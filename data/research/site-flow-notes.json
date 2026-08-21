@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "captured": "2026-08-21",
+    "method": "WebSearch + WebFetch only, no sub-agents. 12 searches, 12 fetch attempts (8 returned usable content; NRC direct fetches and Radiant Nuclear homepage 403'd and are marked snippet-only, sourced from search-result text instead).",
+    "site_tabs_today": ["Pipeline", "Economics", "Vendors", "Demand", "Market design", "Policy", "Evidence"]
+  },
+  "sites": [
+    {
+      "name": "Nuclear Barbarian / nukebarbarian",
+      "nav_names": "Not a structured website. It is Emmet Penney's Substack newsletter + podcast at nuclearbarbarians.com, mirrored to X/Instagram/Threads/Apple Podcasts. No nav taxonomy or section structure exists to learn from.",
+      "status_pattern": "None. Editorial/podcast content only, no deployment-status or timeline presentation.",
+      "idea": "Not applicable — confirmed not a structured site and moved on quickly per instructions."
+    },
+    {
+      "name": "DOE Office of Nuclear Energy (energy.gov/ne)",
+      "nav_names": "[fetched energy.gov/ne/advanced-small-modular-reactors-smrs] Site-level top nav: Policy & Priorities, Leadership & Organization, Topics, News & Events, About, Funding Opportunities. The SMR page itself is organized: Overview -> Technology Focus (coolant types: light water/gas/liquid metal/molten salt) -> Program Structure (Advanced SMR R&D Program, SMR Licensing Technical Support, named funding solicitation DE-FOA-0001817) -> 'SMR-Related Reports' rail -> 'SMR-Related News' rail.",
+      "status_pattern": "No structured stage table. Timeline is prose-only: deployment framed as 'late 2020s to early 2030s', first-of-a-kind demo at INL framed as 'this decade'. No done/pending marks at all.",
+      "idea": "DOE runs a 'Reports' rail and a 'News' rail side by side on the same page — durable reference material kept visually separate from time-stamped updates. Our Evidence tab currently mixes citations and dated developments in one list; splitting them the way DOE does would make the durable source register easier to scan separately from what's new."
+    },
+    {
+      "name": "NRC (nrc.gov)",
+      "nav_names": "[snippet-only — direct fetches of nrc.gov/reactors/new-reactors/advanced.html, the pre-application-activities page, and the semiannual-status PDF all returned HTTP 403] Advanced/new-reactor licensing content is split by legal pathway: Combined License (COL) Applications for large LWRs, Design Certification (DC) applications, and a 'who we're working with' pre-application roster for advanced/micro designs with one page per company (e.g. .../pre-application-activities/antares-nuclear).",
+      "status_pattern": "[snippet-only] Applications are bucketed into three named states rather than a progress bar: 'docketed' / active review (e.g. Oklo's COL application), 'issued' (14 reactors named individually across 8 named sites: Fermi, Levy County, North Anna, South Texas, Turkey Point, V.C. Summer, Vogtle, W.S. Lee), and 'suspended or canceled at the applicant's request' (10 projects, each named individually rather than delisted). A separate recurring 'Semiannual Status Report on the Licensing...' PDF exists but could not be fetched.",
+      "idea": "NRC keeps suspended/canceled applications individually named in the public record instead of just dropping them from the list. Worth stealing for a deals/opportunities tracker: a stalled or dead opportunity should still be a visible labeled row, not silently removed — it reads as more credible, not less."
+    },
+    {
+      "name": "Vendors: Radiant Nuclear, Westinghouse eVinci, Antares Industries",
+      "nav_names": "Radiant [snippet-only, homepage fetch 403'd]: Team / Press / Updates / Careers. Westinghouse eVinci [fetched westinghousenuclear.com/innovation/evinci-microreactor/]: site top nav About / Innovation / New Plants / Nuclear Fuel / Operating Plants / Careers, with eVinci nested under Innovation (breadcrumb: Home > Innovation > eVinci Microreactor). Antares [fetched antaresindustries.com]: Team / Press / Updates / Careers.",
+      "status_pattern": "Antares [fetched]: homepage section titled 'Roadmap to Electricity' with 3 year-bands — 2025 (CDR completion, NSDA approval, facility opening, fuel fabrication start, written in past tense = done), 2026 (first reactor demo at INL, design/component qualification), 2027 (full-power electricity-producing operation, prep for 2028 customer deployments, written in future tense = planned). No icons or progress bar — completion is signaled purely by grammatical tense. Westinghouse eVinci [fetched]: no roadmap or timeline anywhere on the product page — only spec sections (Key Benefits, Heat Pipe Technology, Environmental Benefits, Passive Safety, Key Applications, Technology Hub). Radiant [snippet-only, via search results not the blocked homepage]: milestones reported in press coverage — five-phase test campaign culminating in a 150-hour continuous full-power run targeted Q3 2026; Part 70 license application on an 8-month timeline targeting Q4 2026 approval; Oak Ridge fueling/manufacturing facility targeted for January 2027 commissioning; Kaleidos delivery to Buckley Space Force Base by 2028 — but these are not assembled into any on-site tracker.",
+      "idea": "Antares names its roadmap after the customer-facing outcome ('Roadmap to Electricity'), not the internal process ('Roadmap to Licensing' or 'Development Timeline'). Worth stealing as a labeling pattern for any milestone section on our site."
+    },
+    {
+      "name": "Oklo (oklo.com)",
+      "nav_names": "[fetched] Overview, Energy (+ Ohio sub-page), Technology, Fuel Recycling (+ Tennessee sub-page), Isotopes (+ Texas sub-page), About, Regulatory, Newsroom (Press Releases / Media / POV), Investors (multiple sub-sections), FAQs, Contacts, Careers, Store.",
+      "status_pattern": "[fetched oklo.com and oklo.com/regulatory] No 'path to deployment' page and no homepage timeline exist. The Regulatory page instead splits progress into three parallel workstream dashboards — 'Powerhouses' (Aurora-INL, Aurora-OH S-COLA), 'Fuel cycle' (fabrication / isotope foundry / recycling), 'Isotope production' (test reactor / lab) — each with prose milestones like 'first custom combined license application submitted to the NRC' but no explicit pending/approved stage label on any of them.",
+      "idea": "Oklo deliberately splits deployment progress into parallel per-workstream dashboards instead of forcing one linear timeline. Applicable if our Pipeline/Tracker tab ever needs to show per-vendor or per-region progress that doesn't share a single sequence — don't force independent tracks onto one shared timeline."
+    },
+    {
+      "name": "FERC (ferc.gov)",
+      "nav_names": "[snippet-only] The docket/proceeding surface is branded 'eLibrary' (not labeled 'Dockets' in nav) — a search tool with 'Keyword Search', 'Date Range', and 'Industry Sector' filters, plus a per-case 'Docket Sheet' view reachable by docket number. Adjacent utility pages: 'How to eSubscribe', 'eLibrary Quick Help', 'eLibrary Search Tips'.",
+      "status_pattern": "[snippet-only] No stage taxonomy surfaced — eLibrary is a document repository/search tool, not a summary status tracker; status lives inside each individual docket sheet rather than an aggregate table.",
+      "idea": "FERC keeps the search/discovery surface ('eLibrary') and the single-case detail view ('Docket Sheet') as two distinct named things. Reminder to keep our Evidence tab's index/search role distinct from any single deal's own detail view rather than collapsing the two."
+    },
+    {
+      "name": "Wood Mackenzie",
+      "nav_names": "[fetched a press release, not the live site nav] Coverage is structured as dated press releases/blog posts (e.g. 'Global SMR pipeline surges 42%...') rather than a persistent dashboard page in what was retrievable.",
+      "status_pattern": "[fetched] Explicit analyst term: 'unrisked pipeline' is defined in-text as 'all announced projects' (47 GW, ~$360bn). Sub-buckets used: 'under construction or in development' (2.5 GW globally) and looser regional 'activity' (e.g. 1.2 GW in Canada). No 'order book' or 'capacity tracker' terminology appears in this document.",
+      "idea": "WoodMac explicitly defines 'pipeline' as undiscounted, industry-wide, and including every announced project — i.e. an analyst's word for the whole addressable market. Our tab holds a curated, specific set of deals/opportunities, which is a different object; reusing 'Pipeline' invites readers primed by WoodMac-style usage to assume it's market-wide rather than ours."
+    },
+    {
+      "name": "Heatmap News",
+      "nav_names": "[fetched] Single long-form explainer article; no distinct nav/section chrome captured beyond in-article headers.",
+      "status_pattern": "None — explainer journalism, not a tracker or stage table.",
+      "idea": "The microreactor explainer runs a recurring airport/airplane analogy, an inline comparison graphic titled 'Microreactor vs. SMR vs. Full-size power plant', and deliberately quotes a skeptic (economist John Parsons: 'My crystal ball is broken') beside believers. One small comparison graphic plus one honest skeptic quote does more for credibility than bullish claims alone — worth stealing for our landing tab or Evidence framing."
+    },
+    {
+      "name": "World Nuclear Association reactor database + DOE GAIN microreactor program",
+      "nav_names": "WNA [fetched world-nuclear.org SMR tracker page]: top nav NUCLEAR INFORMATION (with Reactor Database, Publications sub-items), News and Media, About Us, Working Groups, Events, Shop; breadcrumb Home > Information Library > Nuclear Power Reactors > Small Modular Reactors > page titled exactly 'Small Modular Reactor (SMR) Global Project Tracker'. WNA separately runs a 'Reactor Database Global Dashboard' [snippet-only, from search result title] for the full operating/under-construction/decommissioning fleet. DOE GAIN [snippet-only]: gain.inl.gov/doe-microreactor-program/ structured around 'Journal Articles', 'Technical Reports', dated 'Program Review' pages (2024/2025 each as separate pages), and a per-technology 'MARVEL Technology Review'.",
+      "status_pattern": "[fetch returned page chrome/title only, not the live table data — page marked 'Updated Wednesday, 29 July 2026'] Exact stage-category labels in the tracker table were not retrievable through WebFetch.",
+      "idea": "WNA runs two distinctly named, separately scoped surfaces: a forward-looking 'Tracker' for in-motion SMR projects, and a comprehensive 'Database'/'Dashboard' for the full historical reactor fleet. That motion-vs-record split maps onto our Pipeline tab (in-motion deals) vs. Evidence tab (the durable source register) — naming the two differently, the way WNA does, would reinforce rather than blur that distinction."
+    }
+  ],
+  "recommendations": {
+    "landing_tab": {
+      "value": "Tracker",
+      "reasoning": "WNA names its closest equivalent surface (in-motion, staged SMR projects) a 'Tracker', while WoodMac's 'pipeline' is explicitly defined as 'all announced projects' industry-wide (the whole addressable market, undiscounted). Our tab holds a curated, specific set of our own signed deals/opportunities, not the industry's whole pipeline — 'Tracker' matches the closer analog and avoids readers assuming it's market-wide. Runner-up: 'Deals' if plainer language is preferred, grounded in nothing borrowed and therefore less distinctive."
+    },
+    "economics_name": {
+      "value": "Cost Case",
+      "reasoning": "Content is LCOE bands vs. displaced alternatives — a cost comparison, not general 'economics'. DOE's own SMR page buckets this kind of content under financial-analysis reports (fetched), supporting a cost-specific label. Distinguishes cleanly from a renamed Demand tab since it answers 'what does it cost vs. the alternative', not 'what size load fits'."
+    },
+    "demand_name": {
+      "value": "Applications",
+      "reasoning": "Grounded directly in Westinghouse's own eVinci product page (fetched), which has a section literally titled 'Key Applications'. Content is which loads fit 1-20 MW — i.e. use-case/application fit — so 'Applications' names it the way a vendor itself names the same content, and reads as clearly distinct from a cost-focused Economics/'Cost Case' tab."
+    },
+    "timeline_pattern": {
+      "value": "Antares Industries' homepage 'Roadmap to Electricity' (fetched, antaresindustries.com)",
+      "description": "Three year-banded stages (2025 / 2026 / 2027), each listing 2-4 concrete milestones (e.g. 2025: CDR completion, NSDA approval, facility opening, fuel fabrication start; 2026: first reactor demo at INL; 2027: full-power electricity-producing operation, prep for 2028 customer deployments). No icons, checkmarks, or progress bar — done vs. pending is signaled purely by grammatical tense (past tense = completed, future tense = planned), and the roadmap is named after the customer-facing outcome ('Electricity') rather than the internal process. Secondary pattern worth combining with it: NRC's three-bucket status taxonomy (docketed / issued / suspended-or-canceled, snippet-only) which keeps stalled items individually visible rather than delisting them."
+    },
+    "other_ideas": [
+      {"idea": "Split the Evidence tab into a durable 'Reports' rail and a dated 'News/updates' rail, the way DOE's SMR page does, instead of mixing citations and time-stamped developments in one list.", "site": "DOE Office of Nuclear Energy (energy.gov/ne)"},
+      {"idea": "Keep stalled/dead opportunities as individually named, visible rows in the Tracker rather than silently delisting them — NRC does this for suspended/canceled COL applications.", "site": "NRC (nrc.gov, snippet-only)"},
+      {"idea": "For any milestone/roadmap section, name it after the customer-facing outcome (e.g. 'Roadmap to Electricity') rather than the internal process ('Development Timeline').", "site": "Antares Industries (antaresindustries.com)"},
+      {"idea": "If per-vendor or per-region progress ever needs showing on one page, use parallel per-workstream dashboards (Oklo's Powerhouses / Fuel cycle / Isotope production) instead of forcing independent tracks onto one shared linear timeline.", "site": "Oklo (oklo.com/regulatory)"},
+      {"idea": "Pair one small head-to-head comparison graphic with one honest skeptic quote when explaining the tech to a general audience — credibility comes from acknowledging doubt, not just stating capability.", "site": "Heatmap News (heatmap.news microreactor explainer)"}
+    ]
+  }
+}

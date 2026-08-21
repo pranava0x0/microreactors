@@ -1,24 +1,30 @@
 /* Microreactor opportunity map — layout on top of the Antares tokens.
-   Hard edges, hairlines instead of shadows, red reserved for data. */
+   Hard edges, hairlines instead of shadows, red reserved for data.
+   Tabbed IA: one panel visible at a time; [hidden] is the switch. */
 
 *,*::before,*::after{box-sizing:border-box}
 body{overflow-x:hidden}
+[hidden]{display:none!important}
 
 .wrap{max-width:var(--content-max);margin:0 auto;padding:0 var(--gutter-page)}
 @media(min-width:900px){.wrap{padding:0 var(--gutter-page-lg)}}
 
-/* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:40;height:var(--nav-height);display:flex;align-items:center;
-  background:rgba(12,10,9,.82);backdrop-filter:var(--blur-panel);border-bottom:1px solid var(--border-subtle)}
-.nav .wrap{display:flex;align-items:center;gap:var(--space-8);width:100%}
+/* ---------- nav + tabs ---------- */
+.nav{position:sticky;top:0;z-index:40;background:rgba(12,10,9,.92);backdrop-filter:var(--blur-panel);
+  border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
+.navrow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2) var(--space-6)}
 .wordmark{font-weight:var(--weight-bold);letter-spacing:var(--track-wordmark);text-transform:uppercase;
-  font-size:var(--size-label);white-space:nowrap}
+  font-size:var(--size-label);white-space:nowrap;margin-right:auto}
 .wordmark b{color:var(--antares-red);font-weight:var(--weight-bold)}
-.navlinks{display:flex;gap:var(--space-6);margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.navlinks::-webkit-scrollbar{display:none}
-.navlinks a{font-size:var(--size-label);letter-spacing:var(--track-nav);text-transform:uppercase;
-  color:var(--text-secondary);white-space:nowrap}
-.navlinks a:hover{color:var(--text-primary);opacity:1}
+.tabs{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.tab{appearance:none;background:transparent;border:none;border-bottom:2px solid transparent;
+  color:var(--text-secondary);cursor:pointer;padding:var(--space-2) var(--space-3);
+  font:var(--text-label);letter-spacing:var(--track-nav);text-transform:uppercase;
+  font-family:var(--font-core);transition:var(--transition-control);white-space:nowrap;
+  touch-action:manipulation}
+.tab:hover{color:var(--text-primary)}
+.tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
+@media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
 
 /* ---------- type helpers ---------- */
 .eyebrow{font-size:var(--size-label);letter-spacing:var(--track-label);text-transform:uppercase;
@@ -32,15 +38,32 @@ h3{font-size:var(--size-heading-2)}
 .prose{color:var(--text-secondary);max-width:var(--measure-prose)}
 .mono{font-family:var(--font-mono);font-size:var(--size-body-sm)}
 
-section{padding:var(--section-y) 0;border-top:1px solid var(--border-subtle)}
-section:first-of-type{border-top:none}
-.sechead{margin-bottom:var(--space-12)}
+section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
+/* Panels are focusable (tabindex=0) so keyboard users land on them after the
+   tab; they keep the global focus ring — removing it left keyboard focus
+   invisible (review finding, 2026-08-21). */
+.sechead{margin-bottom:var(--space-10)}
+.subhead{margin:var(--space-16) 0 var(--space-6)}
+.subhead h3{padding-bottom:var(--space-3);border-bottom:1px solid var(--border-default)}
+.subhead .prose{margin-top:var(--space-3)}
+
+/* ---------- inline citations ---------- */
+.cite{display:inline-block;font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);text-decoration:none;margin-left:var(--space-1);
+  vertical-align:super;line-height:1}
+.cite:hover{color:var(--antares-red);opacity:1}
+.nosrc{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--antares-red);
+  margin-left:var(--space-1);vertical-align:super;line-height:1;white-space:nowrap}
 
 /* ---------- hero ---------- */
-.hero{padding:var(--space-24) 0 var(--space-16)}
+.hero{padding:var(--space-16) 0 var(--space-12);border-bottom:1px solid var(--border-subtle)}
 .hero h1{max-width:16ch;margin-bottom:var(--space-6)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
-  background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-16)}
+/* Six stats. Explicit column counts per band: auto-fit against a known count
+   strands dead cells in the last row (DESIGN.md 12.18). */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-10)}
+@media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.stats{grid-template-columns:repeat(6,1fr)}}
 .stat{background:var(--surface-page);padding:var(--space-6)}
 .stat .n{font-size:var(--size-heading-1);font-weight:var(--weight-semibold);
   letter-spacing:var(--track-heading);display:block;font-variant-numeric:tabular-nums}
@@ -53,10 +76,11 @@ section:first-of-type{border-top:none}
 .chip{height:var(--control-height-sm);padding:0 var(--space-4);background:transparent;cursor:pointer;
   border:1px solid var(--border-default);color:var(--text-secondary);border-radius:var(--radius-control);
   font:var(--text-label);letter-spacing:var(--track-nav);text-transform:uppercase;
-  transition:var(--transition-control);font-family:var(--font-core)}
+  transition:var(--transition-control);font-family:var(--font-core);touch-action:manipulation}
 .chip:hover{border-color:var(--border-strong);color:var(--text-primary)}
 .chip[aria-pressed="true"]{background:var(--antares-red);border-color:var(--antares-red);color:var(--text-on-accent)}
 .chip .c{opacity:.7;margin-left:var(--space-2);font-variant-numeric:tabular-nums}
+@media(pointer:coarse){.chip{height:var(--control-height)}}
 
 /* ---------- opportunity rows ---------- */
 .rows{border-top:1px solid var(--border-subtle)}
@@ -90,14 +114,14 @@ section:first-of-type{border-top:none}
 .gapnote ul{margin:0;padding-left:var(--space-5)}
 
 /* ---------- cost chart ---------- */
-.chart{margin-top:var(--space-8)}
+.chart{margin-top:var(--space-8);max-width:960px}
 .bar{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:var(--space-4);
   align-items:center;padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle)}
 .bar .lab{font-size:var(--size-body-sm);color:var(--text-secondary)}
 .track{position:relative;height:22px;background:rgba(250,250,249,.05);border-radius:var(--radius-xs)}
 .span{position:absolute;top:0;bottom:0;border-radius:var(--radius-xs);
   display:flex;align-items:center;justify-content:flex-end;padding-right:var(--space-2)}
-.span.micro{background:var(--antares-red);}
+.span.micro{background:var(--antares-red)}
 .span.alt{background:var(--stone-600)}
 .span.narrow{justify-content:flex-start;padding-right:0;overflow:visible}
 .span.narrow .t{position:absolute;left:calc(100% + var(--space-2));color:var(--text-secondary)}
@@ -113,38 +137,154 @@ section:first-of-type{border-top:none}
 .legend{display:flex;gap:var(--space-6);margin-top:var(--space-6);font-size:var(--size-body-sm);
   color:var(--text-tertiary);flex-wrap:wrap}
 .legend i{display:inline-block;width:12px;height:12px;margin-right:var(--space-2);vertical-align:-1px}
+.altnote{margin-top:var(--space-4);padding:var(--space-3) var(--space-4);border:1px solid var(--border-subtle);
+  font-size:var(--size-body-sm);color:var(--text-secondary);max-width:var(--measure-prose)}
+.altnote .k{color:var(--text-tertiary)}
+
+/* ---------- incentives (PTC after OBBBA) ---------- */
+.inc{border:1px solid var(--border-subtle);margin-top:var(--space-6);max-width:960px}
+.inc .lead{padding:var(--space-6);font-size:var(--size-body);color:var(--text-primary);
+  border-bottom:1px solid var(--border-subtle)}
+.inc ul{margin:0;padding:0;list-style:none}
+.inc li{padding:var(--space-4) var(--space-6);border-bottom:1px solid var(--border-subtle);
+  font-size:var(--size-body-sm);color:var(--text-secondary)}
+.inc li:last-child{border-bottom:none}
+.inc .cv{padding:var(--space-4) var(--space-6);font-size:var(--size-caption);color:var(--text-tertiary)}
 
 /* ---------- vendors ---------- */
-.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;
+.vgrid{display:grid;grid-template-columns:1fr;gap:1px;
   background:var(--border-subtle);border:1px solid var(--border-subtle)}
+@media(min-width:640px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.vgrid{grid-template-columns:repeat(3,1fr)}}
 .vcard{background:var(--surface-page);padding:var(--space-8)}
 .vcard h3{margin-bottom:var(--space-1)}
 .vcard .r{color:var(--antares-red);font-size:var(--size-body-sm);letter-spacing:var(--track-label);
   text-transform:uppercase;margin-bottom:var(--space-6);display:block}
-.vspec{display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-3) 0;
+.vspec{display:grid;grid-template-columns:118px 1fr;gap:var(--space-4);padding:var(--space-3) 0;
   border-top:1px solid var(--border-subtle);font-size:var(--size-body-sm)}
 .vspec .k{color:var(--text-tertiary)}
-.vspec .v{color:var(--text-primary);text-align:right}
+.vspec .v{color:var(--text-primary);font-variant-numeric:tabular-nums}
+/* per-vendor deployment ladder: solid dot = done, hollow = target */
+.vtlhead{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);margin-top:var(--space-6);padding-top:var(--space-4);
+  border-top:1px solid var(--border-subtle)}
+.vtl{margin-top:var(--space-3)}
+.ms{display:grid;grid-template-columns:78px 14px 1fr;gap:var(--space-3);align-items:baseline;
+  position:relative;padding:var(--space-2) 0}
+.ms .d{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.ms .dot{width:9px;height:9px;border-radius:var(--radius-circle);align-self:center;
+  position:relative;z-index:1}
+.ms.done .dot{background:var(--antares-red)}
+.ms.tgt .dot{background:var(--surface-page);border:1.5px solid var(--antares-red-40)}
+.ms .l{font-size:var(--size-body-sm);color:var(--text-secondary)}
+.ms.done .l{color:var(--text-primary)}
+.ms::before{content:"";position:absolute;left:calc(78px + var(--space-3) + 4px);top:0;bottom:0;
+  width:1px;background:var(--border-subtle)}
+.ms:first-child::before{top:50%}
+.ms:last-child::before{bottom:50%}
 
-/* ---------- sectors ---------- */
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-8)}
-.sector h3{margin-bottom:var(--space-4);padding-bottom:var(--space-3);
-  border-bottom:1px solid var(--border-default)}
-.load{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);padding:var(--space-2) 0;
-  font-size:var(--size-body-sm);border-bottom:1px solid var(--border-subtle)}
+.vsrcs{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--border-subtle)}
+.vsrcs a{display:inline-block;font-size:var(--size-caption);color:var(--text-secondary);
+  text-decoration:underline;text-underline-offset:3px;margin-right:var(--space-3);margin-bottom:var(--space-2)}
+.vsrcs a:hover{color:var(--antares-red);opacity:1}
+
+/* ---------- demand accordions ---------- */
+.sgrid{display:grid;gap:var(--space-3)}
+details.sector{border:1px solid var(--border-subtle);background:var(--surface-page)}
+details.sector summary{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);
+  align-items:baseline;cursor:pointer;padding:var(--space-5) var(--space-6);list-style:none;
+  touch-action:manipulation}
+details.sector summary::-webkit-details-marker{display:none}
+details.sector summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  transition:transform var(--dur-fast) var(--ease-standard);display:inline-block}
+details.sector[open] summary::before{transform:rotate(90deg)}
+details.sector summary h3{font-size:var(--size-heading-3)}
+details.sector summary .meta{font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);white-space:nowrap}
+.sectorctx{padding:var(--space-4) var(--space-6);border-top:1px solid var(--border-subtle);
+  font-size:var(--size-body-sm);color:var(--text-secondary);max-width:var(--measure-prose)}
+details.sector .loads{padding:0 var(--space-6) var(--space-5);border-top:1px solid var(--border-subtle)}
+@media(min-width:900px){details.sector .loads{column-count:2;column-gap:var(--space-16)}}
+.load{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);padding:var(--space-3) 0;
+  font-size:var(--size-body-sm);border-bottom:1px solid var(--border-subtle);
+  break-inside:avoid;align-items:start}
 .load .note{display:block;color:var(--text-tertiary);font-size:var(--size-caption);
   margin-top:2px;line-height:1.4}
 .load .b{color:var(--antares-red);font-family:var(--font-mono);font-size:var(--size-caption);
-  white-space:nowrap;align-self:center}
+  white-space:nowrap;padding-top:2px}
+.load .delta{display:block;color:var(--text-tertiary);font-size:var(--size-caption);
+  margin-top:var(--space-1);line-height:1.4;border-left:2px solid var(--antares-red-40);
+  padding-left:var(--space-2)}
+
+/* ---------- market design ---------- */
+.mech{display:grid;gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);
+  margin-top:var(--space-6)}
+@media(min-width:900px){.mech{grid-template-columns:repeat(3,1fr)}}
+.mechcard{background:var(--surface-page);padding:var(--space-6)}
+.mechcard h4{color:var(--antares-red);font-size:var(--size-body);margin-bottom:var(--space-3);
+  letter-spacing:var(--track-heading)}
+.mechcard p{font-size:var(--size-body-sm);color:var(--text-secondary);margin-bottom:var(--space-3)}
+.mechcard p:last-child{margin-bottom:0}
+.mechcard .steps{margin:0;padding-left:var(--space-5);font-size:var(--size-body-sm);color:var(--text-secondary)}
+.mechcard .steps li{margin-bottom:var(--space-2)}
+.proposaltag,.ideatag{display:inline-block;font-size:var(--size-label-sm);letter-spacing:var(--track-label);
+  text-transform:uppercase;padding:1px var(--space-2);border:1px solid var(--antares-red-40);
+  color:var(--antares-red);border-radius:var(--radius-control);white-space:nowrap}
+details.prec{border:1px solid var(--border-subtle);margin-bottom:var(--space-3)}
+details.prec summary{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);align-items:baseline;
+  cursor:pointer;padding:var(--space-4) var(--space-5);list-style:none;touch-action:manipulation}
+details.prec summary::-webkit-details-marker{display:none}
+details.prec summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-caption);
+  transition:transform var(--dur-fast) var(--ease-standard)}
+details.prec[open] summary::before{transform:rotate(90deg)}
+details.prec summary .nm{font-weight:var(--weight-semibold);font-size:var(--size-body)}
+details.prec summary .cat{font-size:var(--size-label-sm);letter-spacing:var(--track-label);
+  text-transform:uppercase;color:var(--text-tertiary);white-space:nowrap}
+@media(max-width:640px){
+  details.prec summary{grid-template-columns:auto 1fr}
+  details.prec summary .cat{grid-column:2;white-space:normal}
+}
+details.prec .body{padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--border-subtle)}
+details.prec .body p{font-size:var(--size-body-sm);color:var(--text-secondary);
+  margin-top:var(--space-3);max-width:var(--measure-prose)}
+details.prec .body .k{color:var(--text-tertiary)}
+
+/* ---------- policy pathways ---------- */
+.pgroup{margin-bottom:var(--space-10)}
+.pgroup>h4{font-size:var(--size-body);color:var(--antares-red);letter-spacing:var(--track-heading);
+  margin-bottom:var(--space-4);padding-bottom:var(--space-2);border-bottom:1px solid var(--border-default)}
+.pw{display:grid;grid-template-columns:1fr;gap:var(--space-2);padding:var(--space-4) 0;
+  border-bottom:1px solid var(--border-subtle)}
+.pw .top{display:flex;gap:var(--space-3);align-items:baseline;flex-wrap:wrap}
+.pw .nm{font-weight:var(--weight-semibold);font-size:var(--size-body)}
+.pw .st{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);white-space:nowrap}
+.pw p{font-size:var(--size-body-sm);color:var(--text-secondary);max-width:var(--measure-prose)}
+
+/* ---------- evidence: source register ---------- */
+.reg{border-top:1px solid var(--border-subtle);max-width:960px}
+.reg .rrow{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);align-items:baseline;
+  padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);font-size:var(--size-body-sm)}
+.reg .rrow a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+.reg .rrow a:hover{color:var(--antares-red);opacity:1}
+.reg .host{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  white-space:nowrap}
+@media(max-width:640px){
+  .reg .rrow{grid-template-columns:1fr}
+  .reg .host{white-space:normal;word-break:break-all}
+}
+.reg .uses{display:block;font-size:var(--size-caption);color:var(--text-tertiary);margin-top:2px}
 
 /* ---------- coverage ---------- */
 .cov{display:grid;grid-template-columns:minmax(120px,180px) 1fr auto;gap:var(--space-4);
-  align-items:center;padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle)}
+  align-items:center;padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);max-width:960px}
 .covbar{height:8px;background:rgba(250,250,249,.06);border-radius:var(--radius-xs)}
 .covfill{height:100%;border-radius:var(--radius-xs)}
 .cov .p{font-variant-numeric:tabular-nums;font-size:var(--size-body-sm);color:var(--text-secondary);
   min-width:56px;text-align:right}
 .next{margin-top:var(--space-12);display:grid;gap:var(--space-6)}
+@media(min-width:900px){.next{grid-template-columns:repeat(3,1fr)}}
 .nextcard{border:1px solid var(--border-subtle);padding:var(--space-6)}
 .nextcard h4{color:var(--antares-red);font-size:var(--size-body);margin:0 0 var(--space-3);
   letter-spacing:var(--track-heading)}
@@ -158,5 +298,7 @@ footer a{color:var(--text-secondary);text-decoration:underline;text-underline-of
   .axis{padding-left:0}
   .cov{grid-template-columns:1fr auto}
   .cov .covbar{grid-column:1/-1;order:3}
+  details.sector summary{padding:var(--space-4)}
+  details.sector .loads{padding:0 var(--space-4) var(--space-4)}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
