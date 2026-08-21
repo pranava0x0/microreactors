@@ -1,0 +1,260 @@
+{
+ "_meta": {
+  "generated_by": "tools/build_gaps.py",
+  "note": "Regenerate after any data edit: python3 tools/build_gaps.py"
+ },
+ "field_coverage": [
+  {
+   "field": "land_acres",
+   "have": 1,
+   "total": 14,
+   "pct": 7,
+   "missing_ids": [
+    "anpi-jbsa",
+    "anpi-buckley",
+    "janus",
+    "dome",
+    "eielson",
+    "equinix-radiant",
+    "ianc",
+    "nano-supermicro",
+    "texas-backup",
+    "uk-lastenergy",
+    "canada-src",
+    "romania-nuscale",
+    "jp-kr-moc"
+   ]
+  },
+  {
+   "field": "utility_filing",
+   "have": 1,
+   "total": 14,
+   "pct": 7,
+   "missing_ids": [
+    "anpi-jbsa",
+    "anpi-buckley",
+    "anpi-malmstrom",
+    "janus",
+    "eielson",
+    "equinix-radiant",
+    "ianc",
+    "nano-supermicro",
+    "texas-backup",
+    "uk-lastenergy",
+    "canada-src",
+    "romania-nuscale",
+    "jp-kr-moc"
+   ]
+  },
+  {
+   "field": "shell",
+   "have": 4,
+   "total": 14,
+   "pct": 29,
+   "missing_ids": [
+    "anpi-jbsa",
+    "janus",
+    "eielson",
+    "ianc",
+    "nano-supermicro",
+    "texas-backup",
+    "uk-lastenergy",
+    "canada-src",
+    "romania-nuscale",
+    "jp-kr-moc"
+   ]
+  },
+  {
+   "field": "timeline",
+   "have": 13,
+   "total": 14,
+   "pct": 93,
+   "missing_ids": [
+    "equinix-radiant"
+   ]
+  },
+  {
+   "field": "power_mw",
+   "have": 13,
+   "total": 14,
+   "pct": 93,
+   "missing_ids": [
+    "nano-supermicro"
+   ]
+  },
+  {
+   "field": "sector",
+   "have": 14,
+   "total": 14,
+   "pct": 100,
+   "missing_ids": []
+  },
+  {
+   "field": "owner",
+   "have": 14,
+   "total": 14,
+   "pct": 100,
+   "missing_ids": []
+  }
+ ],
+ "row_gaps": [
+  {
+   "id": "anpi-jbsa",
+   "name": "Joint Base San Antonio (ANPI)",
+   "track": "us-gov",
+   "gaps": [
+    "Land parcel not identified",
+    "No CPS Energy interconnection filing located \u2014 JBSA sits in CPS Energy territory, a municipally owned utility, so any filing may be city-level rather than PUC"
+   ]
+  },
+  {
+   "id": "anpi-buckley",
+   "name": "Buckley Space Force Base (ANPI)",
+   "track": "us-gov",
+   "gaps": [
+    "Land parcel not identified",
+    "No Xcel Energy Colorado interconnection filing located"
+   ]
+  },
+  {
+   "id": "anpi-malmstrom",
+   "name": "Malmstrom Air Force Base (ANPI)",
+   "track": "us-gov",
+   "gaps": [
+    "The 2-acre figure is a vendor design claim, not a Malmstrom site allocation",
+    "No NorthWestern Energy filing located"
+   ]
+  },
+  {
+   "id": "janus",
+   "name": "Army Janus Program \u2014 nine candidate installations",
+   "track": "us-gov",
+   "gaps": [
+    "Per-site load requirement not published",
+    "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor \u2014 it is the one site whose displaced alternative is coal/oil at Alaskan prices \u2014 but no site-specific MW figure was found"
+   ]
+  },
+  {
+   "id": "eielson",
+   "name": "Eielson Air Force Base micro-reactor pilot",
+   "track": "us-gov",
+   "gaps": [
+    "Primary Eielson award document not re-verified in this pass \u2014 treat as carried-forward, not freshly sourced"
+   ]
+  },
+  {
+   "id": "equinix-radiant",
+   "name": "Equinix \u2014 20-reactor purchase agreement",
+   "track": "us-commercial",
+   "gaps": [
+    "No site list",
+    "No delivery schedule",
+    "No unit price"
+   ]
+  },
+  {
+   "id": "ianc",
+   "name": "Industrial Advanced Nuclear Consortium (IANC)",
+   "track": "us-commercial",
+   "gaps": [
+    "No member has issued a microreactor RFP",
+    "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs vs >70% favouring wind/solar \u2014 press-reported only, direct fetch 403'd"
+   ]
+  },
+  {
+   "id": "nano-supermicro",
+   "name": "NANO Nuclear \u00d7 Supermicro",
+   "track": "us-commercial",
+   "gaps": [
+    "MOU only \u2014 no binding capacity, no site, no date"
+   ]
+  },
+  {
+   "id": "texas-backup",
+   "name": "Texas Backup Power Package Program",
+   "track": "us-commercial",
+   "gaps": [
+    "Nuclear is not named as an eligible technology \u2014 this is a substitution opportunity into live procurement, not an existing nuclear pipeline"
+   ]
+  },
+  {
+   "id": "uk-lastenergy",
+   "name": "DP World Thames Freeport \u2014 Last Energy PWR-20",
+   "track": "intl",
+   "gaps": [
+    "Competitor deployment, not an opening for Antares/Radiant/Westinghouse \u2014 included as proof a commercial port operator will sign for microreactor power"
+   ]
+  },
+  {
+   "id": "canada-src",
+   "name": "Saskatchewan Research Council eVinci pilot",
+   "track": "intl",
+   "gaps": [
+    "CNSC licensing milestones not tracked here"
+   ]
+  },
+  {
+   "id": "romania-nuscale",
+   "name": "Doice\u0219ti NuScale VOYGR-6",
+   "track": "intl",
+   "gaps": [
+    "SMR scale \u2014 included as proof the U.S. export machinery reaches funded construction, not as a microreactor lead"
+   ]
+  },
+  {
+   "id": "jp-kr-moc",
+   "name": "U.S.\u2013Japan\u2013Korea trilateral SMR Memorandum of Cooperation",
+   "track": "intl",
+   "gaps": [
+    "Primary state.gov page not independently read \u2014 press-corroborated only"
+   ]
+  }
+ ],
+ "vendor_gaps": [
+  {
+   "id": "antares",
+   "name": "Antares Nuclear",
+   "gaps": [
+    "No disclosed funding total",
+    "No published land-area or exclusion-zone footprint",
+    "No utility filing located for the JBSA interconnection"
+   ]
+  },
+  {
+   "id": "radiant",
+   "name": "Radiant Nuclear",
+   "gaps": [
+    "Criticality was targeted for 2026-07-04; completion of the five-phase campaign is still forward-looking as of capture date and should be re-verified",
+    "Equinix 20-unit deal: no per-unit price or delivery schedule published"
+   ]
+  },
+  {
+   "id": "evinci",
+   "name": "Westinghouse",
+   "gaps": [
+    "No US commercial (non-government) offtake located",
+    "Malmstrom timeline not separately published beyond the ANPI 2030 goal"
+   ]
+  }
+ ],
+ "next_pass": [
+  {
+   "target": "Utility filings",
+   "why": "13/14 rows have none.",
+   "where": "FERC eLibrary; state PUC dockets (CO PUC for Buckley/Xcel, MT PSC for Malmstrom/NorthWestern); San Antonio city council agendas for JBSA/CPS Energy, which is municipally owned and so files locally rather than at a PUC.",
+   "why_search_failed": "Web search does not index docket systems. This needs direct docket queries, not more searching."
+  },
+  {
+   "target": "Land area / site footprint",
+   "why": "13/14 rows have none.",
+   "where": "NRC ADAMS early site permit and construction permit filings; DoD installation master plans; NEPA environmental assessments.",
+   "why_search_failed": "Only Westinghouse publishes a footprint figure (2 acres), and that is a design claim rather than an allocated parcel."
+  },
+  {
+   "target": "Shell / enclosure detail",
+   "why": "10/14 rows have none.",
+   "where": "Vendor technical datasheets; NRC pre-application meeting slides; DOE DOME experiment safety documentation.",
+   "why_search_failed": "Press coverage reports mass and transportability but not containment or enclosure design."
+  }
+ ]
+}
