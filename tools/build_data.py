@@ -24,12 +24,13 @@ FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy",
 IDENT_KEYS = ("name", "scenario", "alternative", "target", "question", "label", "sector")
 
 
-def collect_sources(node: Any, ctx: str, out: List[Tuple[str, str, str]]) -> None:
-    """Walk the bundle; record every {label, url} source dict with its context."""
+def collect_sources(node: Any, ctx: str, out: List[Tuple[str, str, str, str]]) -> None:
+    """Walk the bundle; record every {label, url} source dict with its context
+    and fetch status ('' when unrecorded, which older rows treat as fetched)."""
     if isinstance(node, dict):
         url = node.get("url")
         if isinstance(url, str) and url.startswith("http") and isinstance(node.get("label"), str):
-            out.append((node["label"], url, ctx))
+            out.append((node["label"], url, ctx, node.get("status", "")))
             return  # a source dict is a leaf; its own label is not a context
         ident: str = ctx
         for k in IDENT_KEYS:
@@ -45,17 +46,22 @@ def collect_sources(node: Any, ctx: str, out: List[Tuple[str, str, str]]) -> Non
 
 
 def sources_index(bundle: Dict[str, Any]) -> List[Dict[str, Any]]:
-    found: List[Tuple[str, str, str]] = []
+    found: List[Tuple[str, str, str, str]] = []
     for name in FILES:
         collect_sources(bundle[name], name, found)
     by_url: Dict[str, Dict[str, Any]] = {}
-    for label, url, ctx in found:
+    for label, url, ctx, status in found:
         row = by_url.setdefault(url, {"url": url, "label": label,
                                       "host": urlparse(url).netloc.replace("www.", ""),
-                                      "uses": []})
+                                      "uses": [], "statuses": []})
         if ctx not in row["uses"]:
             row["uses"].append(ctx)
-    return sorted(by_url.values(), key=lambda r: (r["host"], r["label"]))
+        row["statuses"].append(status)
+    rows = sorted(by_url.values(), key=lambda r: (r["host"], r["label"]))
+    for r in rows:
+        # A URL is snippet-only for the register only if NO use ever read it.
+        r["snippet"] = all(s == "snippet-only" for s in r.pop("statuses"))
+    return rows
 
 
 def captured_date(bundle: Dict[str, Any]) -> str:

@@ -43,8 +43,10 @@
   }
   function srcList(sources, cls) {
     return '<div class="' + (cls || "srcs") + '">' + (sources || []).map(function (x) {
-      return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer">' +
-        esc(x.label) + "</a>";
+      var snip = x.status === "snippet-only";
+      return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer"' +
+        (snip ? ' title="search-corroborated; page not directly fetched"' : "") + ">" +
+        esc(x.label) + (snip ? "†" : "") + "</a>";
     }).join("") + "</div>";
   }
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
@@ -91,11 +93,12 @@
     else if (e.key === "End") next = tabEls.length - 1;
     if (next != null) {
       e.preventDefault();
-      activate(tabEls[next].dataset.panel, { push: true, focus: true });
+      activate(tabEls[next].dataset.panel, { push: true, focus: true, scroll: true });
     }
   });
+  // Back/Forward land like any other tab switch: top of the newly shown panel.
   window.addEventListener("hashchange", function () {
-    activate(location.hash.slice(1) || PANELS[0], {});
+    activate(location.hash.slice(1) || PANELS[0], { scroll: true });
   });
 
   /* ---------- hero stats ---------- */
@@ -341,8 +344,9 @@
     "marked, and re-checked by tools/verify_quotes.py.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
-    return '<div class="rrow"><span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' +
-      esc(r.label) + '</a><span class="uses">cited by: ' + esc(uses) + '</span></span>' +
+    return '<div class="rrow"><span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"' +
+      (r.snippet ? ' title="search-corroborated; page not directly fetched"' : "") + ">" +
+      esc(r.label) + (r.snippet ? "†" : "") + '</a><span class="uses">cited by: ' + esc(uses) + '</span></span>' +
       '<span class="host">' + esc(r.host) + "</span></div>";
   }).join("") + "</div>");
 

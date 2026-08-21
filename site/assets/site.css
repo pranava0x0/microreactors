@@ -39,7 +39,9 @@ h3{font-size:var(--size-heading-2)}
 .mono{font-family:var(--font-mono);font-size:var(--size-body-sm)}
 
 section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
-section[role="tabpanel"]:focus-visible{outline:none;box-shadow:none}
+/* Panels are focusable (tabindex=0) so keyboard users land on them after the
+   tab; they keep the global focus ring — removing it left keyboard focus
+   invisible (review finding, 2026-08-21). */
 .sechead{margin-bottom:var(--space-10)}
 .subhead{margin:var(--space-16) 0 var(--space-6)}
 .subhead h3{padding-bottom:var(--space-3);border-bottom:1px solid var(--border-default)}

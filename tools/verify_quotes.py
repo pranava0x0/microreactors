@@ -12,6 +12,7 @@ snippet-only status, which the site renders with an explicit marker.
   python3 tools/verify_quotes.py --dry    # report only
 """
 import argparse
+import datetime
 import html
 import io
 import json
@@ -27,7 +28,6 @@ DATA = ROOT / "data"
 FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy"]
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
-STAMP = "2026-08-21"
 
 
 def norm(s: str) -> str:
@@ -67,7 +67,11 @@ def walk(node: Any, out: List[dict]) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--stamp", default=datetime.date.today().isoformat(),
+                    help="verification date to record (defaults to today; "
+                         "pass explicitly for a reproducible backfill)")
     args = ap.parse_args()
+    stamp = args.stamp
 
     verified: List[Tuple[str, str]] = []
     unreachable: List[Tuple[str, str]] = []
@@ -93,7 +97,7 @@ def main() -> int:
                 continue
             if norm(src["quote"]) in body:
                 src["status"] = "fetched"
-                src["verified"] = f"{STAMP} quote confirmed in page"
+                src["verified"] = f"{stamp} quote confirmed in page"
                 verified.append((name, url))
                 changed = True
             else:
