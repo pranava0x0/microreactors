@@ -13,6 +13,7 @@ import argparse
 import concurrent.futures
 import json
 import pathlib
+import socket
 import sys
 import urllib.error
 import urllib.request
@@ -25,6 +26,13 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
 
+# Sentinels below the HTTP range: a host that no longer resolves or refuses
+# connections is DEAD (the citation target is gone); a timeout or TLS failure
+# means the host exists but will not talk to a script, which is BLOCKED.
+DNS_DEAD = -1
+REFUSED = -2
+
+
 def status_of(url: str, timeout: float) -> int:
     req = urllib.request.Request(url, headers={"User-Agent": UA}, method="GET")
     try:
@@ -32,8 +40,19 @@ def status_of(url: str, timeout: float) -> int:
             return r.status
     except urllib.error.HTTPError as e:
         return e.code
+    except urllib.error.URLError as e:
+        reason = e.reason
+        if isinstance(reason, socket.gaierror):
+            return DNS_DEAD
+        if isinstance(reason, ConnectionRefusedError):
+            return REFUSED
+        return 0  # timeout / TLS / reset: host exists, treat as blocked
+    except socket.gaierror:
+        return DNS_DEAD
+    except ConnectionRefusedError:
+        return REFUSED
     except Exception:
-        return 0  # DNS/refused/timeout
+        return 0
 
 
 def main() -> int:
@@ -60,9 +79,9 @@ def main() -> int:
     dead, blocked, live = [], [], []
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
         for url, code in zip(urls, ex.map(lambda u: status_of(u, args.timeout), urls)):
-            if code in (404, 410):
+            if code in (404, 410, DNS_DEAD, REFUSED):
                 dead.append((code, url))
-            elif code in (0, 403, 429) or code >= 500:
+            elif code == 0 or code in (403, 429) or code >= 500:
                 blocked.append((code, url))
             else:
                 live.append((code, url))
