@@ -107,6 +107,8 @@ def main() -> int:
         "land_pct": cov["land_acres"]["pct"],
         "filing_pct": cov["utility_filing"]["pct"],
         # Deployment-facing stats: how far the market has actually moved.
+        "milestones_2026": sum(1 for v in vendors for m in v.get("milestones", [])
+                               if m.get("status") == "done" and str(m.get("date", "")).startswith("2026")),
         "binding_rows": sum(1 for o in opps if o.get("binding")),
         "reactors_critical_2026": sum(o.get("reactors_critical_2026", 0) for o in opps),
         "units_largest_preorder": max((o.get("units_committed", 0) for o in opps), default=0),

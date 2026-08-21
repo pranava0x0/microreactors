@@ -93,6 +93,12 @@ def check() -> List[Tuple[str, str]]:
             need(c, f"sectors:{s['sector']}:context")
 
     mech = json.loads((DATA / "mechanisms.json").read_text())
+    # The proposal prose is exempt by allowlist, but it must still pass through
+    # need() so deleting the exemption (or adding numbers elsewhere) bites.
+    need({"intro": mech.get("intro", "")}, "mechanisms:intro", "mechanisms.json:intro")
+    for card in mech["proposal"]["cards"]:
+        need({"title": card.get("title", ""), "paras": " ".join(card.get("paras", []))},
+             f"mechanisms:proposal:{card.get('title', '')[:30]}", "mechanisms.json:proposal")
     for g in mech["precedent_groups"]:
         for p in g["items"]:
             need(p, f"mechanisms:{p['name'][:40]}")

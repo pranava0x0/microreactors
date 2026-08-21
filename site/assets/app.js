@@ -104,10 +104,10 @@
   /* ---------- hero stats ---------- */
   var s = D.summary;
   $("built").textContent = s.built;
-  /* Deployment stats, not site stats: each number answers "how far along is
-     this market", so all six move when the market moves. */
+  /* Deployment stats, not site stats: each number is a market event, not a
+     count of what this site happens to curate. */
   var stats = [
-    { n: s.opportunities, k: "opportunities mapped" },
+    { n: s.milestones_2026, k: "vendor milestones hit in 2026" },
     { n: s.binding_rows + "/" + s.opportunities, k: "hold a binding instrument", accent: true },
     { n: s.reactors_critical_2026, k: "test reactors critical in 2026", accent: true },
     { n: s.units_largest_preorder, k: "units in the largest preorder" },
