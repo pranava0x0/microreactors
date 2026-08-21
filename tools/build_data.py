@@ -83,13 +83,14 @@ def main() -> int:
     # Derived headline figures — computed, never hand-typed, so they cannot
     # drift away from the data they summarise.
     opps = bundle["opportunities"]["opportunities"]
+    vendors = bundle["vendors"]["vendors"]
     cov = {c["field"]: c for c in bundle["gaps"]["field_coverage"]}
     reg = sources_index(bundle)
     loads = [l for s in bundle["sectors"]["sectors"] for l in s["loads"]]
     bundle["sources_index"] = reg
     bundle["summary"] = {
         "opportunities": len(opps),
-        "vendors": len(bundle["vendors"]["vendors"]),
+        "vendors": len(vendors),
         "tracks": {t["id"]: sum(1 for o in opps if o["track"] == t["id"])
                    for t in bundle["opportunities"]["tracks"]},
         "sector_count": len(bundle["sectors"]["sectors"]),
@@ -99,6 +100,12 @@ def main() -> int:
         "source_count": len(reg),
         "land_pct": cov["land_acres"]["pct"],
         "filing_pct": cov["utility_filing"]["pct"],
+        # Deployment-facing stats: how far the market has actually moved.
+        "binding_rows": sum(1 for o in opps if o.get("binding")),
+        "reactors_critical_2026": sum(o.get("reactors_critical_2026", 0) for o in opps),
+        "units_largest_preorder": max((o.get("units_committed", 0) for o in opps), default=0),
+        "first_delivery_year": min(v["first_delivery_year"] for v in vendors
+                                   if v.get("first_delivery_year")),
         "built": captured_date(bundle),
     }
 

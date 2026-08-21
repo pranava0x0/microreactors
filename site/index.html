@@ -17,10 +17,10 @@
   <div class="wrap navrow">
     <span class="wordmark">Microreactor <b>Opportunity Map</b></span>
     <div class="tabs" role="tablist" aria-label="Sections" id="tabs">
-      <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Pipeline</button>
-      <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Economics</button>
+      <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Tracker</button>
+      <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Costs</button>
       <button class="tab" role="tab" id="tab-vendors" aria-controls="vendors" data-panel="vendors">Vendors</button>
-      <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Demand</button>
+      <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Applications</button>
       <button class="tab" role="tab" id="tab-market" aria-controls="market" data-panel="market">Market design</button>
       <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Policy</button>
       <button class="tab" role="tab" id="tab-evidence" aria-controls="evidence" data-panel="evidence">Evidence</button>
@@ -44,7 +44,7 @@
 <section id="pipeline" role="tabpanel" aria-labelledby="tab-pipeline" tabindex="0">
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">01 — Pipeline · who is buying now</p>
+      <p class="eyebrow">01 — Tracker · who is buying now</p>
       <h2>The opportunity set</h2>
       <p class="prose">Only one track has signed pairings of a named reactor to a named site.
         Select a track to filter; open a row for its full field set and citations.</p>
@@ -57,7 +57,7 @@
 <section id="economics" role="tabpanel" aria-labelledby="tab-economics" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">02 — Economics · what it costs, against what it displaces</p>
+      <p class="eyebrow">02 — Costs · against what it displaces</p>
       <h2>Published cost bands, sourced</h2>
       <p class="prose">No microreactor has sold power commercially, so nothing here is a realised
         price. The width of each band encodes the assumption behind it — first-of-a-kind capital
@@ -84,7 +84,9 @@
       <h2>The three the Air Force already picked</h2>
       <p class="prose">Choosing a third vendor to sit alongside Antares and Radiant was not a
         judgment call. In April 2026 the Department of the Air Force and DIU paired exactly three
-        companies with three named bases under the ANPI programme — Westinghouse is the third.</p>
+        companies with three named bases under the ANPI programme — Westinghouse is the third.<a
+        class="cite" href="https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"
+        target="_blank" rel="noopener noreferrer" title="ANS — Air Force selects three microreactor developers for ANPI">[1]</a></p>
     </div>
     <div class="vgrid" id="vendorcards"></div>
   </div>
@@ -93,7 +95,7 @@
 <section id="demand" role="tabpanel" aria-labelledby="tab-demand" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">04 — Demand · which loads fit a 1–20 MW block</p>
+      <p class="eyebrow">04 — Applications · which loads fit a 1–20 MW block</p>
       <h2>Sized buyer classes</h2>
       <p class="prose">Annual-average electrical demand bands. Planning figures, not guaranteed
         averages — final sizing needs at least a year of hourly site-load data. Each band links
@@ -140,7 +142,8 @@
         coverage across the opportunity set and the three fields that stay near-empty because web
         search does not index docket systems.</p>
     </div>
-    <div class="subhead"><h3>Source register</h3></div>
+    <div class="subhead"><h3>Source register</h3>
+      <p class="prose" id="evsummary"></p></div>
     <div id="register"></div>
     <div class="subhead"><h3>Field coverage</h3></div>
     <div id="coverage"></div>

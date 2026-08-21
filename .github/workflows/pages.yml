@@ -1,0 +1,46 @@
+name: pages
+
+# Deploys site/ to GitHub Pages. No build step exists by design: site/data.js
+# is committed, and the ci workflow proves it is in sync with data/*.json.
+#
+# Security posture: no github.event.* input is interpolated anywhere in this
+# workflow; the single expression used is a trusted step output
+# (steps.deployment.outputs.page_url), per the official deploy-pages pattern.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Refuse to publish a site whose data or contract is broken.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Gate on the test suite
+        run: python3 -m unittest discover -s tests
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

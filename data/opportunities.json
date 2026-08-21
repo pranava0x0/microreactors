@@ -2,180 +2,473 @@
   "_meta": {
     "captured": "2026-08-21",
     "method": "Web search only. No agent fan-out. Every row carries at least one source URL; rows without one were not written.",
-    "field_coverage_warning": "Sector, owner, timeline and power are well covered. LAND AREA, SHELL/ENCLOSURE and UTILITY FILINGS are sparse across the whole set — see data/gaps.json. Web search does not reach docket systems; those three fields need a targeted pass against FERC eLibrary, state PUC dockets and NRC ADAMS."
+    "field_coverage_warning": "Sector, owner, timeline and power are well covered. LAND AREA, SHELL/ENCLOSURE and UTILITY FILINGS are sparse across the whole set — see data/gaps.json. Web search does not reach docket systems; those three fields need a targeted pass against FERC eLibrary, state PUC dockets and NRC ADAMS.",
+    "binding_note": "binding=true marks rows holding a signed, funded or awarded instrument (selection with a named site, purchase agreement with deposits, FID, operating infrastructure); consortia, MOUs, unfunded programmes and channel agreements are false. Set 2026-08-21.",
+    "delisting_policy": "A stalled or cancelled opportunity stays as a named row with its status, never silently delisted — the NRC keeps suspended and cancelled applications individually visible, and a tracker that quietly drops rows reads as less credible, not more. Adopted 2026-08-21."
   },
   "tracks": [
-    {"id": "us-gov", "label": "U.S. Government", "blurb": "The only track with signed pairings of a named reactor to a named site. Federal buyers are absorbing first-of-a-kind risk on behalf of the whole market."},
-    {"id": "intl", "label": "International", "blurb": "Government machinery and industrial partners, treated as one track — see docs/segmentation.md for why they are not split."},
-    {"id": "us-commercial", "label": "U.S. Commercial", "blurb": "Where the volume is, but almost entirely at SMR scale rather than microreactor scale. The microreactor-specific commercial evidence is thin and named."}
+    {
+      "id": "us-gov",
+      "label": "U.S. Government",
+      "blurb": "The only track with signed pairings of a named reactor to a named site. Federal buyers are absorbing first-of-a-kind risk on behalf of the whole market."
+    },
+    {
+      "id": "intl",
+      "label": "International",
+      "blurb": "Government machinery and industrial partners, treated as one track — see docs/segmentation.md for why they are not split."
+    },
+    {
+      "id": "us-commercial",
+      "label": "U.S. Commercial",
+      "blurb": "Where the volume is, but almost entirely at SMR scale rather than microreactor scale. The microreactor-specific commercial evidence is thin and named."
+    }
   ],
   "opportunities": [
     {
-      "id": "anpi-jbsa", "track": "us-gov", "sector": "Defense — installation power",
-      "name": "Joint Base San Antonio (ANPI)", "owner": "U.S. Department of the Air Force",
-      "location": "San Antonio, TX", "vendor": "Antares Nuclear (R1)",
-      "power_mw": "0.1–1 MWe class", "timeline": "Deployment targeted 2028 or earlier; ANPI goal ≥1 reactor operating by 2030",
+      "id": "anpi-jbsa",
+      "track": "us-gov",
+      "sector": "Defense — installation power",
+      "name": "Joint Base San Antonio (ANPI)",
+      "owner": "U.S. Department of the Air Force",
+      "location": "San Antonio, TX",
+      "vendor": "Antares Nuclear (R1)",
+      "power_mw": "0.1–1 MWe class",
+      "timeline": "Deployment targeted 2028 or earlier; ANPI goal ≥1 reactor operating by 2030",
       "instrument": "ANPI selection (DAF + Defense Innovation Unit), contractor-owned/contractor-operated",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Selected",
-      "sources": [{"label": "Businesswire 2026-04-22", "url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"}, {"label": "Breaking Defense", "url": "https://breakingdefense.com/2026/04/department-of-air-force-picks-bidders-for-nuclear-microreactors-assigns-locations/"}],
-      "gaps": ["Land parcel not identified", "No CPS Energy interconnection filing located — JBSA sits in CPS Energy territory, a municipally owned utility, so any filing may be city-level rather than PUC"]
+      "sources": [
+        {
+          "label": "Businesswire 2026-04-22",
+          "url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"
+        },
+        {
+          "label": "Breaking Defense",
+          "url": "https://breakingdefense.com/2026/04/department-of-air-force-picks-bidders-for-nuclear-microreactors-assigns-locations/"
+        }
+      ],
+      "gaps": [
+        "Land parcel not identified",
+        "No CPS Energy interconnection filing located — JBSA sits in CPS Energy territory, a municipally owned utility, so any filing may be city-level rather than PUC"
+      ],
+      "binding": true
     },
     {
-      "id": "anpi-buckley", "track": "us-gov", "sector": "Defense — installation power",
-      "name": "Buckley Space Force Base (ANPI)", "owner": "U.S. Space Force / Dept of the Air Force",
-      "location": "Aurora, CO", "vendor": "Radiant Nuclear (Kaleidos)",
-      "power_mw": "1 MWe (3 MWt)", "timeline": "ANPI goal ≥1 reactor operating by 2030; Radiant FOAK to a USAF base in 2028",
+      "id": "anpi-buckley",
+      "track": "us-gov",
+      "sector": "Defense — installation power",
+      "name": "Buckley Space Force Base (ANPI)",
+      "owner": "U.S. Space Force / Dept of the Air Force",
+      "location": "Aurora, CO",
+      "vendor": "Radiant Nuclear (Kaleidos)",
+      "power_mw": "1 MWe (3 MWt)",
+      "timeline": "ANPI goal ≥1 reactor operating by 2030; Radiant FOAK to a USAF base in 2028",
       "instrument": "ANPI selection (DAF + DIU)",
-      "land_acres": null, "shell": "70-tonne unit, fits a single shipping container", "utility_filing": null,
+      "land_acres": null,
+      "shell": "70-tonne unit, fits a single shipping container",
+      "utility_filing": null,
       "status": "Selected",
-      "sources": [{"label": "ANS — Air Force selects three ANPI developers", "url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"}, {"label": "ExecutiveGov — Buckley/Malmstrom", "url": "https://www.executivegov.com/articles/air-force-anpi-nuclear-microreactor"}],
-      "gaps": ["Land parcel not identified", "No Xcel Energy Colorado interconnection filing located"]
+      "sources": [
+        {
+          "label": "ANS — Air Force selects three ANPI developers",
+          "url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"
+        },
+        {
+          "label": "ExecutiveGov — Buckley/Malmstrom",
+          "url": "https://www.executivegov.com/articles/air-force-anpi-nuclear-microreactor"
+        }
+      ],
+      "gaps": [
+        "Land parcel not identified",
+        "No Xcel Energy Colorado interconnection filing located"
+      ],
+      "binding": true
     },
     {
-      "id": "anpi-malmstrom", "track": "us-gov", "sector": "Defense — installation power",
-      "name": "Malmstrom Air Force Base (ANPI)", "owner": "U.S. Department of the Air Force",
-      "location": "Great Falls, MT", "vendor": "Westinghouse (eVinci)",
-      "power_mw": "up to 5 MWe", "timeline": "ANPI goal ≥1 reactor operating by 2030",
+      "id": "anpi-malmstrom",
+      "track": "us-gov",
+      "sector": "Defense — installation power",
+      "name": "Malmstrom Air Force Base (ANPI)",
+      "owner": "U.S. Department of the Air Force",
+      "location": "Great Falls, MT",
+      "vendor": "Westinghouse (eVinci)",
+      "power_mw": "up to 5 MWe",
+      "timeline": "ANPI goal ≥1 reactor operating by 2030",
       "instrument": "ANPI selection (DAF + DIU)",
-      "land_acres": 2, "shell": "Factory-built transportable unit; vendor states 5 MWe on sites as small as two acres", "utility_filing": null,
+      "land_acres": 2,
+      "shell": "Factory-built transportable unit; vendor states 5 MWe on sites as small as two acres",
+      "utility_filing": null,
       "status": "Selected",
-      "sources": [{"label": "Exchange Monitor", "url": "https://www.exchangemonitor.com/air-force-picks-three-companies-to-deploy-microreactors-at-military-bases/?printmode=1"}, {"label": "Neutron Bytes 2026-04-24", "url": "https://neutronbytes.com/2026/04/24/air-force-selects-three-microreactors-for-base-power/"}],
-      "gaps": ["The 2-acre figure is a vendor design claim, not a Malmstrom site allocation", "No NorthWestern Energy filing located"]
+      "sources": [
+        {
+          "label": "Exchange Monitor",
+          "url": "https://www.exchangemonitor.com/air-force-picks-three-companies-to-deploy-microreactors-at-military-bases/?printmode=1"
+        },
+        {
+          "label": "Neutron Bytes 2026-04-24",
+          "url": "https://neutronbytes.com/2026/04/24/air-force-selects-three-microreactors-for-base-power/"
+        }
+      ],
+      "gaps": [
+        "The 2-acre figure is a vendor design claim, not a Malmstrom site allocation",
+        "No NorthWestern Energy filing located"
+      ],
+      "binding": true
     },
     {
-      "id": "janus", "track": "us-gov", "sector": "Defense — installation power",
-      "name": "Army Janus Program — nine candidate installations", "owner": "U.S. Department of the Army",
+      "id": "janus",
+      "track": "us-gov",
+      "sector": "Defense — installation power",
+      "name": "Army Janus Program — nine candidate installations",
+      "owner": "U.S. Department of the Army",
       "location": "Fort Benning GA; Fort Bragg NC; Fort Campbell KY/TN; Fort Drum NY; Fort Hood TX; Fort Wainwright AK; Holston Army Ammunition Plant TN; Joint Base Lewis-McChord WA; Redstone Arsenal AL",
       "vendor": "Not yet assigned — vendor evaluation and design-to-site matching underway via DIU",
-      "power_mw": "Not specified per site", "timeline": "Army-regulated reactor operational at a domestic installation by 2028-09-30; sites announced November 2025",
+      "power_mw": "Not specified per site",
+      "timeline": "Army-regulated reactor operational at a domestic installation by 2028-09-30; sites announced November 2025",
       "instrument": "Army program + DIU solicitation",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Sites identified, vendors not selected",
-      "sources": [{"label": "army.mil — Janus next steps", "url": "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy"}, {"label": "ANS — nine sites", "url": "https://www.ans.org/news/article-7567/us-army-chooses-nine-sites-for-possible-microreactor-by-2030/"}, {"label": "World Nuclear News", "url": "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites"}],
-      "gaps": ["Per-site load requirement not published", "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor — it is the one site whose displaced alternative is coal/oil at Alaskan prices — but no site-specific MW figure was found"]
+      "sources": [
+        {
+          "label": "army.mil — Janus next steps",
+          "url": "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy"
+        },
+        {
+          "label": "ANS — nine sites",
+          "url": "https://www.ans.org/news/article-7567/us-army-chooses-nine-sites-for-possible-microreactor-by-2030/"
+        },
+        {
+          "label": "World Nuclear News",
+          "url": "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites"
+        }
+      ],
+      "gaps": [
+        "Per-site load requirement not published",
+        "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor — it is the one site whose displaced alternative is coal/oil at Alaskan prices — but no site-specific MW figure was found"
+      ],
+      "binding": false
     },
     {
-      "id": "dome", "track": "us-gov", "sector": "Federal R&D — test infrastructure",
-      "name": "DOE DOME test bed, Idaho National Laboratory", "owner": "U.S. Department of Energy / Battelle Energy Alliance",
-      "location": "Idaho National Laboratory, ID", "vendor": "Radiant (first), Westinghouse eVinci, Ultra Safe Nuclear (FEEED)",
-      "power_mw": "Houses fuelled experiments up to 20 MWt", "timeline": "First fuelled experiment from spring 2026; Radiant fuel received 2026-07-01; Radiant campaign targeted to complete Q3 2026",
+      "id": "dome",
+      "track": "us-gov",
+      "sector": "Federal R&D — test infrastructure",
+      "name": "DOE DOME test bed, Idaho National Laboratory",
+      "owner": "U.S. Department of Energy / Battelle Energy Alliance",
+      "location": "Idaho National Laboratory, ID",
+      "vendor": "Radiant (first), Westinghouse eVinci, Ultra Safe Nuclear (FEEED)",
+      "power_mw": "Houses fuelled experiments up to 20 MWt",
+      "timeline": "First fuelled experiment from spring 2026; Radiant fuel received 2026-07-01; Radiant campaign targeted to complete Q3 2026",
       "instrument": "DOE National Reactor Innovation Center test-bed access",
-      "land_acres": null, "shell": "Repurposed 80-ft EBR-II steel-and-concrete containment, retrofitted electrical/mechanical/HVAC", "utility_filing": "N/A — DOE-authorised, not NRC-licensed",
+      "land_acres": null,
+      "shell": "Repurposed 80-ft EBR-II steel-and-concrete containment, retrofitted electrical/mechanical/HVAC",
+      "utility_filing": "N/A — DOE-authorised, not NRC-licensed",
       "status": "Operating",
-      "sources": [{"label": "DOE — first microreactor experiments in DOME", "url": "https://www.energy.gov/ne/articles/energy-department-announces-first-microreactor-experiments-dome-test-bed"}, {"label": "World Nuclear News — test bed open for business", "url": "https://www.world-nuclear-news.org/articles/first-of-a-kind-microreactor-test-bed-open-for-business"}, {"label": "DOE — 3 experiments to watch from 2026", "url": "https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026"}],
-      "gaps": []
+      "sources": [
+        {
+          "label": "DOE — first microreactor experiments in DOME",
+          "url": "https://www.energy.gov/ne/articles/energy-department-announces-first-microreactor-experiments-dome-test-bed"
+        },
+        {
+          "label": "World Nuclear News — test bed open for business",
+          "url": "https://www.world-nuclear-news.org/articles/first-of-a-kind-microreactor-test-bed-open-for-business"
+        },
+        {
+          "label": "DOE — 3 experiments to watch from 2026",
+          "url": "https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026"
+        }
+      ],
+      "gaps": [],
+      "binding": true
     },
     {
-      "id": "doe-pilot", "track": "us-gov", "sector": "Federal R&D — DOE authorization track",
-      "name": "DOE Reactor Pilot Program — 11 projects", "owner": "U.S. Department of Energy",
+      "id": "doe-pilot",
+      "track": "us-gov",
+      "sector": "Federal R&D — DOE authorization track",
+      "name": "DOE Reactor Pilot Program — 11 projects",
+      "owner": "U.S. Department of Energy",
       "location": "DOE and DOE-approved sites; first units at INL and in Utah",
       "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
-      "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe", "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
+      "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe",
+      "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
       "instrument": "EO 14301 pilot programme using DOE's own authorization authority — no NRC licence",
-      "land_acres": null, "shell": null, "utility_filing": "N/A — DOE-authorised test reactors",
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": "N/A — DOE-authorised test reactors",
       "status": "Three critical, others in safety review",
-      "sources": [{"label": "ANS — Reactor Pilot Program at the July 4 deadline", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"}, {"label": "Holland & Knight — the May 2025 nuclear executive orders", "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders"}],
-      "gaps": ["Test reactors under DOE authority, not commercially licensed plants — the commercial path still runs through NRC", "Per-project power ratings not all published"]
+      "sources": [
+        {
+          "label": "ANS — Reactor Pilot Program at the July 4 deadline",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"
+        },
+        {
+          "label": "Holland & Knight — the May 2025 nuclear executive orders",
+          "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders"
+        }
+      ],
+      "gaps": [
+        "Test reactors under DOE authority, not commercially licensed plants — the commercial path still runs through NRC",
+        "Per-project power ratings not all published"
+      ],
+      "binding": true,
+      "reactors_critical_2026": 3
     },
     {
-      "id": "eielson", "track": "us-gov", "sector": "Defense — remote installation power",
-      "name": "Eielson Air Force Base micro-reactor pilot", "owner": "U.S. Department of the Air Force",
-      "location": "Fairbanks, AK", "vendor": "Oklo (Aurora)",
-      "power_mw": "Power and heat; Aurora class above microreactor band", "timeline": "Oklo targets first commercial operation of Aurora-INL late 2027/2028",
+      "id": "eielson",
+      "track": "us-gov",
+      "sector": "Defense — remote installation power",
+      "name": "Eielson Air Force Base micro-reactor pilot",
+      "owner": "U.S. Department of the Air Force",
+      "location": "Fairbanks, AK",
+      "vendor": "Oklo (Aurora)",
+      "power_mw": "Power and heat; Aurora class above microreactor band",
+      "timeline": "Oklo targets first commercial operation of Aurora-INL late 2027/2028",
       "instrument": "Design/build/own/operate award",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Awarded",
-      "sources": [{"label": "Sen. Murkowski — Eielson AFB microreactor pilot announcement", "url": "https://www.murkowski.senate.gov/press/release/murkowski-welcomes-eielson-afb-announcement-on-microreactor-pilot-program"}, {"label": "Nasdaq — Oklo selected for Eielson AFB Aurora microreactor", "url": "https://www.nasdaq.com/articles/oklo-selected-provide-clean-power-eielson-air-force-base-aurora-microreactor"}],
-      "gaps": ["Primary DoD award document not located — sourced to the senator's release and financial press coverage of the selection"]
+      "sources": [
+        {
+          "label": "Sen. Murkowski — Eielson AFB microreactor pilot announcement",
+          "url": "https://www.murkowski.senate.gov/press/release/murkowski-welcomes-eielson-afb-announcement-on-microreactor-pilot-program"
+        },
+        {
+          "label": "Nasdaq — Oklo selected for Eielson AFB Aurora microreactor",
+          "url": "https://www.nasdaq.com/articles/oklo-selected-provide-clean-power-eielson-air-force-base-aurora-microreactor"
+        }
+      ],
+      "gaps": [
+        "Primary DoD award document not located — sourced to the senator's release and financial press coverage of the selection"
+      ],
+      "binding": true
     },
     {
-      "id": "equinix-radiant", "track": "us-commercial", "sector": "Compute — colocation data centres",
-      "name": "Equinix — 20-reactor purchase agreement", "owner": "Equinix, Inc. (NASDAQ: EQIX)",
-      "location": "Not site-assigned", "vendor": "Radiant Nuclear (Kaleidos)",
-      "power_mw": "20 × 1 MWe = 20 MWe committed", "timeline": "Not published",
+      "id": "equinix-radiant",
+      "track": "us-commercial",
+      "sector": "Compute — colocation data centres",
+      "name": "Equinix — 20-reactor purchase agreement",
+      "owner": "Equinix, Inc. (NASDAQ: EQIX)",
+      "location": "Not site-assigned",
+      "vendor": "Radiant Nuclear (Kaleidos)",
+      "power_mw": "20 × 1 MWe = 20 MWe committed",
+      "timeline": "Not published",
       "instrument": "Purchase agreement / pre-order with deposits",
-      "land_acres": null, "shell": "Container-scale units", "utility_filing": null,
+      "land_acres": null,
+      "shell": "Container-scale units",
+      "utility_filing": null,
       "status": "Signed",
-      "sources": [{"label": "Equinix investor release 2025-08-14", "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy"}, {"label": "Radiant Series D (customer reference)", "url": "https://www.radiantnuclear.com/blog/series-d-announcement/"}],
-      "gaps": ["No site list", "No delivery schedule", "No unit price"]
+      "sources": [
+        {
+          "label": "Equinix investor release 2025-08-14",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy"
+        },
+        {
+          "label": "Radiant Series D (customer reference)",
+          "url": "https://www.radiantnuclear.com/blog/series-d-announcement/"
+        }
+      ],
+      "gaps": [
+        "No site list",
+        "No delivery schedule",
+        "No unit price"
+      ],
+      "binding": true,
+      "units_committed": 20
     },
     {
-      "id": "ianc", "track": "us-commercial", "sector": "Heavy industry — oil & gas, mining, steel",
-      "name": "Industrial Advanced Nuclear Consortium (IANC)", "owner": "ExxonMobil, Shell, Chevron, ConocoPhillips, Rio Tinto, Freeport-McMoRan, Nucor",
-      "location": "Multi-site, not assigned", "vendor": "Technology-neutral; explicitly covers SMRs and MMRs",
-      "power_mw": "Use cases span remote well pads, offshore platforms, refinery/LNG heat, mining", "timeline": "ExxonMobil stated goal: make nuclear a viable option for industrial projects by 2030",
+      "id": "ianc",
+      "track": "us-commercial",
+      "sector": "Heavy industry — oil & gas, mining, steel",
+      "name": "Industrial Advanced Nuclear Consortium (IANC)",
+      "owner": "ExxonMobil, Shell, Chevron, ConocoPhillips, Rio Tinto, Freeport-McMoRan, Nucor",
+      "location": "Multi-site, not assigned",
+      "vendor": "Technology-neutral; explicitly covers SMRs and MMRs",
+      "power_mw": "Use cases span remote well pads, offshore platforms, refinery/LNG heat, mining",
+      "timeline": "ExxonMobil stated goal: make nuclear a viable option for industrial projects by 2030",
       "instrument": "Demand-aggregation consortium, launched 2025-09-02 by The Open Group",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Consortium formed; no procurement",
-      "sources": [{"label": "The Open Group / IANC", "url": "https://www.opengroup.org/IANC"}, {"label": "BusinessWire — The Open Group launches IANC (2025-09-02)", "url": "https://www.businesswire.com/news/home/20250902229163/en/The-Open-Group-Launches-the-Industrial-Advanced-Nuclear-Consortium"}],
-      "gaps": ["No member has issued a microreactor RFP", "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs vs >70% favouring wind/solar — press-reported only, direct fetch 403'd"]
+      "sources": [
+        {
+          "label": "The Open Group / IANC",
+          "url": "https://www.opengroup.org/IANC"
+        },
+        {
+          "label": "BusinessWire — The Open Group launches IANC (2025-09-02)",
+          "url": "https://www.businesswire.com/news/home/20250902229163/en/The-Open-Group-Launches-the-Industrial-Advanced-Nuclear-Consortium"
+        }
+      ],
+      "gaps": [
+        "No member has issued a microreactor RFP",
+        "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs vs >70% favouring wind/solar — press-reported only, direct fetch 403'd"
+      ],
+      "binding": false
     },
     {
-      "id": "nano-supermicro", "track": "us-commercial", "sector": "Compute — integrated power+compute",
-      "name": "NANO Nuclear × Supermicro", "owner": "NANO Nuclear Energy; Super Micro Computer, Inc.",
-      "location": "Not site-assigned", "vendor": "NANO Nuclear",
-      "power_mw": "Not specified", "timeline": "MOU signed May 2026",
+      "id": "nano-supermicro",
+      "track": "us-commercial",
+      "sector": "Compute — integrated power+compute",
+      "name": "NANO Nuclear × Supermicro",
+      "owner": "NANO Nuclear Energy; Super Micro Computer, Inc.",
+      "location": "Not site-assigned",
+      "vendor": "NANO Nuclear",
+      "power_mw": "Not specified",
+      "timeline": "MOU signed May 2026",
       "instrument": "Strategic MOU — standardised microreactor power solution for data centres, pre-integrated power-plus-compute",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "MOU",
-      "sources": [{"label": "smrintel — nuclear data center deals tracker", "url": "https://smrintel.com/nuclear-data-center-deals/"}],
-      "gaps": ["MOU only — no binding capacity, no site, no date"]
+      "sources": [
+        {
+          "label": "smrintel — nuclear data center deals tracker",
+          "url": "https://smrintel.com/nuclear-data-center-deals/"
+        }
+      ],
+      "gaps": [
+        "MOU only — no binding capacity, no site, no date"
+      ],
+      "binding": false
     },
     {
-      "id": "texas-backup", "track": "us-commercial", "sector": "Civic infrastructure — resilience procurement",
-      "name": "Texas Backup Power Package Program", "owner": "State of Texas / Texas Energy Fund",
-      "location": "Texas", "vendor": "None — currently solar, battery and gas",
-      "power_mw": "Site-scale backup at hospitals, water treatment, nursing homes, police/fire", "timeline": "Announced 2025-06-11",
+      "id": "texas-backup",
+      "track": "us-commercial",
+      "sector": "Civic infrastructure — resilience procurement",
+      "name": "Texas Backup Power Package Program",
+      "owner": "State of Texas / Texas Energy Fund",
+      "location": "Texas",
+      "vendor": "None — currently solar, battery and gas",
+      "power_mw": "Site-scale backup at hospitals, water treatment, nursing homes, police/fire",
+      "timeline": "Announced 2025-06-11",
       "instrument": "$1.8B state funding programme",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Live programme, nuclear not yet eligible",
-      "sources": [{"label": "University of Houston Energy Innovation — Texas backup power microgrid resilience (2025)", "url": "https://www.uh.edu/uh-energy-innovation/news-events/energy/stories/2025/microgirdresilience.php"}],
-      "gaps": ["Nuclear is not named as an eligible technology — this is a substitution opportunity into live procurement, not an existing nuclear pipeline"]
+      "sources": [
+        {
+          "label": "University of Houston Energy Innovation — Texas backup power microgrid resilience (2025)",
+          "url": "https://www.uh.edu/uh-energy-innovation/news-events/energy/stories/2025/microgirdresilience.php"
+        }
+      ],
+      "gaps": [
+        "Nuclear is not named as an eligible technology — this is a substitution opportunity into live procurement, not an existing nuclear pipeline"
+      ],
+      "binding": false
     },
     {
-      "id": "uk-lastenergy", "track": "intl", "sector": "Ports & logistics",
-      "name": "DP World Thames Freeport — Last Energy PWR-20", "owner": "DP World (freeport operator); Last Energy (developer)",
-      "location": "Thames Freeport, United Kingdom", "vendor": "Last Energy (PWR-20)",
-      "power_mw": "20 MWe", "timeline": "Preliminary Design Review completed with UK ONR July 2025; target online 2030",
+      "id": "uk-lastenergy",
+      "track": "intl",
+      "sector": "Ports & logistics",
+      "name": "DP World Thames Freeport — Last Energy PWR-20",
+      "owner": "DP World (freeport operator); Last Energy (developer)",
+      "location": "Thames Freeport, United Kingdom",
+      "vendor": "Last Energy (PWR-20)",
+      "power_mw": "20 MWe",
+      "timeline": "Preliminary Design Review completed with UK ONR July 2025; target online 2030",
       "instrument": "Named commercial customer; UK regulatory review underway",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "In regulatory review",
-      "sources": [{"label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)", "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"}],
-      "gaps": ["Competitor deployment, not an opening for Antares/Radiant/Westinghouse — included as proof a commercial port operator will sign for microreactor power"]
+      "sources": [
+        {
+          "label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)",
+          "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"
+        }
+      ],
+      "gaps": [
+        "Competitor deployment, not an opening for Antares/Radiant/Westinghouse — included as proof a commercial port operator will sign for microreactor power"
+      ],
+      "binding": true
     },
     {
-      "id": "canada-src", "track": "intl", "sector": "Government research council",
-      "name": "Saskatchewan Research Council eVinci pilot", "owner": "Saskatchewan Research Council (Crown corporation)",
-      "location": "Saskatchewan, Canada", "vendor": "Westinghouse (eVinci)",
-      "power_mw": "up to 5 MWe", "timeline": "Pilot by 2029, subject to licensing",
+      "id": "canada-src",
+      "track": "intl",
+      "sector": "Government research council",
+      "name": "Saskatchewan Research Council eVinci pilot",
+      "owner": "Saskatchewan Research Council (Crown corporation)",
+      "location": "Saskatchewan, Canada",
+      "vendor": "Westinghouse (eVinci)",
+      "power_mw": "up to 5 MWe",
+      "timeline": "Pilot by 2029, subject to licensing",
       "instrument": "First eVinci customer; SRC is the licensed operator; CA$80M government funding",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Funded",
-      "sources": [{"label": "POWER — Westinghouse secures first eVinci customer", "url": "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/"}],
-      "gaps": ["CNSC licensing milestones not tracked here"]
+      "sources": [
+        {
+          "label": "POWER — Westinghouse secures first eVinci customer",
+          "url": "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/"
+        }
+      ],
+      "gaps": [
+        "CNSC licensing milestones not tracked here"
+      ],
+      "binding": true
     },
     {
-      "id": "romania-nuscale", "track": "intl", "sector": "Electric utility — SMR (scale comparator)",
-      "name": "Doicești NuScale VOYGR-6", "owner": "Nuclearelectrica / RoPower",
-      "location": "Doicești, Romania", "vendor": "NuScale",
-      "power_mw": "6 modules (SMR scale, not microreactor)", "timeline": "Final Investment Decision approved February 2026",
+      "id": "romania-nuscale",
+      "track": "intl",
+      "sector": "Electric utility — SMR (scale comparator)",
+      "name": "Doicești NuScale VOYGR-6",
+      "owner": "Nuclearelectrica / RoPower",
+      "location": "Doicești, Romania",
+      "vendor": "NuScale",
+      "power_mw": "6 modules (SMR scale, not microreactor)",
+      "timeline": "Final Investment Decision approved February 2026",
       "instrument": "FID — the most construction-advanced U.S.-linked SMR export relationship",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "FID approved",
-      "sources": [{"label": "Neutron Bytes — FID approved for six NuScale SMRs in Romania (2026-02-13)", "url": "https://neutronbytes.com/2026/02/13/final-investment-decision-approved-for-six-nuscale-smrs-in-romania/"}],
-      "gaps": ["SMR scale — included as proof the U.S. export machinery reaches funded construction, not as a microreactor lead"]
+      "sources": [
+        {
+          "label": "Neutron Bytes — FID approved for six NuScale SMRs in Romania (2026-02-13)",
+          "url": "https://neutronbytes.com/2026/02/13/final-investment-decision-approved-for-six-nuscale-smrs-in-romania/"
+        }
+      ],
+      "gaps": [
+        "SMR scale — included as proof the U.S. export machinery reaches funded construction, not as a microreactor lead"
+      ],
+      "binding": true
     },
     {
-      "id": "jp-kr-moc", "track": "intl", "sector": "Government-to-government export channel",
-      "name": "U.S.–Japan–Korea trilateral SMR Memorandum of Cooperation", "owner": "U.S. Dept of State; Japan MOFA; ROK MOFA",
-      "location": "Third countries, Indo-Pacific first", "vendor": "Channel, not vendor-specific",
-      "power_mw": "N/A", "timeline": "Signed 2026-07-07 at the NATO Summit, Ankara",
+      "id": "jp-kr-moc",
+      "track": "intl",
+      "sector": "Government-to-government export channel",
+      "name": "U.S.–Japan–Korea trilateral SMR Memorandum of Cooperation",
+      "owner": "U.S. Dept of State; Japan MOFA; ROK MOFA",
+      "location": "Third countries, Indo-Pacific first",
+      "vendor": "Channel, not vendor-specific",
+      "power_mw": "N/A",
+      "timeline": "Signed 2026-07-07 at the NATO Summit, Ankara",
       "instrument": "Trilateral MOC — U.S. reactor design, Japan heavy manufacturing, Korea construction/supply chain",
-      "land_acres": null, "shell": null, "utility_filing": null,
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
       "status": "Signed",
-      "sources": [{"label": "State Dept release — trilateral MOC on SMR deployments (direct fetch failed on encoding; press-corroborated)", "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-japan-and-the-republic-of-korea-sign-a-trilateral-memorandum-of-cooperation-on-small-modular-reactor-deployments-in-other-countries/"}, {"label": "UPI — U.S., Japan, Korea joint SMR project (2026-07-13)", "url": "https://www.upi.com/Top_News/World-News/2026/07/13/united-states-japan-joint-small-modular-reactor-project/9231783994951/"}],
-      "gaps": ["Primary state.gov page not independently read — press-corroborated only"]
+      "sources": [
+        {
+          "label": "State Dept release — trilateral MOC on SMR deployments (direct fetch failed on encoding; press-corroborated)",
+          "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-japan-and-the-republic-of-korea-sign-a-trilateral-memorandum-of-cooperation-on-small-modular-reactor-deployments-in-other-countries/"
+        },
+        {
+          "label": "UPI — U.S., Japan, Korea joint SMR project (2026-07-13)",
+          "url": "https://www.upi.com/Top_News/World-News/2026/07/13/united-states-japan-joint-small-modular-reactor-project/9231783994951/"
+        }
+      ],
+      "gaps": [
+        "Primary state.gov page not independently read — press-corroborated only"
+      ],
+      "binding": false
     }
   ]
 }
