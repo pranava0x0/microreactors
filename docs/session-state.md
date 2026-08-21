@@ -65,9 +65,10 @@ and continues from "Next actions". Keep updates terse; strike items when done.
       folded DNS-dead into blocked). All three fixed in fa97431: verify_quotes.py upgraded
       10 sources, dagger marker for the rest, scanner covers the block prose
       (mutation-checked), URLError taxonomy split. Replies posted on all three threads.
-- [ ] Codex round 2 (background poll bl4z32gtg), then merge to main
-- [ ] Pages sequence, pre-verified: repo is PRIVATE on a free plan (Pages API 422s), so:
-      gh repo edit pranava0x0/microreactors --visibility public --accept-visibility-change-consequences
-      -> gh api repos/pranava0x0/microreactors/pages -X POST -f build_type=workflow
-      -> merge PR #2 (push to main triggers pages.yml) -> verify live URL serves the
-      real document (assert title/content, not just a 200; auth-wall lesson)
+- [x] Codex round 2: 4 findings (P1 srcList/register missing the snippet marker — the
+      round-1 class in the other render paths; P2 hard-coded verify stamp; P2 arrow-key/
+      hashchange scroll; P2 panel focus ring removed). All fixed in 647302e, class swept
+      (cite + srcList + register), replies posted. Round-3 courtesy poll: quiet ×5.
+      Per the repo review-budget rule, merging now.
+- [ ] EXECUTING: flip public -> enable Pages -> merge PR #2 -> verify live document
+      at https://pranava0x0.github.io/microreactors/ (assert content, not just 200)
