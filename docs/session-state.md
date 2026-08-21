@@ -70,5 +70,10 @@ and continues from "Next actions". Keep updates terse; strike items when done.
       hashchange scroll; P2 panel focus ring removed). All fixed in 647302e, class swept
       (cite + srcList + register), replies posted. Round-3 courtesy poll: quiet ×5.
       Per the repo review-budget rule, merging now.
-- [ ] EXECUTING: flip public -> enable Pages -> merge PR #2 -> verify live document
-      at https://pranava0x0.github.io/microreactors/ (assert content, not just 200)
+- [x] Round 3 (post-pause): 3 findings incl. a real check_links crash (4-tuple contract
+      change missed a call site) - fixed in 8e652d7 with an offline regression test;
+      scanner now covers mechanisms proposal prose; last artifact-count stat replaced.
+- [x] COMPLETE 2026-08-21: repo public, Pages enabled (build_type=workflow), PR #2
+      merged (mergedAt 2026-08-21T23:53:55Z), remote branch deleted, ci+pages green on
+      main, live document verified at https://pranava0x0.github.io/microreactors/
+      (title + headline + current assets confirmed, not just a 200).
