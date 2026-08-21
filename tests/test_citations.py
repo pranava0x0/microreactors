@@ -8,6 +8,7 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 import check_citations  # noqa: E402
+import check_links  # noqa: E402
 
 
 class ClaimCoverage(unittest.TestCase):
@@ -16,6 +17,15 @@ class ClaimCoverage(unittest.TestCase):
         self.assertEqual(violations, [],
                          "numbered claims without a source (fix the data or, with a "
                          "stated reason, the allowlist): " + str(violations))
+
+    def test_link_sweep_collects_urls_offline(self):
+        """The sweep's URL collection must survive contract changes in
+        collect_sources — it crashed once when the tuple grew a field.
+        Network-free: only the collection path runs."""
+        urls = check_links.collect_urls()
+        self.assertGreater(len(urls), 50, "URL collection suspiciously small")
+        for u in urls[:5]:
+            self.assertTrue(u.startswith("http"), u)
 
     def test_scanner_is_not_vacuous(self):
         """The number regex must actually fire on this dataset's shapes, or a

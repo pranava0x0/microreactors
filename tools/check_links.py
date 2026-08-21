@@ -55,6 +55,17 @@ def status_of(url: str, timeout: float) -> int:
         return 0
 
 
+def collect_urls() -> list:
+    """Every distinct cited URL across the data files. collect_sources yields
+    (label, url, context, status); only the URL matters here."""
+    found: list = []
+    for name in FILES:
+        p = ROOT / "data" / f"{name}.json"
+        if p.exists():
+            collect_sources(json.loads(p.read_text()), name, found)
+    return sorted({u for _, u, _, _ in found})
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
@@ -64,12 +75,7 @@ def main() -> int:
         print("--limit must be a positive integer", file=sys.stderr)
         return 2
 
-    found = []
-    for name in FILES:
-        p = ROOT / "data" / f"{name}.json"
-        if p.exists():
-            collect_sources(json.loads(p.read_text()), name, found)
-    urls = sorted({u for _, u, _ in found})
+    urls = collect_urls()
     if not urls:
         print("no URLs found — that is a failure, not a clean sweep", file=sys.stderr)
         return 1
