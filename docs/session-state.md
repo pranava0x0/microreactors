@@ -60,6 +60,14 @@ and continues from "Next actions". Keep updates terse; strike items when done.
 - [x] /learnings written to both repos; issues.md, backlog.md, docs/agent-runs.md filled
 - [x] Commits 18aad96, 2d0ad2e, baf4763; branch pushed; PR #2 open
       (https://github.com/pranava0x0/microreactors/pull/2)
-- [ ] Codex review rounds on PR #2 (background poll running), then merge to main
-- [ ] Pages: gh api repos/pranava0x0/microreactors/pages -X POST -f build_type=workflow
-      (fallback: flip visibility public first); verify live URL serves the real document
+- [x] Codex round 1: 3 findings (P1 snippet-only sources rendered as fetched; P2 scanner
+      missed incentives prose + the answer overclaimed construction dates; P2 link checker
+      folded DNS-dead into blocked). All three fixed in fa97431: verify_quotes.py upgraded
+      10 sources, dagger marker for the rest, scanner covers the block prose
+      (mutation-checked), URLError taxonomy split. Replies posted on all three threads.
+- [ ] Codex round 2 (background poll bl4z32gtg), then merge to main
+- [ ] Pages sequence, pre-verified: repo is PRIVATE on a free plan (Pages API 422s), so:
+      gh repo edit pranava0x0/microreactors --visibility public --accept-visibility-change-consequences
+      -> gh api repos/pranava0x0/microreactors/pages -X POST -f build_type=workflow
+      -> merge PR #2 (push to main triggers pages.yml) -> verify live URL serves the
+      real document (assert title/content, not just a 200; auth-wall lesson)
