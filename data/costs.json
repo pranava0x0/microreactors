@@ -1,0 +1,98 @@
+{
+ "_meta": {
+  "captured": "2026-08-21",
+  "warning": "Every figure below is a published estimate, not a quoted price. No microreactor has sold power commercially, so no realised LCOE exists anywhere in this table. Ranges are wide because they encode different assumptions about FOAK vs Nth-of-a-kind cost maturity \u2014 that spread IS the finding, not noise to average away.",
+  "review": "Reviewed 2026-08-21 against an energy/project-finance reading. Three corrections applied: the diesel comparison was overstated (bands overlap), the at-scale case was implying a false capex sensitivity, and the PTC scenario was missing its U.S.-only scope."
+ },
+ "microreactor_lcoe": [
+  {
+   "scenario": "Published range, general",
+   "low_mwh": 200,
+   "high_mwh": 330,
+   "low_kwh": 0.2,
+   "high_kwh": 0.33,
+   "basis": "Comparable to or below diesel-based electricity in remote locations",
+   "source": {
+    "label": "Nuclear Business Platform \u2014 microreactor market review",
+    "url": "https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution"
+   }
+  },
+  {
+   "scenario": "With Production Tax Credit (U.S. only)",
+   "low_mwh": 48.21,
+   "high_mwh": 78.32,
+   "basis": "Competitive LCOE achievable with PTC",
+   "source": {
+    "label": "Evaluation of nuclear microreactor cost-competitiveness (arXiv 2506.13361)",
+    "url": "https://arxiv.org/pdf/2506.13361"
+   },
+   "caveat": "The PTC is a U.S. federal incentive and does not apply to the international track. Any export case should be read against the unsubsidised bands."
+  },
+  {
+   "scenario": "CAPEX $5,000/kW (FOAK-ish)",
+   "low_mwh": 80,
+   "high_mwh": 90,
+   "capex_kw": 5000,
+   "basis": "Upper-bound capital cost case",
+   "source": {
+    "label": "Evaluation of nuclear microreactor cost-competitiveness (ScienceDirect)",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0029549325004728"
+   }
+  },
+  {
+   "scenario": "CAPEX $2,500/kW (at scale)",
+   "low_mwh": 35,
+   "high_mwh": 35,
+   "capex_kw": 2500,
+   "basis": "If manufacturing scale is achieved",
+   "source": {
+    "label": "Evaluation of nuclear microreactor cost-competitiveness (ScienceDirect)",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0029549325004728"
+   },
+   "caveat": "Not a pure capex sensitivity. Halving capital cost ($5,000\u2192$2,500/kW) drops LCOE 59% ($85\u2192$35/MWh) \u2014 more than full pass-through, which is arithmetically impossible if capex were the only variable. The at-scale case necessarily bundles other improvements (capacity factor, O&M, fuel cycle). Treat it as a scenario, not a lever."
+  }
+ ],
+ "displaced_alternatives": [
+  {
+   "alternative": "Remote diesel generation",
+   "low_mwh": 250,
+   "high_mwh": 400,
+   "low_kwh": 0.25,
+   "high_kwh": 0.4,
+   "note": "Typical remote-location diesel electricity cost",
+   "source": {
+    "label": "Nuclear Business Platform",
+    "url": "https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution"
+   }
+  },
+  {
+   "alternative": "Small rural Alaskan communities",
+   "low_mwh": 350,
+   "high_mwh": 600,
+   "avg_mwh": 520,
+   "note": "The single most favourable displaced-cost environment in the U.S.",
+   "source": {
+    "label": "Evaluation of nuclear microreactor cost-competitiveness (arXiv)",
+    "url": "https://arxiv.org/pdf/2506.13361"
+   }
+  },
+  {
+   "alternative": "Diesel breakeven threshold",
+   "note": "Microreactors were found cost-competitive with diesel gensets for off-grid community microgrids once diesel fuel exceeds $1.50/litre",
+   "threshold_usd_per_litre": 1.5,
+   "source": {
+    "label": "A Techno-Economic Evaluation of Microreactors for Off-Grid and Microgrid Applications",
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210670723002317"
+   }
+  },
+  {
+   "alternative": "NEI position",
+   "note": "NEI report concludes electricity from microreactors will cost less than diesel generators",
+   "source": {
+    "label": "NucNet \u2014 NEI report",
+    "url": "https://www.nucnet.org/news/electricity-from-micro-reactors-will-cost-less-than-diesel-generators-says-nei-report"
+   }
+  }
+ ],
+ "reading": "Read the overlaps, not the midpoints. Against **rural Alaska** ($350\u2013600/MWh) the microreactor band ($200\u2013330) clears cleanly \u2014 that is the one genuinely uncontested win, and it is why Fort Wainwright is the most interesting row in the Army Janus table. Against **remote diesel** ($250\u2013400) the bands overlap: a microreactor at the top of its range ($330) still loses to diesel at the bottom of its range ($250), so 'cheaper than diesel' is a site-by-site claim that turns on local fuel logistics, not a category claim. Against grid-connected U.S. industrial power the microreactor loses badly in every published case except the PTC and at-scale scenarios, both of which are forward-looking. The commercial logic therefore inverts by sector: off-grid sites can buy on cost today, on-grid sites buy on resilience, speed-to-power or carbon and pay a premium to do it."
+}

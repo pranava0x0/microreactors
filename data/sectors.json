@@ -1,0 +1,379 @@
+{
+ "_meta": {
+  "source": "docs/rian-research-chatgpt.md \u2014 annual-average electrical demand planning bands",
+  "generated_by": "tools/parse_sectors.py",
+  "caveat": "Planning bands, not guaranteed averages; final sizing requires at least one year of hourly site-load data."
+ },
+ "sectors": [
+  {
+   "sector": "Compute",
+   "loads": [
+    {
+     "label": "Regional data centers",
+     "band": "1\u201310 MW",
+     "note": "",
+     "band_full": "1\u201310 MW"
+    },
+    {
+     "label": "Company-owned data centers",
+     "band": "1\u20135 MW",
+     "note": "",
+     "band_full": "1\u20135 MW"
+    },
+    {
+     "label": "Shared data centers",
+     "band": "5\u201350 MW",
+     "note": "",
+     "band_full": "5\u201350 MW"
+    },
+    {
+     "label": "Supercomputing centers",
+     "band": "10\u201350 MW",
+     "note": "",
+     "band_full": "10\u201350 MW"
+    },
+    {
+     "label": "AI and very large cloud data centers",
+     "band": "50\u2013500+ MW",
+     "note": "total, using a 1\u201320 MW dedicated block",
+     "band_full": "50\u2013500+ MW total, using a 1\u201320 MW dedicated block"
+    },
+    {
+     "label": "Dedicated baseload and outage-protection blocks within larger data-center campuses",
+     "band": "1\u201320 MW",
+     "note": "",
+     "band_full": "1\u201320 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Mining",
+   "loads": [
+    {
+     "label": "Large pozzolan mines with onsite crushing, grinding or drying",
+     "band": "1\u20135 MW",
+     "note": "",
+     "band_full": "1\u20135 MW"
+    },
+    {
+     "label": "Remote lithium and rare-earth mines with onsite processing",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Remote copper and other large mines",
+     "band": "12\u201325 MW",
+     "note": "for a representative site, with larger mines using a 5\u201320 MW partial-power block",
+     "band_full": "12\u201325 MW for a representative site, with larger mines using a 5\u201320 MW partial-power block"
+    }
+   ]
+  },
+  {
+   "sector": "Electric Utilities",
+   "loads": [
+    {
+     "label": "Individual remote grids with sufficient year-round demand",
+     "band": "1\u201310 MW",
+     "note": "",
+     "band_full": "1\u201310 MW"
+    },
+    {
+     "label": "Regional grids serving several communities",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Replacements or partial replacements for older diesel and coal generation",
+     "band": "1\u201320 MW",
+     "note": "",
+     "band_full": "1\u201320 MW"
+    },
+    {
+     "label": "Power for new mines, factories, data centers and communities before major grid upgrades",
+     "band": "1\u201320 MW",
+     "note": "",
+     "band_full": "1\u201320 MW"
+    },
+    {
+     "label": "Staged additions for future load growth",
+     "band": "1\u201320 MW",
+     "note": "",
+     "band_full": "1\u201320 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Manufacturing",
+   "loads": [
+    {
+     "label": "Steel rolling and finishing plants, excluding full steelmaking mills",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Cement plants",
+     "band": "7\u201325 MW",
+     "note": "",
+     "band_full": "7\u201325 MW"
+    },
+    {
+     "label": "Lime plants",
+     "band": "2\u20138 MW",
+     "note": "",
+     "band_full": "2\u20138 MW"
+    },
+    {
+     "label": "Chemical plants",
+     "band": "5\u201350 MW",
+     "note": "with a 5\u201320 MW block at larger plants",
+     "band_full": "5\u201350 MW, with a 5\u201320 MW block at larger plants"
+    },
+    {
+     "label": "Fertilizer plants",
+     "band": "5\u201330 MW",
+     "note": "with a 5\u201320 MW block at larger plants",
+     "band_full": "5\u201330 MW, with a 5\u201320 MW block at larger plants"
+    },
+    {
+     "label": "Hydrogen and low-carbon fuel plants",
+     "band": "5\u201320 MW",
+     "note": "per production block",
+     "band_full": "5\u201320 MW per production block"
+    },
+    {
+     "label": "Pulp and paper mills",
+     "band": "10\u201340 MW",
+     "note": "with partial supply above 20 MW",
+     "band_full": "10\u201340 MW, with partial supply above 20 MW"
+    },
+    {
+     "label": "Large integrated sawmills and wood-products plants",
+     "band": "1\u20138 MW",
+     "note": "",
+     "band_full": "1\u20138 MW"
+    },
+    {
+     "label": "Semiconductor fabs",
+     "band": "30\u2013150+ MW",
+     "note": "total, using a 5\u201320 MW dedicated block",
+     "band_full": "30\u2013150+ MW total, using a 5\u201320 MW dedicated block"
+    },
+    {
+     "label": "Battery-cell plants",
+     "band": "20\u2013100+ MW",
+     "note": "total, using a 5\u201320 MW block",
+     "band_full": "20\u2013100+ MW total, using a 5\u201320 MW block"
+    },
+    {
+     "label": "Battery-material plants",
+     "band": "5\u201330 MW",
+     "note": "",
+     "band_full": "5\u201330 MW"
+    },
+    {
+     "label": "Battery-recycling plants",
+     "band": "2\u201315 MW",
+     "note": "",
+     "band_full": "2\u201315 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Oil & Gas",
+   "loads": [
+    {
+     "label": "Remote oil fields and production hubs",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Offshore platforms",
+     "band": "10\u201350 MW",
+     "note": "total, using a 5\u201320 MW block at larger platforms",
+     "band_full": "10\u201350 MW total, using a 5\u201320 MW block at larger platforms"
+    },
+    {
+     "label": "Pipeline pumping and electric compression stations",
+     "band": "5\u201320 MW",
+     "note": "per station",
+     "band_full": "5\u201320 MW per station"
+    },
+    {
+     "label": "Gas-processing plants",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Smaller liquefied-natural-gas plants and receiving terminals",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Smaller refineries",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Dedicated electrical blocks at larger refineries",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Transportation",
+   "loads": [
+    {
+     "label": "Large Amazon, Walmart and similar fulfillment and distribution centers",
+     "band": "1\u20133 MW",
+     "note": "normally; 2\u201310 MW with heavy automation or fleet charging",
+     "band_full": "1\u20133 MW normally; 2\u201310 MW with heavy automation or fleet charging"
+    },
+    {
+     "label": "Refrigerated distribution centers",
+     "band": "1\u20135 MW",
+     "note": "",
+     "band_full": "1\u20135 MW"
+    },
+    {
+     "label": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
+     "band": "5\u201320 MW",
+     "note": "average, with higher short-term peaks",
+     "band_full": "5\u201320 MW average, with higher short-term peaks"
+    },
+    {
+     "label": "Major passenger airports",
+     "band": "10\u201330 MW",
+     "note": "average",
+     "band_full": "10\u201330 MW average"
+    },
+    {
+     "label": "Major air-cargo campuses",
+     "band": "3\u201315 MW",
+     "note": "",
+     "band_full": "3\u201315 MW"
+    },
+    {
+     "label": "Large rail, truck and fleet-charging hubs",
+     "band": "1\u201310 MW",
+     "note": "average, with peaks of 5\u201330 MW",
+     "band_full": "1\u201310 MW average, with peaks of 5\u201330 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Civic Infrastructure",
+   "loads": [
+    {
+     "label": "Large individual hospitals",
+     "band": "2\u20138 MW",
+     "note": "",
+     "band_full": "2\u20138 MW"
+    },
+    {
+     "label": "Major medical campuses",
+     "band": "10\u201340 MW",
+     "note": "",
+     "band_full": "10\u201340 MW"
+    },
+    {
+     "label": "Large prison complexes",
+     "band": "1\u20133 MW",
+     "note": "",
+     "band_full": "1\u20133 MW"
+    },
+    {
+     "label": "Major universities",
+     "band": "5\u201330 MW",
+     "note": "",
+     "band_full": "5\u201330 MW"
+    },
+    {
+     "label": "National laboratories",
+     "band": "10\u201350+ MW",
+     "note": "using a 5\u201320 MW block at larger sites",
+     "band_full": "10\u201350+ MW, using a 5\u201320 MW block at larger sites"
+    },
+    {
+     "label": "Large campus electrical systems",
+     "band": "5\u201330 MW",
+     "note": "",
+     "band_full": "5\u201330 MW"
+    },
+    {
+     "label": "Regional drinking-water treatment and pumping systems",
+     "band": "1\u201310 MW",
+     "note": "",
+     "band_full": "1\u201310 MW"
+    },
+    {
+     "label": "Major city wastewater plants",
+     "band": "1\u201315 MW",
+     "note": "",
+     "band_full": "1\u201315 MW"
+    },
+    {
+     "label": "Large seawater desalination plants",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    }
+   ]
+  },
+  {
+   "sector": "Agriculture & Food",
+   "loads": [
+    {
+     "label": "Large lighted greenhouse campuses",
+     "band": "1\u20138 MW",
+     "note": "",
+     "band_full": "1\u20138 MW"
+    },
+    {
+     "label": "Large indoor-growing facilities",
+     "band": "1\u201310 MW",
+     "note": "",
+     "band_full": "1\u201310 MW"
+    },
+    {
+     "label": "Large land-based aquaculture operations",
+     "band": "1\u20135 MW",
+     "note": "",
+     "band_full": "1\u20135 MW"
+    },
+    {
+     "label": "Remote seafood-processing plants connected to a year-round community grid",
+     "band": "1\u20135 MW",
+     "note": "during processing",
+     "band_full": "1\u20135 MW during processing"
+    },
+    {
+     "label": "Very large meat, dairy and frozen-food plants",
+     "band": "2\u201315 MW",
+     "note": "",
+     "band_full": "2\u201315 MW"
+    },
+    {
+     "label": "Large grain and oilseed mills",
+     "band": "5\u201320 MW",
+     "note": "",
+     "band_full": "5\u201320 MW"
+    },
+    {
+     "label": "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping",
+     "band": "2\u201320 MW",
+     "note": "",
+     "band_full": "2\u201320 MW"
+    }
+   ]
+  }
+ ]
+}

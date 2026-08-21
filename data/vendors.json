@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "captured": "2026-08-21",
+    "note": "Three vendors = the exact Air Force ANPI slate (Antares, Radiant, Westinghouse). Selecting the third vendor was not a judgment call: DoD already paired these three against three named bases in April 2026."
+  },
+  "vendors": [
+    {
+      "id": "antares",
+      "name": "Antares Nuclear",
+      "reactor": "R1",
+      "coolant": "Sodium heat pipe",
+      "fuel": "TRISO",
+      "mwe_low": 0.1,
+      "mwe_high": 1.0,
+      "mwe_label": "100 kWe – 1 MWe class",
+      "refuel_years": 6,
+      "transport": "Truck-delivered, factory-produced",
+      "anpi_site": "Joint Base San Antonio, TX",
+      "first_delivery_target": "2028 or earlier",
+      "grid_required": false,
+      "notes": "Antares plants require no connection to the commercial power grid or specialised infrastructure to deploy. Selection driven by JBSA's utility infrastructure, land availability and critical mission requirements.",
+      "sources": [
+        {"label": "Businesswire — ANPI selection (2026-04-22)", "url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"},
+        {"label": "World Nuclear News — USAF microreactor selections", "url": "https://world-nuclear-news.org/articles/us-air-force-announces-selections-for-microreactor-deployments"},
+        {"label": "ENR — JBSA weighs nuclear for grid independence", "url": "https://www.enr.com/articles/62882-san-antonio-military-base-weighs-nuclear-option-for-grid-independence"}
+      ],
+      "gaps": ["No disclosed funding total", "No published land-area or exclusion-zone footprint", "No utility filing located for the JBSA interconnection"]
+    },
+    {
+      "id": "radiant",
+      "name": "Radiant Nuclear",
+      "reactor": "Kaleidos",
+      "coolant": "Helium (HTGR), prismatic graphite blocks",
+      "fuel": "HALEU TRISO (fabricated by Standard Nuclear, Oak Ridge TN)",
+      "mwt": 3.0,
+      "mwe_low": 1.0,
+      "mwe_high": 1.2,
+      "mwe_label": "1 MWe (3 MWt)",
+      "refuel_years": 5,
+      "service_life_years": 20,
+      "mass_tonnes": 70,
+      "transport": "Fits a single shipping container",
+      "anpi_site": "Buckley Space Force Base, CO",
+      "first_delivery_target": "2028 (DIU/Dept of the Air Force FOAK)",
+      "status": "First new reactor design to be tested in DOE's DOME test bed. First TRISO fuel tranche received 2026-07-01; five-phase campaign (criticality → heat/power → full power → 150 h unattended continuous operation) targeting completion Q3 2026.",
+      "funding_usd": 300000000,
+      "funding_note": "$300M Series D on top of a $165M Series C (May), total raised >$500M. Reactor factory foundation in Oak Ridge, TN in 2026.",
+      "commercial": "Equinix agreement to purchase 20 reactors.",
+      "sources": [
+        {"label": "Radiant — Series D announcement", "url": "https://www.radiantnuclear.com/blog/series-d-announcement/"},
+        {"label": "Radiant — first TRISO fuel at INL DOME", "url": "https://www.radiantnuclear.com/blog/triso-fuel-inl/"},
+        {"label": "Radiant — DOME selection", "url": "https://www.radiantnuclear.com/blog/dome-selection/"},
+        {"label": "World Nuclear News — Kaleidos begins journey to Idaho", "url": "https://world-nuclear-news.org/articles/kaleidos-microreactor-begins-journey-to-idaho"},
+        {"label": "smrintel — Kaleidos spec sheet", "url": "https://smrintel.com/reactors/radiant-kaleidos/"}
+      ],
+      "gaps": ["Criticality was targeted for 2026-07-04; completion of the five-phase campaign is still forward-looking as of capture date and should be re-verified", "Equinix 20-unit deal: no per-unit price or delivery schedule published"]
+    },
+    {
+      "id": "evinci",
+      "name": "Westinghouse",
+      "reactor": "eVinci",
+      "coolant": "Heat pipe (passive)",
+      "fuel": "TRISO",
+      "mwe_low": 0.005,
+      "mwe_high": 5.0,
+      "mwe_label": "several kWe – 5 MWe",
+      "refuel_years": 8,
+      "land_acres": 2,
+      "transport": "Transportable, factory-built",
+      "anpi_site": "Malmstrom Air Force Base, MT",
+      "test_reactor": "Scaled 3 MWt heat-pipe nuclear test reactor at INL DOME, testing from 2026",
+      "commercial": "First customer: Saskatchewan Research Council (SRC), pilot by 2029, SRC as licensed operator, CA$80M government funding. Penn State partnership (March 2025); Penn State filed a letter of intent with the NRC to host and operate an eVinci on 2026-02-28.",
+      "notes": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refuelling.",
+      "sources": [
+        {"label": "POWER — Westinghouse/Radiant selected for first fuelled DOME tests", "url": "https://www.powermag.com/westinghouse-radiant-selected-for-first-fueled-nuclear-microreactor-tests-at-inls-dome-facility/"},
+        {"label": "POWER — Westinghouse secures first eVinci customer", "url": "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/"},
+        {"label": "Westinghouse — eVinci selected for DOME", "url": "https://info.westinghousenuclear.com/blog/evinci-microreactor-selected-for-experiments-in-dome-test-bed"},
+        {"label": "DOE — Westinghouse completes eVinci front-end study", "url": "https://www.energy.gov/ne/articles/westinghouse-completes-study-first-evinci-microreactor-experiment"},
+        {"label": "Data Center Frontier — eVinci for AI data centers", "url": "https://www.datacenterfrontier.com/energy/article/55232808/westinghouse-evinci-microreactor-could-yield-5-mw-of-nuclear-power-every-8-years-for-ai-data-centers"}
+      ],
+      "gaps": ["No US commercial (non-government) offtake located", "Malmstrom timeline not separately published beyond the ANPI 2030 goal"]
+    }
+  ]
+}

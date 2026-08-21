@@ -1,0 +1,166 @@
+/* ANTARES DESIGN SYSTEM — tokens
+   Pulled from the Claude Design project "Antares Design System"
+   (208d3492-a0c5-4a70-9dd7-564ca7a64ee5), tokens/ directory, 2026-08-21.
+   Brand red #E60040 sampled from the official mark; #292524 from the site's OG
+   plate. Dark is the primary mode; light surfaces via [data-tone="light"]. */
+
+:root{
+  /* — Brand base — */
+  --antares-red:#E60040;
+  --antares-red-press:#C40036;
+  --antares-red-hover:#FF1E5A;
+  --antares-red-08:rgba(230,0,64,.08);
+  --antares-red-16:rgba(230,0,64,.16);
+  --antares-red-40:rgba(230,0,64,.40);
+  --antares-red-deep:#B0302E;
+
+  /* — Warm neutral ramp — */
+  --stone-50:#FAFAF9;
+  --stone-100:#F5F5F4;
+  --stone-200:#E7E5E4;
+  --stone-300:#D6D3D1;
+  --stone-400:#A8A29E;
+  --stone-500:#78716C;
+  --stone-600:#57534E;
+  --stone-700:#44403C;
+  --stone-800:#292524;
+  --stone-900:#1C1917;
+  --stone-950:#0C0A09;
+  --white:#FFFFFF;
+  --black:#000000;
+
+  /* — Semantic surfaces (dark is the primary mode) — */
+  --surface-page:var(--stone-950);
+  --surface-raised:var(--stone-900);
+  --surface-plate:var(--stone-800);
+  --surface-inverse:var(--stone-50);
+  --surface-media:var(--black);
+
+  /* — Semantic text — */
+  --text-primary:var(--stone-50);
+  --text-secondary:var(--stone-400);
+  --text-tertiary:var(--stone-500);
+  --text-accent:var(--antares-red);
+  --text-on-accent:var(--white);
+  --text-inverse-primary:var(--stone-900);
+  --text-inverse-secondary:var(--stone-600);
+
+  /* — Semantic lines — */
+  --border-subtle:rgba(250,250,249,.12);
+  --border-default:rgba(250,250,249,.20);
+  --border-strong:rgba(250,250,249,.36);
+  --border-accent:var(--antares-red);
+  --border-inverse-subtle:rgba(12,10,9,.12);
+  --border-inverse-default:rgba(12,10,9,.20);
+
+  /* — Scrims — */
+  --scrim-bottom:linear-gradient(to top,rgba(12,10,9,.88) 0%,rgba(12,10,9,.55) 34%,rgba(12,10,9,0) 78%);
+  --scrim-top:linear-gradient(to bottom,rgba(12,10,9,.72) 0%,rgba(12,10,9,0) 100%);
+  --scrim-flat:rgba(12,10,9,.45);
+
+  /* — Type — one family, four weights — */
+  --font-core:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+
+  --size-display-1:clamp(40px,5.4vw,76px);
+  --size-display-2:clamp(34px,4.2vw,56px);
+  --size-display-3:clamp(28px,3vw,40px);
+  --lh-display:1.04;
+  --track-display:-0.028em;
+
+  --size-heading-1:32px;
+  --size-heading-2:24px;
+  --size-heading-3:20px;
+  --lh-heading:1.16;
+  --track-heading:-0.018em;
+
+  --size-body-lg:20px;
+  --size-body:16px;
+  --size-body-sm:14px;
+  --size-caption:12px;
+  --lh-body:1.5;
+  --lh-body-lg:1.45;
+  --track-body:-0.006em;
+
+  --size-label:12px;
+  --size-label-sm:11px;
+  --track-label:0.18em;
+  --track-nav:0.10em;
+  --track-wordmark:0.30em;
+
+  --size-index:13px;
+  --track-index:0.12em;
+
+  --measure-prose:66ch;
+  --measure-narrow:46ch;
+
+  --text-display-1:var(--weight-semibold) var(--size-display-1)/var(--lh-display) var(--font-core);
+  --text-display-2:var(--weight-semibold) var(--size-display-2)/var(--lh-display) var(--font-core);
+  --text-heading-2:var(--weight-semibold) var(--size-heading-2)/var(--lh-heading) var(--font-core);
+  --text-body:var(--weight-regular) var(--size-body)/var(--lh-body) var(--font-core);
+  --text-label:var(--weight-medium) var(--size-label)/1 var(--font-core);
+
+  /* — Space: 4px base grid — */
+  --space-0:0px;  --space-1:4px;  --space-2:8px;  --space-3:12px;
+  --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px;
+  --space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;
+  --space-24:96px;--space-32:128px;--space-40:160px;
+
+  --gutter-page:24px;
+  --gutter-page-lg:48px;
+  --content-max:1440px;
+  --content-max-text:960px;
+  --section-y:var(--space-24);
+  --section-y-lg:var(--space-32);
+  --stack-tight:var(--space-3);
+  --stack:var(--space-6);
+  --stack-loose:var(--space-12);
+  --nav-height:64px;
+  --announce-height:44px;
+  --control-height:44px;
+  --control-height-sm:36px;
+
+  /* — Radius: hard-edged by default — */
+  --radius-none:0px; --radius-xs:2px; --radius-sm:4px; --radius-md:6px;
+  --radius-pill:999px; --radius-circle:50%;
+  --radius-card:var(--radius-xs);
+  --radius-control:var(--radius-xs);
+  --radius-media:var(--radius-none);
+
+  /* — Elevation: hairlines, not drop shadows — */
+  --shadow-none:none;
+  --shadow-control:0 1px 2px rgba(12,10,9,.24);
+  --shadow-float:0 8px 24px rgba(12,10,9,.32);
+  --shadow-plate:0 1px 0 rgba(12,10,9,.06),0 12px 32px rgba(12,10,9,.10);
+  --ring-focus:0 0 0 2px var(--surface-page),0 0 0 4px var(--antares-red);
+  --ring-focus-inverse:0 0 0 2px var(--surface-inverse),0 0 0 4px var(--antares-red);
+  --inset-hairline:inset 0 0 0 1px var(--border-subtle);
+  --blur-panel:saturate(140%) blur(14px);
+
+  /* — Motion: restrained and mechanical — */
+  --dur-instant:80ms; --dur-fast:160ms; --dur-base:260ms;
+  --dur-slow:600ms;   --dur-media:1200ms;
+  --ease-standard:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --transition-control:color var(--dur-fast) var(--ease-standard),background-color var(--dur-fast) var(--ease-standard),border-color var(--dur-fast) var(--ease-standard),opacity var(--dur-fast) var(--ease-standard);
+  --transition-media:opacity var(--dur-media) var(--ease-in-out);
+  --hover-dim:.62;
+  --press-dim:.48;
+}
+
+/* — Base element defaults — */
+html{-webkit-font-smoothing:antialiased;text-size-adjust:100%}
+body{margin:0;background:var(--surface-page);color:var(--text-primary);font:var(--text-body);letter-spacing:var(--track-body);text-wrap:pretty}
+h1,h2,h3,h4{margin:0;font-weight:var(--weight-semibold);letter-spacing:var(--track-heading);line-height:var(--lh-heading)}
+p{margin:0}
+a{color:var(--text-primary);text-decoration:none;transition:var(--transition-control)}
+a:hover{opacity:var(--hover-dim)}
+a:active{opacity:var(--press-dim)}
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+img,video{display:block;max-width:100%}
+::selection{background:var(--antares-red);color:var(--white)}
