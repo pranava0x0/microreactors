@@ -56,9 +56,9 @@
       var panel = $(p);
       if (panel) panel.hidden = p !== id;
     });
-    // The full hero belongs to the landing tab; elsewhere it compacts to the
-    // stat strip so each panel's content starts within the first screen.
-    document.querySelector(".hero").classList.toggle("compact", id !== PANELS[0]);
+    // The hero and its stat strip belong to the landing tab only; every other
+    // tab opens straight on its own content.
+    document.querySelector(".hero").hidden = id !== PANELS[0];
     tabEls.forEach(function (t) {
       var on = t.dataset.panel === id;
       t.setAttribute("aria-selected", String(on));
@@ -96,12 +96,14 @@
   /* ---------- hero stats ---------- */
   var s = D.summary;
   $("built").textContent = s.built;
+  /* Deployment stats, not site stats: each number answers "how far along is
+     this market", so all six move when the market moves. */
   var stats = [
     { n: s.opportunities, k: "opportunities mapped" },
-    { n: s.cited_rows + "/" + s.opportunities, k: "rows with a source", accent: s.cited_rows === s.opportunities },
-    { n: s.vendors, k: "reactor vendors" },
-    { n: s.load_types, k: "load types sized" },
-    { n: s.source_count, k: "distinct sources cited", accent: true },
+    { n: s.binding_rows + "/" + s.opportunities, k: "hold a binding instrument", accent: true },
+    { n: s.reactors_critical_2026, k: "test reactors critical in 2026", accent: true },
+    { n: s.units_largest_preorder, k: "units in the largest preorder" },
+    { n: s.first_delivery_year, k: "first delivery target" },
     { n: s.filing_pct + "%", k: "have a utility filing", accent: true }
   ];
   render($("stats"), stats.map(function (x) {
@@ -246,11 +248,19 @@
       ? '<div class="gapnote"><strong>Known gaps</strong><ul>' +
         v.gaps.map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("") + "</ul></div>"
       : "";
+    var tl = (v.milestones || []).length
+      ? '<div class="vtlhead">Roadmap to power</div><div class="vtl">' +
+        v.milestones.map(function (m) {
+          return '<div class="ms ' + (m.status === "done" ? "done" : "tgt") + '">' +
+            '<span class="d">' + esc(m.date) + '</span><span class="dot" aria-hidden="true"></span>' +
+            '<span class="l">' + esc(m.label) + cite(m.source ? [m.source] : []) + "</span></div>";
+        }).join("") + "</div>"
+      : "";
     return '<div class="vcard"><h3>' + esc(v.name) + '</h3><span class="r">' + esc(v.reactor) + "</span>" +
       specs.map(function (x) {
         return '<div class="vspec"><span class="k">' + esc(x[0]) + '</span><span class="v">' +
           esc(x[1]) + "</span></div>";
-      }).join("") + gaps + srcList(v.sources, "vsrcs") + "</div>";
+      }).join("") + tl + gaps + srcList(v.sources, "vsrcs") + "</div>";
   }).join(""));
 
   /* ---------- demand accordions ---------- */
@@ -259,7 +269,11 @@
     return '<details class="sector"' + (i === 0 ? " open" : "") + "><summary>" +
       "<h3>" + esc(sec.sector) + "</h3>" +
       '<span class="meta">' + sec.loads.length + " loads · " + cited + " cited</span>" +
-      '</summary><div class="loads">' +
+      "</summary>" +
+      (sec.context
+        ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
+        : "") +
+      '<div class="loads">' +
       sec.loads.map(function (l) {
         return '<div class="load"><span>' + esc(l.label) +
           (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
@@ -314,6 +328,10 @@
 
   /* ---------- evidence: source register ---------- */
   var reg = D.sources_index || [];
+  render($("evsummary"),
+    esc(s.source_count) + " distinct sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
+    " pipeline rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) +
+    " demand bands; the uncited bands are named on the Demand tab.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
     return '<div class="rrow"><span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' +

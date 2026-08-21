@@ -56,10 +56,6 @@ section[role="tabpanel"]:focus-visible{outline:none;box-shadow:none}
 /* ---------- hero ---------- */
 .hero{padding:var(--space-16) 0 var(--space-12);border-bottom:1px solid var(--border-subtle)}
 .hero h1{max-width:16ch;margin-bottom:var(--space-6)}
-.hero.compact{padding:var(--space-6) 0}
-.hero.compact h1,.hero.compact .lede,.hero.compact .eyebrow{display:none}
-.hero.compact .stats{margin-top:0}
-@media(max-width:640px){.hero.compact{display:none}}
 /* Six stats. Explicit column counts per band: auto-fit against a known count
    strands dead cells in the last row (DESIGN.md 12.18). */
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
@@ -166,6 +162,26 @@ section[role="tabpanel"]:focus-visible{outline:none;box-shadow:none}
   border-top:1px solid var(--border-subtle);font-size:var(--size-body-sm)}
 .vspec .k{color:var(--text-tertiary)}
 .vspec .v{color:var(--text-primary);font-variant-numeric:tabular-nums}
+/* per-vendor deployment ladder: solid dot = done, hollow = target */
+.vtlhead{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);margin-top:var(--space-6);padding-top:var(--space-4);
+  border-top:1px solid var(--border-subtle)}
+.vtl{margin-top:var(--space-3)}
+.ms{display:grid;grid-template-columns:78px 14px 1fr;gap:var(--space-3);align-items:baseline;
+  position:relative;padding:var(--space-2) 0}
+.ms .d{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.ms .dot{width:9px;height:9px;border-radius:var(--radius-circle);align-self:center;
+  position:relative;z-index:1}
+.ms.done .dot{background:var(--antares-red)}
+.ms.tgt .dot{background:var(--surface-page);border:1.5px solid var(--antares-red-40)}
+.ms .l{font-size:var(--size-body-sm);color:var(--text-secondary)}
+.ms.done .l{color:var(--text-primary)}
+.ms::before{content:"";position:absolute;left:calc(78px + var(--space-3) + 4px);top:0;bottom:0;
+  width:1px;background:var(--border-subtle)}
+.ms:first-child::before{top:50%}
+.ms:last-child::before{bottom:50%}
+
 .vsrcs{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--border-subtle)}
 .vsrcs a{display:inline-block;font-size:var(--size-caption);color:var(--text-secondary);
   text-decoration:underline;text-underline-offset:3px;margin-right:var(--space-3);margin-bottom:var(--space-2)}
@@ -184,6 +200,8 @@ details.sector[open] summary::before{transform:rotate(90deg)}
 details.sector summary h3{font-size:var(--size-heading-3)}
 details.sector summary .meta{font-family:var(--font-mono);font-size:var(--size-caption);
   color:var(--text-tertiary);white-space:nowrap}
+.sectorctx{padding:var(--space-4) var(--space-6);border-top:1px solid var(--border-subtle);
+  font-size:var(--size-body-sm);color:var(--text-secondary);max-width:var(--measure-prose)}
 details.sector .loads{padding:0 var(--space-6) var(--space-5);border-top:1px solid var(--border-subtle)}
 @media(min-width:900px){details.sector .loads{column-count:2;column-gap:var(--space-16)}}
 .load{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);padding:var(--space-3) 0;

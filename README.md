@@ -10,10 +10,10 @@ Open it directly or serve the `site/` directory.
 
 | Tab | Question it answers |
 |---|---|
-| Pipeline | Who is buying now — signed instruments, by buyer track |
-| Economics | What it costs against what it displaces, and whether the PTC survives the OBBBA (it does, for nuclear) |
-| Vendors | Who builds the machines — the exact Air Force ANPI slate |
-| Demand | Which loads fit a 1–20 MW block, each band cited |
+| Tracker | Who is buying now — signed instruments, by buyer track (named "Tracker" after WNA's SMR project tracker; WoodMac defines "pipeline" as the whole announced market, which this is not) |
+| Costs | What it costs against what it displaces, and whether the PTC survives the OBBBA (it does, for nuclear) |
+| Vendors | Who builds the machines — the ANPI slate, each with a cited deployment roadmap |
+| Applications | Which loads fit a 1–20 MW block (Westinghouse's own term for this content), each band cited, plus how each sector powers itself today |
 | Market design | How early orders get cheaper — a shared orderbook + overrun pool proposal, argued from cited precedents |
 | Policy | Rules that unlock the sale: diesel replacement, battery pairing, faster interconnection, licensing speed |
 | Evidence | Every source cited anywhere on the site, plus field coverage and the honest gaps |
@@ -27,6 +27,8 @@ Open it directly or serve the `site/` directory.
 | `data/research/` | Committed research trails from the citation passes (agent outputs, verbatim). |
 | `tools/build_data.py` | Bundles `data/*.json` → `site/data.js`, computes the headline figures and the source register. |
 | `tools/build_gaps.py` | Derives `data/gaps.json` (field coverage + next-pass plan) from the data. |
+| `tools/check_citations.py` | Claim-coverage scanner: any record whose prose carries a hard number must have a source, be registered uncited, or sit on a reasoned allowlist. Wired into the test suite. |
+| `tools/check_links.py` | Liveness sweep over every cited URL (dead/blocked/live). Network-dependent, so run locally on demand, never in CI. |
 | `tests/` | The CI gate: citation coverage, generator sync/idempotency, HTML/CSS/JS contract, prose register. |
 | `docs/` | Segmentation rationale and the two prior research documents. |
 
