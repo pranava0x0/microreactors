@@ -72,8 +72,16 @@ def check() -> List[Tuple[str, str]]:
     costs = json.loads((DATA / "costs.json").read_text())
     for r in costs["microreactor_lcoe"] + costs["displaced_alternatives"]:
         need(r, f"costs:{r.get('scenario') or r.get('alternative')}")
-    for p in costs["incentives"]["points"]:
+    inc = costs["incentives"]
+    for p in inc["points"]:
         need(p, "costs:incentives")
+    # The block's own summary prose (question/answer/caveat) carries numbers
+    # too; it is covered by the union of its points' sources, checked as one
+    # record so nothing typed there can bypass the citation contract.
+    inc_sources = [s for p in inc["points"] for s in (p.get("sources") or ([p["source"]] if p.get("source") else []))]
+    need({"question": inc.get("question", ""), "answer": inc.get("answer", ""),
+          "caveat": inc.get("caveat", ""), "sources": inc_sources},
+         "costs:incentives:summary-prose")
 
     sectors = json.loads((DATA / "sectors.json").read_text())
     uncited = set(sectors["_meta"].get("uncited", []))

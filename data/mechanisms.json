@@ -41,7 +41,12 @@
      "early_vs_late": "Two answers by layer: the buyer pool itself should charge one blended average price (\"customers all be 'one fifth' of the orderbook versus 'waiting to be fifth'\"), while government incentives on top should be front-loaded — \"Ensuring that first-movers receive the best deal could induce customers to commit earlier.\"",
      "relevance": "The primary source for this tab's design: flat average inside the pool, front-loaded subsidy outside it, and a 30–50 unit target that makes multi-buyer aggregation mandatory for microreactors.",
      "sources": [
-      {"label": "DOE — Pathways to Commercial Liftoff: Advanced Nuclear (Sept 2024, PDF)", "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf", "quote": "Ensuring that first-movers receive the best deal could induce customers to commit earlier", "status": "fetched"}
+      {
+       "label": "DOE — Pathways to Commercial Liftoff: Advanced Nuclear (Sept 2024, PDF)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf",
+       "quote": "Ensuring that first-movers receive the best deal could induce customers to commit earlier",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -52,8 +57,18 @@
      "early_vs_late": "Deliberately flat: \"all the participants experience the same average cost based upon the total cost of all the units in the orderbook\" — the design goal is erasing the first-mover disadvantage so nobody benefits from delaying.",
      "relevance": "The closest existing blueprint to a shared microreactor orderbook plus risk pool: SPV pooling, tiered contingency, automatic backstop, and a reasoned rejection of price differences by order position.",
      "sources": [
-      {"label": "EFI Foundation — A Cost Stabilization Facility for SMRs (PDF)", "url": "https://efifoundation.org/wp-content/uploads/sites/3/2023/10/20231011-CSF-FINAL-1.pdf", "quote": "all the participants experience the same average cost based upon the total cost of all the units in the orderbook", "status": "fetched"},
-      {"label": "EFI Foundation — CSF model term sheet", "url": "https://efifoundation.org/foundation-reports/cost-stabilization-facility-for-a-portfolio-of-nuclear-energy-projects-a-model-term-sheet/", "quote": "available to groups of at least three projects using the same technology", "status": "fetched"}
+      {
+       "label": "EFI Foundation — A Cost Stabilization Facility for SMRs (PDF)",
+       "url": "https://efifoundation.org/wp-content/uploads/sites/3/2023/10/20231011-CSF-FINAL-1.pdf",
+       "quote": "all the participants experience the same average cost based upon the total cost of all the units in the orderbook",
+       "status": "fetched"
+      },
+      {
+       "label": "EFI Foundation — CSF model term sheet",
+       "url": "https://efifoundation.org/foundation-reports/cost-stabilization-facility-for-a-portfolio-of-nuclear-energy-projects-a-model-term-sheet/",
+       "quote": "available to groups of at least three projects using the same technology",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -64,7 +79,12 @@
      "early_vs_late": "No price tiering by order position; every sponsor keeps skin in the game through the deductible and copayment regardless of vintage.",
      "relevance": "Supplies the deductible-plus-copayment vocabulary for the overrun pool's first band.",
      "sources": [
-      {"label": "NIA — Options to Accelerate Commitments to Advanced Nuclear Energy Projects (PDF)", "url": "https://nuclearinnovationalliance.org/sites/default/files/2024-06/Options%20to%20Accelerate%20Commitments%20to%20Advanced%20Nuclear%20Energy%20Projects.pdf", "quote": "strong interest in mechanisms to share the risk of cost overruns (e.g., sharing among an \"order book\")", "status": "fetched"}
+      {
+       "label": "NIA — Options to Accelerate Commitments to Advanced Nuclear Energy Projects (PDF)",
+       "url": "https://nuclearinnovationalliance.org/sites/default/files/2024-06/Options%20to%20Accelerate%20Commitments%20to%20Advanced%20Nuclear%20Energy%20Projects.pdf",
+       "quote": "strong interest in mechanisms to share the risk of cost overruns (e.g., sharing among an \"order book\")",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -75,8 +95,19 @@
      "early_vs_late": "Symmetric by design: every member had the same opt-out at the same ceiling whenever they joined, so there was no reward for committing early and no cost to waiting — a structural driver of the shortfall.",
      "relevance": "The clearest cautionary case for orderbook design: an opt-out-only pool with no early-mover benefit and no shared overrun backstop dissolves exactly when costs rise.",
      "sources": [
-      {"label": "IEEFA — UAMPS SMR update, the fading promise of low-cost power", "url": "https://ieefa.org/resources/small-modular-reactor-update-fading-promise-low-cost-power-uamps-smr", "quote": "target price for power was pegged at $58 per megawatt-hour; it's risen to $89/MWh, a 53% increase", "status": "snippet-only"},
-      {"label": "Utility Dive — NuScale, UAMPS terminate SMR project", "url": "https://www.utilitydive.com/news/nuscale-uamps-terminate-small-modular-nuclear-reactor-smr-project-idaho/699281/", "quote": "NuScale, UAMPS terminate small modular reactor project in Idaho", "status": "snippet-only"}
+      {
+       "label": "IEEFA — UAMPS SMR update, the fading promise of low-cost power",
+       "url": "https://ieefa.org/resources/small-modular-reactor-update-fading-promise-low-cost-power-uamps-smr",
+       "quote": "target price for power was pegged at $58 per megawatt-hour; it's risen to $89/MWh, a 53% increase",
+       "status": "snippet-only"
+      },
+      {
+       "label": "Utility Dive — NuScale, UAMPS terminate SMR project",
+       "url": "https://www.utilitydive.com/news/nuscale-uamps-terminate-small-modular-nuclear-reactor-smr-project-idaho/699281/",
+       "quote": "NuScale, UAMPS terminate small modular reactor project in Idaho",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
      ]
     },
     {
@@ -87,8 +118,19 @@
      "early_vs_late": "Explicitly front-loaded, roughly 8× more per project for the first movers than the fast followers, in exchange for bearing FOAK risk.",
      "relevance": "A live, funded federal example of the outside-subsidy layer paying first movers most, the design this tab proposes above the flat-priced pool.",
      "sources": [
-      {"label": "DOE — $900 million to unlock SMR deployment", "url": "https://www.energy.gov/ne/articles/900-million-available-unlock-commercial-deployment-american-made-small-modular-reactors", "quote": "offering funding to de-risk the deployment of Generation III+ light-water small modular reactors", "status": "fetched"},
-      {"label": "POWER — Tier 1 awards to TVA and Holtec", "url": "https://www.powermag.com/doe-releases-900m-to-spur-gen-iii-nuclear-smr-deployment-targets-two-first-mover-projects/", "quote": "Targets Two 'First Mover' Projects", "status": "snippet-only"}
+      {
+       "label": "DOE — $900 million to unlock SMR deployment",
+       "url": "https://www.energy.gov/ne/articles/900-million-available-unlock-commercial-deployment-american-made-small-modular-reactors",
+       "quote": "offering funding to de-risk the deployment of Generation III+ light-water small modular reactors",
+       "status": "fetched"
+      },
+      {
+       "label": "POWER — Tier 1 awards to TVA and Holtec",
+       "url": "https://www.powermag.com/doe-releases-900m-to-spur-gen-iii-nuclear-smr-deployment-targets-two-first-mover-projects/",
+       "quote": "Targets Two 'First Mover' Projects",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
      ]
     },
     {
@@ -99,7 +141,12 @@
      "early_vs_late": "Undisclosed; Kairos frames the fleet structure as the way to move down the learning curve toward cost and schedule certainty.",
      "relevance": "A buyers' club of one: a single hyperscaler aggregating its own multi-unit demand to reach fleet pricing. The shared orderbook generalises this across many smaller buyers.",
      "sources": [
-      {"label": "Kairos Power — Google partnership announcement", "url": "https://www.kairospower.com/updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation", "quote": "the first corporate agreement for multiple deployments of a single advanced reactor design in the United States", "status": "fetched"}
+      {
+       "label": "Kairos Power — Google partnership announcement",
+       "url": "https://www.kairospower.com/updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation",
+       "quote": "the first corporate agreement for multiple deployments of a single advanced reactor design in the United States",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -110,7 +157,12 @@
      "early_vs_late": "Undisclosed; nothing public says whether Equinix's price falls if later buyers join Radiant's book.",
      "relevance": "Real deposits on 20 units is still short of DOE's 30–50 unit microreactor factory threshold — the concrete case for aggregating several such buyers into one book.",
      "sources": [
-      {"label": "Radiant — Equinix preorder announcement (via Accesswire)", "url": "https://www.digitaljournal.com/pr/news/accesswire/radiant-announces-equinix-preorder-1397753544.html", "quote": "This agreement with Equinix demonstrates the critical need to deliver dependable power anywhere it's needed", "status": "fetched"}
+      {
+       "label": "Radiant — Equinix preorder announcement (via Accesswire)",
+       "url": "https://www.digitaljournal.com/pr/news/accesswire/radiant-announces-equinix-preorder-1397753544.html",
+       "quote": "This agreement with Equinix demonstrates the critical need to deliver dependable power anywhere it's needed",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -121,7 +173,12 @@
      "early_vs_late": "One FOAK project per design; the question does not arise.",
      "relevance": "The baseline both NIA and EFI cite as necessary and insufficient: it de-risks the first plant but aggregates no demand and pools no overrun risk — the gap this tab's mechanism fills.",
      "sources": [
-      {"label": "DOE — Advanced Reactor Demonstration Program", "url": "https://www.energy.gov/ne/advanced-reactor-demonstration-projects", "quote": "Advanced Reactor Demonstrations – DE-FOA-0002271", "status": "fetched"}
+      {
+       "label": "DOE — Advanced Reactor Demonstration Program",
+       "url": "https://www.energy.gov/ne/advanced-reactor-demonstration-projects",
+       "quote": "Advanced Reactor Demonstrations – DE-FOA-0002271",
+       "status": "fetched"
+      }
      ]
     }
    ]
@@ -137,7 +194,12 @@
      "early_vs_late": "Uniform: every qualifying dose in the subsidised tranche earned the same top-up regardless of when the supplier joined; the subsidy tracked volume share, never arrival order.",
      "relevance": "The flat, volume-proportional subsidy design — one of the three distinct answers the precedents give to who should get the better deal.",
      "sources": [
-      {"label": "GAVI — Pneumococcal AMC, how it works", "url": "https://www.gavi.org/investing-gavi/innovative-financing/pneumococcal-advance-market-commitment-amc/how-it-works", "quote": "an additional $3.50 per dose for approximately 20% of the doses they provide", "status": "fetched"}
+      {
+       "label": "GAVI — Pneumococcal AMC, how it works",
+       "url": "https://www.gavi.org/investing-gavi/innovative-financing/pneumococcal-advance-market-commitment-amc/how-it-works",
+       "quote": "an additional $3.50 per dose for approximately 20% of the doses they provide",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -148,7 +210,12 @@
      "early_vs_late": "Inverted on purpose: early suppliers are paid more per ton as a market-making subsidy, pulling the cost curve down for everyone who buys later.",
      "relevance": "Proof that paying more early can be the rational design when the goal is creating supply rather than sharing a fixed book.",
      "sources": [
-      {"label": "Frontier — an advance market commitment to accelerate carbon removal", "url": "https://frontierclimate.com/writing/launch", "quote": "buyers will enter into low-volume prepurchase agreements", "status": "fetched"}
+      {
+       "label": "Frontier — an advance market commitment to accelerate carbon removal",
+       "url": "https://frontierclimate.com/writing/launch",
+       "quote": "buyers will enter into low-volume prepurchase agreements",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -159,7 +226,12 @@
      "early_vs_late": "No price differentiation; the early-pledger benefit is influence over which suppliers and technologies get validated.",
      "relevance": "The lightweight on-ramp: a microreactor buyers' club could start as percentage pledges before hardening into binding preorders, as long as it hardens — DOE's zero-signed-contracts finding is what soft pledges produce alone.",
      "sources": [
-      {"label": "WEF — First Movers Coalition 2024 commitments", "url": "https://www.weforum.org/press/2024/01/wef24-first-movers-coalition-commitments/", "quote": "101 companies that have pledged a total of $19 billion in purchasing commitments by 2030", "status": "snippet-only"}
+      {
+       "label": "WEF — First Movers Coalition 2024 commitments",
+       "url": "https://www.weforum.org/press/2024/01/wef24-first-movers-coalition-commitments/",
+       "quote": "101 companies that have pledged a total of $19 billion in purchasing commitments by 2030",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -170,7 +242,12 @@
      "early_vs_late": "The launch customer gets the steepest discount, funded by the manufacturer against future volume, as compensation for bearing pioneer risk on an unproven airframe.",
      "relevance": "The precedent DOE's Liftoff report cites by name, and the template for any manufacturer-funded early discount: the maker pays it, never the later buyers.",
      "sources": [
-      {"label": "DOE Liftoff report — Boeing 787 analogy", "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf", "quote": "Boeing sold 50 787s to their first customer, spreading early costs over multiple planes in a single order", "status": "fetched"}
+      {
+       "label": "DOE Liftoff report — Boeing 787 analogy",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf",
+       "quote": "Boeing sold 50 787s to their first customer, spreading early costs over multiple planes in a single order",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -181,7 +258,12 @@
      "early_vs_late": "A single government buyer shifting risk off manufacturers; no multi-buyer price question arises.",
      "relevance": "The template for funding factory tooling ahead of a full book: one deep-pocketed backstop paying for at-risk capacity, which maps to the federal loan layer, never the buyer pool.",
      "sources": [
-      {"label": "CRS — Operation Warp Speed contracts (PDF)", "url": "https://www.congress.gov/crs_external_products/IN/PDF/IN11560/IN11560.7.pdf", "quote": "Operation Warp Speed Contracts for COVID 19 Vaccines", "status": "snippet-only"}
+      {
+       "label": "CRS — Operation Warp Speed contracts (PDF)",
+       "url": "https://www.congress.gov/crs_external_products/IN/PDF/IN11560/IN11560.7.pdf",
+       "quote": "Operation Warp Speed Contracts for COVID 19 Vaccines",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -192,7 +274,12 @@
      "early_vs_late": "No buyer pool existed; the question does not arise.",
      "relevance": "The reminder that an orderbook is one lever: if manufacturing and soft costs dominate, a cost curve can move without any buyer-side pooling.",
      "sources": [
-      {"label": "DOE — SunShot Initiative", "url": "https://www.energy.gov/eere/solar/sunshot-initiative", "quote": "achieved SunShot's original 2020 cost target of $0.06 per kilowatt-hour for utility-scale photovoltaic (PV) solar power three years ahead of schedule", "status": "snippet-only"}
+      {
+       "label": "DOE — SunShot Initiative",
+       "url": "https://www.energy.gov/eere/solar/sunshot-initiative",
+       "quote": "achieved SunShot's original 2020 cost target of $0.06 per kilowatt-hour for utility-scale photovoltaic (PV) solar power three years ahead of schedule",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -203,8 +290,18 @@
      "early_vs_late": "Each round priced independently at that round's market level, so later buyers paid more — 2022–24 interest-rate and supply-chain inflation overwhelmed technology learning.",
      "relevance": "The macro warning for any orderbook: the pool needs an explicit, separately priced provision for economy-wide inflation, or a good design still fails on a bad macro draw. The same shock broke UAMPS.",
      "sources": [
-      {"label": "NYSERDA — 2023 offshore wind solicitation awards (PDF)", "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Offshore-Wind/2023-Offshore-Wind-Solicitation-Awards.pdf", "quote": "weighted average strike price of awarded offshore wind projects over the 25-year life of the contracts is $96.72 per megawatt hour", "status": "snippet-only"},
-      {"label": "offshoreWIND.biz — inflation price-relief requests", "url": "https://www.offshorewind.biz/2023/09/01/new-york-offshore-wind-developers-ask-for-inflation-related-price-relief-nyserda-argues-some-requests-not-tied-to-inflationary-pressures/", "quote": "requesting an average rate increase of 48% to $167.25 per megawatt-hour", "status": "snippet-only"}
+      {
+       "label": "NYSERDA — 2023 offshore wind solicitation awards (PDF)",
+       "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Offshore-Wind/2023-Offshore-Wind-Solicitation-Awards.pdf",
+       "quote": "weighted average strike price of awarded offshore wind projects over the 25-year life of the contracts is $96.72 per megawatt hour",
+       "status": "snippet-only"
+      },
+      {
+       "label": "offshoreWIND.biz — inflation price-relief requests",
+       "url": "https://www.offshorewind.biz/2023/09/01/new-york-offshore-wind-developers-ask-for-inflation-related-price-relief-nyserda-argues-some-requests-not-tied-to-inflationary-pressures/",
+       "quote": "requesting an average rate increase of 48% to $167.25 per megawatt-hour",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -215,7 +312,12 @@
      "early_vs_late": "Simultaneous member-competitors, no order positions.",
      "relevance": "The duration answer for a microreactor pool's public backstop: government capital can be transitional, sunsetting once the standardised fleet has de-risked itself, rather than a permanent subsidy.",
      "sources": [
-      {"label": "CSIS — Sematech's lessons for the NSTC", "url": "https://www.csis.org/analysis/implementing-chips-act-sematechs-lessons-national-semiconductor-technology-center", "quote": "Department of Defense was tasked with providing $500 million over five years to be matched by industry contributions", "status": "snippet-only"}
+      {
+       "label": "CSIS — Sematech's lessons for the NSTC",
+       "url": "https://www.csis.org/analysis/implementing-chips-act-sematechs-lessons-national-semiconductor-technology-center",
+       "quote": "Department of Defense was tasked with providing $500 million over five years to be matched by industry contributions",
+       "status": "snippet-only"
+      }
      ]
     }
    ]
@@ -231,8 +333,18 @@
      "early_vs_late": "Underwritten per plant, never by order position.",
      "relevance": "The overrun pool does not need inventing: a member-owned nuclear mutual with a construction product already exists, and the adaptation is to many smaller standardised units whose loss data compounds unit over unit.",
      "sources": [
-      {"label": "Insurance Journal — Marsh placement referencing the nuclear mutual pools", "url": "https://www.insurancejournal.com/news/west/2026/03/26/863586.htm", "quote": "backed by U.S., London, and Bermuda insurers alongside traditional nuclear insurance pools and risk-retention vehicles", "status": "fetched"},
-      {"label": "Wikipedia — Nuclear Electric Insurance Limited", "url": "https://en.wikipedia.org/wiki/Nuclear_Electric_Insurance_Limited", "quote": "insures operators for any costs associated with property damage, decontamination, extended outages", "status": "snippet-only"}
+      {
+       "label": "Insurance Journal — Marsh placement referencing the nuclear mutual pools",
+       "url": "https://www.insurancejournal.com/news/west/2026/03/26/863586.htm",
+       "quote": "backed by U.S., London, and Bermuda insurers alongside traditional nuclear insurance pools and risk-retention vehicles",
+       "status": "fetched"
+      },
+      {
+       "label": "Wikipedia — Nuclear Electric Insurance Limited",
+       "url": "https://en.wikipedia.org/wiki/Nuclear_Electric_Insurance_Limited",
+       "quote": "insures operators for any costs associated with property damage, decontamination, extended outages",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -243,8 +355,18 @@
      "early_vs_late": "Every reactor is assessed the same share when the second layer triggers, whatever its vintage.",
      "relevance": "The classic template for the pool's second band: bounded per-project capital first, then equal retrospective assessment across the whole fleet for the tail.",
      "sources": [
-      {"label": "NRC — backgrounder on nuclear insurance and disaster relief", "url": "https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/nuclear-insurance", "quote": "Backgrounder on Nuclear Insurance and Disaster Relief", "status": "snippet-only"},
-      {"label": "CRS — Price-Anderson Act summary", "url": "https://www.congress.gov/crs-product/IF10821", "quote": "Nuclear Power Industry Liability Limits and Compensation to the Public", "status": "snippet-only"}
+      {
+       "label": "NRC — backgrounder on nuclear insurance and disaster relief",
+       "url": "https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/nuclear-insurance",
+       "quote": "Backgrounder on Nuclear Insurance and Disaster Relief",
+       "status": "snippet-only"
+      },
+      {
+       "label": "CRS — Price-Anderson Act summary",
+       "url": "https://www.congress.gov/crs-product/IF10821",
+       "quote": "Nuclear Power Industry Liability Limits and Compensation to the Public",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -255,8 +377,19 @@
      "early_vs_late": "Risk shifts to all current ratepayers collectively and continuously; no order positions.",
      "relevance": "The financing insight for the pool: de-risking capital can be worth more than the overrun itself, which is why a credible insurance layer lowers LCOE even if it never pays out.",
      "sources": [
-      {"label": "Consumer Scotland — public information note on nuclear RAB and Sizewell C", "url": "https://consumer.scot/publications/public-information-note-on-nuclear-rab-and-sizewell-c-html/", "quote": "the taxpayer is taking an unknown and uncertain risk of cost overruns", "status": "snippet-only"},
-      {"label": "Business Energy Deals — nuclear RAB explainer", "url": "https://www.businessenergydeals.co.uk/blog/regulated-asset-base-nuclear/", "quote": "adding 0.3p/kWh to unit rates", "status": "snippet-only"}
+      {
+       "label": "Consumer Scotland — public information note on nuclear RAB and Sizewell C",
+       "url": "https://consumer.scot/publications/public-information-note-on-nuclear-rab-and-sizewell-c-html/",
+       "quote": "the taxpayer is taking an unknown and uncertain risk of cost overruns",
+       "status": "snippet-only"
+      },
+      {
+       "label": "Business Energy Deals — nuclear RAB explainer",
+       "url": "https://www.businessenergydeals.co.uk/blog/regulated-asset-base-nuclear/",
+       "quote": "adding 0.3p/kWh to unit rates",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
      ]
     },
     {
@@ -267,8 +400,18 @@
      "early_vs_late": "A fixed four-owner consortium from the start; the split that mattered was shareholder versus ratepayer.",
      "relevance": "Why the pool spreads overruns across bounded layers held by different parties: piling the whole tail onto one fixed-price counterparty bankrupts the counterparty and then costs more anyway.",
      "sources": [
-      {"label": "DOE Liftoff report — Vogtle analysis", "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf", "quote": "the budget reset was a substantially more accurate estimate of the total cost and ensured project success", "status": "fetched"},
-      {"label": "Georgia Recorder — PSC passes $7.6B to ratepayers", "url": "https://georgiarecorder.com/2023/12/19/state-regulators-pass-along-7-6b-tab-to-ratepayers-for-georgia-powers-plant-vogtle/", "quote": "State regulators pass along $7.6B tab to ratepayers", "status": "snippet-only"}
+      {
+       "label": "DOE Liftoff report — Vogtle analysis",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/11/DOE-Advanced-Nuclear-Liftoff-Report.pdf",
+       "quote": "the budget reset was a substantially more accurate estimate of the total cost and ensured project success",
+       "status": "fetched"
+      },
+      {
+       "label": "Georgia Recorder — PSC passes $7.6B to ratepayers",
+       "url": "https://georgiarecorder.com/2023/12/19/state-regulators-pass-along-7-6b-tab-to-ratepayers-for-georgia-powers-plant-vogtle/",
+       "quote": "State regulators pass along $7.6B tab to ratepayers",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -279,7 +422,12 @@
      "early_vs_late": "Tiered by overrun magnitude, never by commitment timing.",
      "relevance": "A ready, regulator-approved answer to exactly how the pool's bands should escalate: define severity bands and assign each an explicit split.",
      "sources": [
-      {"label": "EFI CSF paper — Box 1, CVOW schedule (VA SCC PUR-2021-00142)", "url": "https://efifoundation.org/wp-content/uploads/sites/3/2023/10/20231011-CSF-FINAL-1.pdf", "quote": "$10.3 billion - $11.3 billion: 50% customers / 50% company", "status": "fetched"}
+      {
+       "label": "EFI CSF paper — Box 1, CVOW schedule (VA SCC PUR-2021-00142)",
+       "url": "https://efifoundation.org/wp-content/uploads/sites/3/2023/10/20231011-CSF-FINAL-1.pdf",
+       "quote": "$10.3 billion - $11.3 billion: 50% customers / 50% company",
+       "status": "fetched"
+      }
      ]
     },
     {
@@ -290,8 +438,18 @@
      "early_vs_late": "The backstop engages only once three or more projects exist — federal capital is gated on a real orderbook forming, though the bill does not split funds by order position.",
      "relevance": "Live legislative traction for the exact backstop layer the proposal cards describe: shared overrun capital conditional on aggregation.",
      "sources": [
-      {"label": "ANS — Gallego and Risch submit ARC Act 2.0", "url": "https://www.ans.org/news/2026-02-11/article-7750/gallego-and-risch-submit-arc-act-20-in-the-senate/", "quote": "authorize up to $3.6 billion to help offset cost overruns at three or more next-generation nuclear reactor projects", "status": "snippet-only"},
-      {"label": "Sen. Risch — ARC Act press release", "url": "https://www.risch.senate.gov/news/press-releases/what-are-they-saying-risch-gallego-nuclear-bill-is-critical-to-meet-growing-energy-demands/", "quote": "minimizing the risk of project cost overruns", "status": "snippet-only"}
+      {
+       "label": "ANS — Gallego and Risch submit ARC Act 2.0",
+       "url": "https://www.ans.org/news/2026-02-11/article-7750/gallego-and-risch-submit-arc-act-20-in-the-senate/",
+       "quote": "authorize up to $3.6 billion to help offset cost overruns at three or more next-generation nuclear reactor projects",
+       "status": "snippet-only"
+      },
+      {
+       "label": "Sen. Risch — ARC Act press release",
+       "url": "https://www.risch.senate.gov/news/press-releases/what-are-they-saying-risch-gallego-nuclear-bill-is-critical-to-meet-growing-energy-demands/",
+       "quote": "minimizing the risk of project cost overruns",
+       "status": "snippet-only"
+      }
      ]
     },
     {
@@ -302,7 +460,12 @@
      "early_vs_late": "Single-project placement.",
      "relevance": "Commercial reinsurance is already willing to price FOAK advanced-reactor construction risk — a microreactor pool could attract layered private capacity once early units de-risk the design, rather than leaning on government indefinitely.",
      "sources": [
-      {"label": "Insurance Journal — Marsh secures insurance for Kemmerer construction", "url": "https://www.insurancejournal.com/news/west/2026/03/26/863586.htm", "quote": "the first time a next-generation U.S. nuclear plant has gained direct access to the commercial insurance marketplace", "status": "fetched"}
+      {
+       "label": "Insurance Journal — Marsh secures insurance for Kemmerer construction",
+       "url": "https://www.insurancejournal.com/news/west/2026/03/26/863586.htm",
+       "quote": "the first time a next-generation U.S. nuclear plant has gained direct access to the commercial insurance marketplace",
+       "status": "fetched"
+      }
      ]
     }
    ]

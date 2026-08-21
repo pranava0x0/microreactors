@@ -28,12 +28,17 @@
 
   /* Inline citation chips: numbered superscript links, one per source.
      An empty list renders an explicit "no source yet" marker, never a blank —
-     an honest absence has to be visible to be fixed. */
+     an honest absence has to be visible to be fixed. A source whose page was
+     never directly read (status snippet-only: search-corroborated, usually a
+     bot-walled host) renders with a dagger so it never dresses as a full
+     citation. */
   function cite(sources) {
     if (!sources || !sources.length) return '<span class="nosrc">no source yet</span>';
     return sources.map(function (s, i) {
+      var snip = s.status === "snippet-only";
       return '<a class="cite" href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer" ' +
-        'title="' + esc(s.label) + '">[' + (i + 1) + "]</a>";
+        'title="' + esc(s.label) + (snip ? " · search-corroborated; page not directly fetched" : "") +
+        '">[' + (i + 1) + (snip ? "†" : "") + "]</a>";
     }).join("");
   }
   function srcList(sources, cls) {
@@ -330,8 +335,10 @@
   var reg = D.sources_index || [];
   render($("evsummary"),
     esc(s.source_count) + " distinct sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
-    " pipeline rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) +
-    " demand bands; the uncited bands are named on the Demand tab.");
+    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) +
+    " demand bands; the uncited bands are named on the Applications tab. Chips marked † cite " +
+    "pages corroborated through search results whose hosts refused a direct fetch — kept, " +
+    "marked, and re-checked by tools/verify_quotes.py.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
     return '<div class="rrow"><span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' +

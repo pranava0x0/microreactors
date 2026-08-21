@@ -54,9 +54,12 @@ and continues from "Next actions". Keep updates terse; strike items when done.
 - [x] Pages workflow written (.github/workflows/pages.yml, enablement:true, gates on suite)
 - [x] Repo facts: github.com/pranava0x0/microreactors PRIVATE, default main, gh authed,
       no secrets/PII in tree (scanned). Plan unknown -> try Pages private, else flip public.
-- [ ] Integrate agent output (sector intros, new citations, tab renames)
-- [ ] Full suite + 3-viewport verify
-- [ ] /learnings
-- [ ] Commit, push, PR, Codex rounds, merge
+- [x] Integrate agent output (8 sector contexts, 4 band closures incl. 2 corrections,
+      uncited 12 -> 8, tab renames Tracker/Costs/Applications)
+- [x] Full suite green (29 tests incl. e2e); Applications/landing screenshots verified
+- [x] /learnings written to both repos; issues.md, backlog.md, docs/agent-runs.md filled
+- [x] Commits 18aad96, 2d0ad2e, baf4763; branch pushed; PR #2 open
+      (https://github.com/pranava0x0/microreactors/pull/2)
+- [ ] Codex review rounds on PR #2 (background poll running), then merge to main
 - [ ] Pages: gh api repos/pranava0x0/microreactors/pages -X POST -f build_type=workflow
       (fallback: flip visibility public first); verify live URL serves the real document
