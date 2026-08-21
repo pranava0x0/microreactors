@@ -1,0 +1,510 @@
+{
+ "_meta": {
+  "captured": "2026-08-21",
+  "note": "Regulatory and policy pathways that would widen the microreactor market. kind: 'enacted' = law/rule in force, 'program' = live funded programme, 'proposed' = pending rule or bill, 'finding' = published research result, 'idea' = this site's own proposal, carried without a citation because none exists. Research trail: data/research/policy-pathways.json. Two citation corrections from that pass are baked in here: the DoD 99.9% availability mandate is 10 U.S.C. 2920 (not 2911(b)), and Alaska's SB 177 was signed in 2022 with implementing regulations in August 2025.",
+  "captured_note": "Statuses are as of 2026-08-21; EL25-49 tariff language and NRC Part 57 were still pending."
+ },
+ "groups": [
+  {
+   "id": "diesel",
+   "name": "Replace diesel backup",
+   "pathways": [
+    {
+     "name": "EPA emergency-engine hour caps (RICE NESHAP)",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Emergency diesel gensets may run without limit only in true emergencies; non-emergency operation (testing plus grid-support dispatch) is capped at 100 hours a year, with a 50-hour sub-limit for grid-support dispatch. A May 2025 EPA memo loosened when standby diesel can be dispatched, but the cap structure stands. A microreactor has no hour cap: it can run as continuous baseload or support the grid without ever tripping the ceiling that constrains a diesel fleet.",
+     "sources": [
+      {
+       "label": "EPA — provisions for emergency engines",
+       "url": "https://www.epa.gov/stationary-engines/fact-sheet-specifics-about-provisions-related",
+       "quote": "A combined total of 100 hours per year may be used to prevent blackouts and brownouts",
+       "status": "fetched"
+      },
+      {
+       "label": "Kirkland & Ellis — 2025 EPA guidance on data-center backup generators",
+       "url": "https://www.kirkland.com/publications/kirkland-alert/2025/05/new-epa-guidance-clarifies-when-data-centers-and-other-operators-may-utilize-emergency-backup",
+       "quote": "Energy Emergency Alert Level 1 when transition to Level 2 is imminent",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "The Tier 4 reclassification cliff",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Emergency gensets are exempt from EPA's strictest Tier 4 Final standard; use one beyond the emergency exemptions and it reclassifies as non-emergency, requiring Tier 4 compliance most standby fleets cannot meet without replacement. Illinois requires Tier 4 Final for most new data-center diesel permits from December 2026, and California's South Coast AQMD has denied permits at 100 MW+ campuses without it. A microreactor carries no engine-tier certification and no reclassification risk however much it runs.",
+     "sources": [
+      {
+       "label": "Woodstock Power — Tier 4 Final impacts on diesel generators",
+       "url": "https://woodstockpower.com/blog/epa-tier-4-final-regulation-impacts-diesel-generators/",
+       "quote": "Emergency standby generator sets are exempt from Tier 4 requirements and can be Tier 2 or Tier 3",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "California's diesel restrictions, and a bill that forgot nuclear",
+     "status": "proposed",
+     "kind": "proposed",
+     "mechanism": "CARB's toxic-control measure already limits stationary emergency diesel to outages beyond the facility's control. SB 978 (amended March 2026) would go further for large data centers: backup power restricted to onsite solar, wind or battery storage only. Microreactors are not on the eligible list. That is a drafting gap to close by amendment, and until it closes, the bill is a diesel ban that a microreactor cannot legally answer.",
+     "sources": [
+      {
+       "label": "California Legislature — SB-978 text as amended 2026-03-23",
+       "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB978",
+       "quote": "shall only use onsite solar or wind generation or a battery electric storage system as backup power generation",
+       "status": "fetched"
+      },
+      {
+       "label": "CARB — backup generator use during PSPS",
+       "url": "https://ww2.arb.ca.gov/resources/fact-sheets/carb-regulations-allow-use-back-generators-during-public-safety-power-shutoff",
+       "quote": "beyond the reasonable control of the facility",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "Texas Backup Power Package Program excludes nuclear",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "The $1.8B programme (16 TAC §25.513, adopted May 2026) funds critical facilities under 2.5 MW to install a hybrid backup package, but fixes the technology mix to natural gas or propane generation, battery storage and solar. Nuclear is not an eligible source, so the one state actively courting nuclear investment has a funded backup-power programme a microreactor cannot enter without an administrative or legislative amendment.",
+     "sources": [
+      {
+       "label": "EnergyChoiceMatters — PUC clarifies TBPP islanding rules",
+       "url": "https://www.energychoicematters.com/stories/20260508b.html",
+       "quote": "must not export power to the electric grid",
+       "status": "fetched"
+      },
+      {
+       "label": "PowerGen Enterprises — TBPP facility guide",
+       "url": "https://powergenenterprises.com/texas-backup-power-package-program-guide",
+       "quote": "the TBPP does not fund a plain diesel generator",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "CMS already accepts non-generator emergency power",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "CMS's categorical waiver QSO-23-11-LSC permits hospitals and most certified facilities to satisfy the alternate-energy-source requirement with something other than a generator set: fuel cells, solar, wind and energy-storage microgrids qualify, provided NFPA 99 and the electrical code are met (life-support long-term-care facilities still need a generator). This is the strongest existing precedent for an always-on microreactor plus bridging battery qualifying as hospital emergency power.",
+     "sources": [
+      {
+       "label": "America's Essential Hospitals — CMS guidance on alternate energy sources",
+       "url": "https://essentialhospitals.org/cms-updates-guidance-alternative-energy-sources/",
+       "quote": "onsite alternative energy sources and micro-grids, which can be powered by fuel cells, solar, wind, and energy storage",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "NFPA 110's ten-second start, honestly stated",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Hospital life-safety branches must regain power within 10 seconds of a utility failure, the requirement that made diesel the default. An always-on microreactor never needs to start, but in a paired design it is the bridging battery that carries the 10-second ride-through while the reactor carries duration. Any hospital pitch should say that plainly rather than imply the reactor itself starts in ten seconds.",
+     "sources": [
+      {
+       "label": "backuppower.ai — hospital generator requirements under NFPA 99/110",
+       "url": "https://backuppower.ai/healthcare/hospital-generator-requirements/",
+       "quote": "power must be restored to the Life Safety and Critical branches within 10 seconds",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ]
+    },
+    {
+     "name": "The DoD 99.9% availability mandate (10 U.S.C. 2920)",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "By end of FY2030 the Pentagon must ensure the full energy load of each installation's critical missions has at least 99.9% availability per year, with mission-specific standards up to 99.9999%. This statute (§2920; the adjacent §2911(b) carries the general resilience authorities) is the legal driver behind ANPI and Janus: a multi-year-fuelled microreactor fits an availability floor that fuel-logistics-dependent diesel struggles to guarantee.",
+     "sources": [
+      {
+       "label": "10 U.S.C. §2920 (Cornell LII)",
+       "url": "https://www.law.cornell.edu/uscode/text/10/2920",
+       "quote": "minimum level of availability of 99.9 percent",
+       "status": "fetched"
+      },
+      {
+       "label": "10 U.S.C. §2911 (Cornell LII)",
+       "url": "https://www.law.cornell.edu/uscode/text/10/2911",
+       "quote": "establish metrics and standards for the assessment of energy resilience",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "Dublin's template: on-site generation as the price of a grid connection",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Ireland's regulator ended the Dublin data-center connection freeze in December 2025 on the condition that new data centers install on-site generation or batteries sized to their full demand, support the grid when needed, and source 80% of annual demand from new renewables. It is nearly a ready-made regulatory template for microreactor-plus-battery, except the qualifying sources named are renewables; nuclear eligibility is unconfirmed and should be treated as an advocacy target, not an assumption.",
+     "sources": [
+      {
+       "label": "Energy Connects — Ireland ends data-center connection moratorium",
+       "url": "https://www.energyconnects.com/news/utilities/2025/december/ireland-ends-moratorium-on-new-power-links-to-data-centers/",
+       "quote": "install on-site generation or battery systems capable of meeting its full electricity demand",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "Add microreactors to every backup-power technology list",
+     "status": "idea — this site's proposal",
+     "kind": "idea",
+     "mechanism": "The pattern across TBPP, SB 978 and Dublin is identical: regulators write technology lists for clean backup and nuclear is simply absent, on drafting inertia rather than any stated objection. A standing advocacy motion: petition each such rule to name any NRC- or DOE-authorised generation source meeting the availability spec, so the list tests performance rather than technology. Texas is the highest-value first target because the fund already exists and the state's own HB 14 nuclear office could carry the amendment.",
+     "sources": []
+    },
+    {
+     "name": "A CMS-style categorical waiver for reactor microgrids",
+     "status": "idea — this site's proposal",
+     "kind": "idea",
+     "mechanism": "CMS extended emergency-power eligibility to fuel-cell microgrids by waiver rather than rulemaking. The same instrument fits here: a categorical waiver recognising an always-on microreactor with a code-compliant bridging battery as an alternate energy source for non-life-support facilities, with the battery satisfying the 10-second start and the reactor the 96-hour duration requirement diesel meets with fuel trucks.",
+     "sources": []
+    }
+   ]
+  },
+  {
+   "id": "batteries",
+   "name": "Pair with batteries",
+   "pathways": [
+    {
+     "name": "INL's MAGNET testbed already runs the pairing",
+     "status": "program",
+     "kind": "program",
+     "mechanism": "INL's MAGNET rig emulates a microreactor's output with controllable electric heaters (250 kW, extendable to ~450 kW) inside a systems-integration lab that also holds a microgrid testbed with batteries, solar, load banks and smart inverters, so microreactor-plus-storage control strategies are being validated on real hardware before any commercial deployment.",
+     "sources": [
+      {
+       "label": "INL — MAGNET testbed",
+       "url": "https://inl.gov/document/microreactor-agile-non-nuclear-experimental-testbed-magnet/",
+       "quote": "up to 250 kilowatts of energy through controllable electrical heater elements",
+       "status": "snippet-only"
+      },
+      {
+       "label": "INL — distributed energy and grid systems integration",
+       "url": "https://inl.gov/integrated-energy/distributed-energy-and-grid-systems-integration/",
+       "quote": "microgrid testing and demonstration",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "The published economics: storage improves the reactor's NPV",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "A 2025 Applied Energy study (INL and University of Michigan) modelled a microreactor paired with a liquid-metal battery across ERCOT, PJM and MISO and found the pairing consistently improves the reactor's net present value against standalone operation, with the benefit varying by market. The wider SMR literature converges on the same shape: run the reactor flat at high capacity factor and let storage follow the load, rather than cycling the reactor.",
+     "sources": [
+      {
+       "label": "OSTI — microreactor + liquid metal battery study (Applied Energy 2025)",
+       "url": "https://www.osti.gov/pages/biblio/3013828-microreactor-liquid-metal-battery-system-potential-energy-markets-ex-ante-evaluation-costs-technology-policy-impacts",
+       "quote": "Coupling an LMB to a microreactor consistently improves the net present value of a microreactor compared to its standalone operation",
+       "status": "fetched"
+      },
+      {
+       "label": "ScienceDirect — SMR flexible-operation economics (fetch blocked; snippet only)",
+       "url": "https://www.sciencedirect.com/science/article/abs/pii/S0149197019302070",
+       "quote": "Battery energy storage system is the best option to achieve load following with small modular reactors",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "The vendor already frames it this way",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "Westinghouse's own eVinci framing for data-center microgrids has the reactor doing three jobs: replace the diesel backup fleet, charge the battery storage, and supplement grid or co-located renewable supply. Flat reactor output feeding a battery that shapes the load is the vendor's stated design, matching the published economics above.",
+     "sources": [
+      {
+       "label": "Data Center Frontier — eVinci for AI data centers",
+       "url": "https://www.datacenterfrontier.com/energy/article/55232808/westinghouse-evinci-microreactor-could-yield-5-mw-of-nuclear-power-every-8-years-for-ai-data-centers",
+       "quote": "microreactors can replace diesel backup generators, charge battery storage systems, and supplement power",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "The gap: no battery major has signed a nuclear pairing",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "Targeted searches for Tesla Megapack, Fluence and Form Energy each paired with a nuclear developer found no signed partnership as of this capture. Even Equinix's string of reactor agreements reports no contracted battery component. Form Energy's iron-air pilots at two retiring coal sites are a siting-reuse story, and the closest adjacency found. The pairing exists in labs, vendor decks and papers; the commercial offer does not yet bundle it, which is an open first-mover slot rather than a settled market.",
+     "sources": [
+      {
+       "label": "World Nuclear News — Equinix's SMR and microreactor agreements",
+       "url": "https://www.world-nuclear-news.org/articles/equinix-signs-further-agreements-with-smr-developers",
+       "quote": "twenty 1 MWe Kaleidos high-temperature gas-cooled portable microreactors",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "A co-branded reactor-plus-storage reference skid",
+     "status": "idea — this site's proposal",
+     "kind": "idea",
+     "mechanism": "A microreactor vendor and a battery major co-develop one certified product: a 1 MWe unit with a right-sized battery (roughly 2–4 MWh), IEEE 1547 interconnection profile and a UL-listed microgrid controller, sold as a single SKU with one warranty. The battery partner gets a firm, clean charging source and a new market; the reactor vendor gets the 10-second start and load-following capability its physics does not need to provide. Form Energy's long-duration iron-air chemistry is the natural fit for the multi-day resilience case.",
+     "sources": []
+    },
+    {
+     "name": "Sell the pair as black-start and island-mode service",
+     "status": "idea — this site's proposal",
+     "kind": "idea",
+     "mechanism": "A microreactor-plus-battery microgrid can energise a de-energised local island and hold it, a service utilities currently procure almost exclusively from gas and hydro. Registering the pair as a black-start resource, or contracting island-mode support for critical circuits during regional outages, converts resilience from a private amenity into a paid grid service and gives the interconnecting utility a reason to want the unit online.",
+     "sources": []
+    }
+   ]
+  },
+  {
+   "id": "interconnection",
+   "name": "Faster interconnection",
+   "pathways": [
+    {
+     "name": "FERC Order 2023: readiness beats queue position",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "The 2023 reform replaced first-come-first-served study queues with first-ready-first-served clusters: projects showing site control and financial commitment move ahead of speculative filings, with penalties on late studies. A microreactor with a signed host site is exactly the kind of ready project the reform advantages.",
+     "sources": [
+      {
+       "label": "Troutman Pepper — FERC Order 2023 summary",
+       "url": "https://www.troutman.com/insights/troutman-pepper-summary-of-ferc-order-no-2023-on-generator-interconnection-reform/",
+       "quote": "first-ready, first-served cluster study approach that requires generators to demonstrate commercial readiness",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "Small-generator procedures cover the whole class, precisely stated",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "FERC's Small Generator Interconnection Procedures govern facilities up to 20 MW, so every microreactor on this site interconnects under the lighter SGIP rather than the large-generator process. The further-simplified Fast Track lane is narrower: synchronous machines qualify only to 2 MW, so the 1 MWe class (Kaleidos, R1) can clear Fast Track while a 5 MWe eVinci uses standard SGIP study. The pitch is a size-graded speed advantage, and it should be quoted that precisely.",
+     "sources": [
+      {
+       "label": "National Law Review — FERC amends pro forma SGIP/SGIA",
+       "url": "https://natlawreview.com/article/federal-energy-regulatory-commission-ferc-amends-pro-forma-small-generator-interconn",
+       "quote": "Synchronous and induction machines must be no larger than 2 MW to be eligible for the Fast Track Process",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "Surplus interconnection: inherit a retiring plant's grid connection",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "FERC Order 845 lets a new generator use the unused interconnection capacity of an existing one, and regional variants go further: MISO's replacement process gives a retiring unit's owner about three years to interconnect a successor at the same point, and PJM expanded its surplus service in 2025. A microreactor replacing part of a retiring coal or diesel plant can take the existing connection instead of a multi-year new queue.",
+     "sources": [
+      {
+       "label": "Orrick — FERC Order 845 reforms",
+       "url": "https://www.orrick.com/en/Insights/2018/05/FERC-Order-No-845-Reforms-Generator-Interconnection-Process-Advances-Energy-Storage",
+       "quote": "allows a new interconnection customer to use excess or unused interconnection service capacity",
+       "status": "snippet-only"
+      },
+      {
+       "label": "McGuireWoods — PJM surplus service expansion (2025)",
+       "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/2/ferc-approves-expansion-of-pjms-surplus-interconnection-service-to-address-near-term-resource-adequacy-concerns/",
+       "quote": "expansion of PJM's Surplus Interconnection Service",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ]
+    },
+    {
+     "name": "Coal-to-nuclear siting is studied and quantified",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "DOE's 2022 study screened 157 retired and 237 operating coal sites and found 80% suitable for hosting advanced reactors below gigawatt scale, with 15–35% construction-cost savings from reusing switchyards, transmission, cooling and civil works. The same logic applies down-scale to retiring diesel plants in remote grids, where the microreactor is the right-sized successor.",
+     "sources": [
+      {
+       "label": "DOE — converting coal plants to nuclear",
+       "url": "https://www.energy.gov/ne/articles/8-things-know-about-converting-coal-plants-nuclear-power",
+       "quote": "save up to 35% on construction costs",
+       "status": "fetched"
+      },
+      {
+       "label": "DOE — hundreds of coal sites could convert",
+       "url": "https://www.energy.gov/ne/articles/doe-report-finds-hundreds-retiring-coal-plant-sites-could-convert-nuclear",
+       "quote": "157 retired coal plant sites and 237 operating coal plant sites as potential candidates",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "The co-location caution: Talen–Amazon, twice rejected",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "FERC rejected (2-1, and again on rehearing) the amended interconnection agreement that would have grown direct sales from the Susquehanna nuclear plant to a co-located Amazon campus from 300 to 480 MW, on cost-allocation and justification grounds. Behind-the-meter nuclear-to-load structures face the same objections until the pending rulemaking settles them; co-location is not yet a settled fast path and should not be pitched as one.",
+     "sources": [
+      {
+       "label": "Utility Dive — FERC rejects Talen–Amazon ISA",
+       "url": "https://www.utilitydive.com/news/ferc-interconnection-isa-talen-amazon-data-center-susquehanna-exelon/731841/",
+       "quote": "specific reliability concerns, novel legal issues or other unique factors",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ]
+    },
+    {
+     "name": "The rulemaking to watch: FERC EL25-49 on co-located load",
+     "status": "proposed",
+     "kind": "proposed",
+     "mechanism": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; compliance filings were still in flight at capture. This docket will define whether a microreactor can serve an adjacent data center behind the meter in PJM without full wholesale interconnection.",
+     "sources": [
+      {
+       "label": "Concentric — FERC EL25-49 co-location proceeding summary",
+       "url": "https://ceadvisors.com/summary-of-ferc-order-instituting-proceeding-on-co-located-large-loads-at-generating-facilities-docket-no-el25-49-000-et-al/",
+       "quote": "lacking explicit provisions on co-location arrangements",
+       "status": "fetched"
+      },
+      {
+       "label": "FERC — December 2025 co-location order fact sheet (fetch blocked; snippet only)",
+       "url": "https://www.ferc.gov/news-events/news/fact-sheet-ferc-directs-nations-largest-grid-operator-create-new-rules-embrace",
+       "quote": "establish three new transmission services, and to create new behind-the-meter generation rules",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "ERCOT connect-and-manage, and a 75 MW threshold that spares microreactors",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "ERCOT connects generators without pre-funding network upgrades, managing congestion by redispatch, which trade coverage credits with 1.5–3.5 year interconnections against 4–6+ elsewhere; the curtailment risk that offsets it matters less to a firm 1–20 MW unit than to weather-dependent resources. Texas SB 6 (2025) adds review only for co-location deals with loads of 75 MW or more, well above any single microreactor, and the new withdrawal-limited private-network structure lets co-located generation net against load at the meter.",
+     "sources": [
+      {
+       "label": "pv magazine — ERCOT interconnection speed and connect-and-manage",
+       "url": "https://pv-magazine-usa.com/2026/01/07/ercot-outperformed-on-interconnection-in-2024-likely-due-to-connect-and-manage/",
+       "quote": "does not require network upgrades for interconnections",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      },
+      {
+       "label": "Beatty & Wozniak — SB 6 review and the WLPUN structure",
+       "url": "https://www.bwenergylaw.com/blog/2026/08/texas-data-center-review-delays-batch-zero-and-puts-behind-the-meter-power-in-focus/",
+       "quote": "a firm cap on net grid draw at the point of interconnection",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "Accredit the pair as a resource-adequacy and outage asset",
+     "status": "idea — this site's proposal",
+     "kind": "idea",
+     "mechanism": "A microreactor sited on a retiring plant's surplus interconnection is firm capacity exactly where the grid just lost some: accredit it (with its battery) for resource adequacy, and offer contracted support during other plants' outages, so the interconnecting utility gains a reliability asset rather than a queue burden. An expedited-study lane for firm, dispatchable resources under 20 MW at existing points of interconnection would be the formal version, and no such lane exists today.",
+     "sources": []
+    }
+   ]
+  },
+  {
+   "id": "licensing",
+   "name": "Licensing and deployment speed",
+   "pathways": [
+    {
+     "name": "ADVANCE Act: a strategy mandate and a halved review rate",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $148, a concrete cost advantage available now.",
+     "sources": [
+      {
+       "label": "NEI — ADVANCE Act overview (PDF)",
+       "url": "https://lp.nei.org/rs/766-WBL-877/images/ADVANCEsummary.pdf",
+       "quote": "reduced hourly rate for advanced nuclear reactor applicants is $148 per hour",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "Part 53 is final",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "NRC finalised its risk-informed, technology-inclusive licensing framework in March 2026, the first new reactor-licensing pathway since 1989 and the first shift in underlying approach since 1956. Advanced designs can now license without the stack of light-water-shaped exemptions the legacy parts required.",
+     "sources": [
+      {
+       "label": "ANS — NRC unveils Part 53 final rule",
+       "url": "https://www.ans.org/news/article-7881/nrc-unveils-part-53-final-rule/",
+       "quote": "first significant shift in the underlying approach to reactor licensing since Part 50 was introduced in 1956",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "Part 57, the microreactor rule: 6–12 months, if it lands",
+     "status": "proposed",
+     "kind": "proposed",
+     "mechanism": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less) would approve fleets of identical units, allow limited construction ahead of full permitting, and streamline environmental review; NRC's own estimate is $3.76–11.84B in combined savings and licensing-to-deployment in 6–12 months for qualifying designs. It is a proposed rule, and every use of that 6–12 month number should say so.",
+     "sources": [
+      {
+       "label": "ANS — NRC introduces microreactor regulatory framework",
+       "url": "https://www.ans.org/news/2026-04-27/article-7981/nrc-introduces-microreactor-regulatory-framework/",
+       "quote": "Reduce licensing and deployment to just 6-12 months",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "The 2025 executive orders and the DOE pilot track",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "The May 2025 orders set an 18-month ceiling on NRC decisions for new reactors and created the DOE Reactor Pilot Program, which authorises test reactors at DOE sites under DOE's own safety authority rather than NRC licensing. DOE selected 11 projects from 10 companies by August 2025.",
+     "sources": [
+      {
+       "label": "Holland & Knight — the four May 2025 nuclear executive orders",
+       "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders",
+       "quote": "18-month deadline for construction and operation of new reactors",
+       "status": "snippet-only"
+      }
+     ]
+    },
+    {
+     "name": "The pilot track already produced three critical reactors",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "The executive order's goal of three test reactors critical by July 4, 2026 was met: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah) and Deployable Energy's 1 MWe Unity (July 1). Application to criticality in under a year is the concrete demonstration that the DOE-authorisation track is materially faster than NRC licensing, with the honest caveat that these are DOE-site test reactors, not commercially licensed plants.",
+     "sources": [
+      {
+       "label": "ANS — checking in on the Reactor Pilot Program at the deadline",
+       "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+       "quote": "three reactors achieving criticality by July 4, 2026",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "Texas HB 14: a $350M fund that does include microreactors",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Signed June 2025, HB 14 created the Texas Advanced Nuclear Energy Office and a $350M development fund, expandable toward $2B, reimbursing project, workforce and supply-chain expenses for advanced nuclear including microreactors. Unlike the state's backup-power programme, this one names the technology.",
+     "sources": [
+      {
+       "label": "Texas Governor — HB 14 signing statement",
+       "url": "https://gov.texas.gov/news/post/governor-abbott-congratulates-texas-legislature-for-passing-nuclear-power-legislation",
+       "quote": "$350 million—the largest national commitment",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "Alaska SB 177 (2022) and its 2025 regulations",
+     "status": "enacted",
+     "kind": "enacted",
+     "mechanism": "Signed in 2022, SB 177 defines a microreactor (up to 50 MWe) and exempts it from the legislative land-designation step before siting permits; the implementing regulations arrived in August 2025, giving organised boroughs direct approval authority with standard setbacks retained. The date split matters for citation accuracy: statute 2022, regulations 2025.",
+     "sources": [
+      {
+       "label": "World Nuclear News — Alaska simplifies microreactor regulations",
+       "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+       "quote": "an advanced nuclear reactor capable of producing no more than 50 MW",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "name": "State momentum, stated carefully",
+     "status": "finding",
+     "kind": "finding",
+     "mechanism": "Every state plus Puerto Rico took some nuclear legislative or regulatory action in 2025, and Wyoming hosted the first NRC construction permit for a commercial non-light-water reactor (TerraPower, March 2026). Claims that Tennessee or Utah have Alaska-style microreactor siting statutes were checked and not confirmed; they stay off this site until they can be cited.",
+     "sources": [
+      {
+       "label": "Neutron Bytes — state nuclear activity and the TerraPower permit",
+       "url": "https://neutronbytes.com/2026/08/01/doe-selects-five-states-as-nuclear-lifecycle-innovation-campuses/",
+       "quote": "TerraPower received its construction permit in March 2026 for the Natrium plant in Wyoming",
+       "status": "snippet-only"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

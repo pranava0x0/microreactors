@@ -1,0 +1,261 @@
+{
+ "_meta": {
+  "captured": "2026-08-21",
+  "method": "web search + fetch verification (WebFetch; two PDFs fetched via direct HTTPS request and read with PyMuPDF after the WebFetch tool hit a TLS/encoding issue on the same URLs — content is from the live source either way)",
+  "task_a_note": "Sector 'today' summaries describe the incumbent power/backup pattern a 1-20 MW microreactor would displace, each grounded in at least one source fetched this session.",
+  "task_b_note": "Closure attempts for the 12 demand bands a prior research pass (data/research/demand-citations.json) could not source. Budget: two search angles per band, then not_found."
+ },
+ "sector_context": [
+  {
+   "sector": "Compute (data centers)",
+   "today": "U.S. data centers run on grid power with an on-site diesel generator fleet as the standard backup, typically sized N+1 (one more unit than the minimum load needs) so any single generator can fail or be pulled for maintenance without an outage, plus on-site fuel storage to ride out extended outages. Diesel remains the default backup fuel industry-wide — the Uptime Institute notes that 'Few — very few — can even contemplate operating production environments without diesel generators.' A 1-20 MW microreactor would displace this on-site diesel genset fleet and its fuel-resupply contracts as the facility's backup/resilience layer, not the grid interconnection itself.",
+   "sources": [
+    {
+     "label": "Uptime Institute Journal — Data centers without generators: the groundwork is being laid",
+     "url": "https://journal.uptimeinstitute.com/data-centers-without-generators-the-groundwork-is-being-laid/",
+     "quote": "Few — very few — can even contemplate operating production environments without diesel generators.",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER Magazine — Understanding Uptime Institute's Tier III Standard",
+     "url": "https://www.powermag.com/understanding-uptime-institutes-tier-iii-standard-a-guide-to-data-center-electrical-system-design/",
+     "quote": "The generators should have enough fuel storage for at least 12 hours of operation and be designed for rapid start-up.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "sector": "Mining",
+   "today": "Remote mines generate their own power on-site because grid extension is uneconomic at their locations. INL/GAIN's global market analysis states that for the small-rural-community and remote-mining use cases, 'power production is almost entirely from diesel,' with surveyed mine electric capacity ranging 10-40 MW, and even grid-connected mines keep a redundant self-generating source for continuity. A 1-20 MW microreactor would displace part or all of this diesel (or HFO, at larger sites) generator fleet, cutting the fuel-logistics cost that dominates remote-mine operating expense.",
+   "sources": [
+    {
+     "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+     "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+     "quote": "power production is almost entirely from diesel",
+     "status": "fetched",
+     "note": "p.53, Section 5.2.4 Remote Mining Operations. Same section: 'Of the mines referenced in the UAA (2020) study, electric power capacity ranges from 10 to 40 MW,' and mines 'generally require a redundant and self-generating power source to ensure continuous operations' even when grid-connected."
+    }
+   ]
+  },
+  {
+   "sector": "Electric utilities (remote grids)",
+   "today": "More than 100 rural Alaska communities run their own isolated microgrids because they have no road or transmission connection to the regional grid; INL/GAIN reports these communities 'have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities,' with only a small wind-diesel hybrid share. The same diesel-only pattern holds for isolated island and regional grids elsewhere. A 1-20 MW microreactor would displace all or most of a community's diesel genset capacity — the incumbent generation that akenergytransparency.org's and NEI's cost figures (already cited elsewhere in this dataset) are priced against.",
+   "sources": [
+    {
+     "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+     "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+     "quote": "They have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities.",
+     "status": "fetched",
+     "note": "p.50, Section 5.2.1 Small Rural Community use case, citing UAA (2020b) on Alaska's 100+ isolated microgrid communities."
+    }
+   ]
+  },
+  {
+   "sector": "Manufacturing",
+   "today": "Heat-heavy manufacturing plants buy grid power for most of their load and layer on-site combined heat and power (CHP) on top to cover steady thermal and electric demand together; DOE's Better Buildings CHP fact sheet series states CHP 'is well suited for chemical plants, refineries, pulp and paper mills, wastewater treatment plants, food processing sites' and similar facilities, running as a supplement to (or partial replacement for) utility-purchased electricity. Plants without CHP instead keep standby diesel generators for critical processes, the same grid-plus-diesel-backup pattern documented across data centers, hospitals and government facilities elsewhere in this dataset. A 1-20 MW microreactor would displace either the CHP plant's power output or the backup diesel fleet, and a district-heat host could also take the reactor's thermal output.",
+   "sources": [
+    {
+     "label": "DOE Better Buildings — Combined Heat and Power Technology Fact Sheet Series: Overview of CHP Technologies",
+     "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Overview_of_CHP_Technologies.pdf",
+     "quote": "In the industrial sector, CHP is well suited for chemical plants, refineries, pulp and paper mills, wastewater treatment plants, food processing sites",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "sector": "Oil & Gas",
+   "today": "Offshore platforms generate their own power because they have no grid connection: gas turbines (often burning the field's own associated gas) supply primary power while diesel generators handle emergency and black-start backup — 'this gas-turbine-main, diesel-backup architecture is the offshore norm.' Onshore, remote well pads and production hubs run similarly on-site gas or diesel gensets. The one large-scale exception is Norway, where HVDC power-from-shore cables (e.g. Equinor's Johan Sverdrup field) now replace platform generation entirely, cutting emissions to 'around 80% lower than the alternative method of gas turbines' — confirming gas turbines as the baseline the shore-power link replaces. A 1-20 MW microreactor would displace on-site gas-turbine or diesel generation at a platform, pad, or hub, playing the same role shore power plays at Johan Sverdrup without needing a coastal HVDC cable.",
+   "sources": [
+    {
+     "label": "Prismecs — Offshore Platform & FPSO Power Generation: Systems & Codes",
+     "url": "https://prismecs.com/blog/navigating-the-future-of-marine-technology-in-oil-and-gas-exploration",
+     "quote": "This gas-turbine-main, diesel-backup architecture is the offshore norm.",
+     "status": "fetched"
+    },
+    {
+     "label": "Offshore Technology — Electrifying the Johan Sverdrup oil and gas field",
+     "url": "https://www.offshore-technology.com/features/electrifying-johan-sverdrup-oil-gas-field/",
+     "quote": "around 80% lower than the alternative method of gas turbines",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "sector": "Transportation (ports/airports/warehouses)",
+   "today": "Ports, airports and large warehouses run on grid power with diesel generators as the standard backup, and are increasingly adding dedicated on-site generation for resilience because they remain, in Kimley-Horn's framing, a facility where 'a microgrid would allow airports to be less dependent on local utilities for electricity' — which is why a growing number of airports (Indianapolis International among them) are building microgrids with battery storage rather than relying on the grid plus diesel alone. Ports are separately adding shore power so docked ships can shut down diesel auxiliary engines at berth. A 1-20 MW microreactor sits in the same slot as an airport central utility plant or port microgrid: a dedicated on-site resilience block behind the grid connection.",
+   "sources": [
+    {
+     "label": "Kimley-Horn — Microgrids: The Future of Resiliency at Airports",
+     "url": "https://www.kimley-horn.com/news-insights/perspectives/microgrids-future-resiliency-airports/",
+     "quote": "A microgrid would allow airports to be less dependent on local utilities for electricity",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "sector": "Civic infrastructure",
+   "today": "Hospitals and other CMS-regulated facilities must maintain emergency and standby power under 42 CFR 482.15, meeting NFPA 99/101/110 — 'the hospital must implement emergency and standby power systems based on the emergency plan' — which in practice means grid power plus code-mandated, fuel-stocked diesel generators (the dataset's existing NFPA/CMS citations cover the 96-hour fuel-planning detail). Universities instead lean on combined heat and power for everyday supply and resilience together: DOE's Better Buildings series finds 'the average CHP system at a college/university has a capacity of 9.1 MW,' with flagship installations like the University of Minnesota's 22.8 MW system built with black-start capability to keep campus hospitals and labs powered through grid outages. A 1-20 MW microreactor would displace either the code-mandated diesel generator bank (hospitals, prisons, water plants) or the campus CHP plant (universities, medical campuses).",
+   "sources": [
+    {
+     "label": "Cornell LII — 42 CFR 482.15, Condition of participation: Emergency preparedness",
+     "url": "https://www.law.cornell.edu/cfr/text/42/482.15",
+     "quote": "The hospital must implement emergency and standby power systems based on the emergency plan",
+     "status": "fetched"
+    },
+    {
+     "label": "DOE Better Buildings — CHP Market Sector Fact Sheet: Colleges & Universities",
+     "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Colleges_Universities.pdf",
+     "quote": "The average CHP system at a college/university has a capacity of 9.1 MW.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "sector": "Agriculture & Food",
+   "today": "Most irrigation power still comes from diesel or petrol engines, or from grid-fed electric motors backed by diesel generators where grid service is unreliable — 'the vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors' as well as grid-plus-diesel-backup electric motors. Lit greenhouse operations instead often run on-site combined heat and power, sized to supply grow-light electricity, heat and CO2 together, and DOE's greenhouse CHP fact sheet notes such 'CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.' A 1-20 MW microreactor would displace diesel irrigation/backup gensets at farm scale, or a greenhouse campus's CHP plant.",
+   "sources": [
+    {
+     "label": "energypedia — Powering Agriculture: Irrigation",
+     "url": "https://energypedia.info/wiki/Powering_Agriculture:_Irrigation",
+     "quote": "The vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors",
+     "status": "fetched"
+    },
+    {
+     "label": "DOE Better Buildings — CHP Market Sector Fact Sheet: Greenhouses",
+     "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Greenhouses.pdf",
+     "quote": "CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "band_closures": [
+  {
+   "label": "Company-owned (enterprise) data centers, claimed 1-5 MW",
+   "verdict": "not_found",
+   "published_figure": "No source ties a specific MW figure to the 'company-owned/enterprise' ownership category as such. Dgtl Infra's own data-center taxonomy page gives MW figures for the adjacent size/lease categories instead but states no capacity number in its 'Enterprise Data Centers' section (named examples: Bank of America, Coca-Cola, ExxonMobil, JPMorgan Chase, Procter & Gamble, Walmart). The nearest numeric match is a different category on the same page, 'Wholesale data centers,' which are leased to a single large tenant rather than owned by it.",
+   "sources": [
+    {
+     "label": "Dgtl Infra — Types of Data Centers: Enterprise, Colocation, Hyperscale",
+     "url": "https://dgtlinfra.com/types-of-data-centers/",
+     "quote": "suitable for individual power capacity requirements of 1 to 5 megawatts (MW)",
+     "status": "fetched",
+     "note": "This 1-5 MW figure is stated for 'Wholesale data centers' (leased to one large tenant), not for the 'Enterprise Data Centers' section, which gives no MW figure at all."
+    }
+   ]
+  },
+  {
+   "label": "Dedicated baseload and outage-protection blocks within larger data-center campuses, claimed 1-20 MW",
+   "verdict": "not_found",
+   "published_figure": "No source describes a distinctly-sized 'dedicated baseload/outage-protection block' within a larger data-center campus as its own published category, after two search angles (this pass and the prior pass's phased 24/48/72 MW grid-interconnection increments, which describe total campus interconnection phasing, not a microreactor-sized backup block). This appears to be the dataset's own framing device for how a microreactor attaches to a larger campus rather than an independently documented market category.",
+   "sources": []
+  },
+  {
+   "label": "Large pozzolan mines with onsite crushing, grinding or drying, claimed 1-5 MW",
+   "verdict": "not_found",
+   "published_figure": "No single source ties a facility-level MW figure to a pozzolan operation. Two different (unfetched, search-derived) sources give the two halves of a possible derivation without agreeing on one plant: a New Zealand natural-pozzolan study puts drying alone at 72-356 kWh/tonne, and trade press reports Eco Material's Kirkland Mine facility has crushing/classifying equipment scaled for up to 500,000 tons/year. Multiplying across these two different sources (not a valid single-source derivation) implies roughly 4-20 MW average for a large facility on drying alone, before crushing/grinding — above, not within, the claimed 1-5 MW band, suggesting the band fits smaller or older pozzolan operations rather than a large modern one.",
+   "sources": [
+    {
+     "label": "ConcreteNZ conference paper — Natural Pozzolans: An Introduction",
+     "url": "https://cdn.ymaws.com/concretenz.org.nz/resource/resmgr/docs/conf/2023/s3_p5.pdf",
+     "quote": "the drying process requires between 72 to 356 kWh per tonne",
+     "status": "snippet-only"
+    },
+    {
+     "label": "Concrete Products — Pozzolan Proliferation",
+     "url": "https://concreteproducts.com/index.php/2022/08/06/pozzolan-proliferation/",
+     "quote": "crushing and classifying equipment scaled for up to 500,000 tons' annual throughput",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "label": "Lime plants, claimed 2-8 MW",
+   "verdict": "derived",
+   "published_figure": "EuLA/Ecofys's lime-industry technical report states, in one document, both an electricity-intensity figure and a typical kiln production rate: 'The electricity consumption in lime manufacturing is small, in the order of magnitude of ±60 kWh/tonne lime product,' plus BREF component intensities of kiln 5-50, hydrating 5-30, and grinding 4-40 kWh/tonne; the same report separately states 'Ninety per cent of the kilns has a capacity between 10 and 500 tonnes per day.' Derived: at the largest typical kiln (500 t/day) and the headline ±60 kWh/tonne figure, average electrical demand is approximately 1.25 MW; using the full kiln+hydrating+grinding BREF range (14-120 kWh/tonne) at the same throughput gives approximately 0.3-2.5 MW. Both derivations sit at or below the claimed 2-8 MW band's floor, suggesting the band is sized for something larger than one typical (90th-percentile) kiln — e.g. a multi-kiln plant, or one with downstream processing this report doesn't itemize.",
+   "sources": [
+    {
+     "label": "European Lime Association / Ecofys — A Competitive and Efficient Lime Industry (Technical Report)",
+     "url": "https://www.eula.eu/wp-content/uploads/2019/02/A-Competitive-and-Efficient-Lime-Industry-Technical-report-by-Ecofys_0.pdf",
+     "quote": "The electricity consumption in lime manufacturing is small, in the order of magnitude of ±60 kWh/tonne lime product",
+     "status": "fetched"
+    },
+    {
+     "label": "European Lime Association / Ecofys — A Competitive and Efficient Lime Industry (Technical Report)",
+     "url": "https://www.eula.eu/wp-content/uploads/2019/02/A-Competitive-and-Efficient-Lime-Industry-Technical-report-by-Ecofys_0.pdf",
+     "quote": "Ninety per cent of the kilns has a capacity between 10 and 500 tonnes per day",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "label": "Chemical plants ELECTRICAL demand (existing dataset entry is thermal only), claimed 5-50 MW",
+   "verdict": "not_found",
+   "published_figure": "No source isolates chemical-plant ELECTRICAL demand (as distinct from the thermal/process-heat MWth figures already in this dataset) at facility level, after two search angles. The only comparanda found remain generic and cross-industry, not chemical-specific: industrial-energy trade sources cite 'as high as 10MW at typical auto plants and 25MW at typical steel mills' with no equivalent chemical-plant figure, and a national aggregate (the German chemical sector draws roughly 50 TWh/year, 9% of German electricity) has no per-plant breakdown.",
+   "sources": []
+  },
+  {
+   "label": "Large integrated sawmills and wood-products plants, claimed 1-8 MW",
+   "verdict": "not_found",
+   "published_figure": "No single-facility electrical MW figure was found after two search angles. Sources report only per-unit-volume intensity (roughly 77 kWh/m3 of lumber) or scale statements for adjacent-but-different configurations: a combined sawmill-plus-pulp-mill complex can consume 'more than 85 megawatts' (too large, and not sawmill-only), while biomass-to-power installations at wood plants generate '10 to 20 MW or more' of electricity OUTPUT for sale — the opposite of a sawmill's own consumption. Neither converts cleanly to a stand-alone large sawmill's demand.",
+   "sources": []
+  },
+  {
+   "label": "Battery-material plants, claimed 5-30 MW",
+   "verdict": "not_found",
+   "published_figure": "No source gives a facility-level MW figure for a conventional lithium-hydroxide or cathode-precursor plant (Albemarle, Livent, Umicore) at commercial scale after two search angles; coverage of these named plants is limited to production tonnage and investment dollars, not power draw. One academic life-cycle-analysis paper on an alternative (electrodialysis) lithium-hydroxide process states 175.6 MW is required for a 250 tph spodumene input, but this describes a different, non-incumbent production technology at a scale roughly 6-35x above the claimed 5-30 MW band, so it is not used as representative.",
+   "sources": []
+  },
+  {
+   "label": "Battery-recycling plants, claimed 2-15 MW",
+   "verdict": "not_found",
+   "published_figure": "No facility-level MW figure found for Redwood Materials, Li-Cycle, or Ascend Elements recycling plants after two search angles; coverage is limited to processing volume (e.g. Redwood recycled '20 gigawatt-hours of lithium-ion batteries' in a recent year — a throughput metric, not a power-draw metric) and corporate/financial status.",
+   "sources": []
+  },
+  {
+   "label": "Remote oil fields and production hubs, claimed 5-20 MW",
+   "verdict": "found",
+   "published_figure": "Burns & McDonnell's oil-field electrification white paper gives dynamic load ranges gathered from actual producers, including 'Central Delivery Point (CDP): 15 MW-35 MW' — a CDP being the production/gathering hub a field's wells feed into — overlapping the claimed 5-20 MW band in its 15-20 MW zone, with the source's own ceiling (35 MW) extending above ours for larger hubs. The same source gives well-pad-level demand separately at 0.25-2.5 MW (smaller than this band) and water-handling at 0.5-10 MW.",
+   "sources": [
+    {
+     "label": "Burns & McDonnell — Business Case for Electrification of the Oil Field (white paper)",
+     "url": "https://info.burnsmcd.com/white-paper/business-case-for-electrification-of-the-oil-field",
+     "quote": "Central Delivery Point (CDP): 15 MW-35 MW",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "label": "Gas-processing plants, claimed 5-20 MW",
+   "verdict": "found",
+   "published_figure": "The same Burns & McDonnell white paper states 'Gas Processing Plant: 5 MW-15 MW' as one of its dynamic oil-and-gas-facility load ranges, gathered from actual producer data — falling almost entirely inside the claimed 5-20 MW band.",
+   "sources": [
+    {
+     "label": "Burns & McDonnell — Business Case for Electrification of the Oil Field (white paper)",
+     "url": "https://info.burnsmcd.com/white-paper/business-case-for-electrification-of-the-oil-field",
+     "quote": "Gas Processing Plant: 5 MW-15 MW",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "label": "Major air-cargo campuses, claimed 3-15 MW",
+   "verdict": "found",
+   "published_figure": "CMTA's project brief for the SDF generator plant at Louisville Muhammad Ali International Airport (UPS's Worldport, the world's largest express air-cargo hub) states 'On-Site Generation: 6.75 MW Grid-Paralleled,' built from three 2.25 MW Tier 4 diesel generator sets plus battery storage — inside the claimed 3-15 MW band. Caveat: this is the airport's dedicated backup/resiliency generation capacity for the main terminal, garage and administration buildings specifically, not an independently confirmed figure for the full sorting-hub campus's total grid-supplied demand, which is plausibly higher.",
+   "sources": [
+    {
+     "label": "CMTA — SDF Generator Plant Microgrid (project brief)",
+     "url": "https://www.cmta.com/results/briefs/sdf-generator-plant-microgrid",
+     "quote": "On-Site Generation: 6.75 MW Grid-Paralleled",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "label": "Large grain and oilseed mills, claimed 5-20 MW",
+   "verdict": "not_found",
+   "published_figure": "No facility-level MW figure found for a named large grain/oilseed operation (ADM, Cargill, Bunge) after two search angles; coverage of new/expanded soybean-crushing plants (e.g. ADM North Dakota, Cargill Sidney OH) reports processing capacity in bushels/day and capital investment, not electrical demand, and general flour-milling sources discuss electricity only as a cost share (up to 33% of processing cost), not a demand figure.",
+   "sources": []
+  }
+ ]
+}

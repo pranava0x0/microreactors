@@ -3,16 +3,82 @@
 
 Inlined rather than fetched so the site works from file://, GitHub Pages, or
 any static host with no server and no CORS story.
+
+Deterministic: the "built" stamp derives from the data files' own _meta.captured
+dates (max), never from the wall clock, so rebuilding unchanged data yields
+byte-identical output and CI can enforce that site/data.js is in sync.
 """
-import json, pathlib, sys, datetime
+import json
+import pathlib
+import sys
+from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
-FILES = ["opportunities", "vendors", "costs", "sectors", "gaps"]
+FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "gaps"]
 
-def main():
-    bundle = {}
+# Dict identity fields, in priority order, used as the "cited by" context label
+# for any source found beneath that dict.
+IDENT_KEYS = ("name", "scenario", "alternative", "target", "question", "label", "sector")
+
+
+def collect_sources(node: Any, ctx: str, out: List[Tuple[str, str, str, str]]) -> None:
+    """Walk the bundle; record every {label, url} source dict with its context
+    and fetch status ('' when unrecorded, which older rows treat as fetched)."""
+    if isinstance(node, dict):
+        url = node.get("url")
+        if isinstance(url, str) and url.startswith("http") and isinstance(node.get("label"), str):
+            out.append((node["label"], url, ctx, node.get("status", "")))
+            return  # a source dict is a leaf; its own label is not a context
+        ident: str = ctx
+        for k in IDENT_KEYS:
+            v = node.get(k)
+            if isinstance(v, str) and v:
+                ident = v
+                break
+        for v in node.values():
+            collect_sources(v, ident, out)
+    elif isinstance(node, list):
+        for v in node:
+            collect_sources(v, ctx, out)
+
+
+def sources_index(bundle: Dict[str, Any]) -> List[Dict[str, Any]]:
+    found: List[Tuple[str, str, str, str]] = []
+    for name in FILES:
+        collect_sources(bundle[name], name, found)
+    by_url: Dict[str, Dict[str, Any]] = {}
+    for label, url, ctx, status in found:
+        row = by_url.setdefault(url, {"url": url, "label": label,
+                                      "host": urlparse(url).netloc.replace("www.", ""),
+                                      "uses": [], "statuses": []})
+        if ctx not in row["uses"]:
+            row["uses"].append(ctx)
+        row["statuses"].append(status)
+    rows = sorted(by_url.values(), key=lambda r: (r["host"], r["label"]))
+    for r in rows:
+        # A URL is snippet-only for the register only if NO use ever read it.
+        r["snippet"] = all(s == "snippet-only" for s in r.pop("statuses"))
+    return rows
+
+
+def captured_date(bundle: Dict[str, Any]) -> str:
+    dates = []
+    for name in FILES:
+        meta = bundle[name].get("_meta", {})
+        c = meta.get("captured")
+        if isinstance(c, str) and c:
+            dates.append(c)
+    if not dates:
+        print("no _meta.captured date in any data file", file=sys.stderr)
+        sys.exit(1)
+    return max(dates)
+
+
+def main() -> int:
+    bundle: Dict[str, Any] = {}
     for name in FILES:
         p = DATA / f"{name}.json"
         if not p.exists():
@@ -23,30 +89,46 @@ def main():
     # Derived headline figures — computed, never hand-typed, so they cannot
     # drift away from the data they summarise.
     opps = bundle["opportunities"]["opportunities"]
+    vendors = bundle["vendors"]["vendors"]
     cov = {c["field"]: c for c in bundle["gaps"]["field_coverage"]}
+    reg = sources_index(bundle)
+    loads = [l for s in bundle["sectors"]["sectors"] for l in s["loads"]]
+    bundle["sources_index"] = reg
     bundle["summary"] = {
         "opportunities": len(opps),
-        "vendors": len(bundle["vendors"]["vendors"]),
+        "vendors": len(vendors),
         "tracks": {t["id"]: sum(1 for o in opps if o["track"] == t["id"])
                    for t in bundle["opportunities"]["tracks"]},
         "sector_count": len(bundle["sectors"]["sectors"]),
-        "load_types": sum(len(s["loads"]) for s in bundle["sectors"]["sectors"]),
+        "load_types": len(loads),
+        "cited_loads": sum(1 for l in loads if l.get("sources")),
         "cited_rows": sum(1 for o in opps if o.get("sources")),
+        "source_count": len(reg),
         "land_pct": cov["land_acres"]["pct"],
         "filing_pct": cov["utility_filing"]["pct"],
-        "built": datetime.date.today().isoformat(),
+        # Deployment-facing stats: how far the market has actually moved.
+        "milestones_2026": sum(1 for v in vendors for m in v.get("milestones", [])
+                               if m.get("status") == "done" and str(m.get("date", "")).startswith("2026")),
+        "binding_rows": sum(1 for o in opps if o.get("binding")),
+        "reactors_critical_2026": sum(o.get("reactors_critical_2026", 0) for o in opps),
+        "units_largest_preorder": max((o.get("units_committed", 0) for o in opps), default=0),
+        "first_delivery_year": min(v["first_delivery_year"] for v in vendors
+                                   if v.get("first_delivery_year")),
+        "built": captured_date(bundle),
     }
 
     SITE.mkdir(exist_ok=True)
     js = "/* generated by tools/build_data.py — do not edit */\nwindow.MR=" + \
-         json.dumps(bundle, separators=(",", ":")) + ";\n"
+         json.dumps(bundle, separators=(",", ":"), ensure_ascii=False) + ";\n"
     (SITE / "data.js").write_text(js)
     s = bundle["summary"]
     print(f"site/data.js  {len(js):,} bytes")
     print(f"  {s['opportunities']} opportunities ({s['cited_rows']} cited)  "
-          f"{s['vendors']} vendors  {s['sector_count']} sectors / {s['load_types']} load types")
-    print(f"  tracks: {s['tracks']}")
+          f"{s['vendors']} vendors  {s['sector_count']} sectors / {s['load_types']} load types "
+          f"({s['cited_loads']} cited)")
+    print(f"  {s['source_count']} distinct sources  tracks: {s['tracks']}")
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

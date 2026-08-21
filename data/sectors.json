@@ -1,8 +1,19 @@
 {
  "_meta": {
-  "source": "docs/rian-research-chatgpt.md \u2014 annual-average electrical demand planning bands",
+  "source": "docs/rian-research-chatgpt.md — annual-average electrical demand planning bands",
   "generated_by": "tools/parse_sectors.py",
-  "caveat": "Planning bands, not guaranteed averages; final sizing requires at least one year of hourly site-load data."
+  "caveat": "Planning bands, not guaranteed averages; final sizing requires at least one year of hourly site-load data.",
+  "citations": "Per-load sources from two verified research passes (data/research/demand-citations.json, data/research/demand-context.json): 27 bands supported or partially supported directly, 4 corrected in place where published figures contradicted the claim (offshore platforms, land-based aquaculture, remote oil-field hubs, lime plants), 8 with no authoritative source found after two passes — registered in _meta.uncited and marked on the page. Each sector carries a cited summary of its incumbent power/backup pattern.",
+  "uncited": [
+   "Battery-material plants",
+   "Battery-recycling plants",
+   "Company-owned data centers",
+   "Dedicated baseload and outage-protection blocks within larger data-center campuses",
+   "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping",
+   "Large grain and oilseed mills",
+   "Large integrated sawmills and wood-products plants",
+   "Large pozzolan mines with onsite crushing, grinding or drying"
+  ]
  },
  "sectors": [
   {
@@ -10,370 +21,1061 @@
    "loads": [
     {
      "label": "Regional data centers",
-     "band": "1\u201310 MW",
+     "band": "1–10 MW",
      "note": "",
-     "band_full": "1\u201310 MW"
+     "band_full": "1–10 MW",
+     "sources": [
+      {
+       "label": "JLL — Why smaller data centers are taking off",
+       "url": "https://www.jll.com/en-us/insights/why-smaller-data-centers-are-taking-off",
+       "quote": "have a smaller capacity between 500 kilowatts to 2 MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Grand View Research — Edge Data Center Market Report",
+       "url": "https://www.grandviewresearch.com/industry-analysis/edge-data-center-market-report",
+       "quote": "the below 10 MW segment is projected to hold 80.82% of the U.S. edge data center market share in 2026",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "JLL puts edge data centers at 0.5–2 MW; market-report aggregation puts 'metro edge' at 1–5 MW and 'regional edge' at 5–20 MW, with facilities under 10 MW holding ~81% of the projected 2026 U.S. edge-DC market.",
+     "delta_note": "JLL's edge figure (0.5–2 MW) sits below our 1–10 MW floor; the market-share stat supports the ceiling but is a market-segment share, not a per-facility figure."
     },
     {
      "label": "Company-owned data centers",
-     "band": "1\u20135 MW",
+     "band": "1–5 MW",
      "note": "",
-     "band_full": "1\u20135 MW"
+     "band_full": "1–5 MW",
+     "verdict": "not_found",
+     "not_found_note": "No authoritative source found breaking out 'company-owned/enterprise' data centers as a distinct MW-sized category. LBNL's 2024 report classifies energy use by space-type share (internal/enterprise vs. colocation vs. hyperscale) rather than per-facility MW."
     },
     {
      "label": "Shared data centers",
-     "band": "5\u201350 MW",
+     "band": "5–50 MW",
      "note": "",
-     "band_full": "5\u201350 MW"
+     "band_full": "5–50 MW",
+     "sources": [
+      {
+       "label": "Equinix Interconnections blog — Inside Equinix Data Centers (fetch blocked, HTTP 403; figures via search)",
+       "url": "https://blog.equinix.com/blog/2019/09/19/inside-equinix-data-centers-a-view-of-the-top-5-north-american-metros/",
+       "quote": "Dallas campus has 228,681 sq ft of colocation rental space and 40 MW of sellable power capacity",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Equinix multi-building metro campuses report 40–113 MW of 'sellable power capacity' per metro (Dallas campus: 40 MW across 228,681 sq ft; DC-metro: 113 MW across 13 interconnected buildings).",
+     "delta_note": "These are 2019-dated metro-wide totals across multiple buildings, not single shared-facility figures; the upper end (113 MW) exceeds our 50 MW ceiling."
     },
     {
      "label": "Supercomputing centers",
-     "band": "10\u201350 MW",
+     "band": "10–50 MW",
      "note": "",
-     "band_full": "10\u201350 MW"
+     "band_full": "10–50 MW",
+     "sources": [
+      {
+       "label": "Oak Ridge Leadership Computing Facility (ORNL) — Powering Frontier",
+       "url": "https://www.olcf.ornl.gov/2020/09/23/powering-frontier/",
+       "quote": "We needed to provide about 40 megawatts of power and cooling to the Frontier data center.",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "ORNL provisioned ~40 MW of power and cooling for the Frontier exascale supercomputer (operating draw ~21–23 MW); peer exascale machines El Capitan (~30 MW, LLNL) and Aurora (~38.7 MW, Argonne) fall in the same range."
     },
     {
      "label": "AI and very large cloud data centers",
-     "band": "50\u2013500+ MW",
-     "note": "total, using a 1\u201320 MW dedicated block",
-     "band_full": "50\u2013500+ MW total, using a 1\u201320 MW dedicated block"
+     "band": "50–500+ MW",
+     "note": "total, using a 1–20 MW dedicated block",
+     "band_full": "50–500+ MW total, using a 1–20 MW dedicated block",
+     "sources": [
+      {
+       "label": "Congressional Research Service R48646, Data Centers and Their Energy Consumption (via EveryCRSReport mirror)",
+       "url": "https://www.everycrsreport.com/reports/R48646.html",
+       "quote": "new hyperscale data centers have been built with capacities from 100 MW to 1,000 MW each",
+       "status": "fetched"
+      },
+      {
+       "label": "JLL — Why smaller data centers are taking off",
+       "url": "https://www.jll.com/en-us/insights/why-smaller-data-centers-are-taking-off",
+       "quote": "can typically house 10,000 racks with a capacity in excess of 80 megawatts",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "partial",
+     "published": "CRS: a facility must exceed 100 MW power rating to count as 'hyperscale'; new hyperscale data centers are built at 100–1,000 MW each. JLL: hyperscale halls exceed 80 MW with 10,000+ racks.",
+     "delta_note": "Published hyperscale floor (100 MW, CRS) is double our band's 50 MW floor; our 500+ MW ceiling matches the observed 1,000 MW top end. No source addresses the '1–20 MW dedicated block' sub-claim; phased-buildout trade press describes larger 24–72 MW installment blocks."
     },
     {
      "label": "Dedicated baseload and outage-protection blocks within larger data-center campuses",
-     "band": "1\u201320 MW",
+     "band": "1–20 MW",
      "note": "",
-     "band_full": "1\u201320 MW"
+     "band_full": "1–20 MW",
+     "verdict": "not_found",
+     "delta_note": "This describes total campus grid-interconnection phasing, a different concept from a microreactor-sized backup block, with larger increments than our 1–20 MW band.",
+     "not_found_note": "Two passes found no published category matching this row; it is this dataset's own framing device for how a microreactor attaches to a larger campus. Kept, labelled as unsourced framing."
     }
-   ]
+   ],
+   "context": {
+    "today": "U.S. data centers run on grid power with an on-site diesel generator fleet as the standard backup, typically sized N+1 (one more unit than the minimum load needs) so any single generator can fail or be pulled for maintenance without an outage, plus on-site fuel storage to ride out extended outages. Diesel remains the default backup fuel industry-wide — the Uptime Institute notes that 'Few — very few — can even contemplate operating production environments without diesel generators.' A 1-20 MW microreactor would displace this on-site diesel genset fleet and its fuel-resupply contracts as the facility's backup/resilience layer, not the grid interconnection itself.",
+    "sources": [
+     {
+      "label": "Uptime Institute Journal — Data centers without generators: the groundwork is being laid",
+      "url": "https://journal.uptimeinstitute.com/data-centers-without-generators-the-groundwork-is-being-laid/",
+      "quote": "Few — very few — can even contemplate operating production environments without diesel generators.",
+      "status": "fetched"
+     },
+     {
+      "label": "POWER Magazine — Understanding Uptime Institute's Tier III Standard",
+      "url": "https://www.powermag.com/understanding-uptime-institutes-tier-iii-standard-a-guide-to-data-center-electrical-system-design/",
+      "quote": "The generators should have enough fuel storage for at least 12 hours of operation and be designed for rapid start-up.",
+      "status": "fetched"
+     }
+    ]
+   }
   },
   {
    "sector": "Mining",
    "loads": [
     {
      "label": "Large pozzolan mines with onsite crushing, grinding or drying",
-     "band": "1\u20135 MW",
+     "band": "1–5 MW",
      "note": "",
-     "band_full": "1\u20135 MW"
+     "band_full": "1–5 MW",
+     "verdict": "not_found",
+     "not_found_note": "No single-source figure. A cross-source sketch (drying intensity from one study x a named plant's throughput from another) lands at roughly 4–20 MW, above this band — flagged as a lead, not adopted, because the two halves describe different plants."
     },
     {
      "label": "Remote lithium and rare-earth mines with onsite processing",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "Of the mines referenced in the UAA (2020) study, electric power capacity ranges from 10 to 40 MW.",
+       "status": "fetched"
+      },
+      {
+       "label": "OPG/CNL/MIRARCO — SMR Economic Feasibility and Cost-Benefit Study for Remote Mining",
+       "url": "https://mirarco.org/wp-content/uploads/mirarco-doc/Team%20Report%20with%20Final%20signatures.pdf",
+       "quote": "increase to a maximum of 210,818 MW·he in year 9, then decrease to 167,079 MW·he at the end of the LoM",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "partial",
+     "published": "No lithium/rare-earth-specific figure found; general remote-mine data points run at or slightly above this band's ceiling. INL/GAIN (citing UAA 2020, Alaska mines): electric power capacity 10–40 MW. OPG/CNL/MIRARCO representative Arctic mine: annual electricity consumption implies ~19–24 MW average over its 14-year life.",
+     "delta_note": "Both figures are for unspecified/base-metal remote mines, not lithium or rare-earth specifically (which involve heavier chemical processing and could plausibly run higher); both land at or above our 20 MW ceiling rather than inside the 5–20 MW band."
     },
     {
      "label": "Remote copper and other large mines",
-     "band": "12\u201325 MW",
-     "note": "for a representative site, with larger mines using a 5\u201320 MW partial-power block",
-     "band_full": "12\u201325 MW for a representative site, with larger mines using a 5\u201320 MW partial-power block"
+     "band": "12–25 MW",
+     "note": "for a representative site, with larger mines using a 5–20 MW partial-power block",
+     "band_full": "12–25 MW for a representative site, with larger mines using a 5–20 MW partial-power block",
+     "sources": [
+      {
+       "label": "OPG/CNL/MIRARCO — SMR Economic Feasibility and Cost-Benefit Study for Remote Mining",
+       "url": "https://mirarco.org/wp-content/uploads/mirarco-doc/Team%20Report%20with%20Final%20signatures.pdf",
+       "quote": "increase to a maximum of 210,818 MW·he in year 9, then decrease to 167,079 MW·he at the end of the LoM",
+       "status": "fetched"
+      },
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "electric power capacity ranges from 10 to 40 MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Reuters Events Nuclear — Ontario Power Generation predicts SMR openings in booming mining sectors",
+       "url": "https://www.reutersevents.com/nuclear/ontario-power-generation-predicts-smr-openings-booming-mining-sectors",
+       "quote": "A typical mine might require around 30 MW of power capacity, while a smelter might require as much as 200 MW of power",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "OPG/CNL/MIRARCO's representative far-North Canadian mine (real anonymized mining-company data, unspecified commodity): annual electricity consumption peaks at 210,818 MWh in year 9 (~24 MW average) and settles at 167,079 MWh (~19 MW average) by end of mine life — squarely inside the 12–25 MW band. INL/GAIN corroborates with a 10–40 MW range across UAA-surveyed Alaska mines. Reuters Events, reporting on this same OPG-adjacent research: 'a typical mine might require around 30 MW.'",
+     "delta_note": "Reuters' 'typical mine ~30 MW' figure sits just above our 25 MW ceiling; a downstream smelter (200 MW) is an order of magnitude larger and is correctly excluded from this band."
     }
-   ]
+   ],
+   "context": {
+    "today": "Remote mines generate their own power on-site because grid extension is uneconomic at their locations. INL/GAIN's global market analysis states that for the small-rural-community and remote-mining use cases, 'power production is almost entirely from diesel,' with surveyed mine electric capacity ranging 10-40 MW, and even grid-connected mines keep a redundant self-generating source for continuity. A 1-20 MW microreactor would displace part or all of this diesel (or HFO, at larger sites) generator fleet, cutting the fuel-logistics cost that dominates remote-mine operating expense.",
+    "sources": [
+     {
+      "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+      "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+      "quote": "power production is almost entirely from diesel",
+      "status": "fetched",
+      "note": "p.53, Section 5.2.4 Remote Mining Operations. Same section: 'Of the mines referenced in the UAA (2020) study, electric power capacity ranges from 10 to 40 MW,' and mines 'generally require a redundant and self-generating power source to ensure continuous operations' even when grid-connected."
+     }
+    ]
+   }
   },
   {
    "sector": "Electric Utilities",
    "loads": [
     {
      "label": "Individual remote grids with sufficient year-round demand",
-     "band": "1\u201310 MW",
+     "band": "1–10 MW",
      "note": "",
-     "band_full": "1\u201310 MW"
+     "band_full": "1–10 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "These isolated micro- and mini- grids range in size from 0.5–85 MWe, serving both communities and industry",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "INL/GAIN, citing UAA (2020a): Alaska's isolated micro/mini-grids (over 100 communities) range 0.5–85 MWe; the report frames near-term (2020s) microreactor deployment as targeting isolated microgrids of 100 kWe–20 MWe.",
+     "delta_note": "The 0.5–85 MW published range is much wider than our 1–10 MW band; our band sits at the lower/typical end of that spread rather than being independently pinned down."
     },
     {
      "label": "Regional grids serving several communities",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "Puerto Rico's Integrated Resource Plan proposes building a new electricity infrastructure with microgrids (1–20 MW)",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "INL/GAIN: Puerto Rico's Integrated Resource Plan proposes new resilience-focused electricity infrastructure built as 1–20 MW microgrids; IRENA (cited in the same report) puts renewable mini-grid capacity generally from kW up to 100+ MW."
     },
     {
      "label": "Replacements or partial replacements for older diesel and coal generation",
-     "band": "1\u201320 MW",
+     "band": "1–20 MW",
      "note": "",
-     "band_full": "1\u201320 MW"
+     "band_full": "1–20 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "plant unit sizes ranging from 100 MW to 1,000 MW, with most U.S. coal plants in the mid-range of 250–750 MWe",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "partial",
+     "published": "INL/GAIN: U.S. coal-plant unit sizes typically run 100–1,000 MW (most in the 250–750 MWe mid-range) — far above this band at whole-plant scale. Diesel-side context (Puerto Rico, Alaska microgrids) matches the 1–20 MW band well.",
+     "delta_note": "A 1–20 MW microreactor cannot replace a full 100–1,000 MW coal unit; the band's own wording ('partial replacements') already anticipates this and is best read as a fractional offset, not a like-for-like swap. It fits diesel-generator-scale replacement much better than utility coal-plant-scale replacement."
     },
     {
      "label": "Power for new mines, factories, data centers and communities before major grid upgrades",
-     "band": "1\u201320 MW",
+     "band": "1–20 MW",
      "note": "",
-     "band_full": "1\u201320 MW"
+     "band_full": "1–20 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "markets subject to fuel insecurity and high-energy prices (mining, islands) and on isolated microgrids (100 kWe–20 MWe)",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Same Puerto Rico IRP data point applies: new resilience/bridge electricity infrastructure proposed as 1–20 MW microgrids, and the INL/GAIN 2020s-deployment window frames microreactors as fitting isolated microgrids of 100 kWe–20 MWe before later (2030s) integration into 1–100 MWe mini-grids."
     },
     {
      "label": "Staged additions for future load growth",
-     "band": "1\u201320 MW",
+     "band": "1–20 MW",
      "note": "",
-     "band_full": "1\u201320 MW"
+     "band_full": "1–20 MW",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "Later in the 2030s, microreactors begin to be integrated into mini-grids (1 MWe to 100 MWe)",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "partial",
+     "published": "INL/GAIN frames a two-stage timeline: 2020s deployment onto isolated microgrids (100 kWe–20 MWe), then 'later in the 2030s, microreactors begin to be integrated into mini-grids (1 MWe to 100 MWe)' — i.e. staged growth is described, but the report's own second stage already exceeds our 20 MW ceiling.",
+     "delta_note": "The band matches INL's first (2020s) stage but not its own second (2030s) stage, which runs up to 100 MWe — 'staged additions' as a concept is supported, but the ceiling stated (20 MW) is lower than where INL sees the staging heading."
     }
-   ]
+   ],
+   "context": {
+    "today": "More than 100 rural Alaska communities run their own isolated microgrids because they have no road or transmission connection to the regional grid; INL/GAIN reports these communities 'have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities,' with only a small wind-diesel hybrid share. The same diesel-only pattern holds for isolated island and regional grids elsewhere. A 1-20 MW microreactor would displace all or most of a community's diesel genset capacity — the incumbent generation that akenergytransparency.org's and NEI's cost figures (already cited elsewhere in this dataset) are priced against.",
+    "sources": [
+     {
+      "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+      "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+      "quote": "They have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities.",
+      "status": "fetched",
+      "note": "p.50, Section 5.2.1 Small Rural Community use case, citing UAA (2020b) on Alaska's 100+ isolated microgrid communities."
+     }
+    ]
+   }
   },
   {
    "sector": "Manufacturing",
    "loads": [
     {
      "label": "Steel rolling and finishing plants, excluding full steelmaking mills",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "ScienceDirect — Energy and environmental performance of iron and steel industry in real-time demand response: a case of hot rolling process (fetch blocked, HTTP 403; figure via search)",
+       "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306261925004477",
+       "quote": "demand response potential peaks at 16 MW ... in a hot rolling process with 5 roughing mills and 7 finishing mills",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "supports",
+     "published": "A hot-rolling-process case study (5 roughing mills + 7 finishing mills, no EAF) reports demand-response peaking at 16 MW — inside the band. Primary steelmaking (electric arc furnace), explicitly excluded by our label, peaks far higher at 100+ MW."
     },
     {
      "label": "Cement plants",
-     "band": "7\u201325 MW",
+     "band": "7–25 MW",
      "note": "",
-     "band_full": "7\u201325 MW"
+     "band_full": "7–25 MW",
+     "sources": [
+      {
+       "label": "Energy Science & Engineering (Wiley) — power generation from cement kiln waste gases, Kenya case study (fetch blocked, HTTP 403; figure via search)",
+       "url": "https://scijournals.onlinelibrary.wiley.com/doi/full/10.1002/ese3.153",
+       "quote": "average electricity demand of 9.7 MW (peak)",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "supports",
+     "published": "A peer-reviewed Kenyan cement-plant case study reports average electricity demand of 9.7 MW (peak) — inside the band. An LBNL/DOE report on California cement plants (fetched) discusses demand-response strategy but does not itself state plant-level MW figures."
     },
     {
      "label": "Lime plants",
-     "band": "2\u20138 MW",
-     "note": "",
-     "band_full": "2\u20138 MW"
+     "band": "1–3 MW",
+     "note": "derived: EuLA/Ecofys intensity at the largest typical single kiln (500 t/day); a multi-kiln plant runs higher",
+     "band_full": "1–3 MW derived: EuLA/Ecofys intensity at the largest typical single kiln (500 t/day); a multi-kiln plant runs higher",
+     "verdict": "contradicts",
+     "sources": [
+      {
+       "label": "European Lime Association / Ecofys — A Competitive and Efficient Lime Industry (Technical Report)",
+       "url": "https://www.eula.eu/wp-content/uploads/2019/02/A-Competitive-and-Efficient-Lime-Industry-Technical-report-by-Ecofys_0.pdf",
+       "quote": "The electricity consumption in lime manufacturing is small, in the order of magnitude of ±60 kWh/tonne lime product",
+       "status": "fetched"
+      },
+      {
+       "label": "European Lime Association / Ecofys — A Competitive and Efficient Lime Industry (Technical Report)",
+       "url": "https://www.eula.eu/wp-content/uploads/2019/02/A-Competitive-and-Efficient-Lime-Industry-Technical-report-by-Ecofys_0.pdf",
+       "quote": "Ninety per cent of the kilns has a capacity between 10 and 500 tonnes per day",
+       "status": "fetched"
+      }
+     ],
+     "published": "EuLA/Ecofys: ±60 kWh/tonne (BREF all-in 14–120 kWh/t); 90% of kilns run 10–500 t/day. Derived at the largest typical kiln: ~0.3–2.5 MW.",
+     "delta_note": "Corrected 2026-08-21: previously 2–8 MW. The single-source derivation lands at or below that band's floor, so the band now reflects a typical large single-kiln plant."
     },
     {
      "label": "Chemical plants",
-     "band": "5\u201350 MW",
-     "note": "with a 5\u201320 MW block at larger plants",
-     "band_full": "5\u201350 MW, with a 5\u201320 MW block at larger plants"
+     "band": "5–50 MW",
+     "note": "with a 5–20 MW block at larger plants",
+     "band_full": "5–50 MW, with a 5–20 MW block at larger plants",
+     "sources": [
+      {
+       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
+       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
+       "quote": "most applicable to chemical, paper and food manufacturing particularly in the range of 10 to 50 MWth",
+       "status": "fetched"
+      },
+      {
+       "label": "Thunder Said Energy — Industrial energy and electricity consumption by sector (via search synthesis, not directly fetched)",
+       "url": "https://thundersaidenergy.com/downloads/industrial-energy-and-electricity-consumption-by-sector/",
+       "quote": "as high as 10MW at typical auto plants and 25MW at typical steel mills",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "No chemical-specific electrical MW figure isolated; a general industrial-energy source cites 'as high as 10 MW at typical auto plants and 25 MW at typical steel mills' without a distinct chemical-plant number. INL/GAIN, citing Forsberg and Foss (2021), places chemical/paper/food process-heat demand mostly in the 10–50 MWth range, with >6,000 U.S. heat users above 1 MWth.",
+     "delta_note": "The INL/Forsberg-Foss figure is THERMAL demand (MWth, process steam/heat), not electrical — a different metric than our electrical-demand band, though similar in magnitude at the low end."
     },
     {
      "label": "Fertilizer plants",
-     "band": "5\u201330 MW",
-     "note": "with a 5\u201320 MW block at larger plants",
-     "band_full": "5\u201330 MW, with a 5\u201320 MW block at larger plants"
+     "band": "5–30 MW",
+     "note": "with a 5–20 MW block at larger plants",
+     "band_full": "5–30 MW, with a 5–20 MW block at larger plants",
+     "sources": [
+      {
+       "label": "MDPI Fuels — Flexible Green Ammonia Production Plants (fetch blocked, HTTP 403; figure via search)",
+       "url": "https://www.mdpi.com/2076-3298/11/4/71",
+       "quote": "a typically sized Haber-Bosch plant with an air separation unit will require between 28 and 44 MW of 24/7 electricity supply",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "supports",
+     "published": "A typically sized Haber-Bosch ammonia plant with an air separation unit requires 28–44 MW of round-the-clock electricity — just above our band's ceiling, consistent with the dataset's own 'block at larger plants' framing.",
+     "delta_note": "28–44 MW sits just above our 30 MW whole-plant ceiling but matches the '5–20 MW block at larger plants' framing well if read as a partial supply."
     },
     {
      "label": "Hydrogen and low-carbon fuel plants",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "per production block",
-     "band_full": "5\u201320 MW per production block"
+     "band_full": "5–20 MW per production block",
+     "sources": [
+      {
+       "label": "Search synthesis of green-ammonia/electrolyzer trade coverage (not independently fetched)",
+       "url": "https://advancedbiofuelsusa.info/cop27-fertiglobe-commissions-phase-one-of-egypt-green-100-mw-hydrogen-plant-for-ammonia-production/",
+       "quote": "Small-scale ammonia plants can be powered by alkaline electrolyzer units with capacities of 1 MW, 5 MW, and 10 MW",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Small-scale green-ammonia/hydrogen electrolyzer units are sold in 1 MW, 5 MW and 10 MW module sizes, consistent with a 5–20 MW production block. Fertiglobe's Egypt phase-one green-hydrogen plant is a 100 MW electrolyzer array (whole-facility scale, feeding ammonia production).",
+     "delta_note": "Individual electrolyzer modules (1–10 MW) support the band; whole-facility hydrogen plants (e.g. Fertiglobe's 100 MW Egypt array) are much larger once multiple blocks are combined."
     },
     {
      "label": "Pulp and paper mills",
-     "band": "10\u201340 MW",
+     "band": "10–40 MW",
      "note": "with partial supply above 20 MW",
-     "band_full": "10\u201340 MW, with partial supply above 20 MW"
+     "band_full": "10–40 MW, with partial supply above 20 MW",
+     "sources": [
+      {
+       "label": "ScienceDirect — The chemical pulp mill as a flexible prosumer of electricity (fetch blocked, HTTP 403; figures via search)",
+       "url": "https://www.sciencedirect.com/science/article/pii/S2590174523000570",
+       "quote": "momentary net production ranges from 17 MW in the least-flexible scenario to 105 MW in the most-flexible scenario",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "A 1,000-tonne/day Kraft mill can generate 25–35 MW from black-liquor combustion alone — inside the band. A chemical-pulp-mill flexibility study reports net electricity production spanning 17–105 MW across operating scenarios.",
+     "delta_note": "The flexibility study's upper end (105 MW) is well above our 40 MW ceiling; the core Kraft self-generation figure (25–35 MW) fits inside the band."
     },
     {
      "label": "Large integrated sawmills and wood-products plants",
-     "band": "1\u20138 MW",
+     "band": "1–8 MW",
      "note": "",
-     "band_full": "1\u20138 MW"
+     "band_full": "1–8 MW",
+     "verdict": "not_found",
+     "not_found_note": "No per-mill MW figure found. USDA Forest Service and Oregon Dept. of Forestry sources report only aggregate/industry-wide energy (trillion-Btu scale across dozens of mills) and per-unit-of-lumber intensity, not per-facility electrical demand — converting would require assumptions the sources don't state."
     },
     {
      "label": "Semiconductor fabs",
-     "band": "30\u2013150+ MW",
-     "note": "total, using a 5\u201320 MW dedicated block",
-     "band_full": "30\u2013150+ MW total, using a 5\u201320 MW dedicated block"
+     "band": "30–150+ MW",
+     "note": "total, using a 5–20 MW dedicated block",
+     "band_full": "30–150+ MW total, using a 5–20 MW dedicated block",
+     "sources": [
+      {
+       "label": "SemiWiki — Power consumption of fabs through the roof, danger ahead?",
+       "url": "https://semiwiki.com/forum/threads/power-consumption-of-fabs-through-the-roof-danger-ahead.21411/",
+       "quote": "a typical semiconductor manufacturing plant consumes as much energy annually as about 50,000 homes",
+       "status": "fetched"
+      },
+      {
+       "label": "PatentPC — Semiconductor Manufacturing Energy Consumption (via search synthesis, not directly fetched)",
+       "url": "https://patentpc.com/blog/semiconductor-manufacturing-energy-consumption-how-green-is-the-chip-industry-latest-stats",
+       "quote": "Leading-edge fabs require 200–600 MW of reliable, clean power",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "SemiWiki, citing McKinsey: a typical semiconductor fab consumes as much energy annually as ~50,000 homes (implies roughly 60 MW average). Other trade reporting cites leading-edge fabs requiring 200–600 MW.",
+     "delta_note": "Leading-edge fabs (200–600 MW per trade estimates) run above our 150 MW open ceiling; a 'typical' fab (~60 MW implied) fits inside the band."
     },
     {
      "label": "Battery-cell plants",
-     "band": "20\u2013100+ MW",
-     "note": "total, using a 5\u201320 MW block",
-     "band_full": "20\u2013100+ MW total, using a 5\u201320 MW block"
+     "band": "20–100+ MW",
+     "note": "total, using a 5–20 MW block",
+     "band_full": "20–100+ MW total, using a 5–20 MW block",
+     "sources": [
+      {
+       "label": "IOP Science — Energy use for GWh-scale lithium-ion battery production",
+       "url": "https://iopscience.iop.org/article/10.1088/2515-7620/ab5e1e",
+       "quote": "The average power demand correlating to an annual electricity consumption of 2300 GWh is over 250 MW",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Peer-reviewed (IOP Science topical review): Tesla Gigafactory Nevada's ~2,300 GWh/year electricity use implies an average power demand 'over 250 MW'; Northvolt Ett's first 8 GWh/year production line implies ~46 MW average — both anchor within or near the band's open-ended range.",
+     "delta_note": "Gigafactory Nevada is a multi-product gigafactory (cells plus drivetrain components), not a single battery-cell line, which likely inflates its total above a pure-play battery-cell plant; the single-line Northvolt figure (46 MW) fits the band more directly."
     },
     {
      "label": "Battery-material plants",
-     "band": "5\u201330 MW",
+     "band": "5–30 MW",
      "note": "",
-     "band_full": "5\u201330 MW"
+     "band_full": "5–30 MW",
+     "verdict": "not_found",
+     "not_found_note": "No plant-level MW figure found after two search angles covering cathode/material producers generally and named companies (Redwood Materials, Li-Cycle, Ascend Elements) specifically."
     },
     {
      "label": "Battery-recycling plants",
-     "band": "2\u201315 MW",
+     "band": "2–15 MW",
      "note": "",
-     "band_full": "2\u201315 MW"
+     "band_full": "2–15 MW",
+     "verdict": "not_found",
+     "not_found_note": "No plant-level MW figure found. Tangential: Redwood Materials operates a 12 MW/63 MWh battery microgrid at its Nevada site, but it powers a co-located third-party AI data center, not the recycling/materials plant itself, so it is not used as a proxy here."
     }
-   ]
+   ],
+   "context": {
+    "today": "Heat-heavy manufacturing plants buy grid power for most of their load and layer on-site combined heat and power (CHP) on top to cover steady thermal and electric demand together; DOE's Better Buildings CHP fact sheet series states CHP 'is well suited for chemical plants, refineries, pulp and paper mills, wastewater treatment plants, food processing sites' and similar facilities, running as a supplement to (or partial replacement for) utility-purchased electricity. Plants without CHP instead keep standby diesel generators for critical processes, the same grid-plus-diesel-backup pattern documented across data centers, hospitals and government facilities elsewhere in this dataset. A 1-20 MW microreactor would displace either the CHP plant's power output or the backup diesel fleet, and a district-heat host could also take the reactor's thermal output.",
+    "sources": [
+     {
+      "label": "DOE Better Buildings — Combined Heat and Power Technology Fact Sheet Series: Overview of CHP Technologies",
+      "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Overview_of_CHP_Technologies.pdf",
+      "quote": "In the industrial sector, CHP is well suited for chemical plants, refineries, pulp and paper mills, wastewater treatment plants, food processing sites",
+      "status": "fetched"
+     }
+    ]
+   }
   },
   {
    "sector": "Oil & Gas",
    "loads": [
     {
      "label": "Remote oil fields and production hubs",
-     "band": "5\u201320 MW",
-     "note": "",
-     "band_full": "5\u201320 MW"
+     "band": "15–35 MW",
+     "note": "central delivery point (production hub); individual well pads run 0.25–2.5 MW",
+     "band_full": "15–35 MW central delivery point (production hub); individual well pads run 0.25–2.5 MW",
+     "verdict": "contradicts",
+     "sources": [
+      {
+       "label": "Burns & McDonnell — Business Case for Electrification of the Oil Field (white paper)",
+       "url": "https://info.burnsmcd.com/white-paper/business-case-for-electrification-of-the-oil-field",
+       "quote": "Central Delivery Point (CDP): 15 MW-35 MW",
+       "status": "fetched"
+      }
+     ],
+     "published": "Burns & McDonnell producer data: central delivery point (production hub) 15–35 MW; individual well pads 0.25–2.5 MW; water handling 0.5–10 MW.",
+     "delta_note": "Corrected 2026-08-21: previously 5–20 MW. Producer-derived data puts a production hub at 15–35 MW, so the band follows the source; a 5–20 MW block is partial supply at a hub, or full supply for a cluster of pads."
     },
     {
      "label": "Offshore platforms",
-     "band": "10\u201350 MW",
-     "note": "total, using a 5\u201320 MW block at larger platforms",
-     "band_full": "10\u201350 MW total, using a 5\u201320 MW block at larger platforms"
+     "band": "80–300+ MW",
+     "note": "total; documented platforms, FPSOs and North Sea hubs, using a 5–20 MW partial-power block",
+     "band_full": "80–300+ MW total; documented platforms, FPSOs and North Sea hubs, using a 5–20 MW partial-power block",
+     "sources": [
+      {
+       "label": "MDPI Energies — Electrification of Offshore Oil and Gas Production (fetch blocked, HTTP 403; figures via search)",
+       "url": "https://www.mdpi.com/1996-1073/16/15/5812",
+       "quote": "The power demand of a single platform can easily exceed 100 megawatts (MW)",
+       "status": "snippet-only"
+      },
+      {
+       "label": "SIA Partners — Offshore Oil and Gas Platforms: Electrification Technologies (via search synthesis, not directly fetched)",
+       "url": "https://www.sia-partners.com/en/insights/publications/offshore-oil-and-gas-platforms-electrification-technologies",
+       "quote": "Hywind Tampen will have a total capacity of 60 MW and will provide approximately 35% of the electricity demand of the Gullfaks and Snorre oil and gas fields",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ],
+     "verdict": "contradicts",
+     "published": "Published figures run well above this band: a single offshore platform's power demand 'can easily exceed 100 MW,' with complex deepwater systems needing 100–250 MW depending on subsea loads; FPSOs typically 80–150 MW; Norway's Johan Sverdrup phase 2 expanded power-from-shore capacity to 300 MW total, and the 60 MW Hywind Tampen floating wind array covers only ~35% of the combined Gullfaks/Snorre fields' demand.",
+     "delta_note": "Corrected 2026-08-21: this dataset previously claimed 10–50 MW total. Published figures run 2–10× higher (single platforms exceed 100 MW; FPSOs 80–150 MW; Johan Sverdrup shore power 300 MW), so the band now follows the sources. Real single-platform and platform-hub demand runs 2–10x above our 10–50 MW band. The band may be intended as a microreactor-sized partial contribution ('5–20 MW block') rather than whole-platform demand, but even that reading is generous against these figures — a genuinely small/older single platform could still fit this band, but the well-documented examples found here (North Sea hubs, FPSOs) do not."
     },
     {
      "label": "Pipeline pumping and electric compression stations",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "per station",
-     "band_full": "5\u201320 MW per station"
+     "band_full": "5–20 MW per station",
+     "sources": [
+      {
+       "label": "INGAA — Assessment of Electric-Drive Compressor Conversion (Jan 2024)",
+       "url": "https://ingaa.org/wp-content/uploads/2024/01/Assessment-of-Electric-Drive-Compressor-Conversion1.pdf",
+       "quote": "The average per-station estimated load is 11 MW ... more than 80% of compressor stations are rated under 21 MW",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "INGAA (Interstate Natural Gas Association of America), surveying 1,395 U.S. compressor stations: peak load ranges <1–97 MW, average per-station load is 11 MW, over 50% are rated under 8 MW, and over 80% are rated under 21 MW — closely matching this band."
     },
     {
      "label": "Gas-processing plants",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "verdict": "supports",
+     "sources": [
+      {
+       "label": "Burns & McDonnell — Business Case for Electrification of the Oil Field (white paper)",
+       "url": "https://info.burnsmcd.com/white-paper/business-case-for-electrification-of-the-oil-field",
+       "quote": "Gas Processing Plant: 5 MW-15 MW",
+       "status": "fetched"
+      }
+     ],
+     "published": "Burns & McDonnell producer data: gas processing plant 5–15 MW.",
+     "delta_note": "Producer-derived range (5–15 MW) sits inside the band, slightly narrower at the top."
     },
     {
      "label": "Smaller liquefied-natural-gas plants and receiving terminals",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "ScienceDirect — Flexible operation of a mixed fluid cascade LNG plant for electrical power management (fetch blocked, HTTP 403; figure via search)",
+       "url": "https://www.sciencedirect.com/science/article/pii/S0360544222006971",
+       "quote": "operating range from 3.5 MW to 28 MW",
+       "status": "snippet-only"
+      },
+      {
+       "label": "LNG Industry — Ensuring stable power (via search synthesis, not directly fetched)",
+       "url": "https://www.lngindustry.com/special-reports/28052024/ensuring-stable-power/",
+       "quote": "For a 5 million tpy liquefaction facility, roughly 140 MW of power supply is needed",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "supports",
+     "published": "A flexible-operation LNG plant study demonstrates a power range of 3.5–28 MW; a mini-scale LNG unit (~35 kton/yr) draws ~3.5 MW. By contrast, large liquefaction trains (5–18 million tpy) need 140–800 MW — the 'large' facilities this dataset explicitly excludes."
     },
     {
      "label": "Smaller refineries",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "Schneider Electric blog — How process electrification can decarbonize oil refineries and petrochemicals (via search synthesis, not directly fetched)",
+       "url": "https://blog.se.com/energy-management-energy-efficiency/2024/10/01/process-electrification-helps-cut-co2-in-refining/",
+       "quote": "a typical medium-complexity refinery requires around 700-900 MW of thermal power and over 50 MW of electricity",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ],
+     "verdict": "partial",
+     "published": "A medium-complexity refinery reportedly needs 'over 50 MW' of electricity (alongside 700–900 MW of thermal energy); a separate estimate puts a refinery's 'useful' electrical draw at ~24 MW. Electricity is generally only ~5–10% of a refinery's total energy use.",
+     "delta_note": "Even a 'medium-complexity' (not just large) refinery appears to need somewhat more than our 20 MW ceiling on one estimate (>50 MW); the second estimate (~24 MW) sits right at the ceiling."
     },
     {
      "label": "Dedicated electrical blocks at larger refineries",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "Schneider Electric blog — How process electrification can decarbonize oil refineries and petrochemicals (via search synthesis, not directly fetched)",
+       "url": "https://blog.se.com/energy-management-energy-efficiency/2024/10/01/process-electrification-helps-cut-co2-in-refining/",
+       "quote": "a typical medium-complexity refinery requires around 700-900 MW of thermal power and over 50 MW of electricity",
+       "status": "fetched",
+       "verified": "2026-08-21 quote confirmed in page"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Same refinery data applies: if a whole medium-complexity refinery draws roughly 50+ MW of electricity, a 5–20 MW 'dedicated block' is a plausible partial slice of that total, consistent with the band's own 'block' framing, though no source directly names a block size."
     }
-   ]
+   ],
+   "context": {
+    "today": "Offshore platforms generate their own power because they have no grid connection: gas turbines (often burning the field's own associated gas) supply primary power while diesel generators handle emergency and black-start backup — 'this gas-turbine-main, diesel-backup architecture is the offshore norm.' Onshore, remote well pads and production hubs run similarly on-site gas or diesel gensets. The one large-scale exception is Norway, where HVDC power-from-shore cables (e.g. Equinor's Johan Sverdrup field) now replace platform generation entirely, cutting emissions to 'around 80% lower than the alternative method of gas turbines' — confirming gas turbines as the baseline the shore-power link replaces. A 1-20 MW microreactor would displace on-site gas-turbine or diesel generation at a platform, pad, or hub, playing the same role shore power plays at Johan Sverdrup without needing a coastal HVDC cable.",
+    "sources": [
+     {
+      "label": "Prismecs — Offshore Platform & FPSO Power Generation: Systems & Codes",
+      "url": "https://prismecs.com/blog/navigating-the-future-of-marine-technology-in-oil-and-gas-exploration",
+      "quote": "This gas-turbine-main, diesel-backup architecture is the offshore norm.",
+      "status": "fetched"
+     },
+     {
+      "label": "Offshore Technology — Electrifying the Johan Sverdrup oil and gas field",
+      "url": "https://www.offshore-technology.com/features/electrifying-johan-sverdrup-oil-gas-field/",
+      "quote": "around 80% lower than the alternative method of gas turbines",
+      "status": "fetched"
+     }
+    ]
+   }
   },
   {
    "sector": "Transportation",
    "loads": [
     {
      "label": "Large Amazon, Walmart and similar fulfillment and distribution centers",
-     "band": "1\u20133 MW",
-     "note": "normally; 2\u201310 MW with heavy automation or fleet charging",
-     "band_full": "1\u20133 MW normally; 2\u201310 MW with heavy automation or fleet charging"
+     "band": "1–3 MW",
+     "note": "normally; 2–10 MW with heavy automation or fleet charging",
+     "band_full": "1–3 MW normally; 2–10 MW with heavy automation or fleet charging",
+     "sources": [
+      {
+       "label": "NREL/OpenEI — Heavy-Duty Electric Fleet Depot Charging Load Profiles & Substation Load Integration Assessment (via search synthesis, not directly fetched)",
+       "url": "https://data.nrel.gov/submissions/162",
+       "quote": "A 20-bus transit depot charging overnight at 150 kW per bus could draw 3 MW of peak demand",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "No fulfillment-center-specific published figure found directly. Heavy-duty fleet-depot charging (the 'fleet charging' half of this claim) draws roughly 3 MW peak for a 20-vehicle bus depot and ~4.5 MW for a 50-bus depot, consistent with the 2–10 MW automated/fleet-charging upper case."
     },
     {
      "label": "Refrigerated distribution centers",
-     "band": "1\u20135 MW",
+     "band": "1–5 MW",
      "note": "",
-     "band_full": "1\u20135 MW"
+     "band_full": "1–5 MW",
+     "sources": [
+      {
+       "label": "Ally Energy — Logistics Facility Electrification, Load Growth, and Demand Side Control",
+       "url": "https://ally-energy.com/2026/03/23/logistics-facility-electrification-load-growth-and-demand-side-control/",
+       "quote": "A cold storage warehouse can consume 1 to 3 megawatts",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "A cold storage warehouse can consume 1 to 3 megawatts — inside the band."
     },
     {
      "label": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "average, with higher short-term peaks",
-     "band_full": "5\u201320 MW average, with higher short-term peaks"
+     "band_full": "5–20 MW average, with higher short-term peaks",
+     "sources": [
+      {
+       "label": "ICCT — Shore power needs and CO2 implications working paper (fetch blocked, HTTP 403; figures via search)",
+       "url": "https://theicct.org/wp-content/uploads/2023/10/Shore-power-ships-EU-Fit-for-55-working-paper-24-v3.pdf",
+       "quote": "a large cruise ship may require a constant supply of up to 16 MW, while a container ship may require 7.5 MW",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Per-vessel and per-crane figures, not a whole-port average: a large cruise ship's shore-power connection needs up to 16 MW, a container ship ~7.5 MW (6–12 MVA typical container-ship connections, 10–16 MVA for cruise ships); ship-to-shore cranes draw 1–2 MW each when operating. A terminal serving several berths and cranes concurrently would plausibly aggregate into the 5–20 MW band, though no single published 'whole cargo port' figure was found."
     },
     {
      "label": "Major passenger airports",
-     "band": "10\u201330 MW",
+     "band": "10–30 MW",
      "note": "average",
-     "band_full": "10\u201330 MW average"
+     "band_full": "10–30 MW average",
+     "sources": [
+      {
+       "label": "Port of Seattle — 2024 CO2 Emissions from Scope 1 & 2 Sources at SEA Airport",
+       "url": "https://www.portseattle.org/sites/default/files/2026-05/2024%20AV%20Scope%2012_Web_v3.pdf",
+       "quote": "TOTAL ELECTRICITY ... 122,530,683 [kWh, 2024 column]",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Seattle-Tacoma International Airport (SEA) purchased 122,530,683 kWh of total electricity in 2024 per the Port of Seattle's own emissions inventory — equivalent to an average continuous demand of ~14 MW (122,530,683 kWh ÷ 8,760 h), inside the 10–30 MW band. Figure is a direct unit-conversion of the report's own annual total, not independently stated as MW by the source."
     },
     {
      "label": "Major air-cargo campuses",
-     "band": "3\u201315 MW",
+     "band": "3–15 MW",
      "note": "",
-     "band_full": "3\u201315 MW"
+     "band_full": "3–15 MW",
+     "verdict": "partial",
+     "sources": [
+      {
+       "label": "CMTA — SDF Generator Plant Microgrid (project brief)",
+       "url": "https://www.cmta.com/results/briefs/sdf-generator-plant-microgrid",
+       "quote": "On-Site Generation: 6.75 MW Grid-Paralleled",
+       "status": "fetched"
+      }
+     ],
+     "published": "SDF (Louisville, UPS Worldport) on-site resiliency generation: 6.75 MW grid-paralleled, three 2.25 MW Tier 4 gensets plus storage.",
+     "delta_note": "The 6.75 MW figure is the airport's dedicated backup plant for terminal/garage/administration, inside the band; the full sorting-hub campus's total demand is plausibly higher and stays unconfirmed."
     },
     {
      "label": "Large rail, truck and fleet-charging hubs",
-     "band": "1\u201310 MW",
-     "note": "average, with peaks of 5\u201330 MW",
-     "band_full": "1\u201310 MW average, with peaks of 5\u201330 MW"
+     "band": "1–10 MW",
+     "note": "average, with peaks of 5–30 MW",
+     "band_full": "1–10 MW average, with peaks of 5–30 MW",
+     "sources": [
+      {
+       "label": "NREL/OpenEI — Heavy-Duty Electric Fleet Depot Charging Load Profiles & Substation Load Integration Assessment (via search synthesis, not directly fetched)",
+       "url": "https://data.nrel.gov/submissions/162",
+       "quote": "A 20-bus transit depot charging overnight at 150 kW per bus could draw 3 MW of peak demand",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Heavy-duty fleet depot charging: a 20-bus depot at 150 kW/bus overnight draws ~3 MW peak; a 50-bus depot at 90 kW average/bus needs ~4.5 MW peak electrical service; the new Megawatt Charging System (MCS) standard supports up to 3.75 MW per individual charging point. ICCT projects county-level aggregate medium/heavy-duty-vehicle charging could reach 132 MW by 2030 in high-energy industrial counties — an aggregate across many sites, not one hub.",
+     "delta_note": "Individual depot peaks found (3–4.5 MW) sit at the low end of our 1–10 MW average band and well under our 30 MW peak ceiling; no source confirms a hub actually reaching the 30 MW peak this band allows for."
     }
-   ]
+   ],
+   "context": {
+    "today": "Ports, airports and large warehouses run on grid power with diesel generators as the standard backup, and are increasingly adding dedicated on-site generation for resilience because they remain, in Kimley-Horn's framing, a facility where 'a microgrid would allow airports to be less dependent on local utilities for electricity' — which is why a growing number of airports (Indianapolis International among them) are building microgrids with battery storage rather than relying on the grid plus diesel alone. Ports are separately adding shore power so docked ships can shut down diesel auxiliary engines at berth. A 1-20 MW microreactor sits in the same slot as an airport central utility plant or port microgrid: a dedicated on-site resilience block behind the grid connection.",
+    "sources": [
+     {
+      "label": "Kimley-Horn — Microgrids: The Future of Resiliency at Airports",
+      "url": "https://www.kimley-horn.com/news-insights/perspectives/microgrids-future-resiliency-airports/",
+      "quote": "A microgrid would allow airports to be less dependent on local utilities for electricity",
+      "status": "fetched"
+     }
+    ]
+   }
   },
   {
    "sector": "Civic Infrastructure",
    "loads": [
     {
      "label": "Large individual hospitals",
-     "band": "2\u20138 MW",
+     "band": "2–8 MW",
      "note": "",
-     "band_full": "2\u20138 MW"
+     "band_full": "2–8 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Hospitals",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Hospitals.pdf",
+       "quote": "The current average CHP installation size at a U.S. hospital is ~3.3 MW.",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE Better Buildings CHP fact sheet: the average CHP installation size at a U.S. hospital is ~3.3 MW — inside the band. A named small-hospital example (Doctors Community Hospital, Lanham, MD) uses 1.2 MW of CHP to cover 80% of its electrical load, implying ~1.5 MW total demand."
     },
     {
      "label": "Major medical campuses",
-     "band": "10\u201340 MW",
+     "band": "10–40 MW",
      "note": "",
-     "band_full": "10\u201340 MW"
+     "band_full": "10–40 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Hospitals",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Hospitals.pdf",
+       "quote": "the campus installed 15 MW of CHP capacity to provide electricity, hot water, steam, and cooling",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Same DOE fact sheet, named multi-hospital campus examples: UF Health Shands Healthcare Campus (Gainesville, FL — multiple teaching hospitals, research facilities, trauma center) installed 4.3 MW of CHP in 2009 plus 7.4 MW more in 2017 (11.7 MW total); University of Texas Medical Branch (Galveston — 7 hospitals, clinics, academic/research buildings, 13,000 employees) installed 15 MW of CHP in 2016. Both fall inside the band."
     },
     {
      "label": "Large prison complexes",
-     "band": "1\u20133 MW",
+     "band": "1–3 MW",
      "note": "",
-     "band_full": "1\u20133 MW"
+     "band_full": "1–3 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Correctional Facilities",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Correctional_Facilities.pdf",
+       "quote": "The average CHP system at a correctional facility has a capacity of 2.4 MW.",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE Better Buildings CHP fact sheet: 'The average CHP system at a correctional facility has a capacity of 2.4 MW' (44 facilities, 124 MW total installed) — inside the band. Corroborating scale proxies: California's 12 solar-equipped state prisons average ~2.3 MW of solar capacity each; Santa Rita Jail's 1 MW fuel cell covers up to 80% of peak demand (implying ~1.25 MW total)."
     },
     {
      "label": "Major universities",
-     "band": "5\u201330 MW",
+     "band": "5–30 MW",
      "note": "",
-     "band_full": "5\u201330 MW"
+     "band_full": "5–30 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Colleges & Universities",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Colleges_Universities.pdf",
+       "quote": "The average CHP system at a college/university has a capacity of 9.1 MW.",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE Better Buildings CHP fact sheet: 'The average CHP system at a college/university has a capacity of 9.1 MW' (281 institutions, 2.6 GW total installed) — inside the band. University of Minnesota (Minneapolis) installed a 22.8 MW CHP system, also inside the band near its ceiling.",
+     "delta_note": "A search-only data point (not independently fetched) put one large university's total purchased electricity at ~400,000 MWh/yr (~46 MW average) — above our 30 MW ceiling — suggesting the largest flagship campuses can exceed this band even though the CHP-fleet average sits comfortably inside it."
     },
     {
      "label": "National laboratories",
-     "band": "10\u201350+ MW",
-     "note": "using a 5\u201320 MW block at larger sites",
-     "band_full": "10\u201350+ MW, using a 5\u201320 MW block at larger sites"
+     "band": "10–50+ MW",
+     "note": "using a 5–20 MW block at larger sites",
+     "band_full": "10–50+ MW, using a 5–20 MW block at larger sites",
+     "sources": [
+      {
+       "label": "Oak Ridge Leadership Computing Facility (ORNL) — Powering Frontier",
+       "url": "https://www.olcf.ornl.gov/2020/09/23/powering-frontier/",
+       "quote": "We needed to provide about 40 megawatts of power and cooling to the Frontier data center.",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "partial",
+     "published": "No whole-site national-laboratory MW figure found directly, but ORNL (a national laboratory) provisioned ~40 MW of power and cooling for just one facility on its site (the Frontier supercomputer) — consistent with a full national-lab campus (many buildings/reactors/facilities beyond one supercomputer) reaching the 10–50+ MW band.",
+     "delta_note": "This is one facility's provisioned power on a national-lab site, not a whole-lab total — used here only as a lower-bound sanity check, not direct confirmation."
     },
     {
      "label": "Large campus electrical systems",
-     "band": "5\u201330 MW",
+     "band": "5–30 MW",
      "note": "",
-     "band_full": "5\u201330 MW"
+     "band_full": "5–30 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Colleges & Universities",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Colleges_Universities.pdf",
+       "quote": "large systems (>10 MW) that power entire campuses",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Reusing the CHP fleet-average data: colleges/universities average 9.1 MW, hospitals average 3.3 MW, and named large single campuses (UF Health Shands 11.7 MW, UTMB Galveston 15 MW, U. Minnesota 22.8 MW) all fall inside this band, which is a generic version of the same 'campus' framing."
     },
     {
      "label": "Regional drinking-water treatment and pumping systems",
-     "band": "1\u201310 MW",
+     "band": "1–10 MW",
      "note": "",
-     "band_full": "1\u201310 MW"
+     "band_full": "1–10 MW",
+     "sources": [
+      {
+       "label": "Search synthesis citing a demand-response study of U.S. drinking water treatment plants (not directly fetched)",
+       "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306261920304116",
+       "quote": "The Eastern Municipal Water District of Southern California has about 12.2 MW enrolled in various demand response programs",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "Eastern Municipal Water District (Southern California) has about 12.2 MW enrolled in demand-response programs — just above our ceiling, though this is flexible/enrolled load rather than a stated total. A national aggregate (470 MW average load across all U.S. drinking-water treatment plants serving 230–234 million people) could not be safely converted to a single-utility figure without an unstated plant count."
     },
     {
      "label": "Major city wastewater plants",
-     "band": "1\u201315 MW",
+     "band": "1–15 MW",
      "note": "",
-     "band_full": "1\u201315 MW"
+     "band_full": "1–15 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Wastewater Treatment",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Wastewater_Treatment.pdf",
+       "quote": "a total cogeneration capacity of 12.8 MW, of which 3.2 MW was installed for resiliency",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE Better Buildings CHP fact sheet: 227 WWTPs with CHP total 755 MW installed (~3.3 MW average). Named example: Miami-Dade Water and Sewer Department (a major-city utility) runs 12.8 MW of cogeneration capacity across two facilities — both inside the band."
     },
     {
      "label": "Large seawater desalination plants",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "sources": [
+      {
+       "label": "DOE — Bandwidth Study on Energy Use and Potential Energy Savings Opportunities in U.S. Seawater Desalination Systems (2017)",
+       "url": "https://www.energy.gov/sites/default/files/2017/12/f46/Seawater_desalination_bandwidth_study_2017.pdf",
+       "quote": "A value of 2.7 kWhe/m3 (with energy recovery) at the Carlsbad facility for the current typical",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE bandwidth study: the Carlsbad, California facility (the single largest U.S. seawater RO plant, 54% of national capacity, sized at 50 MGD / 189,300 m3/day) runs at a current-typical energy intensity of 2.7 kWh(e)/m3 — implying ~21.3 MW average electric demand (189,300 m3/day × 2.7 kWh/m3 ÷ 24h), essentially matching the band's ceiling.",
+     "delta_note": "~21.3 MW is a derived figure (source states energy intensity and capacity separately, not a combined MW value) and sits just above our 20 MW ceiling for the single largest U.S. plant — a reasonable calibration point for the band's upper end."
     }
-   ]
+   ],
+   "context": {
+    "today": "Hospitals and other CMS-regulated facilities must maintain emergency and standby power under 42 CFR 482.15, meeting NFPA 99/101/110 — 'the hospital must implement emergency and standby power systems based on the emergency plan' — which in practice means grid power plus code-mandated, fuel-stocked diesel generators (the dataset's existing NFPA/CMS citations cover the 96-hour fuel-planning detail). Universities instead lean on combined heat and power for everyday supply and resilience together: DOE's Better Buildings series finds 'the average CHP system at a college/university has a capacity of 9.1 MW,' with flagship installations like the University of Minnesota's 22.8 MW system built with black-start capability to keep campus hospitals and labs powered through grid outages. A 1-20 MW microreactor would displace either the code-mandated diesel generator bank (hospitals, prisons, water plants) or the campus CHP plant (universities, medical campuses).",
+    "sources": [
+     {
+      "label": "Cornell LII — 42 CFR 482.15, Condition of participation: Emergency preparedness",
+      "url": "https://www.law.cornell.edu/cfr/text/42/482.15",
+      "quote": "The hospital must implement emergency and standby power systems based on the emergency plan",
+      "status": "fetched"
+     },
+     {
+      "label": "DOE Better Buildings — CHP Market Sector Fact Sheet: Colleges & Universities",
+      "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Colleges_Universities.pdf",
+      "quote": "The average CHP system at a college/university has a capacity of 9.1 MW.",
+      "status": "fetched"
+     }
+    ]
+   }
   },
   {
    "sector": "Agriculture & Food",
    "loads": [
     {
      "label": "Large lighted greenhouse campuses",
-     "band": "1\u20138 MW",
+     "band": "1–8 MW",
      "note": "",
-     "band_full": "1\u20138 MW"
+     "band_full": "1–8 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Greenhouses",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Greenhouses.pdf",
+       "quote": "Electricity demand was as low as 1.5 MW in the afternoon but spiked to 11 MW at night to power grow lights",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "DOE Better Buildings CHP fact sheet: greenhouse CHP installations average 3 MW (post-2005, down from >100 MW utility-scale cogeneration plants in the 1990s). Named example: Houweling's Tomatoes (six greenhouses, Camarillo, CA) had electricity demand 'as low as 1.5 MW in the afternoon' spiking to '11 MW at night to power grow lights.'",
+     "delta_note": "The named campus's night-time lighting peak (11 MW) runs slightly above our 8 MW ceiling; its daytime low (1.5 MW) and the CHP fleet average (3 MW) both fit inside the band."
     },
     {
      "label": "Large indoor-growing facilities",
-     "band": "1\u201310 MW",
+     "band": "1–10 MW",
      "note": "",
-     "band_full": "1\u201310 MW"
+     "band_full": "1–10 MW",
+     "sources": [
+      {
+       "label": "DOE Better Buildings — Combined Heat and Power (CHP) Market Sector Fact Sheet: Greenhouses (Indoor Vertical Farming section)",
+       "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Greenhouses.pdf",
+       "quote": "A vertical grow operation can consume as much as 70,000 MWh per year, depending on farm size and crop types",
+       "status": "fetched"
+      }
+     ],
+     "verdict": "supports",
+     "published": "Same DOE fact sheet, on indoor vertical farming: 'A vertical grow operation can consume as much as 70,000 MWh per year' — equivalent to ~8 MW average (70,000 MWh ÷ 8,760 h), inside the band near its ceiling."
     },
     {
      "label": "Large land-based aquaculture operations",
-     "band": "1\u20135 MW",
-     "note": "",
-     "band_full": "1\u20135 MW"
+     "band": "0.5–16 MW",
+     "note": "published examples bracket the range: a small fishery near 0.5 MW, an intensive recirculating system near 16 MW; no mid-size figure located",
+     "band_full": "0.5–16 MW published examples bracket the range: a small fishery near 0.5 MW, an intensive recirculating system near 16 MW; no mid-size figure located",
+     "sources": [
+      {
+       "label": "US Patent — Systems and methods of intensive recirculating aquaculture (via search synthesis, not directly fetched)",
+       "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10034461",
+       "quote": "electrical energy consumption installed estimated at 16,000 kW",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "contradicts",
+     "published": "Two data points bracket our band from opposite sides rather than falling inside it: a patent describing an intensive recirculating aquaculture system (RAS) cites installed electrical capacity of ~16 MW at full scale (above our 5 MW ceiling), while one unspecified 'fishery' consumed 4.1 million kWh/yr (~0.47 MW average, below our 1 MW floor).",
+     "delta_note": "Corrected 2026-08-21: previously 1–5 MW. The two published data points sit on either side of that band, neither inside it. Land-based RAS (recirculating aquaculture system) facilities are unusually energy-intensive (continuous pumping, aeration, filtration, temperature control), which may explain why a large intensive system runs well above this band; a much smaller operation runs well below it. The 1–5 MW band may be describing a mid-size case this research didn't surface."
     },
     {
      "label": "Remote seafood-processing plants connected to a year-round community grid",
-     "band": "1\u20135 MW",
+     "band": "1–5 MW",
      "note": "during processing",
-     "band_full": "1\u20135 MW during processing"
+     "band_full": "1–5 MW during processing",
+     "sources": [
+      {
+       "label": "Search synthesis (source page not independently identified/fetched)",
+       "url": "https://www.wipo.int/web-publications/green-technology-book-expo-edition/en/3-4-green-rural-energy-solutions-energy-transition-in-fisheries-and-aquaculture.html",
+       "quote": "one fishery consumed 4.1 million kWh of electricity annually",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "partial",
+     "published": "One unspecified 'fishery' reportedly consumed 4.1 million kWh/yr, equivalent to ~0.47 MW average — below our 1 MW floor, though this is a year-round average rather than an 'during processing' peak/seasonal figure, which the band specifically calls out as higher.",
+     "delta_note": "This figure is an annual average for an unspecified-size fishery, not a during-processing peak for a large remote plant, so it likely understates the band's intended (seasonal peak) figure rather than genuinely contradicting it."
     },
     {
      "label": "Very large meat, dairy and frozen-food plants",
-     "band": "2\u201315 MW",
+     "band": "2–15 MW",
      "note": "",
-     "band_full": "2\u201315 MW"
+     "band_full": "2–15 MW",
+     "sources": [
+      {
+       "label": "ResearchGate — Example breakdown of energy use at a typical meat plant (via search synthesis, not directly fetched)",
+       "url": "https://www.researchgate.net/figure/1-Example-breakdown-of-energy-use-at-a-typical-meat-plant-continued_tbl15_37621627",
+       "quote": "Energy requirements for a typical meat processing facility would be 8-10 MWt (thermal) and 4-6 MWe (electrical)",
+       "status": "snippet-only"
+      }
+     ],
+     "verdict": "supports",
+     "published": "'Energy requirements for a typical meat processing facility would be 8-10 MWt (thermal) and 4-6 MWe (electrical)' — the electrical figure sits comfortably inside the band; refrigeration compressors are cited as the largest single electricity user (~24.5% of plant-wide electricity)."
     },
     {
      "label": "Large grain and oilseed mills",
-     "band": "5\u201320 MW",
+     "band": "5–20 MW",
      "note": "",
-     "band_full": "5\u201320 MW"
+     "band_full": "5–20 MW",
+     "verdict": "not_found",
+     "not_found_note": "No facility-level MW figure found after two search angles. Sources report only specific energy consumption per unit of production (e.g., ~4–7 kWh per hundredweight of flour milled), which would require an unstated production-rate assumption to convert to a plant-level MW figure."
     },
     {
      "label": "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping",
-     "band": "2\u201320 MW",
+     "band": "2–20 MW",
      "note": "",
-     "band_full": "2\u201320 MW"
+     "band_full": "2–20 MW",
+     "verdict": "not_found",
+     "not_found_note": "No source found describing a combined growing+processing+refrigeration+water-pumping 'integrated agricultural campus' as a single documented facility type with its own MW figure; this appears to be a composite category the dataset defines by combining the other rows in this sector rather than one independently published elsewhere."
     }
-   ]
+   ],
+   "context": {
+    "today": "Most irrigation power still comes from diesel or petrol engines, or from grid-fed electric motors backed by diesel generators where grid service is unreliable — 'the vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors' as well as grid-plus-diesel-backup electric motors. Lit greenhouse operations instead often run on-site combined heat and power, sized to supply grow-light electricity, heat and CO2 together, and DOE's greenhouse CHP fact sheet notes such 'CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.' A 1-20 MW microreactor would displace diesel irrigation/backup gensets at farm scale, or a greenhouse campus's CHP plant.",
+    "sources": [
+     {
+      "label": "energypedia — Powering Agriculture: Irrigation",
+      "url": "https://energypedia.info/wiki/Powering_Agriculture:_Irrigation",
+      "quote": "The vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors",
+      "status": "fetched"
+     },
+     {
+      "label": "DOE Better Buildings — CHP Market Sector Fact Sheet: Greenhouses",
+      "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Greenhouses.pdf",
+      "quote": "CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.",
+      "status": "fetched"
+     }
+    ]
+   }
   }
  ]
 }
