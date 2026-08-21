@@ -57,6 +57,19 @@ class SourceShape(unittest.TestCase):
             for s in ss:
                 self.assert_source(s, f"vendor {v['id']}")
 
+    def test_vendor_delivery_year_agrees_with_target_text(self):
+        """first_delivery_year (drives the hero stat) duplicates a fact stated
+        in first_delivery_target prose; duplicated values must be tested for
+        agreement or they drift (CLAUDE.md single-source-of-truth)."""
+        for v in load("vendors.json")["vendors"]:
+            year = v.get("first_delivery_year")
+            self.assertIsNotNone(year, f"{v['id']}: missing first_delivery_year")
+            target = v.get("first_delivery_target") or ""
+            milestones = " ".join(m["date"] for m in v.get("milestones", []))
+            self.assertIn(str(year), target + " " + milestones,
+                          f"{v['id']}: first_delivery_year {year} not stated in "
+                          f"target text or milestones — copies drifted")
+
     def test_cost_bands_all_cited(self):
         costs = load("costs.json")
         rows = costs["microreactor_lcoe"] + costs["displaced_alternatives"]
