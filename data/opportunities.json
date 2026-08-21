@@ -67,6 +67,18 @@
       "gaps": []
     },
     {
+      "id": "doe-pilot", "track": "us-gov", "sector": "Federal R&D — DOE authorization track",
+      "name": "DOE Reactor Pilot Program — 11 projects", "owner": "U.S. Department of Energy",
+      "location": "DOE and DOE-approved sites; first units at INL and in Utah",
+      "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
+      "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe", "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
+      "instrument": "EO 14301 pilot programme using DOE's own authorization authority — no NRC licence",
+      "land_acres": null, "shell": null, "utility_filing": "N/A — DOE-authorised test reactors",
+      "status": "Three critical, others in safety review",
+      "sources": [{"label": "ANS — Reactor Pilot Program at the July 4 deadline", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"}, {"label": "Holland & Knight — the May 2025 nuclear executive orders", "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders"}],
+      "gaps": ["Test reactors under DOE authority, not commercially licensed plants — the commercial path still runs through NRC", "Per-project power ratings not all published"]
+    },
+    {
       "id": "eielson", "track": "us-gov", "sector": "Defense — remote installation power",
       "name": "Eielson Air Force Base micro-reactor pilot", "owner": "U.S. Department of the Air Force",
       "location": "Fairbanks, AK", "vendor": "Oklo (Aurora)",
@@ -74,8 +86,8 @@
       "instrument": "Design/build/own/operate award",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "Awarded",
-      "sources": [{"label": "Carried from docs/microreactor-demand-research.md §3, sourced there to DoD/Oklo coverage", "url": "https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026"}],
-      "gaps": ["Primary Eielson award document not re-verified in this pass — treat as carried-forward, not freshly sourced"]
+      "sources": [{"label": "Sen. Murkowski — Eielson AFB microreactor pilot announcement", "url": "https://www.murkowski.senate.gov/press/release/murkowski-welcomes-eielson-afb-announcement-on-microreactor-pilot-program"}, {"label": "Nasdaq — Oklo selected for Eielson AFB Aurora microreactor", "url": "https://www.nasdaq.com/articles/oklo-selected-provide-clean-power-eielson-air-force-base-aurora-microreactor"}],
+      "gaps": ["Primary DoD award document not located — sourced to the senator's release and financial press coverage of the selection"]
     },
     {
       "id": "equinix-radiant", "track": "us-commercial", "sector": "Compute — colocation data centres",
@@ -96,7 +108,7 @@
       "instrument": "Demand-aggregation consortium, launched 2025-09-02 by The Open Group",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "Consortium formed; no procurement",
-      "sources": [{"label": "The Open Group / IANC", "url": "https://www.opengroup.org/industrial-advanced-nuclear-consortium"}, {"label": "Carried from docs/microreactor-demand-research.md §4 (BusinessWire 2025-09-02)", "url": "https://www.businesswire.com"}],
+      "sources": [{"label": "The Open Group / IANC", "url": "https://www.opengroup.org/IANC"}, {"label": "BusinessWire — The Open Group launches IANC (2025-09-02)", "url": "https://www.businesswire.com/news/home/20250902229163/en/The-Open-Group-Launches-the-Industrial-Advanced-Nuclear-Consortium"}],
       "gaps": ["No member has issued a microreactor RFP", "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs vs >70% favouring wind/solar — press-reported only, direct fetch 403'd"]
     },
     {
@@ -118,7 +130,7 @@
       "instrument": "$1.8B state funding programme",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "Live programme, nuclear not yet eligible",
-      "sources": [{"label": "Carried from docs/microreactor-demand-research.md §3 (University of Houston Energy Innovation)", "url": "https://uh.edu/energy/"}],
+      "sources": [{"label": "University of Houston Energy Innovation — Texas backup power microgrid resilience (2025)", "url": "https://www.uh.edu/uh-energy-innovation/news-events/energy/stories/2025/microgirdresilience.php"}],
       "gaps": ["Nuclear is not named as an eligible technology — this is a substitution opportunity into live procurement, not an existing nuclear pipeline"]
     },
     {
@@ -129,7 +141,7 @@
       "instrument": "Named commercial customer; UK regulatory review underway",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "In regulatory review",
-      "sources": [{"label": "Carried from docs/microreactor-demand-research.md §6", "url": "https://www.onr.org.uk/"}],
+      "sources": [{"label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)", "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"}],
       "gaps": ["Competitor deployment, not an opening for Antares/Radiant/Westinghouse — included as proof a commercial port operator will sign for microreactor power"]
     },
     {
@@ -151,7 +163,7 @@
       "instrument": "FID — the most construction-advanced U.S.-linked SMR export relationship",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "FID approved",
-      "sources": [{"label": "Carried from docs/microreactor-demand-research.md §6 (Neutron Bytes 2026-02-13)", "url": "https://neutronbytes.com/"}],
+      "sources": [{"label": "Neutron Bytes — FID approved for six NuScale SMRs in Romania (2026-02-13)", "url": "https://neutronbytes.com/2026/02/13/final-investment-decision-approved-for-six-nuscale-smrs-in-romania/"}],
       "gaps": ["SMR scale — included as proof the U.S. export machinery reaches funded construction, not as a microreactor lead"]
     },
     {
@@ -162,7 +174,7 @@
       "instrument": "Trilateral MOC — U.S. reactor design, Japan heavy manufacturing, Korea construction/supply chain",
       "land_acres": null, "shell": null, "utility_filing": null,
       "status": "Signed",
-      "sources": [{"label": "Carried from docs/microreactor-demand-research.md §6 — state.gov release, press-corroborated (UPI, Korea Times); direct fetch failed on encoding", "url": "https://www.state.gov/"}],
+      "sources": [{"label": "State Dept release — trilateral MOC on SMR deployments (direct fetch failed on encoding; press-corroborated)", "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-japan-and-the-republic-of-korea-sign-a-trilateral-memorandum-of-cooperation-on-small-modular-reactor-deployments-in-other-countries/"}, {"label": "UPI — U.S., Japan, Korea joint SMR project (2026-07-13)", "url": "https://www.upi.com/Top_News/World-News/2026/07/13/united-states-japan-joint-small-modular-reactor-project/9231783994951/"}],
       "gaps": ["Primary state.gov page not independently read — press-corroborated only"]
     }
   ]

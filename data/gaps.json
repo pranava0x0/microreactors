@@ -7,13 +7,14 @@
   {
    "field": "land_acres",
    "have": 1,
-   "total": 14,
+   "total": 15,
    "pct": 7,
    "missing_ids": [
     "anpi-jbsa",
     "anpi-buckley",
     "janus",
     "dome",
+    "doe-pilot",
     "eielson",
     "equinix-radiant",
     "ianc",
@@ -27,9 +28,9 @@
   },
   {
    "field": "utility_filing",
-   "have": 1,
-   "total": 14,
-   "pct": 7,
+   "have": 2,
+   "total": 15,
+   "pct": 13,
    "missing_ids": [
     "anpi-jbsa",
     "anpi-buckley",
@@ -49,11 +50,12 @@
   {
    "field": "shell",
    "have": 4,
-   "total": 14,
-   "pct": 29,
+   "total": 15,
+   "pct": 27,
    "missing_ids": [
     "anpi-jbsa",
     "janus",
+    "doe-pilot",
     "eielson",
     "ianc",
     "nano-supermicro",
@@ -66,8 +68,8 @@
   },
   {
    "field": "timeline",
-   "have": 13,
-   "total": 14,
+   "have": 14,
+   "total": 15,
    "pct": 93,
    "missing_ids": [
     "equinix-radiant"
@@ -75,8 +77,8 @@
   },
   {
    "field": "power_mw",
-   "have": 13,
-   "total": 14,
+   "have": 14,
+   "total": 15,
    "pct": 93,
    "missing_ids": [
     "nano-supermicro"
@@ -84,15 +86,15 @@
   },
   {
    "field": "sector",
-   "have": 14,
-   "total": 14,
+   "have": 15,
+   "total": 15,
    "pct": 100,
    "missing_ids": []
   },
   {
    "field": "owner",
-   "have": 14,
-   "total": 14,
+   "have": 15,
+   "total": 15,
    "pct": 100,
    "missing_ids": []
   }
@@ -135,11 +137,20 @@
    ]
   },
   {
+   "id": "doe-pilot",
+   "name": "DOE Reactor Pilot Program \u2014 11 projects",
+   "track": "us-gov",
+   "gaps": [
+    "Test reactors under DOE authority, not commercially licensed plants \u2014 the commercial path still runs through NRC",
+    "Per-project power ratings not all published"
+   ]
+  },
+  {
    "id": "eielson",
    "name": "Eielson Air Force Base micro-reactor pilot",
    "track": "us-gov",
    "gaps": [
-    "Primary Eielson award document not re-verified in this pass \u2014 treat as carried-forward, not freshly sourced"
+    "Primary DoD award document not located \u2014 sourced to the senator's release and financial press coverage of the selection"
    ]
   },
   {
@@ -240,19 +251,19 @@
  "next_pass": [
   {
    "target": "Utility filings",
-   "why": "13/14 rows have none.",
+   "why": "13/15 rows have none.",
    "where": "FERC eLibrary; state PUC dockets (CO PUC for Buckley/Xcel, MT PSC for Malmstrom/NorthWestern); San Antonio city council agendas for JBSA/CPS Energy, which is municipally owned and so files locally rather than at a PUC.",
    "why_search_failed": "Web search does not index docket systems. This needs direct docket queries, not more searching."
   },
   {
    "target": "Land area / site footprint",
-   "why": "13/14 rows have none.",
+   "why": "14/15 rows have none.",
    "where": "NRC ADAMS early site permit and construction permit filings; DoD installation master plans; NEPA environmental assessments.",
    "why_search_failed": "Only Westinghouse publishes a footprint figure (2 acres), and that is a design claim rather than an allocated parcel."
   },
   {
    "target": "Shell / enclosure detail",
-   "why": "10/14 rows have none.",
+   "why": "11/15 rows have none.",
    "where": "Vendor technical datasheets; NRC pre-application meeting slides; DOE DOME experiment safety documentation.",
    "why_search_failed": "Press coverage reports mass and transportability but not containment or enclosure design."
   }

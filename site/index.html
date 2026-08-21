@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Microreactor Opportunity Map</title>
-<meta name="description" content="A cited map of the microreactor business-development opportunity space: U.S. government, international, and U.S. commercial tracks, with cost bands and an honest evidence-gap register.">
+<meta name="description" content="A cited map of the microreactor business-development opportunity space: pipeline, economics, vendors, demand, market mechanisms, policy pathways, and an honest evidence-gap register.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,14 +14,16 @@
 <body>
 
 <nav class="nav">
-  <div class="wrap">
+  <div class="wrap navrow">
     <span class="wordmark">Microreactor <b>Opportunity Map</b></span>
-    <div class="navlinks">
-      <a href="#pipeline">Pipeline</a>
-      <a href="#economics">Economics</a>
-      <a href="#vendors">Vendors</a>
-      <a href="#demand">Demand</a>
-      <a href="#evidence">Evidence</a>
+    <div class="tabs" role="tablist" aria-label="Sections" id="tabs">
+      <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Pipeline</button>
+      <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Economics</button>
+      <button class="tab" role="tab" id="tab-vendors" aria-controls="vendors" data-panel="vendors">Vendors</button>
+      <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Demand</button>
+      <button class="tab" role="tab" id="tab-market" aria-controls="market" data-panel="market">Market design</button>
+      <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Policy</button>
+      <button class="tab" role="tab" id="tab-evidence" aria-controls="evidence" data-panel="evidence">Evidence</button>
     </div>
   </div>
 </nav>
@@ -31,16 +33,18 @@
     <p class="eyebrow">Business development · captured <span id="built"></span></p>
     <h1>Where microreactors actually get sold.</h1>
     <p class="lede">Three buyer tracks, ranked by how far each has moved from interest to instrument.
-      Every row carries a source. The fields that web search could not reach — land, shell,
-      utility filings — are counted and named rather than quietly left blank.</p>
+      Every band and price carries a source you can click. The fields research could not reach are
+      counted and named rather than quietly left blank.</p>
     <div class="stats" id="stats"></div>
   </div>
 </header>
 
-<section id="pipeline">
+<main>
+
+<section id="pipeline" role="tabpanel" aria-labelledby="tab-pipeline" tabindex="0">
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">01 — Pipeline</p>
+      <p class="eyebrow">01 — Pipeline · who is buying now</p>
       <h2>The opportunity set</h2>
       <p class="prose">Only one track has signed pairings of a named reactor to a named site.
         Select a track to filter; open a row for its full field set and citations.</p>
@@ -50,11 +54,11 @@
   </div>
 </section>
 
-<section id="economics">
+<section id="economics" role="tabpanel" aria-labelledby="tab-economics" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">02 — Economics</p>
-      <h2>What it costs, against what it displaces</h2>
+      <p class="eyebrow">02 — Economics · what it costs, against what it displaces</p>
+      <h2>Published cost bands, sourced</h2>
       <p class="prose">No microreactor has sold power commercially, so nothing here is a realised
         price. The width of each band encodes the assumption behind it — first-of-a-kind capital
         cost versus manufacturing scale. That spread is the finding, not noise.</p>
@@ -64,48 +68,87 @@
       <span><i style="background:var(--antares-red)"></i>Microreactor LCOE estimate</span>
       <span><i style="background:var(--stone-600)"></i>Displaced alternative</span>
     </div>
+    <div id="altnotes"></div>
     <p class="prose" id="reading" style="margin-top:var(--space-8)"></p>
+    <div class="subhead">
+      <h3 id="ptc-q"></h3>
+    </div>
+    <div id="incentives"></div>
   </div>
 </section>
 
-<section id="vendors">
+<section id="vendors" role="tabpanel" aria-labelledby="tab-vendors" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">03 — Vendors</p>
+      <p class="eyebrow">03 — Vendors · who builds the machines</p>
       <h2>The three the Air Force already picked</h2>
       <p class="prose">Choosing a third vendor to sit alongside Antares and Radiant was not a
         judgment call. In April 2026 the Department of the Air Force and DIU paired exactly three
         companies with three named bases under the ANPI programme — Westinghouse is the third.</p>
     </div>
-    <div class="vgrid" id="vendors"></div>
+    <div class="vgrid" id="vendorcards"></div>
   </div>
 </section>
 
-<section id="demand">
+<section id="demand" role="tabpanel" aria-labelledby="tab-demand" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">04 — Demand</p>
-      <h2>Loads that fit a 1–20 MW block</h2>
+      <p class="eyebrow">04 — Demand · which loads fit a 1–20 MW block</p>
+      <h2>Sized buyer classes</h2>
       <p class="prose">Annual-average electrical demand bands. Planning figures, not guaranteed
-        averages — final sizing needs at least a year of hourly site-load data.</p>
+        averages — final sizing needs at least a year of hourly site-load data. Each band links
+        its evidence inline; bands still awaiting a source say so.</p>
     </div>
     <div class="sgrid" id="sectors"></div>
   </div>
 </section>
 
-<section id="evidence">
+<section id="market" role="tabpanel" aria-labelledby="tab-market" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <p class="eyebrow">05 — Evidence</p>
-      <h2>What this research does not know</h2>
-      <p class="prose">Field coverage across the opportunity set. Three fields are near-empty, and
-        all three fail for the same reason: web search does not index docket systems. More
-        searching will not fix them — direct docket queries will.</p>
+      <p class="eyebrow">05 — Market design · how early orders get cheaper</p>
+      <h2>A shared orderbook, with a shared safety net</h2>
+      <p class="prose" id="market-intro"></p>
     </div>
+    <div id="mechanism"></div>
+    <div class="subhead"><h3>What history says about pooled orders</h3>
+      <p class="prose">Every mechanism below actually ran. Each row records how it worked, what
+        happened, and who got the better deal — the first buyers or the later ones.</p></div>
+    <div id="precedents"></div>
+  </div>
+</section>
+
+<section id="policy" role="tabpanel" aria-labelledby="tab-policy" tabindex="0" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow">06 — Policy · rules that unlock the sale</p>
+      <h2>Regulatory pathways</h2>
+      <p class="prose">Mechanisms that would let a microreactor replace diesel backup, pair with
+        batteries, or connect faster. Rows marked <span class="ideatag">idea</span> are proposals
+        from this research, not enacted policy — they carry no citation because none exists yet.</p>
+    </div>
+    <div id="pathways"></div>
+  </div>
+</section>
+
+<section id="evidence" role="tabpanel" aria-labelledby="tab-evidence" tabindex="0" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow">07 — Evidence · sources and gaps</p>
+      <h2>What this research knows, and does not</h2>
+      <p class="prose">Every source cited anywhere on this site, indexed below, followed by field
+        coverage across the opportunity set and the three fields that stay near-empty because web
+        search does not index docket systems.</p>
+    </div>
+    <div class="subhead"><h3>Source register</h3></div>
+    <div id="register"></div>
+    <div class="subhead"><h3>Field coverage</h3></div>
     <div id="coverage"></div>
     <div class="next" id="next"></div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
@@ -116,7 +159,7 @@
       Visual language from the Antares design system.
     </p>
     <p style="margin-top:var(--space-4)">
-      Sources are linked inline on every row. Rows marked
+      Sources are linked inline on every row and indexed on the Evidence tab. Rows marked
       <span style="color:var(--antares-red)">not found</span> are honest absences, not zeros.
     </p>
   </div>
