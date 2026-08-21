@@ -111,7 +111,8 @@
   /* ---------- economics ---------- */
   var bands = [];
   D.costs.microreactor_lcoe.forEach(function (c) {
-    bands.push({ lab: c.scenario, lo: c.low_mwh, hi: c.high_mwh, cls: "micro", src: c.source });
+    bands.push({ lab: c.scenario, lo: c.low_mwh, hi: c.high_mwh, cls: "micro", src: c.source,
+                 caveat: c.caveat });
   });
   D.costs.displaced_alternatives.forEach(function (a) {
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt", src: a.source });
@@ -132,10 +133,11 @@
     return '<div class="bar"><div class="lab">' + esc(b.lab) + "</div>" +
       '<div class="track"><div class="span ' + b.cls + (narrow ? " narrow" : "") +
       '" style="left:' + left.toFixed(1) + "%;width:" + Math.max(width, 2.5).toFixed(1) +
-      '%"><span class="t">' + esc(txt) + "</span></div></div></div>";
+      '%"><span class="t">' + esc(txt) + "</span></div></div>" +
+      (b.caveat ? '<div class="caveat">' + esc(b.caveat) + "</div>" : "") + "</div>";
   }).join("") +
     '<div class="axis"><span>$0</span><span>$' + MAX / 2 + "</span><span>$" + MAX + "/MWh</span></div>";
-  $("reading").textContent = D.costs.reading;
+  $("reading").innerHTML = esc(D.costs.reading).replace(/\*\*(.+?)\*\*/g,"<strong style=\"color:var(--text-primary)\">$1</strong>");
 
   /* ---------- vendors ---------- */
   $("vendors").innerHTML = D.vendors.vendors.map(function (v) {
