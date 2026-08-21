@@ -159,8 +159,9 @@
   $("sectors").innerHTML = D.sectors.sectors.map(function (sec) {
     return '<div class="sector"><h3>' + esc(sec.sector) + "</h3>" +
       sec.loads.map(function (l) {
-        return '<div class="load"><span>' + esc(l.label) + '</span><span class="b">' +
-          esc(l.band) + "</span></div>";
+        return '<div class="load"><span>' + esc(l.label) +
+          (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
+          '</span><span class="b">' + esc(l.band) + "</span></div>";
       }).join("") + "</div>";
   }).join("");
 

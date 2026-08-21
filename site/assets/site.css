@@ -132,6 +132,8 @@ section:first-of-type{border-top:none}
   border-bottom:1px solid var(--border-default)}
 .load{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);padding:var(--space-2) 0;
   font-size:var(--size-body-sm);border-bottom:1px solid var(--border-subtle)}
+.load .note{display:block;color:var(--text-tertiary);font-size:var(--size-caption);
+  margin-top:2px;line-height:1.4}
 .load .b{color:var(--antares-red);font-family:var(--font-mono);font-size:var(--size-caption);
   white-space:nowrap;align-self:center}
 
