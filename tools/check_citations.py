@@ -109,6 +109,14 @@ def check() -> List[Tuple[str, str]]:
             key = "policy.json:idea" if pw.get("kind") == "idea" else ""
             need(pw, f"policy:{pw['name'][:40]}", key)
 
+    sites_p = DATA / "deployment_sites.json"
+    if sites_p.exists():
+        sites = json.loads(sites_p.read_text())
+        for s in sites["sites"]:
+            need(s, f"deployment_sites:{s['id']}")
+        for nf in sites["_meta"].get("negative_findings", []):
+            need(nf, f"deployment_sites:negative:{nf['finding'][:40]}")
+
     return violations
 
 

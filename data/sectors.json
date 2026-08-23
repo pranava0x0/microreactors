@@ -304,9 +304,10 @@
      {
       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
       "url": "https://gain.inl.gov/content/uploads/4/2024/04/Document-INL-EXT-21-63214.pdf",
-      "quote": "They have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities.",
+      "quote": "They have a very high reliance on diesel power generation",
       "status": "fetched",
-      "note": "p.50, Section 5.2.1 Small Rural Community use case, citing UAA (2020b) on Alaska's 100+ isolated microgrid communities."
+      "note": "p.50, Section 5.2.1 Small Rural Community use case, citing UAA (2020b) on Alaska's 100+ isolated microgrid communities.",
+      "verified": "2026-08-23 span shortened to end before extraction glyph damage ('100%of' in PDF text layer), re-verified against cached copy"
      }
     ]
    }

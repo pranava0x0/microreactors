@@ -1,79 +1,42 @@
-# Session state — 2026-08-21 (citation + IA overhaul, round 2)
+# Session state — 2026-08-23 (site eval + deployment-sites research) — COMPLETE
 
-Resume file: if this session dies, a fresh session reads THIS file plus `git log -5`
-and continues from "Next actions". Keep updates terse; strike items when done.
+Resume file: a fresh session reads THIS file plus `git log -5`. This session's work is
+committed on `jam/site-eval-deployment-research-b100c6` (worktree); not yet pushed/PR'd —
+that is the user's call. Full write-up: docs/evaluation-2026-08-23.md.
 
-## Where things stand
+## What landed (all committed, 40/40 tests green)
 
-- Commit `18aad96` (branch `jam/microreactor-research-citations-a1b352`) holds round 1:
-  7-tab IA, citations (144 sources), corrected economics (FOAK/NOAK/Alaska/PTC-OBBBA),
-  mechanisms + policy tabs, stdlib test suite + optional Playwright e2e, CI workflow.
-- Round 2 (user feedback) in progress, this list is the contract:
-  1. Hero stats: replace site-meta stats with deployment/BD stats (binding instruments,
-     test reactors critical, largest preorder, first delivery target, utility-filing %).
-     Stats appear ONLY on the landing tab; other tabs get no hero at all.
-  2. Vendors tab: per-vendor deployment timeline (done/target milestones with dates+sources).
-  3. Demand tab: per-sector "how this sector powers today / what a microreactor displaces"
-     intro with citations; close as many of the 12 uncited bands as possible.
-     Agent writing to data/research/demand-context.json.
-  4. Reference-site scan (nukebarbarian, DOE, NRC, vendor sites, FERC, WoodMac, Heatmap)
-     for flow/naming ideas. Agent writing to data/research/site-flow-notes.json.
-  5. Tab renames pending agent input; default decision if agent unhelpful:
-     Pipeline->Deals (landing), Economics->Costs, Demand->Loads, others unchanged.
-  6. Citation tooling: tools/check_citations.py (claim-number scan: any record whose
-     prose carries hard numbers must have sources or an explicit uncited/idea marker)
-     + tools/check_links.py (dead/blocked/live sweep). Wire scanner into tests; link
-     checker manual (network in CI is flaky).
-  7. /learnings pass into CLAUDE.md/companions.
-  8. Ship: push branch, PR, wait for Codex bot, address comments (budget 2 rounds), merge.
-  9. GitHub Pages deploy: repo may be private -> check `gh repo view --json visibility`;
-     make public if needed (user pre-authorised all decisions), add
-     .github/workflows/pages.yml (actions/upload-pages-artifact from site/ +
-     deploy-pages), enable Pages via gh api; verify the live URL returns the real
-     document (not a login page) before claiming success.
+1. **Evaluation**: baseline 30 tests green; the deeper claim-vs-source audit found and
+   fixed three data defects (canada-src a year stale — Westinghouse cancelled SRC fall
+   2025; Penn State LOI milestone mis-dated 2026-02-28 → 2025-02-17 and mis-cited to an
+   article predating it; a quote span crossing PDF glyph damage). Eielson row upgraded
+   to primary DAF/Oklo sources, closing its registered gap. Oklo–Switch 12 GW MPA added
+   to the tracker (was missing).
+2. **Tools** (each validated live before use): fetch_source.py (fetch→cache→index,
+   --from-file for 403 hosts), adams_search.py (new adams-search.nrc.gov API — old
+   adams.nrc.gov is gone), ferc_elibrary.py, verify_quotes --cache (offline quote gate;
+   caught a real pre-existing defect on first run). 26 sources indexed with URL +
+   access date + SHA-256; raw bytes in gitignored data/cache/.
+3. **data/deployment_sites.json**: 5 deep rows (Penn State FRONTIER, CVEA Valdez —
+   tabled after a positive study, Eielson, Chalk River — paused, SRC — cancelled) +
+   6 scan rows (RELLIS, UIUC Kronos, ACU MSRR permitted, Last Energy Haskell + Llynfi,
+   Oklo–Diamondback) + negative findings (FERC zero microreactor filings ever;
+   Malmstrom's only filing is a 1994 tariff) + category absences. Gated by
+   tests/test_deployment_sites.py (enums from _meta, bands locked to sectors.json,
+   tracker_ids resolve, mutation-checked scanner coverage).
 
-## Decisions already taken (do not relitigate)
+## Open threads (see backlog.md for the full list)
 
-- Stats derive in build_data.py from new data fields: `binding` bool per opportunity,
-  `units_committed` (equinix 20), `reactors_critical_2026` (doe-pilot row = 3),
-  `first_delivery_year` per vendor (2028/2028/2029).
-- Binding=true rows: anpi-jbsa, anpi-buckley, anpi-malmstrom, dome, doe-pilot, eielson,
-  equinix-radiant, uk-lastenergy, canada-src, romania-nuscale (10). False: janus, ianc,
-  nano-supermicro, texas-backup, jp-kr-moc.
-- Vendor milestones arrays added to vendors.json (Antares Mark-0 critical 2026-06-04;
-  Radiant fuel-at-DOME 2026-07-01 + Equinix preorder 2025-08-14; eVinci DOME test +
-  Penn State LOI 2026-02-28 + SRC 2029 + Malmstrom 2030), each with source.
-- No co-author trailers in commits (repo config claude.coauthor=false).
+- State-PUC docket forums not yet queried: CO PUC, MT PSC, San Antonio agendas,
+  Alaska RCA, ERCOT queue number.
+- Site UI for deployment_sites.json (a Sites layer/tab) — dataset is ready, render isn't.
+- Watch items with dates: Penn State FRONTIER REP (overdue vs. 'later in 2025' promise),
+  UIUC CP docketing decision, Aalo RELLIS ESP (docket 99902128), Eielson environmental
+  analysis, Chalk River post-bankruptcy disposition.
+- DAF Microreactor FAQs PDF still uncaptured (af.mil 403s curl; browser chunk flow).
 
-## Next actions (strike as completed)
+## Session mechanics notes
 
-- [x] Launch agents (site-flow, demand-context)
-- [x] Data: binding/units/critical fields + vendor milestones
-- [x] build_data: new summary stats; app.js hero landing-only + timeline renderer
-- [x] tools/check_citations.py + check_links.py + tests (scanner mutation-checked red)
-- [x] Pages workflow written (.github/workflows/pages.yml, enablement:true, gates on suite)
-- [x] Repo facts: github.com/pranava0x0/microreactors PRIVATE, default main, gh authed,
-      no secrets/PII in tree (scanned). Plan unknown -> try Pages private, else flip public.
-- [x] Integrate agent output (8 sector contexts, 4 band closures incl. 2 corrections,
-      uncited 12 -> 8, tab renames Tracker/Costs/Applications)
-- [x] Full suite green (29 tests incl. e2e); Applications/landing screenshots verified
-- [x] /learnings written to both repos; issues.md, backlog.md, docs/agent-runs.md filled
-- [x] Commits 18aad96, 2d0ad2e, baf4763; branch pushed; PR #2 open
-      (https://github.com/pranava0x0/microreactors/pull/2)
-- [x] Codex round 1: 3 findings (P1 snippet-only sources rendered as fetched; P2 scanner
-      missed incentives prose + the answer overclaimed construction dates; P2 link checker
-      folded DNS-dead into blocked). All three fixed in fa97431: verify_quotes.py upgraded
-      10 sources, dagger marker for the rest, scanner covers the block prose
-      (mutation-checked), URLError taxonomy split. Replies posted on all three threads.
-- [x] Codex round 2: 4 findings (P1 srcList/register missing the snippet marker — the
-      round-1 class in the other render paths; P2 hard-coded verify stamp; P2 arrow-key/
-      hashchange scroll; P2 panel focus ring removed). All fixed in 647302e, class swept
-      (cite + srcList + register), replies posted. Round-3 courtesy poll: quiet ×5.
-      Per the repo review-budget rule, merging now.
-- [x] Round 3 (post-pause): 3 findings incl. a real check_links crash (4-tuple contract
-      change missed a call site) - fixed in 8e652d7 with an offline regression test;
-      scanner now covers mechanisms proposal prose; last artifact-count stat replaced.
-- [x] COMPLETE 2026-08-21: repo public, Pages enabled (build_type=workflow), PR #2
-      merged (mergedAt 2026-08-21T23:53:55Z), remote branch deleted, ci+pages green on
-      main, live document verified at https://pranava0x0.github.io/microreactors/
-      (title + headline + current assets confirmed, not just a 200).
+- The 16-min resume timer (cron ce715fb0, 13:02) was set first as asked; the usage
+  window never cut the session, so it was deleted at close.
+- Capture rules for blocked hosts and the ans.org JS-shell trap are in issues.md.

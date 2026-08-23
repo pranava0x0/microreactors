@@ -57,13 +57,32 @@ def status_of(url: str, timeout: float) -> int:
 
 def collect_urls() -> list:
     """Every distinct cited URL across the data files. collect_sources yields
-    (label, url, context, status); only the URL matters here."""
+    (label, url, context, status) for labeled source dicts; deployment_sites
+    (not in build_data.FILES — the site does not render it yet) is swept with
+    a plain URL walker so its filings[] entries, which carry a url but no
+    label, are covered too."""
     found: list = []
     for name in FILES:
         p = ROOT / "data" / f"{name}.json"
         if p.exists():
             collect_sources(json.loads(p.read_text()), name, found)
-    return sorted({u for _, u, _, _ in found})
+    urls = {u for _, u, _, _ in found}
+
+    def walk(node) -> None:
+        if isinstance(node, dict):
+            u = node.get("url")
+            if isinstance(u, str) and u.startswith("http"):
+                urls.add(u)
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    sites_p = ROOT / "data" / "deployment_sites.json"
+    if sites_p.exists():
+        walk(json.loads(sites_p.read_text()))
+    return sorted(urls)
 
 
 def main() -> int:
