@@ -51,15 +51,45 @@ class TestDeploymentSites(unittest.TestCase):
                           f"{s['id']}: status {s['status']!r} not declared in _meta.status_values")
             self.assertIn(s["depth"], depths, f"{s['id']}: bad depth")
 
-    def test_band_matches_sectors_file(self):
-        """A row filed under one of the Applications tab's sectors must use one
-        of that sector's exact load labels — otherwise the site list and the
-        Applications page drift apart."""
+    def test_band_matches_declared_taxonomy(self):
+        """Every category must be either an Applications-tab sector (band must
+        be one of its exact load labels) or declared in _meta.extra_categories
+        (band from its declared list). An unknown category FAILS — a silently
+        skipped row would be orphaned the day a Sites UI groups by category."""
+        extra = self.meta.get("extra_categories", {})
         for s in self.sites:
             if s["category"] in self.bands_by_sector:
                 self.assertIn(s["band"], self.bands_by_sector[s["category"]],
                               f"{s['id']}: band {s['band']!r} is not a load label "
                               f"of sector {s['category']!r}")
+            elif s["category"] in extra:
+                self.assertIn(s["band"], extra[s["category"]],
+                              f"{s['id']}: band {s['band']!r} not declared for "
+                              f"extra category {s['category']!r}")
+            else:
+                self.fail(f"{s['id']}: category {s['category']!r} is neither an "
+                          f"Applications sector nor declared in _meta.extra_categories")
+
+    def test_negative_findings_carry_committed_evidence(self):
+        """The FERC zero-hit and Malmstrom-1994 claims must be reproducible from
+        committed raw payloads, not just assertable against a live API
+        (AGENTS.md: cache the raw response and commit it). Re-parse the evidence
+        with the same tool that fetched it and re-derive each claim."""
+        import ferc_elibrary
+        for nf in self.meta["negative_findings"]:
+            ev = nf.get("evidence")
+            self.assertTrue(ev, f"negative finding lacks evidence file: {nf['finding'][:60]}")
+            payload = json.loads((ROOT / ev).read_text())
+            self.assertIn("response", payload)
+            rows = ferc_elibrary.rows(payload["response"])
+            if "zero filings" in nf["finding"]:
+                self.assertEqual(payload["response"]["totalHits"], 0)
+                self.assertEqual(rows, [])
+            if "Malmstrom" in nf["finding"]:
+                self.assertEqual(payload["response"]["totalHits"], 1)
+                self.assertEqual(rows[0]["accession"], "19940107-0041")
+                self.assertTrue(str(rows[0]["filed"]).endswith("1994"),
+                                f"unexpected filed date {rows[0]['filed']!r}")
 
     def test_every_row_cited_with_full_urls(self):
         for s in self.sites:
