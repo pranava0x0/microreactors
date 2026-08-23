@@ -295,6 +295,38 @@
       "units_committed": 20
     },
     {
+      "id": "oklo-switch",
+      "track": "us-commercial",
+      "sector": "Compute — AI/cloud data centres",
+      "name": "Switch — 12 GW Oklo master power agreement",
+      "owner": "Switch (AI/cloud data centres)",
+      "location": "Not site-assigned (Switch campuses: NV, MI, GA, TX)",
+      "vendor": "Oklo (Aurora)",
+      "power_mw": "12 GW programme through 2044; 50 MWe units",
+      "timeline": "Framework signed 2024-12; individual binding PPAs to follow per project",
+      "instrument": "Non-binding Master Power Agreement — the largest announced corporate nuclear framework; grew Oklo's order book to ~14 GW",
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
+      "status": "Master agreement (non-binding)",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/b9b2009161ff8e15.html)"
+        },
+        {
+          "label": "Utility Dive — Oklo inks 12-GW supply agreement with Switch",
+          "url": "https://www.utilitydive.com/news/oklo-aurora-smr-advanced-nuclear-reactor-supply-agreement-data-center-developer-switch/735933/"
+        }
+      ],
+      "gaps": [
+        "No site list, no delivery schedule, no unit pricing — binding only at future per-project PPAs"
+      ],
+      "binding": false
+    },
+    {
       "id": "ianc",
       "track": "us-commercial",
       "sector": "Heavy industry — oil & gas, mining, steel",

@@ -3,8 +3,23 @@
     "captured": "2026-08-23",
     "purpose": "Candidate deployment SITES per Applications-tab category (US + abroad), with the regulatory/utility filing trail for each. Complements opportunities.json: that file tracks buyer instruments; this file tracks named physical sites and their filings. Rows that correspond to a tracker row carry tracker_id and add site-level facts only.",
     "method": "Depth-first: deep rows were built by reading primary documents (docket searches via tools/adams_search.py + tools/ferc_elibrary.py, pages cached via tools/fetch_source.py and indexed in data/research/source_index.json with URL + access date + SHA-256). Scan rows come from click-through on the Applications tab's citations plus web search, each with at least one source. No row is written without a source.",
-    "depth_values": ["deep", "scan"],
-    "status_values": ["concept", "feasibility", "tabled", "pre-application", "application", "intent-to-award", "paused", "cancelled", "under-construction", "operating"],
+    "depth_values": [
+      "deep",
+      "scan"
+    ],
+    "status_values": [
+      "concept",
+      "feasibility",
+      "tabled",
+      "pre-application",
+      "application",
+      "intent-to-award",
+      "permitted",
+      "paused",
+      "cancelled",
+      "under-construction",
+      "operating"
+    ],
     "filing_note": "A filing entry is a document lodged with (or issued by) a regulator or utility forum: NRC ADAMS accessions, FERC eLibrary accessions, state PUC dockets, CNSC records. 'None located' gaps are honest absences after a docket-system search, not unchecked blanks.",
     "negative_findings": [
       {
@@ -25,7 +40,8 @@
           }
         ]
       }
-    ]
+    ],
+    "category_absences": "Categories where no named candidate microreactor site was located as of the capture date, beyond what opportunities.json already tracks: Mining (the IANC consortium is multi-site and unassigned; the tracker's counter-signal row stands), Agriculture & Food, Transportation (US — the one named port deployment is abroad, see the tracker's Thames Freeport row), and the hospital/prison/water bands of Civic Infrastructure. Honest absences, not unchecked blanks."
   },
   "sites": [
     {
@@ -266,6 +282,265 @@
       ],
       "gaps": [
         "Which alternative vendors SRC is now evaluating — not named on its pages as of 2026-08-23"
+      ]
+    },
+    {
+      "id": "tamus-rellis",
+      "name": "Texas A&M RELLIS Energy Proving Ground",
+      "category": "Civic Infrastructure",
+      "band": "Major universities",
+      "country": "US",
+      "region": "Bryan, TX (RELLIS campus)",
+      "status": "pre-application",
+      "depth": "scan",
+      "owner": "Texas A&M University System",
+      "vendor": "Aalo Atomics, Kairos Power, Natura Resources, Terrestrial Energy (site agreements; Aalo is the microreactor-class entrant)",
+      "power": "site projected for >1 GW combined across vendors; Aalo unit is the 1–20 MW-class entrant",
+      "summary": "A university system offering land to reactor developers on its 2,400-acre RELLIS campus, with its own NRC early-site-permit track: notice of intent 2024-11-07, NRC project number 99902136 assigned 2024-11-08. Four vendors signed site agreements (announced 2025-02-04). In 2026 Aalo filed its own letter of intent to pursue an ESP for an Aalo reactor at RELLIS — the microreactor-class filing on this site.",
+      "filings": [
+        {
+          "forum": "NRC ADAMS",
+          "type": "Notice of intent for an early site permit (Texas A&M System)",
+          "id": "ML24312A358",
+          "date": "2024-11-07",
+          "url": "https://www.nrc.gov/docs/ML2431/ML24312A358.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Assignment of project number 99902136 for the RELLIS ESP",
+          "id": "ML24312A364",
+          "date": "2024-11-08",
+          "url": "https://www.nrc.gov/docs/ML2431/ML24312A364.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Aalo letter of intent to pursue an ESP for an Aalo reactor at RELLIS (docket 99902128)",
+          "id": "ML26190A374",
+          "date": "2026-07-09",
+          "url": "https://www.nrc.gov/docs/ML2619/ML26190A374.pdf"
+        }
+      ],
+      "utility_context": "Reactors at RELLIS could feed the ERCOT grid; no ERCOT interconnection filing identified per vendor yet.",
+      "sources": [
+        {
+          "label": "WNN — Four SMR developers aim to build at Texas A&M site",
+          "url": "https://www.world-nuclear-news.org/articles/four-smr-developers-aim-to-build-reactors-at-texas-am-university-site",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/aa3ae1cb05e950a3.html)"
+        }
+      ],
+      "gaps": [
+        "Which vendors advance beyond site agreements — the A&M ESP application itself was not located in ADAMS (only the NOI and project-number assignment)"
+      ]
+    },
+    {
+      "id": "uiuc-kronos",
+      "name": "UIUC Kronos MMR research reactor",
+      "category": "Civic Infrastructure",
+      "band": "Major universities",
+      "country": "US",
+      "region": "Urbana-Champaign, IL",
+      "status": "application",
+      "depth": "scan",
+      "owner": "University of Illinois Urbana-Champaign (NPRE)",
+      "vendor": "NANO Nuclear (Kronos MMR; formerly USNC MMR — project continued after USNC's 2024 bankruptcy)",
+      "power": "45 MWt (research reactor)",
+      "summary": "The longest-running university microreactor programme to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC announced receipt of the construction permit application on 2026-04-15. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
+      "filings": [
+        {
+          "forum": "NRC ADAMS",
+          "type": "NRC news release — application received for advanced microreactor at UIUC",
+          "id": "ML26127A022",
+          "date": "2026-04-15",
+          "url": "https://www.nrc.gov/docs/ML2612/ML26127A022.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Environmental Report, Rev. 0 (docket 99902094)",
+          "id": "ML26090A468",
+          "date": "2026-03-31",
+          "url": "https://www.nrc.gov/docs/ML2609/ML26090A468.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Regulatory engagement plan (pre-application, then-USNC MMR)",
+          "id": "ML21288A168",
+          "date": "2021-10-01",
+          "url": "https://www.nrc.gov/docs/ML2128/ML21288A168.pdf"
+        }
+      ],
+      "utility_context": "Campus research reactor intended to demonstrate district heat/steam integration with Abbott Power Plant; behind-the-meter, no PUC filing expected.",
+      "sources": [
+        {
+          "label": "UIUC NPRE — Illinois Microreactor Project page",
+          "url": "https://npre.illinois.edu/about/illinois-microreactor-project",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/c271edfcde70ad28.html)"
+        }
+      ],
+      "gaps": [
+        "Docketing/acceptance status of the CP application after receipt not yet checked"
+      ]
+    },
+    {
+      "id": "acu-msrr",
+      "name": "ACU NEXT Lab Molten Salt Research Reactor",
+      "category": "Civic Infrastructure",
+      "band": "Major universities",
+      "country": "US",
+      "region": "Abilene, TX",
+      "status": "permitted",
+      "depth": "scan",
+      "owner": "Abilene Christian University (NEXT Lab, with Natura Resources)",
+      "vendor": "Natura Resources (MSR-1)",
+      "power": "1 MWt (research reactor)",
+      "summary": "The furthest-advanced university deployment in the class: the NRC issued the construction permit for the Molten Salt Research Reactor on 2024-09-16 — the trail runs from CP application (2022-08-15) through docketing (2023-01-24) and environmental assessment (2024-01) to issuance, all on docket 05000610. The same vendor's follow-on commercial track is one of the four RELLIS entrants.",
+      "filings": [
+        {
+          "forum": "NRC ADAMS",
+          "type": "Construction permit application submittal (dockets 05000610/99902088)",
+          "id": "ML22227A202",
+          "date": "2022-08-12",
+          "url": "https://www.nrc.gov/docs/ML2222/ML22227A202.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Acceptance for docketing of the CP application",
+          "id": "ML23024A030",
+          "date": "2023-01-24",
+          "url": "https://www.nrc.gov/docs/ML2302/ML23024A030.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Environmental assessment for the MSRR",
+          "id": "ML23300A053",
+          "date": "2024-01-31",
+          "url": "https://www.nrc.gov/docs/ML2330/ML23300A053.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Construction permit issued (CPRR-1) + news release 24-071",
+          "id": "ML24243A040",
+          "date": "2024-09-16",
+          "url": "https://www.nrc.gov/docs/ML2424/ML24243A040.pdf"
+        }
+      ],
+      "utility_context": "On-campus research facility; no PUC filing expected.",
+      "sources": [
+        {
+          "label": "NRC — News release 24-071: construction permit issued for ACU research reactor",
+          "url": "https://www.nrc.gov/docs/ML2427/ML24276A165.pdf"
+        }
+      ],
+      "gaps": [
+        "Construction progress since permit issuance not tracked here (docket 05000610 continues through 2026 with degradation-management submittals)"
+      ]
+    },
+    {
+      "id": "lastenergy-haskell",
+      "name": "Last Energy Haskell County plant (data-center supply)",
+      "category": "Compute",
+      "band": "AI and very large cloud data centers",
+      "country": "US",
+      "region": "Haskell County, TX",
+      "status": "pre-application",
+      "depth": "scan",
+      "owner": "Last Energy (merchant plant; data-center customers via ERCOT)",
+      "vendor": "Last Energy (PWR-20)",
+      "power": "30 × 20 MWe = 600 MWe planned (each unit in the 1–20 MW band)",
+      "summary": "A 200-acre site secured for thirty PWR-20 microreactors (announced 2025-02) to serve Texas data-center load — the largest announced US microreactor site by unit count. The company said it filed for an ERCOT grid connection and would prepare an NRC early site permit; by 2026-07-31 its PWR-20 Regulatory Engagement Plan Rev 1.0 was in ADAMS.",
+      "filings": [
+        {
+          "forum": "NRC ADAMS",
+          "type": "Last Energy PWR-20 Regulatory Engagement Plan, Rev 1.0",
+          "id": "ML26217A115",
+          "date": "2026-07-31",
+          "url": "https://www.nrc.gov/docs/ML2621/ML26217A115.pdf"
+        },
+        {
+          "forum": "ERCOT",
+          "type": "Grid-connection filing (as reported; queue entry not independently located)",
+          "url": "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant"
+        }
+      ],
+      "utility_context": "ERCOT interconnection — one of the only microreactor projects with a grid-side filing anywhere in the US.",
+      "sources": [
+        {
+          "label": "WNN — Last Energy plans Texan microreactor plant",
+          "url": "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/800fe3c62494363c.html)"
+        }
+      ],
+      "gaps": [
+        "ERCOT queue number not located (the public GIS report was not searched)",
+        "No named data-center offtaker"
+      ]
+    },
+    {
+      "id": "lastenergy-llynfi",
+      "name": "Last Energy Llynfi (former coal plant site, Wales)",
+      "category": "Electric Utilities",
+      "band": "Replacements or partial replacements for older diesel and coal generation",
+      "country": "UK",
+      "region": "Llynfi Valley, Bridgend County, Wales",
+      "status": "pre-application",
+      "depth": "scan",
+      "owner": "Last Energy UK (site control announced 2024-10)",
+      "vendor": "Last Energy (PWR-20)",
+      "power": "4 × 20 MWe (or 83 MWt heat per unit)",
+      "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Strategic Infrastructure Project application in July 2026, and targets a site licence decision by December 2027.",
+      "filings": [
+        {
+          "forum": "ONR/Natural Resources Wales",
+          "type": "Preliminary Design Review completed (GDA-alternative pathway)",
+          "url": "https://www.world-nuclear-news.org/articles/regulatory-progress-for-last-energys-uk-project"
+        },
+        {
+          "forum": "Welsh planning (SIP)",
+          "type": "Strategic Infrastructure Project application — planned July 2026",
+          "url": "https://cleanenergyllynfi.wales/"
+        }
+      ],
+      "utility_context": "Grid-connected merchant plant in the GB market; distribution-level connection expected at 80 MWe.",
+      "sources": [
+        {
+          "label": "WNN — Regulatory progress for Last Energy's UK project",
+          "url": "https://www.world-nuclear-news.org/articles/regulatory-progress-for-last-energys-uk-project",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/66fb34a984be6ca7.html)"
+        }
+      ],
+      "gaps": [
+        "SIP application contents unverified until filed",
+        "Distinct from the tracker's Thames Freeport row — same vendor, different site and instrument"
+      ]
+    },
+    {
+      "id": "oklo-diamondback-permian",
+      "name": "Diamondback Energy Permian operations (Oklo LOI)",
+      "category": "Oil & Gas",
+      "band": "Remote oil fields and production hubs",
+      "country": "US",
+      "region": "Permian Basin near Midland, TX",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Diamondback E&P LLC",
+      "vendor": "Oklo (Aurora)",
+      "power": "50 MWe across powerhouses (units in/near the band)",
+      "summary": "The named oil-and-gas datapoint: a nonbinding letter of intent (April 2024) for Oklo to license, build, own and operate Aurora powerhouses supplying 50 MW to Diamondback's Permian operations under a 20-year PPA structure with a 20-year extension option. No site parcel or filing yet — it marks the sector's first named counterparty.",
+      "filings": [],
+      "utility_context": "Behind-the-fence supply to oilfield operations; no ERCOT or PUCT filing located.",
+      "sources": [
+        {
+          "label": "WNN — US companies sign up with Oklo for microreactor power",
+          "url": "https://www.world-nuclear-news.org/Articles/US-companies-sign-up-with-Oklo-for-microreactor-po",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/23ade65f2fda9f41.html)"
+        }
+      ],
+      "gaps": [
+        "Conversion of the LOI to a binding PPA not confirmed as of 2026-08-23"
       ]
     }
   ]
