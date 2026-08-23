@@ -1,8 +1,9 @@
 # Session state — 2026-08-23 (site eval + deployment-sites research) — COMPLETE
 
-Resume file: a fresh session reads THIS file plus `git log -5`. This session's work is
-committed on `jam/site-eval-deployment-research-b100c6` (worktree); not yet pushed/PR'd —
-that is the user's call. Full write-up: docs/evaluation-2026-08-23.md.
+Resume file: a fresh session reads THIS file plus `git log -5`. SHIPPED: PR #3 merged
+2026-08-23T18:34Z after two Codex rounds (6 findings, all fixed + replied) and a quiet
+round-3 poll; ci+pages green; live document verified serving the new data; both feature
+branches deleted (proven merged). Full write-up: docs/evaluation-2026-08-23.md.
 
 ## What landed (all committed, 40/40 tests green)
 
