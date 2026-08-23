@@ -1,79 +1,60 @@
-# Session state — 2026-08-21 (citation + IA overhaul, round 2)
+# Session state — 2026-08-23 (site eval + deployment-sites research)
 
-Resume file: if this session dies, a fresh session reads THIS file plus `git log -5`
-and continues from "Next actions". Keep updates terse; strike items when done.
+Resume file: a fresh session reads THIS file plus `git log -5` and continues from
+"Next actions". Prior session (citation+IA overhaul) is COMPLETE — PR #2 merged,
+Pages live at https://pranava0x0.github.io/microreactors/. See git history of this
+file for that log. Branch: `jam/site-eval-deployment-research-b100c6` (worktree).
 
-## Where things stand
+## The task (user's words, decomposed)
 
-- Commit `18aad96` (branch `jam/microreactor-research-citations-a1b352`) holds round 1:
-  7-tab IA, citations (144 sources), corrected economics (FOAK/NOAK/Alaska/PTC-OBBBA),
-  mechanisms + policy tabs, stdlib test suite + optional Playwright e2e, CI workflow.
-- Round 2 (user feedback) in progress, this list is the contract:
-  1. Hero stats: replace site-meta stats with deployment/BD stats (binding instruments,
-     test reactors critical, largest preorder, first delivery target, utility-filing %).
-     Stats appear ONLY on the landing tab; other tabs get no hero at all.
-  2. Vendors tab: per-vendor deployment timeline (done/target milestones with dates+sources).
-  3. Demand tab: per-sector "how this sector powers today / what a microreactor displaces"
-     intro with citations; close as many of the 12 uncited bands as possible.
-     Agent writing to data/research/demand-context.json.
-  4. Reference-site scan (nukebarbarian, DOE, NRC, vendor sites, FERC, WoodMac, Heatmap)
-     for flow/naming ideas. Agent writing to data/research/site-flow-notes.json.
-  5. Tab renames pending agent input; default decision if agent unhelpful:
-     Pipeline->Deals (landing), Economics->Costs, Demand->Loads, others unchanged.
-  6. Citation tooling: tools/check_citations.py (claim-number scan: any record whose
-     prose carries hard numbers must have sources or an explicit uncited/idea marker)
-     + tools/check_links.py (dead/blocked/live sweep). Wire scanner into tests; link
-     checker manual (network in CI is flaky).
-  7. /learnings pass into CLAUDE.md/companions.
-  8. Ship: push branch, PR, wait for Codex bot, address comments (budget 2 rounds), merge.
-  9. GitHub Pages deploy: repo may be private -> check `gh repo view --json visibility`;
-     make public if needed (user pre-authorised all decisions), add
-     .github/workflows/pages.yml (actions/upload-pages-artifact from site/ +
-     deploy-pages), enable Pages via gh api; verify the live URL returns the real
-     document (not a login page) before claiming success.
+1. Comprehensive evaluation of site + data: every claim cited; tests/scrapers
+   enforce it (extend gates where holes found).
+2. Deployment-categories research (Applications tab = 8 sectors / ~50 load bands):
+   for each category, a list of candidate SITES (US + abroad) reached by clicking
+   through from that page's citations + new search, and relevant UTILITY FILINGS
+   (the known-empty field; needs FERC eLibrary / state PUC / NRC ADAMS, not web
+   search).
+3. Depth-first: 1–2 sites per 1–3 sub-categories FIRST, with reusable scripts;
+   THEN fan out broad. Parallel + web-search before agents.
+4. Every grabbed source document gets indexed: original URL + access date; cache
+   pages (data/cache/, gitignored raw; committed index in
+   data/research/source_index.json).
+5. A 16-min timer (cron ce715fb0, fires 13:02 local) resumes this task if the
+   usage window dies.
 
-## Decisions already taken (do not relitigate)
+## Evaluation findings so far
 
-- Stats derive in build_data.py from new data fields: `binding` bool per opportunity,
-  `units_committed` (equinix 20), `reactors_critical_2026` (doe-pilot row = 3),
-  `first_delivery_year` per vendor (2028/2028/2029).
-- Binding=true rows: anpi-jbsa, anpi-buckley, anpi-malmstrom, dome, doe-pilot, eielson,
-  equinix-radiant, uk-lastenergy, canada-src, romania-nuscale (10). False: janus, ianc,
-  nano-supermicro, texas-backup, jp-kr-moc.
-- Vendor milestones arrays added to vendors.json (Antares Mark-0 critical 2026-06-04;
-  Radiant fuel-at-DOME 2026-07-01 + Equinix preorder 2025-08-14; eVinci DOME test +
-  Penn State LOI 2026-02-28 + SRC 2029 + Malmstrom 2030), each with source.
-- No co-author trailers in commits (repo config claude.coauthor=false).
+- 30/30 tests green; tools/check_citations.py green; working tree was clean.
+- Known gaps (README + gaps.json): land_acres, shell, utility_filing near-empty
+  across opportunities.json; named absences: CPS Energy (JBSA), Xcel CO
+  (Buckley), NorthWestern MT (Malmstrom) interconnection filings "not located".
+
+## Plan of record
+
+- Deep-dive picks (3 subcategories, sites with real filing trails):
+  A. Defense — remote installation: Eielson AFB pilot (Fairbanks AK; utility
+     context Golden Valley Electric Association; hunt DAF/DLA award docs + NRC
+     pre-application docket).
+  B. Civic — universities: Penn State eVinci LOI (NRC ADAMS pre-application
+     trail for eVinci; Westinghouse docket).
+  C. Utilities — remote/regional grids: Copper Valley Electric (AK, RCA dockets)
+     + abroad comparator with richest foreign filing trail (CNSC: SRC eVinci
+     pilot; check status of Chalk River MMR before citing — USNC bankruptcy).
+- Scripts to write in tools/: fetch_source.py (fetch→cache→index, idempotent),
+  adams_search.py (NRC ADAMS public API), ferc_elibrary.py (eLibrary API).
+  Validate each against a real query before relying on it.
+- New dataset: data/deployment_sites.json (category/subcategory keyed site rows
+  with filings[] and sources[]); wire into check_citations.py + new test; NOT
+  into build_data FILES yet (no UI this pass — site integration is a later PR).
+- Then broad pass: per-sector site lists US+abroad (agents in parallel OK here).
 
 ## Next actions (strike as completed)
 
-- [x] Launch agents (site-flow, demand-context)
-- [x] Data: binding/units/critical fields + vendor milestones
-- [x] build_data: new summary stats; app.js hero landing-only + timeline renderer
-- [x] tools/check_citations.py + check_links.py + tests (scanner mutation-checked red)
-- [x] Pages workflow written (.github/workflows/pages.yml, enablement:true, gates on suite)
-- [x] Repo facts: github.com/pranava0x0/microreactors PRIVATE, default main, gh authed,
-      no secrets/PII in tree (scanned). Plan unknown -> try Pages private, else flip public.
-- [x] Integrate agent output (8 sector contexts, 4 band closures incl. 2 corrections,
-      uncited 12 -> 8, tab renames Tracker/Costs/Applications)
-- [x] Full suite green (29 tests incl. e2e); Applications/landing screenshots verified
-- [x] /learnings written to both repos; issues.md, backlog.md, docs/agent-runs.md filled
-- [x] Commits 18aad96, 2d0ad2e, baf4763; branch pushed; PR #2 open
-      (https://github.com/pranava0x0/microreactors/pull/2)
-- [x] Codex round 1: 3 findings (P1 snippet-only sources rendered as fetched; P2 scanner
-      missed incentives prose + the answer overclaimed construction dates; P2 link checker
-      folded DNS-dead into blocked). All three fixed in fa97431: verify_quotes.py upgraded
-      10 sources, dagger marker for the rest, scanner covers the block prose
-      (mutation-checked), URLError taxonomy split. Replies posted on all three threads.
-- [x] Codex round 2: 4 findings (P1 srcList/register missing the snippet marker — the
-      round-1 class in the other render paths; P2 hard-coded verify stamp; P2 arrow-key/
-      hashchange scroll; P2 panel focus ring removed). All fixed in 647302e, class swept
-      (cite + srcList + register), replies posted. Round-3 courtesy poll: quiet ×5.
-      Per the repo review-budget rule, merging now.
-- [x] Round 3 (post-pause): 3 findings incl. a real check_links crash (4-tuple contract
-      change missed a call site) - fixed in 8e652d7 with an offline regression test;
-      scanner now covers mechanisms proposal prose; last artifact-count stat replaced.
-- [x] COMPLETE 2026-08-21: repo public, Pages enabled (build_type=workflow), PR #2
-      merged (mergedAt 2026-08-21T23:53:55Z), remote branch deleted, ci+pages green on
-      main, live document verified at https://pranava0x0.github.io/microreactors/
-      (title + headline + current assets confirmed, not just a 200).
+- [ ] Probe ADAMS + FERC eLibrary endpoints (curl) — validate before scripting
+- [ ] tools/fetch_source.py + data/research/source_index.json + .gitignore cache
+- [ ] Deep dive A (Eielson), B (Penn State), C (Copper Valley + CNSC comparator)
+- [ ] data/deployment_sites.json schema + first rows + citation-gate wiring
+- [ ] Try to close CPS/Xcel/NorthWestern filing absences via dockets
+- [ ] Broad pass per 8 sectors (US + abroad lists)
+- [ ] Evaluation write-up (what the gate covers, holes closed this pass)
+- [ ] Commit early and often; update this file as things land
