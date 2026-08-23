@@ -3,6 +3,33 @@
 Living audit trail. Each bug: date, area, description, root cause (code bug vs data bug
 vs test bug), status.
 
+- **2026-08-23 · data · canada-src row a year stale — Fixed.** The tracker carried SRC as
+  "Funded / binding, pilot by 2029" while SRC's own FAQ states Westinghouse cancelled the
+  contract in fall 2025, pivoting eVinci to space/defence/government. Root cause: **data
+  bug** (no refresh trigger on counterparty status). Fix: status "Cancelled — vendor
+  withdrew", binding false (hero stat 10→9 binding), quote-locked to SRC's page, cached.
+  Regression guard: the quote-lock now verifies offline via `verify_quotes --cache`.
+- **2026-08-23 · data · Penn State milestone mis-dated AND mis-cited — Fixed.** Vendor
+  milestone said Penn State filed its NRC letter of intent on 2026-02-28, citing a 2023
+  POWER article that predates the claim and cannot contain it. The primary document
+  (ADAMS ML25059A029, fetched and cached) is dated 2025-02-17 and is for a 15 MWt
+  eVinci-based research-reactor construction permit. Root cause: **data bug**, the
+  claim-vs-source mismatch class (see 2026-08-21 capex entry) — presence-checking cannot
+  catch it; only reading the cited document does. Fix: date corrected, milestone re-cited
+  to the LOI itself with a verified quote span.
+- **2026-08-23 · data · Quote span crossed PDF glyph damage — Fixed.** A sectors.json
+  quote ("…with 100% of electric production…") failed offline verification against the
+  cached INL-EXT-21-63214 bytes because the PDF text layer reads "100%of" (no space).
+  The prior network verification passed under a different extractor. Root cause: **data
+  bug** per the documented glyph-damage rule — span must end before the damaged region.
+  Fix: span shortened, re-verified. Found BY the new `verify_quotes --cache` gate.
+- **2026-08-23 · tooling · ans.org caches as a JS shell — noted.** urllib fetches of
+  ans.org return a nav-only stub (5.6KB) that looks like a successful capture. The stub
+  row was removed from the source index. Rule: after caching a page, grep the cache for
+  the fact you want before citing it (the "May 30 NOITA date" claimed by a search summary
+  was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
+  clients outright — use browser capture + `fetch_source --from-file`.
+
 - **2026-08-21 · data · Fabricated capex scenarios in costs.json — Fixed** (commit 18aad96).
   Two LCOE rows ("CAPEX $5,000/kW (FOAK-ish)" → $80–90/MWh and "CAPEX $2,500/kW (at scale)"
   → $35/MWh) cited Abdussami et al. (arXiv 2506.13361 / Nucl. Eng. & Design), which contains

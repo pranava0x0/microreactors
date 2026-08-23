@@ -24,11 +24,17 @@ Open it directly or serve the `site/` directory.
 |---|---|
 | `site/` | The visualisation. Static HTML/CSS/JS; data is inlined into `site/data.js`. |
 | `data/*.json` | The dataset. Hand-curated except `gaps.json`, which is derived. |
-| `data/research/` | Committed research trails from the citation passes (agent outputs, verbatim). |
+| `data/deployment_sites.json` | Candidate deployment sites per Applications category (US + abroad) with their regulatory filing trails. Gated by `tests/test_deployment_sites.py`; not yet rendered by the site (backlog). |
+| `data/research/` | Committed research trails from the citation passes (agent outputs, verbatim), plus `source_index.json` — every fetched source document: URL, access date, SHA-256 of the cached bytes. |
+| `data/cache/` | Raw bytes of every indexed source (gitignored; rebuild with `tools/fetch_source.py`). |
 | `tools/build_data.py` | Bundles `data/*.json` → `site/data.js`, computes the headline figures and the source register. |
 | `tools/build_gaps.py` | Derives `data/gaps.json` (field coverage + next-pass plan) from the data. |
 | `tools/check_citations.py` | Claim-coverage scanner: any record whose prose carries a hard number must have a source, be registered uncited, or sit on a reasoned allowlist. Wired into the test suite. |
 | `tools/check_links.py` | Liveness sweep over every cited URL (dead/blocked/live). Network-dependent, so run locally on demand, never in CI. |
+| `tools/fetch_source.py` | Fetch → cache → index a source document (URL + access date + SHA-256). `--from-file` for hosts that 403 non-browser clients. |
+| `tools/adams_search.py` | NRC ADAMS docket/full-text search (the only way to find NRC filings — web search does not index ADAMS). |
+| `tools/ferc_elibrary.py` | FERC eLibrary docket/full-text search, same rationale. |
+| `tools/verify_quotes.py` | Quote-lock verification: network mode upgrades snippet-only sources; `--cache` verifies every quoted source offline against `data/cache/`. |
 | `tests/` | The CI gate: citation coverage, generator sync/idempotency, HTML/CSS/JS contract, prose register. |
 | `docs/` | Segmentation rationale and the two prior research documents. |
 
@@ -63,10 +69,14 @@ time a row was added.
 ## What this research knows and does not know
 
 Sector, owner, timeline and power are well covered. **Land area, shell/enclosure and
-utility filings are near-empty** and all three fail for the same reason: web search does
-not index docket systems. More searching will not fix them. The next pass needs direct
-queries against FERC eLibrary, state PUC dockets, and NRC ADAMS — see the Evidence tab,
-generated from `data/gaps.json`.
+utility filings are near-empty on the tracker** because web search does not index docket
+systems. The 2026-08-23 pass built the direct-query tools (`tools/adams_search.py`,
+`tools/ferc_elibrary.py`) and ran them: NRC ADAMS and FERC eLibrary are now covered —
+including the negative results (FERC has zero microreactor filings; see
+`data/deployment_sites.json` `_meta.negative_findings`) — while state PUC forums
+(CO, MT, San Antonio, Alaska RCA, the ERCOT queue) remain open in `backlog.md`.
+Site-level filing trails live in `data/deployment_sites.json`; see also
+`docs/evaluation-2026-08-23.md`.
 
 Rows that show **not found** are honest absences. Nothing in this dataset is inferred to
 fill a blank.

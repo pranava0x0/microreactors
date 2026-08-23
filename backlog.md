@@ -1,9 +1,24 @@
 # Backlog
 
-- **high** · Docket pass for the three near-empty fields (utility filings, land parcels,
-  shell detail): FERC eLibrary, CO PUC (Buckley/Xcel), MT PSC (Malmstrom/NorthWestern),
-  San Antonio city agendas (JBSA/CPS), NRC ADAMS. Web search cannot reach these; the
-  Evidence tab documents exactly where to look.
+- **high** · Docket pass, remaining forums (2026-08-23: NRC ADAMS + FERC eLibrary DONE —
+  tools/adams_search.py + tools/ferc_elibrary.py, findings in data/deployment_sites.json;
+  FERC has zero microreactor description hits ever, Malmstrom's only filing is a 1994
+  tariff). Still open: CO PUC (Buckley/Xcel), MT PSC (Malmstrom/NorthWestern), San
+  Antonio city agendas (JBSA/CPS), Alaska RCA (CVEA), ERCOT queue number for Last
+  Energy Haskell.
+- **high** · Integrate data/deployment_sites.json into the site as a Sites layer/tab
+  (per-category candidate sites + filings). The dataset is gated and cited; only the
+  UI is missing. Decide render: per-sector site lists on Applications vs its own tab.
+- **med** · Deep-dive follow-ups with expiry: Penn State FRONTIER REP (promised late
+  2025, absent from ADAMS as of 2026-08-23 — does the Westinghouse commercial-market
+  exit affect it?); UIUC CP docketing decision after 2026-04-15 receipt; Aalo RELLIS
+  ESP progress on docket 99902128; DAF/NRC environmental analysis for Eielson (next
+  paper trail); Chalk River MMR post-bankruptcy disposition (Standard Nuclear).
+- **med** · Browser-capture the DAF Microreactor FAQs PDF (eielson.af.mil 403s curl;
+  use the JS chunk flow documented in AGENTS.md) — carries the NOITA issuance date and
+  site-selection detail the row currently lacks.
+- **low** · Last Energy Poland (Legnica SEZ letter of intent, DB Energy) — one search
+  found nothing current; verify and add an abroad row or record the absence.
 - **med** · Close the remaining uncited Applications bands (registered in
   sectors.json `_meta.uncited`); each needs a facility-level MW source or stays marked.
 - **med** · Watch items with expiry: NRC Part 57 finalisation (proposed May 2026 — the
