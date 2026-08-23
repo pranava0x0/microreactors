@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "purpose": "Every source document fetched during research: original URL, access date, SHA-256 of the cached bytes. Cache lives in data/cache/ (gitignored)."
+  },
+  "sources": [
+    {
+      "url": "https://adams-search.nrc.gov/assets/APS-User-Manual.pdf",
+      "fetched": "2026-08-23",
+      "sha256": "ab6d6e298cf9a142aad94dbe39024eb0002513beef1e61851784652145643c93",
+      "bytes": 2687062,
+      "content_type": "application/pdf",
+      "cache": "2224c51a7e859914.pdf",
+      "title": "NRC ADAMS Public Search (APS) User Manual",
+      "note": "Reference for the ADAMS search API used by tools/adams_search.py"
+    }
+  ]
+}
