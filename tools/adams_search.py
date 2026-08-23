@@ -81,7 +81,10 @@ def main() -> int:
     try:
         if args.accession:
             payload = get(f"{API}/{args.accession}")
-            print(json.dumps(payload, indent=2)[:4000])
+            if args.json:
+                json.dump(payload, sys.stdout, indent=2)  # complete, cacheable
+            else:
+                print(json.dumps(payload, indent=2)[:4000])  # human preview
             return 0
         if not args.query and not args.docket:
             ap.error("need a query, --docket, or --accession")
