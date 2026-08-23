@@ -44,7 +44,7 @@ agreement was missing entirely; added (binding=false).
 
 | Tool | What it does | Validated against |
 |---|---|---|
-| `fetch_source.py` | Fetch → cache raw bytes (`data/cache/`, gitignored) → index in `data/research/source_index.json` with URL, access date, SHA-256, content type. `--from-file` indexes browser-captured bytes for hosts that 403 non-browser clients (recorded `capture: out-of-band`). `--list` reports. | 27 sources indexed this session |
+| `fetch_source.py` | Fetch → cache raw bytes (`data/cache/`, gitignored) → index in `data/research/source_index.json` with URL, access date, SHA-256, content type. `--from-file` indexes browser-captured bytes for hosts that 403 non-browser clients (recorded `capture: out-of-band`). `--list` reports. | 26 sources indexed this session |
 | `adams_search.py` | NRC ADAMS full-text/docket search via the API behind adams-search.nrc.gov (`POST /api/search`, contract sniffed from the Angular app — the old adams.nrc.gov WBA endpoint no longer resolves). Direct nrc.gov/docs URLs in every hit. | eVinci docket 99902079 (244 docs), ACU 05000610, UIUC 99902094, RELLIS 99902136 |
 | `ferc_elibrary.py` | FERC eLibrary search via `eLibraryWebAPI/api/Search/AdvancedSearch`; docket sweeps and description/full-text search; emits stable `filelist?accession_number=` permalinks. | "microreactor" description search: **0 hits ever** (a citable negative); Malmstrom's single 1994 tariff |
 | `verify_quotes.py --cache` | Offline quote-lock verification against the cache (above). | 19/19 |
