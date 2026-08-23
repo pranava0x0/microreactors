@@ -10,7 +10,13 @@ bytes that were read, even if the URL dies.
 
 Usage:
   python3 tools/fetch_source.py URL [URL ...] [--title "..."] [--note "..."] [--force]
+  python3 tools/fetch_source.py URL --from-file capture.html   # pre-captured body
   python3 tools/fetch_source.py --list
+
+--from-file indexes URL with bytes captured out-of-band (e.g. via a real
+browser when the host 403s non-browser TLS fingerprints — nrc.gov/docs,
+*.af.mil and oklo.com all do). The row records capture="out-of-band" so the
+provenance is honest.
 
 Idempotent: a URL already in the index is skipped (reported) unless --force,
 which re-fetches and updates the row in place. Exit 1 if any fetch failed.
@@ -71,17 +77,36 @@ def cache_path(url: str, ctype: str) -> pathlib.Path:
     return CACHE / f"{stem}{ext}"
 
 
-def add(url: str, title: str, note: str, force: bool, idx: dict) -> bool:
-    """Fetch url into the cache and upsert its index row. True on success."""
+def sniff_type(body: bytes, path: pathlib.Path) -> str:
+    if body[:5] == b"%PDF-":
+        return "application/pdf"
+    for t, ext in EXT_BY_TYPE.items():
+        if path.suffix == ext:
+            return t
+    return "application/octet-stream"
+
+
+def add(url: str, title: str, note: str, force: bool, idx: dict,
+        body_path: str = "") -> bool:
+    """Fetch url into the cache and upsert its index row. True on success.
+
+    body_path: index url with pre-captured bytes from this file instead of
+    fetching (for hosts that 403 non-browser clients); recorded as
+    capture="out-of-band"."""
     row = next((r for r in idx["sources"] if r["url"] == url), None)
     if row and not force and (CACHE / row["cache"]).exists():
         print(f"already indexed ({row['fetched']}): {url}")
         return True
-    try:
-        body, ctype, final_url = fetch(url)
-    except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
-        print(f"FETCH FAILED  {url}: {e}", file=sys.stderr)
-        return False
+    if body_path:
+        p_in = pathlib.Path(body_path)
+        body, final_url = p_in.read_bytes(), url
+        ctype = sniff_type(body, p_in)
+    else:
+        try:
+            body, ctype, final_url = fetch(url)
+        except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
+            print(f"FETCH FAILED  {url}: {e}", file=sys.stderr)
+            return False
     CACHE.mkdir(parents=True, exist_ok=True)
     p = cache_path(url, ctype)
     p.write_bytes(body)
@@ -93,6 +118,8 @@ def add(url: str, title: str, note: str, force: bool, idx: dict) -> bool:
         "content_type": ctype or "unknown",
         "cache": p.name,
     }
+    if body_path:
+        new["capture"] = "out-of-band"
     if final_url != url:
         new["final_url"] = final_url
     if title:
@@ -118,7 +145,11 @@ def main() -> int:
     ap.add_argument("--note", default="")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--from-file", default="",
+                    help="index the (single) URL with pre-captured bytes from this file")
     args = ap.parse_args()
+    if args.from_file and len(args.urls) != 1:
+        ap.error("--from-file requires exactly one URL")
 
     idx = load_index()
     if args.list:
@@ -129,7 +160,8 @@ def main() -> int:
     if not args.urls:
         ap.error("no URLs given (or use --list)")
 
-    ok = all([add(u, args.title, args.note, args.force, idx) for u in args.urls])
+    ok = all([add(u, args.title, args.note, args.force, idx, args.from_file)
+              for u in args.urls])
     save_index(idx)
     return 0 if ok else 1
 
