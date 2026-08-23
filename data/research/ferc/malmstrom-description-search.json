@@ -1,0 +1,78 @@
+{
+ "_meta": {
+  "fetched": "2026-08-23",
+  "tool": "tools/ferc_elibrary.py search(text='Malmstrom', full_text=False, per_page=20)",
+  "api": "https://elibrary.ferc.gov/eLibraryWebAPI/api/Search/AdvancedSearch"
+ },
+ "response": {
+  "searchHits": [
+   {
+    "reference": "{4B552916-3B31-C489-B717-6C4A89300007}-{AB38CC9F-811A-4834-8BD7-4018E60C9EBA}",
+    "documentId": "4B552916-3B31-C489-B717-6C4A89300007",
+    "description": "MT Power Co submits title page,elec tariff Sched #GS-1,et al w/Malmstrom Air Force Base under ER94-801.",
+    "summary": null,
+    "category": "Submittal",
+    "acesssionNumber": "19940107-0041",
+    "issuedDate": "12/29/1993",
+    "filedDate": "01/03/1994",
+    "postedDate": null,
+    "classTypes": [
+     {
+      "documentClass": "Application/Petition/Request",
+      "documentType": "Electric Rate Filing"
+     }
+    ],
+    "availCode": "P",
+    "familyValue": "none",
+    "libraries": [
+     "Electric"
+    ],
+    "score": 85.54,
+    "docketNumbers": [
+     "ER94-801-000"
+    ],
+    "transmittals": [
+     {
+      "fileId": "0",
+      "fileType": "",
+      "fileFormat": "Microfilm",
+      "fileName": "",
+      "fileDesc": "",
+      "fileSize": 0,
+      "transmittalFk": null
+     },
+     {
+      "fileId": "00A16C41-66E2-5005-8110-C31FAFC91712",
+      "fileType": "TIF",
+      "fileFormat": "Image",
+      "fileName": "10633546.TIF",
+      "fileDesc": "",
+      "fileSize": 1018378,
+      "transmittalFk": null
+     }
+    ],
+    "affiliations": [
+     {
+      "afType": "AUTHOR",
+      "affiliation": "MONTANA POWER CO",
+      "lastName": "STUART",
+      "firstInitial": "R",
+      "middleInitial": "C"
+     },
+     {
+      "afType": "RECIPIENT",
+      "affiliation": "SECRETARY OF THE COMMISSION & STAFF",
+      "lastName": "CASHELL",
+      "firstInitial": "L",
+      "middleInitial": "D"
+     }
+    ]
+   }
+  ],
+  "totalHits": 1,
+  "numHits": 1,
+  "success": true,
+  "errorMessage": null,
+  "searchResultId": null
+ }
+}

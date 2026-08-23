@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-21",
+    "captured": "2026-08-23",
     "method": "Web search only. No agent fan-out. Every row carries at least one source URL; rows without one were not written.",
     "field_coverage_warning": "Sector, owner, timeline and power are well covered. LAND AREA, SHELL/ENCLOSURE and UTILITY FILINGS are sparse across the whole set — see data/gaps.json. Web search does not reach docket systems; those three fields need a targeted pass against FERC eLibrary, state PUC dockets and NRC ADAMS.",
     "binding_note": "binding=true marks rows holding a signed, funded or awarded instrument (selection with a named site, purchase agreement with deposits, FID, operating infrastructure); consortia, MOUs, unfunded programmes and channel agreements are false. Set 2026-08-21.",
@@ -225,13 +225,27 @@
       "location": "Fairbanks, AK",
       "vendor": "Oklo (Aurora)",
       "power_mw": "Power and heat; Aurora class above microreactor band",
-      "timeline": "Oklo targets first commercial operation of Aurora-INL late 2027/2028",
-      "instrument": "Design/build/own/operate award",
+      "timeline": "NOITA announced 2025-06-11; 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC preparing environmental analysis",
+      "instrument": "Notice of Intent to Award — Oklo to design, construct, own and operate, delivering electricity and heat under a long-term PPA",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "Awarded",
+      "status": "Intent to award (NOITA)",
       "sources": [
+        {
+          "label": "DAF — Microreactor pilot reaches major project milestone (NOITA)",
+          "url": "https://www.eielson.af.mil/News/Display/Article/4213214/microreactor-pilot-reaches-major-project-milestone/",
+          "quote": "issuance of a Notice of Intent to Award (NOITA) to Oklo, Inc.",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/b2a27fcdd4682985.txt)"
+        },
+        {
+          "label": "Oklo — Selected as intended awardee for Eielson AFB",
+          "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+          "quote": "delivering both electricity and heat to the DAF's preferred installation, Eielson Air Force Base in Alaska, under a long-term power purchase agreement",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/2ee0865dff6b2579.txt)"
+        },
         {
           "label": "Sen. Murkowski — Eielson AFB microreactor pilot announcement",
           "url": "https://www.murkowski.senate.gov/press/release/murkowski-welcomes-eielson-afb-announcement-on-microreactor-pilot-program"
@@ -242,7 +256,8 @@
         }
       ],
       "gaps": [
-        "Primary DoD award document not located — sourced to the senator's release and financial press coverage of the selection"
+        "Land parcel on base not identified",
+        "NOITA initiates negotiation — the award itself follows NRC licensing"
       ],
       "binding": true
     },
@@ -278,6 +293,38 @@
       ],
       "binding": true,
       "units_committed": 20
+    },
+    {
+      "id": "oklo-switch",
+      "track": "us-commercial",
+      "sector": "Compute — AI/cloud data centres",
+      "name": "Switch — 12 GW Oklo master power agreement",
+      "owner": "Switch (AI/cloud data centres)",
+      "location": "Not site-assigned (Switch campuses: NV, MI, GA, TX)",
+      "vendor": "Oklo (Aurora)",
+      "power_mw": "12 GW programme through 2044; 50 MWe units",
+      "timeline": "Framework signed 2024-12; individual binding PPAs to follow per project",
+      "instrument": "Non-binding Master Power Agreement — the largest announced corporate nuclear framework; grew Oklo's order book to ~14 GW",
+      "land_acres": null,
+      "shell": null,
+      "utility_filing": null,
+      "status": "Master agreement (non-binding)",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/b9b2009161ff8e15.html)"
+        },
+        {
+          "label": "Utility Dive — Oklo inks 12-GW supply agreement with Switch",
+          "url": "https://www.utilitydive.com/news/oklo-aurora-smr-advanced-nuclear-reactor-supply-agreement-data-center-developer-switch/735933/"
+        }
+      ],
+      "gaps": [
+        "No site list, no delivery schedule, no unit pricing — binding only at future per-project PPAs"
+      ],
+      "binding": false
     },
     {
       "id": "ianc",
@@ -397,22 +444,29 @@
       "location": "Saskatchewan, Canada",
       "vendor": "Westinghouse (eVinci)",
       "power_mw": "up to 5 MWe",
-      "timeline": "Pilot by 2029, subject to licensing",
-      "instrument": "First eVinci customer; SRC is the licensed operator; CA$80M government funding",
+      "timeline": "Cancelled fall 2025 — Westinghouse shifted eVinci to space, defence and government applications, away from commercial markets",
+      "instrument": "Was the first eVinci customer (CA$80M government funding, SRC as licensed operator); Westinghouse cancelled the contract in fall 2025",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "Funded",
+      "status": "Cancelled — vendor withdrew",
       "sources": [
         {
           "label": "POWER — Westinghouse secures first eVinci customer",
           "url": "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/"
+        },
+        {
+          "label": "SRC — FAQs About Nuclear (project status)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/b7b035a9b58f500a.html)"
         }
       ],
       "gaps": [
-        "CNSC licensing milestones not tracked here"
+        "SRC states it is evaluating other microreactor technologies for northern and remote Saskatchewan; no successor vendor or instrument located as of 2026-08-23"
       ],
-      "binding": true
+      "binding": false
     },
     {
       "id": "romania-nuscale",
