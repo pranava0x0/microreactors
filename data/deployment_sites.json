@@ -1,0 +1,272 @@
+{
+  "_meta": {
+    "captured": "2026-08-23",
+    "purpose": "Candidate deployment SITES per Applications-tab category (US + abroad), with the regulatory/utility filing trail for each. Complements opportunities.json: that file tracks buyer instruments; this file tracks named physical sites and their filings. Rows that correspond to a tracker row carry tracker_id and add site-level facts only.",
+    "method": "Depth-first: deep rows were built by reading primary documents (docket searches via tools/adams_search.py + tools/ferc_elibrary.py, pages cached via tools/fetch_source.py and indexed in data/research/source_index.json with URL + access date + SHA-256). Scan rows come from click-through on the Applications tab's citations plus web search, each with at least one source. No row is written without a source.",
+    "depth_values": ["deep", "scan"],
+    "status_values": ["concept", "feasibility", "tabled", "pre-application", "application", "intent-to-award", "paused", "cancelled", "under-construction", "operating"],
+    "filing_note": "A filing entry is a document lodged with (or issued by) a regulator or utility forum: NRC ADAMS accessions, FERC eLibrary accessions, state PUC dockets, CNSC records. 'None located' gaps are honest absences after a docket-system search, not unchecked blanks.",
+    "negative_findings": [
+      {
+        "finding": "FERC eLibrary has zero filings with 'microreactor' in the description as of 2026-08-23 (tools/ferc_elibrary.py 'microreactor' --desc-only: totalHits=0). Microreactor deployments to date are behind-the-fence or distribution-level and do not touch FERC-jurisdictional dockets.",
+        "sources": [
+          {
+            "label": "FERC eLibrary search (API, description search)",
+            "url": "https://elibrary.ferc.gov/eLibrary/search"
+          }
+        ]
+      },
+      {
+        "finding": "Malmstrom AFB's only FERC eLibrary filing ever is a 1994 Montana Power electric tariff for base service (ER94-801-000) — no modern interconnection filing exists for the ANPI eVinci project.",
+        "sources": [
+          {
+            "label": "FERC eLibrary — MT Power Co tariff w/ Malmstrom AFB (accession 19940107-0041)",
+            "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=19940107-0041"
+          }
+        ]
+      }
+    ]
+  },
+  "sites": [
+    {
+      "id": "psu-frontier",
+      "name": "Penn State FRONTIER — eVinci-based research reactor",
+      "category": "Civic Infrastructure",
+      "band": "Major universities",
+      "country": "US",
+      "region": "University Park, PA",
+      "status": "pre-application",
+      "depth": "deep",
+      "owner": "The Pennsylvania State University",
+      "vendor": "Westinghouse (eVinci)",
+      "power": "15 MWt",
+      "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-17 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
+      "filings": [
+        {
+          "forum": "NRC ADAMS",
+          "type": "Notice of intent to submit a CP application (research reactor)",
+          "id": "ML25059A029",
+          "date": "2025-02-17",
+          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "Vendor pre-application docket for eVinci (topical reports, safety evaluations, meeting records; 244 documents 2019–2026)",
+          "id": "Docket 99902079",
+          "date": "2019–2026",
+          "url": "https://adams-search.nrc.gov/home",
+          "note": "Search docket 99902079; recent examples: eVinci Nuclear Design Methodology TR safety evaluation cover letter ML25351A004 (2026-01-09), WCAP-18810 verification ML26121A066 (2026-05-12)"
+        }
+      ],
+      "utility_context": "Campus behind-the-meter research facility; no state PUC or FERC filing expected for a §104(c) research reactor.",
+      "sources": [
+        {
+          "label": "NRC ADAMS — Penn State notice of intent, ML25059A029",
+          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf",
+          "quote": "The RR will be designed, constructed, licensed and operated at a thermal power level of 15 MWt",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/35aba5f2c9cde917.pdf)"
+        }
+      ],
+      "gaps": [
+        "The promised Regulatory Engagement Plan ('later in 2025') was not located in ADAMS as of 2026-08-23 — unclear whether Westinghouse's fall-2025 pivot away from commercial markets affects the FRONTIER schedule",
+        "No NRC acknowledgment letter with the assigned project number located"
+      ]
+    },
+    {
+      "id": "cvea-valdez",
+      "name": "Copper Valley Electric Association MMR (Valdez / Glennallen)",
+      "category": "Electric Utilities",
+      "band": "Individual remote grids with sufficient year-round demand",
+      "country": "US",
+      "region": "Valdez and Glennallen, AK",
+      "status": "tabled",
+      "depth": "deep",
+      "owner": "Copper Valley Electric Association (member-owned cooperative, islanded grid)",
+      "vendor": "USNC (MMR) — vendor entered Chapter 11 in 2024",
+      "power": "2 × 15 MWt studied",
+      "summary": "The completed pre-feasibility study (USNC doc 027263, 2023-06-09) found an MMR 'a match for CVEA's needs': replacing the Valdez cogeneration unit, with CVEA ownership beating vendor ownership on economics, year-round heat sales pivotal, and IRA credits worth 30–50% of capital (energy-community + domestic-content bonuses, direct pay available). It evaluated a Mountain Site at ~Mile 3 Dayville Road, Valdez — a bedrock bench at the toe of Sugarloaf Mountain ~600 feet below the Trans-Alaska Pipeline, zoned Public Use / Heavy Industrial — as lowest tsunami risk and suitable for construction, plus a Glennallen site with no nearby heat off-taker. CVEA nonetheless tabled the project indefinitely on 2023-08-09. The paired state-policy artifact is Alaska SB 177 (signed 2022-05-24), which removed the legislative-designation requirement for reactor siting in AS 18.45.",
+      "filings": [
+        {
+          "forum": "Utility (self-published project record)",
+          "type": "Pre-feasibility study, public release",
+          "id": "USNC 027263 R01",
+          "date": "2023-06-09",
+          "url": "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf"
+        },
+        {
+          "forum": "Utility (self-published project record)",
+          "type": "Project tabled announcement",
+          "date": "2023-08-09",
+          "url": "https://www.cvea.org/assets/documents/pdfs/pressReleases/nuclear/CVEA-Potential-MMR-Project-Update---For-Immediate-Release.pdf"
+        },
+        {
+          "forum": "Alaska Legislature (BASIS)",
+          "type": "SB 177 — microreactor siting statute amendment (AS 18.45)",
+          "date": "2022-05-24",
+          "url": "https://www.akleg.gov/basis/Bill/Detail/32?Root=SB%20177"
+        }
+      ],
+      "utility_context": "CVEA is the utility — an islanded cooperative serving ~3,800 members from Valdez to Glennallen, not interconnected to any other grid. No Regulatory Commission of Alaska docket for the project was located.",
+      "sources": [
+        {
+          "label": "CVEA × USNC — Pre-Feasibility Study (public version)",
+          "url": "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf",
+          "quote": "This site is located at approximately Mile 3 of Dayville Road. The site is on a bedrock bench at the toe of Sugarloaf Mountain",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/6ba0a58b5affb52c.pdf)"
+        },
+        {
+          "label": "CVEA — Potential MMR Project page (tabled status + document set)",
+          "url": "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html",
+          "quote": "Micro-Modular Nuclear Reactor Project Tabled Indefinitely by CVEA",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/1b6a9d74ec6ffdeb.html)"
+        }
+      ],
+      "gaps": [
+        "The tabling release's stated reasons not yet extracted from the cached PDF",
+        "No RCA docket search performed (RCA's docket system has no public API located); CVEA's own project page is the record of state of play"
+      ]
+    },
+    {
+      "id": "eielson-pilot",
+      "name": "Eielson AFB — DAF microreactor pilot site",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fairbanks, AK",
+      "status": "intent-to-award",
+      "depth": "deep",
+      "tracker_id": "eielson",
+      "owner": "U.S. Department of the Air Force (DLA Energy contracting)",
+      "vendor": "Oklo (Aurora)",
+      "power": "5 MWe (2023 selection figure); DAF describes the class as 1–50 MW",
+      "summary": "The DAF's preferred site for the first commercial microreactor on a DoD installation. NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC are preparing the environmental analysis. Site logic: the base runs a 72-year-old coal-fired heat-and-power plant and buys electricity from Golden Valley Electric Association — the pilot is backup power and grid-independence for an Arctic F-35 base, taking electricity and heat under a long-term PPA.",
+      "filings": [
+        {
+          "forum": "DAF / DLA Energy (procurement record)",
+          "type": "Notice of Intent to Award announcement",
+          "date": "2025-06-11",
+          "url": "https://www.eielson.af.mil/News/Display/Article/4213214/microreactor-pilot-reaches-major-project-milestone/"
+        }
+      ],
+      "utility_context": "On-base DoD procurement; the base's commercial supplier and sole backup is Golden Valley Electric Association (GVEA). No FERC or RCA filing expected for a behind-the-fence federal plant.",
+      "sources": [
+        {
+          "label": "Alaska Public Media — 2023 selection + base power context",
+          "url": "https://alaskapublic.org/news/2023-09-07/contractor-selected-to-build-nuclear-power-plant-at-eielson-air-force-base",
+          "quote": "the 5-megawatt facility would provide energy resilience in the form of backup power for the base's 72-year-old coal-fired heat and power plant",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/2f39a4a90b77419a.html)"
+        },
+        {
+          "label": "DAF — Microreactor pilot reaches major project milestone (NOITA)",
+          "url": "https://www.eielson.af.mil/News/Display/Article/4213214/microreactor-pilot-reaches-major-project-milestone/",
+          "quote": "the DAF and Nuclear Regulatory Commission (NRC) are preparing an environmental analysis for the project as a next step",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/b2a27fcdd4682985.txt)"
+        }
+      ],
+      "gaps": [
+        "Land parcel on base not identified",
+        "No NRC docket or pre-application entry for an Oklo Eielson unit located in ADAMS as of 2026-08-23 — the environmental analysis is the next paper trail to watch"
+      ]
+    },
+    {
+      "id": "chalk-river-mmr",
+      "name": "Global First Power MMR at Chalk River Laboratories",
+      "category": "Civic Infrastructure",
+      "band": "National laboratories",
+      "country": "Canada",
+      "region": "Renfrew County, ON",
+      "status": "paused",
+      "depth": "deep",
+      "owner": "Global First Power (OPG + USNC joint venture)",
+      "vendor": "USNC (MMR)",
+      "power": "up to 45 MWt process heat",
+      "summary": "The richest foreign filing trail in the microreactor class and the first SMR licence application in Canada (announced 2019-04-02): a licence to prepare site under NSCA s.24(2) plus a CNSC-led environmental assessment under CEAA 2012, for an MMR delivering up to 45 MWt of process heat via molten salt at Canada's national laboratory campus, ~200 km northwest of Ottawa. CNSC staff paused all EA and licence-review work in 2024; parent USNC filed Chapter 11 in October 2024. CNSC's project page now reads 'Current Status: Paused' and its review-status page is archived.",
+      "filings": [
+        {
+          "forum": "CNSC",
+          "type": "Licence to prepare site application (first SMR licence application in Canada)",
+          "date": "2019-04-02 (submission announced)",
+          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/"
+        },
+        {
+          "forum": "CNSC",
+          "type": "Environmental assessment under CEAA 2012 (CNSC-led)",
+          "date": "2019–2024 (paused)",
+          "url": "https://www.cnsc-ccsn.gc.ca/eng/resources/environmental-protection/environmental-assessments/ea-80182/"
+        },
+        {
+          "forum": "CNSC",
+          "type": "GFP–CNSC administrative protocol for the EA + PRSL application",
+          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/chalk-river/global-first-micro-modular-reactor-project/gfp-admin/"
+        }
+      ],
+      "utility_context": "Process-heat + power demonstration at a federal lab campus (CNL-managed, AECL-owned); Ontario Power Generation is a co-venturer, but no provincial rate filing applies.",
+      "sources": [
+        {
+          "label": "CNSC — GFP MMR Project page (status of record)",
+          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/",
+          "quote": "Current Status: Paused",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/86ae36a4020b067d.html)"
+        },
+        {
+          "label": "CNSC — Regulatory review status for the MMR Project (archived)",
+          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/other-reactor-facilities/regulatory-review-status-micro-modular-reactor/",
+          "quote": "produce up to 45 megawatts (thermal) of process heat",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/1247b9c24a69722e.html)"
+        },
+        {
+          "label": "WNN — First Canadian SMR licence application submitted (2019-04-02)",
+          "url": "https://www.world-nuclear-news.org/Articles/First-Canadian-SMR-licence-application-submitted",
+          "quote": "announced their submission of the application",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/52f1d4a9784380b4.html)"
+        }
+      ],
+      "gaps": [
+        "Post-bankruptcy ownership of the GFP venture (Standard Nuclear stalking-horse) and whether the CNSC application will be withdrawn or transferred — not resolved by CNSC's pages as of 2026-08-23"
+      ]
+    },
+    {
+      "id": "src-evinci",
+      "name": "Saskatchewan Research Council eVinci site (cancelled)",
+      "category": "Civic Infrastructure",
+      "band": "National laboratories",
+      "country": "Canada",
+      "region": "Saskatchewan",
+      "status": "cancelled",
+      "depth": "deep",
+      "tracker_id": "canada-src",
+      "owner": "Saskatchewan Research Council (Crown corporation)",
+      "vendor": "Westinghouse (eVinci) — withdrew",
+      "power": "up to 5 MWe planned",
+      "summary": "Was the first announced eVinci customer site (2023-11-27 announcement; CA$80M government funding; SRC as licensed operator; target 2029). Westinghouse cancelled the contract in fall 2025, refocusing eVinci on space, defence and government applications. SRC says it continues evaluating other microreactor technologies for northern and remote Saskatchewan. No CNSC site-specific licence application was reached before cancellation.",
+      "filings": [],
+      "utility_context": "Would have been a Crown-research-council-operated unit; SaskPower's separate SMR programme (GE-Hitachi BWRX-300, utility scale) is the province's other nuclear track.",
+      "sources": [
+        {
+          "label": "SRC — FAQs About Nuclear (cancellation of record)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched",
+          "verified": "2026-08-23 quote confirmed in cached copy (data/cache/b7b035a9b58f500a.html)"
+        },
+        {
+          "label": "Westinghouse — First Canadian eVinci targeted for Saskatchewan (2023-11-27)",
+          "url": "https://info.westinghousenuclear.com/news/first-canadian-evinci-microreactor-targeted-for-saskatchewan",
+          "status": "fetched",
+          "verified": "2026-08-23 page cached (data/cache/52dfdb44eb083e88.html)"
+        }
+      ],
+      "gaps": [
+        "Which alternative vendors SRC is now evaluating — not named on its pages as of 2026-08-23"
+      ]
+    }
+  ]
+}
