@@ -33,7 +33,8 @@ from typing import Any, List, Tuple
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy"]
+FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy",
+         "deployment_sites"]
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 

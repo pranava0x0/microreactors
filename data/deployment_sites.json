@@ -29,7 +29,8 @@
             "label": "FERC eLibrary search (API, description search)",
             "url": "https://elibrary.ferc.gov/eLibrary/search"
           }
-        ]
+        ],
+        "evidence": "data/research/ferc/microreactor-description-search.json"
       },
       {
         "finding": "Malmstrom AFB's only FERC eLibrary filing ever is a 1994 Montana Power electric tariff for base service (ER94-801-000) — no modern interconnection filing exists for the ANPI eVinci project.",
@@ -38,10 +39,18 @@
             "label": "FERC eLibrary — MT Power Co tariff w/ Malmstrom AFB (accession 19940107-0041)",
             "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=19940107-0041"
           }
-        ]
+        ],
+        "evidence": "data/research/ferc/malmstrom-description-search.json"
       }
     ],
-    "category_absences": "Categories where no named candidate microreactor site was located as of the capture date, beyond what opportunities.json already tracks: Mining (the IANC consortium is multi-site and unassigned; the tracker's counter-signal row stands), Agriculture & Food, Transportation (US — the one named port deployment is abroad, see the tracker's Thames Freeport row), and the hospital/prison/water bands of Civic Infrastructure. Honest absences, not unchecked blanks."
+    "category_absences": "Categories where no named candidate microreactor site was located as of the capture date, beyond what opportunities.json already tracks: Mining (the IANC consortium is multi-site and unassigned; the tracker's counter-signal row stands), Agriculture & Food, Transportation (US — the one named port deployment is abroad, see the tracker's Thames Freeport row), and the hospital/prison/water bands of Civic Infrastructure. Honest absences, not unchecked blanks.",
+    "extra_categories": {
+      "Defense installations": [
+        "Remote installation power",
+        "Installation power"
+      ]
+    },
+    "extra_categories_note": "Deployment categories the Applications taxonomy (sectors.json) deliberately does not carry — that page maps civilian load types, while defense procurement is its own buyer frame (as in opportunities.json's tracks). Declared here with their allowed bands so a Sites UI can group these rows and so a row with an undeclared category fails the tests instead of being silently skipped."
   },
   "sites": [
     {
