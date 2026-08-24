@@ -26,39 +26,62 @@
   var NONE = '<span class="v none">not found</span>';
   var val = function (v) { return v ? '<span class="v">' + esc(v) + "</span>" : NONE; };
 
-  /* Inline citation chips: numbered superscript links, one per source.
-     An empty list renders an explicit "no source yet" marker, never a blank —
-     an honest absence has to be visible to be fixed. A source whose page was
+  /* Inline citation chips carry the source's number in the Sources register,
+     assigned once by tools/build_data.py and reused wherever that URL appears.
+     The same source is the same number on every tab, so a chip is an address
+     into the register rather than a per-row counter restarting at [1] on each
+     bullet. An empty list renders an explicit "no source yet" marker, never a
+     blank: an absence has to be visible to be fixed. A source whose page was
      never directly read (status snippet-only: search-corroborated, usually a
      bot-walled host) renders with a dagger so it never dresses as a full
      citation. */
+  var NUM = D.source_numbers || {};
+  function citeNum(url) { return NUM[url] || "?"; }
+  // Citations written straight into index.html carry a "[?]" placeholder; the
+  // number comes from the same register as every generated chip, so a static
+  // and a data-driven citation of one URL can never print different numbers.
+  Array.prototype.forEach.call(document.querySelectorAll("a.cite"), function (a) {
+    a.textContent = "[" + citeNum(a.getAttribute("href")) + "]";
+  });
   function cite(sources) {
     if (!sources || !sources.length) return '<span class="nosrc">no source yet</span>';
-    return sources.map(function (s, i) {
+    return sources.map(function (s) {
       var snip = s.status === "snippet-only";
       return '<a class="cite" href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer" ' +
-        'title="' + esc(s.label) + (snip ? " · search-corroborated; page not directly fetched" : "") +
-        '">[' + (i + 1) + (snip ? "†" : "") + "]</a>";
+        'title="' + esc(s.label) + (snip ? " \u00b7 search-corroborated; page not directly fetched" : "") +
+        '">[' + citeNum(s.url) + (snip ? "\u2020" : "") + "]</a>";
     }).join("");
   }
   function srcList(sources, cls) {
     return '<div class="' + (cls || "srcs") + '">' + (sources || []).map(function (x) {
       var snip = x.status === "snippet-only";
       return '<a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer"' +
-        (snip ? ' title="search-corroborated; page not directly fetched"' : "") + ">" +
-        esc(x.label) + (snip ? "†" : "") + "</a>";
+        (snip ? ' title="search-corroborated; page not directly fetched"' : "") +
+        '><span class="sn">' + citeNum(x.url) + "</span>" +
+        esc(x.label) + (snip ? "\u2020" : "") + "</a>";
     }).join("") + "</div>";
   }
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  var PANELS = ["pipeline", "economics", "vendors", "demand", "market", "policy", "evidence"];
+  var PANELS = ["pipeline", "economics", "vendors", "demand", "market", "policy", "sources"];
+  /* Sub-navigation, registered by makeSubnav() below. Four panels were long
+     enough to bury their own sections at 1280px before this split: policy ran
+     30,900px and the source register 67,500px, so field coverage and the gap
+     register sat ~90 screens below the fold. Routes are "panel/sub", so a
+     sub-section is still linkable. */
+  var SUBS = {};
+  var slug = function (t) {
+    return String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  };
   var tablist = $("tabs");
   var tabEls = Array.prototype.slice.call(tablist.querySelectorAll(".tab"));
 
-  function activate(id, opts) {
+  function activate(route, opts) {
     opts = opts || {};
-    if (PANELS.indexOf(id) === -1) id = PANELS[0];
+    var parts = String(route || "").split("/");
+    var id = parts[0], sub = parts[1] || "";
+    if (PANELS.indexOf(id) === -1) { id = PANELS[0]; sub = ""; }
     PANELS.forEach(function (p) {
       var panel = $(p);
       if (panel) panel.hidden = p !== id;
@@ -72,9 +95,10 @@
       t.tabIndex = on ? 0 : -1;
       if (on && opts.focus) t.focus();
     });
-    if (location.hash.slice(1) !== id) {
-      if (opts.push) location.hash = id;
-      else history.replaceState(null, "", "#" + id);
+    var here = id + (SUBS[id] ? "/" + SUBS[id].show(sub) : "");
+    if (location.hash.slice(1) !== here) {
+      if (opts.push) location.hash = here;
+      else history.replaceState(null, "", "#" + here);
     }
     if (opts.scroll) window.scrollTo(0, 0);
   }
@@ -100,6 +124,54 @@
   window.addEventListener("hashchange", function () {
     activate(location.hash.slice(1) || PANELS[0], { scroll: true });
   });
+
+  /* One sub-tab strip per long panel. Items are [{id, label}]; each maps to a
+     [data-sub] element already inside the panel. The strip wraps rather than
+     scrolls, so no sub-section can sit off-screen unannounced. */
+  function makeSubnav(panelId, items) {
+    var panel = $(panelId), host = panel.querySelector(".subtabs");
+    if (!host || !items.length) return;
+    render(host, items.map(function (it) {
+      return '<button class="subtab" type="button" role="tab" data-go="' + esc(it.id) +
+        '" id="' + esc(panelId + "-tab-" + it.id) + '" aria-controls="' +
+        esc(panelId + "-" + it.id) + '">' + esc(it.label) + "</button>";
+    }).join(""));
+    var btns = Array.prototype.slice.call(host.querySelectorAll(".subtab"));
+    var ids = items.map(function (x) { return x.id; });
+    Array.prototype.forEach.call(panel.querySelectorAll("[data-sub]"), function (el) {
+      el.setAttribute("aria-labelledby", panelId + "-tab-" + el.getAttribute("data-sub"));
+    });
+    function show(id) {
+      if (ids.indexOf(id) === -1) id = ids[0];
+      Array.prototype.forEach.call(panel.querySelectorAll("[data-sub]"), function (el) {
+        el.hidden = el.getAttribute("data-sub") !== id;
+      });
+      btns.forEach(function (b) {
+        var on = b.dataset.go === id;
+        b.setAttribute("aria-selected", String(on));
+        b.tabIndex = on ? 0 : -1;
+      });
+      return id;
+    }
+    host.addEventListener("click", function (e) {
+      var b = e.target.closest(".subtab");
+      if (b) activate(panelId + "/" + b.dataset.go, { push: true, scroll: true });
+    });
+    host.addEventListener("keydown", function (e) {
+      var i = btns.indexOf(document.activeElement), n = null;
+      if (i === -1) return;
+      if (e.key === "ArrowRight") n = (i + 1) % btns.length;
+      else if (e.key === "ArrowLeft") n = (i - 1 + btns.length) % btns.length;
+      else if (e.key === "Home") n = 0;
+      else if (e.key === "End") n = btns.length - 1;
+      if (n == null) return;
+      e.preventDefault();
+      activate(panelId + "/" + btns[n].dataset.go, { push: true, scroll: true });
+      btns[n].focus();
+    });
+    SUBS[panelId] = { show: show };
+    show(ids[0]);
+  }
 
   /* ---------- hero stats ---------- */
   var s = D.summary;
@@ -233,6 +305,9 @@
 
   render($("reading"), esc(D.costs.reading).replace(/\*\*(.+?)\*\*/g, "<strong style=\"color:var(--text-primary)\">$1</strong>"));
 
+  makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
+                           { id: "tax-credit", label: "Tax credit" }]);
+
   var inc = D.costs.incentives;
   if (inc) {
     $("ptc-q").textContent = inc.question;
@@ -272,11 +347,9 @@
   }).join(""));
 
   /* ---------- demand accordions ---------- */
-  render($("sectors"), D.sectors.sectors.map(function (sec, i) {
-    var cited = sec.loads.filter(function (l) { return (l.sources || []).length; }).length;
-    return '<details class="sector"' + (i === 0 ? " open" : "") + "><summary>" +
+  render($("sectors"), D.sectors.sectors.map(function (sec) {
+    return '<details class="sector"><summary>' +
       "<h3>" + esc(sec.sector) + "</h3>" +
-      '<span class="meta">' + sec.loads.length + " loads · " + cited + " cited</span>" +
       "</summary>" +
       (sec.context
         ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
@@ -294,7 +367,7 @@
   var M = D.mechanisms;
   if (M && M.proposal) {
     render($("market-intro"), esc(M.intro) +
-      ' <span class="proposaltag">proposal — precedents cited below</span>');
+      ' <span class="proposaltag">this site\'s proposal</span>');
     render($("mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
       return '<div class="mechcard"><h4>' + esc(c.title) + "</h4>" +
         (c.paras || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
@@ -303,8 +376,12 @@
           : "") +
         "</div>";
     }).join("") + "</div>");
-    render($("precedents"), (M.precedent_groups || []).map(function (g) {
-      return '<div class="pgroup"><h4>' + esc(g.name) + "</h4>" +
+    var mgroups = M.precedent_groups || [];
+    render($("precedents"), mgroups.map(function (g) {
+      return '<div class="pgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
+        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every mechanism ' +
+        "here ran in the real world. Each row records how it worked, what happened, and " +
+        "whether early or late buyers got the better deal.</p>" +
         g.items.map(function (p) {
           return '<details class="prec"><summary><span class="nm">' + esc(p.name) + "</span>" +
             '<span class="cat">' + esc(p.category) + "</span></summary>" +
@@ -316,13 +393,16 @@
             srcList(p.sources) + "</div></details>";
         }).join("") + "</div>";
     }).join(""));
+    makeSubnav("market", [{ id: "proposal", label: "The proposal" }].concat(
+      mgroups.map(function (g) { return { id: slug(g.name), label: g.name }; })));
   }
 
   /* ---------- policy pathways ---------- */
   var P = D.policy;
   if (P) {
     render($("pathways"), P.groups.map(function (g) {
-      return '<div class="pgroup"><h4>' + esc(g.name) + "</h4>" +
+      return '<div class="pgroup" data-sub="' + esc(slug(g.name)) + '" id="policy-' +
+        esc(slug(g.name)) + '" role="tabpanel" tabindex="0">' +
         g.pathways.map(function (pw) {
           var tag = pw.kind === "idea" ? ' <span class="ideatag">idea</span>' : "";
           var srcs = (pw.sources || []).length ? cite(pw.sources)
@@ -332,19 +412,23 @@
             "<p>" + esc(pw.mechanism) + " " + srcs + "</p></div>";
         }).join("") + "</div>";
     }).join(""));
+    makeSubnav("policy", P.groups.map(function (g) {
+      return { id: slug(g.name), label: g.name };
+    }));
   }
 
   /* ---------- evidence: source register ---------- */
   var reg = D.sources_index || [];
   render($("evsummary"),
-    esc(s.source_count) + " distinct sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
-    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) +
-    " demand bands; the uncited bands are named on the Applications tab. Chips marked † cite " +
-    "pages corroborated through search results whose hosts refused a direct fetch — kept, " +
-    "marked, and re-checked by tools/verify_quotes.py.");
+    esc(s.source_count) + " sources, numbered once each. A chip like [12] anywhere on the site " +
+    "points at number 12 below. Sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
+    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) + " demand bands. " +
+    "A † means the host refused a direct fetch and the page is corroborated through search " +
+    "results instead.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
-    return '<div class="rrow"><span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"' +
+    return '<div class="rrow" id="src-' + r.n + '"><span class="rn">' + r.n + "</span>" +
+      '<span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"' +
       (r.snippet ? ' title="search-corroborated; page not directly fetched"' : "") + ">" +
       esc(r.label) + (r.snippet ? "†" : "") + '</a><span class="uses">cited by: ' + esc(uses) + '</span></span>' +
       '<span class="host">' + esc(r.host) + "</span></div>";
@@ -365,6 +449,10 @@
       '<p class="prose"><span class="k" style="color:var(--text-tertiary)">Where to look: </span>' +
       esc(n.where) + "</p></div>";
   }).join(""));
+
+  makeSubnav("sources", [{ id: "register", label: "Source register" },
+                         { id: "coverage", label: "Field coverage" },
+                         { id: "gaps", label: "What is missing" }]);
 
   /* boot: land on the panel the hash names, or the first. scroll:true beats
      the browser's native jump-to-anchor, which otherwise strands a deep link

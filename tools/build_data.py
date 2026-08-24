@@ -19,6 +19,12 @@ DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "gaps"]
 
+# Citation numbering walks the data in the order the tabs render it, so [1] is
+# the first source a reader meets. One number per URL, reused everywhere that
+# URL is cited: a chip's number is a stable address into the Sources register,
+# never a per-row counter that restarts.
+CITE_ORDER = ["opportunities", "costs", "vendors", "sectors", "mechanisms", "policy", "gaps"]
+
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
 IDENT_KEYS = ("name", "scenario", "alternative", "target", "question", "label", "sector")
@@ -46,18 +52,19 @@ def collect_sources(node: Any, ctx: str, out: List[Tuple[str, str, str, str]]) -
 
 
 def sources_index(bundle: Dict[str, Any]) -> List[Dict[str, Any]]:
+    assert sorted(CITE_ORDER) == sorted(FILES), "CITE_ORDER and FILES cover different data files"
     found: List[Tuple[str, str, str, str]] = []
-    for name in FILES:
+    for name in CITE_ORDER:
         collect_sources(bundle[name], name, found)
     by_url: Dict[str, Dict[str, Any]] = {}
     for label, url, ctx, status in found:
-        row = by_url.setdefault(url, {"url": url, "label": label,
+        row = by_url.setdefault(url, {"n": len(by_url) + 1, "url": url, "label": label,
                                       "host": urlparse(url).netloc.replace("www.", ""),
                                       "uses": [], "statuses": []})
         if ctx not in row["uses"]:
             row["uses"].append(ctx)
         row["statuses"].append(status)
-    rows = sorted(by_url.values(), key=lambda r: (r["host"], r["label"]))
+    rows = sorted(by_url.values(), key=lambda r: r["n"])
     for r in rows:
         # A URL is snippet-only for the register only if NO use ever read it.
         r["snippet"] = all(s == "snippet-only" for s in r.pop("statuses"))
@@ -94,6 +101,7 @@ def main() -> int:
     reg = sources_index(bundle)
     loads = [l for s in bundle["sectors"]["sectors"] for l in s["loads"]]
     bundle["sources_index"] = reg
+    bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
     bundle["summary"] = {
         "opportunities": len(opps),
         "vendors": len(vendors),

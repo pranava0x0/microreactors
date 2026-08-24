@@ -30,6 +30,37 @@ vs test bug), status.
   was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
   clients outright — use browser capture + `fetch_source --from-file`.
 
+- **2026-08-23 · site · Citation numbers restarted at [1] on every row — Fixed.** `cite()`
+  numbered chips by their index within one row's own source list, so `[1]` appeared dozens
+  of times across the site pointing at a different source each time, and no chip could be
+  matched to the register. Root cause: **code bug** (a local counter used as a global
+  address). Fix: `tools/build_data.py` assigns one number per URL in tab-render order and
+  emits `source_numbers`; every chip, source list and register row reads from it, and a
+  URL missing from the register renders `[?]`. Regression guards:
+  `test_citation_numbers_are_global_and_total` and `test_static_html_citations_resolve`
+  in tests/test_build.py, both negative-tested against a doctored bundle.
+- **2026-08-23 · site · Four panels had grown past reading length — Fixed.** Measured at
+  1280px: Policy 30,906px, Sources 67,475px, Market design 13,951px, Costs 13,216px. Field
+  coverage and the gap register sat roughly 90 screens below the fold on Sources, so in
+  practice they were unreachable. Root cause: **design bug** (one flat scroll per tab, with
+  no second level of navigation). Fix: a shared sub-tab strip (`makeSubnav`) on those four
+  panels, routed as `#panel/sub`; Policy's first sub-panel is now 11,265px. The strip wraps
+  instead of scrolling, so no sub-section can sit off-screen.
+- **2026-08-23 · site · Sector summaries reported a meaningless ratio — Fixed.** Each
+  Applications accordion printed "6 loads · 4 cited", a count of this site's own curation
+  presented as if it were a finding, and the first sector auto-expanded on load. Root
+  cause: **design bug**. Both removed.
+- **2026-08-23 · copy · Structural AI-register tells across display copy — Fixed.** A scan
+  over all 649 user-visible strings found the tells no word list catches: 3 headings with a
+  comma-stapled adverb tail ("Published cost bands, sourced"), 5 comma-stapled twin
+  headings, 10 of 32 policy names on a colon setup/payoff template, 14 of 23 precedent
+  read-across notes opening "The <noun> for <X>:", and 92 strings carrying em-dashes.
+  Root cause: **copy bug** (DESIGN.md §11.1 documents every one of these; the register
+  test only greps single words, in data/*.json only, so index.html's "unlock" also went
+  unchecked). Fix: swept to 0 / 0 / 0 / 3 / 9 respectively, the remainder being proper
+  names and verbatim quotes. Per-tab eyebrow taglines and the footer's build-tooling
+  narration were cut in the same pass.
+
 - **2026-08-21 · data · Fabricated capex scenarios in costs.json — Fixed** (commit 18aad96).
   Two LCOE rows ("CAPEX $5,000/kW (FOAK-ish)" → $80–90/MWh and "CAPEX $2,500/kW (at scale)"
   → $35/MWh) cited Abdussami et al. (arXiv 2506.13361 / Nucl. Eng. & Design), which contains

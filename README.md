@@ -8,6 +8,11 @@ Open it directly or serve the `site/` directory.
 
 ## The seven tabs, and what each is for
 
+Four of them (Costs, Market design, Policy, Sources) split into sub-tabs, routed as
+`#panel/sub` so a sub-section stays linkable. That split exists because the panels had
+grown past reading length: at 1280px, Policy ran 30,900px and Sources 67,500px, which put
+field coverage and the gap register roughly 90 screens below the fold.
+
 | Tab | Question it answers |
 |---|---|
 | Tracker | Who is buying now — signed instruments, by buyer track (named "Tracker" after WNA's SMR project tracker; WoodMac defines "pipeline" as the whole announced market, which this is not) |
@@ -16,7 +21,7 @@ Open it directly or serve the `site/` directory.
 | Applications | Which loads fit a 1–20 MW block (Westinghouse's own term for this content), each band cited, plus how each sector powers itself today |
 | Market design | How early orders get cheaper — a shared orderbook + overrun pool proposal, argued from cited precedents |
 | Policy | Rules that unlock the sale: diesel replacement, battery pairing, faster interconnection, licensing speed |
-| Evidence | Every source cited anywhere on the site, plus field coverage and the honest gaps |
+| Sources | Every source cited anywhere on the site, numbered, plus field coverage and the gaps |
 
 ## What's here
 
@@ -57,6 +62,12 @@ time a row was added.
 
 ## Citation rules the tests enforce
 
+- Every source gets one number, assigned by `tools/build_data.py` in the order the tabs
+  render it and reused everywhere that URL is cited. A chip reading `[33]` means the same
+  source on every tab and matches row 33 of the register, so the numbers never restart
+  per row. A URL missing from the register renders `[?]`, and two tests
+  (`test_citation_numbers_are_global_and_total`, `test_static_html_citations_resolve`)
+  fail before it can ship.
 - Every opportunity, vendor, cost band, incentive point and precedent carries at least
   one source with a full URL (bare homepages are rejected).
 - Every demand load either carries a source or its label sits in an explicit
@@ -64,7 +75,9 @@ time a row was added.
 - Policy rows marked `idea` are this site's own proposals and must NOT carry a source;
   everything else must.
 - Authored prose is linted against the AI-register word list (verbatim quotes and
-  source titles exempt).
+  source titles exempt). The structural tells that word list cannot catch (comma-staple
+  headings, colon setup/payoff headings, templated openers) were swept on 2026-08-23;
+  `DESIGN.md` §11.1 is the reference.
 
 ## What this research knows and does not know
 
@@ -77,6 +90,11 @@ including the negative results (FERC has zero microreactor filings; see
 (CO, MT, San Antonio, Alaska RCA, the ERCOT queue) remain open in `backlog.md`.
 Site-level filing trails live in `data/deployment_sites.json`; see also
 `docs/evaluation-2026-08-23.md`.
+
+The data files do not share one JSON indent: `opportunities.json`, `vendors.json` and
+`deployment_sites.json` are written at `indent=2`, the rest at `indent=1`. Any script
+re-serialising one must match its file's own indent or the diff fills with reformatting
+churn that hides the real change.
 
 Rows that show **not found** are honest absences. Nothing in this dataset is inferred to
 fill a blank.

@@ -3,7 +3,7 @@
   "captured": "2026-08-21",
   "note": "The proposal block is this site's own synthesis and is labelled as such on the page; it cites no source because it is not claiming one. Every factual claim inside it is carried by a precedent row below, each verified against a fetched or snippet-corroborated source (per-source status recorded). Research trail: data/research/orderbook-mechanisms.json."
  },
- "intro": "Nobody's first microreactor order is cheap, and nobody wants to be first. DOE's liftoff analysis puts the committed orderbook a microreactor factory needs at 30–50 units of one design, roughly 500 MW in total, so no single buyer gets there alone. A shared orderbook converts each buyer's private first-unit risk into a fleet position; a mutual overrun pool gives that risk a place to sit. The three cards are this site's synthesis; everything they assert about what actually happened is cited in the precedents below them.",
+ "intro": "First microreactor orders are expensive, and nobody wants to place one. DOE's liftoff analysis puts the committed orderbook a microreactor factory needs at 30–50 units of one design, roughly 500 MW, which no single buyer reaches alone. A shared orderbook turns each buyer's private first-unit risk into a fleet position, and a mutual overrun pool sets who pays when a build runs over. The three cards below are this site's own synthesis, argued from the precedents in the other tabs.",
  "proposal": {
   "cards": [
    {
@@ -38,8 +38,8 @@
      "category": "government framework",
      "mechanism": "DOE's flagship framework (2023, updated Sept 2024) makes a committed orderbook the first phase of commercial liftoff: 5–10 units of one design for SMRs, and 30–50 units specifically for microreactors, whose factories must be justified across far smaller per-unit MW. It distinguishes a buyers' consortium (offtakers pool demand at one average price) from a builders' consortium (asset owners spread early costs), and cites Boeing's 787 launch strategy by name.",
      "outcome": "As of Sept 2024, zero signed contracts to construct new US reactors existed despite many MOUs. The report quantifies the learning it wants to capture: bulk-ordering 10+ reactors could cut first-unit cost ~15%; Vogtle Unit 4 came in ~30% cheaper than Unit 3 on the same site.",
-     "early_vs_late": "Two answers by layer: the buyer pool itself should charge one blended average price (\"customers all be 'one fifth' of the orderbook versus 'waiting to be fifth'\"), while government incentives on top should be front-loaded — \"Ensuring that first-movers receive the best deal could induce customers to commit earlier.\"",
-     "relevance": "The primary source for this tab's design: flat average inside the pool, front-loaded subsidy outside it, and a 30–50 unit target that makes multi-buyer aggregation mandatory for microreactors.",
+     "early_vs_late": "Two answers by layer: the buyer pool itself should charge one blended average price (\"customers all be 'one fifth' of the orderbook versus 'waiting to be fifth'\"), while government incentives on top should be front-loaded: \"Ensuring that first-movers receive the best deal could induce customers to commit earlier.\"",
+     "relevance": "This tab's design comes mostly from here: a flat average inside the pool, front-loaded subsidy outside it, and a 30–50 unit target that makes multi-buyer aggregation mandatory for microreactors.",
      "sources": [
       {
        "label": "DOE — Pathways to Commercial Liftoff: Advanced Nuclear (Sept 2024, PDF)",
@@ -54,8 +54,8 @@
      "category": "published blueprint",
      "mechanism": "Working paper (Oct 2023; model term sheet Jan 2025) for an SMR orderbook of at least 3 projects (illustrated at 10 units): sponsors hold pro-rata interests in every unit through an SPV; sponsors fund the baseline budget and a pooled contingency in full; only when both are exhausted does a DOE backstop loan trigger automatically, illustrated at an 80% federal / 20% sponsor split of the overrun tail.",
      "outcome": "Proposal only. Illustrative numbers: a 10-unit, $20B orderbook with a $5B (25%) contingency facility; FOAK unit at $2.45B declining to $1.79B by unit 10.",
-     "early_vs_late": "Deliberately flat: \"all the participants experience the same average cost based upon the total cost of all the units in the orderbook\" — the design goal is erasing the first-mover disadvantage so nobody benefits from delaying.",
-     "relevance": "The closest existing blueprint to a shared microreactor orderbook plus risk pool: SPV pooling, tiered contingency, automatic backstop, and a reasoned rejection of price differences by order position.",
+     "early_vs_late": "Deliberately flat: \"all the participants experience the same average cost based upon the total cost of all the units in the orderbook\". The design goal is erasing the first-mover disadvantage so nobody benefits from delaying.",
+     "relevance": "Closest thing to a working blueprint for a shared microreactor orderbook plus risk pool. It pools through an SPV, tiers the contingency, adds an automatic backstop, and gives a reasoned rejection of price differences by order position.",
      "sources": [
       {
        "label": "EFI Foundation — A Cost Stabilization Facility for SMRs (PDF)",
@@ -92,8 +92,8 @@
      "category": "failed precedent",
      "mechanism": "About 27 municipal utilities subscribed to shares of a 6-module NuScale plant under a Budget and Plan of Finance that let any member withdraw, reimbursed for most costs, if $/MWh crossed an agreed ceiling. Continuation required roughly 80% subscription.",
      "outcome": "Target price rose from $58/MWh (2021) to $89/MWh (2023), a 53% increase, as estimated construction cost climbed from $5.3B to $9.3B. UAMPS and NuScale terminated the project on 2023-11-08 for insufficient subscription.",
-     "early_vs_late": "Symmetric by design: every member had the same opt-out at the same ceiling whenever they joined, so there was no reward for committing early and no cost to waiting — a structural driver of the shortfall.",
-     "relevance": "The clearest cautionary case for orderbook design: an opt-out-only pool with no early-mover benefit and no shared overrun backstop dissolves exactly when costs rise.",
+     "early_vs_late": "Symmetric by design: every member had the same opt-out at the same ceiling whenever they joined, so there was no reward for committing early and no cost to waiting, which was a structural driver of the shortfall.",
+     "relevance": "Shows what goes wrong. An opt-out-only pool with no early-mover benefit and no shared overrun backstop dissolves as soon as costs rise.",
      "sources": [
       {
        "label": "IEEFA — UAMPS SMR update, the fading promise of low-cost power",
@@ -116,7 +116,7 @@
      "mechanism": "DE-FOA-0003485 splits $900M into Tier 1 First Mover Team Support (up to $800M for at most two utility-led teams) and Tier 2 Fast Follower support (about $100M across additional projects), funded by the IIJA and FY2024 appropriations.",
      "outcome": "Tier 1 awards of $800M announced Dec 2025 to Tennessee Valley Authority and Holtec Government Services.",
      "early_vs_late": "Explicitly front-loaded, roughly 8× more per project for the first movers than the fast followers, in exchange for bearing FOAK risk.",
-     "relevance": "A live, funded federal example of the outside-subsidy layer paying first movers most, the design this tab proposes above the flat-priced pool.",
+     "relevance": "A live, funded federal example of the outside-subsidy layer paying first movers most, which is what this tab proposes above the flat-priced pool.",
      "sources": [
       {
        "label": "DOE — $900 million to unlock SMR deployment",
@@ -139,7 +139,7 @@
      "mechanism": "A Master Plant Development Agreement (Oct 2024) covering a fleet of reactors totalling 500 MW by 2035, first unit by 2030; Kairos builds and operates, selling through PPAs under the master framework with milestone-based accountability.",
      "outcome": "Signed; described as the first US corporate agreement for multiple deployments of a single advanced reactor design. No public per-unit price schedule.",
      "early_vs_late": "Undisclosed; Kairos frames the fleet structure as the way to move down the learning curve toward cost and schedule certainty.",
-     "relevance": "A buyers' club of one: a single hyperscaler aggregating its own multi-unit demand to reach fleet pricing. The shared orderbook generalises this across many smaller buyers.",
+     "relevance": "A buyers' club of one, where a single hyperscaler aggregates its own multi-unit demand to reach fleet pricing. The shared orderbook generalises this across many smaller buyers.",
      "sources": [
       {
        "label": "Kairos Power — Google partnership announcement",
@@ -155,7 +155,7 @@
      "mechanism": "A preorder with paid deposits for 20 Kaleidos microreactors (announced 2025-08-14), ahead of the design's first fuelled test at INL's DOME facility.",
      "outcome": "Radiant calls it the largest deal to date for any mass-manufactured reactor. No public per-unit price or delivery schedule.",
      "early_vs_late": "Undisclosed; nothing public says whether Equinix's price falls if later buyers join Radiant's book.",
-     "relevance": "Real deposits on 20 units is still short of DOE's 30–50 unit microreactor factory threshold — the concrete case for aggregating several such buyers into one book.",
+     "relevance": "Real deposits on 20 units still fall short of DOE's 30–50 unit factory threshold, which is the concrete case for aggregating several such buyers into one book.",
      "sources": [
       {
        "label": "Radiant — Equinix preorder announcement (via Accesswire)",
@@ -171,7 +171,7 @@
      "mechanism": "50/50 public-private cost share awarded 2020: about $2B toward TerraPower's Natrium and $1.2B toward X-energy's Xe-100, industry matching dollar-for-dollar, $3.2B DOE total over seven years.",
      "outcome": "Both demonstrations underway as of 2026; single-project awards, no multi-buyer structure.",
      "early_vs_late": "One FOAK project per design; the question does not arise.",
-     "relevance": "The baseline both NIA and EFI cite as necessary and insufficient: it de-risks the first plant but aggregates no demand and pools no overrun risk — the gap this tab's mechanism fills.",
+     "relevance": "Both NIA and EFI cite this as necessary and insufficient. It de-risks the first plant but aggregates no demand and pools no overrun risk, which is the gap this tab's mechanism fills.",
      "sources": [
       {
        "label": "DOE — Advanced Reactor Demonstration Program",
@@ -192,7 +192,7 @@
      "mechanism": "Donors pledged $1.5B (2009) to guarantee manufacturers a price: suppliers committed for 10 years to a $3.50/dose tail price and received a $3.50/dose top-up on roughly the first 20% of doses supplied, funded from the shared pool.",
      "outcome": "161M doses procured through the AMC in 2019; 1.65B doses contracted through 2027; three vaccines developed and over 150M children immunised.",
      "early_vs_late": "Uniform: every qualifying dose in the subsidised tranche earned the same top-up regardless of when the supplier joined; the subsidy tracked volume share, never arrival order.",
-     "relevance": "The flat, volume-proportional subsidy design — one of the three distinct answers the precedents give to who should get the better deal.",
+     "relevance": "A flat, volume-proportional subsidy, and one of the three distinct answers the precedents give to who should get the better deal.",
      "sources": [
       {
        "label": "GAVI — Pneumococcal AMC, how it works",
@@ -208,7 +208,7 @@
      "mechanism": "Launched 2022 by Stripe, Alphabet, Shopify, Meta and McKinsey at $1B+ (later $1.8B): low-volume prepurchases for early-stage suppliers and offtakes for growth-stage ones, with prices deliberately higher for earlier, riskier tons.",
      "outcome": "$1.8B committed; funded early deals from Charm Industrial onward through 2025.",
      "early_vs_late": "Inverted on purpose: early suppliers are paid more per ton as a market-making subsidy, pulling the cost curve down for everyone who buys later.",
-     "relevance": "Proof that paying more early can be the rational design when the goal is creating supply rather than sharing a fixed book.",
+     "relevance": "Shows that paying more early can be the rational design when the goal is to create supply that does not exist yet.",
      "sources": [
       {
        "label": "Frontier — an advance market commitment to accelerate carbon removal",
@@ -224,7 +224,7 @@
      "mechanism": "WEF and the US government coordinate forward purchasing pledges: members commit a percentage of future procurement (green steel, aluminium, cement, shipping, aviation, CDR) by a target year, with no single binding master contract.",
      "outcome": "101 companies had pledged $19B in purchasing commitments by 2030, per WEF's 2024 reporting.",
      "early_vs_late": "No price differentiation; the early-pledger benefit is influence over which suppliers and technologies get validated.",
-     "relevance": "The lightweight on-ramp: a microreactor buyers' club could start as percentage pledges before hardening into binding preorders, as long as it hardens — DOE's zero-signed-contracts finding is what soft pledges produce alone.",
+     "relevance": "A lightweight on-ramp. A microreactor buyers' club could start as percentage pledges and harden into binding preorders later, as long as it does harden: DOE found that soft pledges alone produced zero signed contracts.",
      "sources": [
       {
        "label": "WEF — First Movers Coalition 2024 commitments",
@@ -240,7 +240,7 @@
      "mechanism": "Boeing launched the 787 with All Nippon Airways ordering 50 aircraft (2004, list value ~$6B, heavily discounted). Aircraft makers price early units below production cost and recoup after cumulative volume drives unit cost past break-even; aerospace learning curves run 80–90%.",
      "outcome": "Program reached full commercial scale; over 1,000 787s delivered since.",
      "early_vs_late": "The launch customer gets the steepest discount, funded by the manufacturer against future volume, as compensation for bearing pioneer risk on an unproven airframe.",
-     "relevance": "The precedent DOE's Liftoff report cites by name, and the template for any manufacturer-funded early discount: the maker pays it, never the later buyers.",
+     "relevance": "DOE's Liftoff report cites this precedent by name. It is the template for a manufacturer-funded early discount, where the maker pays for it and the later buyers do not.",
      "sources": [
       {
        "label": "DOE Liftoff report — Boeing 787 analogy",
@@ -256,7 +256,7 @@
      "mechanism": "The US government combined R&D funding, manufacturing subsidies and advance purchase agreements so vaccine makers could build capacity before trial results existed; Pfizer took a pure $1.95B APA for 100M doses with no federal R&D money.",
      "outcome": "Roughly $10–18B deployed; vaccines reached market in under a year against a typical decade.",
      "early_vs_late": "A single government buyer shifting risk off manufacturers; no multi-buyer price question arises.",
-     "relevance": "The template for funding factory tooling ahead of a full book: one deep-pocketed backstop paying for at-risk capacity, which maps to the federal loan layer, never the buyer pool.",
+     "relevance": "How to fund factory tooling ahead of a full book: one deep-pocketed backstop pays for at-risk capacity. That maps to the federal loan layer, never to the buyer pool.",
      "sources": [
       {
        "label": "CRS — Operation Warp Speed contracts (PDF)",
@@ -272,7 +272,7 @@
      "mechanism": "A 2011 program targeting a 75% cut in solar costs by 2020, pursued through R&D and soft-cost reduction (permitting, financing, installation), with no demand-aggregation purchase mechanism at all.",
      "outcome": "The $0.06/kWh utility-scale target was hit in 2017, three years early, from ~$0.28/kWh in 2011.",
      "early_vs_late": "No buyer pool existed; the question does not arise.",
-     "relevance": "The reminder that an orderbook is one lever: if manufacturing and soft costs dominate, a cost curve can move without any buyer-side pooling.",
+     "relevance": "A reminder that an orderbook is only one lever. If manufacturing and soft costs dominate, a cost curve can move without any buyer-side pooling.",
      "sources": [
       {
        "label": "DOE — SunShot Initiative",
@@ -287,8 +287,8 @@
      "category": "counter-example",
      "mechanism": "New York procures offshore wind in sequential competitive rounds, each locking a 25-year strike price, on the assumption that successive rounds ratchet prices down.",
      "outcome": "Prices rose instead: the 2023 round averaged $96.72/MWh (2023 real dollars, $145.07 nominal); the 2024 round averaged $150.15/MWh all-in. Developers holding already-awarded 2023 contracts petitioned for 27–66% price relief citing inflation.",
-     "early_vs_late": "Each round priced independently at that round's market level, so later buyers paid more — 2022–24 interest-rate and supply-chain inflation overwhelmed technology learning.",
-     "relevance": "The macro warning for any orderbook: the pool needs an explicit, separately priced provision for economy-wide inflation, or a good design still fails on a bad macro draw. The same shock broke UAMPS.",
+     "early_vs_late": "Each round priced independently at that round's market level, so later buyers paid more; 2022–24 interest-rate and supply-chain inflation overwhelmed technology learning.",
+     "relevance": "The macro warning. A pool needs an explicit, separately priced provision for economy-wide inflation, or a good design still fails on a bad macro draw. The same shock broke UAMPS.",
      "sources": [
       {
        "label": "NYSERDA — 2023 offshore wind solicitation awards (PDF)",
@@ -310,7 +310,7 @@
      "mechanism": "14 US semiconductor makers formed Sematech in 1987 with DARPA providing $100M/year matched by industry, pooling R&D that members had been duplicating; government matching ended after 1996 by board decision.",
      "outcome": "Analysis found membership cut members' own private R&D by roughly $300M/year, about three times the subsidy, by removing duplication; the consortium outlived its federal funding.",
      "early_vs_late": "Simultaneous member-competitors, no order positions.",
-     "relevance": "The duration answer for a microreactor pool's public backstop: government capital can be transitional, sunsetting once the standardised fleet has de-risked itself, rather than a permanent subsidy.",
+     "relevance": "Answers how long a public backstop should last: government capital can be transitional, sunsetting once the standardised fleet has de-risked itself.",
      "sources": [
       {
        "label": "CSIS — Sematech's lessons for the NSTC",
@@ -328,10 +328,10 @@
     {
      "name": "NEIL — Nuclear Electric Insurance Limited",
      "category": "mutual insurance",
-     "mechanism": "A mutual insurer founded 1980 after Three Mile Island, owned by member utilities, covering property, decontamination and extended-outage risk up to $2.75B per site — and running a Member Nuclear Builders' Risk Program for the construction phase, also up to $2.75B per occurrence, with delay-in-startup sublimits.",
+     "mechanism": "A mutual insurer founded 1980 after Three Mile Island, owned by member utilities, covering property, decontamination and extended-outage risk up to $2.75B per site, and running a Member Nuclear Builders' Risk Program for the construction phase, also up to $2.75B per occurrence, with delay-in-startup sublimits.",
      "outcome": "Assets over $5B and an AM Best A (Excellent) rating as of 2025; its builders-risk product reinsured Vogtle 3 and 4 and is being extended to advanced-reactor builds.",
      "early_vs_late": "Underwritten per plant, never by order position.",
-     "relevance": "The overrun pool does not need inventing: a member-owned nuclear mutual with a construction product already exists, and the adaptation is to many smaller standardised units whose loss data compounds unit over unit.",
+     "relevance": "The overrun pool does not need inventing. A member-owned nuclear mutual with a construction product already exists; the adaptation is to many smaller standardised units whose loss data compounds unit over unit.",
      "sources": [
       {
        "label": "Insurance Journal — Marsh placement referencing the nuclear mutual pools",
@@ -353,7 +353,7 @@
      "mechanism": "Two tiers for third-party nuclear liability since 1957: each site carries $500M of commercial insurance, and damages beyond it trigger retrospective assessments on every operating reactor nationwide, capped per reactor and administered through American Nuclear Insurers.",
      "outcome": "Roughly $15.5B of pooled compensation capacity per incident; repeatedly renewed, and the reason nuclear liability is insurable at all.",
      "early_vs_late": "Every reactor is assessed the same share when the second layer triggers, whatever its vintage.",
-     "relevance": "The classic template for the pool's second band: bounded per-project capital first, then equal retrospective assessment across the whole fleet for the tail.",
+     "relevance": "The classic shape for the pool's second band. Bounded per-project capital first, then an equal retrospective assessment across the whole fleet for the tail.",
      "sources": [
       {
        "label": "NRC — backgrounder on nuclear insurance and disaster relief",
@@ -375,7 +375,7 @@
      "mechanism": "Consumers pay a levy during construction (0.3p/kWh on UK bills as of Dec 2025), giving investors early revenue and a regulated, lower cost of capital in exchange for consumers absorbing bounded overrun risk.",
      "outcome": "Live on UK bills. The National Audit Office's modelling found that cutting the required investor return from 9% to 6% is worth as much as absorbing a 75–100% construction overrun; critics call the structure an open cheque book for developers.",
      "early_vs_late": "Risk shifts to all current ratepayers collectively and continuously; no order positions.",
-     "relevance": "The financing insight for the pool: de-risking capital can be worth more than the overrun itself, which is why a credible insurance layer lowers LCOE even if it never pays out.",
+     "relevance": "De-risking capital can be worth more than the overrun itself, which is why a credible insurance layer lowers LCOE even if it never pays out.",
      "sources": [
       {
        "label": "Consumer Scotland — public information note on nuclear RAB and Sizewell C",
@@ -395,10 +395,10 @@
     {
      "name": "Vogtle 3 & 4 and the Westinghouse fixed-price collapse",
      "category": "cautionary allocation",
-     "mechanism": "Westinghouse and CB&I held a fixed-price EPC to design and build both units, concentrating designer, constructor and project manager in one counterparty that absorbed all cost growth — until it filed for bankruptcy in March 2017 and the owners had to take over management themselves.",
+     "mechanism": "Westinghouse and CB&I held a fixed-price EPC to design and build both units, concentrating designer, constructor and project manager in one counterparty that absorbed all cost growth, until it filed for bankruptcy in March 2017 and the owners had to take over management themselves.",
      "outcome": "Final cost roughly $32–35B against an original ~$14B. Georgia regulators let Georgia Power recover $7.56B of its ~$10.2B share from ratepayers while shareholders absorbed ~$2.6B. Unit 4 still came in ~30% cheaper than Unit 3, the cleanest twin-unit learning datapoint on record.",
      "early_vs_late": "A fixed four-owner consortium from the start; the split that mattered was shareholder versus ratepayer.",
-     "relevance": "Why the pool spreads overruns across bounded layers held by different parties: piling the whole tail onto one fixed-price counterparty bankrupts the counterparty and then costs more anyway.",
+     "relevance": "Why the pool spreads overruns across bounded layers held by different parties: piling the whole tail onto one fixed-price counterparty bankrupts that counterparty and costs more anyway.",
      "sources": [
       {
        "label": "DOE Liftoff report — Vogtle analysis",
@@ -420,7 +420,7 @@
      "mechanism": "Virginia's SCC (Dec 2022) approved a sliding overrun split for Dominion's $9.8B project: customers pay 100% of the first band ($9.8–10.3B), the split is 50/50 to $11.3B, the company pays 100% to $13.7B, and anything beyond goes to a future proceeding.",
      "outcome": "In force; cited by EFI's cost-stabilization paper as the model for a formal tiered risk schedule.",
      "early_vs_late": "Tiered by overrun magnitude, never by commitment timing.",
-     "relevance": "A ready, regulator-approved answer to exactly how the pool's bands should escalate: define severity bands and assign each an explicit split.",
+     "relevance": "A regulator has already approved an answer to how the pool's bands should escalate: define severity bands and assign each an explicit split.",
      "sources": [
       {
        "label": "EFI CSF paper — Box 1, CVOW schedule (VA SCC PUR-2021-00142)",
@@ -435,8 +435,8 @@
      "category": "pending legislation",
      "mechanism": "The bipartisan Accelerating Reliable Capacity Act (Sens. Risch and Gallego, reintroduced Feb 2026) would authorise up to $3.6B to offset cost overruns across three or more next-generation reactor projects, up to $1.2B per qualifying project, repurposing existing appropriations.",
      "outcome": "Introduced; no floor vote as of this capture.",
-     "early_vs_late": "The backstop engages only once three or more projects exist — federal capital is gated on a real orderbook forming, though the bill does not split funds by order position.",
-     "relevance": "Live legislative traction for the exact backstop layer the proposal cards describe: shared overrun capital conditional on aggregation.",
+     "early_vs_late": "The backstop engages only once three or more projects exist, so federal capital is gated on a real orderbook forming, though the bill does not split funds by order position.",
+     "relevance": "Live legislative traction for the exact backstop layer the proposal cards describe, with shared overrun capital conditional on aggregation.",
      "sources": [
       {
        "label": "ANS — Gallego and Risch submit ARC Act 2.0",
@@ -458,7 +458,7 @@
      "mechanism": "Broker Marsh placed construction-phase insurance for TerraPower's Natrium build in Wyoming, layering US, London and Bermuda commercial insurers on top of the traditional nuclear mutual pools.",
      "outcome": "Reported March 2026 as the first time a next-generation US nuclear plant gained direct access to the commercial insurance marketplace; limits and premium undisclosed.",
      "early_vs_late": "Single-project placement.",
-     "relevance": "Commercial reinsurance is already willing to price FOAK advanced-reactor construction risk — a microreactor pool could attract layered private capacity once early units de-risk the design, rather than leaning on government indefinitely.",
+     "relevance": "Commercial reinsurance is already willing to price FOAK advanced-reactor construction risk. A microreactor pool could attract layered private capacity once early units de-risk the design, instead of leaning on government indefinitely.",
      "sources": [
       {
        "label": "Insurance Journal — Marsh secures insurance for Kemmerer construction",

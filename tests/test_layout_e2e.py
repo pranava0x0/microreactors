@@ -9,6 +9,7 @@ an accordion that will not toggle.
 import contextlib
 import http.server
 import pathlib
+import re
 import socket
 import threading
 import unittest
@@ -22,7 +23,12 @@ try:
 except ImportError:
     _HAVE_PW = False
 
-PANELS = ["pipeline", "economics", "vendors", "demand", "market", "policy", "evidence"]
+# Derived from the markup, never re-typed: a hand-written copy of this list
+# goes stale silently the next time a panel is renamed (CLAUDE.md, single
+# source of truth).
+PANELS = re.findall(r'<section id="([\w-]+)" role="tabpanel"',
+                    (SITE / "index.html").read_text())
+assert len(PANELS) >= 5, "panel extraction from index.html failed"
 
 
 @contextlib.contextmanager
@@ -71,10 +77,25 @@ class Layout(unittest.TestCase):
                           wide = el.className || el.tagName; break;
                         }
                       }
+                      // Sub-tab strip, where the panel has one: exactly one
+                      // sub-panel showing, and no sub-tab parked off its edge.
+                      const strip = document.querySelector('#' + panel + ' .subtabs');
+                      let sub = null;
+                      if (strip) {
+                        const last = strip.lastElementChild.getBoundingClientRect();
+                        const box = strip.getBoundingClientRect();
+                        sub = {
+                          shown: [...document.querySelectorAll('#' + panel + ' [data-sub]')]
+                            .filter(e => !e.hidden).length,
+                          selected: strip.querySelectorAll('[aria-selected="true"]').length,
+                          lastIn: last.right <= box.right + 0.5,
+                          overflow: strip.scrollWidth > strip.clientWidth + 1
+                        };
+                      }
                       return {
                         scrollW: doc.scrollWidth, clientW: doc.clientWidth,
                         lastTabIn: lastTab.right <= tabsBox.right + 0.5,
-                        visible, wide,
+                        visible, wide, sub,
                         tabH: document.querySelector('.tab').getBoundingClientRect().height
                       };
                     }""", panel)
@@ -86,6 +107,14 @@ class Layout(unittest.TestCase):
                         problems.append(f"{width}px {panel}: visible={m['visible']}")
                     if m["wide"]:
                         problems.append(f"{width}px {panel}: overwide element {m['wide']}")
+                    if m["sub"]:
+                        sub = m["sub"]
+                        if sub["shown"] != 1:
+                            problems.append(f"{width}px {panel}: {sub['shown']} sub-panels visible")
+                        if sub["selected"] != 1:
+                            problems.append(f"{width}px {panel}: {sub['selected']} sub-tabs selected")
+                        if not sub["lastIn"] or sub["overflow"]:
+                            problems.append(f"{width}px {panel}: sub-tab strip clipped")
                     # Touch floor with half-pixel tolerance: device scaling makes
                     # exact-44 checks flake (TESTING.md 2026-08-10).
                     if coarse and m["tabH"] < 43.5:
