@@ -84,12 +84,23 @@ class Layout(unittest.TestCase):
                       if (strip) {
                         const last = strip.lastElementChild.getBoundingClientRect();
                         const box = strip.getBoundingClientRect();
+                        const btns = [...strip.querySelectorAll('.subtab')];
                         sub = {
                           shown: [...document.querySelectorAll('#' + panel + ' [data-sub]')]
                             .filter(e => !e.hidden).length,
                           selected: strip.querySelectorAll('[aria-selected="true"]').length,
                           lastIn: last.right <= box.right + 0.5,
-                          overflow: strip.scrollWidth > strip.clientWidth + 1
+                          overflow: strip.scrollWidth > strip.clientWidth + 1,
+                          minH: Math.min(...btns.map(b => b.getBoundingClientRect().height)),
+                          // DESIGN.md 8.7: lighter than the primary tabs means
+                          // underline only. A box would show up as a radius or
+                          // a side border.
+                          boxed: btns.some(b => {
+                            const c = getComputedStyle(b);
+                            return parseFloat(c.borderRadius) > 0
+                              || parseFloat(c.borderLeftWidth) > 0
+                              || parseFloat(c.borderTopWidth) > 0;
+                          })
                         };
                       }
                       return {
@@ -115,6 +126,10 @@ class Layout(unittest.TestCase):
                             problems.append(f"{width}px {panel}: {sub['selected']} sub-tabs selected")
                         if not sub["lastIn"] or sub["overflow"]:
                             problems.append(f"{width}px {panel}: sub-tab strip clipped")
+                        if sub["boxed"]:
+                            problems.append(f"{width}px {panel}: sub-tabs are boxed, not underlined")
+                        if coarse and sub["minH"] < 43.5:
+                            problems.append(f"{width}px {panel}: sub-tab height {sub['minH']}")
                     # Touch floor with half-pixel tolerance: device scaling makes
                     # exact-44 checks flake (TESTING.md 2026-08-10).
                     if coarse and m["tabH"] < 43.5:
