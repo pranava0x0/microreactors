@@ -14,14 +14,23 @@ sweep, both on short strings only, because both are headline constructions:
                 Ten of thirty-two policy names ran this template.
 
 Scope differs per pattern, because their false positives do. comma-tail is
-checked on every short display string (it produced no false positive across
-741 of them). colon-setup is checked only on strings sitting under a heading
-key, since "Equinix 20-unit deal: no per-unit price published" is a fine note
-and a bad headline. Heading keys are matched by key NAME, not by a list of
-paths, so a new heading field is covered the day it is added as long as it is
-called one of the usual things. Anything legitimately matching goes in ALLOW
-with a reason, the same convention tools/check_citations.py uses.
+checked on every short display string, in the data files AND in the markup:
+the markup half was missing until 2026-08-23, which left the wordmark, all
+seven tab labels, the chart legend and the footer credit unscanned while this
+docstring claimed otherwise. colon-setup is checked only on strings sitting
+under a heading key, or on a markup heading, since "Equinix 20-unit deal: no
+per-unit price published" is a fine note and a bad headline. Heading keys are
+matched by key NAME, not by a list of paths, so a new heading field is covered
+the day it is added as long as it is called one of the usual things.
+
+Known limit: both patterns only run on strings of at most HEAD_MAX characters,
+because both are headline constructions and both regexes anchor at the end of
+the string. A comma-tail buried mid-paragraph is out of scope by design; catching
+those needs sentence segmentation, which buys more false positives than it is
+worth. Anything legitimately matching goes in ALLOW with a reason, the same
+convention tools/check_citations.py uses.
 """
+import html.parser
 import json
 import pathlib
 import re
@@ -74,16 +83,65 @@ def strings(node, out, key=""):
         out.append((key, node))
 
 
+class Visible(html.parser.HTMLParser):
+    """Every run of authored text in the markup, one per element that holds
+    text, plus the joined text of its ancestors so a sentence broken by an
+    inline <span> is still seen whole. Headings are tagged so the colon check
+    can tell a headline from a legend label."""
+
+    SKIP = {"head", "script", "style", "title"}
+    HEADING = {"h1", "h2", "h3"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.runs, self.stack, self.depth_skipped = [], [], 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self.depth_skipped += 1
+        eyebrow = dict(attrs).get("class", "") == "eyebrow"
+        self.stack.append({"tag": tag, "eyebrow": eyebrow, "text": []})
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP and self.depth_skipped:
+            self.depth_skipped -= 1
+        while self.stack:
+            frame = self.stack.pop()
+            text = re.sub(r"\s+", " ", "".join(frame["text"])).strip()
+            if text:
+                heading = frame["tag"] in self.HEADING or frame["eyebrow"]
+                self.runs.append(("name" if heading else "markup", text))
+                if self.stack:
+                    self.stack[-1]["text"].append(" " + text + " ")
+            if frame["tag"] == tag:
+                break
+
+    def handle_data(self, data):
+        if not self.depth_skipped and self.stack:
+            self.stack[-1]["text"].append(data)
+
+
+def markup_strings():
+    parser = Visible()
+    parser.feed((SITE / "index.html").read_text())
+    seen, out = set(), []
+    for kind, text in parser.runs:
+        # A heading also surfaces inside its ancestors' joined text; keep the
+        # heading-tagged copy, which is the one the colon check needs.
+        key = (text, kind)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append((kind, text))
+    headings = {t for k, t in out if k == "name"}
+    return [(k, t) for k, t in out if k == "name" or t not in headings]
+
+
 def display_strings():
     out = []
     for name in FILES:
         strings(json.loads((DATA / f"{name}.json").read_text()), out)
-    html = (SITE / "index.html").read_text()
-    for tag in ("h1", "h2", "h3"):
-        out += [("name", re.sub(r"<[^>]+>", "", x).strip())
-                for x in re.findall(rf"<{tag}[^>]*>(.*?)</{tag}>", html, re.S)]
-    out += [("name", re.sub(r"<[^>]+>", "", x).strip())
-            for x in re.findall(r'<p class="eyebrow">(.*?)</p>', html, re.S)]
+    out += markup_strings()
     return [(k, s) for k, s in out if s]
 
 
@@ -102,15 +160,18 @@ def check():
 def main() -> int:
     all_strings = display_strings()
     heads = [s for k, s in all_strings if k in HEADING_KEYS]
-    if len(all_strings) < 200 or len(heads) < 50:
-        print(f"extraction found {len(all_strings)} strings / {len(heads)} headings "
-              "— stale?", file=sys.stderr)
+    markup = markup_strings()
+    # Floors, not niceties: a parser that silently returns nothing shrinks the
+    # total by too little to notice and turns this gate into a green no-op.
+    if len(all_strings) < 200 or len(heads) < 50 or len(markup) < 20:
+        print(f"extraction found {len(all_strings)} strings / {len(heads)} headings / "
+              f"{len(markup)} markup runs — stale?", file=sys.stderr)
         return 2
     found = check()
     for kind, s in found:
         print(f"{kind}: {s}", file=sys.stderr)
-    print(f"{len(all_strings)} display strings scanned, {len(heads)} under a heading key, "
-          f"{len(found)} register hits")
+    print(f"{len(all_strings)} display strings scanned ({len(markup)} from the markup), "
+          f"{len(heads)} under a heading key, {len(found)} register hits")
     return 1 if found else 0
 
 
