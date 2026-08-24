@@ -203,6 +203,11 @@ A matrix answers a binary question: "does this entity touch this dimension at al
 
 When one tab's content runs past ~2–3 screens, split it into **sub-tabs** instead of a longer scroll: a second, lighter tablist *inside* the panel (underline style, not the boxed primary tabs), each sub-panel `role="tabpanel"`. Keep the same ARIA contract as the primary tabs (`role="tab"` / `aria-selected` / roving `tabindex` / arrow-key navigation) and a ≥44px touch target on `pointer:coarse`. Example: a long comment list split into Overview / Respondent types / Comment summaries — each one screen instead of one ten-screen scroll.
 
+Three design rules for sub-tabs and sub-panels (2026-08):
+- **Omit the default sub-tab slug from the URL hash.** Landing on a panel with sub-tabs should yield a clean `#market` or `#pipeline` URL, not `#market/proposal` or `#pipeline/all`. Only secondary/non-default sub-tabs append a path suffix (e.g. `#market/other-industries`).
+- **Use structured CSS grids rather than CSS multi-column (`column-count`) for card lists and accordions.** CSS column-balancing splits items across columns and reflows jarringly when an accordion expands or collapses. Use `display: grid; grid-template-columns: repeat(2, 1fr)` for multi-column cards, keeping introductory prose in a full-width header block above the grid.
+- **Let prose spread across full container card widths.** Avoid hardcoding `max-width: var(--measure-prose)` inside bounded UI cards (such as sector descriptions, precedent detail cards, and deployment site cards), which leaves awkward blank gutters inside otherwise wide surfaces.
+
 ### 8.8 Metadata chips (multi-lens tags)
 
 When a row carries several orthogonal tag sets (e.g. three classification lenses), render each lens as a small tint chip in its own color, lenses separated by a hairline. Abbreviate the chip label and carry the full meaning in `title` plus an `sr-only` group label so the grouping survives for screen readers. Keep it to ~3 lenses or the row stops scanning; push the rest to the deep-dive. Color is a *cue*, never the only signal — the text is the label.
