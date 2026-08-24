@@ -30,6 +30,23 @@ vs test bug), status.
   was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
   clients outright — use browser capture + `fetch_source --from-file`.
 
+- **2026-08-23 · site · Register host stuffed into the number column ≤640px — Fixed.**
+  Widening `.reg .rrow` from two grid columns to three (number, details, host) left the
+  ≤640px override at two columns, so auto-placement dropped the third child into row 2
+  **column 1**: the host sized the number column to 114–247px, squeezed the details column
+  to 197px, and `word-break:break-all` broke long domains over two lines. Root cause:
+  **code bug** — a grid child count changed without its narrow-viewport rule changing with
+  it. Fix: explicit `grid-column:2` on `.reg .host` in the media rule, which also aligns it
+  under the details it belongs to. Found by the PR bot on #4, not by the e2e gate, which
+  checked page overflow but never where a child landed. Regression guard:
+  `SourceRegisterMobile` in tests/test_layout_e2e.py asserts every host starts right of the
+  number and shares the details column's left edge.
+- **2026-08-23 · site · Renaming the Evidence panel broke `#evidence` links — Fixed.**
+  Renaming the panel id to `sources` made the old route unknown, and `activate()` silently
+  falls back to the first panel, so every shared `#evidence` link landed on the Tracker with
+  the hash rewritten. Root cause: **code bug** — an id rename treated as internal when it is
+  also a public URL. Fix: an `ALIASES` map in app.js normalises `evidence` to `sources`
+  before the unknown-route check. Regression guard: `Routing` in tests/test_layout_e2e.py.
 - **2026-08-23 · site · Citation numbers restarted at [1] on every row — Fixed.** `cite()`
   numbered chips by their index within one row's own source list, so `[1]` appeared dozens
   of times across the site pointing at a different source each time, and no chip could be

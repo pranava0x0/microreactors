@@ -290,8 +290,12 @@ details.prec .body .k{color:var(--text-tertiary)}
 .reg .host{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
   white-space:nowrap}
 @media(max-width:640px){
+  /* Two columns, three children: the host has to be placed explicitly or
+     auto-placement drops it into column 1, where it is sized by the number
+     column and a long domain breaks almost vertically. Column 2 also lines it
+     up under the source details it belongs to. */
   .reg .rrow{grid-template-columns:auto 1fr}
-  .reg .host{white-space:normal;word-break:break-all}
+  .reg .host{grid-column:2;white-space:normal;word-break:break-all}
 }
 .reg .uses{display:block;font-size:var(--size-caption);color:var(--text-tertiary);margin-top:2px}
 
