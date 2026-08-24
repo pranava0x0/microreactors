@@ -16,12 +16,14 @@ body{overflow-x:hidden}
 .wordmark{font-weight:var(--weight-bold);letter-spacing:var(--track-wordmark);text-transform:uppercase;
   font-size:var(--size-label);white-space:nowrap;margin-right:auto}
 .wordmark b{color:var(--antares-red);font-weight:var(--weight-bold)}
+@media(min-width:900px){.wordmark{font-size:var(--size-index)}}
 .tabs{display:flex;flex-wrap:wrap;gap:var(--space-1)}
 .tab{appearance:none;background:transparent;border:none;border-bottom:2px solid transparent;
   color:var(--text-secondary);cursor:pointer;padding:var(--space-2) var(--space-3);
-  font:var(--text-label);letter-spacing:var(--track-nav);text-transform:uppercase;
+  font-size:13px;font-weight:var(--weight-medium);letter-spacing:var(--track-nav);text-transform:uppercase;
   font-family:var(--font-core);transition:var(--transition-control);white-space:nowrap;
   touch-action:manipulation}
+@media(min-width:768px){.tab{font-size:15px;padding:var(--space-2) var(--space-4)}}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
@@ -83,8 +85,8 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .subtab{appearance:none;background:transparent;border:none;cursor:pointer;
   border-bottom:2px solid transparent;margin-bottom:-1px;
   padding:var(--space-2) 0 var(--space-3);color:var(--text-tertiary);
-  font-family:var(--font-core);font-size:var(--size-caption);font-weight:var(--weight-medium);
-  letter-spacing:var(--track-label);text-transform:uppercase;
+  font-family:var(--font-core);font-size:var(--size-index);font-weight:var(--weight-medium);
+  letter-spacing:var(--track-nav);text-transform:uppercase;
   transition:var(--transition-control);touch-action:manipulation}
 .subtab:hover{color:var(--text-primary)}
 .subtab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--text-primary)}
