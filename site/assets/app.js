@@ -362,14 +362,105 @@
   );
   makeSubnav("vendors", vItems);
 
-  /* ---------- demand accordions / subtabs ---------- */
-  var secItems = [{ id: "all", label: "All sectors" }].concat(
+  /* ---------- demand summary & top options ---------- */
+  render($("dsummary"), [
+    { n: "35", k: "demand bands mapped" },
+    { n: "8", k: "civilian sectors" },
+    { n: "1–20 MW", k: "microreactor sweet spot", accent: true },
+    { n: "$250–$850", k: "/MWh displaced diesel ceiling", accent: true }
+  ].map(function (x) {
+    return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
+      esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
+  }).join(""));
+
+  var topOptions = [
+    {
+      title: "Remote Outposts & Arctic Microgrids",
+      band: "1–5 MW",
+      incumbent: "Islanded diesel generation ($300–$850/MWh) and seasonal ice-road fuel logistics",
+      desc: "Isolated radar stations, military installations, and remote Arctic settlements require 24/7 firm power where fuel delivery is restricted to seasonal barges or ice roads. Microreactors provide multi-year continuous operation with black-start islanding capability.",
+      edge: "Satisfies statutory 99.9% energy availability mandates (10 U.S.C. 2920) while cutting volatile fuel haulage risks.",
+      sources: [
+        { label: "ANS — DAF ANPI selections", url: "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/" },
+        { label: "CVEA — Alaska MMR study", url: "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf" }
+      ]
+    },
+    {
+      title: "Off-Grid Mining & Mineral Processing",
+      band: "5–20 MW",
+      incumbent: "Onsite diesel/HFO generator banks ($200–$450/MWh)",
+      desc: "Remote copper, lithium, gold, and pozzolan operations operate continuous crushing, grinding, flotation mills, and employee camps. Building transmission lines across remote terrain often costs upwards of $100M with 5–10 year wait times.",
+      edge: "Steady 24/7 flat baseload profile maximizes reactor capacity factor with zero transmission queue delay.",
+      sources: [
+        { label: "CVEA — Alaska project report", url: "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html" }
+      ]
+    },
+    {
+      title: "Behind-the-Meter Edge & Regional Data Centers",
+      band: "5–20 MW",
+      incumbent: "5–7 year utility interconnection queues and EPA/CARB emergency diesel runtime caps",
+      desc: "Regional AI inference hubs and edge colocation facilities require 1–20 MW dedicated power blocks. Utility substation queues delay power delivery for years, while EPA RICE NESHAP rules cap non-emergency diesel dispatch at 100 hours per year.",
+      edge: "Dedicated onsite baseload bypasses transmission queues entirely without triggering Tier 4 emergency diesel reclassification.",
+      sources: [
+        { label: "JLL — Smaller data centers", url: "https://www.jll.com/en-us/insights/why-smaller-data-centers-are-taking-off" },
+        { label: "EPA — Emergency engine provisions", url: "https://www.epa.gov/stationary-engines/fact-sheet-specifics-about-provisions-related" },
+        { label: "Kirkland & Ellis — EPA guidance", url: "https://www.kirkland.com/publications/kirkland-alert/2025/05/new-epa-guidance-clarifies-when-data-centers-and-other-operators-may-utilize-emergency-backup" }
+      ]
+    },
+    {
+      title: "Medical Campuses & Critical Civic Infrastructure",
+      band: "2–10 MW",
+      incumbent: "Aging campus Combined Heat & Power (CHP) plants and code-mandated diesel banks",
+      desc: "Major hospitals and university campuses require simultaneous electricity and process steam for heating, sterilization, and climate control. CMS waiver QSO-23-11-LSC permits microgrids and non-generator sources to satisfy emergency power rules under 42 CFR 482.15.",
+      edge: "Delivers continuous power plus 100°C–200°C steam while replacing aging combustion boilers facing tightening air-quality caps.",
+      sources: [
+        { label: "CMS — Alternate energy guidance", url: "https://essentialhospitals.org/cms-updates-guidance-alternative-energy-sources/" },
+        { label: "DOE — Better Buildings CHP", url: "https://betterbuildingssolutioncenter.energy.gov/chp/colleges-universities" }
+      ]
+    },
+    {
+      title: "Marine Terminals & Port Cold Ironing",
+      band: "5–20 MW",
+      incumbent: "Auxiliary shipboard diesel engines running in port non-attainment air basins",
+      desc: "Port authorities face strict mandates (such as CARB At-Berth rules) requiring berthed container and cruise vessels to shut down auxiliary diesel engines and plug into shore power (cold ironing). Simultaneous vessel berthing creates massive multi-megawatt load spikes.",
+      edge: "Provides dedicated port microgrid power without overloading local municipal utility substations.",
+      sources: [
+        { label: "CARB — At-Berth regulation", url: "https://ww2.arb.ca.gov/our-work/programs/ocean-going-vessels-berth-regulation" }
+      ]
+    },
+    {
+      title: "Spaceport Propellant Liquefaction & Launch Pads",
+      band: "5–30 MW",
+      incumbent: "Bulk trucked cryogenic propellant haulage with high boil-off losses",
+      desc: "High-cadence commercial launch sites require continuous liquefaction and zero-boil-off refrigeration for liquid oxygen, liquid methane, and liquid hydrogen. Launch pads are frequently situated in remote coastal areas fed by long, vulnerable radial transmission lines.",
+      edge: "Onsite liquefaction eliminates thousands of hazardous propellant tanker truck runs and provides independent pad power.",
+      sources: [
+        { label: "Businesswire — Antares ANPI", url: "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative" }
+      ]
+    }
+  ];
+
+  var topGridHTML = '<div class="topgrid">' + topOptions.map(function (o) {
+    return '<div class="topcard">' +
+      '<div class="thdr"><h4>' + esc(o.title) + '</h4><span class="tband">' + esc(o.band) + "</span></div>" +
+      '<div class="tinc"><strong>Displaces:</strong> ' + esc(o.incumbent) + "</div>" +
+      '<div class="tdesc">' + esc(o.desc) + " " + cite(o.sources) + "</div>" +
+      '<div class="tedge"><strong>Why microreactors win:</strong> ' + esc(o.edge) + "</div>" +
+      "</div>";
+  }).join("") + "</div>";
+
+  var secItems = [
+    { id: "top", label: "Top options" },
+    { id: "all", label: "All sectors" }
+  ].concat(
     D.sectors.sectors.map(function (sec) {
       return { id: slug(sec.sector), label: sec.sector };
     })
   );
 
   render($("sectors"),
+    '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
+      topGridHTML + "</div>" +
     '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
     D.sectors.sectors.map(function (sec) {
       return '<details class="sector"><summary>' +
