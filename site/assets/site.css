@@ -71,6 +71,25 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .stat .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);margin-top:var(--space-2);display:block}
 
+/* ---------- sub-tabs ---------- */
+/* DESIGN.md 8.7: a second, LIGHTER tablist inside the panel, underline style,
+   never boxed. Subordination is carried by colour, not size: --size-caption and
+   --size-label are both 12px, so the weight difference is the neutral underline
+   against the primary nav's accent red, plus tertiary idle text against the
+   primary's secondary. The strip wraps rather than scrolls, because a
+   sub-section parked off the right edge is unreachable in practice. */
+.subtabs{display:flex;flex-wrap:wrap;column-gap:var(--space-6);row-gap:var(--space-1);
+  margin-bottom:var(--space-8);border-bottom:1px solid var(--border-subtle)}
+.subtab{appearance:none;background:transparent;border:none;cursor:pointer;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  padding:var(--space-2) 0 var(--space-3);color:var(--text-tertiary);
+  font-family:var(--font-core);font-size:var(--size-caption);font-weight:var(--weight-medium);
+  letter-spacing:var(--track-label);text-transform:uppercase;
+  transition:var(--transition-control);touch-action:manipulation}
+.subtab:hover{color:var(--text-primary)}
+.subtab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--text-primary)}
+@media(pointer:coarse){.subtab{min-height:44px}}
+
 /* ---------- track filter ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
 .chip{height:var(--control-height-sm);padding:0 var(--space-4);background:transparent;cursor:pointer;
@@ -108,6 +127,8 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .srcs a{display:inline-block;font-size:var(--size-body-sm);color:var(--text-secondary);
   text-decoration:underline;text-underline-offset:3px;margin-right:var(--space-4)}
 .srcs a:hover{color:var(--antares-red);opacity:1}
+.srcs .sn,.vsrcs .sn{font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);margin-right:var(--space-2)}
 .gapnote{margin-top:var(--space-4);padding:var(--space-4);border-left:2px solid var(--antares-red);
   background:var(--antares-red-08);font-size:var(--size-body-sm);color:var(--text-secondary)}
 .gapnote li{margin-bottom:var(--space-2)}
@@ -264,15 +285,21 @@ details.prec .body .k{color:var(--text-tertiary)}
 
 /* ---------- evidence: source register ---------- */
 .reg{border-top:1px solid var(--border-subtle);max-width:960px}
-.reg .rrow{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);align-items:baseline;
+.reg .rrow{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);align-items:baseline;
   padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);font-size:var(--size-body-sm)}
+.reg .rn{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  min-width:3ch;text-align:right}
 .reg .rrow a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
 .reg .rrow a:hover{color:var(--antares-red);opacity:1}
 .reg .host{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
   white-space:nowrap}
 @media(max-width:640px){
-  .reg .rrow{grid-template-columns:1fr}
-  .reg .host{white-space:normal;word-break:break-all}
+  /* Two columns, three children: the host has to be placed explicitly or
+     auto-placement drops it into column 1, where it is sized by the number
+     column and a long domain breaks almost vertically. Column 2 also lines it
+     up under the source details it belongs to. */
+  .reg .rrow{grid-template-columns:auto 1fr}
+  .reg .host{grid-column:2;white-space:normal;word-break:break-all}
 }
 .reg .uses{display:block;font-size:var(--size-caption);color:var(--text-tertiary);margin-top:2px}
 

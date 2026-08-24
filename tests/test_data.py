@@ -7,6 +7,7 @@ an 'idea' dressed as a fact are the three failure classes these tests block.
 import json
 import pathlib
 import re
+import sys
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -194,6 +195,26 @@ class Register(unittest.TestCase):
             text = " \n".join(strings).lower()
             for word in self.BANNED:
                 self.assertNotIn(word, text, f"{name} contains banned register word {word!r}")
+
+    def test_no_ai_register_in_markup(self):
+        """index.html was outside this lint until 2026-08-23, which is how a
+        section eyebrow shipped reading "rules that unlock the sale"."""
+        html = (ROOT / "site" / "index.html").read_text()
+        body = re.sub(r"<head>.*?</head>", "", html, flags=re.S)
+        text = re.sub(r"<[^>]+>", " ", body).lower()
+        self.assertGreater(len(text), 500, "markup text extraction failed")
+        for word in self.BANNED:
+            i = text.find(word)
+            self.assertEqual(i, -1, f"index.html contains banned register word {word!r}: "
+                                    f"...{text[max(0, i - 40):i + 40].strip()}...")
+
+    def test_structural_register_lint_passes(self):
+        """tools/check_register.py, run as the tests run it: headline shapes
+        (comma-tail, colon-setup) that no word list can catch."""
+        sys.path.insert(0, str(ROOT / "tools"))
+        import check_register
+        self.assertEqual(check_register.check(), [],
+                         "structural register hits — see tools/check_register.py")
 
 
 if __name__ == "__main__":

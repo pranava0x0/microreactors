@@ -30,6 +30,81 @@ vs test bug), status.
   was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
   clients outright — use browser capture + `fetch_source --from-file`.
 
+- **2026-08-23 · tooling · Structural register lint skipped the markup it claimed to
+  cover — Fixed.** `check_register.py` pulled only `h1`–`h3` and eyebrows out of
+  index.html, while its own docstring said comma-tail ran on "every short display string".
+  Measured: 10 headline-length static strings were invisible to it — the wordmark, all
+  seven tab labels, the chart legend and the footer credit. Root cause: **test bug**, the
+  "a checker that does not model the real object measures nothing" class, in its reassuring
+  form: the gate reported 0 hits over 1,101 strings and looked thorough. Fix: an
+  `html.parser` pass emits every run of authored text, one per element holding text plus
+  the joined text of its ancestors, so a sentence split by an inline `<span>` is still seen
+  whole; headings stay tagged so the colon check keeps its narrower scope. 1,101 → 1,138
+  strings, still 0 hits. Guards: floors on total strings, heading count and markup runs, so
+  a parser returning nothing fails loudly instead of shrinking the total by too little to
+  notice. Negative-tested against a comma-tail planted in a tab label, in the footer and in
+  a nested legend span, and a colon-setup planted in an `h2`. Known limit, now stated in the
+  docstring rather than overclaimed: both patterns anchor at end-of-string and only run
+  below 80 characters, so a tell buried mid-paragraph is out of scope by design.
+- **2026-08-23 · site · Sub-tabs shipped boxed against a written rule — Fixed.** The new
+  sub-tab strips used the site's `.chip` treatment (1px border, radius, raised background)
+  on all four panels. DESIGN.md §8.7 specifies the opposite in as many words: "a second,
+  lighter tablist inside the panel (underline style, not the boxed primary tabs)". Root
+  cause: **design bug**, and the same class as the AGENTS.md case from 2026-08-12 — the rule
+  was written in this repo and read during the same session, then not applied, because
+  reusing an existing component felt like the conservative choice. Fix: underline treatment,
+  subordinated by colour rather than size (`--size-caption` and `--size-label` are both 12px,
+  so the hierarchy is a neutral underline against the primary nav's accent red plus tertiary
+  idle text). Regression guard: the e2e layout gate now fails any sub-tab carrying a radius
+  or a side/top border, and asserts the 44px touch floor on `pointer:coarse`.
+- **2026-08-23 · site · Register host stuffed into the number column ≤640px — Fixed.**
+  Widening `.reg .rrow` from two grid columns to three (number, details, host) left the
+  ≤640px override at two columns, so auto-placement dropped the third child into row 2
+  **column 1**: the host sized the number column to 114–247px, squeezed the details column
+  to 197px, and `word-break:break-all` broke long domains over two lines. Root cause:
+  **code bug** — a grid child count changed without its narrow-viewport rule changing with
+  it. Fix: explicit `grid-column:2` on `.reg .host` in the media rule, which also aligns it
+  under the details it belongs to. Found by the PR bot on #4, not by the e2e gate, which
+  checked page overflow but never where a child landed. Regression guard:
+  `SourceRegisterMobile` in tests/test_layout_e2e.py asserts every host starts right of the
+  number and shares the details column's left edge.
+- **2026-08-23 · site · Renaming the Evidence panel broke `#evidence` links — Fixed.**
+  Renaming the panel id to `sources` made the old route unknown, and `activate()` silently
+  falls back to the first panel, so every shared `#evidence` link landed on the Tracker with
+  the hash rewritten. Root cause: **code bug** — an id rename treated as internal when it is
+  also a public URL. Fix: an `ALIASES` map in app.js normalises `evidence` to `sources`
+  before the unknown-route check. Regression guard: `Routing` in tests/test_layout_e2e.py.
+- **2026-08-23 · site · Citation numbers restarted at [1] on every row — Fixed.** `cite()`
+  numbered chips by their index within one row's own source list, so `[1]` appeared dozens
+  of times across the site pointing at a different source each time, and no chip could be
+  matched to the register. Root cause: **code bug** (a local counter used as a global
+  address). Fix: `tools/build_data.py` assigns one number per URL in tab-render order and
+  emits `source_numbers`; every chip, source list and register row reads from it, and a
+  URL missing from the register renders `[?]`. Regression guards:
+  `test_citation_numbers_are_global_and_total` and `test_static_html_citations_resolve`
+  in tests/test_build.py, both negative-tested against a doctored bundle.
+- **2026-08-23 · site · Four panels had grown past reading length — Fixed.** Measured at
+  1280px: Policy 30,906px, Sources 67,475px, Market design 13,951px, Costs 13,216px. Field
+  coverage and the gap register sat roughly 90 screens below the fold on Sources, so in
+  practice they were unreachable. Root cause: **design bug** (one flat scroll per tab, with
+  no second level of navigation). Fix: a shared sub-tab strip (`makeSubnav`) on those four
+  panels, routed as `#panel/sub`; Policy's first sub-panel is now 11,265px. The strip wraps
+  instead of scrolling, so no sub-section can sit off-screen.
+- **2026-08-23 · site · Sector summaries reported a meaningless ratio — Fixed.** Each
+  Applications accordion printed "6 loads · 4 cited", a count of this site's own curation
+  presented as if it were a finding, and the first sector auto-expanded on load. Root
+  cause: **design bug**. Both removed.
+- **2026-08-23 · copy · Structural AI-register tells across display copy — Fixed.** A scan
+  over all 649 user-visible strings found the tells no word list catches: 3 headings with a
+  comma-stapled adverb tail ("Published cost bands, sourced"), 5 comma-stapled twin
+  headings, 10 of 32 policy names on a colon setup/payoff template, 14 of 23 precedent
+  read-across notes opening "The <noun> for <X>:", and 92 strings carrying em-dashes.
+  Root cause: **copy bug** (DESIGN.md §11.1 documents every one of these; the register
+  test only greps single words, in data/*.json only, so index.html's "unlock" also went
+  unchecked). Fix: swept to 0 / 0 / 0 / 3 / 9 respectively, the remainder being proper
+  names and verbatim quotes. Per-tab eyebrow taglines and the footer's build-tooling
+  narration were cut in the same pass.
+
 - **2026-08-21 · data · Fabricated capex scenarios in costs.json — Fixed** (commit 18aad96).
   Two LCOE rows ("CAPEX $5,000/kW (FOAK-ish)" → $80–90/MWh and "CAPEX $2,500/kW (at scale)"
   → $35/MWh) cited Abdussami et al. (arXiv 2506.13361 / Nucl. Eng. & Design), which contains

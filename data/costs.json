@@ -56,18 +56,18 @@
  ],
  "incentives": {
   "question": "Is the PTC still relevant in 2026, after the One Big Beautiful Bill Act?",
-  "answer": "Yes — for nuclear specifically. The OBBBA (signed July 2025) terminated the tech-neutral §45Y/§48E credits early for wind and solar but kept them for nuclear: a nuclear plant qualifies if construction begins before 2034, with a three-year phase-out after that. The deployments this site tracks target operation between 2028 and 2030, comfortably inside that window; most rows publish no construction date, so start-of-construction timing is an open item per project.",
+  "answer": "Yes, for nuclear specifically. The OBBBA (signed July 2025) terminated the tech-neutral §45Y/§48E credits early for wind and solar but kept them for nuclear: a nuclear plant qualifies if construction begins before 2034, with a three-year phase-out after that. The deployments this site tracks target operation between 2028 and 2030, comfortably inside that window; most rows publish no construction date, so start-of-construction timing is an open item per project.",
   "points": [
    {
     "fact": "§45Y/§48E survive for new nuclear that begins construction before 2034, then phase out over three years; the emissions-based sunset trigger was replaced by these fixed dates.",
     "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives (July 2025)", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
    },
    {
-    "fact": "New 10% credit adder for facilities in “nuclear energy communities” (metro areas with ≥0.17% direct nuclear employment since 2010) — §45Y only.",
+    "fact": "New 10% credit adder for facilities in “nuclear energy communities” (metro areas with ≥0.17% direct nuclear employment since 2010), §45Y only.",
     "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
    },
    {
-    "fact": "New risk: foreign-entity-of-concern (FEOC) restrictions apply from 2026 — material-assistance thresholds on the supply chain that a HALEU/TRISO vendor has to clear to keep the credit.",
+    "fact": "New risk: foreign-entity-of-concern (FEOC) restrictions apply from 2026: material-assistance thresholds on the supply chain that a HALEU/TRISO vendor has to clear to keep the credit.",
     "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
    },
    {
@@ -94,7 +94,7 @@
    "alternative": "Small rural Alaskan communities (diesel-fired)",
    "low_mwh": 300,
    "high_mwh": 800,
-   "note": "These grids run on diesel. NEI puts remote-arctic diesel generation at $0.30–0.60/kWh; Alaska's own Power Cost Equalization reporting shows rural rates of $0.55–0.80+/kWh, with some villages above $1/kWh. The PCE subsidy (FY2026 base 20.38¢/kWh) covers only residential use up to 750 kWh/month — commercial and industrial loads pay the full unsubsidised rate, which is exactly the price a microreactor has to beat.",
+   "note": "These grids run on diesel. NEI puts remote-arctic diesel generation at $0.30–0.60/kWh; Alaska's own Power Cost Equalization reporting shows rural rates of $0.55–0.80+/kWh, with some villages above $1/kWh. The PCE subsidy (FY2026 base 20.38¢/kWh) covers only residential use up to 750 kWh/month. Commercial and industrial loads pay the full unsubsidised rate, which is the price a microreactor has to beat.",
    "sources": [
     {"label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)", "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"},
     {"label": "Alaska Energy Transparency Project — Power Cost Equalization explained", "url": "https://www.akenergytransparency.org/news/power-cost-equalization-explained"},
@@ -123,5 +123,5 @@
    }
   }
  ],
- "reading": "Read the overlaps, not the midpoints. Against **rural Alaska** ($300–800+/MWh, diesel-fired, and commercial loads get no PCE subsidy) even the **FOAK band** ($140–410) wins across most of the range — that is the one genuinely uncontested market, and it is why Fort Wainwright is the most interesting row in the Army Janus table. Against **remote diesel** generally ($250–400) the FOAK band overlaps: a first unit at the top of its range ($410) loses to diesel at the bottom of its range ($250), so 'cheaper than diesel' is a site-by-site claim that turns on local fuel logistics until NOAK costs ($90–330) arrive. Against grid-connected U.S. industrial power the microreactor loses in every published case except the PTC-supported optimization ($48–78), which is forward-looking and U.S.-only. The commercial logic therefore inverts by sector: off-grid sites can buy on cost today, on-grid sites buy on resilience, speed-to-power or carbon and pay a premium to do it."
+ "reading": "Where the bands overlap is what matters. Against **rural Alaska** ($300–800+/MWh, diesel-fired, and commercial loads get no PCE subsidy) even the **FOAK band** ($140–410) wins across most of the range. That is the one uncontested market, and it is why Fort Wainwright is the most interesting row in the Army Janus table. Against **remote diesel** generally ($250–400) the FOAK band overlaps: a first unit at the top of its range ($410) loses to diesel at the bottom of its range ($250), so 'cheaper than diesel' is a site-by-site claim that turns on local fuel logistics until NOAK costs ($90–330) arrive. Against grid-connected U.S. industrial power the microreactor loses in every published case except the PTC-supported optimization ($48–78), which is forward-looking and U.S.-only. So the commercial logic flips by sector: off-grid sites can buy on cost today, while on-grid sites buy on resilience, speed-to-power or carbon and pay a premium for it."
 }

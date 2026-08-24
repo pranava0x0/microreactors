@@ -117,7 +117,7 @@
     }
    ],
    "context": {
-    "today": "U.S. data centers run on grid power with an on-site diesel generator fleet as the standard backup, typically sized N+1 (one more unit than the minimum load needs) so any single generator can fail or be pulled for maintenance without an outage, plus on-site fuel storage to ride out extended outages. Diesel remains the default backup fuel industry-wide — the Uptime Institute notes that 'Few — very few — can even contemplate operating production environments without diesel generators.' A 1-20 MW microreactor would displace this on-site diesel genset fleet and its fuel-resupply contracts as the facility's backup/resilience layer, not the grid interconnection itself.",
+    "today": "U.S. data centers run on grid power with an on-site diesel generator fleet as the standard backup, typically sized N+1 (one more unit than the minimum load needs) so any single generator can fail or be pulled for maintenance without an outage, plus on-site fuel storage to ride out extended outages. Diesel remains the default backup fuel industry-wide; the Uptime Institute notes that 'Few — very few — can even contemplate operating production environments without diesel generators.' A 1-20 MW microreactor would displace this on-site diesel genset fleet and its fuel-resupply contracts as the facility's backup/resilience layer, not the grid interconnection itself.",
     "sources": [
      {
       "label": "Uptime Institute Journal — Data centers without generators: the groundwork is being laid",
@@ -295,11 +295,11 @@
      ],
      "verdict": "partial",
      "published": "INL/GAIN frames a two-stage timeline: 2020s deployment onto isolated microgrids (100 kWe–20 MWe), then 'later in the 2030s, microreactors begin to be integrated into mini-grids (1 MWe to 100 MWe)' — i.e. staged growth is described, but the report's own second stage already exceeds our 20 MW ceiling.",
-     "delta_note": "The band matches INL's first (2020s) stage but not its own second (2030s) stage, which runs up to 100 MWe — 'staged additions' as a concept is supported, but the ceiling stated (20 MW) is lower than where INL sees the staging heading."
+     "delta_note": "The band matches INL's first (2020s) stage but not its own second (2030s) stage, which runs up to 100 MWe. 'Staged additions' as a concept is supported, but the stated ceiling (20 MW) is lower than where INL sees the staging heading."
     }
    ],
    "context": {
-    "today": "More than 100 rural Alaska communities run their own isolated microgrids because they have no road or transmission connection to the regional grid; INL/GAIN reports these communities 'have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities,' with only a small wind-diesel hybrid share. The same diesel-only pattern holds for isolated island and regional grids elsewhere. A 1-20 MW microreactor would displace all or most of a community's diesel genset capacity — the incumbent generation that akenergytransparency.org's and NEI's cost figures (already cited elsewhere in this dataset) are priced against.",
+    "today": "More than 100 rural Alaska communities run their own isolated microgrids because they have no road or transmission connection to the regional grid; INL/GAIN reports these communities 'have a very high reliance on diesel power generation, with 100% of electric production coming from diesel in most communities,' with only a small wind-diesel hybrid share. The same diesel-only pattern holds for isolated island and regional grids elsewhere. A 1-20 MW microreactor would displace all or most of a community's diesel genset capacity, the incumbent generation that akenergytransparency.org's and NEI's cost figures (cited elsewhere in this dataset) are priced against.",
     "sources": [
      {
       "label": "INL/GAIN — Global Market Analysis of Microreactors (INL/EXT-21-63214)",
@@ -391,7 +391,7 @@
      ],
      "verdict": "partial",
      "published": "No chemical-specific electrical MW figure isolated; a general industrial-energy source cites 'as high as 10 MW at typical auto plants and 25 MW at typical steel mills' without a distinct chemical-plant number. INL/GAIN, citing Forsberg and Foss (2021), places chemical/paper/food process-heat demand mostly in the 10–50 MWth range, with >6,000 U.S. heat users above 1 MWth.",
-     "delta_note": "The INL/Forsberg-Foss figure is THERMAL demand (MWth, process steam/heat), not electrical — a different metric than our electrical-demand band, though similar in magnitude at the low end."
+     "delta_note": "The INL/Forsberg-Foss figure is THERMAL demand (MWth, process steam or heat), not electrical, so it is a different metric from our electrical-demand band, though similar in magnitude at the low end."
     },
     {
      "label": "Fertilizer plants",
@@ -563,7 +563,7 @@
      ],
      "verdict": "contradicts",
      "published": "Published figures run well above this band: a single offshore platform's power demand 'can easily exceed 100 MW,' with complex deepwater systems needing 100–250 MW depending on subsea loads; FPSOs typically 80–150 MW; Norway's Johan Sverdrup phase 2 expanded power-from-shore capacity to 300 MW total, and the 60 MW Hywind Tampen floating wind array covers only ~35% of the combined Gullfaks/Snorre fields' demand.",
-     "delta_note": "Corrected 2026-08-21: this dataset previously claimed 10–50 MW total. Published figures run 2–10× higher (single platforms exceed 100 MW; FPSOs 80–150 MW; Johan Sverdrup shore power 300 MW), so the band now follows the sources. Real single-platform and platform-hub demand runs 2–10x above our 10–50 MW band. The band may be intended as a microreactor-sized partial contribution ('5–20 MW block') rather than whole-platform demand, but even that reading is generous against these figures — a genuinely small/older single platform could still fit this band, but the well-documented examples found here (North Sea hubs, FPSOs) do not."
+     "delta_note": "Corrected 2026-08-21: this dataset previously claimed 10–50 MW total. Published figures run 2–10× higher (single platforms exceed 100 MW; FPSOs 80–150 MW; Johan Sverdrup shore power 300 MW), so the band now follows the sources. Real single-platform and platform-hub demand runs 2–10x above our 10–50 MW band. The band may be intended as a microreactor-sized partial contribution ('5–20 MW block') rather than whole-platform demand, but even that reading is generous against these figures. A small or older single platform could still fit this band; the well-documented examples found here (North Sea hubs, FPSOs) do not."
     },
     {
      "label": "Pipeline pumping and electric compression stations",
@@ -657,7 +657,7 @@
     }
    ],
    "context": {
-    "today": "Offshore platforms generate their own power because they have no grid connection: gas turbines (often burning the field's own associated gas) supply primary power while diesel generators handle emergency and black-start backup — 'this gas-turbine-main, diesel-backup architecture is the offshore norm.' Onshore, remote well pads and production hubs run similarly on-site gas or diesel gensets. The one large-scale exception is Norway, where HVDC power-from-shore cables (e.g. Equinor's Johan Sverdrup field) now replace platform generation entirely, cutting emissions to 'around 80% lower than the alternative method of gas turbines' — confirming gas turbines as the baseline the shore-power link replaces. A 1-20 MW microreactor would displace on-site gas-turbine or diesel generation at a platform, pad, or hub, playing the same role shore power plays at Johan Sverdrup without needing a coastal HVDC cable.",
+    "today": "Offshore platforms generate their own power because they have no grid connection: gas turbines (often burning the field's own associated gas) supply primary power while diesel generators handle emergency and black-start backup; 'this gas-turbine-main, diesel-backup architecture is the offshore norm.' Onshore, remote well pads and production hubs run similarly on-site gas or diesel gensets. The one large-scale exception is Norway, where HVDC power-from-shore cables (e.g. Equinor's Johan Sverdrup field) now replace platform generation entirely, cutting emissions to 'around 80% lower than the alternative method of gas turbines', which confirms gas turbines as the baseline the shore-power link replaces. A 1-20 MW microreactor would displace on-site gas-turbine or diesel generation at a platform, pad, or hub, playing the same role shore power plays at Johan Sverdrup without needing a coastal HVDC cable.",
     "sources": [
      {
       "label": "Prismecs — Offshore Platform & FPSO Power Generation: Systems & Codes",
@@ -777,7 +777,7 @@
     }
    ],
    "context": {
-    "today": "Ports, airports and large warehouses run on grid power with diesel generators as the standard backup, and are increasingly adding dedicated on-site generation for resilience because they remain, in Kimley-Horn's framing, a facility where 'a microgrid would allow airports to be less dependent on local utilities for electricity' — which is why a growing number of airports (Indianapolis International among them) are building microgrids with battery storage rather than relying on the grid plus diesel alone. Ports are separately adding shore power so docked ships can shut down diesel auxiliary engines at berth. A 1-20 MW microreactor sits in the same slot as an airport central utility plant or port microgrid: a dedicated on-site resilience block behind the grid connection.",
+    "today": "Ports, airports and large warehouses run on grid power with diesel generators as the standard backup, and are increasingly adding dedicated on-site generation for resilience because they remain, in Kimley-Horn's framing, a facility where 'a microgrid would allow airports to be less dependent on local utilities for electricity', which is why a growing number of airports (Indianapolis International among them) are building microgrids with battery storage instead of relying on the grid plus diesel alone. Ports are separately adding shore power so docked ships can shut down diesel auxiliary engines at berth. A 1-20 MW microreactor sits in the same slot as an airport central utility plant or port microgrid: a dedicated on-site resilience block behind the grid connection.",
     "sources": [
      {
       "label": "Kimley-Horn — Microgrids: The Future of Resiliency at Airports",
@@ -854,7 +854,7 @@
      ],
      "verdict": "supports",
      "published": "DOE Better Buildings CHP fact sheet: 'The average CHP system at a college/university has a capacity of 9.1 MW' (281 institutions, 2.6 GW total installed) — inside the band. University of Minnesota (Minneapolis) installed a 22.8 MW CHP system, also inside the band near its ceiling.",
-     "delta_note": "A search-only data point (not independently fetched) put one large university's total purchased electricity at ~400,000 MWh/yr (~46 MW average) — above our 30 MW ceiling — suggesting the largest flagship campuses can exceed this band even though the CHP-fleet average sits comfortably inside it."
+     "delta_note": "A search-only data point (not independently fetched) put one large university's total purchased electricity at ~400,000 MWh/yr (~46 MW average), above our 30 MW ceiling, which suggests the largest flagship campuses can exceed this band even though the CHP-fleet average sits well inside it."
     },
     {
      "label": "National laboratories",
@@ -871,7 +871,7 @@
      ],
      "verdict": "partial",
      "published": "No whole-site national-laboratory MW figure found directly, but ORNL (a national laboratory) provisioned ~40 MW of power and cooling for just one facility on its site (the Frontier supercomputer) — consistent with a full national-lab campus (many buildings/reactors/facilities beyond one supercomputer) reaching the 10–50+ MW band.",
-     "delta_note": "This is one facility's provisioned power on a national-lab site, not a whole-lab total — used here only as a lower-bound sanity check, not direct confirmation."
+     "delta_note": "This is one facility's provisioned power on a national-lab site, not a whole-lab total. It is used here only as a lower-bound sanity check, not as direct confirmation."
     },
     {
      "label": "Large campus electrical systems",
@@ -936,11 +936,11 @@
      ],
      "verdict": "supports",
      "published": "DOE bandwidth study: the Carlsbad, California facility (the single largest U.S. seawater RO plant, 54% of national capacity, sized at 50 MGD / 189,300 m3/day) runs at a current-typical energy intensity of 2.7 kWh(e)/m3 — implying ~21.3 MW average electric demand (189,300 m3/day × 2.7 kWh/m3 ÷ 24h), essentially matching the band's ceiling.",
-     "delta_note": "~21.3 MW is a derived figure (source states energy intensity and capacity separately, not a combined MW value) and sits just above our 20 MW ceiling for the single largest U.S. plant — a reasonable calibration point for the band's upper end."
+     "delta_note": "~21.3 MW is a derived figure (source states energy intensity and capacity separately, not a combined MW value) and sits just above our 20 MW ceiling for the single largest U.S. plant, which makes it a reasonable calibration point for the band's upper end."
     }
    ],
    "context": {
-    "today": "Hospitals and other CMS-regulated facilities must maintain emergency and standby power under 42 CFR 482.15, meeting NFPA 99/101/110 — 'the hospital must implement emergency and standby power systems based on the emergency plan' — which in practice means grid power plus code-mandated, fuel-stocked diesel generators (the dataset's existing NFPA/CMS citations cover the 96-hour fuel-planning detail). Universities instead lean on combined heat and power for everyday supply and resilience together: DOE's Better Buildings series finds 'the average CHP system at a college/university has a capacity of 9.1 MW,' with flagship installations like the University of Minnesota's 22.8 MW system built with black-start capability to keep campus hospitals and labs powered through grid outages. A 1-20 MW microreactor would displace either the code-mandated diesel generator bank (hospitals, prisons, water plants) or the campus CHP plant (universities, medical campuses).",
+    "today": "Hospitals and other CMS-regulated facilities must maintain emergency and standby power under 42 CFR 482.15, meeting NFPA 99/101/110, which requires that 'the hospital must implement emergency and standby power systems based on the emergency plan'. In practice that means grid power plus code-mandated, fuel-stocked diesel generators (the dataset's existing NFPA/CMS citations cover the 96-hour fuel-planning detail). Universities instead lean on combined heat and power for everyday supply and resilience together: DOE's Better Buildings series finds 'the average CHP system at a college/university has a capacity of 9.1 MW,' with flagship installations like the University of Minnesota's 22.8 MW system built with black-start capability to keep campus hospitals and labs powered through grid outages. A 1-20 MW microreactor would displace either the code-mandated diesel generator bank (hospitals, prisons, water plants) or the campus CHP plant (universities, medical campuses).",
     "sources": [
      {
       "label": "Cornell LII — 42 CFR 482.15, Condition of participation: Emergency preparedness",
@@ -1061,7 +1061,7 @@
     }
    ],
    "context": {
-    "today": "Most irrigation power still comes from diesel or petrol engines, or from grid-fed electric motors backed by diesel generators where grid service is unreliable — 'the vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors' as well as grid-plus-diesel-backup electric motors. Lit greenhouse operations instead often run on-site combined heat and power, sized to supply grow-light electricity, heat and CO2 together, and DOE's greenhouse CHP fact sheet notes such 'CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.' A 1-20 MW microreactor would displace diesel irrigation/backup gensets at farm scale, or a greenhouse campus's CHP plant.",
+    "today": "Most irrigation power still comes from diesel or petrol engines, or from grid-fed electric motors backed by diesel generators where grid service is unreliable: 'the vast majority of water pumping for irrigation purposes is to date done by diesel or petrol motors', as well as grid-plus-diesel-backup electric motors. Lit greenhouse operations instead often run on-site combined heat and power, sized to supply grow-light electricity, heat and CO2 together, and DOE's greenhouse CHP fact sheet notes such 'CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.' A 1-20 MW microreactor would displace diesel irrigation/backup gensets at farm scale, or a greenhouse campus's CHP plant.",
     "sources": [
      {
       "label": "energypedia — Powering Agriculture: Irrigation",
