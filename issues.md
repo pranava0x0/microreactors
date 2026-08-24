@@ -30,6 +30,22 @@ vs test bug), status.
   was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
   clients outright — use browser capture + `fetch_source --from-file`.
 
+- **2026-08-23 · tooling · Structural register lint skipped the markup it claimed to
+  cover — Fixed.** `check_register.py` pulled only `h1`–`h3` and eyebrows out of
+  index.html, while its own docstring said comma-tail ran on "every short display string".
+  Measured: 10 headline-length static strings were invisible to it — the wordmark, all
+  seven tab labels, the chart legend and the footer credit. Root cause: **test bug**, the
+  "a checker that does not model the real object measures nothing" class, in its reassuring
+  form: the gate reported 0 hits over 1,101 strings and looked thorough. Fix: an
+  `html.parser` pass emits every run of authored text, one per element holding text plus
+  the joined text of its ancestors, so a sentence split by an inline `<span>` is still seen
+  whole; headings stay tagged so the colon check keeps its narrower scope. 1,101 → 1,138
+  strings, still 0 hits. Guards: floors on total strings, heading count and markup runs, so
+  a parser returning nothing fails loudly instead of shrinking the total by too little to
+  notice. Negative-tested against a comma-tail planted in a tab label, in the footer and in
+  a nested legend span, and a colon-setup planted in an `h2`. Known limit, now stated in the
+  docstring rather than overclaimed: both patterns anchor at end-of-string and only run
+  below 80 characters, so a tell buried mid-paragraph is out of scope by design.
 - **2026-08-23 · site · Sub-tabs shipped boxed against a written rule — Fixed.** The new
   sub-tab strips used the site's `.chip` treatment (1px border, radius, raised background)
   on all four panels. DESIGN.md §8.7 specifies the opposite in as many words: "a second,
