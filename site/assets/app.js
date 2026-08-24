@@ -470,8 +470,8 @@
   var citedLoads = totalLoads.filter(function (l) { return l.sources && l.sources.length; });
 
   render($("dsummary"), [
-    { n: String(totalLoads.length), k: "demand loads mapped" },
     { n: String(D.sectors.sectors.length), k: "civilian sectors" },
+    { n: String(totalLoads.length), k: "facility load profiles" },
     { n: String(citedLoads.length), k: "cited with primary sources" },
     { n: "$250–$850", k: "/MWh displaced diesel ceiling", accent: true }
   ].map(function (x) {
@@ -662,7 +662,7 @@
   render($("evsummary"),
     esc(s.source_count) + " sources, numbered once each. A chip like [12] anywhere on the site " +
     "points at number 12 below. Sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
-    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) + " demand bands. " +
+    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) + " facility load profiles. " +
     "A † means the host refused a direct fetch and the page is corroborated through search " +
     "results instead.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
