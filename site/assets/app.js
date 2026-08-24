@@ -101,7 +101,8 @@
       t.tabIndex = on ? 0 : -1;
       if (on && opts.focus) t.focus();
     });
-    var here = id + (SUBS[id] ? "/" + SUBS[id].show(sub) : "");
+    var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
+    var here = id + (subRes ? "/" + subRes : "");
     if (location.hash.slice(1) !== here) {
       if (opts.push) location.hash = here;
       else history.replaceState(null, "", "#" + here);
@@ -148,7 +149,8 @@
       el.setAttribute("aria-labelledby", panelId + "-tab-" + el.getAttribute("data-sub"));
     });
     function show(id) {
-      if (ids.indexOf(id) === -1) id = ids[0];
+      if (!id || ids.indexOf(id) === -1) id = ids[0];
+      var isDefault = id === ids[0];
       Array.prototype.forEach.call(panel.querySelectorAll("[data-sub]"), function (el) {
         el.hidden = el.getAttribute("data-sub") !== id;
       });
@@ -157,11 +159,14 @@
         b.setAttribute("aria-selected", String(on));
         b.tabIndex = on ? 0 : -1;
       });
-      return id;
+      return isDefault ? "" : id;
     }
     host.addEventListener("click", function (e) {
       var b = e.target.closest(".subtab");
-      if (b) activate(panelId + "/" + b.dataset.go, { push: true, scroll: true });
+      if (b) {
+        var targetSub = b.dataset.go === ids[0] ? "" : b.dataset.go;
+        activate(panelId + (targetSub ? "/" + targetSub : ""), { push: true, scroll: true });
+      }
     });
     host.addEventListener("keydown", function (e) {
       var i = btns.indexOf(document.activeElement), n = null;
@@ -172,7 +177,8 @@
       else if (e.key === "End") n = btns.length - 1;
       if (n == null) return;
       e.preventDefault();
-      activate(panelId + "/" + btns[n].dataset.go, { push: true, scroll: true });
+      var targetSub = btns[n].dataset.go === ids[0] ? "" : btns[n].dataset.go;
+      activate(panelId + (targetSub ? "/" + targetSub : ""), { push: true, scroll: true });
       btns[n].focus();
     });
     SUBS[panelId] = { show: show };
