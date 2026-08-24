@@ -11,14 +11,13 @@
   UI is missing. Decide render: per-sector site lists on Applications vs its own tab.
 - **med** · Deep-dive follow-ups with expiry: Penn State FRONTIER REP (promised late
   2025, absent from ADAMS as of 2026-08-23 — does the Westinghouse commercial-market
-  exit affect it?); UIUC CP docketing decision after 2026-04-15 receipt; Aalo RELLIS
-  ESP progress on docket 99902128; DAF/NRC environmental analysis for Eielson (next
+  exit affect it?); UIUC CP docketed under NRC Docket 50-618 on 2026-05-18 (DONE — findings in data/research/deployment-sites-followups.json); Aalo RELLIS
+  selection & NRC pre-application docket 99902128 (DONE — findings in data/research/deployment-sites-followups.json); DAF/NRC environmental analysis for Eielson (next
   paper trail); Chalk River MMR post-bankruptcy disposition (Standard Nuclear).
 - **med** · Browser-capture the DAF Microreactor FAQs PDF (eielson.af.mil 403s curl;
   use the JS chunk flow documented in AGENTS.md) — carries the NOITA issuance date and
   site-selection detail the row currently lacks.
-- **low** · Last Energy Poland (Legnica SEZ letter of intent, DB Energy) — one search
-  found nothing current; verify and add an abroad row or record the absence.
+- **low** · Last Energy Poland (Katowice & Legnica SEZ agreements, DB Energy, PAA pre-application) (DONE — findings in data/research/deployment-sites-followups.json).
 - **med** · Close the remaining uncited Applications bands (registered in
   sectors.json `_meta.uncited`); each needs a facility-level MW source or stays marked.
 - **med** · Watch items with expiry: NRC Part 57 finalisation (proposed May 2026 — the
@@ -36,7 +35,7 @@
 - **low** · Sub-tabs for the Tracker's three buyer tracks if the row count grows: the
   track chips currently filter one list, which still reads fine at 16 rows. Costs,
   Market design, Policy and Sources got sub-tabs on 2026-08-23.
-- **med** · Research & evaluate creative off-grid/hybrid application spaces:
+- **med** · Research & evaluate creative off-grid/hybrid application spaces (DONE — 2026-08-24 deep dive in data/research/creative-demand-applications.json):
   1. Spaceports and orbital launch complexes (5–30 MWe + thermal for on-site cryogenic propellant liquefaction: LOX, liquid methane, and LH2).
   2. Arctic defense radar and surveillance outposts (NORAD/North Warning System modernization: 47+ remote sites replacing pure diesel logistics).
   3. Direct Air Capture (DAC) / Megaton-scale carbon removal hubs (1–20 MWe + 10–50 MWth 100°C–300°C low-carbon thermal desorption in remote mineralized basins).
