@@ -17,13 +17,13 @@ from urllib.parse import urlparse
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
-FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "gaps"]
+FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "deployment_sites", "gaps"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
 # URL is cited: a chip's number is a stable address into the Sources register,
 # never a per-row counter that restarts.
-CITE_ORDER = ["opportunities", "costs", "vendors", "sectors", "mechanisms", "policy", "gaps"]
+CITE_ORDER = ["opportunities", "costs", "vendors", "sectors", "mechanisms", "policy", "deployment_sites", "gaps"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
