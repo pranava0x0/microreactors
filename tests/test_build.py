@@ -2,6 +2,7 @@
 generator change that stales the committed artifacts fails here (a test that
 only reads site/data.js cannot see a broken build_data.py)."""
 import json
+import re
 import pathlib
 import subprocess
 import sys
@@ -61,6 +62,54 @@ class BundleConsistency(unittest.TestCase):
             for key in ("url", "label", "host", "uses"):
                 self.assertTrue(r.get(key), f"register row missing {key}: {r}")
             self.assertTrue(r["uses"], f"register row has empty uses: {r['url']}")
+
+    def test_citation_numbers_are_global_and_total(self):
+        """One number per source URL, reused everywhere that URL is cited.
+
+        The site renders "[?]" for a URL missing from source_numbers, so a
+        source the walk never reached would ship a visibly broken citation.
+        Walk the bundle independently of build_data.py's own walk and require
+        every source dict it finds to carry a number.
+        """
+        reg = self.MR["sources_index"]
+        nums = self.MR["source_numbers"]
+        self.assertEqual([r["n"] for r in reg], list(range(1, len(reg) + 1)),
+                         "register is not numbered 1..N in order")
+        self.assertEqual(nums, {r["url"]: r["n"] for r in reg},
+                         "source_numbers disagrees with the register")
+
+        found = set()
+
+        def walk(node):
+            if isinstance(node, dict):
+                url, label = node.get("url"), node.get("label")
+                if isinstance(url, str) and url.startswith("http") and isinstance(label, str):
+                    found.add(url)
+                    return
+                for v in node.values():
+                    walk(v)
+            elif isinstance(node, list):
+                for v in node:
+                    walk(v)
+
+        for name in ("opportunities", "vendors", "costs", "sectors",
+                     "mechanisms", "policy", "gaps"):
+            walk(self.MR[name])
+        self.assertGreater(len(found), 20, "source walk found suspiciously few sources")
+        self.assertEqual(found - set(nums), set(),
+                         "cited URLs with no register number would render as [?]")
+
+    def test_static_html_citations_resolve(self):
+        """Citations hand-written into index.html carry a [?] placeholder that
+        app.js fills from the same register. The href still has to be a source
+        the data cites, or the chip renders [?] to the reader."""
+        html = (ROOT / "site" / "index.html").read_text()
+        hrefs = re.findall(r'<a class="cite"[^>]*href="([^"]+)"', html)
+        self.assertTrue(hrefs, "no static citation found in index.html")
+        unknown = [h for h in hrefs if h not in self.MR["source_numbers"]]
+        self.assertEqual(unknown, [],
+                         "static citations not in the source register (they would "
+                         f"render as [?]): {unknown}")
 
     def test_built_stamp_is_data_derived(self):
         """The stamp must equal the max _meta.captured across data files —

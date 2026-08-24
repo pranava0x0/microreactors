@@ -27,7 +27,7 @@
     {
       "id": "anpi-jbsa",
       "track": "us-gov",
-      "sector": "Defense — installation power",
+      "sector": "Defense · installation power",
       "name": "Joint Base San Antonio (ANPI)",
       "owner": "U.S. Department of the Air Force",
       "location": "San Antonio, TX",
@@ -51,14 +51,14 @@
       ],
       "gaps": [
         "Land parcel not identified",
-        "No CPS Energy interconnection filing located — JBSA sits in CPS Energy territory, a municipally owned utility, so any filing may be city-level rather than PUC"
+        "No CPS Energy interconnection filing located. JBSA sits in CPS Energy territory, a municipally owned utility, so any filing may be city-level instead of PUC."
       ],
       "binding": true
     },
     {
       "id": "anpi-buckley",
       "track": "us-gov",
-      "sector": "Defense — installation power",
+      "sector": "Defense · installation power",
       "name": "Buckley Space Force Base (ANPI)",
       "owner": "U.S. Space Force / Dept of the Air Force",
       "location": "Aurora, CO",
@@ -89,7 +89,7 @@
     {
       "id": "anpi-malmstrom",
       "track": "us-gov",
-      "sector": "Defense — installation power",
+      "sector": "Defense · installation power",
       "name": "Malmstrom Air Force Base (ANPI)",
       "owner": "U.S. Department of the Air Force",
       "location": "Great Falls, MT",
@@ -120,11 +120,11 @@
     {
       "id": "janus",
       "track": "us-gov",
-      "sector": "Defense — installation power",
+      "sector": "Defense · installation power",
       "name": "Army Janus Program — nine candidate installations",
       "owner": "U.S. Department of the Army",
       "location": "Fort Benning GA; Fort Bragg NC; Fort Campbell KY/TN; Fort Drum NY; Fort Hood TX; Fort Wainwright AK; Holston Army Ammunition Plant TN; Joint Base Lewis-McChord WA; Redstone Arsenal AL",
-      "vendor": "Not yet assigned — vendor evaluation and design-to-site matching underway via DIU",
+      "vendor": "Not yet assigned; DIU is still matching vendors and designs to sites",
       "power_mw": "Not specified per site",
       "timeline": "Army-regulated reactor operational at a domestic installation by 2028-09-30; sites announced November 2025",
       "instrument": "Army program + DIU solicitation",
@@ -148,14 +148,14 @@
       ],
       "gaps": [
         "Per-site load requirement not published",
-        "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor — it is the one site whose displaced alternative is coal/oil at Alaskan prices — but no site-specific MW figure was found"
+        "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor, because it is the one site whose displaced alternative is coal or oil at Alaskan prices, but no site-specific MW figure was found"
       ],
       "binding": false
     },
     {
       "id": "dome",
       "track": "us-gov",
-      "sector": "Federal R&D — test infrastructure",
+      "sector": "Federal R&D · test infrastructure",
       "name": "DOE DOME test bed, Idaho National Laboratory",
       "owner": "U.S. Department of Energy / Battelle Energy Alliance",
       "location": "Idaho National Laboratory, ID",
@@ -165,7 +165,7 @@
       "instrument": "DOE National Reactor Innovation Center test-bed access",
       "land_acres": null,
       "shell": "Repurposed 80-ft EBR-II steel-and-concrete containment, retrofitted electrical/mechanical/HVAC",
-      "utility_filing": "N/A — DOE-authorised, not NRC-licensed",
+      "utility_filing": "N/A; authorised by DOE, not licensed by NRC",
       "status": "Operating",
       "sources": [
         {
@@ -187,17 +187,17 @@
     {
       "id": "doe-pilot",
       "track": "us-gov",
-      "sector": "Federal R&D — DOE authorization track",
+      "sector": "Federal R&D · DOE authorization track",
       "name": "DOE Reactor Pilot Program — 11 projects",
       "owner": "U.S. Department of Energy",
       "location": "DOE and DOE-approved sites; first units at INL and in Utah",
       "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
       "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe",
       "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
-      "instrument": "EO 14301 pilot programme using DOE's own authorization authority — no NRC licence",
+      "instrument": "EO 14301 pilot programme under DOE's own authorization authority, with no NRC licence",
       "land_acres": null,
       "shell": null,
-      "utility_filing": "N/A — DOE-authorised test reactors",
+      "utility_filing": "N/A; DOE-authorised test reactors",
       "status": "Three critical, others in safety review",
       "sources": [
         {
@@ -210,7 +210,7 @@
         }
       ],
       "gaps": [
-        "Test reactors under DOE authority, not commercially licensed plants — the commercial path still runs through NRC",
+        "Test reactors under DOE authority, not commercially licensed plants; the commercial path still runs through NRC",
         "Per-project power ratings not all published"
       ],
       "binding": true,
@@ -219,14 +219,14 @@
     {
       "id": "eielson",
       "track": "us-gov",
-      "sector": "Defense — remote installation power",
+      "sector": "Defense · remote installation power",
       "name": "Eielson Air Force Base micro-reactor pilot",
       "owner": "U.S. Department of the Air Force",
       "location": "Fairbanks, AK",
       "vendor": "Oklo (Aurora)",
       "power_mw": "Power and heat; Aurora class above microreactor band",
       "timeline": "NOITA announced 2025-06-11; 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC preparing environmental analysis",
-      "instrument": "Notice of Intent to Award — Oklo to design, construct, own and operate, delivering electricity and heat under a long-term PPA",
+      "instrument": "Notice of Intent to Award. Oklo would design, construct, own and operate, selling electricity and heat under a long-term PPA",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -257,14 +257,14 @@
       ],
       "gaps": [
         "Land parcel on base not identified",
-        "NOITA initiates negotiation — the award itself follows NRC licensing"
+        "A NOITA opens negotiation; the award itself follows NRC licensing"
       ],
       "binding": true
     },
     {
       "id": "equinix-radiant",
       "track": "us-commercial",
-      "sector": "Compute — colocation data centres",
+      "sector": "Compute · colocation data centres",
       "name": "Equinix — 20-reactor purchase agreement",
       "owner": "Equinix, Inc. (NASDAQ: EQIX)",
       "location": "Not site-assigned",
@@ -297,14 +297,14 @@
     {
       "id": "oklo-switch",
       "track": "us-commercial",
-      "sector": "Compute — AI/cloud data centres",
+      "sector": "Compute · AI/cloud data centres",
       "name": "Switch — 12 GW Oklo master power agreement",
       "owner": "Switch (AI/cloud data centres)",
       "location": "Not site-assigned (Switch campuses: NV, MI, GA, TX)",
       "vendor": "Oklo (Aurora)",
       "power_mw": "12 GW programme through 2044; 50 MWe units",
       "timeline": "Framework signed 2024-12; individual binding PPAs to follow per project",
-      "instrument": "Non-binding Master Power Agreement — the largest announced corporate nuclear framework; grew Oklo's order book to ~14 GW",
+      "instrument": "Non-binding Master Power Agreement, the largest announced corporate nuclear framework; it grew Oklo's order book to ~14 GW",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -322,14 +322,14 @@
         }
       ],
       "gaps": [
-        "No site list, no delivery schedule, no unit pricing — binding only at future per-project PPAs"
+        "No site list, no delivery schedule and no unit pricing; it becomes binding only at future per-project PPAs"
       ],
       "binding": false
     },
     {
       "id": "ianc",
       "track": "us-commercial",
-      "sector": "Heavy industry — oil & gas, mining, steel",
+      "sector": "Heavy industry · oil & gas, mining, steel",
       "name": "Industrial Advanced Nuclear Consortium (IANC)",
       "owner": "ExxonMobil, Shell, Chevron, ConocoPhillips, Rio Tinto, Freeport-McMoRan, Nucor",
       "location": "Multi-site, not assigned",
@@ -353,21 +353,21 @@
       ],
       "gaps": [
         "No member has issued a microreactor RFP",
-        "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs vs >70% favouring wind/solar — press-reported only, direct fetch 403'd"
+        "Counter-signal: a MINING.COM analysis reports <10% of miners actively considering SMRs against >70% favouring wind or solar. Press-reported only; the direct fetch 403'd."
       ],
       "binding": false
     },
     {
       "id": "nano-supermicro",
       "track": "us-commercial",
-      "sector": "Compute — integrated power+compute",
+      "sector": "Compute · integrated power and compute",
       "name": "NANO Nuclear × Supermicro",
       "owner": "NANO Nuclear Energy; Super Micro Computer, Inc.",
       "location": "Not site-assigned",
       "vendor": "NANO Nuclear",
       "power_mw": "Not specified",
       "timeline": "MOU signed May 2026",
-      "instrument": "Strategic MOU — standardised microreactor power solution for data centres, pre-integrated power-plus-compute",
+      "instrument": "Strategic MOU for a standardised microreactor power package for data centres, pre-integrated with compute",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -379,18 +379,18 @@
         }
       ],
       "gaps": [
-        "MOU only — no binding capacity, no site, no date"
+        "MOU only, with no binding capacity, no site and no date"
       ],
       "binding": false
     },
     {
       "id": "texas-backup",
       "track": "us-commercial",
-      "sector": "Civic infrastructure — resilience procurement",
+      "sector": "Civic infrastructure · resilience procurement",
       "name": "Texas Backup Power Package Program",
       "owner": "State of Texas / Texas Energy Fund",
       "location": "Texas",
-      "vendor": "None — currently solar, battery and gas",
+      "vendor": "None; currently solar, battery and gas",
       "power_mw": "Site-scale backup at hospitals, water treatment, nursing homes, police/fire",
       "timeline": "Announced 2025-06-11",
       "instrument": "$1.8B state funding programme",
@@ -405,7 +405,7 @@
         }
       ],
       "gaps": [
-        "Nuclear is not named as an eligible technology — this is a substitution opportunity into live procurement, not an existing nuclear pipeline"
+        "Nuclear is not named as an eligible technology, so this is a substitution opportunity into live procurement, not an existing nuclear pipeline"
       ],
       "binding": false
     },
@@ -431,7 +431,7 @@
         }
       ],
       "gaps": [
-        "Competitor deployment, not an opening for Antares/Radiant/Westinghouse — included as proof a commercial port operator will sign for microreactor power"
+        "Competitor deployment, not an opening for Antares, Radiant or Westinghouse. It is here as proof that a commercial port operator will sign for microreactor power."
       ],
       "binding": true
     },
@@ -444,12 +444,12 @@
       "location": "Saskatchewan, Canada",
       "vendor": "Westinghouse (eVinci)",
       "power_mw": "up to 5 MWe",
-      "timeline": "Cancelled fall 2025 — Westinghouse shifted eVinci to space, defence and government applications, away from commercial markets",
+      "timeline": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defence and government applications and away from commercial markets",
       "instrument": "Was the first eVinci customer (CA$80M government funding, SRC as licensed operator); Westinghouse cancelled the contract in fall 2025",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "Cancelled — vendor withdrew",
+      "status": "Cancelled; vendor withdrew",
       "sources": [
         {
           "label": "POWER — Westinghouse secures first eVinci customer",
@@ -471,14 +471,14 @@
     {
       "id": "romania-nuscale",
       "track": "intl",
-      "sector": "Electric utility — SMR (scale comparator)",
+      "sector": "Electric utility · SMR (scale comparator)",
       "name": "Doicești NuScale VOYGR-6",
       "owner": "Nuclearelectrica / RoPower",
       "location": "Doicești, Romania",
       "vendor": "NuScale",
       "power_mw": "6 modules (SMR scale, not microreactor)",
       "timeline": "Final Investment Decision approved February 2026",
-      "instrument": "FID — the most construction-advanced U.S.-linked SMR export relationship",
+      "instrument": "FID, the most construction-advanced U.S.-linked SMR export relationship",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -490,7 +490,7 @@
         }
       ],
       "gaps": [
-        "SMR scale — included as proof the U.S. export machinery reaches funded construction, not as a microreactor lead"
+        "SMR scale. It is here as proof the U.S. export machinery reaches funded construction, not as a microreactor lead."
       ],
       "binding": true
     },
@@ -504,7 +504,7 @@
       "vendor": "Channel, not vendor-specific",
       "power_mw": "N/A",
       "timeline": "Signed 2026-07-07 at the NATO Summit, Ankara",
-      "instrument": "Trilateral MOC — U.S. reactor design, Japan heavy manufacturing, Korea construction/supply chain",
+      "instrument": "Trilateral MOC: U.S. reactor design, Japan heavy manufacturing, Korea construction and supply chain",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -520,7 +520,7 @@
         }
       ],
       "gaps": [
-        "Primary state.gov page not independently read — press-corroborated only"
+        "Primary state.gov page not independently read; press-corroborated only"
       ],
       "binding": false
     }
