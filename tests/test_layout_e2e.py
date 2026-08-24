@@ -137,6 +137,8 @@ class Layout(unittest.TestCase):
                 if width == 375:
                     page.click("#tab-demand")
                     page.wait_for_timeout(50)
+                    page.click("#demand-tab-all")
+                    page.wait_for_timeout(50)
                     before = page.evaluate("document.querySelectorAll('details.sector[open]').length")
                     page.click("details.sector:nth-of-type(2) summary")
                     page.wait_for_timeout(50)

@@ -213,6 +213,30 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .vsolo .vcard{border:1px solid var(--border-subtle);max-width:960px}
 
 /* ---------- demand accordions & subtabs ---------- */
+.dsummary{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
+@media(min-width:640px){.dsummary{grid-template-columns:repeat(4,1fr)}}
+.dstat{background:var(--surface-page);padding:var(--space-5) var(--space-6)}
+.dstat .n{font-size:var(--size-heading-2);font-weight:var(--weight-semibold);
+  letter-spacing:var(--track-heading);display:block;font-variant-numeric:tabular-nums}
+.dstat .n.accent{color:var(--antares-red)}
+.dstat .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);margin-top:var(--space-2);display:block}
+
+.topgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+@media(min-width:768px){.topgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.topgrid{grid-template-columns:repeat(3,1fr)}}
+.topcard{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);
+  display:flex;flex-direction:column}
+.topcard .thdr{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-3)}
+.topcard h4{font-size:var(--size-heading-3);color:var(--text-primary);margin:0;font-weight:var(--weight-semibold)}
+.topcard .tband{color:var(--antares-red);font-family:var(--font-mono);font-size:var(--size-caption);white-space:nowrap;font-weight:var(--weight-medium)}
+.topcard .tinc{font-size:var(--size-caption);color:var(--text-tertiary);margin-bottom:var(--space-3);line-height:1.4}
+.topcard .tinc strong{color:var(--text-secondary);font-weight:var(--weight-medium)}
+.topcard .tdesc{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin-bottom:var(--space-4);flex-grow:1}
+.topcard .tedge{font-size:var(--size-caption);color:var(--text-tertiary);border-left:2px solid var(--antares-red-40);padding-left:var(--space-3);line-height:1.45;margin-top:auto}
+.topcard .tedge strong{color:var(--antares-red);font-weight:var(--weight-medium)}
+
 .sgrid{display:grid;gap:var(--space-3)}
 .sector.solo{border:1px solid var(--border-subtle);background:var(--surface-page)}
 .sectorhead{padding:var(--space-5) var(--space-6)}
