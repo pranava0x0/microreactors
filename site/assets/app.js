@@ -200,15 +200,6 @@
   /* ---------- pipeline ---------- */
   var tracks = D.opportunities.tracks;
   var opps = D.opportunities.opportunities;
-  var active = "all";
-
-  var chips = [{ id: "all", label: "All", n: opps.length }].concat(
-    tracks.map(function (t) { return { id: t.id, label: t.label, n: s.tracks[t.id] }; })
-  );
-  render($("filters"), chips.map(function (c) {
-    return '<button class="chip" type="button" data-t="' + esc(c.id) + '" aria-pressed="' +
-      (c.id === "all") + '">' + esc(c.label) + '<span class="c">' + c.n + "</span></button>";
-  }).join(""));
 
   function trackLabel(id) {
     for (var i = 0; i < tracks.length; i++) if (tracks[i].id === id) return tracks[i].label;
@@ -242,34 +233,36 @@
       "</div>" + gaps + srcList(o.sources) + "</div></article>";
   }
 
-  function renderRows() {
-    var list = active === "all" ? opps : opps.filter(function (o) { return o.track === active; });
-    render($("rows"), list.map(rowHTML).join(""));
-  }
+  var pipeItems = [{ id: "all", label: "All (" + opps.length + ")" }].concat(
+    tracks.map(function (t) {
+      return { id: t.id, label: t.label + " (" + (s.tracks[t.id] || 0) + ")" };
+    })
+  );
 
-  $("filters").addEventListener("click", function (e) {
-    var b = e.target.closest(".chip");
-    if (!b) return;
-    active = b.dataset.t;
-    Array.prototype.forEach.call(this.querySelectorAll(".chip"), function (c) {
-      c.setAttribute("aria-pressed", String(c === b));
-    });
-    renderRows();
-  });
+  render($("pipelinetracks"),
+    '<div data-sub="all" id="pipeline-all" role="tabpanel" tabindex="0">' +
+      '<div class="rows">' + opps.map(rowHTML).join("") + "</div></div>" +
+    tracks.map(function (t) {
+      var trackOpps = opps.filter(function (o) { return o.track === t.id; });
+      return '<div data-sub="' + esc(t.id) + '" id="pipeline-' + esc(t.id) + '" role="tabpanel" tabindex="0">' +
+        '<p class="prose trackblurb">' + esc(t.blurb) + "</p>" +
+        '<div class="rows">' + trackOpps.map(rowHTML).join("") + "</div></div>";
+    }).join("")
+  );
+  makeSubnav("pipeline", pipeItems);
 
   function toggle(top) {
     var row = top.parentNode, open = row.classList.toggle("open");
     top.setAttribute("aria-expanded", String(open));
   }
-  $("rows").addEventListener("click", function (e) {
+  $("pipelinetracks").addEventListener("click", function (e) {
     var t = e.target.closest(".rowtop");
     if (t && !e.target.closest("a")) toggle(t);
   });
-  $("rows").addEventListener("keydown", function (e) {
+  $("pipelinetracks").addEventListener("keydown", function (e) {
     var t = e.target.closest(".rowtop");
     if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggle(t); }
   });
-  renderRows();
 
   /* ---------- economics ---------- */
   var bands = [];
@@ -325,7 +318,7 @@
   }
 
   /* ---------- vendors ---------- */
-  render($("vendorcards"), D.vendors.vendors.map(function (v) {
+  function vendorCardHTML(v) {
     var specs = [
       ["Output", v.mwe_label], ["Coolant", v.coolant], ["Fuel", v.fuel],
       ["Refuelling", v.refuel_years ? "every " + v.refuel_years + " yr" : null],
@@ -350,24 +343,68 @@
         return '<div class="vspec"><span class="k">' + esc(x[0]) + '</span><span class="v">' +
           esc(x[1]) + "</span></div>";
       }).join("") + tl + gaps + srcList(v.sources, "vsrcs") + "</div>";
-  }).join(""));
+  }
 
-  /* ---------- demand accordions ---------- */
-  render($("sectors"), D.sectors.sectors.map(function (sec) {
-    return '<details class="sector"><summary>' +
-      "<h3>" + esc(sec.sector) + "</h3>" +
-      "</summary>" +
-      (sec.context
-        ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
-        : "") +
-      '<div class="loads">' +
-      sec.loads.map(function (l) {
-        return '<div class="load"><span>' + esc(l.label) +
-          (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
-          (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
-          '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
-      }).join("") + "</div></details>";
-  }).join(""));
+  var vItems = [{ id: "all", label: "All vendors" }].concat(
+    D.vendors.vendors.map(function (v) {
+      return { id: slug(v.name), label: v.name };
+    })
+  );
+
+  render($("vendorcards"),
+    '<div class="vgrid" data-sub="all" id="vendors-all" role="tabpanel" tabindex="0">' +
+    D.vendors.vendors.map(vendorCardHTML).join("") + "</div>" +
+    D.vendors.vendors.map(function (v) {
+      var vId = slug(v.name);
+      return '<div class="vsolo" data-sub="' + esc(vId) + '" id="vendors-' + esc(vId) +
+        '" role="tabpanel" tabindex="0">' + vendorCardHTML(v) + "</div>";
+    }).join("")
+  );
+  makeSubnav("vendors", vItems);
+
+  /* ---------- demand accordions / subtabs ---------- */
+  var secItems = [{ id: "all", label: "All sectors" }].concat(
+    D.sectors.sectors.map(function (sec) {
+      return { id: slug(sec.sector), label: sec.sector };
+    })
+  );
+
+  render($("sectors"),
+    '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
+    D.sectors.sectors.map(function (sec) {
+      return '<details class="sector"><summary>' +
+        "<h3>" + esc(sec.sector) + "</h3>" +
+        "</summary>" +
+        (sec.context
+          ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
+          : "") +
+        '<div class="loads">' +
+        sec.loads.map(function (l) {
+          return '<div class="load"><span>' + esc(l.label) +
+            (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
+            (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
+            '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
+        }).join("") + "</div></details>";
+    }).join("") + "</div>" +
+    D.sectors.sectors.map(function (sec) {
+      var sId = slug(sec.sector);
+      return '<div class="ssector" data-sub="' + esc(sId) + '" id="demand-' + esc(sId) +
+        '" role="tabpanel" tabindex="0">' +
+        '<div class="sector solo">' +
+        '<div class="sectorhead"><h3>' + esc(sec.sector) + "</h3></div>" +
+        (sec.context
+          ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
+          : "") +
+        '<div class="loads">' +
+        sec.loads.map(function (l) {
+          return '<div class="load"><span>' + esc(l.label) +
+            (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
+            (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
+            '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
+        }).join("") + "</div></div></div>";
+    }).join("")
+  );
+  makeSubnav("demand", secItems);
 
   /* ---------- market design ---------- */
   var M = D.mechanisms;
