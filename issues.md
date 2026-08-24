@@ -30,6 +30,17 @@ vs test bug), status.
   was never on the page). nrc.gov/docs, *.af.mil, oklo.com and ktoo.org 403 non-browser
   clients outright — use browser capture + `fetch_source --from-file`.
 
+- **2026-08-23 · site · Sub-tabs shipped boxed against a written rule — Fixed.** The new
+  sub-tab strips used the site's `.chip` treatment (1px border, radius, raised background)
+  on all four panels. DESIGN.md §8.7 specifies the opposite in as many words: "a second,
+  lighter tablist inside the panel (underline style, not the boxed primary tabs)". Root
+  cause: **design bug**, and the same class as the AGENTS.md case from 2026-08-12 — the rule
+  was written in this repo and read during the same session, then not applied, because
+  reusing an existing component felt like the conservative choice. Fix: underline treatment,
+  subordinated by colour rather than size (`--size-caption` and `--size-label` are both 12px,
+  so the hierarchy is a neutral underline against the primary nav's accent red plus tertiary
+  idle text). Regression guard: the e2e layout gate now fails any sub-tab carrying a radius
+  or a side/top border, and asserts the 44px touch floor on `pointer:coarse`.
 - **2026-08-23 · site · Register host stuffed into the number column ≤640px — Fixed.**
   Widening `.reg .rrow` from two grid columns to three (number, details, host) left the
   ≤640px override at two columns, so auto-placement dropped the third child into row 2
