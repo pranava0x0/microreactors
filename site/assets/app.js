@@ -71,6 +71,11 @@
      register sat ~90 screens below the fold. Routes are "panel/sub", so a
      sub-section is still linkable. */
   var SUBS = {};
+  /* Routes that used to exist. The Sources tab shipped as "Evidence" until
+     2026-08-23, so #evidence is live in anything already linked or bookmarked;
+     without this it falls through to the unknown-route branch and strands the
+     reader on the Tracker. activate() rewrites the hash to the canonical id. */
+  var ALIASES = { evidence: "sources" };
   var slug = function (t) {
     return String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   };
@@ -81,6 +86,7 @@
     opts = opts || {};
     var parts = String(route || "").split("/");
     var id = parts[0], sub = parts[1] || "";
+    if (ALIASES[id]) id = ALIASES[id];
     if (PANELS.indexOf(id) === -1) { id = PANELS[0]; sub = ""; }
     PANELS.forEach(function (p) {
       var panel = $(p);

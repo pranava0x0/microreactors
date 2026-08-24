@@ -133,5 +133,68 @@ class Layout(unittest.TestCase):
         self.assertEqual(problems, [])
 
 
+@unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+class Routing(unittest.TestCase):
+    def test_legacy_evidence_hash_lands_on_sources(self):
+        """The Sources tab shipped as "Evidence" until 2026-08-23. Anything
+        already linked or bookmarked uses #evidence, and an unknown route
+        silently strands the reader on the Tracker."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            page.goto(base + "#evidence", wait_until="networkidle")
+            page.wait_for_timeout(80)
+            got = page.evaluate("""() => ({
+              visible: [...document.querySelectorAll('section[role=tabpanel]')]
+                .filter(p => !p.hidden).map(p => p.id),
+              hash: location.hash
+            })""")
+            browser.close()
+        self.assertEqual(got["visible"], ["sources"], "#evidence did not land on Sources")
+        self.assertTrue(got["hash"].startswith("#sources"),
+                        f"legacy hash not rewritten to canonical: {got['hash']}")
+
+
+@unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+class SourceRegisterMobile(unittest.TestCase):
+    def test_host_shares_the_content_column(self):
+        """Three children in a two-column grid: without an explicit placement
+        the host auto-flows into column 1, where the number column sizes it and
+        word-break renders a long domain almost vertically."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            ctx = browser.new_context(viewport={"width": 375, "height": 812},
+                                      has_touch=True, is_mobile=True)
+            page = ctx.new_page()
+            page.goto(base + "#sources/register", wait_until="networkidle")
+            page.wait_for_timeout(80)
+            got = page.evaluate("""() => {
+              const rows = [...document.querySelectorAll('#register .rrow')];
+              const bad = [];
+              let tallestHost = 0;
+              for (const r of rows) {
+                const rn = r.querySelector('.rn').getBoundingClientRect();
+                const host = r.querySelector('.host').getBoundingClientRect();
+                const body = r.children[1].getBoundingClientRect();
+                if (host.left < rn.right) bad.push(r.id);
+                if (Math.abs(host.left - body.left) > 1) bad.push(r.id + ':misaligned');
+                tallestHost = Math.max(tallestHost, host.height);
+              }
+              return { rows: rows.length, bad: bad.slice(0, 5), tallestHost };
+            }""")
+            ctx.close()
+            browser.close()
+        self.assertGreater(got["rows"], 20, "register rows did not render")
+        self.assertEqual(got["bad"], [], "host is not in the content column")
+        self.assertLess(got["tallestHost"], 40,
+                        f"a hostname wrapped to {got['tallestHost']}px — column too narrow")
+
+
 if __name__ == "__main__":
     unittest.main()
