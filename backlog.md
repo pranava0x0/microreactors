@@ -7,8 +7,7 @@
   Antonio city agendas (JBSA/CPS), Alaska RCA (CVEA), ERCOT queue number for Last
   Energy Haskell.
 - **high** · Integrate data/deployment_sites.json into the site as a Sites layer/tab
-  (per-category candidate sites + filings). The dataset is gated and cited; only the
-  UI is missing. Decide render: per-sector site lists on Applications vs its own tab.
+  (per-category candidate sites + filings) (DONE — 2026-08-24 dedicated Sites tab with sub-tabs for Universities & Labs, Defense & Remote, Commercial & Grid, and Findings & Absences).
 - **med** · Deep-dive follow-ups with expiry: Penn State FRONTIER REP (promised late
   2025, absent from ADAMS as of 2026-08-23 — does the Westinghouse commercial-market
   exit affect it?); UIUC CP docketed under NRC Docket 50-618 on 2026-05-18 (DONE — findings in data/research/deployment-sites-followups.json); Aalo RELLIS

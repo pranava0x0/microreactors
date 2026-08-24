@@ -18,6 +18,7 @@
     <span class="wordmark">Microreactor <b>Opportunity Map</b></span>
     <div class="tabs" role="tablist" aria-label="Sections" id="tabs">
       <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Tracker</button>
+      <button class="tab" role="tab" id="tab-sites" aria-controls="sites" data-panel="sites">Sites</button>
       <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Costs</button>
       <button class="tab" role="tab" id="tab-vendors" aria-controls="vendors" data-panel="vendors">Vendors</button>
       <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Applications</button>
@@ -50,6 +51,20 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Tracker sections"></div>
     <div id="pipelinetracks"></div>
+  </div>
+</section>
+
+<section id="sites" role="tabpanel" aria-labelledby="tab-sites" tabindex="0" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Candidate deployment sites and filings</h2>
+      <p class="prose">Named physical locations paired with microreactors, tracked against their
+        regulatory and utility filings (NRC ADAMS, FERC eLibrary, state PUCs, and international regulators).
+        Includes confirmed negative findings where docket searches confirmed zero filings.</p>
+      <div class="sites-summary" id="sites-summary"></div>
+    </div>
+    <div class="subtabs" role="tablist" aria-label="Sites sections"></div>
+    <div id="sites-content"></div>
   </div>
 </section>
 

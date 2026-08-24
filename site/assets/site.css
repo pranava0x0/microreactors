@@ -237,6 +237,52 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .topcard .tedge{font-size:var(--size-caption);color:var(--text-tertiary);border-left:2px solid var(--antares-red-40);padding-left:var(--space-3);line-height:1.45;margin-top:auto}
 .topcard .tedge strong{color:var(--antares-red);font-weight:var(--weight-medium)}
 
+/* ---------- candidate deployment sites ---------- */
+.sites-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
+@media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
+.sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+.sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);
+  min-width:0;overflow-wrap:break-word;word-break:break-word}
+.sitecard .shdr{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);
+  margin-bottom:var(--space-3);flex-wrap:wrap}
+.sitecard h3{font-size:var(--size-heading-3);color:var(--text-primary);margin:0;font-weight:var(--weight-semibold)}
+.sitecard .smeta{display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap}
+.sitetag{font-family:var(--font-mono);font-size:var(--size-caption);padding:1px var(--space-2);
+  border:1px solid var(--border-subtle);text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--text-tertiary)}
+.sitetag.status-permitted,.sitetag.status-operating{color:var(--stance-positive);border-color:var(--stance-positive-40)}
+.sitetag.status-application,.sitetag.status-pre-application,.sitetag.status-intent-to-award{color:var(--antares-red);border-color:var(--antares-red-40)}
+.sitetag.status-tabled,.sitetag.status-paused,.sitetag.status-cancelled{color:var(--text-tertiary);border-color:var(--border-subtle)}
+.sitedetails{display:grid;grid-template-columns:1fr;gap:var(--space-2);margin:var(--space-4) 0;
+  font-size:var(--size-body-sm);color:var(--text-secondary);padding:var(--space-3) 0;
+  border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);min-width:0}
+@media(min-width:768px){.sitedetails{grid-template-columns:repeat(2,1fr)}}
+.sitedetails .drow{display:flex;gap:var(--space-2);min-width:0;flex-wrap:wrap}
+.sitedetails .dlbl{color:var(--text-tertiary);min-width:80px;flex-shrink:0}
+.sitesummary{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin-bottom:var(--space-4)}
+.filingtrail{margin-top:var(--space-4);background:var(--surface-sunken);border:1px solid var(--border-subtle);
+  padding:var(--space-4);min-width:0}
+.filingtrail h4{font-size:var(--size-caption);text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--text-tertiary);margin:0 0 var(--space-3) 0}
+.filingrow{padding:var(--space-2) 0;border-bottom:1px solid var(--border-subtle);
+  display:flex;flex-direction:column;gap:var(--space-1);font-size:var(--size-caption);min-width:0}
+@media(min-width:640px){
+  .filingrow{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);align-items:baseline}
+}
+.filingrow:last-child{border-bottom:none}
+.filingforum{font-family:var(--font-mono);color:var(--antares-red);font-weight:var(--weight-medium);flex-shrink:0}
+.filingdesc{color:var(--text-secondary);min-width:0;overflow-wrap:anywhere}
+.filingdesc a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.filingdesc code{word-break:break-all}
+.filingdate{color:var(--text-tertiary);font-family:var(--font-mono);white-space:nowrap;flex-shrink:0}
+.sitegaps{margin-top:var(--space-3);font-size:var(--size-caption);color:var(--text-tertiary);
+  border-left:2px solid var(--antares-red-40);padding-left:var(--space-3);line-height:1.45}
+.negfinding{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);margin-bottom:var(--space-4);
+  min-width:0;overflow-wrap:break-word}
+.negfinding h4{font-size:var(--size-body);color:var(--text-primary);margin:0 0 var(--space-2) 0}
+.negfinding p{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin:0}
+
 .sgrid{display:grid;gap:var(--space-3)}
 .sector.solo{border:1px solid var(--border-subtle);background:var(--surface-page)}
 .sectorhead{padding:var(--space-5) var(--space-6)}

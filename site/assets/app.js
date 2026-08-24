@@ -64,7 +64,7 @@
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  var PANELS = ["pipeline", "economics", "vendors", "demand", "market", "policy", "sources"];
+  var PANELS = ["pipeline", "sites", "economics", "vendors", "demand", "market", "policy", "sources"];
   /* Sub-navigation, registered by makeSubnav() below. Four panels were long
      enough to bury their own sections at 1280px before this split: policy ran
      30,900px and the source register 67,500px, so field coverage and the gap
@@ -263,6 +263,109 @@
     var t = e.target.closest(".rowtop");
     if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggle(t); }
   });
+
+  /* ---------- candidate deployment sites ---------- */
+  if (D.deployment_sites && D.deployment_sites.sites) {
+    var sites = D.deployment_sites.sites;
+    render($("sites-summary"), [
+      { n: String(sites.length), k: "candidate sites tracked" },
+      { n: "5", k: "load categories covered" },
+      { n: String(sites.filter(function (s) { return s.filings && s.filings.length; }).length), k: "sites with active filings", accent: true },
+      { n: "0", k: "FERC microreactor hits", accent: true }
+    ].map(function (x) {
+      return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
+        esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
+    }).join(""));
+
+    var renderSiteCard = function (s) {
+      var stCls = "status-" + slug(s.status);
+      var filingsHTML = "";
+      if (s.filings && s.filings.length) {
+        filingsHTML = '<div class="filingtrail"><h4>Regulatory &amp; Utility Filings</h4>' +
+          s.filings.map(function (f) {
+            return '<div class="filingrow">' +
+              '<span class="filingforum">' + esc(f.forum) + "</span>" +
+              '<span class="filingdesc">' +
+                (f.url ? '<a href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer">' + esc(f.type) + "</a>" : esc(f.type)) +
+                (f.id ? " &middot; <code>" + esc(f.id) + "</code>" : "") +
+                (f.note ? ' <span class="note">(' + esc(f.note) + ")</span>" : "") +
+              "</span>" +
+              '<span class="filingdate">' + esc(f.date || "") + "</span>" +
+              "</div>";
+          }).join("") + "</div>";
+      }
+      var gapsHTML = "";
+      if (s.gaps && s.gaps.length) {
+        gapsHTML = '<div class="sitegaps"><strong>Evidence gaps:</strong> ' +
+          s.gaps.map(function (g) { return esc(g); }).join(" &middot; ") + "</div>";
+      }
+      return '<div class="sitecard" id="site-' + esc(s.id) + '">' +
+        '<div class="shdr">' +
+          "<h3>" + esc(s.name) + "</h3>" +
+          '<div class="smeta">' +
+            '<span class="sitetag ' + stCls + '">' + esc(s.status) + "</span>" +
+            '<span class="sitetag">' + esc(s.depth) + "</span>" +
+            '<span class="sitetag">' + esc(s.country) + (s.region ? " &middot; " + esc(s.region) : "") + "</span>" +
+          "</div>" +
+        "</div>" +
+        '<div class="sitedetails">' +
+          '<div class="drow"><span class="dlbl">Category:</span><span>' + esc(s.category) + (s.band ? " &middot; " + esc(s.band) : "") + "</span></div>" +
+          '<div class="drow"><span class="dlbl">Owner/Host:</span><span>' + esc(s.owner || "") + "</span></div>" +
+          '<div class="drow"><span class="dlbl">Reactor:</span><span>' + esc(s.vendor || "") + (s.power ? " (" + esc(s.power) + ")" : "") + "</span></div>" +
+          '<div class="drow"><span class="dlbl">Utility:</span><span>' + esc(s.utility_context || "Behind-the-meter") + "</span></div>" +
+        "</div>" +
+        '<div class="sitesummary">' + esc(s.summary) + " " + cite(s.sources) + "</div>" +
+        filingsHTML +
+        gapsHTML +
+        "</div>";
+    };
+
+    var univSites = sites.filter(function (s) {
+      return s.category === "Civic Infrastructure";
+    });
+    var defSites = sites.filter(function (s) {
+      return s.category === "Defense installations" || (s.category === "Electric Utilities" && s.id === "cvea-valdez");
+    });
+    var commSites = sites.filter(function (s) {
+      return s.category === "Compute" || s.category === "Oil & Gas" || (s.category === "Electric Utilities" && s.id !== "cvea-valdez");
+    });
+
+    var negs = D.deployment_sites._meta.negative_findings || [];
+    var negHTML = '<div class="negfindings">' +
+      negs.map(function (n) {
+        return '<div class="negfinding">' +
+          "<h4>Confirmed negative docket finding</h4>" +
+          "<p>" + esc(n.finding) + " " + cite(n.sources) + "</p>" +
+          "</div>";
+      }).join("") +
+      (D.deployment_sites._meta.category_absences
+        ? '<div class="negfinding"><h4>Category absences</h4><p>' +
+          esc(D.deployment_sites._meta.category_absences) + "</p></div>"
+        : "") +
+      "</div>";
+
+    var siteItems = [
+      { id: "all", label: "All (" + sites.length + ")" },
+      { id: "universities-labs", label: "Universities & Labs (" + univSites.length + ")" },
+      { id: "defense-remote", label: "Defense & Remote (" + defSites.length + ")" },
+      { id: "commercial-grid", label: "Commercial & Grid (" + commSites.length + ")" },
+      { id: "findings-absences", label: "Findings & Absences" }
+    ];
+
+    render($("sites-content"),
+      '<div data-sub="all" id="sites-all" role="tabpanel" tabindex="0">' +
+        '<div class="sitesgrid">' + sites.map(renderSiteCard).join("") + "</div></div>" +
+      '<div data-sub="universities-labs" id="sites-universities-labs" role="tabpanel" tabindex="0">' +
+        '<div class="sitesgrid">' + univSites.map(renderSiteCard).join("") + "</div></div>" +
+      '<div data-sub="defense-remote" id="sites-defense-remote" role="tabpanel" tabindex="0">' +
+        '<div class="sitesgrid">' + defSites.map(renderSiteCard).join("") + "</div></div>" +
+      '<div data-sub="commercial-grid" id="sites-commercial-grid" role="tabpanel" tabindex="0">' +
+        '<div class="sitesgrid">' + commSites.map(renderSiteCard).join("") + "</div></div>" +
+      '<div data-sub="findings-absences" id="sites-findings-absences" role="tabpanel" tabindex="0">' +
+        negHTML + "</div>"
+    );
+    makeSubnav("sites", siteItems);
+  }
 
   /* ---------- economics ---------- */
   var bands = [];
