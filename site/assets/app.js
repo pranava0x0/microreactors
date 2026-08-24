@@ -648,8 +648,9 @@
   var P = D.policy;
   if (P) {
     render($("pathways"), P.groups.map(function (g) {
-      return '<div class="pgroup" data-sub="' + esc(slug(g.name)) + '" id="policy-' +
+      return '<div class="policygroup" data-sub="' + esc(slug(g.name)) + '" id="policy-' +
         esc(slug(g.name)) + '" role="tabpanel" tabindex="0">' +
+        '<div class="policygrid">' +
         g.pathways.map(function (pw) {
           var tag = pw.kind === "idea" ? ' <span class="ideatag">idea</span>' : "";
           var srcs = (pw.sources || []).length ? cite(pw.sources)
@@ -657,7 +658,7 @@
           return '<div class="pw"><div class="top"><span class="nm">' + esc(pw.name) + "</span>" +
             '<span class="st">' + esc(pw.status) + "</span>" + tag + "</div>" +
             "<p>" + esc(pw.mechanism) + " " + srcs + "</p></div>";
-        }).join("") + "</div>";
+        }).join("") + "</div></div>";
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
