@@ -466,10 +466,13 @@
   makeSubnav("vendors", vItems);
 
   /* ---------- demand summary & top options ---------- */
+  var totalLoads = [].concat.apply([], D.sectors.sectors.map(function (s) { return s.loads; }));
+  var citedLoads = totalLoads.filter(function (l) { return l.sources && l.sources.length; });
+
   render($("dsummary"), [
-    { n: "35", k: "demand bands mapped" },
-    { n: "8", k: "civilian sectors" },
-    { n: "1–20 MW", k: "microreactor sweet spot", accent: true },
+    { n: String(totalLoads.length), k: "demand loads mapped" },
+    { n: String(D.sectors.sectors.length), k: "civilian sectors" },
+    { n: String(citedLoads.length), k: "cited with primary sources" },
     { n: "$250–$850", k: "/MWh displaced diesel ceiling", accent: true }
   ].map(function (x) {
     return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
