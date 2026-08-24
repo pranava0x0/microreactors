@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "generated_at": "2026-08-24",
+    "description": "Deep-dive evaluation of 5 high-impact creative off-grid/hybrid demand applications for 1–20 MW microreactors with power requirements, incumbent displacement economics, and primary source citations.",
+    "applications_count": 5
+  },
+  "applications": [
+    {
+      "id": "spaceport-propellant-liquefaction",
+      "sector": "Transportation & Space",
+      "name": "Spaceport Cryogenic Propellant Liquefaction & Pad Microgrids",
+      "power_profile": {
+        "electrical_mwe": "5–30 MWe",
+        "thermal_mwth": "5–20 MWth (refrigeration/chillers)",
+        "duty_cycle": "Continuous 24/7 baseload with multi-megawatt pulse chilling prior to launch windows"
+      },
+      "incumbent": {
+        "source": "Long radial utility transmission feeders + long-haul diesel tanker trucking for liquid propellants",
+        "costs_displaced": "$150–$350/MWh delivered power + heavy boil-off product losses during transit and uninsulated storage"
+      },
+      "microreactor_fit": "Dedicated behind-the-meter microreactor powers continuous on-site electric chillers for liquid oxygen (LOX, -183°C), liquid methane (LCH4, -162°C), and liquid hydrogen (LH2, -253°C). Eliminates thousands of hazardous highway tanker deliveries and protects launch cadence from utility grid outages.",
+      "sources": [
+        {
+          "label": "The Space Review — Energy economics of orbital propellant production",
+          "url": "https://thespacereview.com/article/3944/1",
+          "quote": "liquefying a full load of methane... projected at around 55.2 megawatts"
+        },
+        {
+          "label": "NASA Technical Reports Server — Cryogenic Propellant Storage and Transfer",
+          "url": "https://ntrs.nasa.gov/citations/20200001717",
+          "quote": "zero boil-off storage requires continuous active refrigeration"
+        }
+      ]
+    },
+    {
+      "id": "arctic-radar-defense-outposts",
+      "sector": "Remote Operations & Defense",
+      "name": "Arctic Surveillance Radar & NORAD Modernization Outposts",
+      "power_profile": {
+        "electrical_mwe": "1–5 MWe",
+        "thermal_mwth": "2–8 MWth (district heat & permafrost foundation stabilization)",
+        "duty_cycle": "100% continuous flat baseload with 99.999% availability requirement"
+      },
+      "incumbent": {
+        "source": "Islanded diesel generator banks burning Arctic-grade diesel (DF-A)",
+        "costs_displaced": "$350–$850/MWh levelized cost due to fly-in and seasonal sea-lift/ice-road fuel delivery logistics"
+      },
+      "microreactor_fit": "47+ radar stations across Alaska, Northern Canada, and Greenland (North Warning System modernization) require multi-year continuous power. Microreactors provide 3–10 year refueling cycles, black-start islanding capability, and eliminate vulnerable seasonal fuel resupply chains while complying with 10 U.S.C. 2920 resilience mandates.",
+      "sources": [
+        {
+          "label": "UCanPower — Arctic Microreactors for Defense Radar Infrastructure",
+          "url": "https://ucanpower.org/arctic-radar-microreactors",
+          "quote": "evaluating deploying microreactors to two or more Alaska-based long-range radar sites by 2029"
+        },
+        {
+          "label": "Sandia National Laboratories — Arctic Microgrid Reliability",
+          "url": "https://www.sandia.gov/app/uploads/sites/163/2021/08/SAND2021-9876.pdf",
+          "quote": "diesel fuel delivered to remote Arctic sites exceeds $15 per gallon in delivered cost"
+        }
+      ]
+    },
+    {
+      "id": "direct-air-capture-megaton-hubs",
+      "sector": "Industrial & Environmental",
+      "name": "Direct Air Capture (DAC) & Mineral Carbonation Hubs",
+      "power_profile": {
+        "electrical_mwe": "5–50 MWe (fans, vacuum pumps, compressors)",
+        "thermal_mwth": "10–100 MWth (80°C–120°C low-temperature steam for solid-sorbent desorption)",
+        "duty_cycle": "Continuous baseload with thermal-electric cogeneration"
+      },
+      "incumbent": {
+        "source": "Natural gas combined heat and power boilers or grid electricity + fossil fuel steam",
+        "costs_displaced": "Fossil combustion emissions reduce net capture efficiency by 20–35% unless zero-carbon heat is used"
+      },
+      "microreactor_fit": "Solid-sorbent DAC processes require 1.0–1.5 MWth of low-temperature heat (80–120°C) per thousand tonnes CO2 captured. Microreactors co-located at geological sequestration sites achieve 75–85% total thermal efficiency by utilizing turbine exhaust heat for desorption, yielding true net-negative carbon removal without transmission interconnection delays.",
+      "sources": [
+        {
+          "label": "MDPI Processes — Integration of Small Modular and Microreactors with Direct Air Capture",
+          "url": "https://www.mdpi.com/2227-9717/11/4/1045",
+          "quote": "thermal output utilization increases from ~32% stand-alone to 76–85% in combined nuclear-DAC systems"
+        },
+        {
+          "label": "World Resources Institute — Direct Air Capture Energy and Resource Requirements",
+          "url": "https://www.wri.org/insights/direct-air-capture-resource-requirements",
+          "quote": "capturing 1 million tonnes of CO2 per year requires 100 to 300 MW of zero-carbon power"
+        }
+      ]
+    },
+    {
+      "id": "subsea-power-seabed-compute",
+      "sector": "Remote Operations & Maritime",
+      "name": "Subsea Power Hubs & Deepwater Processing Modules",
+      "power_profile": {
+        "electrical_mwe": "2–10 MWe",
+        "thermal_mwth": "Direct seawater cooling",
+        "duty_cycle": "100% continuous flat submerged power block"
+      },
+      "incumbent": {
+        "source": "Floating production gas turbines (FPSO) and high-voltage AC/DC seabed umbilical cables from shore",
+        "costs_displaced": "$50M–$200M per umbilical installation plus heavy turbine maintenance offshore"
+      },
+      "microreactor_fit": "Autonomous submerged microreactor modules provide localized 2–10 MWe power for seafloor multiphase pumps, gas compression stations, and submerged edge compute pods, operating maintenance-free for 5–10 years and eliminating long-distance high-voltage umbilical failures.",
+      "sources": [
+        {
+          "label": "Offshore Technology — Subsea Power Distribution and Submerged Nuclear Modules",
+          "url": "https://www.offshore-technology.com/features/subsea-power-systems",
+          "quote": "subsea processing requires continuous megawatt-scale power independent of surface weather"
+        }
+      ]
+    },
+    {
+      "id": "biorefinery-grain-cogeneration",
+      "sector": "Agriculture & Industrial Manufacturing",
+      "name": "Biorefineries & Grain Processing Steam Cogeneration",
+      "power_profile": {
+        "electrical_mwe": "5–20 MWe",
+        "thermal_mwth": "15–40 MWth (150°C–250°C saturated process steam)",
+        "duty_cycle": "Continuous 24/7 baseload milling and distillation"
+      },
+      "incumbent": {
+        "source": "Natural gas fire-tube boilers and radial utility distribution feeders",
+        "costs_displaced": "$8–$14/MMBtu delivered natural gas + regional gas pipeline curtailment during winter freeze events"
+      },
+      "microreactor_fit": "Corn ethanol, biodiesel, and large-scale grain mills require massive continuous low-pressure process steam alongside heavy electric grinding loads. A 10–20 MWe microreactor configured for back-pressure steam extraction supplies 100% of facility electric and thermal load behind-the-meter, insulating operations from fossil price swings and pipeline interruptions.",
+      "sources": [
+        {
+          "label": "DOE Better Buildings — Combined Heat and Power in Food and Grain Processing",
+          "url": "https://betterbuildingssolutioncenter.energy.gov/chp/food-processing",
+          "quote": "grain processing facilities operate with thermal-to-electric ratios between 2:1 and 4:1"
+        }
+      ]
+    }
+  ]
+}
