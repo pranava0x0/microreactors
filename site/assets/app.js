@@ -624,10 +624,11 @@
     }).join("") + "</div>");
     var mgroups = M.precedent_groups || [];
     render($("precedents"), mgroups.map(function (g) {
-      return '<div class="pgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
+      return '<div class="precgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
         esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every mechanism ' +
         "here ran in the real world. Each row records how it worked, what happened, and " +
         "whether early or late buyers got the better deal.</p>" +
+        '<div class="precgrid">' +
         g.items.map(function (p) {
           return '<details class="prec"><summary><span class="nm">' + esc(p.name) + "</span>" +
             '<span class="cat">' + esc(p.category) + "</span></summary>" +
@@ -637,7 +638,7 @@
             (p.early_vs_late ? '<p><span class="k">Early vs late orders · </span>' + esc(p.early_vs_late) + "</p>" : "") +
             (p.relevance ? '<p><span class="k">Read-across · </span>' + esc(p.relevance) + "</p>" : "") +
             srcList(p.sources) + "</div></details>";
-        }).join("") + "</div>";
+        }).join("") + "</div></div>";
     }).join(""));
     makeSubnav("market", [{ id: "proposal", label: "The proposal" }].concat(
       mgroups.map(function (g) { return { id: slug(g.name), label: g.name }; })));

@@ -329,7 +329,11 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
 .proposaltag,.ideatag{display:inline-block;font-size:var(--size-label-sm);letter-spacing:var(--track-label);
   text-transform:uppercase;padding:1px var(--space-2);border:1px solid var(--antares-red-40);
   color:var(--antares-red);border-radius:var(--radius-control);white-space:nowrap}
-details.prec{border:1px solid var(--border-subtle);margin-bottom:var(--space-3)}
+/* ---------- precedents & market subpanels ---------- */
+.precgroup{margin-bottom:var(--space-10)}
+.precgroup .prose{margin-bottom:var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body)}
+.precgrid{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
+details.prec{border:1px solid var(--border-subtle);background:var(--surface-page);margin-bottom:0}
 details.prec summary{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);align-items:baseline;
   cursor:pointer;padding:var(--space-4) var(--space-5);list-style:none;touch-action:manipulation}
 details.prec summary::-webkit-details-marker{display:none}
@@ -338,14 +342,14 @@ details.prec summary::before{content:"\25B8";color:var(--antares-red);font-size:
 details.prec[open] summary::before{transform:rotate(90deg)}
 details.prec summary .nm{font-weight:var(--weight-semibold);font-size:var(--size-body)}
 details.prec summary .cat{font-size:var(--size-label-sm);letter-spacing:var(--track-label);
-  text-transform:uppercase;color:var(--text-tertiary);white-space:nowrap}
+  text-transform:uppercase;color:var(--text-tertiary);white-space:nowrap;justify-self:end}
 @media(max-width:640px){
   details.prec summary{grid-template-columns:auto 1fr}
-  details.prec summary .cat{grid-column:2;white-space:normal}
+  details.prec summary .cat{grid-column:2;white-space:normal;justify-self:start}
 }
 details.prec .body{padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--border-subtle)}
 details.prec .body p{font-size:var(--size-body-sm);color:var(--text-secondary);
-  margin-top:var(--space-3);max-width:var(--measure-prose)}
+  margin-top:var(--space-3);line-height:var(--lh-body)}
 details.prec .body .k{color:var(--text-tertiary)}
 
 /* ---------- policy pathways ---------- */
