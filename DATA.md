@@ -134,3 +134,26 @@
 
 - **A 200-with-bytes fetch can still be a non-capture: JS-shell sites (ans.org) return a nav-only stub to urllib that looks like a successful cache.** After caching any page, grep the cached bytes for the fact you came for before citing it; the failure is silent twice — the fetch "succeeds" and the index row looks healthy. Upgrade to the 2026-08-09 403 rule: before settling for an aggregator, the browser pane can usually capture the blocked primary itself (see AGENTS.md browser-scrape section for the flow, incl. chunked PDF fetch); cite the primary once its bytes are actually in the cache.
 - **Never cite a fact that exists only in a search-result summary.** Summaries synthesize across sources; the page is the source. One summary supplied a precise date ("May 30, 2025") that its cited page never contained — the page carried only the event, not that date.
+
+### 2026-08-25 (federal award APIs and JS-shell hosts)
+
+- **On a multi-phase assistance award, `total_obligation` can be the full federal ceiling rather
+  than money committed — the opposite of the contract case.** USAspending reports $26,062,370 for
+  the Tanana Chiefs Conference ERA cooperative agreement while DOE's own announcement says
+  **$4.1M was released for Phase 1**: a 6× overstatement if read as money on contract. The API
+  surfaces no phase field. Never quote an assistance award's obligation without checking the
+  awarding agency's announcement. (Encoded in `tools/usaspending.py`.)
+- **A federal programme that returns nothing by keyword is not absent — search its CFDA number.**
+  DOE's Energy Improvements in Rural or Remote Areas awards contain no text matching that
+  programme name and surface only under **CFDA 81.255 (Clean Energy Demonstrations)**. An earlier
+  pass recorded ERA as a coverage gap when it was a query-shape bug.
+- **Two different URLs that cache to byte-identical files are a JavaScript shell, not content.**
+  `elibrary.ferc.gov` returned the same 22,464-byte HTML for a filelist page and a docket search;
+  `programs.dsireusa.org` returned 56KB containing none of its own article text. The tell is cheap
+  to check and worth checking before quoting: compare `bytes` across unrelated URLs from the same
+  host in `source_index.json`, and grep the cached copy for a term the page must contain. Sibling
+  of the 2026-08-23 JS-shell stub rule.
+- **`tools/ferc_elibrary.py` reaches FERC's search API fine while `ferc.gov` 403s ordinary web
+  fetches.** Three separate research agents recorded FERC filings as unreachable. When an agent
+  reports a host as walled, check whether the repo already owns a client for it — agents are
+  barred from running `tools/` (shared-index race), so closing that seam is the orchestrator's job.

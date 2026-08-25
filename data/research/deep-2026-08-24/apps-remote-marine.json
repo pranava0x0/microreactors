@@ -1,0 +1,432 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "apps-remote-marine",
+  "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
+  "angles_run": [
+   "Alaska Energy Authority / Regulatory Commission of Alaska Power Cost Equalization: base rate orders and per-utility Appendix 1 cost-of-service calculations",
+   "DOE OCED Energy Improvements in Rural or Remote Areas (ERA) awards in Alaska, with dollar values and capacities",
+   "Military and federal remote sites: Eielson AFB microreactor pilot, Project Pele, DIU Advanced Nuclear Power for Installations",
+   "Canadian remote/Arctic communities: Qulliq Energy Corporation regulated rates, Yukon off-diesel projects",
+   "CARB At-Berth Regulation: Standardized Regulatory Impact Assessment per-berth shore power capex and per-vessel electrical load",
+   "Port electrification awards: EPA Clean Ports Program 2024 selections, MARAD Port Infrastructure Development Program FY2024",
+   "Port microgrids and on-site generation: Port of Long Beach, Port of Seattle / Northwest Seaport Alliance shore power",
+   "Floating and marine nuclear precedent: Akademik Lomonosov delivered cost"
+  ],
+  "absences": [
+   "DIU Advanced Nuclear Power for Installations (ANPI): eight companies were declared eligible for Other Transaction awards in April 2025, but no per-company contract value or site has been published. Dropped for lack of numbers.",
+   "Eielson AFB / Oklo contract price: no dollar value or $/kWh rate has been published. Reporting states the rate is to be settled in negotiation and the award is still a Notice of Intent to Award, not an executed contract. A widely repeated '$100 million or more over 30 years' figure traces to Air Force Times and was not found in any fetched primary document, so it is excluded.",
+   "Port of Los Angeles EPA Clean Ports award of '$412 million' appeared only in search summaries and the port's own release returned HTTP 403; EPA's own fetched release named NY/NJ ($344.1M) and Oakland ($322.2M) as the largest. The POLA figure is excluded as unverified.",
+   "Port of Long Beach load forecast: the port's own board documents quantifying its future electrical demand in MW were not located; only a 'triple or quadruple by 2035' statement in trade press, which carries no MW figure.",
+   "Alaska Village Electric Cooperative and Cordova Electric Cooperative appear in the RCA schedules but no separate signed deal with published numbers was found for either.",
+   "Islands and territories: no Puerto Rico, US Virgin Islands, Hawaii or Guam microgrid/IPP contract with a published $/kWh was verified within the search budget. Port of San Juan appears only as a MARAD wharf-reconstruction award.",
+   "Antarctic and research stations: no McMurdo or NSF power contract with published cost figures was found.",
+   "Telecom, radar and pipeline-compressor outposts: two searches surfaced no contract with real numbers; angle abandoned per the bail rule.",
+   "Cargo-handling-equipment load studies: no port or utility published a study stating the MW added by converting RTG cranes, yard tractors and reefers at a named terminal. The EPA and MARAD awards give equipment counts but not the resulting electrical demand.",
+   "No port authority board resolution studying nuclear power was found.",
+   "FY2025 and FY2026 PCE statistical reports exist but the by-community PDFs exceeded the fetch size limit; the FY2024 RCA rate order used here is the most recent regulator document actually read end to end."
+  ]
+ },
+ "cases": [
+  {
+   "id": "alaska-pce-fy2024-base-rate-order",
+   "sector": "Remote outposts & microgrids",
+   "name": "Alaska Power Cost Equalization - FY2024 base rate order and per-utility cost of service",
+   "country": "US",
+   "region": "Statewide rural Alaska",
+   "parties": {
+    "host": "193 rural Alaska communities (~82,000 residents)",
+    "provider": "Alaska Energy Authority (program administrator)",
+    "utility": "Regulatory Commission of Alaska (rate-setter)"
+   },
+   "instrument": "utility tariff",
+   "signed": "2023-06",
+   "capacity": "Statewide programme covering the diesel-dominated rural utilities; individual utilities range from ~50 MWh/yr (Lime Village) to ~19.7 GWh/yr (Kotzebue Electric Association) of test-period sales",
+   "price": "PCE base rate set at $0.1935/kWh effective 2023-07-01 (down from $0.1958/kWh); statutory maximum eligible cost is $1.00/kWh less the base rate, i.e. $0.8065/kWh of PCE credit",
+   "displaced": "RCA Appendix 1 cost-of-service calculations for FY2024: Igiugig Village Council total power cost $1.0944/kWh of which fuel/purchased power is $0.8140/kWh; Kokhanok Village Council $1.0209/kWh total, $0.6498/kWh fuel; Chitina Electric $1.0669/kWh total, $0.4015/kWh fuel; Lime Village $1.9487/kWh total, $1.5288/kWh fuel; Galena $0.6242/kWh total, $0.3813/kWh fuel; Kotzebue Electric Association $0.4079/kWh total, $0.1885/kWh fuel",
+   "filings": [
+    {
+     "forum": "State PUC",
+     "type": "Letter Order - notice of PCE amount changes from base rate change, with Schedule BKC-1 and per-utility Appendix 1 cost calculations",
+     "id": "L2300184 (docket U-23-010)",
+     "date": "2023-06-26",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+    }
+   ],
+   "summary": "The Regulatory Commission of Alaska set the FY2024 Power Cost Equalization base rate at $0.1935/kWh on 13 June 2023 and, a week later, recalculated the per-kWh PCE credit for every participating rural utility. The attached Appendix 1 sheets are the single best published price-to-beat dataset in US remote power: for each utility they state test-period kWh sales, non-fuel power cost per kWh, fuel/purchased-power cost per kWh, and total power cost per kWh. Total power costs run from about $0.41/kWh at wind-equipped Kotzebue to $1.9487/kWh at Lime Village, with fuel alone above $0.81/kWh at Igiugig and $1.52/kWh at Lime Village. The state pays the gap above the base rate up to a statutory ceiling of $1.00/kWh of total cost, so any community whose costs exceed roughly $1.00/kWh is already eating unsubsidised cost.",
+   "microreactor_read": "This is the price sheet. A 1-20 MW reactor selling into rural Alaska must beat a delivered cost of service that the regulator itself certifies at $0.62-$1.95/kWh, with the fuel-only component alone at $0.38-$1.53/kWh in the villages - but the loads are tiny (Igiugig 272 MWh/yr, Kokhanok 359 MWh/yr), so only aggregated or hub communities like Kotzebue (19.7 GWh/yr, and already down at $0.41/kWh because of wind) present a load a reactor could actually serve. The commercially interesting band is the mid-size hub at $0.60-$1.00/kWh, not the cheapest and not the smallest.",
+   "sources": [
+    {
+     "label": "Regulatory Commission of Alaska - Letter Order L2300184, FY2024 PCE base rate change",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+     "quote": "On June 13, 2023, the Commission established a new base rate of 19.35 cents per kilowatt-hour (kWh) for PCE calculations.",
+     "status": "fetched"
+    },
+    {
+     "label": "Alaska Energy Authority - Power Cost Equalization programme page",
+     "url": "https://akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
+     "quote": "serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "kokhanok-era-microgrid-2024",
+   "sector": "Remote outposts & microgrids",
+   "name": "Kokhanok Paradigm Shift - DOE OCED Energy Improvements in Rural or Remote Areas award",
+   "country": "US",
+   "region": "Kokhanok, Alaska",
+   "parties": {
+    "host": "Kokhanok Village Council",
+    "provider": "US DOE Office of Clean Energy Demonstrations (ERA programme)",
+    "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
+   },
+   "instrument": "grant-funded",
+   "signed": "2024-08",
+   "capacity": "1 MW battery energy storage system plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage, added to an existing diesel microgrid serving ~170 residents",
+   "capex": "Nearly $5 million federal cost share from DOE OCED",
+   "displaced": "Anticipated 70% of the local power plant's diesel use. RCA FY2024 Appendix 1 for Kokhanok Village Council: 358,953 kWh test-period sales, total power cost $1.0209/kWh, of which fuel/purchased power is $0.6498/kWh.",
+   "filings": [
+    {
+     "forum": "State PUC",
+     "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+     "id": "L2300184 (docket U-23-010)",
+     "date": "2023-06-26",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+    }
+   ],
+   "summary": "DOE's Office of Clean Energy Demonstrations announced roughly $5 million for the Kokhanok Village Council to bolt a 1 MW battery, 100 kW of solar, a 100 kW wind turbine and electric thermal storage onto the village's diesel microgrid, targeting displacement of about 70% of the powerhouse's diesel within two years. The load being served is genuinely tiny: the regulator's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load. Against that, the village's certified cost of service is $1.0209/kWh, of which $0.6498/kWh is fuel. So the federal grant is buying about $5 million of hardware to cut a fuel bill of roughly $233,000 a year.",
+   "microreactor_read": "Kokhanok shows what the remote-village market actually pays and how small it is: $5 million of public capital against a 41 kW average load and a $0.65/kWh fuel bill. A microreactor sized at 1 MW would be 20x oversized for this village, so the reachable price signal is not the village itself but the fact that grant-makers will fund roughly $5,000 per installed kW of non-diesel capacity to displace $0.65/kWh diesel - a capex benchmark a reactor must land near, since the alternative here is already funded.",
+   "sources": [
+    {
+     "label": "US DOE Office of Clean Energy Demonstrations - Award Wednesdays, August 14, 2024",
+     "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
+     "quote": "an anticipated 70% of the local power",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska - Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+     "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "carb-at-berth-shore-power-capex",
+   "sector": "Marine terminals",
+   "name": "CARB At-Berth Regulation - published shore power capex per berth and per-vessel electrical load",
+   "country": "US",
+   "region": "California ports (statewide)",
+   "parties": {
+    "host": "California container, reefer, cruise, ro-ro and tanker terminals",
+    "provider": "Terminal and vessel operators (compliance spend)",
+    "utility": "California Air Resources Board (rule-maker); California Department of Finance (SRIA publisher)"
+   },
+   "instrument": "utility tariff",
+   "signed": "2019-08",
+   "capacity": "A container vessel at berth draws about 1 MW; a large cruise vessel 5 MW or more. Berth-level shore power connections are therefore roughly 1-5 MW each, intermittent and call-driven.",
+   "capex": "Container/reefer berth shore power retrofit capital cost of $7,010,813 per berth (June 2018 vessel operator surveys). Capture-and-control alternatives were costed at $6,518,000 per system, $7,000,000 per berth for structural work, $4,500,000 per berth for piping, $7,000,000 per crane and $10,000,000 per crane support structure per berth, plus $1,000,000 per berth per year of operating labour.",
+   "displaced": "Auxiliary diesel engine operation at berth; CARB's earlier at-berth rule already imposed an 80% reduction requirement",
+   "filings": [
+    {
+     "forum": "State agency rulemaking record",
+     "type": "Standardized Regulatory Impact Assessment, Proposed Control Measure for Ocean-Going Vessels At Berth",
+     "id": "SRIA (California Department of Finance major regulations table)",
+     "date": "2019-08-01",
+     "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf"
+    }
+   ],
+   "summary": "California's Standardized Regulatory Impact Assessment for the At-Berth Regulation is the rare document that puts a defensible dollar figure on port electrification. It records a container/reefer berth shore power retrofit capital cost of $7,010,813 per berth, taken from CARB's June 2018 vessel operator surveys, and uses it as the basis for maintenance cost assumptions. It also states the load: about 1 MW for a container vessel and 5 MW or more for a large cruise vessel while hotelling. Where shore power was rejected in favour of shore-side capture and control, the assessment carries even larger per-berth numbers, including $7 million per berth of structural work, $4.5 million of piping and $10 million per crane support structure.",
+   "microreactor_read": "This sets the terminal-side willingness to pay: a port already accepts roughly $7 million of capital per berth to electrify a 1-5 MW, highly intermittent hotelling load. A 1-20 MW reactor at a marine terminal is competing not against grid energy price but against that $7 million per berth of connection capex plus whatever the utility charges for the demand spike - and its problem is duty cycle, because a berth's shore power draw only exists while a ship is alongside.",
+   "sources": [
+    {
+     "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (per-berth capex)",
+     "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+     "quote": "berth shore power retrofit capital costs of $7,010,813 per berth as indicated by the June 2018 vessel operator surveys",
+     "status": "fetched"
+    },
+    {
+     "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (per-vessel electrical load)",
+     "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+     "quote": "a container vessel may draw 1 megawatt (MW) of electricity to replace its auxiliary engine operation at berth",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "eielson-afb-oklo-microreactor-noita",
+   "sector": "Remote outposts & microgrids",
+   "name": "Eielson Air Force Base microreactor pilot - Notice of Intent to Award to Oklo",
+   "country": "US",
+   "region": "Eielson AFB, Alaska",
+   "parties": {
+    "host": "Department of the Air Force / 354th Fighter Wing",
+    "provider": "Oklo Inc. (Aurora powerhouse)",
+    "utility": "Defense Logistics Agency Energy (contracting agency)"
+   },
+   "instrument": "PPA",
+   "signed": "2025-06",
+   "term_years": 30,
+   "capacity": "Up to 5 MWe plus steam heat, alongside an existing coal-fired plant with a maximum capacity of 23 MW",
+   "price": "Not disclosed. Reporting states the Air Force will settle the price of the contract and the rate it pays for power during negotiations.",
+   "displaced": "Supplements Eielson's existing coal-fired power plant (23 MW max capacity) and the base's winter heating fuel burn",
+   "filings": [],
+   "summary": "On 11 June 2025 the Defense Logistics Agency Energy, acting for the Department of the Air Force, issued a Notice of Intent to Award to Oklo for the DoD's first commercial microreactor. The structure is a build-own-operate arrangement: Oklo would design, construct, own and operate the plant and sell electricity and steam to the base under a long-term, firm-fixed-price power purchase agreement reported at 30 years. Capacity is up to 5 MWe, sitting alongside Eielson's existing 23 MW coal-fired plant. No price has been published; the rate for power is explicitly left to contract negotiation, and the award is contingent on Oklo obtaining an NRC licence.",
+   "microreactor_read": "This is the cleanest template for selling a 1-20 MW reactor into a remote outpost: the host buys energy, not a reactor, on a 30-year firm-fixed-price PPA from a private owner-operator, contracted by a central buying agency (DLA Energy) rather than the base. The commercially important gap is that no price is published, so the deal proves the instrument exists but sets no benchmark - and the reactor is sized at 5 MW against a 23 MW incumbent, i.e. it is a supplement, not a replacement.",
+   "sources": [
+    {
+     "label": "Oklo Inc. - Oklo Selected as Intended Awardee to Provide Clean, Reliable Power to Eielson Air Force Base in Alaska",
+     "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+     "quote": "Oklo would design, construct, own, and operate the power plant, delivering both electricity and heat",
+     "status": "fetched"
+    },
+    {
+     "label": "Air & Space Forces Magazine - Air Force Moves Ahead with Military's First Microreactor",
+     "url": "https://www.airandspaceforces.com/air-force-microreactor-eielson-alaska/",
+     "quote": "existing coal-fired power plant, which has a max capacity of 23 megawatts",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER Magazine - Oklo Retapped for Alaska Air Force Microreactor",
+     "url": "https://www.powermag.com/oklo-retapped-for-alaska-air-force-microreactor-proposes-nuclear-fleet-wide-licensing-framework/",
+     "quote": "deliver both electricity and heat under a 30-year, firm-fixed-price PPA",
+     "status": "fetched"
+    }
+   ],
+   "nuclear": true
+  },
+  {
+   "id": "project-pele-bwxt-2022",
+   "sector": "Remote outposts & microgrids",
+   "name": "Project Pele - DoD Strategic Capabilities Office transportable microreactor prototype",
+   "country": "US",
+   "region": "Idaho National Laboratory, Idaho (test site); built in Lynchburg VA and Euclid OH",
+   "parties": {
+    "host": "US DoD Strategic Capabilities Office",
+    "provider": "BWXT Advanced Technologies LLC"
+   },
+   "instrument": "design-build",
+   "signed": "2022-06",
+   "capacity": "High-temperature gas-cooled transportable microreactor shipped in 20-foot ISO CONEX containers. BWXT's own 2025 statement calls it a 1.5-megawatt demonstration microreactor; the 2022 award was reported as a 1 MWe to 5 MWe design.",
+   "capex": "Cost-type contract of approximately $300 million, depending on options selected",
+   "displaced": "Diesel fuel convoys to forward and remote military sites; the reactor is designed to run up to three years without refuelling",
+   "filings": [],
+   "summary": "In June 2022 the DoD's Strategic Capabilities Office selected BWXT Advanced Technologies to build the Project Pele transportable microreactor prototype under a cost-type contract worth approximately $300 million depending on options. The unit is a high-temperature gas-cooled reactor rated 1 to 5 MWe, packaged into 20-foot ISO-compliant CONEX containers, designed to reach operation within 72 hours of on-site assembly and to be removed in under seven days. Core fabrication began in 2025 and the unit is expected to produce electricity at Idaho National Laboratory in 2028, roughly four years later than the original 2024 delivery target.",
+   "microreactor_read": "Pele prices the first-of-a-kind transportable microreactor at roughly $300 million for 1-5 MWe, i.e. $60-300 million per MW - one to two orders of magnitude above anything a remote community pays. It is a capability purchase, not an energy purchase, and it is the number a commercial microreactor pitch has to explicitly distance itself from: Pele proves transportability and the DoD's willingness to fund it, and simultaneously proves that prototype economics do not touch even the $1.95/kWh worst-case rural Alaska cost of service.",
+   "sources": [
+    {
+     "label": "POWER Magazine - DOD Picks BWXT Design for Project Pele Prototype Nuclear Microreactor",
+     "url": "https://www.powermag.com/dod-picks-bwxt-to-manufacture-project-pele-prototype-nuclear-microreactor/",
+     "quote": "approximately $300 million, depending on options selected",
+     "status": "fetched"
+    },
+    {
+     "label": "BWXT - Project Pele Begins Taking Shape with Start of Core Manufacturing",
+     "url": "https://www.bwxt.com/project-pele-begins-taking-shape-with-start-of-core-manufacturing/",
+     "quote": "Pele is a 1.5-megawatt demonstration microreactor for the Department of Defense Strategic Capabilities Office.",
+     "status": "fetched"
+    }
+   ],
+   "nuclear": true
+  },
+  {
+   "id": "qulliq-nunavut-interim-rates-2025",
+   "sector": "Remote outposts & microgrids",
+   "name": "Qulliq Energy Corporation - 2025 interim electricity rates, Nunavut",
+   "country": "CA",
+   "region": "Nunavut (territory-wide)",
+   "parties": {
+    "host": "Nunavut ratepayers",
+    "provider": "Qulliq Energy Corporation (territorial Crown utility)",
+    "utility": "Utility Rates Review Council (URRC), Minister responsible"
+   },
+   "instrument": "utility tariff",
+   "signed": "2025-04",
+   "capacity": "Territory-wide diesel-fired generation; the application covers QEC's revenue requirement for fiscal 2025-2026",
+   "price": "Interim rates effective 1 April 2025: residential non-government from $0.6733 to $0.7494 per kWh; residential government from $1.0221 to $1.1300 per kWh; commercial non-government from $0.5554 to $0.6208 per kWh; commercial government from $0.9518 to $1.0533 per kWh. Energy rate increase of 9.5%.",
+   "filings": [
+    {
+     "forum": "Utility Rates Review Council (Nunavut)",
+     "type": "General Rate Application, interim rates authorised",
+     "id": "QEC 2025-2026 GRA",
+     "date": "2024-11-29",
+     "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application"
+    }
+   ],
+   "summary": "Qulliq Energy Corporation filed its General Rate Application on 29 November 2024 and the Utility Rates Review Council authorised interim rates from 1 April 2025, raising the energy rate 9.5 percent. The published tariff is the hardest available Canadian number for remote diesel power: residential non-government energy goes to $0.7494/kWh and the government class to $1.1300/kWh, with commercial classes at $0.6208 and $1.0533/kWh. These are regulated retail energy rates for a territory whose generation is diesel throughout, and they are set by a rate-setting body rather than estimated by a study.",
+   "microreactor_read": "Nunavut publishes the number a reactor developer needs: a regulated retail energy rate of $0.62 to $1.13 per kWh depending on class, on a territory-wide diesel fleet. Even at a 20-year levelised cost of $250-350/MWh, a 1-20 MW reactor undercuts every one of those classes by a factor of two or more - the binding constraints in Nunavut are community size, marine sealift logistics and the absence of a Canadian microreactor licence, not price.",
+   "sources": [
+    {
+     "label": "Qulliq Energy Corporation - Interim Electricity Rates effective April 1, 2025 (General Rate Application)",
+     "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application",
+     "quote": "$0.6733 to $0.7494 per kWh",
+     "status": "fetched"
+    },
+    {
+     "label": "Qulliq Energy Corporation - QEC's General Rate Application",
+     "url": "https://www.qec.nu.ca/qecs-general-rate-application",
+     "quote": "seeks rate increases to meet QEC",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "epa-clean-ports-2024-selections",
+   "sector": "Marine terminals",
+   "name": "EPA Clean Ports Program - 2024 selections (nearly $3 billion)",
+   "country": "US",
+   "region": "27 states and territories",
+   "parties": {
+    "host": "US port authorities and terminal operators",
+    "provider": "US EPA (Inflation Reduction Act funding)"
+   },
+   "instrument": "grant-funded",
+   "signed": "2024-10",
+   "capacity": "Over 1,500 units of cargo handling equipment, 1,000 drayage trucks, 10 locomotives, 20 vessels, plus shore power systems, charging infrastructure and solar generation",
+   "capex": "Nearly $3 billion across 55 selectees. Named awards include Port Authority of New York and New Jersey $344,138,135; Port of Oakland $322,167,584; Port of Philadelphia $77,650,965; Georgia Ports Authority $48,763,746; Detroit/Wayne County Port Authority $21,905,782.",
+   "displaced": "Projected over 3 million metric tons of CO2, 12,000 short tons of NOx and 200 short tons of PM2.5 over ten years",
+   "filings": [],
+   "summary": "EPA selected 55 applicants across 27 states and territories for nearly $3 billion of Inflation Reduction Act money under the Clean Ports Program, with the largest single awards going to the Port Authority of New York and New Jersey ($344.1 million) and the Port of Oakland ($322.2 million). The money buys load, not supply: over 1,500 pieces of cargo handling equipment, 1,000 drayage trucks, 10 locomotives, 20 vessels, shore power systems and charging infrastructure. Solar generation appears in the list but at nothing like the scale of the electrical demand being created. This is the single largest federal commitment to electrifying US marine terminals and it leaves the generation and interconnection problem to the ports and their utilities.",
+   "microreactor_read": "Nearly $3 billion of federal money is converting US marine terminals from diesel-fuelled to electricity-fuelled, and almost none of it builds generation - which is precisely the gap a 1-20 MW on-site reactor would fill. The commercial read: the load is now funded and arriving on a fixed schedule, so the reactor's competitor at a big container port is the utility's interconnection queue and demand charges, not diesel. Sizing follows from the equipment counts, not from the berth: a terminal converting hundreds of yard tractors and RTG cranes lands in exactly the 5-20 MW band.",
+   "sources": [
+    {
+     "label": "US EPA - Selections for Nearly $3 Billion of Investments in Clean Ports",
+     "url": "https://www.epa.gov/newsreleases/biden-harris-administration-announces-selections-nearly-3-billion-investments-clean",
+     "quote": "55 applicants across 27 states and territories",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "port-of-long-beach-microgrid-2022",
+   "sector": "Marine terminals",
+   "name": "Port of Long Beach microgrid - Joint Command and Control Center",
+   "country": "US",
+   "region": "Long Beach, California",
+   "parties": {
+    "host": "Port of Long Beach",
+    "provider": "Schneider Electric",
+    "utility": "California Energy Commission (grant funder)"
+   },
+   "instrument": "design-build",
+   "signed": "2018",
+   "capacity": "300 kW solar PV array plus a 250 kW stationary battery energy storage system, producing about 520 MWh annually",
+   "capex": "$12.2 million total project cost, part-funded by a California Energy Commission grant",
+   "price": "Projected to reduce the port's electric costs by more than $60,000 a year",
+   "displaced": "Diesel backup generators serving the port's Joint Command and Control Center",
+   "filings": [],
+   "summary": "The Port of Long Beach contracted Schneider Electric to design and build a microgrid for its Joint Command and Control Center: a 300 kW solar array and a 250 kW battery, generating roughly 520 MWh a year, at a total project cost of $12.2 million and expected online in late 2022. The stated energy benefit is a saving of more than $60,000 a year. That is roughly $22,000 per installed kW and a simple payback on energy alone of about two centuries - the port is buying resilience for its emergency operations centre, not cheap electricity.",
+   "microreactor_read": "This is the clearest evidence that a port's resilience budget is priced completely differently from its energy budget: Long Beach paid $12.2 million for 550 kW of nameplate and 520 MWh a year. A 1-20 MW reactor selling resilience rather than energy at a marine terminal is competing against roughly $22,000/kW of accepted resilience capex - a bar most microreactor cost estimates clear - but the addressable slice is the critical-facility load, not the whole terminal.",
+   "sources": [
+    {
+     "label": "Microgrid Knowledge - Port of Long Beach, Schneider Electric start construction on $12.2 million microgrid project",
+     "url": "https://www.microgridknowledge.com/google-news-feed/article/11427396/port-of-long-beach-schneider-electric-start-construction-on-122-million-microgrid-project",
+     "quote": "electric costs by more than $60,000 a year",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "port-of-seattle-cruise-shore-power",
+   "sector": "Marine terminals",
+   "name": "Port of Seattle - shore power at all three cruise berths",
+   "country": "US",
+   "region": "Seattle, Washington",
+   "parties": {
+    "host": "Port of Seattle",
+    "provider": "Port of Seattle capital programme (Pier 66 system purchased from a proprietary supplier)",
+    "utility": "Seattle City Light"
+   },
+   "instrument": "design-build",
+   "signed": "2021-12",
+   "capacity": "Three cruise berths equipped with shore power. CARB's regulatory assessment puts a large cruise vessel's hotelling draw at 5 MW or more, so the three berths represent roughly 15 MW of intermittent connected load.",
+   "capex": "$44 million investment across the three cruise berths, i.e. roughly $14.7 million per berth. The Port of Seattle Commission separately authorised $7.6 million for the Pier 66 installation on 14 December 2021.",
+   "displaced": "Auxiliary diesel engine hotelling emissions from cruise vessels at berth",
+   "filings": [
+    {
+     "forum": "Port of Seattle Commission",
+     "type": "Commission authorisation to purchase and install shore power at Pier 66",
+     "id": "Commission action, 14 December 2021",
+     "date": "2021-12-14",
+     "url": "https://www.portseattle.org/blog/past-present-and-future-shore-power"
+    }
+   ],
+   "summary": "The Port of Seattle finished equipping all three of its cruise berths with shore power at a stated cost of $44 million, with the Pier 66 element authorised by the Port Commission on 14 December 2021 at $7.6 million and delivered in partnership with Seattle City Light. The Northwest Seaport Alliance separately installed shore power at both Terminal 5 container berths as part of that terminal's modernisation, part-funded by a Washington State appropriation. At roughly $14.7 million per cruise berth this is more than double CARB's $7.0 million per berth container figure, which is what you would expect given a large cruise vessel draws 5 MW or more against a container vessel's 1 MW.",
+   "microreactor_read": "Seattle prices the cruise-terminal case at about $14.7 million per berth for a 5 MW-plus connection that is used only while a ship is alongside during a summer season. A 1-20 MW reactor at a cruise terminal would be nearly perfectly sized to the three-berth load but catastrophically mismatched on duty cycle; the sellable proposition is a reactor serving a year-round base load with the cruise berths as a seasonal add, not a reactor dedicated to shore power.",
+   "sources": [
+    {
+     "label": "Port of Seattle - The Past, Present, and Future of Shore Power",
+     "url": "https://www.portseattle.org/blog/past-present-and-future-shore-power",
+     "quote": "Thanks to a $44 million investment, all three of the",
+     "status": "fetched"
+    },
+    {
+     "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (cruise vessel load)",
+     "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+     "quote": "while a large cruise vessel may draw 5 MW or more",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "marad-pidp-fy2024-awards",
+   "sector": "Marine terminals",
+   "name": "MARAD Port Infrastructure Development Program - FY2024 awards",
+   "country": "US",
+   "region": "15 states and one territory",
+   "parties": {
+    "host": "US port authorities",
+    "provider": "US DOT Maritime Administration (Bipartisan Infrastructure Law funding)"
+   },
+   "instrument": "grant-funded",
+   "signed": "2024-11",
+   "capex": "Almost $580 million funding 31 projects. Named awards include Port Everglades (Broward County, FL) $53,357,402 for electric terminal tractors, forklifts and hybrid equipment with electrical system upgrades and charging civil works; Port of San Juan (Puerto Rico) $53,526,756 for Puerto Nuevo Wharves reconstruction; Anchorage approximately $50 million; Garden City, Georgia approximately $49.9 million; Oakland approximately $49.5 million.",
+   "displaced": "Diesel terminal tractors, forklifts and cargo handling equipment at the electrification-focused awardees",
+   "filings": [],
+   "summary": "MARAD announced almost $580 million of Port Infrastructure Development Program awards for 31 projects across 15 states and one territory, timed to the third anniversary of the Bipartisan Infrastructure Law. The largest awards were $53.5 million to the Port of San Juan for wharf reconstruction and $53.4 million to Port Everglades for a package that is explicitly electrification: electric terminal tractors and forklifts, hybrid equipment, and the electrical system upgrades and civil works needed for charging stations. Anchorage, Garden City (Georgia) and Oakland each took roughly $50 million. As with the EPA programme, no award in the list builds generation.",
+   "microreactor_read": "PIDP is the second federal pipeline turning marine terminals into large electrical loads, and its awards are sized at $50 million per port - the same order as a small reactor project. The salient detail for a microreactor pitch is that Port Everglades' award pays for the substation and charging civil works but not for the electrons, so the port ends up with a new multi-megawatt demand and an unchanged supply arrangement with its utility.",
+   "sources": [
+    {
+     "label": "Maritime Professional - Ports Awarded $580 Million in MARAD Grants",
+     "url": "https://www.maritimeprofessional.com/news/ports-awarded-million-marad-grants-399260",
+     "quote": "almost $580 million in Port Infrastructure Development Program awards, funding 31 projects in 15 states and one territory",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "akademik-lomonosov-delivered-cost",
+   "sector": "Marine terminals",
+   "name": "Akademik Lomonosov - delivered cost of the first floating nuclear plant",
+   "country": "RU",
+   "region": "Pevek, Chukotka",
+   "parties": {
+    "host": "Chaun-Bilibino network, Pevek",
+    "provider": "Rosatom (barge built at Baltic Shipyard, St Petersburg)"
+   },
+   "signed": "2019-12",
+   "capacity": "Two 35 MW KLT-40S reactors (70 MW total) on a 144-metre barge, with a stated 40-year lifetime",
+   "capex": "Reported at 37 billion rubles, converted as $700 million by POWER Magazine and as US$740 million by the World Nuclear Industry Status Report; more than 300% above the original estimate (nine billion rubles / $170 million per POWER, six billion rubles / US$232 million per WNISR)",
+   "displaced": "The retiring Bilibino nuclear plant and Chaun coal generation in the Russian Arctic",
+   "filings": [],
+   "summary": "The Akademik Lomonosov is the only floating nuclear plant in commercial operation and the only one with a published delivered cost. Two 35 MW KLT-40S reactors sit on a 144-metre barge; the plant was connected to the Chaun-Bilibino network at Pevek in December 2019. Reported cost reached 37 billion rubles, about $700 million, against an original 2006 estimate of nine billion rubles ($170 million) - an overrun of more than 300 percent. At $700 million for 70 MW that is roughly $10,000 per kW installed, for a first-of-a-kind unit built over thirteen years.",
+   "microreactor_read": "The only real-world floating nuclear price is about $10,000/kW for a 70 MW twin-reactor barge - which, strikingly, is cheaper per kW than the Port of Long Beach paid for 550 kW of solar-plus-battery microgrid. For a marine terminal the read is that hull-mounted, shipyard-built nuclear has a demonstrated cost point an order of magnitude below one-off port resilience projects, but it took thirteen years and a 300 percent overrun to get there, and nothing in the Western regulatory system currently permits a moored reactor at a commercial berth.",
+   "sources": [
+    {
+     "label": "POWER Magazine - Russia Sees Floating Nuclear Power Plant Costs Balloon",
+     "url": "https://www.powermag.com/russia-sees-floating-power-plant-costs-balloon/",
+     "quote": "mushroomed to 37 billion rubles ($700 million), an increase of more than 300% from the original 2006 estimate",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear Industry Status Report - Russia Connects World's First Floating Mini Nuclear Power Plant to Grid (27 December 2019)",
+     "url": "https://www.worldnuclearreport.org/Russia-Connects-World-s-First-Floating-Mini-Nuclear-Power-Plant-to-Grid",
+     "quote": "70 MW Akademik Lomonosov floating nuclear power plant",
+     "status": "fetched"
+    }
+   ],
+   "nuclear": true
+  }
+ ]
+}

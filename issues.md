@@ -135,3 +135,46 @@ vs test bug), status.
   betterbuildingssolutioncenter.energy.gov hostname overflowed the Evidence register. Root
   cause: **code bug** (nowrap on unbounded strings). Both stack/wrap on ≤640px now; the e2e
   layout gate (tests/test_layout_e2e.py) caught both and guards the class.
+
+## 2026-08-25 — deep research pass, quote gate and copy sweep
+
+- **2026-08-25 · site · Every styled `<details>` kept its full height when closed — Fixed.**
+  No closed-state rule existed anywhere in `site.css`; the UA rule alone does not survive an
+  author-styled disclosure. Invisible until the Policy tab gained 25 instrument rows and
+  reserved a screen-height of blank space. Root cause: **code bug**. Measured 917px closed
+  before, 0px after. `details.sector` had the same latent bug and is fixed in the same rule.
+- **2026-08-25 · site · Cost chart overflowed the page at every width — Fixed.**
+  The axis ceiling was a literal `var MAX = 850`, so correcting rural Alaska to $1,950/MWh
+  rendered a 1,945px bar inside a 1,280px page. Root cause: **code bug** (hand-typed constant
+  mirroring the data). `MAX` now derives from the bands. Caught by `tests/test_layout_e2e.py`,
+  not by the manual browser pass, which had only checked the sub-tab it just added.
+- **2026-08-25 · tooling · Four stale hand-typed mirrors of `build_data.FILES` — Fixed.**
+  `test_build.py`, `verify_quotes.py` and `check_register.py` each re-typed the data-file list,
+  and all three were stale: the quote gate and the AI-register lint had never once examined
+  `benchmarks.json` or `instruments.json`. Root cause: **test/tool bug**. All three now derive
+  from the builder's registry. Deriving `check_register`'s list immediately caught two headings
+  written the same session in the colon-setup shape the site swept on 2026-08-23.
+- **2026-08-25 · data · 18 shipped quotes did not appear in their cited source — Fixed.**
+  Exposed only after caching 145 sources, which took the quote gate from 33 checks to 272.
+  Root cause: **data bug** (agents return near-verbatim quotes: an em-dash normalised, a
+  separator dropped, two JSON fields joined by an ellipsis). 26 narrowed to a genuinely verbatim
+  span by the new `tools/repair_quotes.py`; 4 hosts serve a JS shell and are now `snippet-only`
+  with a note; one quote was simply not on its page and was replaced.
+- **2026-08-25 · tooling · Quote gate reported honest disclosures as failures — Fixed.**
+  `verify_quotes.py --cache` flagged `snippet-only` sources as `QUOTE MISMATCH`, though such a
+  row declares the page was never fetched and cannot match cached bytes. Root cause: **tool bug**
+  (missing third verdict). Now reports `snippet-only` separately and fails only on real
+  mismatches.
+- **2026-08-25 · site · Three inline citations in `app.js` were not in the source register — Fixed.**
+  They rendered `[?]` to the reader. One was orphaned the same session by re-sourcing the CMS
+  policy row to the primary memo, removing the only row citing the old URL; the other two had
+  never been registered. Root cause: **code bug plus a gate gap** — `index.html` citations were
+  tested, `app.js` citations were not. New `test_app_js_hardcoded_citations_resolve` closes it.
+- **2026-08-25 · tooling · Impossible-citation lint first false-positived, then went silent — Fixed.**
+  `(19|20)\d{2}` matched inside contract number `N69450-16-C-1901`; requiring non-digit boundaries
+  then stopped it matching ISO dates like `2025-06`, so it caught nothing and passed everything.
+  Root cause: **tool bug**. Structured date fields and prose labels now use separate patterns, and
+  both directions are fixture-tested.
+- **2026-08-25 · docs · An earlier claim in-session that the Vendors `[?]` was a bug — Not a bug.**
+  It is the placeholder `app.js` fills from the register, which is why the browser check reported
+  zero unresolved chips. Recorded so the next reader does not "fix" it.

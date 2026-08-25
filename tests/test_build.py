@@ -99,6 +99,18 @@ class BundleConsistency(unittest.TestCase):
         self.assertEqual(found - set(nums), set(),
                          "cited URLs with no register number would render as [?]")
 
+    def test_app_js_hardcoded_citations_resolve(self):
+        """app.js carries a few sources inline rather than in a data file. Nothing
+        walked them, so three dangled unnoticed — one of them orphaned by an edit
+        to policy.json that removed the only row citing that URL."""
+        js = (ROOT / "site" / "assets" / "app.js").read_text()
+        urls = re.findall(r'url:\s*"(https?://[^"]+)"', js)
+        self.assertTrue(urls, "no inline citation found in app.js")
+        unknown = [u for u in urls if u not in self.MR["source_numbers"]]
+        self.assertEqual(unknown, [],
+                         "inline app.js citations missing from the source register "
+                         f"(they render as [?]): {unknown}")
+
     def test_static_html_citations_resolve(self):
         """Citations hand-written into index.html carry a [?] placeholder that
         app.js fills from the same register. The href still has to be a source
@@ -114,11 +126,18 @@ class BundleConsistency(unittest.TestCase):
     def test_built_stamp_is_data_derived(self):
         """The stamp must equal the max _meta.captured across data files —
         never the wall clock — or CI cannot enforce artifact sync."""
+        # Derived from the builder's own registry, never a second hand-typed list:
+        # a literal here goes stale the day a data file is added, and this test
+        # was already two files behind when that happened.
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+
         captured = []
-        for f in ("opportunities", "vendors", "costs", "sectors", "mechanisms", "policy"):
+        for f in build_data.FILES:
             meta = json.loads((ROOT / "data" / f"{f}.json").read_text()).get("_meta", {})
-            if meta.get("captured"):
+            if isinstance(meta.get("captured"), str) and meta["captured"]:
                 captured.append(meta["captured"])
+        self.assertTrue(captured, "no data file carries _meta.captured")
         self.assertEqual(self.MR["summary"]["built"], max(captured))
 
 

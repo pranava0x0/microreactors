@@ -52,6 +52,25 @@
         '">[' + citeNum(s.url) + (snip ? "\u2020" : "") + "]</a>";
     }).join("");
   }
+  /* Filing trails render on both the Sites cards and the Price-to-beat rows.
+     One function, so a fix to either reaches both. */
+  function filingList(filings, heading) {
+    if (!filings || !filings.length) { return ""; }
+    return '<div class="filingtrail"><h4>' + esc(heading || "Regulatory & utility filings") +
+      "</h4>" + filings.map(function (f) {
+        return '<div class="filingrow">' +
+          '<span class="filingforum">' + esc(f.forum) + "</span>" +
+          '<span class="filingdesc">' +
+            (f.url ? '<a href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer">' +
+              esc(f.type) + "</a>" : esc(f.type)) +
+            (f.id ? " &middot; <code>" + esc(f.id) + "</code>" : "") +
+            (f.note ? ' <span class="note">(' + esc(f.note) + ")</span>" : "") +
+          "</span>" +
+          '<span class="filingdate">' + esc(f.date || "") + "</span>" +
+          "</div>";
+      }).join("") + "</div>";
+  }
+
   function srcList(sources, cls) {
     return '<div class="' + (cls || "srcs") + '">' + (sources || []).map(function (x) {
       var snip = x.status === "snippet-only";
@@ -285,21 +304,7 @@
 
     var renderSiteCard = function (s) {
       var stCls = "status-" + slug(s.status);
-      var filingsHTML = "";
-      if (s.filings && s.filings.length) {
-        filingsHTML = '<div class="filingtrail"><h4>Regulatory &amp; Utility Filings</h4>' +
-          s.filings.map(function (f) {
-            return '<div class="filingrow">' +
-              '<span class="filingforum">' + esc(f.forum) + "</span>" +
-              '<span class="filingdesc">' +
-                (f.url ? '<a href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer">' + esc(f.type) + "</a>" : esc(f.type)) +
-                (f.id ? " &middot; <code>" + esc(f.id) + "</code>" : "") +
-                (f.note ? ' <span class="note">(' + esc(f.note) + ")</span>" : "") +
-              "</span>" +
-              '<span class="filingdate">' + esc(f.date || "") + "</span>" +
-              "</div>";
-          }).join("") + "</div>";
-      }
+      var filingsHTML = filingList(s.filings);
       var gapsHTML = "";
       if (s.gaps && s.gaps.length) {
         gapsHTML = '<div class="sitegaps"><strong>Evidence gaps:</strong> ' +
@@ -383,7 +388,14 @@
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt",
                                         srcs: srcsOf(a) });
   });
-  var MAX = 850;
+  // Axis ceiling derived from the bands themselves, rounded up to a clean step.
+  // A hard-coded ceiling silently renders any band above it wider than the
+  // chart: raising rural Alaska to $1,950/MWh against a literal 850 produced a
+  // 1,945px bar inside a 1,280px page.
+  var MAX = (function () {
+    var top = bands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
+    return Math.max(850, Math.ceil(top / 250) * 250);
+  }());
   // Round for display: the underlying study reports cents, but a chart label
   // implying two-decimal precision on a forward-looking cost estimate is false
   // precision. Full values stay in data/costs.json.
@@ -402,7 +414,8 @@
       '%"><span class="t">' + esc(txt) + "</span></div></div>" +
       (b.caveat ? '<div class="caveat">' + esc(b.caveat) + "</div>" : "") + "</div>";
   }).join("") +
-    '<div class="axis"><span>$0</span><span>$' + MAX / 2 + "</span><span>$" + MAX + "/MWh</span></div>");
+    '<div class="axis"><span>$0</span><span>$' + Math.round(MAX / 2) + "</span><span>$" +
+    MAX + "/MWh</span></div>");
 
   render($("altnotes"), D.costs.displaced_alternatives.filter(function (a) {
     return a.low_mwh == null;
@@ -414,7 +427,46 @@
   render($("reading"), esc(D.costs.reading).replace(/\*\*(.+?)\*\*/g, "<strong style=\"color:var(--text-primary)\">$1</strong>"));
 
   makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
-                           { id: "tax-credit", label: "Tax credit" }]);
+                           { id: "tax-credit", label: "Tax credit" },
+                           { id: "price-to-beat", label: "Price to beat" }]);
+
+  /* ---------- price to beat: signed deals, with the number attached ---------- */
+  var B = D.benchmarks;
+  if (B && B.sectors) {
+    render($("benchsummary"),
+      esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power " +
+      "actually costs at places like these, from signed contracts, government awards and rate " +
+      "orders. " + esc(s.benchmarks - s.benchmarks_nuclear) + " are the non-nuclear incumbent a " +
+      "reactor would have to beat; " + esc(s.benchmarks_nuclear) + " are nuclear projects kept " +
+      "for their published cost. " + esc(s.benchmarks_priced) + " give a price or a cost, and " +
+      esc(s.benchmarks_filed) + " include the paperwork.");
+
+    render($("benchmarks"), B.sectors.map(function (sec) {
+      return '<div class="benchsector"><h4>' + esc(sec.sector) +
+        ' <span class="cnt">' + sec.records.length + "</span></h4>" +
+        '<div class="precgrid">' + sec.records.map(function (c) {
+          var facts = [
+            ["Signed", c.signed], ["Term", c.term_years ? c.term_years + " years" : ""],
+            ["Instrument", c.instrument], ["Capacity", c.capacity],
+            ["Price", c.price], ["Capex", c.capex], ["Displaces", c.displaced]
+          ].filter(function (f) { return f[1]; });
+          var head = [c.price, c.capex, c.displaced].filter(Boolean)[0] || c.capacity || "";
+          return '<details class="prec"><summary><span class="nm">' + esc(c.name) +
+            (c.nuclear ? ' <span class="nuctag">nuclear</span>' : "") + "</span>" +
+            '<span class="cat">' + esc(head) + "</span></summary>" +
+            '<div class="body">' +
+            '<div class="sitedetails">' + facts.map(function (f) {
+              return '<div class="drow"><span class="dlbl">' + esc(f[0]) +
+                "</span><span>" + esc(f[1]) + "</span></div>";
+            }).join("") + "</div>" +
+            "<p>" + esc(c.summary) + "</p>" +
+            (c.microreactor_read
+              ? '<p><span class="k">What a reactor would have to beat \u00b7 </span>' + esc(c.microreactor_read) + "</p>"
+              : "") +
+            filingList(c.filings) + srcList(c.sources) + "</div></details>";
+        }).join("") + "</div></div>";
+    }).join(""));
+  }
 
   var inc = D.costs.incentives;
   if (inc) {
@@ -526,8 +578,8 @@
       desc: "Major hospitals and university campuses require simultaneous electricity and process steam for heating, sterilization, and climate control. CMS waiver QSO-23-11-LSC permits microgrids and non-generator sources to satisfy emergency power rules under 42 CFR 482.15.",
       edge: "Delivers continuous power plus 100°C–200°C steam while replacing aging combustion boilers facing tightening air-quality caps.",
       sources: [
-        { label: "CMS — Alternate energy guidance", url: "https://essentialhospitals.org/cms-updates-guidance-alternative-energy-sources/" },
-        { label: "DOE — Better Buildings CHP", url: "https://betterbuildingssolutioncenter.energy.gov/chp/colleges-universities" }
+        { label: "CMS — QSO-23-11-LSC categorical waiver", url: "https://www.cms.gov/files/document/qso-23-11-lsc.pdf" },
+        { label: "DOE Better Buildings — CHP technology fact sheet", url: "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Overview_of_CHP_Technologies.pdf" }
       ]
     },
     {
@@ -537,7 +589,7 @@
       desc: "Port authorities face strict mandates (such as CARB At-Berth rules) requiring berthed container and cruise vessels to shut down auxiliary diesel engines and plug into shore power (cold ironing). Simultaneous vessel berthing creates massive multi-megawatt load spikes.",
       edge: "Provides dedicated port microgrid power without overloading local municipal utility substations.",
       sources: [
-        { label: "CARB — At-Berth regulation", url: "https://ww2.arb.ca.gov/our-work/programs/ocean-going-vessels-berth-regulation" }
+        { label: "CARB / CA Dept of Finance — At-Berth regulation impact assessment", url: "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf" }
       ]
     },
     {
@@ -561,6 +613,57 @@
       "</div>";
   }).join("") + "</div>";
 
+  /* Every microreactor-specific note on the site, gathered in one place. Each
+     record on the Policy and Costs tabs ends with what a 1-20 MW unit changes
+     that a large reactor does not; read together they are the argument for the
+     size, which is otherwise scattered across two tabs and nine sub-tabs. */
+  var edgeGroups = [];
+  var policyName = {}, policySlug = {};
+  ((D.policy && D.policy.groups) || []).forEach(function (g) {
+    policyName[g.id] = g.name;
+    policySlug[g.id] = slug(g.name);
+  });
+  ((D.instruments && D.instruments.groups) || []).forEach(function (g) {
+    var rows = g.records.filter(function (r) { return r.microreactor_edge; });
+    if (!rows.length) { return; }
+    edgeGroups.push({
+      label: policyName[g.group] || g.group,
+      href: "#policy/" + (policySlug[g.group] || slug(g.group)),
+      linkText: "the rules behind these",
+      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_edge }; })
+    });
+  });
+  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (sec) {
+    var rows = sec.records.filter(function (r) { return r.microreactor_read; });
+    if (!rows.length) { return; }
+    edgeGroups.push({
+      label: sec.sector,
+      href: "#economics/price-to-beat",
+      linkText: "the deals behind these",
+      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_read }; })
+    });
+  });
+  var edgeCount = edgeGroups.reduce(function (n, g) { return n + g.rows.length; }, 0);
+
+  var edgeHTML = !edgeCount ? "" :
+    '<div class="edgeband"><div class="subhead"><h3>Why a small reactor, case by case</h3></div>' +
+    '<p class="prose">' + edgeCount + " notes from across the site, each on what a 1\u201320 MW " +
+    "unit changes that a bigger one does not. They sit on the Policy and Costs tabs one at a " +
+    "time; together they are the case for the size.</p>" +
+    '<div class="precgrid">' + edgeGroups.map(function (g) {
+      // One disclosure per group, closed like the sector accordions on this same
+      // tab. Open, all nine run to about 47,000px at 375px wide — the length that
+      // forced the sub-tab split in the first place.
+      return '<details class="prec"><summary><span class="nm">' + esc(g.label) + "</span>" +
+        '<span class="cat">' + g.rows.length + " notes</span></summary>" +
+        '<div class="body"><p class="egolink"><a href="' + esc(g.href) + '">' +
+        esc(g.linkText) + "</a></p>" +
+        g.rows.map(function (r) {
+          return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
+            "<p>" + esc(r.note) + "</p></div>";
+        }).join("") + "</div></details>";
+    }).join("") + "</div></div>";
+
   var secItems = [
     { id: "top", label: "Top options" },
     { id: "all", label: "All sectors" }
@@ -572,7 +675,7 @@
 
   render($("sectors"),
     '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
-      topGridHTML + "</div>" +
+      topGridHTML + edgeHTML + "</div>" +
     '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
     D.sectors.sectors.map(function (sec) {
       return '<details class="sector"><summary>' +
@@ -625,9 +728,9 @@
     var mgroups = M.precedent_groups || [];
     render($("precedents"), mgroups.map(function (g) {
       return '<div class="precgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
-        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every mechanism ' +
-        "here ran in the real world. Each row records how it worked, what happened, and " +
-        "whether early or late buyers got the better deal.</p>" +
+        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every one of these ' +
+        "really happened. Each row covers how it worked and who came out ahead, the buyers " +
+        "who moved early or the ones who waited.</p>" +
         '<div class="precgrid">' +
         g.items.map(function (p) {
           return '<details class="prec"><summary><span class="nm">' + esc(p.name) + "</span>" +
@@ -647,6 +750,60 @@
   /* ---------- policy pathways ---------- */
   var P = D.policy;
   if (P) {
+    /* Instruments, keyed by the policy group they belong to. The Policy tab answers
+       two questions per group: what the rule says (the pathway cards above) and how a
+       deal actually gets signed under it (these). */
+    var INST = {};
+    ((D.instruments && D.instruments.groups) || []).forEach(function (g) {
+      INST[g.group] = g.records;
+    });
+
+    var instrumentBand = function (groupId) {
+      var recs = INST[groupId];
+      if (!recs || !recs.length) { return ""; }
+      return '<div class="instband"><div class="subhead"><h3>How the deal gets signed</h3></div>' +
+        '<p class="prose">' + recs.length + " ways a deal like this gets done. Each one shows " +
+        "who signs, who has already done it without a reactor, and what changes once a " +
+        "reactor is involved.</p>" +
+        '<div class="precgrid">' + recs.map(function (m) {
+          var facts = [
+            ["Who signs", m.who_signs], ["Asset owner", m.asset_owner],
+            ["Term", m.term], ["How it is priced", m.price_form]
+          ].filter(function (f) { return f[1]; });
+          return '<details class="prec"><summary><span class="nm">' + esc(m.name) + "</span>" +
+            '<span class="cat">' + esc((m.family || "").replace(/-/g, " ")) + "</span></summary>" +
+            '<div class="body">' +
+            '<div class="sitedetails">' + facts.map(function (f) {
+              return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" +
+                esc(f[1]) + "</span></div>";
+            }).join("") + "</div>" +
+            "<p>" + esc(m.what_it_is) + "</p>" +
+            ((m.precedents || []).length
+              ? '<div class="beat"><span class="k">Who is already doing this</span>' +
+                m.precedents.map(function (pr) {
+                  return "<p>" + '<strong>' + esc(pr.name) +
+                    (pr.year ? " (" + esc(pr.year) + ")" : "") + "</strong>" +
+                    (pr.parties ? " \u2014 " + esc(pr.parties) : "") +
+                    (pr.size ? " \u00b7 " + esc(pr.size) : "") +
+                    (pr.price ? " \u00b7 " + esc(pr.price) : "") +
+                    (pr.note ? " " + esc(pr.note) : "") + "</p>";
+                }).join("") + "</div>"
+              : "") +
+            '<div class="beat"><span class="k">What changes with a reactor</span><p>' +
+              esc(m.nuclear_fit) + "</p></div>" +
+            (m.microreactor_edge
+              ? '<div class="beat edge"><span class="k">What is different about a small one</span>' +
+                "<p>" + esc(m.microreactor_edge) + "</p></div>"
+              : "") +
+            ((m.blockers || []).length
+              ? '<div class="beat"><span class="k">Blockers</span><ul class="blockers">' +
+                m.blockers.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") +
+                "</ul></div>"
+              : "") +
+            srcList(m.sources) + "</div></details>";
+        }).join("") + "</div></div>";
+    };
+
     render($("pathways"), P.groups.map(function (g) {
       return '<div class="policygroup" data-sub="' + esc(slug(g.name)) + '" id="policy-' +
         esc(slug(g.name)) + '" role="tabpanel" tabindex="0">' +
@@ -658,7 +815,7 @@
           return '<div class="pw"><div class="top"><span class="nm">' + esc(pw.name) + "</span>" +
             '<span class="st">' + esc(pw.status) + "</span>" + tag + "</div>" +
             "<p>" + esc(pw.mechanism) + " " + srcs + "</p></div>";
-        }).join("") + "</div></div>";
+        }).join("") + "</div>" + instrumentBand(g.id) + "</div>";
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
@@ -668,11 +825,10 @@
   /* ---------- evidence: source register ---------- */
   var reg = D.sources_index || [];
   render($("evsummary"),
-    esc(s.source_count) + " sources, numbered once each. A chip like [12] anywhere on the site " +
-    "points at number 12 below. Sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
-    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) + " facility load profiles. " +
-    "A † means the host refused a direct fetch and the page is corroborated through search " +
-    "results instead.");
+    esc(s.source_count) + " sources. Each gets one number, used everywhere on the site, so [12] " +
+    "always means the same thing. They back " + esc(s.cited_rows) + " of " + esc(s.opportunities) +
+    " tracker rows and " + esc(s.cited_loads) + " of " + esc(s.load_types) + " load profiles. " +
+    "A † means we could not open the page directly and checked it through search instead.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
     return '<div class="rrow" id="src-' + r.n + '"><span class="rn">' + r.n + "</span>" +
@@ -700,7 +856,8 @@
 
   makeSubnav("sources", [{ id: "register", label: "Source register" },
                          { id: "coverage", label: "Field coverage" },
-                         { id: "gaps", label: "What is missing" }]);
+                         { id: "gaps", label: "What is missing" },
+                         { id: "about", label: "About" }]);
 
   /* boot: land on the panel the hash names, or the first. scroll:true beats
      the browser's native jump-to-anchor, which otherwise strands a deep link

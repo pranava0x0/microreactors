@@ -38,7 +38,13 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
-FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "gaps"]
+# Derived from the builder's registry rather than re-typed. Four hand-written
+# mirrors of this same list were found stale on 2026-08-25; a lint that silently
+# skips a data file is worse than no lint.
+sys.path.insert(0, str(ROOT / "tools"))
+import build_data as _bd
+
+FILES = list(_bd.FILES)
 
 HEAD_MAX = 80
 

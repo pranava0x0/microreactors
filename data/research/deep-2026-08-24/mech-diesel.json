@@ -1,0 +1,602 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "mech-diesel",
+  "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
+  "angles_run": [
+   "Behind-the-meter resiliency-as-a-service / ESA / EaaS / BOO contracts sold for RESILIENCE rather than cheap energy",
+   "Utility tariffs and utility-owned, rate-based on-site generation and microgrids",
+   "Rules that make diesel expensive, hour-capped or permit-blocked (RICE NESHAP, state BACT, air districts)",
+   "Rules that ALLOW a non-diesel asset to legally COUNT as the emergency power supply (NFPA 110/111/99/855, CMS categorical waiver)",
+   "Public procurement vehicles (ESPC, UESC, utility privatization, DLA Energy, GSA)",
+   "Programme money that pays for the swap (Texas Backup Power Package, California SGIP, EPA DERA)",
+   "Insurance / Uptime Institute / rating-agency requirements that force the diesel fleet to exist"
+  ],
+  "absences": [
+   "No published price for ANY resiliency-as-a-service contract. Enchanted Rock, PowerSecure and Scale Microgrid Solutions all disclose the STRUCTURE (set-up fee + monthly subscription) and never the number. The Microsoft San Jose contract value is not public. Every $/kWh and $/kW-month in this file therefore comes from tariffs, grants or leases, not from a commercial resilience deal.",
+   "Could not fetch any primary PUCT document for the Texas Backup Power Package Program. Both ftp.puc.texas.gov and interchange.puc.texas.gov failed TLS certificate verification in this environment, so Project No. 59024, the $500/kW grant, the 2.5 MW cap, the 48-hour rule and the four-technology definition are all sourced to a secondary (Texas Solar Energy Society) page. The rule text itself is unread.",
+   "Could not find a single AHJ document accepting a non-rotating energy converter as the NFPA 110 Level 1 Type 10 emergency power supply for a DATA CENTRE. The only certified real-world example located anywhere was a hospital battery (California HCAI certifying Kaiser Permanente Ontario's battery as primary backup, April 2025). Trade blogs describe hybrid battery+diesel Type 10 architectures as an emerging 2025 practice but name no facility, no AHJ and no date.",
+   "No insurance carrier document and no rating-agency document requiring a diesel standby fleet was found. Angle 7 produced exactly one real artefact: Uptime Institute's engine-generator rating rule. Whether insurers independently mandate diesel remains unverified.",
+   "Could not verify the Bloom Energy / Yale New Haven Lawrence + Memorial Hospital 1.75 MW fuel cell figures (August 2025) in any fetched primary page. Dropped rather than cited.",
+   "Could not fetch the DoD 2018 Briefing to Congress on Utility Infrastructure (TLS failure) or the NAVFAC Beaufort award notice (403). The 61 privatization contracts, the $251.4M/50-year Beaufort figure and the $14.5M 12-installation Army electrical conveyance are unverified search-summary figures.",
+   "Could not fetch the SEPA large-load tariff analysis (403). The '29 large-load tariffs approved in 2025 vs 14 in 2018-2024' and the AEP Ohio 85% minimum-demand / 12-year / 25 MW terms are unverified.",
+   "Could not fetch the ComEd Bronzeville ICC filings; the $25M ratepayer / $5M DOE / $8M+$17M phase split and Docket 17-0331 are from search summaries only.",
+   "No ESPC or UESC task order was found whose stated scope was REPLACING diesel backup. Every federal microgrid located (Parris Island, Fort Huachuca) keeps the diesel fleet and displaces its run hours. This appears to be the general pattern, not a search failure — the same is true of the Kaiser hospital microgrid.",
+   "EPA DERA grants were not researched (angle 6 was satisfied by TBPP and SGIP before reaching it). DERA funds engine replacement and repower, which is a different question from standby-power displacement.",
+   "No verified example found of ANY host that removed its diesel generators outright. In every dated precedent in this file the alternative takes the first-response or run-hours role and diesel is demoted to secondary/extended-outage backup."
+  ]
+ },
+ "mechanisms": [
+  {
+   "id": "resiliency-as-a-service-microgrid-subscription",
+   "group": "diesel",
+   "family": "commercial-contract",
+   "name": "Resiliency-as-a-Service (RaaS): third-party-owned backup microgrid sold as a monthly subscription",
+   "what_it_is": "The host signs a long-term services agreement with a microgrid developer instead of buying generators. The developer finances, owns, permits, operates and maintains the generating plant on the host's land; the host grants a site licence/easement and pays a one-time set-up fee for construction plus a recurring monthly service fee. Availability and maintenance risk sit with the developer; the host typically pays fuel only during an actual outage. The developer keeps the merchant upside (grid-services and demand-response revenue from the same iron), which is what subsidises the service fee below the cost of owning a diesel fleet.",
+   "who_signs": "Host facility (data centre, grocery chain, water utility, hospital) <-> microgrid developer (Enchanted Rock, Scale Microgrid Solutions, PowerSecure, Bloom Energy)",
+   "asset_owner": "third-party developer",
+   "term": "typically 10-20 years of service; the developer's economics assume it keeps the asset and its grid-services revenue",
+   "price_form": "one-time set-up fee + fixed monthly service fee ($/month or $/kW-month), fuel passed through only during outages",
+   "precedents": [
+    {
+     "name": "Microsoft San Jose data centre backup microgrid",
+     "year": "2022",
+     "parties": "Microsoft (host) <-> Enchanted Rock (developer/owner-operator); U.S. Energy (RNG supply)",
+     "size": "100 MW; 224 natural gas gensets at 0.45 MW each",
+     "note": "Announced June 2022 as California's largest data-centre microgrid; install from late 2023, complete mid-2024. Sold explicitly as the backup power supply for grid outages and California Base Interruptible Program events, in place of a diesel standby fleet. Contract price not published.",
+     "source_idx": 1
+    },
+    {
+     "name": "Enchanted Rock standard RaaS commercial structure",
+     "year": "2025",
+     "parties": "Enchanted Rock <-> commercial & industrial hosts (grocery, hospitals)",
+     "size": "standardised 0.5 MW gas gensets; ~10 units for a hospital, 2-3 for a grocery store",
+     "note": "Described on the record 2025-03-17: set-up fee then monthly subscription; developer owns the plant and the surplus-power revenue, which reduces the host's fee. Host pays fuel only during an outage.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "The instrument itself is technology-agnostic and is the single closest commercial analogue to selling a reactor as a service: the host never takes title, never operates, and never carries fuel logistics. But three things break for a reactor. (1) The developer-owner must hold the NRC licence and be the operator, so the 'we own and operate it on your land' clause maps to a real NRC 10 CFR 50/52 licensee obligation and a site that is now a licensed nuclear facility with an emergency-planning zone. (2) State retail-sale law: in most regulated states a non-utility selling metered electricity to a host across a property line needs a third-party-sale exemption; RaaS providers avoid this today by selling a *service* (availability) rather than kWh. (3) The merchant upside that subsidises the fee — bidding the asset into demand response and grid services — is exactly what an emergency-only diesel engine cannot do and what a reactor, as a baseload machine, also cannot do well, because a reactor wants to run 24/7 rather than sit idle for 8,700 hours.",
+   "microreactor_edge": "A factory-built 1-20 MW unit fits the RaaS balance sheet in a way a large reactor cannot: the developer's model is a fleet of identical, standardised, factory-produced 0.45-0.5 MW blocks replicated across hundreds of sites, financed on the developer's balance sheet and amortised over a subscription. A modular reactor is the same product shape one or two orders of magnitude up in unit size. Relocatability also matches the RaaS covenant that the developer takes the asset away at end of term rather than leaving a stranded plant on the host's land.",
+   "blockers": [
+    "NRC licensing sits with the owner-operator, so a RaaS developer becomes a nuclear licensee — a different corporate risk profile from owning gas gensets",
+    "State third-party retail-sale restrictions in regulated states (the reason today's providers sell availability, not kWh)",
+    "A reactor idle for 8,700 hours a year has no revenue; the RaaS subsidy comes from merchant grid-services participation a reactor cannot replicate",
+    "Emergency planning zone and security force obligations attach to the host's site, not the developer's"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive — Microgrids called a low-burden way to ensure backup power",
+     "url": "https://www.utilitydive.com/news/microgrid-called-low-burden-way-to-ensure-backup-power-Enchanted-Rock/742801/",
+     "quote": "the client pays a set-up fee to do the construction work and install the network and then a monthly service fee",
+     "status": "fetched"
+    },
+    {
+     "label": "Microgrid Knowledge — Enchanted Rock to build California's largest RNG microgrid for Microsoft",
+     "url": "https://www.microgridknowledge.com/editors-choice/article/11427227/enchanted-rock-to-build-californias-largest-rng-microgrid-for-microsoft",
+     "quote": "Plans call for a 100-MW microgrid that will include 224 natural gas generators, each with a 0.45 MW capacity.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "rice-neshap-emergency-engine-hour-cap",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "EPA RICE NESHAP emergency-engine hour cap (40 CFR 63.6640(f)) — the rule that keeps diesel a sunk cost, not an asset",
+   "what_it_is": "Federal air rules give standby engines a cheap compliance path only if they stay 'emergency' engines. An emergency stationary reciprocating internal combustion engine may run at most 100 hours per calendar year for maintenance, testing and specified non-emergency purposes, of which at most 50 hours may be genuine non-emergency operation — and those 50 hours may not be used for peak shaving, non-emergency demand response, or to earn income by supplying power to a grid. There is no contract here: the rule is a boundary condition on every diesel-replacement business case, because it forbids the diesel fleet from ever earning its keep. The host therefore carries 100% of the capital, maintenance, fuel-turnover and permitting cost of an asset that is contractually barred from producing revenue.",
+   "who_signs": "EPA <-> owner/operator of the stationary engine (enforced through the state or local air permit)",
+   "asset_owner": "host",
+   "term": "perpetual condition of the air permit",
+   "price_form": "not a price — a use restriction that strands the host's capital",
+   "precedents": [
+    {
+     "name": "Virginia data-centre diesel fleet and the DEQ 'planned outage' guidance fight",
+     "year": "2025",
+     "parties": "Virginia DEQ (Mike Dowd, Air and Renewable Energy Division) <-> data-centre operators; opposed by Southern Environmental Law Center and Piedmont Environmental Council",
+     "size": "~9,000 permitted generators in Virginia, ~4,700 of them in Loudoun County; ~8,000 are Tier II",
+     "note": "DEQ's 30 September 2025 memo would widen what counts as an 'emergency' to include utility 'planned outage' events noticed within 14 days, which is precisely the class of hours the federal emergency-engine definition excludes. The scale of the fight is the tell: the hour cap is the binding constraint on whether a very large installed diesel fleet is usable for anything.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "A reactor is not a RICE engine and is not hour-capped by this rule at all — it can run 8,760 hours a year and sell into the grid, which is the exact freedom the diesel fleet is denied. That inverts the business case: diesel is a pure cost centre that can never amortise, while a reactor's capital can be amortised against continuous output. But the same inversion is the trap: a reactor sized to cover an emergency load will be economically dead unless it can sell its output the other 99% of the time, which throws it back onto the interconnection and third-party-sale questions the diesel fleet never has to answer.",
+   "microreactor_edge": "A 1-20 MW unit is small enough to be sized to a site's actual continuous load rather than its peak emergency load, so it can plausibly run at high capacity factor behind the meter and never need to export — sidestepping both the hour cap and the export/third-party-sale problem in one move. A 300 MW+ unit at a single host cannot do that.",
+   "blockers": [
+    "The 100-hour cap makes diesel cheap-per-year to keep, which raises the bar an alternative must clear on total cost, not on emissions",
+    "Air permits are issued per engine by the state/local authority, so the replacement conversation is 50 different regulators, not one",
+    "Nothing in the RICE rule says what may legally replace a diesel engine as the emergency supply — that is a fire-code question (see NFPA/CMS records)"
+   ],
+   "sources": [
+    {
+     "label": "40 CFR 63.6640 — continuous compliance requirements for emergency stationary RICE",
+     "url": "https://www.law.cornell.edu/cfr/text/40/63.6640",
+     "quote": "The 50 hours per year for non-emergency situations cannot be used for peak shaving or non-emergency demand response",
+     "status": "fetched"
+    },
+    {
+     "label": "VPM News — State regulators weigh expanded use of data centers' diesel backup generators",
+     "url": "https://www.vpm.org/news/2025-12-17/virginia-data-centers-diesel-backup-generators-deq-loudoun-turner-dowd",
+     "quote": "There are about 9,000 generators in Virginia, with about 4,700 in Loudoun County. Of the total, around 8,000 are Tier II",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "cms-health-care-microgrid-categorical-waiver",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "CMS categorical waiver QSO-23-11-LSC — the document that lets something other than a generator legally be a hospital's emergency power source",
+   "what_it_is": "This is the load-bearing permission for the whole diesel-replacement question in healthcare. CMS conditions of participation bind hospitals to the 2012 edition of NFPA 99, which requires the essential electrical system to be fed by a generator set or a battery system — full stop. On 31 March 2023 CMS issued a categorical waiver letting facilities instead comply with the 2021 edition of NFPA 99, which recognises a 'health care microgrid system' (HCMS) as an acceptable alternate power source. No application is filed: the facility simply elects the waiver, documents it, and declares it at the survey entrance conference. Long-term care facilities providing life support are excluded and must still have an emergency generator.",
+   "who_signs": "No contract. CMS (via QSO memo) <-> the certified facility, which elects the waiver unilaterally and declares it to the state survey agency / accrediting organisation at entrance conference",
+   "asset_owner": "host (but the waiver is silent on ownership, so a third-party-owned microgrid qualifies)",
+   "term": "standing waiver until CMS adopts a newer NFPA edition by rulemaking",
+   "price_form": "not priced — it is the legal precondition that makes any of the commercial instruments sellable into healthcare",
+   "precedents": [
+    {
+     "name": "Kaiser Permanente Ontario Medical Center microgrid",
+     "year": "2025",
+     "parties": "Kaiser Permanente (host) <-> California Energy Commission (grant); certified by the California Department of Health Care Access and Information (HCAI)",
+     "size": "2 MW solar + 1 MW fuel cell + 9 MWh battery; carries emergency load up to 10 continuous hours",
+     "price": "$8.3 million California Energy Commission grant",
+     "note": "In April 2025 HCAI certified the battery to operate as the hospital's PRIMARY backup power source — the existing diesel generators were demoted to secondary backup for extended outages rather than removed. This is the concrete shape of a real diesel displacement: the alternative takes the first-response role, diesel becomes the long-tail insurance.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The waiver text describes an HCMS as a small-scale grid fed by 'clean energy technologies like fuel cells, solar panels, wind turbines, and energy storage systems.' Nuclear is not named. The gate is not the fuel — it is NFPA 110's Level 1 Type 10 requirement that the emergency supply be at full load within 10 seconds of losing normal power. A reactor cannot start in 10 seconds and cannot be black-started on demand at all; if it is already running, it can carry the load through an outage, but then it is the NORMAL power source, not the emergency one, and the facility still owes a code-compliant emergency supply behind it. So the honest nuclear read on healthcare is: a reactor displaces the utility feed and the diesels' RUN HOURS, not the diesels themselves, unless the microgrid pairs it with a battery that provides the 10-second ride-through — which is exactly the Kaiser architecture with a reactor swapped in for the fuel cell.",
+   "microreactor_edge": "A 1-20 MW unit is the only reactor size that matches a medical campus's actual essential-electrical-system load (a large hospital's whole campus is single-digit MW). The Kaiser precedent shows the certified article is a 1 MW fuel cell plus a 9 MWh battery — a microreactor is a drop-in for that fuel cell block at the same order of magnitude, whereas a 300 MW reactor has no addressable customer of that shape.",
+   "blockers": [
+    "NFPA 110 Level 1 Type 10 ten-second start requirement — no reactor meets it, so a battery or engine must sit in front",
+    "Long-term care facilities providing life support are excluded from the waiver and must keep a generator",
+    "State AHJ still certifies independently (in California, HCAI) — the CMS waiver does not bind the state",
+    "The waiver is an election, not an approval, so the facility carries the risk if a surveyor disagrees"
+   ],
+   "sources": [
+    {
+     "label": "Brach Eichler — CMS Issues Categorical Waiver for Microgrid Systems as Alternate Power Sources in Health Care Facilities",
+     "url": "https://www.bracheichler.com/insights/cms-issues-categorical-waiver-for-microgrid-systems-as-alternate-power-sources-in-health-care-facilities-2/",
+     "quote": "use alternate power sources other than generators or battery systems",
+     "status": "fetched"
+    },
+    {
+     "label": "Health Facilities Management — Kaiser Permanente operationalizes microgrid system",
+     "url": "https://www.hfmmagazine.com/kaiser-permanente-operationalizes-microgrid-system",
+     "quote": "battery component was certified by the California Department of Health Care Access and Information to operate as a primary backup power source",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "texas-backup-power-package-program",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Texas Backup Power Package (TBPP) Program — state money that buys the replacement outright, with a technology list",
+   "what_it_is": "Texas capitalised a $10 billion Texas Energy Fund in 2023 and dedicated $1.8 billion of it to buying standardised behind-the-meter resilience packages for critical facilities. The PUCT adopted the implementing rule under Project No. 59024. A qualifying entity (hospital, nursing home, water/wastewater utility, 911 centre, fire station, rural fuel station on an evacuation route) applies for a grant of up to $500/kW plus a forgivable low-cost loan for the balance; the host owns the package. The defining feature for this research is the prescriptive technology definition: a package is a 'standardised, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel' that must run its host for at least 48 hours without refuelling or recharging from the grid, and must be under 2.5 MW. It may not export to the grid under any circumstance.",
+   "who_signs": "Public Utility Commission of Texas <-> qualifying critical facility (grant + loan agreement); facility contracts separately with an installer",
+   "asset_owner": "host (public agency or private critical facility)",
+   "term": "one-time capital grant plus forgivable loan; asset life 20+ years",
+   "price_form": "grant-funded — up to $500/kW capital grant plus forgivable low-cost loan for the balance",
+   "precedents": [
+    {
+     "name": "Texas Backup Power Package Program rule adoption",
+     "year": "2026",
+     "parties": "Public Utility Commission of Texas; funded from the Texas Energy Fund created by the Texas Legislature in 2023",
+     "size": "packages capped at under 2.5 MW each; 48-hour minimum autonomy",
+     "price": "$1.8 billion programme; grants up to $500/kW",
+     "note": "PUCT Project No. 59024. Eligible hosts are exactly the sectors a microreactor would target — hospitals, water utilities, emergency communications — and the money is real and already appropriated. But the eligible technology list is closed and nuclear is not on it.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "This is the cleanest example of a technology list excluding nuclear by construction rather than by hostility. Three separate clauses each independently disqualify a reactor: (1) the package must be a combination of generator + PV + batteries + on-site fuel, and 'on-site fuel' in the rule's sense is natural gas or propane; (2) the whole package must be under 2.5 MW, which is below even the small end of most microreactor designs and far below the point where reactor economics work; (3) the package must be 'stand-alone' and behind-the-meter with no export under any circumstance, which forecloses the capacity-factor economics a reactor needs. Getting nuclear into a programme like this requires the statute or rule to be amended, not a waiver.",
+   "microreactor_edge": "A sub-2.5 MW factory-built unit is the ONLY reactor form factor that could ever fit this size cap, and the 48-hour-without-refuelling requirement is the one criterion where a reactor wins outright and by orders of magnitude — a diesel or gas package needs an on-site fuel farm sized for 48 hours, while a reactor's refuelling interval is measured in years. If a state programme of this shape ever re-opened its technology list, the 48-hour autonomy clause is the argument to lead with.",
+   "blockers": [
+    "Closed technology list: generator + PV + battery + on-site fuel; nuclear not named",
+    "Under-2.5 MW size cap excludes most microreactor designs and destroys the economics of the rest",
+    "No grid export permitted under any circumstance, and no participation in retail demand-response programmes",
+    "$500/kW grant ceiling is roughly an order of magnitude below plausible microreactor overnight capital cost"
+   ],
+   "sources": [
+    {
+     "label": "Texas Solar Energy Society — Power When It Matters Most: Texas' Backup Power Package Program",
+     "url": "https://txses.org/power-when-it-matters-most-texas-backup-power-package-program/",
+     "quote": "standardized, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "utility-owned-behind-the-meter-backup-tariff",
+   "group": "diesel",
+   "family": "utility-tariff",
+   "name": "Regulated utility owns the customer's backup generator and bills it as a tariffed service (Entergy 'Power Through')",
+   "what_it_is": "The regulated utility — not a third-party developer — finances, installs, owns, operates and maintains a natural-gas generator at the customer's own premises, and recovers it as a line item on the customer's monthly electric bill under a commission-approved tariff. The customer signs a service agreement, not a construction contract, and supplies only the site. Availability, maintenance and fuel-supply risk stay with the utility. The economics work because the utility dispatches the same machines into system peaks when the host is not in outage, so the resilience service is cross-subsidised by capacity value the customer could never monetise on its own (see the RICE NESHAP record: an emergency-only diesel is legally barred from doing this).",
+   "who_signs": "Regulated utility <-> retail customer, under a tariff approved by the state commission",
+   "asset_owner": "utility",
+   "term": "multi-year tariffed service; utility keeps the asset",
+   "price_form": "fixed monthly charge on the customer's utility bill (rate-based / tariffed service fee)",
+   "precedents": [
+    {
+     "name": "Entergy Texas 'Power Through' backup generation program",
+     "year": "2025",
+     "parties": "Entergy Texas <-> H-E-B (5 grocery stores) and Lone Star College System (1 campus); approved by the Public Utility Commission of Texas",
+     "size": "six pilot units; whole-facility backup generation",
+     "note": "PUCT unanimously approved the program on 2025-02-20 after the six-unit pilot. Entergy maintains the units at no additional cost to the host, and dispatches them into summer/winter system peaks when they are not covering an outage. Entergy runs sibling programmes in Louisiana and Arkansas.",
+     "source_idx": 0
+    },
+    {
+     "name": "ComEd Bronzeville Community Microgrid",
+     "year": "2018",
+     "parties": "Commonwealth Edison <-> Illinois Commerce Commission (Docket 17-0331); US Department of Energy grant",
+     "size": "Chicago Bronzeville neighbourhood cluster microgrid",
+     "price": "$25 million recovered from ratepayers plus a $5 million DOE grant; phase one $8 million, phase two $17 million",
+     "note": "The ICC approved the rate-based utility-owned microgrid in February 2018 but only after ComEd conceded it would not own the distributed energy resources inside it — the boundary of what a utility may rate-base was the whole fight. Cited from search summaries; not independently fetched.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the one family where the regulated utility is the asset owner, which sidesteps the third-party-retail-sale problem entirely — a utility may already sell power to its own customers. It also puts the licensee obligation on a party that in many cases already holds NRC licences. The blocker moves to prudence review: the utility must persuade its commission that a reactor at a single customer's premises is a used-and-useful ratepayer asset, and the ComEd fight shows commissions police that boundary hard even for gas and solar. Also, a tariff of this shape needs the asset to be dispatchable into system peaks to pencil, and a reactor's value is baseload, not peaking.",
+   "microreactor_edge": "A 1-20 MW unit is small enough that a utility could conceivably rate-base it against a cluster of critical customers on one feeder — the Bronzeville 'community microgrid' shape — rather than a single host. That is a materially different customer than 'one hyperscaler', and it is the only sales motion in this record's family that a large reactor cannot also serve.",
+   "blockers": [
+    "Prudence/used-and-useful review at the state commission; ComEd only won rate-basing after agreeing not to own the DERs",
+    "Utility ownership of on-site customer generation is contested in restructured states and outright barred in some",
+    "The tariff economics depend on peak dispatch value the reactor does not naturally provide",
+    "A reactor at a customer's premises makes that customer's site a licensed nuclear facility, which no backup-generator tariff contemplates"
+   ],
+   "sources": [
+    {
+     "label": "Entergy — Entergy Texas receives approval on backup generation program",
+     "url": "https://www.entergy.com/news/entergy-texas-receives-approval-on-backup-generation-program",
+     "quote": "These pilot projects, installed at five H-E-B grocery stores and one Lone Star College system campus",
+     "status": "fetched"
+    },
+    {
+     "label": "Utility Dive — Illinois regulators greenlight ComEd's microgrid 'cluster' project",
+     "url": "https://www.utilitydive.com/news/illinois-regulators-greenlight-comeds-microgrid-cluster-project/518121/",
+     "quote": "Illinois regulators greenlight ComEd's microgrid 'cluster' project",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "federal-espc-eaas-task-order",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Federal Energy Savings Performance Contract (ESPC) task order — how a federal site buys resilience with zero appropriated capex",
+   "what_it_is": "A federal agency issues a task order under an ESPC IDIQ to an energy service company (ESCO). The ESCO designs, finances, builds, owns during the term, and operates the energy assets; the government pays nothing up front and instead pays the ESCO out of the utility and O&M savings the project generates, with those savings contractually guaranteed by the ESCO and measured and verified annually. If the savings do not materialise, the ESCO makes up the shortfall. Resilience assets (microgrid controls, on-site generation, storage) ride along inside a package whose repayment is carried by the efficiency measures. This is the mechanism by which a base gets a microgrid without ever asking Congress for military construction money.",
+   "who_signs": "Federal agency contracting officer (e.g. NAVFAC EXWC, USACE Huntsville, DOE FEMP IDIQ holders) <-> ESCO (Ameresco, Honeywell, Johnson Controls, Schneider)",
+   "term": "up to 25 years by statute; Parris Island is 22 years",
+   "asset_owner": "third-party developer (ESCO owns and operates through the performance period; title typically transfers at the end)",
+   "price_form": "no capex — the government pays an annual payment funded entirely from contractually guaranteed utility and O&M savings",
+   "precedents": [
+    {
+     "name": "Marine Corps Recruit Depot Parris Island microgrid",
+     "year": "2017",
+     "parties": "Naval Facilities Engineering and Expeditionary Warfare Center (NAVFAC EXWC) <-> Ameresco",
+     "size": "3.5 MW gas CHP + 6.7 MW-DC solar PV + 8.0 MWh battery, with fast load-shedding microgrid control across 121 buildings",
+     "price": "$91.1 million ESPC; 22-year O&M term; reported ~$6.9M/year utility savings",
+     "note": "Announced 2017-01-12; construction from spring 2017, operational 2019. The island-mode microgrid is the resilience deliverable; the 20 energy conservation measures across 3.1 million sq ft are what pays for it. Diesel is not removed — the microgrid displaces its run hours.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "ESPC is structurally hostile to nuclear for one specific reason: the payment stream is capped by verified energy and O&M SAVINGS relative to the baseline utility bill, and it must repay the full project cost within 25 years. A reactor's capital cost per kW is far above what a federal site's utility savings can amortise, so the arithmetic fails before any licensing question arises. The related UESC (Utility Energy Service Contract) vehicle is more promising because the serving utility finances the work and there is no statutory savings-repayment test of the same severity. Separately, DoD has been buying nuclear outside these vehicles — via direct power purchase and pilot authorities — precisely because ESPC cannot carry it.",
+   "microreactor_edge": "Real but narrow: at a genuinely remote or islanded federal site, the displaced baseline is not grid power at $0.08/kWh but delivered diesel, and delivered-diesel costs at remote sites are high enough that an ESPC savings stream could plausibly amortise a small unit. The fuel-logistics tail is the savings line item — a microreactor with a multi-year refuelling interval removes the convoy, the fuel farm and the fuel-quality maintenance, all of which are O&M savings an ESCO is allowed to count.",
+   "blockers": [
+    "Statutory 25-year maximum term and the requirement that guaranteed savings repay the entire project cost",
+    "Annual measurement and verification of savings — a reactor's output is easy to verify but its cost is not repayable from savings at typical grid baselines",
+    "ESCO owns the asset during the term; an ESCO becoming an NRC licensee is unprecedented",
+    "Federal site nuclear siting adds NEPA and NRC review on a timeline no ESPC task order schedule contemplates"
+   ],
+   "sources": [
+    {
+     "label": "Ameresco investor relations — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at MCRD Parris Island",
+     "url": "https://ir.ameresco.com/news-events/press-releases/detail/244/ameresco-to-build-microgrid-integrating-onsite-generation",
+     "quote": "engineer, construct and operate the energy generating assets",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "uptime-institute-tier-engine-generator-rating",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "Uptime Institute Tier III/IV engine-generator rating rule — the private standard that requires the diesel fleet to exist and to be unlimited-runtime",
+   "what_it_is": "Not a law and not a contract, but the certification that data-centre tenants, lenders and insurers actually ask for. Uptime Institute's Tier Standard requires that the on-site engine generators for a Tier III or Tier IV site carry a rating with NO limitation on consecutive hours of operation at N demand: only continuous ratings, derated prime ratings, or standby ratings without runtime limits qualify. Tier I and Tier II may use runtime-limited machines. The practical effect is that the highest-value data-centre sites are contractually and commercially obliged to keep a fleet of engine generators capable of running indefinitely — which is why the diesel fleet survives even at sites that have added batteries, fuel cells or on-site gas.",
+   "who_signs": "Uptime Institute <-> the owner/operator seeking Tier Certification; downstream this appears as a covenant in colocation contracts, tenant SLAs and lender/insurer diligence",
+   "asset_owner": "host",
+   "term": "per-certification; re-verified on Tier Certification of Constructed Facility and operational sustainability reviews",
+   "price_form": "not priced — a design constraint that mandates capital the host cannot avoid",
+   "precedents": [
+    {
+     "name": "Uptime Institute Accredited Tier Designer Technical Paper: Engine-Generator Ratings",
+     "year": "2026",
+     "parties": "Uptime Institute (standards body) <-> Tier-certified data centre operators worldwide",
+     "size": "applies to every Tier III and Tier IV certified facility",
+     "note": "Document reference UITPEGEN211-2026. The rule creates a direct collision with EPA RICE NESHAP: the federal rule gives an engine cheap 'emergency' status only if it runs under 100 hours a year, while Uptime requires the machine's RATING to have no runtime limit at all. Operators satisfy both by buying continuous-rated iron and then never using it — the worst possible capital outcome, and the strongest economic argument for replacing it with something that can run.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "A reactor is the only candidate replacement that trivially satisfies the 'no limitation on consecutive hours of operation' requirement — it is the unlimited-runtime machine par excellence. But the Tier Standard is written around engine generators as the ENGINE-GENERATOR component of a topology, and the standard's other requirements (N+1 redundancy of the engine-generator system, concurrent maintainability, fault tolerance) mean a single reactor cannot by itself be the Tier III/IV backup: it would need redundant units or a paired conventional fleet. Uptime has no published pathway that treats a reactor as the engine-generator component.",
+   "microreactor_edge": "The N+1 and concurrent-maintainability requirements reward small identical units over one large one. A Tier IV topology needs the engine-generator system to be fault-tolerant and maintainable while carrying load, which is impossible with one 300 MW reactor and arithmetically straightforward with a fleet of 5-10 MW factory-built units that can be individually taken offline. This is the clearest case in this dataset where the STANDARD, not the economics, prefers small and modular.",
+   "blockers": [
+    "Uptime Tier Standard names engine generators as the engine-generator component; no published nuclear pathway",
+    "N+1 redundancy and concurrent maintainability mean one reactor is never sufficient on its own",
+    "Tier III/IV certification is bought by tenants and lenders, so the operator cannot unilaterally deviate",
+    "Direct conflict with the RICE NESHAP 100-hour cap means the incumbent fleet is already over-specified and under-used, so a replacement has to justify itself on more than run hours"
+   ],
+   "sources": [
+    {
+     "label": "Uptime Institute — Accredited Tier Designer Technical Paper Series: Engine-Generator Ratings",
+     "url": "https://uptimeinstitute.com/publications/asset/accredited-tier-designer-technical-paper-series-engine-generator-ratings",
+     "quote": "Only continuous ratings, derated prime ratings or standby ratings with no runtime limitations qualify for the Tier III or IV requirement for engine generators.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "third-party-sale-authorization-state-law",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "State third-party-sale authorization — whether a developer may legally sell metered power to a host at all",
+   "what_it_is": "Every behind-the-meter PPA depends on the host's state having decided that a company selling electricity to one customer on that customer's own premises is NOT a 'public utility'. That decision lives in the state's statutory definition of 'utility', in a commission order, or in a court ruling — not in any contract. Where the answer is no, the developer must restructure as a LEASE of equipment or a SERVICE agreement (availability, not kWh), which is exactly why the resiliency-as-a-service providers sell a monthly subscription rather than energy. Where the answer is yes, it is frequently yes-with-a-size-cap tied to the host's own consumption.",
+   "who_signs": "No signature — it is the precondition. State legislature / commission / court <-> anyone attempting a behind-the-meter energy sale",
+   "asset_owner": "third-party developer (that is the arrangement the rule governs)",
+   "term": "n/a — statutory",
+   "price_form": "n/a — determines whether $/kWh pricing is legal at all, versus a lease or service fee",
+   "precedents": [
+    {
+     "name": "DSIRE 3rd-Party Solar PV Power Purchase Agreement map",
+     "year": "2023",
+     "parties": "N.C. Clean Energy Technology Center (DSIRE), tracking all 50 states",
+     "size": "At least 29 states plus Washington DC and Puerto Rico authorize or allow third-party PPAs for solar PV",
+     "note": "November 2023 edition. Named prohibitions: North Carolina General Statutes 62-3(23) prohibits third-party sales (leases explicitly allowed instead); South Carolina Code 58-27-2610(E) likewise. Named SIZE CAPS: Colorado limits systems to 120% of average annual consumption (PUC Decision C09-0990, Docket 08R-424E); Nevada to 150% (PUC Orders 07-06024, 07-06027); Texas to no more than average annual consumption (S.B. 981, 2011); Arizona limited to schools, governments and non-profits (ACC Decision 71795, Docket E-20690A-09-0346).",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "The size caps are the finding that matters and nobody writes them down in a nuclear context. In Texas, Colorado and Nevada the authorisation to sell behind the meter is conditioned on the system generating no more than roughly the host's own annual consumption (100%, 120%, 150% respectively). A reactor sized only to a single host's load has no scale economics, and a reactor sized to serve several hosts or export is outside the authorisation and becomes a regulated utility. In North Carolina and South Carolina a third-party sale is flatly prohibited, so a reactor developer must lease the machine to the host and let the host be the operator — which collides directly with NRC licensing, since the host would then need to be the licensee. The commercial structure and the licensing structure are coupled through this rule and neither can be chosen independently.",
+   "microreactor_edge": "A 1-20 MW unit is the only reactor scale that can sit under a 100-150% of-host-consumption cap at a real industrial or campus load without wasting most of its output. At 5 MW the cap is satisfiable by a single large data hall, hospital campus, mine or port terminal; at 300 MW there is no single host in any of these sectors whose annual consumption the cap would allow you to match.",
+   "blockers": [
+    "North Carolina G.S. 62-3(23) and South Carolina Code 58-27-2610(E) prohibit third-party retail sales outright",
+    "Texas S.B. 981 (2011), Colorado 120% cap, Nevada 150% cap all size-limit the system to the host's own consumption",
+    "Arizona limits third-party PPAs to schools, governments and non-profits",
+    "Municipal and cooperative utility territories may bar third-party PPAs even in states that authorise them",
+    "The maps and orders are all written about solar PV; none of them contemplate a nuclear generator and none has been tested for one"
+   ],
+   "sources": [
+    {
+     "label": "DSIRE / N.C. Clean Energy Technology Center — 3rd Party Solar PV Power Purchase Agreement (November 2023)",
+     "url": "https://ncsolarcen-prod.s3.amazonaws.com/wp-content/uploads/2023/11/DSIRE_3rd-Party-PPA_Nov_2023.pdf",
+     "quote": "Legal authorization for residential 3rd-party solar PV PPA arrangements usually lies in the definition of a “utility” in state statutes",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "sgip-self-generation-incentive-eligibility",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "California Self-Generation Incentive Program (SGIP) — a ratepayer-funded capital subsidy with a closed technology list, an efficiency gate, and an explicit ban on backup-only assets",
+   "what_it_is": "CPUC-administered, ratepayer-funded capital incentives paid to a Host Customer (or assigned to the developer) for behind-the-meter storage and generation. The applicant reserves an incentive, builds, and is paid on commissioning and, for storage, on performance. For a diesel-replacement question this programme is the most instructive rulebook in the country because its exclusions are explicit: equipment 'capable of operating on, or switching to, diesel fuel or diesel cycle for start-up or continuous operation' is ineligible, and so — critically — are 'backup systems intended solely for emergency purposes'. Generation must also clear a minimum operating efficiency gate: either waste-heat utilisation of at least 5% under P.U. Code 216.6(a), or electrical efficiency of at least 40%.",
+   "who_signs": "Host Customer (or assigned developer) <-> SGIP Program Administrator (PG&E, SCE, SoCalGas, CSE) under CPUC rules",
+   "asset_owner": "host (incentive may be assigned to a third-party owner)",
+   "term": "one-time capital incentive; 10-year operational and permanency requirements",
+   "price_form": "grant-funded — $/kWh for storage, $/kW for generation, paid on reservation and commissioning",
+   "precedents": [
+    {
+     "name": "2025 SGIP Handbook v1 eligibility rules",
+     "year": "2025",
+     "parties": "California Public Utilities Commission <-> SGIP Program Administrators and applicants",
+     "size": "Eligible generation is a closed list: pressure reduction turbines, photovoltaics, wind turbines, gas turbines, waste heat to power, microturbines, steam turbine CHP, internal combustion engines, linear generators, fuel cell CHP, fuel cell electric. Storage sizing capped at the Host Customer's previous 12-month annual peak demand.",
+     "price": "$280 million authorised for the Residential Solar and Storage Equity budget; up to $1,100/kWh storage and $3,100/kW solar under that budget",
+     "note": "The word 'nuclear' does not appear anywhere in the 139-page 2025 handbook. The programme also refuses to fund pure resilience: 'Backup systems intended solely for emergency purposes' are ineligible equipment. The incentive amounts are from search-result summaries, not read in the handbook; the eligibility and exclusion language was read directly in the PDF.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Three independent disqualifications, each of which would need a CPUC rulemaking to change. (1) Nuclear is absent from the closed eligible-technology list — not banned, just not enumerated, which in a programme with an enumerated list is the same thing. (2) The minimum operating efficiency gate requires 40% electrical efficiency OR meaningful waste-heat utilisation; a light-water microreactor operating electricity-only sits around 30-33% thermal-to-electric and would FAIL, so the only compliant configuration is CHP with a real thermal host. (3) The sizing rule caps incentivised capacity at the Host Customer's own annual peak demand and requires combined on-site generation to be no more than the host's maximum site electric load — the same output-cap trap as the third-party-sale rules.",
+   "microreactor_edge": "The efficiency gate points at a real product decision: a microreactor sold as a CHP machine (process heat, district heat, desalination, industrial steam) clears an efficiency test that an electricity-only unit fails, and CHP is also what the incentive tables reward. The sizing cap at the host's own peak demand is again only satisfiable at 1-20 MW.",
+   "blockers": [
+    "Nuclear absent from the enumerated eligible-technology list",
+    "40% electrical efficiency / waste-heat utilisation gate that an electricity-only light-water microreactor fails",
+    "'Backup systems intended solely for emergency purposes' are explicitly ineligible — the programme will not pay for resilience alone",
+    "Incentivised capacity capped at the Host Customer's previous 12-month annual peak demand",
+    "System must be installed on the Host Customer's side of the utility meter and interconnected to the distribution system"
+   ],
+   "sources": [
+    {
+     "label": "CPUC — 2025 Self-Generation Incentive Program Handbook v1, Table 5 Equipment Eligibility Criteria",
+     "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+     "quote": "Any generation equipment that is capable of operating on, or switching to, diesel fuel or diesel cycle for start-up or continuous operation",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "air-district-emergency-generator-permit-cap",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "Local air-district permit hour caps — the layer below EPA that decides whether new diesel can be built at all",
+   "what_it_is": "The federal RICE rule is a floor; the binding number is usually in the local air district's permit. In South Coast AQMD, an engine keeps its 'emergency backup generator' status only if it does not operate more than 200 hours a year, with testing and maintenance limited in most cases to 20-50 hours annually under Rule 1470. Non-emergency operation strips the exemption and pushes the engine into the far more expensive Rule 1110.2 permitting regime. The consequence for a host is that the diesel fleet is capped not by fuel but by permit, so a site that needs more standby capacity — or that has run out of district NOx or diesel-PM offsets — cannot simply add more engines and must buy resilience some other way.",
+   "who_signs": "Local air district (South Coast AQMD, Bay Area AQMD, Virginia DEQ) <-> each engine's owner, per permit to construct/operate",
+   "asset_owner": "host",
+   "term": "permit term, renewed",
+   "price_form": "not priced directly; drives offset purchases and aftertreatment capex (SCR + DOC + DPF)",
+   "precedents": [
+    {
+     "name": "South Coast AQMD emergency-generator permit limits",
+     "year": "2025",
+     "parties": "South Coast Air Quality Management District <-> permitted engine owners in the Los Angeles basin",
+     "size": "200 hours per year total; 20-50 hours per year for testing and maintenance under Rule 1470",
+     "note": "Natural gas engines get extra hours only during CAISO Stage II/III electrical emergencies or actual/imminent blackouts, and those hours still count toward the 200.",
+     "source_idx": 0
+    },
+    {
+     "name": "Virginia DEQ presumptive BACT for data-centre gen-sets",
+     "year": "2026",
+     "parties": "Virginia Department of Environmental Quality <-> data-centre operators, applications received on or after 2026-07-01",
+     "size": "applies against a permitted fleet of ~9,000 generators statewide, ~4,700 in Loudoun County",
+     "note": "Presumptive BACT for both emergency and non-emergency data-centre gen-sets is now SCR or equivalent for NOx, a diesel oxidation catalyst for CO, and a diesel particulate filter for PM. That is a large per-engine capex increase applied to the densest diesel-backup market in the United States. From search-result summaries; the underlying DEQ guidance document was not fetched.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "A reactor has no criteria-pollutant permit at all — no NOx, no diesel PM, no offsets, no BACT determination, no air district hour cap. That is a genuine and under-appreciated advantage in non-attainment basins (the Los Angeles basin, the Northern Virginia corridor) where the constraint on adding load is literally the availability of emission offsets. The permitting burden simply moves house: from the air district to the NRC, plus state siting and NEPA, and the NRC path is measured in years where an air permit is measured in months.",
+   "microreactor_edge": "Where the incumbent constraint is offsets rather than money, a factory-built unit that arrives with no air permit at all is the whole value proposition, and the relevant comparison is not $/MWh but 'can this site be built'. A relocatable unit also lets a developer place capacity in the non-attainment basin and move it when the load moves, which a permitted diesel fleet with site-specific offsets cannot do.",
+   "blockers": [
+    "Air-district rules are written per engine and per district; there are dozens of them and none has a nuclear pathway because none needs one",
+    "The NRC/NEPA timeline is far longer than an air permit timeline, so the permitting advantage is real in kind but not in schedule",
+    "Existing hosts have already bought their offsets and permits; the advantage only bites on NEW capacity"
+   ],
+   "sources": [
+    {
+     "label": "South Coast AQMD — Emergency Generators permitting page",
+     "url": "https://www.aqmd.gov/home/permits/emergency-generators",
+     "quote": "and maintenance hours are limited, in most cases, to 20 - 50 hours annually pursuant to Rule 1470.",
+     "status": "fetched"
+    },
+    {
+     "label": "Encino Environmental Services — States Are Tightening the Rules for Data Center Backup Generators",
+     "url": "https://encinoenviron.com/states-are-tightening-the-rules-for-data-center-backup-generators/",
+     "quote": "States Are Tightening the Rules for Data Center Backup Generators",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "dod-utilities-privatization-conveyance",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "DoD utilities privatization under 10 U.S.C. 2688 — conveying the base's utility system to a private owner on a 50-year contract",
+   "what_it_is": "A military department conveys ownership of an installation's utility system (electric distribution, water, gas, wastewater) to a utility or other entity, which then owns, maintains, recapitalises and operates it and sells service back to the installation under a long-term utility services contract. The statutory term ceiling is 50 years where the Secretary determines a longer contract is cost effective — far longer than any ESPC (25 years) or commercial ESA. The United States can take its consideration either as a lump-sum payment or as reduced charges for utility service. DLA Energy procures and administers the contracts on behalf of the Army and Air Force. This is the only US procurement vehicle whose term matches a reactor's design life.",
+   "who_signs": "Secretary of a military department (through DLA Energy / NAVFAC / USACE) <-> private, municipal, regional, district or cooperative utility",
+   "asset_owner": "third-party developer or utility (title to the utility system is actually conveyed out of federal ownership)",
+   "term": "up to 50 years for the utility services contract, where determined cost effective",
+   "price_form": "monthly utility service charges under the services contract; conveyance consideration paid as lump sum or as reduced service charges",
+   "precedents": [
+    {
+     "name": "NAVFAC Southeast Beaufort/Parris Island utility system privatization",
+     "year": "2008",
+     "parties": "Naval Facilities Engineering Command Southeast <-> Beaufort-Jasper Water & Sewer Authority",
+     "size": "water and wastewater systems at Marine Corps and Naval installations in the Beaufort, South Carolina area",
+     "price": "estimated $251.4 million over a 50-year privatization term",
+     "note": "Cited from search-result summaries; the NAVFAC award notice itself was not fetched. Included because it establishes the real-world scale and term of a 2688 conveyance rather than the statutory ceiling.",
+     "source_idx": 1
+    },
+    {
+     "name": "DLA Energy utilities privatization portfolio",
+     "year": "2018",
+     "parties": "Defense Logistics Agency Energy <-> Departments of the Army and Air Force",
+     "size": "61 utilities privatization contracts administered; one Army electrical distribution conveyance covering 12 installations on a 50-year term at a $14.5 million purchase price",
+     "note": "From search-result summaries of DoD's 2018 Briefing to Congress on DoD Utility Infrastructure; the PDF could not be fetched (TLS failure). Treat the 61-contract and $14.5M figures as unverified.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the strongest structural fit for nuclear of any vehicle in this dataset, and for one reason only: the 50-year term. A reactor's capital cost can be amortised over 50 years of utility service charges in a way it cannot over an ESPC's 25 years or a commercial ESA's 15-20. The conveyance also removes the awkward question of a private party operating equipment on federal land, because title genuinely leaves the government. The blockers are that 2688 governs the conveyance of a UTILITY SYSTEM (distribution infrastructure), not the construction of new generation, and that a reactor on a military installation triggers NRC licensing plus base-security and NEPA questions no 2688 conveyance has ever contemplated. Note also that DoD has been pursuing nuclear through separate pilot authorities rather than through 2688, which is itself evidence about the fit.",
+   "microreactor_edge": "The relocatability argument lands hardest here. A 50-year contract on a base that may be realigned is a stranded-asset risk for any fixed plant; a factory-built unit that can be removed and redeployed to another installation at end of term turns that risk into a fleet-management decision. The absence of a fuel-delivery tail is also directly monetisable inside a 2688 services contract, because delivered fuel to a remote installation is a line item the contractor is already pricing.",
+   "blockers": [
+    "10 U.S.C. 2688 authorises conveyance of an existing utility SYSTEM, not procurement of new generation",
+    "50-year term requires a Secretary-level cost-effectiveness determination backed by business case analysis",
+    "NRC licensing of a reactor on a military installation is unprecedented and adds NEPA and security review",
+    "Base realignment/closure risk over a 50-year horizon",
+    "DoD is currently buying nuclear through separate pilot authorities, suggesting 2688 is not the chosen route"
+   ],
+   "sources": [
+    {
+     "label": "10 U.S.C. 2688 — Utility systems: conveyance authority",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title10-section2688&num=0&edition=prelim",
+     "quote": "The Secretary of a military department may convey a utility system, or part of a utility system, under the jurisdiction of the Secretary",
+     "status": "fetched"
+    },
+    {
+     "label": "GlobalSecurity — NAVFAC Southeast Awards Multi Utility System Privatization Contract",
+     "url": "https://www.globalsecurity.org/military/library/news/2008/03/mil-080308-nns03.htm",
+     "quote": "NAVFAC Southeast Awards Multi Utility System Privatization Contract",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "utility-procured-onsite-generation-special-contract",
+   "group": "diesel",
+   "family": "utility-tariff",
+   "name": "Utility procures the on-site generation fleet and recovers it from the single large customer under a special contract",
+   "what_it_is": "A regulated utility signs a master supply agreement with an equipment manufacturer for a large block of on-site generation, then places that equipment at individual large customers' sites and recovers 100% of the cost from those customers through a bespoke 'special contract' rather than from the general ratepayer base. The customer gets on-site firm power without capex and without an interconnection queue position; the utility keeps the customer relationship and controls what gets built on its system; the general ratepayer is held harmless. The equipment is deliberately configured so it cannot export to the grid, which keeps it out of wholesale market and interconnection jurisdiction.",
+   "who_signs": "Regulated utility <-> equipment manufacturer (master supply agreement); regulated utility <-> large customer (special contract approved by the state commission)",
+   "asset_owner": "utility or customer depending on the project agreement; cost recovery is from the customer either way",
+   "term": "special contracts for large loads are commonly 10-15 years with minimum-demand and exit provisions",
+   "price_form": "special contract — bespoke $/kW and $/kWh terms with a minimum billing demand, approved by the commission",
+   "precedents": [
+    {
+     "name": "AEP / Bloom Energy gigawatt fuel cell procurement",
+     "year": "2024",
+     "parties": "American Electric Power <-> Bloom Energy (supply); AEP <-> AI data-centre customers in central Ohio (special contracts)",
+     "size": "up to 1 GW of solid oxide fuel cells; initial order reported at 100 MW",
+     "note": "Announced 2024-11-14 and described as the largest commercial fuel cell procurement to date. AEP states costs are borne by the large customers under special contract and the installations are designed not to export. This is the template for a utility buying a fleet of factory-built on-site generators and placing them at customer premises.",
+     "source_idx": 0
+    },
+    {
+     "name": "Large-load tariff proliferation",
+     "year": "2025",
+     "parties": "State commissions nationwide; Public Utilities Commission of Ohio approved AEP's data-centre tariff July 2025",
+     "size": "29 large-load tariffs approved by state regulators in 2025 alone, against 14 approved in 2018-2024 combined",
+     "note": "The AEP Ohio tariff carries an 85% minimum demand charge, 12-year contract terms and exit penalties for customers above 25 MW. Figures from search-result summaries of a SEPA analysis; the article returned 403 and was not fetched.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This mechanism solves the two hardest nuclear problems at once and creates a third. It solves the third-party-sale problem, because the seller is the utility. It solves the cost-recovery problem, because the special contract makes one creditworthy customer pay for the asset rather than a rate case. It creates a licensing problem: the utility becomes the NRC licensee for a reactor sitting on a customer's premises, with the customer's site inside the emergency planning zone and subject to security requirements the customer never agreed to. The AEP structure also depends on the asset not exporting, which for a reactor means it must be sized at or below the host's firm load — the same cap as everywhere else in this dataset.",
+   "microreactor_edge": "The AEP-Bloom deal is explicitly a FLEET purchase of standardised factory-built units placed one or a few at a time across many customer sites — 1 GW bought as a supply agreement, deployed as ~100 MW increments. That is a microreactor sales motion, not a large-reactor one: the utility's purchasing behaviour here is buying a product, not commissioning a plant, and the unit economics only work if units are identical and manufactured.",
+   "blockers": [
+    "Utility becomes the NRC licensee for equipment on a customer's site",
+    "Special contracts require commission approval and are contested by consumer advocates over cross-subsidy",
+    "No-export design requirement caps the reactor at the host's own firm load",
+    "12-year special-contract terms are short relative to a reactor's amortisation; the exit penalties protect the utility, not a 40-year asset"
+   ],
+   "sources": [
+    {
+     "label": "AEP — AEP Leveraging Fuel Cell Technology to Power Data Center Growth",
+     "url": "https://www.aep.com/news/stories/view/9866/AEP-Leveraging-Fuel-Cell-Technology-to-Power-Data-Center-Growth/",
+     "quote": "All costs for the fuel cell projects will be covered by the large customers under a special contract.",
+     "status": "fetched"
+    },
+    {
+     "label": "SEPA — U.S. Data Center Gold Rush Drives Surge in New Utility Tariffs",
+     "url": "https://sepapower.org/knowledge/u-s-data-center-gold-rush-drives-surge-in-new-utility-tariffs/",
+     "quote": "U.S. Data Center Gold Rush Drives Surge in New Utility Tariffs",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "tariffed-on-bill-lease-of-customer-sited-backup",
+   "group": "diesel",
+   "family": "utility-tariff",
+   "name": "Tariffed on-bill lease of a customer-sited backup asset, paid for by aggregating it into a virtual power plant",
+   "what_it_is": "The regulated utility leases a backup asset to the customer under a commission-approved tariff and bills it monthly on the electric bill. The customer gets seamless backup power; the utility gets dispatch rights over the asset during system peaks and aggregates thousands of them into a virtual power plant, and the peak-shaving value is what holds the lease price below the customer's cost of buying the same hardware. A parallel 'bring your own device' track pays a rebate to customers who buy their own asset and enrol it for shared dispatch. This is the cleanest example of the general principle that a backup asset only becomes affordable when someone is allowed to USE it between emergencies — the exact freedom the RICE NESHAP denies a diesel engine.",
+   "who_signs": "Regulated utility <-> retail customer, under a tariff approved by the state Public Utility Commission",
+   "asset_owner": "utility (lease track) or host (BYOD track, with dispatch rights assigned to the utility)",
+   "term": "10-year lease",
+   "price_form": "$55/month on the electric bill, or a $5,500 upfront 10-year prepayment; BYOD rebate up to $10,500 scaled to enrolled discharge power",
+   "precedents": [
+    {
+     "name": "Green Mountain Power Powerwall lease and Bring Your Own Device programs",
+     "year": "2020",
+     "parties": "Green Mountain Power <-> Vermont residential customers; Vermont Public Utility Commission (tariff approval)",
+     "size": "~2,900 customers operating more than 4,800 batteries; aggregated with utility-scale batteries and EV chargers into a ~50 MW virtual power plant",
+     "price": "$55/month for two Powerwalls, or $5,500 upfront for a 10-year lease; BYOD incentive up to $10,500 depending on shared energy",
+     "note": "GMP was the first US utility to win regulatory approval for fully tariffed home energy programs, in 2020. After three severe storms in twelve months the Commission lifted the enrollment caps on both programs. Residential scale, but it is the only fully tariffed backup-asset lease in the country and the template a commercial version would follow.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "The mechanism does not scale to a reactor at a single host, but its economic logic is the one a reactor most needs and most easily satisfies: the asset earns its keep between emergencies. A reactor's problem is the mirror image of a battery's — the battery has near-zero marginal cost and limited energy, the reactor has large capital and unlimited energy — so the tariffed-lease structure would have to invert: the utility leases the reactor's OUTPUT to the host continuously and the host's resilience is a by-product, rather than leasing a standby asset and monetising it occasionally. The regulatory precedent that matters is narrower and more useful: a state commission has already approved putting a customer-sited generation asset on the utility's tariff and billing it on-bill, which is a shape a commission could in principle extend.",
+   "microreactor_edge": "The VPM/aggregation logic argues for a fleet of small units across many hosts rather than one large unit at one host: 4,800 devices at 2,900 customers aggregate into 50 MW. A fleet of 5 MW units across ten critical facilities on one utility's system is the same portfolio shape and gives the utility a dispatchable resource with diversity, which one 50 MW machine does not.",
+   "blockers": [
+    "Residential-scale precedent only; no commercial or industrial tariffed lease of generation exists at this shape",
+    "The economics depend on frequent peak dispatch, which a baseload reactor does not provide",
+    "Utility ownership of customer-sited generation is contested or barred outside vertically integrated states",
+    "A leased reactor makes the lessee-or-lessor question an NRC licensing question, not a commercial one"
+   ],
+   "sources": [
+    {
+     "label": "Green Mountain Power — GMP's Request to Expand Customer Access to Cost-Effective Home Energy Storage is Approved",
+     "url": "https://greenmountainpower.com/news/gmps-request-to-expand-customer-access-to-cost-effective-home-energy-storage-is-approved/",
+     "quote": "along with utility scale batteries and devices like car chargers, into a virtual power plant of about 50MW of stored energy",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

@@ -624,3 +624,45 @@ For a content/static site, default to a **cookieless, privacy-first** tool (no c
 - **"Never contacted" is a fact, not missing data, and an em dash says the wrong one.** A list rendered `—` for anyone with no logged interaction. In a corpus where 27 of 29 people have never been logged, that is a column of placeholders implying broken data; the word "never" states the truth and reads as ordinary. Reserve the placeholder for values that genuinely are absent.
 
 - **A stat strip must measure the subject, not the site.** (2026-08-21) "144 distinct sources cited" and "55 load types sized" describe the artifact; "10/15 hold a binding instrument" and "3 test reactors critical in 2026" describe the market the artifact maps. A reader asked for the second kind by name ("useless stats... I only need stats about the deployment/sales/BD"). Corollary: a summary strip repeated on every tab compounds the offence - it belongs on the landing view only, and every other tab opens straight on its own content.
+
+### 11.2 The slop patterns a word list cannot catch (2026-08-25)
+
+§11.1 lists banned *words*. These are banned *moves* — every one of them was shipped on this
+site, read fine sentence by sentence, and made the page colder and harder to scan. The test for
+all of them: **would you say this out loud to someone who just walked up to the screen?**
+
+- **Explaining the machinery instead of using it.** "Each card carries a cited roadmap to first
+  power." "Every figure links to its source." "They are not enacted policy and carry no citation."
+  "What the incumbent charges, proven by a contract." The citation chips, the `idea` tag and the
+  source register already say all of this, visibly, on every row. Prose that narrates the UI is
+  pure overhead — delete it and let the interface speak. If the mechanism genuinely needs a
+  legend, write one short legend once, not a reminder in every section.
+- **Meta-commentary about the data instead of the data.** "…and that disagreement is the useful
+  part." "That is worth knowing too." "Where the bands overlap is what matters." The reader
+  decides what is useful; your job is to put the number in front of them. Cut the sentence that
+  tells them how to feel about the previous sentence.
+- **Balanced abstract headings.** "What it costs against what it displaces." The shape is a
+  see-saw — two abstractions weighed against each other, naming nothing. Say the concrete thing:
+  "What the power costs." A heading should survive being read alone in a table of contents.
+- **Register drift into the formal.** "realised price," "whilst," "utilise," "in order to." This
+  site is read by business-development people on a phone, not by a journal's copy desk. Plain
+  American, short words, contractions where they fall naturally.
+- **Throat-clearing before the point.** "Three buyer tracks, ranked by how far each has moved from
+  interest to a signed instrument. Every figure links to its source, and the fields research could
+  not reach are counted and named." Two sentences of methodology before a single fact. Front-load
+  the answer, the way the federal plain-language guidance has said since 2011: lead with what is
+  there, and let anyone who wants the method go find it.
+- **Nominalisation.** "the fields research could not reach are counted and named" → "we say which
+  fields we could not fill." Verbs beat abstract nouns, and an actor beats a passive.
+- **Hedge stacking.** One qualifier is honest; three is a shrug. "Roughly, in most cases, it may
+  be that…" — pick the single hedge that is actually true and commit to it.
+- **The em-dash habit.** More than one per paragraph and the prose starts to sound like an
+  aside about an aside. A full stop is usually the better mark.
+- **Rule of three for its own sake.** Three parallel clauses when the truth has two parts, or
+  four, is rhythm chosen over accuracy.
+
+The house label rule follows from the same test: prefer **"Who is already doing this"** over
+"Happening today, outside nuclear," and **"What is different about a small one"** over "What a
+1–20 MW unit changes." Say it the way you would in the room.
+
+**These apply to your own replies as well as to shipped copy** — the same list, both places.
