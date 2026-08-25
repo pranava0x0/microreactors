@@ -121,6 +121,18 @@ def allowed(text: str) -> str:
     return ""
 
 
+def unescape_js(raw: str) -> str:
+    """Resolve \\uXXXX escapes without touching literal UTF-8.
+
+    The obvious `raw.encode().decode("unicode_escape")` round-trips through
+    latin-1 and mangles any character already written literally in the source:
+    "100°C–200°C" came back as "100Â°Câ\x80\x9320…", which silently broke the
+    em-dash count for every app.js string.
+    """
+    out = re.sub(r"\\u([0-9a-fA-F]{4})", lambda m: chr(int(m.group(1), 16)), raw)
+    return out.replace('\\"', '"').replace("\\\\", "\\")
+
+
 def app_js_strings():
     """Display copy hard-coded in app.js: the object literals that carry card
     prose. Only fields that reach the page, never selectors or class names."""
@@ -128,7 +140,7 @@ def app_js_strings():
     out = []
     for key in ("title", "incumbent", "why", "edge", "label", "k"):
         for m in re.finditer(rf'\b{key}:\s*"((?:[^"\\]|\\.){{{MIN_LEN},}})"', src):
-            out.append((key, m.group(1).encode().decode("unicode_escape")))
+            out.append((key, unescape_js(m.group(1))))
     return out
 
 

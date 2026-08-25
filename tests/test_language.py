@@ -84,6 +84,19 @@ class CheckerStillWorks(unittest.TestCase):
         quoting = "The gate requires 'waste-heat utilisation' of at least five per cent."
         self.assertNotIn("register-drift", flags(quoting))
 
+    def test_app_js_strings_keep_their_literal_unicode(self):
+        """app.js mixes literal UTF-8 with \\uXXXX escapes. Decoding the whole
+        string via unicode_escape round-trips through latin-1 and mangles the
+        literal half — "100°C–200°C" became "100Â°Câ\x80\x9320…", which silently
+        broke the em-dash count for every string this collector returns."""
+        self.assertEqual(cl.unescape_js(r"a \u2014 b"), "a — b")
+        self.assertEqual(cl.unescape_js("100°C–200°C"), "100°C–200°C")
+        collected = [t for _, t in cl.app_js_strings()]
+        self.assertTrue(collected, "no app.js display strings collected")
+        for t in collected:
+            self.assertNotIn("Â", t, f"mojibake in collected app.js string: {t[:60]}")
+            self.assertNotIn("â\x80", t, f"mojibake in collected app.js string: {t[:60]}")
+
     def test_allow_entries_carry_a_reason(self):
         for frag, reason in cl.ALLOW.items():
             self.assertTrue(reason and len(reason) > 15,
