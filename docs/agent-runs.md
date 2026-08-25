@@ -47,3 +47,28 @@ caused the wall — serialise into two waves of four or five. (3) Tell agents wh
 even when forbidding them from running the ones that write shared state: three independently gave up
 on FERC filings the repo can already fetch. (4) An agent's declared dead seam is a task for the
 orchestrator, not a closed question.
+
+### Wave 3 — the four killed agents, re-run after the limit reset (2026-08-25)
+
+| # | Agent | Worked | Quality | ~tokens | Best alternative in hindsight |
+|---|---|---|---|---|---|
+| 7 | Docket recovery (resume) | y | high — 2 → 8 records; **corrected the AEP Ohio terms on two of three numbers** and found the cited tariff superseded in April 2026; confirmed CT PURA 20-03-17 a dead host with exact failure modes | 230K | none |
+| 8 | Federal awards (resume) | y | high — 14 → 26 records; found FEMA publishes a benefit-cost ratio per project ($261M net benefits against a $6.54M generator) | 195K | should have been pointed at `tools/usaspending.py` in wave 2, not left to web search |
+| 9 | Nuclear structures (resume) | y | high — 6 → 13 records; **Price-Anderson is a ~100× step function at exactly 100 MWe**, in 10 CFR with dollar figures | 211K | none |
+| 10 | Repo survey | y | high — 37 repos, 10 relevant; **tested the FERC download route live** rather than trusting the README, and corrected two of the owner's own repos that disagree about whether eLibrary accepts automated fetch | 174K | should have been launched FIRST in wave 2: it was the cheapest and the only non-research task, and it died last having produced nothing |
+
+**Resume economics.** Re-running four killed agents cost ~810K tokens and produced 45 new records
+plus a 539-line survey. The alternative — treating the partial files as final — would have shipped
+`mech-dockets.json` at 2 records and no survey at all. The incremental-write rule is what made the
+resume cheap: each agent read its own partial file, kept what was there, and appended, so nothing
+was re-researched.
+
+**Two rules earned this wave.**
+1. **Launch order should put the cheapest and most independent agent first, not last.** The repo
+   survey needed no prior result, was the smallest job, and was the only one that returned nothing
+   when the wall hit. Ordering by dependency instead of by cost lost it entirely on the first try.
+2. **An agent's declared dead seam is a task for the orchestrator, not a closed question.** Three
+   agents independently gave up on FERC filings that `tools/ferc_elibrary.py` fetches without
+   trouble. They were correctly barred from running `tools/` (shared-index race), which means the
+   main session has to read the absences as a work list — closing that one seam produced the
+   surplus-interconnection census, the strongest single finding in the pass.
