@@ -1,0 +1,321 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "main-session (LBNL primary read)",
+  "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
+  "angles_run": [
+   "LBNL Community Guide to Regulatory Barriers Affecting Microgrids, Reports 2 and 3 (March 2026), read in full from cached PDFs",
+   "state-by-state legal stance table (CA, CT, MA, NJ, OK, FL)",
+   "case studies: Blue Lake Rancheria, Coventry CT, ComEd Bronzeville, Harvard, NJ DCO Energy declaratory ruling"
+  ],
+  "absences": [
+   "Report No. 1 (Foundational Issues) was read in the same pass and its findings are in mech-economics-permitting.json, not here",
+   "No dollar figures: this series is a legal guide and does not price any of the structures it describes. Costs must come from the case records.",
+   "No state has yet been found that names nuclear specifically in a microgrid or third-party-sale statute; the structures below are technology-neutral by default, which is a finding rather than a gap",
+   "The Coventry PURA docket (20-03-17) and the ComEd ICC petition (2018) are cited via LBNL rather than read in the original — a follow-up pass should pull both from the state dockets"
+  ]
+ },
+ "mechanisms": [
+  {
+   "id": "self-service-single-owner",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "Own it yourself and never sell an electron",
+   "what_it_is": "The host buys the generator outright and uses the output only on its own contiguous property. Because no electricity changes hands, there is no sale, no retail service, and in nearly every state no public-utility status to argue about. The host carries the whole capital cost and the whole performance risk, and gets the whole benefit. This is the only structure that is available in all fifty states without asking anyone's permission.",
+   "who_signs": "Host <-> equipment vendor (a purchase order, not an energy contract)",
+   "asset_owner": "host",
+   "term": "asset life; no energy contract exists",
+   "price_form": "capex plus O&M; no per-kWh price",
+   "precedents": [
+    {
+     "name": "Blue Lake Rancheria microgrid",
+     "year": "2019",
+     "parties": "Blue Lake Rancheria (tribal government), Humboldt State, Siemens, Schatz Energy Research Center",
+     "size": "solar + BESS + existing diesel, single contiguous parcel",
+     "note": "LBNL's worked example of the single-property route: direct ownership, no boundary crossing, no public-utility exposure.",
+     "source_idx": 0
+    },
+    {
+     "name": "Harvard University campus distribution",
+     "year": "2014",
+     "parties": "Harvard University; Massachusetts Supreme Judicial Court doctrine",
+     "size": "multi-building campus crossing public streets",
+     "note": "Massachusetts applies a control-focused test: because Harvard never transfers ownership AND control of the electricity to a third party, no statutory distribution occurs and the PUC has no hook — even though its wires cross public streets.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the cleanest structure for a reactor and the one every early order should assume. A host that owns the reactor and consumes all its output is not selling power, so no PUC has jurisdiction over the transaction — the entire regulatory load falls on the NRC licence and the local AHJ instead of on utility law. The catch is that it requires the host to own a nuclear facility, which means the host, not the vendor, is the NRC licensee and carries decommissioning funding assurance.",
+   "microreactor_edge": "A 1–20 MW unit is small enough that a single campus, mine or terminal can absorb its entire output, which is what makes self-service viable at all. A 300 MW reactor forces its owner to sell the surplus, and the moment it sells, every structure below applies. Sizing the machine to one property's own load is therefore not just an engineering choice — it is what keeps the deal out of utility regulation.",
+   "blockers": [
+    "The host becomes the NRC licensee, with the operating organisation, security plan and decommissioning funding that implies",
+    "Full capital cost on the host's balance sheet, with no tax-equity path unless the host has tax appetite",
+    "Contiguity: the moment the wires leave the parcel the structure changes (see the ROW records)"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 2: Single Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_2_2026_03_11_final_0.pdf",
+     "quote": "Its primary function is to generate and distribute electricity exclusively for its own on-site needs",
+     "status": "fetched"
+    },
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "maintains continuous ownership and control of the electrons from generation to consumption",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "third-party-btm-ppa",
+   "group": "diesel",
+   "family": "commercial-contract",
+   "name": "Third-party behind-the-meter PPA",
+   "what_it_is": "A developer owns, builds and operates the plant on the host's site and sells the output to the host at a contracted price per kWh. The host commits no capital and buys a service; the developer keeps the tax attributes and carries the performance risk. This is the default structure for commercial solar and for most third-party microgrids — and it is the structure that most often collides with state utility law, because selling electricity to another party is exactly what a regulated utility is chartered to do.",
+   "who_signs": "Host <-> independent developer",
+   "asset_owner": "third-party developer",
+   "term": "15–25 years",
+   "price_form": "$/kWh, usually with an escalator and an availability guarantee",
+   "precedents": [
+    {
+     "name": "California's restrictive stance under Public Utilities Code section 218",
+     "year": "2023",
+     "parties": "California PUC; any non-utility multi-property developer",
+     "note": "LBNL rates California highly restrictive: where a project touches more than one property, a utility partnership or utility-owned model is often the only route left, and non-utility models face significant legal barriers.",
+     "source_idx": 0
+    },
+    {
+     "name": "PW Ventures, Inc. v. Nichols",
+     "year": "1988",
+     "parties": "Florida Public Service Commission; PW Ventures",
+     "note": "Florida reads 'supplying electricity to or for the public' broadly enough to capture a sale to a single large customer, with no numerical exception. A one-customer behind-the-meter PPA can still be an illegal utility.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "A reactor sold this way puts the vendor or a project company in the NRC licensee seat, which is what most microreactor developers say they want — Oklo's build-own-operate model at Eielson is exactly this shape. But the same sale that solves the balance-sheet problem creates the utility-law problem, and the answer is state-specific: legal in most states, unavailable in Florida and much of Oklahoma, and hard in California unless the utility is a partner.",
+   "microreactor_edge": "Nothing about being small changes the utility-law analysis — the test is who sells to whom, not how many megawatts. What being small does change is the remedy: if a state bars the PPA, a 1–20 MW factory-built unit can be re-papered as a lease or an outright sale far more cheaply than a bespoke gigawatt plant can, because the asset is a product with a price rather than a construction project.",
+   "blockers": [
+    "Florida and Oklahoma-style rules that class a single-customer sale as retail electric service",
+    "California Public Utilities Code section 218 where the project spans more than one property",
+    "The developer must be creditworthy across a 20-year term the host is relying on for resilience"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "viable pathway for multi-property projects. Non-utility models face significant legal barriers",
+     "status": "fetched"
+    },
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "There is no explicit numerical exception for electric suppliers, intensifying the regulatory risk",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "true-lease-not-ppa",
+   "group": "diesel",
+   "family": "commercial-contract",
+   "name": "Lease the machine instead of selling the power",
+   "what_it_is": "Where a PPA would make the developer an illegal retail supplier, the same economics can be papered as a true lease: the third party keeps title to the equipment but hands the host possession and use of it, with few restrictions on how the host uses it. The host is then generating its own power with rented equipment, and the owner is not selling electricity at all. Whether this works turns entirely on the lease terms — a lease that reserves operational control to the owner is a disguised PPA and fails.",
+   "who_signs": "Host (lessee) <-> equipment owner (lessor)",
+   "asset_owner": "third-party developer, with possession and use transferred to the host",
+   "term": "typically matched to the equipment life",
+   "price_form": "fixed lease payment, not indexed to output",
+   "precedents": [
+    {
+     "name": "Oklahoma Attorney General Opinion 2018-5",
+     "year": "2018",
+     "parties": "Oklahoma AG; certified retail electric suppliers",
+     "note": "A third party selling microgrid output to a host under a PPA is furnishing retail electric service and may not operate in another supplier's certified unincorporated territory. A true lease of the same equipment avoids that classification.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "A lease is a poor fit for a reactor in its usual form, because the NRC licence attaches to the operator and few hosts want to operate a reactor. The workable hybrid is a lease of the plant plus a separate operations-and-maintenance contract — but the tighter the O&M contract, the more operational control sits with the owner, and the closer the arrangement drifts back toward the disguised-PPA finding it was built to avoid. This tension is unresolved and worth naming to any counsel early.",
+   "microreactor_edge": "This is the structure a factory-built, sealed, relocatable unit is best suited to, because a leased asset that can be removed and re-sited at the end of the term is a genuinely different proposition from a leased power plant that has to be demolished in place. A microreactor fleet operator leasing units and taking them back is the closest thing in this space to an aircraft-leasing model.",
+   "blockers": [
+    "The lease/PPA line is fact-intensive and decided after the fact by a regulator or a court",
+    "NRC licensing assumes an operating organisation; splitting title from operation needs deliberate structuring",
+    "No lease of a nuclear plant to a non-nuclear host has been tested in any state"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 2: Single Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_2_2026_03_11_final_0.pdf",
+     "quote": "the customer is using the leased equipment to produce their own power",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "utility-owned-rate-based",
+   "group": "diesel",
+   "family": "utility-tariff",
+   "name": "Let the utility own it and rate-base it",
+   "what_it_is": "The incumbent utility builds, owns and operates the on-site plant and recovers the cost through regulated rates after a commission approves it. Because the utility already holds the exclusive franchise and every municipal agreement it needs, the whole franchise and public-utility fight simply does not arise. The price is control: the utility decides the design, the operation and the cost recovery, and the host becomes a customer rather than an owner.",
+   "who_signs": "Utility <-> state commission (a rate petition), with the host as a served customer",
+   "asset_owner": "utility",
+   "term": "the asset's regulated life",
+   "price_form": "rate-based; recovered from ratepayers, sometimes with a special contract or pilot tariff",
+   "precedents": [
+    {
+     "name": "ComEd Bronzeville Community Microgrid",
+     "year": "2018",
+     "parties": "Commonwealth Edison, Illinois Commerce Commission, U.S. Department of Energy",
+     "note": "The utility-centric archetype. Consumer groups objected to the utility-operated model and withdrew only after ComEd agreed to develop a pilot tariff for third-party microgrids in a later phase.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "The most expedient route for a reactor in a restrictive state, and the only route in some. It also solves the licensee problem cleanly, because a utility already runs a nuclear-capable operating organisation in many jurisdictions. What it costs is speed of a different kind: a prudence review and a rate case put the reactor's cost in front of intervenors, and a first-of-a-kind capital number is exactly what a prudence review is designed to disallow.",
+   "microreactor_edge": "A 1–20 MW unit is small enough to be approved as a pilot rather than a rate case — the dollar figure sits in the range utilities already spend on distribution projects without a contested proceeding. That is a real and under-used advantage: the same machine that is a rounding error on a utility's capital plan is a bet-the-company project for a single industrial host.",
+   "blockers": [
+    "Prudence review of first-of-a-kind capital",
+    "The host gives up control of design and dispatch",
+    "Cost recovery timelines are measured in years, not quarters"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "By having the utility own and operate the multi-property microgrid, the entire legal conflict over wasteful duplication or public utility classification was rendered moot",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "municipal-carveout-p3",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Municipal ownership under a state carve-out",
+   "what_it_is": "Some states have legislated an explicit exception letting a municipality own distribution infrastructure that crosses public streets to connect its own critical facilities. A project that would be illegal for a private developer becomes lawful when the town takes title to the wires, and the town then partners with a developer to design, build and operate everything else. The structure is a public-private partnership in which the ownership of one specific asset — the crossing — is what buys the legal permission.",
+   "who_signs": "Municipality <-> developer (P3), with the municipality holding title to the crossing infrastructure",
+   "asset_owner": "public agency for the distribution crossing; developer or municipality for generation",
+   "term": "project-specific",
+   "price_form": "grant-supported capital plus a services contract",
+   "precedents": [
+    {
+     "name": "Coventry Microgrid Project",
+     "year": "2020",
+     "parties": "Town of Coventry and Coventry Housing Authority; Connecticut PURA Docket No. 20-03-17; Eversource as objector",
+     "size": "solar, BESS and gas CHP serving schools, emergency services and public housing",
+     "note": "Eversource and others argued the privately-owned wires across the municipal right-of-way infringed the exclusive distribution franchise. The project won by changing who owned the wires, not by winning the argument — the Town took title, fitting a carve-out created by 2012 Conn. Pub. Acts 12-148 section 7 and 2013 Conn. Pub. Acts 13-298.",
+     "source_idx": 0
+    },
+    {
+     "name": "New Jersey Town Center Distributed Energy Resource (TCDER) programme",
+     "year": "2016",
+     "parties": "New Jersey Board of Public Utilities",
+     "note": "A post-Sandy programmatic pathway that de-risks the right-of-way crossing for municipally-led resilience projects from the outset.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Directly relevant to the civic-infrastructure and medical-campus buyers, where the host is a town, a county or a public hospital authority. A municipality that can lawfully own the wires can also own the reactor, and public ownership pairs naturally with the public-power precedent for nuclear. The carve-outs are narrow, though: they are written for critical-facility resilience, and a project that also sells surplus power to a private neighbour falls straight back outside them.",
+   "microreactor_edge": "Carve-outs of this kind are written around critical facilities that must stay up through a multi-day outage — which is the one duty cycle diesel is worst at and a reactor is best at. A microreactor sized to a town's police, water, shelter and hospital load is the literal subject of the statute, where a large reactor is not.",
+   "blockers": [
+    "Only a handful of states have the carve-out at all",
+    "Municipal ownership means municipal procurement, budget cycles and elections",
+    "Carve-outs are limited to the municipality's own critical facilities"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "the project's design was revised so that the Town of Coventry itself, rather than a private developer, would assume direct ownership",
+     "status": "fetched"
+    },
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "This program provides a programmatic pathway for a municipally-led project in New",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "master-metering-waiver",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "The master-metering waiver nobody budgets for",
+   "what_it_is": "Serving several separately-metered buildings from one on-site plant usually means consolidating their utility revenue meters into a single master meter — and master metering is prohibited outright in many states, because the rule exists to stop landlords reselling power to tenants. The project therefore needs an explicit commission waiver, and the waiver proceeding drags in every consumer-protection question attached to the meters being removed.",
+   "who_signs": "Project <-> state commission (a waiver petition), with consumer advocates as intervenors",
+   "asset_owner": "unchanged by the waiver",
+   "term": "granted per project",
+   "price_form": "not a price mechanism; a permission",
+   "precedents": [
+    {
+     "name": "Coventry master-metering waiver and ZREC reassignment",
+     "year": "2020",
+     "parties": "Connecticut PURA; Town of Coventry; Coventry Housing Authority; Office of Consumer Counsel",
+     "size": "71 residential meters consolidated into one",
+     "note": "PURA had to waive the statewide master-metering prohibition and separately authorise reassigning Zero Emission Renewable Energy Credit meters so the project kept its subsidy. The Office of Consumer Counsel showed consolidation would extinguish tenants' access to Eversource hardship programmes; PURA approved conditionally anyway.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Identical for a reactor — this is a metering and consumer-protection question, entirely indifferent to what is generating. It matters because it is the step that turns a 'behind the meter' pitch into a contested proceeding with a consumer advocate on the other side, and because it is routinely left out of development schedules.",
+   "microreactor_edge": "None specific to reactor size. Worth carrying anyway: a microreactor's whole commercial premise is serving a multi-building campus behind one meter, and this is the rule that decides whether one meter is legally possible.",
+   "blockers": [
+    "Outright statutory prohibition in several states",
+    "Consumer advocates intervene as of right where residential meters are involved",
+    "Existing incentive meters (renewable credits, net metering) may not survive the consolidation"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 3: Multi-Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_3_2026_03_11_final_0.pdf",
+     "quote": "consolidate 71 individual residential meters into a single",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "row-crossing-and-contiguity",
+   "group": "diesel",
+   "family": "regulatory-rule",
+   "name": "Where the property line runs decides which law applies",
+   "what_it_is": "The single most consequential fact about an on-site plant is whether its wires stay inside one parcel. Staying inside means the project answers only to the local building department and fire marshal. Crossing a public street triggers two entirely separate regimes at once: the municipality or DOT governs the physical occupation of the roadway, and the state commission governs whether the resulting commercial arrangement makes you a public utility. They are different statutes, different bodies, and clearing one says nothing about the other.",
+   "who_signs": "Project <-> municipality or DOT (street-cut permit or revocable consent); separately, project <-> state commission on the commercial structure",
+   "asset_owner": "unchanged; in California, crossing may force transfer of the crossing assets to the utility",
+   "term": "permit-specific",
+   "price_form": "permit and franchise fees; in some states a compelled asset transfer",
+   "precedents": [
+    {
+     "name": "New Jersey DCO Energy declaratory ruling on intersections",
+     "year": "2021",
+     "parties": "New Jersey Board of Public Utilities; DCO Energy, LLC",
+     "note": "New Jersey treats contiguous properties separated by one right-of-way as a single property, and in 2021 found that a diagonal split by two intersecting streets is fundamentally one thoroughfare — so a project may cross an intersection and still count as single-property.",
+     "source_idx": 0
+    },
+    {
+     "name": "California compelled transfer of cross-boundary infrastructure",
+     "year": "2023",
+     "parties": "California investor-owned utilities; project owners",
+     "note": "California may require a project owner to hand ownership of any energy infrastructure built across property lines to the regulated utility, which triggers transfer fees and other charges.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "A reactor's siting is driven by NRC exclusion-area and emergency-planning-zone requirements, which push the machine toward the middle of a large parcel — and that happens to be the same direction utility law pushes it. The two constraints point the same way for once. Where they conflict is a reactor sited on one parcel to serve buildings on another, which is the common campus and port case.",
+   "microreactor_edge": "Small emergency planning zones are the concrete advantage here: designs that can justify an EPZ at or near the site boundary let a reactor sit on a parcel that a large plant could never use, which keeps the whole project inside the single-property regime instead of the multi-property one. That is a licensing argument with a direct utility-law payoff, and the two are almost never argued together.",
+   "blockers": [
+    "Crossing a public street is the single biggest trigger for franchise litigation",
+    "Local fire marshal authority over battery installations is not waivable by a utility technical review",
+    "State-preempted microgrid districts strip local zoning in some states, splitting authority across parcels"
+   ],
+   "sources": [
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 2: Single Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_2_2026_03_11_final_0.pdf",
+     "quote": "may even require a project owner to transfer ownership of any energy infrastructure built across property lines to the regulated utility",
+     "status": "fetched"
+    },
+    {
+     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 2: Single Property Microgrids (2026-03)",
+     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_2_2026_03_11_final_0.pdf",
+     "quote": "allowing microgrids to cross intersections and still be considered a single property",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

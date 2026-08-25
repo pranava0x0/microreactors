@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "apps-federal-awards",
+    "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DoD ESPC/UESC/utility-privatization vehicles) rather than press releases, so every record carries an obligated or total-potential contract value tied to a named site.",
+    "angles_run": [
+      "USAspending /api/v2/search/spending_by_award keyword sweeps: microgrid, diesel generator, standby generator, shore power, cold ironing, energy savings performance contract, utility privatization, Clean Ports, port electrification, Grid Resilience",
+      "USAspending /api/v2/awards/{id} detail pulls to separate total_obligation from base_and_all_options on multi-decade vehicles",
+      "EPA Clean Ports Program (CFDA 66.051) award records for per-port federal + cost-share values and equipment counts",
+      "Confirmation of two named leads: Parris Island ESPC and NAVFAC Beaufort utility privatization",
+      "Capacity (MW) corroboration from contractor and Navy publications where the award record gives dollars but not megawatts"
+    ],
+    "absences": [
+      "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
+      "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
+      "FEMA BRIC and Hazard Mitigation Grant Program generator/microgrid awards: not retrieved. OpenFEMA datasets were not queried in this pass, so no named-site FEMA generator dollar values are in this file.",
+      "DOE Energy Improvements in Rural or Remote Areas (ERA): USAspending keyword 'Energy Improvements in Rural or Remote Areas' returned zero grant awards, so ERA site-level values are absent.",
+      "Off-grid mining & mineral processing: no federal award record with a named mine site and a generation dollar value was found; DOE MESC critical-minerals awards fund processing plants, not the power blocks, so nothing in that sector is recorded here.",
+      "No award record published a $/kWh energy price. Federal construction and ESPC awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex or contract value, never an energy rate.",
+      "Heat rate, fuel burn and annual generation are not in the award records; where a $/MWh comparison would be useful it could not be derived from the award's own numbers."
+    ]
+  },
+  "cases": [
+    {
+      "id": "fort-stewart-10mw-generation-plant-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "Fort Stewart 10 MW generation plant with microgrid controls (W912HN26CA001)",
+      "country": "US",
+      "region": "Fort Stewart, Georgia",
+      "parties": {
+        "host": "U.S. Army / USACE Savannah District",
+        "provider": "David Boland Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2025-11",
+      "term_years": 3,
+      "capacity": "10 MW generation plant with microgrid controls",
+      "capex": "$54,333,598 obligated; base and all options also $54,333,598 (firm, no unexercised options)",
+      "displaced": "Grid dependence at an Army installation; the award buys islandable on-site generation rather than replacing an existing plant",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Y1BG, NAICS 237130",
+          "id": "PIID W912HN26CA001",
+          "date": "2025-11-03",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "USACE Savannah District awarded David Boland Inc. a definitive construction contract on 2025-11-03 to build a 10 MW generation plant with microgrid controls at Fort Stewart, Georgia, with a period of performance running to 2028-12-15. The award record shows $54,333,598 obligated and an identical base-and-all-options value, so this is the whole contract, not a first tranche. Place of performance is recorded as FORT STEWART, LIBERTY COUNTY, GA 31315. The award is a construction contract only — no fuel, no operations, no long-term service.",
+      "microreactor_read": "This is the cleanest federal price stamp available for on-site firm generation at a defended site: $54.33M for 10 MW is $5,433/kW of installed capacity, engineering and construction included, with fuel and O&M still to come on top. A 1-20 MW microreactor sold into an Army installation has to land near or below $5,400/kW installed to be argued on capital cost alone, and its pitch has to be the fuel and O&M line the Boland contract does not cover.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_W912HN26CA001 (PIID W912HN26CA001), David Boland Inc.",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/",
+          "quote": "CONSTRUCT A 10MW GENERATION PLANT, WITH MICROGRID CONTROLS",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "parris-island-espc-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "MCRD Parris Island site-wide microgrid ESPC (N39430-17-F-1901)",
+      "country": "US",
+      "region": "Parris Island, South Carolina",
+      "parties": {
+        "host": "U.S. Marine Corps / NAVFAC EXWC",
+        "provider": "Ameresco, Inc."
+      },
+      "instrument": "ESPC/UESC",
+      "signed": "2016-12",
+      "term_years": 25,
+      "capacity": "3.5 MW natural-gas CHP + 6.7 MW-DC solar PV + 8.0 MWh battery + existing diesel backup, under one microgrid controller; announced as 10 MW of new on-site generation",
+      "price": "$91.1 million self-funding ESPC investment as announced by the contractor",
+      "capex": "$66,631,952 obligated to date against a base-and-all-options value of $212,716,674 (USAspending, award last modified 2026-05-01)",
+      "displaced": "An end-of-life central steam plant and grid purchases; announced as a 79% reduction in the depot's utility energy demand",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29029",
+          "id": "PIID N3943017F1901",
+          "date": "2016-12-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/"
+        }
+      ],
+      "summary": "NAVFAC EXWC issued Ameresco a task order under the DOE ESPC IDIQ on 2016-12-28 to build and then operate a site-wide microgrid at Marine Corps Recruit Depot Parris Island, with a period of performance running to 2041-11-30. Ameresco announced the deal as a $91.1 million self-funding ESPC covering 10 MW of new on-site generation, a 3.5 MW gas CHP plant replacing the end-of-life steam plant, 6.7 MW-DC of solar PV and an 8.0 MWh battery. The federal award record tells a different story about size: $66,631,952 has been obligated so far and the contract's base-and-all-options value is $212,716,674 — 2.3x the announced $91.1M, because the ESPC's later years are performance-period service payments, not construction. The host pays nothing up front and repays out of guaranteed savings across roughly 25 years.",
+      "microreactor_read": "Two numbers matter to a microreactor seller here and they are far apart: the capital comparison is $91.1M for about 10 MW of mixed generation, i.e. roughly $9,100/kW nameplate and about $26,000/kW if you count only the 3.5 MW of firm dispatchable CHP; the commercial comparison is the $212.7M of lifecycle contract value a 25-year vehicle at one recruit depot can actually carry. A 5-10 MW microreactor priced against the $91.1M sticker looks expensive and priced against the $212.7M lifecycle envelope looks financeable — which is why the instrument, not the capex, is the thing to copy.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
+          "quote": "\"total_obligation\": 66631952.0 ... \"base_and_all_options\": 212716674.0",
+          "status": "fetched"
+        },
+        {
+          "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
+          "url": "https://ir.ameresco.com/news-events/press-releases/detail/244/ameresco-to-build-microgrid-integrating-onsite-generation",
+          "quote": "$91.1 million self-funding Energy Savings Performance Contract (ESPC)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "guantanamo-bay-lng-espc",
+      "sector": "Remote outposts & microgrids",
+      "name": "Naval Station Guantanamo Bay 20 MW LNG combined-cycle plant ESPC (N39430-19-F-9909)",
+      "country": "US",
+      "region": "Naval Station Guantanamo Bay, Cuba",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Southeast",
+        "provider": "Siemens Government Technologies, Inc."
+      },
+      "instrument": "ESPC/UESC",
+      "signed": "2019-07",
+      "term_years": 24,
+      "capacity": "20 MW LNG dual-fuel combined-cycle plant, plus a 13.7 MW solar facility; 15 existing diesel generators retained for outages and peaks",
+      "price": "Projected annual energy savings of $24.6 million over a 22-year performance period",
+      "capex": "$368.8 million for the power plant itself; $828.8 million announced ESPC value; USAspending shows $101,059,504 obligated against a base-and-all-options value of $927,391,394 running to 2043-04-24",
+      "displaced": "Diesel generation on an isolated island base — LNG substitution announced at approximately $9 million a year in fuel cost savings versus diesel, and a 27.4 percent cut in annual fuel consumption",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29041, firm fixed price",
+          "id": "PIID N3943019F9909",
+          "date": "2019-07-24",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
+        }
+      ],
+      "summary": "In July 2019 NAVFAC Southeast awarded Siemens Government Technologies an ESPC task order — announced at $828.8 million and issued for 25 years of construction plus operation — to replace diesel generation at Naval Station Guantanamo Bay with a dual-fuel LNG combined-cycle plant and a solar field. The plant was commissioned on 2023-09-07 and is rated 20 MW; the plant alone cost $368.8 million. The federal award record shows $101,059,504 obligated so far against a base-and-all-options value of $927,391,394 with a potential end date of 2043-04-24, so the contract has grown roughly $100M past its announced value and only about 11 percent of the ceiling has been obligated. The 15 pre-existing diesel generators were not retired; they were kept for outages and peaks.",
+      "microreactor_read": "Guantanamo is the strongest capex-per-MW argument in this file and it runs the reactor's way: $368.8M for 20 MW of island generation is $18,440/kW, and that is for a gas plant whose fuel still has to arrive by ship. A 1-20 MW microreactor competing at an isolated base does not need to beat $5,400/kW — at a site with no pipeline and no grid tie it needs to beat roughly $18,000/kW plus a fuel logistics chain, against a counterfactual the Navy itself valued at $24.6M a year in savings over 22 years.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
+          "quote": "\"total_obligation\": 101059504.3 ... \"base_and_all_options\": 927391394.3",
+          "status": "fetched"
+        },
+        {
+          "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
+          "url": "https://www.dvidshub.net/news/453129/naval-station-guantanamo-bay-commissions-new-energy-efficient-power-plant",
+          "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "doyon-utilities-alaska-utility-privatization",
+      "sector": "Remote outposts & microgrids",
+      "name": "Doyon Utilities 50-year utility privatization, Alaska Army installations (SP0600-07-C-8263)",
+      "country": "US",
+      "region": "Fort Wainwright, Alaska (plus Fort Greely and JBER-Richardson under the Doyon Utilities program)",
+      "parties": {
+        "host": "U.S. Army, contracting through DLA Energy",
+        "provider": "Doyon Utilities, LLC (Alaska Native corporation joint venture)",
+        "utility": "Doyon Utilities, LLC — regulated by the Regulatory Commission of Alaska"
+      },
+      "instrument": "utility tariff",
+      "signed": "2007-09",
+      "term_years": 51,
+      "capacity": "Full electric, heat, water and wastewater utility systems at Alaska Army installations; capacity not stated in the award record",
+      "capex": "$894,733,810 obligated to date against a base-and-all-options value of $3,082,072,958; period of performance 2007-09-28 to 2058-08-14",
+      "displaced": "Government ownership and operation of installation utility systems in interior Alaska, where the incumbent generation is coal and oil-fired central plant",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Utility service contract for utility privatization, firm fixed price",
+          "id": "PIID SP0600-07-C-8263",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
+        },
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Companion utility privatization contract, same recipient and date",
+          "id": "PIID SP0600-07-C-8261",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "DLA Energy awarded Doyon Utilities a utility privatization contract on 2007-09-28 covering Army installation utility systems in Alaska, with a period of performance that runs to 2058-08-14 — a fifty-one year term. The award record shows $894,733,810 already obligated and a base-and-all-options value of $3,082,072,958, making this by a wide margin the largest single utility vehicle surfaced in this sweep. A companion contract to the same recipient on the same day (SP0600-07-C-8261) carries a further $212,665,748 obligated. The contractor is a regulated utility: its rates at these installations are set by the Regulatory Commission of Alaska, not by the contract alone.",
+      "microreactor_read": "This is the instrument a microreactor should be sold into rather than around: a single counterparty already holds a fifty-year, three-billion-dollar franchise to supply heat and power to Alaska Army installations, and its generation is coal and oil in a place where fuel arrives by rail and barge. The reactor does not need to beat a $/kW number to enter — it needs to become an asset inside a rate base a regulator already approves, and the addressable line is the roughly $60M a year of obligations this one contract has averaged since 2007.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_SP060007C8263 (PIID SP0600-07-C-8263), Doyon Utilities LLC, Fort Wainwright AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
+          "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

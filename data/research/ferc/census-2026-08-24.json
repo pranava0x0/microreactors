@@ -1,0 +1,463 @@
+{
+  "_meta": {
+    "source": "FERC eLibrary description-only search via tools/ferc_elibrary.py",
+    "limit": 200,
+    "caveat": "Filing counts are not deal counts. Check single_docket_years before reading any year shape as market activity."
+  },
+  "censuses": [
+    {
+      "phrase": "Surplus Interconnection Service Agreement",
+      "total_hits": 71,
+      "returned": 71,
+      "capped": false,
+      "capped_note": "",
+      "by_year": {
+        "2022": 6,
+        "2023": 6,
+        "2024": 13,
+        "2025": 23,
+        "2026": 23
+      },
+      "named_agreements_by_year": {
+        "2022": 1,
+        "2023": 3,
+        "2024": 3,
+        "2025": 9,
+        "2026": 19
+      },
+      "distinct_dockets": 67,
+      "top_dockets": [
+        [
+          "ER26-803",
+          2
+        ],
+        [
+          "ER26-2717",
+          2
+        ],
+        [
+          "ER25-945",
+          2
+        ],
+        [
+          "ER25-944",
+          2
+        ],
+        [
+          "ER25-2016",
+          2
+        ],
+        [
+          "ER26-185",
+          2
+        ],
+        [
+          "ER26-938",
+          1
+        ],
+        [
+          "ER26-1548",
+          1
+        ]
+      ],
+      "single_docket_years": [],
+      "named_agreements": [
+        {
+          "filed": "02/27/2026",
+          "accession": "20260227-3067",
+          "dockets": [
+            "ER26-938-000"
+          ],
+          "description": "Letter order accepting Alabama Power Company's et al. 01/02/2026 filing of a Surplus Interconnection Service Agreement with Twiggs County Solar, LLC, designated as Service Agreement No. 868 under ER26-938. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260227-3067"
+        },
+        {
+          "filed": "02/12/2026",
+          "accession": "20260212-3058",
+          "dockets": [
+            "ER26-803-000"
+          ],
+          "description": "Letter order accepting Alabama Power Company's et al. 12/17/2025 filing of a Surplus Interconnection Service Agreement with Decatur Solar Energy Center, LLC and Decatur Energy Storage, LLC, designated as Service Agreement No. 867 under ER26-803.",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260212-3058"
+        },
+        {
+          "filed": "04/27/2026",
+          "accession": "20260427-3015",
+          "dockets": [
+            "ER26-1548-000"
+          ],
+          "description": "Letter order accepting Alabama Power Company's et al. 02/27/2026 filing of an executed Surplus Interconnection Service Agreement with White Pine Solar, LLC under ER26-1548. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3015"
+        },
+        {
+          "filed": "04/27/2026",
+          "accession": "20260427-3019",
+          "dockets": [
+            "ER26-1547-000"
+          ],
+          "description": "Letter order accepting Alabama Power Company's et al. 02/27/2026 filing of a Surplus Interconnection Service Agreement with Cabokenze Energy Storage, LLC and White Oak Solar, LLC under ER26-1547. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3019"
+        },
+        {
+          "filed": "04/24/2026",
+          "accession": "20260424-3019",
+          "dockets": [
+            "ER26-1545-000"
+          ],
+          "description": "Letter order accepting Alabama Power Company's et al. 02/27/2026 filing of a Surplus Interconnection Service Agreement with Saunder’s Crossing Energy Storage, LLC and Washington County Solar, LLC under ER26-1545. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260424-3019"
+        },
+        {
+          "filed": "06/26/2026",
+          "accession": "20260626-3014",
+          "dockets": [
+            "ER26-2498-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/11/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Public Service Company of Oklahoma and Oklahoma Gas and Electric Company under ER26-2498. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-3014"
+        },
+        {
+          "filed": "01/30/2025",
+          "accession": "20250130-3010",
+          "dockets": [
+            "ER25-773-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 12/20/2024 filing of a Surplus Interconnection Service Generator Agreement with Boot Hill Solar LLC and Sunflower Electric Power Corporation under ER25-773. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250130-3010"
+        },
+        {
+          "filed": "08/03/2026",
+          "accession": "20260803-3008",
+          "dockets": [
+            "ER26-2862-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 06/17/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Oklahoma Gas and Electric Company and Twelvemile Energy II, LLC etc. under ER26-2862. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260803-3008"
+        },
+        {
+          "filed": "06/26/2026",
+          "accession": "20260626-3082",
+          "dockets": [
+            "ER26-2526-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/14/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Balko Energy Storage, LLC, Balko Wind, LLC et al. under ER26-2526. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-3082"
+        },
+        {
+          "filed": "06/25/2026",
+          "accession": "20260625-3048",
+          "dockets": [
+            "ER26-2505-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/12/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Balko Solar, LLC and Balko Wind, LLC, etc. under ER26-2505. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260625-3048"
+        },
+        {
+          "filed": "04/27/2026",
+          "accession": "20260427-3014",
+          "dockets": [
+            "ER26-1625-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 03/05/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Grand River Dam Authority and Mayes Solar, LLC under ER26-1625.",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3014"
+        },
+        {
+          "filed": "04/27/2026",
+          "accession": "20260427-3013",
+          "dockets": [
+            "ER26-1621-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 03/05/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Grand River Dam Authority, Salt Branch Solar, LLC and Salt Branch under ER26-1621. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3013"
+        },
+        {
+          "filed": "06/11/2024",
+          "accession": "20240611-3080",
+          "dockets": [
+            "ER24-1765-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 04/16/2024 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Minco II Energy Storage, LLC as surplus interconnection service customer, etc. under ER24-1765. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240611-3080"
+        },
+        {
+          "filed": "03/22/2024",
+          "accession": "20240322-3054",
+          "dockets": [
+            "ER24-1031-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 01/29/ 2024 filing of a notice of cancellation of the Surplus Interconnection Service Generator Interconnection Agreement with Twelvemile Energy, LLC etc. under ER24-1031. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20240322-3054"
+        },
+        {
+          "filed": "08/04/2023",
+          "accession": "20230804-3077",
+          "dockets": [
+            "ER23-2259-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s June 26, 2023 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Nebraska Public Power District as surplus interconnection service customer, etc. under ER23-2259.",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20230804-3077"
+        },
+        {
+          "filed": "06/26/2026",
+          "accession": "20260626-3062",
+          "dockets": [
+            "ER26-2525-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/14/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Colt Grid, LLC and Oklahoma Gas and Electric Company under ER26-2525. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-3062"
+        },
+        {
+          "filed": "11/04/2025",
+          "accession": "20251104-3009",
+          "dockets": [
+            "ER25-3459-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 09/18/2025 filing of an amended and restated Surplus Interconnection Service Generator Interconnection Agreement with Skeleton Creek Energy Center, LLC et al. under ER25-3459. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20251104-3009"
+        },
+        {
+          "filed": "12/14/2023",
+          "accession": "20231214-3109",
+          "dockets": [
+            "ER24-294-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s November 1, 2023 filing of an executed Surplus Interconnection Service Generator Interconnection Agreement with NextEra Energy Resources Interconnection Holdings, LLC etc. under ER24-294. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20231214-3109"
+        },
+        {
+          "filed": "07/15/2025",
+          "accession": "20250715-3052",
+          "dockets": [
+            "ER25-2404-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 06/03/2025 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Southwest Public Service Company under ER25-2404. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250715-3052"
+        },
+        {
+          "filed": "08/03/2026",
+          "accession": "20260803-3017",
+          "dockets": [
+            "ER26-2865-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 06/17/2026 filing of an executed Surplus Interconnection Service Generator Interconnection Agreement with Clark County Storage Project LLC, Clark County Solar, LLC, etc. under ER26-2865. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260803-3017"
+        },
+        {
+          "filed": "06/26/2026",
+          "accession": "20260626-3021",
+          "dockets": [
+            "ER26-2500-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/11/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with NextEra Energy Resources Development, LLC, Willow Creek Wind Project, LLC, et. al. under ER26-2500. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260626-3021"
+        },
+        {
+          "filed": "06/11/2026",
+          "accession": "20260611-3005",
+          "dockets": [
+            "ER26-2478-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/07/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Grand River Dam Authority and Neosho Grid, LLC under ER26-2478. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260611-3005"
+        },
+        {
+          "filed": "05/22/2026",
+          "accession": "20260522-3097",
+          "dockets": [
+            "ER26-1984-000",
+            "ER26-1982-000",
+            "ER26-1983-000"
+          ],
+          "description": "Letter order accepting Tri-State Generation and Transmission Association, Inc.'s 03/31/2026 filing of an executed Surplus Interconnection Service Generator Interconnection Agreement with Escalante Solar, LLC etc. under ER26-1982 et al. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260522-3097"
+        },
+        {
+          "filed": "04/28/2026",
+          "accession": "20260428-3013",
+          "dockets": [
+            "ER26-1753-000"
+          ],
+          "description": "Letter order accepting Tri-State Generation and Transmission Association, Inc.'s 03/13/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with CGRP 03, LLC under ER26-1753. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260428-3013"
+        },
+        {
+          "filed": "07/03/2025",
+          "accession": "20250703-3030",
+          "dockets": [
+            "ER25-2187-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/09/2025 filing of a revised Surplus Interconnection Service Generator Interconnection Agreement with DG Woodward Energy Storage, LLC, Oklahoma Wind, LLC et al. under ER25-2187. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250703-3030"
+        },
+        {
+          "filed": "06/16/2025",
+          "accession": "20250616-3020",
+          "dockets": [
+            "ER25-2056-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 04/28/2025 filing of an executed Surplus Interconnection Service Generator Interconnection Agreement with Skeleton Creek Energy Center, LLC and Oklahoma Gas and Electric Company under ER25-2056. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250616-3020"
+        },
+        {
+          "filed": "04/10/2025",
+          "accession": "20250410-3017",
+          "dockets": [
+            "ER25-1323-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 02/18/2025 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Fly Gap Solar, LLC and Oklahoma Gas and Electric Company under ER25-1323. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250410-3017"
+        },
+        {
+          "filed": "04/10/2025",
+          "accession": "20250410-3018",
+          "dockets": [
+            "ER25-1326-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 02/18/2025 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Anvil Solar, LLC and Oklahoma Gas and Electric Company under ER25-1326.",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250410-3018"
+        },
+        {
+          "filed": "06/30/2026",
+          "accession": "20260630-3006",
+          "dockets": [
+            "ER26-2627-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 05/26/2026 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Oklahoma Gas and Electric Company and Ringer Grid, LLC under ER26-2627. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260630-3006"
+        },
+        {
+          "filed": "10/15/2025",
+          "accession": "20251015-3006",
+          "dockets": [
+            "ER25-3203-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 08/18/2025 filing of a notice of cancellation of the Amended and Restated Surplus Interconnection Service Generator Interconnection Agreement with Choctaw Fields Solar Project, LLC et al., ER25-3203. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20251015-3006"
+        },
+        {
+          "filed": "03/26/2025",
+          "accession": "20250326-3059",
+          "dockets": [
+            "ER25-1258-000"
+          ],
+          "description": "Letter order accepting Southwest Power Pool, Inc.'s 02/10/2025 filing of a Surplus Interconnection Service Generator Interconnection Agreement with Drumtown Solar, LLC and Oklahoma Gas and Electric Company under ER25-1258. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20250326-3059"
+        },
+        {
+          "filed": "07/06/2026",
+          "accession": "20260706-3050",
+          "dockets": [
+            "ER26-2503-000"
+          ],
+          "description": "Letter order accepting Arizona Public Service Company's 05/11/2026 filing of revisions to add surplus interconnection service to a Large Generator Interconnection Agreement with Shay Solar, LLC under ER26-2503. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260706-3050"
+        },
+        {
+          "filed": "07/22/2022",
+          "accession": "20220722-3001",
+          "dockets": [
+            "ER22-1961-000"
+          ],
+          "description": "Letter order accepting Arizona Public Service Company's May 26, 2022 filing of revisions to its Large Generator Interconnection Agreement with its transmission function and its generation function to add Surplus Interconnection Service etc., ER22-1961.",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20220722-3001"
+        },
+        {
+          "filed": "12/26/2024",
+          "accession": "20241226-3018",
+          "dockets": [
+            "ER25-373-000"
+          ],
+          "description": "Letter order accepting Public Service Company of Colorado's 11/05/2024 filing of a notice of cancellation of the Second Amended Surplus Large Generator Interconnection Agreement with Front Range Midway Solar Project, LLC under ER25-373. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20241226-3018"
+        },
+        {
+          "filed": "01/10/2023",
+          "accession": "20230110-3023",
+          "dockets": [
+            "ER23-436-000"
+          ],
+          "description": "Letter order accepting Public Service Company of Colorado's 11/15/2022 filing of an Amended Surplus Large Generator Interconnection Agreement with Front Range Midway Solar Project, LLC under ER23-436. ",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20230110-3023"
+        }
+      ]
+    },
+    {
+      "phrase": "co-located load",
+      "total_hits": 64,
+      "returned": 64,
+      "capped": false,
+      "capped_note": "",
+      "by_year": {
+        "1995": 1,
+        "1997": 1,
+        "2004": 2,
+        "2005": 3,
+        "2007": 1,
+        "2010": 1,
+        "2024": 45,
+        "2025": 5,
+        "2026": 5
+      },
+      "named_agreements_by_year": {},
+      "distinct_dockets": 24,
+      "top_dockets": [
+        [
+          "AD24-11",
+          46
+        ],
+        [
+          "EL25-49",
+          6
+        ],
+        [
+          "ER24-2172",
+          6
+        ],
+        [
+          "ER26-1479",
+          4
+        ],
+        [
+          "EL25-20",
+          2
+        ],
+        [
+          "ER24-2893",
+          2
+        ],
+        [
+          "ER24-2894",
+          2
+        ],
+        [
+          "ER24-2889",
+          2
+        ]
+      ],
+      "single_docket_years": [
+        {
+          "year": "2024",
+          "docket": "AD24-11",
+          "filings": 42,
+          "of": 45,
+          "note": "one docket carries most of this year's volume — a proceeding, not a market"
+        },
+        {
+          "year": "2025",
+          "docket": "EL25-49",
+          "filings": 4,
+          "of": 5,
+          "note": "one docket carries most of this year's volume — a proceeding, not a market"
+        },
+        {
+          "year": "2026",
+          "docket": "ER26-1479",
+          "filings": 4,
+          "of": 5,
+          "note": "one docket carries most of this year's volume — a proceeding, not a market"
+        }
+      ],
+      "named_agreements": []
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "apps-medical-civic",
+    "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
+    "angles_run": [
+      "Medical: hospital microgrid/CHP deals with published capex or $/kWh (Baystate, Kaiser Ontario, Kaiser Richmond, Loma Linda, NextNRG, TECO/Texas Medical Center)",
+      "Medical: the regulatory hook - CMS 96-hour fuel rule and NFPA 110 Level 1 Type 10 ten-second transfer; searched for an AHJ accepting a non-diesel emergency power supply",
+      "Medical: who finances it - state resiliency grants (MA DOER, CA Energy Commission EPIC), utility investment, HUD National Disaster Resilience Competition, developer-owned PPA/EaaS",
+      "Medical: hospital load and thermal data from EIA CBECS 2018 inpatient health care",
+      "Medical: published cost-of-outage figures for hospitals (abandoned - no primary source)",
+      "Civic: water and wastewater plant electricity - Blue Plains DBO contract, EPA water-sector energy share",
+      "Civic: state and utility resiliency grant programmes - MA DOER Community Clean Energy Resiliency Initiative, CT DEEP microgrid grants, NY Prize, Maryland Energy Administration",
+      "Civic: airports - Pittsburgh International (BOO) and JFK New Terminal One (EaaS)",
+      "Civic: university and municipal district-energy campuses as civic anchors - Ohio State 50-year energy concession",
+      "Civic: emergency operations centres, PSAPs and shelters - Montgomery County MD public safety HQ and jail, Sterling MA police/dispatch battery"
+    ],
+    "absences": [
+      "No published $/kWh, capacity fee or capex for the Pittsburgh International Airport 20-year Peoples Natural Gas contract - only 'no cost to the airport' and ~$1M first-year savings; the 2019 Allegheny County Airport Authority board resolution itself was not located.",
+      "No published $/kWh for the JFK New Terminal One EaaS agreement or the Montgomery County MD energy services agreement; both are disclosed only as 'no upfront capital cost'.",
+      "Hospital cost-of-outage per hour could not be sourced to a primary document. Figures circulating ($25,000/minute EHR downtime, Uptime Institute; ~$100,000/hour, ITIC) appear only in vendor blogs citing them second-hand. Dropped rather than cited.",
+      "The CT DEEP 'Chart of Microgrid Award Winners - All Rounds' PDF with per-site dollar amounts could not be retrieved; only round totals were verifiable ($18M pilot round, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4). No Connecticut record written.",
+      "Could not fetch the ORNL CHP Technical Assistance Partnership project profile for Texas Medical Center (TLS certificate failure) or the DOE Better Buildings implementation model for Kaiser Richmond (same failure); used a Burns & McDonnell case study PDF and The Planning Report instead.",
+      "Found no document in which an authority having jurisdiction accepted a non-diesel emergency power supply for a hospital under NFPA 110/NFPA 99. Every case examined kept diesel or batteries for the 10-second transfer: Baystate's 4.6 MW CHP still includes a black-start diesel, and Kaiser Ontario's 9 MWh battery buys only 10 hours.",
+      "No FEMA BRIC or HMGP award for a hospital or water-plant microgrid with a named site and dollar value surfaced in the searches run.",
+      "Kaiser Richmond battery capacity (reported elsewhere as 1 MWh) and total project cost beyond the $4.77M CEC grant are unverified.",
+      "Ohio State CHP nameplate of ~105 MW appears only in search summaries, not in a page I fetched; the fetched OSU page gives only the 8,000-ton cooling capacity, and the fetched cost source gives $278M rising to $300M.",
+      "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency centre) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
+      "Deer Island (Boston), Hyperion (Los Angeles) and Stickney (Chicago) wastewater plants were not researched to a numbers-plus-document standard within budget.",
+      "No state PUC docket, FERC filing or NRC accession applies to any of these deals - they are procurement awards, board resolutions, grant awards and bilateral PPAs, not rate filings. Only the Ohio State board action is recorded in `filings`.",
+      "EIA CBECS electricity intensity for inpatient hospitals in kWh per square foot (commonly quoted as 31 kWh/sq ft from CBECS 2012) is not present on the CBECS 2018 health-care page that was fetched; only average floorspace of 264,800 sq ft and the 32% space-heating share were verified."
+    ]
+  },
+  "cases": [
+    {
+      "id": "dc-water-blue-plains-biogas-chp",
+      "sector": "Critical civic infrastructure",
+      "name": "DC Water Blue Plains AWTP thermal hydrolysis + biogas CHP (Pepco Energy Services DBO)",
+      "country": "US",
+      "region": "Washington, DC",
+      "parties": {
+        "host": "DC Water (District of Columbia Water and Sewer Authority)",
+        "provider": "Pepco Energy Services (design-build-operate contractor)",
+        "utility": "Pepco"
+      },
+      "instrument": "design-build",
+      "signed": "2012-03",
+      "term_years": 15,
+      "capacity": "CHP rated at least 14 MW gross on digester biogas (DOE reports up to 13 MW output), covering roughly 30-33% of the 157-acre plant's average power demand",
+      "price": "O&M services valued at more than $89 million over the 15-year contract term",
+      "capex": "$81 million design-build for the CHP island; ~$170 million total Pepco Energy Services contract; ~$470 million for the whole waste-to-energy program including Cambi thermal hydrolysis and digesters",
+      "displaced": "Purchased grid electricity: about $10 million per year of electricity cost avoided",
+      "summary": "DC Water selected Pepco Energy Services in March 2012 under a design-build-operate contract to build a combined heat and power plant burning biogas from North America's first Cambi thermal hydrolysis + anaerobic digestion train at Blue Plains, the largest advanced wastewater treatment plant in the world. The build price was $81 million; a 15-year O&M contract worth more than $89 million brought the deal to roughly $170 million, inside a ~$470 million overall waste-to-energy program. The CHP is rated at least 14 MW and supplies about a third of plant load, saving roughly $10 million a year in electricity. Blue Plains still buys the other two-thirds of its power from the grid.",
+      "microreactor_read": "A single large municipal wastewater plant is a 30-45 MW electrical load with a firm 24/7 duty cycle and a real steam demand - two to three microreactors' worth on one fenced federal-adjacent site. But the price to beat is brutal: $81M for 14 MW is ~$5,800/kW installed for a machine whose fuel is free digester gas, so a reactor has to sell against the remaining grid-supplied two-thirds of load, not against the CHP.",
+      "sources": [
+        {
+          "label": "DC Water — Pepco Energy Services Selected by DC Water to Build and Operate a $170 million Combined Heat & Power Plant",
+          "url": "https://www.dcwater.com/about-dc-water/media/news/pepco-energy-services-selected-dc-water-build-and-operate-170-million",
+          "quote": "The CHP project will produce at least 14 MW of electric power that will supply the Blue Plains facility with nearly 30 percent",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Department of Energy (CMEI) — A National First in Community Waste to Energy in our Nation's Capital",
+          "url": "https://www.energy.gov/cmei/articles/national-first-community-waste-energy-our-nations-capital",
+          "quote": "an electrical cost savings of about $10 million per year",
+          "status": "fetched"
+        },
+        {
+          "label": "US EPA — Energy Efficiency for Water Utilities",
+          "url": "https://www.epa.gov/sustainable-water-infrastructure/energy-efficiency-water-utilities",
+          "quote": "drinking water and wastewater plants typically are the largest energy consumers, often accounting for 30 to 40 percent of total energy consumed",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "pittsburgh-international-airport-microgrid",
+      "sector": "Critical civic infrastructure",
+      "name": "Pittsburgh International Airport microgrid (Peoples Natural Gas, 20-year build-own-operate)",
+      "country": "US",
+      "region": "Pittsburgh, Pennsylvania",
+      "parties": {
+        "host": "Allegheny County Airport Authority",
+        "provider": "Peoples Natural Gas (with CNX Resources, IMG Energy Solutions, EIS Solar, PJ Dick, LLI Engineering)",
+        "utility": "Duquesne Light Company"
+      },
+      "instrument": "BOO",
+      "signed": "2019",
+      "term_years": 20,
+      "capacity": "Five natural-gas-fueled generators plus 9,360 solar panels across eight acres; more than 20 MW capable against an airport peak demand of approximately 14 MW",
+      "price": "No capital cost to the airport; natural gas price locked for the first five years with no rate increases",
+      "displaced": "Retail utility supply: about $1 million saved in the first year of operation; the airport's consultant expected rate increases of at least 15-20% absent the deal",
+      "summary": "In 2019 the Allegheny County Airport Authority board awarded Peoples Natural Gas a 20-year contract to build, own, maintain and operate a microgrid at no capital cost to the airport, fed by five gas gensets burning gas produced on airport land plus a 9,360-panel solar array on a former landfill. The microgrid went live in July 2021 and made PIT the first airport in the world running entirely on its own generation, with a grid tie to Duquesne Light retained. Peak airport demand is about 14 MW against more than 20 MW of installed capacity. The airport reported roughly $1 million in energy savings in year one, with gas prices locked for five years. A ~4.7 MW solar expansion of 11,216 additional panels was announced in 2025.",
+      "microreactor_read": "A major international airport peaks at ~14 MW - one microreactor's output - and the incumbent structure is exactly the one a reactor vendor must copy: zero host capex, developer owns the asset, host buys power on a 20-year fixed-price agreement. The number to beat is the delivered price that produced $1M/yr of savings against Duquesne Light retail, not a capex comparison.",
+      "sources": [
+        {
+          "label": "PR Newswire / Allegheny County Airport Authority — Pittsburgh International Airport Goes Live with First-of-Its-Kind Microgrid",
+          "url": "https://www.prnewswire.com/news-releases/pittsburgh-international-airport-goes-live-with-first-of-its-kind-microgrid-powering-entire-facility-with-natural-gas-and-solar-energy-301333349.html",
+          "quote": "The Allegheny County Airport Authority Board of Directors in 2019 awarded Peoples Natural Gas a 20-year contract to build, maintain and operate the microgrid",
+          "status": "fetched"
+        },
+        {
+          "label": "Microgrid Knowledge — How a microgrid saved Pittsburgh International Airport $1 million",
+          "url": "https://www.microgridknowledge.com/editors-choice/article/11427168/how-a-microgrid-saved-pittsburgh-international-airport-1-million",
+          "quote": "But it is the $1 million in energy savings, achieved in its first year of operation, that is most eye popping.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "baystate-health-springfield-chp",
+      "sector": "Medical campuses",
+      "name": "Baystate Medical Center 4.6 MW CHP plant, Springfield MA",
+      "country": "US",
+      "region": "Springfield, Massachusetts",
+      "parties": {
+        "host": "Baystate Health / City of Springfield",
+        "provider": "City of Springfield-led project (Massachusetts DOER Community Clean Energy Resiliency Initiative award)",
+        "utility": "Eversource Energy"
+      },
+      "instrument": "grant-funded",
+      "signed": "2014-10",
+      "capacity": "4.6 MW gas-turbine CHP with heat recovery steam generator, absorption chiller, black-start diesel generator and load management; designed to supply 80% of the hospital's annual energy, 68% of electricity and 97% of steam",
+      "capex": "$27 million total project cost, of which $2.79 million was a Massachusetts DOER resiliency grant and about $5 million an Eversource Energy investment; the wider Springfield resilience effort drew $17 million+ from HUD's National Disaster Resilience Competition",
+      "displaced": "Purchased electricity and steam: an estimated $2.7 million a year in energy costs; hospital backup endurance extended from 96 hours to 30 days or more",
+      "summary": "Massachusetts DOER awarded Springfield $2.79 million in October 2014 under the Community Clean Energy Resiliency Initiative for a 4.6 MW CHP plant serving Baystate Medical Center with electricity, chilled water and steam. Ground was broken 2 November 2016 on a $27 million project part-funded by roughly $5 million from Eversource and sitting inside a HUD National Disaster Resilience Competition award of more than $17 million. The plant is designed to carry 80% of the hospital's annual energy use and to island the campus, extending ride-through from 96 hours of diesel to 30 days or more. Projected savings are about $2.7 million a year.",
+      "microreactor_read": "This is the cleanest medical-campus price benchmark available: $27M for 4.6 MW is roughly $5,900/kW installed, retiring $2.7M/yr of purchased energy - a ~10-year simple payback that a hospital board already said yes to. A 5 MW microreactor must land near that capex AND cover the steam load, because the CHP wins on heat; note also that the plant still needed a black-start diesel, since NFPA 110 Type 10 requires the emergency supply on load within 10 seconds and no thermal plant can meet that alone.",
+      "sources": [
+        {
+          "label": "City of Springfield, MA — Baystate Health Breaks Ground on Innovative Heat and Power Plant",
+          "url": "https://www.springfield-ma.gov/cos/news-story?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=13266&cHash=77a50ee7828db431a83f867fb85179f5",
+          "quote": "The project will save Baystate Health an estimated $2.7 million in energy costs annually.",
+          "status": "fetched"
+        },
+        {
+          "label": "Microgrid Knowledge — Massachusetts Awards $7M for Community Microgrid & Resiliency Projects",
+          "url": "https://microgridknowledge.com/massachusetts-awards-7m-community-microgrid-resiliency-projects",
+          "quote": "The plant will produce 80 percent of the hospital's annual energy consumption, 68 percent of electricity and 97 percent of steam",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kaiser-ontario-medical-center-microgrid",
+      "sector": "Medical campuses",
+      "name": "Kaiser Permanente Ontario Medical Center renewable microgrid",
+      "country": "US",
+      "region": "Ontario, California",
+      "parties": {
+        "host": "Kaiser Permanente",
+        "provider": "Faraday Microgrids (storage) and Ameresco (solar canopies, under PPA)",
+        "utility": "Southern California Edison"
+      },
+      "instrument": "PPA",
+      "signed": "2025-04",
+      "capacity": "2 MW on-site solar + 9 MWh non-lithium battery storage + 1 MW fuel cell; produces roughly 3,300 MWh per year",
+      "capex": "Battery storage funded by an $8.3 million California Energy Commission grant to Faraday Microgrids; total project cost not disclosed",
+      "price": "Solar sold to the hospital under a power purchase agreement with Ameresco; $/kWh not published",
+      "displaced": "Diesel emergency generation duty: the microgrid can serve all the hospital's emergency power needs for 10 continuous hours",
+      "summary": "Kaiser Permanente brought what it calls the largest hospital-based renewable microgrid in the US online at its Ontario Medical Center in April 2025: 2 MW of solar canopies installed by Ameresco under a PPA, 9 MWh of non-lithium battery storage funded by an $8.3 million California Energy Commission grant to Faraday Microgrids, and a 1 MW fuel cell. The system is sized to carry the hospital's entire emergency power load for 10 continuous hours and to generate about 3,300 MWh a year. Kaiser paid no capital for the storage and buys the solar output rather than owning it.",
+      "microreactor_read": "Ten hours is the honest number: even the largest hospital renewable microgrid in the country buys ride-through, not independence, and it took an $8.3M state grant to buy those ten hours of 9 MWh storage. A 1-5 MW reactor sells against the gap between 10 hours and a multi-day regional outage - but it must arrive already paired with storage, because NFPA 110 wants load carried in 10 seconds and no reactor ramps that fast.",
+      "sources": [
+        {
+          "label": "PR Newswire / Kaiser Permanente — Kaiser Permanente Debuts Largest Hospital-based Renewable Microgrid in U.S.",
+          "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
+          "quote": "capacity to serve all the hospital's emergency power needs for 10 continuous hours",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kaiser-richmond-medical-center-microgrid",
+      "sector": "Medical campuses",
+      "name": "Kaiser Permanente Richmond Medical Center microgrid (CEC EPIC-funded)",
+      "country": "US",
+      "region": "Richmond, California",
+      "parties": {
+        "host": "Kaiser Permanente",
+        "provider": "Charge Bliss (CEC grant recipient, developer)",
+        "utility": "Pacific Gas & Electric"
+      },
+      "instrument": "grant-funded",
+      "signed": "2017",
+      "capacity": "250 kW solar PV plus on-site battery storage serving the medical center's critical-care load",
+      "capex": "$4.77 million California Energy Commission grant awarded to Charge Bliss; total project cost not published",
+      "displaced": "Utility demand charges - the battery is discharged into demand peaks to cut billed demand; the developer claims solar plus storage can carry the critical-care load potentially indefinitely",
+      "summary": "The California Energy Commission ran an RFP to demonstrate a renewable microgrid at a medical center and awarded Charge Bliss a $4.77 million grant; Charge Bliss partnered with Kaiser Permanente to build California's first medical-center microgrid at Richmond in 2017, with 250 kW of solar and battery storage. Kaiser's own energy lead describes the value as peak-demand shaving on the bill plus the ability to carry critical-care load. The state paid for the demonstration; the amount Kaiser contributed was not published.",
+      "microreactor_read": "The first medical-campus microgrid in California needed a $4.77M state grant to install 250 kW - roughly $19,000/kW of subsidised demonstration capital for a fraction of a hospital's load. That is the fiscal precedent a microreactor vendor should cite: hospitals do not fund resilience from operating budgets, they take state demonstration money, so the addressable first customer is a state energy commission, not a health system CFO.",
+      "sources": [
+        {
+          "label": "The Planning Report — Kaiser Permanente's Richmond Medical Center Solar-Battery Microgrid a CEC-Funded Model",
+          "url": "https://www.planningreport.com/2018/08/24/kaiser-permanente-s-richmond-medical-center-solar-battery-microgrid-cec-funded-model",
+          "quote": "The combination of solar arrays and battery storage onsite can provide power to the critical care load to the facility potentially indefinitely.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "montgomery-county-md-pshq-mccf-microgrids",
+      "sector": "Critical civic infrastructure",
+      "name": "Montgomery County MD microgrids at Public Safety Headquarters and the County Correctional Facility",
+      "country": "US",
+      "region": "Gaithersburg and Boyds, Maryland",
+      "parties": {
+        "host": "Montgomery County, Maryland (Dept. of General Services)",
+        "provider": "Duke Energy Renewables (owner-operator) with REC Solar and Schneider Electric",
+        "utility": "Pepco"
+      },
+      "instrument": "ESA (energy services agreement)",
+      "signed": "2016",
+      "term_years": 25,
+      "capacity": "Public Safety HQ: 2 MW solar PV parking canopies (2.5 MW per Maryland Energy Administration) plus an 800 kW CHP system. Correctional Facility: 220 kW CHP with existing generators. Combined output over 11 million kWh per year.",
+      "capex": "No upfront capital cost to the county; partially funded by two Maryland Energy Administration grants totaling $494,250",
+      "price": "Energy services agreement - the county pays for energy delivered; Duke Energy Renewables owns and operates both microgrids over a 25-year service life",
+      "displaced": "Grid supply plus standby diesel duty at two facilities that must run through a regional outage: a 911/emergency-operations complex and a jail",
+      "summary": "Montgomery County procured microgrids at its Public Safety Headquarters and its Correctional Facility under a public-private partnership in which Duke Energy Renewables owns and operates the assets for a 25-year service life, Schneider Electric builds and maintains them, and the county pays nothing upfront. PSHQ got 2 MW of solar canopies over nine acres of parking plus an 800 kW CHP unit; the jail got a 220 kW CHP tied into its existing generators. Together they produce over 11 million kWh a year. The Maryland Energy Administration contributed two grants totaling $494,250. Both went live on 24 October 2018.",
+      "microreactor_read": "This is the template contract for civic microreactor sales: a county with no capital budget, an asset owned by a third party for 25 years, and an energy services payment out of the operating line. But the scale is the warning - the jail's whole CHP is 220 kW and the public-safety complex's is 800 kW, so a single 1 MW reactor already oversizes the two most critical buildings a US county owns. Civic sales have to aggregate campuses, not chase single facilities.",
+      "sources": [
+        {
+          "label": "Montgomery County MD Dept. of General Services — Advanced Energy Projects",
+          "url": "https://www.montgomerycountymd.gov/department-general-services/dgs-divisions-offices/office-energy-sustainability/advanced-energy-projects",
+          "quote": "a 220 KW Combined Heat and Power (CHP) system combined with existing generators",
+          "status": "fetched"
+        },
+        {
+          "label": "Maryland Energy Administration — Montgomery County Amplifies Sustainability with Two Energy Resilience Microgrids",
+          "url": "https://news.maryland.gov/mea/2018/10/25/montgomery-county-amplifies-sustainability-with-two-energy-resilience-microgrids/",
+          "quote": "This project is partially funded by two grants from the Maryland Energy Administration (MEA) totaling $494,250 dollars.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "teco-texas-medical-center-central-plant",
+      "sector": "Medical campuses",
+      "name": "Thermal Energy Corporation (TECO) central utility plant expansion, Texas Medical Center",
+      "country": "US",
+      "region": "Houston, Texas",
+      "parties": {
+        "host": "Thermal Energy Corporation, a nonprofit cooperative owned by the Texas Medical Center institutions",
+        "provider": "Burns & McDonnell (engineering, procurement, construction)",
+        "utility": "CenterPoint Energy (138-kV service)"
+      },
+      "instrument": "design-build",
+      "signed": "2011",
+      "capacity": "48 MW gas-turbine CHP producing up to 330,000 lb/hr of steam, plus a 6 MW back-pressure steam turbine, an 8.8 million-gallon / 76,000 ton-hour chilled water storage tank and a new East Chiller Plant; serves ~24 million sq ft across 50 buildings and 18 medical institutions",
+      "capex": "$377 million construction cost",
+      "displaced": "Cut Texas Medical Center's grid demand by 50%; customer rates fell 4.1% by 2015 and more than $3 million was refunded to TMC customers",
+      "summary": "TECO, the nonprofit district-energy cooperative owned by the Texas Medical Center's member hospitals, executed a $377 million expansion completed in 2011 under a 50-year master plan, adding a 48 MW combined-cycle-style CHP plant with up to 330,000 lb/hr of steam, a 6 MW back-pressure steam turbine, 8.8 million gallons of chilled water storage and a rebuilt 138-kV substation, all without interrupting service. The plant runs at about 80% fuel efficiency, halved TMC's grid demand, cut member rates 4.1% by 2015 and refunded over $3 million to customers. It rode through Hurricane Harvey in 2017 in island mode with full service to every TMC facility.",
+      "microreactor_read": "The world's largest medical complex needed 48 MW and got it for $377 million (~$7,850/kW all-in with chillers and storage) - so a medical 'campus' at true district scale is a 5-10 microreactor site, not a 1 MW one. The decisive fact for a reactor vendor is thermal: 330,000 lb/hr of steam and 76,000 ton-hours of cooling is what the hospitals actually buy, and CBECS says space heating alone is 32% of inpatient energy use, so an electricity-only reactor loses this customer to gas.",
+      "sources": [
+        {
+          "label": "Burns & McDonnell — Case Study: TECO Central Utility Plant, A District Energy System Is Bigger In Texas",
+          "url": "https://info.burnsmcd.com/hubfs/Collateral/Case%20Studies/District-Energy-Systems-Are-Bigger-in-Texas-Too-case-study-burns-mcdonnell-12092.pdf",
+          "quote": "we provided engineering, procurement and construction services for the $377 million expansion, all without hindering the medical center's ongoing operation",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Energy Information Administration — CBECS 2018: Health care buildings",
+          "url": "https://www.eia.gov/consumption/commercial/pba/health-care.php",
+          "quote": "Space heating accounted for the largest share of end-use consumption for both inpatient (32%)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "jfk-new-terminal-one-microgrid",
+      "sector": "Critical civic infrastructure",
+      "name": "JFK New Terminal One microgrid (AlphaStruxure Energy-as-a-Service)",
+      "country": "US",
+      "region": "Queens, New York",
+      "parties": {
+        "host": "Port Authority of New York & New Jersey / New Terminal One at JFK",
+        "provider": "AlphaStruxure (finances, designs, builds, owns, operates)",
+        "utility": "Con Edison"
+      },
+      "instrument": "EaaS",
+      "signed": "2024-09",
+      "capacity": "About 10.5 MW: 7.7 MWdc rooftop solar (~13,000 panels over 370,000 sq ft), 3.84 MW of RNG-ready fuel cells in CHP configuration, plus battery storage; sized to cover roughly half the terminal's daily operations",
+      "capex": "No upfront capital expenditure by the Port Authority; AlphaStruxure finances the whole system under the EaaS agreement",
+      "price": "Long-term Energy-as-a-Service agreement with predictable operating costs and guaranteed performance; $/kWh not published",
+      "displaced": "Con Edison supply and terminal standby generation; generation equivalent to 2,386 average US homes' annual electricity use",
+      "summary": "The Port Authority of New York & New Jersey and New Terminal One broke ground on 24 September 2024 on what will be the largest airport microgrid in the US, financed entirely by AlphaStruxure under an Energy-as-a-Service contract with zero upfront capital cost to the Port Authority. AlphaStruxure designs, builds, owns, operates and maintains a roughly 10.5 MW system of rooftop solar, 3.84 MW of RNG-ready fuel cells running CHP, and battery storage, covering about half the terminal's daily electricity. Gates open in 2026.",
+      "microreactor_read": "A transport authority with balance-sheet capacity chose to take zero capital risk: the whole 10.5 MW is off the Port Authority's books under an EaaS contract that guarantees performance. For a microreactor this is the only viable civic instrument - and the direct competitor is a 3.84 MW fuel cell that already delivers firm, dispatchable, low-emission CHP behind the meter today, with no licensing queue.",
+      "sources": [
+        {
+          "label": "AlphaStruxure — Port Authority, New Terminal One at JFK and AlphaStruxure Begin Construction of a Microgrid",
+          "url": "https://alphastruxure.com/news-press-release/jfkmicrogridconstruction/",
+          "quote": "AlphaStruxure is financing the microgrid project through an EaaS model, which is a long-term agreement ensuring predictable operating costs and guaranteed performance",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ohio-state-energy-concession-chp",
+      "sector": "Critical civic infrastructure",
+      "name": "Ohio State University 50-year energy concession and campus CHP plant (Ohio State Energy Partners)",
+      "country": "US",
+      "region": "Columbus, Ohio",
+      "parties": {
+        "host": "The Ohio State University",
+        "provider": "Ohio State Energy Partners (ENGIE North America 50% / Axium Infrastructure 50%)",
+        "utility": "AEP Ohio"
+      },
+      "instrument": "lease",
+      "signed": "2017-04",
+      "term_years": 50,
+      "capacity": "Utility system for a 485-building campus; new natural-gas combined heat and power plant reported at about 105 MW with an 8,000-ton cooling facility expandable to 13,000 tons",
+      "capex": "CHP plant budget rose from about $278 million to roughly $290-300 million, funded by the concessionaire, not the university",
+      "price": "Concession and lease agreement valued at $1.165 billion to the university, including an upfront payment; the university pays OSEP fees for utility service over the 50-year term",
+      "displaced": "Purchased power and the university's own aging steam plant; the CHP is projected to cut energy costs by $10 million a year and to deliver a 25% efficiency improvement within 10 years",
+      "filings": [
+        {
+          "forum": "University Board of Trustees",
+          "type": "Board resolution approving the public-private partnership",
+          "id": "Board of Trustees action, 7 April 2017",
+          "date": "2017-04-07",
+          "url": "https://busfin.osu.edu/university-business/comprehensive-energy-management/energy-concession-agreement"
+        }
+      ],
+      "summary": "On 7 April 2017 Ohio State's Board of Trustees approved a 50-year concession and lease of the university's entire utility system to Ohio State Energy Partners, an ENGIE/Axium consortium, in a deal valued at $1.165 billion to the university including a large upfront payment plus a $50 million research centre. OSEP took over operations, committed to a 25% efficiency improvement in ten years, and financed and built a natural-gas CHP plant whose budget rose from about $278 million to roughly $290-300 million after the original EPC contractor was defaulted. The plant is projected to cut campus energy costs by about $10 million a year.",
+      "microreactor_read": "This is the largest civic-anchor energy contract in the US and it proves the instrument a microreactor needs: a 50-year concession where a private consortium owns the generation, takes the construction risk (including a defaulted EPC and a $20M+ overrun) and gets paid a utility fee. The capex bar is ~$2,800/kW for gas CHP with an $10M/yr savings claim - and note the schedule risk cuts both ways: this gas plant slipped roughly four years, which is the delay a reactor is usually assumed to have a monopoly on.",
+      "sources": [
+        {
+          "label": "The Ohio State University, Business and Finance — Energy Concession Agreement",
+          "url": "https://busfin.osu.edu/university-business/comprehensive-energy-management/energy-concession-agreement",
+          "quote": "On April 7, 2017, the Board of Trustees approved a public-private partnership",
+          "status": "fetched"
+        },
+        {
+          "label": "Energy Tech — Ohio State University leaders confirm new CHP power plant delayed again, rises in cost",
+          "url": "https://www.energytech.com/energy-efficiency/article/21260595/ohio-state-university-leaders-confirm-new-chp-power-plant-delayed-again-rises-in-cost",
+          "quote": "The OSU CHP plant was expected to be about $278 million and has risen to an expected $300 million.",
+          "status": "fetched"
+        },
+        {
+          "label": "Ohio State Facilities Design and Construction — Combined Heat and Power Plant",
+          "url": "https://fdc.osu.edu/combined-heat-and-power-plant",
+          "quote": "The CHP plant is managed by Ohio State Energy Partners (OSEP) and will contain an 8,000-ton cooling facility with future build-out potential to 13,000-ton.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "sterling-mmld-battery-police-dispatch",
+      "sector": "Critical civic infrastructure",
+      "name": "Sterling Municipal Light Department battery storage backing the town police station and dispatch centre",
+      "country": "US",
+      "region": "Sterling, Massachusetts",
+      "parties": {
+        "host": "Town of Sterling / Sterling Municipal Light Department",
+        "provider": "NEC Energy Solutions (batteries); DOE Office of Electricity and Sandia National Laboratories provided technical support",
+        "utility": "Sterling Municipal Light Department (municipal utility)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2016",
+      "capacity": "2 MW / 3.9 MWh battery at the Chocksett Road substation, paired with existing solar; islands to give up to 12 days of backup power to the police station and dispatch centre",
+      "capex": "About $2.7 million total, of which a $1.46 million Massachusetts DOER resiliency grant and a $250,000 US Department of Energy grant",
+      "displaced": "Peak demand and capacity charges: projected to save SMLD customers over $400,000 a year; Sandia calculated payback in fewer than seven years",
+      "summary": "Sterling, a town of about 7,800 with its own municipal light department, installed the state's first utility-scale battery in 2016: 2 MW / 3.9 MWh from NEC Energy Solutions at the Chocksett Road substation, for roughly $2.7 million with a $1.46 million DOER resiliency grant and $250,000 from DOE. The system pays for itself on peak shaving - Sandia National Laboratories calculated payback under seven years and SMLD projects over $400,000 a year of customer savings - while the resilience benefit is that it can island with existing solar and carry the town's police station and 911 dispatch centre for up to 12 days.",
+      "microreactor_read": "The entire critical civic load of a New England town - police station plus PSAP dispatch - is small enough that 3.9 MWh of batteries covers it for twelve days, and the economics were carried by peak shaving, not by resilience. A microreactor has no addressable product at this scale; the only civic entry point is the municipal utility itself, which buys on payback-under-seven-years arithmetic.",
+      "sources": [
+        {
+          "label": "Clean Energy States Alliance — Sterling, Massachusetts Breaks Ground on a Resilient Energy Storage System",
+          "url": "https://www.cesa.org/sterling-energy-storage-project/",
+          "quote": "provide up to 12 days of backup power to the town's police station and dispatch center",
+          "status": "fetched"
+        },
+        {
+          "label": "Clean Energy States Alliance — Sterling project page (grant detail)",
+          "url": "https://www.cesa.org/sterling-energy-storage-project/",
+          "quote": "$1.46M grant from the Massachusetts Department of Energy Resources",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "loma-linda-faculty-medical-clinics-ppa",
+      "sector": "Medical campuses",
+      "name": "Loma Linda University Health Faculty Medical Clinics solar-plus-storage microgrid, 30-year PPA at 15 cents/kWh",
+      "country": "US",
+      "region": "Loma Linda, California",
+      "parties": {
+        "host": "Loma Linda University Health (Faculty Medical Clinics)",
+        "provider": "Renewable Energy Partners, Corona CA (owns and operates)",
+        "utility": "Southern California Edison"
+      },
+      "instrument": "PPA",
+      "signed": "2025-08",
+      "term_years": 30,
+      "capacity": "3,622 solar panels generating up to 2 MW plus a 1 MW Tesla battery giving about six hours of backup; expected to meet up to 87% of a facility that averages 1.7 MW",
+      "price": "15 cents per kWh for the power for the entire term of the contract, flat with no escalator",
+      "capex": "Not disclosed; the developer owns the system, the clinic pays only for delivered energy",
+      "displaced": "Southern California Edison retail supply ranging between 17 cents/kWh and 24 cents/kWh during peak times; about $500,000 a year of savings at current rates, up to $1.5 million a year if SCE reaches 30 cents/kWh",
+      "summary": "Loma Linda University Health's Faculty Medical Clinics energised a solar-plus-storage microgrid on 22 August 2025 built, owned and operated by Renewable Energy Partners under a 30-year power purchase agreement. The clinic pays a flat 15 cents per kWh for the whole term against SCE rates of 17-24 cents, saving an expected $500,000 a year now and up to $1.5 million if utility rates hit 30 cents. The system is 3,622 panels rated up to 2 MW plus a 1 MW Tesla battery good for roughly six hours, covering as much as 87% of a facility whose average demand is 1.7 MW.",
+      "microreactor_read": "Here is the number a microreactor has to beat in the richest healthcare power market in the country: 15 cents per kWh, fixed and unescalated for thirty years, behind the meter, with zero host capex. And the load is 1.7 MW average - one small reactor - but the incumbent already covers 87% of it and the remaining gap is a six-hour battery, so the reactor's only differentiated product is multi-day firmness.",
+      "sources": [
+        {
+          "label": "Microgrid Knowledge — University Healthcare Clinic Powers Up Microgrid with On-Site Solar and Tesla Battery in California",
+          "url": "https://www.microgridknowledge.com/microgrids/critical-services/news/55312608/university-healthcare-clinic-powers-up-microgrid-with-on-site-solar-and-tesla-battery-in-california",
+          "quote": "15 cents per kWh for the power for the entire term of the contract",
+          "status": "fetched"
+        },
+        {
+          "label": "Microgrid Knowledge — same article, utility rate comparison",
+          "url": "https://www.microgridknowledge.com/microgrids/critical-services/news/55312608/university-healthcare-clinic-powers-up-microgrid-with-on-site-solar-and-tesla-battery-in-california",
+          "quote": "power purchased from Southern California Edison ranges between 17 cents per kWh to 24 cents per kWh during peak times",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nextnrg-sunnyside-topanga-microgrid-ppas",
+      "sector": "Medical campuses",
+      "name": "NextNRG 28-year microgrid PPAs with Sunnyside Nursing and Topanga Terrace, California",
+      "country": "US",
+      "region": "Torrance and Canoga Park, California",
+      "parties": {
+        "host": "Sunnyside Nursing and Post-Acute Care; Topanga Terrace Rehabilitation and Subacute Care",
+        "provider": "NextNRG Inc. (owns and operates the smart microgrids)",
+        "utility": "Southern California Edison"
+      },
+      "instrument": "PPA",
+      "signed": "2025",
+      "term_years": 28,
+      "capacity": "Smart microgrids with on-site generation, storage, wireless EV charging and mobile fuel delivery; individual solar kW and storage kWh not disclosed",
+      "price": "Sunnyside PPA priced at 25 cents per kWh with a 2% annual escalator; Topanga PPA at 22 cents per kWh with the same escalator",
+      "capex": "Borne entirely by NextNRG; no upfront cost to either healthcare facility",
+      "displaced": "Southern California Edison retail supply at the two post-acute care facilities",
+      "summary": "NextNRG signed separate 28-year power purchase agreements in 2025 with two California post-acute care facilities, Sunnyside Nursing and Post-Acute Care and Topanga Terrace Rehabilitation and Subacute Care, under which NextNRG owns and operates smart microgrids and sells power back to the facilities. Sunnyside pays 25 cents per kWh with a 2% annual escalator; Topanga pays 22 cents with the same escalator. Neither facility puts up capital. Capacities and construction dates were not disclosed.",
+      "microreactor_read": "Sub-acute care facilities are signing 28-year contracts at 22-25 cents/kWh with a 2% escalator - roughly double the Loma Linda price and well above utility retail - which shows what healthcare hosts will actually pay for resilience plus off-balance-sheet treatment. That, not the wholesale market, is the ceiling a microreactor PPA is competing under; the binding constraint is contract length, since these hosts will sign for 28-30 years.",
+      "sources": [
+        {
+          "label": "Microgrid Knowledge — Two California Healthcare Facilities Choose Long-Term Microgrid PPAs with New Developer",
+          "url": "https://www.microgridknowledge.com/commercial-microgrids/news/55303895/two-california",
+          "quote": "The Sunnyside PPA is designed to generate revenue at 25 cents per kWh with a 2% annual escalator",
+          "status": "fetched"
+        },
+        {
+          "label": "Microgrid Knowledge — same article, Topanga pricing",
+          "url": "https://www.microgridknowledge.com/commercial-microgrids/news/55303895/two-california",
+          "quote": "the Topanga PPA will generate 22 cents per kWh with the same rate of price escalator",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

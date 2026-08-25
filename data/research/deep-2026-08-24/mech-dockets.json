@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "mech-dockets",
+    "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
+    "angles_run": [
+      "PUCT interchange direct curl (WebFetch TLS fails on interchange.puc.texas.gov; curl succeeds without -k)",
+      "ICC e-Docket server-rendered document listing -> final order PDF + annual compliance reports",
+      "CT PURA docket system (dpuc.state.ct.us Lotus Notes views)",
+      "CT DEEP microgrid grant round award tables",
+      "NJ BPU orders and the 2016 NJ Microgrid Report",
+      "CPUC SGIP 2025 Handbook eligibility sections",
+      "PUCO / other state commission 2025-2026 large-load data-centre tariffs"
+    ],
+    "absences": []
+  },
+  "mechanisms": [
+    {
+      "id": "puct-tbpp-59024-backup-power-package",
+      "group": "diesel",
+      "family": "public-procurement",
+      "name": "Texas Backup Power Package Program (16 TAC 25.513, PUCT Project No. 59024)",
+      "what_it_is": "Texas Energy Fund grants and forgivable loans pay an approved vendor to install a behind-the-meter backup package at a critical facility (hospital, police/fire station, water plant, shelter, school, house of worship). The critical-facility owner signs an award agreement with the commission and a contract with a commission-selected vendor; the facility owner controls the site and owns the package. Grant is capped at $500 per kilowatt; anything above that must be financed by the forgivable loan. Costs funded by the award may not be recovered from the facility's customers or constituents.",
+      "who_signs": "Critical-facility owner <-> PUCT / Texas Energy Fund administrator (award agreement), plus facility owner <-> commission-approved vendor (install + service)",
+      "asset_owner": "host",
+      "term": "Compliance and monitoring period set in the award agreement; site control (ownership or lease) required for its duration",
+      "price_form": "grant-funded, capped at $500/kW, plus forgivable loan for the balance",
+      "precedents": [
+        {
+          "name": "PUCT Project No. 59024 — Order Adopting New 16 TAC 25.513",
+          "year": "2026",
+          "parties": "Public Utility Commission of Texas; 38 commenting parties incl. Oncor, NRG, Vistra, Bloom Energy, Generac, PowerSecure, FCHEA, Texas Hydrogen Alliance",
+          "size": "each site aggregated to serve not more than 2.5 MW of critical load; 48 continuous hours without refuelling",
+          "price": "grant award may not exceed $500 per kilowatt",
+          "note": "Adopted 2026-05-07, effective 2026-05-27, implementing PURA 34.0204/34.0205/35.005(g) from SB 2627. Rule text adopted after 46 filings in the project.",
+          "source_idx": 0
+        },
+        {
+          "name": "Hydrogen / fuel-cell eligibility request denied",
+          "year": "2026",
+          "parties": "FCHEA, GTL Leasing, Sharper Energy Technologies, Texas Hydrogen Alliance, Schneider Electric vs. PUCT",
+          "size": "requested addition of hydrogen, ammonia, alkanes and fuel cells to 25.513(b)(3)(A)(vi)",
+          "note": "Denied on statutory grounds — the clearest available evidence that the eligible-generation list is closed and enumerated, not performance-based.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "Excluded by construction, and the exclusion has now been tested. Adopted 25.513(b)(3)(A)(vi) requires a package to 'provide power sourced from a combination of natural gas or propane with photovoltaic panels and battery storage,' and new subparagraph (vii) requires it to 'prioritize power sourced from natural gas when it is available on site.' When five parties asked to add hydrogen and fuel cells, the commission refused 'because the statute does not authorize inclusion of alternative fuel sources' — so the list is a closed statutory enumeration a nuclear unit cannot enter by demonstrating equivalent performance. The 48-continuous-hour-without-refuelling rule is the one criterion a reactor passes trivially and a diesel set fails without a fuel farm, but it buys nothing here because eligibility gates on fuel type first. The no-export rule (b)(3)(A)(iii) and (b)(3)(B) additionally forbid the wholesale or retail sale of energy, ancillary services, ERS, ADER participation, solar buyback, or any demand-response participation — so a host cannot monetise off-hours output, which is the entire economic case for putting a baseload reactor behind a 2.5 MW critical load.",
+      "microreactor_edge": "The 2.5 MW cap and the definition of 'critical load' (life-safety, medical, emergency comms, potable water) size these packages exactly in the 1-20 MW microreactor band's bottom end — but the cap is on critical load, not on the resource, and the no-export prohibition means the other 90% of a microreactor's annual output would be curtailed. A Texas critical facility is a good technical fit and a terrible TBPP fit; the honest path is the loan side of the Texas Energy Fund or a separate ESA, not this rule.",
+      "blockers": [
+        "16 TAC 25.513(b)(3)(A)(vi) enumerates natural gas or propane + PV + battery storage — a closed list, not a performance standard",
+        "25.513(b)(3)(A)(vii): must prioritize natural gas when available on site",
+        "25.513(b)(3)(A)(iii) and (b)(3)(B): controls must prevent any sale of energy, ancillary services, ERS or other reliability service; no ADER, no solar buyback, no demand response",
+        "Commission declined hydrogen/fuel cells 'because the statute does not authorize inclusion of alternative fuel sources' — changing the list requires the Legislature, not the PUCT",
+        "Vendors must be selected by the commission through a competitive solicitation and kept on an approved vendor list",
+        "$500/kW grant cap is roughly two orders of magnitude below microreactor capex"
+      ],
+      "sources": [
+        {
+          "label": "Public Utility Commission of Texas — Project No. 59024, Order Adopting New 16 TAC 25.513 (Texas Backup Power Package Program), 2026-05-07",
+          "url": "https://interchange.puc.texas.gov/Documents/59024_45_1639679.PDF",
+          "quote": "The commission declines to modify proposed subsection (b)(3)(A)(vi) to include hydrogen or fuel cell technologies as eligible fuel or power sources for the TBPPs",
+          "status": "fetched"
+        },
+        {
+          "label": "PUCT Project No. 59024 — adopted rule text, 16 TAC 25.513(b)(3)(A) (attachment to the 2026-05-07 order)",
+          "url": "https://interchange.puc.texas.gov/Documents/59024_45_1639680.PDF",
+          "quote": "be capable of operating for at least 48 continuous hours without refueling or connecting to a separate power source",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "comed-bronzeville-icc-17-0331",
+      "group": "interconnection",
+      "family": "regulatory-rule",
+      "name": "Utility-owned community microgrid via CPCN + rate base (ICC Docket 17-0331, ComEd Bronzeville)",
+      "what_it_is": "ComEd petitioned the Illinois Commerce Commission for a certificate of public convenience and necessity to build, own and rate-base a full-feeder community microgrid serving roughly 1,060 customers and about 7 MW of peak load across 0.29 square miles of Bronzeville, Chicago. The utility owns the wires, the microgrid master controller and the storage; non-storage DER was to be competitively procured from third parties which the utility would not own. The whole capital cost goes into ComEd's distribution rate base and is recovered from all 3.9 million ComEd customers, not from the 1,060 inside the boundary.",
+      "who_signs": "ComEd <-> Illinois Commerce Commission (CPCN petition), with a side agreement ComEd <-> Citizens Utility Board / Environmental Defense Fund on a future pilot microgrid services tariff",
+      "asset_owner": "utility",
+      "term": "Multi-year study period with Annual Reports to the docket (the eighth annual report was filed 2026-02-27)",
+      "price_form": "rate-based",
+      "precedents": [
+        {
+          "name": "ICC Docket 17-0331 — ComEd Bronzeville Community Microgrid, Final Order",
+          "year": "2018",
+          "parties": "Commonwealth Edison Co.; ICC Staff; Illinois Attorney General; Citizens Utility Board; Environmental Defense Fund; Environmental Law & Policy Center; Illinois Power Agency",
+          "size": "approx. 7 MW peak load, 1,060 customers, 0.29 sq mi; Phase I 2.5 MW load + 0.75 MW PV + 0.5 MW / 2 MWh BESS + up to 3 MW of ComEd's existing mobile diesel gensets; Phase II adds 4.5 MW load and ~7 MW of controllable generation",
+          "price": "$29.6M gross; $25M maximum net to ComEd after a $4M DOE SHINES grant and $600,000 partner cost-share; ~$200,000/yr operating cost",
+          "note": "Order entered 2018-02-28. Staff's smaller alternative would have cost about $12.3M less. Phase I net cost approx. $8M.",
+          "source_idx": 0
+        },
+        {
+          "name": "ComEd / CUB / EDF agreement to file a pilot microgrid services tariff",
+          "year": "2018",
+          "parties": "ComEd <-> Citizens Utility Board and Environmental Defense Fund",
+          "size": "third-party-developed microgrids using ComEd wires; utility feasibility study on customer request; islanding services and the utility microgrid controller offered under tariff",
+          "note": "Committed filing date no later than 2020-01-01 — but the Commission itself declined to endorse it, holding tariff findings premature.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "This is the cleanest US template for putting a generator inside a utility's rate base rather than selling its output: the host community signs nothing, pays nothing directly, and the cost is socialised across the whole service territory. That structure would carry a microreactor's capex without a creditworthy offtaker — but 17-0331 also shows the price of admission. The Attorney General's central attack was cost-per-benefit on a $25M asset serving 1,060 customers, and the order's own framing is that '$25 million ... sets the bar for the' benefits the project must show. A reactor at 5-10x that capex faces the same prudence test with a far bigger number, plus a siting question the order never had to reach. Note also that ComEd's existing tariffs 'prohibit the use of customer-owned generation as a source of' supply inside the microgrid — utility ownership was not merely preferred, it was the path of least tariff resistance.",
+      "microreactor_edge": "The Bronzeville footprint is 7 MW of peak load — the exact middle of the 1-20 MW microreactor band, and one unit would replace both the 3 MW of mobile diesel gensets ComEd planned to wheel in for testing and the 7 MW of Phase II controllable generation. A single relocatable unit also collapses the two-phase build (Phase I to satisfy a DOE grant deadline, Phase II for the real microgrid) into one asset.",
+      "blockers": [
+        "CPCN prudence test: the AG argued a reasonable person would not invest $25 million on the demonstrated benefits; the reliability benefit was computed from LBNL/DOE ICE Calculator values",
+        "Public Utilities Act Section 9-241 non-discrimination — spending rate-base dollars concentrated in one neighbourhood was litigated as an unlawful preference",
+        "The Commission expressly refused to bless the third-party microgrid tariff: 'any findings on tariffs are premature in this docket'",
+        "ComEd's existing tariffs prohibit customer-owned generation as a supply source inside its system, pushing ownership to the utility",
+        "Cost allocation across customer classes was deferred to a future tariff filing, leaving recovery unresolved at order date"
+      ],
+      "sources": [
+        {
+          "label": "Illinois Commerce Commission — Docket 17-0331, Commonwealth Edison Company, Final Order (2018-02-28)",
+          "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
+          "quote": "ComEd estimates the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant and $600,000 cost sharing with research partners.",
+          "status": "fetched"
+        },
+        {
+          "label": "ICC Docket 17-0331 Final Order — Commission analysis on the third-party microgrid tariff",
+          "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
+          "quote": "The Commission agrees with Staff that any findings on tariffs are premature in this docket.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
