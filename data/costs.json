@@ -1,8 +1,9 @@
 {
  "_meta": {
-  "captured": "2026-08-21",
-  "warning": "Every figure below is a published estimate, not a quoted price. No microreactor has sold power commercially, so no realised LCOE exists anywhere in this table. Ranges are wide because they encode different assumptions about FOAK vs Nth-of-a-kind cost maturity — that spread IS the finding, not noise to average away.",
-  "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do."
+  "captured": "2026-08-25",
+  "warning": "No microreactor has sold power commercially, so no figure in this table is a price anyone has paid. The ranges are wide because sources disagree about what the first units cost to build. The displaced-alternative bands were re-sourced to primary documents on 2026-08-25.",
+  "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do.",
+  "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low."
  },
  "microreactor_lcoe": [
   {
@@ -60,50 +61,89 @@
   "points": [
    {
     "fact": "§45Y/§48E survive for new nuclear that begins construction before 2034, then phase out over three years; the emissions-based sunset trigger was replaced by these fixed dates.",
-    "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives (July 2025)", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
+    "source": {
+     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives (July 2025)",
+     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+    }
    },
    {
     "fact": "New 10% credit adder for facilities in “nuclear energy communities” (metro areas with ≥0.17% direct nuclear employment since 2010), §45Y only.",
-    "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
+    "source": {
+     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+    }
    },
    {
     "fact": "New risk: foreign-entity-of-concern (FEOC) restrictions apply from 2026: material-assistance thresholds on the supply chain that a HALEU/TRISO vendor has to clear to keep the credit.",
-    "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
+    "source": {
+     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+    }
    },
    {
     "fact": "Credit transferability (§6418) survives, except transfers to specified foreign entities; advanced nuclear companies also gain master-limited-partnership eligibility from 2026.",
-    "source": {"label": "Morgan Lewis — OBBBA impact on nuclear tax incentives", "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"}
+    "source": {
+     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+    }
    }
   ],
   "caveat": "A DoD contractor-owned/contractor-operated unit still needs tax capacity or a transfer counterparty to monetise the credit."
  },
  "displaced_alternatives": [
   {
-   "alternative": "Remote diesel generation",
+   "alternative": "Remote industrial diesel",
    "low_mwh": 250,
-   "high_mwh": 400,
+   "high_mwh": 600,
    "low_kwh": 0.25,
-   "high_kwh": 0.4,
-   "note": "Typical remote-location diesel electricity cost",
+   "high_kwh": 0.6,
+   "note": "What a remote industrial site pays to run its own diesel plant. TUGLIQ's public completion report for the Glencore Raglan smart-grid pilot, funded under Canada's ecoENERGY Innovation Initiative, puts industrial self-generators at $0.25-$0.60/kWh — and northern electricity generally between $0.20 and $1.20/kWh.",
    "source": {
-    "label": "Nuclear Business Platform",
-    "url": "https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution"
-   }
+    "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
+    "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
+   },
+   "delta_note": "Corrected 2026-08-25. This band previously read $0.25-$0.40/kWh sourced to a vendor marketing page. The ceiling was too low: the same $0.25 floor holds, but a federally-funded completion report puts the top of industrial self-generation at $0.60/kWh, and remote community utilities run far higher still — see the rural-Alaska row, where the state regulator certifies up to $1.95/kWh.",
+   "sources": [
+    {
+     "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
+     "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+     "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
+     "status": "fetched",
+     "verified": "2026-08-25 quote confirmed in cached copy"
+    }
+   ]
   },
   {
    "alternative": "Small rural Alaskan communities (diesel-fired)",
-   "low_mwh": 300,
-   "high_mwh": 800,
-   "note": "These grids run on diesel. NEI puts remote-arctic diesel generation at $0.30–0.60/kWh; Alaska's own Power Cost Equalization reporting shows rural rates of $0.55–0.80+/kWh, with some villages above $1/kWh. The PCE subsidy (FY2026 base 20.38¢/kWh) covers only residential use up to 750 kWh/month. Commercial and industrial loads pay the full unsubsidised rate, which is the price a microreactor has to beat.",
+   "low_mwh": 410,
+   "high_mwh": 1950,
+   "note": "These grids run on diesel. The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet: its per-utility appendix gives total power cost per kWh for every participating rural utility, running from about $0.41/kWh at wind-equipped Kotzebue to $1.95/kWh at Lime Village, with fuel alone between $0.19 and $1.53/kWh. The PCE base rate was set at 19.35 cents/kWh and the subsidy covers only residential use up to 750 kWh a month; commercial and industrial load pays the full unsubsidised cost, which is the number a microreactor has to beat.",
    "sources": [
-    {"label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)", "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"},
-    {"label": "Alaska Energy Transparency Project — Power Cost Equalization explained", "url": "https://www.akenergytransparency.org/news/power-cost-equalization-explained"},
-    {"label": "Macdonald & Parsons, MIT CEEPR WP 2021-018 — The Value of Nuclear Microreactors in Providing Heat and Electricity to Alaskan Communities", "url": "https://ceepr.mit.edu/workingpaper/the-value-of-nuclear-microreactors-in-providing-heat-and-electricity-to-alaskan-communities/"}
+    {
+     "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+     "quote": "On June 13, 2023, the Commission established a new base rate of 19.35 cents per kilowatt-hour (kWh) for PCE calculations.",
+     "status": "fetched",
+     "verified": "2026-08-25 quote confirmed in cached copy"
+    },
+    {
+     "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+     "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+    },
+    {
+     "label": "Alaska Energy Transparency Project — Power Cost Equalization explained",
+     "url": "https://www.akenergytransparency.org/news/power-cost-equalization-explained"
+    },
+    {
+     "label": "Macdonald & Parsons, MIT CEEPR WP 2021-018 — The Value of Nuclear Microreactors in Providing Heat and Electricity to Alaskan Communities",
+     "url": "https://ceepr.mit.edu/workingpaper/the-value-of-nuclear-microreactors-in-providing-heat-and-electricity-to-alaskan-communities/"
+    }
    ],
    "source": {
-    "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
-    "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
-   }
+    "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
+    "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+   },
+   "delta_note": "Revised 2026-08-25 from $300-800/MWh. The earlier band came from secondary summaries of the PCE programme; the regulator's own order is both wider and higher at the top."
   },
   {
    "alternative": "Diesel breakeven threshold",
@@ -123,5 +163,5 @@
    }
   }
  ],
- "reading": "Where the bands overlap is what matters. Against **rural Alaska** ($300–800+/MWh, diesel-fired, and commercial loads get no PCE subsidy) even the **FOAK band** ($140–410) wins across most of the range. That is the one uncontested market, and it is why Fort Wainwright is the most interesting row in the Army Janus table. Against **remote diesel** generally ($250–400) the FOAK band overlaps: a first unit at the top of its range ($410) loses to diesel at the bottom of its range ($250), so 'cheaper than diesel' is a site-by-site claim that turns on local fuel logistics until NOAK costs ($90–330) arrive. Against grid-connected U.S. industrial power the microreactor loses in every published case except the PTC-supported optimization ($48–78), which is forward-looking and U.S.-only. So the commercial logic flips by sector: off-grid sites can buy on cost today, while on-grid sites buy on resilience, speed-to-power or carbon and pay a premium for it."
+ "reading": "What matters is where the bands overlap. Against **rural Alaska** — which the state regulator puts at **$410–1,950/MWh**, and where commercial customers get no PCE subsidy — even a **first-of-a-kind** microreactor at $140–410 wins across the whole range. That is the one market where the cost case is not in doubt, and it is why Fort Wainwright is the row worth watching in the Army Janus table.\n\nAgainst **remote industrial diesel** at $250–600 the bands cross. A first unit at the top of its range loses to cheap diesel at the bottom of its. So 'cheaper than diesel' is a claim you have to make site by site, and it turns on how hard the fuel is to deliver, until **later units** at $90–330 arrive.\n\nAgainst ordinary grid power in the U.S., the microreactor loses in every published case except one that assumes the tax credit ($48–78), which is a forecast rather than a price anyone has paid. The upshot is that the sales pitch changes by sector. Off-grid sites can buy on cost right now. On-grid sites are buying resilience, speed, or clean power, and paying extra for it."
 }

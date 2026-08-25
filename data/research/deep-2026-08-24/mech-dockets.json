@@ -1,0 +1,516 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "mech-dockets",
+  "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
+  "angles_run": [
+   "PUCT interchange direct curl (WebFetch TLS fails on interchange.puc.texas.gov; curl succeeds without -k)",
+   "ICC e-Docket server-rendered document listing -> final order PDF + annual compliance reports",
+   "CT PURA docket system (dpuc.state.ct.us Lotus Notes views) — host unreachable, see absences",
+   "CT DEEP microgrid award-tracking chart (all rounds) + the enabling statute, Public Act 12-148 Sec. 7",
+   "NJ BPU board orders: TCDER Phase II award order (QO16100967) and the DCO Energy declaratory ruling (QO20030191)",
+   "CPUC SGIP 2025 Handbook v1 — Eligible/Ineligible Equipment, Sec. 7.1 operational eligibility, Sec. 7.4 renewable fuel",
+   "PUCO / AEP Ohio Schedule DCT via the utility's own filed tariff book (PUCO DIS is WAF-blocked)",
+   "Second-state large-load tariff: IURC Cause No. 46097, I&M Tariff I.P., order plus settlement Attachment A"
+  ],
+  "absences": [
+   "CT PURA Docket No. 20-03-17 (Town of Coventry / Coventry Housing Authority master-metering waiver and ZREC meter reassignment) — NOT retrieved, and this is a confirmed dead seam, not a near miss. PURA's document databases all live on one host that is unreachable from here: http://www.dpuc.state.ct.us/DPUCPublicList.NSF/, http://www.dpuc.state.ct.us/SearchDB.nsf/MenuForm?Openform and https://www.dpuc.state.ct.us/FINALDEC.NSF/$FormFD-UtilityByDecisionDateView?OpenForm&CollapseView each fail with curl 'Recv failure: Connection reset by peer' over both http and https, with and without -k. Guessed decision paths under https://portal.ct.gov/-/media/PURA/ return a 200 with the CT.gov HTML shell rather than a PDF. Four web searches on the docket number surfaced nothing containing it. Do not re-spend on dpuc.state.ct.us; the only remaining routes are a real browser session against portal.ct.gov's docket search, or a records request to PURA.ExecutiveSecretary@ct.gov.",
+   "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
+   "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
+   "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
+   "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+   "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
+   "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
+   "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+   "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
+   "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
+  ]
+ },
+ "mechanisms": [
+  {
+   "id": "puct-tbpp-59024-backup-power-package",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Texas Backup Power Package Program (16 TAC 25.513, PUCT Project No. 59024)",
+   "what_it_is": "Texas Energy Fund grants and forgivable loans pay an approved vendor to install a behind-the-meter backup package at a critical facility (hospital, police/fire station, water plant, shelter, school, house of worship). The critical-facility owner signs an award agreement with the commission and a contract with a commission-selected vendor; the facility owner controls the site and owns the package. Grant is capped at $500 per kilowatt; anything above that must be financed by the forgivable loan. Costs funded by the award may not be recovered from the facility's customers or constituents.",
+   "who_signs": "Critical-facility owner <-> PUCT / Texas Energy Fund administrator (award agreement), plus facility owner <-> commission-approved vendor (install + service)",
+   "asset_owner": "host",
+   "term": "Compliance and monitoring period set in the award agreement; site control (ownership or lease) required for its duration",
+   "price_form": "grant-funded, capped at $500/kW, plus forgivable loan for the balance",
+   "precedents": [
+    {
+     "name": "PUCT Project No. 59024 — Order Adopting New 16 TAC 25.513",
+     "year": "2026",
+     "parties": "Public Utility Commission of Texas; 38 commenting parties incl. Oncor, NRG, Vistra, Bloom Energy, Generac, PowerSecure, FCHEA, Texas Hydrogen Alliance",
+     "size": "each site aggregated to serve not more than 2.5 MW of critical load; 48 continuous hours without refuelling",
+     "price": "grant award may not exceed $500 per kilowatt",
+     "note": "Adopted 2026-05-07, effective 2026-05-27, implementing PURA 34.0204/34.0205/35.005(g) from SB 2627. Rule text adopted after 46 filings in the project.",
+     "source_idx": 0
+    },
+    {
+     "name": "Hydrogen / fuel-cell eligibility request denied",
+     "year": "2026",
+     "parties": "FCHEA, GTL Leasing, Sharper Energy Technologies, Texas Hydrogen Alliance, Schneider Electric vs. PUCT",
+     "size": "requested addition of hydrogen, ammonia, alkanes and fuel cells to 25.513(b)(3)(A)(vi)",
+     "note": "Denied on statutory grounds — the clearest available evidence that the eligible-generation list is closed and enumerated, not performance-based.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Excluded by construction, and the exclusion has now been tested. Adopted 25.513(b)(3)(A)(vi) requires a package to 'provide power sourced from a combination of natural gas or propane with photovoltaic panels and battery storage,' and new subparagraph (vii) requires it to 'prioritize power sourced from natural gas when it is available on site.' When five parties asked to add hydrogen and fuel cells, the commission refused 'because the statute does not authorize inclusion of alternative fuel sources' — so the list is a closed statutory enumeration a nuclear unit cannot enter by demonstrating equivalent performance. The 48-continuous-hour-without-refuelling rule is the one criterion a reactor passes trivially and a diesel set fails without a fuel farm, but it buys nothing here because eligibility gates on fuel type first. The no-export rule (b)(3)(A)(iii) and (b)(3)(B) additionally forbid the wholesale or retail sale of energy, ancillary services, ERS, ADER participation, solar buyback, or any demand-response participation — so a host cannot monetise off-hours output, which is the entire economic case for putting a baseload reactor behind a 2.5 MW critical load.",
+   "microreactor_edge": "The 2.5 MW cap and the definition of 'critical load' (life-safety, medical, emergency comms, potable water) size these packages exactly in the 1-20 MW microreactor band's bottom end — but the cap is on critical load, not on the resource, and the no-export prohibition means the other 90% of a microreactor's annual output would be curtailed. A Texas critical facility is a good technical fit and a terrible TBPP fit; the honest path is the loan side of the Texas Energy Fund or a separate ESA, not this rule.",
+   "blockers": [
+    "16 TAC 25.513(b)(3)(A)(vi) enumerates natural gas or propane + PV + battery storage — a closed list, not a performance standard",
+    "25.513(b)(3)(A)(vii): must prioritize natural gas when available on site",
+    "25.513(b)(3)(A)(iii) and (b)(3)(B): controls must prevent any sale of energy, ancillary services, ERS or other reliability service; no ADER, no solar buyback, no demand response",
+    "Commission declined hydrogen/fuel cells 'because the statute does not authorize inclusion of alternative fuel sources' — changing the list requires the Legislature, not the PUCT",
+    "Vendors must be selected by the commission through a competitive solicitation and kept on an approved vendor list",
+    "$500/kW grant cap is roughly two orders of magnitude below microreactor capex"
+   ],
+   "sources": [
+    {
+     "label": "Public Utility Commission of Texas — Project No. 59024, Order Adopting New 16 TAC 25.513 (Texas Backup Power Package Program), 2026-05-07",
+     "url": "https://interchange.puc.texas.gov/Documents/59024_45_1639679.PDF",
+     "quote": "The commission declines to modify proposed subsection (b)(3)(A)(vi) to include hydrogen or fuel cell technologies as eligible fuel or power sources for the TBPPs",
+     "status": "fetched"
+    },
+    {
+     "label": "PUCT Project No. 59024 — adopted rule text, 16 TAC 25.513(b)(3)(A) (attachment to the 2026-05-07 order)",
+     "url": "https://interchange.puc.texas.gov/Documents/59024_45_1639680.PDF",
+     "quote": "be capable of operating for at least 48 continuous hours without refueling or connecting to a separate power source",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "comed-bronzeville-icc-17-0331",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Utility-owned community microgrid via CPCN + rate base (ICC Docket 17-0331, ComEd Bronzeville)",
+   "what_it_is": "ComEd petitioned the Illinois Commerce Commission for a certificate of public convenience and necessity to build, own and rate-base a full-feeder community microgrid serving roughly 1,060 customers and about 7 MW of peak load across 0.29 square miles of Bronzeville, Chicago. The utility owns the wires, the microgrid master controller and the storage; non-storage DER was to be competitively procured from third parties which the utility would not own. The whole capital cost goes into ComEd's distribution rate base and is recovered from all 3.9 million ComEd customers, not from the 1,060 inside the boundary.",
+   "who_signs": "ComEd <-> Illinois Commerce Commission (CPCN petition), with a side agreement ComEd <-> Citizens Utility Board / Environmental Defense Fund on a future pilot microgrid services tariff",
+   "asset_owner": "utility",
+   "term": "Multi-year study period with Annual Reports to the docket (the eighth annual report was filed 2026-02-27)",
+   "price_form": "rate-based",
+   "precedents": [
+    {
+     "name": "ICC Docket 17-0331 — ComEd Bronzeville Community Microgrid, Final Order",
+     "year": "2018",
+     "parties": "Commonwealth Edison Co.; ICC Staff; Illinois Attorney General; Citizens Utility Board; Environmental Defense Fund; Environmental Law & Policy Center; Illinois Power Agency",
+     "size": "approx. 7 MW peak load, 1,060 customers, 0.29 sq mi; Phase I 2.5 MW load + 0.75 MW PV + 0.5 MW / 2 MWh BESS + up to 3 MW of ComEd's existing mobile diesel gensets; Phase II adds 4.5 MW load and ~7 MW of controllable generation",
+     "price": "$29.6M gross; $25M maximum net to ComEd after a $4M DOE SHINES grant and $600,000 partner cost-share; ~$200,000/yr operating cost",
+     "note": "Order entered 2018-02-28. Staff's smaller alternative would have cost about $12.3M less. Phase I net cost approx. $8M.",
+     "source_idx": 0
+    },
+    {
+     "name": "ComEd / CUB / EDF agreement to file a pilot microgrid services tariff",
+     "year": "2018",
+     "parties": "ComEd <-> Citizens Utility Board and Environmental Defense Fund",
+     "size": "third-party-developed microgrids using ComEd wires; utility feasibility study on customer request; islanding services and the utility microgrid controller offered under tariff",
+     "note": "Committed filing date no later than 2020-01-01 — but the Commission itself declined to endorse it, holding tariff findings premature.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "This is the cleanest US template for putting a generator inside a utility's rate base rather than selling its output: the host community signs nothing, pays nothing directly, and the cost is socialised across the whole service territory. That structure would carry a microreactor's capex without a creditworthy offtaker — but 17-0331 also shows the price of admission. The Attorney General's central attack was cost-per-benefit on a $25M asset serving 1,060 customers, and the order's own framing is that '$25 million ... sets the bar for the' benefits the project must show. A reactor at 5-10x that capex faces the same prudence test with a far bigger number, plus a siting question the order never had to reach. Note also that ComEd's existing tariffs 'prohibit the use of customer-owned generation as a source of' supply inside the microgrid — utility ownership was not merely preferred, it was the path of least tariff resistance.",
+   "microreactor_edge": "The Bronzeville footprint is 7 MW of peak load — the exact middle of the 1-20 MW microreactor band, and one unit would replace both the 3 MW of mobile diesel gensets ComEd planned to wheel in for testing and the 7 MW of Phase II controllable generation. A single relocatable unit also collapses the two-phase build (Phase I to satisfy a DOE grant deadline, Phase II for the real microgrid) into one asset.",
+   "blockers": [
+    "CPCN prudence test: the AG argued a reasonable person would not invest $25 million on the demonstrated benefits; the reliability benefit was computed from LBNL/DOE ICE Calculator values",
+    "Public Utilities Act Section 9-241 non-discrimination — spending rate-base dollars concentrated in one neighbourhood was litigated as an unlawful preference",
+    "The Commission expressly refused to bless the third-party microgrid tariff: 'any findings on tariffs are premature in this docket'",
+    "ComEd's existing tariffs prohibit customer-owned generation as a supply source inside its system, pushing ownership to the utility",
+    "Cost allocation across customer classes was deferred to a future tariff filing, leaving recovery unresolved at order date"
+   ],
+   "sources": [
+    {
+     "label": "Illinois Commerce Commission — Docket 17-0331, Commonwealth Edison Company, Final Order (2018-02-28)",
+     "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
+     "quote": "the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant",
+     "status": "fetched"
+    },
+    {
+     "label": "ICC Docket 17-0331 Final Order — Commission analysis on the third-party microgrid tariff",
+     "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
+     "quote": "The Commission agrees with Staff that any findings on tariffs are premature in this docket.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "cpuc-sgip-2025-handbook-eligibility",
+   "group": "batteries",
+   "family": "regulatory-rule",
+   "name": "California Self-Generation Incentive Program — 2025 Handbook eligibility gates (CPUC SGIP)",
+   "what_it_is": "SGIP pays a capacity-based rebate to a Host Customer (or their assigned Payee) for behind-the-meter storage and generation installed on the customer side of the utility meter. The Host Customer owns or leases the equipment, or takes it under a lease/PPA/energy-services agreement — the handbook expressly allows PPAs — and the Program Administrator (PG&E, SCE, SoCalGas, or the Center for Sustainable Energy) pays the incentive against milestone documentation, with performance-based payments metered by an approved Performance Data Provider for five years. The host bears all performance risk; the incentive is a one-time capex offset, not an energy price. Three earlier-pass claims are now confirmed from the handbook itself: the eligible-equipment list is a closed enumeration, there is a 40% minimum electric-efficiency gate expressed as E/F_HHV, and equipment intended solely for emergency backup is ineligible.",
+   "who_signs": "Host Customer <-> SGIP Program Administrator (PG&E / SCE / SoCalGas / Center for Sustainable Energy), under the SGIP Contract; separate host <-> installer/owner agreements (lease, PPA or energy-services agreement) must be handed to the PA",
+   "term": "10-year warranty / contractual-permanence period; 5 years of Performance Data Provider metering; 10-year renewable-fuel audit for fuelled projects",
+   "asset_owner": "host",
+   "price_form": "one-time $/W or $/Wh capacity rebate (grant-funded from ratepayer collections)",
+   "precedents": [
+    {
+     "name": "SGIP statewide ratepayer collection, program years 2020-2024",
+     "year": "2025",
+     "parties": "CPUC; Pacific Gas and Electric $360,000,000; Southern California Edison $280,000,000; Center for Sustainable Energy $99,000,000; Southern California Gas $74,400,000",
+     "size": "88% of the budget allocated to energy storage, 12% to renewable generation; Equity Resiliency alone is 63%",
+     "price": "$813,400,000 total authorized collections; reservations issued through 2025-12-31",
+     "note": "The generation half of the program is 12% of an $813M pot — the storage tail wags this dog.",
+     "source_idx": 0
+    },
+    {
+     "name": "Generation incentive rates and the 3 MW ceiling (2025 Handbook Tables 4.1.3 and 4.2.3)",
+     "year": "2025",
+     "parties": "CPUC Energy Division / SGIP Program Administrators",
+     "size": "incentives paid for up to 3 MW of rated capacity; 100% of base to 1 MW, 75% for >1-2 MW, 50% for >2-3 MW, 0% above 3 MW",
+     "price": "$2.00/W generation base incentive, plus a $2.50/W non-residential Resiliency Adder; storage $0.20-$0.50/Wh stepped, $1.00/Wh flat for Equity Resiliency",
+     "note": "A 3 MW unit taking base + resiliency adder tops out around $9.4M of incentive; a 10 MW unit gets the same $9.4M, because everything above 3 MW earns 0%.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Excluded three separate ways, any one of which is fatal. (1) The eligible-equipment list is a closed enumeration: storage plus eleven named generation technologies (pressure reduction turbines, PV, wind, gas turbines, waste heat to power, microturbines, steam turbine CHP, internal combustion engines, linear generators, fuel cell CHP, fuel cell electric), with no performance-based route in. (2) The generation budget is a renewable generation budget: 'Eligible fuels are those that produce useful energy when undergoing combustion or a chemical reaction and are classified as renewable', and customers 'are required to use 100% renewable fuel for the lifetime of the project'. Fission is neither combustion nor a chemical reaction, and is not renewable in California law. (3) The 40% electrical-efficiency gate is written as E/F_HHV, a ratio of rated electric output to higher heating value fuel consumption. That quantity is undefined for a reactor, so the qualifying test cannot even be evaluated, let alone passed. Separately, the ineligibility of 'Backup systems intended solely for emergency purposes' is confirmed verbatim, and it cuts against diesel gensets too: an emergency-only genset cannot claim SGIP either.",
+   "microreactor_edge": "SGIP is the clearest place a *relocatable* microreactor is worse off than a fixed one. The handbook's permanence test says only systems permanently installed 'both physically and contractually' are eligible, and it names the disqualifiers: 'unsecured equipment, wheels, carrying handles, dolly, trailer, or platform, will deem the system ineligible'. Factory-built, truck-delivered, take-it-back-at-end-of-life is the microreactor's whole product story and it is the exact fact pattern this clause rejects. The 60-day written notice required before any change of site location or system ownership within the warranty period compounds it. The 3 MW incentive ceiling also caps the subsidy at the very bottom of the 1-20 MW band.",
+   "blockers": [
+    "Eligible Equipment is a closed enumerated list of storage plus 11 named generation technologies; no equivalent-performance pathway",
+    "Renewable Fuel Eligibility (Sec. 7.4): eligible fuels must undergo combustion or a chemical reaction AND be classified as renewable; 100% renewable fuel required for project life",
+    "Operational eligibility (Sec. 7.1): waste-heat utilisation >=5% per P.U. Code 216.6(a), or Electrical Efficiency E/F_HHV >= 40% — both defined over fuel heating value",
+    "Ineligible Equipment: 'Backup systems intended solely for emergency purposes'; also any generation capable of operating on or switching to diesel fuel for start-up or continuous operation",
+    "Permanent-installation test rejects any indication of portability (wheels, trailer, platform, quick disconnects)",
+    "Incentive rated-capacity ceiling of 3 MW, declining from 100% to 0% between 1 MW and 3 MW",
+    "Ineligible customer class: any electrical corporation under P.U. Code 218 that generates or purchases electricity for wholesale or retail sale",
+    "Rebuilt, refurbished or relocated equipment is ineligible"
+   ],
+   "sources": [
+    {
+     "label": "CPUC Energy Division — 2025 Self-Generation Incentive Program Handbook v1, Section 3 'Eligible/Ineligible Equipment' (p.46)",
+     "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+     "quote": "Backup systems intended solely for emergency purposes",
+     "status": "fetched"
+    },
+    {
+     "label": "CPUC 2025 SGIP Handbook v1, Section 7.4 Renewable Fuel Eligibility Requirements (p.62)",
+     "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+     "quote": "Eligible fuels are those that produce useful energy when undergoing combustion or a chemical reaction and are classified as renewable.",
+     "status": "fetched"
+    },
+    {
+     "label": "CPUC 2025 SGIP Handbook v1, Permanent Installation requirement (p.47)",
+     "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+     "quote": "unsecured equipment, wheels, carrying handles, dolly, trailer, or platform, will deem the system ineligible",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "aep-ohio-schedule-dct-large-load-tariff",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "AEP Ohio Schedule DCT (Data Center Tariff), P.U.C.O. No. 22 Sheet 223 — large-load minimum-demand tariff",
+   "what_it_is": "A data centre with an aggregate monthly maximum demand above 25,000 kW at a single location (or aggregated across affiliates in the service territory) signs an Electric Service Agreement with Ohio Power Company under Schedule DCT, plus a Letter of Agreement and a Contribution in Aid of Construction agreement for customer-specific plant. The customer commits to a Contract Capacity for an initial term of the Load Ramp Period plus 8 years and pays a minimum monthly billing demand whether or not it consumes the power, so the utility — not the customer — is protected against stranded network investment. Collateral of 50% of total minimum charges over the whole term is posted at signing unless the customer is A-/A3 rated with liquidity above 10x that amount. The customer must own or hold the exclusive right to use a designated site before signing.",
+   "who_signs": "Data-centre customer <-> Ohio Power Company (AEP Ohio), under an ESA + Letter of Agreement + CIAC agreement, on tariff terms approved by the Public Utilities Commission of Ohio",
+   "asset_owner": "utility",
+   "term": "Load Ramp Period (max 4 years) plus 8 years — so 12 years only when the ramp runs the full 4; 3-year ramp gives 11. Thereafter evergreen on 3 years' written notice.",
+   "price_form": "rate-based: $8.08/kW primary or $9.05/kW secondary distribution demand charge, plus customer charge and all approved riders, applied to a contractual minimum billing demand",
+   "precedents": [
+    {
+     "name": "PUCO Case No. 24-508-EL-ATA — Schedule DCT stipulation adopted",
+     "year": "2025",
+     "parties": "AEP Ohio (Ohio Power Company); PUCO Staff; Office of the Ohio Consumers' Counsel; and other signatory parties",
+     "size": "applies to new data-centre load above 25,000 kW aggregate, and to existing customers expanding by more than 25,000 kW",
+     "price": "minimum billing demand floor; exit fee of 36 months of minimum charges, available only after the fifth year following the ramp",
+     "note": "Order 2025-07-09; compliance tariff filed 2025-07-11; effective 2025-07-23. The sheet now in force was re-issued 2026-04-08 under the Case No. 25-392-EL-AIR rate-case order, effective 2026-04-10 — cite the current sheet, not the 2025 compliance filing.",
+     "source_idx": 0
+    },
+    {
+     "name": "Minimum Demand table and Load Ramp floors, Schedule DCT Sheets 223-1 and 223-4",
+     "year": "2026",
+     "parties": "Ohio Power Company, issued by Marc Reitter, President, AEP Ohio",
+     "size": "Load Ramp Contract Capacity floors of 50% / 65% / 80% / 90% of Contract Capacity in years 1-4",
+     "price": "25,001-75,000 kW: 15,000 kW plus 85% of the marginal amount over 25,000 kW. 75,001 kW and above: 57,500 kW plus 100% of the marginal amount over 75,000 kW, capped at 85% of total contract capacity. Existing Load floor is 60%.",
+     "note": "CORRECTION to the widely reported '85% minimum demand': 85% is the marginal rate in the lower band and the overall cap in the upper band, not the floor. A 25 MW new load's floor is 15 MW = 60% of contract capacity; the marginal rate above 75 MW is 100%, not 85%.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Ignores nuclear, and that neutrality is the opening. Schedule DCT never enumerates generation technologies. Its 'Customer-Owned Generation and Emergency Conditions' section lets a customer elect to use behind-the-meter generation to offset its Contract Capacity on one engineering condition: equipment must exist 'to instantaneously curtail load equal to or greater than the behind-the-meter generation output', plus an OAC 4901:1-22 interconnection agreement. Because the customer's exposure is a minimum billing demand rather than metered consumption, a behind-the-meter generator that merely shaves energy saves nothing. Only lowering Contract Capacity itself does. That makes the netting election the most valuable clause in the tariff for a reactor developer: every MW of firm on-site capacity that reduces Contract Capacity removes roughly 0.85 MW of minimum billing demand for the full 11-12 year term, and cuts the 50%-of-minimum-charges collateral in proportion. Emergency or backup generation not designed to run in parallel sits expressly outside these requirements, which is the escape hatch a diesel farm uses and a baseload reactor cannot.",
+   "microreactor_edge": "A 25 MW data centre is the smallest load Schedule DCT reaches, and it is served entirely by the top of the 1-20 MW microreactor band or a two-unit plant — so the microreactor is the only reactor class that can address the tariff's entry tier rather than only hyperscale campuses. The instantaneous-curtailment requirement is also easier to satisfy for a small, steadily-loaded unit than for a large one whose trip drops a step the site cannot absorb. Against that, the tariff's site rule ('must own or have the exclusive right to use the land') and the 8-year-post-ramp commitment are indifferent to relocatability, so the microreactor's mobility earns nothing here.",
+   "blockers": [
+    "Minimum billing demand is owed 'regardless of the customer choosing to curtail, reduce, suspend, or terminate service' during the initial term",
+    "Exit only after the fifth year following the Load Ramp Period, and only on paying 36 months of minimum charges",
+    "Collateral of 50% of total minimum charges for the full term unless rated A- (S&P) and A3 (Moody's) with liquidity above 10x that requirement",
+    "Netting BTM output against Contract Capacity requires instantaneous load-curtailment equipment maintained for the term, subject to the transmission provider's technical requirements",
+    "Service may be suspended with Commission approval if usage exceeds Contract Capacity by more than 1,000 kW — including for customers with BTM generation",
+    "New Loads are barred from the 1CP and 6CP Basic Transmission Cost Rider programs",
+    "Affiliate aggregation: all affiliated New Load above 25,000 kW is stacked by energization date to compute Minimum Demand",
+    "Service does not commence 'until the Company has sufficient capacity to meet the contractual load requirements' — the queue, not the contract, sets the date"
+   ],
+   "sources": [
+    {
+     "label": "Ohio Power Company (AEP Ohio) — P.U.C.O. No. 22, Schedule DCT (Data Center Tariff), Original Sheet No. 223-5, effective 2026-04-10 (AEP Ohio Tariff Book, July 24 2026)",
+     "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+     "quote": "contracts under the Schedule shall be made for an initial period of not less than the Load Ramp Period plus 8 years",
+     "status": "fetched"
+    },
+    {
+     "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-4 — Minimum Demand table",
+     "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+     "quote": "57,500 kW plus 100% of marginal amount over 75,000 kW; provided, however, that the minimum demand will not exceed 85% of the total contract capacity.",
+     "status": "fetched"
+    },
+    {
+     "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-7 — Customer-Owned Generation and Emergency Conditions",
+     "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+     "quote": "to instantaneously curtail load equal to or greater than the behind-the-meter generation output",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "im-indiana-tariff-ip-large-load-46097",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "Indiana Michigan Power Tariff I.P. large-load terms (IURC Cause No. 46097) — the second-state comparison to AEP Ohio",
+   "what_it_is": "Indiana Michigan Power's Industrial Power tariff was modified by an unopposed settlement among I&M, the Indiana Office of Utility Consumer Counselor, Citizens Action Coalition, Amazon Data Services, the Data Center Coalition, Google and Microsoft, approved by the IURC on 2025-02-19. A customer at or above 70 MW at one plant, or 150 MW aggregated across affiliated premises of 1 MW or more, becomes a 'Large Load Customer' and signs an Electric Services Agreement fixing contract capacity, load ramp and term. Minimum monthly billing demand never falls below 80% of contract capacity, and collateral equals 24 times the maximum monthly non-fuel bill. Same commercial idea as AEP Ohio Schedule DCT, materially different numbers — which is why running both matters.",
+   "who_signs": "Large Load Customer <-> Indiana Michigan Power Company, via an Electric Services Agreement under Tariff I.P., approved by the Indiana Utility Regulatory Commission",
+   "asset_owner": "utility",
+   "term": "Initial Contract Term not less than 12 years, which begins only AFTER a Load Ramp Period of up to 5 years — a total commitment of up to 17 years. 42 months' written notice to discontinue.",
+   "price_form": "rate-based; minimum monthly charge = monthly service charge + minimum demand charge x monthly billing demand + Step 1 embedded capacity charge x billing demand + energy blocks",
+   "precedents": [
+    {
+     "name": "IURC Cause No. 46097 — Order approving the Tariff I.P. large-load settlement",
+     "year": "2025",
+     "parties": "Indiana Michigan Power Company; Indiana OUCC; Citizens Action Coalition of Indiana; Amazon Data Services; Data Center Coalition; Google LLC; Microsoft Corporation",
+     "size": "contract capacity >= 70 MW at an individual plant, or >= 150 MW aggregated across premises each of 1 MW or larger; applies to new or expanded load on or after 2024-01-01",
+     "price": "80% minimum monthly billing demand; collateral = 24 x maximum monthly non-fuel bill; exit fee equals the nominal remaining Minimum Charge over an Exit Fee Period of 1-5 years",
+     "note": "Order issued 2025-02-19 (Huston, Bennett, Freeman, Veleta and Ziegner concurring). Commission modified the settlement to require that any mutually agreed capacity reduction beyond 20% come back to the Commission for approval. Semi-annual Large Load Customer reports are filed under seal as trade secret.",
+     "source_idx": 0
+    },
+    {
+     "name": "Contractual flexibility terms — the price of walking away",
+     "year": "2025",
+     "parties": "Settling Parties in Cause No. 46097",
+     "size": "up to 20% capacity reduction free of charge, but only after year 5 and on 42 months' notice tied to the PJM Delivery Year",
+     "price": "beyond 20%, an Exit Fee equal to the nominal remaining Minimum Charge for the terminated capacity, net of the OSS/PJM Rider contribution",
+     "note": "Cross-state comparison: AEP Ohio Schedule DCT charges a flat 36 months of minimum charges to exit after year 5 post-ramp; I&M charges the full remaining minimum over a 1-5 year Exit Fee Period on 42 months' notice.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Ignores nuclear, and then closes the door the Ohio tariff leaves open. Tariff I.P.'s Special Terms are explicit that a customer with its own generation buys standby service and must 'contract for the maximum amount of demand in kW which the Company might be required to furnish' — so behind-the-meter generation does not reduce the contracted demand, it defines it. Layered on the 80% minimum billing demand, a Large Load Customer with an on-site reactor still owes 80% of a contract capacity sized to full backup. Worse, the tariff's standing path for customer generation routes to 'Rider NMS (Net Metering Service Rider), Tariff COGEN/SPP or by special agreement with the Company' — and a fission plant is neither a cogeneration facility nor a PURPA small power production facility, whose fuel must be biomass, waste, renewable resources or geothermal. A reactor host in I&M territory therefore has exactly one route, the bilateral special agreement, with no tariffed terms to fall back on. This is the sharpest contrast in the file: Ohio lets BTM output offset Contract Capacity subject to instantaneous curtailment; Indiana makes BTM output irrelevant to the bill.",
+   "microreactor_edge": "Nothing helpful, and that is the finding. The 70 MW single-plant threshold is 2.8x AEP Ohio's 25 MW, so no single microreactor and no plausible small fleet reaches the tier at all — a 1-20 MW unit is invisible to this tariff except as the on-site generator of a customer who is already there for other reasons. The 150 MW affiliate-aggregation rule with a 1 MW per-premises floor also means a distributed fleet of small sites can be swept into Large Load status collectively while no individual site qualifies for anything.",
+   "blockers": [
+    "80% minimum monthly billing demand floor on contract capacity, and on the highest billing demand of the past 11 months",
+    "Standby/backup service requires contracting for the full maximum demand the Company might have to furnish — BTM generation cannot reduce it",
+    "Customer generation routed to Rider NMS, Tariff COGEN/SPP, or a bilateral special agreement; nuclear qualifies for neither PURPA category",
+    "Initial Contract Term of 12 years starts only after a Load Ramp Period of up to 5 years",
+    "42 months' written notice, aligned to the PJM Delivery Year, before any reduction or termination",
+    "Any mutually agreed reduction beyond 20% must be approved by the Commission (Ordering Paragraph 3)",
+    "Collateral of 24x the maximum monthly non-fuel bill, recomputed annually, unless A-/A3 rated with 10x liquidity",
+    "Large Load Customer reports are confidential trade secret under Ind. Code 24-2-3-2 — the comparables are sealed"
+   ],
+   "sources": [
+    {
+     "label": "Indiana Utility Regulatory Commission — Cause No. 46097, Order of the Commission, approved 2025-02-19",
+     "url": "https://www.in.gov/iurc/files/ord_46097_021925.pdf",
+     "quote": "The Settlement Agreement, a copy of which is attached to this Order, is approved as modified herein.",
+     "status": "fetched"
+    },
+    {
+     "label": "IURC Cause No. 46097 — Stipulation and Settlement Agreement, Monthly Billing Demand clause (filed 2024-11-22)",
+     "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/4aae5d78-18a9-ef11-8a6a-001dd80bd98a/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46097_IndMich_Submission+of+Unopposed+Settlement+Agreement+and+Unopposed+Motion+for+Acceptance+of+Out+of+Time+Filing_112224.pdf",
+     "quote": "in no event be less than the greater of (a) 80 percent of the Large Load Customer’s contract capacity",
+     "status": "fetched"
+    },
+    {
+     "label": "IURC Cause No. 46097 — Settlement Agreement Attachment A, revised Tariff I.P. Sheet No. 21.3, Special Terms and Conditions",
+     "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/4aae5d78-18a9-ef11-8a6a-001dd80bd98a/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46097_IndMich_Submission+of+Unopposed+Settlement+Agreement+and+Unopposed+Motion+for+Acceptance+of+Out+of+Time+Filing_112224.pdf",
+     "quote": "Customers with cogeneration and/or small power production facilities shall take service under Rider NMS (Net Metering Service Rider), Tariff COGEN/SPP or by special agreement",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "njbpu-tcder-microgrid-qo16100967",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "New Jersey Town Center DER Microgrid Program, Phases I and II (NJBPU Docket No. QO16100967)",
+   "what_it_is": "A post-Sandy state programme in which a municipality, county or state agency that owns critical facilities applies to the NJ Board of Public Utilities for a cash incentive, first to fund a feasibility study (Phase I) and then, competitively, to fund the engineering design of a 'Town Center DER Microgrid' — a cluster of FEMA Category III and IV critical facilities inside one municipal boundary, connected to DER that can island from the grid. The awardee signs an MOU with the Board, takes 75% of the award on execution and 25% on Staff's verification that the delivered design matches the application. The public agency owns the asset and bears every downstream risk; the Board funds paper, not steel, and states explicitly that an award 'does not indicate Board approval of any TCDER Microgrid project'.",
+   "who_signs": "Municipality / county / state agency <-> New Jersey Board of Public Utilities, via a Memorandum of Understanding executed within 60 days of the order",
+   "asset_owner": "public agency",
+   "term": "Design-stage only; MOU plus quarterly status reports to Board Staff and six-monthly meetings with the electric distribution company",
+   "price_form": "grant-funded design incentive (75% on MOU execution, 25% on Staff design review)",
+   "precedents": [
+    {
+     "name": "Phase II TCDER Microgrid Design Incentive awards — the per-site chart",
+     "year": "2021",
+     "parties": "NJBPU; Township of Montclair; Borough of Highland Park; Hudson County; City of Hoboken; Township of Neptune; NJ Dept of Treasury (for City of Trenton); City of Atlantic City (DCO Energy); Township of Woodbridge",
+     "size": "8 awards of 11 applications. Project sizes: Hudson County 1.7 MW, Montclair 2.3 MW, Highland Park 2.4 MW, Woodbridge 2.6 MW, Hoboken 4.375 MW, Neptune 7.8 MW, Atlantic City 20 MW, Trenton (20 MW gas CHP + 4.5 MW PV). Collectively 24 FEMA Category IV and 32 Category III facilities, 10.5 MW PV and 2.9 MW storage.",
+     "price": "$4,000,000 authorised, $4,053,050 requested. Awards: Atlantic City $1,125,000; Montclair $679,500; Hoboken $550,000; Neptune $526,100; Hudson County $376,000; Woodbridge $296,950 (of $350,000 requested); Trenton $250,000; Highland Park $196,450. Estimated design costs ran $196,450 to $4,167,000.",
+     "note": "Order dated 2021-03-03, effective 2021-03-13. Camden County, Middletown Township and Paterson got nothing and the programme closed on depletion. This is the per-site cost chart for civic resilience microgrid DESIGN; note it is design cost only, roughly 10-27% of design cost covered for the larger projects.",
+     "source_idx": 0
+    },
+    {
+     "name": "Phase I TCDER Microgrid Feasibility Study Incentive Program",
+     "year": "2017",
+     "parties": "NJBPU and 13 applicants: Atlantic City, Camden County, Cape May County MUA, Galloway, Highland Park, Hoboken, Hudson County, Middletown, Montclair, Neptune, Paterson, NJ Treasury (Trenton), Woodbridge",
+     "size": "13 feasibility studies, all delivered by 2018-12-31 and all deemed acceptable; Cape May County MUA then withdrew",
+     "price": "$2,133,980 total authorised across 13 orders issued 2017-06-30 (Docket Nos. 0017060629 through 0017060641) — about $164,000 per study",
+     "note": "The full funnel is legible: $2.1M of studies produced 12 eligible projects, $4.0M of design money produced 8 designs, and the programme then closed with no construction funding at all.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Ignores nuclear, because the eligibility rule is about which buildings are in the cluster, not which machine powers it. It also contains the most useful regulator finding in this file for a firm non-emitting resource. The Board found that 'existing technology and cost considerations currently do not allow for renewable DERs alone, or renewable DERs coupled with energy storage, to provide the level and length of resilience that critical facilities need', and therefore that 'the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time'. All eight funded designs prove it: each carries natural gas CHP or gas/diesel gensets, while the Board simultaneously urges awardees to minimise fossil DER. That is a regulator publicly stating a capability gap it cannot close with the technologies on its own list. The gating constraint for a reactor is not eligibility but the applicant's own certification that the project 'is legally permissible' under existing law, code and standing Board Orders. For a multi-building municipal cluster that means crossing public streets, which raises New Jersey's right-of-way question squarely.",
+   "microreactor_edge": "The size match is almost exact and it is measured, not asserted: six of the eight funded designs sit between 1.7 MW and 4.4 MW, and the median awarded project is about 2.5 MW. A single 1-20 MW unit covers any of them, and covers the two 20 MW outliers (Atlantic City, Trenton) as a small fleet. Crucially these are multi-day-outage resilience assets whose fossil DER exists precisely because storage cannot hold the duration — the one attribute a reactor has for free. The programme's own money is far too small (a $196K-$1.1M design grant) to matter, so the value here is the documented demand shape and the named counterparties, not the funding.",
+   "blockers": [
+    "Board FINDS fossil-fuelled DER 'necessary at this time' — the incumbent is written into the record, not merely tolerated",
+    "Applicant must certify its project is legally permissible under existing law, code and standing Board Orders (Appendix A certification)",
+    "TCDER Microgrid is defined as a cluster of critical facilities 'within a municipal boundary' — a multi-town or regional siting is out of scope",
+    "Only one Basis of Design per applicant; no alternatives and no future expansion capability considered",
+    "Design-stage funding only; the programme closed on depletion of the $4M with no construction tranche",
+    "'An award under this Phase II Incentive Program does not indicate Board approval of any TCDER Microgrid project'",
+    "Board Staff itself recorded 'several regulatory and statutory barriers constraining the wide-spread development of TCDER Microgrids' and directed a separate stakeholder process to identify them"
+   ],
+   "sources": [
+    {
+     "label": "New Jersey Board of Public Utilities — Docket No. QO16100967, Order (Agenda Item 8B, 2021-03-03), TCDER Microgrid Program Phase II Detailed Design Incentive",
+     "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210303/8B%20-%20ORDER%20TCDER%20II.pdf",
+     "quote": "the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time",
+     "status": "fetched"
+    },
+    {
+     "label": "NJBPU Docket No. QO16100967 Order (2021-03-03) — Phase I history and Phase II award summary",
+     "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210303/8B%20-%20ORDER%20TCDER%20II.pdf",
+     "quote": "Collectively, these 8 projects, if implemented, would provide resilience to 24 FEMA Category IV facilities and 32 FEMA Category III facilities.",
+     "status": "fetched"
+    },
+    {
+     "label": "NJBPU — Phase II TCDER Microgrid Incentive Program Application (released 2020-02-19), Docket No. QO16100967",
+     "url": "https://nj.gov/bpu/pdf/energy/Phase%20II%20TCDER%20Microgrid%20Incentive%20Program%20Application%202-19-20.pdf",
+     "quote": "a cluster of critical facilities within a municipal boundary",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "ct-deep-microgrid-grant-loan-pa12-148",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Connecticut Microgrid Grant and Loan Program (Public Act 12-148 Sec. 7) — the per-site civic-resilience cost dataset",
+   "what_it_is": "Connecticut's post-Irene/Sandy statute directed DEEP to run a microgrid grant and loan programme for critical facilities. A municipality, electric distribution company, municipal electric utility, energy improvement district or private entity applies in a competitive round; DEEP awards a grant or loan and the recipient owns and operates the microgrid, reporting annually to PURA, the Office of Consumer Counsel, DEEP and two legislative committees for five years. The decisive statutory limit is on what the money buys: under the pilot the grants and loans pay only for design, engineering services and interconnection infrastructure — not the generator. A 2016 bond expansion widened this to matching funds or low-interest loans for energy storage and clean distributed generation. DEEP's own award-tracking chart is the per-site dataset: 12 operational microgrids and $22,265,935 of awards.",
+   "who_signs": "Municipality, EDC, municipal electric utility, energy improvement district or private entity <-> Connecticut Department of Energy & Environmental Protection, following a competitive Request for Proposals/Applications",
+   "asset_owner": "host",
+   "term": "Grant or loan; recipient must report project status annually for five years to PURA, OCC, DEEP and the appropriations and energy committees",
+   "price_form": "grant-funded (and low-interest loans), restricted by statute to design, engineering services and interconnection infrastructure",
+   "precedents": [
+    {
+     "name": "DEEP Microgrid Award Tracking chart — all rounds, as of 2022-08-02",
+     "year": "2022",
+     "parties": "Wesleyan University; Town of Woodbridge; Hartford-Parkville; University of Hartford; Fairfield; Bridgeport; Windham; Milford; University of Bridgeport; Wesleyan University Expansion; Daughters of Mary of the Immaculate Conception (New Britain)",
+     "size": "12 operational microgrids. Generation as built: Wesleyan 2.4 MW + 676 kW gas CHP recip; Woodbridge 2.2 MW fuel cell; Hartford-Parkville 4 x 200 kW fuel cells; Univ. of Hartford 2 x 1.9 MW existing diesel + 250 kW + 150 kW diesel; Fairfield 300 kW gas recip + 47 kW PV; Bridgeport 3 x 600 kW gas microturbine CHP; Windham 2 x 100 kW gas + diesel; Milford 400 kW gas CHP + 125 kW battery; Univ. of Bridgeport 1.4 MW fuel cell; Daughters of Mary 4 x 100 kW/255 kWh new BESS on existing PV and a 22 kW gas generator.",
+     "price": "Round 1 (pilot) $12,879,157 across 7 operational projects; Round 2 $5,090,240 (Milford $2,909,341, Univ. of Bridgeport $2,180,899); Round 3 $424,000 (Wesleyan expansion); Round 4 $3,872,538 (Daughters of Mary). Per-site range $424,000 to $3,872,538. Largest pilot awards: Woodbridge $3,000,000, Bridgeport $2,975,000, Univ. of Hartford $2,270,333, Hartford-Parkville $2,063,000, Fairfield $1,167,659, Windham $709,350, Wesleyan $693,815.",
+     "note": "CORRECTION to the round totals: DEEP announced roughly $36.6M across four rounds ($18M pilot to nine projects, $5.1M round 2, $424,000 round 3, $13.1M round 4 to three projects), but its own tracker lists only $22,265,935 as operational — 61%. The pilot shows 7 of 9 projects, and Round 4 shows 1 of 3. Round 2 and Round 3 delivered in full.",
+     "source_idx": 0
+    },
+    {
+     "name": "Wesleyan University Expansion Project — the pure interconnection datapoint",
+     "year": "2017",
+     "parties": "Wesleyan University <-> Connecticut DEEP (Round 3, sole award)",
+     "size": "added a dining venue, public safety building and physical plant building to the existing microgrid; DER column reads EXISTING only — no new generation whatsoever",
+     "price": "$424,000",
+     "note": "The single cleanest published price for the microgrid wrapper alone: $424,000 to bring three more buildings onto existing 3.076 MW of gas CHP. Because the statute confines the grant to design, engineering and interconnection, every award in this chart should be read as the cost of the switchgear-and-controls layer, not the cost of the generator.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Admits a reactor by construction — the only mechanism in this file that does. Public Act 12-148 Sec. 7(a)(3) defines the eligible resource purely by size and location: 'the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user'. There is no fuel list, no emissions test, no efficiency gate and no renewability requirement — the exact opposite of the PUCT's closed natural-gas-or-propane enumeration and the CPUC's combustion-or-chemical-reaction-and-renewable fuel rule. A 1-20 MW reactor on a hospital or municipal campus satisfies the definition on its face. The statutory 'critical facility' list is equally accommodating: hospital, police station, fire station, water treatment plant, sewage treatment plant, public shelter, correctional facility, any commercial area of a municipality, a municipal centre, or anything else DEEP identifies as critical. The catch is on the money, not the eligibility: the pilot grant may fund only design, engineering services and interconnection infrastructure, so a reactor developer gets its wires and controls paid for and none of its capex.",
+   "microreactor_edge": "Two things. First, the 65 MW statutory ceiling is written as a maximum, so a smaller unit is strictly safer under it while a full-size reactor is excluded outright — this is one of the few rules where being small is legally load-bearing rather than merely commercially convenient. Second, the delivered fleet shows what a reactor would be replacing: ten of the twelve operational Connecticut microgrids are anchored on natural gas CHP, fuel cells or diesel, and the only battery-led project kept a natural gas generator on site anyway. On capacity the fit is direct — the built systems run from about 200 kW to 4.2 MW, so a single unit at the bottom of the microreactor band covers any of them and most of them several times over.",
+   "blockers": [
+    "PA 12-148 Sec. 7(c): grants and loans may only fund design, engineering services and interconnection infrastructure — no generation capex under the pilot authority",
+    "Statutory pilot cap of $15,000,000 total (PA 13-298 later authorised a further $30,000,000)",
+    "No open Request for Applications; DEEP's programme page states none is currently open and its content was last updated January 2020",
+    "Award-to-operation attrition is high: 7 of 9 pilot awards and 1 of 3 Round 4 awards appear as operational in DEEP's tracker",
+    "Five years of annual status reporting to PURA, OCC, DEEP and two legislative committees",
+    "Awards were to be distributed as evenly as possible between small, medium and large municipalities — a political allocation rule, not a technical one"
+   ],
+   "sources": [
+    {
+     "label": "CT DEEP — Microgrids Project Award Tracking, All Projects (2022-08-02), Microgrid Grant and Loan Program",
+     "url": "https://portal.ct.gov/-/media/deep/energy/microgrids/microgrid-grant-and-loan-program/microgrids-project-award-tracking-all-projects-822022.pdf",
+     "quote": "(1) 2.4 MW and (1) 676 kW Natural Gas Combined Heat and Power Reciprocating Engine",
+     "status": "fetched"
+    },
+    {
+     "label": "Connecticut Public Act 12-148, Section 7(a)(3) (Substitute Senate Bill No. 23), definition of distributed energy generation",
+     "url": "http://www.cga.ct.gov/2012/ACT/Pa/pdf/2012PA-00148-R00SB-00023-PA.pdf",
+     "quote": "the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user",
+     "status": "fetched"
+    },
+    {
+     "label": "Connecticut Public Act 12-148, Section 7(c) — permitted use of grant and loan proceeds",
+     "url": "http://www.cga.ct.gov/2012/ACT/Pa/pdf/2012PA-00148-R00SB-00023-PA.pdf",
+     "quote": "Such grants and loans shall only be used to provide assistance to recipients for the cost of design, engineering services and interconnection infrastructure",
+     "status": "fetched"
+    },
+    {
+     "label": "CT DEEP — Microgrid Grant and Loan Program, Previous Rounds: Award Winners and Updates",
+     "url": "https://portal.ct.gov/deep/energy/microgrid-grant-and-loan/microgrid-grant-and-loan-program",
+     "quote": "Of the nine applications submitted for Round 4, three were awarded grants totaling approximately $13.1 million.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "njbpu-dco-energy-onsite-generation-qo20030191",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "New Jersey 'on-site generation facility' carve-out from public-utility status (NJBPU Docket No. QO20030191, DCO Energy declaratory ruling)",
+   "what_it_is": "New Jersey's Electric Discount and Energy Competition Act creates a narrow exemption from the incumbent utility's exclusive franchise: a generator that sells electricity to a single end-use customer located on the same or contiguous property is an 'on-site generation facility' and, by statute, is not a public utility. The developer owns and operates the plant, signs one power purchase agreement with one host, and the host is exempt from the Societal Benefits Charge, Market Transition Charge and Transition Bond Charge on that power. DCO Energy petitioned the Board on 2020-02-28 to confirm that adding the AtlantiCare Regional Medical Center to its 6 MW CHP at the Midtown Thermal Control Center qualified, even though the hospital sits diagonally across an intersection 145 feet door-to-door. Atlantic City Electric intervened and opposed. The Board granted the petition on 2021-01-27.",
+   "who_signs": "Developer <-> host, under a single power purchase agreement for the whole campus (DCO Energy <-> AtlantiCare); developer <-> NJBPU for the declaratory ruling confirming non-utility status",
+   "asset_owner": "third-party developer",
+   "term": "Not fixed by the ruling; the commercial instrument is a single PPA covering the entire host campus",
+   "price_form": "$/kWh under a single PPA, plus statutory exemption from the Societal Benefits Charge, Market Transition Charge and Transition Bond Charge",
+   "precedents": [
+    {
+     "name": "In re Petition of DCO Energy, LLC for a Declaratory Ruling — Docket No. QO20030191",
+     "year": "2021",
+     "parties": "DCO Energy, LLC (Murray E. Bevan, Esq.); Atlantic City Electric Company (intervenor, opposed); NJ Division of Rate Counsel (Stefanie A. Brand, took no position on the merits)",
+     "size": "6 MW combined heat and power at the Midtown Thermal Control Center serving the AtlantiCare City Campus as sole electric customer; 145 feet door-to-door across the Atlantic Avenue / South Ohio Street intersection",
+     "note": "Order 2021-01-27, Agenda Item 8D. Two holdings that travel: an existing hospital plus a new Medical Arts Building sharing a corporate parent are ONE end-use customer, and 'When two streets bisect, the intersection created is fundamentally one single thoroughfare for the purposes of EDECA'. DCO withdrew its second question (counting microgrid CHP savings as ACE's third-party energy-efficiency gains) in an amended petition of 2020-10-23.",
+     "source_idx": 0
+    },
+    {
+     "name": "In re Cooper Hospital System — the single-end-user doctrine this ruling extends",
+     "year": "2017",
+     "parties": "Cooper Hospital System; NJBPU",
+     "size": "CHP plant at One Cooper Plaza serving Three Cooper Plaza, separated by Haddon Avenue; three entities held to constitute one 'end user'",
+     "note": "2017 N.J. PUC LEXIS 74, decided 2017-04-21, cited by both ACE and the Board in QO20030191. The rule extracted from it: all entities in the project must function as part of a single integrated system to be deemed a single end user. ACE argued the Board had warned that going further risked 'a proliferation of mini utilities'; the Board went further anyway.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Admits a reactor on its face, and is the most directly useful commercial mechanism in this file. EDECA's definition opens with 'A generation facility, including, but not limited to, a generation facility that produces Class I or Class II renewable energy' — the renewable clause is illustrative, not a limit, so the statute imposes no fuel, efficiency or emissions test at all. What it does impose is the thing that actually kills reactor deals: 'An on-site generation facility shall not be considered a public utility' holds only for a single end-use customer on contiguous property. A microreactor sized for a campus will overproduce for one host, and the moment a second unrelated offtaker appears the developer becomes a regulated public utility inside someone else's exclusive franchise — the 'proliferation of unregulated mini-utilities' Rate Counsel warned about. The workaround the Board has now blessed twice is corporate, not technical: aggregate the buildings into one end user by common parent and integrated operation (Cooper: three entities, one user; DCO: hospital plus Medical Arts Building, one campus). Note also N.J.S.A. 48:3-77.1: power sold to an off-site end-use thermal customer must ride the incumbent utility's existing distribution infrastructure, so there is no private-wire route out.",
+   "microreactor_edge": "A 6 MW plant serving one hospital campus under one PPA is the exact commercial shape a 1-20 MW reactor is built for, and this ruling shows the whole structure working with a real regulator, a real opponent and a real host. Two microreactor-specific caveats. The contiguity doctrine that rescued DCO — sit across the street and you are still 'on-site' — is worth less to a reactor than to a CHP plant, because a reactor's siting envelope is set by its own exclusion-area and emergency-planning requirements rather than by property lines, and no amount of statutory contiguity relaxes those. And the single-end-user rule bites harder the larger the unit relative to the host: a reactor sized to a campus load has no lawful way to sell its surplus to the building next door unless that building is inside the same corporate family.",
+   "blockers": [
+    "N.J.S.A. 48:3-51 permits exactly ONE end-use customer per on-site generation facility",
+    "Contiguity: same property, or separated by no more than one easement, public thoroughfare, transportation or utility-owned right-of-way",
+    "N.J.S.A. 48:3-77.1 forces sales to an off-site end-use thermal customer onto the incumbent utility's existing distribution infrastructure — no private wire",
+    "The incumbent EDC will intervene: ACE argued the petition was procedurally improper, relied on contingent future facts, and prejudged the parallel TCDER II proceeding",
+    "Rate Counsel's standing objection that multi-customer on-site generation creates unregulated mini-utilities bypassing the Societal Benefits Charge",
+    "The single-end-user finding rested on evidentiary proof of a shared parent (IRS paperwork, media coverage, testimony) — corporate structure is part of the permitting record",
+    "Declaratory relief on a not-yet-completed land transfer was attacked as premature; the escrow account is what saved it"
+   ],
+   "sources": [
+    {
+     "label": "New Jersey Board of Public Utilities — Docket No. QO20030191, Order on DCO Energy Motion for Declaratory Ruling (Agenda Item 8D, 2021-01-27), quoting N.J.S.A. 48:3-51",
+     "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+     "quote": "An on-site generation facility shall not be considered a public utility.",
+     "status": "fetched"
+    },
+    {
+     "label": "NJBPU Docket No. QO20030191 Order (2021-01-27) — Discussion and Findings on the intersection question",
+     "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+     "quote": "When two streets bisect, the intersection created is fundamentally one single thoroughfare for the purposes of EDECA.",
+     "status": "fetched"
+    },
+    {
+     "label": "NJBPU Docket No. QO20030191 Order (2021-01-27) — EDECA definition of 'on-site generation facility'",
+     "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+     "quote": "A generation facility, including, but not limited to, a generation facility that produces Class I or Class II renewable energy",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

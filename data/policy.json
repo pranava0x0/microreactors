@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "captured": "2026-08-21",
+  "captured": "2026-08-25",
   "note": "Regulatory and policy pathways that would widen the microreactor market. kind: 'enacted' = law/rule in force, 'program' = live funded programme, 'proposed' = pending rule or bill, 'finding' = published research result, 'idea' = this site's own proposal, carried without a citation because none exists. Research trail: data/research/policy-pathways.json. Two citation corrections from that pass are baked in here: the DoD 99.9% availability mandate is 10 U.S.C. 2920 (not 2911(b)), and Alaska's SB 177 was signed in 2022 with implementing regulations in August 2025.",
   "captured_note": "Statuses are as of 2026-08-21; EL25-49 tariff language and NRC Part 57 were still pending."
  },
@@ -87,28 +87,36 @@
      "name": "CMS accepts non-generator emergency power",
      "status": "enacted",
      "kind": "enacted",
-     "mechanism": "CMS's categorical waiver QSO-23-11-LSC permits hospitals and most certified facilities to satisfy the alternate-energy-source requirement with something other than a generator set: fuel cells, solar, wind and energy-storage microgrids qualify, provided NFPA 99 and the electrical code are met (life-support long-term-care facilities still need a generator). This is the strongest existing precedent for an always-on microreactor plus bridging battery qualifying as hospital emergency power.",
+     "mechanism": "CMS's categorical waiver QSO-23-11-LSC permits hospitals and most certified facilities to satisfy the alternate-energy-source requirement with something other than a generator set or battery system, provided NFPA 99 (2021) and the 2023 electrical code are met — the memo names fuel cells, solar, wind and energy storage. Crucially the waiver does not enumerate a closed list of permitted technologies: it points at NFPA 99 (2021) 6.10.2, under which any combination of generation, storage or transformation equipment may serve as a health-care microgrid's power source. Life-support long-term-care facilities still need a generator. This is the strongest existing precedent for an always-on microreactor plus bridging battery qualifying as hospital emergency power.",
      "sources": [
       {
-       "label": "America's Essential Hospitals — CMS guidance on alternate energy sources",
-       "url": "https://essentialhospitals.org/cms-updates-guidance-alternative-energy-sources/",
-       "quote": "onsite alternative energy sources and micro-grids, which can be powered by fuel cells, solar, wind, and energy storage",
-       "status": "fetched"
+       "label": "CMS — QSO-23-11-LSC, Categorical Waiver: Health Care Microgrid Systems (2023-03-31)",
+       "url": "https://www.cms.gov/files/document/qso-23-11-lsc.pdf",
+       "quote": "CMS is issuing a categorical waiver permitting new and existing health care facilities subject to CMS requirements to utilize alternate sources of power other than a generator set or battery system",
+       "status": "fetched",
+       "verified": "2026-08-25 quote confirmed in cached copy"
+      },
+      {
+       "label": "CMS — QSO-23-11-LSC, Categorical Waiver: Health Care Microgrid Systems (2023-03-31)",
+       "url": "https://www.cms.gov/files/document/qso-23-11-lsc.pdf",
+       "quote": "on equipment may serve as the power source for all or a portion of a HCMS. NFPA 99 (2021) 6.10.2",
+       "status": "fetched",
+       "verified": "2026-08-25 quote confirmed in cached copy"
       }
      ]
     },
     {
-     "name": "NFPA 110's ten-second start",
+     "name": "The ten-second start, and which standard actually governs",
      "status": "enacted",
      "kind": "enacted",
-     "mechanism": "Hospital life-safety branches must regain power within 10 seconds of a utility failure, the requirement that made diesel the default. An always-on microreactor never needs to start, but in a paired design it is the bridging battery that carries the 10-second ride-through while the reactor carries duration. Any hospital pitch should say that plainly rather than imply the reactor itself starts in ten seconds.",
+     "mechanism": "Hospital life-safety branches must regain power within 10 seconds of a utility failure, the requirement that made diesel the default. The standards split by technology and the distinction matters: NFPA 110 governs emergency power supplies whose energy converter is a rotating machine driven by a diesel, spark-ignition or gas-turbine prime mover, while stored-energy systems fall under NFPA 111 and their installation under NFPA 855. A reactor is neither, which is why the route in is NFPA 99's health-care microgrid language rather than NFPA 110 at all. In a paired design the bridging battery carries the 10-second ride-through and the reactor carries duration. Any hospital pitch should say that plainly rather than imply the reactor itself starts in ten seconds.",
      "sources": [
       {
-       "label": "backuppower.ai — hospital generator requirements under NFPA 99/110",
-       "url": "https://backuppower.ai/healthcare/hospital-generator-requirements/",
-       "quote": "power must be restored to the Life Safety and Critical branches within 10 seconds",
+       "label": "CMS — QSO-23-11-LSC, Categorical Waiver: Health Care Microgrid Systems (2023-03-31)",
+       "url": "https://www.cms.gov/files/document/qso-23-11-lsc.pdf",
+       "quote": "on equipment may serve as the power source for all or a portion of a HCMS. NFPA 99 (2021) 6.10.2",
        "status": "fetched",
-       "verified": "2026-08-21 quote confirmed in page"
+       "verified": "2026-08-25 quote confirmed in cached copy"
       }
      ]
     },
@@ -157,7 +165,7 @@
      "name": "A CMS-style categorical waiver for reactor microgrids",
      "status": "this site's proposal",
      "kind": "idea",
-     "mechanism": "CMS extended emergency-power eligibility to fuel-cell microgrids by waiver rather than rulemaking. The same instrument fits here: a categorical waiver recognising an always-on microreactor with a code-compliant bridging battery as an alternate energy source for non-life-support facilities, with the battery satisfying the 10-second start and the reactor the 96-hour duration requirement diesel meets with fuel trucks.",
+     "mechanism": "Narrower than it first appears, and worth stating precisely. CMS extended emergency-power eligibility by waiver rather than rulemaking, and the waiver's own text is open-ended — alternate sources other than a generator set or battery system, judged against NFPA 99 (2021). On a plain reading a reactor plus a code-compliant bridging battery may already qualify by self-election, with no new CMS action at all. What is missing is not permission but certainty: an explicit confirmation that a reactor counts, so that a hospital's authority having jurisdiction is not the first body ever asked to decide it. No facility has yet tested this, and no AHJ document accepting a non-diesel emergency power supply at a hospital was found in two research passes.",
      "sources": []
     }
    ]
@@ -263,8 +271,9 @@
       {
        "label": "Troutman Pepper — FERC Order 2023 summary",
        "url": "https://www.troutman.com/insights/troutman-pepper-summary-of-ferc-order-no-2023-on-generator-interconnection-reform/",
-       "quote": "first-ready, first-served cluster study approach that requires generators to demonstrate commercial readiness",
-       "status": "snippet-only"
+       "quote": "cluster study approach that requires generators to demonstrate commercial readiness",
+       "status": "snippet-only",
+       "verified": "2026-08-25 quote confirmed in cached copy"
       }
      ]
     },

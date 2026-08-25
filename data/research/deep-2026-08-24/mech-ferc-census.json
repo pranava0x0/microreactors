@@ -1,0 +1,116 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "main-session (FERC eLibrary census via tools/ferc_elibrary.py)",
+  "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
+  "method": "python3 tools/ferc_census.py \"<phrase>\" --out data/research/ferc/census-<date>.json — wraps tools/ferc_elibrary.py's description-only search, counts filings by filedDate year, groups by base docket number, and flags any year above 5 filings where one docket carries half or more of the volume. Description-only search counts filings whose FERC-written description contains the phrase, not every filing in which the concept appears. Full output: data/research/ferc/census-2026-08-24.json",
+  "angles_run": [
+   "Surplus Interconnection Service Agreement (71 filings, all returned)",
+   "co-located load (64 filings, all returned)",
+   "Small Generator Interconnection Agreement (811 filings, first 200 returned - a capped list, so its shape is not reported)"
+  ],
+  "absences": [
+   "The Small Generator Interconnection Agreement query returned 811 hits against a 200 cap, so no year-shape is reported for it here; a capped list is a floor, not a total.",
+   "None of the underlying letter orders was opened: FERC serves them as DOCX transmittals and the census is built from the search API's own description strings.",
+   "The census counts filings, not megawatts. No filing description states the MW inherited, so the size distribution of surplus interconnection is unknown from this method.",
+   "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact.",
+   "Three cited hosts serve only a JavaScript shell to non-browser clients (elibrary.ferc.gov, programs.dsireusa.org); those sources are marked snippet-only rather than left claiming a fetch that did not happen."
+  ]
+ },
+ "mechanisms": [
+  {
+   "id": "surplus-interconnection-uptake",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Surplus interconnection has stopped being theoretical",
+   "what_it_is": "FERC Order 845 let a new generator use the unused capacity of an existing interconnection instead of joining the queue. The open question was never whether the rule existed but whether anyone used it. Searching FERC eLibrary for filings whose description names a Surplus Interconnection Service Agreement returns 71 filings, of which 35 name a specific counterparty agreement — and those 35 run 1 in 2022, 3 in 2023, 3 in 2024, 9 in 2025 and 19 in 2026 through August, across 37 distinct dockets. The instrument is in routine use and its use is roughly doubling year on year. Every counterparty is solar, storage or wind.",
+   "who_signs": "New generator <-> transmission provider, filed at FERC as a service agreement under the provider's tariff",
+   "asset_owner": "the new generator",
+   "term": "life of the interconnection service",
+   "price_form": "no queue position and, in principle, no new network upgrade cost — the value is schedule, not tariff",
+   "precedents": [
+    {
+     "name": "Alabama Power / Decatur Solar Energy Center and Decatur Energy Storage",
+     "year": "2026",
+     "parties": "Alabama Power Company; Decatur Solar Energy Center, LLC; Decatur Energy Storage, LLC",
+     "note": "Accepted 2026-02-12 as Service Agreement No. 867 under docket ER26-803. A solar plant and a battery sharing one inherited point of interconnection is the archetypal use.",
+     "source_idx": 0
+    },
+    {
+     "name": "Alabama Power / Cabokenze Energy Storage and White Oak Solar",
+     "year": "2026",
+     "parties": "Alabama Power Company; Cabokenze Energy Storage, LLC; White Oak Solar, LLC",
+     "note": "Accepted 2026-04-27 under docket ER26-1547 — the same pattern again ten weeks later, which is what routine use looks like.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Nothing in the rule excludes a reactor, and this is the strongest schedule argument available to one: the alternative is a cluster study measured in years. The practical constraint is that surplus capacity exists where a plant is retiring or running below its interconnection rating, which points at coal and gas sites rather than greenfield ones — and those sites come with a site-suitability question the NRC, not FERC, decides.",
+   "microreactor_edge": "Surplus capacity is usually a modest slice of a retired plant's rating, which suits a machine sized in single-digit megawatts far better than one sized in hundreds. A microreactor can fit inside the leftover headroom of an existing connection; a large reactor generally cannot, and would have to justify a new one. Not one of the 71 filings involves a reactor of any size, so this remains an argument rather than a precedent.",
+   "blockers": [
+    "Surplus capacity only exists where an incumbent generator is retiring or under-running its rating",
+    "The census counts filings, not megawatts — no filing description states how much capacity was inherited",
+    "Zero reactor precedent: the instrument's entire track record is solar, storage and wind"
+   ],
+   "sources": [
+    {
+     "label": "FERC eLibrary — ER26-803-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260212-3058)",
+     "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260212-3058",
+     "quote": "filing of a Surplus Interconnection Service Agreement with Decatur Solar Energy Center, LLC and Decatur Energy Storage, LLC",
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
+    },
+    {
+     "label": "FERC eLibrary — ER26-1547-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260427-3019)",
+     "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3019",
+     "quote": "Surplus Interconnection Service Agreement with Cabokenze Energy Storage, LLC and White Oak Solar, LLC",
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
+    }
+   ]
+  },
+  {
+   "id": "co-location-docket-concentration",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "The co-location wave is one proceeding, not a wave of deals",
+   "what_it_is": "Searching FERC eLibrary for filings described as concerning co-located load returns 64 filings, 45 of them in 2024 — which reads as a surge until the dockets are counted. Forty-two of those 45 sit in a single docket, AD24-11, FERC's own technical conference on co-location at large generators. Activity then falls to 5 filings in 2025 and 5 in 2026. The record documents an intense regulatory argument about the structure, not an accumulation of executed co-location deals, and any read of the docket volume as market traction has the causation backwards.",
+   "who_signs": "Co-located load <-> host generator, with the interconnection agreement filed at FERC and open to protest",
+   "asset_owner": "separate owners for the generator and the load, which is the whole difficulty",
+   "term": "deal-specific",
+   "price_form": "bilateral; the contested question is what transmission charges the load avoids",
+   "precedents": [
+    {
+     "name": "FERC docket AD24-11 — technical conference on large loads co-located at generating facilities",
+     "year": "2024",
+     "parties": "FERC; PJM; generators; data-centre developers; state commissions and consumer advocates",
+     "size": "42 of the 45 co-location filings made in 2024",
+     "note": "A single proceeding accounts for nearly the entire 2024 volume. Counting filings without counting dockets would report a market that does not exist.",
+     "source_idx": 0
+    },
+    {
+     "name": "FERC docket EL25-49 — the follow-on show-cause proceeding on co-located load",
+     "year": "2025",
+     "parties": "FERC; PJM and its transmission owners",
+     "note": "The argument moved from a conference into a Section 206 proceeding rather than into signed agreements.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Co-location is the structure most often proposed for large reactors serving data centres, and it is the one FERC has been least willing to bless — the Talen-Amazon interconnection amendment at Susquehanna was rejected twice. A reactor project that depends on co-location is betting on an unsettled question; one that sells behind its host's existing meter is not.",
+   "microreactor_edge": "The genuine advantage of a 1-20 MW machine is that it can be small enough to sit behind the host's meter as ordinary on-site generation, never becoming a co-location question at all. The whole AD24-11 argument is about loads large enough to matter to the transmission system; a microreactor's customer usually is not.",
+   "blockers": [
+    "The rules governing what a co-located load pays for transmission are still being litigated",
+    "Docket volume is a poor proxy for deal volume and is routinely misread as one",
+    "Two rejections at Susquehanna are the most-cited data points and both went against the structure"
+   ],
+   "sources": [
+    {
+     "label": "FERC eLibrary — docket AD24-11, technical conference on co-located large loads (census of 64 co-located-load filings, 42 of them in AD24-11 during 2024)",
+     "url": "https://elibrary.ferc.gov/eLibrary/search?docket=AD24-11",
+     "quote": "co-located load",
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
+    }
+   ]
+  }
+ ]
+}
