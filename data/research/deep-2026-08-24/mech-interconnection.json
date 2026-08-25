@@ -1,667 +1,669 @@
 {
-  "_meta": {
-    "captured": "2026-08-24",
-    "agent": "mech-interconnection",
-    "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
-    "angles_run": [
-      "FERC Order 2023/2023-A cluster process, SGIP/SGIA 20 MW threshold, Fast Track screens",
-      "Surplus interconnection service (inheriting a retiring/underused plant's POI)",
-      "Co-located load and behind-the-meter arrangements (Talen-Amazon, FERC EL25-49)",
-      "State/ISO fast paths (ERCOT connect-and-manage, large-load process, SB6)",
-      "Never interconnecting: deliberate islanded operation",
-      "Flexible / curtailable interconnection agreements",
-      "Distribution-level interconnection (Rule 21, hosting capacity)"
-    ],
-    "absences": [
-      "No EXECUTED surplus interconnection service agreement could be verified with named parties, MW and a date. FERC eLibrary (ferc.gov) and SEC EDGAR both return HTTP 403 to automated fetch, so no primary filing was retrievable; only aggregate counts survived verification (44 projects online in MISO, 22 in SPP, 8 PJM applications with 2 approved).",
-      "No published STUDY COST or network-upgrade cost specific to a surplus interconnection request was found in any RTO tariff or filing. The claim that surplus customers 'pay no network upgrade cost' is a description of the mechanism, not a verified dollar figure.",
-      "No named, executed flexible/curtailable INTERCONNECTION agreement with MW and price was found. Enchanted Rock returned nothing in this context; Google's flexible capacity is published only as 'gigawatt scale across multiple utility territories' with no agreement, MW or price. The flexible-interconnection angle produced rulemakings, not contracts.",
-      "Could not verify what happened to the pre-existing 300 MW Talen/Amazon Susquehanna co-located arrangement after FERC's 1 November 2024 rejection of the 480 MW amendment.",
-      "The text of FERC's 18 December 2025 co-location order (193 FERC para. 61,217) and the 18 June 2026 show cause orders could not be read directly - ferc.gov HTML and White & Case both 403'd. The FERC E-1 slide deck PDF was retrievable and is the primary source used; compliance deadlines come from a law-firm summary.",
-      "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
-      "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
-      "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
-      "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report."
-    ]
-  },
-  "mechanisms": [
-    {
-      "id": "ferc-lgip-cluster-queue",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Standard FERC large-generator queue (Order 2023 cluster study -> LGIA)",
-      "what_it_is": "The default federal route for any generator above the small-generator threshold. The developer files an interconnection request with the transmission provider, is grouped into an annual cluster, pays a share of a cluster study, then a facilities study, then executes a Large Generator Interconnection Agreement (LGIA) and pays for whatever network upgrades the study assigns. The transmission provider owns and builds the upgrades; the interconnection customer funds them. Order No. 2023 (July 2023, affirmed by Order 2023-A in March 2024) replaced serial first-come-first-served with first-ready-first-served clusters, put hard deadlines on the studies, and made the transmission provider pay penalties for missing them.",
-      "who_signs": "Interconnection customer <-> transmission provider / RTO (LGIA)",
-      "asset_owner": "third-party developer (generator); utility owns the network upgrades",
-      "term": "LGIA runs for the life of the facility; the study-to-agreement process alone is the multi-year part",
-      "price_form": "study deposits + 100% funding of assigned network upgrades (capex, not $/kWh)",
-      "precedents": [
-        {
-          "name": "US projects reaching commercial operation in 2025 (LBNL 'Queued Up' cohort)",
-          "year": "2025",
-          "parties": "All US transmission providers / all queued generators",
-          "size": "2,061 GW of generation and storage actively in queues at end-2025",
-          "note": "Median duration from request to signing an interconnection agreement was well over 3 years; time to commercial operations exceeds 5 years. Of requests submitted 2000-2020, 75% had withdrawn and only 13% of capacity had come online by end-2025. Withdrawal rates exceed 40% even AFTER an IA is signed.",
-          "source_idx": 0
-        },
-        {
-          "name": "Order No. 2023 study-deadline penalty regime",
-          "year": "2023",
-          "parties": "FERC <-> all jurisdictional transmission providers",
-          "size": "150-calendar-day cluster study window",
-          "price": "$1,000/business day (cluster study), $2,000/business day (restudy, affected-system study), $2,500/business day (facilities study)",
-          "note": "Order 2023 also requires 90% site control at the interconnection-request stage and 100% by facilities-study agreement, and sets the LGIA deposit at 20% of estimated network upgrade costs. Study costs are allocated 10-50% per capita and the remainder pro rata by MW.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Nothing in the LGIP is nuclear-specific: a reactor is a synchronous machine like any thermal plant and enters the same cluster. The mismatch is schedule. A reactor's licensing path (NRC construction permit + operating licence, or a combined licence) runs on its own clock and is not accelerated by holding a queue position, while Order 2023's readiness rules run the other way - 90% site control at request, escalating withdrawal penalties, and a 20%-of-upgrade-cost deposit at LGIA - all of which punish a project that must sit still waiting on a regulator. Firm, dispatchable output is the enabler: a reactor's high capacity factor makes it far more likely to trigger, and be charged for, deliverability-driven network upgrades than an equivalent-MW solar plant.",
-      "microreactor_edge": "A 1-20 MW unit should never be in this process at all - it falls under the pro forma Small Generator Interconnection Procedures, which apply at 20 MW and below (see sgip-study-process). The real edge is that a factory-built unit's construction schedule (months on site) is decoupled from the queue: unlike a gas plant whose EPC schedule and queue position must be co-managed over years, a microreactor fleet can hold the connection first and drop the machine in later. The claim that a small unit dodges the queue entirely is only true below the SGIP threshold; above 20 MW, an aggregated fleet at one site re-enters the full LGIP.",
-      "blockers": [
-        "Median 3+ years request-to-IA and 5+ years to commercial operation (LBNL, 2025)",
-        "20% of estimated network upgrade cost due as deposit at LGIA execution (Order 2023)",
-        "90% site control required at the interconnection request stage - hard for a relocatable unit with no fixed host yet",
-        "Escalating withdrawal penalties under Order 2023 make a licensing-driven schedule slip expensive",
-        "Aggregating multiple microreactors past 20 MW at one point of interconnection pushes the project out of SGIP and into the full cluster process"
-      ],
-      "sources": [
-        {
-          "label": "American Public Power Association - Backlog of power plants seeking transmission grid connection eased somewhat in 2025: LBNL",
-          "url": "https://www.publicpower.org/periodical/article/backlog-power-plants-seeking-transmission-grid-connection-eased-somewhat-2025-lbnl",
-          "quote": "The median duration from submitting a request to signing an IA was well over 3 years in 2025.",
-          "status": "fetched"
-        },
-        {
-          "label": "Troutman Pepper Locke - Summary of FERC Order No. 2023 on Generator Interconnection Reform",
-          "url": "https://www.troutman.com/insights/troutman-pepper-summary-of-ferc-order-no-2023-on-generator-interconnection-reform/",
-          "quote": "$1,000 per business day for delayed cluster studies; $2,000 per business day for delayed cluster restudies and affected system studies",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "sgip-study-process",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Small Generator Interconnection Procedures - Study Process (2-20 MW)",
-      "what_it_is": "FERC's pro forma SGIP is a separate, lighter interconnection track that applies to any generating facility of 20 MW or less, ending in a Small Generator Interconnection Agreement (SGIA) rather than an LGIA. Anything larger than 2 MW but no larger than 20 MW - or any facility that failed Fast Track - runs the Study Process: a scoping meeting, an optional feasibility study, a system impact study, and a facilities study. The interconnection customer funds the studies and any resulting interconnection facilities; the transmission provider designs and builds them. Deposits are trivially small compared with the LGIP: a feasibility-study deposit of the lesser of 50% of the estimated cost or $1,000 earnest money.",
-      "who_signs": "Interconnection customer <-> transmission provider (SGIA)",
-      "asset_owner": "host or third-party developer (generator); utility owns interconnection facilities",
-      "term": "SGIA runs for the life of the facility",
-      "price_form": "study deposits (from $1,000) + cost of interconnection facilities and any upgrades",
-      "precedents": [
-        {
-          "name": "FERC pro forma SGIP / SGIA applicability rule",
-          "year": "2013",
-          "parties": "FERC <-> all jurisdictional transmission providers (Order 792, Nov 2013; Order 792-A, Sep 2014)",
-          "size": "20 MW ceiling; Study Process covers >2 MW to 20 MW",
-          "price": "Feasibility-study deposit: lesser of 50% of good-faith estimate or $1,000 earnest money; Study Process filing deposit not to exceed $1,000",
-          "note": "Deadline structure is in business days, not years: scoping meeting within 10 business days of a complete request; feasibility-study agreement within 5 business days of the scoping meeting; customer must return the executed system impact study agreement within 30 business days and the facilities study agreement within 30 business days. There is no cluster and no annual window.",
-          "source_idx": 0
-        },
-        {
-          "name": "Order 792 extension of small-generator standards to 20 MW DER",
-          "year": "2013",
-          "parties": "FERC / distributed generation industry",
-          "size": "up to 20 MW",
-          "note": "Orders 792 and 792-A adopted small-generator interconnection standards for distributed energy resources up to 20 MW, and created the Fast Track sub-process for a subset of them.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The SGIP is technology-neutral on its face - it turns on MW, machine type, and line voltage, not fuel. A reactor of 20 MW or less is legally entitled to the Study Process and an SGIA. The catch is that SGIP screens were written around intermittent DER on distribution circuits: the aggregation screen (15% of line-section annual peak load on a radial circuit) and the minimum-load screen (aggregate generation below 100% of line-section minimum load) are load-relative, and a 20 MW machine will blow through both on a typical distribution feeder even though it is nominally 'small'. Expect the Study Process, not a screen pass.",
-      "microreactor_edge": "This is the single most concrete rule-based advantage a 1-20 MW reactor has: the entire fleet size range sits at or under the pro forma SGIP's 20 MW ceiling, so it is entitled to an SGIA and study deposits measured in thousands of dollars rather than a cluster study, a 20%-of-upgrades deposit, and a multi-year queue. The advantage is lost the moment a site aggregates past 20 MW at one point of interconnection - so a 4 x 5 MW campus is an LGIP project while 4 x 5 MW at four separate points of interconnection is four SGIP projects. Note this is the FEDERAL pro forma; individual RTOs and states set their own thresholds.",
-      "blockers": [
-        "20 MW is the hard applicability ceiling - a multi-unit site crosses it fast",
-        "SGIP screens are relative to line-section peak and minimum load; a 20 MW machine fails the 15% aggregation screen on almost any distribution feeder",
-        "The pro forma SGIP is FERC-jurisdictional only; state-jurisdictional distribution interconnection uses state rules with different thresholds",
-        "Business-day deadlines bind the customer's return of executed study agreements (15-30 business days) as tightly as they bind the utility"
-      ],
-      "sources": [
-        {
-          "label": "FERC - pro forma Small Generator Interconnection Procedures (SGIP)",
-          "url": "https://www.ferc.gov/sites/default/files/2020-04/sm-gen-procedures.pdf",
-          "quote": "larger than 2 MW but no larger than 20 MW, (2) is not certified, or (3) is certified",
-          "status": "fetched"
-        },
-        {
-          "label": "DSIRE - Interconnection Standards for Small Generators (FERC Orders 792 / 792-A)",
-          "url": "https://programs.dsireusa.org/system/program/detail/2774/interconnection-standards-for-small-generators",
-          "quote": "adopted new \"small generator\" interconnection standards for distributed energy resources up to 20 megawatts (MW) in capacity",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "sgip-fast-track",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "SGIP Fast Track Process (screens instead of studies)",
-      "what_it_is": "The fastest federal route: instead of a scoping meeting and three studies, the transmission provider runs a set of technical screens and, if the project passes, must offer an SGIA without further study. The customer pays a flat $500 non-refundable processing fee and gets an initial-review answer within 15 business days. If a screen fails, the customer can buy a supplemental review (deposit = the provider's good-faith cost estimate, results within 30 business days of the deposit) or drop into the full Study Process. Eligibility is set by machine type, MW, line voltage, and distance from the substation.",
-      "who_signs": "Interconnection customer <-> transmission provider (SGIA, no study agreements)",
-      "asset_owner": "host or third-party developer",
-      "term": "SGIA runs for the life of the facility",
-      "price_form": "$500 flat fee; supplemental review at cost",
-      "precedents": [
-        {
-          "name": "FERC pro forma SGIP Fast Track eligibility table and fee schedule",
-          "year": "2013",
-          "parties": "FERC <-> all jurisdictional transmission providers (Order 792)",
-          "size": "Inverter-based: 500 kW (<5 kV), 2 MW (5-15 kV), 3 MW (15-30 kV), 4 MW (30-69 kV); +1 MW each on a mainline within 2.5 electrical circuit miles of a substation, to a 5 MW ceiling. Synchronous and induction machines: 2 MW, regardless of location.",
-          "price": "$500 non-refundable processing fee",
-          "note": "Initial review within 15 business days of a complete request. Anything on a line above 69 kV is ineligible regardless of size. Screen 2.2.1.2: aggregate generation on a radial circuit must not exceed 15% of the line section's annual peak load. Supplemental review minimum-load screen: aggregate generation below 100% of line-section minimum load.",
-          "source_idx": 0
-        },
-        {
-          "name": "California Rule 21 Fast Track modernisation (state analogue)",
-          "year": "2025",
-          "parties": "CPUC <-> PG&E, SCE, SDG&E",
-          "size": "Distribution-level DER",
-          "note": "California set a 40-business-day timeline (20 design + 20 construction) for net generation output meter installs and 120 business days (60 design + 60 construction) for interconnection-related distribution upgrades; CPUC opened a Rule 21 modernisation rulemaking at its 14 August 2025 voting meeting.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "A nuclear plant is a synchronous machine. That single fact caps Fast Track eligibility at 2 MW 'regardless of location' - the generous 3-5 MW thresholds in the eligibility table are written only for certified inverter-based systems. A reactor coupled to the grid through a certified grid-forming inverter (rather than a directly-coupled synchronous turbine-generator) would be the only way into the higher rows, and no microreactor design has been certified to the SGIP Attachment 3/4 codes and standards. Practically, Fast Track today is a 2 MW door for nuclear.",
-      "microreactor_edge": "This is where the common claim 'a small reactor sits under the interconnection thresholds' is FALSE as usually stated. Under 20 MW gets you the Study Process, not Fast Track. Only a sub-2 MW synchronous unit - or an inverter-coupled unit that has been certified - clears the Fast Track door. The concrete design implication: a microreactor vendor that sells power through a certified inverter and sizes the point-of-interconnection export at or below the line-voltage row it wants (2 MW at 5-15 kV, 4 MW at 30-69 kV) converts a multi-month study into a 15-business-day screen and a $500 fee. That is an interconnection-driven argument for inverter coupling and for exporting less than you generate.",
-      "blockers": [
-        "2 MW cap on all synchronous and induction machines, regardless of line voltage or location",
-        "Lines above 69 kV are ineligible for Fast Track at any size",
-        "Higher thresholds require the facility to be a CERTIFIED inverter-based system under SGIP Attachments 3 and 4; no reactor has such certification",
-        "15% of line-section annual peak load aggregation screen on radial circuits",
-        "Supplemental review minimum-load screen (aggregate generation < 100% of line-section minimum load) is brutal for a baseload machine on a small feeder"
-      ],
-      "sources": [
-        {
-          "label": "FERC - pro forma Small Generator Interconnection Procedures (SGIP)",
-          "url": "https://www.ferc.gov/sites/default/files/2020-04/sm-gen-procedures.pdf",
-          "quote": "All synchronous and induction machines must be no larger than 2 MW to be eligible for the Fast Track Process, regardless of location.",
-          "status": "fetched"
-        },
-        {
-          "label": "Energy Toolbase - Fast Track Interconnection Process is Streamlined with Integration Capacity Analysis within California's Rule 21",
-          "url": "https://www.energytoolbase.com/blog/policyupdate/californias-rule-21/",
-          "quote": "the new standard timeline for interconnection-related distribution upgrades is 120 business days: 60 business days for design and 60 business days for construction",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "surplus-interconnection-service",
-      "group": "interconnection",
-      "family": "utility-tariff",
-      "name": "Surplus Interconnection Service (inheriting an existing point of interconnection)",
-      "what_it_is": "A new generator plugs into the unused headroom of an existing generator's already-studied point of interconnection, under the existing interconnection rights, instead of requesting a new one. The incumbent generator (or its assignee) and the new unit share the POI; the RTO runs a much narrower study confined to whether the combined output can be accommodated. Because the network upgrades were already paid for by the original interconnection customer, the surplus customer typically pays no new network upgrade cost. This is the coal-to-X, retiring-plant and diesel-site-reuse route.",
-      "who_signs": "Surplus interconnection customer <-> RTO/transmission provider, with the existing interconnection customer's consent (Surplus Interconnection Study Agreement, then a surplus ISA)",
-      "asset_owner": "third-party developer or host; the incumbent generator retains the underlying interconnection rights",
-      "term": "Tied to the life of the underlying interconnection service",
-      "price_form": "study deposit only; no new network upgrade allocation in the normal case",
-      "precedents": [
-        {
-          "name": "MISO surplus interconnection fleet",
-          "year": "2026",
-          "parties": "MISO <-> interconnection customers",
-          "size": "44 projects online; 14.8 GW of surplus requests under study as of 30 June 2026",
-          "note": "Since 2024, projects in MISO took ONE YEAR on average to come online via surplus interconnection, against an LBNL national median of 5+ years through the standard queue. SPP: 22 projects online, 14.3 GW under study, roughly two years to come online.",
-          "source_idx": 0
-        },
-        {
-          "name": "PJM surplus interconnection service expansion (FERC order, effective 7 March 2025)",
-          "year": "2025",
-          "parties": "FERC <-> PJM Interconnection",
-          "size": "Eight SIS applications received since 2023, two approved",
-          "note": "FERC accepted PJM tariff revisions in February 2025 giving broader and earlier SIS access, including for storage co-located at an existing POI. Uptake has been thin - 8 applications, 2 approvals - which is the tell that PJM's SIS process is not yet a working fast lane.",
-          "source_idx": 0
-        },
-        {
-          "name": "UC Berkeley headroom study of PJM points of interconnection",
-          "year": "2025",
-          "parties": "UC Berkeley researchers / PJM footprint",
-          "size": "153 GW of solar, wind and storage supportable on existing PJM POIs (106 GW after loss of IRA credits); 74 GW solar + 5 GW wind by 2030 at underused thermal plant sites",
-          "note": "Researchers put buildout at about two years via surplus interconnection versus up to about seven years for a new gas-fired plant through the standard queue.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Surplus interconnection is the strongest structural fit nuclear has in the whole interconnection landscape, and it is the mechanism behind the coal-to-nuclear thesis: a retiring thermal plant leaves behind a studied, energised, high-voltage POI sized for a firm baseload machine with a similar capacity factor - which is exactly the profile a reactor presents, and unlike solar it will actually use the headroom around the clock. The blockers are non-electrical: the surplus customer must obtain the incumbent's cooperation, and the site must clear NRC siting (population, seismic, emergency planning zone) which a coal site was never screened against.",
-      "microreactor_edge": "A 1-20 MW unit fits into headroom that is too small to interest anyone else. A retiring 300 MW coal unit's POI is a target for a large developer; the 5-15 MW of unused headroom at a small industrial cogen site, a retired peaker, or a partially-derated plant is not, and that is precisely the size a microreactor fills. Because MISO surplus projects have come online in about a year on average since 2024, a factory-built unit whose site works is schedule-compatible with the connection route for the first time. A relocatable fleet can also be pointed at wherever the headroom is, rather than needing the headroom to appear where the host already is.",
-      "blockers": [
-        "Requires the consent/cooperation of the existing interconnection customer holding the rights",
-        "PJM's uptake is 8 applications and 2 approvals since 2023 - the tariff exists but the pipeline does not",
-        "Surplus service is generally non-firm relative to the incumbent: the surplus unit can be curtailed when the original generator uses its full rights",
-        "NRC siting criteria (population density, seismic, EPZ) were never applied to the incumbent fossil site",
-        "No pro forma surplus interconnection service agreement in PJM as of 2026 - each deal is bespoke"
-      ],
-      "sources": [
-        {
-          "label": "Utility Dive - PJM eyes option to jumpstart surplus interconnection pathway (21 Aug 2026)",
-          "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-service/828473/",
-          "quote": "Forty-four surplus interconnection projects have come online in MISO and 22 have started operating in SPP's footprint",
-          "status": "fetched"
-        },
-        {
-          "label": "Utility Dive - PJM surplus interconnection can support 153 GW of solar, wind, storage: UC Berkeley researchers",
-          "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-sis-solar-wind-storage/758121/",
-          "quote": "Existing generating facilities in the PJM Interconnection have surplus interconnection capacity that could support about 153 GW of solar, wind and storage",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "co-located-load-btmg",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Co-located load / behind-the-meter generation at a generating facility",
-      "what_it_is": "The load moves to the generator rather than the generator moving to the load. A large customer sits inside the plant fence and takes power directly from the generator, netting some or all of its demand behind the meter, with the plant's existing interconnection agreement amended to describe the arrangement. Because the load is not a new transmission-connected load and the generator is not a new interconnection request, the arrangement can in principle skip both queues entirely - which is exactly why FERC has spent 2024-2026 fighting over whether it is lawful.",
-      "who_signs": "Generator owner <-> co-located customer (power/service agreement), plus an amended ISA between the RTO, transmission owner and interconnection customer",
-      "asset_owner": "third-party developer (generator); the load host owns its own facility",
-      "term": "Typically 10-20 year power agreements; the ISA amendment is open-ended",
-      "price_form": "$/MWh under a bilateral contract, plus whatever transmission charge the eventual tariff assigns",
-      "precedents": [
-        {
-          "name": "Socrates South Power Generation Project (Williams / Meta), New Albany, Ohio",
-          "year": "2025",
-          "parties": "Will-Power OH (subsidiary of The Williams Companies) -> Sidecat, LLC (Meta affiliate)",
-          "size": "200 MW per site, two sites (400 MW total); serving a 740-acre data centre campus",
-          "note": "Approved by the Ohio Power Siting Board on 9 June 2025. The plant's output is dedicated to a single customer's load and is NOT physically connected to the electric grid - three Solar Turbines Titan 250s, nine PGM 130s, three Siemens SGT400s and 15 Caterpillar 3520 reciprocating engines. Construction from June 2025, in service before end-2026: roughly 18 months from approval to power.",
-          "source_idx": 0
-        },
-        {
-          "name": "FERC order on PJM co-location (Docket EL25-49 et al.)",
-          "year": "2025",
-          "parties": "FERC <-> PJM Interconnection",
-          "size": "PJM-wide tariff",
-          "note": "Issued 18 December 2025 (PJM Interconnection, L.L.C., 193 FERC para. 61,217). FERC found PJM's tariff unjust and unreasonable for co-located load, directed three new transmission services (interim non-firm NITS, Firm Contract Demand, Non-Firm Contract Demand), found the existing behind-the-meter generation rules no longer just and reasonable, and ordered a NEW MW threshold on how much load a customer may net using BTMG. Compliance filings were due 20 January 2026 (interconnection procedures), 17 February 2026 (tariff clarity) and 18 February 2026 (BTMG).",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The single most important negative precedent in this space is nuclear. On 1 November 2024 FERC rejected, 2-1, the amended Susquehanna ISA that would have raised Amazon's co-located data centre load from 300 MW to 480 MW (with a path to 960 MW in 120 MW increments), on the ground that PJM had not justified the non-conforming provisions. That rejection is what triggered the EL25-49 show-cause proceeding. So the co-location route for a reactor is not a settled commercial structure - it is an open FERC docket in which the first mover was told no, and where the pending remedy explicitly includes a cap on how much load may be netted behind the meter.",
-      "microreactor_edge": "A 1-20 MW unit is small enough that the co-located load can plausibly be ALL of the plant's output, which is the cleanest version of this structure: no export, no netting question, no capacity-market interaction, and arguably no interconnection request at all. The FERC fight is about hundreds of megawatts being pulled out of a capacity market; a 5 MW machine serving a 5 MW hospital or fab does not create the resource-adequacy problem that made Susquehanna contentious. But watch the pending BTMG MW threshold - if PJM sets it low, it binds small units too, and if it is set high, the microreactor case is trivially inside it.",
-      "blockers": [
-        "FERC rejected the Talen/Amazon amended ISA 2-1 on 1 Nov 2024; the structure is not settled law",
-        "PJM's BTMG rules were declared no longer just and reasonable and are being rewritten with a new MW netting threshold (compliance due 18 Feb 2026)",
-        "State retail-service and franchise law may treat sales to a co-located third party as retail sales",
-        "If the co-located load ever wants grid backup, it needs transmission service and the queue question returns",
-        "PJM must still create the three new transmission services; rates are being set through a paper hearing, so the price is unknown"
-      ],
-      "sources": [
-        {
-          "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
-          "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
-          "quote": "dedicated to a single customer's electric load and would not be physically connected to the electric grid",
-          "status": "fetched"
-        },
-        {
-          "label": "K&L Gates - FERC Orders PJM to Reform Tariff for Co-Located Generation and Load",
-          "url": "https://www.klgates.com/FERC-Orders-PJM-to-Reform-Tariff-for-Co-Located-Generation-and-Load-1-15-2026",
-          "quote": "a temporary, non-firm transmission service subject to curtailment available to customers seeking NITS until the utility places into service network upgrades",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "never-interconnect-islanded",
-      "group": "interconnection",
-      "family": "commercial-contract",
-      "name": "Deliberately never interconnecting (fully islanded on-site generation)",
-      "what_it_is": "The host builds generation that is never electrically connected to the utility system. There is no interconnection request, no study, no interconnection agreement, no network upgrade allocation and no RTO relationship at all - the only permits are siting, air and gas/fuel supply. In exchange the host gives up export revenue, capacity payments, ancillary revenue and, critically, grid backup: reserve margin must be self-provided N+1 on site. This has become the default schedule hedge for 2025-2026 data centre builds because the interconnection queue's 5+ year median is incompatible with an 18-36 month build.",
-      "who_signs": "Host <-> on-site power provider (energy services agreement / BOO); NO agreement with any utility or RTO",
-      "asset_owner": "third-party developer (typical) or host",
-      "term": "10-20 year energy services agreements",
-      "price_form": "$/kWh or fixed monthly service fee under an energy services agreement",
-      "precedents": [
-        {
-          "name": "Socrates South / Socrates North (Williams -> Meta), New Albany, Ohio",
-          "year": "2025",
-          "parties": "Will-Power OH (Williams) -> Sidecat, LLC (Meta)",
-          "size": "200 MW per site, 400 MW total",
-          "note": "The Ohio Power Siting Board approved it on 9 June 2025 with the output 'dedicated to a single customer's electric load' and 'not be physically connected to the electric grid'. Construction began June 2025 with in-service before end-2026 - about 18 months, versus a 5+ year national median through the interconnection queue.",
-          "source_idx": 0
-        },
-        {
-          "name": "Project Jupiter (Oracle / BorderPlex / Bloom Energy), Dona Ana County, New Mexico",
-          "year": "2026",
-          "parties": "Oracle + BorderPlex Digital Assets -> Bloom Energy",
-          "size": "Up to 2.45 GW of installed fuel cell capacity on a ~1,400-acre, four-building campus",
-          "note": "Announced 27 April 2026. The design replaced previously planned gas turbines AND diesel generators with a single islanded microgrid that does not draw from the local utility - Bloom's CEO called it one of the largest islanded microgrid power facilities in the world, and Oracle cited bypassing grid capacity constraints to stabilise the project timeline. NOx cut ~92% versus the gas-turbine plan.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Islanding removes every interconnection blocker at once and leaves nuclear's own blockers untouched - NRC licensing, security, EPZ - so it does not shorten the critical path, it just stops the grid from lengthening it. The genuine technical problem is the opposite of solar's: a reactor cannot follow a data centre's load swings quickly, so an islanded nuclear microgrid needs storage or a dump load, and it cannot lean on the grid as its N+1. Ohio's Socrates precedent is instructive on what an islanded plant must prove to a siting board even with no interconnection at all.",
-      "microreactor_edge": "This is the route where small size is unambiguously an advantage rather than a rules artefact. An islanded site must self-provide N+1: a single large unit forces you to build a second large unit or a huge battery, whereas a fleet of 1-20 MW units gives you N+1 from unit count - four 5 MW modules for a 15 MW load is a real redundancy plan, one 20 MW module is not. Relocatability also matters here: with no ISA, no capacity rights and no network upgrades sunk into the site, an islanded microreactor has nothing anchoring it when the host's load moves - which is not true of any grid-connected route, where the interconnection rights are often the most valuable thing on site.",
-      "blockers": [
-        "No export revenue, no capacity revenue, no ancillary services revenue - the reactor is paid only for what the host consumes",
-        "Host must self-provide N+1 reserve; no grid backup during refuelling or trip",
-        "Load-following: a reactor cannot chase a data-centre load step without storage or a dump load",
-        "Siting/air/water permits still apply, and a siting board can still say no (Oracle withdrew air permit applications for the earlier Project Jupiter microgrid design)",
-        "Stranded-asset risk if the host leaves - though far lower for a relocatable unit"
-      ],
-      "sources": [
-        {
-          "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
-          "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
-          "quote": "dedicated to a single customer's electric load and would not be physically connected to the electric grid",
-          "status": "fetched"
-        },
-        {
-          "label": "DataCenterDynamics - Oracle to deploy up to 2.45GW of Bloom fuel cells at New Mexico data center",
-          "url": "https://www.datacenterdynamics.com/en/news/oracle-to-deploy-up-to-245gw-of-bloom-fuel-cells-at-new-mexico-data-center/",
-          "quote": "one of the largest islanded microgrid power facilities in the world",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "pjm-replacement-generation-cir-transfer",
-      "group": "interconnection",
-      "family": "utility-tariff",
-      "name": "Replacement Generation Interconnection Process (inheriting a retiring unit's Capacity Interconnection Rights)",
-      "what_it_is": "A separate, non-queue process for putting a new resource on the site of a deactivating generator and transferring the retiring unit's Capacity Interconnection Rights (CIRs) to it. CIRs are what let a resource inject at the existing point of interconnection and sell into the capacity auction; without them, a replacement unit would have to re-earn deliverability through the cluster queue. The replacement resource must connect at the same substation and operating voltage and cannot exceed the deactivating facility's maximum generation output. PJM screens for Material Adverse Impact rather than running a full cluster study.",
-      "who_signs": "Replacement interconnection customer <-> PJM / transmission owner, standing in the deactivating generator's shoes",
-      "asset_owner": "third-party developer or the incumbent generator owner",
-      "term": "For the life of the replacement facility",
-      "price_form": "study costs only; no re-earned network upgrade allocation in the normal case",
-      "precedents": [
-        {
-          "name": "PJM Replacement Generation Interconnection Process (FERC Docket ER26-403)",
-          "year": "2026",
-          "parties": "FERC <-> PJM Interconnection",
-          "size": "Replacement capped at the maximum generation output of the deactivating facility; same substation and operating voltage",
-          "note": "FERC approved on 29 January 2026, effective 30 January 2026. Developers get a one-time opportunity to change their proposed resource within 15 business days of a Material Adverse Impact determination. This is the mechanism that makes coal-to-X and peaker-site reuse a non-queue transaction.",
-          "source_idx": 0
-        },
-        {
-          "name": "PJM Expedited Interconnection Track (EIT) - the contrasting large-project fast lane",
-          "year": "2026",
-          "parties": "FERC <-> PJM Interconnection",
-          "size": "Up to 10 interconnection requests per calendar year, minimum 250 MW unforced capacity each",
-          "note": "Accepted by FERC in June 2026, effective 31 July 2026, sunsetting end-2027. Selected projects must execute a Generation Interconnection Agreement within 10 months of submission and be operational within three years, and must carry a state-authority commitment to expedite siting. The 250 MW UCAP floor excludes every microreactor and most SMRs outright.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "This is the legal plumbing behind coal-to-nuclear: a reactor replacing a retiring coal unit at the same substation and voltage inherits the CIRs and skips the cluster. It fits nuclear better than it fits anything intermittent, because CIRs are capacity rights and a reactor can actually deliver against them at high capacity factor. The binding constraint is the MW cap - the replacement cannot exceed the deactivating unit's output - plus the multi-year gap between when the coal unit deactivates and when a reactor could be licensed and built, during which the site's CIRs must be held.",
-      "microreactor_edge": "Two things flip. First, the MW cap is never binding for a 1-20 MW unit replacing a 300-600 MW coal unit - the constraint becomes 'you may only use a fraction of what is there', which argues for a multi-unit fleet at one retired site. Second, and against the microreactor: PJM's actual fast lane for new capacity, the EIT, has a 250 MW UCAP floor and takes only 10 requests a year, so a small reactor cannot use it at all. The honest reading is that a microreactor's route into PJM is replacement/surplus at an existing site, not any of the expedited new-build tracks.",
-      "blockers": [
-        "Replacement resource cannot exceed the deactivating facility's maximum generation output",
-        "Must connect at the same substation and the same operating voltage",
-        "Material Adverse Impact screen can still kick a project back with only a 15-business-day window to modify",
-        "PJM's EIT fast lane requires 250 MW UCAP minimum - structurally closed to 1-20 MW units",
-        "CIRs must be held through the licensing and construction gap between deactivation and the reactor's operation"
-      ],
-      "sources": [
-        {
-          "label": "PJM Inside Lines - FERC Approves Streamlined Process To Replace Retiring Facilities",
-          "url": "https://insidelines.pjm.com/ferc-approves-streamlined-process-to-replace-retiring-facilities/",
-          "quote": "input power into the transmission system at the facility's Point of Interconnection to the grid",
-          "status": "fetched"
-        },
-        {
-          "label": "PJM Inside Lines - FERC OKs Temporary Process To Fast-Track Large Capacity Projects",
-          "url": "https://insidelines.pjm.com/ferc-oks-temporary-process-to-fast-track-large-capacity-projects/",
-          "quote": "up to 10 interconnection requests per calendar year",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "ercot-large-load-and-sb6-net-metering",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "ERCOT Large Load Interconnection Process and the SB6 net-metering review",
-      "what_it_is": "In ERCOT the binding process for an on-site generation deal is often the LOAD's interconnection, not the generator's. A Large Load is one or more facilities at a single site with aggregate peak demand of 75 MW or more behind common points of interconnection; it must run the Large Load Interconnection Process (Planning Guide Section 9, created by PGRR115, effective 15 December 2025). Separately, Texas SB6 (effective 20 June 2025) requires any existing stand-alone generation resource entering a net-metering arrangement with a new large load to obtain an ERCOT impact study and Texas PUC approval before the load can energize.",
-      "who_signs": "Large load customer <-> Transmission Service Provider and ERCOT (Load Commissioning Plan); separately, generator + load <-> Texas PUC (Net Metering Review)",
-      "asset_owner": "host (load) and generator owner separately",
-      "term": "Ongoing; energization deadlines run in days",
-      "price_form": "study fees; SB6 sets a minimum $100,000 initial transmission screening study payment",
-      "precedents": [
-        {
-          "name": "ERCOT Planning Guide Section 9 / PGRR115 large-load applicability",
-          "year": "2025",
-          "parties": "ERCOT <-> Texas PUC <-> large load customers",
-          "size": "75 MW aggregate peak demand at a single site",
-          "note": "Approved by the Texas PUC in May 2025, effective 15 December 2025. Critically, the INTERIM process that ran from March 2022 applied to loads co-located with a Generation Resource at just 20 MW or greater, versus 75 MW for standalone loads. PGRR115 removed that distinction: Section 9.2.1 'does not distinguish between loads that are co-located and not co-located with Generation Resources or Energy Storage Resources, and does not apply to loads under 75 MW.' Study review runs on 10-business-day ERCOT windows (extendable by 20 business days), and a customer that has not energized within 365 days of its requested initial energization date can be sent back for re-study.",
-          "source_idx": 0
-        },
-        {
-          "name": "Texas Senate Bill 6",
-          "year": "2025",
-          "parties": "State of Texas / Texas PUC / ERCOT",
-          "size": "75 MW large-load threshold (PUCT may lower it)",
-          "price": "At least $100,000 per interconnection request for an initial transmission screening study",
-          "note": "Signed and effective 20 June 2025. Net Metering Review: ERCOT must complete the system-impact study within 120 days and the PUCT must decide within 60 days of receiving it - so roughly 180 days for a co-located generation deal with an existing resource. Any large load interconnecting after 31 December 2025 must be remotely curtailable by ERCOT during firm load shed events, unless designated a critical load industrial customer or critical natural gas facility.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "SB6's curtailability mandate is the interesting one for nuclear: a large load that self-supplies from an on-site reactor still has to accept remote curtailment if it interconnects after 31 December 2025, unless it qualifies as a critical load. And a reactor paired with an EXISTING ERCOT generation resource under a net-metering arrangement drags in a PUCT approval that did not exist before mid-2025. Against that, ERCOT's generator side remains the fastest in the country because connect-and-manage studies only local upgrades rather than broad network upgrades, and generators are not allocated transmission costs.",
-      "microreactor_edge": "A 1-20 MW reactor serving a co-located host is very likely to sit entirely outside the ERCOT Large Load Interconnection Process, because PGRR115 raised the co-located trigger from 20 MW to the flat 75 MW load threshold - a rules change made in 2025 that a 2024-vintage analysis would get exactly backwards. That is a real, dated, numeric advantage: a 20 MW co-located campus that would have been captured under the interim process is now exempt. It disappears the moment the host's own peak demand crosses 75 MW, which most AI data centres do; so the microreactor's ERCOT market is the sub-75 MW host, not the hyperscaler.",
-      "blockers": [
-        "75 MW load threshold captures any serious data-centre host regardless of how the generation is arranged",
-        "SB6 Net Metering Review adds ~180 days (120-day ERCOT study + 60-day PUCT decision) to any deal with an EXISTING generation resource",
-        "Mandatory remote curtailability for large loads interconnecting after 31 December 2025",
-        "Minimum $100,000 initial transmission screening study payment per interconnection request",
-        "PUCT may lower the 75 MW threshold by rule, which would pull small co-located projects back in"
-      ],
-      "sources": [
-        {
-          "label": "ERCOT - Questions and Answers About the Large Load Interconnection Process (Rev. 12.15.25)",
-          "url": "https://www.ercot.com/files/docs/2025/12/24/Large-Load-Interconnection-Process-Q-A.pdf",
-          "quote": "as one or more facilities at a single site with an aggregate peak demand greater than or equal to 75 MW",
-          "status": "fetched"
-        },
-        {
-          "label": "Bracewell LLP - Texas Senate Bill 6 Ushers in Major Overhaul of Large Load Interconnection and Grid Access Rules",
-          "url": "https://www.bracewell.com/resources/texas-senate-bill-6-ushers-in-major-overhaul-of-large-load-interconnection-and-grid-access-rules/",
-          "quote": "each customer requesting interconnection to pay at least $100,000 to the interconnecting transmission provider for an initial transmission screening study",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "energy-only-and-provisional-service",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Energy-only (ERIS), reduced-capacity and provisional interconnection service",
-      "what_it_is": "Three related ways to buy less interconnection than your nameplate and get connected sooner and cheaper. (1) Energy Resource Interconnection Service studies only whether you can inject energy, not whether you are deliverable to load, so far fewer network upgrades are triggered - in exchange the generator is curtailable during congestion and cannot count as a capacity resource. (2) Order 845 requires transmission providers to let a customer request interconnection service BELOW the facility's full generating capacity, so a 20 MW machine can buy 10 MW of interconnection. (3) Order 845's provisional interconnection service lets a project operate at a restricted level before its network upgrades are finished, under a provisional interconnection agreement.",
-      "who_signs": "Interconnection customer <-> transmission provider (LGIA/SGIA electing ERIS, reduced capacity, or a provisional agreement)",
-      "asset_owner": "third-party developer or host",
-      "term": "Life of the facility; provisional service is temporary until upgrades are in service",
-      "price_form": "Network upgrade capex avoided; paid for in curtailment risk and lost capacity revenue",
-      "precedents": [
-        {
-          "name": "Duke Energy Carolinas/Progress solar cluster re-study (Tyler Norris, Duke University)",
-          "year": "2024",
-          "parties": "Duke Energy / North Carolina and South Carolina solar developers",
-          "size": "1.9 GW of solar studied",
-          "price": "NRIS: $290 million of network upgrades, $156/kW, 36 overloaded transmission elements, 4.5 years average install. ERIS: $82 million, $44/kW, 9 overloaded elements - a 72% cost reduction.",
-          "note": "Study released April 2024, presented at a FERC workshop 10 September 2024. The upgrades avoided by going energy-only were the ones with the 4.5-year build times, so the cost saving and the schedule saving are the same saving.",
-          "source_idx": 0
-        },
-        {
-          "name": "FERC Order No. 845",
-          "year": "2018",
-          "parties": "FERC <-> all jurisdictional transmission providers",
-          "size": "All LGIP projects",
-          "note": "Adopted 19 April 2018, effective 23 July 2018, compliance filings due 7 August 2018. It created BOTH the surplus interconnection process and the right to request interconnection service lower than the full generating capacity of the facility, plus provisional interconnection agreements allowing a project to interconnect before all studies or upgrades are complete, subject to operating restrictions.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Energy-only is a bad trade for a reactor and a good trade for solar, and the asymmetry is worth stating plainly: curtailment is cheap for a plant with zero marginal cost and a 25% capacity factor, and ruinous for a plant with a huge fixed cost and a 90%+ capacity factor whose entire economics assume it runs. Reduced-capacity service, by contrast, is a strong fit - a reactor sized to a host's load can buy interconnection only for the export it actually intends, avoiding deliverability upgrades it will never use. Provisional service is the schedule tool: it lets a licensed, built reactor start selling while the network upgrades finish.",
-      "microreactor_edge": "Reduced-capacity interconnection service is the single cleanest way a 1-20 MW unit can stay inside the small-generator thresholds: a 20 MW machine that requests 2 MW of export interconnection service (with the rest consumed on site) is judged on the 2 MW, which is what puts a synchronous machine back inside the Fast Track door. This is the concrete version of 'export less than you generate'. Energy-only, by contrast, should generally be refused by a microreactor developer - it converts capex savings into an availability risk the business case cannot carry.",
-      "blockers": [
-        "ERIS generators are curtailed first during congestion and cannot be counted as capacity resources",
-        "LBNL's cost dataset finds ERIS's advantage largely disappears once any physical upgrade is triggered ($467/kW NRIS vs $353/kW ERIS across non-ISO requests)",
-        "Provisional service ends when upgrades are complete; it does not remove the upgrade obligation",
-        "Reduced-capacity service caps future expansion - selling more later means re-entering the queue",
-        "A high-capacity-factor plant bears far more curtailment cost per MW of avoided upgrade than an intermittent one"
-      ],
-      "sources": [
-        {
-          "label": "Utility Dive - Flexible interconnection service for Duke solar could slash costs, speed grid connections: study",
-          "url": "https://www.utilitydive.com/news/flexible-interconnection-service-eris-nris-duke-solar-study-ferc/726527/",
-          "quote": "energy-only interconnection service",
-          "status": "fetched"
-        },
-        {
-          "label": "Orrick - FERC Order No. 845 Reforms Generator Interconnection Process, Advances Energy Storage",
-          "url": "https://www.orrick.com/en/Insights/2018/05/FERC-Order-No-845-Reforms-Generator-Interconnection-Process-Advances-Energy-Storage",
-          "quote": "provisional interconnection agreements offer developers the ability to interconnect a project before all studies or necessary transmission upgrades are complete, subject to operating restrictions",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "curtailable-large-load-fast-path",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Curtailment-enabled large-load interconnection (trading firmness for speed)",
-      "what_it_is": "The load side's version of energy-only service: a large customer agrees in advance to be curtailed - remotely, by the RTO, under defined conditions - and in exchange gets studied and energised faster than a firm load would be. The agreement is a transmission service election plus a controllable-load obligation, not a generation interconnection agreement. This is the fastest-moving area of US interconnection law in 2025-2026 and it is where any on-site reactor serving a large host will actually land.",
-      "who_signs": "Large load customer <-> transmission provider / RTO (non-firm or contract-demand transmission service, plus curtailment equipment obligations)",
-      "asset_owner": "host owns the load; utility owns the curtailment control equipment",
-      "term": "Interim service until network upgrades are in service; contract-demand services are longer-term",
-      "price_form": "discounted/non-firm transmission rate, still being set by FERC through a paper hearing",
-      "precedents": [
-        {
-          "name": "DOE-directed ANOPR on Interconnection of Large Loads (FERC Docket RM26-4-000)",
-          "year": "2025",
-          "parties": "US DOE Secretary Chris Wright -> FERC",
-          "size": "Large loads generally defined as demand greater than 20 MW",
-          "note": "Directed 23 October 2025 under Section 403 of the DOE Organization Act, with comments due 14 November and replies 28 November 2025. The ANOPR proposed that large loads agreeing to be curtailable, and hybrid facilities agreeing to be dispatchable, get an expedited interconnection process potentially as short as 60 days. DOE set a 30 April 2026 final-action deadline; FERC missed it, issued an Order Regarding Intent to Act on 16 April 2026 promising action by end of June, and on 18 June 2026 issued six Section 206 show cause orders to all jurisdictional RTOs and their transmission owners instead of a rule.",
-          "source_idx": 0
-        },
-        {
-          "name": "PJM interim non-firm NITS for co-located load (FERC, 18 December 2025)",
-          "year": "2025",
-          "parties": "FERC <-> PJM Interconnection",
-          "size": "PJM footprint",
-          "note": "Interim NITS is temporary, non-firm transmission service subject to curtailment, available until the utility places the required network upgrades in service; customers taking it on behalf of co-located load agree to curtail in advance of system emergency conditions. This is the first FERC-blessed structure that lets a co-located load energise before its upgrades exist.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "A host powered by an on-site reactor is a strong candidate for the curtailable fast path precisely because it does not need the grid for energy - it needs the grid for backup. Agreeing to be curtailed costs a self-supplied host far less than it costs a grid-dependent one, which is a real and underused argument. The catch is ERCOT's version: SB6 makes curtailability mandatory for large loads interconnecting after 31 December 2025 rather than a bargaining chip, so in Texas the host gives up firmness and gets nothing back for it.",
-      "microreactor_edge": "Nothing here is size-specific on its face, but the 20 MW figure recurs: DOE's ANOPR sets the large-load definition at demand greater than 20 MW, which is the same number as the SGIP generator ceiling. A microreactor-plus-host campus that stays under 20 MW of grid-facing demand sits below the federal large-load line and at or below the small-generator line simultaneously - the only configuration in this whole landscape that is small on both sides of the meter at once. That is the most defensible version of the 'microreactors dodge the queue' claim.",
-      "blockers": [
-        "FERC has not issued a large-load interconnection rule: it blew through DOE's 30 April 2026 deadline and answered with show cause orders on 18 June 2026",
-        "Rates for PJM's three new transmission services are still being set through a paper hearing - the price of the fast path is unknown",
-        "In ERCOT curtailability is a mandate, not a trade: no speed benefit is granted in exchange",
-        "Non-firm service by definition offers no backup guarantee, which is the one thing an on-site reactor needs the grid for",
-        "The 20 MW ANOPR threshold is a proposal, not a rule, and could move"
-      ],
-      "sources": [
-        {
-          "label": "Mayer Brown - FERC Large-Load Interconnection Preliminary Rulemaking: Key Takeaways",
-          "url": "https://www.mayerbrown.com/en/insights/publications/2025/11/ferc-large-load-interconnection-preliminary-rulemaking-key-takeaways-for-data-center-developers-other-large-load-projects-and-investors",
-          "quote": "hybrid facilities that agree to be dispatchable would qualify for an expedited interconnection process, potentially as short as 60 days",
-          "status": "fetched"
-        },
-        {
-          "label": "K&L Gates - FERC Orders PJM to Reform Tariff for Co-Located Generation and Load",
-          "url": "https://www.klgates.com/FERC-Orders-PJM-to-Reform-Tariff-for-Co-Located-Generation-and-Load-1-15-2026",
-          "quote": "a temporary, non-firm transmission service subject to curtailment available to customers seeking NITS until the utility places into service network upgrades",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "ercot-connect-and-manage-small-generation",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "ERCOT connect-and-manage and the Small Generation process (<10 MW)",
-      "what_it_is": "ERCOT is the only US market that does not study broad network upgrades before connecting a generator. It builds the 'driveway' (the interconnection facilities) during the interconnection process and leaves the 'highway' (transmission expansion) to a separate planning process; congestion is then managed in real-time operations rather than pre-empted by upgrades. Deliverability is not guaranteed and the generator is not allocated transmission cost. ERCOT further splits its process at 10 MW: units below that run the Small Generation process under Planning Guide Section 5.4, with the system impact study conducted by the TDSP rather than ERCOT.",
-      "who_signs": "Interconnection entity <-> TDSP and ERCOT (Standard Generation Interconnection Agreement); no RTO cost allocation for network upgrades",
-      "asset_owner": "third-party developer or host",
-      "term": "Life of the facility",
-      "price_form": "application and study fees; generator bears no transmission-upgrade allocation",
-      "precedents": [
-        {
-          "name": "ERCOT resource interconnection process durations (ERCOT staff presentation, 30 October 2024)",
-          "year": "2024",
-          "parties": "ERCOT <-> interconnecting entities and TDSPs",
-          "size": "10 MW split: Large Generation >= 10 MW, Small Generation < 10 MW",
-          "note": "ERCOT's own stated durations: 18 to 30 months for Large Generation and 8 to 12 months for Small Generation, not including construction or supply delays. Compare LBNL's national median of well over 3 years to an interconnection agreement and 5+ years to commercial operation. ERCOT explicitly says it is 'Not a Queue, each project moves on its own' and that 'Deliverability not guaranteed.'",
-          "source_idx": 0
-        },
-        {
-          "name": "ERCOT interconnection study cost bands (developer-side estimates)",
-          "year": "2025",
-          "parties": "ERCOT interconnecting entities",
-          "size": "n/a",
-          "price": "Application fee $5,000-$25,000; Full Interconnection Study $50,000-$200,000 depending on complexity; network upgrades from relay-setting changes costing a few thousand dollars up to hundreds of millions",
-          "note": "Consultancy-published bands, not a tariff. Included because ERCOT does not publish a single fee schedule; treat as an order-of-magnitude, not a rate.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Connect-and-manage suits a reactor better than it suits wind or solar for one reason: the price of the bargain is congestion exposure, and a firm baseload unit sited at or near its load is the least congestion-exposed thing you can build. A reactor in ERCOT is not allocated transmission upgrade cost at all, which removes the single largest cost uncertainty in every other US market. What ERCOT does not remove is the load-side process - if the host crosses 75 MW of demand it lands in the Large Load Interconnection Process regardless of how clean the generator's path was.",
-      "microreactor_edge": "ERCOT's 10 MW split is the sharpest size cliff found anywhere in this research: a unit at 9.9 MW runs ERCOT's Small Generation process at a stated 8-12 months, and the identical unit at 10.1 MW runs Large Generation at 18-30 months. That is a 10-to-22-month schedule difference decided by 0.2 MW, and it is a direct argument for a vendor to offer a sub-10 MW ERCOT variant or to derate at the point of interconnection. Nothing about factory building or relocatability produces a comparable saving.",
-      "blockers": [
-        "Deliverability is not guaranteed; the generator carries congestion and basis risk with no upgrade obligation on the transmission provider",
-        "The 10 MW Small Generation cut-off is a hard line - one unit above it doubles the stated timeline",
-        "ERCOT-only: no other US market runs connect-and-manage, so the advantage does not travel",
-        "Load-side Large Load Interconnection Process still applies at 75 MW of host demand",
-        "No published tariff fee schedule; study costs are quoted case by case"
-      ],
-      "sources": [
-        {
-          "label": "ERCOT - Interconnection Process: Generation Entity Winter Weather Preparedness (30 Oct 2024)",
-          "url": "https://www.ercot.com/files/docs/2024/10/30/0940-AM-ERCOT-Interconnection-Process-Generation-Entity-Winter-Weather-Preparedness-Fernandes.pdf",
-          "quote": "ERCOT process is 18 to 30 months for Large Generation (>=10 MW) and 8 to 12 months for Small Generation",
-          "status": "fetched"
-        },
-        {
-          "label": "NFM Consulting - Generator Interconnection with ERCOT",
-          "url": "https://nfmconsulting.com/knowledge/generator-interconnection-ercot/",
-          "quote": "$50,000-$200,000 depending on the study complexity",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "distribution-level-state-interconnection",
-      "group": "interconnection",
-      "family": "regulatory-rule",
-      "name": "Distribution-level interconnection under state DER rules (NY SIR, California Rule 21)",
-      "what_it_is": "Below the FERC line, interconnection to a utility's distribution system is governed by state rules, not the SGIP. New York's Standardized Interconnection Requirements cover new distributed generators and energy storage of 5 MW or less; the utility runs preliminary screens, an optional supplemental screening analysis, and if needed a Coordinated Electric System Interconnection Review (CESIR) - a full distribution study - before issuing a standard interconnection contract. California's Rule 21 plays the same role and has begun using Integration Capacity Analysis (hosting capacity) results directly in interconnection decisions. Fees here are two orders of magnitude below transmission-level study costs.",
-      "who_signs": "Applicant <-> distribution utility (New York State Standardized Interconnection Contract; Rule 21 agreement in California)",
-      "asset_owner": "host or third-party developer",
-      "term": "Life of the facility",
-      "price_form": "flat application fees plus utility cost for distribution upgrades",
-      "precedents": [
-        {
-          "name": "New York State Standardized Interconnection Requirements (National Grid tariff addendum)",
-          "year": "2025",
-          "parties": "NY PSC <-> National Grid, Con Edison and the other NY utilities <-> DG/ESS applicants",
-          "size": "AC generator nameplate rating of 5 MW or less, aggregated on the customer side",
-          "price": "$750 non-refundable application fee (waived/credited if a pre-application report was bought within 15 business days); $2,500 non-refundable supplemental screening fee with actual costs billable up to $5,000",
-          "note": "Timelines are in business days throughout: utility response to an application within 10 business days; supplemental screening analysis within 20 business days; CESIR completed within 60 business days of authorisation, fee and complete information; executed interconnection contract within 15 business days of a clean screening result. A project change during CESIR can add another 40 business days.",
-          "source_idx": 0
-        },
-        {
-          "name": "California Rule 21 modernisation and ICA-based interconnection",
-          "year": "2025",
-          "parties": "CPUC <-> PG&E, SCE, SDG&E",
-          "size": "Distribution-connected DER",
-          "note": "California became the first state to use hosting capacity (Integration Capacity Analysis) results in interconnection decisions, and set standard construction timelines of 40 business days (20 design + 20 construction) for a net generation output meter and 120 business days (60 design + 60 construction) for interconnection-related distribution upgrades. The CPUC opened a Rule 21 modernisation rulemaking at its 14 August 2025 voting meeting.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "State DER rules were drafted for solar, storage and small CHP and are silent on nuclear, which cuts both ways: there is no nuclear-specific bar, and there is also no place in the forms for a reactor. The operational problem is physical, not legal - distribution feeders are radial and sized for load, and the screens are all load-relative (aggregate generation versus line-section peak or minimum load). A firm machine that runs at night, when the feeder minimum load is lowest, is the worst case for the minimum-load screen. Expect a full CESIR or its equivalent, not a screen pass.",
-      "microreactor_edge": "New York's 5 MW cap and California's distribution rules define the ONLY size at which a reactor is a distribution-level, state-jurisdictional device rather than a transmission-level FERC one - and it is 5 MW, not 20. A sub-5 MW unit in New York is processed for a $750 application fee and a 60-business-day study; the same vendor's 10 MW unit is a different legal object entirely. This is the strongest concrete argument in the whole interconnection landscape for a vendor to offer a 1-5 MW SKU, and it is a rules argument, not an engineering one.",
-      "blockers": [
-        "5 MW cap in New York (state rules elsewhere vary; the SGIP's 20 MW is the FERC-jurisdictional number, not the state one)",
-        "Load-relative screens punish a baseload machine on a low-minimum-load feeder",
-        "Hosting-capacity limits on a given feeder are fixed by the feeder, so siting is dictated by the distribution system rather than by the host",
-        "CESIR can find distribution upgrades whose cost falls entirely on the applicant",
-        "A project change mid-CESIR can add 40 business days"
-      ],
-      "sources": [
-        {
-          "label": "New York State Standardized Interconnection Requirements (National Grid tariff addendum ESIR)",
-          "url": "https://www.nationalgridus.com/media/pdfs/billing-payments/tariffs/uny/addesir8.pdf",
-          "quote": "The CESIR shall be completed within sixty (60) Business Days of receipt of the information set forth in Step 5.",
-          "status": "fetched"
-        },
-        {
-          "label": "Energy Toolbase - Fast Track Interconnection Process is Streamlined with Integration Capacity Analysis within California's Rule 21",
-          "url": "https://www.energytoolbase.com/blog/policyupdate/californias-rule-21/",
-          "quote": "certified Power Control System (PCS) with an open loop response time of no more than two seconds",
-          "status": "snippet-only"
-        }
-      ]
-    }
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "mech-interconnection",
+  "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
+  "angles_run": [
+   "FERC Order 2023/2023-A cluster process, SGIP/SGIA 20 MW threshold, Fast Track screens",
+   "Surplus interconnection service (inheriting a retiring/underused plant's POI)",
+   "Co-located load and behind-the-meter arrangements (Talen-Amazon, FERC EL25-49)",
+   "State/ISO fast paths (ERCOT connect-and-manage, large-load process, SB6)",
+   "Never interconnecting: deliberate islanded operation",
+   "Flexible / curtailable interconnection agreements",
+   "Distribution-level interconnection (Rule 21, hosting capacity)"
+  ],
+  "absences": [
+   "No EXECUTED surplus interconnection service agreement could be verified with named parties, MW and a date. FERC eLibrary (ferc.gov) and SEC EDGAR both return HTTP 403 to automated fetch, so no primary filing was retrievable; only aggregate counts survived verification (44 projects online in MISO, 22 in SPP, 8 PJM applications with 2 approved).",
+   "No published STUDY COST or network-upgrade cost specific to a surplus interconnection request was found in any RTO tariff or filing. The claim that surplus customers 'pay no network upgrade cost' is a description of the mechanism, not a verified dollar figure.",
+   "No named, executed flexible/curtailable INTERCONNECTION agreement with MW and price was found. Enchanted Rock returned nothing in this context; Google's flexible capacity is published only as 'gigawatt scale across multiple utility territories' with no agreement, MW or price. The flexible-interconnection angle produced rulemakings, not contracts.",
+   "Could not verify what happened to the pre-existing 300 MW Talen/Amazon Susquehanna co-located arrangement after FERC's 1 November 2024 rejection of the 480 MW amendment.",
+   "The text of FERC's 18 December 2025 co-location order (193 FERC para. 61,217) and the 18 June 2026 show cause orders could not be read directly - ferc.gov HTML and White & Case both 403'd. The FERC E-1 slide deck PDF was retrievable and is the primary source used; compliance deadlines come from a law-firm summary.",
+   "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
+   "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
+   "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
+   "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report.",
+   "Three cited hosts serve only a JavaScript shell to non-browser clients (elibrary.ferc.gov, programs.dsireusa.org); those sources are marked snippet-only rather than left claiming a fetch that did not happen."
   ]
+ },
+ "mechanisms": [
+  {
+   "id": "ferc-lgip-cluster-queue",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Standard FERC large-generator queue (Order 2023 cluster study -> LGIA)",
+   "what_it_is": "The default federal route for any generator above the small-generator threshold. The developer files an interconnection request with the transmission provider, is grouped into an annual cluster, pays a share of a cluster study, then a facilities study, then executes a Large Generator Interconnection Agreement (LGIA) and pays for whatever network upgrades the study assigns. The transmission provider owns and builds the upgrades; the interconnection customer funds them. Order No. 2023 (July 2023, affirmed by Order 2023-A in March 2024) replaced serial first-come-first-served with first-ready-first-served clusters, put hard deadlines on the studies, and made the transmission provider pay penalties for missing them.",
+   "who_signs": "Interconnection customer <-> transmission provider / RTO (LGIA)",
+   "asset_owner": "third-party developer (generator); utility owns the network upgrades",
+   "term": "LGIA runs for the life of the facility; the study-to-agreement process alone is the multi-year part",
+   "price_form": "study deposits + 100% funding of assigned network upgrades (capex, not $/kWh)",
+   "precedents": [
+    {
+     "name": "US projects reaching commercial operation in 2025 (LBNL 'Queued Up' cohort)",
+     "year": "2025",
+     "parties": "All US transmission providers / all queued generators",
+     "size": "2,061 GW of generation and storage actively in queues at end-2025",
+     "note": "Median duration from request to signing an interconnection agreement was well over 3 years; time to commercial operations exceeds 5 years. Of requests submitted 2000-2020, 75% had withdrawn and only 13% of capacity had come online by end-2025. Withdrawal rates exceed 40% even AFTER an IA is signed.",
+     "source_idx": 0
+    },
+    {
+     "name": "Order No. 2023 study-deadline penalty regime",
+     "year": "2023",
+     "parties": "FERC <-> all jurisdictional transmission providers",
+     "size": "150-calendar-day cluster study window",
+     "price": "$1,000/business day (cluster study), $2,000/business day (restudy, affected-system study), $2,500/business day (facilities study)",
+     "note": "Order 2023 also requires 90% site control at the interconnection-request stage and 100% by facilities-study agreement, and sets the LGIA deposit at 20% of estimated network upgrade costs. Study costs are allocated 10-50% per capita and the remainder pro rata by MW.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Nothing in the LGIP is nuclear-specific: a reactor is a synchronous machine like any thermal plant and enters the same cluster. The mismatch is schedule. A reactor's licensing path (NRC construction permit + operating licence, or a combined licence) runs on its own clock and is not accelerated by holding a queue position, while Order 2023's readiness rules run the other way - 90% site control at request, escalating withdrawal penalties, and a 20%-of-upgrade-cost deposit at LGIA - all of which punish a project that must sit still waiting on a regulator. Firm, dispatchable output is the enabler: a reactor's high capacity factor makes it far more likely to trigger, and be charged for, deliverability-driven network upgrades than an equivalent-MW solar plant.",
+   "microreactor_edge": "A 1-20 MW unit should never be in this process at all - it falls under the pro forma Small Generator Interconnection Procedures, which apply at 20 MW and below (see sgip-study-process). The real edge is that a factory-built unit's construction schedule (months on site) is decoupled from the queue: unlike a gas plant whose EPC schedule and queue position must be co-managed over years, a microreactor fleet can hold the connection first and drop the machine in later. The claim that a small unit dodges the queue entirely is only true below the SGIP threshold; above 20 MW, an aggregated fleet at one site re-enters the full LGIP.",
+   "blockers": [
+    "Median 3+ years request-to-IA and 5+ years to commercial operation (LBNL, 2025)",
+    "20% of estimated network upgrade cost due as deposit at LGIA execution (Order 2023)",
+    "90% site control required at the interconnection request stage - hard for a relocatable unit with no fixed host yet",
+    "Escalating withdrawal penalties under Order 2023 make a licensing-driven schedule slip expensive",
+    "Aggregating multiple microreactors past 20 MW at one point of interconnection pushes the project out of SGIP and into the full cluster process"
+   ],
+   "sources": [
+    {
+     "label": "American Public Power Association - Backlog of power plants seeking transmission grid connection eased somewhat in 2025: LBNL",
+     "url": "https://www.publicpower.org/periodical/article/backlog-power-plants-seeking-transmission-grid-connection-eased-somewhat-2025-lbnl",
+     "quote": "median duration from submitting a request to signing an IA was well over 3 years in",
+     "status": "fetched"
+    },
+    {
+     "label": "Troutman Pepper Locke - Summary of FERC Order No. 2023 on Generator Interconnection Reform",
+     "url": "https://www.troutman.com/insights/troutman-pepper-summary-of-ferc-order-no-2023-on-generator-interconnection-reform/",
+     "quote": "$1,000 per business day for delayed cluster studies; $2,000 per business day for delayed cluster restudies and affected system studies",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "sgip-study-process",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Small Generator Interconnection Procedures - Study Process (2-20 MW)",
+   "what_it_is": "FERC's pro forma SGIP is a separate, lighter interconnection track that applies to any generating facility of 20 MW or less, ending in a Small Generator Interconnection Agreement (SGIA) rather than an LGIA. Anything larger than 2 MW but no larger than 20 MW - or any facility that failed Fast Track - runs the Study Process: a scoping meeting, an optional feasibility study, a system impact study, and a facilities study. The interconnection customer funds the studies and any resulting interconnection facilities; the transmission provider designs and builds them. Deposits are trivially small compared with the LGIP: a feasibility-study deposit of the lesser of 50% of the estimated cost or $1,000 earnest money.",
+   "who_signs": "Interconnection customer <-> transmission provider (SGIA)",
+   "asset_owner": "host or third-party developer (generator); utility owns interconnection facilities",
+   "term": "SGIA runs for the life of the facility",
+   "price_form": "study deposits (from $1,000) + cost of interconnection facilities and any upgrades",
+   "precedents": [
+    {
+     "name": "FERC pro forma SGIP / SGIA applicability rule",
+     "year": "2013",
+     "parties": "FERC <-> all jurisdictional transmission providers (Order 792, Nov 2013; Order 792-A, Sep 2014)",
+     "size": "20 MW ceiling; Study Process covers >2 MW to 20 MW",
+     "price": "Feasibility-study deposit: lesser of 50% of good-faith estimate or $1,000 earnest money; Study Process filing deposit not to exceed $1,000",
+     "note": "Deadline structure is in business days, not years: scoping meeting within 10 business days of a complete request; feasibility-study agreement within 5 business days of the scoping meeting; customer must return the executed system impact study agreement within 30 business days and the facilities study agreement within 30 business days. There is no cluster and no annual window.",
+     "source_idx": 0
+    },
+    {
+     "name": "Order 792 extension of small-generator standards to 20 MW DER",
+     "year": "2013",
+     "parties": "FERC / distributed generation industry",
+     "size": "up to 20 MW",
+     "note": "Orders 792 and 792-A adopted small-generator interconnection standards for distributed energy resources up to 20 MW, and created the Fast Track sub-process for a subset of them.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The SGIP is technology-neutral on its face - it turns on MW, machine type, and line voltage, not fuel. A reactor of 20 MW or less is legally entitled to the Study Process and an SGIA. The catch is that SGIP screens were written around intermittent DER on distribution circuits: the aggregation screen (15% of line-section annual peak load on a radial circuit) and the minimum-load screen (aggregate generation below 100% of line-section minimum load) are load-relative, and a 20 MW machine will blow through both on a typical distribution feeder even though it is nominally 'small'. Expect the Study Process, not a screen pass.",
+   "microreactor_edge": "This is the single most concrete rule-based advantage a 1-20 MW reactor has: the entire fleet size range sits at or under the pro forma SGIP's 20 MW ceiling, so it is entitled to an SGIA and study deposits measured in thousands of dollars rather than a cluster study, a 20%-of-upgrades deposit, and a multi-year queue. The advantage is lost the moment a site aggregates past 20 MW at one point of interconnection - so a 4 x 5 MW campus is an LGIP project while 4 x 5 MW at four separate points of interconnection is four SGIP projects. Note this is the FEDERAL pro forma; individual RTOs and states set their own thresholds.",
+   "blockers": [
+    "20 MW is the hard applicability ceiling - a multi-unit site crosses it fast",
+    "SGIP screens are relative to line-section peak and minimum load; a 20 MW machine fails the 15% aggregation screen on almost any distribution feeder",
+    "The pro forma SGIP is FERC-jurisdictional only; state-jurisdictional distribution interconnection uses state rules with different thresholds",
+    "Business-day deadlines bind the customer's return of executed study agreements (15-30 business days) as tightly as they bind the utility"
+   ],
+   "sources": [
+    {
+     "label": "FERC - pro forma Small Generator Interconnection Procedures (SGIP)",
+     "url": "https://www.ferc.gov/sites/default/files/2020-04/sm-gen-procedures.pdf",
+     "quote": "larger than 2 MW but no larger than 20 MW, (2) is not certified, or (3) is certified",
+     "status": "fetched"
+    },
+    {
+     "label": "DSIRE - Interconnection Standards for Small Generators (FERC Orders 792 / 792-A)",
+     "url": "https://programs.dsireusa.org/system/program/detail/2774/interconnection-standards-for-small-generators",
+     "quote": "adopted new \"small generator\" interconnection standards for distributed energy resources up to 20 megawatts (MW) in capacity",
+     "status": "snippet-only",
+     "note": "The host returns no article text to a non-browser client, so the quote is search-corroborated rather than read in a fetched page."
+    }
+   ]
+  },
+  {
+   "id": "sgip-fast-track",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "SGIP Fast Track Process (screens instead of studies)",
+   "what_it_is": "The fastest federal route: instead of a scoping meeting and three studies, the transmission provider runs a set of technical screens and, if the project passes, must offer an SGIA without further study. The customer pays a flat $500 non-refundable processing fee and gets an initial-review answer within 15 business days. If a screen fails, the customer can buy a supplemental review (deposit = the provider's good-faith cost estimate, results within 30 business days of the deposit) or drop into the full Study Process. Eligibility is set by machine type, MW, line voltage, and distance from the substation.",
+   "who_signs": "Interconnection customer <-> transmission provider (SGIA, no study agreements)",
+   "asset_owner": "host or third-party developer",
+   "term": "SGIA runs for the life of the facility",
+   "price_form": "$500 flat fee; supplemental review at cost",
+   "precedents": [
+    {
+     "name": "FERC pro forma SGIP Fast Track eligibility table and fee schedule",
+     "year": "2013",
+     "parties": "FERC <-> all jurisdictional transmission providers (Order 792)",
+     "size": "Inverter-based: 500 kW (<5 kV), 2 MW (5-15 kV), 3 MW (15-30 kV), 4 MW (30-69 kV); +1 MW each on a mainline within 2.5 electrical circuit miles of a substation, to a 5 MW ceiling. Synchronous and induction machines: 2 MW, regardless of location.",
+     "price": "$500 non-refundable processing fee",
+     "note": "Initial review within 15 business days of a complete request. Anything on a line above 69 kV is ineligible regardless of size. Screen 2.2.1.2: aggregate generation on a radial circuit must not exceed 15% of the line section's annual peak load. Supplemental review minimum-load screen: aggregate generation below 100% of line-section minimum load.",
+     "source_idx": 0
+    },
+    {
+     "name": "California Rule 21 Fast Track modernisation (state analogue)",
+     "year": "2025",
+     "parties": "CPUC <-> PG&E, SCE, SDG&E",
+     "size": "Distribution-level DER",
+     "note": "California set a 40-business-day timeline (20 design + 20 construction) for net generation output meter installs and 120 business days (60 design + 60 construction) for interconnection-related distribution upgrades; CPUC opened a Rule 21 modernisation rulemaking at its 14 August 2025 voting meeting.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "A nuclear plant is a synchronous machine. That single fact caps Fast Track eligibility at 2 MW 'regardless of location' - the generous 3-5 MW thresholds in the eligibility table are written only for certified inverter-based systems. A reactor coupled to the grid through a certified grid-forming inverter (rather than a directly-coupled synchronous turbine-generator) would be the only way into the higher rows, and no microreactor design has been certified to the SGIP Attachment 3/4 codes and standards. Practically, Fast Track today is a 2 MW door for nuclear.",
+   "microreactor_edge": "This is where the common claim 'a small reactor sits under the interconnection thresholds' is FALSE as usually stated. Under 20 MW gets you the Study Process, not Fast Track. Only a sub-2 MW synchronous unit - or an inverter-coupled unit that has been certified - clears the Fast Track door. The concrete design implication: a microreactor vendor that sells power through a certified inverter and sizes the point-of-interconnection export at or below the line-voltage row it wants (2 MW at 5-15 kV, 4 MW at 30-69 kV) converts a multi-month study into a 15-business-day screen and a $500 fee. That is an interconnection-driven argument for inverter coupling and for exporting less than you generate.",
+   "blockers": [
+    "2 MW cap on all synchronous and induction machines, regardless of line voltage or location",
+    "Lines above 69 kV are ineligible for Fast Track at any size",
+    "Higher thresholds require the facility to be a CERTIFIED inverter-based system under SGIP Attachments 3 and 4; no reactor has such certification",
+    "15% of line-section annual peak load aggregation screen on radial circuits",
+    "Supplemental review minimum-load screen (aggregate generation < 100% of line-section minimum load) is brutal for a baseload machine on a small feeder"
+   ],
+   "sources": [
+    {
+     "label": "FERC - pro forma Small Generator Interconnection Procedures (SGIP)",
+     "url": "https://www.ferc.gov/sites/default/files/2020-04/sm-gen-procedures.pdf",
+     "quote": "All synchronous and induction machines must be no larger than 2 MW to be eligible for the Fast Track Process, regardless of location.",
+     "status": "fetched"
+    },
+    {
+     "label": "Energy Toolbase - Fast Track Interconnection Process is Streamlined with Integration Capacity Analysis within California's Rule 21",
+     "url": "https://www.energytoolbase.com/blog/policyupdate/californias-rule-21/",
+     "quote": "new standard timeline for interconnection-related distribution upgrades is 120 business days: 60 business days for design and 60 business days for construction",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "surplus-interconnection-service",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "Surplus Interconnection Service (inheriting an existing point of interconnection)",
+   "what_it_is": "A new generator plugs into the unused headroom of an existing generator's already-studied point of interconnection, under the existing interconnection rights, instead of requesting a new one. The incumbent generator (or its assignee) and the new unit share the POI; the RTO runs a much narrower study confined to whether the combined output can be accommodated. Because the network upgrades were already paid for by the original interconnection customer, the surplus customer typically pays no new network upgrade cost. This is the coal-to-X, retiring-plant and diesel-site-reuse route.",
+   "who_signs": "Surplus interconnection customer <-> RTO/transmission provider, with the existing interconnection customer's consent (Surplus Interconnection Study Agreement, then a surplus ISA)",
+   "asset_owner": "third-party developer or host; the incumbent generator retains the underlying interconnection rights",
+   "term": "Tied to the life of the underlying interconnection service",
+   "price_form": "study deposit only; no new network upgrade allocation in the normal case",
+   "precedents": [
+    {
+     "name": "MISO surplus interconnection fleet",
+     "year": "2026",
+     "parties": "MISO <-> interconnection customers",
+     "size": "44 projects online; 14.8 GW of surplus requests under study as of 30 June 2026",
+     "note": "Since 2024, projects in MISO took ONE YEAR on average to come online via surplus interconnection, against an LBNL national median of 5+ years through the standard queue. SPP: 22 projects online, 14.3 GW under study, roughly two years to come online.",
+     "source_idx": 0
+    },
+    {
+     "name": "PJM surplus interconnection service expansion (FERC order, effective 7 March 2025)",
+     "year": "2025",
+     "parties": "FERC <-> PJM Interconnection",
+     "size": "Eight SIS applications received since 2023, two approved",
+     "note": "FERC accepted PJM tariff revisions in February 2025 giving broader and earlier SIS access, including for storage co-located at an existing POI. Uptake has been thin - 8 applications, 2 approvals - which is the tell that PJM's SIS process is not yet a working fast lane.",
+     "source_idx": 0
+    },
+    {
+     "name": "UC Berkeley headroom study of PJM points of interconnection",
+     "year": "2025",
+     "parties": "UC Berkeley researchers / PJM footprint",
+     "size": "153 GW of solar, wind and storage supportable on existing PJM POIs (106 GW after loss of IRA credits); 74 GW solar + 5 GW wind by 2030 at underused thermal plant sites",
+     "note": "Researchers put buildout at about two years via surplus interconnection versus up to about seven years for a new gas-fired plant through the standard queue.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Surplus interconnection is the strongest structural fit nuclear has in the whole interconnection landscape, and it is the mechanism behind the coal-to-nuclear thesis: a retiring thermal plant leaves behind a studied, energised, high-voltage POI sized for a firm baseload machine with a similar capacity factor - which is exactly the profile a reactor presents, and unlike solar it will actually use the headroom around the clock. The blockers are non-electrical: the surplus customer must obtain the incumbent's cooperation, and the site must clear NRC siting (population, seismic, emergency planning zone) which a coal site was never screened against.",
+   "microreactor_edge": "A 1-20 MW unit fits into headroom that is too small to interest anyone else. A retiring 300 MW coal unit's POI is a target for a large developer; the 5-15 MW of unused headroom at a small industrial cogen site, a retired peaker, or a partially-derated plant is not, and that is precisely the size a microreactor fills. Because MISO surplus projects have come online in about a year on average since 2024, a factory-built unit whose site works is schedule-compatible with the connection route for the first time. A relocatable fleet can also be pointed at wherever the headroom is, rather than needing the headroom to appear where the host already is.",
+   "blockers": [
+    "Requires the consent/cooperation of the existing interconnection customer holding the rights",
+    "PJM's uptake is 8 applications and 2 approvals since 2023 - the tariff exists but the pipeline does not",
+    "Surplus service is generally non-firm relative to the incumbent: the surplus unit can be curtailed when the original generator uses its full rights",
+    "NRC siting criteria (population density, seismic, EPZ) were never applied to the incumbent fossil site",
+    "No pro forma surplus interconnection service agreement in PJM as of 2026 - each deal is bespoke"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive - PJM eyes option to jumpstart surplus interconnection pathway (21 Aug 2026)",
+     "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-service/828473/",
+     "quote": "Forty-four surplus interconnection projects have come online in MISO and 22 have started operating in",
+     "status": "fetched"
+    },
+    {
+     "label": "Utility Dive - PJM surplus interconnection can support 153 GW of solar, wind, storage: UC Berkeley researchers",
+     "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-sis-solar-wind-storage/758121/",
+     "quote": "generating facilities in the PJM Interconnection have surplus interconnection capacity that could support about 153 GW of solar, wind and storage",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "co-located-load-btmg",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Co-located load / behind-the-meter generation at a generating facility",
+   "what_it_is": "The load moves to the generator rather than the generator moving to the load. A large customer sits inside the plant fence and takes power directly from the generator, netting some or all of its demand behind the meter, with the plant's existing interconnection agreement amended to describe the arrangement. Because the load is not a new transmission-connected load and the generator is not a new interconnection request, the arrangement can in principle skip both queues entirely - which is exactly why FERC has spent 2024-2026 fighting over whether it is lawful.",
+   "who_signs": "Generator owner <-> co-located customer (power/service agreement), plus an amended ISA between the RTO, transmission owner and interconnection customer",
+   "asset_owner": "third-party developer (generator); the load host owns its own facility",
+   "term": "Typically 10-20 year power agreements; the ISA amendment is open-ended",
+   "price_form": "$/MWh under a bilateral contract, plus whatever transmission charge the eventual tariff assigns",
+   "precedents": [
+    {
+     "name": "Socrates South Power Generation Project (Williams / Meta), New Albany, Ohio",
+     "year": "2025",
+     "parties": "Will-Power OH (subsidiary of The Williams Companies) -> Sidecat, LLC (Meta affiliate)",
+     "size": "200 MW per site, two sites (400 MW total); serving a 740-acre data centre campus",
+     "note": "Approved by the Ohio Power Siting Board on 9 June 2025. The plant's output is dedicated to a single customer's load and is NOT physically connected to the electric grid - three Solar Turbines Titan 250s, nine PGM 130s, three Siemens SGT400s and 15 Caterpillar 3520 reciprocating engines. Construction from June 2025, in service before end-2026: roughly 18 months from approval to power.",
+     "source_idx": 0
+    },
+    {
+     "name": "FERC order on PJM co-location (Docket EL25-49 et al.)",
+     "year": "2025",
+     "parties": "FERC <-> PJM Interconnection",
+     "size": "PJM-wide tariff",
+     "note": "Issued 18 December 2025 (PJM Interconnection, L.L.C., 193 FERC para. 61,217). FERC found PJM's tariff unjust and unreasonable for co-located load, directed three new transmission services (interim non-firm NITS, Firm Contract Demand, Non-Firm Contract Demand), found the existing behind-the-meter generation rules no longer just and reasonable, and ordered a NEW MW threshold on how much load a customer may net using BTMG. Compliance filings were due 20 January 2026 (interconnection procedures), 17 February 2026 (tariff clarity) and 18 February 2026 (BTMG).",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The single most important negative precedent in this space is nuclear. On 1 November 2024 FERC rejected, 2-1, the amended Susquehanna ISA that would have raised Amazon's co-located data centre load from 300 MW to 480 MW (with a path to 960 MW in 120 MW increments), on the ground that PJM had not justified the non-conforming provisions. That rejection is what triggered the EL25-49 show-cause proceeding. So the co-location route for a reactor is not a settled commercial structure - it is an open FERC docket in which the first mover was told no, and where the pending remedy explicitly includes a cap on how much load may be netted behind the meter.",
+   "microreactor_edge": "A 1-20 MW unit is small enough that the co-located load can plausibly be ALL of the plant's output, which is the cleanest version of this structure: no export, no netting question, no capacity-market interaction, and arguably no interconnection request at all. The FERC fight is about hundreds of megawatts being pulled out of a capacity market; a 5 MW machine serving a 5 MW hospital or fab does not create the resource-adequacy problem that made Susquehanna contentious. But watch the pending BTMG MW threshold - if PJM sets it low, it binds small units too, and if it is set high, the microreactor case is trivially inside it.",
+   "blockers": [
+    "FERC rejected the Talen/Amazon amended ISA 2-1 on 1 Nov 2024; the structure is not settled law",
+    "PJM's BTMG rules were declared no longer just and reasonable and are being rewritten with a new MW netting threshold (compliance due 18 Feb 2026)",
+    "State retail-service and franchise law may treat sales to a co-located third party as retail sales",
+    "If the co-located load ever wants grid backup, it needs transmission service and the queue question returns",
+    "PJM must still create the three new transmission services; rates are being set through a paper hearing, so the price is unknown"
+   ],
+   "sources": [
+    {
+     "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
+     "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
+     "quote": "electric load and would not be physically connected to the electric grid",
+     "status": "fetched"
+    },
+    {
+     "label": "K&L Gates - FERC Orders PJM to Reform Tariff for Co-Located Generation and Load",
+     "url": "https://www.klgates.com/FERC-Orders-PJM-to-Reform-Tariff-for-Co-Located-Generation-and-Load-1-15-2026",
+     "quote": "a temporary, non-firm transmission service subject to curtailment available to customers seeking NITS until the utility places into service network upgrades",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "never-interconnect-islanded",
+   "group": "interconnection",
+   "family": "commercial-contract",
+   "name": "Deliberately never interconnecting (fully islanded on-site generation)",
+   "what_it_is": "The host builds generation that is never electrically connected to the utility system. There is no interconnection request, no study, no interconnection agreement, no network upgrade allocation and no RTO relationship at all - the only permits are siting, air and gas/fuel supply. In exchange the host gives up export revenue, capacity payments, ancillary revenue and, critically, grid backup: reserve margin must be self-provided N+1 on site. This has become the default schedule hedge for 2025-2026 data centre builds because the interconnection queue's 5+ year median is incompatible with an 18-36 month build.",
+   "who_signs": "Host <-> on-site power provider (energy services agreement / BOO); NO agreement with any utility or RTO",
+   "asset_owner": "third-party developer (typical) or host",
+   "term": "10-20 year energy services agreements",
+   "price_form": "$/kWh or fixed monthly service fee under an energy services agreement",
+   "precedents": [
+    {
+     "name": "Socrates South / Socrates North (Williams -> Meta), New Albany, Ohio",
+     "year": "2025",
+     "parties": "Will-Power OH (Williams) -> Sidecat, LLC (Meta)",
+     "size": "200 MW per site, 400 MW total",
+     "note": "The Ohio Power Siting Board approved it on 9 June 2025 with the output 'dedicated to a single customer's electric load' and 'not be physically connected to the electric grid'. Construction began June 2025 with in-service before end-2026 - about 18 months, versus a 5+ year national median through the interconnection queue.",
+     "source_idx": 0
+    },
+    {
+     "name": "Project Jupiter (Oracle / BorderPlex / Bloom Energy), Dona Ana County, New Mexico",
+     "year": "2026",
+     "parties": "Oracle + BorderPlex Digital Assets -> Bloom Energy",
+     "size": "Up to 2.45 GW of installed fuel cell capacity on a ~1,400-acre, four-building campus",
+     "note": "Announced 27 April 2026. The design replaced previously planned gas turbines AND diesel generators with a single islanded microgrid that does not draw from the local utility - Bloom's CEO called it one of the largest islanded microgrid power facilities in the world, and Oracle cited bypassing grid capacity constraints to stabilise the project timeline. NOx cut ~92% versus the gas-turbine plan.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Islanding removes every interconnection blocker at once and leaves nuclear's own blockers untouched - NRC licensing, security, EPZ - so it does not shorten the critical path, it just stops the grid from lengthening it. The genuine technical problem is the opposite of solar's: a reactor cannot follow a data centre's load swings quickly, so an islanded nuclear microgrid needs storage or a dump load, and it cannot lean on the grid as its N+1. Ohio's Socrates precedent is instructive on what an islanded plant must prove to a siting board even with no interconnection at all.",
+   "microreactor_edge": "This is the route where small size is unambiguously an advantage rather than a rules artefact. An islanded site must self-provide N+1: a single large unit forces you to build a second large unit or a huge battery, whereas a fleet of 1-20 MW units gives you N+1 from unit count - four 5 MW modules for a 15 MW load is a real redundancy plan, one 20 MW module is not. Relocatability also matters here: with no ISA, no capacity rights and no network upgrades sunk into the site, an islanded microreactor has nothing anchoring it when the host's load moves - which is not true of any grid-connected route, where the interconnection rights are often the most valuable thing on site.",
+   "blockers": [
+    "No export revenue, no capacity revenue, no ancillary services revenue - the reactor is paid only for what the host consumes",
+    "Host must self-provide N+1 reserve; no grid backup during refuelling or trip",
+    "Load-following: a reactor cannot chase a data-centre load step without storage or a dump load",
+    "Siting/air/water permits still apply, and a siting board can still say no (Oracle withdrew air permit applications for the earlier Project Jupiter microgrid design)",
+    "Stranded-asset risk if the host leaves - though far lower for a relocatable unit"
+   ],
+   "sources": [
+    {
+     "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
+     "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
+     "quote": "electric load and would not be physically connected to the electric grid",
+     "status": "fetched"
+    },
+    {
+     "label": "DataCenterDynamics - Oracle to deploy up to 2.45GW of Bloom fuel cells at New Mexico data center",
+     "url": "https://www.datacenterdynamics.com/en/news/oracle-to-deploy-up-to-245gw-of-bloom-fuel-cells-at-new-mexico-data-center/",
+     "quote": "one of the largest islanded microgrid power facilities in the world",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "pjm-replacement-generation-cir-transfer",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "Replacement Generation Interconnection Process (inheriting a retiring unit's Capacity Interconnection Rights)",
+   "what_it_is": "A separate, non-queue process for putting a new resource on the site of a deactivating generator and transferring the retiring unit's Capacity Interconnection Rights (CIRs) to it. CIRs are what let a resource inject at the existing point of interconnection and sell into the capacity auction; without them, a replacement unit would have to re-earn deliverability through the cluster queue. The replacement resource must connect at the same substation and operating voltage and cannot exceed the deactivating facility's maximum generation output. PJM screens for Material Adverse Impact rather than running a full cluster study.",
+   "who_signs": "Replacement interconnection customer <-> PJM / transmission owner, standing in the deactivating generator's shoes",
+   "asset_owner": "third-party developer or the incumbent generator owner",
+   "term": "For the life of the replacement facility",
+   "price_form": "study costs only; no re-earned network upgrade allocation in the normal case",
+   "precedents": [
+    {
+     "name": "PJM Replacement Generation Interconnection Process (FERC Docket ER26-403)",
+     "year": "2026",
+     "parties": "FERC <-> PJM Interconnection",
+     "size": "Replacement capped at the maximum generation output of the deactivating facility; same substation and operating voltage",
+     "note": "FERC approved on 29 January 2026, effective 30 January 2026. Developers get a one-time opportunity to change their proposed resource within 15 business days of a Material Adverse Impact determination. This is the mechanism that makes coal-to-X and peaker-site reuse a non-queue transaction.",
+     "source_idx": 0
+    },
+    {
+     "name": "PJM Expedited Interconnection Track (EIT) - the contrasting large-project fast lane",
+     "year": "2026",
+     "parties": "FERC <-> PJM Interconnection",
+     "size": "Up to 10 interconnection requests per calendar year, minimum 250 MW unforced capacity each",
+     "note": "Accepted by FERC in June 2026, effective 31 July 2026, sunsetting end-2027. Selected projects must execute a Generation Interconnection Agreement within 10 months of submission and be operational within three years, and must carry a state-authority commitment to expedite siting. The 250 MW UCAP floor excludes every microreactor and most SMRs outright.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the legal plumbing behind coal-to-nuclear: a reactor replacing a retiring coal unit at the same substation and voltage inherits the CIRs and skips the cluster. It fits nuclear better than it fits anything intermittent, because CIRs are capacity rights and a reactor can actually deliver against them at high capacity factor. The binding constraint is the MW cap - the replacement cannot exceed the deactivating unit's output - plus the multi-year gap between when the coal unit deactivates and when a reactor could be licensed and built, during which the site's CIRs must be held.",
+   "microreactor_edge": "Two things flip. First, the MW cap is never binding for a 1-20 MW unit replacing a 300-600 MW coal unit - the constraint becomes 'you may only use a fraction of what is there', which argues for a multi-unit fleet at one retired site. Second, and against the microreactor: PJM's actual fast lane for new capacity, the EIT, has a 250 MW UCAP floor and takes only 10 requests a year, so a small reactor cannot use it at all. The honest reading is that a microreactor's route into PJM is replacement/surplus at an existing site, not any of the expedited new-build tracks.",
+   "blockers": [
+    "Replacement resource cannot exceed the deactivating facility's maximum generation output",
+    "Must connect at the same substation and the same operating voltage",
+    "Material Adverse Impact screen can still kick a project back with only a 15-business-day window to modify",
+    "PJM's EIT fast lane requires 250 MW UCAP minimum - structurally closed to 1-20 MW units",
+    "CIRs must be held through the licensing and construction gap between deactivation and the reactor's operation"
+   ],
+   "sources": [
+    {
+     "label": "PJM Inside Lines - FERC Approves Streamlined Process To Replace Retiring Facilities",
+     "url": "https://insidelines.pjm.com/ferc-approves-streamlined-process-to-replace-retiring-facilities/",
+     "quote": "input power into the transmission system at the facility's Point of Interconnection to the grid",
+     "status": "fetched"
+    },
+    {
+     "label": "PJM Inside Lines - FERC OKs Temporary Process To Fast-Track Large Capacity Projects",
+     "url": "https://insidelines.pjm.com/ferc-oks-temporary-process-to-fast-track-large-capacity-projects/",
+     "quote": "up to 10 interconnection requests per calendar year",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "ercot-large-load-and-sb6-net-metering",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "ERCOT Large Load Interconnection Process and the SB6 net-metering review",
+   "what_it_is": "In ERCOT the binding process for an on-site generation deal is often the LOAD's interconnection, not the generator's. A Large Load is one or more facilities at a single site with aggregate peak demand of 75 MW or more behind common points of interconnection; it must run the Large Load Interconnection Process (Planning Guide Section 9, created by PGRR115, effective 15 December 2025). Separately, Texas SB6 (effective 20 June 2025) requires any existing stand-alone generation resource entering a net-metering arrangement with a new large load to obtain an ERCOT impact study and Texas PUC approval before the load can energize.",
+   "who_signs": "Large load customer <-> Transmission Service Provider and ERCOT (Load Commissioning Plan); separately, generator + load <-> Texas PUC (Net Metering Review)",
+   "asset_owner": "host (load) and generator owner separately",
+   "term": "Ongoing; energization deadlines run in days",
+   "price_form": "study fees; SB6 sets a minimum $100,000 initial transmission screening study payment",
+   "precedents": [
+    {
+     "name": "ERCOT Planning Guide Section 9 / PGRR115 large-load applicability",
+     "year": "2025",
+     "parties": "ERCOT <-> Texas PUC <-> large load customers",
+     "size": "75 MW aggregate peak demand at a single site",
+     "note": "Approved by the Texas PUC in May 2025, effective 15 December 2025. Critically, the INTERIM process that ran from March 2022 applied to loads co-located with a Generation Resource at just 20 MW or greater, versus 75 MW for standalone loads. PGRR115 removed that distinction: Section 9.2.1 'does not distinguish between loads that are co-located and not co-located with Generation Resources or Energy Storage Resources, and does not apply to loads under 75 MW.' Study review runs on 10-business-day ERCOT windows (extendable by 20 business days), and a customer that has not energized within 365 days of its requested initial energization date can be sent back for re-study.",
+     "source_idx": 0
+    },
+    {
+     "name": "Texas Senate Bill 6",
+     "year": "2025",
+     "parties": "State of Texas / Texas PUC / ERCOT",
+     "size": "75 MW large-load threshold (PUCT may lower it)",
+     "price": "At least $100,000 per interconnection request for an initial transmission screening study",
+     "note": "Signed and effective 20 June 2025. Net Metering Review: ERCOT must complete the system-impact study within 120 days and the PUCT must decide within 60 days of receiving it - so roughly 180 days for a co-located generation deal with an existing resource. Any large load interconnecting after 31 December 2025 must be remotely curtailable by ERCOT during firm load shed events, unless designated a critical load industrial customer or critical natural gas facility.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "SB6's curtailability mandate is the interesting one for nuclear: a large load that self-supplies from an on-site reactor still has to accept remote curtailment if it interconnects after 31 December 2025, unless it qualifies as a critical load. And a reactor paired with an EXISTING ERCOT generation resource under a net-metering arrangement drags in a PUCT approval that did not exist before mid-2025. Against that, ERCOT's generator side remains the fastest in the country because connect-and-manage studies only local upgrades rather than broad network upgrades, and generators are not allocated transmission costs.",
+   "microreactor_edge": "A 1-20 MW reactor serving a co-located host is very likely to sit entirely outside the ERCOT Large Load Interconnection Process, because PGRR115 raised the co-located trigger from 20 MW to the flat 75 MW load threshold - a rules change made in 2025 that a 2024-vintage analysis would get exactly backwards. That is a real, dated, numeric advantage: a 20 MW co-located campus that would have been captured under the interim process is now exempt. It disappears the moment the host's own peak demand crosses 75 MW, which most AI data centres do; so the microreactor's ERCOT market is the sub-75 MW host, not the hyperscaler.",
+   "blockers": [
+    "75 MW load threshold captures any serious data-centre host regardless of how the generation is arranged",
+    "SB6 Net Metering Review adds ~180 days (120-day ERCOT study + 60-day PUCT decision) to any deal with an EXISTING generation resource",
+    "Mandatory remote curtailability for large loads interconnecting after 31 December 2025",
+    "Minimum $100,000 initial transmission screening study payment per interconnection request",
+    "PUCT may lower the 75 MW threshold by rule, which would pull small co-located projects back in"
+   ],
+   "sources": [
+    {
+     "label": "ERCOT - Questions and Answers About the Large Load Interconnection Process (Rev. 12.15.25)",
+     "url": "https://www.ercot.com/files/docs/2025/12/24/Large-Load-Interconnection-Process-Q-A.pdf",
+     "quote": "as one or more facilities at a single site with an aggregate peak demand greater than or equal to 75 MW",
+     "status": "fetched"
+    },
+    {
+     "label": "Bracewell LLP - Texas Senate Bill 6 Ushers in Major Overhaul of Large Load Interconnection and Grid Access Rules",
+     "url": "https://www.bracewell.com/resources/texas-senate-bill-6-ushers-in-major-overhaul-of-large-load-interconnection-and-grid-access-rules/",
+     "quote": "each customer requesting interconnection to pay at least $100,000 to the interconnecting transmission provider for an initial transmission screening study",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "energy-only-and-provisional-service",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Energy-only (ERIS), reduced-capacity and provisional interconnection service",
+   "what_it_is": "Three related ways to buy less interconnection than your nameplate and get connected sooner and cheaper. (1) Energy Resource Interconnection Service studies only whether you can inject energy, not whether you are deliverable to load, so far fewer network upgrades are triggered - in exchange the generator is curtailable during congestion and cannot count as a capacity resource. (2) Order 845 requires transmission providers to let a customer request interconnection service BELOW the facility's full generating capacity, so a 20 MW machine can buy 10 MW of interconnection. (3) Order 845's provisional interconnection service lets a project operate at a restricted level before its network upgrades are finished, under a provisional interconnection agreement.",
+   "who_signs": "Interconnection customer <-> transmission provider (LGIA/SGIA electing ERIS, reduced capacity, or a provisional agreement)",
+   "asset_owner": "third-party developer or host",
+   "term": "Life of the facility; provisional service is temporary until upgrades are in service",
+   "price_form": "Network upgrade capex avoided; paid for in curtailment risk and lost capacity revenue",
+   "precedents": [
+    {
+     "name": "Duke Energy Carolinas/Progress solar cluster re-study (Tyler Norris, Duke University)",
+     "year": "2024",
+     "parties": "Duke Energy / North Carolina and South Carolina solar developers",
+     "size": "1.9 GW of solar studied",
+     "price": "NRIS: $290 million of network upgrades, $156/kW, 36 overloaded transmission elements, 4.5 years average install. ERIS: $82 million, $44/kW, 9 overloaded elements - a 72% cost reduction.",
+     "note": "Study released April 2024, presented at a FERC workshop 10 September 2024. The upgrades avoided by going energy-only were the ones with the 4.5-year build times, so the cost saving and the schedule saving are the same saving.",
+     "source_idx": 0
+    },
+    {
+     "name": "FERC Order No. 845",
+     "year": "2018",
+     "parties": "FERC <-> all jurisdictional transmission providers",
+     "size": "All LGIP projects",
+     "note": "Adopted 19 April 2018, effective 23 July 2018, compliance filings due 7 August 2018. It created BOTH the surplus interconnection process and the right to request interconnection service lower than the full generating capacity of the facility, plus provisional interconnection agreements allowing a project to interconnect before all studies or upgrades are complete, subject to operating restrictions.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Energy-only is a bad trade for a reactor and a good trade for solar, and the asymmetry is worth stating plainly: curtailment is cheap for a plant with zero marginal cost and a 25% capacity factor, and ruinous for a plant with a huge fixed cost and a 90%+ capacity factor whose entire economics assume it runs. Reduced-capacity service, by contrast, is a strong fit - a reactor sized to a host's load can buy interconnection only for the export it actually intends, avoiding deliverability upgrades it will never use. Provisional service is the schedule tool: it lets a licensed, built reactor start selling while the network upgrades finish.",
+   "microreactor_edge": "Reduced-capacity interconnection service is the single cleanest way a 1-20 MW unit can stay inside the small-generator thresholds: a 20 MW machine that requests 2 MW of export interconnection service (with the rest consumed on site) is judged on the 2 MW, which is what puts a synchronous machine back inside the Fast Track door. This is the concrete version of 'export less than you generate'. Energy-only, by contrast, should generally be refused by a microreactor developer - it converts capex savings into an availability risk the business case cannot carry.",
+   "blockers": [
+    "ERIS generators are curtailed first during congestion and cannot be counted as capacity resources",
+    "LBNL's cost dataset finds ERIS's advantage largely disappears once any physical upgrade is triggered ($467/kW NRIS vs $353/kW ERIS across non-ISO requests)",
+    "Provisional service ends when upgrades are complete; it does not remove the upgrade obligation",
+    "Reduced-capacity service caps future expansion - selling more later means re-entering the queue",
+    "A high-capacity-factor plant bears far more curtailment cost per MW of avoided upgrade than an intermittent one"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive - Flexible interconnection service for Duke solar could slash costs, speed grid connections: study",
+     "url": "https://www.utilitydive.com/news/flexible-interconnection-service-eris-nris-duke-solar-study-ferc/726527/",
+     "quote": "energy-only interconnection service",
+     "status": "fetched"
+    },
+    {
+     "label": "Orrick - FERC Order No. 845 Reforms Generator Interconnection Process, Advances Energy Storage",
+     "url": "https://www.orrick.com/en/Insights/2018/05/FERC-Order-No-845-Reforms-Generator-Interconnection-Process-Advances-Energy-Storage",
+     "quote": "provisional interconnection agreements offer developers the ability to interconnect a project before all studies or necessary transmission upgrades are complete, subject to operating restrictions",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "curtailable-large-load-fast-path",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Curtailment-enabled large-load interconnection (trading firmness for speed)",
+   "what_it_is": "The load side's version of energy-only service: a large customer agrees in advance to be curtailed - remotely, by the RTO, under defined conditions - and in exchange gets studied and energised faster than a firm load would be. The agreement is a transmission service election plus a controllable-load obligation, not a generation interconnection agreement. This is the fastest-moving area of US interconnection law in 2025-2026 and it is where any on-site reactor serving a large host will actually land.",
+   "who_signs": "Large load customer <-> transmission provider / RTO (non-firm or contract-demand transmission service, plus curtailment equipment obligations)",
+   "asset_owner": "host owns the load; utility owns the curtailment control equipment",
+   "term": "Interim service until network upgrades are in service; contract-demand services are longer-term",
+   "price_form": "discounted/non-firm transmission rate, still being set by FERC through a paper hearing",
+   "precedents": [
+    {
+     "name": "DOE-directed ANOPR on Interconnection of Large Loads (FERC Docket RM26-4-000)",
+     "year": "2025",
+     "parties": "US DOE Secretary Chris Wright -> FERC",
+     "size": "Large loads generally defined as demand greater than 20 MW",
+     "note": "Directed 23 October 2025 under Section 403 of the DOE Organization Act, with comments due 14 November and replies 28 November 2025. The ANOPR proposed that large loads agreeing to be curtailable, and hybrid facilities agreeing to be dispatchable, get an expedited interconnection process potentially as short as 60 days. DOE set a 30 April 2026 final-action deadline; FERC missed it, issued an Order Regarding Intent to Act on 16 April 2026 promising action by end of June, and on 18 June 2026 issued six Section 206 show cause orders to all jurisdictional RTOs and their transmission owners instead of a rule.",
+     "source_idx": 0
+    },
+    {
+     "name": "PJM interim non-firm NITS for co-located load (FERC, 18 December 2025)",
+     "year": "2025",
+     "parties": "FERC <-> PJM Interconnection",
+     "size": "PJM footprint",
+     "note": "Interim NITS is temporary, non-firm transmission service subject to curtailment, available until the utility places the required network upgrades in service; customers taking it on behalf of co-located load agree to curtail in advance of system emergency conditions. This is the first FERC-blessed structure that lets a co-located load energise before its upgrades exist.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "A host powered by an on-site reactor is a strong candidate for the curtailable fast path precisely because it does not need the grid for energy - it needs the grid for backup. Agreeing to be curtailed costs a self-supplied host far less than it costs a grid-dependent one, which is a real and underused argument. The catch is ERCOT's version: SB6 makes curtailability mandatory for large loads interconnecting after 31 December 2025 rather than a bargaining chip, so in Texas the host gives up firmness and gets nothing back for it.",
+   "microreactor_edge": "Nothing here is size-specific on its face, but the 20 MW figure recurs: DOE's ANOPR sets the large-load definition at demand greater than 20 MW, which is the same number as the SGIP generator ceiling. A microreactor-plus-host campus that stays under 20 MW of grid-facing demand sits below the federal large-load line and at or below the small-generator line simultaneously - the only configuration in this whole landscape that is small on both sides of the meter at once. That is the most defensible version of the 'microreactors dodge the queue' claim.",
+   "blockers": [
+    "FERC has not issued a large-load interconnection rule: it blew through DOE's 30 April 2026 deadline and answered with show cause orders on 18 June 2026",
+    "Rates for PJM's three new transmission services are still being set through a paper hearing - the price of the fast path is unknown",
+    "In ERCOT curtailability is a mandate, not a trade: no speed benefit is granted in exchange",
+    "Non-firm service by definition offers no backup guarantee, which is the one thing an on-site reactor needs the grid for",
+    "The 20 MW ANOPR threshold is a proposal, not a rule, and could move"
+   ],
+   "sources": [
+    {
+     "label": "Mayer Brown - FERC Large-Load Interconnection Preliminary Rulemaking: Key Takeaways",
+     "url": "https://www.mayerbrown.com/en/insights/publications/2025/11/ferc-large-load-interconnection-preliminary-rulemaking-key-takeaways-for-data-center-developers-other-large-load-projects-and-investors",
+     "quote": "hybrid facilities that agree to be dispatchable would qualify for an expedited interconnection process, potentially as short as 60 days",
+     "status": "fetched"
+    },
+    {
+     "label": "K&L Gates - FERC Orders PJM to Reform Tariff for Co-Located Generation and Load",
+     "url": "https://www.klgates.com/FERC-Orders-PJM-to-Reform-Tariff-for-Co-Located-Generation-and-Load-1-15-2026",
+     "quote": "a temporary, non-firm transmission service subject to curtailment available to customers seeking NITS until the utility places into service network upgrades",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "ercot-connect-and-manage-small-generation",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "ERCOT connect-and-manage and the Small Generation process (<10 MW)",
+   "what_it_is": "ERCOT is the only US market that does not study broad network upgrades before connecting a generator. It builds the 'driveway' (the interconnection facilities) during the interconnection process and leaves the 'highway' (transmission expansion) to a separate planning process; congestion is then managed in real-time operations rather than pre-empted by upgrades. Deliverability is not guaranteed and the generator is not allocated transmission cost. ERCOT further splits its process at 10 MW: units below that run the Small Generation process under Planning Guide Section 5.4, with the system impact study conducted by the TDSP rather than ERCOT.",
+   "who_signs": "Interconnection entity <-> TDSP and ERCOT (Standard Generation Interconnection Agreement); no RTO cost allocation for network upgrades",
+   "asset_owner": "third-party developer or host",
+   "term": "Life of the facility",
+   "price_form": "application and study fees; generator bears no transmission-upgrade allocation",
+   "precedents": [
+    {
+     "name": "ERCOT resource interconnection process durations (ERCOT staff presentation, 30 October 2024)",
+     "year": "2024",
+     "parties": "ERCOT <-> interconnecting entities and TDSPs",
+     "size": "10 MW split: Large Generation >= 10 MW, Small Generation < 10 MW",
+     "note": "ERCOT's own stated durations: 18 to 30 months for Large Generation and 8 to 12 months for Small Generation, not including construction or supply delays. Compare LBNL's national median of well over 3 years to an interconnection agreement and 5+ years to commercial operation. ERCOT explicitly says it is 'Not a Queue, each project moves on its own' and that 'Deliverability not guaranteed.'",
+     "source_idx": 0
+    },
+    {
+     "name": "ERCOT interconnection study cost bands (developer-side estimates)",
+     "year": "2025",
+     "parties": "ERCOT interconnecting entities",
+     "size": "n/a",
+     "price": "Application fee $5,000-$25,000; Full Interconnection Study $50,000-$200,000 depending on complexity; network upgrades from relay-setting changes costing a few thousand dollars up to hundreds of millions",
+     "note": "Consultancy-published bands, not a tariff. Included because ERCOT does not publish a single fee schedule; treat as an order-of-magnitude, not a rate.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Connect-and-manage suits a reactor better than it suits wind or solar for one reason: the price of the bargain is congestion exposure, and a firm baseload unit sited at or near its load is the least congestion-exposed thing you can build. A reactor in ERCOT is not allocated transmission upgrade cost at all, which removes the single largest cost uncertainty in every other US market. What ERCOT does not remove is the load-side process - if the host crosses 75 MW of demand it lands in the Large Load Interconnection Process regardless of how clean the generator's path was.",
+   "microreactor_edge": "ERCOT's 10 MW split is the sharpest size cliff found anywhere in this research: a unit at 9.9 MW runs ERCOT's Small Generation process at a stated 8-12 months, and the identical unit at 10.1 MW runs Large Generation at 18-30 months. That is a 10-to-22-month schedule difference decided by 0.2 MW, and it is a direct argument for a vendor to offer a sub-10 MW ERCOT variant or to derate at the point of interconnection. Nothing about factory building or relocatability produces a comparable saving.",
+   "blockers": [
+    "Deliverability is not guaranteed; the generator carries congestion and basis risk with no upgrade obligation on the transmission provider",
+    "The 10 MW Small Generation cut-off is a hard line - one unit above it doubles the stated timeline",
+    "ERCOT-only: no other US market runs connect-and-manage, so the advantage does not travel",
+    "Load-side Large Load Interconnection Process still applies at 75 MW of host demand",
+    "No published tariff fee schedule; study costs are quoted case by case"
+   ],
+   "sources": [
+    {
+     "label": "ERCOT - Interconnection Process: Generation Entity Winter Weather Preparedness (30 Oct 2024)",
+     "url": "https://www.ercot.com/files/docs/2024/10/30/0940-AM-ERCOT-Interconnection-Process-Generation-Entity-Winter-Weather-Preparedness-Fernandes.pdf",
+     "quote": "ERCOT process is 18 to 30 months for Large Generation (>=10 MW) and 8 to 12 months for Small Generation",
+     "status": "fetched"
+    },
+    {
+     "label": "NFM Consulting - Generator Interconnection with ERCOT",
+     "url": "https://nfmconsulting.com/knowledge/generator-interconnection-ercot/",
+     "quote": "$50,000-$200,000 depending on the study complexity",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "distribution-level-state-interconnection",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "Distribution-level interconnection under state DER rules (NY SIR, California Rule 21)",
+   "what_it_is": "Below the FERC line, interconnection to a utility's distribution system is governed by state rules, not the SGIP. New York's Standardized Interconnection Requirements cover new distributed generators and energy storage of 5 MW or less; the utility runs preliminary screens, an optional supplemental screening analysis, and if needed a Coordinated Electric System Interconnection Review (CESIR) - a full distribution study - before issuing a standard interconnection contract. California's Rule 21 plays the same role and has begun using Integration Capacity Analysis (hosting capacity) results directly in interconnection decisions. Fees here are two orders of magnitude below transmission-level study costs.",
+   "who_signs": "Applicant <-> distribution utility (New York State Standardized Interconnection Contract; Rule 21 agreement in California)",
+   "asset_owner": "host or third-party developer",
+   "term": "Life of the facility",
+   "price_form": "flat application fees plus utility cost for distribution upgrades",
+   "precedents": [
+    {
+     "name": "New York State Standardized Interconnection Requirements (National Grid tariff addendum)",
+     "year": "2025",
+     "parties": "NY PSC <-> National Grid, Con Edison and the other NY utilities <-> DG/ESS applicants",
+     "size": "AC generator nameplate rating of 5 MW or less, aggregated on the customer side",
+     "price": "$750 non-refundable application fee (waived/credited if a pre-application report was bought within 15 business days); $2,500 non-refundable supplemental screening fee with actual costs billable up to $5,000",
+     "note": "Timelines are in business days throughout: utility response to an application within 10 business days; supplemental screening analysis within 20 business days; CESIR completed within 60 business days of authorisation, fee and complete information; executed interconnection contract within 15 business days of a clean screening result. A project change during CESIR can add another 40 business days.",
+     "source_idx": 0
+    },
+    {
+     "name": "California Rule 21 modernisation and ICA-based interconnection",
+     "year": "2025",
+     "parties": "CPUC <-> PG&E, SCE, SDG&E",
+     "size": "Distribution-connected DER",
+     "note": "California became the first state to use hosting capacity (Integration Capacity Analysis) results in interconnection decisions, and set standard construction timelines of 40 business days (20 design + 20 construction) for a net generation output meter and 120 business days (60 design + 60 construction) for interconnection-related distribution upgrades. The CPUC opened a Rule 21 modernisation rulemaking at its 14 August 2025 voting meeting.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "State DER rules were drafted for solar, storage and small CHP and are silent on nuclear, which cuts both ways: there is no nuclear-specific bar, and there is also no place in the forms for a reactor. The operational problem is physical, not legal - distribution feeders are radial and sized for load, and the screens are all load-relative (aggregate generation versus line-section peak or minimum load). A firm machine that runs at night, when the feeder minimum load is lowest, is the worst case for the minimum-load screen. Expect a full CESIR or its equivalent, not a screen pass.",
+   "microreactor_edge": "New York's 5 MW cap and California's distribution rules define the ONLY size at which a reactor is a distribution-level, state-jurisdictional device rather than a transmission-level FERC one - and it is 5 MW, not 20. A sub-5 MW unit in New York is processed for a $750 application fee and a 60-business-day study; the same vendor's 10 MW unit is a different legal object entirely. This is the strongest concrete argument in the whole interconnection landscape for a vendor to offer a 1-5 MW SKU, and it is a rules argument, not an engineering one.",
+   "blockers": [
+    "5 MW cap in New York (state rules elsewhere vary; the SGIP's 20 MW is the FERC-jurisdictional number, not the state one)",
+    "Load-relative screens punish a baseload machine on a low-minimum-load feeder",
+    "Hosting-capacity limits on a given feeder are fixed by the feeder, so siting is dictated by the distribution system rather than by the host",
+    "CESIR can find distribution upgrades whose cost falls entirely on the applicant",
+    "A project change mid-CESIR can add 40 business days"
+   ],
+   "sources": [
+    {
+     "label": "New York State Standardized Interconnection Requirements (National Grid tariff addendum ESIR)",
+     "url": "https://www.nationalgridus.com/media/pdfs/billing-payments/tariffs/uny/addesir8.pdf",
+     "quote": "The CESIR shall be completed within sixty (60) Business Days of receipt of the information set forth in Step 5.",
+     "status": "fetched"
+    },
+    {
+     "label": "Energy Toolbase - Fast Track Interconnection Process is Streamlined with Integration Capacity Analysis within California's Rule 21",
+     "url": "https://www.energytoolbase.com/blog/policyupdate/californias-rule-21/",
+     "quote": "certified Power Control System (PCS) with an open loop response time of no more than two seconds",
+     "status": "snippet-only"
+    }
+   ]
+  }
+ ]
 }

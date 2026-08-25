@@ -7,18 +7,21 @@
    {
     "file": "apps-federal-awards.json",
     "kind": "case",
-    "records": 14,
-    "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DoD ESPC/UESC/utility-privatization vehicles) rather than press releases, so every record carries an obligated or total-potential contract value tied to a named site.",
-    "incomplete": true,
+    "records": 26,
+    "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
+    "incomplete": false,
     "absences": [
      "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
      "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
-     "FEMA BRIC and Hazard Mitigation Grant Program generator/microgrid awards: not retrieved. OpenFEMA datasets were not queried in this pass, so no named-site FEMA generator dollar values are in this file.",
-     "DOE Energy Improvements in Rural or Remote Areas (ERA): USAspending keyword 'Energy Improvements in Rural or Remote Areas' returned zero grant awards, so ERA site-level values are absent.",
-     "Off-grid mining & mineral processing: no federal award record with a named mine site and a generation dollar value was found; DOE MESC critical-minerals awards fund processing plants, not the power blocks, so nothing in that sector is recorded here.",
-     "No award record published a $/kWh energy price. Federal construction and ESPC awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex or contract value, never an energy rate.",
+     "DOE Energy Improvements in Rural or Remote Areas: the programme name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the programme.",
+     "Grid Resilience 40101(d) state formula allocations: not separated from 40103 GRIP competitive awards. Both sit under CFDA 81.254, and the award records do not distinguish them, so the Barnstable record is reported as CFDA 81.254 without claiming which section funded it.",
+     "DOE OCED's own ERA project pages (energy.gov/oced/energy-improvements-rural-or-remote-areas and the /arctic Alaska ERA article) both return HTTP 404 as of 2026-08-25; the surviving fetchable DOE source for these awards is the Award Wednesdays post of 2024-08-14.",
+     "MARAD's layberth locations PDF (maritime.dot.gov, 19 Apr 2024) returns HTTP 403 to a direct fetch, so 'Terminal 2, Berths 205-206' could not be tied to a named port from a primary document. Search summaries point to the Port of Portland, Oregon; that is unverified and is not asserted in the record.",
+     "FEMA project records carry no kW ratings, no equipment counts and no narrative — only a project-type taxonomy. Every FEMA record here therefore has a named site and a dollar value but no capacity, which is why no $/kW is derived from any of them.",
+     "Off-grid mining & mineral processing: skipped by instruction after a prior run reported the angle dry; no federal award record with a named mine site and a generation dollar value is in this file.",
+     "No award record published a $/kWh energy price. Federal construction, ESPC and grant awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex, contract value or a FEMA benefit-cost figure, never an energy rate.",
      "Heat rate, fuel burn and annual generation are not in the award records; where a $/MWh comparison would be useful it could not be derived from the award's own numbers.",
-     "Agent terminated on a session limit part-way through; the mining angle was reported dry before it died."
+     "The USAspending keyword sweeps that produced the contract records were read at their page limits (20-30 rows sorted by award amount, hasNext true on the DOE microgrid and Clean Ports queries). Every 'this is the going rate' statement in this file is a floor drawn from the top of a capped list, not a population total."
     ]
    },
    {
@@ -123,7 +126,7 @@
    {
     "file": "mech-dockets.json",
     "kind": "mechanism",
-    "records": 2,
+    "records": 7,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
     "incomplete": true,
     "absences": [
@@ -152,7 +155,8 @@
      "The Small Generator Interconnection Agreement query returned 811 hits against a 200 cap, so no year-shape is reported for it here; a capped list is a floor, not a total.",
      "None of the underlying letter orders was opened: FERC serves them as DOCX transmittals and the census is built from the search API's own description strings.",
      "The census counts filings, not megawatts. No filing description states the MW inherited, so the size distribution of surplus interconnection is unknown from this method.",
-     "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact."
+     "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact.",
+     "Three cited hosts serve only a JavaScript shell to non-browser clients (elibrary.ferc.gov, programs.dsireusa.org); those sources are marked snippet-only rather than left claiming a fetch that did not happen."
     ]
    },
    {
@@ -170,13 +174,14 @@
      "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
      "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
      "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
-     "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report."
+     "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report.",
+     "Three cited hosts serve only a JavaScript shell to non-browser clients (elibrary.ferc.gov, programs.dsireusa.org); those sources are marked snippet-only rather than left claiming a fetch that did not happen."
     ]
    },
    {
     "file": "mech-nuclear-structures.json",
     "kind": "mechanism",
-    "records": 6,
+    "records": 12,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
     "incomplete": true,
     "absences": [
@@ -210,6 +215,74 @@
   {
    "group": "diesel",
    "records": [
+    {
+     "id": "ct-deep-microgrid-grant-loan-pa12-148",
+     "group": "diesel",
+     "family": "public-procurement",
+     "name": "Connecticut Microgrid Grant and Loan Program (Public Act 12-148 Sec. 7) — the per-site civic-resilience cost dataset",
+     "what_it_is": "Connecticut's post-Irene/Sandy statute directed DEEP to run a microgrid grant and loan programme for critical facilities. A municipality, electric distribution company, municipal electric utility, energy improvement district or private entity applies in a competitive round; DEEP awards a grant or loan and the recipient owns and operates the microgrid, reporting annually to PURA, the Office of Consumer Counsel, DEEP and two legislative committees for five years. The decisive statutory limit is on what the money buys: under the pilot the grants and loans pay only for design, engineering services and interconnection infrastructure — not the generator. A 2016 bond expansion widened this to matching funds or low-interest loans for energy storage and clean distributed generation. DEEP's own award-tracking chart is the per-site dataset: 12 operational microgrids and $22,265,935 of awards.",
+     "who_signs": "Municipality, EDC, municipal electric utility, energy improvement district or private entity <-> Connecticut Department of Energy & Environmental Protection, following a competitive Request for Proposals/Applications",
+     "asset_owner": "host",
+     "term": "Grant or loan; recipient must report project status annually for five years to PURA, OCC, DEEP and the appropriations and energy committees",
+     "price_form": "grant-funded (and low-interest loans), restricted by statute to design, engineering services and interconnection infrastructure",
+     "precedents": [
+      {
+       "name": "DEEP Microgrid Award Tracking chart — all rounds, as of 2022-08-02",
+       "year": "2022",
+       "parties": "Wesleyan University; Town of Woodbridge; Hartford-Parkville; University of Hartford; Fairfield; Bridgeport; Windham; Milford; University of Bridgeport; Wesleyan University Expansion; Daughters of Mary of the Immaculate Conception (New Britain)",
+       "size": "12 operational microgrids. Generation as built: Wesleyan 2.4 MW + 676 kW gas CHP recip; Woodbridge 2.2 MW fuel cell; Hartford-Parkville 4 x 200 kW fuel cells; Univ. of Hartford 2 x 1.9 MW existing diesel + 250 kW + 150 kW diesel; Fairfield 300 kW gas recip + 47 kW PV; Bridgeport 3 x 600 kW gas microturbine CHP; Windham 2 x 100 kW gas + diesel; Milford 400 kW gas CHP + 125 kW battery; Univ. of Bridgeport 1.4 MW fuel cell; Daughters of Mary 4 x 100 kW/255 kWh new BESS on existing PV and a 22 kW gas generator.",
+       "price": "Round 1 (pilot) $12,879,157 across 7 operational projects; Round 2 $5,090,240 (Milford $2,909,341, Univ. of Bridgeport $2,180,899); Round 3 $424,000 (Wesleyan expansion); Round 4 $3,872,538 (Daughters of Mary). Per-site range $424,000 to $3,872,538. Largest pilot awards: Woodbridge $3,000,000, Bridgeport $2,975,000, Univ. of Hartford $2,270,333, Hartford-Parkville $2,063,000, Fairfield $1,167,659, Windham $709,350, Wesleyan $693,815.",
+       "note": "CORRECTION to the round totals: DEEP announced roughly $36.6M across four rounds ($18M pilot to nine projects, $5.1M round 2, $424,000 round 3, $13.1M round 4 to three projects), but its own tracker lists only $22,265,935 as operational — 61%. The pilot shows 7 of 9 projects, and Round 4 shows 1 of 3. Round 2 and Round 3 delivered in full.",
+       "source_idx": 0
+      },
+      {
+       "name": "Wesleyan University Expansion Project — the pure interconnection datapoint",
+       "year": "2017",
+       "parties": "Wesleyan University <-> Connecticut DEEP (Round 3, sole award)",
+       "size": "added a dining venue, public safety building and physical plant building to the existing microgrid; DER column reads EXISTING only — no new generation whatsoever",
+       "price": "$424,000",
+       "note": "The single cleanest published price for the microgrid wrapper alone: $424,000 to bring three more buildings onto existing 3.076 MW of gas CHP. Because the statute confines the grant to design, engineering and interconnection, every award in this chart should be read as the cost of the switchgear-and-controls layer, not the cost of the generator.",
+       "source_idx": 0
+      }
+     ],
+     "nuclear_fit": "Admits a reactor by construction — the only mechanism in this file that does. Public Act 12-148 Sec. 7(a)(3) defines the eligible resource purely by size and location: 'the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user'. There is no fuel list, no emissions test, no efficiency gate and no renewability requirement — the exact opposite of the PUCT's closed natural-gas-or-propane enumeration and the CPUC's combustion-or-chemical-reaction-and-renewable fuel rule. A 1-20 MW reactor on a hospital or municipal campus satisfies the definition on its face. The statutory 'critical facility' list is equally accommodating: hospital, police station, fire station, water treatment plant, sewage treatment plant, public shelter, correctional facility, any commercial area of a municipality, a municipal centre, or anything else DEEP identifies as critical. The catch is on the money, not the eligibility: the pilot grant may fund only design, engineering services and interconnection infrastructure, so a reactor developer gets its wires and controls paid for and none of its capex.",
+     "microreactor_edge": "Two things. First, the 65 MW statutory ceiling is written as a maximum, so a smaller unit is strictly safer under it while a full-size reactor is excluded outright — this is one of the few rules where being small is legally load-bearing rather than merely commercially convenient. Second, the delivered fleet shows what a reactor would be replacing: ten of the twelve operational Connecticut microgrids are anchored on natural gas CHP, fuel cells or diesel, and the only battery-led project kept a natural gas generator on site anyway. On capacity the fit is direct — the built systems run from about 200 kW to 4.2 MW, so a single unit at the bottom of the microreactor band covers any of them and most of them several times over.",
+     "blockers": [
+      "PA 12-148 Sec. 7(c): grants and loans may only fund design, engineering services and interconnection infrastructure — no generation capex under the pilot authority",
+      "Statutory pilot cap of $15,000,000 total (PA 13-298 later authorised a further $30,000,000)",
+      "No open Request for Applications; DEEP's programme page states none is currently open and its content was last updated January 2020",
+      "Award-to-operation attrition is high: 7 of 9 pilot awards and 1 of 3 Round 4 awards appear as operational in DEEP's tracker",
+      "Five years of annual status reporting to PURA, OCC, DEEP and two legislative committees",
+      "Awards were to be distributed as evenly as possible between small, medium and large municipalities — a political allocation rule, not a technical one"
+     ],
+     "sources": [
+      {
+       "label": "CT DEEP — Microgrids Project Award Tracking, All Projects (2022-08-02), Microgrid Grant and Loan Program",
+       "url": "https://portal.ct.gov/-/media/deep/energy/microgrids/microgrid-grant-and-loan-program/microgrids-project-award-tracking-all-projects-822022.pdf",
+       "quote": "(1) 2.4 MW and (1) 676 kW Natural Gas Combined Heat and Power Reciprocating Engine",
+       "status": "fetched"
+      },
+      {
+       "label": "Connecticut Public Act 12-148, Section 7(a)(3) (Substitute Senate Bill No. 23), definition of distributed energy generation",
+       "url": "http://www.cga.ct.gov/2012/ACT/Pa/pdf/2012PA-00148-R00SB-00023-PA.pdf",
+       "quote": "the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user",
+       "status": "fetched"
+      },
+      {
+       "label": "Connecticut Public Act 12-148, Section 7(c) — permitted use of grant and loan proceeds",
+       "url": "http://www.cga.ct.gov/2012/ACT/Pa/pdf/2012PA-00148-R00SB-00023-PA.pdf",
+       "quote": "Such grants and loans shall only be used to provide assistance to recipients for the cost of design, engineering services and interconnection infrastructure",
+       "status": "fetched"
+      },
+      {
+       "label": "CT DEEP — Microgrid Grant and Loan Program, Previous Rounds: Award Winners and Updates",
+       "url": "https://portal.ct.gov/deep/energy/microgrid-grant-and-loan/microgrid-grant-and-loan-program",
+       "quote": "Of the nine applications submitted for Round 4, three were awarded grants totaling approximately $13.1 million.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-dockets.json"
+    },
     {
      "id": "dod-ota-contractor-owned-contractor-operated-base-power",
      "group": "diesel",
@@ -366,6 +439,69 @@
       }
      ],
      "_from": "mech-selling-structure.json"
+    },
+    {
+     "id": "njbpu-tcder-microgrid-qo16100967",
+     "group": "diesel",
+     "family": "public-procurement",
+     "name": "New Jersey Town Center DER Microgrid Program, Phases I and II (NJBPU Docket No. QO16100967)",
+     "what_it_is": "A post-Sandy state programme in which a municipality, county or state agency that owns critical facilities applies to the NJ Board of Public Utilities for a cash incentive, first to fund a feasibility study (Phase I) and then, competitively, to fund the engineering design of a 'Town Center DER Microgrid' — a cluster of FEMA Category III and IV critical facilities inside one municipal boundary, connected to DER that can island from the grid. The awardee signs an MOU with the Board, takes 75% of the award on execution and 25% on Staff's verification that the delivered design matches the application. The public agency owns the asset and bears every downstream risk; the Board funds paper, not steel, and states explicitly that an award 'does not indicate Board approval of any TCDER Microgrid project'.",
+     "who_signs": "Municipality / county / state agency <-> New Jersey Board of Public Utilities, via a Memorandum of Understanding executed within 60 days of the order",
+     "asset_owner": "public agency",
+     "term": "Design-stage only; MOU plus quarterly status reports to Board Staff and six-monthly meetings with the electric distribution company",
+     "price_form": "grant-funded design incentive (75% on MOU execution, 25% on Staff design review)",
+     "precedents": [
+      {
+       "name": "Phase II TCDER Microgrid Design Incentive awards — the per-site chart",
+       "year": "2021",
+       "parties": "NJBPU; Township of Montclair; Borough of Highland Park; Hudson County; City of Hoboken; Township of Neptune; NJ Dept of Treasury (for City of Trenton); City of Atlantic City (DCO Energy); Township of Woodbridge",
+       "size": "8 awards of 11 applications. Project sizes: Hudson County 1.7 MW, Montclair 2.3 MW, Highland Park 2.4 MW, Woodbridge 2.6 MW, Hoboken 4.375 MW, Neptune 7.8 MW, Atlantic City 20 MW, Trenton (20 MW gas CHP + 4.5 MW PV). Collectively 24 FEMA Category IV and 32 Category III facilities, 10.5 MW PV and 2.9 MW storage.",
+       "price": "$4,000,000 authorised, $4,053,050 requested. Awards: Atlantic City $1,125,000; Montclair $679,500; Hoboken $550,000; Neptune $526,100; Hudson County $376,000; Woodbridge $296,950 (of $350,000 requested); Trenton $250,000; Highland Park $196,450. Estimated design costs ran $196,450 to $4,167,000.",
+       "note": "Order dated 2021-03-03, effective 2021-03-13. Camden County, Middletown Township and Paterson got nothing and the programme closed on depletion. This is the per-site cost chart for civic resilience microgrid DESIGN; note it is design cost only, roughly 10-27% of design cost covered for the larger projects.",
+       "source_idx": 0
+      },
+      {
+       "name": "Phase I TCDER Microgrid Feasibility Study Incentive Program",
+       "year": "2017",
+       "parties": "NJBPU and 13 applicants: Atlantic City, Camden County, Cape May County MUA, Galloway, Highland Park, Hoboken, Hudson County, Middletown, Montclair, Neptune, Paterson, NJ Treasury (Trenton), Woodbridge",
+       "size": "13 feasibility studies, all delivered by 2018-12-31 and all deemed acceptable; Cape May County MUA then withdrew",
+       "price": "$2,133,980 total authorised across 13 orders issued 2017-06-30 (Docket Nos. 0017060629 through 0017060641) — about $164,000 per study",
+       "note": "The full funnel is legible: $2.1M of studies produced 12 eligible projects, $4.0M of design money produced 8 designs, and the programme then closed with no construction funding at all.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "Ignores nuclear — the eligibility rule is about which BUILDINGS are in the cluster, not which machine powers it — and it contains the single most useful regulator finding in this file for a firm non-emitting resource. The Board found that 'existing technology and cost considerations currently do not allow for renewable DERs alone, or renewable DERs coupled with energy storage, to provide the level and length of resilience that critical facilities need' and therefore that 'the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time'. Every one of the eight funded designs proves it: each carries natural gas CHP or gas/diesel gensets, and the Board simultaneously URGES awardees to minimise fossil DER. That is a regulator publicly stating a capability gap it cannot close with the technologies on its own list. The gating constraint for a reactor is not eligibility but the applicant's own certification that the project 'is legally permissible' under existing law, code and standing Board Orders — which for a multi-building municipal cluster means crossing public streets, and therefore squarely raises New Jersey's right-of-way question.",
+     "microreactor_edge": "The size match is almost exact and it is measured, not asserted: six of the eight funded designs sit between 1.7 MW and 4.4 MW, and the median awarded project is about 2.5 MW. A single 1-20 MW unit covers any of them, and covers the two 20 MW outliers (Atlantic City, Trenton) as a small fleet. Crucially these are multi-day-outage resilience assets whose fossil DER exists precisely because storage cannot hold the duration — the one attribute a reactor has for free. The programme's own money is far too small (a $196K-$1.1M design grant) to matter, so the value here is the documented demand shape and the named counterparties, not the funding.",
+     "blockers": [
+      "Board FINDS fossil-fuelled DER 'necessary at this time' — the incumbent is written into the record, not merely tolerated",
+      "Applicant must certify its project is legally permissible under existing law, code and standing Board Orders (Appendix A certification)",
+      "TCDER Microgrid is defined as a cluster of critical facilities 'within a municipal boundary' — a multi-town or regional siting is out of scope",
+      "Only one Basis of Design per applicant; no alternatives and no future expansion capability considered",
+      "Design-stage funding only; the programme closed on depletion of the $4M with no construction tranche",
+      "'An award under this Phase II Incentive Program does not indicate Board approval of any TCDER Microgrid project'",
+      "Board Staff itself recorded 'several regulatory and statutory barriers constraining the wide-spread development of TCDER Microgrids' and directed a separate stakeholder process to identify them"
+     ],
+     "sources": [
+      {
+       "label": "New Jersey Board of Public Utilities — Docket No. QO16100967, Order (Agenda Item 8B, 2021-03-03), TCDER Microgrid Program Phase II Detailed Design Incentive",
+       "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210303/8B%20-%20ORDER%20TCDER%20II.pdf",
+       "quote": "the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time",
+       "status": "fetched"
+      },
+      {
+       "label": "NJBPU Docket No. QO16100967 Order (2021-03-03) — Phase I history and Phase II award summary",
+       "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210303/8B%20-%20ORDER%20TCDER%20II.pdf",
+       "quote": "Collectively, these 8 projects, if implemented, would provide resilience to 24 FEMA Category IV facilities and 32 FEMA Category III facilities.",
+       "status": "fetched"
+      },
+      {
+       "label": "NJBPU — Phase II TCDER Microgrid Incentive Program Application (released 2020-02-19), Docket No. QO16100967",
+       "url": "https://nj.gov/bpu/pdf/energy/Phase%20II%20TCDER%20Microgrid%20Incentive%20Program%20Application%202-19-20.pdf",
+       "quote": "a cluster of critical facilities within a municipal boundary",
+       "status": "snippet-only"
+      }
+     ],
+     "_from": "mech-dockets.json"
     },
     {
      "id": "self-service-single-owner",
@@ -765,7 +901,7 @@
       {
        "label": "South Coast AQMD — Emergency Generators permitting page",
        "url": "https://www.aqmd.gov/home/permits/emergency-generators",
-       "quote": "Testing and maintenance hours are limited, in most cases, to 20 - 50 hours annually pursuant to Rule 1470.",
+       "quote": "and maintenance hours are limited, in most cases, to 20 - 50 hours annually pursuant to Rule 1470.",
        "status": "fetched"
       },
       {
@@ -883,6 +1019,58 @@
      "_from": "mech-diesel.json"
     },
     {
+     "id": "host-owned-reactor-for-process-heat-and-steam",
+     "group": "diesel",
+     "family": "commercial-contract",
+     "name": "Host-owned reactor selling itself steam: the industrial offtaker becomes the NRC licensee",
+     "what_it_is": "The industrial host does not buy power from anyone. It creates a wholly owned single-purpose subsidiary, that subsidiary becomes the NRC construction permit applicant and eventual licensee, and the reactor delivers high-pressure steam and electricity across the fence to the parent's own plant. There is no PPA, no third-party developer owning the asset, and therefore no negotiated price at all - the transfer is internal. The vendor's role collapses to technology supply and EPC. This is the structural inverse of the build-own-operate PPA model, and it is what a buyer chooses when the product is process heat rather than electricity, because heat cannot be wheeled and has no market price.",
+     "who_signs": "Dow Inc. (via wholly owned subsidiary Long Mott Energy, LLC) <-> X-energy as reactor supplier; Long Mott Energy <-> NRC as licence applicant",
+     "asset_owner": "host",
+     "term": "no offtake term - the asset is owned by the consumer of its output",
+     "price_form": "NO PRICE. The output is transferred internally; Dow states only that it expects its cost of energy net of subsidies to be competitive with other firm clean energy.",
+     "precedents": [
+      {
+       "name": "Long Mott Generating Station construction permit application",
+       "year": "2025",
+       "parties": "Long Mott Energy, LLC (wholly owned subsidiary of The Dow Chemical Company) <-> US NRC; X-energy as Xe-100 supplier and ARDP prime",
+       "size": "four Xe-100 high-temperature gas-cooled units, 800 MWt total / 320 MWe, each unit rated 200 MWt of high-pressure, high-temperature steam, at Dow's UCC Seadrift Operations, Calhoun County, Texas",
+       "price": "NO PRICE OR PRICE BASIS IS PUBLISHED - not $/MWh, not $/klb of steam, not $/MMBtu. Dow's only quantitative statement about cost is that it expects the cost of energy, net of all subsidies, to be competitive with other alternatives for firm, clean energy.",
+       "note": "Filed 2025-03-31 under section 103 of the Atomic Energy Act and 10 CFR Part 50; NRC Docket No. 99902117, Docket ID NRC-2025-0079, application package ADAMS ML25090A057. First NRC review of the Xe-100 design. The application includes a separate financial qualification submission (ADAMS ML25090A059). The plant replaces existing energy and steam assets at Seadrift that are near end-of-life - so the true comparator is the avoided cost of rebuilding gas-fired cogeneration, which Dow has not disclosed either. As of August 2026 construction has not begun and the permit decision is expected in the first half of 2027.",
+       "source_idx": 0
+      }
+     ],
+     "nuclear_fit": "Heat changes the contract, not just the product. Electricity has a market price, a wholesale node and a settlement convention; industrial steam has none of those, so a steam deal has to invent its own price basis - usually indexed to the gas price of the boiler it replaces, plus a fixed capacity charge. When the asset is nuclear, the host has a further reason to own rather than buy: the reactor must sit inside the fence to deliver steam at all, so the host is accepting the reactor's siting, security and emergency-planning footprint on its own site regardless of who owns it. Once you have accepted the footprint, third-party ownership buys you much less than it does for a solar farm across the road.",
+     "microreactor_edge": "Dow's four-unit plant is 800 MWt because a large petrochemical complex has an enormous steam load; a 1-20 MW microreactor's thermal output is a few tens of MWt at most, which suits a food-processing plant, a district heat loop, a mine's process circuit or a campus - not a cracker. The commercially decisive difference is the licensee: Dow could afford to stand up a subsidiary, a nuclear organisation and a Part 50 application because it is spreading that overhead across 800 MWt. A single 15 MWt host cannot, which forces the microreactor back into a third-party-owned model where the vendor holds the licence and sells heat - a structure for which no signed, priced precedent exists.",
+     "blockers": [
+      "No published price basis of any kind for nuclear process heat - not $/klb steam, not $/MMBtu, not a gas-index formula",
+      "Host ownership means the industrial company must become an NRC licensee and build a nuclear operating organisation",
+      "The Xe-100 has never been reviewed by the NRC before; Long Mott is the first application of the design",
+      "Steam cannot be wheeled, so there is no alternative buyer and no residual value if the host's plant closes",
+      "Construction had not begun as of August 2026; permit decision expected first half of 2027"
+     ],
+     "sources": [
+      {
+       "label": "Federal Register - Long Mott Energy, LLC.; Long Mott Generating Station; Construction Permit Application (90 FR 18874)",
+       "url": "https://www.federalregister.gov/documents/2025/05/02/2025-07662/long-mott-energy-llc-long-mott-generating-station-construction-permit-application",
+       "quote": "a wholly owned subsidiary of the Dow Chemical Company, filed an application for a construction permit for a four-unit power reactor facility",
+       "status": "fetched"
+      },
+      {
+       "label": "Dow Investor Relations - Dow and X-energy Submit Construction Permit Application to the U.S. Nuclear Regulatory Commission",
+       "url": "https://investors.dow.com/en/news/news-details/2025/Dow-and-X-energy-Submit-Construction-Permit-Application-to-the-U-S--Nuclear-Regulatory-Commission-for-Proposed-Advanced-Nuclear-Project-in-Texas/default.aspx",
+       "quote": "safe, reliable, and clean power and industrial steam replacing existing energy and steam assets that are near end-of-life",
+       "status": "fetched"
+      },
+      {
+       "label": "Dow Investor Relations - Dow and X-energy construction permit announcement (cost statement)",
+       "url": "https://investors.dow.com/en/news/news-details/2025/Dow-and-X-energy-Submit-Construction-Permit-Application-to-the-U-S--Nuclear-Regulatory-Commission-for-Proposed-Advanced-Nuclear-Project-in-Texas/default.aspx",
+       "quote": "Dow expects the cost of energy ‐ net of all subsidies ‐ to be competitive with other alternatives for firm, clean energy.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
+    {
      "id": "cms-health-care-microgrid-categorical-waiver",
      "group": "diesel",
      "family": "regulatory-rule",
@@ -921,7 +1109,7 @@
       {
        "label": "Health Facilities Management — Kaiser Permanente operationalizes microgrid system",
        "url": "https://www.hfmmagazine.com/kaiser-permanente-operationalizes-microgrid-system",
-       "quote": "The battery component was certified by the California Department of Health Care Access and Information to operate as a primary backup power source",
+       "quote": "battery component was certified by the California Department of Health Care Access and Information to operate as a primary backup power source",
        "status": "fetched"
       }
      ],
@@ -1276,7 +1464,7 @@
       {
        "label": "Texas Solar Energy Society — Power When It Matters Most: Texas' Backup Power Package Program",
        "url": "https://txses.org/power-when-it-matters-most-texas-backup-power-package-program/",
-       "quote": "A standardized, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel",
+       "quote": "standardized, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel",
        "status": "fetched"
       }
      ],
@@ -1362,6 +1550,70 @@
   {
    "group": "batteries",
    "records": [
+    {
+     "id": "cpuc-sgip-2025-handbook-eligibility",
+     "group": "batteries",
+     "family": "regulatory-rule",
+     "name": "California Self-Generation Incentive Program — 2025 Handbook eligibility gates (CPUC SGIP)",
+     "what_it_is": "SGIP pays a capacity-based rebate to a Host Customer (or their assigned Payee) for behind-the-meter storage and generation installed on the customer side of the utility meter. The Host Customer owns or leases the equipment, or takes it under a lease/PPA/energy-services agreement — the handbook expressly allows PPAs — and the Program Administrator (PG&E, SCE, SoCalGas, or the Center for Sustainable Energy) pays the incentive against milestone documentation, with performance-based payments metered by an approved Performance Data Provider for five years. The host bears all performance risk; the incentive is a one-time capex offset, not an energy price. Three earlier-pass claims are now confirmed from the handbook itself: the eligible-equipment list is a closed enumeration, there is a 40% minimum electric-efficiency gate expressed as E/F_HHV, and equipment intended solely for emergency backup is ineligible.",
+     "who_signs": "Host Customer <-> SGIP Program Administrator (PG&E / SCE / SoCalGas / Center for Sustainable Energy), under the SGIP Contract; separate host <-> installer/owner agreements (lease, PPA or energy-services agreement) must be handed to the PA",
+     "term": "10-year warranty / contractual-permanence period; 5 years of Performance Data Provider metering; 10-year renewable-fuel audit for fuelled projects",
+     "asset_owner": "host",
+     "price_form": "one-time $/W or $/Wh capacity rebate (grant-funded from ratepayer collections)",
+     "precedents": [
+      {
+       "name": "SGIP statewide ratepayer collection, program years 2020-2024",
+       "year": "2025",
+       "parties": "CPUC; Pacific Gas and Electric $360,000,000; Southern California Edison $280,000,000; Center for Sustainable Energy $99,000,000; Southern California Gas $74,400,000",
+       "size": "88% of the budget allocated to energy storage, 12% to renewable generation; Equity Resiliency alone is 63%",
+       "price": "$813,400,000 total authorized collections; reservations issued through 2025-12-31",
+       "note": "The generation half of the program is 12% of an $813M pot — the storage tail wags this dog.",
+       "source_idx": 0
+      },
+      {
+       "name": "Generation incentive rates and the 3 MW ceiling (2025 Handbook Tables 4.1.3 and 4.2.3)",
+       "year": "2025",
+       "parties": "CPUC Energy Division / SGIP Program Administrators",
+       "size": "incentives paid for up to 3 MW of rated capacity; 100% of base to 1 MW, 75% for >1-2 MW, 50% for >2-3 MW, 0% above 3 MW",
+       "price": "$2.00/W generation base incentive, plus a $2.50/W non-residential Resiliency Adder; storage $0.20-$0.50/Wh stepped, $1.00/Wh flat for Equity Resiliency",
+       "note": "A 3 MW unit taking base + resiliency adder tops out around $9.4M of incentive; a 10 MW unit gets the same $9.4M, because everything above 3 MW earns 0%.",
+       "source_idx": 0
+      }
+     ],
+     "nuclear_fit": "Excluded three separate ways, any one of which is fatal. (1) The eligible-equipment list is a closed enumeration — storage plus eleven named generation technologies (pressure reduction turbines, PV, wind, gas turbines, waste heat to power, microturbines, steam turbine CHP, internal combustion engines, linear generators, fuel cell CHP, fuel cell electric) — with no performance-based route in. (2) The generation budget is a *renewable* generation budget: 'Eligible fuels are those that produce useful energy when undergoing combustion or a chemical reaction and are classified as renewable', and customers 'are required to use 100% renewable fuel for the lifetime of the project'. Fission is neither combustion nor a chemical reaction, and is not renewable in California law. (3) The 40% electrical-efficiency gate is written as E/F_HHV, a ratio of rated electric output to *higher heating value fuel consumption* — a quantity that is undefined for a reactor, so the qualifying test cannot even be evaluated, let alone passed. Separately, the ineligibility of 'Backup systems intended solely for emergency purposes' is confirmed verbatim, and it cuts against diesel gensets as well: an emergency-only genset cannot claim SGIP either.",
+     "microreactor_edge": "SGIP is the clearest place a *relocatable* microreactor is worse off than a fixed one. The handbook's permanence test says only systems permanently installed 'both physically and contractually' are eligible, and it names the disqualifiers: 'unsecured equipment, wheels, carrying handles, dolly, trailer, or platform, will deem the system ineligible'. Factory-built, truck-delivered, take-it-back-at-end-of-life is the microreactor's whole product story and it is the exact fact pattern this clause rejects. The 60-day written notice required before any change of site location or system ownership within the warranty period compounds it. The 3 MW incentive ceiling also caps the subsidy at the very bottom of the 1-20 MW band.",
+     "blockers": [
+      "Eligible Equipment is a closed enumerated list of storage plus 11 named generation technologies; no equivalent-performance pathway",
+      "Renewable Fuel Eligibility (Sec. 7.4): eligible fuels must undergo combustion or a chemical reaction AND be classified as renewable; 100% renewable fuel required for project life",
+      "Operational eligibility (Sec. 7.1): waste-heat utilisation >=5% per P.U. Code 216.6(a), or Electrical Efficiency E/F_HHV >= 40% — both defined over fuel heating value",
+      "Ineligible Equipment: 'Backup systems intended solely for emergency purposes'; also any generation capable of operating on or switching to diesel fuel for start-up or continuous operation",
+      "Permanent-installation test rejects any indication of portability (wheels, trailer, platform, quick disconnects)",
+      "Incentive rated-capacity ceiling of 3 MW, declining from 100% to 0% between 1 MW and 3 MW",
+      "Ineligible customer class: any electrical corporation under P.U. Code 218 that generates or purchases electricity for wholesale or retail sale",
+      "Rebuilt, refurbished or relocated equipment is ineligible"
+     ],
+     "sources": [
+      {
+       "label": "CPUC Energy Division — 2025 Self-Generation Incentive Program Handbook v1, Section 3 'Eligible/Ineligible Equipment' (p.46)",
+       "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+       "quote": "Backup systems intended solely for emergency purposes",
+       "status": "fetched"
+      },
+      {
+       "label": "CPUC 2025 SGIP Handbook v1, Section 7.4 Renewable Fuel Eligibility Requirements (p.62)",
+       "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+       "quote": "Eligible fuels are those that produce useful energy when undergoing combustion or a chemical reaction and are classified as renewable.",
+       "status": "fetched"
+      },
+      {
+       "label": "CPUC 2025 SGIP Handbook v1, Permanent Installation requirement (p.47)",
+       "url": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+       "quote": "unsecured equipment, wheels, carrying handles, dolly, trailer, or platform, will deem the system ineligible",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-dockets.json"
+    },
     {
      "id": "all-source-rfp-guarantee-stack",
      "group": "batteries",
@@ -1468,8 +1720,9 @@
       {
        "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
        "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
-       "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage to a pre-existing, diesel-fueled backup power system",
-       "status": "snippet-only"
+       "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage",
+       "status": "snippet-only",
+       "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
       }
      ],
      "_from": "mech-batteries.json"
@@ -1576,7 +1829,7 @@
       {
        "label": "Kaiser Permanente / PR Newswire — Kaiser Permanente Debuts Largest Hospital-Based Renewable Microgrid in U.S.",
        "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
-       "quote": "The microgrid...will serve as the initial emergency power backup system during commercial power outages.",
+       "quote": "serve as the initial emergency power backup system during commercial power outages.",
        "status": "fetched"
       }
      ],
@@ -1833,13 +2086,13 @@
       {
        "label": "POWER Magazine — Two SCE Gas-Battery Hybrid Projects Revolutionize Peaker Performance",
        "url": "https://www.powermag.com/two-sce-gas-battery-hybrid-projects-revolutionize-peaker-performance/",
-       "quote": "making the Hybrid EGT instantly available around the clock, providing spinning reserves even while the gas turbine is offline",
+       "quote": "available around the clock, providing spinning reserves even while the gas turbine is offline",
        "status": "fetched"
       },
       {
        "label": "Clean Energy Group — The Promise and Pitfalls of Fossil Power Plant Hybridization with Energy Storage",
        "url": "https://www.cleanegroup.org/the-promise-and-pitfalls-of-fossil-power-plant-hybridization-with-energy-storage/",
-       "quote": "at least 13 fossil fuel and battery storage power plant hybrids had been in operation between 2019 and 2022",
+       "quote": "at least 13 fossil fuel and battery storage power plant hybrids",
        "status": "snippet-only"
       }
      ],
@@ -1944,8 +2197,9 @@
       {
        "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
        "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
-       "quote": "the microgrid will furnish power to the 50-bed acute care facility, allowing the hospital to operate as an \"island\"",
-       "status": "snippet-only"
+       "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage",
+       "status": "snippet-only",
+       "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
       }
      ],
      "_from": "mech-batteries.json"
@@ -2163,17 +2417,267 @@
       {
        "label": "Utility Dive - PJM eyes option to jumpstart surplus interconnection pathway (21 Aug 2026)",
        "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-service/828473/",
-       "quote": "Forty-four surplus interconnection projects have come online in MISO and 22 have started operating in SPP's footprint",
+       "quote": "Forty-four surplus interconnection projects have come online in MISO and 22 have started operating in",
        "status": "fetched"
       },
       {
        "label": "Utility Dive - PJM surplus interconnection can support 153 GW of solar, wind, storage: UC Berkeley researchers",
        "url": "https://www.utilitydive.com/news/pjm-surplus-interconnection-sis-solar-wind-storage/758121/",
-       "quote": "Existing generating facilities in the PJM Interconnection have surplus interconnection capacity that could support about 153 GW of solar, wind and storage",
+       "quote": "generating facilities in the PJM Interconnection have surplus interconnection capacity that could support about 153 GW of solar, wind and storage",
        "status": "fetched"
       }
      ],
      "_from": "mech-interconnection.json"
+    },
+    {
+     "id": "aep-ohio-schedule-dct-large-load-tariff",
+     "group": "interconnection",
+     "family": "utility-tariff",
+     "name": "AEP Ohio Schedule DCT (Data Center Tariff), P.U.C.O. No. 22 Sheet 223 — large-load minimum-demand tariff",
+     "what_it_is": "A data centre with an aggregate monthly maximum demand above 25,000 kW at a single location (or aggregated across affiliates in the service territory) signs an Electric Service Agreement with Ohio Power Company under Schedule DCT, plus a Letter of Agreement and a Contribution in Aid of Construction agreement for customer-specific plant. The customer commits to a Contract Capacity for an initial term of the Load Ramp Period plus 8 years and pays a minimum monthly billing demand whether or not it consumes the power, so the utility — not the customer — is protected against stranded network investment. Collateral of 50% of total minimum charges over the whole term is posted at signing unless the customer is A-/A3 rated with liquidity above 10x that amount. The customer must own or hold the exclusive right to use a designated site before signing.",
+     "who_signs": "Data-centre customer <-> Ohio Power Company (AEP Ohio), under an ESA + Letter of Agreement + CIAC agreement, on tariff terms approved by the Public Utilities Commission of Ohio",
+     "asset_owner": "utility",
+     "term": "Load Ramp Period (max 4 years) plus 8 years — so 12 years only when the ramp runs the full 4; 3-year ramp gives 11. Thereafter evergreen on 3 years' written notice.",
+     "price_form": "rate-based: $8.08/kW primary or $9.05/kW secondary distribution demand charge, plus customer charge and all approved riders, applied to a contractual minimum billing demand",
+     "precedents": [
+      {
+       "name": "PUCO Case No. 24-508-EL-ATA — Schedule DCT stipulation adopted",
+       "year": "2025",
+       "parties": "AEP Ohio (Ohio Power Company); PUCO Staff; Office of the Ohio Consumers' Counsel; and other signatory parties",
+       "size": "applies to new data-centre load above 25,000 kW aggregate, and to existing customers expanding by more than 25,000 kW",
+       "price": "minimum billing demand floor; exit fee of 36 months of minimum charges, available only after the fifth year following the ramp",
+       "note": "Order 2025-07-09; compliance tariff filed 2025-07-11; effective 2025-07-23. The sheet now in force was re-issued 2026-04-08 under the Case No. 25-392-EL-AIR rate-case order, effective 2026-04-10 — cite the current sheet, not the 2025 compliance filing.",
+       "source_idx": 0
+      },
+      {
+       "name": "Minimum Demand table and Load Ramp floors, Schedule DCT Sheets 223-1 and 223-4",
+       "year": "2026",
+       "parties": "Ohio Power Company, issued by Marc Reitter, President, AEP Ohio",
+       "size": "Load Ramp Contract Capacity floors of 50% / 65% / 80% / 90% of Contract Capacity in years 1-4",
+       "price": "25,001-75,000 kW: 15,000 kW plus 85% of the marginal amount over 25,000 kW. 75,001 kW and above: 57,500 kW plus 100% of the marginal amount over 75,000 kW, capped at 85% of total contract capacity. Existing Load floor is 60%.",
+       "note": "CORRECTION to the widely reported '85% minimum demand': 85% is the marginal rate in the lower band and the overall cap in the upper band, not the floor. A 25 MW new load's floor is 15 MW = 60% of contract capacity; the marginal rate above 75 MW is 100%, not 85%.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "Ignores nuclear — and that neutrality is the opening. Schedule DCT never enumerates generation technologies. Its 'Customer-Owned Generation and Emergency Conditions' section lets a customer elect to use behind-the-meter generation to offset its Contract Capacity, on one engineering condition: equipment must exist 'to instantaneously curtail load equal to or greater than the behind-the-meter generation output', plus an OAC 4901:1-22 interconnection agreement. Because the customer's exposure is a minimum billing demand rather than metered consumption, a BTM generator that merely shaves energy saves nothing — only lowering Contract Capacity itself does. That makes the netting election the single most valuable clause in the tariff for a reactor developer: every MW of firm on-site capacity that reduces Contract Capacity removes roughly 0.85 MW of minimum billing demand for the full 11-12 year term, and reduces the 50%-of-minimum-charges collateral in proportion. Emergency or backup generation not designed to run in parallel is expressly outside these requirements — the escape hatch a diesel farm uses and a baseload reactor cannot.",
+     "microreactor_edge": "A 25 MW data centre is the smallest load Schedule DCT reaches, and it is served entirely by the top of the 1-20 MW microreactor band or a two-unit plant — so the microreactor is the only reactor class that can address the tariff's entry tier rather than only hyperscale campuses. The instantaneous-curtailment requirement is also easier to satisfy for a small, steadily-loaded unit than for a large one whose trip drops a step the site cannot absorb. Against that, the tariff's site rule ('must own or have the exclusive right to use the land') and the 8-year-post-ramp commitment are indifferent to relocatability, so the microreactor's mobility earns nothing here.",
+     "blockers": [
+      "Minimum billing demand is owed 'regardless of the customer choosing to curtail, reduce, suspend, or terminate service' during the initial term",
+      "Exit only after the fifth year following the Load Ramp Period, and only on paying 36 months of minimum charges",
+      "Collateral of 50% of total minimum charges for the full term unless rated A- (S&P) and A3 (Moody's) with liquidity above 10x that requirement",
+      "Netting BTM output against Contract Capacity requires instantaneous load-curtailment equipment maintained for the term, subject to the transmission provider's technical requirements",
+      "Service may be suspended with Commission approval if usage exceeds Contract Capacity by more than 1,000 kW — including for customers with BTM generation",
+      "New Loads are barred from the 1CP and 6CP Basic Transmission Cost Rider programs",
+      "Affiliate aggregation: all affiliated New Load above 25,000 kW is stacked by energization date to compute Minimum Demand",
+      "Service does not commence 'until the Company has sufficient capacity to meet the contractual load requirements' — the queue, not the contract, sets the date"
+     ],
+     "sources": [
+      {
+       "label": "Ohio Power Company (AEP Ohio) — P.U.C.O. No. 22, Schedule DCT (Data Center Tariff), Original Sheet No. 223-5, effective 2026-04-10 (AEP Ohio Tariff Book, July 24 2026)",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "quote": "contracts under the Schedule shall be made for an initial period of not less than the Load Ramp Period plus 8 years",
+       "status": "fetched"
+      },
+      {
+       "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-4 — Minimum Demand table",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "quote": "57,500 kW plus 100% of marginal amount over 75,000 kW; provided, however, that the minimum demand will not exceed 85% of the total contract capacity.",
+       "status": "fetched"
+      },
+      {
+       "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-7 — Customer-Owned Generation and Emergency Conditions",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "quote": "to instantaneously curtail load equal to or greater than the behind-the-meter generation output",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-dockets.json"
+    },
+    {
+     "id": "doe-ardp-cooperative-agreement-cost-share",
+     "group": "interconnection",
+     "family": "public-procurement",
+     "name": "DOE cost-shared cooperative agreement: the government buys down half the first-of-a-kind capex and owns none of it",
+     "what_it_is": "DOE signs a multi-year cooperative agreement with a developer under which the two sides split total project cost, invoice by invoice, against agreed technical milestones. DOE takes no ownership, no output and no equity; it buys the existence of a first unit. The Energy Policy Act of 2005 sets the default floor - a non-federal share of not less than 50% for demonstration and commercial application activities - and the ARDP funding opportunity applied that floor to every invoice in every year rather than averaging it over the award, which is a materially tighter constraint than a headline 50-50 implies. Because the split is on total project cost, DOE's dollar commitment is a ceiling, not a budget: it only pays out if the developer spends its half first.",
+     "who_signs": "US Department of Energy (Office of Clean Energy Demonstrations / Office of Nuclear Energy) <-> reactor developer, under a cooperative agreement",
+     "asset_owner": "third-party developer",
+     "term": "6-7 years for the ARDP demonstration awards",
+     "price_form": "cost share as a percentage of total project cost - no energy price and no DOE offtake",
+     "precedents": [
+      {
+       "name": "ARDP demonstration awards - TerraPower Natrium and X-energy Xe-100",
+       "year": "2021",
+       "parties": "DOE <-> TerraPower LLC; DOE <-> X-energy",
+       "size": "Natrium, 345 MWe sodium fast reactor with molten-salt storage (boosting to 500 MWe), Kemmerer, Wyoming; Xe-100, four 80 MWe / 200 MWt high-temperature gas units",
+       "price": "Initial funding $160 million, $80 million each. DOE's total ARDP commitment was $3.2 billion over seven years subject to appropriations. GAO recorded DOE awarding TerraPower almost $2 billion and X-energy about $1.2 billion, at a 50-50 split of TOTAL PROJECT COST - which implies total project costs of roughly $4 billion and $2.4 billion respectively.",
+       "note": "The cost-share schedule is not flat. GAO found TerraPower was to cover 60% of project costs in the FIRST year with DOE covering 40%, reverting to 50-50 for the rest of the term - the developer front-loads its own money, the opposite of the Carbon Free Power Project's front-loaded federal share. Awards were announced October 2020 but not executed until February 2021 (X-energy) and May 2021 (TerraPower).",
+       "source_idx": 0
+      },
+      {
+       "name": "X-energy ARDP demonstration relocated, then topped up",
+       "year": "2026",
+       "parties": "DOE <-> X-energy, with Dow added as a sub-awardee under X-energy's ARDP cooperative agreement",
+       "size": "four Xe-100 units, 320 MWe / 800 MWt, at Dow's Seadrift site in Calhoun County, Texas",
+       "price": "An additional $1 billion of DOE cost-shared funding, bringing total DOE support for the Seadrift project to approximately $2.15 billion.",
+       "note": "STATUS CORRECTION: the X-energy ARDP demonstration is no longer in Washington State. GAO's 2022 record - and much writing that still cites it - places the Xe-100 Demonstration at Energy Northwest in Washington. DOE instead made Dow a sub-awardee under X-energy's existing cooperative agreement and the demonstration moved to Texas. As of August 2026 no construction has begun; the NRC construction permit decision is expected in the first half of 2027.",
+       "source_idx": 2
+      }
+     ],
+     "nuclear_fit": "A 50% cost share is the only instrument that has moved a first-of-a-kind reactor from paper to a construction site in the United States, and its structural weakness is exactly the thing it is praised for: because DOE pays a percentage of whatever the project costs, a cost overrun is shared rather than absorbed, so neither party has the incentive a fixed-price contract creates. It also does not solve the offtake problem at all - a fully cost-shared reactor still has no customer, which is what killed the one ARDP-adjacent project that had a price.",
+     "microreactor_edge": "The 50% floor is written as a percentage, so it is technology-neutral and scale-neutral - which quietly disadvantages microreactors twice. First, at $2-4 billion of total project cost a large demonstration can absorb a nine-figure federal award, while a $50-150 million microreactor's 50% is a rounding error to DOE and does not justify the cooperative agreement's administrative load. Second, the developer must fund its half BEFORE invoicing, and for a microreactor firm that means raising the entire unit cost in venture equity anyway - which is why the microreactor cohort ended up in the DOE Reactor Pilot Program's no-money authorisation pathway instead of in ARDP.",
+     "blockers": [
+      "DOE's dollar commitment is 'subject to the availability of future appropriations' - it is a ceiling, not a budget",
+      "The non-federal 50% applies to each invoice each year, so a developer that cannot fund its half stops drawing federal money immediately",
+      "Percentage cost share shares overruns rather than capping them; nobody holds fixed-price risk",
+      "Cost share does not create an offtaker - a fully cost-shared reactor still has no customer",
+      "Widely repeated siting facts from the 2021-22 award record are stale: the Xe-100 demonstration is in Texas, not Washington"
+     ],
+     "sources": [
+      {
+       "label": "US GAO - GAO-22-105394, Nuclear Energy Projects: DOE Should Institutionalize Oversight Plans for Demonstrations of New Reactor Types",
+       "url": "https://www.gao.gov/assets/gao-22-105394.pdf",
+       "quote": "TerraPower was to cover 60 percent of project costs during the first year of the award, and DOE was to cover the remaining 40 percent.",
+       "status": "fetched"
+      },
+      {
+       "label": "US Department of Energy - U.S. Department of Energy Announces $160 Million in First Awards under Advanced Reactor Demonstration Program",
+       "url": "https://www.energy.gov/ne/articles/us-department-energy-announces-160-million-first-awards-under-advanced-reactor",
+       "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations, with our industry partners providing matching funds.",
+       "status": "fetched"
+      },
+      {
+       "label": "ANS Nuclear Newswire - X-energy, TerraPower share updates on advanced reactor projects",
+       "url": "https://www.ans.org/news/2026-08-17/article-8297/xenergy-terrapower-share-updates-on-advanced-reactor-projects/",
+       "quote": "the first advanced reactor deployment of its kind at an industrial site in North America",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
+    {
+     "id": "im-indiana-tariff-ip-large-load-46097",
+     "group": "interconnection",
+     "family": "utility-tariff",
+     "name": "Indiana Michigan Power Tariff I.P. large-load terms (IURC Cause No. 46097) — the second-state comparison to AEP Ohio",
+     "what_it_is": "Indiana Michigan Power's Industrial Power tariff was modified by an unopposed settlement among I&M, the Indiana Office of Utility Consumer Counselor, Citizens Action Coalition, Amazon Data Services, the Data Center Coalition, Google and Microsoft, approved by the IURC on 2025-02-19. A customer at or above 70 MW at one plant, or 150 MW aggregated across affiliated premises of 1 MW or more, becomes a 'Large Load Customer' and signs an Electric Services Agreement fixing contract capacity, load ramp and term. Minimum monthly billing demand never falls below 80% of contract capacity, and collateral equals 24 times the maximum monthly non-fuel bill. Same commercial idea as AEP Ohio Schedule DCT, materially different numbers — which is why running both matters.",
+     "who_signs": "Large Load Customer <-> Indiana Michigan Power Company, via an Electric Services Agreement under Tariff I.P., approved by the Indiana Utility Regulatory Commission",
+     "asset_owner": "utility",
+     "term": "Initial Contract Term not less than 12 years, which begins only AFTER a Load Ramp Period of up to 5 years — a total commitment of up to 17 years. 42 months' written notice to discontinue.",
+     "price_form": "rate-based; minimum monthly charge = monthly service charge + minimum demand charge x monthly billing demand + Step 1 embedded capacity charge x billing demand + energy blocks",
+     "precedents": [
+      {
+       "name": "IURC Cause No. 46097 — Order approving the Tariff I.P. large-load settlement",
+       "year": "2025",
+       "parties": "Indiana Michigan Power Company; Indiana OUCC; Citizens Action Coalition of Indiana; Amazon Data Services; Data Center Coalition; Google LLC; Microsoft Corporation",
+       "size": "contract capacity >= 70 MW at an individual plant, or >= 150 MW aggregated across premises each of 1 MW or larger; applies to new or expanded load on or after 2024-01-01",
+       "price": "80% minimum monthly billing demand; collateral = 24 x maximum monthly non-fuel bill; exit fee equals the nominal remaining Minimum Charge over an Exit Fee Period of 1-5 years",
+       "note": "Order issued 2025-02-19 (Huston, Bennett, Freeman, Veleta and Ziegner concurring). Commission modified the settlement to require that any mutually agreed capacity reduction beyond 20% come back to the Commission for approval. Semi-annual Large Load Customer reports are filed under seal as trade secret.",
+       "source_idx": 0
+      },
+      {
+       "name": "Contractual flexibility terms — the price of walking away",
+       "year": "2025",
+       "parties": "Settling Parties in Cause No. 46097",
+       "size": "up to 20% capacity reduction free of charge, but only after year 5 and on 42 months' notice tied to the PJM Delivery Year",
+       "price": "beyond 20%, an Exit Fee equal to the nominal remaining Minimum Charge for the terminated capacity, net of the OSS/PJM Rider contribution",
+       "note": "Cross-state comparison: AEP Ohio Schedule DCT charges a flat 36 months of minimum charges to exit after year 5 post-ramp; I&M charges the full remaining minimum over a 1-5 year Exit Fee Period on 42 months' notice.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "Ignores nuclear, and then closes the door the Ohio tariff leaves open. Tariff I.P.'s Special Terms are explicit that a customer with its own generation buys standby service and must 'contract for the maximum amount of demand in kW which the Company might be required to furnish' — so behind-the-meter generation does not reduce the contracted demand, it defines it. Layered on the 80% minimum billing demand, a Large Load Customer with an on-site reactor still owes 80% of a contract capacity sized to full backup. Worse, the tariff's standing path for customer generation routes to 'Rider NMS (Net Metering Service Rider), Tariff COGEN/SPP or by special agreement with the Company' — and a fission plant is neither a cogeneration facility nor a PURPA small power production facility, whose fuel must be biomass, waste, renewable resources or geothermal. A reactor host in I&M territory therefore has exactly one route, the bilateral special agreement, with no tariffed terms to fall back on. This is the sharpest contrast in the file: Ohio lets BTM output offset Contract Capacity subject to instantaneous curtailment; Indiana makes BTM output irrelevant to the bill.",
+     "microreactor_edge": "Nothing helpful, and that is the finding. The 70 MW single-plant threshold is 2.8x AEP Ohio's 25 MW, so no single microreactor and no plausible small fleet reaches the tier at all — a 1-20 MW unit is invisible to this tariff except as the on-site generator of a customer who is already there for other reasons. The 150 MW affiliate-aggregation rule with a 1 MW per-premises floor also means a distributed fleet of small sites can be swept into Large Load status collectively while no individual site qualifies for anything.",
+     "blockers": [
+      "80% minimum monthly billing demand floor on contract capacity, and on the highest billing demand of the past 11 months",
+      "Standby/backup service requires contracting for the full maximum demand the Company might have to furnish — BTM generation cannot reduce it",
+      "Customer generation routed to Rider NMS, Tariff COGEN/SPP, or a bilateral special agreement; nuclear qualifies for neither PURPA category",
+      "Initial Contract Term of 12 years starts only after a Load Ramp Period of up to 5 years",
+      "42 months' written notice, aligned to the PJM Delivery Year, before any reduction or termination",
+      "Any mutually agreed reduction beyond 20% must be approved by the Commission (Ordering Paragraph 3)",
+      "Collateral of 24x the maximum monthly non-fuel bill, recomputed annually, unless A-/A3 rated with 10x liquidity",
+      "Large Load Customer reports are confidential trade secret under Ind. Code 24-2-3-2 — the comparables are sealed"
+     ],
+     "sources": [
+      {
+       "label": "Indiana Utility Regulatory Commission — Cause No. 46097, Order of the Commission, approved 2025-02-19",
+       "url": "https://www.in.gov/iurc/files/ord_46097_021925.pdf",
+       "quote": "The Settlement Agreement, a copy of which is attached to this Order, is approved as modified herein.",
+       "status": "fetched"
+      },
+      {
+       "label": "IURC Cause No. 46097 — Stipulation and Settlement Agreement, Monthly Billing Demand clause (filed 2024-11-22)",
+       "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/4aae5d78-18a9-ef11-8a6a-001dd80bd98a/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46097_IndMich_Submission+of+Unopposed+Settlement+Agreement+and+Unopposed+Motion+for+Acceptance+of+Out+of+Time+Filing_112224.pdf",
+       "quote": "in no event be less than the greater of (a) 80 percent of the Large Load Customer’s contract capacity",
+       "status": "fetched"
+      },
+      {
+       "label": "IURC Cause No. 46097 — Settlement Agreement Attachment A, revised Tariff I.P. Sheet No. 21.3, Special Terms and Conditions",
+       "url": "https://iurc.portal.in.gov/_entity/sharepointdocumentlocation/4aae5d78-18a9-ef11-8a6a-001dd80bd98a/bb9c6bba-fd52-45ad-8e64-a444aef13c39?file=46097_IndMich_Submission+of+Unopposed+Settlement+Agreement+and+Unopposed+Motion+for+Acceptance+of+Out+of+Time+Filing_112224.pdf",
+       "quote": "Customers with cogeneration and/or small power production facilities shall take service under Rider NMS (Net Metering Service Rider), Tariff COGEN/SPP or by special agreement",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-dockets.json"
+    },
+    {
+     "id": "rate-regulated-utility-ownership-small-reactor",
+     "group": "interconnection",
+     "family": "utility-tariff",
+     "name": "Rate-regulated utility ownership: the reactor goes in the rate base, not into a PPA",
+     "what_it_is": "A regulated utility - or a Crown corporation under an economic regulator - owns the reactor outright, capitalises it, and recovers construction cost plus an allowed return through regulated rates. There is no offtaker and no price per MWh negotiated with anyone: the counterparty is the entire captive customer base, and the 'contract' is a commission order setting payment amounts. This is the only structure in which a small reactor's full capital cost has ever been published, because rate regulation forces disclosure that a bilateral PPA does not. It is also the structure that puts 100% of construction-cost overrun risk on ratepayers unless the commission disallows it.",
+     "who_signs": "Regulated utility or Crown generator <-> its economic regulator (Ontario Energy Board; for TVA, its own Board under the TVA Act)",
+     "asset_owner": "utility",
+     "term": "60-year design life recovered over a regulated depreciation schedule",
+     "price_form": "rate-based - allowed return on capital recovered through regulated payment amounts",
+     "precedents": [
+      {
+       "name": "Darlington New Nuclear Project (DNNP) - four BWRX-300 units",
+       "year": "2025",
+       "parties": "Ontario Power Generation <-> Government of Ontario / Ontario Energy Board; Canada Growth Fund and Building Ontario Fund as equity investors",
+       "size": "4 x BWRX-300, up to 1,200 MW total, Darlington, Ontario",
+       "price": "CAD 20.9 billion total for all four units. First unit CAD 6.1 billion plus CAD 1.6 billion of shared infrastructure (CAD 7.7 billion for phase one); fourth unit estimated CAD 4.1 billion, about 33% below the first. OPG's projected levelised cost is about 14.9 Canadian cents per kWh over a 60-year life - that is OPG's own projection, not a contracted price. Unit one alone is roughly CAD 20,300 per kW before the shared infrastructure is counted.",
+       "note": "THE BEST PUBLIC CAPITAL-COST NUMBER FOR ANY SMALL REACTOR. Crucially, the CAD 20.9 billion is an all-in figure on a basis most projects exclude: OPG states it covers licensing, engineering, procurement, construction, operations readiness, contingency, INTEREST and escalation over the ten-year build. Comparing it to an overnight cost understates it; comparing an overnight cost to it overstates the gap. The contingency exists but its size has not been published. Financing: Canada Growth Fund put in CAD 2 billion for 15% and Building Ontario Fund CAD 1 billion for 7.5%, with OPG remaining majority owner - CAD 3 billion of the CAD 20.9 billion is government equity, explicitly to de-risk the project until private capital will enter.",
+       "source_idx": 0
+      },
+      {
+       "name": "TVA Clinch River BWRX-300",
+       "year": "2025",
+       "parties": "Tennessee Valley Authority <-> its own Board; NRC construction permit application docketed 2025",
+       "size": "one BWRX-300, roughly 300 MWe, Oak Ridge, Tennessee",
+       "price": "No total project cost has been published by TVA. What is public is the incremental development spend its Board has authorised: $200 million approved February 2022 and a further $150 million in April 2024, for $350 million to date on design and development alone - before any construction commitment.",
+       "note": "TVA is federally owned and self-financing, so there is no state commission order to disallow a cost overrun and no adversarial rate proceeding in which a total cost has to be defended. A widely cited overnight cost of $17,949/kW in 2024 dollars is an intervenor's reading of TVA filings (David Schlissel, reported by the Southern Alliance for Clean Energy), not a figure TVA has published, and it should be cited that way.",
+       "source_idx": 2
+      }
+     ],
+     "nuclear_fit": "Rate-basing is the oldest way to finance a reactor and remains the only one that has actually produced a published all-in number for a small unit. What nuclear changes is who absorbs the overrun: in a PPA the developer eats it, in a rate base the customer does, which is why commissions resist and why the two North American small-reactor rate-base cases are both public or Crown entities (OPG, TVA) rather than investor-owned utilities. Note also that PacifiCorp's route to TerraPower's 345 MWe Natrium unit at Kemmerer is a power purchase agreement, not ownership - and PacifiCorp has not disclosed the price, so even the utility-adjacent case does not yield a number.",
+     "microreactor_edge": "A 1-20 MW unit is too small to matter to a rate base and too small to justify the proceeding. OPG's CAD 6.1 billion first unit is a project a regulator will spend two years examining; a CAD 60-100 million microreactor is below the threshold at which most commissions open a certificate proceeding at all, and its cost disappears inside a utility's ordinary capital budget. The consequence cuts both ways: the microreactor escapes the prudence review that OPG's unit must survive, and it also never generates the public cost disclosure that review produces - which is exactly why no microreactor capital cost is public and OPG's is.",
+     "blockers": [
+      "No US state commission has approved rate-basing a reactor under 100 MW; every rate-base precedent found is 300 MW-class or larger",
+      "OPG's CAD 20.9 billion includes interest and escalation, so it is routinely mis-compared against overnight costs that exclude both",
+      "TVA has published no total cost for Clinch River, only $350 million of authorised development spend",
+      "PacifiCorp's Natrium offtake is a PPA with an undisclosed price, so the largest US utility-linked small-reactor deal produces no comparator either",
+      "Ratepayers, not the developer, carry construction overrun risk in this structure"
+     ],
+     "sources": [
+      {
+       "label": "World Nuclear News - Canada's first SMR project: How is CAD20.9 billion cost calculated?",
+       "url": "https://world-nuclear-news.org/articles/what-is-the-budget-for-canadas-first-smr-project",
+       "quote": "everything needed to build the new nuclear plant, including licensing, engineering, procurement, construction, operations readiness, contingency, interest and escalation",
+       "status": "fetched"
+      },
+      {
+       "label": "World Nuclear News - OPG secures government equity financing for SMR project",
+       "url": "https://www.world-nuclear-news.org/articles/opg-secures-government-equity-financing-for-smr-project",
+       "quote": "invest in a large-scale rate-regulated asset with rates subject to oversight and approval by the Ontario Energy Board",
+       "status": "fetched"
+      },
+      {
+       "label": "Power Engineering - TVA approves more funding for advanced nuclear reactors",
+       "url": "https://www.power-eng.com/nuclear/tva-approves-more-funding-for-advanced-nuclear-reactors/",
+       "quote": "$350 million in nuclear funding for the SMR project",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
     },
     {
      "id": "co-located-load-btmg",
@@ -2216,7 +2720,7 @@
       {
        "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
        "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
-       "quote": "dedicated to a single customer's electric load and would not be physically connected to the electric grid",
+       "quote": "electric load and would not be physically connected to the electric grid",
        "status": "fetched"
       },
       {
@@ -2587,7 +3091,7 @@
       {
        "label": "American Public Power Association - Backlog of power plants seeking transmission grid connection eased somewhat in 2025: LBNL",
        "url": "https://www.publicpower.org/periodical/article/backlog-power-plants-seeking-transmission-grid-connection-eased-somewhat-2025-lbnl",
-       "quote": "The median duration from submitting a request to signing an IA was well over 3 years in 2025.",
+       "quote": "median duration from submitting a request to signing an IA was well over 3 years in",
        "status": "fetched"
       },
       {
@@ -2598,55 +3102,6 @@
       }
      ],
      "_from": "mech-interconnection.json"
-    },
-    {
-     "id": "surplus-interconnection-uptake",
-     "group": "interconnection",
-     "family": "regulatory-rule",
-     "name": "Surplus interconnection has stopped being theoretical",
-     "what_it_is": "FERC Order 845 let a new generator use the unused capacity of an existing interconnection instead of joining the queue. The open question was never whether the rule existed but whether anyone used it. Searching FERC eLibrary for filings whose description names a Surplus Interconnection Service Agreement returns 71 filings, of which 35 name a specific counterparty agreement — and those 35 run 1 in 2022, 3 in 2023, 3 in 2024, 9 in 2025 and 19 in 2026 through August, across 37 distinct dockets. The instrument is in routine use and its use is roughly doubling year on year. Every counterparty is solar, storage or wind.",
-     "who_signs": "New generator <-> transmission provider, filed at FERC as a service agreement under the provider's tariff",
-     "asset_owner": "the new generator",
-     "term": "life of the interconnection service",
-     "price_form": "no queue position and, in principle, no new network upgrade cost — the value is schedule, not tariff",
-     "precedents": [
-      {
-       "name": "Alabama Power / Decatur Solar Energy Center and Decatur Energy Storage",
-       "year": "2026",
-       "parties": "Alabama Power Company; Decatur Solar Energy Center, LLC; Decatur Energy Storage, LLC",
-       "note": "Accepted 2026-02-12 as Service Agreement No. 867 under docket ER26-803. A solar plant and a battery sharing one inherited point of interconnection is the archetypal use.",
-       "source_idx": 0
-      },
-      {
-       "name": "Alabama Power / Cabokenze Energy Storage and White Oak Solar",
-       "year": "2026",
-       "parties": "Alabama Power Company; Cabokenze Energy Storage, LLC; White Oak Solar, LLC",
-       "note": "Accepted 2026-04-27 under docket ER26-1547 — the same pattern again ten weeks later, which is what routine use looks like.",
-       "source_idx": 1
-      }
-     ],
-     "nuclear_fit": "Nothing in the rule excludes a reactor, and this is the strongest schedule argument available to one: the alternative is a cluster study measured in years. The practical constraint is that surplus capacity exists where a plant is retiring or running below its interconnection rating, which points at coal and gas sites rather than greenfield ones — and those sites come with a site-suitability question the NRC, not FERC, decides.",
-     "microreactor_edge": "Surplus capacity is usually a modest slice of a retired plant's rating, which suits a machine sized in single-digit megawatts far better than one sized in hundreds. A microreactor can fit inside the leftover headroom of an existing connection; a large reactor generally cannot, and would have to justify a new one. Not one of the 71 filings involves a reactor of any size, so this remains an argument rather than a precedent.",
-     "blockers": [
-      "Surplus capacity only exists where an incumbent generator is retiring or under-running its rating",
-      "The census counts filings, not megawatts — no filing description states how much capacity was inherited",
-      "Zero reactor precedent: the instrument's entire track record is solar, storage and wind"
-     ],
-     "sources": [
-      {
-       "label": "FERC eLibrary — ER26-803-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260212-3058)",
-       "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260212-3058",
-       "quote": "filing of a Surplus Interconnection Service Agreement with Decatur Solar Energy Center, LLC and Decatur Energy Storage, LLC",
-       "status": "fetched"
-      },
-      {
-       "label": "FERC eLibrary — ER26-1547-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260427-3019)",
-       "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3019",
-       "quote": "Surplus Interconnection Service Agreement with Cabokenze Energy Storage, LLC and White Oak Solar, LLC",
-       "status": "fetched"
-      }
-     ],
-     "_from": "mech-ferc-census.json"
     },
     {
      "id": "comed-bronzeville-icc-17-0331",
@@ -2743,7 +3198,7 @@
       {
        "label": "Power Engineering - Onsite gas turbines, reciprocating engines to power Meta data center",
        "url": "https://www.power-eng.com/onsite-power/onsite-gas-turbines-reciprocating-engines-to-power-meta-data-center/",
-       "quote": "dedicated to a single customer's electric load and would not be physically connected to the electric grid",
+       "quote": "electric load and would not be physically connected to the electric grid",
        "status": "fetched"
       },
       {
@@ -2857,7 +3312,7 @@
       {
        "label": "Energy Toolbase - Fast Track Interconnection Process is Streamlined with Integration Capacity Analysis within California's Rule 21",
        "url": "https://www.energytoolbase.com/blog/policyupdate/californias-rule-21/",
-       "quote": "the new standard timeline for interconnection-related distribution upgrades is 120 business days: 60 business days for design and 60 business days for construction",
+       "quote": "new standard timeline for interconnection-related distribution upgrades is 120 business days: 60 business days for design and 60 business days for construction",
        "status": "snippet-only"
       }
      ],
@@ -2911,10 +3366,62 @@
        "label": "DSIRE - Interconnection Standards for Small Generators (FERC Orders 792 / 792-A)",
        "url": "https://programs.dsireusa.org/system/program/detail/2774/interconnection-standards-for-small-generators",
        "quote": "adopted new \"small generator\" interconnection standards for distributed energy resources up to 20 megawatts (MW) in capacity",
-       "status": "snippet-only"
+       "status": "snippet-only",
+       "note": "The host returns no article text to a non-browser client, so the quote is search-corroborated rather than read in a fetched page."
       }
      ],
      "_from": "mech-interconnection.json"
+    },
+    {
+     "id": "surplus-interconnection-uptake",
+     "group": "interconnection",
+     "family": "regulatory-rule",
+     "name": "Surplus interconnection has stopped being theoretical",
+     "what_it_is": "FERC Order 845 let a new generator use the unused capacity of an existing interconnection instead of joining the queue. The open question was never whether the rule existed but whether anyone used it. Searching FERC eLibrary for filings whose description names a Surplus Interconnection Service Agreement returns 71 filings, of which 35 name a specific counterparty agreement — and those 35 run 1 in 2022, 3 in 2023, 3 in 2024, 9 in 2025 and 19 in 2026 through August, across 37 distinct dockets. The instrument is in routine use and its use is roughly doubling year on year. Every counterparty is solar, storage or wind.",
+     "who_signs": "New generator <-> transmission provider, filed at FERC as a service agreement under the provider's tariff",
+     "asset_owner": "the new generator",
+     "term": "life of the interconnection service",
+     "price_form": "no queue position and, in principle, no new network upgrade cost — the value is schedule, not tariff",
+     "precedents": [
+      {
+       "name": "Alabama Power / Decatur Solar Energy Center and Decatur Energy Storage",
+       "year": "2026",
+       "parties": "Alabama Power Company; Decatur Solar Energy Center, LLC; Decatur Energy Storage, LLC",
+       "note": "Accepted 2026-02-12 as Service Agreement No. 867 under docket ER26-803. A solar plant and a battery sharing one inherited point of interconnection is the archetypal use.",
+       "source_idx": 0
+      },
+      {
+       "name": "Alabama Power / Cabokenze Energy Storage and White Oak Solar",
+       "year": "2026",
+       "parties": "Alabama Power Company; Cabokenze Energy Storage, LLC; White Oak Solar, LLC",
+       "note": "Accepted 2026-04-27 under docket ER26-1547 — the same pattern again ten weeks later, which is what routine use looks like.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "Nothing in the rule excludes a reactor, and this is the strongest schedule argument available to one: the alternative is a cluster study measured in years. The practical constraint is that surplus capacity exists where a plant is retiring or running below its interconnection rating, which points at coal and gas sites rather than greenfield ones — and those sites come with a site-suitability question the NRC, not FERC, decides.",
+     "microreactor_edge": "Surplus capacity is usually a modest slice of a retired plant's rating, which suits a machine sized in single-digit megawatts far better than one sized in hundreds. A microreactor can fit inside the leftover headroom of an existing connection; a large reactor generally cannot, and would have to justify a new one. Not one of the 71 filings involves a reactor of any size, so this remains an argument rather than a precedent.",
+     "blockers": [
+      "Surplus capacity only exists where an incumbent generator is retiring or under-running its rating",
+      "The census counts filings, not megawatts — no filing description states how much capacity was inherited",
+      "Zero reactor precedent: the instrument's entire track record is solar, storage and wind"
+     ],
+     "sources": [
+      {
+       "label": "FERC eLibrary — ER26-803-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260212-3058)",
+       "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260212-3058",
+       "quote": "filing of a Surplus Interconnection Service Agreement with Decatur Solar Energy Center, LLC and Decatur Energy Storage, LLC",
+       "status": "snippet-only",
+       "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
+      },
+      {
+       "label": "FERC eLibrary — ER26-1547-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260427-3019)",
+       "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3019",
+       "quote": "Surplus Interconnection Service Agreement with Cabokenze Energy Storage, LLC and White Oak Solar, LLC",
+       "status": "snippet-only",
+       "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
+      }
+     ],
+     "_from": "mech-ferc-census.json"
     },
     {
      "id": "co-location-docket-concentration",
@@ -2955,10 +3462,62 @@
        "label": "FERC eLibrary — docket AD24-11, technical conference on co-located large loads (census of 64 co-located-load filings, 42 of them in AD24-11 during 2024)",
        "url": "https://elibrary.ferc.gov/eLibrary/search?docket=AD24-11",
        "quote": "co-located load",
-       "status": "fetched"
+       "status": "snippet-only",
+       "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
       }
      ],
      "_from": "mech-ferc-census.json"
+    },
+    {
+     "id": "joint-action-subscription-target-price",
+     "group": "interconnection",
+     "family": "utility-tariff",
+     "name": "Municipal joint-action subscription against a published target power price",
+     "what_it_is": "A joint-action agency forms a single-purpose LLC, takes the DOE cost share into it, and then sells subscriptions in the plant's output to its member municipal utilities. Each member commits to a share of capacity and pays its share of cost; the agency publishes a target power price that the subscription is sold against, and members hold off-ramps at defined decision points. This is the only nuclear structure that has ever produced a published, project-specific dollars-per-megawatt-hour figure for a small reactor - and the reason it exists is that municipal boards cannot vote on a subscription without a number. The same transparency is what killed the project.",
+     "who_signs": "Utah Associated Municipal Power Systems (via Carbon Free Power Project, LLC) <-> its member municipal utilities; separately CFPP LLC <-> DOE",
+     "asset_owner": "public agency (a special purpose entity wholly owned by the joint-action agency)",
+     "term": "10-year DOE award term; subscriptions with member off-ramps at defined economic-competitiveness milestones",
+     "price_form": "$/MWh target power price, published and revised",
+     "precedents": [
+      {
+       "name": "Carbon Free Power Project - target power price revision",
+       "year": "2023",
+       "parties": "UAMPS / CFPP LLC <-> NuScale Power; DOE as cost-share provider",
+       "size": "six 77 MWe NuScale modules, 462 MWe, at Idaho National Laboratory",
+       "price": "$89 per megawatt hour. THIS IS THE ONLY PUBLISHED TARGET POWER PRICE FOR A SMALL MODULAR REACTOR IN THE UNITED STATES. It was announced in January 2023 as a revision upward from an earlier target in the mid-to-high $50s/MWh, driven by commodity and interest-rate escalation. Note that the plant was also downsized from twelve modules to six between 2020 and 2023, so the price rise and the capacity cut happened together.",
+       "note": "STATUS: TERMINATED. On 2023-11-08 UAMPS and NuScale mutually agreed to end the project for lack of subscription. DOE's award was up to $1.4 billion and was structured with a front-loaded federal share - at least 70% for the first four years, 23% over the life of the project - the opposite profile to ARDP. Roughly $232 million had been disbursed at termination.",
+       "source_idx": 0
+      }
+     ],
+     "nuclear_fit": "Every other nuclear commercial structure hides its price: the Oklo/Equinix letter of intent has its price term redacted, the Eielson award has no published price, PacifiCorp will not disclose its Natrium PPA price, and Dow says only that it expects its cost of energy net of subsidies to be competitive. CFPP is the exception because a joint-action agency's members are public bodies that vote in public. The lesson is uncomfortable and worth stating plainly: the one small-reactor project that published a price could not sell its output at that price.",
+     "microreactor_edge": "The subscription model is a way of assembling many small buyers into one large plant - the opposite of the microreactor thesis, which is to put one small plant next to one buyer. At 1-20 MW there is nothing to subscribe: a single host takes the whole output, so there is no committee, no public vote, and correspondingly no published price. That is precisely why the microreactor sector has no price benchmark and the 300 MW-class sector has exactly one.",
+     "blockers": [
+      "The project was terminated in November 2023; $89/MWh is a historical target price, never a delivered one",
+      "Target price rose roughly 50% in about two years while the plant shrank from twelve modules to six",
+      "Member off-ramps mean subscription can evaporate at each milestone, which is what happened",
+      "A front-loaded federal cost share leaves the taxpayer exposed to early termination - DOE had disbursed about $232 million"
+     ],
+     "sources": [
+      {
+       "label": "NuScale Power - NuScale Reaches Key Milestone in the Development of the Carbon Free Power Project",
+       "url": "https://www.nuscalepower.com/press-releases/2023/nuscale-reaches-key-milestone-in-the-development-of-the-carbon-free-power-project",
+       "quote": "six, 77-megawatt modules to generate 462 megawatts of carbon-free electricity",
+       "status": "fetched"
+      },
+      {
+       "label": "World Nuclear News - Idaho SMR project terminated",
+       "url": "https://www.world-nuclear-news.org/Articles/Idaho-SMR-project-terminated",
+       "quote": "the US Department of Energy approved a multi-year cost share award to CFPP LLC of up to USD1.4 billion",
+       "status": "fetched"
+      },
+      {
+       "label": "US GAO - GAO-22-105394, Nuclear Energy Projects (Carbon Free Power Project cost-share structure)",
+       "url": "https://www.gao.gov/assets/gao-22-105394.pdf",
+       "quote": "The total federal cost share will be 23 percent over the life of the project.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
     },
     {
      "id": "reservation-fee-rofr-mfn-offtake",
@@ -3125,6 +3684,127 @@
   {
    "group": "licensing",
    "records": [
+    {
+     "id": "price-anderson-financial-protection-tiers",
+     "group": "licensing",
+     "family": "regulatory-rule",
+     "name": "Price-Anderson financial protection: a mandatory contract term, priced by reactor size in the regulation itself",
+     "what_it_is": "Every NRC power reactor licensee must carry financial protection against public liability, and must sign an indemnity agreement with the Commission. This is not background regulation - it is a term the licensee executes, an insurance premium it pays annually, and a contingent liability it must disclose to lenders and to any offtaker doing diligence. The size of the obligation is set in 10 CFR Part 140 as a step function of reactor size, and the steps are enormous. Crucially, the top tier - a $500 million primary layer plus mandatory participation in the industry retrospective pool - attaches only to reactors rated 100,000 electrical kilowatts or more. Everything smaller sits in a much cheaper regime.",
+     "who_signs": "NRC licensee <-> US Nuclear Regulatory Commission (indemnity agreement under section 170 of the Atomic Energy Act), plus the licensee <-> nuclear liability insurer",
+     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
+     "term": "for the life of the licence; the indemnity agreement runs with it",
+     "price_form": "annual insurance premium plus a contingent deferred premium assessed only after an incident",
+     "precedents": [
+      {
+       "name": "10 CFR 140.11(a)(4) - reactors of 100,000 electrical kilowatts or more",
+       "year": "2024",
+       "parties": "NRC <-> every large power reactor licensee",
+       "size": "any power reactor rated at or above 100 MWe",
+       "price": "$500,000,000 of primary financial protection PLUS mandatory participation in the industry retrospective rating plan. The deferred premium is capped at $158,026,000 per reactor per nuclear incident, payable at no more than $24,714,000 per incident within one calendar year. Multi-unit sites of 100-300 MWe units totalling no more than 1,300,000 electrical kilowatts count as a single reactor for this assessment.",
+       "note": "The retrospective premium is the real liability: it is a several, contingent obligation to pay up to $158 million per reactor after somebody else's accident. It has to be disclosed, and it prices into a lender's covenants.",
+       "source_idx": 0
+      },
+      {
+       "name": "10 CFR 140.11(a)(1)-(3) and 10 CFR 140.12 - everything below 100 MWe",
+       "year": "2024",
+       "parties": "NRC <-> small and micro reactor licensees",
+       "size": "reactors up to 10 MWt by fixed tier, and above 10 MWt but below 100 MWe by formula",
+       "price": "$1,000,000 at or below 10 kWt; $1,500,000 above 10 kWt to 1 MWt; $2,500,000 above 1 MWt to 10 MWt. Above that and below 100 MWe, 10 CFR 140.12 sets financial protection at $185 per thermal kilowatt multiplied by a population factor of 1.0 to 2.0, subject to a hard floor of $4,500,000 and a hard ceiling of $74,000,000.",
+       "note": "Worked example for a microreactor: a 20 MWt unit gives a base of $185 x 20,000 kWt = $3.7 million; even at the maximum population factor of 2.0 that is $7.4 million, and at the minimum population factor the $4,500,000 floor binds. The population factor is computed over minor civil divisions inside a circle whose radius in miles equals the square root of the thermal rating in MW - for a 20 MWt unit that circle is about 4.5 miles, which is why a remote site lands at factor 1.0.",
+       "source_idx": 2
+      }
+     ],
+     "nuclear_fit": "There is no analogue in a gas or solar contract. A solar developer carries commercial general liability; a reactor licensee signs a federal indemnity agreement, buys a statutorily specified layer of nuclear liability insurance, and - above 100 MWe - accepts a several contingent obligation for other operators' accidents. For an offtaker's diligence this is the clearest example of a term that exists only because the asset is nuclear, and it is one of the few such terms with an exact published dollar amount rather than a qualitative requirement.",
+     "microreactor_edge": "This is the sharpest quantitative 1-20 MW versus 300 MW distinction in the whole file, and it runs in the microreactor's favour by two orders of magnitude. A 300 MWe unit must carry $500,000,000 of primary protection and accept a contingent $158,026,000 retrospective assessment. A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and it is not assessed the deferred premium because the retrospective plan applies to reactors of 100,000 electrical kilowatts or more. A microreactor's Price-Anderson obligation is roughly 1% of a large reactor's, set by a formula in the regulation rather than by negotiation.",
+     "blockers": [
+      "The 10 CFR 140.12 population factor is computed from Census minor civil divisions, so an urban or campus site is penalised up to 2x relative to a remote one",
+      "The $4,500,000 floor binds for any microreactor below about 24 MWt at population factor 1.0, so the smallest units get no further reduction for being smaller",
+      "Whether a sub-100 MWe licensee can DRAW on the industry secondary layer it does not pay into was not verified in this pass - only that it is not assessed",
+      "The dollar figures are periodically adjusted for inflation, so any number quoted in a contract must name its CFR edition"
+     ],
+     "sources": [
+      {
+       "label": "10 CFR 140.11, Amounts of financial protection for certain reactors (CFR 2024 edition, govinfo)",
+       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
+       "quote": "In an amount equal to the sum of $500,000,000 and the amount available as secondary financial protection",
+       "status": "fetched"
+      },
+      {
+       "label": "10 CFR 140.11(a)(4), deferred premium cap (CFR 2024 edition, govinfo)",
+       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
+       "quote": "no more than $158,026,000 with respect to any nuclear incident",
+       "status": "fetched"
+      },
+      {
+       "label": "10 CFR 140.12, Amount of financial protection required for other reactors (CFR 2024 edition, govinfo)",
+       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-12.pdf",
+       "quote": "be less than $4,500,000 or more than $74,000,000",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
+    {
+     "id": "reactor-only-obligations-decommissioning-operators-security",
+     "group": "licensing",
+     "family": "regulatory-rule",
+     "name": "The obligations a reactor deal must fund that a gas or solar deal never mentions",
+     "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
+     "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
+     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
+     "term": "funded before or during operation; the decommissioning certification is filed with the licence application and adjusted annually",
+     "price_form": "no price - these are cost obligations that must be recovered inside whatever price is charged",
+     "precedents": [
+      {
+       "name": "10 CFR 50.75(c)(1) minimum decommissioning funding - the floor that does not scale down",
+       "year": "2024",
+       "parties": "NRC <-> every power reactor licensee and combined licence applicant",
+       "size": "applies to all power reactors regardless of size",
+       "price": "In January 1986 dollars: a PWR at or above 3400 MWt must certify $105 million; between 1200 and 3400 MWt the formula is $(75 + 0.0088P) where P is thermal megawatts. THE CRITICAL CLAUSE: 'For a PWR of less than 1200 MWt, use P = 1200 MWt.' So a 20 MWt microreactor certifies the same $85.56 million (1986 dollars) as a 1200 MWt plant - 60 times its thermal rating. For a BWR the formula is $(104 + 0.009P) with the same substitution, giving $114.8 million. The certified amount must then be escalated annually by a factor at least equal to 0.65L + 0.13E + 0.22B, where L and E are Bureau of Labor Statistics labour and energy escalators and B is the waste burial escalator from NUREG-1307.",
+       "note": "Two further points that matter commercially. First, the table lists only PWRs and BWRs - a high-temperature gas, sodium-cooled or heat-pipe microreactor is not in it at all, so its amount has to come from a site-specific estimate rather than the table, which removes the certainty the table was meant to provide. Second, 50.75(a) expressly notes that decommissioning funding may also be regulated by FERC or a state PUC with rate jurisdiction, and that the NRC amount is additional to, not a substitute for, those requirements.",
+       "source_idx": 0
+      },
+      {
+       "name": "Proposed 10 CFR Part 57 - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
+       "year": "2026",
+       "parties": "NRC <-> future microreactor licensees; Docket ID NRC-2025-0379, proposed rule published 2026-05-01",
+       "size": "microreactors and reactors of comparable risk profile; explicitly aimed at high-volume deployment",
+       "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
+       "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's.",
+     "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones.",
+     "blockers": [
+      "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
+      "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
+      "Part 57 is a proposed rule published 2026-05-01; it confers nothing on a deal signed now",
+      "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
+      "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive"
+     ],
+     "sources": [
+      {
+       "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
+       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol1/pdf/CFR-2024-title10-vol1-sec50-75.pdf",
+       "quote": "funds will be available for the decommissioning process",
+       "status": "fetched"
+      },
+      {
+       "label": "Federal Register - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed rule, NRC-2025-0379)",
+       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+       "quote": "An emergency planning zone (EPZ) would not be defined for facilities licensed under proposed part 57.",
+       "status": "fetched"
+      },
+      {
+       "label": "Federal Register - proposed 10 CFR Part 57 (physical security and force-on-force)",
+       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+       "quote": "it would not be appropriate to require force-on-force exercises to evaluate the performance of these facilities",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
     {
      "id": "doe-authorization-ota-test-reactor",
      "group": "licensing",

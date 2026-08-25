@@ -13,7 +13,8 @@
    "The Small Generator Interconnection Agreement query returned 811 hits against a 200 cap, so no year-shape is reported for it here; a capped list is a floor, not a total.",
    "None of the underlying letter orders was opened: FERC serves them as DOCX transmittals and the census is built from the search API's own description strings.",
    "The census counts filings, not megawatts. No filing description states the MW inherited, so the size distribution of surplus interconnection is unknown from this method.",
-   "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact."
+   "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact.",
+   "Three cited hosts serve only a JavaScript shell to non-browser clients (elibrary.ferc.gov, programs.dsireusa.org); those sources are marked snippet-only rather than left claiming a fetch that did not happen."
   ]
  },
  "mechanisms": [
@@ -55,13 +56,15 @@
      "label": "FERC eLibrary — ER26-803-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260212-3058)",
      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260212-3058",
      "quote": "filing of a Surplus Interconnection Service Agreement with Decatur Solar Energy Center, LLC and Decatur Energy Storage, LLC",
-     "status": "fetched"
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
     },
     {
      "label": "FERC eLibrary — ER26-1547-000, letter order accepting a Surplus Interconnection Service Agreement (accession 20260427-3019)",
      "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260427-3019",
      "quote": "Surplus Interconnection Service Agreement with Cabokenze Energy Storage, LLC and White Oak Solar, LLC",
-     "status": "fetched"
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
     }
    ]
   },
@@ -104,7 +107,8 @@
      "label": "FERC eLibrary — docket AD24-11, technical conference on co-located large loads (census of 64 co-located-load filings, 42 of them in AD24-11 during 2024)",
      "url": "https://elibrary.ferc.gov/eLibrary/search?docket=AD24-11",
      "quote": "co-located load",
-     "status": "fetched"
+     "status": "snippet-only",
+     "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
     }
    ]
   }

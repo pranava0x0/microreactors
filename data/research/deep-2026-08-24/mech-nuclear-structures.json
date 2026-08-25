@@ -321,6 +321,406 @@
      "status": "fetched"
     }
    ]
+  },
+  {
+   "id": "rate-regulated-utility-ownership-small-reactor",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "Rate-regulated utility ownership: the reactor goes in the rate base, not into a PPA",
+   "what_it_is": "A regulated utility - or a Crown corporation under an economic regulator - owns the reactor outright, capitalises it, and recovers construction cost plus an allowed return through regulated rates. There is no offtaker and no price per MWh negotiated with anyone: the counterparty is the entire captive customer base, and the 'contract' is a commission order setting payment amounts. This is the only structure in which a small reactor's full capital cost has ever been published, because rate regulation forces disclosure that a bilateral PPA does not. It is also the structure that puts 100% of construction-cost overrun risk on ratepayers unless the commission disallows it.",
+   "who_signs": "Regulated utility or Crown generator <-> its economic regulator (Ontario Energy Board; for TVA, its own Board under the TVA Act)",
+   "asset_owner": "utility",
+   "term": "60-year design life recovered over a regulated depreciation schedule",
+   "price_form": "rate-based - allowed return on capital recovered through regulated payment amounts",
+   "precedents": [
+    {
+     "name": "Darlington New Nuclear Project (DNNP) - four BWRX-300 units",
+     "year": "2025",
+     "parties": "Ontario Power Generation <-> Government of Ontario / Ontario Energy Board; Canada Growth Fund and Building Ontario Fund as equity investors",
+     "size": "4 x BWRX-300, up to 1,200 MW total, Darlington, Ontario",
+     "price": "CAD 20.9 billion total for all four units. First unit CAD 6.1 billion plus CAD 1.6 billion of shared infrastructure (CAD 7.7 billion for phase one); fourth unit estimated CAD 4.1 billion, about 33% below the first. OPG's projected levelised cost is about 14.9 Canadian cents per kWh over a 60-year life - that is OPG's own projection, not a contracted price. Unit one alone is roughly CAD 20,300 per kW before the shared infrastructure is counted.",
+     "note": "THE BEST PUBLIC CAPITAL-COST NUMBER FOR ANY SMALL REACTOR. Crucially, the CAD 20.9 billion is an all-in figure on a basis most projects exclude: OPG states it covers licensing, engineering, procurement, construction, operations readiness, contingency, INTEREST and escalation over the ten-year build. Comparing it to an overnight cost understates it; comparing an overnight cost to it overstates the gap. The contingency exists but its size has not been published. Financing: Canada Growth Fund put in CAD 2 billion for 15% and Building Ontario Fund CAD 1 billion for 7.5%, with OPG remaining majority owner - CAD 3 billion of the CAD 20.9 billion is government equity, explicitly to de-risk the project until private capital will enter.",
+     "source_idx": 0
+    },
+    {
+     "name": "TVA Clinch River BWRX-300",
+     "year": "2025",
+     "parties": "Tennessee Valley Authority <-> its own Board; NRC construction permit application docketed 2025",
+     "size": "one BWRX-300, roughly 300 MWe, Oak Ridge, Tennessee",
+     "price": "No total project cost has been published by TVA. What is public is the incremental development spend its Board has authorised: $200 million approved February 2022 and a further $150 million in April 2024, for $350 million to date on design and development alone - before any construction commitment.",
+     "note": "TVA is federally owned and self-financing, so there is no state commission order to disallow a cost overrun and no adversarial rate proceeding in which a total cost has to be defended. A widely cited overnight cost of $17,949/kW in 2024 dollars is an intervenor's reading of TVA filings (David Schlissel, reported by the Southern Alliance for Clean Energy), not a figure TVA has published, and it should be cited that way.",
+     "source_idx": 2
+    }
+   ],
+   "nuclear_fit": "Rate-basing is the oldest way to finance a reactor and remains the only one that has actually produced a published all-in number for a small unit. What nuclear changes is who absorbs the overrun: in a PPA the developer eats it, in a rate base the customer does, which is why commissions resist and why the two North American small-reactor rate-base cases are both public or Crown entities (OPG, TVA) rather than investor-owned utilities. Note also that PacifiCorp's route to TerraPower's 345 MWe Natrium unit at Kemmerer is a power purchase agreement, not ownership - and PacifiCorp has not disclosed the price, so even the utility-adjacent case does not yield a number.",
+   "microreactor_edge": "A 1-20 MW unit is too small to matter to a rate base and too small to justify the proceeding. OPG's CAD 6.1 billion first unit is a project a regulator will spend two years examining; a CAD 60-100 million microreactor is below the threshold at which most commissions open a certificate proceeding at all, and its cost disappears inside a utility's ordinary capital budget. The consequence cuts both ways: the microreactor escapes the prudence review that OPG's unit must survive, and it also never generates the public cost disclosure that review produces - which is exactly why no microreactor capital cost is public and OPG's is.",
+   "blockers": [
+    "No US state commission has approved rate-basing a reactor under 100 MW; every rate-base precedent found is 300 MW-class or larger",
+    "OPG's CAD 20.9 billion includes interest and escalation, so it is routinely mis-compared against overnight costs that exclude both",
+    "TVA has published no total cost for Clinch River, only $350 million of authorised development spend",
+    "PacifiCorp's Natrium offtake is a PPA with an undisclosed price, so the largest US utility-linked small-reactor deal produces no comparator either",
+    "Ratepayers, not the developer, carry construction overrun risk in this structure"
+   ],
+   "sources": [
+    {
+     "label": "World Nuclear News - Canada's first SMR project: How is CAD20.9 billion cost calculated?",
+     "url": "https://world-nuclear-news.org/articles/what-is-the-budget-for-canadas-first-smr-project",
+     "quote": "everything needed to build the new nuclear plant, including licensing, engineering, procurement, construction, operations readiness, contingency, interest and escalation",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News - OPG secures government equity financing for SMR project",
+     "url": "https://www.world-nuclear-news.org/articles/opg-secures-government-equity-financing-for-smr-project",
+     "quote": "invest in a large-scale rate-regulated asset with rates subject to oversight and approval by the Ontario Energy Board",
+     "status": "fetched"
+    },
+    {
+     "label": "Power Engineering - TVA approves more funding for advanced nuclear reactors",
+     "url": "https://www.power-eng.com/nuclear/tva-approves-more-funding-for-advanced-nuclear-reactors/",
+     "quote": "$350 million in nuclear funding for the SMR project",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "doe-ardp-cooperative-agreement-cost-share",
+   "group": "interconnection",
+   "family": "public-procurement",
+   "name": "DOE cost-shared cooperative agreement: the government buys down half the first-of-a-kind capex and owns none of it",
+   "what_it_is": "DOE signs a multi-year cooperative agreement with a developer under which the two sides split total project cost, invoice by invoice, against agreed technical milestones. DOE takes no ownership, no output and no equity; it buys the existence of a first unit. The Energy Policy Act of 2005 sets the default floor - a non-federal share of not less than 50% for demonstration and commercial application activities - and the ARDP funding opportunity applied that floor to every invoice in every year rather than averaging it over the award, which is a materially tighter constraint than a headline 50-50 implies. Because the split is on total project cost, DOE's dollar commitment is a ceiling, not a budget: it only pays out if the developer spends its half first.",
+   "who_signs": "US Department of Energy (Office of Clean Energy Demonstrations / Office of Nuclear Energy) <-> reactor developer, under a cooperative agreement",
+   "asset_owner": "third-party developer",
+   "term": "6-7 years for the ARDP demonstration awards",
+   "price_form": "cost share as a percentage of total project cost - no energy price and no DOE offtake",
+   "precedents": [
+    {
+     "name": "ARDP demonstration awards - TerraPower Natrium and X-energy Xe-100",
+     "year": "2021",
+     "parties": "DOE <-> TerraPower LLC; DOE <-> X-energy",
+     "size": "Natrium, 345 MWe sodium fast reactor with molten-salt storage (boosting to 500 MWe), Kemmerer, Wyoming; Xe-100, four 80 MWe / 200 MWt high-temperature gas units",
+     "price": "Initial funding $160 million, $80 million each. DOE's total ARDP commitment was $3.2 billion over seven years subject to appropriations. GAO recorded DOE awarding TerraPower almost $2 billion and X-energy about $1.2 billion, at a 50-50 split of TOTAL PROJECT COST - which implies total project costs of roughly $4 billion and $2.4 billion respectively.",
+     "note": "The cost-share schedule is not flat. GAO found TerraPower was to cover 60% of project costs in the FIRST year with DOE covering 40%, reverting to 50-50 for the rest of the term - the developer front-loads its own money, the opposite of the Carbon Free Power Project's front-loaded federal share. Awards were announced October 2020 but not executed until February 2021 (X-energy) and May 2021 (TerraPower).",
+     "source_idx": 0
+    },
+    {
+     "name": "X-energy ARDP demonstration relocated, then topped up",
+     "year": "2026",
+     "parties": "DOE <-> X-energy, with Dow added as a sub-awardee under X-energy's ARDP cooperative agreement",
+     "size": "four Xe-100 units, 320 MWe / 800 MWt, at Dow's Seadrift site in Calhoun County, Texas",
+     "price": "An additional $1 billion of DOE cost-shared funding, bringing total DOE support for the Seadrift project to approximately $2.15 billion.",
+     "note": "STATUS CORRECTION: the X-energy ARDP demonstration is no longer in Washington State. GAO's 2022 record - and much writing that still cites it - places the Xe-100 Demonstration at Energy Northwest in Washington. DOE instead made Dow a sub-awardee under X-energy's existing cooperative agreement and the demonstration moved to Texas. As of August 2026 no construction has begun; the NRC construction permit decision is expected in the first half of 2027.",
+     "source_idx": 2
+    }
+   ],
+   "nuclear_fit": "A 50% cost share is the only instrument that has moved a first-of-a-kind reactor from paper to a construction site in the United States, and its structural weakness is exactly the thing it is praised for: because DOE pays a percentage of whatever the project costs, a cost overrun is shared rather than absorbed, so neither party has the incentive a fixed-price contract creates. It also does not solve the offtake problem at all - a fully cost-shared reactor still has no customer, which is what killed the one ARDP-adjacent project that had a price.",
+   "microreactor_edge": "The 50% floor is written as a percentage, so it is technology-neutral and scale-neutral - which quietly disadvantages microreactors twice. First, at $2-4 billion of total project cost a large demonstration can absorb a nine-figure federal award, while a $50-150 million microreactor's 50% is a rounding error to DOE and does not justify the cooperative agreement's administrative load. Second, the developer must fund its half BEFORE invoicing, and for a microreactor firm that means raising the entire unit cost in venture equity anyway - which is why the microreactor cohort ended up in the DOE Reactor Pilot Program's no-money authorisation pathway instead of in ARDP.",
+   "blockers": [
+    "DOE's dollar commitment is 'subject to the availability of future appropriations' - it is a ceiling, not a budget",
+    "The non-federal 50% applies to each invoice each year, so a developer that cannot fund its half stops drawing federal money immediately",
+    "Percentage cost share shares overruns rather than capping them; nobody holds fixed-price risk",
+    "Cost share does not create an offtaker - a fully cost-shared reactor still has no customer",
+    "Widely repeated siting facts from the 2021-22 award record are stale: the Xe-100 demonstration is in Texas, not Washington"
+   ],
+   "sources": [
+    {
+     "label": "US GAO - GAO-22-105394, Nuclear Energy Projects: DOE Should Institutionalize Oversight Plans for Demonstrations of New Reactor Types",
+     "url": "https://www.gao.gov/assets/gao-22-105394.pdf",
+     "quote": "TerraPower was to cover 60 percent of project costs during the first year of the award, and DOE was to cover the remaining 40 percent.",
+     "status": "fetched"
+    },
+    {
+     "label": "US Department of Energy - U.S. Department of Energy Announces $160 Million in First Awards under Advanced Reactor Demonstration Program",
+     "url": "https://www.energy.gov/ne/articles/us-department-energy-announces-160-million-first-awards-under-advanced-reactor",
+     "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations, with our industry partners providing matching funds.",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS Nuclear Newswire - X-energy, TerraPower share updates on advanced reactor projects",
+     "url": "https://www.ans.org/news/2026-08-17/article-8297/xenergy-terrapower-share-updates-on-advanced-reactor-projects/",
+     "quote": "the first advanced reactor deployment of its kind at an industrial site in North America",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "joint-action-subscription-target-price",
+   "group": "interconnection",
+   "family": "utility-tariff",
+   "name": "Municipal joint-action subscription against a published target power price",
+   "what_it_is": "A joint-action agency forms a single-purpose LLC, takes the DOE cost share into it, and then sells subscriptions in the plant's output to its member municipal utilities. Each member commits to a share of capacity and pays its share of cost; the agency publishes a target power price that the subscription is sold against, and members hold off-ramps at defined decision points. This is the only nuclear structure that has ever produced a published, project-specific dollars-per-megawatt-hour figure for a small reactor - and the reason it exists is that municipal boards cannot vote on a subscription without a number. The same transparency is what killed the project.",
+   "who_signs": "Utah Associated Municipal Power Systems (via Carbon Free Power Project, LLC) <-> its member municipal utilities; separately CFPP LLC <-> DOE",
+   "asset_owner": "public agency (a special purpose entity wholly owned by the joint-action agency)",
+   "term": "10-year DOE award term; subscriptions with member off-ramps at defined economic-competitiveness milestones",
+   "price_form": "$/MWh target power price, published and revised",
+   "precedents": [
+    {
+     "name": "Carbon Free Power Project - target power price revision",
+     "year": "2023",
+     "parties": "UAMPS / CFPP LLC <-> NuScale Power; DOE as cost-share provider",
+     "size": "six 77 MWe NuScale modules, 462 MWe, at Idaho National Laboratory",
+     "price": "$89 per megawatt hour. THIS IS THE ONLY PUBLISHED TARGET POWER PRICE FOR A SMALL MODULAR REACTOR IN THE UNITED STATES. It was announced in January 2023 as a revision upward from an earlier target in the mid-to-high $50s/MWh, driven by commodity and interest-rate escalation. Note that the plant was also downsized from twelve modules to six between 2020 and 2023, so the price rise and the capacity cut happened together.",
+     "note": "STATUS: TERMINATED. On 2023-11-08 UAMPS and NuScale mutually agreed to end the project for lack of subscription. DOE's award was up to $1.4 billion and was structured with a front-loaded federal share - at least 70% for the first four years, 23% over the life of the project - the opposite profile to ARDP. Roughly $232 million had been disbursed at termination.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Every other nuclear commercial structure hides its price: the Oklo/Equinix letter of intent has its price term redacted, the Eielson award has no published price, PacifiCorp will not disclose its Natrium PPA price, and Dow says only that it expects its cost of energy net of subsidies to be competitive. CFPP is the exception because a joint-action agency's members are public bodies that vote in public. The lesson is uncomfortable and worth stating plainly: the one small-reactor project that published a price could not sell its output at that price.",
+   "microreactor_edge": "The subscription model is a way of assembling many small buyers into one large plant - the opposite of the microreactor thesis, which is to put one small plant next to one buyer. At 1-20 MW there is nothing to subscribe: a single host takes the whole output, so there is no committee, no public vote, and correspondingly no published price. That is precisely why the microreactor sector has no price benchmark and the 300 MW-class sector has exactly one.",
+   "blockers": [
+    "The project was terminated in November 2023; $89/MWh is a historical target price, never a delivered one",
+    "Target price rose roughly 50% in about two years while the plant shrank from twelve modules to six",
+    "Member off-ramps mean subscription can evaporate at each milestone, which is what happened",
+    "A front-loaded federal cost share leaves the taxpayer exposed to early termination - DOE had disbursed about $232 million"
+   ],
+   "sources": [
+    {
+     "label": "NuScale Power - NuScale Reaches Key Milestone in the Development of the Carbon Free Power Project",
+     "url": "https://www.nuscalepower.com/press-releases/2023/nuscale-reaches-key-milestone-in-the-development-of-the-carbon-free-power-project",
+     "quote": "six, 77-megawatt modules to generate 462 megawatts of carbon-free electricity",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News - Idaho SMR project terminated",
+     "url": "https://www.world-nuclear-news.org/Articles/Idaho-SMR-project-terminated",
+     "quote": "the US Department of Energy approved a multi-year cost share award to CFPP LLC of up to USD1.4 billion",
+     "status": "fetched"
+    },
+    {
+     "label": "US GAO - GAO-22-105394, Nuclear Energy Projects (Carbon Free Power Project cost-share structure)",
+     "url": "https://www.gao.gov/assets/gao-22-105394.pdf",
+     "quote": "The total federal cost share will be 23 percent over the life of the project.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "host-owned-reactor-for-process-heat-and-steam",
+   "group": "diesel",
+   "family": "commercial-contract",
+   "name": "Host-owned reactor selling itself steam: the industrial offtaker becomes the NRC licensee",
+   "what_it_is": "The industrial host does not buy power from anyone. It creates a wholly owned single-purpose subsidiary, that subsidiary becomes the NRC construction permit applicant and eventual licensee, and the reactor delivers high-pressure steam and electricity across the fence to the parent's own plant. There is no PPA, no third-party developer owning the asset, and therefore no negotiated price at all - the transfer is internal. The vendor's role collapses to technology supply and EPC. This is the structural inverse of the build-own-operate PPA model, and it is what a buyer chooses when the product is process heat rather than electricity, because heat cannot be wheeled and has no market price.",
+   "who_signs": "Dow Inc. (via wholly owned subsidiary Long Mott Energy, LLC) <-> X-energy as reactor supplier; Long Mott Energy <-> NRC as licence applicant",
+   "asset_owner": "host",
+   "term": "no offtake term - the asset is owned by the consumer of its output",
+   "price_form": "NO PRICE. The output is transferred internally; Dow states only that it expects its cost of energy net of subsidies to be competitive with other firm clean energy.",
+   "precedents": [
+    {
+     "name": "Long Mott Generating Station construction permit application",
+     "year": "2025",
+     "parties": "Long Mott Energy, LLC (wholly owned subsidiary of The Dow Chemical Company) <-> US NRC; X-energy as Xe-100 supplier and ARDP prime",
+     "size": "four Xe-100 high-temperature gas-cooled units, 800 MWt total / 320 MWe, each unit rated 200 MWt of high-pressure, high-temperature steam, at Dow's UCC Seadrift Operations, Calhoun County, Texas",
+     "price": "NO PRICE OR PRICE BASIS IS PUBLISHED - not $/MWh, not $/klb of steam, not $/MMBtu. Dow's only quantitative statement about cost is that it expects the cost of energy, net of all subsidies, to be competitive with other alternatives for firm, clean energy.",
+     "note": "Filed 2025-03-31 under section 103 of the Atomic Energy Act and 10 CFR Part 50; NRC Docket No. 99902117, Docket ID NRC-2025-0079, application package ADAMS ML25090A057. First NRC review of the Xe-100 design. The application includes a separate financial qualification submission (ADAMS ML25090A059). The plant replaces existing energy and steam assets at Seadrift that are near end-of-life - so the true comparator is the avoided cost of rebuilding gas-fired cogeneration, which Dow has not disclosed either. As of August 2026 construction has not begun and the permit decision is expected in the first half of 2027.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "Heat changes the contract, not just the product. Electricity has a market price, a wholesale node and a settlement convention; industrial steam has none of those, so a steam deal has to invent its own price basis - usually indexed to the gas price of the boiler it replaces, plus a fixed capacity charge. When the asset is nuclear, the host has a further reason to own rather than buy: the reactor must sit inside the fence to deliver steam at all, so the host is accepting the reactor's siting, security and emergency-planning footprint on its own site regardless of who owns it. Once you have accepted the footprint, third-party ownership buys you much less than it does for a solar farm across the road.",
+   "microreactor_edge": "Dow's four-unit plant is 800 MWt because a large petrochemical complex has an enormous steam load; a 1-20 MW microreactor's thermal output is a few tens of MWt at most, which suits a food-processing plant, a district heat loop, a mine's process circuit or a campus - not a cracker. The commercially decisive difference is the licensee: Dow could afford to stand up a subsidiary, a nuclear organisation and a Part 50 application because it is spreading that overhead across 800 MWt. A single 15 MWt host cannot, which forces the microreactor back into a third-party-owned model where the vendor holds the licence and sells heat - a structure for which no signed, priced precedent exists.",
+   "blockers": [
+    "No published price basis of any kind for nuclear process heat - not $/klb steam, not $/MMBtu, not a gas-index formula",
+    "Host ownership means the industrial company must become an NRC licensee and build a nuclear operating organisation",
+    "The Xe-100 has never been reviewed by the NRC before; Long Mott is the first application of the design",
+    "Steam cannot be wheeled, so there is no alternative buyer and no residual value if the host's plant closes",
+    "Construction had not begun as of August 2026; permit decision expected first half of 2027"
+   ],
+   "sources": [
+    {
+     "label": "Federal Register - Long Mott Energy, LLC.; Long Mott Generating Station; Construction Permit Application (90 FR 18874)",
+     "url": "https://www.federalregister.gov/documents/2025/05/02/2025-07662/long-mott-energy-llc-long-mott-generating-station-construction-permit-application",
+     "quote": "a wholly owned subsidiary of the Dow Chemical Company, filed an application for a construction permit for a four-unit power reactor facility",
+     "status": "fetched"
+    },
+    {
+     "label": "Dow Investor Relations - Dow and X-energy Submit Construction Permit Application to the U.S. Nuclear Regulatory Commission",
+     "url": "https://investors.dow.com/en/news/news-details/2025/Dow-and-X-energy-Submit-Construction-Permit-Application-to-the-U-S--Nuclear-Regulatory-Commission-for-Proposed-Advanced-Nuclear-Project-in-Texas/default.aspx",
+     "quote": "safe, reliable, and clean power and industrial steam replacing existing energy and steam assets that are near end-of-life",
+     "status": "fetched"
+    },
+    {
+     "label": "Dow Investor Relations - Dow and X-energy construction permit announcement (cost statement)",
+     "url": "https://investors.dow.com/en/news/news-details/2025/Dow-and-X-energy-Submit-Construction-Permit-Application-to-the-U-S--Nuclear-Regulatory-Commission-for-Proposed-Advanced-Nuclear-Project-in-Texas/default.aspx",
+     "quote": "Dow expects the cost of energy ‐ net of all subsidies ‐ to be competitive with other alternatives for firm, clean energy.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "price-anderson-financial-protection-tiers",
+   "group": "licensing",
+   "family": "regulatory-rule",
+   "name": "Price-Anderson financial protection: a mandatory contract term, priced by reactor size in the regulation itself",
+   "what_it_is": "Every NRC power reactor licensee must carry financial protection against public liability, and must sign an indemnity agreement with the Commission. This is not background regulation - it is a term the licensee executes, an insurance premium it pays annually, and a contingent liability it must disclose to lenders and to any offtaker doing diligence. The size of the obligation is set in 10 CFR Part 140 as a step function of reactor size, and the steps are enormous. Crucially, the top tier - a $500 million primary layer plus mandatory participation in the industry retrospective pool - attaches only to reactors rated 100,000 electrical kilowatts or more. Everything smaller sits in a much cheaper regime.",
+   "who_signs": "NRC licensee <-> US Nuclear Regulatory Commission (indemnity agreement under section 170 of the Atomic Energy Act), plus the licensee <-> nuclear liability insurer",
+   "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
+   "term": "for the life of the licence; the indemnity agreement runs with it",
+   "price_form": "annual insurance premium plus a contingent deferred premium assessed only after an incident",
+   "precedents": [
+    {
+     "name": "10 CFR 140.11(a)(4) - reactors of 100,000 electrical kilowatts or more",
+     "year": "2024",
+     "parties": "NRC <-> every large power reactor licensee",
+     "size": "any power reactor rated at or above 100 MWe",
+     "price": "$500,000,000 of primary financial protection PLUS mandatory participation in the industry retrospective rating plan. The deferred premium is capped at $158,026,000 per reactor per nuclear incident, payable at no more than $24,714,000 per incident within one calendar year. Multi-unit sites of 100-300 MWe units totalling no more than 1,300,000 electrical kilowatts count as a single reactor for this assessment.",
+     "note": "The retrospective premium is the real liability: it is a several, contingent obligation to pay up to $158 million per reactor after somebody else's accident. It has to be disclosed, and it prices into a lender's covenants.",
+     "source_idx": 0
+    },
+    {
+     "name": "10 CFR 140.11(a)(1)-(3) and 10 CFR 140.12 - everything below 100 MWe",
+     "year": "2024",
+     "parties": "NRC <-> small and micro reactor licensees",
+     "size": "reactors up to 10 MWt by fixed tier, and above 10 MWt but below 100 MWe by formula",
+     "price": "$1,000,000 at or below 10 kWt; $1,500,000 above 10 kWt to 1 MWt; $2,500,000 above 1 MWt to 10 MWt. Above that and below 100 MWe, 10 CFR 140.12 sets financial protection at $185 per thermal kilowatt multiplied by a population factor of 1.0 to 2.0, subject to a hard floor of $4,500,000 and a hard ceiling of $74,000,000.",
+     "note": "Worked example for a microreactor: a 20 MWt unit gives a base of $185 x 20,000 kWt = $3.7 million; even at the maximum population factor of 2.0 that is $7.4 million, and at the minimum population factor the $4,500,000 floor binds. The population factor is computed over minor civil divisions inside a circle whose radius in miles equals the square root of the thermal rating in MW - for a 20 MWt unit that circle is about 4.5 miles, which is why a remote site lands at factor 1.0.",
+     "source_idx": 2
+    }
+   ],
+   "nuclear_fit": "There is no analogue in a gas or solar contract. A solar developer carries commercial general liability; a reactor licensee signs a federal indemnity agreement, buys a statutorily specified layer of nuclear liability insurance, and - above 100 MWe - accepts a several contingent obligation for other operators' accidents. For an offtaker's diligence this is the clearest example of a term that exists only because the asset is nuclear, and it is one of the few such terms with an exact published dollar amount rather than a qualitative requirement.",
+   "microreactor_edge": "This is the sharpest quantitative 1-20 MW versus 300 MW distinction in the whole file, and it runs in the microreactor's favour by two orders of magnitude. A 300 MWe unit must carry $500,000,000 of primary protection and accept a contingent $158,026,000 retrospective assessment. A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and it is not assessed the deferred premium because the retrospective plan applies to reactors of 100,000 electrical kilowatts or more. A microreactor's Price-Anderson obligation is roughly 1% of a large reactor's, set by a formula in the regulation rather than by negotiation.",
+   "blockers": [
+    "The 10 CFR 140.12 population factor is computed from Census minor civil divisions, so an urban or campus site is penalised up to 2x relative to a remote one",
+    "The $4,500,000 floor binds for any microreactor below about 24 MWt at population factor 1.0, so the smallest units get no further reduction for being smaller",
+    "Whether a sub-100 MWe licensee can DRAW on the industry secondary layer it does not pay into was not verified in this pass - only that it is not assessed",
+    "The dollar figures are periodically adjusted for inflation, so any number quoted in a contract must name its CFR edition"
+   ],
+   "sources": [
+    {
+     "label": "10 CFR 140.11, Amounts of financial protection for certain reactors (CFR 2024 edition, govinfo)",
+     "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
+     "quote": "In an amount equal to the sum of $500,000,000 and the amount available as secondary financial protection",
+     "status": "fetched"
+    },
+    {
+     "label": "10 CFR 140.11(a)(4), deferred premium cap (CFR 2024 edition, govinfo)",
+     "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
+     "quote": "no more than $158,026,000 with respect to any nuclear incident",
+     "status": "fetched"
+    },
+    {
+     "label": "10 CFR 140.12, Amount of financial protection required for other reactors (CFR 2024 edition, govinfo)",
+     "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-12.pdf",
+     "quote": "be less than $4,500,000 or more than $74,000,000",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "reactor-only-obligations-decommissioning-operators-security",
+   "group": "licensing",
+   "family": "regulatory-rule",
+   "name": "The obligations a reactor deal must fund that a gas or solar deal never mentions",
+   "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
+   "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
+   "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
+   "term": "funded before or during operation; the decommissioning certification is filed with the licence application and adjusted annually",
+   "price_form": "no price - these are cost obligations that must be recovered inside whatever price is charged",
+   "precedents": [
+    {
+     "name": "10 CFR 50.75(c)(1) minimum decommissioning funding - the floor that does not scale down",
+     "year": "2024",
+     "parties": "NRC <-> every power reactor licensee and combined licence applicant",
+     "size": "applies to all power reactors regardless of size",
+     "price": "In January 1986 dollars: a PWR at or above 3400 MWt must certify $105 million; between 1200 and 3400 MWt the formula is $(75 + 0.0088P) where P is thermal megawatts. THE CRITICAL CLAUSE: 'For a PWR of less than 1200 MWt, use P = 1200 MWt.' So a 20 MWt microreactor certifies the same $85.56 million (1986 dollars) as a 1200 MWt plant - 60 times its thermal rating. For a BWR the formula is $(104 + 0.009P) with the same substitution, giving $114.8 million. The certified amount must then be escalated annually by a factor at least equal to 0.65L + 0.13E + 0.22B, where L and E are Bureau of Labor Statistics labour and energy escalators and B is the waste burial escalator from NUREG-1307.",
+     "note": "Two further points that matter commercially. First, the table lists only PWRs and BWRs - a high-temperature gas, sodium-cooled or heat-pipe microreactor is not in it at all, so its amount has to come from a site-specific estimate rather than the table, which removes the certainty the table was meant to provide. Second, 50.75(a) expressly notes that decommissioning funding may also be regulated by FERC or a state PUC with rate jurisdiction, and that the NRC amount is additional to, not a substitute for, those requirements.",
+     "source_idx": 0
+    },
+    {
+     "name": "Proposed 10 CFR Part 57 - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
+     "year": "2026",
+     "parties": "NRC <-> future microreactor licensees; Docket ID NRC-2025-0379, proposed rule published 2026-05-01",
+     "size": "microreactors and reactors of comparable risk profile; explicitly aimed at high-volume deployment",
+     "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
+     "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's.",
+   "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones.",
+   "blockers": [
+    "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
+    "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
+    "Part 57 is a proposed rule published 2026-05-01; it confers nothing on a deal signed now",
+    "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
+    "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive"
+   ],
+   "sources": [
+    {
+     "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
+     "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol1/pdf/CFR-2024-title10-vol1-sec50-75.pdf",
+     "quote": "funds will be available for the decommissioning process",
+     "status": "fetched"
+    },
+    {
+     "label": "Federal Register - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed rule, NRC-2025-0379)",
+     "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+     "quote": "An emergency planning zone (EPZ) would not be defined for facilities licensed under proposed part 57.",
+     "status": "fetched"
+    },
+    {
+     "label": "Federal Register - proposed 10 CFR Part 57 (physical security and force-on-force)",
+     "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+     "quote": "it would not be appropriate to require force-on-force exercises to evaluate the performance of these facilities",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "tech-neutral-tax-credits-45y-48e-new-nuclear",
+   "group": "interconnection",
+   "family": "regulatory-rule",
+   "name": "The technology-neutral tax credits as the only published, contractible price support for a new reactor",
+   "what_it_is": "A new reactor elects either the section 45Y clean electricity production credit, paid per kilowatt-hour generated for ten years, or the section 48E investment credit, taken as a percentage of qualified investment in the year the plant is placed in service. These are the only dollar figures in the whole nuclear stack that are published, indexed, and knowable in advance, which is why every unpriced deal in this file - Oklo/Equinix, Eielson, Dow, PacifiCorp/Natrium - is quietly negotiated around them. They are also transferable and elective for cash under the IRA machinery, so they function as a financing instrument, not merely a tax attribute. The credits carry conditions that reach directly into the contract: 45Y is available on electricity sold to an UNRELATED person, or on electricity consumed or stored only where the facility has a metering device owned and operated by an unrelated person.",
+   "who_signs": "Reactor owner <-> US Treasury/IRS; and, where the credit is monetised, the owner <-> a tax-credit transferee",
+   "asset_owner": "third-party developer | utility | host - follows whoever owns the facility",
+   "term": "45Y runs 10 years from placed-in-service; construction must begin before 2034, after which the credits phase out over three years",
+   "price_form": "$/kWh production credit (45Y) or percentage-of-investment credit (48E)",
+   "precedents": [
+    {
+     "name": "Section 45Y applicable amounts for calendar year 2025",
+     "year": "2025",
+     "parties": "IRS / Treasury <-> any qualified clean electricity facility, nuclear included",
+     "size": "per kilowatt-hour of qualifying generation",
+     "price": "0.6 cents per kWh base, and 3 cents per kWh ($30/MWh) for a facility meeting prevailing wage and apprenticeship requirements. The 2025 inflation adjustment factor is 1.9971, derived from the GDP implicit price deflator for 2024 (125.234) over 1992 (62.707) - the statutory 0.3 and 1.5 cent amounts have almost exactly doubled since enactment. Published at 90 FR 41477 on 2025-08-25.",
+     "note": "SCALE CHECK: $30/MWh against the only published small-reactor target power price in the United States - the Carbon Free Power Project's $89/MWh - is about a third of the price. The credit is large enough to decide whether a project clears, and it is the one number in a nuclear pro forma that is not a projection.",
+     "source_idx": 0
+    },
+    {
+     "name": "Section 48E investment credit and the OBBBA nuclear energy community adder",
+     "year": "2025",
+     "parties": "IRS / Treasury <-> facility owner",
+     "size": "percentage of qualified investment in the facility",
+     "price": "6 percent of the qualified investment as the base amount, multiplied by five to up to 30 percent where prevailing wage and registered apprenticeship requirements are met, plus 10 percentage points for domestic content in steel, iron and manufactured products, plus 10 percentage points for an energy community. The One Big Beautiful Bill Act added a further nuclear-specific adder of 10% (or two percentage points without prevailing wage and apprenticeship) for an advanced nuclear facility in a metropolitan statistical area with at least 0.17% direct nuclear-related employment at any time since 2010.",
+     "note": "The nuclear energy community adder is available ONLY against 45Y, not 48E - so a developer choosing the investment credit forfeits the one credit provision written specifically for nuclear. That makes the 45Y-versus-48E election a genuine structuring decision rather than a modelling preference, and it pushes a nuclear project toward the production credit if its site qualifies.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The credits are technology-neutral, which for nuclear is both the enabling fact and the trap. Enabling, because a reactor qualifies on the same terms as a wind farm and needs no bespoke legislation. Trap, because the 45Y unrelated-person condition is written for a merchant generator selling into a market, and the entire microreactor thesis is behind-the-meter sale to a single host - sometimes, as at Dow's Long Mott, to the owner itself. In that configuration the credit survives only through the metering-device route, where the meter is owned and operated by an unrelated person, so a term about who owns a meter becomes a condition of a nine-figure tax position.",
+   "microreactor_edge": "The election runs opposite ways at the two scales, and the reason is capacity factor and capex intensity. 45Y pays on output, so it rewards a plant that runs; 48E pays on investment, so it rewards a plant that costs a lot per kW. A first-of-a-kind microreactor is extraordinarily capex-intensive per kW and has an unproven capacity factor, which argues for 48E - but taking 48E forfeits the nuclear energy community adder and delivers nothing if the unit is not placed in service. A 300 MW unit at a former nuclear or fossil site has the site qualification, the scale to certify prevailing wage and apprenticeship compliance, and a credible capacity factor, so it can take 45Y at 3 cents/kWh with the nuclear adder on top. The credit regime, without intending to, is better fitted to the large unit.",
+   "blockers": [
+    "45Y requires sale to an unrelated person, or an unrelated-person-owned metering device for self-consumed power - a direct problem for behind-the-meter and host-owned microreactors",
+    "The nuclear energy community adder applies only under 45Y, so electing 48E forfeits the only nuclear-specific credit provision",
+    "Construction must begin before 2034, after which the credits phase out over three years - a hard deadline for a technology whose first commercial units are not yet licensed",
+    "The 0.17% nuclear-employment community test is keyed to metropolitan statistical areas, which excludes exactly the remote sites microreactors are marketed for",
+    "Foreign entity of concern restrictions apply to 45Y and 48E and were not examined in this pass"
+   ],
+   "sources": [
+    {
+     "label": "Federal Register - Publication of Inflation Adjustment Factor and Applicable Amounts for Clean Electricity Production Credit for Calendar Year 2025 (90 FR 41477)",
+     "url": "https://www.federalregister.gov/documents/2025/08/25/2025-16249/publication-of-inflation-adjustment-factor-and-applicable-amounts-for-clean-electricity-production",
+     "quote": "the applicable amount provided in section 45Y(a)(2)(B) is 3 cents (or $0.03)",
+     "status": "fetched"
+    },
+    {
+     "label": "Internal Revenue Service - Clean Electricity Investment Credit (48E)",
+     "url": "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+     "quote": "The base amount of the Clean Electricity Investment Credit is 6 percent of the qualified investment.",
+     "status": "fetched"
+    },
+    {
+     "label": "Morgan Lewis - The Impact of the 'One Big Beautiful Bill Act' on Nuclear Tax Incentives",
+     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives",
+     "quote": "The adder for advanced nuclear facilities is not available to the Clean Electricity ITC.",
+     "status": "fetched"
+    }
+   ]
   }
  ]
 }

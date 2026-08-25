@@ -33,8 +33,15 @@ from typing import Any, List, Tuple
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy",
-         "deployment_sites"]
+# Derived from the builder's registry, never re-typed: this list was already two
+# files behind when benchmarks.json and instruments.json were added, and a quote
+# gate that silently skips a file is worse than no gate.
+# gaps.json is excluded because it is derived from the others, so every source in
+# it is a duplicate of one already checked here.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_data as _bd
+
+FILES = [n for n in _bd.FILES if n != "gaps"]
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
@@ -100,7 +107,7 @@ def check_against_cache(verbose: bool = False) -> int:
     if index_p.exists():
         for r in json.loads(index_p.read_text())["sources"]:
             by_url[r["url"]] = DATA / "cache" / r["cache"]
-    ok, missing, mismatched = [], [], []
+    ok, missing, mismatched, snippet = [], [], [], []
     for name in FILES:
         targets: List[dict] = []
         walk(json.loads((DATA / f"{name}.json").read_text()), targets, any_status=True)
@@ -111,9 +118,16 @@ def check_against_cache(verbose: bool = False) -> int:
                 continue
             if norm(src["quote"]) in norm(cached_text(cache_file)):
                 ok.append((name, src["url"]))
+            elif src.get("status") == "snippet-only":
+                # The row already declares the page was never fetched, so its quote is
+                # search-corroborated by construction. Absent from the cached bytes is
+                # the expected state, not a defect — reporting it as a mismatch
+                # conflates an honest disclosure with a broken citation.
+                snippet.append((name, src["url"]))
             else:
                 mismatched.append((name, src["url"], src["quote"][:60]))
-    print(f"cache-verified {len(ok)} · not-in-cache {len(missing)} · MISMATCH {len(mismatched)}")
+    print(f"cache-verified {len(ok)} · not-in-cache {len(missing)} · "
+          f"snippet-only {len(snippet)} · MISMATCH {len(mismatched)}")
     for name, url, q in mismatched:
         print(f"QUOTE MISMATCH  {name}: {url}\n    quote: {q}…")
     if verbose:

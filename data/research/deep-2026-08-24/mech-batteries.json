@@ -1,715 +1,717 @@
 {
-  "_meta": {
-    "captured": "2026-08-24",
-    "agent": "mech-batteries",
-    "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
-    "angles_run": [
-      "hybrid resource contracting (single hybrid PPA vs two contracts, tolling, availability guarantees, charging restrictions)",
-      "storage-as-backup replacing the genset (NFPA 99/110/111, CMS categorical waiver, real hospital microgrids)",
-      "utility procurement of the pair and capacity accreditation (ELCC, RA, all-source RFPs)",
-      "ancillary services and black start",
-      "islanding and microgrid controls (IEEE 1547/1547.4, UL 1741 SB)",
-      "who is actually building paired reactors (vendors, battery majors, national labs)",
-      "the economics literature (INL/NREL nuclear + storage NPV)"
-    ],
-    "absences": [
-      "No executed contract, LOI, MOU or press release pairing ANY nuclear reactor with a battery storage system could be verified. Searched Westinghouse eVinci, Oklo, X-energy, Radiant and BWXT against Tesla, Fluence, Wartsila, Sungrow and Powin; nothing found in company press rooms, SEC filings or trade press. This is a confirmed negative: as of 2026-08-24 no battery major has signed anything nuclear, and no reactor vendor markets a paired storage product.",
-      "No black-start award price is public. ERCOT's Black Start Services RFP for 2027-2029 (responses due 2026-02-15) is published as a market notice, but awarded bid prices are reviewed inside the Black Start Working Group and not disclosed, so the revenue for that service could not be quantified.",
-      "The Kapolei Energy Storage contract price with Hawaiian Electric is not public; only the derived bill impact ($0.28/month average over the 20-year contract) was found, and only via secondary reporting of the HECO filing rather than the filing itself.",
-      "No CMS-surveyed Health Care Microgrid System has been identified by name. The waiver (QSO-23-11-LSC) is real and its election process is documented, but no facility was found that has been publicly recorded as electing it at survey, so the practical acceptance record is unverified.",
-      "No facility was found where a battery alone was accepted as the entire legally required emergency power supply under NFPA 111 with a documented SEPSS class/type designation. Every real case found (Kaiser Richmond 2017, Kaiser Ontario 2025, Blue Lake Rancheria) pairs storage with either a retained diesel plant, a fuel cell, or both.",
-      "Energy-storage-as-a-service shared-savings contracts (Stem and similar) could not be pinned to any published $/month or shared-savings percentage; two searches returned only marketing claims of 20-30% bill reduction with no contracted figures, so no record was written.",
-      "Solar-storage hybrid ELCC could not be quoted for PJM's current delivery years because PJM itself reports the class as 'Small Sample Size' for both 2026/2027 and 2027/2028 — the hybrid accreditation precedent does not exist statistically, only under the superseded methodology.",
-      "PacifiCorp's published Energy Storage Agreement leaves the Storage Price (Exhibit K) and the guaranteed availability, capacity and round-trip-efficiency values (Exhibit A) blank as bid variables, so the template's guarantee architecture is documented but its numbers are not.",
-      "Montgomery County's microgrid battery capacity, contract term and $/kWh price are not published; only annual kWh output (about 11 million kWh/yr across two sites) and the no-upfront-cost structure could be verified.",
-      "No CAISO, ERCOT, MISO or NYISO tariff provision was found that defines a capacity accreditation class for a firm generator paired with storage; the only accreditation classes found treat generation and storage separately, or treat hybrids as solar-hosted."
-    ]
-  },
-  "mechanisms": [
-    {
-      "id": "storage-tolling-agreement",
-      "group": "batteries",
-      "family": "commercial-contract",
-      "name": "Storage tolling agreement (capacity payment, buyer dispatches)",
-      "what_it_is": "A developer builds, owns and operates the battery; the offtaker pays a flat $/kW-month capacity payment for the right to charge and discharge it at will. The owner bears construction, availability and round-trip-efficiency risk (guaranteed efficiency rates are scheduled year by year and decline with degradation); the offtaker bears all market/price risk and supplies the charging energy. Because the buyer is the scheduling coordinator, the battery's energy, installed capacity, capacity attributes and ancillary services are all delivered as one bundled 'Product'. This is the dominant instrument for utility-procured standalone storage in the US.",
-      "who_signs": "Storage developer/owner (SPV) <-> load-serving entity or utility",
-      "asset_owner": "third-party developer",
-      "term": "20 years (Anaheim/Roadhouse: twenty Contract Years)",
-      "price_form": "$/kW-month capacity fee, flat, no escalation",
-      "precedents": [
-        {
-          "name": "Roadhouse Energy Storage — Energy Storage Agreement with the City of Anaheim",
-          "year": "2024",
-          "parties": "Roadhouse Energy Storage, LLC (NextEra Energy Resources) <-> City of Anaheim (Anaheim Public Utilities)",
-          "size": "300 MW / 1,200 MWh (4-hour), San Bernardino County, CA",
-          "price": "$18.76 per kW-month, flat, no escalation, Contract Years 1-20",
-          "note": "Approved at the Anaheim Public Utilities Board meeting of 2024-04-24. Guaranteed COD 2027-10-01. Guaranteed round-trip efficiency scheduled to decline from 83.9% in Year 1 to 78.2% in Year 20. Development and operation security of $100/kW of guaranteed capacity. Utility staff presented ~$71M/yr in costs against ~$78M/yr in benefits, a ~$7M/yr net benefit. Buyer is the Scheduling Coordinator; Product = Facility Energy + Installed Capacity + Capacity Attributes + Ancillary Services.",
-          "source_idx": 0
-        },
-        {
-          "name": "Corazon Energy Storage — 20-year tolling agreement with Public Service Company of New Mexico",
-          "year": "2024",
-          "parties": "Plus Power <-> PNM",
-          "size": "150 MW / 600 MWh, New Mexico",
-          "note": "Awarded out of PNM's 2026-2028 Generation Resources RFP (issued 2022). Plus Power retains ownership of the facility while PNM charges and dispatches it. Price not published.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The tolling form transfers cleanly to a reactor because it already separates ownership from dispatch: the vendor/SPV owns and operates the plant (which is what NRC licensing wants — a single, competent licensee), and the host or utility buys the right to call on it. What does not transfer is the price form. A battery is paid $/kW-month precisely because it has no fuel and no energy of its own; a reactor generates, so the analogue is a capacity-plus-energy split (a $/kW-month availability fee for the firm block, plus $/MWh for what it actually delivers). The guaranteed-efficiency schedule has a direct reactor analogue that no battery contract has: a guaranteed capacity-factor / availability schedule net of scheduled refuelling and maintenance outages, which is the one number a nuclear tolling agreement will be negotiated on.",
-      "microreactor_edge": "A 300 MW/1,200 MWh toll is a wholesale-market instrument; a 1-20 MW reactor's version is the same paper at a site-sized scale, where the offtaker is a single host rather than a utility. The relevant arithmetic: Anaheim is paying $18.76/kW-month = ~$225/kW-yr for 4 hours of shiftable energy with zero energy of its own. A 5 MW reactor plus a 2-4 hour battery sold on the same $/kW-month basis has to clear that number and the diesel it displaces, but it also sells firm energy the battery cannot, so it competes on the energy leg, not the capacity leg.",
-      "blockers": [
-        "Capacity payments are priced off a market's resource-adequacy value; a behind-the-meter reactor at a single host has no RA market to monetise unless the utility tariff lets it export",
-        "Tolling puts availability risk on the owner — a reactor owner cannot yet quote a bankable availability guarantee for a first-of-a-kind unit",
-        "$100/kW development and operation security is trivial for a battery developer and material for a reactor SPV with a decade-long licensing tail"
-      ],
-      "sources": [
-        {
-          "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement, staff presentation and Energy Storage Agreement cover sheet (April 24, 2024)",
-          "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
-          "quote": "$18.76 per kW-mo. (flat) with no escalation",
-          "status": "fetched"
-        },
-        {
-          "label": "Energy-Storage.news — Tolling agreement for 600 MWh New Mexico project, financial close for 400 MWh California battery",
-          "url": "https://www.ess-news.com/2024/11/26/tolling-agreement-for-600-mwh-new-mexico-project-financial-close-for-400-mwh-california-battery/",
-          "quote": "Plus Power and PNM signed a tolling agreement, by which Plus Power retains ownership of the facility while PNM can charge and dispatch",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "cms-hcms-categorical-waiver",
-      "group": "batteries",
-      "family": "regulatory-rule",
-      "name": "CMS categorical waiver for Health Care Microgrid Systems (QSO-23-11-LSC)",
-      "what_it_is": "CMS conditions of participation bind hospitals to the 2012 edition of NFPA 99, which requires the emergency power source for a hospital's essential electric system to be a generator set or a battery system — nothing else. On 2023-03-31 CMS issued a categorical waiver letting facilities instead comply with the 2021 edition of NFPA 99 and the 2023 NEC, which permit a 'health care microgrid system' (HCMS) to be that source. Nobody signs anything: the facility formally elects the waiver, documents the election, and produces it at the survey entrance conference along with evidence of compliance. The economic consequence is that the capital otherwise sunk in a legally-mandated diesel plant becomes available to buy a different power source.",
-      "who_signs": "Health care facility (self-election) <-> CMS state survey agency at survey",
-      "asset_owner": "host | third-party developer",
-      "term": "Indefinite; effective immediately from 2023-03-31, re-verified at each survey; HCMS recommissioning required every 5 years",
-      "price_form": "not a payment instrument — it is the permission that unlocks one",
-      "precedents": [
-        {
-          "name": "Kaiser Permanente Ontario Medical Center microgrid",
-          "year": "2025",
-          "parties": "Kaiser Permanente (host) <-> Faraday Microgrids (storage) <-> Ameresco (solar under PPA) <-> California Energy Commission (grant)",
-          "size": "2 MW solar + 9 MWh non-lithium battery + 1 MW fuel cell",
-          "price": "$8.3 million CEC grant to Faraday Microgrids for the storage; solar sold to the hospital under an Ameresco PPA",
-          "note": "Announced 2025-04-17 as the largest hospital-based renewable microgrid in the US. Stated to serve all of the hospital's emergency power needs for 10 continuous hours and to act as the initial emergency backup during outages.",
-          "source_idx": 1
-        },
-        {
-          "name": "Kaiser Permanente Richmond Medical Center microgrid",
-          "year": "2017",
-          "parties": "Kaiser Permanente <-> Charge Bliss / Blue Sky (DOE Better Buildings implementation model)",
-          "size": "250 kW solar carport + 1 MW / 1 MWh battery, 50-bed acute care facility",
-          "note": "California's first medical-center microgrid; islands the hospital for roughly three hours. It was layered on top of the pre-existing diesel emergency system rather than replacing it — the pre-waiver configuration, and the reason the waiver mattered.",
-          "source_idx": 2
-        }
-      ],
-      "nuclear_fit": "This is the single most consequential open door found in this pass, and it is open to reactors by the text of the standard, not by analogy. The CMS attachment reproduces NFPA 99 (2021) 6.10.2 as: any combination of generation, storage or transformation equipment may serve as the power source for all or a portion of an HCMS. The standard does not enumerate permitted generation technologies. A reactor plus a battery, behind an HCMS control system, is therefore already a permissible emergency power source for a CMS-certified hospital — with no CMS rulemaking required. The gating requirements are engineering, not nuclear: a control system isolated from other networks with its own 90-minute backup battery and a per-source power readout, a written commissioning plan and report, recommissioning every 5 years, and annual inspection/testing/maintenance by qualified persons.",
-      "microreactor_edge": "The battery is what makes the reactor legally usable here. NFPA 110 Type 10 requires the emergency source to pick up load within 10 seconds; a reactor cannot start from cold in 10 seconds and should not be asked to try. A battery sized for minutes covers the transfer, the reactor carries the multi-day outage that the batteries at Ontario (10 hours) and Richmond (3 hours) cannot, and the pair covers both ends of the duration curve that neither covers alone. A 1-20 MW unit also matches the load: Ontario's whole hospital emergency need is covered by 9 MWh, so a single 5 MW block plus a small battery serves an entire medical campus with margin, and the same campus is exactly the 'individual buildings or campuses consisting of several buildings, and non-health care buildings' scope NFPA 99 6.10.1.3/6.10.1.4 permits an HCMS to serve.",
-      "blockers": [
-        "The waiver excludes long-term care facilities providing life support — 42 CFR 483.90(c)(2) requires an emergency generator there without exception",
-        "State hospital building authorities are a second gate: in California HCAI/OSHPD reviews hospital electrical systems independently of CMS",
-        "The facility, not the vendor, must formally elect and document the waiver, and must produce compliance evidence at the survey entrance conference — a late election after a citation is explicitly not accepted",
-        "Every HCMS project found so far pairs storage with solar/fuel cells; there is no surveyed HCMS precedent with a generator that is not a genset, so the first reactor host is also the first test case"
-      ],
-      "sources": [
-        {
-          "label": "CMS — QSO-23-11-LSC, Categorical Waiver: Health Care Microgrid Systems (HCMSs), March 31, 2023",
-          "url": "https://www.cms.gov/files/document/qso-23-11-lsc.pdf",
-          "quote": "CMS is issuing a categorical waiver permitting new and existing health care facilities subject to CMS requirements to utilize alternate sources of power",
-          "status": "fetched"
-        },
-        {
-          "label": "Kaiser Permanente / PR Newswire — Kaiser Permanente Debuts Largest Hospital-Based Renewable Microgrid in U.S.",
-          "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
-          "quote": "It has the capacity to serve all the hospital's emergency power needs for 10 continuous hours.",
-          "status": "fetched"
-        },
-        {
-          "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
-          "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
-          "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage to a pre-existing, diesel-fueled backup power system",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "single-hybrid-ppa",
-      "group": "batteries",
-      "family": "commercial-contract",
-      "name": "Single hybrid PPA — generator and storage sold as one $/kWh product",
-      "what_it_is": "One contract, one price, one point of delivery: the developer owns the generator and the battery as a single facility and sells a shaped, dispatchable energy product at a flat $/kWh. The offtaker does not see two assets and does not pay separately for storage — the battery is an input to the seller's delivery obligation, not a product. The seller therefore carries all of the pairing risk (round-trip losses, degradation, augmentation) inside a single energy price, and the buyer's only real levers are the delivery schedule and the availability/curtailment terms. This is the form utility RFPs now default to, and it is why the storage cost shows up as a per-MWh adder rather than a line item.",
-      "who_signs": "Hybrid project SPV <-> utility or corporate offtaker",
-      "asset_owner": "third-party developer",
-      "term": "20-25 years (Waikoloa: 25 years)",
-      "price_form": "$/kWh flat, single blended price for the paired facility",
-      "precedents": [
-        {
-          "name": "AES Waikoloa Solar + Storage — PPA with Hawaiian Electric",
-          "year": "2019",
-          "parties": "AES Corporation <-> Hawaiian Electric Company",
-          "size": "30 MWac / 43 MWdc bifacial single-axis-tracker PV + 30 MW / 120 MWh lithium battery, Hawai'i Island",
-          "price": "US$0.09/kWh under a 25-year PPA",
-          "note": "Awarded in HECO's 2018 competitive procurement, approved by regulators in 2019, commercial operation targeted April 2023. The storage is 4-hour and sized 1:1 with the solar's AC rating — the offtaker buys shaped energy, not solar plus a battery.",
-          "source_idx": 0
-        },
-        {
-          "name": "Berkeley Lab utility-scale solar dataset — measured cost of the storage half",
-          "year": "2025",
-          "parties": "LBNL Electricity Markets & Policy (empirical dataset across 100+ operating or contracted PV+battery hybrids)",
-          "size": "n/a (dataset)",
-          "price": "roughly $10/MWh-PV adder for a battery sized at 50% of PV capacity, against $8-21/MWh-PV of value gain depending on region and dispatch",
-          "note": "The gap between adder and value is the entire commercial case for pairing, and it is single-digit dollars per MWh. Any pairing that costs materially more than ~$10/MWh has to justify itself on something other than arbitrage.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "A single hybrid PPA is the closest existing template for selling a reactor-plus-storage block, because it sells the service rather than the machines — which is what a host actually wants and what keeps the reactor's operating envelope out of the contract. The blocker is that in a solar hybrid the battery exists to make an intermittent source firm; with a reactor the vector reverses. The reactor is already firm and the battery exists to make it *flexible* — to absorb the difference between a flat thermal output and a spiky site load. That flips who benefits from the charging terms: a solar hybrid's PPA restricts grid charging to protect the renewable attribute, whereas a reactor hybrid wants the battery charged almost exclusively from the reactor anyway, which makes the restriction free to accept.",
-      "microreactor_edge": "The pricing benchmark transfers directly and it is brutal: Hawai'i, the highest-cost major US grid, buys firm-shaped renewable energy at 9 cents/kWh on a 25-year term. A 1-20 MW reactor selling into any grid-connected hybrid PPA has to clear that. Where the microreactor wins is where the hybrid PPA cannot go at all — off-grid, islanded, or behind a meter where the alternative is diesel at 30-70 cents/kWh, not solar at 9. The right read of this mechanism is that it sets the ceiling price for grid-tied reactor pairs and tells you to sell somewhere else.",
-      "blockers": [
-        "A single blended $/kWh forces the seller to absorb degradation and augmentation risk over 25 years — for a battery that is an actuarial problem, for a reactor it is a refuelling and licence-renewal problem the counterparty has never priced",
-        "Legacy ITC charging restrictions shaped these contracts (see itc-charging-restriction record) and still appear as boilerplate in hybrid PPAs even where the tax rule no longer requires them",
-        "9 cents/kWh in Hawai'i is the number to beat; nothing in the current microreactor cost literature gets there on a grid-tied basis"
-      ],
-      "sources": [
-        {
-          "label": "Energy-Storage.news — Hawaii Island's biggest solar-plus-storage plant will soon deliver power at 9 cents/kWh",
-          "url": "https://www.energy-storage.news/hawaii-islands-biggest-solar-plus-storage-plant-will-soon-deliver-power-at-9-cents-kwh/",
-          "quote": "30MW/120MWh of lithium-on battery storage",
-          "status": "fetched"
-        },
-        {
-          "label": "Berkeley Lab Energy Markets & Policy — Top 10 Research Findings on the Growth of Hybrid Power Plants in the United States",
-          "url": "https://emp.lbl.gov/news/berkeley-lab-releases-top-10-research",
-          "quote": "The cost of adding storage to PV is around $10/MWh-PV for a battery sized to 50% of the PV's capacity",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "elcc-capacity-accreditation-of-the-pair",
-      "group": "batteries",
-      "family": "regulatory-rule",
-      "name": "ELCC capacity accreditation — what the pair is allowed to count as",
-      "what_it_is": "In an organised capacity market the revenue a resource earns is its installed capacity multiplied by an accreditation factor set by the RTO, not by the owner. PJM computes an ELCC class rating for every class by adding an increment of that class to a probabilistic model and measuring how much expected unserved energy it removes, divided by what perfect capacity would remove. Nobody signs anything; the number is published annually and it moves. It is the single largest determinant of whether a paired asset earns capacity revenue, and it is where a steady generator and a duration-limited battery are valued on completely different curves.",
-      "who_signs": "RTO/ISO tariff (PJM Manual 21A / RAA) <-> every capacity resource, by operation of the tariff",
-      "asset_owner": "utility | third-party developer | host",
-      "term": "Set per Delivery Year; recalculated annually and applied prospectively",
-      "price_form": "rate-based — accredited UCAP MW x capacity clearing price",
-      "precedents": [
-        {
-          "name": "PJM 2025 ELCC / Reserve Requirement Study — class ratings for 2026/27 and 2027/28",
-          "year": "2025",
-          "parties": "PJM Interconnection, Resource Adequacy Planning (study dated October 22, 2025)",
-          "size": "5,938 MW of capacity storage resources and 32,181 MW of nuclear in the 2027/2028 portfolio",
-          "price": "Accreditation, 2027/2028: Nuclear 95%, Diesel Utility 92%, Demand Resource 92%, Coal 83%, Gas Combined Cycle 74%, 10-hr Storage 78%, 8-hr Storage 70%, 6-hr Storage 67%, Gas Combustion Turbine 61%, 4-hr Storage 58%, Tracking Solar 8%",
-          "note": "Solar-Storage Hybrid is listed as 'Small Sample Size' in both delivery years — PJM does not have enough operating hybrids to rate the class at all.",
-          "source_idx": 0
-        },
-        {
-          "name": "PJM ELCC class ratings under the prior methodology — the collapse of short-duration storage",
-          "year": "2022",
-          "parties": "PJM Interconnection (ratings for 2023/24 3IA, 2025/26 BRA, 2026/27 BRA)",
-          "size": "n/a (class ratings table)",
-          "price": "4-hr Storage 94% -> 77% -> 77%; 6-hr 100% -> 96% -> 94%; 8-hr and 10-hr Storage 100% across all three years; Solar Hybrid storage component 93% -> 74% -> 83%",
-          "note": "Duration-limited storage loses accreditation as more of it is added, because the net-load peak it has to cover widens. Unlimited-duration resources do not decay this way. This is the structural reason a generator is worth pairing with a battery rather than adding more batteries.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Nuclear is accredited at 95% in PJM for 2027/2028 — the highest class rating of any generation class, above coal (83%), gas combined cycle (74%) and gas combustion turbine (61%). That is the strongest quantitative statement of nuclear's grid value found in this pass, and it is written into an RTO study rather than a vendor deck. The specific enabler for a pair is that accreditation is computed per class on a marginal, probabilistic basis: a resource that is available in the hours the model is short earns near-perfect credit, and a reactor's flat output plus a battery that shifts it into those hours is exactly that resource. The blocker is definitional: there is no ELCC class for a nuclear-storage hybrid, and PJM cannot even rate the solar-storage hybrid class for lack of sample.",
-      "microreactor_edge": "The accreditation table is a pricing sheet for how much battery to buy. Going from 4-hr to 10-hr storage buys 20 accreditation points (58% -> 78%) and costs roughly 2.5x the energy capacity. Pairing a 5 MW always-on block with a 4-hour battery instead does something no amount of battery duration achieves: it removes the duration limit entirely, because the reactor refills the battery every night for free. A 1-20 MW unit is also small enough to be accredited behind the meter as load reduction rather than as generation — the Demand Resource class jumped to 92% for 2027/2028 after PJM eliminated the DR performance window and made DR a 24/7 resource, which is precisely the shape a reactor-plus-battery presents to the utility.",
-      "blockers": [
-        "No ELCC class exists for nuclear-plus-storage; a first mover is rated by analogy or by unit-specific study",
-        "PJM lists Solar-Storage Hybrid as 'Small Sample Size' for both 2026/27 and 2027/28 — the hybrid precedent that would carry a reactor pair does not yet exist statistically",
-        "Class ratings are recomputed annually and moved by 8-9 points in one year for storage classes; a 20-year financing cannot be underwritten on them",
-        "Behind-the-meter assets at a single host are outside the capacity market entirely unless the utility tariff admits them"
-      ],
-      "sources": [
-        {
-          "label": "PJM — 2025 PJM Effective Load Carrying Capability and Reserve Requirement Study (ELCC/RRS), October 22, 2025",
-          "url": "https://www.pjm.com/-/media/DotCom/planning/res-adeq/elcc/2025-pjm-elcc-rrs.pdf",
-          "quote": "The ELCC Class Ratings for 2027/2028 compared to those for 2026/2027 are presented in Table 2.",
-          "status": "fetched"
-        },
-        {
-          "label": "PJM — Effective Load Carrying Capability (ELCC) Class Ratings for 2023/2024 3IA, 2025/2026 BRA and 2026/2027 BRA",
-          "url": "https://www.pjm.com/-/media/DotCom/planning/res-adeq/elcc/elcc-class-ratings-for-2023-2025-2026.ashx",
-          "quote": "ELCC Class Ratings for 2023/2024 3IA, 2025/2026 BRA and 2026/2027 BRA",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "intentional-islanding-interconnection-gate",
-      "group": "batteries",
-      "family": "regulatory-rule",
-      "name": "Intentional islanding — the microgrid interconnect device certification gate",
-      "what_it_is": "To island a site and re-synchronise, the customer must satisfy the utility that the on-site resources cannot back-feed a de-energised distribution circuit and that they transition safely between islanded and grid-parallel modes. In practice this is enforced through the interconnection application: the utility requires listed equipment certified to a named standard before it will approve the switch. The critical detail is that the standard everyone cites for DER interconnection, UL 1741 SB (implementing IEEE 1547-2018), does not test for this at all — so utilities have had to invent an additional requirement. Nobody is paid for anything here; it is a gate, and it is the gate every microgrid passes through.",
-      "who_signs": "DER customer/developer <-> distribution utility, via the state interconnection tariff",
-      "asset_owner": "host | third-party developer",
-      "term": "Per interconnection agreement; permanent condition of operation",
-      "price_form": "not priced — a certification and study cost borne by the applicant",
-      "precedents": [
-        {
-          "name": "Joint Utilities of New York — memo requiring UL 1741 CRD for Multimode certification",
-          "year": "2025",
-          "parties": "Joint Utilities of New York <-> NY Department of Public Service Staff, Interconnection Technical Working Group",
-          "size": "Applies to all NY interconnection applications for DERs with microgrid interconnect devices (MIDs) and to EVs with V2G/V2H",
-          "note": "February 2025. The JU found that New York's Standardized Interconnection Requirements do not check that DERs in an intentional island cannot back-feed a de-energised area EPS, and do not check safe transition between islanded and utility-interactive modes. UL 1741 SB, the SIR's baseline requirement, has no intentional-islanding type test, and its 'Enter Service' test does not apply to islanded systems. The JU therefore imposed a separate UL 1741 CRD for Multi-Mode Products requirement on top of IEEE 1547-2018 and UL 1741 SB.",
-          "source_idx": 0
-        },
-        {
-          "name": "Kaiser Permanente Richmond Medical Center — a hospital that actually islands",
-          "year": "2017",
-          "parties": "Kaiser Permanente <-> PG&E territory, California",
-          "size": "250 kW PV + 1 MW / 1 MWh battery, 50-bed acute care hospital",
-          "note": "Islands the hospital for roughly three hours, demonstrating that the practical constraint on an islanded medical campus is not the switchgear but the energy behind it.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Islanding is where a reactor's normal handicap inverts. Everything in IEEE 1547 / UL 1741 is written for inverter-based resources whose failure mode is back-feeding a dead line; a rotating-machine reactor plant behind a microgrid interconnect device sits on the older, better-understood side of that rulebook, closer to how a standby generator is treated than how a PV inverter is. The blocker is the reverse of the battery's: an inverter can form a grid in milliseconds and a reactor cannot, so the reactor cannot be the resource that catches the island at the instant of separation. It has to already be running, or the battery has to hold the island until it is.",
-      "microreactor_edge": "A 1-20 MW block plus a battery is the only combination that both catches the island and holds it. The battery's grid-forming inverter picks up the island inside the sub-second window the certification is about; the reactor then carries it for days, which no battery at hospital scale does — Richmond's 1 MWh gives three hours, Ontario's 9 MWh gives ten. The pair also collapses a sizing problem: without a reactor the battery must be sized to the worst-case outage duration, and with one it need only be sized to the transfer transient plus a ramp margin, which is one to two orders of magnitude less energy.",
-      "blockers": [
-        "UL 1741 SB has no intentional-islanding type test; neither SA nor SB certifies a multimode inverter's standalone behaviour during an island",
-        "State interconnection rules are being amended one utility group at a time — a project designed to the published SIR can still be rejected on an added requirement",
-        "The certification path is written around inverters; a reactor's protection and synchronisation scheme has no listed-equipment shortcut and will be evaluated by study",
-        "Re-synchronisation to the area EPS after an island is the utility's call, not the host's"
-      ],
-      "sources": [
-        {
-          "label": "Joint Utilities of New York / NY DPS — Memo to Industry and NY DPS Staff: Requirement for UL CRD for Multimode Certification (February 2025)",
-          "url": "https://dps.ny.gov/system/files/documents/2025/02/2025-02-26-ju-itwg-ul-1741-crd-for-multimode-discussions.pdf",
-          "quote": "intended for utility interactive inverters, the certification does not have an intentional islanding type",
-          "status": "fetched"
-        },
-        {
-          "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
-          "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
-          "quote": "the microgrid will furnish power to the 50-bed acute care facility, allowing the hospital to operate as an \"island\"",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "grid-services-contract-black-start-inertia",
-      "group": "batteries",
-      "family": "commercial-contract",
-      "name": "Grid-services contract — black start, synthetic inertia and fast frequency response bought as named products",
-      "what_it_is": "Rather than buying energy or capacity, the utility contracts for named reliability services and specifies the physics: response time, inertia constant, MW of fast frequency response, and the ability to restart the grid from a blackout. The asset owner builds to those specifications and is paid a contracted fee; the utility gets services that were previously an unpriced by-product of having synchronous machines on the system. This is the mechanism by which a resource with no fuel and no synchronous mass gets paid for what a spinning turbine used to give away, and it is the newest of the mechanisms here.",
-      "who_signs": "Storage owner <-> vertically integrated utility (PUC-approved) or RTO under tariff",
-      "asset_owner": "third-party developer",
-      "term": "20 years (Kapolei Energy Storage)",
-      "price_form": "contracted service fee, PUC-approved; ERCOT procures black start by periodic RFP with bid prices reviewed by the Black Start Working Group",
-      "precedents": [
-        {
-          "name": "Kapolei Energy Storage — grid services contract with Hawaiian Electric",
-          "year": "2024",
-          "parties": "Plus Power (owner) <-> Hawaiian Electric; 158 Tesla Megapack LFP units",
-          "size": "185 MW / 565 MWh on Oahu, comprising 135 MW / 540 MWh of capacity and energy plus 50 MW / 25 MWh dedicated to fast frequency response",
-          "price": "Hawaiian Electric's filing estimated an average bill reduction of $0.28 per month over the 20-year contract life",
-          "note": "In service January 2024, replacing the retired 180 MW AES coal plant. Contracted to provide fast frequency response, synthetic inertia and black start, responding within 250 milliseconds. HECO modelling projects a 69% reduction in renewable curtailment and 10% more utility-scale renewables integrated in the first five years.",
-          "source_idx": 0
-        },
-        {
-          "name": "ERCOT Black Start Service procurement",
-          "year": "2026",
-          "parties": "ERCOT <-> qualifying resources, selected by annual/periodic RFP",
-          "size": "System-wide; RFP issued for the contract period January 1, 2027 through December 31, 2029, responses due February 15, 2026",
-          "note": "ERCOT selects black start resources against system reliability and minimum-cost criteria; the Black Start Working Group reviews cranking paths, start-up procedures and the final awarded resources' bid prices. Award prices are not published in the market notice.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Black start is the service a nuclear plant conspicuously cannot provide and conspicuously needs: large reactors are the classic black-start *load*, requiring an external cranking path to restore station power. A microreactor paired with a battery inverts that relationship at site scale — the battery is the grid-forming source, and the reactor is what the battery restarts. The commercial enabler is that these services are now separately contracted and separately paid, so a site pair can be compensated for a capability it must build anyway. The blocker is that grid-forming credit attaches to the inverter, not the generator, so the reactor half earns nothing under these products directly.",
-      "microreactor_edge": "The 50 MW / 25 MWh fast-frequency-response block inside Kapolei is a 30-minute battery — the service is priced on power, not energy. That is exactly the shape a reactor pair needs: a 5 MW reactor with a 5 MW / 2.5 MWh grid-forming battery costs a fraction of a 4-hour system and buys the same sub-second response class. And a 1-20 MW unit's genuine differentiator is that after black start it can keep an islanded network alive indefinitely, whereas a battery-only black start on a dead grid runs out of energy in hours unless generation comes back.",
-      "blockers": [
-        "Ancillary-service and black-start products are defined per market; a behind-the-meter pair at one host cannot sell into them without a qualified market participant and metering",
-        "Black start award prices are confidential in ERCOT's public market notices, so the revenue is real but not publicly benchmarkable",
-        "Grid-forming capability is an inverter attribute; a synchronous reactor plant earns the inertia credit but not the sub-second products",
-        "No nuclear resource has been contracted for black start service at any scale"
-      ],
-      "sources": [
-        {
-          "label": "Utility Dive — Pioneering 565-MWh battery storage facility now online in Hawai'i, Plus Power says",
-          "url": "https://www.utilitydive.com/news/plus-power-energy-storage-online-hawaii-HECO-rolling-blackouts/704561/",
-          "quote": "fast frequency response, synthetic inertia, and black start",
-          "status": "fetched"
-        },
-        {
-          "label": "ERCOT — Market Notice M-B111425-02, RFP for Black Start Services for 2027 through 2029",
-          "url": "https://www.ercot.com/services/comm/mkt_notices/M-B111425-02",
-          "quote": "Black Start Services Request for Proposal (RFP) for the contract period of January 1, 2027, through December 31, 2029",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "itc-charging-restriction",
-      "group": "batteries",
-      "family": "regulatory-rule",
-      "name": "Tax-credit charging restrictions — the rule that wrote the pairing into the contract",
-      "what_it_is": "Before standalone storage became creditable, a battery only earned the investment credit by being part of a qualifying generator's property, and it only stayed creditable if it charged from that generator. The rule is a cliff plus a haircut measured annually over the five-year recapture period: below 75% of annual charging energy from the qualifying source the credit is lost entirely, and between 75% and 100% it is pro-rated. Nobody signs this either — it is tax law — but it is the reason hybrid PPAs and hybrid interconnection agreements contain explicit no-grid-charging covenants, metering obligations and control logic, and why those covenants persist as boilerplate. The IRS ruling that made it concrete describes charging control implemented in software sampling every 0.1 seconds.",
-      "who_signs": "Taxpayer/owner <-> IRS (and, derivatively, tax-equity investor <-> project, through covenants)",
-      "asset_owner": "third-party developer | host",
-      "term": "Five-year recapture period, tested each annual measuring period",
-      "price_form": "percentage of eligible capex (ITC), or $/MWh (PTC) on the generation half",
-      "precedents": [
-        {
-          "name": "IRS Private Letter Ruling 201809003",
-          "year": "2018",
-          "parties": "IRS Office of Chief Counsel (PLR-118431-17) <-> individual taxpayer; battery consistent with a 13.5 kWh / 5 kW residential unit",
-          "size": "13.5 kWh storage capacity, 5 kW power rating, AC-coupled to an existing residential PV system",
-          "price": "30 percent credit under IRC Sec. 25D",
-          "note": "Ruling dated November 27, 2017, released March 2, 2018. The taxpayer's control scheme monitors solar production and grid import every 0.1 seconds and charges only up to instantaneous solar power, so that all charging energy is assured to come from the solar system. This is the engineering that the tax rule forced into the asset.",
-          "source_idx": 0
-        },
-        {
-          "name": "Inflation Reduction Act of 2022 — standalone storage becomes creditable",
-          "year": "2022",
-          "parties": "US Congress; implemented through IRC Sec. 48E (ITC) and 45Y (PTC)",
-          "size": "n/a (statute)",
-          "price": "ITC base 6%, 30% with wage/apprenticeship, up to 50% with domestic-content and energy-community bonuses; PTC $5.5/MWh base, $27.5/MWh qualified, up to $33/MWh with bonuses",
-          "note": "Rates as modelled by Idaho National Laboratory for microreactor projects. Standalone storage no longer needs a host generator to be creditable, which removed the legal reason to co-locate — pairings after 2022 are commercial choices, not tax-driven ones.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Nuclear is inside the technology-neutral credits: 48E and 45Y apply to zero-carbon generation regardless of technology, so a reactor and a battery can each claim on their own terms and the historical reason to bolt them together is gone. That is an enabler with a sting. The specific choice a reactor project faces, as INL frames it, is ITC versus PTC: high-capex, high-capacity-factor assets sit awkwardly between the two rules of thumb, since high capex argues for the ITC and high capacity factor argues for the PTC. At a $27/MWh PTC, INL finds the claimable PTC exceeds the microreactor's entire variable O&M cost.",
-      "microreactor_edge": "For a 1-20 MW unit the ITC/PTC choice is closer than for a gigawatt plant because the capex per kW is much higher (INL models $14,001/kWe base and $8,616/kWe low case against a conventional plant's few thousand), which pushes toward the ITC, while a microreactor's design capacity factor pushes toward the PTC. The battery half matters here: INL explicitly excludes the LMB from the tax-credit modelling, noting this understates the pair's economics, so a real project can stack a 48E claim on the storage that the published analysis does not credit.",
-      "blockers": [
-        "The 75% cliff and pro-rata haircut still bind any structure that claims storage as part of a generator's energy property rather than standalone",
-        "Recapture is tested annually for five years — an operating year in which the reactor is down for refuelling and the battery charges from the grid is a tax event, not just a performance event",
-        "Tax-equity covenants outlive the tax rule that created them; no-grid-charging language is still standard hybrid-PPA boilerplate",
-        "Credit rates depend on wage/apprenticeship, domestic content and energy-community tests that a relocatable factory-built unit may satisfy in one location and not another"
-      ],
-      "sources": [
-        {
-          "label": "IRS — Private Letter Ruling 201809003 (PLR-118431-17), released March 2, 2018",
-          "url": "https://www.irs.gov/pub/irs-wd/201809003.pdf",
-          "quote": "Thus all energy that is used to charge the Battery can be effectively assured to come from the Solar Energy System.",
-          "status": "fetched"
-        },
-        {
-          "label": "Idaho National Laboratory INL/RPT-24-80420 — Microreactor-Liquid Metal Battery System Potential in Energy Markets (November 2025)",
-          "url": "https://www.osti.gov/servlets/purl/3013828",
-          "quote": "6%, 30%, 40%, and 50% for ITC, and 5.5, 27.5, 30.5, and 33 USD/MWh for PTC",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "non-wires-alternative-rate-based-pair",
-      "group": "batteries",
-      "family": "utility-tariff",
-      "name": "Non-wires alternative — the utility owns the pair and rate-bases it against a deferred cable",
-      "what_it_is": "The utility identifies a transmission or distribution investment it would otherwise have to make, then builds a generator-plus-storage pair on the constrained side instead and puts it in rate base. Nobody signs a PPA; the utility owns both halves outright, the regulator approves the capital, and every customer pays through rates. The case is made purely on avoided cost against the wires project, which means the comparison is not against the grid price of electricity but against the cost of steel and permits — a far higher bar to clear and therefore a far easier one to beat. This is the cleanest example of the pair being bought as one product, because neither half alone could have deferred the cable.",
-      "who_signs": "Utility <-> state regulator (rate case / capital approval); vendor supplies equipment",
-      "asset_owner": "utility",
-      "term": "Asset life, recovered over the depreciation schedule",
-      "price_form": "rate-based capital, recovered in distribution rates",
-      "precedents": [
-        {
-          "name": "Nantucket Battery Energy Storage System",
-          "year": "2019",
-          "parties": "National Grid (owner) <-> Tesla (240 Powerpacks); Nantucket, Massachusetts",
-          "size": "6 MW / 48 MWh battery (8-hour) plus a replacement 15 MW diesel generator and power control house",
-          "price": "$81 million for the combined project, against close to a $200 million investment for a third underwater transmission cable",
-          "note": "Commissioned October 2019. The island is fed by two submarine cables; the pair exists to carry the summer peak if one cable fails. PNNL published a separate assessment of the system's value stack (PNNL-28941).",
-          "source_idx": 0
-        },
-        {
-          "name": "Blue Lake Rancheria community microgrid",
-          "year": "2015",
-          "parties": "Blue Lake Rancheria (tribal government) <-> Siemens <-> Schatz Energy Research Center, Cal Poly Humboldt; California Energy Commission EPIC grant",
-          "size": "0.5 MW solar PV + 950 kWh battery + biomass fuel cell + diesel generators across a 100-acre campus",
-          "price": "$5 million California Energy Commission EPIC grant",
-          "note": "Serves government offices, tribal enterprises and a Red Cross shelter-in-place facility. Grant-funded rather than rate-based, but the same logic: the pair is bought to serve a site the wires cannot reliably reach.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "This is the mechanism most favourable to a reactor, because the benchmark is a transmission project rather than a commodity price. National Grid's alternative was a $200 million cable; that is roughly $33,000 per kW of the 6 MW it was firming, which is more than double INL's high-end microreactor capex assumption of $14,001/kWe. The blocker is regulatory rather than economic: rate-basing a reactor requires the utility to be the NRC licensee and to convince a state commission to put a first-of-a-kind nuclear asset in customer rates, which is exactly the argument that has historically gone badly. It also has to survive prudence review if the unit underperforms.",
-      "microreactor_edge": "Nantucket is the archetypal microreactor site and the numbers say so: an island with a hard cable constraint, a summer peak, an existing diesel plant, and a utility willing to spend $81 million to avoid $200 million. A 5-15 MW reactor replaces both the 15 MW diesel and most of the 48 MWh battery, and unlike the battery it does not need the cable at all to recharge — the 8-hour battery's entire value depends on being refilled off-peak through the very cables it is insuring against. That dependency is the specific weakness a reactor removes, and it is invisible in the headline MW/MWh.",
-      "blockers": [
-        "Rate-basing puts the utility on the NRC licence and the prudence risk; no US utility has done this for a microreactor",
-        "The deferral case has a clock — once the wires project is eventually built the asset's justification lapses",
-        "Island and constrained-area sites are small in number and each requires its own regulatory proceeding",
-        "The comparison only works where the avoided wires cost is enormous; on an unconstrained system there is nothing to defer"
-      ],
-      "sources": [
-        {
-          "label": "Utility Dive — There once was a 48 MWh Tesla battery on Nantucket, which saved National Grid $120M in its budget",
-          "url": "https://www.utilitydive.com/news/Tesla-national-grid-battery-energy-storage-8hour-long-duration-diesel-generation-system-nantucket/564428/",
-          "quote": "Together with the 15 MW diesel generator and a power control house, the project cost $81 million.",
-          "status": "fetched"
-        },
-        {
-          "label": "Businesswire — Siemens, Blue Lake Rancheria, Humboldt State University community microgrid",
-          "url": "https://www.businesswire.com/news/home/20150824005598/en/Siemens-Blue-Lake-Rancheria-Humboldt-State-University",
-          "quote": "funded in part through a $5 million grant from the California Energy Commission's Electric Program Investment Charge (EPIC) program",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "generator-hybridisation-ramp-and-spinning-reserve",
-      "group": "batteries",
-      "family": "commercial-contract",
-      "name": "Generator hybridisation — a small battery bolted onto a thermal unit to sell its start time",
-      "what_it_is": "A short-duration battery is integrated into an existing thermal generator's controls so that the combined plant is dispatchable the instant the market calls it, while the turbine is still starting or entirely offline. The battery is not a storage product; it is a performance upgrade to the generator, and the two are bid into the market as one resource. It is bought because the *service* being sold is response time, and response time is where a thermal machine loses. Crucially the battery is tiny relative to the generator — the point is bridging seconds and minutes, not shifting hours.",
-      "who_signs": "Plant owner (utility or IPP) <-> equipment vendor / integrator; the combined plant then bids under existing market rules",
-      "asset_owner": "utility | third-party developer",
-      "term": "Plant life; the market products are bid daily",
-      "price_form": "monetised through ancillary-service and energy market revenues, plus avoided fuel and emissions during starts",
-      "precedents": [
-        {
-          "name": "SCE Center Peaker and Grapeland Peaker — Hybrid Enhanced Gas Turbine",
-          "year": "2016",
-          "parties": "Southern California Edison (owner) <-> General Electric, Current, Wellhead Power Solutions; Norwalk and Rancho Cucamonga, California",
-          "size": "10 MW / 4.3 MWh lithium-ion BESS integrated with a 50 MW GE LM6000 aeroderivative gas turbine at each site",
-          "note": "Online to meet a CPUC deadline of December 31, 2016. The battery makes the plant instantly available around the clock and lets it provide spinning reserve while the turbine is offline; start time improves from about 10 minutes to under five, with emissions reductions of up to 60%. The battery is a 26-minute device — 4.3 MWh on 10 MW — which is the whole point.",
-          "source_idx": 0
-        },
-        {
-          "name": "MCE / Fresno peaker hybridisation",
-          "year": "2023",
-          "parties": "Marin Clean Energy <-> existing 48 MW gas-fired peaker, Fresno, California",
-          "size": "16 MW of battery storage added to a 48 MW gas peaker",
-          "note": "EIA counted at least 13 fossil-plus-storage hybrid plants operating between 2019 and 2022, down to 8 as of 2023 — the population is small and shrinking, which is itself a caution about this mechanism's durability.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Of every mechanism in this file, this is the closest structural match to a reactor, because it treats the battery as a control-system component rather than an energy asset. A reactor has the same defect as a peaker in an exaggerated form — it cannot follow a step change in load, and unlike a turbine it should not be asked to cycle at all, since thermal cycling is a licensing and materials problem rather than a fuel-cost one. The battery buys the reactor the right to run flat. What changes versus a gas turbine is the ratio: SCE needed 26 minutes of storage on a machine that starts in ten; a reactor is far slower to change power, so the buffer has to cover a longer transient.",
-      "microreactor_edge": "SCE's ratio is the number worth carrying: 10 MW of battery power on a 50 MW turbine, at 4.3 MWh. Scaled to a 5 MW reactor that is roughly a 1 MW / 0.4 MWh buffer — small enough to sit in a couple of cabinets and to be replaced on a normal commercial cycle without touching the nuclear island. The reactor also gets something the peaker does not: because it runs continuously, the battery is always charged and always available, so the pair can offer instantaneous response without the peaker's dependence on a market signal to refill. Sizing the reactor to average load and letting the buffer absorb peaks is the specific move a 1-20 MW factory-built block enables, and it is what turns a flat 5 MW into a service.",
-      "blockers": [
-        "The EIA-counted population of fossil-plus-storage hybrids fell from 13 (2019-2022) to 8 in 2023 — hybridisation is not a proven durable business model on its own",
-        "Integrating a battery into a nuclear plant's control system crosses into safety-related design review in a way that bolting one onto a gas turbine does not",
-        "Market rules for co-located hybrids differ by ISO and mostly assume an intermittent host resource",
-        "The revenue is ancillary-service revenue, which is thin, saturates quickly, and is unavailable behind the meter"
-      ],
-      "sources": [
-        {
-          "label": "POWER Magazine — Two SCE Gas-Battery Hybrid Projects Revolutionize Peaker Performance",
-          "url": "https://www.powermag.com/two-sce-gas-battery-hybrid-projects-revolutionize-peaker-performance/",
-          "quote": "making the Hybrid EGT instantly available around the clock, providing spinning reserves even while the gas turbine is offline",
-          "status": "fetched"
-        },
-        {
-          "label": "Clean Energy Group — The Promise and Pitfalls of Fossil Power Plant Hybridization with Energy Storage",
-          "url": "https://www.cleanegroup.org/the-promise-and-pitfalls-of-fossil-power-plant-hybridization-with-energy-storage/",
-          "quote": "at least 13 fossil fuel and battery storage power plant hybrids had been in operation between 2019 and 2022",
-          "status": "snippet-only"
-        }
-      ]
-    },
-    {
-      "id": "microgrid-energy-services-agreement-p3",
-      "group": "batteries",
-      "family": "public-procurement",
-      "name": "Microgrid energy services agreement / P3 — third party owns the pair, host pays only for output",
-      "what_it_is": "A public host with critical facilities procures resilience rather than equipment. A developer designs, finances, builds, owns and operates the entire microgrid — generation, storage, controls, switchgear, cybersecurity — on the host's site, and the host pays only for delivered energy and services under a long-term agreement. There is no capital appropriation, which is the mechanism's whole reason to exist: it converts a capital project that a county council must vote on into an operating expense that lives in a utility budget line. The host's exposure is contractual performance; the developer's exposure is everything else.",
-      "who_signs": "Public agency (county, city, base, campus) <-> microgrid developer/owner, via competitive solicitation",
-      "asset_owner": "third-party developer",
-      "term": "Long-term service agreement, typically 15-25 years",
-      "price_form": "$/kWh for delivered energy plus a resilience/service fee; no upfront capital from the host",
-      "precedents": [
-        {
-          "name": "Montgomery County, Maryland — advanced microgrids at Public Safety Headquarters and the Correctional Facility",
-          "year": "2018",
-          "parties": "Montgomery County, MD <-> Schneider Electric (design, controls, DERMS, cybersecurity) and Duke Energy Renewables (owner-operator, with REC Solar)",
-          "size": "Two microgrids at Gaithersburg and Boyds; combined output over 11 million kWh per year from solar and combined heat and power, with battery storage and controls",
-          "price": "No upfront costs for the County; the county pays for output under the P3 agreement",
-          "note": "Activated October 2018. Duke Energy Renewables owns and operates both microgrids. Roughly 3.3 million kWh/yr of solar and 7.4 million kWh/yr of CHP.",
-          "source_idx": 0
-        },
-        {
-          "name": "Kaiser Permanente Ontario Medical Center — solar under an Ameresco PPA inside a grant-funded microgrid",
-          "year": "2025",
-          "parties": "Kaiser Permanente (host) <-> Ameresco (solar PPA) <-> Faraday Microgrids (storage, CEC-funded)",
-          "size": "2 MW solar + 9 MWh non-lithium battery + 1 MW fuel cell",
-          "price": "$8.3 million California Energy Commission grant for the storage; solar bought under PPA rather than owned",
-          "note": "Shows the common hybrid financing shape: the generation half sold as a service, the storage half grant-funded, and the host owning neither.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The ESA/P3 form is the natural wrapper for a reactor because it keeps the licensee and the operator in one entity — the developer — and gives the host a service it can procure without a nuclear engineering staff or a capital vote. Two things break. First, term: a microgrid ESA runs 15-25 years against a reactor's design life and licence renewal cycle, so the residual-value and decommissioning questions land inside the contract rather than after it. Second, the security and emergency-planning obligations of a licensed facility do not sit comfortably on a county correctional facility or a hospital campus, and no ESA template addresses them.",
-      "microreactor_edge": "Montgomery County's two microgrids together deliver about 11 GWh/year, which is roughly 1.25 MW average. A single 5 MW block would serve that county's whole critical-facility portfolio four times over with the surplus available for export or heat — meaning the natural microreactor customer here is not one facility but an aggregated municipal or campus portfolio. Factory build and relocatability also match the P3 risk allocation: the developer's downside on a stranded asset is bounded if the unit can be removed and redeployed, which is not true of a CHP plant poured into a jail's mechanical yard.",
-      "blockers": [
-        "No ESA template allocates nuclear decommissioning, spent-fuel or security-force obligations between host and developer",
-        "Public procurement rules require competitive solicitation against alternatives; a sole-source reactor is hard to justify against a priced diesel or CHP bid",
-        "The host's site becomes a licensed facility, with siting, emergency planning and public engagement obligations a county has never assumed",
-        "Contract terms of 15-25 years are shorter than the asset's economic life, leaving a residual-value gap"
-      ],
-      "sources": [
-        {
-          "label": "Duke Energy — Successful microgrid activation showcases innovation; supports reliable, efficient, clean energy at Montgomery County, Md., critical facilities (October 24, 2018)",
-          "url": "https://news.duke-energy.com/releases/successful-microgrid-activation-showcases-innovation-supports-reliable-efficient-clean-energy-at-montgomery-county-md-critical-facilities",
-          "quote": "an innovative public-private partnership with Schneider Electric and Duke Energy Renewables that required no upfront costs for the County",
-          "status": "fetched"
-        },
-        {
-          "label": "Kaiser Permanente / PR Newswire — Kaiser Permanente Debuts Largest Hospital-Based Renewable Microgrid in U.S.",
-          "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
-          "quote": "The microgrid...will serve as the initial emergency power backup system during commercial power outages.",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "all-source-rfp-guarantee-stack",
-      "group": "batteries",
-      "family": "public-procurement",
-      "name": "All-source RFP guarantee stack — what a utility makes the pair contractually promise",
-      "what_it_is": "Utilities now run technology-neutral all-source RFPs and publish the contract they intend to sign, so a bidder's obligations are known before the bid. For storage the published template is not a price sheet, it is a stack of tested guarantees: a Guaranteed Storage Power Capacity Rating, a Guaranteed Storage Round Trip Efficiency, a Storage Availability Guarantee, a Storage Ramp Rate test, energy capacity tests, cybersecurity requirements, and a licensed professional engineer's certification of each at commercial operation. The utility also supplies and owns the Charging Energy and issues Charging and Discharging Notices to an AGC set-point, so the seller has no discretion over dispatch. Tax credits stay with the seller and are explicitly carved out of the capacity rights the utility buys.",
-      "who_signs": "Bidder/project SPV <-> utility, on the utility's published RFP contract form, under state commission oversight",
-      "asset_owner": "third-party developer",
-      "term": "Set per RFP; the template's milestones, delay damages and security run from execution to commercial operation and through the delivery term",
-      "price_form": "$/kW-month or $/kW-yr storage price (Exhibit K), adjusted by measured availability and round-trip efficiency",
-      "precedents": [
-        {
-          "name": "PacifiCorp 2022 All-Source RFP — Appendix E-3, form Energy Storage Agreement",
-          "year": "2022",
-          "parties": "PacifiCorp <-> bidders into the 2022 All-Source RFP (Oregon, Utah, Wyoming, Washington, Idaho, California service areas)",
-          "size": "Template applies to any bid storage facility; exhibits T through W define the capacity, availability, round-trip-efficiency and ramp-rate tests",
-          "note": "Charging Energy is defined as energy provided by PacifiCorp to the seller at the point of delivery under a Charging Notice, all of it used for PacifiCorp's benefit. Commercial operation requires a Licensed Professional Engineer's letter certifying the power capacity rating, round trip efficiency, ramp rate and AGC installation each meet or exceed the guaranteed values. Capacity Rights expressly exclude ancillary services and tax credits.",
-          "source_idx": 0
-        },
-        {
-          "name": "Anaheim / Roadhouse guaranteed-efficiency schedule as executed practice",
-          "year": "2024",
-          "parties": "Roadhouse Energy Storage, LLC <-> City of Anaheim",
-          "size": "300 MW / 1,200 MWh",
-          "price": "$18.76/kW-month flat for 20 years",
-          "note": "The executed contract puts numbers on the template's abstractions: guaranteed round-trip efficiency of 83.9% falling to 78.2% over twenty contract years, with $100/kW of development and operation security backing it.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "This is the concrete answer to 'what would a utility make a reactor promise'. Every line of the storage guarantee stack has a nuclear analogue and each is harder: guaranteed power capacity becomes guaranteed net electrical output at reference conditions; round-trip efficiency becomes thermal efficiency and house load; the availability guarantee becomes a capacity-factor guarantee net of refuelling; the ramp-rate test becomes the reactor's licensed manoeuvring envelope, which for most microreactor designs is the binding constraint. The professional-engineer certification at commercial operation is the interesting enabler: it means the utility's acceptance test is an engineering document, not a regulatory one, so a design that can demonstrate its numbers can be accepted on the same terms as a battery. The blocker is AGC: these templates give the utility direct set-point control of the asset, and no reactor licence contemplates a utility dispatcher moving reactor power.",
-      "microreactor_edge": "Pairing solves the ramp-rate exhibit outright. A reactor cannot pass a storage ramp-rate test and should not try; a battery on the same point of delivery can, and the combined facility is what gets certified. That is the single most useful thing pairing does for a bid into an all-source RFP: it lets a slow, always-on machine be sold under a contract form written for fast machines. The relocatability of a 1-20 MW unit also changes the delay-damages and security calculus, since a factory unit that misses a milestone at one site is not a stranded construction project.",
-      "blockers": [
-        "AGC set-point control by the utility is incompatible with current reactor licensing bases",
-        "Availability guarantees have to be quoted before any operating fleet exists to price them",
-        "Delay damages and milestone security in these templates assume construction schedules measured in quarters, not the multi-year NRC licensing tail",
-        "Capacity Rights carve-outs mean the seller keeps the tax credits — the utility will price the bid assuming those credits are monetised, which requires a tax-equity market that does not yet exist for microreactors"
-      ],
-      "sources": [
-        {
-          "label": "PacifiCorp — 2022 All-Source RFP, Appendix E-3 Tolling Agreement Documents (form Energy Storage Agreement)",
-          "url": "https://www.pacificorp.com/content/dam/pcorp/documents/en/pacificorp/suppliers/rfps/pacificorps-2022-all-source-request-for-proposals/appendix-e-g/PacifiCorp_2022AS_RFP_App_E-3_Tolling_Agreement.pdf",
-          "quote": "used for PacifiCorp’s benefit in accordance with Charging Notices and Discharging Notices",
-          "status": "fetched"
-        },
-        {
-          "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement, Energy Storage Agreement cover sheet (April 24, 2024)",
-          "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
-          "quote": "Guaranteed Capacity:  300 MW",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "ratepayer-funded-microgrid-grant",
-      "group": "batteries",
-      "family": "public-procurement",
-      "name": "Ratepayer-funded microgrid incentive — a regulator pays for the pair on behalf of a community",
-      "what_it_is": "A state commission orders utilities to collect a fixed pot from ratepayers and award it as grants for community microgrids serving critical facilities in vulnerable areas. The community or local government applies through its utility; the award funds the capital, and the recipient commits to operate and maintain the system for a minimum term. Nobody buys energy under this mechanism — the regulator is buying outage resilience for third parties who could never finance it, and the projects are explicitly required to be complex enough to island for extended periods and serve multiple customers. It is the only mechanism in this file where the entity that pays is neither the host nor the offtaker.",
-      "who_signs": "Community/local government/tribe <-> investor-owned utility administering the program, under a commission decision",
-      "asset_owner": "host | public agency | third-party developer (per award terms)",
-      "term": "Award-specific; Isla Vista requires operation and maintenance for no less than 10 years",
-      "price_form": "grant-funded capital, recovered from all ratepayers",
-      "precedents": [
-        {
-          "name": "CPUC Microgrid Incentive Program",
-          "year": "2023",
-          "parties": "California Public Utilities Commission (Rulemaking R.19-09-009) <-> PG&E, SCE, SDG&E as administrators",
-          "size": "$200 million total: $79.2M PG&E, $83.3M SCE, $17.5M SDG&E; up to $15 million per project",
-          "price": "$200 million of ratepayer funds; program is now fully subscribed and closed to new applications",
-          "note": "Decision dated April 6, 2023. Targets disadvantaged, vulnerable and tribal communities that have experienced or are likely to experience outages, and emphasises projects that can operate independently for extended periods and serve multiple customers.",
-          "source_idx": 0
-        },
-        {
-          "name": "Isla Vista community microgrid",
-          "year": "2026",
-          "parties": "Santa Barbara County <-> Southern California Edison (MIP administrator); operator to be the county or a third-party vendor",
-          "size": "Serves the Isla Vista sheriff's office, a neighborhood health clinic, a community center and 150+ residential and business customers",
-          "price": "$15.3 million, fully funded by the Microgrid Incentive Program; $400,000 of it earmarked for community engagement and workforce development",
-          "note": "Expected to provide 24 hours of backup power. Operation and maintenance committed for a term no less than 10 years.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The program's own selection criteria — independent operation for extended periods, multiple customers, critical facilities — describe a reactor better than they describe a solar-plus-battery microgrid, which is the awkward part. A $15 million cap is real money against a microreactor's cost but well short of it, so the mechanism as written can fund the storage and controls half of a reactor pairing but not the reactor. The harder blocker is political rather than financial: these programs are aimed at disadvantaged and tribal communities, and siting a first-of-a-kind licensed nuclear facility in exactly those communities is an environmental-justice problem that a grant application does not resolve.",
-      "microreactor_edge": "Isla Vista is the sharpest number here: $15.3 million buys a community 24 hours of backup. A 1-20 MW unit's proposition against that is duration measured in years rather than hours, for a portfolio of sites rather than one — and the honest comparison is that the grant program has already spent its $200 million and is closed, so the mechanism cannot be the funding route for a reactor even if the fit were perfect. The useful read is the price signal, not the funding: California's regulator was willing to spend roughly $100,000 per critical-facility-day of resilience, which is the number a reactor-plus-storage resilience offering can be benchmarked against.",
-      "blockers": [
-        "The program is fully subscribed and closed; there is no open window",
-        "$15 million per project caps out well below any credible microreactor capex",
-        "Awards are targeted at disadvantaged, vulnerable and tribal communities, where siting a licensed nuclear facility carries its own consent problem",
-        "Award terms bind operation and maintenance for a minimum period without providing an operating revenue stream"
-      ],
-      "sources": [
-        {
-          "label": "CPUC — CPUC Charts Course for Microgrid Incentive Program To Increase Community Resilience (April 6, 2023, R.19-09-009)",
-          "url": "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-charts-course-for-microgrid-incentive-program-to-increase-community-resilience-2023",
-          "quote": "Projects selected under the MIP can receive up to $15 million in award funding.",
-          "status": "fetched"
-        },
-        {
-          "label": "Microgrid Knowledge — Utility-supported $15.3M Microgrid to Power Public Safety, Health in Coastal California Community",
-          "url": "https://www.microgridknowledge.com/utility-microgrids/article/55378864/utility-supported-153m-microgrid-to-power-public-safety-health-in-coastal-california-community",
-          "quote": "Either the county or a third-party vendor will operate and maintain the microgrid for a term no less than 10 years",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "single-owner-merchant-arbitrage-pair",
-      "group": "batteries",
-      "family": "commercial-contract",
-      "name": "Single-owner merchant pair — one entity owns generator and storage and optimises dispatch against price",
-      "what_it_is": "No offtake contract at all: one owner holds both the generator and the battery, and the battery's job is to move the generator's flat output into the hours the market pays for. Because both halves are inside one balance sheet the owner is indifferent to which asset earns the revenue, and the optimisation is purely dispatch against a price series. The economics live or die on price volatility rather than on price level, which makes this the one mechanism where a market with cheap average power can still be the best market. It is also the mechanism most exposed: nothing is contracted, so nothing is bankable.",
-      "who_signs": "Nobody — the owner sells into the wholesale market as a price taker; the counterparty is the market operator",
-      "asset_owner": "third-party developer | utility",
-      "term": "Asset life; 20-year project life is the standard modelling assumption",
-      "price_form": "merchant real-time market revenue, plus tax credits on the generation half",
-      "precedents": [
-        {
-          "name": "City of Anaheim's own merchant arithmetic on the Roadhouse contract",
-          "year": "2024",
-          "parties": "Anaheim Public Utilities (staff analysis presented to the Public Utilities Board, April 24, 2024)",
-          "size": "300 MW / 1,200 MWh",
-          "price": "$71M/yr in battery agreement and renewable power costs against $78M/yr in wholesale energy and avoided CAISO costs — a ~$7M/yr net benefit, about 9% of cost",
-          "note": "A real, published arbitrage margin on a real contract. The margin is thin enough that it is the difference between two large numbers, which is what makes merchant exposure on a paired asset dangerous.",
-          "source_idx": 0
-        },
-        {
-          "name": "Berkeley Lab hybrid dataset — the measured arbitrage spread",
-          "year": "2025",
-          "parties": "LBNL Electricity Markets & Policy",
-          "size": "100+ operating or contracted US PV+battery hybrids",
-          "price": "cost of adding storage ~$10/MWh-PV at a 50% storage-to-PV ratio, against $8-21/MWh-PV of value depending on region and dispatch assumptions",
-          "note": "The low end of the value range is below the cost. Merchant pairing is not reliably profitable across regions; it is profitable in specific ones.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "Idaho National Laboratory modelled exactly this structure for a reactor: a 20 MWth (9.6 MWe) high-temperature gas reactor with a single owner also holding a liquid metal battery, dispatched by stochastic optimisation against ERCOT, PJM and MISO real-time prices over a 20-year life. Two findings matter commercially. First, the battery prefers to charge from the reactor rather than from the grid, so the tax-credit charging restriction that constrains solar hybrids is close to free for a reactor pair. Second, the reactor's own capex dominates: INL's base case assumes $14,001/kWe with a low case of $8,616/kWe, and even at the low case the NPV outcome varies by market rather than being uniformly positive. The paper reports the maximum allowable reactor capex to break even, computed per 9,800 kW of reactor — which is the correct way to state the target and is rarely stated that way in vendor material.",
-      "microreactor_edge": "The most surprising number in the literature is the sizing ratio. INL optimised the battery's power rating across a 0-100 MWe range against a 9.6 MWe reactor, and the optimum sat at the top of the range in all three markets — roughly ten times the reactor's electrical output, with the paper cautioning that beyond 100 MWe the estimates could differ. That is the opposite of the intuition that a small reactor takes a small battery: a flat generator plus a very large short-duration battery is a peaking plant with nuclear fuel. The other quantified finding is that a large share of the reactor's output is better sold as heat or product than as electricity — INL estimates non-electric application potential at 38.6% in ERCOT, 23.7% in PJM and 24% in MISO, and in ERCOT 650 MWh of 1,682 MWh generated is diverted to charging rather than sold. To make the arbitrage return real the battery must sustain 624-633 cycles per year at 72.2% round-trip efficiency, or 730-768 cycles at 80.3%.",
-      "blockers": [
-        "Merchant revenue is unbankable for a first-of-a-kind asset; lenders will require an offtake contract that this mechanism by definition lacks",
-        "The measured arbitrage margin on a real utility contract was ~9% of cost — a difference between two large, volatile numbers",
-        "INL's own result is market-dependent: even at the low capex case the NPV varies significantly across ERCOT, PJM and MISO",
-        "624-768 full cycles per year is a duty cycle no commercially available long-life battery chemistry is warranted for over a 20-year life"
-      ],
-      "sources": [
-        {
-          "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement staff presentation (April 24, 2024)",
-          "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
-          "quote": "dispatches in excess of 438,000 MWh during",
-          "status": "fetched"
-        },
-        {
-          "label": "Idaho National Laboratory INL/RPT-24-80420 — Microreactor-Liquid Metal Battery System Potential in Energy Markets (November 2025)",
-          "url": "https://www.osti.gov/servlets/purl/3013828",
-          "quote": "72.2% round-trip efficiency (RTE) and 730-768 cycles at 80.3% RTE.",
-          "status": "fetched"
-        }
-      ]
-    }
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "mech-batteries",
+  "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
+  "angles_run": [
+   "hybrid resource contracting (single hybrid PPA vs two contracts, tolling, availability guarantees, charging restrictions)",
+   "storage-as-backup replacing the genset (NFPA 99/110/111, CMS categorical waiver, real hospital microgrids)",
+   "utility procurement of the pair and capacity accreditation (ELCC, RA, all-source RFPs)",
+   "ancillary services and black start",
+   "islanding and microgrid controls (IEEE 1547/1547.4, UL 1741 SB)",
+   "who is actually building paired reactors (vendors, battery majors, national labs)",
+   "the economics literature (INL/NREL nuclear + storage NPV)"
+  ],
+  "absences": [
+   "No executed contract, LOI, MOU or press release pairing ANY nuclear reactor with a battery storage system could be verified. Searched Westinghouse eVinci, Oklo, X-energy, Radiant and BWXT against Tesla, Fluence, Wartsila, Sungrow and Powin; nothing found in company press rooms, SEC filings or trade press. This is a confirmed negative: as of 2026-08-24 no battery major has signed anything nuclear, and no reactor vendor markets a paired storage product.",
+   "No black-start award price is public. ERCOT's Black Start Services RFP for 2027-2029 (responses due 2026-02-15) is published as a market notice, but awarded bid prices are reviewed inside the Black Start Working Group and not disclosed, so the revenue for that service could not be quantified.",
+   "The Kapolei Energy Storage contract price with Hawaiian Electric is not public; only the derived bill impact ($0.28/month average over the 20-year contract) was found, and only via secondary reporting of the HECO filing rather than the filing itself.",
+   "No CMS-surveyed Health Care Microgrid System has been identified by name. The waiver (QSO-23-11-LSC) is real and its election process is documented, but no facility was found that has been publicly recorded as electing it at survey, so the practical acceptance record is unverified.",
+   "No facility was found where a battery alone was accepted as the entire legally required emergency power supply under NFPA 111 with a documented SEPSS class/type designation. Every real case found (Kaiser Richmond 2017, Kaiser Ontario 2025, Blue Lake Rancheria) pairs storage with either a retained diesel plant, a fuel cell, or both.",
+   "Energy-storage-as-a-service shared-savings contracts (Stem and similar) could not be pinned to any published $/month or shared-savings percentage; two searches returned only marketing claims of 20-30% bill reduction with no contracted figures, so no record was written.",
+   "Solar-storage hybrid ELCC could not be quoted for PJM's current delivery years because PJM itself reports the class as 'Small Sample Size' for both 2026/2027 and 2027/2028 — the hybrid accreditation precedent does not exist statistically, only under the superseded methodology.",
+   "PacifiCorp's published Energy Storage Agreement leaves the Storage Price (Exhibit K) and the guaranteed availability, capacity and round-trip-efficiency values (Exhibit A) blank as bid variables, so the template's guarantee architecture is documented but its numbers are not.",
+   "Montgomery County's microgrid battery capacity, contract term and $/kWh price are not published; only annual kWh output (about 11 million kWh/yr across two sites) and the no-upfront-cost structure could be verified.",
+   "No CAISO, ERCOT, MISO or NYISO tariff provision was found that defines a capacity accreditation class for a firm generator paired with storage; the only accreditation classes found treat generation and storage separately, or treat hybrids as solar-hosted."
   ]
+ },
+ "mechanisms": [
+  {
+   "id": "storage-tolling-agreement",
+   "group": "batteries",
+   "family": "commercial-contract",
+   "name": "Storage tolling agreement (capacity payment, buyer dispatches)",
+   "what_it_is": "A developer builds, owns and operates the battery; the offtaker pays a flat $/kW-month capacity payment for the right to charge and discharge it at will. The owner bears construction, availability and round-trip-efficiency risk (guaranteed efficiency rates are scheduled year by year and decline with degradation); the offtaker bears all market/price risk and supplies the charging energy. Because the buyer is the scheduling coordinator, the battery's energy, installed capacity, capacity attributes and ancillary services are all delivered as one bundled 'Product'. This is the dominant instrument for utility-procured standalone storage in the US.",
+   "who_signs": "Storage developer/owner (SPV) <-> load-serving entity or utility",
+   "asset_owner": "third-party developer",
+   "term": "20 years (Anaheim/Roadhouse: twenty Contract Years)",
+   "price_form": "$/kW-month capacity fee, flat, no escalation",
+   "precedents": [
+    {
+     "name": "Roadhouse Energy Storage — Energy Storage Agreement with the City of Anaheim",
+     "year": "2024",
+     "parties": "Roadhouse Energy Storage, LLC (NextEra Energy Resources) <-> City of Anaheim (Anaheim Public Utilities)",
+     "size": "300 MW / 1,200 MWh (4-hour), San Bernardino County, CA",
+     "price": "$18.76 per kW-month, flat, no escalation, Contract Years 1-20",
+     "note": "Approved at the Anaheim Public Utilities Board meeting of 2024-04-24. Guaranteed COD 2027-10-01. Guaranteed round-trip efficiency scheduled to decline from 83.9% in Year 1 to 78.2% in Year 20. Development and operation security of $100/kW of guaranteed capacity. Utility staff presented ~$71M/yr in costs against ~$78M/yr in benefits, a ~$7M/yr net benefit. Buyer is the Scheduling Coordinator; Product = Facility Energy + Installed Capacity + Capacity Attributes + Ancillary Services.",
+     "source_idx": 0
+    },
+    {
+     "name": "Corazon Energy Storage — 20-year tolling agreement with Public Service Company of New Mexico",
+     "year": "2024",
+     "parties": "Plus Power <-> PNM",
+     "size": "150 MW / 600 MWh, New Mexico",
+     "note": "Awarded out of PNM's 2026-2028 Generation Resources RFP (issued 2022). Plus Power retains ownership of the facility while PNM charges and dispatches it. Price not published.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The tolling form transfers cleanly to a reactor because it already separates ownership from dispatch: the vendor/SPV owns and operates the plant (which is what NRC licensing wants — a single, competent licensee), and the host or utility buys the right to call on it. What does not transfer is the price form. A battery is paid $/kW-month precisely because it has no fuel and no energy of its own; a reactor generates, so the analogue is a capacity-plus-energy split (a $/kW-month availability fee for the firm block, plus $/MWh for what it actually delivers). The guaranteed-efficiency schedule has a direct reactor analogue that no battery contract has: a guaranteed capacity-factor / availability schedule net of scheduled refuelling and maintenance outages, which is the one number a nuclear tolling agreement will be negotiated on.",
+   "microreactor_edge": "A 300 MW/1,200 MWh toll is a wholesale-market instrument; a 1-20 MW reactor's version is the same paper at a site-sized scale, where the offtaker is a single host rather than a utility. The relevant arithmetic: Anaheim is paying $18.76/kW-month = ~$225/kW-yr for 4 hours of shiftable energy with zero energy of its own. A 5 MW reactor plus a 2-4 hour battery sold on the same $/kW-month basis has to clear that number and the diesel it displaces, but it also sells firm energy the battery cannot, so it competes on the energy leg, not the capacity leg.",
+   "blockers": [
+    "Capacity payments are priced off a market's resource-adequacy value; a behind-the-meter reactor at a single host has no RA market to monetise unless the utility tariff lets it export",
+    "Tolling puts availability risk on the owner — a reactor owner cannot yet quote a bankable availability guarantee for a first-of-a-kind unit",
+    "$100/kW development and operation security is trivial for a battery developer and material for a reactor SPV with a decade-long licensing tail"
+   ],
+   "sources": [
+    {
+     "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement, staff presentation and Energy Storage Agreement cover sheet (April 24, 2024)",
+     "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
+     "quote": "$18.76 per kW-mo. (flat) with no escalation",
+     "status": "fetched"
+    },
+    {
+     "label": "Energy-Storage.news — Tolling agreement for 600 MWh New Mexico project, financial close for 400 MWh California battery",
+     "url": "https://www.ess-news.com/2024/11/26/tolling-agreement-for-600-mwh-new-mexico-project-financial-close-for-400-mwh-california-battery/",
+     "quote": "Plus Power and PNM signed a tolling agreement, by which Plus Power retains ownership of the facility while PNM can charge and dispatch",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "cms-hcms-categorical-waiver",
+   "group": "batteries",
+   "family": "regulatory-rule",
+   "name": "CMS categorical waiver for Health Care Microgrid Systems (QSO-23-11-LSC)",
+   "what_it_is": "CMS conditions of participation bind hospitals to the 2012 edition of NFPA 99, which requires the emergency power source for a hospital's essential electric system to be a generator set or a battery system — nothing else. On 2023-03-31 CMS issued a categorical waiver letting facilities instead comply with the 2021 edition of NFPA 99 and the 2023 NEC, which permit a 'health care microgrid system' (HCMS) to be that source. Nobody signs anything: the facility formally elects the waiver, documents the election, and produces it at the survey entrance conference along with evidence of compliance. The economic consequence is that the capital otherwise sunk in a legally-mandated diesel plant becomes available to buy a different power source.",
+   "who_signs": "Health care facility (self-election) <-> CMS state survey agency at survey",
+   "asset_owner": "host | third-party developer",
+   "term": "Indefinite; effective immediately from 2023-03-31, re-verified at each survey; HCMS recommissioning required every 5 years",
+   "price_form": "not a payment instrument — it is the permission that unlocks one",
+   "precedents": [
+    {
+     "name": "Kaiser Permanente Ontario Medical Center microgrid",
+     "year": "2025",
+     "parties": "Kaiser Permanente (host) <-> Faraday Microgrids (storage) <-> Ameresco (solar under PPA) <-> California Energy Commission (grant)",
+     "size": "2 MW solar + 9 MWh non-lithium battery + 1 MW fuel cell",
+     "price": "$8.3 million CEC grant to Faraday Microgrids for the storage; solar sold to the hospital under an Ameresco PPA",
+     "note": "Announced 2025-04-17 as the largest hospital-based renewable microgrid in the US. Stated to serve all of the hospital's emergency power needs for 10 continuous hours and to act as the initial emergency backup during outages.",
+     "source_idx": 1
+    },
+    {
+     "name": "Kaiser Permanente Richmond Medical Center microgrid",
+     "year": "2017",
+     "parties": "Kaiser Permanente <-> Charge Bliss / Blue Sky (DOE Better Buildings implementation model)",
+     "size": "250 kW solar carport + 1 MW / 1 MWh battery, 50-bed acute care facility",
+     "note": "California's first medical-center microgrid; islands the hospital for roughly three hours. It was layered on top of the pre-existing diesel emergency system rather than replacing it — the pre-waiver configuration, and the reason the waiver mattered.",
+     "source_idx": 2
+    }
+   ],
+   "nuclear_fit": "This is the single most consequential open door found in this pass, and it is open to reactors by the text of the standard, not by analogy. The CMS attachment reproduces NFPA 99 (2021) 6.10.2 as: any combination of generation, storage or transformation equipment may serve as the power source for all or a portion of an HCMS. The standard does not enumerate permitted generation technologies. A reactor plus a battery, behind an HCMS control system, is therefore already a permissible emergency power source for a CMS-certified hospital — with no CMS rulemaking required. The gating requirements are engineering, not nuclear: a control system isolated from other networks with its own 90-minute backup battery and a per-source power readout, a written commissioning plan and report, recommissioning every 5 years, and annual inspection/testing/maintenance by qualified persons.",
+   "microreactor_edge": "The battery is what makes the reactor legally usable here. NFPA 110 Type 10 requires the emergency source to pick up load within 10 seconds; a reactor cannot start from cold in 10 seconds and should not be asked to try. A battery sized for minutes covers the transfer, the reactor carries the multi-day outage that the batteries at Ontario (10 hours) and Richmond (3 hours) cannot, and the pair covers both ends of the duration curve that neither covers alone. A 1-20 MW unit also matches the load: Ontario's whole hospital emergency need is covered by 9 MWh, so a single 5 MW block plus a small battery serves an entire medical campus with margin, and the same campus is exactly the 'individual buildings or campuses consisting of several buildings, and non-health care buildings' scope NFPA 99 6.10.1.3/6.10.1.4 permits an HCMS to serve.",
+   "blockers": [
+    "The waiver excludes long-term care facilities providing life support — 42 CFR 483.90(c)(2) requires an emergency generator there without exception",
+    "State hospital building authorities are a second gate: in California HCAI/OSHPD reviews hospital electrical systems independently of CMS",
+    "The facility, not the vendor, must formally elect and document the waiver, and must produce compliance evidence at the survey entrance conference — a late election after a citation is explicitly not accepted",
+    "Every HCMS project found so far pairs storage with solar/fuel cells; there is no surveyed HCMS precedent with a generator that is not a genset, so the first reactor host is also the first test case"
+   ],
+   "sources": [
+    {
+     "label": "CMS — QSO-23-11-LSC, Categorical Waiver: Health Care Microgrid Systems (HCMSs), March 31, 2023",
+     "url": "https://www.cms.gov/files/document/qso-23-11-lsc.pdf",
+     "quote": "CMS is issuing a categorical waiver permitting new and existing health care facilities subject to CMS requirements to utilize alternate sources of power",
+     "status": "fetched"
+    },
+    {
+     "label": "Kaiser Permanente / PR Newswire — Kaiser Permanente Debuts Largest Hospital-Based Renewable Microgrid in U.S.",
+     "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
+     "quote": "It has the capacity to serve all the hospital's emergency power needs for 10 continuous hours.",
+     "status": "fetched"
+    },
+    {
+     "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
+     "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
+     "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage",
+     "status": "snippet-only",
+     "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
+    }
+   ]
+  },
+  {
+   "id": "single-hybrid-ppa",
+   "group": "batteries",
+   "family": "commercial-contract",
+   "name": "Single hybrid PPA — generator and storage sold as one $/kWh product",
+   "what_it_is": "One contract, one price, one point of delivery: the developer owns the generator and the battery as a single facility and sells a shaped, dispatchable energy product at a flat $/kWh. The offtaker does not see two assets and does not pay separately for storage — the battery is an input to the seller's delivery obligation, not a product. The seller therefore carries all of the pairing risk (round-trip losses, degradation, augmentation) inside a single energy price, and the buyer's only real levers are the delivery schedule and the availability/curtailment terms. This is the form utility RFPs now default to, and it is why the storage cost shows up as a per-MWh adder rather than a line item.",
+   "who_signs": "Hybrid project SPV <-> utility or corporate offtaker",
+   "asset_owner": "third-party developer",
+   "term": "20-25 years (Waikoloa: 25 years)",
+   "price_form": "$/kWh flat, single blended price for the paired facility",
+   "precedents": [
+    {
+     "name": "AES Waikoloa Solar + Storage — PPA with Hawaiian Electric",
+     "year": "2019",
+     "parties": "AES Corporation <-> Hawaiian Electric Company",
+     "size": "30 MWac / 43 MWdc bifacial single-axis-tracker PV + 30 MW / 120 MWh lithium battery, Hawai'i Island",
+     "price": "US$0.09/kWh under a 25-year PPA",
+     "note": "Awarded in HECO's 2018 competitive procurement, approved by regulators in 2019, commercial operation targeted April 2023. The storage is 4-hour and sized 1:1 with the solar's AC rating — the offtaker buys shaped energy, not solar plus a battery.",
+     "source_idx": 0
+    },
+    {
+     "name": "Berkeley Lab utility-scale solar dataset — measured cost of the storage half",
+     "year": "2025",
+     "parties": "LBNL Electricity Markets & Policy (empirical dataset across 100+ operating or contracted PV+battery hybrids)",
+     "size": "n/a (dataset)",
+     "price": "roughly $10/MWh-PV adder for a battery sized at 50% of PV capacity, against $8-21/MWh-PV of value gain depending on region and dispatch",
+     "note": "The gap between adder and value is the entire commercial case for pairing, and it is single-digit dollars per MWh. Any pairing that costs materially more than ~$10/MWh has to justify itself on something other than arbitrage.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "A single hybrid PPA is the closest existing template for selling a reactor-plus-storage block, because it sells the service rather than the machines — which is what a host actually wants and what keeps the reactor's operating envelope out of the contract. The blocker is that in a solar hybrid the battery exists to make an intermittent source firm; with a reactor the vector reverses. The reactor is already firm and the battery exists to make it *flexible* — to absorb the difference between a flat thermal output and a spiky site load. That flips who benefits from the charging terms: a solar hybrid's PPA restricts grid charging to protect the renewable attribute, whereas a reactor hybrid wants the battery charged almost exclusively from the reactor anyway, which makes the restriction free to accept.",
+   "microreactor_edge": "The pricing benchmark transfers directly and it is brutal: Hawai'i, the highest-cost major US grid, buys firm-shaped renewable energy at 9 cents/kWh on a 25-year term. A 1-20 MW reactor selling into any grid-connected hybrid PPA has to clear that. Where the microreactor wins is where the hybrid PPA cannot go at all — off-grid, islanded, or behind a meter where the alternative is diesel at 30-70 cents/kWh, not solar at 9. The right read of this mechanism is that it sets the ceiling price for grid-tied reactor pairs and tells you to sell somewhere else.",
+   "blockers": [
+    "A single blended $/kWh forces the seller to absorb degradation and augmentation risk over 25 years — for a battery that is an actuarial problem, for a reactor it is a refuelling and licence-renewal problem the counterparty has never priced",
+    "Legacy ITC charging restrictions shaped these contracts (see itc-charging-restriction record) and still appear as boilerplate in hybrid PPAs even where the tax rule no longer requires them",
+    "9 cents/kWh in Hawai'i is the number to beat; nothing in the current microreactor cost literature gets there on a grid-tied basis"
+   ],
+   "sources": [
+    {
+     "label": "Energy-Storage.news — Hawaii Island's biggest solar-plus-storage plant will soon deliver power at 9 cents/kWh",
+     "url": "https://www.energy-storage.news/hawaii-islands-biggest-solar-plus-storage-plant-will-soon-deliver-power-at-9-cents-kwh/",
+     "quote": "30MW/120MWh of lithium-on battery storage",
+     "status": "fetched"
+    },
+    {
+     "label": "Berkeley Lab Energy Markets & Policy — Top 10 Research Findings on the Growth of Hybrid Power Plants in the United States",
+     "url": "https://emp.lbl.gov/news/berkeley-lab-releases-top-10-research",
+     "quote": "The cost of adding storage to PV is around $10/MWh-PV for a battery sized to 50% of the PV's capacity",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "elcc-capacity-accreditation-of-the-pair",
+   "group": "batteries",
+   "family": "regulatory-rule",
+   "name": "ELCC capacity accreditation — what the pair is allowed to count as",
+   "what_it_is": "In an organised capacity market the revenue a resource earns is its installed capacity multiplied by an accreditation factor set by the RTO, not by the owner. PJM computes an ELCC class rating for every class by adding an increment of that class to a probabilistic model and measuring how much expected unserved energy it removes, divided by what perfect capacity would remove. Nobody signs anything; the number is published annually and it moves. It is the single largest determinant of whether a paired asset earns capacity revenue, and it is where a steady generator and a duration-limited battery are valued on completely different curves.",
+   "who_signs": "RTO/ISO tariff (PJM Manual 21A / RAA) <-> every capacity resource, by operation of the tariff",
+   "asset_owner": "utility | third-party developer | host",
+   "term": "Set per Delivery Year; recalculated annually and applied prospectively",
+   "price_form": "rate-based — accredited UCAP MW x capacity clearing price",
+   "precedents": [
+    {
+     "name": "PJM 2025 ELCC / Reserve Requirement Study — class ratings for 2026/27 and 2027/28",
+     "year": "2025",
+     "parties": "PJM Interconnection, Resource Adequacy Planning (study dated October 22, 2025)",
+     "size": "5,938 MW of capacity storage resources and 32,181 MW of nuclear in the 2027/2028 portfolio",
+     "price": "Accreditation, 2027/2028: Nuclear 95%, Diesel Utility 92%, Demand Resource 92%, Coal 83%, Gas Combined Cycle 74%, 10-hr Storage 78%, 8-hr Storage 70%, 6-hr Storage 67%, Gas Combustion Turbine 61%, 4-hr Storage 58%, Tracking Solar 8%",
+     "note": "Solar-Storage Hybrid is listed as 'Small Sample Size' in both delivery years — PJM does not have enough operating hybrids to rate the class at all.",
+     "source_idx": 0
+    },
+    {
+     "name": "PJM ELCC class ratings under the prior methodology — the collapse of short-duration storage",
+     "year": "2022",
+     "parties": "PJM Interconnection (ratings for 2023/24 3IA, 2025/26 BRA, 2026/27 BRA)",
+     "size": "n/a (class ratings table)",
+     "price": "4-hr Storage 94% -> 77% -> 77%; 6-hr 100% -> 96% -> 94%; 8-hr and 10-hr Storage 100% across all three years; Solar Hybrid storage component 93% -> 74% -> 83%",
+     "note": "Duration-limited storage loses accreditation as more of it is added, because the net-load peak it has to cover widens. Unlimited-duration resources do not decay this way. This is the structural reason a generator is worth pairing with a battery rather than adding more batteries.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Nuclear is accredited at 95% in PJM for 2027/2028 — the highest class rating of any generation class, above coal (83%), gas combined cycle (74%) and gas combustion turbine (61%). That is the strongest quantitative statement of nuclear's grid value found in this pass, and it is written into an RTO study rather than a vendor deck. The specific enabler for a pair is that accreditation is computed per class on a marginal, probabilistic basis: a resource that is available in the hours the model is short earns near-perfect credit, and a reactor's flat output plus a battery that shifts it into those hours is exactly that resource. The blocker is definitional: there is no ELCC class for a nuclear-storage hybrid, and PJM cannot even rate the solar-storage hybrid class for lack of sample.",
+   "microreactor_edge": "The accreditation table is a pricing sheet for how much battery to buy. Going from 4-hr to 10-hr storage buys 20 accreditation points (58% -> 78%) and costs roughly 2.5x the energy capacity. Pairing a 5 MW always-on block with a 4-hour battery instead does something no amount of battery duration achieves: it removes the duration limit entirely, because the reactor refills the battery every night for free. A 1-20 MW unit is also small enough to be accredited behind the meter as load reduction rather than as generation — the Demand Resource class jumped to 92% for 2027/2028 after PJM eliminated the DR performance window and made DR a 24/7 resource, which is precisely the shape a reactor-plus-battery presents to the utility.",
+   "blockers": [
+    "No ELCC class exists for nuclear-plus-storage; a first mover is rated by analogy or by unit-specific study",
+    "PJM lists Solar-Storage Hybrid as 'Small Sample Size' for both 2026/27 and 2027/28 — the hybrid precedent that would carry a reactor pair does not yet exist statistically",
+    "Class ratings are recomputed annually and moved by 8-9 points in one year for storage classes; a 20-year financing cannot be underwritten on them",
+    "Behind-the-meter assets at a single host are outside the capacity market entirely unless the utility tariff admits them"
+   ],
+   "sources": [
+    {
+     "label": "PJM — 2025 PJM Effective Load Carrying Capability and Reserve Requirement Study (ELCC/RRS), October 22, 2025",
+     "url": "https://www.pjm.com/-/media/DotCom/planning/res-adeq/elcc/2025-pjm-elcc-rrs.pdf",
+     "quote": "The ELCC Class Ratings for 2027/2028 compared to those for 2026/2027 are presented in Table 2.",
+     "status": "fetched"
+    },
+    {
+     "label": "PJM — Effective Load Carrying Capability (ELCC) Class Ratings for 2023/2024 3IA, 2025/2026 BRA and 2026/2027 BRA",
+     "url": "https://www.pjm.com/-/media/DotCom/planning/res-adeq/elcc/elcc-class-ratings-for-2023-2025-2026.ashx",
+     "quote": "ELCC Class Ratings for 2023/2024 3IA, 2025/2026 BRA and 2026/2027 BRA",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "intentional-islanding-interconnection-gate",
+   "group": "batteries",
+   "family": "regulatory-rule",
+   "name": "Intentional islanding — the microgrid interconnect device certification gate",
+   "what_it_is": "To island a site and re-synchronise, the customer must satisfy the utility that the on-site resources cannot back-feed a de-energised distribution circuit and that they transition safely between islanded and grid-parallel modes. In practice this is enforced through the interconnection application: the utility requires listed equipment certified to a named standard before it will approve the switch. The critical detail is that the standard everyone cites for DER interconnection, UL 1741 SB (implementing IEEE 1547-2018), does not test for this at all — so utilities have had to invent an additional requirement. Nobody is paid for anything here; it is a gate, and it is the gate every microgrid passes through.",
+   "who_signs": "DER customer/developer <-> distribution utility, via the state interconnection tariff",
+   "asset_owner": "host | third-party developer",
+   "term": "Per interconnection agreement; permanent condition of operation",
+   "price_form": "not priced — a certification and study cost borne by the applicant",
+   "precedents": [
+    {
+     "name": "Joint Utilities of New York — memo requiring UL 1741 CRD for Multimode certification",
+     "year": "2025",
+     "parties": "Joint Utilities of New York <-> NY Department of Public Service Staff, Interconnection Technical Working Group",
+     "size": "Applies to all NY interconnection applications for DERs with microgrid interconnect devices (MIDs) and to EVs with V2G/V2H",
+     "note": "February 2025. The JU found that New York's Standardized Interconnection Requirements do not check that DERs in an intentional island cannot back-feed a de-energised area EPS, and do not check safe transition between islanded and utility-interactive modes. UL 1741 SB, the SIR's baseline requirement, has no intentional-islanding type test, and its 'Enter Service' test does not apply to islanded systems. The JU therefore imposed a separate UL 1741 CRD for Multi-Mode Products requirement on top of IEEE 1547-2018 and UL 1741 SB.",
+     "source_idx": 0
+    },
+    {
+     "name": "Kaiser Permanente Richmond Medical Center — a hospital that actually islands",
+     "year": "2017",
+     "parties": "Kaiser Permanente <-> PG&E territory, California",
+     "size": "250 kW PV + 1 MW / 1 MWh battery, 50-bed acute care hospital",
+     "note": "Islands the hospital for roughly three hours, demonstrating that the practical constraint on an islanded medical campus is not the switchgear but the energy behind it.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Islanding is where a reactor's normal handicap inverts. Everything in IEEE 1547 / UL 1741 is written for inverter-based resources whose failure mode is back-feeding a dead line; a rotating-machine reactor plant behind a microgrid interconnect device sits on the older, better-understood side of that rulebook, closer to how a standby generator is treated than how a PV inverter is. The blocker is the reverse of the battery's: an inverter can form a grid in milliseconds and a reactor cannot, so the reactor cannot be the resource that catches the island at the instant of separation. It has to already be running, or the battery has to hold the island until it is.",
+   "microreactor_edge": "A 1-20 MW block plus a battery is the only combination that both catches the island and holds it. The battery's grid-forming inverter picks up the island inside the sub-second window the certification is about; the reactor then carries it for days, which no battery at hospital scale does — Richmond's 1 MWh gives three hours, Ontario's 9 MWh gives ten. The pair also collapses a sizing problem: without a reactor the battery must be sized to the worst-case outage duration, and with one it need only be sized to the transfer transient plus a ramp margin, which is one to two orders of magnitude less energy.",
+   "blockers": [
+    "UL 1741 SB has no intentional-islanding type test; neither SA nor SB certifies a multimode inverter's standalone behaviour during an island",
+    "State interconnection rules are being amended one utility group at a time — a project designed to the published SIR can still be rejected on an added requirement",
+    "The certification path is written around inverters; a reactor's protection and synchronisation scheme has no listed-equipment shortcut and will be evaluated by study",
+    "Re-synchronisation to the area EPS after an island is the utility's call, not the host's"
+   ],
+   "sources": [
+    {
+     "label": "Joint Utilities of New York / NY DPS — Memo to Industry and NY DPS Staff: Requirement for UL CRD for Multimode Certification (February 2025)",
+     "url": "https://dps.ny.gov/system/files/documents/2025/02/2025-02-26-ju-itwg-ul-1741-crd-for-multimode-discussions.pdf",
+     "quote": "intended for utility interactive inverters, the certification does not have an intentional islanding type",
+     "status": "fetched"
+    },
+    {
+     "label": "DOE Better Buildings Solution Center — Kaiser Permanente Pioneers California's First Medical Center Microgrid",
+     "url": "https://betterbuildingssolutioncenter.energy.gov/implementation-models/kaiser-permanente-pioneers-californias-first-medical-center-microgrid",
+     "quote": "the first hospital in California to implement a microgrid that connects renewable energy and battery storage",
+     "status": "snippet-only",
+     "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
+    }
+   ]
+  },
+  {
+   "id": "grid-services-contract-black-start-inertia",
+   "group": "batteries",
+   "family": "commercial-contract",
+   "name": "Grid-services contract — black start, synthetic inertia and fast frequency response bought as named products",
+   "what_it_is": "Rather than buying energy or capacity, the utility contracts for named reliability services and specifies the physics: response time, inertia constant, MW of fast frequency response, and the ability to restart the grid from a blackout. The asset owner builds to those specifications and is paid a contracted fee; the utility gets services that were previously an unpriced by-product of having synchronous machines on the system. This is the mechanism by which a resource with no fuel and no synchronous mass gets paid for what a spinning turbine used to give away, and it is the newest of the mechanisms here.",
+   "who_signs": "Storage owner <-> vertically integrated utility (PUC-approved) or RTO under tariff",
+   "asset_owner": "third-party developer",
+   "term": "20 years (Kapolei Energy Storage)",
+   "price_form": "contracted service fee, PUC-approved; ERCOT procures black start by periodic RFP with bid prices reviewed by the Black Start Working Group",
+   "precedents": [
+    {
+     "name": "Kapolei Energy Storage — grid services contract with Hawaiian Electric",
+     "year": "2024",
+     "parties": "Plus Power (owner) <-> Hawaiian Electric; 158 Tesla Megapack LFP units",
+     "size": "185 MW / 565 MWh on Oahu, comprising 135 MW / 540 MWh of capacity and energy plus 50 MW / 25 MWh dedicated to fast frequency response",
+     "price": "Hawaiian Electric's filing estimated an average bill reduction of $0.28 per month over the 20-year contract life",
+     "note": "In service January 2024, replacing the retired 180 MW AES coal plant. Contracted to provide fast frequency response, synthetic inertia and black start, responding within 250 milliseconds. HECO modelling projects a 69% reduction in renewable curtailment and 10% more utility-scale renewables integrated in the first five years.",
+     "source_idx": 0
+    },
+    {
+     "name": "ERCOT Black Start Service procurement",
+     "year": "2026",
+     "parties": "ERCOT <-> qualifying resources, selected by annual/periodic RFP",
+     "size": "System-wide; RFP issued for the contract period January 1, 2027 through December 31, 2029, responses due February 15, 2026",
+     "note": "ERCOT selects black start resources against system reliability and minimum-cost criteria; the Black Start Working Group reviews cranking paths, start-up procedures and the final awarded resources' bid prices. Award prices are not published in the market notice.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Black start is the service a nuclear plant conspicuously cannot provide and conspicuously needs: large reactors are the classic black-start *load*, requiring an external cranking path to restore station power. A microreactor paired with a battery inverts that relationship at site scale — the battery is the grid-forming source, and the reactor is what the battery restarts. The commercial enabler is that these services are now separately contracted and separately paid, so a site pair can be compensated for a capability it must build anyway. The blocker is that grid-forming credit attaches to the inverter, not the generator, so the reactor half earns nothing under these products directly.",
+   "microreactor_edge": "The 50 MW / 25 MWh fast-frequency-response block inside Kapolei is a 30-minute battery — the service is priced on power, not energy. That is exactly the shape a reactor pair needs: a 5 MW reactor with a 5 MW / 2.5 MWh grid-forming battery costs a fraction of a 4-hour system and buys the same sub-second response class. And a 1-20 MW unit's genuine differentiator is that after black start it can keep an islanded network alive indefinitely, whereas a battery-only black start on a dead grid runs out of energy in hours unless generation comes back.",
+   "blockers": [
+    "Ancillary-service and black-start products are defined per market; a behind-the-meter pair at one host cannot sell into them without a qualified market participant and metering",
+    "Black start award prices are confidential in ERCOT's public market notices, so the revenue is real but not publicly benchmarkable",
+    "Grid-forming capability is an inverter attribute; a synchronous reactor plant earns the inertia credit but not the sub-second products",
+    "No nuclear resource has been contracted for black start service at any scale"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive — Pioneering 565-MWh battery storage facility now online in Hawai'i, Plus Power says",
+     "url": "https://www.utilitydive.com/news/plus-power-energy-storage-online-hawaii-HECO-rolling-blackouts/704561/",
+     "quote": "fast frequency response, synthetic inertia, and black start",
+     "status": "fetched"
+    },
+    {
+     "label": "ERCOT — Market Notice M-B111425-02, RFP for Black Start Services for 2027 through 2029",
+     "url": "https://www.ercot.com/services/comm/mkt_notices/M-B111425-02",
+     "quote": "Black Start Services Request for Proposal (RFP) for the contract period of January 1, 2027, through December 31, 2029",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "itc-charging-restriction",
+   "group": "batteries",
+   "family": "regulatory-rule",
+   "name": "Tax-credit charging restrictions — the rule that wrote the pairing into the contract",
+   "what_it_is": "Before standalone storage became creditable, a battery only earned the investment credit by being part of a qualifying generator's property, and it only stayed creditable if it charged from that generator. The rule is a cliff plus a haircut measured annually over the five-year recapture period: below 75% of annual charging energy from the qualifying source the credit is lost entirely, and between 75% and 100% it is pro-rated. Nobody signs this either — it is tax law — but it is the reason hybrid PPAs and hybrid interconnection agreements contain explicit no-grid-charging covenants, metering obligations and control logic, and why those covenants persist as boilerplate. The IRS ruling that made it concrete describes charging control implemented in software sampling every 0.1 seconds.",
+   "who_signs": "Taxpayer/owner <-> IRS (and, derivatively, tax-equity investor <-> project, through covenants)",
+   "asset_owner": "third-party developer | host",
+   "term": "Five-year recapture period, tested each annual measuring period",
+   "price_form": "percentage of eligible capex (ITC), or $/MWh (PTC) on the generation half",
+   "precedents": [
+    {
+     "name": "IRS Private Letter Ruling 201809003",
+     "year": "2018",
+     "parties": "IRS Office of Chief Counsel (PLR-118431-17) <-> individual taxpayer; battery consistent with a 13.5 kWh / 5 kW residential unit",
+     "size": "13.5 kWh storage capacity, 5 kW power rating, AC-coupled to an existing residential PV system",
+     "price": "30 percent credit under IRC Sec. 25D",
+     "note": "Ruling dated November 27, 2017, released March 2, 2018. The taxpayer's control scheme monitors solar production and grid import every 0.1 seconds and charges only up to instantaneous solar power, so that all charging energy is assured to come from the solar system. This is the engineering that the tax rule forced into the asset.",
+     "source_idx": 0
+    },
+    {
+     "name": "Inflation Reduction Act of 2022 — standalone storage becomes creditable",
+     "year": "2022",
+     "parties": "US Congress; implemented through IRC Sec. 48E (ITC) and 45Y (PTC)",
+     "size": "n/a (statute)",
+     "price": "ITC base 6%, 30% with wage/apprenticeship, up to 50% with domestic-content and energy-community bonuses; PTC $5.5/MWh base, $27.5/MWh qualified, up to $33/MWh with bonuses",
+     "note": "Rates as modelled by Idaho National Laboratory for microreactor projects. Standalone storage no longer needs a host generator to be creditable, which removed the legal reason to co-locate — pairings after 2022 are commercial choices, not tax-driven ones.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Nuclear is inside the technology-neutral credits: 48E and 45Y apply to zero-carbon generation regardless of technology, so a reactor and a battery can each claim on their own terms and the historical reason to bolt them together is gone. That is an enabler with a sting. The specific choice a reactor project faces, as INL frames it, is ITC versus PTC: high-capex, high-capacity-factor assets sit awkwardly between the two rules of thumb, since high capex argues for the ITC and high capacity factor argues for the PTC. At a $27/MWh PTC, INL finds the claimable PTC exceeds the microreactor's entire variable O&M cost.",
+   "microreactor_edge": "For a 1-20 MW unit the ITC/PTC choice is closer than for a gigawatt plant because the capex per kW is much higher (INL models $14,001/kWe base and $8,616/kWe low case against a conventional plant's few thousand), which pushes toward the ITC, while a microreactor's design capacity factor pushes toward the PTC. The battery half matters here: INL explicitly excludes the LMB from the tax-credit modelling, noting this understates the pair's economics, so a real project can stack a 48E claim on the storage that the published analysis does not credit.",
+   "blockers": [
+    "The 75% cliff and pro-rata haircut still bind any structure that claims storage as part of a generator's energy property rather than standalone",
+    "Recapture is tested annually for five years — an operating year in which the reactor is down for refuelling and the battery charges from the grid is a tax event, not just a performance event",
+    "Tax-equity covenants outlive the tax rule that created them; no-grid-charging language is still standard hybrid-PPA boilerplate",
+    "Credit rates depend on wage/apprenticeship, domestic content and energy-community tests that a relocatable factory-built unit may satisfy in one location and not another"
+   ],
+   "sources": [
+    {
+     "label": "IRS — Private Letter Ruling 201809003 (PLR-118431-17), released March 2, 2018",
+     "url": "https://www.irs.gov/pub/irs-wd/201809003.pdf",
+     "quote": "Thus all energy that is used to charge the Battery can be effectively assured to come from the Solar Energy System.",
+     "status": "fetched"
+    },
+    {
+     "label": "Idaho National Laboratory INL/RPT-24-80420 — Microreactor-Liquid Metal Battery System Potential in Energy Markets (November 2025)",
+     "url": "https://www.osti.gov/servlets/purl/3013828",
+     "quote": "6%, 30%, 40%, and 50% for ITC, and 5.5, 27.5, 30.5, and 33 USD/MWh for PTC",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "non-wires-alternative-rate-based-pair",
+   "group": "batteries",
+   "family": "utility-tariff",
+   "name": "Non-wires alternative — the utility owns the pair and rate-bases it against a deferred cable",
+   "what_it_is": "The utility identifies a transmission or distribution investment it would otherwise have to make, then builds a generator-plus-storage pair on the constrained side instead and puts it in rate base. Nobody signs a PPA; the utility owns both halves outright, the regulator approves the capital, and every customer pays through rates. The case is made purely on avoided cost against the wires project, which means the comparison is not against the grid price of electricity but against the cost of steel and permits — a far higher bar to clear and therefore a far easier one to beat. This is the cleanest example of the pair being bought as one product, because neither half alone could have deferred the cable.",
+   "who_signs": "Utility <-> state regulator (rate case / capital approval); vendor supplies equipment",
+   "asset_owner": "utility",
+   "term": "Asset life, recovered over the depreciation schedule",
+   "price_form": "rate-based capital, recovered in distribution rates",
+   "precedents": [
+    {
+     "name": "Nantucket Battery Energy Storage System",
+     "year": "2019",
+     "parties": "National Grid (owner) <-> Tesla (240 Powerpacks); Nantucket, Massachusetts",
+     "size": "6 MW / 48 MWh battery (8-hour) plus a replacement 15 MW diesel generator and power control house",
+     "price": "$81 million for the combined project, against close to a $200 million investment for a third underwater transmission cable",
+     "note": "Commissioned October 2019. The island is fed by two submarine cables; the pair exists to carry the summer peak if one cable fails. PNNL published a separate assessment of the system's value stack (PNNL-28941).",
+     "source_idx": 0
+    },
+    {
+     "name": "Blue Lake Rancheria community microgrid",
+     "year": "2015",
+     "parties": "Blue Lake Rancheria (tribal government) <-> Siemens <-> Schatz Energy Research Center, Cal Poly Humboldt; California Energy Commission EPIC grant",
+     "size": "0.5 MW solar PV + 950 kWh battery + biomass fuel cell + diesel generators across a 100-acre campus",
+     "price": "$5 million California Energy Commission EPIC grant",
+     "note": "Serves government offices, tribal enterprises and a Red Cross shelter-in-place facility. Grant-funded rather than rate-based, but the same logic: the pair is bought to serve a site the wires cannot reliably reach.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the mechanism most favourable to a reactor, because the benchmark is a transmission project rather than a commodity price. National Grid's alternative was a $200 million cable; that is roughly $33,000 per kW of the 6 MW it was firming, which is more than double INL's high-end microreactor capex assumption of $14,001/kWe. The blocker is regulatory rather than economic: rate-basing a reactor requires the utility to be the NRC licensee and to convince a state commission to put a first-of-a-kind nuclear asset in customer rates, which is exactly the argument that has historically gone badly. It also has to survive prudence review if the unit underperforms.",
+   "microreactor_edge": "Nantucket is the archetypal microreactor site and the numbers say so: an island with a hard cable constraint, a summer peak, an existing diesel plant, and a utility willing to spend $81 million to avoid $200 million. A 5-15 MW reactor replaces both the 15 MW diesel and most of the 48 MWh battery, and unlike the battery it does not need the cable at all to recharge — the 8-hour battery's entire value depends on being refilled off-peak through the very cables it is insuring against. That dependency is the specific weakness a reactor removes, and it is invisible in the headline MW/MWh.",
+   "blockers": [
+    "Rate-basing puts the utility on the NRC licence and the prudence risk; no US utility has done this for a microreactor",
+    "The deferral case has a clock — once the wires project is eventually built the asset's justification lapses",
+    "Island and constrained-area sites are small in number and each requires its own regulatory proceeding",
+    "The comparison only works where the avoided wires cost is enormous; on an unconstrained system there is nothing to defer"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive — There once was a 48 MWh Tesla battery on Nantucket, which saved National Grid $120M in its budget",
+     "url": "https://www.utilitydive.com/news/Tesla-national-grid-battery-energy-storage-8hour-long-duration-diesel-generation-system-nantucket/564428/",
+     "quote": "Together with the 15 MW diesel generator and a power control house, the project cost $81 million.",
+     "status": "fetched"
+    },
+    {
+     "label": "Businesswire — Siemens, Blue Lake Rancheria, Humboldt State University community microgrid",
+     "url": "https://www.businesswire.com/news/home/20150824005598/en/Siemens-Blue-Lake-Rancheria-Humboldt-State-University",
+     "quote": "funded in part through a $5 million grant from the California Energy Commission's Electric Program Investment Charge (EPIC) program",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "generator-hybridisation-ramp-and-spinning-reserve",
+   "group": "batteries",
+   "family": "commercial-contract",
+   "name": "Generator hybridisation — a small battery bolted onto a thermal unit to sell its start time",
+   "what_it_is": "A short-duration battery is integrated into an existing thermal generator's controls so that the combined plant is dispatchable the instant the market calls it, while the turbine is still starting or entirely offline. The battery is not a storage product; it is a performance upgrade to the generator, and the two are bid into the market as one resource. It is bought because the *service* being sold is response time, and response time is where a thermal machine loses. Crucially the battery is tiny relative to the generator — the point is bridging seconds and minutes, not shifting hours.",
+   "who_signs": "Plant owner (utility or IPP) <-> equipment vendor / integrator; the combined plant then bids under existing market rules",
+   "asset_owner": "utility | third-party developer",
+   "term": "Plant life; the market products are bid daily",
+   "price_form": "monetised through ancillary-service and energy market revenues, plus avoided fuel and emissions during starts",
+   "precedents": [
+    {
+     "name": "SCE Center Peaker and Grapeland Peaker — Hybrid Enhanced Gas Turbine",
+     "year": "2016",
+     "parties": "Southern California Edison (owner) <-> General Electric, Current, Wellhead Power Solutions; Norwalk and Rancho Cucamonga, California",
+     "size": "10 MW / 4.3 MWh lithium-ion BESS integrated with a 50 MW GE LM6000 aeroderivative gas turbine at each site",
+     "note": "Online to meet a CPUC deadline of December 31, 2016. The battery makes the plant instantly available around the clock and lets it provide spinning reserve while the turbine is offline; start time improves from about 10 minutes to under five, with emissions reductions of up to 60%. The battery is a 26-minute device — 4.3 MWh on 10 MW — which is the whole point.",
+     "source_idx": 0
+    },
+    {
+     "name": "MCE / Fresno peaker hybridisation",
+     "year": "2023",
+     "parties": "Marin Clean Energy <-> existing 48 MW gas-fired peaker, Fresno, California",
+     "size": "16 MW of battery storage added to a 48 MW gas peaker",
+     "note": "EIA counted at least 13 fossil-plus-storage hybrid plants operating between 2019 and 2022, down to 8 as of 2023 — the population is small and shrinking, which is itself a caution about this mechanism's durability.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Of every mechanism in this file, this is the closest structural match to a reactor, because it treats the battery as a control-system component rather than an energy asset. A reactor has the same defect as a peaker in an exaggerated form — it cannot follow a step change in load, and unlike a turbine it should not be asked to cycle at all, since thermal cycling is a licensing and materials problem rather than a fuel-cost one. The battery buys the reactor the right to run flat. What changes versus a gas turbine is the ratio: SCE needed 26 minutes of storage on a machine that starts in ten; a reactor is far slower to change power, so the buffer has to cover a longer transient.",
+   "microreactor_edge": "SCE's ratio is the number worth carrying: 10 MW of battery power on a 50 MW turbine, at 4.3 MWh. Scaled to a 5 MW reactor that is roughly a 1 MW / 0.4 MWh buffer — small enough to sit in a couple of cabinets and to be replaced on a normal commercial cycle without touching the nuclear island. The reactor also gets something the peaker does not: because it runs continuously, the battery is always charged and always available, so the pair can offer instantaneous response without the peaker's dependence on a market signal to refill. Sizing the reactor to average load and letting the buffer absorb peaks is the specific move a 1-20 MW factory-built block enables, and it is what turns a flat 5 MW into a service.",
+   "blockers": [
+    "The EIA-counted population of fossil-plus-storage hybrids fell from 13 (2019-2022) to 8 in 2023 — hybridisation is not a proven durable business model on its own",
+    "Integrating a battery into a nuclear plant's control system crosses into safety-related design review in a way that bolting one onto a gas turbine does not",
+    "Market rules for co-located hybrids differ by ISO and mostly assume an intermittent host resource",
+    "The revenue is ancillary-service revenue, which is thin, saturates quickly, and is unavailable behind the meter"
+   ],
+   "sources": [
+    {
+     "label": "POWER Magazine — Two SCE Gas-Battery Hybrid Projects Revolutionize Peaker Performance",
+     "url": "https://www.powermag.com/two-sce-gas-battery-hybrid-projects-revolutionize-peaker-performance/",
+     "quote": "available around the clock, providing spinning reserves even while the gas turbine is offline",
+     "status": "fetched"
+    },
+    {
+     "label": "Clean Energy Group — The Promise and Pitfalls of Fossil Power Plant Hybridization with Energy Storage",
+     "url": "https://www.cleanegroup.org/the-promise-and-pitfalls-of-fossil-power-plant-hybridization-with-energy-storage/",
+     "quote": "at least 13 fossil fuel and battery storage power plant hybrids",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "microgrid-energy-services-agreement-p3",
+   "group": "batteries",
+   "family": "public-procurement",
+   "name": "Microgrid energy services agreement / P3 — third party owns the pair, host pays only for output",
+   "what_it_is": "A public host with critical facilities procures resilience rather than equipment. A developer designs, finances, builds, owns and operates the entire microgrid — generation, storage, controls, switchgear, cybersecurity — on the host's site, and the host pays only for delivered energy and services under a long-term agreement. There is no capital appropriation, which is the mechanism's whole reason to exist: it converts a capital project that a county council must vote on into an operating expense that lives in a utility budget line. The host's exposure is contractual performance; the developer's exposure is everything else.",
+   "who_signs": "Public agency (county, city, base, campus) <-> microgrid developer/owner, via competitive solicitation",
+   "asset_owner": "third-party developer",
+   "term": "Long-term service agreement, typically 15-25 years",
+   "price_form": "$/kWh for delivered energy plus a resilience/service fee; no upfront capital from the host",
+   "precedents": [
+    {
+     "name": "Montgomery County, Maryland — advanced microgrids at Public Safety Headquarters and the Correctional Facility",
+     "year": "2018",
+     "parties": "Montgomery County, MD <-> Schneider Electric (design, controls, DERMS, cybersecurity) and Duke Energy Renewables (owner-operator, with REC Solar)",
+     "size": "Two microgrids at Gaithersburg and Boyds; combined output over 11 million kWh per year from solar and combined heat and power, with battery storage and controls",
+     "price": "No upfront costs for the County; the county pays for output under the P3 agreement",
+     "note": "Activated October 2018. Duke Energy Renewables owns and operates both microgrids. Roughly 3.3 million kWh/yr of solar and 7.4 million kWh/yr of CHP.",
+     "source_idx": 0
+    },
+    {
+     "name": "Kaiser Permanente Ontario Medical Center — solar under an Ameresco PPA inside a grant-funded microgrid",
+     "year": "2025",
+     "parties": "Kaiser Permanente (host) <-> Ameresco (solar PPA) <-> Faraday Microgrids (storage, CEC-funded)",
+     "size": "2 MW solar + 9 MWh non-lithium battery + 1 MW fuel cell",
+     "price": "$8.3 million California Energy Commission grant for the storage; solar bought under PPA rather than owned",
+     "note": "Shows the common hybrid financing shape: the generation half sold as a service, the storage half grant-funded, and the host owning neither.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The ESA/P3 form is the natural wrapper for a reactor because it keeps the licensee and the operator in one entity — the developer — and gives the host a service it can procure without a nuclear engineering staff or a capital vote. Two things break. First, term: a microgrid ESA runs 15-25 years against a reactor's design life and licence renewal cycle, so the residual-value and decommissioning questions land inside the contract rather than after it. Second, the security and emergency-planning obligations of a licensed facility do not sit comfortably on a county correctional facility or a hospital campus, and no ESA template addresses them.",
+   "microreactor_edge": "Montgomery County's two microgrids together deliver about 11 GWh/year, which is roughly 1.25 MW average. A single 5 MW block would serve that county's whole critical-facility portfolio four times over with the surplus available for export or heat — meaning the natural microreactor customer here is not one facility but an aggregated municipal or campus portfolio. Factory build and relocatability also match the P3 risk allocation: the developer's downside on a stranded asset is bounded if the unit can be removed and redeployed, which is not true of a CHP plant poured into a jail's mechanical yard.",
+   "blockers": [
+    "No ESA template allocates nuclear decommissioning, spent-fuel or security-force obligations between host and developer",
+    "Public procurement rules require competitive solicitation against alternatives; a sole-source reactor is hard to justify against a priced diesel or CHP bid",
+    "The host's site becomes a licensed facility, with siting, emergency planning and public engagement obligations a county has never assumed",
+    "Contract terms of 15-25 years are shorter than the asset's economic life, leaving a residual-value gap"
+   ],
+   "sources": [
+    {
+     "label": "Duke Energy — Successful microgrid activation showcases innovation; supports reliable, efficient, clean energy at Montgomery County, Md., critical facilities (October 24, 2018)",
+     "url": "https://news.duke-energy.com/releases/successful-microgrid-activation-showcases-innovation-supports-reliable-efficient-clean-energy-at-montgomery-county-md-critical-facilities",
+     "quote": "an innovative public-private partnership with Schneider Electric and Duke Energy Renewables that required no upfront costs for the County",
+     "status": "fetched"
+    },
+    {
+     "label": "Kaiser Permanente / PR Newswire — Kaiser Permanente Debuts Largest Hospital-Based Renewable Microgrid in U.S.",
+     "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
+     "quote": "serve as the initial emergency power backup system during commercial power outages.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "all-source-rfp-guarantee-stack",
+   "group": "batteries",
+   "family": "public-procurement",
+   "name": "All-source RFP guarantee stack — what a utility makes the pair contractually promise",
+   "what_it_is": "Utilities now run technology-neutral all-source RFPs and publish the contract they intend to sign, so a bidder's obligations are known before the bid. For storage the published template is not a price sheet, it is a stack of tested guarantees: a Guaranteed Storage Power Capacity Rating, a Guaranteed Storage Round Trip Efficiency, a Storage Availability Guarantee, a Storage Ramp Rate test, energy capacity tests, cybersecurity requirements, and a licensed professional engineer's certification of each at commercial operation. The utility also supplies and owns the Charging Energy and issues Charging and Discharging Notices to an AGC set-point, so the seller has no discretion over dispatch. Tax credits stay with the seller and are explicitly carved out of the capacity rights the utility buys.",
+   "who_signs": "Bidder/project SPV <-> utility, on the utility's published RFP contract form, under state commission oversight",
+   "asset_owner": "third-party developer",
+   "term": "Set per RFP; the template's milestones, delay damages and security run from execution to commercial operation and through the delivery term",
+   "price_form": "$/kW-month or $/kW-yr storage price (Exhibit K), adjusted by measured availability and round-trip efficiency",
+   "precedents": [
+    {
+     "name": "PacifiCorp 2022 All-Source RFP — Appendix E-3, form Energy Storage Agreement",
+     "year": "2022",
+     "parties": "PacifiCorp <-> bidders into the 2022 All-Source RFP (Oregon, Utah, Wyoming, Washington, Idaho, California service areas)",
+     "size": "Template applies to any bid storage facility; exhibits T through W define the capacity, availability, round-trip-efficiency and ramp-rate tests",
+     "note": "Charging Energy is defined as energy provided by PacifiCorp to the seller at the point of delivery under a Charging Notice, all of it used for PacifiCorp's benefit. Commercial operation requires a Licensed Professional Engineer's letter certifying the power capacity rating, round trip efficiency, ramp rate and AGC installation each meet or exceed the guaranteed values. Capacity Rights expressly exclude ancillary services and tax credits.",
+     "source_idx": 0
+    },
+    {
+     "name": "Anaheim / Roadhouse guaranteed-efficiency schedule as executed practice",
+     "year": "2024",
+     "parties": "Roadhouse Energy Storage, LLC <-> City of Anaheim",
+     "size": "300 MW / 1,200 MWh",
+     "price": "$18.76/kW-month flat for 20 years",
+     "note": "The executed contract puts numbers on the template's abstractions: guaranteed round-trip efficiency of 83.9% falling to 78.2% over twenty contract years, with $100/kW of development and operation security backing it.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the concrete answer to 'what would a utility make a reactor promise'. Every line of the storage guarantee stack has a nuclear analogue and each is harder: guaranteed power capacity becomes guaranteed net electrical output at reference conditions; round-trip efficiency becomes thermal efficiency and house load; the availability guarantee becomes a capacity-factor guarantee net of refuelling; the ramp-rate test becomes the reactor's licensed manoeuvring envelope, which for most microreactor designs is the binding constraint. The professional-engineer certification at commercial operation is the interesting enabler: it means the utility's acceptance test is an engineering document, not a regulatory one, so a design that can demonstrate its numbers can be accepted on the same terms as a battery. The blocker is AGC: these templates give the utility direct set-point control of the asset, and no reactor licence contemplates a utility dispatcher moving reactor power.",
+   "microreactor_edge": "Pairing solves the ramp-rate exhibit outright. A reactor cannot pass a storage ramp-rate test and should not try; a battery on the same point of delivery can, and the combined facility is what gets certified. That is the single most useful thing pairing does for a bid into an all-source RFP: it lets a slow, always-on machine be sold under a contract form written for fast machines. The relocatability of a 1-20 MW unit also changes the delay-damages and security calculus, since a factory unit that misses a milestone at one site is not a stranded construction project.",
+   "blockers": [
+    "AGC set-point control by the utility is incompatible with current reactor licensing bases",
+    "Availability guarantees have to be quoted before any operating fleet exists to price them",
+    "Delay damages and milestone security in these templates assume construction schedules measured in quarters, not the multi-year NRC licensing tail",
+    "Capacity Rights carve-outs mean the seller keeps the tax credits — the utility will price the bid assuming those credits are monetised, which requires a tax-equity market that does not yet exist for microreactors"
+   ],
+   "sources": [
+    {
+     "label": "PacifiCorp — 2022 All-Source RFP, Appendix E-3 Tolling Agreement Documents (form Energy Storage Agreement)",
+     "url": "https://www.pacificorp.com/content/dam/pcorp/documents/en/pacificorp/suppliers/rfps/pacificorps-2022-all-source-request-for-proposals/appendix-e-g/PacifiCorp_2022AS_RFP_App_E-3_Tolling_Agreement.pdf",
+     "quote": "used for PacifiCorp’s benefit in accordance with Charging Notices and Discharging Notices",
+     "status": "fetched"
+    },
+    {
+     "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement, Energy Storage Agreement cover sheet (April 24, 2024)",
+     "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
+     "quote": "Guaranteed Capacity:  300 MW",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "ratepayer-funded-microgrid-grant",
+   "group": "batteries",
+   "family": "public-procurement",
+   "name": "Ratepayer-funded microgrid incentive — a regulator pays for the pair on behalf of a community",
+   "what_it_is": "A state commission orders utilities to collect a fixed pot from ratepayers and award it as grants for community microgrids serving critical facilities in vulnerable areas. The community or local government applies through its utility; the award funds the capital, and the recipient commits to operate and maintain the system for a minimum term. Nobody buys energy under this mechanism — the regulator is buying outage resilience for third parties who could never finance it, and the projects are explicitly required to be complex enough to island for extended periods and serve multiple customers. It is the only mechanism in this file where the entity that pays is neither the host nor the offtaker.",
+   "who_signs": "Community/local government/tribe <-> investor-owned utility administering the program, under a commission decision",
+   "asset_owner": "host | public agency | third-party developer (per award terms)",
+   "term": "Award-specific; Isla Vista requires operation and maintenance for no less than 10 years",
+   "price_form": "grant-funded capital, recovered from all ratepayers",
+   "precedents": [
+    {
+     "name": "CPUC Microgrid Incentive Program",
+     "year": "2023",
+     "parties": "California Public Utilities Commission (Rulemaking R.19-09-009) <-> PG&E, SCE, SDG&E as administrators",
+     "size": "$200 million total: $79.2M PG&E, $83.3M SCE, $17.5M SDG&E; up to $15 million per project",
+     "price": "$200 million of ratepayer funds; program is now fully subscribed and closed to new applications",
+     "note": "Decision dated April 6, 2023. Targets disadvantaged, vulnerable and tribal communities that have experienced or are likely to experience outages, and emphasises projects that can operate independently for extended periods and serve multiple customers.",
+     "source_idx": 0
+    },
+    {
+     "name": "Isla Vista community microgrid",
+     "year": "2026",
+     "parties": "Santa Barbara County <-> Southern California Edison (MIP administrator); operator to be the county or a third-party vendor",
+     "size": "Serves the Isla Vista sheriff's office, a neighborhood health clinic, a community center and 150+ residential and business customers",
+     "price": "$15.3 million, fully funded by the Microgrid Incentive Program; $400,000 of it earmarked for community engagement and workforce development",
+     "note": "Expected to provide 24 hours of backup power. Operation and maintenance committed for a term no less than 10 years.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The program's own selection criteria — independent operation for extended periods, multiple customers, critical facilities — describe a reactor better than they describe a solar-plus-battery microgrid, which is the awkward part. A $15 million cap is real money against a microreactor's cost but well short of it, so the mechanism as written can fund the storage and controls half of a reactor pairing but not the reactor. The harder blocker is political rather than financial: these programs are aimed at disadvantaged and tribal communities, and siting a first-of-a-kind licensed nuclear facility in exactly those communities is an environmental-justice problem that a grant application does not resolve.",
+   "microreactor_edge": "Isla Vista is the sharpest number here: $15.3 million buys a community 24 hours of backup. A 1-20 MW unit's proposition against that is duration measured in years rather than hours, for a portfolio of sites rather than one — and the honest comparison is that the grant program has already spent its $200 million and is closed, so the mechanism cannot be the funding route for a reactor even if the fit were perfect. The useful read is the price signal, not the funding: California's regulator was willing to spend roughly $100,000 per critical-facility-day of resilience, which is the number a reactor-plus-storage resilience offering can be benchmarked against.",
+   "blockers": [
+    "The program is fully subscribed and closed; there is no open window",
+    "$15 million per project caps out well below any credible microreactor capex",
+    "Awards are targeted at disadvantaged, vulnerable and tribal communities, where siting a licensed nuclear facility carries its own consent problem",
+    "Award terms bind operation and maintenance for a minimum period without providing an operating revenue stream"
+   ],
+   "sources": [
+    {
+     "label": "CPUC — CPUC Charts Course for Microgrid Incentive Program To Increase Community Resilience (April 6, 2023, R.19-09-009)",
+     "url": "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-charts-course-for-microgrid-incentive-program-to-increase-community-resilience-2023",
+     "quote": "Projects selected under the MIP can receive up to $15 million in award funding.",
+     "status": "fetched"
+    },
+    {
+     "label": "Microgrid Knowledge — Utility-supported $15.3M Microgrid to Power Public Safety, Health in Coastal California Community",
+     "url": "https://www.microgridknowledge.com/utility-microgrids/article/55378864/utility-supported-153m-microgrid-to-power-public-safety-health-in-coastal-california-community",
+     "quote": "Either the county or a third-party vendor will operate and maintain the microgrid for a term no less than 10 years",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "single-owner-merchant-arbitrage-pair",
+   "group": "batteries",
+   "family": "commercial-contract",
+   "name": "Single-owner merchant pair — one entity owns generator and storage and optimises dispatch against price",
+   "what_it_is": "No offtake contract at all: one owner holds both the generator and the battery, and the battery's job is to move the generator's flat output into the hours the market pays for. Because both halves are inside one balance sheet the owner is indifferent to which asset earns the revenue, and the optimisation is purely dispatch against a price series. The economics live or die on price volatility rather than on price level, which makes this the one mechanism where a market with cheap average power can still be the best market. It is also the mechanism most exposed: nothing is contracted, so nothing is bankable.",
+   "who_signs": "Nobody — the owner sells into the wholesale market as a price taker; the counterparty is the market operator",
+   "asset_owner": "third-party developer | utility",
+   "term": "Asset life; 20-year project life is the standard modelling assumption",
+   "price_form": "merchant real-time market revenue, plus tax credits on the generation half",
+   "precedents": [
+    {
+     "name": "City of Anaheim's own merchant arithmetic on the Roadhouse contract",
+     "year": "2024",
+     "parties": "Anaheim Public Utilities (staff analysis presented to the Public Utilities Board, April 24, 2024)",
+     "size": "300 MW / 1,200 MWh",
+     "price": "$71M/yr in battery agreement and renewable power costs against $78M/yr in wholesale energy and avoided CAISO costs — a ~$7M/yr net benefit, about 9% of cost",
+     "note": "A real, published arbitrage margin on a real contract. The margin is thin enough that it is the difference between two large numbers, which is what makes merchant exposure on a paired asset dangerous.",
+     "source_idx": 0
+    },
+    {
+     "name": "Berkeley Lab hybrid dataset — the measured arbitrage spread",
+     "year": "2025",
+     "parties": "LBNL Electricity Markets & Policy",
+     "size": "100+ operating or contracted US PV+battery hybrids",
+     "price": "cost of adding storage ~$10/MWh-PV at a 50% storage-to-PV ratio, against $8-21/MWh-PV of value depending on region and dispatch assumptions",
+     "note": "The low end of the value range is below the cost. Merchant pairing is not reliably profitable across regions; it is profitable in specific ones.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "Idaho National Laboratory modelled exactly this structure for a reactor: a 20 MWth (9.6 MWe) high-temperature gas reactor with a single owner also holding a liquid metal battery, dispatched by stochastic optimisation against ERCOT, PJM and MISO real-time prices over a 20-year life. Two findings matter commercially. First, the battery prefers to charge from the reactor rather than from the grid, so the tax-credit charging restriction that constrains solar hybrids is close to free for a reactor pair. Second, the reactor's own capex dominates: INL's base case assumes $14,001/kWe with a low case of $8,616/kWe, and even at the low case the NPV outcome varies by market rather than being uniformly positive. The paper reports the maximum allowable reactor capex to break even, computed per 9,800 kW of reactor — which is the correct way to state the target and is rarely stated that way in vendor material.",
+   "microreactor_edge": "The most surprising number in the literature is the sizing ratio. INL optimised the battery's power rating across a 0-100 MWe range against a 9.6 MWe reactor, and the optimum sat at the top of the range in all three markets — roughly ten times the reactor's electrical output, with the paper cautioning that beyond 100 MWe the estimates could differ. That is the opposite of the intuition that a small reactor takes a small battery: a flat generator plus a very large short-duration battery is a peaking plant with nuclear fuel. The other quantified finding is that a large share of the reactor's output is better sold as heat or product than as electricity — INL estimates non-electric application potential at 38.6% in ERCOT, 23.7% in PJM and 24% in MISO, and in ERCOT 650 MWh of 1,682 MWh generated is diverted to charging rather than sold. To make the arbitrage return real the battery must sustain 624-633 cycles per year at 72.2% round-trip efficiency, or 730-768 cycles at 80.3%.",
+   "blockers": [
+    "Merchant revenue is unbankable for a first-of-a-kind asset; lenders will require an offtake contract that this mechanism by definition lacks",
+    "The measured arbitrage margin on a real utility contract was ~9% of cost — a difference between two large, volatile numbers",
+    "INL's own result is market-dependent: even at the low capex case the NPV varies significantly across ERCOT, PJM and MISO",
+    "624-768 full cycles per year is a duty cycle no commercially available long-life battery chemistry is warranted for over a 20-year life"
+   ],
+   "sources": [
+    {
+     "label": "Anaheim Public Utilities Board — Battery Energy Storage Agreement staff presentation (April 24, 2024)",
+     "url": "https://www.anaheim.net/DocumentCenter/View/54386/ITEM-4---Battery-Energy-Storage-Agreement_FINAL",
+     "quote": "dispatches in excess of 438,000 MWh during",
+     "status": "fetched"
+    },
+    {
+     "label": "Idaho National Laboratory INL/RPT-24-80420 — Microreactor-Liquid Metal Battery System Potential in Energy Markets (November 2025)",
+     "url": "https://www.osti.gov/servlets/purl/3013828",
+     "quote": "72.2% round-trip efficiency (RTE) and 730-768 cycles at 80.3% RTE.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
 }
