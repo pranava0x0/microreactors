@@ -223,6 +223,102 @@
           "status": "fetched"
         }
       ]
+    },
+    {
+      "id": "cost-type-government-owned-prototype",
+      "group": "diesel",
+      "family": "public-procurement",
+      "name": "Cost-type prime contract for a government-owned transportable reactor",
+      "what_it_is": "The government contracts a manufacturer on a cost-reimbursement basis to build a reactor that the government owns, and operates it on a federal site under DOE safety oversight rather than an NRC licence. There is no PPA and no price per MWh, because the government is not buying energy - it is buying a machine and a demonstration. All cost overrun risk sits with the government; the vendor is paid its costs. This is the only reactor structure where the published dollar figure is the whole truth, and it is brutal: about $300 million of contract value against 1 to 5 MWe of output.",
+      "who_signs": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
+      "asset_owner": "public agency",
+      "term": "roughly two years to build the prototype (award 2022, operation targeted 2026)",
+      "price_form": "cost-type contract - no energy price at all",
+      "precedents": [
+        {
+          "name": "Project Pele transportable microreactor prototype",
+          "year": "2022",
+          "parties": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
+          "size": "1 to 5 MWe, connected to Idaho National Laboratory's microgrid",
+          "price": "cost-type contract valued at about $300 million. At 1-5 MWe that is roughly $60,000-$300,000 per kW - one to two orders of magnitude above any commercial generation benchmark, because it buys a first-of-a-kind prototype, not electricity.",
+          "note": "Awarded June 2022. Operates at INL's Critical Infrastructure Test Range Complex under the safety oversight of DOE's Idaho Operations Office, not an NRC licence. TRISO fuel delivered to INL December 2025; core manufacturing began 2025.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "A cost-type contract is what a buyer uses when nobody can price the work - which is precisely the condition of every first-of-a-kind reactor. It is also why this number is so often misused: the $300 million is a prototype development cost, and citing it as a microreactor capex is wrong in the same way that citing an X-plane's cost as an airliner's would be. What it does establish honestly is the floor on what a government pays to get a first unit built when it refuses to transfer risk to a vendor.",
+      "microreactor_edge": "Transportability is the whole point and it only exists at this scale: Pele is designed to be shipped in commercial containers and moved between sites, which is a capability a 300 MW plant cannot have at any price. The corresponding commercial consequence is that the asset is not tied to a site, so it is not real property, is not rate-basable, and cannot be financed against a site licence - it has to be financed as equipment.",
+      "blockers": [
+        "Government ownership means no PPA, no offtake, no revenue model and no price signal for a commercial buyer",
+        "DOE Idaho Operations Office safety oversight is not an NRC licence and does not transfer to a commercial site",
+        "$300 million for 1-5 MWe is not a commercial capex and must never be quoted as one"
+      ],
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire - BWXT wins Project Pele contract to supply nation's first microreactor",
+          "url": "https://www.ans.org/news/article-4035/bwxt-wins-project-pele-contract-to-supply-nations-first-microreactor/",
+          "quote": "cost-type contract",
+          "status": "fetched"
+        },
+        {
+          "label": "US Department of Energy - Department of Defense Breaks Ground on Project Pele Microreactor",
+          "url": "https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor",
+          "quote": "connected to INL's microgrid producing 1 to 5 megawatts of electrical power",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "national-lab-testbed-access",
+      "group": "licensing",
+      "family": "public-procurement",
+      "name": "National-laboratory test bed access as a staged, cost-shared entry into operation",
+      "what_it_is": "DOE, through the National Reactor Innovation Center, awards small design-phase grants that buy a developer a slot in a shared, DOE-authorised test facility. The developer still pays for and owns its reactor; DOE supplies the containment structure, the safety-basis process and a fraction of the engineering cost. Awards are staged: a front-end engineering and experiment design phase, then a detailed engineering and experiment planning phase gated on a Preliminary Documented Safety Analysis. It is the cheapest published route from a paper design to a fuelled operating reactor, and the dollar figures are small enough to be startling.",
+      "who_signs": "DOE Office of Nuclear Energy / NRIC (Idaho National Laboratory) <-> microreactor developers",
+      "asset_owner": "third-party developer (reactor); public agency (test bed)",
+      "term": "staged phases from 2023 award to first fuelled experiment targeted 2026",
+      "price_form": "grant-funded design awards; test bed access in kind",
+      "precedents": [
+        {
+          "name": "DOME front-end engineering and experiment design (FEEED) awards",
+          "year": "2023",
+          "parties": "DOE <-> Radiant Industries, Ultra Safe Nuclear Corporation, Westinghouse",
+          "size": "three microreactor experiment designs for the DOME test bed at INL",
+          "price": "$3.9 million total across three developers",
+          "note": "Announced 2023-10-23. DOME repurposes the Experimental Breeder Reactor-II containment structure and is capped at 20 MWth per experiment.",
+          "source_idx": 0
+        },
+        {
+          "name": "DOME detailed engineering and experiment planning (DEEP) phase",
+          "year": "2024",
+          "parties": "DOE <-> Westinghouse (eVinci, up to 5 MWe), Radiant Industries (Kaleidos, 1.2 MWe design; 3.5 MWth full-scale test unit)",
+          "size": "two developers advanced to fuelled-experiment planning",
+          "price": "combined $5 million",
+          "note": "Announced 2024-11-18. Gated on completing a Preliminary Documented Safety Analysis before fabrication and testing. First fuelled reactor experiment targeted 2026.",
+          "source_idx": 1
+        }
+      ],
+      "nuclear_fit": "There is no non-nuclear equivalent because there is no other technology whose first article cannot legally be switched on anywhere. DOME exists to supply the one thing a reactor developer cannot buy commercially: a place where a fuelled reactor may lawfully operate. The awards are tiny relative to reactor capex, which tells you what is actually scarce - not money, but an authorised site.",
+      "microreactor_edge": "DOME's 20 MWth cap is a hard size gate: it is a microreactor facility by design and a 300 MW SMR cannot use it at all. That asymmetry is the single largest schedule advantage a 1-20 MW unit has - it can reach a fuelled, operating first article inside a shared federal containment for single-digit millions of grant support, while a large SMR's only path to a first article is a full NRC construction permit and operating licence on a bespoke site.",
+      "blockers": [
+        "20 MWth per-experiment cap excludes anything above microreactor scale",
+        "A DOME experiment is not a licensed commercial plant and produces no revenue",
+        "Slots are scarce and awarded competitively; two developers hold the first campaigns",
+        "No published fee schedule for test bed access, so the true developer cost of a DOME campaign is not public"
+      ],
+      "sources": [
+        {
+          "label": "US Department of Energy - DOE Awards $3.9 Million for Advanced Reactor Experiment Designs",
+          "url": "https://www.energy.gov/ne/articles/doe-awards-39-million-advanced-reactor-experiment-designs",
+          "quote": "design, fabrication, construction, and testing of fueled reactor experiments",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine - Westinghouse, Radiant Secure $5M for Microreactor Tests at INL's Pioneering DOME Testbed",
+          "url": "https://www.powermag.com/westinghouse-radiant-secure-5m-for-microreactor-tests-at-inls-pioneering-dome-testbed/",
+          "quote": "the detailed engineering and experiment planning (DEEP) phase",
+          "status": "fetched"
+        }
+      ]
     }
   ]
 }

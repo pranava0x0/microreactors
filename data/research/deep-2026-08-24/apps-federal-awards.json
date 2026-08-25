@@ -186,6 +186,188 @@
           "status": "fetched"
         }
       ]
+    },
+    {
+      "id": "port-of-los-angeles-epa-clean-ports",
+      "sector": "Marine terminals",
+      "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
+      "country": "US",
+      "region": "San Pedro, California",
+      "parties": {
+        "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
+        "provider": "U.S. Environmental Protection Agency (funder)",
+        "utility": "Los Angeles Department of Water and Power"
+      },
+      "instrument": "grant-funded",
+      "signed": "2025-01",
+      "term_years": 4,
+      "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
+      "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
+      "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+          "id": "FAIN 97T27601",
+          "date": "2025-01-01",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+        }
+      ],
+      "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
+      "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+          "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nbvc-point-mugu-shore-power-replacement",
+      "sector": "Marine terminals",
+      "name": "Naval Base Ventura County / Point Mugu shore power mound repair and replacement (N62473-24-F-4934)",
+      "country": "US",
+      "region": "Point Mugu, California",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Southwest",
+        "provider": "South Bay EDC Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2024-07",
+      "term_years": 3,
+      "capacity": "Shore power mounds serving berthed vessels; megawatt rating not stated in the award record",
+      "capex": "$44,323,562 obligated; base and all options identical, so the full contract value is $44.3M with no unexercised options",
+      "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life shore power distribution equipment",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Design-build task order under IDIQ N6247324D5205",
+          "id": "PIID N62473-24-F-4934",
+          "date": "2024-07-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
+        }
+      ],
+      "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
+      "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6247324F4934 (PIID N62473-24-F-4934), South Bay EDC Inc., Point Mugu NAWC CA",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/",
+          "quote": "DB REPAIR AND REPLACE SHORE POWER MOUND NAVBASE VENTURA COUNTY/PT MUGU CALIFORNIA.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "beaufort-parris-island-utility-privatization-water",
+      "sector": "Critical civic infrastructure",
+      "name": "MCRD Parris Island / MCAS Beaufort 50-year water and wastewater privatization (N69450-08-C-0070)",
+      "country": "US",
+      "region": "Beaufort, South Carolina",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC (MCRD Parris Island, MCAS Beaufort, Naval Hospital Beaufort, Laurel Bay housing)",
+        "provider": "Beaufort-Jasper Water & Sewer Authority",
+        "utility": "Beaufort-Jasper Water & Sewer Authority"
+      },
+      "instrument": "utility tariff",
+      "signed": "2008-02",
+      "term_years": 50,
+      "capacity": "Water distribution and wastewater collection systems at four Navy and Marine Corps sites; no electric generation in scope",
+      "capex": "$20,987,602.80 obligated as of the record's last modification on 2019-07-16, against a base-and-all-options value of $254,977,740.80; period of performance 2008-02-28 to 2058-02-27",
+      "displaced": "Government ownership and operation of the installations' water and wastewater systems",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Utility privatization contract, fixed price redetermination",
+          "id": "PIID N69450-08-C-0070",
+          "date": "2008-02-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "This record exists to correct a lead. The NAVFAC Beaufort utility privatization reported at roughly $251.4 million over 50 years resolves in the federal award data to N69450-08-C-0070, awarded to the Beaufort-Jasper Water & Sewer Authority on 2008-02-28 with a period of performance to 2058-02-27 — exactly 50 years — and a current base-and-all-options value of $254,977,740.80, close to but not identical with the reported figure. The material correction is the commodity: the contract covers the water distribution and wastewater collection systems at MCRD Parris Island, MCAS Beaufort, the Naval Hospital and Laurel Bay housing. It contains no electricity. USAspending shows only $20,987,602.80 obligated, but the award record was last modified on 2019-07-16, so that obligation figure is a floor that stops eleven years into a fifty-year term rather than a current total.",
+      "microreactor_read": "A quarter-billion-dollar, fifty-year Beaufort utility deal is real but it is not an electricity market, so it prices nothing a reactor sells; the number to carry forward from Beaufort is the separate $212.7M Parris Island ESPC, not this one. The transferable fact is structural: DoD is comfortable handing a single counterparty a 50-year franchise over a commodity utility at a base, and that is precisely the tenor a microreactor needs and cannot get from a construction contract.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6945008C0070 (PIID N69450-08-C-0070), Beaufort-Jasper Water & Sewer Authority",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/",
+          "quote": "MCRD PARRIS ISLAND, MCAS BEAUFORT, NAVAL HOSPITAL AND LAUREL BAY HOUSING WATER AND WASTEWATER SYSTEM PRIVATIZATION CONTRACT",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "salisbury-vamc-campus-generator",
+      "sector": "Medical campuses",
+      "name": "Salisbury VA Medical Center campus generator installation (36C24626C0037)",
+      "country": "US",
+      "region": "Salisbury, North Carolina",
+      "parties": {
+        "host": "U.S. Department of Veterans Affairs, Salisbury VAMC",
+        "provider": "Valiant Construction LLC"
+      },
+      "instrument": "design-build",
+      "signed": "2026-05",
+      "term_years": 1,
+      "capacity": "Campus-wide standby generation for a VA medical center; kW rating not stated in the award record",
+      "capex": "$23,905,280 obligated; base and all options identical, period of performance 2026-05-14 to 2027-07-28",
+      "displaced": "Nothing — this is new or replacement standby diesel capacity bought to keep a hospital campus alive through grid outages",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Y1DZ construction of other hospital buildings",
+          "id": "PIID 36C24626C0037",
+          "date": "2026-05-14",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "VA Network Contracting Office 6 awarded Valiant Construction LLC $23,905,280 on 2026-05-14 to install a campus generator at the Salisbury VA Medical Center, with a period of performance to 2027-07-28 and no unexercised options. The award buys standby capacity only: the generators run during outages and testing, not as a source of energy. This is one of a class — the same sweep surfaced VA generator awards of $22.9M in New York, $19.0M in Maryland and $10.3M at Loma Linda in California — so $10M to $24M per hospital campus is the going federal rate for backup power that produces almost no kilowatt-hours.",
+      "microreactor_read": "A single VA hospital campus is willing to spend $23.9 million on diesel plant that will idle for 8,700 hours a year, and it will do it again in fifteen or twenty years. That is the number a 1-5 MW microreactor has to be measured against at a medical campus — not the hospital's energy bill, but its resilience capex, because the reactor is the only product that can be charged to both budget lines at once.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_36C24626C0037 (PIID 36C24626C0037), Valiant Construction LLC, Salisbury NC",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/",
+          "quote": "INSTALL CAMPUS GENERATOR SALISBURY VAMC",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "san-juan-va-generator-farm-hurricane-hardening",
+      "sector": "Medical campuses",
+      "name": "San Juan VA Medical Center generator farm hurricane hardening (36C24826C0006)",
+      "country": "US",
+      "region": "San Juan, Puerto Rico",
+      "parties": {
+        "host": "U.S. Department of Veterans Affairs, VA Caribbean Healthcare System",
+        "provider": "Project Management Solutions LLC"
+      },
+      "instrument": "design-build",
+      "signed": "2026-04",
+      "term_years": 2,
+      "capacity": "Existing on-site generator farm serving a VA medical center; kW rating not stated in the award record",
+      "capex": "$10,835,000 obligated; base and all options identical, period of performance 2026-04-22 to 2028-09-05",
+      "displaced": "Nothing is displaced — the award hardens diesel plant that already exists so it survives the next hurricane",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Z2DA repair or alteration of hospitals and infirmaries",
+          "id": "PIID 36C24826C0006",
+          "date": "2026-04-22",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "VA Network Contract Office 8 awarded Project Management Solutions LLC $10,835,000 on 2026-04-22 for construction to hurricane-harden the generator farm at the VA medical campus in San Juan, Puerto Rico, running to 2028-09-05. The scope is the enclosure and protection of existing diesel plant, not new capacity and not energy. On an island whose grid has failed repeatedly, the VA is spending eleven million dollars purely on making its backup diesels weatherproof — a cost line that exists only because the primary supply is untrustworthy and the backup is exposed.",
+      "microreactor_read": "Hurricane hardening is a recurring cost that a buried or hardened microreactor would not incur in the same form, and Puerto Rico prices it at $10.8M for one hospital's generator yard alone. Selling into a Caribbean medical campus means beating the sum of three lines the VA already pays separately — backup capex in the $10-24M band, hardening at $10.8M, and grid energy at PREPA's rates — rather than beating any one of them.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_36C24826C0006 (PIID 36C24826C0006), Project Management Solutions LLC, San Juan PR",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/",
+          "quote": "PROVIDE HURRICANE HARDENING AT GENERATOR FARM - CONSTRUCTION",
+          "status": "fetched"
+        }
+      ]
     }
   ]
 }
