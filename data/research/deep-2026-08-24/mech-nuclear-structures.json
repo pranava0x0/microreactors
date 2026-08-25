@@ -1,324 +1,326 @@
 {
-  "_meta": {
-    "captured": "2026-08-24",
-    "agent": "mech-nuclear-structures",
-    "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
-    "angles_run": [
-      "build-own-operate + long-term PPA to a single host (Oklo/Eielson, Oklo/Equinix, Oklo/Switch)",
-      "reactor-as-a-product: preorders, deposits, reservation fees (Radiant/Equinix, NANO/Supermicro, Last Energy, Deep Fission)",
-      "government-as-first-customer vehicles (DIU ANPI, Project Pele, Army Janus, DOE reactor pilot program, INL DOME)",
-      "utility ownership and rate-basing (OPG Darlington BWRX-300, TVA, TerraPower/Kemmerer, Utah)",
-      "cost-share and risk-sharing instruments (DOE ARDP, X-energy/Dow, 45U/45Y/48E tax credits)",
-      "heat rather than electricity (Dow Seadrift, industrial steam)",
-      "reactor-only contract terms (decommissioning funding assurance, Price-Anderson tiers, operator licensing, security force, HALEU)"
-    ],
-    "absences": [
-      "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
-      "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
-      "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
-      "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
-      "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
-      "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
-      "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe."
-    ]
-  },
-  "mechanisms": [
+ "_meta": {
+  "captured": "2026-08-24",
+  "agent": "mech-nuclear-structures",
+  "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
+  "angles_run": [
+   "build-own-operate + long-term PPA to a single host (Oklo/Eielson, Oklo/Equinix, Oklo/Switch)",
+   "reactor-as-a-product: preorders, deposits, reservation fees (Radiant/Equinix, NANO/Supermicro, Last Energy, Deep Fission)",
+   "government-as-first-customer vehicles (DIU ANPI, Project Pele, Army Janus, DOE reactor pilot program, INL DOME)",
+   "utility ownership and rate-basing (OPG Darlington BWRX-300, TVA, TerraPower/Kemmerer, Utah)",
+   "cost-share and risk-sharing instruments (DOE ARDP, X-energy/Dow, 45U/45Y/48E tax credits)",
+   "heat rather than electricity (Dow Seadrift, industrial steam)",
+   "reactor-only contract terms (decommissioning funding assurance, Price-Anderson tiers, operator licensing, security force, HALEU)"
+  ],
+  "absences": [
+   "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
+   "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
+   "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
+   "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
+   "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
+   "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
+   "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe.",
+   "Agent terminated on a session limit part-way through. Angles not completed: utility rate-basing of a small reactor, cost-share instruments (ARDP, X-energy/Dow), heat-not-electricity contracts, and the reactor-specific contract terms (decommissioning assurance, Price-Anderson, HALEU)."
+  ],
+  "incomplete": true
+ },
+ "mechanisms": [
+  {
+   "id": "gov-boo-ppa-single-host-installation",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Government build-own-operate plus a long-term PPA to a single installation",
+   "what_it_is": "A federal agency (here DLA Energy, contracting for the Department of the Air Force) buys energy, not a reactor. The vendor licenses, builds, owns and operates the plant on or adjacent to the installation, and sells electricity and steam to that single host under a long-term power purchase agreement. The government takes no construction risk, no NRC licensing risk and no decommissioning liability; the vendor takes all of it and recovers it in the energy price. Federal agencies have statutory authority (10 U.S.C. 2922a) to sign energy contracts up to 30 years, which is what makes the structure financeable at all.",
+   "who_signs": "Defense Logistics Agency Energy (for the Department of the Air Force) <-> reactor developer (Oklo Inc.)",
+   "asset_owner": "third-party developer",
+   "term": "long-term PPA; DoD energy-contract authority runs to 30 years",
+   "price_form": "$/MWh plus a heat/steam component, under a firm-fixed-price PPA - never published",
+   "precedents": [
     {
-      "id": "gov-boo-ppa-single-host-installation",
-      "group": "diesel",
-      "family": "public-procurement",
-      "name": "Government build-own-operate plus a long-term PPA to a single installation",
-      "what_it_is": "A federal agency (here DLA Energy, contracting for the Department of the Air Force) buys energy, not a reactor. The vendor licenses, builds, owns and operates the plant on or adjacent to the installation, and sells electricity and steam to that single host under a long-term power purchase agreement. The government takes no construction risk, no NRC licensing risk and no decommissioning liability; the vendor takes all of it and recovers it in the energy price. Federal agencies have statutory authority (10 U.S.C. 2922a) to sign energy contracts up to 30 years, which is what makes the structure financeable at all.",
-      "who_signs": "Defense Logistics Agency Energy (for the Department of the Air Force) <-> reactor developer (Oklo Inc.)",
-      "asset_owner": "third-party developer",
-      "term": "long-term PPA; DoD energy-contract authority runs to 30 years",
-      "price_form": "$/MWh plus a heat/steam component, under a firm-fixed-price PPA - never published",
-      "precedents": [
-        {
-          "name": "Eielson AFB microreactor pilot - first tentative selection",
-          "year": "2023",
-          "parties": "US Air Force / DLA Energy <-> Oklo Inc.",
-          "size": "Aurora powerhouse; electricity plus steam to Eielson AFB, Alaska",
-          "price": "not published; contract characterised in press as '$100-million-plus'",
-          "note": "STATUS CORRECTION: this award did NOT stand. Ultra Safe Nuclear protested that a contract at or above $100M required discussions and negotiations, and the Air Force revoked the intent to award in late September 2023.",
-          "source_idx": 1
-        },
-        {
-          "name": "Eielson AFB microreactor pilot - reissued Notice of Intent to Award",
-          "year": "2025",
-          "parties": "DLA Energy (for the Department of the Air Force) <-> Oklo Inc.",
-          "size": "Aurora powerhouse delivering electricity and heat to Eielson AFB, Alaska",
-          "note": "Reissued 2025-06-11 after the 2023 rescission. This is a NOITA, not an executed contract: as of this capture no signed agreement, term, capacity or price has been published for it.",
-          "source_idx": 0
-        }
-      ],
-      "nuclear_fit": "The structure itself is ordinary - DoD has bought third-party-owned energy on long-term PPAs for solar and cogeneration for years. What nuclear changes is the sequencing: the vendor cannot deliver energy without an NRC licence, so the PPA is signed years before the licence application is filed, and the government is contracting against a permitting risk it cannot itself resolve. It also changes the protest surface: the $100M Federal Acquisition Regulation threshold for required discussions is trivially crossed by a reactor and not by a solar array, which is exactly what killed the first Eielson award.",
-      "microreactor_edge": "At 1-20 MW the whole plant serves one host, so there is no wholesale market to sell surplus into and no second offtaker to diversify credit risk - the installation IS the market, and the PPA is the entire revenue stream. A 300 MW unit at the same base would have to sell 90% of its output to the grid and therefore needs an interconnection agreement, a transmission study and a utility counterparty; the 1-20 MW unit needs none of those, which is why the microreactor case can be a pure bilateral government PPA and the large-reactor case cannot.",
-      "blockers": [
-        "FAR $100M threshold for required discussions - the basis of the successful Ultra Safe Nuclear protest that voided the 2023 Eielson award",
-        "A NOITA is not a contract; no executed Eielson agreement has been published as of 2026-08",
-        "NRC licence must be obtained after the PPA is signed, so the offtaker holds schedule risk it cannot price",
-        "No published price means no comparator for the next installation to negotiate against"
-      ],
-      "sources": [
-        {
-          "label": "Oklo Inc. - Oklo Selected as Intended Awardee to Provide Clean, Reliable Power to Eielson Air Force Base in Alaska",
-          "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
-          "quote": "Oklo would design, construct, own, and operate the power plant, delivering both electricity and heat",
-          "status": "fetched"
-        },
-        {
-          "label": "Canary Media - Air Force rescinds $100M award for Oklo microreactor",
-          "url": "https://www.canarymedia.com/articles/nuclear/air-force-rescinds-100m-award-for-oklo-microreactor",
-          "quote": "the military revoked the intent to award Oklo the planned $100-million-plus contract in late September",
-          "status": "fetched"
-        }
-      ]
+     "name": "Eielson AFB microreactor pilot - first tentative selection",
+     "year": "2023",
+     "parties": "US Air Force / DLA Energy <-> Oklo Inc.",
+     "size": "Aurora powerhouse; electricity plus steam to Eielson AFB, Alaska",
+     "price": "not published; contract characterised in press as '$100-million-plus'",
+     "note": "STATUS CORRECTION: this award did NOT stand. Ultra Safe Nuclear protested that a contract at or above $100M required discussions and negotiations, and the Air Force revoked the intent to award in late September 2023.",
+     "source_idx": 1
     },
     {
-      "id": "reservation-fee-rofr-mfn-offtake",
-      "group": "interconnection",
-      "family": "commercial-contract",
-      "name": "Reservation fee plus right of first refusal and most-favoured-nation pricing, ahead of any PPA",
-      "what_it_is": "A corporate offtaker pays a large cash reservation fee to a pre-revenue developer in exchange for a right of first refusal over a block of future output and a most-favoured-nation pricing guarantee - without signing a PPA, agreeing a price, or naming a site. The fee is not a prepayment for energy: it is returned to the buyer as a discount against future PPA pricing. The buyer is effectively buying an option on capacity and a promise that no later customer gets better terms; the developer is buying non-dilutive cash and a reference customer. Ownership, fuel risk, availability risk and price are all deferred to a PPA that does not yet exist.",
-      "who_signs": "Hyperscale data-centre operator (Equinix, Inc.) <-> reactor developer (Oklo Inc.)",
-      "asset_owner": "third-party developer",
-      "term": "36-month ROFR window; anticipated PPA term of 20 years, renewable for further 20-year terms",
-      "price_form": "$/MWh to be set in a future PPA - the price term is REDACTED in the filed exhibit",
-      "precedents": [
-        {
-          "name": "Equinix - Oklo confidential Letter of Intent to Purchase Power",
-          "year": "2024",
-          "parties": "Equinix, Inc. <-> Oklo Inc.",
-          "size": "approximately 500 MW, stated as 4,380,000 MWh/yr of electric energy output",
-          "price": "REDACTED. The filed exhibit replaces every price term with '####'. A $25,000,000 reservation fee is disclosed; the $/MWh is not.",
-          "note": "Signed 2024-02-16, filed as Exhibit 10.19 to AltC Acquisition Corp's S-4/A on 2024-04-15. Fee returned as a 10% discount to most-favoured-nation pricing; MFN clause bars Oklo from giving any later customer better terms without offering them to Equinix. 4,380,000 MWh on 500 MW implies a 100% capacity factor, which is itself a negotiating artefact rather than a plant specification.",
-          "source_idx": 0
-        }
-      ],
-      "nuclear_fit": "This is what an offtake looks like when the asset cannot be delivered for five to ten years and no unit of it has ever been built. There is no price because there is no cost basis - the first-of-a-kind capex is unknown to both parties. The MFN clause is the tell: the buyer is not protecting a price, it is protecting itself against discovering later that the price was set arbitrarily. A gas or solar offtaker does not need MFN protection because a market clearing price exists.",
-      "microreactor_edge": "Equinix's 500 MW is an aggregation of many small units, so the ROFR is written over MWh in a fleet rather than over a single plant's output - the LOI expressly contemplates phased deployment across multiple sites with locations named later. That is only possible with factory-built units. A 300 MW reactor is one site, one licence and one in-service date, so the equivalent contract is a single-site PPA with a fixed COD, not a portfolio option. The microreactor's modularity is what turns the offtake into an option on a production line.",
-      "blockers": [
-        "Price term redacted from the public filing - no comparator exists for any subsequent negotiation",
-        "MFN clause creates a ratchet: Oklo cannot discount to a later customer without repricing Equinix",
-        "ROFR expressly excludes powerhouses supplying any governmental entity and those in Idaho, Ohio and Arizona",
-        "LOI is expressly non-binding as to terms - 'intended as a guide in the negotiations and preparation of a PPA'"
-      ],
-      "sources": [
-        {
-          "label": "SEC EDGAR - AltC Acquisition Corp. S-4/A Exhibit 10.19, Equinix confidential Letter of Intent to Purchase Power",
-          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924047344/tm2324337d21_ex10-19.htm",
-          "quote": "In exchange for the ROFR and other terms hereof, we shall provide Oklo $25,000,000 (the “Payment”) within fifteen (15) days",
-          "status": "fetched"
-        },
-        {
-          "label": "SEC EDGAR - AltC Acquisition Corp. S-4/A Exhibit 10.19 (price term)",
-          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924047344/tm2324337d21_ex10-19.htm",
-          "quote": "purchasing electric energy output from Oklo for a 20-year timeline, and at a rate to be formally specified in one or more future PPAs",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "doe-authorization-ota-test-reactor",
-      "group": "licensing",
-      "family": "public-procurement",
-      "name": "DOE-authorized test reactor under an Other Transaction Agreement, with no federal money and no NRC licence",
-      "what_it_is": "The developer signs an Other Transaction Agreement with DOE and builds a reactor on its own site with its own capital, authorised under DOE's nuclear safety process rather than an NRC licence. DOE supplies the authorisation pathway (Nuclear Safety Design Agreement, then Preliminary Documented Safety Analysis, then Documented Safety Analysis) and in some cases HALEU fuel; it does not supply construction money. The developer bears 100% of capex and schedule risk in exchange for reaching criticality years earlier than the NRC route allows. A parallel Strategic Partnership Project pathway exists in which a national-lab contractor, not the developer, retains design control.",
-      "who_signs": "US Department of Energy <-> reactor developer (11 selected projects)",
-      "asset_owner": "third-party developer",
-      "term": "milestone-based; the programme's own deadline was criticality by 2026-07-04",
-      "price_form": "no price - the developer self-funds; DOE contributes authorisation and, for some, fuel",
-      "precedents": [
-        {
-          "name": "DOE Reactor Pilot Program - initial selections",
-          "year": "2025",
-          "parties": "DOE <-> Aalo Atomics, Antares Nuclear, Atomic Alchemy, Deep Fission, Last Energy, Natura Resources, Oklo (two projects), Radiant Industries, Terrestrial Energy, Valar Atomics",
-          "size": "11 projects, predominantly microreactor-scale test units",
-          "price": "no DOE construction funding disclosed; the instrument conveys authorisation, not cash",
-          "note": "Created under Executive Order 14301. Target was criticality for at least three concepts outside the national laboratories by 2026-07-04.",
-          "source_idx": 0
-        },
-        {
-          "name": "First DOE-authorized criticalities outside the national laboratories",
-          "year": "2026",
-          "parties": "DOE <-> Antares Nuclear (2026-06-04), Valar Atomics (2026-06-18), Aalo Atomics (2026-07-06)",
-          "size": "three test reactors; a fourth developer, Deployable Energy, is also reported critical",
-          "note": "STATUS: the programme met its target. DOE's own page lists Antares 2026-06-04 and Valar 2026-06-18 before the 2026-07-04 deadline, Aalo 2026-07-06 just after. Two authorisation pathways are in use: an OTA under which the developer retains design control, and a Strategic Partnership Project under which the lab contractor (Battelle, for Oklo's Pluto) retains it.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "This is the one mechanism in this file with no non-nuclear analogue at all - it exists because the Atomic Energy Act gives DOE independent authority to authorise reactors on its own terms, so a developer can bypass the NRC entirely for a test unit. The catch is that a DOE-authorized reactor cannot sell power commercially; it buys schedule, not revenue. The design-control question is the commercial crux: under the SPP pathway the developer hands design control to a lab contractor, which is a very different deal from the OTA pathway.",
-      "microreactor_edge": "Every one of the 11 selected projects is small enough to be built with venture capital rather than project finance - which is the only reason a self-funded, unfunded-by-DOE pathway is usable at all. A 300 MW unit cannot be built on a company balance sheet with no offtake and no federal cost share; a 1-5 MW test unit can. The pathway therefore selects for microreactors by construction, not by policy preference.",
-      "blockers": [
-        "DOE authorisation does not permit commercial power sales - a separate NRC licence is still needed to sell into a host or a grid",
-        "No federal construction funding: the developer carries the whole first-of-a-kind capex",
-        "Under the Strategic Partnership Project pathway the lab contractor, not the developer, retains design control",
-        "Criticality of a test unit is not evidence of a bankable commercial product"
-      ],
-      "sources": [
-        {
-          "label": "US Department of Energy - U.S. Department of Energy Reactor Pilot Program",
-          "url": "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program",
-          "quote": "reaching criticality for at least three advanced nuclear reactor concepts located outside of the national laboratories by July 4, 2026",
-          "status": "fetched"
-        },
-        {
-          "label": "ANS Nuclear Newswire - The deadline arrives: Checking in on the Reactor Pilot Program",
-          "url": "https://www.ans.org/news/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
-          "quote": "Battelle retains design control over the Pluto facility—as opposed to the OTA pathway, which allows the involved company to retain design control.",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "dod-ota-contractor-owned-contractor-operated-base-power",
-      "group": "diesel",
-      "family": "public-procurement",
-      "name": "DoD Other Transaction Authority for commercially owned and operated reactors on an installation",
-      "what_it_is": "The Defense Innovation Unit runs a Commercial Solutions Opening, screens vendors into an eligible pool, and then awards Other Transactions to selected vendors to design, license, build and operate microreactor plants on named installations. The reactors are commercially owned and operated - the Army buys resilient power, not a reactor - and the awards are structured as fixed-price milestone payments on commercial terms rather than cost reimbursement. The Army executed a Memorandum of Agreement with DIU so it could use DIU's OTA rather than a FAR-based procurement, which is what avoids the protest exposure that voided the first Eielson award.",
-      "who_signs": "Defense Innovation Unit (under a Memorandum of Agreement with the US Army) <-> selected microreactor vendors",
-      "asset_owner": "third-party developer",
-      "term": "prototype OTs with follow-on production authority; EO 14299 sets an operating deadline of 2028-09-30",
-      "price_form": "fixed-price milestone payments; power price to the installation not disclosed",
-      "precedents": [
-        {
-          "name": "Advanced Nuclear Power for Installations (ANPI) - eligible vendor pool",
-          "year": "2025",
-          "parties": "DIU / DoD <-> Antares Nuclear, BWXT Advanced Technologies, General Atomics Electromagnetic Systems, Kairos Power, Oklo, Radiant Industries, Westinghouse Government Services, X-energy",
-          "size": "eight vendors; systems sized to meet 100% of an installation's critical loads",
-          "price": "NO DOLLAR VALUE DISCLOSED. DIU's own announcement states no award amounts, no ownership model and no capacity range.",
-          "note": "Announced 2025-04-10. Selection confers eligibility for Other Transaction awards, not an award.",
-          "source_idx": 0
-        },
-        {
-          "name": "Army Janus Program - nine named installations",
-          "year": "2025",
-          "parties": "US Army / DIU <-> vendors to be selected",
-          "size": "Fort Benning, Fort Bragg, Fort Campbell, Fort Drum, Fort Hood, Fort Wainwright, Holston Army Ammunition Plant, Joint Base Lewis-McChord, Redstone Arsenal",
-          "price": "no dollar figure published",
-          "note": "Solicitation via DIU's Commercial Solutions Opening, solution briefs due 2025-12-15. Reactors will be commercially owned and operated, and Army-regulated rather than NRC-licensed. EO 14299 requires an operating Army-regulated reactor by 2028-09-30.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "The Army-regulated pathway is the structural innovation: a reactor on a federal installation can be authorised by the Army under its own authority instead of by the NRC, which removes the single longest item from the schedule. It also removes the thing a commercial lender underwrites - an NRC licence is an asset, an Army authorisation is not transferable to a civilian site. Any vendor financing a Janus unit is financing an asset whose regulatory basis dies with the contract.",
-      "microreactor_edge": "Nine installations at once only works if the unit is a product. The programme is explicitly buying 'commercially available dual use microreactor technology' from a pool of eight vendors, which is a supply-chain posture, not a project posture. A 300 MW reactor would be one site, one vendor, one 10-year programme; the microreactor version is a fleet buy with milestone payments and interchangeable suppliers - and a base load of a few tens of MW is exactly what one or two units serve.",
-      "blockers": [
-        "No dollar value has ever been published for any ANPI or Janus Other Transaction",
-        "Army-regulated authorisation is not an NRC licence and does not travel to a commercial site",
-        "EO 14299's 2028-09-30 deadline is shorter than any microreactor has ever taken from award to operation",
-        "Eligibility in the ANPI pool is not an award; as of this capture no ANPI OT value is public"
-      ],
-      "sources": [
-        {
-          "label": "Defense Innovation Unit - DOD selects eligible companies for the Advanced Nuclear Power for Installations Program",
-          "url": "https://www.diu.mil/latest/DOD-selects-eligible-companies-for-the-Advanced-Nuclear-Power-for-Installations-Program",
-          "quote": "eligible to receive Other Transaction (OT) awards to provide commercially available dual use microreactor technology at various DOD installations",
-          "status": "fetched"
-        },
-        {
-          "label": "World Nuclear News - US Army names potential microreactor sites",
-          "url": "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites",
-          "quote": "The reactors will be commercially owned and operated",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "cost-type-government-owned-prototype",
-      "group": "diesel",
-      "family": "public-procurement",
-      "name": "Cost-type prime contract for a government-owned transportable reactor",
-      "what_it_is": "The government contracts a manufacturer on a cost-reimbursement basis to build a reactor that the government owns, and operates it on a federal site under DOE safety oversight rather than an NRC licence. There is no PPA and no price per MWh, because the government is not buying energy - it is buying a machine and a demonstration. All cost overrun risk sits with the government; the vendor is paid its costs. This is the only reactor structure where the published dollar figure is the whole truth, and it is brutal: about $300 million of contract value against 1 to 5 MWe of output.",
-      "who_signs": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
-      "asset_owner": "public agency",
-      "term": "roughly two years to build the prototype (award 2022, operation targeted 2026)",
-      "price_form": "cost-type contract - no energy price at all",
-      "precedents": [
-        {
-          "name": "Project Pele transportable microreactor prototype",
-          "year": "2022",
-          "parties": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
-          "size": "1 to 5 MWe, connected to Idaho National Laboratory's microgrid",
-          "price": "cost-type contract valued at about $300 million. At 1-5 MWe that is roughly $60,000-$300,000 per kW - one to two orders of magnitude above any commercial generation benchmark, because it buys a first-of-a-kind prototype, not electricity.",
-          "note": "Awarded June 2022. Operates at INL's Critical Infrastructure Test Range Complex under the safety oversight of DOE's Idaho Operations Office, not an NRC licence. TRISO fuel delivered to INL December 2025; core manufacturing began 2025.",
-          "source_idx": 0
-        }
-      ],
-      "nuclear_fit": "A cost-type contract is what a buyer uses when nobody can price the work - which is precisely the condition of every first-of-a-kind reactor. It is also why this number is so often misused: the $300 million is a prototype development cost, and citing it as a microreactor capex is wrong in the same way that citing an X-plane's cost as an airliner's would be. What it does establish honestly is the floor on what a government pays to get a first unit built when it refuses to transfer risk to a vendor.",
-      "microreactor_edge": "Transportability is the whole point and it only exists at this scale: Pele is designed to be shipped in commercial containers and moved between sites, which is a capability a 300 MW plant cannot have at any price. The corresponding commercial consequence is that the asset is not tied to a site, so it is not real property, is not rate-basable, and cannot be financed against a site licence - it has to be financed as equipment.",
-      "blockers": [
-        "Government ownership means no PPA, no offtake, no revenue model and no price signal for a commercial buyer",
-        "DOE Idaho Operations Office safety oversight is not an NRC licence and does not transfer to a commercial site",
-        "$300 million for 1-5 MWe is not a commercial capex and must never be quoted as one"
-      ],
-      "sources": [
-        {
-          "label": "ANS Nuclear Newswire - BWXT wins Project Pele contract to supply nation's first microreactor",
-          "url": "https://www.ans.org/news/article-4035/bwxt-wins-project-pele-contract-to-supply-nations-first-microreactor/",
-          "quote": "cost-type contract",
-          "status": "fetched"
-        },
-        {
-          "label": "US Department of Energy - Department of Defense Breaks Ground on Project Pele Microreactor",
-          "url": "https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor",
-          "quote": "connected to INL's microgrid producing 1 to 5 megawatts of electrical power",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "national-lab-testbed-access",
-      "group": "licensing",
-      "family": "public-procurement",
-      "name": "National-laboratory test bed access as a staged, cost-shared entry into operation",
-      "what_it_is": "DOE, through the National Reactor Innovation Center, awards small design-phase grants that buy a developer a slot in a shared, DOE-authorised test facility. The developer still pays for and owns its reactor; DOE supplies the containment structure, the safety-basis process and a fraction of the engineering cost. Awards are staged: a front-end engineering and experiment design phase, then a detailed engineering and experiment planning phase gated on a Preliminary Documented Safety Analysis. It is the cheapest published route from a paper design to a fuelled operating reactor, and the dollar figures are small enough to be startling.",
-      "who_signs": "DOE Office of Nuclear Energy / NRIC (Idaho National Laboratory) <-> microreactor developers",
-      "asset_owner": "third-party developer (reactor); public agency (test bed)",
-      "term": "staged phases from 2023 award to first fuelled experiment targeted 2026",
-      "price_form": "grant-funded design awards; test bed access in kind",
-      "precedents": [
-        {
-          "name": "DOME front-end engineering and experiment design (FEEED) awards",
-          "year": "2023",
-          "parties": "DOE <-> Radiant Industries, Ultra Safe Nuclear Corporation, Westinghouse",
-          "size": "three microreactor experiment designs for the DOME test bed at INL",
-          "price": "$3.9 million total across three developers",
-          "note": "Announced 2023-10-23. DOME repurposes the Experimental Breeder Reactor-II containment structure and is capped at 20 MWth per experiment.",
-          "source_idx": 0
-        },
-        {
-          "name": "DOME detailed engineering and experiment planning (DEEP) phase",
-          "year": "2024",
-          "parties": "DOE <-> Westinghouse (eVinci, up to 5 MWe), Radiant Industries (Kaleidos, 1.2 MWe design; 3.5 MWth full-scale test unit)",
-          "size": "two developers advanced to fuelled-experiment planning",
-          "price": "combined $5 million",
-          "note": "Announced 2024-11-18. Gated on completing a Preliminary Documented Safety Analysis before fabrication and testing. First fuelled reactor experiment targeted 2026.",
-          "source_idx": 1
-        }
-      ],
-      "nuclear_fit": "There is no non-nuclear equivalent because there is no other technology whose first article cannot legally be switched on anywhere. DOME exists to supply the one thing a reactor developer cannot buy commercially: a place where a fuelled reactor may lawfully operate. The awards are tiny relative to reactor capex, which tells you what is actually scarce - not money, but an authorised site.",
-      "microreactor_edge": "DOME's 20 MWth cap is a hard size gate: it is a microreactor facility by design and a 300 MW SMR cannot use it at all. That asymmetry is the single largest schedule advantage a 1-20 MW unit has - it can reach a fuelled, operating first article inside a shared federal containment for single-digit millions of grant support, while a large SMR's only path to a first article is a full NRC construction permit and operating licence on a bespoke site.",
-      "blockers": [
-        "20 MWth per-experiment cap excludes anything above microreactor scale",
-        "A DOME experiment is not a licensed commercial plant and produces no revenue",
-        "Slots are scarce and awarded competitively; two developers hold the first campaigns",
-        "No published fee schedule for test bed access, so the true developer cost of a DOME campaign is not public"
-      ],
-      "sources": [
-        {
-          "label": "US Department of Energy - DOE Awards $3.9 Million for Advanced Reactor Experiment Designs",
-          "url": "https://www.energy.gov/ne/articles/doe-awards-39-million-advanced-reactor-experiment-designs",
-          "quote": "design, fabrication, construction, and testing of fueled reactor experiments",
-          "status": "fetched"
-        },
-        {
-          "label": "POWER Magazine - Westinghouse, Radiant Secure $5M for Microreactor Tests at INL's Pioneering DOME Testbed",
-          "url": "https://www.powermag.com/westinghouse-radiant-secure-5m-for-microreactor-tests-at-inls-pioneering-dome-testbed/",
-          "quote": "the detailed engineering and experiment planning (DEEP) phase",
-          "status": "fetched"
-        }
-      ]
+     "name": "Eielson AFB microreactor pilot - reissued Notice of Intent to Award",
+     "year": "2025",
+     "parties": "DLA Energy (for the Department of the Air Force) <-> Oklo Inc.",
+     "size": "Aurora powerhouse delivering electricity and heat to Eielson AFB, Alaska",
+     "note": "Reissued 2025-06-11 after the 2023 rescission. This is a NOITA, not an executed contract: as of this capture no signed agreement, term, capacity or price has been published for it.",
+     "source_idx": 0
     }
-  ]
+   ],
+   "nuclear_fit": "The structure itself is ordinary - DoD has bought third-party-owned energy on long-term PPAs for solar and cogeneration for years. What nuclear changes is the sequencing: the vendor cannot deliver energy without an NRC licence, so the PPA is signed years before the licence application is filed, and the government is contracting against a permitting risk it cannot itself resolve. It also changes the protest surface: the $100M Federal Acquisition Regulation threshold for required discussions is trivially crossed by a reactor and not by a solar array, which is exactly what killed the first Eielson award.",
+   "microreactor_edge": "At 1-20 MW the whole plant serves one host, so there is no wholesale market to sell surplus into and no second offtaker to diversify credit risk - the installation IS the market, and the PPA is the entire revenue stream. A 300 MW unit at the same base would have to sell 90% of its output to the grid and therefore needs an interconnection agreement, a transmission study and a utility counterparty; the 1-20 MW unit needs none of those, which is why the microreactor case can be a pure bilateral government PPA and the large-reactor case cannot.",
+   "blockers": [
+    "FAR $100M threshold for required discussions - the basis of the successful Ultra Safe Nuclear protest that voided the 2023 Eielson award",
+    "A NOITA is not a contract; no executed Eielson agreement has been published as of 2026-08",
+    "NRC licence must be obtained after the PPA is signed, so the offtaker holds schedule risk it cannot price",
+    "No published price means no comparator for the next installation to negotiate against"
+   ],
+   "sources": [
+    {
+     "label": "Oklo Inc. - Oklo Selected as Intended Awardee to Provide Clean, Reliable Power to Eielson Air Force Base in Alaska",
+     "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+     "quote": "Oklo would design, construct, own, and operate the power plant, delivering both electricity and heat",
+     "status": "fetched"
+    },
+    {
+     "label": "Canary Media - Air Force rescinds $100M award for Oklo microreactor",
+     "url": "https://www.canarymedia.com/articles/nuclear/air-force-rescinds-100m-award-for-oklo-microreactor",
+     "quote": "the military revoked the intent to award Oklo the planned $100-million-plus contract in late September",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "reservation-fee-rofr-mfn-offtake",
+   "group": "interconnection",
+   "family": "commercial-contract",
+   "name": "Reservation fee plus right of first refusal and most-favoured-nation pricing, ahead of any PPA",
+   "what_it_is": "A corporate offtaker pays a large cash reservation fee to a pre-revenue developer in exchange for a right of first refusal over a block of future output and a most-favoured-nation pricing guarantee - without signing a PPA, agreeing a price, or naming a site. The fee is not a prepayment for energy: it is returned to the buyer as a discount against future PPA pricing. The buyer is effectively buying an option on capacity and a promise that no later customer gets better terms; the developer is buying non-dilutive cash and a reference customer. Ownership, fuel risk, availability risk and price are all deferred to a PPA that does not yet exist.",
+   "who_signs": "Hyperscale data-centre operator (Equinix, Inc.) <-> reactor developer (Oklo Inc.)",
+   "asset_owner": "third-party developer",
+   "term": "36-month ROFR window; anticipated PPA term of 20 years, renewable for further 20-year terms",
+   "price_form": "$/MWh to be set in a future PPA - the price term is REDACTED in the filed exhibit",
+   "precedents": [
+    {
+     "name": "Equinix - Oklo confidential Letter of Intent to Purchase Power",
+     "year": "2024",
+     "parties": "Equinix, Inc. <-> Oklo Inc.",
+     "size": "approximately 500 MW, stated as 4,380,000 MWh/yr of electric energy output",
+     "price": "REDACTED. The filed exhibit replaces every price term with '####'. A $25,000,000 reservation fee is disclosed; the $/MWh is not.",
+     "note": "Signed 2024-02-16, filed as Exhibit 10.19 to AltC Acquisition Corp's S-4/A on 2024-04-15. Fee returned as a 10% discount to most-favoured-nation pricing; MFN clause bars Oklo from giving any later customer better terms without offering them to Equinix. 4,380,000 MWh on 500 MW implies a 100% capacity factor, which is itself a negotiating artefact rather than a plant specification.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "This is what an offtake looks like when the asset cannot be delivered for five to ten years and no unit of it has ever been built. There is no price because there is no cost basis - the first-of-a-kind capex is unknown to both parties. The MFN clause is the tell: the buyer is not protecting a price, it is protecting itself against discovering later that the price was set arbitrarily. A gas or solar offtaker does not need MFN protection because a market clearing price exists.",
+   "microreactor_edge": "Equinix's 500 MW is an aggregation of many small units, so the ROFR is written over MWh in a fleet rather than over a single plant's output - the LOI expressly contemplates phased deployment across multiple sites with locations named later. That is only possible with factory-built units. A 300 MW reactor is one site, one licence and one in-service date, so the equivalent contract is a single-site PPA with a fixed COD, not a portfolio option. The microreactor's modularity is what turns the offtake into an option on a production line.",
+   "blockers": [
+    "Price term redacted from the public filing - no comparator exists for any subsequent negotiation",
+    "MFN clause creates a ratchet: Oklo cannot discount to a later customer without repricing Equinix",
+    "ROFR expressly excludes powerhouses supplying any governmental entity and those in Idaho, Ohio and Arizona",
+    "LOI is expressly non-binding as to terms - 'intended as a guide in the negotiations and preparation of a PPA'"
+   ],
+   "sources": [
+    {
+     "label": "SEC EDGAR - AltC Acquisition Corp. S-4/A Exhibit 10.19, Equinix confidential Letter of Intent to Purchase Power",
+     "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924047344/tm2324337d21_ex10-19.htm",
+     "quote": "In exchange for the ROFR and other terms hereof, we shall provide Oklo $25,000,000 (the “Payment”) within fifteen (15) days",
+     "status": "fetched"
+    },
+    {
+     "label": "SEC EDGAR - AltC Acquisition Corp. S-4/A Exhibit 10.19 (price term)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924047344/tm2324337d21_ex10-19.htm",
+     "quote": "purchasing electric energy output from Oklo for a 20-year timeline, and at a rate to be formally specified in one or more future PPAs",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "doe-authorization-ota-test-reactor",
+   "group": "licensing",
+   "family": "public-procurement",
+   "name": "DOE-authorized test reactor under an Other Transaction Agreement, with no federal money and no NRC licence",
+   "what_it_is": "The developer signs an Other Transaction Agreement with DOE and builds a reactor on its own site with its own capital, authorised under DOE's nuclear safety process rather than an NRC licence. DOE supplies the authorisation pathway (Nuclear Safety Design Agreement, then Preliminary Documented Safety Analysis, then Documented Safety Analysis) and in some cases HALEU fuel; it does not supply construction money. The developer bears 100% of capex and schedule risk in exchange for reaching criticality years earlier than the NRC route allows. A parallel Strategic Partnership Project pathway exists in which a national-lab contractor, not the developer, retains design control.",
+   "who_signs": "US Department of Energy <-> reactor developer (11 selected projects)",
+   "asset_owner": "third-party developer",
+   "term": "milestone-based; the programme's own deadline was criticality by 2026-07-04",
+   "price_form": "no price - the developer self-funds; DOE contributes authorisation and, for some, fuel",
+   "precedents": [
+    {
+     "name": "DOE Reactor Pilot Program - initial selections",
+     "year": "2025",
+     "parties": "DOE <-> Aalo Atomics, Antares Nuclear, Atomic Alchemy, Deep Fission, Last Energy, Natura Resources, Oklo (two projects), Radiant Industries, Terrestrial Energy, Valar Atomics",
+     "size": "11 projects, predominantly microreactor-scale test units",
+     "price": "no DOE construction funding disclosed; the instrument conveys authorisation, not cash",
+     "note": "Created under Executive Order 14301. Target was criticality for at least three concepts outside the national laboratories by 2026-07-04.",
+     "source_idx": 0
+    },
+    {
+     "name": "First DOE-authorized criticalities outside the national laboratories",
+     "year": "2026",
+     "parties": "DOE <-> Antares Nuclear (2026-06-04), Valar Atomics (2026-06-18), Aalo Atomics (2026-07-06)",
+     "size": "three test reactors; a fourth developer, Deployable Energy, is also reported critical",
+     "note": "STATUS: the programme met its target. DOE's own page lists Antares 2026-06-04 and Valar 2026-06-18 before the 2026-07-04 deadline, Aalo 2026-07-06 just after. Two authorisation pathways are in use: an OTA under which the developer retains design control, and a Strategic Partnership Project under which the lab contractor (Battelle, for Oklo's Pluto) retains it.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "This is the one mechanism in this file with no non-nuclear analogue at all - it exists because the Atomic Energy Act gives DOE independent authority to authorise reactors on its own terms, so a developer can bypass the NRC entirely for a test unit. The catch is that a DOE-authorized reactor cannot sell power commercially; it buys schedule, not revenue. The design-control question is the commercial crux: under the SPP pathway the developer hands design control to a lab contractor, which is a very different deal from the OTA pathway.",
+   "microreactor_edge": "Every one of the 11 selected projects is small enough to be built with venture capital rather than project finance - which is the only reason a self-funded, unfunded-by-DOE pathway is usable at all. A 300 MW unit cannot be built on a company balance sheet with no offtake and no federal cost share; a 1-5 MW test unit can. The pathway therefore selects for microreactors by construction, not by policy preference.",
+   "blockers": [
+    "DOE authorisation does not permit commercial power sales - a separate NRC licence is still needed to sell into a host or a grid",
+    "No federal construction funding: the developer carries the whole first-of-a-kind capex",
+    "Under the Strategic Partnership Project pathway the lab contractor, not the developer, retains design control",
+    "Criticality of a test unit is not evidence of a bankable commercial product"
+   ],
+   "sources": [
+    {
+     "label": "US Department of Energy - U.S. Department of Energy Reactor Pilot Program",
+     "url": "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program",
+     "quote": "reaching criticality for at least three advanced nuclear reactor concepts located outside of the national laboratories by July 4, 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS Nuclear Newswire - The deadline arrives: Checking in on the Reactor Pilot Program",
+     "url": "https://www.ans.org/news/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+     "quote": "Battelle retains design control over the Pluto facility—as opposed to the OTA pathway, which allows the involved company to retain design control.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "dod-ota-contractor-owned-contractor-operated-base-power",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "DoD Other Transaction Authority for commercially owned and operated reactors on an installation",
+   "what_it_is": "The Defense Innovation Unit runs a Commercial Solutions Opening, screens vendors into an eligible pool, and then awards Other Transactions to selected vendors to design, license, build and operate microreactor plants on named installations. The reactors are commercially owned and operated - the Army buys resilient power, not a reactor - and the awards are structured as fixed-price milestone payments on commercial terms rather than cost reimbursement. The Army executed a Memorandum of Agreement with DIU so it could use DIU's OTA rather than a FAR-based procurement, which is what avoids the protest exposure that voided the first Eielson award.",
+   "who_signs": "Defense Innovation Unit (under a Memorandum of Agreement with the US Army) <-> selected microreactor vendors",
+   "asset_owner": "third-party developer",
+   "term": "prototype OTs with follow-on production authority; EO 14299 sets an operating deadline of 2028-09-30",
+   "price_form": "fixed-price milestone payments; power price to the installation not disclosed",
+   "precedents": [
+    {
+     "name": "Advanced Nuclear Power for Installations (ANPI) - eligible vendor pool",
+     "year": "2025",
+     "parties": "DIU / DoD <-> Antares Nuclear, BWXT Advanced Technologies, General Atomics Electromagnetic Systems, Kairos Power, Oklo, Radiant Industries, Westinghouse Government Services, X-energy",
+     "size": "eight vendors; systems sized to meet 100% of an installation's critical loads",
+     "price": "NO DOLLAR VALUE DISCLOSED. DIU's own announcement states no award amounts, no ownership model and no capacity range.",
+     "note": "Announced 2025-04-10. Selection confers eligibility for Other Transaction awards, not an award.",
+     "source_idx": 0
+    },
+    {
+     "name": "Army Janus Program - nine named installations",
+     "year": "2025",
+     "parties": "US Army / DIU <-> vendors to be selected",
+     "size": "Fort Benning, Fort Bragg, Fort Campbell, Fort Drum, Fort Hood, Fort Wainwright, Holston Army Ammunition Plant, Joint Base Lewis-McChord, Redstone Arsenal",
+     "price": "no dollar figure published",
+     "note": "Solicitation via DIU's Commercial Solutions Opening, solution briefs due 2025-12-15. Reactors will be commercially owned and operated, and Army-regulated rather than NRC-licensed. EO 14299 requires an operating Army-regulated reactor by 2028-09-30.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "The Army-regulated pathway is the structural innovation: a reactor on a federal installation can be authorised by the Army under its own authority instead of by the NRC, which removes the single longest item from the schedule. It also removes the thing a commercial lender underwrites - an NRC licence is an asset, an Army authorisation is not transferable to a civilian site. Any vendor financing a Janus unit is financing an asset whose regulatory basis dies with the contract.",
+   "microreactor_edge": "Nine installations at once only works if the unit is a product. The programme is explicitly buying 'commercially available dual use microreactor technology' from a pool of eight vendors, which is a supply-chain posture, not a project posture. A 300 MW reactor would be one site, one vendor, one 10-year programme; the microreactor version is a fleet buy with milestone payments and interchangeable suppliers - and a base load of a few tens of MW is exactly what one or two units serve.",
+   "blockers": [
+    "No dollar value has ever been published for any ANPI or Janus Other Transaction",
+    "Army-regulated authorisation is not an NRC licence and does not travel to a commercial site",
+    "EO 14299's 2028-09-30 deadline is shorter than any microreactor has ever taken from award to operation",
+    "Eligibility in the ANPI pool is not an award; as of this capture no ANPI OT value is public"
+   ],
+   "sources": [
+    {
+     "label": "Defense Innovation Unit - DOD selects eligible companies for the Advanced Nuclear Power for Installations Program",
+     "url": "https://www.diu.mil/latest/DOD-selects-eligible-companies-for-the-Advanced-Nuclear-Power-for-Installations-Program",
+     "quote": "eligible to receive Other Transaction (OT) awards to provide commercially available dual use microreactor technology at various DOD installations",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News - US Army names potential microreactor sites",
+     "url": "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites",
+     "quote": "The reactors will be commercially owned and operated",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "cost-type-government-owned-prototype",
+   "group": "diesel",
+   "family": "public-procurement",
+   "name": "Cost-type prime contract for a government-owned transportable reactor",
+   "what_it_is": "The government contracts a manufacturer on a cost-reimbursement basis to build a reactor that the government owns, and operates it on a federal site under DOE safety oversight rather than an NRC licence. There is no PPA and no price per MWh, because the government is not buying energy - it is buying a machine and a demonstration. All cost overrun risk sits with the government; the vendor is paid its costs. This is the only reactor structure where the published dollar figure is the whole truth, and it is brutal: about $300 million of contract value against 1 to 5 MWe of output.",
+   "who_signs": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
+   "asset_owner": "public agency",
+   "term": "roughly two years to build the prototype (award 2022, operation targeted 2026)",
+   "price_form": "cost-type contract - no energy price at all",
+   "precedents": [
+    {
+     "name": "Project Pele transportable microreactor prototype",
+     "year": "2022",
+     "parties": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
+     "size": "1 to 5 MWe, connected to Idaho National Laboratory's microgrid",
+     "price": "cost-type contract valued at about $300 million. At 1-5 MWe that is roughly $60,000-$300,000 per kW - one to two orders of magnitude above any commercial generation benchmark, because it buys a first-of-a-kind prototype, not electricity.",
+     "note": "Awarded June 2022. Operates at INL's Critical Infrastructure Test Range Complex under the safety oversight of DOE's Idaho Operations Office, not an NRC licence. TRISO fuel delivered to INL December 2025; core manufacturing began 2025.",
+     "source_idx": 0
+    }
+   ],
+   "nuclear_fit": "A cost-type contract is what a buyer uses when nobody can price the work - which is precisely the condition of every first-of-a-kind reactor. It is also why this number is so often misused: the $300 million is a prototype development cost, and citing it as a microreactor capex is wrong in the same way that citing an X-plane's cost as an airliner's would be. What it does establish honestly is the floor on what a government pays to get a first unit built when it refuses to transfer risk to a vendor.",
+   "microreactor_edge": "Transportability is the whole point and it only exists at this scale: Pele is designed to be shipped in commercial containers and moved between sites, which is a capability a 300 MW plant cannot have at any price. The corresponding commercial consequence is that the asset is not tied to a site, so it is not real property, is not rate-basable, and cannot be financed against a site licence - it has to be financed as equipment.",
+   "blockers": [
+    "Government ownership means no PPA, no offtake, no revenue model and no price signal for a commercial buyer",
+    "DOE Idaho Operations Office safety oversight is not an NRC licence and does not transfer to a commercial site",
+    "$300 million for 1-5 MWe is not a commercial capex and must never be quoted as one"
+   ],
+   "sources": [
+    {
+     "label": "ANS Nuclear Newswire - BWXT wins Project Pele contract to supply nation's first microreactor",
+     "url": "https://www.ans.org/news/article-4035/bwxt-wins-project-pele-contract-to-supply-nations-first-microreactor/",
+     "quote": "cost-type contract",
+     "status": "fetched"
+    },
+    {
+     "label": "US Department of Energy - Department of Defense Breaks Ground on Project Pele Microreactor",
+     "url": "https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor",
+     "quote": "connected to INL's microgrid producing 1 to 5 megawatts of electrical power",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "national-lab-testbed-access",
+   "group": "licensing",
+   "family": "public-procurement",
+   "name": "National-laboratory test bed access as a staged, cost-shared entry into operation",
+   "what_it_is": "DOE, through the National Reactor Innovation Center, awards small design-phase grants that buy a developer a slot in a shared, DOE-authorised test facility. The developer still pays for and owns its reactor; DOE supplies the containment structure, the safety-basis process and a fraction of the engineering cost. Awards are staged: a front-end engineering and experiment design phase, then a detailed engineering and experiment planning phase gated on a Preliminary Documented Safety Analysis. It is the cheapest published route from a paper design to a fuelled operating reactor, and the dollar figures are small enough to be startling.",
+   "who_signs": "DOE Office of Nuclear Energy / NRIC (Idaho National Laboratory) <-> microreactor developers",
+   "asset_owner": "third-party developer (reactor); public agency (test bed)",
+   "term": "staged phases from 2023 award to first fuelled experiment targeted 2026",
+   "price_form": "grant-funded design awards; test bed access in kind",
+   "precedents": [
+    {
+     "name": "DOME front-end engineering and experiment design (FEEED) awards",
+     "year": "2023",
+     "parties": "DOE <-> Radiant Industries, Ultra Safe Nuclear Corporation, Westinghouse",
+     "size": "three microreactor experiment designs for the DOME test bed at INL",
+     "price": "$3.9 million total across three developers",
+     "note": "Announced 2023-10-23. DOME repurposes the Experimental Breeder Reactor-II containment structure and is capped at 20 MWth per experiment.",
+     "source_idx": 0
+    },
+    {
+     "name": "DOME detailed engineering and experiment planning (DEEP) phase",
+     "year": "2024",
+     "parties": "DOE <-> Westinghouse (eVinci, up to 5 MWe), Radiant Industries (Kaleidos, 1.2 MWe design; 3.5 MWth full-scale test unit)",
+     "size": "two developers advanced to fuelled-experiment planning",
+     "price": "combined $5 million",
+     "note": "Announced 2024-11-18. Gated on completing a Preliminary Documented Safety Analysis before fabrication and testing. First fuelled reactor experiment targeted 2026.",
+     "source_idx": 1
+    }
+   ],
+   "nuclear_fit": "There is no non-nuclear equivalent because there is no other technology whose first article cannot legally be switched on anywhere. DOME exists to supply the one thing a reactor developer cannot buy commercially: a place where a fuelled reactor may lawfully operate. The awards are tiny relative to reactor capex, which tells you what is actually scarce - not money, but an authorised site.",
+   "microreactor_edge": "DOME's 20 MWth cap is a hard size gate: it is a microreactor facility by design and a 300 MW SMR cannot use it at all. That asymmetry is the single largest schedule advantage a 1-20 MW unit has - it can reach a fuelled, operating first article inside a shared federal containment for single-digit millions of grant support, while a large SMR's only path to a first article is a full NRC construction permit and operating licence on a bespoke site.",
+   "blockers": [
+    "20 MWth per-experiment cap excludes anything above microreactor scale",
+    "A DOME experiment is not a licensed commercial plant and produces no revenue",
+    "Slots are scarce and awarded competitively; two developers hold the first campaigns",
+    "No published fee schedule for test bed access, so the true developer cost of a DOME campaign is not public"
+   ],
+   "sources": [
+    {
+     "label": "US Department of Energy - DOE Awards $3.9 Million for Advanced Reactor Experiment Designs",
+     "url": "https://www.energy.gov/ne/articles/doe-awards-39-million-advanced-reactor-experiment-designs",
+     "quote": "design, fabrication, construction, and testing of fueled reactor experiments",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER Magazine - Westinghouse, Radiant Secure $5M for Microreactor Tests at INL's Pioneering DOME Testbed",
+     "url": "https://www.powermag.com/westinghouse-radiant-secure-5m-for-microreactor-tests-at-inls-pioneering-dome-testbed/",
+     "quote": "the detailed engineering and experiment planning (DEEP) phase",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
 }
