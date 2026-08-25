@@ -150,4 +150,8 @@
   citations dangled unnoticed until 2026-08-25 — `index.html` was gated, `app.js` was not. There is
   a gate now (`test_app_js_hardcoded_citations_resolve`), but the content still bypasses the AI-
   register lint and the citation coverage scanner, both of which only walk `data/`.
+- **low** · Heading hierarchy on the Price-to-beat sub-tab: a sector name and a row's "Regulatory &
+  utility filings" trail are both `<h4>`, so the document outline reads 44 sibling headings where
+  there are really 5 sections each containing rows. Demote the filing-trail heading, or give it
+  `role="heading" aria-level="5"`.
 
