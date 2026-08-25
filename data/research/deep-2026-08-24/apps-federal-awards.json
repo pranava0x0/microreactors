@@ -98,8 +98,9 @@
     {
      "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
      "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
-     "quote": "\"total_obligation\": 66631952.0 ... \"base_and_all_options\": 212716674.0",
-     "status": "fetched"
+     "quote": "\"total_obligation\":66631952.0",
+     "status": "fetched",
+     "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
     },
     {
      "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
@@ -141,8 +142,9 @@
     {
      "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
      "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
-     "quote": "\"total_obligation\": 101059504.3 ... \"base_and_all_options\": 927391394.3",
-     "status": "fetched"
+     "quote": "\"total_obligation\":101059504.3",
+     "status": "fetched",
+     "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
     },
     {
      "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
@@ -760,8 +762,9 @@
     {
      "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0059-R (Erie County Medical Center)",
      "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27",
-     "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\" ... \"federalShareObligated\":13629976 ... \"benefitCostRatio\":4.43",
-     "status": "fetched"
+     "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\"",
+     "status": "fetched",
+     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
    ]
   },
@@ -796,8 +799,9 @@
     {
      "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0080-R (Cayuga Medical Center)",
      "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27",
-     "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\" ... \"federalShareObligated\":10450800 ... \"benefitCostRatio\":6.91",
-     "status": "fetched"
+     "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\"",
+     "status": "fetched",
+     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
    ]
   },
@@ -832,7 +836,7 @@
     {
      "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4339-0019-R (Puerto Rico Aqueduct and Sewer Authority, Toa Alta)",
      "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27",
-     "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\" ... \"federalShareObligated\":12436047.31 ... \"benefitCostRatio\":4.22",
+     "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\"",
      "status": "fetched"
     }
    ]
@@ -868,8 +872,9 @@
     {
      "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project LPDM-PJ-07-KS-2022-001 (WaterOne, Johnson County KS)",
      "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27",
-     "quote": "\"subrecipient\":\"WaterOne\" ... \"federalShareObligated\":4906200 ... \"benefitCostRatio\":38.09 ... \"netValueBenefits\":261096991",
-     "status": "fetched"
+     "quote": "\"subrecipient\":\"WaterOne\"",
+     "status": "fetched",
+     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
    ]
   },

@@ -126,11 +126,20 @@
    {
     "file": "mech-dockets.json",
     "kind": "mechanism",
-    "records": 7,
+    "records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
-    "incomplete": true,
+    "incomplete": false,
     "absences": [
-     "Agent terminated on a session limit part-way through. Targets NOT reached: CT PURA Docket 20-03-17 decision, CT DEEP per-site microgrid award chart, NJ BPU TCDER + DCO Energy ruling, CPUC 2025 SGIP handbook eligibility text, a 2025-26 large-load tariff."
+     "CT PURA Docket No. 20-03-17 (Town of Coventry / Coventry Housing Authority master-metering waiver and ZREC meter reassignment) — NOT retrieved, and this is a confirmed dead seam, not a near miss. PURA's document databases all live on one host that is unreachable from here: http://www.dpuc.state.ct.us/DPUCPublicList.NSF/, http://www.dpuc.state.ct.us/SearchDB.nsf/MenuForm?Openform and https://www.dpuc.state.ct.us/FINALDEC.NSF/$FormFD-UtilityByDecisionDateView?OpenForm&CollapseView each fail with curl 'Recv failure: Connection reset by peer' over both http and https, with and without -k. Guessed decision paths under https://portal.ct.gov/-/media/PURA/ return a 200 with the CT.gov HTML shell rather than a PDF. Four web searches on the docket number surfaced nothing containing it. Do not re-spend on dpuc.state.ct.us; the only remaining routes are a real browser session against portal.ct.gov's docket search, or a records request to PURA.ExecutiveSecretary@ct.gov.",
+     "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
+     "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
+     "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
+     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+     "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
+     "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
+     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+     "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
+     "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
     ]
    },
    {
@@ -181,18 +190,25 @@
    {
     "file": "mech-nuclear-structures.json",
     "kind": "mechanism",
-    "records": 12,
+    "records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
-    "incomplete": true,
+    "incomplete": false,
     "absences": [
-     "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
+     "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price. The nearest thing to a published small-reactor price found in this pass is one tier up in size and is a target, not a contract: the Carbon Free Power Project's $89/MWh for a 462 MWe six-module NuScale plant, announced January 2023 and terminated November 2023. The one published all-in capital cost is OPG's CAD 20.9 billion for four BWRX-300s, which is a 300 MW-class number, not a microreactor one.",
      "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
      "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
      "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
      "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
      "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
-     "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe.",
-     "Agent terminated on a session limit part-way through. Angles not completed: utility rate-basing of a small reactor, cost-share instruments (ARDP, X-energy/Dow), heat-not-electricity contracts, and the reactor-specific contract terms (decommissioning assurance, Price-Anderson, HALEU)."
+     "Could not locate a microreactor decommissioning funding assurance amount in an actual NRC filing. The regulation itself was resolved instead: 10 CFR 50.75(c)(1) instructs a PWR below 1200 MWt to substitute P = 1200 MWt, so a microreactor certifies $85.56 million in January 1986 dollars, the same as a 1200 MWt plant. The table also covers only PWRs and BWRs, so a non-water microreactor is outside it entirely. No filed, escalated, present-day certified amount for any small or micro reactor was found.",
+     "Could not find any published price for HALEU in any form - not $/kgU, not $/SWU, not a delivered core cost - nor any per-company allocation quantity from DOE's first HALEU allocation round.",
+     "Could not verify whether a sub-100 MWe licensee, which is not assessed the 10 CFR 140.11(a)(4) retrospective premium, may nonetheless DRAW on the industry secondary financial protection layer. Only the assessment side was resolved.",
+     "Could not verify against the statute whether section 45U applies to a newly built reactor; the IRS's own 45U page does not state a placed-in-service restriction and this pass did not read the statutory definition of a qualified nuclear power facility. Treat the assumption that 45U is an existing-fleet credit as unverified here.",
+     "Did not examine the foreign entity of concern restrictions that now apply to sections 45Y and 48E, which may be a binding condition for a developer with non-US investors.",
+     "Could not find a disclosed price for PacifiCorp's power purchase agreement with TerraPower for the Natrium unit at Kemmerer; PacifiCorp has not published what its ratepayers across six states would pay.",
+     "Could not find a Utah state action - Operation Gigawatt or the state nuclear consortium - that has produced a signed instrument or a commission order with a dollar figure attached to a specific reactor. Searched and found announcements only.",
+     "Could not find any published price basis for nuclear process heat: no $/klb of steam, no $/MMBtu, and no gas-index formula, for the Dow Long Mott project or any other industrial steam arrangement.",
+     "TVA has published no total project cost for Clinch River. The widely repeated $17,949/kW overnight figure is an intervenor's reading of TVA filings (David Schlissel, via the Southern Alliance for Clean Energy), not a TVA-published number, and is recorded here as such rather than as a TVA figure."
     ]
    },
    {
@@ -292,8 +308,9 @@
       {
        "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
-       "quote": "\"total_obligation\": 66631952.0 ... \"base_and_all_options\": 212716674.0",
-       "status": "fetched"
+       "quote": "\"total_obligation\":66631952.0",
+       "status": "fetched",
+       "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
       },
       {
        "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
@@ -336,8 +353,9 @@
       {
        "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
-       "quote": "\"total_obligation\": 101059504.3 ... \"base_and_all_options\": 927391394.3",
-       "status": "fetched"
+       "quote": "\"total_obligation\":101059504.3",
+       "status": "fetched",
+       "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
       },
       {
        "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
@@ -1861,13 +1879,14 @@
       }
      ],
      "summary": "FEMA approved an $11,612,000 generator project for Cayuga Medical Center in Tompkins County, New York on 2024-02-14 and obligated $10,450,800 the following day at a 90 percent federal cost share. Its benefit-cost ratio is 6.91 and FEMA's modelled net value of benefits is $81,099,633 — a larger avoided loss than at the bigger Erie County project, on a smaller generator spend. Read alongside the Erie record, the pair sets the going federal rate for hospital standby power in one state in one year: $11.6M and $15.1M of project cost, 90 percent of it federal, against $81.1M and $67.6M of modelled avoided loss.",
-     "microreactor_read": "Two New York hospitals in the same programme year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — roughly six dollars of avoided damage per dollar of resilience capex — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
+     "microreactor_read": "Two New York hospitals in the same programme year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — more than five dollars of avoided damage per dollar of project cost — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
      "sources": [
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0080-R (Cayuga Medical Center)",
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27",
-       "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\" ... \"federalShareObligated\":10450800 ... \"benefitCostRatio\":6.91",
-       "status": "fetched"
+       "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\"",
+       "status": "fetched",
+       "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
      "_from": "apps-federal-awards.json"
@@ -1903,8 +1922,9 @@
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0059-R (Erie County Medical Center)",
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27",
-       "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\" ... \"federalShareObligated\":13629976 ... \"benefitCostRatio\":4.43",
-       "status": "fetched"
+       "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\"",
+       "status": "fetched",
+       "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
      "_from": "apps-federal-awards.json"
@@ -2267,7 +2287,7 @@
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4339-0019-R (Puerto Rico Aqueduct and Sewer Authority, Toa Alta)",
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27",
-       "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\" ... \"federalShareObligated\":12436047.31 ... \"benefitCostRatio\":4.22",
+       "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\"",
        "status": "fetched"
       }
      ],
@@ -2304,8 +2324,9 @@
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project LPDM-PJ-07-KS-2022-001 (WaterOne, Johnson County KS)",
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27",
-       "quote": "\"subrecipient\":\"WaterOne\" ... \"federalShareObligated\":4906200 ... \"benefitCostRatio\":38.09 ... \"netValueBenefits\":261096991",
-       "status": "fetched"
+       "quote": "\"subrecipient\":\"WaterOne\"",
+       "status": "fetched",
+       "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
      "_from": "apps-federal-awards.json"

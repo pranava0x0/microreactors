@@ -46,8 +46,7 @@
   <div class="wrap">
     <div class="sechead">
       <h2>Who is buying now</h2>
-      <p class="prose">Only one track pairs a named reactor with a named site under a signed
-        instrument. Open any row for its full fields and sources.</p>
+      <p class="prose">Only one group has a named reactor at a named site with a signed deal. Open any row for the details.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Tracker sections"></div>
     <div id="pipelinetracks"></div>
@@ -57,10 +56,8 @@
 <section id="sites" role="tabpanel" aria-labelledby="tab-sites" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>Candidate deployment sites and filings</h2>
-      <p class="prose">Named physical locations paired with microreactors, tracked against their
-        regulatory and utility filings (NRC ADAMS, FERC eLibrary, state PUCs, and international regulators).
-        Includes confirmed negative findings where docket searches confirmed zero filings.</p>
+      <h2>Where reactors might actually go</h2>
+      <p class="prose">Real places with a microreactor attached, and what each one has filed with regulators. Where a docket search turned up nothing at all, the row says so.</p>
       <div class="sites-summary" id="sites-summary"></div>
     </div>
     <div class="subtabs" role="tablist" aria-label="Sites sections"></div>
@@ -71,10 +68,8 @@
 <section id="economics" role="tabpanel" aria-labelledby="tab-economics" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>What it costs against what it displaces</h2>
-      <p class="prose">No microreactor has sold power commercially, so nothing here is a realised
-        price. Each band is wide because its sources disagree about first-of-a-kind capital cost
-        versus manufacturing scale, and that disagreement is the useful part.</p>
+      <h2>What the power costs</h2>
+      <p class="prose">No microreactor has sold power yet, so every number here is an estimate. The bands are wide because sources disagree about what the first units will cost to build.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Costs sections"></div>
     <div data-sub="bands" id="economics-bands" role="tabpanel" tabindex="0">
@@ -91,7 +86,7 @@
       <div id="incentives"></div>
     </div>
     <div data-sub="price-to-beat" id="economics-price-to-beat" role="tabpanel" tabindex="0">
-      <div class="subhead"><h3>What the incumbent charges, proven by a contract</h3></div>
+      <div class="subhead"><h3>What people pay today</h3></div>
       <p class="prose" id="benchsummary"></p>
       <div id="benchmarks"></div>
     </div>
@@ -102,12 +97,12 @@
   <div class="wrap">
     <div class="sechead">
       <h2>Antares, Radiant and Westinghouse</h2>
-      <p class="prose">In April 2026 the Air Force and DIU paired these three companies with three
-        named bases under the ANPI programme,<a class="cite"
+      <p class="prose">In April 2026 the Air Force and the Defense Innovation Unit matched
+        these three companies to three bases.<a class="cite"
         href="https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"
         target="_blank" rel="noopener noreferrer"
-        title="ANS — Air Force selects three microreactor developers for ANPI">[?]</a> which is why
-        they are the three covered here. Each card carries a cited roadmap to first power.</p>
+        title="ANS — Air Force selects three microreactor developers for ANPI">[?]</a>
+        Each card tracks how far along that vendor is.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Vendors sections"></div>
     <div id="vendorcards"></div>
@@ -117,10 +112,8 @@
 <section id="demand" role="tabpanel" aria-labelledby="tab-demand" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>Which loads fit a 1–20 MW block</h2>
-      <p class="prose">These are annual electrical load profiles for site planning. Real sizing needs a year
-        of hourly site-load data before anyone commits to a number. Each sector opens with how it
-        powers itself today and what a microreactor would replace.</p>
+      <h2>What a 1–20 MW reactor could power</h2>
+      <p class="prose">Rough yearly power needs, for early planning. Sizing a real project takes a year of hourly data first. Each sector starts with how that industry gets its power today.</p>
       <div class="dsummary" id="dsummary"></div>
     </div>
     <div class="subtabs" role="tablist" aria-label="Applications sections"></div>
@@ -145,10 +138,8 @@
 <section id="policy" role="tabpanel" aria-labelledby="tab-policy" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>Regulatory pathways</h2>
-      <p class="prose">The rules that decide whether a microreactor can replace diesel backup, pair
-        with batteries, or connect faster. Rows marked <span class="ideatag">idea</span> are
-        proposals from this research. They are not enacted policy and carry no citation.</p>
+      <h2>Rules that open or block a sale</h2>
+      <p class="prose">Rules that decide whether a microreactor can replace diesel backup, pair with batteries, or connect to the grid faster. Rows marked <span class="ideatag">idea</span> are our own proposals, not law.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Policy sections"></div>
     <div id="pathways"></div>
@@ -159,9 +150,7 @@
   <div class="wrap">
     <div class="sechead">
       <h2>Sources and gaps</h2>
-      <p class="prose">Every source cited anywhere on this site, then how completely each field is
-        filled in. Three fields stay near-empty because web search does not index docket
-        systems.</p>
+      <p class="prose">Every source used on this site, and how complete each part of the data is. Three fields stay thin because search engines do not index regulators' docket systems.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Sources sections"></div>
     <div data-sub="register" id="sources-register" role="tabpanel" tabindex="0">

@@ -434,12 +434,10 @@
   var B = D.benchmarks;
   if (B && B.sectors) {
     render($("benchsummary"),
-      esc(s.benchmarks) + " deals that were actually signed, across " +
-      esc(B.sectors.length) + " sectors. " + esc(s.benchmarks_priced) +
-      " carry a published price, capex or displaced cost; " + esc(s.benchmarks_filed) +
-      " carry the filing, award notice or rate order that proves it. Every row is a " +
-      "non-nuclear incumbent \u2014 this is the number a reactor has to beat, not a " +
-      "forecast of what one would charge.");
+      esc(s.benchmarks) + " deals people have actually signed, across " +
+      esc(B.sectors.length) + " sectors. None of them is nuclear. These are the prices a " +
+      "reactor would have to beat. " + esc(s.benchmarks_priced) + " list a price or a cost, and " +
+      esc(s.benchmarks_filed) + " include the paperwork behind it.");
 
     render($("benchmarks"), B.sectors.map(function (sec) {
       return '<div class="benchsector"><h4>' + esc(sec.sector) +
@@ -460,7 +458,7 @@
             }).join("") + "</div>" +
             "<p>" + esc(c.summary) + "</p>" +
             (c.microreactor_read
-              ? '<p><span class="k">Price to beat \u00b7 </span>' + esc(c.microreactor_read) + "</p>"
+              ? '<p><span class="k">What a reactor would have to beat \u00b7 </span>' + esc(c.microreactor_read) + "</p>"
               : "") +
             filingList(c.filings) + srcList(c.sources) + "</div></details>";
         }).join("") + "</div></div>";
@@ -577,8 +575,8 @@
       desc: "Major hospitals and university campuses require simultaneous electricity and process steam for heating, sterilization, and climate control. CMS waiver QSO-23-11-LSC permits microgrids and non-generator sources to satisfy emergency power rules under 42 CFR 482.15.",
       edge: "Delivers continuous power plus 100°C–200°C steam while replacing aging combustion boilers facing tightening air-quality caps.",
       sources: [
-        { label: "CMS — Alternate energy guidance", url: "https://essentialhospitals.org/cms-updates-guidance-alternative-energy-sources/" },
-        { label: "DOE — Better Buildings CHP", url: "https://betterbuildingssolutioncenter.energy.gov/chp/colleges-universities" }
+        { label: "CMS — QSO-23-11-LSC categorical waiver", url: "https://www.cms.gov/files/document/qso-23-11-lsc.pdf" },
+        { label: "DOE Better Buildings — CHP technology fact sheet", url: "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Overview_of_CHP_Technologies.pdf" }
       ]
     },
     {
@@ -588,7 +586,7 @@
       desc: "Port authorities face strict mandates (such as CARB At-Berth rules) requiring berthed container and cruise vessels to shut down auxiliary diesel engines and plug into shore power (cold ironing). Simultaneous vessel berthing creates massive multi-megawatt load spikes.",
       edge: "Provides dedicated port microgrid power without overloading local municipal utility substations.",
       sources: [
-        { label: "CARB — At-Berth regulation", url: "https://ww2.arb.ca.gov/our-work/programs/ocean-going-vessels-berth-regulation" }
+        { label: "CARB / CA Dept of Finance — At-Berth regulation impact assessment", url: "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf" }
       ]
     },
     {
@@ -676,9 +674,9 @@
     var mgroups = M.precedent_groups || [];
     render($("precedents"), mgroups.map(function (g) {
       return '<div class="precgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
-        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every mechanism ' +
-        "here ran in the real world. Each row records how it worked, what happened, and " +
-        "whether early or late buyers got the better deal.</p>" +
+        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every one of these ' +
+        "really happened. Each row covers how it worked and who came out ahead, the buyers " +
+        "who moved early or the ones who waited.</p>" +
         '<div class="precgrid">' +
         g.items.map(function (p) {
           return '<details class="prec"><summary><span class="nm">' + esc(p.name) + "</span>" +
@@ -710,9 +708,9 @@
       var recs = INST[groupId];
       if (!recs || !recs.length) { return ""; }
       return '<div class="instband"><div class="subhead"><h3>How the deal gets signed</h3></div>' +
-        '<p class="prose">' + recs.length + " instruments behind this group. Each names who " +
-        "signs what, who has signed one outside nuclear, and what changes when the asset is " +
-        "a reactor.</p>" +
+        '<p class="prose">' + recs.length + " ways a deal like this gets done. Each one shows " +
+        "who signs, who has already done it without a reactor, and what changes once a " +
+        "reactor is involved.</p>" +
         '<div class="precgrid">' + recs.map(function (m) {
           var facts = [
             ["Who signs", m.who_signs], ["Asset owner", m.asset_owner],
@@ -727,7 +725,7 @@
             }).join("") + "</div>" +
             "<p>" + esc(m.what_it_is) + "</p>" +
             ((m.precedents || []).length
-              ? '<div class="beat"><span class="k">Happening today, outside nuclear</span>' +
+              ? '<div class="beat"><span class="k">Who is already doing this</span>' +
                 m.precedents.map(function (pr) {
                   return "<p>" + '<strong>' + esc(pr.name) +
                     (pr.year ? " (" + esc(pr.year) + ")" : "") + "</strong>" +
@@ -737,10 +735,10 @@
                     (pr.note ? " " + esc(pr.note) : "") + "</p>";
                 }).join("") + "</div>"
               : "") +
-            '<div class="beat"><span class="k">For a reactor, any size</span><p>' +
+            '<div class="beat"><span class="k">What changes with a reactor</span><p>' +
               esc(m.nuclear_fit) + "</p></div>" +
             (m.microreactor_edge
-              ? '<div class="beat edge"><span class="k">What a 1\u201320 MW unit changes</span>' +
+              ? '<div class="beat edge"><span class="k">What is different about a small one</span>' +
                 "<p>" + esc(m.microreactor_edge) + "</p></div>"
               : "") +
             ((m.blockers || []).length
@@ -773,11 +771,10 @@
   /* ---------- evidence: source register ---------- */
   var reg = D.sources_index || [];
   render($("evsummary"),
-    esc(s.source_count) + " sources, numbered once each. A chip like [12] anywhere on the site " +
-    "points at number 12 below. Sources back " + esc(s.cited_rows) + "/" + esc(s.opportunities) +
-    " tracker rows and " + esc(s.cited_loads) + "/" + esc(s.load_types) + " facility load profiles. " +
-    "A † means the host refused a direct fetch and the page is corroborated through search " +
-    "results instead.");
+    esc(s.source_count) + " sources. Each gets one number, used everywhere on the site, so [12] " +
+    "always means the same thing. They back " + esc(s.cited_rows) + " of " + esc(s.opportunities) +
+    " tracker rows and " + esc(s.cited_loads) + " of " + esc(s.load_types) + " load profiles. " +
+    "A † means we could not open the page directly and checked it through search instead.");
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
     return '<div class="rrow" id="src-' + r.n + '"><span class="rn">' + r.n + "</span>" +

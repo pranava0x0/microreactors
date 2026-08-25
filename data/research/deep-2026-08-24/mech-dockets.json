@@ -6,16 +6,25 @@
   "angles_run": [
    "PUCT interchange direct curl (WebFetch TLS fails on interchange.puc.texas.gov; curl succeeds without -k)",
    "ICC e-Docket server-rendered document listing -> final order PDF + annual compliance reports",
-   "CT PURA docket system (dpuc.state.ct.us Lotus Notes views)",
-   "CT DEEP microgrid grant round award tables",
-   "NJ BPU orders and the 2016 NJ Microgrid Report",
-   "CPUC SGIP 2025 Handbook eligibility sections",
-   "PUCO / other state commission 2025-2026 large-load data-centre tariffs"
+   "CT PURA docket system (dpuc.state.ct.us Lotus Notes views) — host unreachable, see absences",
+   "CT DEEP microgrid award-tracking chart (all rounds) + the enabling statute, Public Act 12-148 Sec. 7",
+   "NJ BPU board orders: TCDER Phase II award order (QO16100967) and the DCO Energy declaratory ruling (QO20030191)",
+   "CPUC SGIP 2025 Handbook v1 — Eligible/Ineligible Equipment, Sec. 7.1 operational eligibility, Sec. 7.4 renewable fuel",
+   "PUCO / AEP Ohio Schedule DCT via the utility's own filed tariff book (PUCO DIS is WAF-blocked)",
+   "Second-state large-load tariff: IURC Cause No. 46097, I&M Tariff I.P., order plus settlement Attachment A"
   ],
   "absences": [
-   "Agent terminated on a session limit part-way through. Targets NOT reached: CT PURA Docket 20-03-17 decision, CT DEEP per-site microgrid award chart, NJ BPU TCDER + DCO Energy ruling, CPUC 2025 SGIP handbook eligibility text, a 2025-26 large-load tariff."
-  ],
-  "incomplete": true
+   "CT PURA Docket No. 20-03-17 (Town of Coventry / Coventry Housing Authority master-metering waiver and ZREC meter reassignment) — NOT retrieved, and this is a confirmed dead seam, not a near miss. PURA's document databases all live on one host that is unreachable from here: http://www.dpuc.state.ct.us/DPUCPublicList.NSF/, http://www.dpuc.state.ct.us/SearchDB.nsf/MenuForm?Openform and https://www.dpuc.state.ct.us/FINALDEC.NSF/$FormFD-UtilityByDecisionDateView?OpenForm&CollapseView each fail with curl 'Recv failure: Connection reset by peer' over both http and https, with and without -k. Guessed decision paths under https://portal.ct.gov/-/media/PURA/ return a 200 with the CT.gov HTML shell rather than a PDF. Four web searches on the docket number surfaced nothing containing it. Do not re-spend on dpuc.state.ct.us; the only remaining routes are a real browser session against portal.ct.gov's docket search, or a records request to PURA.ExecutiveSecretary@ct.gov.",
+   "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
+   "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
+   "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
+   "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+   "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
+   "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
+   "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+   "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
+   "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
+  ]
  },
  "mechanisms": [
   {
@@ -114,7 +123,7 @@
     {
      "label": "Illinois Commerce Commission — Docket 17-0331, Commonwealth Edison Company, Final Order (2018-02-28)",
      "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
-     "quote": "ComEd estimates the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant and $600,000 cost sharing with research partners.",
+     "quote": "the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant",
      "status": "fetched"
     },
     {

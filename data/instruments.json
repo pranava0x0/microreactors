@@ -126,11 +126,20 @@
    {
     "file": "mech-dockets.json",
     "kind": "mechanism",
-    "records": 7,
+    "records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
-    "incomplete": true,
+    "incomplete": false,
     "absences": [
-     "Agent terminated on a session limit part-way through. Targets NOT reached: CT PURA Docket 20-03-17 decision, CT DEEP per-site microgrid award chart, NJ BPU TCDER + DCO Energy ruling, CPUC 2025 SGIP handbook eligibility text, a 2025-26 large-load tariff."
+     "CT PURA Docket No. 20-03-17 (Town of Coventry / Coventry Housing Authority master-metering waiver and ZREC meter reassignment) — NOT retrieved, and this is a confirmed dead seam, not a near miss. PURA's document databases all live on one host that is unreachable from here: http://www.dpuc.state.ct.us/DPUCPublicList.NSF/, http://www.dpuc.state.ct.us/SearchDB.nsf/MenuForm?Openform and https://www.dpuc.state.ct.us/FINALDEC.NSF/$FormFD-UtilityByDecisionDateView?OpenForm&CollapseView each fail with curl 'Recv failure: Connection reset by peer' over both http and https, with and without -k. Guessed decision paths under https://portal.ct.gov/-/media/PURA/ return a 200 with the CT.gov HTML shell rather than a PDF. Four web searches on the docket number surfaced nothing containing it. Do not re-spend on dpuc.state.ct.us; the only remaining routes are a real browser session against portal.ct.gov's docket search, or a records request to PURA.ExecutiveSecretary@ct.gov.",
+     "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
+     "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
+     "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
+     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+     "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
+     "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
+     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+     "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
+     "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
     ]
    },
    {
@@ -181,18 +190,25 @@
    {
     "file": "mech-nuclear-structures.json",
     "kind": "mechanism",
-    "records": 12,
+    "records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
-    "incomplete": true,
+    "incomplete": false,
     "absences": [
-     "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
+     "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price. The nearest thing to a published small-reactor price found in this pass is one tier up in size and is a target, not a contract: the Carbon Free Power Project's $89/MWh for a 462 MWe six-module NuScale plant, announced January 2023 and terminated November 2023. The one published all-in capital cost is OPG's CAD 20.9 billion for four BWRX-300s, which is a 300 MW-class number, not a microreactor one.",
      "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
      "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
      "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
      "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
      "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
-     "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe.",
-     "Agent terminated on a session limit part-way through. Angles not completed: utility rate-basing of a small reactor, cost-share instruments (ARDP, X-energy/Dow), heat-not-electricity contracts, and the reactor-specific contract terms (decommissioning assurance, Price-Anderson, HALEU)."
+     "Could not locate a microreactor decommissioning funding assurance amount in an actual NRC filing. The regulation itself was resolved instead: 10 CFR 50.75(c)(1) instructs a PWR below 1200 MWt to substitute P = 1200 MWt, so a microreactor certifies $85.56 million in January 1986 dollars, the same as a 1200 MWt plant. The table also covers only PWRs and BWRs, so a non-water microreactor is outside it entirely. No filed, escalated, present-day certified amount for any small or micro reactor was found.",
+     "Could not find any published price for HALEU in any form - not $/kgU, not $/SWU, not a delivered core cost - nor any per-company allocation quantity from DOE's first HALEU allocation round.",
+     "Could not verify whether a sub-100 MWe licensee, which is not assessed the 10 CFR 140.11(a)(4) retrospective premium, may nonetheless DRAW on the industry secondary financial protection layer. Only the assessment side was resolved.",
+     "Could not verify against the statute whether section 45U applies to a newly built reactor; the IRS's own 45U page does not state a placed-in-service restriction and this pass did not read the statutory definition of a qualified nuclear power facility. Treat the assumption that 45U is an existing-fleet credit as unverified here.",
+     "Did not examine the foreign entity of concern restrictions that now apply to sections 45Y and 48E, which may be a binding condition for a developer with non-US investors.",
+     "Could not find a disclosed price for PacifiCorp's power purchase agreement with TerraPower for the Natrium unit at Kemmerer; PacifiCorp has not published what its ratepayers across six states would pay.",
+     "Could not find a Utah state action - Operation Gigawatt or the state nuclear consortium - that has produced a signed instrument or a commission order with a dollar figure attached to a specific reactor. Searched and found announcements only.",
+     "Could not find any published price basis for nuclear process heat: no $/klb of steam, no $/MMBtu, and no gas-index formula, for the Dow Long Mott project or any other industrial steam arrangement.",
+     "TVA has published no total project cost for Clinch River. The widely repeated $17,949/kW overnight figure is an intervenor's reading of TVA filings (David Schlissel, via the Southern Alliance for Clean Energy), not a TVA-published number, and is recorded here as such rather than as a TVA figure."
     ]
    },
    {
@@ -384,7 +400,7 @@
       {
        "label": "Canary Media - Air Force rescinds $100M award for Oklo microreactor",
        "url": "https://www.canarymedia.com/articles/nuclear/air-force-rescinds-100m-award-for-oklo-microreactor",
-       "quote": "the military revoked the intent to award Oklo the planned $100-million-plus contract in late September",
+       "quote": "the military revoked the intent to award Oklo the planned",
        "status": "fetched"
       }
      ],
@@ -1153,7 +1169,7 @@
       {
        "label": "US Department of Energy - Department of Defense Breaks Ground on Project Pele Microreactor",
        "url": "https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor",
-       "quote": "connected to INL's microgrid producing 1 to 5 megawatts of electrical power",
+       "quote": "microgrid producing 1 to 5 megawatts of electrical power",
        "status": "fetched"
       }
      ],
@@ -2542,7 +2558,7 @@
       {
        "label": "US Department of Energy - U.S. Department of Energy Announces $160 Million in First Awards under Advanced Reactor Demonstration Program",
        "url": "https://www.energy.gov/ne/articles/us-department-energy-announces-160-million-first-awards-under-advanced-reactor",
-       "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations, with our industry partners providing matching funds.",
+       "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations",
        "status": "fetched"
       },
       {
@@ -2619,6 +2635,67 @@
      "_from": "mech-dockets.json"
     },
     {
+     "id": "njbpu-dco-energy-onsite-generation-qo20030191",
+     "group": "interconnection",
+     "family": "regulatory-rule",
+     "name": "New Jersey 'on-site generation facility' carve-out from public-utility status (NJBPU Docket No. QO20030191, DCO Energy declaratory ruling)",
+     "what_it_is": "New Jersey's Electric Discount and Energy Competition Act creates a narrow exemption from the incumbent utility's exclusive franchise: a generator that sells electricity to a single end-use customer located on the same or contiguous property is an 'on-site generation facility' and, by statute, is not a public utility. The developer owns and operates the plant, signs one power purchase agreement with one host, and the host is exempt from the Societal Benefits Charge, Market Transition Charge and Transition Bond Charge on that power. DCO Energy petitioned the Board on 2020-02-28 to confirm that adding the AtlantiCare Regional Medical Center to its 6 MW CHP at the Midtown Thermal Control Center qualified, even though the hospital sits diagonally across an intersection 145 feet door-to-door. Atlantic City Electric intervened and opposed. The Board granted the petition on 2021-01-27.",
+     "who_signs": "Developer <-> host, under a single power purchase agreement for the whole campus (DCO Energy <-> AtlantiCare); developer <-> NJBPU for the declaratory ruling confirming non-utility status",
+     "asset_owner": "third-party developer",
+     "term": "Not fixed by the ruling; the commercial instrument is a single PPA covering the entire host campus",
+     "price_form": "$/kWh under a single PPA, plus statutory exemption from the Societal Benefits Charge, Market Transition Charge and Transition Bond Charge",
+     "precedents": [
+      {
+       "name": "In re Petition of DCO Energy, LLC for a Declaratory Ruling — Docket No. QO20030191",
+       "year": "2021",
+       "parties": "DCO Energy, LLC (Murray E. Bevan, Esq.); Atlantic City Electric Company (intervenor, opposed); NJ Division of Rate Counsel (Stefanie A. Brand, took no position on the merits)",
+       "size": "6 MW combined heat and power at the Midtown Thermal Control Center serving the AtlantiCare City Campus as sole electric customer; 145 feet door-to-door across the Atlantic Avenue / South Ohio Street intersection",
+       "note": "Order 2021-01-27, Agenda Item 8D. Two holdings that travel: an existing hospital plus a new Medical Arts Building sharing a corporate parent are ONE end-use customer, and 'When two streets bisect, the intersection created is fundamentally one single thoroughfare for the purposes of EDECA'. DCO withdrew its second question (counting microgrid CHP savings as ACE's third-party energy-efficiency gains) in an amended petition of 2020-10-23.",
+       "source_idx": 0
+      },
+      {
+       "name": "In re Cooper Hospital System — the single-end-user doctrine this ruling extends",
+       "year": "2017",
+       "parties": "Cooper Hospital System; NJBPU",
+       "size": "CHP plant at One Cooper Plaza serving Three Cooper Plaza, separated by Haddon Avenue; three entities held to constitute one 'end user'",
+       "note": "2017 N.J. PUC LEXIS 74, decided 2017-04-21, cited by both ACE and the Board in QO20030191. The rule extracted from it: all entities in the project must function as part of a single integrated system to be deemed a single end user. ACE argued the Board had warned that going further risked 'a proliferation of mini utilities'; the Board went further anyway.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "Admits a reactor on its face, and is the most directly useful commercial mechanism in this file. EDECA's definition opens with 'A generation facility, including, but not limited to, a generation facility that produces Class I or Class II renewable energy' — the renewable clause is illustrative, not a limit, so the statute imposes no fuel, efficiency or emissions test at all. What it does impose is the thing that actually kills reactor deals: 'An on-site generation facility shall not be considered a public utility' holds only for a single end-use customer on contiguous property. A microreactor sized for a campus will overproduce for one host, and the moment a second unrelated offtaker appears the developer becomes a regulated public utility inside someone else's exclusive franchise — the 'proliferation of unregulated mini-utilities' Rate Counsel warned about. The workaround the Board has now blessed twice is corporate, not technical: aggregate the buildings into one end user by common parent and integrated operation (Cooper: three entities, one user; DCO: hospital plus Medical Arts Building, one campus). Note also N.J.S.A. 48:3-77.1: power sold to an off-site end-use thermal customer must ride the incumbent utility's existing distribution infrastructure, so there is no private-wire route out.",
+     "microreactor_edge": "A 6 MW plant serving one hospital campus under one PPA is the exact commercial shape a 1-20 MW reactor is built for, and this ruling shows the whole structure working with a real regulator, a real opponent and a real host. Two microreactor-specific caveats. The contiguity doctrine that rescued DCO — sit across the street and you are still 'on-site' — is worth less to a reactor than to a CHP plant, because a reactor's siting envelope is set by its own exclusion-area and emergency-planning requirements rather than by property lines, and no amount of statutory contiguity relaxes those. And the single-end-user rule bites harder the larger the unit relative to the host: a reactor sized to a campus load has no lawful way to sell its surplus to the building next door unless that building is inside the same corporate family.",
+     "blockers": [
+      "N.J.S.A. 48:3-51 permits exactly ONE end-use customer per on-site generation facility",
+      "Contiguity: same property, or separated by no more than one easement, public thoroughfare, transportation or utility-owned right-of-way",
+      "N.J.S.A. 48:3-77.1 forces sales to an off-site end-use thermal customer onto the incumbent utility's existing distribution infrastructure — no private wire",
+      "The incumbent EDC will intervene: ACE argued the petition was procedurally improper, relied on contingent future facts, and prejudged the parallel TCDER II proceeding",
+      "Rate Counsel's standing objection that multi-customer on-site generation creates unregulated mini-utilities bypassing the Societal Benefits Charge",
+      "The single-end-user finding rested on evidentiary proof of a shared parent (IRS paperwork, media coverage, testimony) — corporate structure is part of the permitting record",
+      "Declaratory relief on a not-yet-completed land transfer was attacked as premature; the escrow account is what saved it"
+     ],
+     "sources": [
+      {
+       "label": "New Jersey Board of Public Utilities — Docket No. QO20030191, Order on DCO Energy Motion for Declaratory Ruling (Agenda Item 8D, 2021-01-27), quoting N.J.S.A. 48:3-51",
+       "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+       "quote": "An on-site generation facility shall not be considered a public utility.",
+       "status": "fetched"
+      },
+      {
+       "label": "NJBPU Docket No. QO20030191 Order (2021-01-27) — Discussion and Findings on the intersection question",
+       "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+       "quote": "When two streets bisect, the intersection created is fundamentally one single thoroughfare for the purposes of EDECA.",
+       "status": "fetched"
+      },
+      {
+       "label": "NJBPU Docket No. QO20030191 Order (2021-01-27) — EDECA definition of 'on-site generation facility'",
+       "url": "https://nj.gov/bpu/pdf/boardorders/2021/20210127/8D%20-%20ORDER%20DCO%20Declaratory%20Ruling.pdf",
+       "quote": "A generation facility, including, but not limited to, a generation facility that produces Class I or Class II renewable energy",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-dockets.json"
+    },
+    {
      "id": "rate-regulated-utility-ownership-small-reactor",
      "group": "interconnection",
      "family": "utility-tariff",
@@ -2674,6 +2751,67 @@
        "label": "Power Engineering - TVA approves more funding for advanced nuclear reactors",
        "url": "https://www.power-eng.com/nuclear/tva-approves-more-funding-for-advanced-nuclear-reactors/",
        "quote": "$350 million in nuclear funding for the SMR project",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
+    {
+     "id": "tech-neutral-tax-credits-45y-48e-new-nuclear",
+     "group": "interconnection",
+     "family": "regulatory-rule",
+     "name": "The technology-neutral tax credits as the only published, contractible price support for a new reactor",
+     "what_it_is": "A new reactor elects either the section 45Y clean electricity production credit, paid per kilowatt-hour generated for ten years, or the section 48E investment credit, taken as a percentage of qualified investment in the year the plant is placed in service. These are the only dollar figures in the whole nuclear stack that are published, indexed, and knowable in advance, which is why every unpriced deal in this file - Oklo/Equinix, Eielson, Dow, PacifiCorp/Natrium - is quietly negotiated around them. They are also transferable and elective for cash under the IRA machinery, so they function as a financing instrument, not merely a tax attribute. The credits carry conditions that reach directly into the contract: 45Y is available on electricity sold to an UNRELATED person, or on electricity consumed or stored only where the facility has a metering device owned and operated by an unrelated person.",
+     "who_signs": "Reactor owner <-> US Treasury/IRS; and, where the credit is monetised, the owner <-> a tax-credit transferee",
+     "asset_owner": "third-party developer | utility | host - follows whoever owns the facility",
+     "term": "45Y runs 10 years from placed-in-service; construction must begin before 2034, after which the credits phase out over three years",
+     "price_form": "$/kWh production credit (45Y) or percentage-of-investment credit (48E)",
+     "precedents": [
+      {
+       "name": "Section 45Y applicable amounts for calendar year 2025",
+       "year": "2025",
+       "parties": "IRS / Treasury <-> any qualified clean electricity facility, nuclear included",
+       "size": "per kilowatt-hour of qualifying generation",
+       "price": "0.6 cents per kWh base, and 3 cents per kWh ($30/MWh) for a facility meeting prevailing wage and apprenticeship requirements. The 2025 inflation adjustment factor is 1.9971, derived from the GDP implicit price deflator for 2024 (125.234) over 1992 (62.707) - the statutory 0.3 and 1.5 cent amounts have almost exactly doubled since enactment. Published at 90 FR 41477 on 2025-08-25.",
+       "note": "SCALE CHECK: $30/MWh against the only published small-reactor target power price in the United States - the Carbon Free Power Project's $89/MWh - is about a third of the price. The credit is large enough to decide whether a project clears, and it is the one number in a nuclear pro forma that is not a projection.",
+       "source_idx": 0
+      },
+      {
+       "name": "Section 48E investment credit and the OBBBA nuclear energy community adder",
+       "year": "2025",
+       "parties": "IRS / Treasury <-> facility owner",
+       "size": "percentage of qualified investment in the facility",
+       "price": "6 percent of the qualified investment as the base amount, multiplied by five to up to 30 percent where prevailing wage and registered apprenticeship requirements are met, plus 10 percentage points for domestic content in steel, iron and manufactured products, plus 10 percentage points for an energy community. The One Big Beautiful Bill Act added a further nuclear-specific adder of 10% (or two percentage points without prevailing wage and apprenticeship) for an advanced nuclear facility in a metropolitan statistical area with at least 0.17% direct nuclear-related employment at any time since 2010.",
+       "note": "The nuclear energy community adder is available ONLY against 45Y, not 48E - so a developer choosing the investment credit forfeits the one credit provision written specifically for nuclear. That makes the 45Y-versus-48E election a genuine structuring decision rather than a modelling preference, and it pushes a nuclear project toward the production credit if its site qualifies.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "The credits are technology-neutral, which for nuclear is both the enabling fact and the trap. Enabling, because a reactor qualifies on the same terms as a wind farm and needs no bespoke legislation. Trap, because the 45Y unrelated-person condition is written for a merchant generator selling into a market, and the entire microreactor thesis is behind-the-meter sale to a single host - sometimes, as at Dow's Long Mott, to the owner itself. In that configuration the credit survives only through the metering-device route, where the meter is owned and operated by an unrelated person, so a term about who owns a meter becomes a condition of a nine-figure tax position.",
+     "microreactor_edge": "The election runs opposite ways at the two scales, and the reason is capacity factor and capex intensity. 45Y pays on output, so it rewards a plant that runs; 48E pays on investment, so it rewards a plant that costs a lot per kW. A first-of-a-kind microreactor is extraordinarily capex-intensive per kW and has an unproven capacity factor, which argues for 48E - but taking 48E forfeits the nuclear energy community adder and delivers nothing if the unit is not placed in service. A 300 MW unit at a former nuclear or fossil site has the site qualification, the scale to certify prevailing wage and apprenticeship compliance, and a credible capacity factor, so it can take 45Y at 3 cents/kWh with the nuclear adder on top. The credit regime, without intending to, is better fitted to the large unit.",
+     "blockers": [
+      "45Y requires sale to an unrelated person, or an unrelated-person-owned metering device for self-consumed power - a direct problem for behind-the-meter and host-owned microreactors",
+      "The nuclear energy community adder applies only under 45Y, so electing 48E forfeits the only nuclear-specific credit provision",
+      "Construction must begin before 2034, after which the credits phase out over three years - a hard deadline for a technology whose first commercial units are not yet licensed",
+      "The 0.17% nuclear-employment community test is keyed to metropolitan statistical areas, which excludes exactly the remote sites microreactors are marketed for",
+      "Foreign entity of concern restrictions apply to 45Y and 48E and were not examined in this pass"
+     ],
+     "sources": [
+      {
+       "label": "Federal Register - Publication of Inflation Adjustment Factor and Applicable Amounts for Clean Electricity Production Credit for Calendar Year 2025 (90 FR 41477)",
+       "url": "https://www.federalregister.gov/documents/2025/08/25/2025-16249/publication-of-inflation-adjustment-factor-and-applicable-amounts-for-clean-electricity-production",
+       "quote": "the applicable amount provided in section 45Y(a)(2)(B) is 3 cents (or $0.03)",
+       "status": "fetched"
+      },
+      {
+       "label": "Internal Revenue Service - Clean Electricity Investment Credit (48E)",
+       "url": "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+       "quote": "The base amount of the Clean Electricity Investment Credit is 6 percent of the qualified investment.",
+       "status": "fetched"
+      },
+      {
+       "label": "Morgan Lewis - The Impact of the 'One Big Beautiful Bill Act' on Nuclear Tax Incentives",
+       "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives",
+       "quote": "The adder for advanced nuclear facilities is not available to the Clean Electricity ITC.",
        "status": "fetched"
       }
      ],
@@ -3145,7 +3283,7 @@
       {
        "label": "Illinois Commerce Commission — Docket 17-0331, Commonwealth Edison Company, Final Order (2018-02-28)",
        "url": "https://icc.illinois.gov/docket/P2017-0331/documents/276063/files/482264.pdf",
-       "quote": "ComEd estimates the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant and $600,000 cost sharing with research partners.",
+       "quote": "the maximum net cost to ComEd of the Project to be $25 million, after applying the $4 million DOE grant",
        "status": "fetched"
       },
       {
@@ -3685,6 +3823,90 @@
    "group": "licensing",
    "records": [
     {
+     "id": "reactor-only-obligations-decommissioning-operators-security",
+     "group": "licensing",
+     "family": "regulatory-rule",
+     "name": "The obligations a reactor deal must fund - decommissioning, operators, security, fuel - that a gas or solar deal never mentions",
+     "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
+     "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
+     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
+     "term": "funded before or during operation; the decommissioning certification is filed with the licence application and adjusted annually",
+     "price_form": "no price - these are cost obligations that must be recovered inside whatever price is charged",
+     "precedents": [
+      {
+       "name": "10 CFR 50.75(c)(1) minimum decommissioning funding - the floor that does not scale down",
+       "year": "2024",
+       "parties": "NRC <-> every power reactor licensee and combined licence applicant",
+       "size": "applies to all power reactors regardless of size",
+       "price": "In January 1986 dollars: a PWR at or above 3400 MWt must certify $105 million; between 1200 and 3400 MWt the formula is $(75 + 0.0088P) where P is thermal megawatts. THE CRITICAL CLAUSE: 'For a PWR of less than 1200 MWt, use P = 1200 MWt.' So a 20 MWt microreactor certifies the same $85.56 million (1986 dollars) as a 1200 MWt plant - 60 times its thermal rating. For a BWR the formula is $(104 + 0.009P) with the same substitution, giving $114.8 million. The certified amount must then be escalated annually by a factor at least equal to 0.65L + 0.13E + 0.22B, where L and E are Bureau of Labor Statistics labour and energy escalators and B is the waste burial escalator from NUREG-1307.",
+       "note": "Two further points that matter commercially. First, the table lists only PWRs and BWRs - a high-temperature gas, sodium-cooled or heat-pipe microreactor is not in it at all, so its amount has to come from a site-specific estimate rather than the table, which removes the certainty the table was meant to provide. Second, 50.75(a) expressly notes that decommissioning funding may also be regulated by FERC or a state PUC with rate jurisdiction, and that the NRC amount is additional to, not a substitute for, those requirements.",
+       "source_idx": 0
+      },
+      {
+       "name": "Proposed 10 CFR Part 57 - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
+       "year": "2026",
+       "parties": "NRC <-> future microreactor licensees; Docket ID NRC-2025-0379, proposed rule published 2026-05-01",
+       "size": "microreactors and reactors of comparable risk profile; explicitly aimed at high-volume deployment",
+       "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
+       "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
+       "source_idx": 1
+      },
+      {
+       "name": "HALEU fuel supply: a DOE allocation standing in for a supply contract that does not exist",
+       "year": "2025",
+       "parties": "DOE <-> TRISO-X, TerraPower, Kairos Power, Radiant Industries, Westinghouse Electric Co. (allocation); separately DOE <-> Centrus Energy (production)",
+       "size": "five allocations out of fifteen company requests, three needing delivery during 2025",
+       "price": "NO PRICE IN ANY FORM - not $/kgU, not $/SWU, not a delivered core cost, and no per-company allocation quantity. What is public is supply: Centrus delivered 900 kilograms of HALEU to DOE by 2025-06-25 (after an initial 20 kg batch in November 2023), against a congressionally directed programme target of 21 metric tons available by 2026-06-30 in tranches of 3, 8 and 10 metric tons.",
+       "note": "There is no commercial merchant market for HALEU in the United States, so the fuel term in a reactor deal is an application to a federal allocation queue rather than a contract with an enricher. An allocation is a conditional commitment; DOE must still initiate contracting to transfer material. The production contract runs on options - Phase III extended through 2026-06-30 with up to eight further years available - so the supply horizon a developer can show a lender is one year at a time. Allocation priority tracked prior DOE programme participation (ARDP Pathway 1, DOME experiments, ARDP risk reduction), so a developer outside those programmes starts behind.",
+       "source_idx": 3
+      }
+     ],
+     "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's. Fuel is the same story in a different register: a gas plant's fuel counterparty is a market, a solar plant has none, and a HALEU reactor's is the federal government running an allocation queue with no published price - so the developer cannot pass through a fuel cost it does not know, the offtaker cannot index a PPA to an index that does not exist, and a lender cannot take security over a conditional commitment.",
+     "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones. On fuel the scale asymmetry runs the other way: a microreactor's first core is small enough that a single sub-tonne DOE delivery can fuel several units, so the existing allocation programme can plausibly serve the microreactor cohort while it cannot fuel a fleet of 300 MW-class units - but microreactor designs typically run to higher enrichment and longer core lives, so fuel is a larger share of lifetime cost and it is the one cost line with no published price at all.",
+     "blockers": [
+      "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
+      "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
+      "Part 57 is a proposed rule published 2026-05-01; it confers nothing on a deal signed now",
+      "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
+      "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive",
+      "No HALEU price is published in any form, and no per-company allocation quantity has been disclosed - so a fuel cost cannot be passed through, indexed, or secured against",
+      "Domestic HALEU production was 900 kilograms in the year to June 2025 against a 21 metric ton programme target; a HALEU allocation is a conditional commitment, not a supply obligation"
+     ],
+     "sources": [
+      {
+       "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
+       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol1/pdf/CFR-2024-title10-vol1-sec50-75.pdf",
+       "quote": "funds will be available for the decommissioning process",
+       "status": "fetched"
+      },
+      {
+       "label": "Federal Register - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed rule, NRC-2025-0379)",
+       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+       "quote": "An emergency planning zone (EPZ) would not be defined for facilities licensed under proposed part 57.",
+       "status": "fetched"
+      },
+      {
+       "label": "Federal Register - proposed 10 CFR Part 57 (physical security and force-on-force)",
+       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+       "quote": "it would not be appropriate to require force-on-force exercises to evaluate the performance of these facilities",
+       "status": "fetched"
+      },
+      {
+       "label": "POWER Magazine - Centrus Completes 900-kg HALEU Delivery to DOE in U.S. Nuclear Fuel Enrichment Milestone",
+       "url": "https://www.powermag.com/centrus-completes-900-kg-haleu-delivery-to-doe-in-u-s-nuclear-fuel-enrichment-milestone/",
+       "quote": "900 kilograms (kg) of High-Assay, Low-Enriched Uranium (HALEU) to the U.S. Department of Energy (DOE)",
+       "status": "fetched"
+      },
+      {
+       "label": "POWER Magazine - DOE Allocates First Round of HALEU to Five U.S. Advanced Nuclear Reactor Developers",
+       "url": "https://www.powermag.com/doe-allocates-first-round-of-haleu-to-five-u-s-advanced-nuclear-reactor-developers/",
+       "quote": "conditional commitments to TRISO-X, TerraPower, Kairos Power, Radiant Industries, and Westinghouse Electric Co.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-nuclear-structures.json"
+    },
+    {
      "id": "price-anderson-financial-protection-tiers",
      "group": "licensing",
      "family": "regulatory-rule",
@@ -3739,67 +3961,6 @@
        "label": "10 CFR 140.12, Amount of financial protection required for other reactors (CFR 2024 edition, govinfo)",
        "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-12.pdf",
        "quote": "be less than $4,500,000 or more than $74,000,000",
-       "status": "fetched"
-      }
-     ],
-     "_from": "mech-nuclear-structures.json"
-    },
-    {
-     "id": "reactor-only-obligations-decommissioning-operators-security",
-     "group": "licensing",
-     "family": "regulatory-rule",
-     "name": "The obligations a reactor deal must fund that a gas or solar deal never mentions",
-     "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
-     "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
-     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
-     "term": "funded before or during operation; the decommissioning certification is filed with the licence application and adjusted annually",
-     "price_form": "no price - these are cost obligations that must be recovered inside whatever price is charged",
-     "precedents": [
-      {
-       "name": "10 CFR 50.75(c)(1) minimum decommissioning funding - the floor that does not scale down",
-       "year": "2024",
-       "parties": "NRC <-> every power reactor licensee and combined licence applicant",
-       "size": "applies to all power reactors regardless of size",
-       "price": "In January 1986 dollars: a PWR at or above 3400 MWt must certify $105 million; between 1200 and 3400 MWt the formula is $(75 + 0.0088P) where P is thermal megawatts. THE CRITICAL CLAUSE: 'For a PWR of less than 1200 MWt, use P = 1200 MWt.' So a 20 MWt microreactor certifies the same $85.56 million (1986 dollars) as a 1200 MWt plant - 60 times its thermal rating. For a BWR the formula is $(104 + 0.009P) with the same substitution, giving $114.8 million. The certified amount must then be escalated annually by a factor at least equal to 0.65L + 0.13E + 0.22B, where L and E are Bureau of Labor Statistics labour and energy escalators and B is the waste burial escalator from NUREG-1307.",
-       "note": "Two further points that matter commercially. First, the table lists only PWRs and BWRs - a high-temperature gas, sodium-cooled or heat-pipe microreactor is not in it at all, so its amount has to come from a site-specific estimate rather than the table, which removes the certainty the table was meant to provide. Second, 50.75(a) expressly notes that decommissioning funding may also be regulated by FERC or a state PUC with rate jurisdiction, and that the NRC amount is additional to, not a substitute for, those requirements.",
-       "source_idx": 0
-      },
-      {
-       "name": "Proposed 10 CFR Part 57 - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
-       "year": "2026",
-       "parties": "NRC <-> future microreactor licensees; Docket ID NRC-2025-0379, proposed rule published 2026-05-01",
-       "size": "microreactors and reactors of comparable risk profile; explicitly aimed at high-volume deployment",
-       "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
-       "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
-       "source_idx": 1
-      }
-     ],
-     "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's.",
-     "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones.",
-     "blockers": [
-      "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
-      "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
-      "Part 57 is a proposed rule published 2026-05-01; it confers nothing on a deal signed now",
-      "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
-      "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive"
-     ],
-     "sources": [
-      {
-       "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
-       "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol1/pdf/CFR-2024-title10-vol1-sec50-75.pdf",
-       "quote": "funds will be available for the decommissioning process",
-       "status": "fetched"
-      },
-      {
-       "label": "Federal Register - Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed rule, NRC-2025-0379)",
-       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
-       "quote": "An emergency planning zone (EPZ) would not be defined for facilities licensed under proposed part 57.",
-       "status": "fetched"
-      },
-      {
-       "label": "Federal Register - proposed 10 CFR Part 57 (physical security and force-on-force)",
-       "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
-       "quote": "it would not be appropriate to require force-on-force exercises to evaluate the performance of these facilities",
        "status": "fetched"
       }
      ],

@@ -13,16 +13,22 @@
    "reactor-only contract terms (decommissioning funding assurance, Price-Anderson tiers, operator licensing, security force, HALEU)"
   ],
   "absences": [
-   "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
+   "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price. The nearest thing to a published small-reactor price found in this pass is one tier up in size and is a target, not a contract: the Carbon Free Power Project's $89/MWh for a 462 MWe six-module NuScale plant, announced January 2023 and terminated November 2023. The one published all-in capital cost is OPG's CAD 20.9 billion for four BWRX-300s, which is a 300 MW-class number, not a microreactor one.",
    "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
    "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
    "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
    "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
    "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
-   "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe.",
-   "Agent terminated on a session limit part-way through. Angles not completed: utility rate-basing of a small reactor, cost-share instruments (ARDP, X-energy/Dow), heat-not-electricity contracts, and the reactor-specific contract terms (decommissioning assurance, Price-Anderson, HALEU)."
-  ],
-  "incomplete": true
+   "Could not locate a microreactor decommissioning funding assurance amount in an actual NRC filing. The regulation itself was resolved instead: 10 CFR 50.75(c)(1) instructs a PWR below 1200 MWt to substitute P = 1200 MWt, so a microreactor certifies $85.56 million in January 1986 dollars, the same as a 1200 MWt plant. The table also covers only PWRs and BWRs, so a non-water microreactor is outside it entirely. No filed, escalated, present-day certified amount for any small or micro reactor was found.",
+   "Could not find any published price for HALEU in any form - not $/kgU, not $/SWU, not a delivered core cost - nor any per-company allocation quantity from DOE's first HALEU allocation round.",
+   "Could not verify whether a sub-100 MWe licensee, which is not assessed the 10 CFR 140.11(a)(4) retrospective premium, may nonetheless DRAW on the industry secondary financial protection layer. Only the assessment side was resolved.",
+   "Could not verify against the statute whether section 45U applies to a newly built reactor; the IRS's own 45U page does not state a placed-in-service restriction and this pass did not read the statutory definition of a qualified nuclear power facility. Treat the assumption that 45U is an existing-fleet credit as unverified here.",
+   "Did not examine the foreign entity of concern restrictions that now apply to sections 45Y and 48E, which may be a binding condition for a developer with non-US investors.",
+   "Could not find a disclosed price for PacifiCorp's power purchase agreement with TerraPower for the Natrium unit at Kemmerer; PacifiCorp has not published what its ratepayers across six states would pay.",
+   "Could not find a Utah state action - Operation Gigawatt or the state nuclear consortium - that has produced a signed instrument or a commission order with a dollar figure attached to a specific reactor. Searched and found announcements only.",
+   "Could not find any published price basis for nuclear process heat: no $/klb of steam, no $/MMBtu, and no gas-index formula, for the Dow Long Mott project or any other industrial steam arrangement.",
+   "TVA has published no total project cost for Clinch River. The widely repeated $17,949/kW overnight figure is an intervenor's reading of TVA filings (David Schlissel, via the Southern Alliance for Clean Energy), not a TVA-published number, and is recorded here as such rather than as a TVA figure."
+  ]
  },
  "mechanisms": [
   {
@@ -72,7 +78,7 @@
     {
      "label": "Canary Media - Air Force rescinds $100M award for Oklo microreactor",
      "url": "https://www.canarymedia.com/articles/nuclear/air-force-rescinds-100m-award-for-oklo-microreactor",
-     "quote": "the military revoked the intent to award Oklo the planned $100-million-plus contract in late September",
+     "quote": "the military revoked the intent to award Oklo the planned",
      "status": "fetched"
     }
    ]
@@ -264,7 +270,7 @@
     {
      "label": "US Department of Energy - Department of Defense Breaks Ground on Project Pele Microreactor",
      "url": "https://www.energy.gov/ne/articles/department-defense-breaks-ground-project-pele-microreactor",
-     "quote": "connected to INL's microgrid producing 1 to 5 megawatts of electrical power",
+     "quote": "microgrid producing 1 to 5 megawatts of electrical power",
      "status": "fetched"
     }
    ]
@@ -431,7 +437,7 @@
     {
      "label": "US Department of Energy - U.S. Department of Energy Announces $160 Million in First Awards under Advanced Reactor Demonstration Program",
      "url": "https://www.energy.gov/ne/articles/us-department-energy-announces-160-million-first-awards-under-advanced-reactor",
-     "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations, with our industry partners providing matching funds.",
+     "quote": "The Department will invest a total of $3.2 billion over seven years, subject to the availability of future appropriations",
      "status": "fetched"
     },
     {
@@ -606,7 +612,7 @@
    "id": "reactor-only-obligations-decommissioning-operators-security",
    "group": "licensing",
    "family": "regulatory-rule",
-   "name": "The obligations a reactor deal must fund that a gas or solar deal never mentions",
+   "name": "The obligations a reactor deal must fund - decommissioning, operators, security, fuel - that a gas or solar deal never mentions",
    "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
    "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
    "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
@@ -630,16 +636,27 @@
      "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
      "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
      "source_idx": 1
+    },
+    {
+     "name": "HALEU fuel supply: a DOE allocation standing in for a supply contract that does not exist",
+     "year": "2025",
+     "parties": "DOE <-> TRISO-X, TerraPower, Kairos Power, Radiant Industries, Westinghouse Electric Co. (allocation); separately DOE <-> Centrus Energy (production)",
+     "size": "five allocations out of fifteen company requests, three needing delivery during 2025",
+     "price": "NO PRICE IN ANY FORM - not $/kgU, not $/SWU, not a delivered core cost, and no per-company allocation quantity. What is public is supply: Centrus delivered 900 kilograms of HALEU to DOE by 2025-06-25 (after an initial 20 kg batch in November 2023), against a congressionally directed programme target of 21 metric tons available by 2026-06-30 in tranches of 3, 8 and 10 metric tons.",
+     "note": "There is no commercial merchant market for HALEU in the United States, so the fuel term in a reactor deal is an application to a federal allocation queue rather than a contract with an enricher. An allocation is a conditional commitment; DOE must still initiate contracting to transfer material. The production contract runs on options - Phase III extended through 2026-06-30 with up to eight further years available - so the supply horizon a developer can show a lender is one year at a time. Allocation priority tracked prior DOE programme participation (ARDP Pathway 1, DOME experiments, ARDP risk reduction), so a developer outside those programmes starts behind.",
+     "source_idx": 3
     }
    ],
-   "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's.",
-   "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones.",
+   "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's. Fuel is the same story in a different register: a gas plant's fuel counterparty is a market, a solar plant has none, and a HALEU reactor's is the federal government running an allocation queue with no published price - so the developer cannot pass through a fuel cost it does not know, the offtaker cannot index a PPA to an index that does not exist, and a lender cannot take security over a conditional commitment.",
+   "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones. On fuel the scale asymmetry runs the other way: a microreactor's first core is small enough that a single sub-tonne DOE delivery can fuel several units, so the existing allocation programme can plausibly serve the microreactor cohort while it cannot fuel a fleet of 300 MW-class units - but microreactor designs typically run to higher enrichment and longer core lives, so fuel is a larger share of lifetime cost and it is the one cost line with no published price at all.",
    "blockers": [
     "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
     "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
     "Part 57 is a proposed rule published 2026-05-01; it confers nothing on a deal signed now",
     "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
-    "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive"
+    "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive",
+    "No HALEU price is published in any form, and no per-company allocation quantity has been disclosed - so a fuel cost cannot be passed through, indexed, or secured against",
+    "Domestic HALEU production was 900 kilograms in the year to June 2025 against a 21 metric ton programme target; a HALEU allocation is a conditional commitment, not a supply obligation"
    ],
    "sources": [
     {
@@ -658,6 +675,18 @@
      "label": "Federal Register - proposed 10 CFR Part 57 (physical security and force-on-force)",
      "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
      "quote": "it would not be appropriate to require force-on-force exercises to evaluate the performance of these facilities",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER Magazine - Centrus Completes 900-kg HALEU Delivery to DOE in U.S. Nuclear Fuel Enrichment Milestone",
+     "url": "https://www.powermag.com/centrus-completes-900-kg-haleu-delivery-to-doe-in-u-s-nuclear-fuel-enrichment-milestone/",
+     "quote": "900 kilograms (kg) of High-Assay, Low-Enriched Uranium (HALEU) to the U.S. Department of Energy (DOE)",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER Magazine - DOE Allocates First Round of HALEU to Five U.S. Advanced Nuclear Reactor Developers",
+     "url": "https://www.powermag.com/doe-allocates-first-round-of-haleu-to-five-u-s-advanced-nuclear-reactor-developers/",
+     "quote": "conditional commitments to TRISO-X, TerraPower, Kairos Power, Radiant Industries, and Westinghouse Electric Co.",
      "status": "fetched"
     }
    ]
