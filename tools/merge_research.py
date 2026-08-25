@@ -24,6 +24,7 @@ Stdlib only, like every tool in this repo.
 import argparse
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -84,9 +85,27 @@ def bucket(records: list, key: str, order: list, kind: str) -> list:
     return out
 
 
+ISO_IN_NAME = re.compile(r"(\d{4}-\d{2}-\d{2})")
+
+
+def capture_date(dir_name: str) -> str:
+    """The ISO date inside a pass directory name, wherever it sits.
+
+    Pass folders are named either `<slug>-<date>` (deep-2026-08-24) or, when
+    scaffolded by research_pass.py init, `<date>-<slug>` (2026-08-25-my-pass).
+    Splitting on the first hyphen handled only the first shape and turned the
+    second into "08-25-my-pass", which then sorted below every real ISO date and
+    silently froze the site's build stamp.
+    """
+    m = ISO_IN_NAME.search(dir_name)
+    if not m:
+        raise SystemExit(f"pass directory {dir_name!r} carries no ISO date in its name")
+    return m.group(1)
+
+
 def build(pass_dir: pathlib.Path) -> dict:
     mechanisms, cases, provenance = collect(pass_dir)
-    captured = pass_dir.name.split("-", 1)[1] if "-" in pass_dir.name else pass_dir.name
+    captured = capture_date(pass_dir.name)
     common = {
         "captured": captured,
         "pass": f"data/research/{pass_dir.name}",

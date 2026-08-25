@@ -51,6 +51,22 @@ class ResearchPass(unittest.TestCase):
         for s in bench["sectors"]:
             self.assertIn(s["sector"], merge_research.SECTOR_ORDER, "unrendered benchmark sector")
 
+    def test_capture_date_handles_both_pass_folder_shapes(self):
+        """Pass folders are named `<slug>-<date>` by hand and `<date>-<slug>` by
+        research_pass.py init. Splitting on the first hyphen only handled the
+        first, turning "2026-08-25-my-pass" into "08-25-my-pass" — which sorts
+        below every real ISO date and would silently freeze the site's build
+        stamp, since build_data takes the max captured date across data files."""
+        sys.path.insert(0, str(ROOT / "tools"))
+        import merge_research
+
+        for name, want in [("deep-2026-08-24", "2026-08-24"),
+                           ("2026-08-25-my-pass", "2026-08-25"),
+                           ("x-2026-01-02-y", "2026-01-02")]:
+            self.assertEqual(merge_research.capture_date(name), want, name)
+        with self.assertRaises(SystemExit):
+            merge_research.capture_date("no-date-here")
+
     def test_derived_files_are_not_hand_edited(self):
         """Each carries the generator that owns it, so the next reader does not
         edit the wrong file."""

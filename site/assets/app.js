@@ -434,10 +434,12 @@
   var B = D.benchmarks;
   if (B && B.sectors) {
     render($("benchsummary"),
-      esc(s.benchmarks) + " deals people have actually signed, across " +
-      esc(B.sectors.length) + " sectors. None of them is nuclear. These are the prices a " +
-      "reactor would have to beat. " + esc(s.benchmarks_priced) + " list a price or a cost, and " +
-      esc(s.benchmarks_filed) + " include the paperwork behind it.");
+      esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power " +
+      "actually costs at places like these, from signed contracts, government awards and rate " +
+      "orders. " + esc(s.benchmarks - s.benchmarks_nuclear) + " are the non-nuclear incumbent a " +
+      "reactor would have to beat; " + esc(s.benchmarks_nuclear) + " are nuclear projects kept " +
+      "for their published cost. " + esc(s.benchmarks_priced) + " give a price or a cost, and " +
+      esc(s.benchmarks_filed) + " include the paperwork.");
 
     render($("benchmarks"), B.sectors.map(function (sec) {
       return '<div class="benchsector"><h4>' + esc(sec.sector) +
@@ -450,7 +452,8 @@
           ].filter(function (f) { return f[1]; });
           var head = [c.price, c.capex, c.displaced].filter(Boolean)[0] || c.capacity || "";
           return '<details class="prec"><summary><span class="nm">' + esc(c.name) +
-            "</span>" + '<span class="cat">' + esc(head) + "</span></summary>" +
+            (c.nuclear ? ' <span class="nuctag">nuclear</span>' : "") + "</span>" +
+            '<span class="cat">' + esc(head) + "</span></summary>" +
             '<div class="body">' +
             '<div class="sitedetails">' + facts.map(function (f) {
               return '<div class="drow"><span class="dlbl">' + esc(f[0]) +

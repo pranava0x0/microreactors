@@ -123,6 +123,11 @@ def main() -> int:
                                  if r.get("price") or r.get("capex") or r.get("displaced")),
         "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                 for r in s_["records"] if r.get("filings")),
+        # Most benchmark rows are the non-nuclear incumbent a reactor would displace,
+        # but a handful are nuclear projects carried for their published cost. The
+        # page must not claim the set is uniformly non-nuclear, so count both.
+        "benchmarks_nuclear": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                  for r in s_["records"] if r.get("nuclear")),
         "land_pct": cov["land_acres"]["pct"],
         "filing_pct": cov["utility_filing"]["pct"],
         # Deployment-facing stats: how far the market has actually moved.

@@ -9,7 +9,12 @@ one overstates the market by an order of magnitude on multi-year vehicles:
   * **obligated** — money actually put on contract to date
   * **potential**  — the ceiling if every option year is exercised
 
-Both are reported for every award, never merged into one "value".
+Both are reported for every award, never merged into one "value" — but only
+`--detail` can fill in the ceiling. The search endpoint does not carry it at
+all, and the per-award endpoint returns `base_and_all_options_value` as null for
+a delivery order, because the ceiling lives on the parent IDV rather than the
+order. So `potential` is honestly `null` far more often than not, and a null
+there means "not published at this level", never "no ceiling".
 
 **The distinction inverts on assistance awards, and the API does not warn you.**
 On a contract, `total_obligation` is the conservative figure. On a multi-phase
@@ -99,6 +104,33 @@ def search(keyword: str, group: str, start: str, end: str, limit: int) -> dict:
     return post(payload)
 
 
+def award_detail(generated_id: str) -> dict:
+    """Per-award record. The only place a contract ceiling can appear."""
+    req = urllib.request.Request(
+        f"https://api.usaspending.gov/api/v2/awards/{generated_id}/",
+        headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=45) as r:
+            return json.loads(r.read())
+    except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError):
+        return {}
+
+
+def add_potential(rows: list) -> int:
+    """Fill `potential` from the award endpoint. Returns how many were found."""
+    found = 0
+    for r in rows:
+        gid = r.get("generated_id")
+        if not gid:
+            continue
+        d = award_detail(gid)
+        val = d.get("base_and_all_options_value") or d.get("base_exercised_options_val")
+        if val is not None:
+            r["potential"] = val
+            found += 1
+    return found
+
+
 def normalise(rows: list, group: str) -> list:
     out = []
     for r in rows:
@@ -113,9 +145,13 @@ def normalise(rows: list, group: str) -> list:
             # outlays are what has actually been disbursed against it.
             "obligated": r.get("Award Amount"),
             "outlayed": r.get("Total Outlays"),
+            # Filled by --detail only; see the note at the top about why this is
+            # usually null even when a ceiling exists on the parent IDV.
+            "potential": None,
             "state": r.get("Place of Performance State Code"),
             "type": r.get("Contract Award Type") or r.get("Assistance Listings"),
             "group": group,
+            "generated_id": r.get("generated_internal_id"),
             "description": (r.get("Description") or "")[:400],
             "url": (f"https://www.usaspending.gov/award/{r.get('generated_internal_id')}"
                     if r.get("generated_internal_id") else
@@ -133,6 +169,9 @@ def main() -> int:
     ap.add_argument("--years", nargs=2, default=["2018", str(dt.date.today().year)],
                     metavar=("FROM", "TO"))
     ap.add_argument("--limit", type=int, default=50, help="rows per keyword per award group")
+    ap.add_argument("--detail", action="store_true",
+                    help="fetch each award's ceiling (base_and_all_options_value). One extra "
+                         "request per row, and frequently null — see the note above.")
     ap.add_argument("--out", type=pathlib.Path)
     a = ap.parse_args()
     start, end = f"{a.years[0]}-01-01", f"{a.years[1]}-12-31"
@@ -142,11 +181,13 @@ def main() -> int:
         for group in a.awards:
             doc = search(kw, group, start, end, a.limit)
             rows = normalise(doc.get("results") or [], group)
+            n_potential = add_potential(rows) if a.detail else 0
             meta = doc.get("page_metadata") or {}
             capped = bool(meta.get("hasNext"))
             total = sum(r["obligated"] or 0 for r in rows)
             print(f"{kw!r} / {group}: {len(rows)} awards, "
                   f"${total:,.0f} obligated in this page"
+                  + (f"; {n_potential}/{len(rows)} ceilings published" if a.detail else "")
                   + ("  ** more pages exist — this is a floor **" if capped else ""))
             for r in rows[:5]:
                 print(f"    ${(r['obligated'] or 0):>14,.0f}  {r['recipient']}  "
@@ -162,7 +203,9 @@ def main() -> int:
             "queried": dt.date.today().isoformat(),
             "time_period": [start, end],
             "caveat": "'obligated' is money on contract to date, not the ceiling if all option "
-                      "years are exercised. Any result marked capped:true is a floor. On "
+                      "years are exercised, which is reported as 'potential' and is null unless "
+                      "--detail was passed AND the API publishes it at this level. Any result "
+                      "marked capped:true is a floor. On "
                       "multi-phase cooperative agreements the obligation can instead be the full "
                       "federal ceiling — check the awarding agency's own announcement for a "
                       "phase release before quoting it.",
