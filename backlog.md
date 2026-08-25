@@ -132,3 +132,22 @@
   shore power exists MARAD's answer is to *rent* a mobile diesel generator — $9.86M obligated over
   five years for one laid-up vessel, leaving no asset behind. That pairing is the clearest
   load-without-supply story in the dataset and deserves a callout on the Applications tab.
+
+## Copy and register (2026-08-25)
+
+- **med** · Extend `tools/check_register.py` with the §11.2 moves that are regexable on authored
+  display copy: register drift (`realis*`, `utilis*`, `whilst`, `in order to`), and UI narration
+  (`carries a cited`, `links to its source`, `carry no citation`, `proven by`). Both were swept by
+  hand on 2026-08-25 and nothing stops them coming back. Calibrate before landing it — a scan found
+  ~9 register-drift hits that are false positives, because CPUC and CARB regulatory language quoted
+  inside `instruments.json` legitimately uses "utilisation". Scope the pattern to authored fields
+  and allowlist the quoted-regulation ones, or the gate is red on arrival and gets ignored.
+- **low** · `which is why` appears 18 times across `microreactor_read` and absence prose, all
+  agent-written. Used causally it is fine; at that density it is a tic. Worth one editing pass, and
+  worth a line in the research-agent prompt template so the next pass does not reintroduce it.
+- **low** · Move the `topOptions` cards out of `site/assets/app.js` and into a data file. They are
+  the only display content whose prose and sources live in JavaScript, which is why three of their
+  citations dangled unnoticed until 2026-08-25 — `index.html` was gated, `app.js` was not. There is
+  a gate now (`test_app_js_hardcoded_citations_resolve`), but the content still bypasses the AI-
+  register lint and the citation coverage scanner, both of which only walk `data/`.
+

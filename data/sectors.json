@@ -3,7 +3,7 @@
   "source": "docs/rian-research-chatgpt.md — annual-average electrical demand planning bands",
   "generated_by": "tools/parse_sectors.py",
   "caveat": "Planning bands, not guaranteed averages; final sizing requires at least one year of hourly site-load data.",
-  "citations": "Per-load sources from two verified research passes (data/research/demand-citations.json, data/research/demand-context.json): 27 bands supported or partially supported directly, 4 corrected in place where published figures contradicted the claim (offshore platforms, land-based aquaculture, remote oil-field hubs, lime plants), 8 with no authoritative source found after two passes — registered in _meta.uncited and marked on the page. Each sector carries a cited summary of its incumbent power/backup pattern.",
+  "citations": "Per-load sources from two verified research passes (data/research/demand-citations.json, data/research/demand-context.json): 27 bands supported or partially supported directly, 4 corrected in place where published figures contradicted the claim (offshore platforms, land-based aquaculture, remote oil-field hubs, lime plants), 8 with no authoritative source found after two passes — registered in _meta.uncited and marked on the page. Each sector summarises how it powers and backs itself up today.",
   "uncited": [
    "Battery-material plants",
    "Battery-recycling plants",

@@ -300,6 +300,55 @@
      "_from": "mech-dockets.json"
     },
     {
+     "id": "potential-to-emit-trap",
+     "group": "diesel",
+     "family": "regulatory-rule",
+     "name": "A diesel is permitted as if it never switches off",
+     "what_it_is": "Air permitting sizes a source by its potential to emit, calculated at maximum rated capacity for all 8,760 hours of the year, whether or not the engine ever runs that much. A standby fleet expected to run a few dozen hours annually is therefore assessed as though it ran continuously, and can be pushed over the major-source threshold into New Source Review and a Title V operating permit. In non-attainment areas the triggering thresholds are lower still.",
+     "who_signs": "Host <-> EPA or the delegated state environmental agency",
+     "asset_owner": "unchanged",
+     "term": "permit life, with renewals",
+     "price_form": "permitting cost and schedule, plus any control equipment the classification forces",
+     "precedents": [
+      {
+       "name": "Santa Rita Jail microgrid",
+       "year": "2014",
+       "parties": "Alameda County; Chevron Energy Solutions; local air district",
+       "note": "Avoided the air permit outright by selecting a pre-certified fuel cell, and scoped the work as upgrades to an existing facility to use that exemption. The permitting problem was solved by technology choice, not by argument.",
+       "source_idx": 1
+      },
+      {
+       "name": "Borrego Springs microgrid phased air permit",
+       "year": "2024",
+       "parties": "San Diego Gas & Electric; local air district",
+       "note": "De-risked the schedule by splitting the diesel air permit into an Authority to Construct followed by a Permit to Operate, so construction could start before the final permit landed.",
+       "source_idx": 1
+      }
+     ],
+     "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centres happen to be.",
+     "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance programme — the same permitting relief, available to a hospital rather than only to a refinery.",
+     "blockers": [
+      "Potential to emit is computed from capacity, not expected use",
+      "Non-attainment areas apply extremely low triggering thresholds",
+      "Authority is delegated to state agencies that may be stricter than EPA"
+     ],
+     "sources": [
+      {
+       "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+       "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+       "quote": "assuming the generator operates continuously (8,760 hours per year) at its maximum rated capacity",
+       "status": "fetched"
+      },
+      {
+       "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+       "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+       "quote": "Selected an AHJ certified fuel cell to gain exemption from air permit",
+       "status": "fetched"
+      }
+     ],
+     "_from": "mech-economics-permitting.json"
+    },
+    {
      "id": "dod-ota-contractor-owned-contractor-operated-base-power",
      "group": "diesel",
      "family": "public-procurement",
@@ -569,55 +618,6 @@
       }
      ],
      "_from": "mech-selling-structure.json"
-    },
-    {
-     "id": "potential-to-emit-trap",
-     "group": "diesel",
-     "family": "regulatory-rule",
-     "name": "Potential to emit: a diesel is permitted as if it never stops",
-     "what_it_is": "Air permitting sizes a source by its potential to emit, calculated at maximum rated capacity for all 8,760 hours of the year, whether or not the engine ever runs that much. A standby fleet expected to run a few dozen hours annually is therefore assessed as though it ran continuously, and can be pushed over the major-source threshold into New Source Review and a Title V operating permit. In non-attainment areas the triggering thresholds are lower still.",
-     "who_signs": "Host <-> EPA or the delegated state environmental agency",
-     "asset_owner": "unchanged",
-     "term": "permit life, with renewals",
-     "price_form": "permitting cost and schedule, plus any control equipment the classification forces",
-     "precedents": [
-      {
-       "name": "Santa Rita Jail microgrid",
-       "year": "2014",
-       "parties": "Alameda County; Chevron Energy Solutions; local air district",
-       "note": "Avoided the air permit outright by selecting a pre-certified fuel cell, and scoped the work as upgrades to an existing facility to use that exemption. The permitting problem was solved by technology choice, not by argument.",
-       "source_idx": 1
-      },
-      {
-       "name": "Borrego Springs microgrid phased air permit",
-       "year": "2024",
-       "parties": "San Diego Gas & Electric; local air district",
-       "note": "De-risked the schedule by splitting the diesel air permit into an Authority to Construct followed by a Permit to Operate, so construction could start before the final permit landed.",
-       "source_idx": 1
-      }
-     ],
-     "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centres happen to be.",
-     "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance programme — the same permitting relief, available to a hospital rather than only to a refinery.",
-     "blockers": [
-      "Potential to emit is computed from capacity, not expected use",
-      "Non-attainment areas apply extremely low triggering thresholds",
-      "Authority is delegated to state agencies that may be stricter than EPA"
-     ],
-     "sources": [
-      {
-       "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-       "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-       "quote": "assuming the generator operates continuously (8,760 hours per year) at its maximum rated capacity",
-       "status": "fetched"
-      },
-      {
-       "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-       "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-       "quote": "Selected an AHJ certified fuel cell to gain exemption from air permit",
-       "status": "fetched"
-      }
-     ],
-     "_from": "mech-economics-permitting.json"
     },
     {
      "id": "resiliency-as-a-service-microgrid-subscription",
@@ -3706,7 +3706,7 @@
      "id": "standby-charges",
      "group": "interconnection",
      "family": "utility-tariff",
-     "name": "Standby charges: the bill you keep paying after you generate your own power",
+     "name": "The bill you keep paying after you make your own power",
      "what_it_is": "A customer with on-site generation still pays the utility a monthly fee for standing ready to serve the whole load if the on-site plant trips. The fee is justified by cost causation and is usually sized off the customer's peak demand, which means a site that generates nearly all its own energy can still see a demand-based bill close to what it paid before. Standard standby tariffs were written for intermittent or unreliable on-site generation and give no credit for a resource that is actually firm.",
      "who_signs": "Host <-> utility, under the utility's filed standby tariff",
      "asset_owner": "unchanged",
