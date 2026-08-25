@@ -45,8 +45,71 @@
 - **low** · Sources tab: split the durable source register from dated developments (DOE
   reports-rail vs news-rail pattern) if a news stream ever gets added.
 - **low** · Cite the Alaska band to the AEA Power Cost Equalization statistical report
-  (primary) in addition to the current secondary reporting.
+  (primary) in addition to the current secondary reporting. (DONE — 2026-08-25, cited to the
+  Regulatory Commission of Alaska's own FY2024 order L2300184 rather than the AEA statistical
+  report, whose PDFs exceed the fetch size limit; the order carries the per-utility appendix.)
 - **low** · Sub-tabs for the Tracker's three buyer tracks if the row count grows: the
   track chips currently filter one list, which still reads fine at 16 rows. Costs,
   Market design, Policy and Sources got sub-tabs on 2026-08-23.
 
+## From the 2026-08-24/25 deep research pass
+
+- **high** · Cache and quote-verify every source that now ships. The pass added 111 records to
+  `data/instruments.json` and `data/benchmarks.json`, but only the handful promoted into
+  `costs.json` and `policy.json` have been through `tools/fetch_source.py` +
+  `tools/verify_quotes.py --cache`. 124 registered URLs are still not-in-cache. Until they are,
+  the site's own quote-lock gate cannot speak for the new rows. Run `fetch_source.py` from the
+  main session only — it writes a shared index and concurrent agents corrupt it.
+- **high** · Finish the four agents the session limit killed on 2026-08-25. Targets are recorded
+  verbatim in each partial file's `_meta.absences` (`_meta.incomplete: true`) and summarised in
+  `docs/RESUME-2026-08-25.md`: `mech-dockets.json` (2 of ~8 records — CT PURA 20-03-17, CT DEEP
+  per-site award chart, NJ BPU TCDER + the DCO Energy intersection ruling, CPUC 2025 SGIP
+  eligibility text, a 2025–26 large-load tariff); `mech-nuclear-structures.json` (6 of ~12 —
+  utility rate-basing, ARDP/Dow cost-share, heat-not-electricity contracts, and decommissioning
+  assurance / Price-Anderson / HALEU as contract terms); `apps-federal-awards.json` (FEMA
+  BRIC/HMGP and DOE ERA still open — use `tools/usaspending.py`, not web search).
+- **high** · The tooling survey of `pranava0x0`'s public repos never started —
+  `docs/tooling-survey-2026-08-24.md` does not exist. Scope the FERC document-audit tool, the
+  brownfields tool and the data-centre community-benefits tool. `ferc_elibrary.py` reads only
+  filing metadata, so anything that retrieves FERC *document text* is the highest-value adoption;
+  a brownfields dataset pairs directly with surplus interconnection, since both point at the same
+  retiring-industrial sites.
+- **med** · `site/data.js` is now 813 KB uncompressed, up from roughly 490 KB, because the two new
+  datasets carry long prose. The repo's own rule is to minimise page weight. Either split the
+  instruments and benchmarks payloads into lazily-fetched files loaded when their tab opens, or
+  trim `what_it_is`/`summary` at build time and keep the full text in `data/`. If lazy-loading,
+  cache the in-flight *promise*, not a boolean — a boolean set after the fetch resolves double-fetches
+  under concurrent callers.
+- **med** · The diesel group now carries 25 instruments against 2 for licensing. Twenty-five
+  disclosures is past scanning length even collapsed. Either sub-group them by `family`
+  (commercial contract / regulatory rule / utility tariff / public procurement) with a filter chip
+  row, or promote the strongest eight and move the rest behind a "more instruments" disclosure.
+- **med** · Fill the licensing group: it has 2 instruments because no agent was pointed at it.
+  The obvious instruments are the NRC pre-application docket, the DOE authorisation route under the
+  2025 executive orders, Part 53 vs Part 57 election, and the §104(c) non-profit research-reactor
+  pathway Penn State used.
+- **med** · Reconcile `data/benchmarks.json` sectors with the Applications tab's eight sectors.
+  Benchmarks use the five sectors this pass researched; Applications uses Compute, Mining, Electric
+  Utilities, Manufacturing, Oil & Gas, Transportation, Civic Infrastructure, Agriculture & Food.
+  Marine terminals sit inside Transportation and medical campuses inside Civic Infrastructure, so a
+  reader cannot currently get from a load band to the price that sector actually pays. Add a
+  sector-to-sector map and cross-link both ways.
+- **med** · Verify the surplus-interconnection census against megawatts, not filings. 35 executed
+  agreements is a count of documents; no filing description states the capacity inherited, so the
+  size distribution — the thing that decides whether a 1–20 MW reactor fits in the leftover
+  headroom — is unknown. Opening a sample of the agreements themselves would settle it.
+- **med** · Test that the two new datasets stay in sync with their research pass. `tools/merge_research.py
+  --check` already exits 1 on drift but nothing runs it; wire it into `tests/` so an edit to a
+  research file that never reaches `data/` fails CI, the same way the builders' sync gate works.
+- **low** · Re-run `tools/ferc_census.py` on further instrument phrases — "black start service
+  agreement", "provisional interconnection service", "replacement generation" — to see which other
+  instruments are actually in use. The script already flags single-docket years and capped lists.
+- **low** · No AHJ document accepting a non-diesel emergency power supply survived two passes, for
+  a hospital or a data centre. This is the single most valuable missing artefact for the diesel
+  group: it would convert the CMS argument from a reading of the waiver text into a precedent.
+  Worth a targeted pass at state hospital-licensing agencies (California HCAI is the likeliest,
+  given it certified Kaiser Ontario's battery as primary backup in April 2025).
+- **low** · Record the confirmed negative on the Batteries tab: no reactor vendor has signed
+  anything with any battery major as of 2026-08-24. The site currently states this as a `finding`
+  row; the research pass re-confirmed it across a second independent search, which is worth noting
+  so a third pass does not re-spend on it.
