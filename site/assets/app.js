@@ -802,7 +802,8 @@
 
   makeSubnav("sources", [{ id: "register", label: "Source register" },
                          { id: "coverage", label: "Field coverage" },
-                         { id: "gaps", label: "What is missing" }]);
+                         { id: "gaps", label: "What is missing" },
+                         { id: "about", label: "About" }]);
 
   /* boot: land on the panel the hash names, or the first. scroll:true beats
      the browser's native jump-to-anchor, which otherwise strands a deep link
