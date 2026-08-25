@@ -16,3 +16,34 @@ One row per subagent/workflow run: why, cost, verdict, and the cheaper route in 
 Retro discipline: after each run, verify the file landed, spot-check 2–3 quotes against
 their URLs, then fold the verified state into a deterministic gate (see
 tools/check_citations.py) so the verification never has to be re-bought.
+
+## 2026-08-24/25 — deep research pass: deal mechanisms + sector price benchmarks
+
+Ten agents in three waves against one `CONTRACT.md`. Wave 1 (6) returned complete; wave 2 (3)
+and the repo survey (1) were killed by a session limit mid-run.
+
+| # | Agent | Worked | Quality | ~tokens | Best alternative in hindsight |
+|---|---|---|---|---|---|
+| 1 | Diesel mechanisms | y | high — 13 records, 11 absences, found the Uptime-vs-EPA conflict and that **no host anywhere has removed its diesel** | 172K | none; this is the pass's best single result |
+| 2 | Battery mechanisms | y | high — 13 records; found CMS QSO-23-11-LSC already waives the generator-or-battery limit, and INL's optimiser wanting a 100 MWe battery on a 9.6 MWe reactor | 214K | none |
+| 3 | Interconnection | y | high — 12 records; **corrected a premise in its own prompt** (SGIP Fast Track caps synchronous machines at 2 MW, so 2–20 MW reactors get the full study) | 202K | none |
+| 4 | Remote + marine | y | high — 11 records; found the RCA per-utility order, a better price sheet than the AEA report the prompt named | 182K | none |
+| 5 | Medical + civic | y | high — 12 records; found civic critical facilities are 220–800 kW, an order of magnitude under a reactor | 158K | none |
+| 6 | Mining | y | high — 13 records; **falsified the prompt's premise** that this sector publishes contract prices (it publishes fuel volumes and capex; 7 of 7 PPAs withhold $/kWh) | 198K | none |
+| 7 | Docket recovery | partial | 2 of ~8 records before the kill | — | fire earlier in the window |
+| 8 | Federal awards | partial | 14 records; mining angle reported dry | — | should have used `tools/usaspending.py` from the start rather than web search |
+| 9 | Nuclear structures | partial | 6 of ~12 records | — | fire earlier in the window |
+| 10 | Repo survey | n | never started | — | non-research task; did not need to share the window with nine research agents |
+
+**What worked.** One shared contract file + a validator written before launch: zero parse failures,
+zero contract violations across 111 records from ten independent agents. Partitioning by entity with
+explicit skip-lists produced no cross-agent duplicates. Requiring `_meta.absences` turned four
+"failures" into a usable work list — the absences are what aimed wave 2 and what the resume doc runs on.
+Three agents contradicted premises stated in their own prompts, which is the behaviour worth paying for.
+
+**What to change.** (1) Launch order should put non-research and recovery agents *first*; they were
+cheapest and died last. (2) Nine concurrent research agents against one shared 5-hour pool is what
+caused the wall — serialise into two waves of four or five. (3) Tell agents which repo tools exist
+even when forbidding them from running the ones that write shared state: three independently gave up
+on FERC filings the repo can already fetch. (4) An agent's declared dead seam is a task for the
+orchestrator, not a closed question.
