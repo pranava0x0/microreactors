@@ -38,6 +38,7 @@ field coverage and the gap register roughly 90 screens below the fold.
 | `tools/build_data.py` | Bundles `data/*.json` → `site/data.js`, computes the headline figures and the source register. |
 | `tools/build_gaps.py` | Derives `data/gaps.json` (field coverage + next-pass plan) from the data. |
 | `tools/check_citations.py` | Claim-coverage scanner: any record whose prose carries a hard number must have a source, be registered uncited, or sit on a reasoned allowlist. Wired into the test suite. |
+| `tools/check_language.py` | Plain-language lint over authored copy: prose that narrates the interface, comments on the data, clears its throat, drifts formal, stacks hedges or piles up em dashes (DESIGN.md §11.2). Reuses `check_register`'s collectors and additionally reads the display strings hard-coded in `app.js`, which no other gate walks. |
 | `tools/check_links.py` | Liveness sweep over every cited URL (dead/blocked/live). Network-dependent, so run locally on demand, never in CI. |
 | `tools/fetch_source.py` | Fetch → cache → index a source document (URL + access date + SHA-256). `--from-file` for hosts that 403 non-browser clients. |
 | `tools/adams_search.py` | NRC ADAMS docket/full-text search (the only way to find NRC filings — web search does not index ADAMS). |
