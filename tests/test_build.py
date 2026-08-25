@@ -114,11 +114,18 @@ class BundleConsistency(unittest.TestCase):
     def test_built_stamp_is_data_derived(self):
         """The stamp must equal the max _meta.captured across data files —
         never the wall clock — or CI cannot enforce artifact sync."""
+        # Derived from the builder's own registry, never a second hand-typed list:
+        # a literal here goes stale the day a data file is added, and this test
+        # was already two files behind when that happened.
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+
         captured = []
-        for f in ("opportunities", "vendors", "costs", "sectors", "mechanisms", "policy"):
+        for f in build_data.FILES:
             meta = json.loads((ROOT / "data" / f"{f}.json").read_text()).get("_meta", {})
-            if meta.get("captured"):
+            if isinstance(meta.get("captured"), str) and meta["captured"]:
                 captured.append(meta["captured"])
+        self.assertTrue(captured, "no data file carries _meta.captured")
         self.assertEqual(self.MR["summary"]["built"], max(captured))
 
 

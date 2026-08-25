@@ -17,13 +17,17 @@ from urllib.parse import urlparse
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
-FILES = ["opportunities", "vendors", "costs", "sectors", "mechanisms", "policy", "deployment_sites", "gaps"]
+FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
+         "instruments", "deployment_sites", "gaps"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
 # URL is cited: a chip's number is a stable address into the Sources register,
 # never a per-row counter that restarts.
-CITE_ORDER = ["opportunities", "costs", "vendors", "sectors", "mechanisms", "policy", "deployment_sites", "gaps"]
+# benchmarks render on the Costs tab and instruments on the Policy tab, so each sits
+# beside the dataset it shares a tab with.
+CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mechanisms",
+              "policy", "instruments", "deployment_sites", "gaps"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -112,6 +116,13 @@ def main() -> int:
         "cited_loads": sum(1 for l in loads if l.get("sources")),
         "cited_rows": sum(1 for o in opps if o.get("sources")),
         "source_count": len(reg),
+        "instruments": sum(len(g["records"]) for g in bundle["instruments"]["groups"]),
+        "benchmarks": sum(len(s_["records"]) for s_ in bundle["benchmarks"]["sectors"]),
+        "benchmarks_priced": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                 for r in s_["records"]
+                                 if r.get("price") or r.get("capex") or r.get("displaced")),
+        "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                for r in s_["records"] if r.get("filings")),
         "land_pct": cov["land_acres"]["pct"],
         "filing_pct": cov["utility_filing"]["pct"],
         # Deployment-facing stats: how far the market has actually moved.

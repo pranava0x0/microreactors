@@ -1,0 +1,2160 @@
+{
+ "_meta": {
+  "captured": "2026-08-24",
+  "pass": "data/research/deep-2026-08-24",
+  "generated_by": "tools/merge_research.py",
+  "provenance": [
+   {
+    "file": "apps-federal-awards.json",
+    "kind": "case",
+    "records": 14,
+    "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DoD ESPC/UESC/utility-privatization vehicles) rather than press releases, so every record carries an obligated or total-potential contract value tied to a named site.",
+    "incomplete": true,
+    "absences": [
+     "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
+     "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
+     "FEMA BRIC and Hazard Mitigation Grant Program generator/microgrid awards: not retrieved. OpenFEMA datasets were not queried in this pass, so no named-site FEMA generator dollar values are in this file.",
+     "DOE Energy Improvements in Rural or Remote Areas (ERA): USAspending keyword 'Energy Improvements in Rural or Remote Areas' returned zero grant awards, so ERA site-level values are absent.",
+     "Off-grid mining & mineral processing: no federal award record with a named mine site and a generation dollar value was found; DOE MESC critical-minerals awards fund processing plants, not the power blocks, so nothing in that sector is recorded here.",
+     "No award record published a $/kWh energy price. Federal construction and ESPC awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex or contract value, never an energy rate.",
+     "Heat rate, fuel burn and annual generation are not in the award records; where a $/MWh comparison would be useful it could not be derived from the award's own numbers.",
+     "Agent terminated on a session limit part-way through; the mining angle was reported dry before it died."
+    ]
+   },
+   {
+    "file": "apps-medical-civic.json",
+    "kind": "case",
+    "records": 12,
+    "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
+    "incomplete": false,
+    "absences": [
+     "No published $/kWh, capacity fee or capex for the Pittsburgh International Airport 20-year Peoples Natural Gas contract - only 'no cost to the airport' and ~$1M first-year savings; the 2019 Allegheny County Airport Authority board resolution itself was not located.",
+     "No published $/kWh for the JFK New Terminal One EaaS agreement or the Montgomery County MD energy services agreement; both are disclosed only as 'no upfront capital cost'.",
+     "Hospital cost-of-outage per hour could not be sourced to a primary document. Figures circulating ($25,000/minute EHR downtime, Uptime Institute; ~$100,000/hour, ITIC) appear only in vendor blogs citing them second-hand. Dropped rather than cited.",
+     "The CT DEEP 'Chart of Microgrid Award Winners - All Rounds' PDF with per-site dollar amounts could not be retrieved; only round totals were verifiable ($18M pilot round, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4). No Connecticut record written.",
+     "Could not fetch the ORNL CHP Technical Assistance Partnership project profile for Texas Medical Center (TLS certificate failure) or the DOE Better Buildings implementation model for Kaiser Richmond (same failure); used a Burns & McDonnell case study PDF and The Planning Report instead.",
+     "Found no document in which an authority having jurisdiction accepted a non-diesel emergency power supply for a hospital under NFPA 110/NFPA 99. Every case examined kept diesel or batteries for the 10-second transfer: Baystate's 4.6 MW CHP still includes a black-start diesel, and Kaiser Ontario's 9 MWh battery buys only 10 hours.",
+     "No FEMA BRIC or HMGP award for a hospital or water-plant microgrid with a named site and dollar value surfaced in the searches run.",
+     "Kaiser Richmond battery capacity (reported elsewhere as 1 MWh) and total project cost beyond the $4.77M CEC grant are unverified.",
+     "Ohio State CHP nameplate of ~105 MW appears only in search summaries, not in a page I fetched; the fetched OSU page gives only the 8,000-ton cooling capacity, and the fetched cost source gives $278M rising to $300M.",
+     "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency centre) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
+     "Deer Island (Boston), Hyperion (Los Angeles) and Stickney (Chicago) wastewater plants were not researched to a numbers-plus-document standard within budget.",
+     "No state PUC docket, FERC filing or NRC accession applies to any of these deals - they are procurement awards, board resolutions, grant awards and bilateral PPAs, not rate filings. Only the Ohio State board action is recorded in `filings`.",
+     "EIA CBECS electricity intensity for inpatient hospitals in kWh per square foot (commonly quoted as 31 kWh/sq ft from CBECS 2012) is not present on the CBECS 2018 health-care page that was fetched; only average floorspace of 264,800 sq ft and the 32% space-heating share were verified."
+    ]
+   },
+   {
+    "file": "apps-mining.json",
+    "kind": "case",
+    "records": 13,
+    "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
+    "incomplete": false,
+    "absences": [
+     "No executed off-grid mine PPA in this file publishes its contracted tariff. Agnew, DeGrussa, Essakane, Syama, Salares Norte, Kathleen Valley and Mt Weld all disclose term, capacity and sometimes capex; not one discloses $/kWh. The only usable price anchors are third-party: TUGLIQ's federal completion report ($0.25-$0.60/kWh industrial self-generation in the Canadian North, $1.20/kWh high) and NRCan's 20-60% LCOE advantage claim.",
+     "The primary target - a verbatim power-price assumption from an NI 43-101 or S-K 1300 technical report - was not captured. Graphite One's April 2025 Graphite Creek feasibility-study PDF exceeded the fetch size limit; docs.nrel.gov did not resolve on repeated attempts; the SEC EDGAR full-text search API returned 403; northernminer.com's Costmine power-cost article is paywalled. Searched for but did not verify: power-price assumptions in the technical reports for Donlin Gold (novagold.com returned 403), Meadowbank/Meliadine, Ekati, Voisey's Bay, Eleonore and Fort Knox.",
+     "Red Dog solar capex is unpublished - Teck's spokesperson declined to give an estimate - and the PPA terms with TUGLIQ were still under negotiation as of the March 2026 coverage. Red Dog's own $/kWh generation cost was not found in any Teck filing or Alaska state document.",
+     "Kivalliq Hydro-Fibre Link: the 150 MW line rating appears only in secondary coverage. The federal Question Period Note confirms the 1,200 km route and 44.5 million litres/yr of diesel displacement but states no MW figure, so no C$/kW was computed from it.",
+     "Fekola Phase 1 capex of approximately US$38 million comes from trade coverage, not from the fetched B2Gold release, which discloses no capital cost or dollar saving for either phase.",
+     "Agnico Eagle's Meliadine wind farm was searched as an executed deal and is not one: the Nunavut Impact Review Board rejected the 11-turbine proposal in November 2023 over caribou impacts and again rejected a change of plans, and the only cost figure found (C$60-75 million) dates from an earlier three-turbine phase. No record written.",
+     "Documented negatives on mine-site nuclear could not be captured verbatim: mining.com's 'SMRs are still not on miners' shopping lists' and Idaho National Laboratory's mining-microreactor pages both returned 403.",
+     "No signed supply or construction contract between a miner and a microreactor vendor was found anywhere. What exists is MOU-stage activity concentrated in uranium (Uranium Energy Corp / Radiant, NANO Nuclear / UrAmerica) plus KGHM's large-SMR permit - i.e. the transaction this project is looking for has not happened in mining.",
+     "Angle 4 (mineral processing) partly failed: DOE MESC and DPA Title III award values for US critical-minerals processing (Kings Mountain $150m, American Battery Technology $115m, Standard Lithium/Equinor up to $225m) are published, but no MW load or power price for any of those facilities was found, so none met the numbers bar as a power record."
+    ]
+   },
+   {
+    "file": "apps-remote-marine.json",
+    "kind": "case",
+    "records": 11,
+    "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
+    "incomplete": false,
+    "absences": [
+     "DIU Advanced Nuclear Power for Installations (ANPI): eight companies were declared eligible for Other Transaction awards in April 2025, but no per-company contract value or site has been published. Dropped for lack of numbers.",
+     "Eielson AFB / Oklo contract price: no dollar value or $/kWh rate has been published. Reporting states the rate is to be settled in negotiation and the award is still a Notice of Intent to Award, not an executed contract. A widely repeated '$100 million or more over 30 years' figure traces to Air Force Times and was not found in any fetched primary document, so it is excluded.",
+     "Port of Los Angeles EPA Clean Ports award of '$412 million' appeared only in search summaries and the port's own release returned HTTP 403; EPA's own fetched release named NY/NJ ($344.1M) and Oakland ($322.2M) as the largest. The POLA figure is excluded as unverified.",
+     "Port of Long Beach load forecast: the port's own board documents quantifying its future electrical demand in MW were not located; only a 'triple or quadruple by 2035' statement in trade press, which carries no MW figure.",
+     "Alaska Village Electric Cooperative and Cordova Electric Cooperative appear in the RCA schedules but no separate signed deal with published numbers was found for either.",
+     "Islands and territories: no Puerto Rico, US Virgin Islands, Hawaii or Guam microgrid/IPP contract with a published $/kWh was verified within the search budget. Port of San Juan appears only as a MARAD wharf-reconstruction award.",
+     "Antarctic and research stations: no McMurdo or NSF power contract with published cost figures was found.",
+     "Telecom, radar and pipeline-compressor outposts: two searches surfaced no contract with real numbers; angle abandoned per the bail rule.",
+     "Cargo-handling-equipment load studies: no port or utility published a study stating the MW added by converting RTG cranes, yard tractors and reefers at a named terminal. The EPA and MARAD awards give equipment counts but not the resulting electrical demand.",
+     "No port authority board resolution studying nuclear power was found.",
+     "FY2025 and FY2026 PCE statistical reports exist but the by-community PDFs exceeded the fetch size limit; the FY2024 RCA rate order used here is the most recent regulator document actually read end to end."
+    ]
+   },
+   {
+    "file": "mech-batteries.json",
+    "kind": "mechanism",
+    "records": 13,
+    "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
+    "incomplete": false,
+    "absences": [
+     "No executed contract, LOI, MOU or press release pairing ANY nuclear reactor with a battery storage system could be verified. Searched Westinghouse eVinci, Oklo, X-energy, Radiant and BWXT against Tesla, Fluence, Wartsila, Sungrow and Powin; nothing found in company press rooms, SEC filings or trade press. This is a confirmed negative: as of 2026-08-24 no battery major has signed anything nuclear, and no reactor vendor markets a paired storage product.",
+     "No black-start award price is public. ERCOT's Black Start Services RFP for 2027-2029 (responses due 2026-02-15) is published as a market notice, but awarded bid prices are reviewed inside the Black Start Working Group and not disclosed, so the revenue for that service could not be quantified.",
+     "The Kapolei Energy Storage contract price with Hawaiian Electric is not public; only the derived bill impact ($0.28/month average over the 20-year contract) was found, and only via secondary reporting of the HECO filing rather than the filing itself.",
+     "No CMS-surveyed Health Care Microgrid System has been identified by name. The waiver (QSO-23-11-LSC) is real and its election process is documented, but no facility was found that has been publicly recorded as electing it at survey, so the practical acceptance record is unverified.",
+     "No facility was found where a battery alone was accepted as the entire legally required emergency power supply under NFPA 111 with a documented SEPSS class/type designation. Every real case found (Kaiser Richmond 2017, Kaiser Ontario 2025, Blue Lake Rancheria) pairs storage with either a retained diesel plant, a fuel cell, or both.",
+     "Energy-storage-as-a-service shared-savings contracts (Stem and similar) could not be pinned to any published $/month or shared-savings percentage; two searches returned only marketing claims of 20-30% bill reduction with no contracted figures, so no record was written.",
+     "Solar-storage hybrid ELCC could not be quoted for PJM's current delivery years because PJM itself reports the class as 'Small Sample Size' for both 2026/2027 and 2027/2028 — the hybrid accreditation precedent does not exist statistically, only under the superseded methodology.",
+     "PacifiCorp's published Energy Storage Agreement leaves the Storage Price (Exhibit K) and the guaranteed availability, capacity and round-trip-efficiency values (Exhibit A) blank as bid variables, so the template's guarantee architecture is documented but its numbers are not.",
+     "Montgomery County's microgrid battery capacity, contract term and $/kWh price are not published; only annual kWh output (about 11 million kWh/yr across two sites) and the no-upfront-cost structure could be verified.",
+     "No CAISO, ERCOT, MISO or NYISO tariff provision was found that defines a capacity accreditation class for a firm generator paired with storage; the only accreditation classes found treat generation and storage separately, or treat hybrids as solar-hosted."
+    ]
+   },
+   {
+    "file": "mech-diesel.json",
+    "kind": "mechanism",
+    "records": 13,
+    "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
+    "incomplete": false,
+    "absences": [
+     "No published price for ANY resiliency-as-a-service contract. Enchanted Rock, PowerSecure and Scale Microgrid Solutions all disclose the STRUCTURE (set-up fee + monthly subscription) and never the number. The Microsoft San Jose contract value is not public. Every $/kWh and $/kW-month in this file therefore comes from tariffs, grants or leases, not from a commercial resilience deal.",
+     "Could not fetch any primary PUCT document for the Texas Backup Power Package Program. Both ftp.puc.texas.gov and interchange.puc.texas.gov failed TLS certificate verification in this environment, so Project No. 59024, the $500/kW grant, the 2.5 MW cap, the 48-hour rule and the four-technology definition are all sourced to a secondary (Texas Solar Energy Society) page. The rule text itself is unread.",
+     "Could not find a single AHJ document accepting a non-rotating energy converter as the NFPA 110 Level 1 Type 10 emergency power supply for a DATA CENTRE. The only certified real-world example located anywhere was a hospital battery (California HCAI certifying Kaiser Permanente Ontario's battery as primary backup, April 2025). Trade blogs describe hybrid battery+diesel Type 10 architectures as an emerging 2025 practice but name no facility, no AHJ and no date.",
+     "No insurance carrier document and no rating-agency document requiring a diesel standby fleet was found. Angle 7 produced exactly one real artefact: Uptime Institute's engine-generator rating rule. Whether insurers independently mandate diesel remains unverified.",
+     "Could not verify the Bloom Energy / Yale New Haven Lawrence + Memorial Hospital 1.75 MW fuel cell figures (August 2025) in any fetched primary page. Dropped rather than cited.",
+     "Could not fetch the DoD 2018 Briefing to Congress on Utility Infrastructure (TLS failure) or the NAVFAC Beaufort award notice (403). The 61 privatization contracts, the $251.4M/50-year Beaufort figure and the $14.5M 12-installation Army electrical conveyance are unverified search-summary figures.",
+     "Could not fetch the SEPA large-load tariff analysis (403). The '29 large-load tariffs approved in 2025 vs 14 in 2018-2024' and the AEP Ohio 85% minimum-demand / 12-year / 25 MW terms are unverified.",
+     "Could not fetch the ComEd Bronzeville ICC filings; the $25M ratepayer / $5M DOE / $8M+$17M phase split and Docket 17-0331 are from search summaries only.",
+     "No ESPC or UESC task order was found whose stated scope was REPLACING diesel backup. Every federal microgrid located (Parris Island, Fort Huachuca) keeps the diesel fleet and displaces its run hours. This appears to be the general pattern, not a search failure — the same is true of the Kaiser hospital microgrid.",
+     "EPA DERA grants were not researched (angle 6 was satisfied by TBPP and SGIP before reaching it). DERA funds engine replacement and repower, which is a different question from standby-power displacement.",
+     "No verified example found of ANY host that removed its diesel generators outright. In every dated precedent in this file the alternative takes the first-response or run-hours role and diesel is demoted to secondary/extended-outage backup."
+    ]
+   },
+   {
+    "file": "mech-dockets.json",
+    "kind": "mechanism",
+    "records": 2,
+    "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
+    "incomplete": true,
+    "absences": [
+     "Agent terminated on a session limit part-way through. Targets NOT reached: CT PURA Docket 20-03-17 decision, CT DEEP per-site microgrid award chart, NJ BPU TCDER + DCO Energy ruling, CPUC 2025 SGIP handbook eligibility text, a 2025-26 large-load tariff."
+    ]
+   },
+   {
+    "file": "mech-economics-permitting.json",
+    "kind": "mechanism",
+    "records": 6,
+    "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
+    "incomplete": false,
+    "absences": [
+     "No standby-tariff rate sheet was read in the original; LBNL describes the structure but publishes no $/kW-month figures. A follow-up pass should pull two or three actual standby tariffs and price them against a 5 MW reactor.",
+     "The Atlantic City outage-risk standby tariff is described as a proposal (2018); whether New Jersey ever adopted it was not established here.",
+     "No source found that prices what a nuclear unit's standby charge would be, because no utility tariff yet contemplates one."
+    ]
+   },
+   {
+    "file": "mech-ferc-census.json",
+    "kind": "mechanism",
+    "records": 2,
+    "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
+    "incomplete": false,
+    "absences": [
+     "The Small Generator Interconnection Agreement query returned 811 hits against a 200 cap, so no year-shape is reported for it here; a capped list is a floor, not a total.",
+     "None of the underlying letter orders was opened: FERC serves them as DOCX transmittals and the census is built from the search API's own description strings.",
+     "The census counts filings, not megawatts. No filing description states the MW inherited, so the size distribution of surplus interconnection is unknown from this method.",
+     "No reactor of any size appears in either census. That is the finding, but it is an absence in FERC's record rather than a positively-sourced fact."
+    ]
+   },
+   {
+    "file": "mech-interconnection.json",
+    "kind": "mechanism",
+    "records": 12,
+    "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
+    "incomplete": false,
+    "absences": [
+     "No EXECUTED surplus interconnection service agreement could be verified with named parties, MW and a date. FERC eLibrary (ferc.gov) and SEC EDGAR both return HTTP 403 to automated fetch, so no primary filing was retrievable; only aggregate counts survived verification (44 projects online in MISO, 22 in SPP, 8 PJM applications with 2 approved).",
+     "No published STUDY COST or network-upgrade cost specific to a surplus interconnection request was found in any RTO tariff or filing. The claim that surplus customers 'pay no network upgrade cost' is a description of the mechanism, not a verified dollar figure.",
+     "No named, executed flexible/curtailable INTERCONNECTION agreement with MW and price was found. Enchanted Rock returned nothing in this context; Google's flexible capacity is published only as 'gigawatt scale across multiple utility territories' with no agreement, MW or price. The flexible-interconnection angle produced rulemakings, not contracts.",
+     "Could not verify what happened to the pre-existing 300 MW Talen/Amazon Susquehanna co-located arrangement after FERC's 1 November 2024 rejection of the 480 MW amendment.",
+     "The text of FERC's 18 December 2025 co-location order (193 FERC para. 61,217) and the 18 June 2026 show cause orders could not be read directly - ferc.gov HTML and White & Case both 403'd. The FERC E-1 slide deck PDF was retrievable and is the primary source used; compliance deadlines come from a law-firm summary.",
+     "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
+     "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
+     "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
+     "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report."
+    ]
+   },
+   {
+    "file": "mech-nuclear-structures.json",
+    "kind": "mechanism",
+    "records": 6,
+    "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
+    "incomplete": true,
+    "absences": [
+     "PRIMARY ABSENCE: no contracted $/MWh price for any microreactor (1-20 MW) PPA has ever been published. The only such document filed with a regulator - the Oklo/Equinix letter of intent filed as SEC Exhibit 10.19 - has its price term literally redacted to '####'. Every $/MWh number in circulation for a microreactor is a vendor projection, not a signed price.",
+     "Could not verify any dollar value for any Defense Innovation Unit ANPI Other Transaction award; DIU's own announcement states no dollar figures and no ownership model.",
+     "Could not verify the value or price terms of the Oklo/Eielson AFB contract; DLA Energy issued only a Notice of Intent to Award, and no executed contract or price appears in any public source.",
+     "Could not find a disclosed deposit amount or unit price for the Radiant/Equinix 20-microreactor preorder, the NANO Nuclear/Supermicro arrangement, or any Last Energy customer contract.",
+     "Could not find a state utility commission order that has actually approved rate-basing of a microreactor (1-20 MW) - all rate-base precedents found are 300 MW-class SMRs or larger.",
+     "Could not verify a published price basis ($/klb steam, $/MMBtu) for the X-energy/Dow Long Mott process-heat offtake; the heat price is not disclosed.",
+     "Could not locate a microreactor decommissioning funding assurance amount in an NRC filing; the NRC's certification amounts in 10 CFR 50.75 are keyed to reactor classes far larger than 20 MWe.",
+     "Agent terminated on a session limit part-way through. Angles not completed: utility rate-basing of a small reactor, cost-share instruments (ARDP, X-energy/Dow), heat-not-electricity contracts, and the reactor-specific contract terms (decommissioning assurance, Price-Anderson, HALEU)."
+    ]
+   },
+   {
+    "file": "mech-selling-structure.json",
+    "kind": "mechanism",
+    "records": 7,
+    "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
+    "incomplete": false,
+    "absences": [
+     "Report No. 1 (Foundational Issues) was read in the same pass and its findings are in mech-economics-permitting.json, not here",
+     "No dollar figures: this series is a legal guide and does not price any of the structures it describes. Costs must come from the case records.",
+     "No state has yet been found that names nuclear specifically in a microgrid or third-party-sale statute; the structures below are technology-neutral by default, which is a finding rather than a gap",
+     "The Coventry PURA docket (20-03-17) and the ComEd ICC petition (2018) are cited via LBNL rather than read in the original — a follow-up pass should pull both from the state dockets"
+    ]
+   }
+  ],
+  "purpose": "The price a reactor has to beat, taken from deals that were actually signed. Each row is a real contract, award or rate order with a number attached and, where one exists, the filing that proves it."
+ },
+ "sectors": [
+  {
+   "sector": "Remote outposts & microgrids",
+   "records": [
+    {
+     "id": "doyon-utilities-alaska-utility-privatization",
+     "sector": "Remote outposts & microgrids",
+     "name": "Doyon Utilities 50-year utility privatization, Alaska Army installations (SP0600-07-C-8263)",
+     "country": "US",
+     "region": "Fort Wainwright, Alaska (plus Fort Greely and JBER-Richardson under the Doyon Utilities program)",
+     "parties": {
+      "host": "U.S. Army, contracting through DLA Energy",
+      "provider": "Doyon Utilities, LLC (Alaska Native corporation joint venture)",
+      "utility": "Doyon Utilities, LLC — regulated by the Regulatory Commission of Alaska"
+     },
+     "instrument": "utility tariff",
+     "signed": "2007-09",
+     "term_years": 51,
+     "capacity": "Full electric, heat, water and wastewater utility systems at Alaska Army installations; capacity not stated in the award record",
+     "capex": "$894,733,810 obligated to date against a base-and-all-options value of $3,082,072,958; period of performance 2007-09-28 to 2058-08-14",
+     "displaced": "Government ownership and operation of installation utility systems in interior Alaska, where the incumbent generation is coal and oil-fired central plant",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Utility service contract for utility privatization, firm fixed price",
+       "id": "PIID SP0600-07-C-8263",
+       "date": "2007-09-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
+      },
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Companion utility privatization contract, same recipient and date",
+       "id": "PIID SP0600-07-C-8261",
+       "date": "2007-09-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "DLA Energy awarded Doyon Utilities a utility privatization contract on 2007-09-28 covering Army installation utility systems in Alaska, with a period of performance that runs to 2058-08-14 — a fifty-one year term. The award record shows $894,733,810 already obligated and a base-and-all-options value of $3,082,072,958, making this by a wide margin the largest single utility vehicle surfaced in this sweep. A companion contract to the same recipient on the same day (SP0600-07-C-8261) carries a further $212,665,748 obligated. The contractor is a regulated utility: its rates at these installations are set by the Regulatory Commission of Alaska, not by the contract alone.",
+     "microreactor_read": "This is the instrument a microreactor should be sold into rather than around: a single counterparty already holds a fifty-year, three-billion-dollar franchise to supply heat and power to Alaska Army installations, and its generation is coal and oil in a place where fuel arrives by rail and barge. The reactor does not need to beat a $/kW number to enter — it needs to become an asset inside a rate base a regulator already approves, and the addressable line is the roughly $60M a year of obligations this one contract has averaged since 2007.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_SP060007C8263 (PIID SP0600-07-C-8263), Doyon Utilities LLC, Fort Wainwright AK",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
+       "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "parris-island-espc-microgrid",
+     "sector": "Remote outposts & microgrids",
+     "name": "MCRD Parris Island site-wide microgrid ESPC (N39430-17-F-1901)",
+     "country": "US",
+     "region": "Parris Island, South Carolina",
+     "parties": {
+      "host": "U.S. Marine Corps / NAVFAC EXWC",
+      "provider": "Ameresco, Inc."
+     },
+     "instrument": "ESPC/UESC",
+     "signed": "2016-12",
+     "term_years": 25,
+     "capacity": "3.5 MW natural-gas CHP + 6.7 MW-DC solar PV + 8.0 MWh battery + existing diesel backup, under one microgrid controller; announced as 10 MW of new on-site generation",
+     "price": "$91.1 million self-funding ESPC investment as announced by the contractor",
+     "capex": "$66,631,952 obligated to date against a base-and-all-options value of $212,716,674 (USAspending, award last modified 2026-05-01)",
+     "displaced": "An end-of-life central steam plant and grid purchases; announced as a 79% reduction in the depot's utility energy demand",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29029",
+       "id": "PIID N3943017F1901",
+       "date": "2016-12-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/"
+      }
+     ],
+     "summary": "NAVFAC EXWC issued Ameresco a task order under the DOE ESPC IDIQ on 2016-12-28 to build and then operate a site-wide microgrid at Marine Corps Recruit Depot Parris Island, with a period of performance running to 2041-11-30. Ameresco announced the deal as a $91.1 million self-funding ESPC covering 10 MW of new on-site generation, a 3.5 MW gas CHP plant replacing the end-of-life steam plant, 6.7 MW-DC of solar PV and an 8.0 MWh battery. The federal award record tells a different story about size: $66,631,952 has been obligated so far and the contract's base-and-all-options value is $212,716,674 — 2.3x the announced $91.1M, because the ESPC's later years are performance-period service payments, not construction. The host pays nothing up front and repays out of guaranteed savings across roughly 25 years.",
+     "microreactor_read": "Two numbers matter to a microreactor seller here and they are far apart: the capital comparison is $91.1M for about 10 MW of mixed generation, i.e. roughly $9,100/kW nameplate and about $26,000/kW if you count only the 3.5 MW of firm dispatchable CHP; the commercial comparison is the $212.7M of lifecycle contract value a 25-year vehicle at one recruit depot can actually carry. A 5-10 MW microreactor priced against the $91.1M sticker looks expensive and priced against the $212.7M lifecycle envelope looks financeable — which is why the instrument, not the capex, is the thing to copy.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
+       "quote": "\"total_obligation\": 66631952.0 ... \"base_and_all_options\": 212716674.0",
+       "status": "fetched"
+      },
+      {
+       "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
+       "url": "https://ir.ameresco.com/news-events/press-releases/detail/244/ameresco-to-build-microgrid-integrating-onsite-generation",
+       "quote": "$91.1 million self-funding Energy Savings Performance Contract (ESPC)",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "guantanamo-bay-lng-espc",
+     "sector": "Remote outposts & microgrids",
+     "name": "Naval Station Guantanamo Bay 20 MW LNG combined-cycle plant ESPC (N39430-19-F-9909)",
+     "country": "US",
+     "region": "Naval Station Guantanamo Bay, Cuba",
+     "parties": {
+      "host": "U.S. Navy / NAVFAC Southeast",
+      "provider": "Siemens Government Technologies, Inc."
+     },
+     "instrument": "ESPC/UESC",
+     "signed": "2019-07",
+     "term_years": 24,
+     "capacity": "20 MW LNG dual-fuel combined-cycle plant, plus a 13.7 MW solar facility; 15 existing diesel generators retained for outages and peaks",
+     "price": "Projected annual energy savings of $24.6 million over a 22-year performance period",
+     "capex": "$368.8 million for the power plant itself; $828.8 million announced ESPC value; USAspending shows $101,059,504 obligated against a base-and-all-options value of $927,391,394 running to 2043-04-24",
+     "displaced": "Diesel generation on an isolated island base — LNG substitution announced at approximately $9 million a year in fuel cost savings versus diesel, and a 27.4 percent cut in annual fuel consumption",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29041, firm fixed price",
+       "id": "PIID N3943019F9909",
+       "date": "2019-07-24",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
+      }
+     ],
+     "summary": "In July 2019 NAVFAC Southeast awarded Siemens Government Technologies an ESPC task order — announced at $828.8 million and issued for 25 years of construction plus operation — to replace diesel generation at Naval Station Guantanamo Bay with a dual-fuel LNG combined-cycle plant and a solar field. The plant was commissioned on 2023-09-07 and is rated 20 MW; the plant alone cost $368.8 million. The federal award record shows $101,059,504 obligated so far against a base-and-all-options value of $927,391,394 with a potential end date of 2043-04-24, so the contract has grown roughly $100M past its announced value and only about 11 percent of the ceiling has been obligated. The 15 pre-existing diesel generators were not retired; they were kept for outages and peaks.",
+     "microreactor_read": "Guantanamo is the strongest capex-per-MW argument in this file and it runs the reactor's way: $368.8M for 20 MW of island generation is $18,440/kW, and that is for a gas plant whose fuel still has to arrive by ship. A 1-20 MW microreactor competing at an isolated base does not need to beat $5,400/kW — at a site with no pipeline and no grid tie it needs to beat roughly $18,000/kW plus a fuel logistics chain, against a counterfactual the Navy itself valued at $24.6M a year in savings over 22 years.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
+       "quote": "\"total_obligation\": 101059504.3 ... \"base_and_all_options\": 927391394.3",
+       "status": "fetched"
+      },
+      {
+       "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
+       "url": "https://www.dvidshub.net/news/453129/naval-station-guantanamo-bay-commissions-new-energy-efficient-power-plant",
+       "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "alaska-pce-fy2024-base-rate-order",
+     "sector": "Remote outposts & microgrids",
+     "name": "Alaska Power Cost Equalization - FY2024 base rate order and per-utility cost of service",
+     "country": "US",
+     "region": "Statewide rural Alaska",
+     "parties": {
+      "host": "193 rural Alaska communities (~82,000 residents)",
+      "provider": "Alaska Energy Authority (program administrator)",
+      "utility": "Regulatory Commission of Alaska (rate-setter)"
+     },
+     "instrument": "utility tariff",
+     "signed": "2023-06",
+     "capacity": "Statewide programme covering the diesel-dominated rural utilities; individual utilities range from ~50 MWh/yr (Lime Village) to ~19.7 GWh/yr (Kotzebue Electric Association) of test-period sales",
+     "price": "PCE base rate set at $0.1935/kWh effective 2023-07-01 (down from $0.1958/kWh); statutory maximum eligible cost is $1.00/kWh less the base rate, i.e. $0.8065/kWh of PCE credit",
+     "displaced": "RCA Appendix 1 cost-of-service calculations for FY2024: Igiugig Village Council total power cost $1.0944/kWh of which fuel/purchased power is $0.8140/kWh; Kokhanok Village Council $1.0209/kWh total, $0.6498/kWh fuel; Chitina Electric $1.0669/kWh total, $0.4015/kWh fuel; Lime Village $1.9487/kWh total, $1.5288/kWh fuel; Galena $0.6242/kWh total, $0.3813/kWh fuel; Kotzebue Electric Association $0.4079/kWh total, $0.1885/kWh fuel",
+     "filings": [
+      {
+       "forum": "State PUC",
+       "type": "Letter Order - notice of PCE amount changes from base rate change, with Schedule BKC-1 and per-utility Appendix 1 cost calculations",
+       "id": "L2300184 (docket U-23-010)",
+       "date": "2023-06-26",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+      }
+     ],
+     "summary": "The Regulatory Commission of Alaska set the FY2024 Power Cost Equalization base rate at $0.1935/kWh on 13 June 2023 and, a week later, recalculated the per-kWh PCE credit for every participating rural utility. The attached Appendix 1 sheets are the single best published price-to-beat dataset in US remote power: for each utility they state test-period kWh sales, non-fuel power cost per kWh, fuel/purchased-power cost per kWh, and total power cost per kWh. Total power costs run from about $0.41/kWh at wind-equipped Kotzebue to $1.9487/kWh at Lime Village, with fuel alone above $0.81/kWh at Igiugig and $1.52/kWh at Lime Village. The state pays the gap above the base rate up to a statutory ceiling of $1.00/kWh of total cost, so any community whose costs exceed roughly $1.00/kWh is already eating unsubsidised cost.",
+     "microreactor_read": "This is the price sheet. A 1-20 MW reactor selling into rural Alaska must beat a delivered cost of service that the regulator itself certifies at $0.62-$1.95/kWh, with the fuel-only component alone at $0.38-$1.53/kWh in the villages - but the loads are tiny (Igiugig 272 MWh/yr, Kokhanok 359 MWh/yr), so only aggregated or hub communities like Kotzebue (19.7 GWh/yr, and already down at $0.41/kWh because of wind) present a load a reactor could actually serve. The commercially interesting band is the mid-size hub at $0.60-$1.00/kWh, not the cheapest and not the smallest.",
+     "sources": [
+      {
+       "label": "Regulatory Commission of Alaska - Letter Order L2300184, FY2024 PCE base rate change",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+       "quote": "On June 13, 2023, the Commission established a new base rate of 19.35 cents per kilowatt-hour (kWh) for PCE calculations.",
+       "status": "fetched"
+      },
+      {
+       "label": "Alaska Energy Authority - Power Cost Equalization programme page",
+       "url": "https://akenergyauthority.org/What-We-Do/Power-Cost-Equalization",
+       "quote": "serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "kokhanok-era-microgrid-2024",
+     "sector": "Remote outposts & microgrids",
+     "name": "Kokhanok Paradigm Shift - DOE OCED Energy Improvements in Rural or Remote Areas award",
+     "country": "US",
+     "region": "Kokhanok, Alaska",
+     "parties": {
+      "host": "Kokhanok Village Council",
+      "provider": "US DOE Office of Clean Energy Demonstrations (ERA programme)",
+      "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
+     },
+     "instrument": "grant-funded",
+     "signed": "2024-08",
+     "capacity": "1 MW battery energy storage system plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage, added to an existing diesel microgrid serving ~170 residents",
+     "capex": "Nearly $5 million federal cost share from DOE OCED",
+     "displaced": "Anticipated 70% of the local power plant's diesel use. RCA FY2024 Appendix 1 for Kokhanok Village Council: 358,953 kWh test-period sales, total power cost $1.0209/kWh, of which fuel/purchased power is $0.6498/kWh.",
+     "filings": [
+      {
+       "forum": "State PUC",
+       "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+       "id": "L2300184 (docket U-23-010)",
+       "date": "2023-06-26",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+      }
+     ],
+     "summary": "DOE's Office of Clean Energy Demonstrations announced roughly $5 million for the Kokhanok Village Council to bolt a 1 MW battery, 100 kW of solar, a 100 kW wind turbine and electric thermal storage onto the village's diesel microgrid, targeting displacement of about 70% of the powerhouse's diesel within two years. The load being served is genuinely tiny: the regulator's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load. Against that, the village's certified cost of service is $1.0209/kWh, of which $0.6498/kWh is fuel. So the federal grant is buying about $5 million of hardware to cut a fuel bill of roughly $233,000 a year.",
+     "microreactor_read": "Kokhanok shows what the remote-village market actually pays and how small it is: $5 million of public capital against a 41 kW average load and a $0.65/kWh fuel bill. A microreactor sized at 1 MW would be 20x oversized for this village, so the reachable price signal is not the village itself but the fact that grant-makers will fund roughly $5,000 per installed kW of non-diesel capacity to displace $0.65/kWh diesel - a capex benchmark a reactor must land near, since the alternative here is already funded.",
+     "sources": [
+      {
+       "label": "US DOE Office of Clean Energy Demonstrations - Award Wednesdays, August 14, 2024",
+       "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
+       "quote": "displacing an anticipated 70% of the local power plant's diesel use",
+       "status": "fetched"
+      },
+      {
+       "label": "Regulatory Commission of Alaska - Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+       "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "aberdeen-proving-ground-microgrid-backup-power",
+     "sector": "Remote outposts & microgrids",
+     "name": "Aberdeen Proving Ground microgrid and backup power (W912QR25CA034)",
+     "country": "US",
+     "region": "Aberdeen Proving Ground, Harford County, Maryland",
+     "parties": {
+      "host": "U.S. Army, contracting through USACE Louisville District",
+      "provider": "City Light & Power Aberdeen, LLC",
+      "utility": "City Light & Power (installation utility privatization contractor)"
+     },
+     "instrument": "design-build",
+     "signed": "2025-09",
+     "term_years": 4,
+     "capacity": "Installation microgrid plus backup power; MW rating not stated in the award record",
+     "capex": "$28,550,078 obligated against a base-and-all-options value of $30,700,239; period of performance 2025-09-26 to 2029-05-18, potential end 2031-08-17",
+     "displaced": "Grid-only supply at an Army installation",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, PSC Y1NZ construction of other utilities",
+       "id": "PIID W912QR25CA034",
+       "date": "2025-09-26",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "USACE Louisville District awarded City Light & Power Aberdeen $28,550,078 on 2025-09-26 for a microgrid and backup power at Aberdeen Proving Ground, with $30,700,239 of total potential value and a potential end date of 2031-08-17. The recipient is notable: City Light & Power is the installation's utility privatization contractor, and the same corporate family holds the parallel microgrid awards at Joint Base Lewis-McChord ($33,506,686 and $28,047,244) and Fort Riley ($24,201,003). The Army is routing installation microgrid construction through the entities that already own the distribution systems rather than through open construction competition.",
+     "microreactor_read": "The buyer of on-base generation is increasingly the privatized utility that owns the wires, not the Army directly, and that counterparty is signing $24-34M microgrid contracts at four installations at once. A microreactor developer selling to the Army should be selling to City Light & Power and its peers, because those firms already hold the site, the distribution assets and the long-term utility contract that can carry a reactor's capital cost across decades — the Army's own construction line cannot.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_W912QR25CA034 (PIID W912QR25CA034), City Light & Power Aberdeen LLC",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/",
+       "quote": "ABERDEEN PROVING GROUND MICROGRID AND BACKUP POWER",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "camp-buehring-resilient-power-microgrid",
+     "sector": "Remote outposts & microgrids",
+     "name": "Camp Buehring ARCENT Readiness Training Center resilient power microgrid (W912QR26CA007)",
+     "country": "KW",
+     "region": "Camp Buehring, Kuwait",
+     "parties": {
+      "host": "U.S. Army Central (ARCENT), contracting through USACE Louisville District",
+      "provider": "AGCO-PS JV"
+     },
+     "instrument": "design-build",
+     "signed": "2026-01",
+     "term_years": 3,
+     "capacity": "1.5 MW diesel generator + 700 kW PV + 1.5 MW / 1.5 MWh battery + 1,500 kVA transformer, synchronised under one microgrid controller",
+     "capex": "$5,222,331 obligated; base and all options identical, period of performance 2026-01-23 to 2028-08-04",
+     "displaced": "Unbacked grid supply at a forward training site; the diesel is added, not removed",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, firm fixed price",
+       "id": "PIID W912QR26CA007",
+       "date": "2026-01-23",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "USACE Louisville District awarded AGCO-PS JV $5,222,331 on 2026-01-23 to supply resilient power to the ARCENT Readiness Training Center at Camp Buehring, Kuwait, running to 2028-08-04. Unusually for a federal award, the description itemises the whole power block: a 1,500 kVA transformer, a 1.5 MW diesel generator, 700 kW of solar PV and a 1.5 MW / 1.5 MWh battery, all synchronised. This is the smallest complete microgrid in this file and the only one whose full equipment list and price are both in the award record, which makes it the cleanest unit-cost benchmark available for a small forward site.",
+     "microreactor_read": "Against 1.5 MW of firm diesel capacity the whole package costs $5.22M, so the Army's blended price for a small resilient power block including storage, solar and interconnection is about $3,480 per kW of firm capacity — the toughest number in this file for a reactor to beat, and it is the number that applies at exactly the 1-5 MW size microreactors target. A microreactor wins this comparison only on fuel: diesel delivered to a Kuwait training camp, not the $5.2M of steel.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_W912QR26CA007 (PIID W912QR26CA007), AGCO-PS JV",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/",
+       "quote": "NEW 1500 KVA TRANSFORMER, 1.5MW DIESEL GENERATOR AND INSTALL A MG SYSTEM INCLUDING 700 KW PV SOLAR PANELS AND A 1.5MW/1.5MWH BESS",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "fort-stewart-10mw-generation-plant-microgrid",
+     "sector": "Remote outposts & microgrids",
+     "name": "Fort Stewart 10 MW generation plant with microgrid controls (W912HN26CA001)",
+     "country": "US",
+     "region": "Fort Stewart, Georgia",
+     "parties": {
+      "host": "U.S. Army / USACE Savannah District",
+      "provider": "David Boland Inc."
+     },
+     "instrument": "design-build",
+     "signed": "2025-11",
+     "term_years": 3,
+     "capacity": "10 MW generation plant with microgrid controls",
+     "capex": "$54,333,598 obligated; base and all options also $54,333,598 (firm, no unexercised options)",
+     "displaced": "Grid dependence at an Army installation; the award buys islandable on-site generation rather than replacing an existing plant",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, PSC Y1BG, NAICS 237130",
+       "id": "PIID W912HN26CA001",
+       "date": "2025-11-03",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "USACE Savannah District awarded David Boland Inc. a definitive construction contract on 2025-11-03 to build a 10 MW generation plant with microgrid controls at Fort Stewart, Georgia, with a period of performance running to 2028-12-15. The award record shows $54,333,598 obligated and an identical base-and-all-options value, so this is the whole contract, not a first tranche. Place of performance is recorded as FORT STEWART, LIBERTY COUNTY, GA 31315. The award is a construction contract only — no fuel, no operations, no long-term service.",
+     "microreactor_read": "This is the cleanest federal price stamp available for on-site firm generation at a defended site: $54.33M for 10 MW is $5,433/kW of installed capacity, engineering and construction included, with fuel and O&M still to come on top. A 1-20 MW microreactor sold into an Army installation has to land near or below $5,400/kW installed to be argued on capital cost alone, and its pitch has to be the fuel and O&M line the Boland contract does not cover.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_W912HN26CA001 (PIID W912HN26CA001), David Boland Inc.",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/",
+       "quote": "CONSTRUCT A 10MW GENERATION PLANT, WITH MICROGRID CONTROLS",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "qulliq-nunavut-interim-rates-2025",
+     "sector": "Remote outposts & microgrids",
+     "name": "Qulliq Energy Corporation - 2025 interim electricity rates, Nunavut",
+     "country": "CA",
+     "region": "Nunavut (territory-wide)",
+     "parties": {
+      "host": "Nunavut ratepayers",
+      "provider": "Qulliq Energy Corporation (territorial Crown utility)",
+      "utility": "Utility Rates Review Council (URRC), Minister responsible"
+     },
+     "instrument": "utility tariff",
+     "signed": "2025-04",
+     "capacity": "Territory-wide diesel-fired generation; the application covers QEC's revenue requirement for fiscal 2025-2026",
+     "price": "Interim rates effective 1 April 2025: residential non-government from $0.6733 to $0.7494 per kWh; residential government from $1.0221 to $1.1300 per kWh; commercial non-government from $0.5554 to $0.6208 per kWh; commercial government from $0.9518 to $1.0533 per kWh. Energy rate increase of 9.5%.",
+     "filings": [
+      {
+       "forum": "Utility Rates Review Council (Nunavut)",
+       "type": "General Rate Application, interim rates authorised",
+       "id": "QEC 2025-2026 GRA",
+       "date": "2024-11-29",
+       "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application"
+      }
+     ],
+     "summary": "Qulliq Energy Corporation filed its General Rate Application on 29 November 2024 and the Utility Rates Review Council authorised interim rates from 1 April 2025, raising the energy rate 9.5 percent. The published tariff is the hardest available Canadian number for remote diesel power: residential non-government energy goes to $0.7494/kWh and the government class to $1.1300/kWh, with commercial classes at $0.6208 and $1.0533/kWh. These are regulated retail energy rates for a territory whose generation is diesel throughout, and they are set by a rate-setting body rather than estimated by a study.",
+     "microreactor_read": "Nunavut publishes the number a reactor developer needs: a regulated retail energy rate of $0.62 to $1.13 per kWh depending on class, on a territory-wide diesel fleet. Even at a 20-year levelised cost of $250-350/MWh, a 1-20 MW reactor undercuts every one of those classes by a factor of two or more - the binding constraints in Nunavut are community size, marine sealift logistics and the absence of a Canadian microreactor licence, not price.",
+     "sources": [
+      {
+       "label": "Qulliq Energy Corporation - Interim Electricity Rates effective April 1, 2025 (General Rate Application)",
+       "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application",
+       "quote": "Residential Non-Government: From $0.6733 to $0.7494 per kWh",
+       "status": "fetched"
+      },
+      {
+       "label": "Qulliq Energy Corporation - QEC's General Rate Application",
+       "url": "https://www.qec.nu.ca/qecs-general-rate-application",
+       "quote": "rate increases to meet QEC's revenue requirement for 2025-2026",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "eielson-afb-oklo-microreactor-noita",
+     "sector": "Remote outposts & microgrids",
+     "name": "Eielson Air Force Base microreactor pilot - Notice of Intent to Award to Oklo",
+     "country": "US",
+     "region": "Eielson AFB, Alaska",
+     "parties": {
+      "host": "Department of the Air Force / 354th Fighter Wing",
+      "provider": "Oklo Inc. (Aurora powerhouse)",
+      "utility": "Defense Logistics Agency Energy (contracting agency)"
+     },
+     "instrument": "PPA",
+     "signed": "2025-06",
+     "term_years": 30,
+     "capacity": "Up to 5 MWe plus steam heat, alongside an existing coal-fired plant with a maximum capacity of 23 MW",
+     "price": "Not disclosed. Reporting states the Air Force will settle the price of the contract and the rate it pays for power during negotiations.",
+     "displaced": "Supplements Eielson's existing coal-fired power plant (23 MW max capacity) and the base's winter heating fuel burn",
+     "filings": [],
+     "summary": "On 11 June 2025 the Defense Logistics Agency Energy, acting for the Department of the Air Force, issued a Notice of Intent to Award to Oklo for the DoD's first commercial microreactor. The structure is a build-own-operate arrangement: Oklo would design, construct, own and operate the plant and sell electricity and steam to the base under a long-term, firm-fixed-price power purchase agreement reported at 30 years. Capacity is up to 5 MWe, sitting alongside Eielson's existing 23 MW coal-fired plant. No price has been published; the rate for power is explicitly left to contract negotiation, and the award is contingent on Oklo obtaining an NRC licence.",
+     "microreactor_read": "This is the cleanest template for selling a 1-20 MW reactor into a remote outpost: the host buys energy, not a reactor, on a 30-year firm-fixed-price PPA from a private owner-operator, contracted by a central buying agency (DLA Energy) rather than the base. The commercially important gap is that no price is published, so the deal proves the instrument exists but sets no benchmark - and the reactor is sized at 5 MW against a 23 MW incumbent, i.e. it is a supplement, not a replacement.",
+     "sources": [
+      {
+       "label": "Oklo Inc. - Oklo Selected as Intended Awardee to Provide Clean, Reliable Power to Eielson Air Force Base in Alaska",
+       "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+       "quote": "Oklo would design, construct, own, and operate the power plant, delivering both electricity and heat",
+       "status": "fetched"
+      },
+      {
+       "label": "Air & Space Forces Magazine - Air Force Moves Ahead with Military's First Microreactor",
+       "url": "https://www.airandspaceforces.com/air-force-microreactor-eielson-alaska/",
+       "quote": "supplement Eielson's existing coal-fired power plant, which has a max capacity of 23 megawatts",
+       "status": "fetched"
+      },
+      {
+       "label": "POWER Magazine - Oklo Retapped for Alaska Air Force Microreactor",
+       "url": "https://www.powermag.com/oklo-retapped-for-alaska-air-force-microreactor-proposes-nuclear-fleet-wide-licensing-framework/",
+       "quote": "deliver both electricity and heat under a 30-year, firm-fixed-price PPA",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "project-pele-bwxt-2022",
+     "sector": "Remote outposts & microgrids",
+     "name": "Project Pele - DoD Strategic Capabilities Office transportable microreactor prototype",
+     "country": "US",
+     "region": "Idaho National Laboratory, Idaho (test site); built in Lynchburg VA and Euclid OH",
+     "parties": {
+      "host": "US DoD Strategic Capabilities Office",
+      "provider": "BWXT Advanced Technologies LLC"
+     },
+     "instrument": "design-build",
+     "signed": "2022-06",
+     "capacity": "High-temperature gas-cooled transportable microreactor shipped in 20-foot ISO CONEX containers. BWXT's own 2025 statement calls it a 1.5-megawatt demonstration microreactor; the 2022 award was reported as a 1 MWe to 5 MWe design.",
+     "capex": "Cost-type contract of approximately $300 million, depending on options selected",
+     "displaced": "Diesel fuel convoys to forward and remote military sites; the reactor is designed to run up to three years without refuelling",
+     "filings": [],
+     "summary": "In June 2022 the DoD's Strategic Capabilities Office selected BWXT Advanced Technologies to build the Project Pele transportable microreactor prototype under a cost-type contract worth approximately $300 million depending on options. The unit is a high-temperature gas-cooled reactor rated 1 to 5 MWe, packaged into 20-foot ISO-compliant CONEX containers, designed to reach operation within 72 hours of on-site assembly and to be removed in under seven days. Core fabrication began in 2025 and the unit is expected to produce electricity at Idaho National Laboratory in 2028, roughly four years later than the original 2024 delivery target.",
+     "microreactor_read": "Pele prices the first-of-a-kind transportable microreactor at roughly $300 million for 1-5 MWe, i.e. $60-300 million per MW - one to two orders of magnitude above anything a remote community pays. It is a capability purchase, not an energy purchase, and it is the number a commercial microreactor pitch has to explicitly distance itself from: Pele proves transportability and the DoD's willingness to fund it, and simultaneously proves that prototype economics do not touch even the $1.95/kWh worst-case rural Alaska cost of service.",
+     "sources": [
+      {
+       "label": "POWER Magazine - DOD Picks BWXT Design for Project Pele Prototype Nuclear Microreactor",
+       "url": "https://www.powermag.com/dod-picks-bwxt-to-manufacture-project-pele-prototype-nuclear-microreactor/",
+       "quote": "approximately $300 million, depending on options selected",
+       "status": "fetched"
+      },
+      {
+       "label": "BWXT - Project Pele Begins Taking Shape with Start of Core Manufacturing",
+       "url": "https://www.bwxt.com/project-pele-begins-taking-shape-with-start-of-core-manufacturing/",
+       "quote": "Pele is a 1.5-megawatt demonstration microreactor for the Department of Defense Strategic Capabilities Office.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    }
+   ]
+  },
+  {
+   "sector": "Off-grid mining & mineral processing",
+   "records": [
+    {
+     "id": "raglan-mine-wind-storage-tugliq-glencore",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Glencore Raglan Mine Renewable Electricity Smart-Grid (Raglan I / Raglan 2.0)",
+     "country": "CA",
+     "region": "Nunavik, Quebec (Ungava Peninsula)",
+     "parties": {
+      "host": "Glencore (Raglan nickel mine)",
+      "provider": "TUGLIQ Energy Co.",
+      "utility": "None - off-grid Arctic microgrid"
+     },
+     "instrument": "grant-funded demonstration plus third-party-owned generation",
+     "signed": "2013",
+     "term_years": 20,
+     "capacity": "3 MW Arctic-rated wind turbine (Raglan I, 2014) plus a second 3 MW turbine (Raglan 2.0); storage is a 200 kW / 1.5 kWh flywheel, a 200 kW / 250 kWh Li-ion battery and a 200 kW / 1 MWh hydrogen loop (315 kW electrolyser + 198 kW fuel cell)",
+     "price": "Northern electricity rates of $1.20/kWh high to $0.20/kWh low; industrial self-generators average $0.25-$0.60/kWh (TUGLIQ/ecoEII completion report)",
+     "capex": "About C$20 million for Raglan I; C$7.8 million federal ecoEII contribution, plus C$3.9 million federal EIP contribution and C$7.1 million announced for Raglan 2.0 turbines",
+     "displaced": "Diesel at a mine burning roughly 60 million litres/yr; the first turbine abated 2.4 million litres in 18 months and over 5 million litres across three years; projected savings of C$41 million in fuel and O&M over the turbine's 20-year life",
+     "filings": [
+      {
+       "forum": "Natural Resources Canada - ecoENERGY Innovation Initiative",
+       "type": "Demonstration Component public completion report",
+       "id": "GC 128296",
+       "date": "2016-11-11",
+       "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
+      },
+      {
+       "forum": "Natural Resources Canada - Emerging Innovations / funding partnerships",
+       "type": "Federal contribution record",
+       "id": "Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+       "date": "2024-12-23",
+       "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid"
+      }
+     ],
+     "summary": "The single most useful disclosure in this sector. TUGLIQ's federally funded completion report for the Raglan wind-storage pilot states the northern power price band outright: rates range from $1.20/kWh at the high end to $0.20/kWh at the low end, and industrial self-generators - i.e. mines running their own diesel plants - average $0.25 to $0.60/kWh even with grouped purchasing. Against that, a C$20 million, 3 MW turbine with flywheel, lithium and hydrogen storage was projected to return C$41 million in fuel and O&M savings over 20 years at a mine burning ~60 million litres of diesel a year. Ottawa funded C$7.8 million of the pilot and returned with C$3.9 million and a further C$7.1 million for the Raglan 2.0 expansion.",
+     "microreactor_read": "This is the number to beat, from a Government of Canada report rather than a vendor deck: $0.25-$0.60/kWh for an industrial self-generator in the Canadian North, with the tail up to $1.20/kWh. A 5 MW microreactor selling at even $0.30/kWh into a Raglan-class site clears the low end of that band, and the Raglan precedent shows the miner will let a third party own the asset and take federal money to de-risk the first unit. The binding constraint is not price - it is that Raglan's own report frames micro-grid collapse (ventilation loss at -40C) as the reason northern operators distrust new generation, so a reactor must prove it firms the grid rather than adding a new failure mode.",
+     "sources": [
+      {
+       "label": "TUGLIQ Energy Co. / ecoENERGY Innovation Initiative - Glencore RAGLAN Mine Renewable Electricity Smart-Grid Pilot Demonstration, Public Completion Report GC 128296",
+       "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+       "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
+       "status": "fetched"
+      },
+      {
+       "label": "Natural Resources Canada - Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+       "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid",
+       "quote": "60%-90% diesel displacement at a Northern mine",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "kghm-nuscale-voygr-6-poland-copper",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "KGHM Polska Miedz - NuScale VOYGR-6 SMR for copper mining and smelting",
+     "country": "PL",
+     "region": "Lower Silesia, Poland",
+     "parties": {
+      "host": "KGHM Polska Miedz S.A. (copper mines, smelters and refineries)",
+      "provider": "NuScale Power",
+      "utility": "Polish national grid"
+     },
+     "instrument": "Early Works Agreement plus Task Order; state decision-in-principle obtained",
+     "signed": "2022-02",
+     "capacity": "VOYGR-6 plant: 462 MWe from six 77 MWe NuScale Power Modules",
+     "filings": [
+      {
+       "forum": "SEC",
+       "type": "NuScale Power Corp Form 8-K exhibit (KGHM press release)",
+       "id": "NuScale Power Corp 8-K, FY2022",
+       "date": "2022-09-07",
+       "url": "https://www.sec.gov/Archives/edgar/data/1822966/000182296622000068/kghmpressrelease.htm"
+      },
+      {
+       "forum": "Polish Ministry of Climate and Environment",
+       "type": "Decision-in-principle (first administrative permit for a nuclear facility in Poland)",
+       "id": "KGHM SMR decision-in-principle",
+       "date": "2023-07-13",
+       "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant"
+      }
+     ],
+     "summary": "The only mining company anywhere to have taken a nuclear project through a national administrative permit. KGHM - a copper miner that also runs smelters and refineries - signed with NuScale in February 2022, executed a Task Order and Statement of Commencement under an Early Works Agreement in September 2022 at the Karpacz Economic Forum, applied to Poland's National Atomic Energy Agency for a 462 MWe six-module plant, and received the decision-in-principle in July 2023, the first step in Poland's permit chain for nuclear facilities. KGHM publicly denied reports in November 2023 that NuScale had terminated the arrangement. No construction contract or price has been published.",
+     "microreactor_read": "The instructive part is the size: the miner that actually went nuclear specified 462 MWe, not 5 or 20, because its load is smelting and refining rather than a mill on a diesel microgrid. Mineral processing - not mining - is where the megawatts are, and it is usually grid-connected, so the reactor competes against a wholesale tariff rather than the $0.25-$0.60/kWh diesel band. For a 1-20 MW unit the read is negative on this precedent and positive on the pattern: process heat and refinery load justify nuclear at a miner's board, while a pit and a mill alone have not yet done so anywhere.",
+     "sources": [
+      {
+       "label": "NuScale Power - NuScale Power and KGHM Sign Task Order to Initiate the Deployment of First Small Modular Reactor in Poland",
+       "url": "https://www.nuscalepower.com/press-releases/2022/nuscale-and-kghm-sign-task-order-to-initiate-the-deployment-of-first-smr-in-poland",
+       "quote": "the first NuScale VOYGR SMR power plant deployment in Poland and Central Europe",
+       "status": "fetched"
+      },
+      {
+       "label": "KGHM Polska Miedz - KGHM has received the basic decision regarding the construction of a small modular reactor (SMR) power plant",
+       "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant",
+       "quote": "six modules, each with a capacity of 77 MW",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "smr-for-mining-canada-nrcan-20mwe-cost-band",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Natural Resources Canada - SMRs for Mining (national addressable-market and cost band)",
+     "country": "CA",
+     "region": "Canada, off-grid mine sites",
+     "parties": {
+      "host": "24 identified current and potential off-grid Canadian mines",
+      "provider": "Canada's SMR Action Plan participants",
+      "utility": "None - off-grid"
+     },
+     "instrument": "public procurement / government programme",
+     "signed": "2020-12",
+     "capacity": "SMR module range from 300 MWe down to 3 MWe per module for micro-SMRs; mining-relevant unit sized at 20 MWe",
+     "capex": "First-of-a-kind units suitable for mining estimated at C$200-350 million for a 20 MWe SMR",
+     "price": "Estimated 20-60% cost advantage in levelized cost of electricity over diesel",
+     "displaced": "Diesel generation at off-grid, remote and northern mines and adjacent communities",
+     "filings": [
+      {
+       "forum": "Natural Resources Canada (Government of Canada)",
+       "type": "Programme page - Small Modular Reactors (SMRs) for Mining",
+       "id": "Canada's SMR Action Plan (launched December 2020)",
+       "date": "2020-12",
+       "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining"
+      }
+     ],
+     "summary": "The Canadian federal government has already sized this market and published the price. NRCan counts 24 current and potential off-grid mines in Canada suitable for SMR deployment, puts a first-of-a-kind 20 MWe mining SMR at C$200-350 million, and claims a 20-60% LCOE advantage over diesel. That capex band is C$10,000-17,500 per kW installed - an order of magnitude above the ~A$3.2m/MW that bought Agnew's hybrid microgrid - which is precisely why the claimed advantage rests on the diesel price rather than on capital cost.",
+     "microreactor_read": "Cross-referenced with the Raglan disclosure, this is the whole business case in two numbers: NRCan's C$200-350m for 20 MWe against a mine paying $0.25-$0.60/kWh for self-generated diesel power. A 20 MWe unit at 90% capacity factor sells ~158 GWh/yr, so at the $0.35/kWh midpoint of the industrial self-generation band it grosses ~C$55m/yr - the FOAK capital is recovered inside a decade only if the site actually runs at that price and that load factor. The market is 24 sites, not hundreds, and NRCan names it.",
+     "sources": [
+      {
+       "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining",
+       "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
+       "quote": "First-of-a-kind units suitable for mining are estimated to cost in the order of $200-350M for a 20 MWe SMR",
+       "status": "fetched"
+      },
+      {
+       "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining (addressable sites)",
+       "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
+       "quote": "Recognized 24 current and potential off-grid mines in Canada that might be suitable for SMR deployment",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "degrussa-solar-battery-juwi-neoen-sandfire",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "DeGrussa Copper-Gold Mine Solar + Battery",
+     "country": "AU",
+     "region": "DeGrussa, Western Australia (~900 km NE of Perth)",
+     "parties": {
+      "host": "Sandfire Resources (DeGrussa copper-gold mine)",
+      "provider": "juwi (developer/operator), Neoen (equity owner)",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2015-07",
+     "capacity": "10.6 MW solar PV (34,080 single-axis-tracking panels) + 6 MW lithium-ion battery, integrated with the existing 19 MW diesel-fired station",
+     "capex": "A$40 million total, funded with A$20.9 million ARENA recoupable grant and up to A$15 million CEFC debt",
+     "price": "Fixed-rate solar PPA priced below the mine's historical diesel generation cost (rate not published)",
+     "displaced": "About 20% of the mine's diesel consumption, roughly 5 million litres per year, and ~12,000 t CO2/yr",
+     "filings": [
+      {
+       "forum": "Clean Energy Finance Corporation (Australian Government) media release",
+       "type": "Debt finance commitment",
+       "id": "CEFC finances major solar storage project at remote mine",
+       "date": "2015-07-15",
+       "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/"
+      }
+     ],
+     "summary": "The first large off-grid solar-plus-storage build at an Australian mine. juwi developed and operated it, Neoen took the equity, and Sandfire signed a fixed-price PPA rather than buying the plant - the whole A$40m sat off the miner's balance sheet. Two Australian government bodies carried more than half the capital: A$20.9m as an ARENA recoupable grant and up to A$15m of CEFC debt. The CEFC's own release states the pricing test plainly: Sandfire buys the solar at a fixed rate lower than the historical cost of its diesel power. Commissioned June 2016; the array was later relocated when the mine closed.",
+     "microreactor_read": "The signable form here is a fixed $/kWh below the incumbent diesel cost, with the developer carrying capex and the miner carrying nothing but an offtake. That is a microreactor-shaped deal, except two-thirds of DeGrussa's economics came from public money (A$35.9m of A$40m in grant plus concessional debt), which is the honest read: at a remote Australian mine the private hurdle was not cleared on diesel displacement alone.",
+     "sources": [
+      {
+       "label": "CEFC - CEFC finances major solar storage project at remote mine",
+       "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/",
+       "quote": "Sandfire Resources will purchase the solar power generated at a fixed rate that is lower than the historical cost of diesel-generated power",
+       "status": "fetched"
+      },
+      {
+       "label": "ARENA - DeGrussa Solar Project record",
+       "url": "https://arena.gov.au/projects/degrussa-solar-project/",
+       "quote": "$20.9 million from the Australian Renewable Energy Agency",
+       "status": "snippet-only"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "kivalliq-hydro-fibre-link-agnico-nukik",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Kivalliq Hydro-Fibre Link (transmission alternative to on-site generation)",
+     "country": "CA",
+     "region": "Gillam, Manitoba to Arviat / Rankin Inlet / Baker Lake, Nunavut",
+     "parties": {
+      "host": "Agnico Eagle (Meadowbank Complex, Meliadine mine) plus five Kivalliq communities",
+      "provider": "Nukik Corp. (Kivalliq Inuit Association / Sakku Investments)",
+      "utility": "Qulliq Energy Corporation, Manitoba Hydro"
+     },
+     "instrument": "MOU (technical collaboration and commercial discussions)",
+     "signed": "2025",
+     "capacity": "1,200 km overhead high-voltage transmission line from Manitoba to Nunavut, plus fibre. Secondary coverage cites a 150 MW rating; the federal Question Period Note does not state a MW figure",
+     "capex": "C$3.2 billion estimated (revised up from C$1.2 billion in 2019)",
+     "displaced": "Roughly 44.5 million litres of diesel per year - about 11 million litres across five communities and about 33.5 million litres at the Meadowbank gold mine alone",
+     "filings": [
+      {
+       "forum": "Nunavut Legislative Assembly",
+       "type": "Ministerial disclosure of revised project cost",
+       "id": "Statement by John Main, minister responsible for Qulliq Energy Corp.",
+       "date": "2025-06-02",
+       "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/"
+      }
+     ],
+     "summary": "The direct competitor to a microreactor at Canada's most diesel-exposed mines is a wire, and it is priced. Nunavut's minister responsible for Qulliq Energy told the legislature in June 2025 that the Kivalliq Hydro-Fibre Link now costs an estimated C$3.2 billion, up from C$1.2 billion in 2019, for a 1,200 km line from Gillam, Manitoba to five Kivalliq communities, completion pushed to 2032. Agnico Eagle and the Inuit-owned proponent Nukik signed an MOU to work through the technical case and formalise commercial discussions. Meadowbank alone burns about 33.5 million litres of diesel a year - the mine is the anchor load that makes the line bankable.",
+     "microreactor_read": "The reactor's competitor at Meadowbank and Meliadine is a C$3.2 billion wire that does not arrive until 2032 - and the mine, at about 33.5 of the 44.5 million litres of displaced diesel, is three-quarters of its justification. Priced against NRCan's C$200-350m for a 20 MWe mining SMR, a handful of on-site units would cover the mine's load for a small fraction of the line's cost and years sooner. What the reactor cannot buy is the rest of the package: the line also takes five Inuit communities off diesel under Inuit ownership, which is what is actually mobilising the public money.",
+     "sources": [
+      {
+       "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B",
+       "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
+       "quote": "$3.2 billion instead of the initial estimate of $1.2 billion from 2019",
+       "status": "fetched"
+      },
+      {
+       "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B (route)",
+       "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
+       "quote": "1,200-kilometre high-voltage transmission line connecting Gillam, Man., to Arviat, Whale Cove, Rankin Inlet, Chesterfield Inlet and Baker Lake",
+       "status": "fetched"
+      },
+      {
+       "label": "Government of Canada (CIRNAC) - Question Period Note: Kivalliq Hydro-Fibre Link",
+       "url": "https://search.open.canada.ca/qpnotes/record/aandc-aadnc,NA-2020-QP-0012",
+       "quote": "44.5 million litres of diesel annually",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "agnew-gold-mine-hybrid-microgrid-edl",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Agnew Gold Mine Hybrid Renewable Microgrid",
+     "country": "AU",
+     "region": "Agnew, Western Australia (Goldfields-Esperance)",
+     "parties": {
+      "host": "Gold Fields (Agnew Gold Mine)",
+      "provider": "EDL (Energy Developments Ltd)",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2019",
+     "term_years": 10,
+     "capacity": "18 MW wind (5 turbines) + 4 MW solar (~10,000 panels) + 13 MW / 4 MWh battery + 16-25 MW gas/diesel engine station; ~47-56 MW total",
+     "capex": "A$111.6 million total project cost, including A$13.5 million ARENA grant",
+     "displaced": "Diesel/gas generation on an isolated mine microgrid; forecast up to 60% renewable share and ~40,000 tCO2e/yr avoided",
+     "filings": [
+      {
+       "forum": "Australian Renewable Energy Agency (ARENA) project record",
+       "type": "Advancing Renewables Program funding record",
+       "id": "Agnew Renewable Energy Microgrid",
+       "date": "2023-01-30",
+       "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/"
+      }
+     ],
+     "summary": "Gold Fields did not build or own the power station at Agnew. EDL built, owns and operates the 18 MW wind / 4 MW solar / 13 MW-4 MWh battery / gas-engine hybrid microgrid and sells power to the mine under a 10-year agreement, with ARENA contributing A$13.5m of the A$111.6m project cost. Wind turbines went in on an off-grid mine site for the first time in Australia. The microgrid started operating in May 2020 and the full hybrid was completed 30 January 2023, running at roughly 50-60% renewable share and up to 85% in good conditions.",
+     "microreactor_read": "This is the exact contracting slot a microreactor would occupy: third-party-owned generation behind the fence, sold to the miner under a ~10-year term with no utility in the transaction. The capital benchmark is blunt - A$111.6m bought ~35 MW of firm-plus-renewable nameplate at Agnew, i.e. roughly A$3.2m/MW installed, and the reactor has to beat the mine's residual gas/diesel energy cost over a term the miner will not extend past its reserve life. Mine life, not reactor life, sets the term.",
+     "sources": [
+      {
+       "label": "ARENA - Agnew Renewable Energy Microgrid project record",
+       "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/",
+       "quote": "deliver up to 60% renewable energy to the Agnew mine and reduce the mine's carbon emissions by some 40,000 tCO2e/year",
+       "status": "fetched"
+      },
+      {
+       "label": "EDL - Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
+       "url": "https://edlenergy.com/project/agnew/",
+       "quote": "EDL owns and operates the Agnew Hybrid Renewable Microgrid",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "fekola-solar-battery-b2gold-owner-built",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Fekola Mine Solar + Battery (Phase 1 and Phase 2)",
+     "country": "ML",
+     "region": "Fekola, western Mali",
+     "parties": {
+      "host": "B2Gold (Fekola gold mine)",
+      "provider": "B2Gold - owner-built and owner-operated",
+      "utility": "None - off-grid"
+     },
+     "instrument": "owner-built (no PPA)",
+     "signed": "2020",
+     "capacity": "Phase 1: 36 MWp solar + 17 MW battery alongside the site HFO plant. Phase 2 (complete Q4 2024, operational January 2025): +22 MW solar and +12.7 MWh battery, for 52 MW solar and 27.7 MWh battery total",
+     "capex": "Approximately US$38 million for Phase 1",
+     "displaced": "Phase 1 saved just over 13 million litres of HFO per year; after Phase 2 the plant reduces HFO consumption by an estimated 20 million litres per year and supplies about 30% of site electricity demand",
+     "filings": [
+      {
+       "forum": "SEC / SEDAR company news release",
+       "type": "News release",
+       "id": "B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
+       "date": "2025-03-18",
+       "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx"
+      }
+     ],
+     "summary": "The counter-example to Agnew, DeGrussa and Essakane: B2Gold built and owns the Fekola solar plant itself rather than signing a PPA. Phase 1 was ~US$38 million for 36 MWp of solar and 17 MW of battery, saving just over 13 million litres of HFO a year. Phase 2, completed in Q4 2024 and operational in January 2025, added 22 MW of solar and 12.7 MWh of battery, taking the site to 52 MW / 27.7 MWh and about 20 million litres of HFO avoided per year - but only ~30% of the site's total electricity demand. The other 70% is still thermal.",
+     "microreactor_read": "The number that matters for a reactor pitch is the 70% residual: even after US$38m-plus of solar and two expansions, Fekola still burns HFO for roughly 30 million-plus litres a year of the load, because solar cannot serve a 24-hour mill. A 20 MWe reactor addresses exactly that residual baseload. It also shows a mid-tier miner will spend its own capital on site power rather than sign a PPA - which means a vendor must be able to sell an owned unit, not only an energy-services contract.",
+     "sources": [
+      {
+       "label": "B2Gold - B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
+       "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
+       "quote": "reduce the annual consumption of heavy fuel oil (\"HFO\") by an estimated 20 million liters",
+       "status": "fetched"
+      },
+      {
+       "label": "B2Gold - Fekola Phase 2 completion (share of demand)",
+       "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
+       "quote": "expected to supply approximately 30% of the site's total electricity demand",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "kathleen-valley-lithium-zenith-95mw-ppa",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Kathleen Valley Lithium Project Hybrid Power Station",
+     "country": "AU",
+     "region": "Kathleen Valley, Western Australia (Goldfields-Esperance)",
+     "parties": {
+      "host": "Liontown Resources (Kathleen Valley lithium mine)",
+      "provider": "Zenith Energy (build-own-operate)",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2022-12",
+     "term_years": 15,
+     "capacity": "95 MW total: 30 MW wind, 16 MWp fixed-axis solar, 17 MW / 19 MWh BESS, 27 MW gas generation, 5 MW diesel standby",
+     "displaced": "Targets at least 60% renewable energy at project start-up; the remainder is gas and diesel",
+     "filings": [
+      {
+       "forum": "ASX company announcement (via Zenith Energy release)",
+       "type": "Power Purchase Agreement announcement",
+       "id": "Liontown Resources signs PPA with Zenith Energy",
+       "date": "2022-12-21",
+       "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/"
+      }
+     ],
+     "summary": "Australia's largest off-grid renewable hybrid power station, contracted rather than owned: Zenith builds, owns and operates 95 MW of mixed generation at Kathleen Valley and sells to Liontown for 15 years from construction completion. Export Finance Australia provided a A$25 million guarantee facility as part of the PPA security package - the miner's credit, not the developer's, is what made the deal financeable. Even in a design targeting 60%+ renewables, 32 MW of the 95 MW is gas and diesel, sized for the mill's firm load. Zenith repeated the template in July 2024 at Lynas' Mt Weld rare-earths mine: ~65 MW (24 MW wind, 7 MW solar, 12 MW/12 MWh BESS, 17 MW gas, 5 MW standby diesel) on a 15-year PPA targeting up to ~70% renewables - and even there, 22 MW of firm thermal generation stays.",
+     "microreactor_read": "The addressable slice is the 27 MW gas plus 5 MW diesel that sits under a 60%-renewable design - one to two 20 MWe units, not the whole station. Two structural facts a reactor vendor must match: a 15-year term is normal here, and the offtaker's counterparty risk was bridged by a sovereign export-credit guarantee (A$25m from Export Finance Australia), which is the same instrument a first-of-a-kind reactor at a single-asset miner would need. The same 20-plus MW firm residual shows up at Mt Weld, so the addressable unit across Zenith's off-grid portfolio is consistently one 20 MWe reactor per site, not a fleet.",
+     "sources": [
+      {
+       "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
+       "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+       "quote": "15 years from construction completion",
+       "status": "fetched"
+      },
+      {
+       "label": "Zenith Energy - Liontown PPA announcement (renewable target)",
+       "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+       "quote": "at least 60% renewable energy at project start-up and beyond",
+       "status": "fetched"
+      },
+      {
+       "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
+       "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
+       "quote": "up to approximately 70%",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "copper-mountain-trolley-assist-12mw-load",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Copper Mountain Mine Trolley Assist (haul-fleet electrification load)",
+     "country": "CA",
+     "region": "Princeton, British Columbia",
+     "parties": {
+      "host": "Copper Mountain Mining Corporation",
+      "provider": "Komatsu, SMS Equipment, ABB",
+      "utility": "BC Hydro"
+     },
+     "instrument": "design-build with utility supply upgrade and CleanBC support",
+     "signed": "2019",
+     "capacity": "Trolley line drawing up to 12 MW at any one time, serving four of eleven 830E hybrid haul trucks simultaneously; each truck's electric drive needs about 3 MW of peak power",
+     "capex": "Around C$40 million",
+     "displaced": "About 400 litres of diesel per truck-hour on trolley, roughly one tonne of CO2 per truck-hour",
+     "filings": [],
+     "summary": "The load-growth case, with a published number. Copper Mountain's trolley-assist installation - feasibility funded 2019, commissioned spring 2022 for around C$40 million - draws up to 12 MW when four of its eleven Komatsu 830E hybrid trucks are on the ramp, each truck's drive peaking near 3 MW. Diesel falls by about 400 litres per truck-hour. Copper Mountain is grid-connected and had to work with BC Hydro to upgrade supply; an off-grid mine doing the same thing has no such option.",
+     "microreactor_read": "This is the number that changes reactor sizing: partially electrifying eleven haul trucks adds up to 12 MW of highly variable load to a single pit. A mine that today needs 25 MW of diesel needs 35-40 MW after fleet electrification, which moves the answer from one microreactor to several - or from a microreactor to an SMR. It also sets the hardest technical requirement: the load is 3 MW steps as trucks pantograph on and off a ramp, so a reactor sold into this must be paired with storage or accept ramping no thermal plant enjoys.",
+     "sources": [
+      {
+       "label": "BC Hydro - A net-zero mine? Copper Mountain takes electrifying first step",
+       "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
+       "quote": "12 megawatts at any one time – enough for four trucks to be on the ramp",
+       "status": "fetched"
+      },
+      {
+       "label": "BC Hydro - Copper Mountain trolley project cost and diesel saving",
+       "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
+       "quote": "400 litres of diesel per hour, or about a tonne of CO2 emissions",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "diavik-wind-farm-and-solar-rio-tinto",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Diavik Diamond Mine Wind Farm (2012) and Solar Plant (2024)",
+     "country": "CA",
+     "region": "Lac de Gras, Northwest Territories",
+     "parties": {
+      "host": "Rio Tinto (Diavik Diamond Mine)",
+      "provider": "Rio Tinto - owner-built; Solvest as solar contractor",
+      "utility": "None - off-grid, ice-road resupplied"
+     },
+     "instrument": "owner-built, part grant-funded",
+     "signed": "2012",
+     "capacity": "9.2 MW wind (four 2.3 MW turbines, 2012) plus 3.5 MW solar (6,620 bifacial panels, 2024)",
+     "capex": "C$31 million for the wind farm (C$1 million under budget); solar supported by C$3.3 million from the NWT Large Emitters GHG Reducing Investment Grant Program",
+     "displaced": "Wind: about four million fewer litres of diesel per year, worth C$5 million/yr, against a site burning ~40 million litres/yr before the turbines. Solar: 4.2 million kWh/yr and 1 million litres of diesel per year, up to 25% of Diavik's electricity during closure works",
+     "filings": [],
+     "summary": "The clearest owner-built Arctic case, and the one with an explicit payback. Rio Tinto spent C$31 million on 9.2 MW of wind at Diavik in 2012 and reported roughly 4 million litres and C$5 million a year of diesel avoided, for a stated 6-8 year payback at a mine that was burning about 40 million litres of diesel annually hauled over a 353 km ice road. Twelve years later it added 3.5 MW of solar - Canada's largest off-grid array in the territories - producing 4.2 million kWh/yr and displacing another million litres, with C$3.3 million of NWT grant support. Commercial production is expected to end in 2026 with closure work to 2029.",
+     "microreactor_read": "The implied diesel-electricity price here is roughly C$1.25/litre of fuel alone, and C$5m of savings for 4 million litres sets the fuel-only avoided cost the reactor must undercut before any O&M credit. The decisive lesson is timing, not price: Diavik justified 9.2 MW of wind on a 6-8 year payback, and its solar arrived with only two years of production left. A microreactor whose payback exceeds remaining mine life cannot be sold to an operating mine no matter how good the $/kWh - which pushes the addressable set toward new long-life mines and toward relocatable units that can move to the next site.",
+     "sources": [
+      {
+       "label": "Nunatsiaq News - Diavik mine's wind-driven power saves $5 million a year in diesel costs",
+       "url": "https://nunatsiaq.com/stories/article/65674diavik_mines_wind-driven_power_saves_5_million_in_diesel_costs/",
+       "quote": "about four million fewer litres of diesel fuel per year",
+       "status": "fetched"
+      },
+      {
+       "label": "Rio Tinto - Rio Tinto completes construction of its solar power plant at Diavik Diamond Mine",
+       "url": "https://www.riotinto.com/en/news/releases/2024/rio-tinto-completes-construction-of-its-solar-power-plant-at-diavik-diamond-mine",
+       "quote": "bi-facial panels which not only generate energy from direct sunlight, but also from the light that reflects off the snow",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "essakane-solar-eren-iamgold-15-year-ppa",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Essakane Solar SAS - 15 MWp hybrid solar/HFO at IAMGOLD Essakane",
+     "country": "BF",
+     "region": "Essakane, northeastern Burkina Faso",
+     "parties": {
+      "host": "IAMGOLD Essakane SA",
+      "provider": "Essakane Solar SAS (EREN Renewable Energy / AEMP), Wartsila as EPC and hybrid controller",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2017",
+     "term_years": 15,
+     "capacity": "15 MWp (12 MWac) solar PV, ~130,000 panels, synchronised to the existing 55-57 MW heavy-fuel-oil plant",
+     "capex": "More than US$20 million",
+     "displaced": "About 6 million litres of fuel per year and ~18,500 t CO2",
+     "filings": [],
+     "summary": "IAMGOLD did not buy the solar plant. A special-purpose company, Essakane Solar SAS - 90% EREN Renewable Energy, 10% IAMGOLD - built and operates it and sells output to the mine under a 15-year PPA, with Wartsila supplying the EPC and the hybrid control system that keeps 12 MWac of PV synchronised to a 55 MW HFO station. Cost was over US$20 million for roughly 6 million litres/yr of avoided fuel. It was, at commissioning in March 2018, the largest hybrid solar/thermal plant at any mine.",
+     "microreactor_read": "The structure a reactor vendor should copy: an SPV majority-owned by the energy party, minority-owned by the miner, selling under a 15-year PPA into an existing thermal plant that stays as backup. West African delivered HFO/diesel power is the beat-price here, well below the Canadian Arctic band - the reactor competes against roughly US$0.15-0.25/kWh, and against a solar plant that cost US$20m for 12 MWac, so the case must be made on night-time and dry-season firmness, not on displacing daytime energy.",
+     "sources": [
+      {
+       "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference",
+       "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
+       "quote": "The PPA is jointly owned with (90%/10%) Essakane Solar SAS, who operates the solar PV plant",
+       "status": "fetched"
+      },
+      {
+       "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference (capacity)",
+       "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
+       "quote": "15MWp or 12MWac solar PV",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "syama-gold-mine-aggreko-16-year-psa",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Syama Gold Mine Hybrid Power Supply Agreement",
+     "country": "ML",
+     "region": "Syama, southern Mali",
+     "parties": {
+      "host": "Resolute Mining (Syama gold complex)",
+      "provider": "Aggreko",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2019-12",
+     "term_years": 16,
+     "capacity": "40 MW thermal power plant + 10 MW Aggreko Y.Cube battery storage, with 20 MW of solar planned for 2023",
+     "price": "Not published as $/kWh; contract stated to reduce the mine's power costs by an estimated 40%",
+     "displaced": "Heavy-fuel-oil and diesel self-generation at an off-grid West African gold mine; ~20% carbon reduction once solar was added",
+     "filings": [],
+     "summary": "Aggreko signed a 16-year contract in December 2019 to install, own, operate and maintain the whole power system at Resolute's Syama complex - 40 MW thermal plus a 10 MW battery, with 20 MW of solar to follow. Resolute bought power, not plant. The published economic claim is a 40% cut in Syama's power costs. The contract length is the striking part: 16 years at a single mine, longer than most mine-life assumptions, which shows an off-grid miner will sign a term long enough to amortise capital-heavy generation when the counterparty carries the capital.",
+     "microreactor_read": "A 16-year off-grid PPA at a single gold mine is direct proof that the term problem is solvable - the objection that miners will not sign past ~10 years is contradicted here, and at Mt Weld (15 yr), Kathleen Valley (15 yr), Essakane (15 yr) and KCGM (25 yr). The reactor's competitor at Syama is a 40 MW thermal fleet whose replacement bought a 40% power-cost reduction; a 5-20 MW reactor must beat West African HFO/diesel delivered cost, generally quoted at $0.15-$0.30/kWh, not the Arctic band.",
+     "sources": [
+      {
+       "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
+       "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+       "quote": "reduce Syama's power costs by an estimated 40%",
+       "status": "fetched"
+      },
+      {
+       "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract (term and plant)",
+       "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+       "quote": "40 MW thermal power plant",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    },
+    {
+     "id": "red-dog-mine-solar-teck-nana-tugliq",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Red Dog Mine Solar Farm + Battery",
+     "country": "US",
+     "region": "De Long Mountains, Northwest Arctic Borough, Alaska",
+     "parties": {
+      "host": "Teck Alaska Incorporated (Red Dog zinc-lead mine), NANA Regional Corporation as landowner",
+      "provider": "TUGLIQ Energy",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA (terms under negotiation as of March 2026)",
+     "signed": "2026",
+     "capacity": "8.8 MW solar farm on ~30 acres plus a battery system; expected to deliver about 2 MW in summer against a site load of roughly 25 MW",
+     "displaced": "Diesel at a mine burning roughly 40,000 gallons per day (about 14.6 million gallons/yr) for a 24.5 MW on-site diesel plant",
+     "filings": [],
+     "summary": "Red Dog would be the first large Alaskan mine to take substantial on-site solar. TUGLIQ - the same Quebec firm behind Raglan - would build and operate an 8.8 MW array plus battery on 30 acres partly on NANA land, with Teck negotiating power-purchase terms rather than buying the plant. Teck declined to give a cost estimate. The scale gap is the story: 8.8 MW nameplate yields about 2 MW in summer against a site that needs roughly 25 MW and burns about 40,000 gallons of diesel a day, and the build is being rushed to start by June 2026 to catch a federal tax-credit deadline in July. The mine is projected to close around 2032.",
+     "microreactor_read": "Red Dog is the sharpest microreactor-shaped load in North America: ~25 MW, off-grid, diesel-only, and a solar answer that covers under a tenth of it. A single 20 MWe unit replaces the entire 24.5 MW diesel station. Two hard constraints: the incumbent price is the delivered cost of ~14.6 million gallons of barged diesel a year (Alaskan remote power is commonly quoted at 40 cents to over $1.00/kWh), and closure around 2032 means the economic window for a fixed asset has already shut - only a relocatable unit fits.",
+     "sources": [
+      {
+       "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun",
+       "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+       "quote": "8.8-megawatt solar farm",
+       "status": "fetched"
+      },
+      {
+       "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun (diesel burn)",
+       "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+       "quote": "roughly 40,000 gallons each day",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-mining.json"
+    }
+   ]
+  },
+  {
+   "sector": "Marine terminals",
+   "records": [
+    {
+     "id": "carb-at-berth-shore-power-capex",
+     "sector": "Marine terminals",
+     "name": "CARB At-Berth Regulation - published shore power capex per berth and per-vessel electrical load",
+     "country": "US",
+     "region": "California ports (statewide)",
+     "parties": {
+      "host": "California container, reefer, cruise, ro-ro and tanker terminals",
+      "provider": "Terminal and vessel operators (compliance spend)",
+      "utility": "California Air Resources Board (rule-maker); California Department of Finance (SRIA publisher)"
+     },
+     "instrument": "utility tariff",
+     "signed": "2019-08",
+     "capacity": "A container vessel at berth draws about 1 MW; a large cruise vessel 5 MW or more. Berth-level shore power connections are therefore roughly 1-5 MW each, intermittent and call-driven.",
+     "capex": "Container/reefer berth shore power retrofit capital cost of $7,010,813 per berth (June 2018 vessel operator surveys). Capture-and-control alternatives were costed at $6,518,000 per system, $7,000,000 per berth for structural work, $4,500,000 per berth for piping, $7,000,000 per crane and $10,000,000 per crane support structure per berth, plus $1,000,000 per berth per year of operating labour.",
+     "displaced": "Auxiliary diesel engine operation at berth; CARB's earlier at-berth rule already imposed an 80% reduction requirement",
+     "filings": [
+      {
+       "forum": "State agency rulemaking record",
+       "type": "Standardized Regulatory Impact Assessment, Proposed Control Measure for Ocean-Going Vessels At Berth",
+       "id": "SRIA (California Department of Finance major regulations table)",
+       "date": "2019-08-01",
+       "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf"
+      }
+     ],
+     "summary": "California's Standardized Regulatory Impact Assessment for the At-Berth Regulation is the rare document that puts a defensible dollar figure on port electrification. It records a container/reefer berth shore power retrofit capital cost of $7,010,813 per berth, taken from CARB's June 2018 vessel operator surveys, and uses it as the basis for maintenance cost assumptions. It also states the load: about 1 MW for a container vessel and 5 MW or more for a large cruise vessel while hotelling. Where shore power was rejected in favour of shore-side capture and control, the assessment carries even larger per-berth numbers, including $7 million per berth of structural work, $4.5 million of piping and $10 million per crane support structure.",
+     "microreactor_read": "This sets the terminal-side willingness to pay: a port already accepts roughly $7 million of capital per berth to electrify a 1-5 MW, highly intermittent hotelling load. A 1-20 MW reactor at a marine terminal is competing not against grid energy price but against that $7 million per berth of connection capex plus whatever the utility charges for the demand spike - and its problem is duty cycle, because a berth's shore power draw only exists while a ship is alongside.",
+     "sources": [
+      {
+       "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (per-berth capex)",
+       "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+       "quote": "berth shore power retrofit capital costs of $7,010,813 per berth as indicated by the June 2018 vessel operator surveys",
+       "status": "fetched"
+      },
+      {
+       "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (per-vessel electrical load)",
+       "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+       "quote": "a container vessel may draw 1 megawatt (MW) of electricity to replace its auxiliary engine operation at berth",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "port-of-seattle-cruise-shore-power",
+     "sector": "Marine terminals",
+     "name": "Port of Seattle - shore power at all three cruise berths",
+     "country": "US",
+     "region": "Seattle, Washington",
+     "parties": {
+      "host": "Port of Seattle",
+      "provider": "Port of Seattle capital programme (Pier 66 system purchased from a proprietary supplier)",
+      "utility": "Seattle City Light"
+     },
+     "instrument": "design-build",
+     "signed": "2021-12",
+     "capacity": "Three cruise berths equipped with shore power. CARB's regulatory assessment puts a large cruise vessel's hotelling draw at 5 MW or more, so the three berths represent roughly 15 MW of intermittent connected load.",
+     "capex": "$44 million investment across the three cruise berths, i.e. roughly $14.7 million per berth. The Port of Seattle Commission separately authorised $7.6 million for the Pier 66 installation on 14 December 2021.",
+     "displaced": "Auxiliary diesel engine hotelling emissions from cruise vessels at berth",
+     "filings": [
+      {
+       "forum": "Port of Seattle Commission",
+       "type": "Commission authorisation to purchase and install shore power at Pier 66",
+       "id": "Commission action, 14 December 2021",
+       "date": "2021-12-14",
+       "url": "https://www.portseattle.org/blog/past-present-and-future-shore-power"
+      }
+     ],
+     "summary": "The Port of Seattle finished equipping all three of its cruise berths with shore power at a stated cost of $44 million, with the Pier 66 element authorised by the Port Commission on 14 December 2021 at $7.6 million and delivered in partnership with Seattle City Light. The Northwest Seaport Alliance separately installed shore power at both Terminal 5 container berths as part of that terminal's modernisation, part-funded by a Washington State appropriation. At roughly $14.7 million per cruise berth this is more than double CARB's $7.0 million per berth container figure, which is what you would expect given a large cruise vessel draws 5 MW or more against a container vessel's 1 MW.",
+     "microreactor_read": "Seattle prices the cruise-terminal case at about $14.7 million per berth for a 5 MW-plus connection that is used only while a ship is alongside during a summer season. A 1-20 MW reactor at a cruise terminal would be nearly perfectly sized to the three-berth load but catastrophically mismatched on duty cycle; the sellable proposition is a reactor serving a year-round base load with the cruise berths as a seasonal add, not a reactor dedicated to shore power.",
+     "sources": [
+      {
+       "label": "Port of Seattle - The Past, Present, and Future of Shore Power",
+       "url": "https://www.portseattle.org/blog/past-present-and-future-shore-power",
+       "quote": "Thanks to a $44 million investment, all three of the Port's cruise berths are equipped with shore power.",
+       "status": "fetched"
+      },
+      {
+       "label": "California Dept of Finance / CARB - Standardized Regulatory Impact Assessment, Ocean-Going Vessels At Berth (cruise vessel load)",
+       "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+       "quote": "while a large cruise vessel may draw 5 MW or more",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "nbvc-point-mugu-shore-power-replacement",
+     "sector": "Marine terminals",
+     "name": "Naval Base Ventura County / Point Mugu shore power mound repair and replacement (N62473-24-F-4934)",
+     "country": "US",
+     "region": "Point Mugu, California",
+     "parties": {
+      "host": "U.S. Navy / NAVFAC Southwest",
+      "provider": "South Bay EDC Inc."
+     },
+     "instrument": "design-build",
+     "signed": "2024-07",
+     "term_years": 3,
+     "capacity": "Shore power mounds serving berthed vessels; megawatt rating not stated in the award record",
+     "capex": "$44,323,562 obligated; base and all options identical, so the full contract value is $44.3M with no unexercised options",
+     "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life shore power distribution equipment",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Design-build task order under IDIQ N6247324D5205",
+       "id": "PIID N62473-24-F-4934",
+       "date": "2024-07-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
+      }
+     ],
+     "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
+     "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_N6247324F4934 (PIID N62473-24-F-4934), South Bay EDC Inc., Point Mugu NAWC CA",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/",
+       "quote": "DB REPAIR AND REPLACE SHORE POWER MOUND NAVBASE VENTURA COUNTY/PT MUGU CALIFORNIA.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "port-hadlock-emergency-diesel-generators",
+     "sector": "Marine terminals",
+     "name": "Port Hadlock emergency diesel generators, fuel tanks and microgrid (N44255-26-F-0125)",
+     "country": "US",
+     "region": "Port Hadlock, Jefferson County, Washington",
+     "parties": {
+      "host": "U.S. Navy / NAVFAC Northwest",
+      "provider": "Absher Construction Co."
+     },
+     "instrument": "design-build",
+     "signed": "2026-04",
+     "term_years": 2,
+     "capacity": "Emergency diesel generators, diesel fuel tanks and switchgear forming a backup power and microgrid system; MW rating not stated in the award record",
+     "capex": "$29,395,000 obligated; base and all options identical, period of performance 2026-04-28 to 2028-06-14",
+     "displaced": "Nothing — the award adds diesel capacity and the fuel storage to run it",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Task order under IDIQ N4425523D1700, PSC Y1JZ",
+       "id": "PIID N44255-26-F-0125",
+       "date": "2026-04-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/"
+      }
+     ],
+     "summary": "NAVFAC Northwest awarded Absher Construction $29,395,000 on 2026-04-28 to construct emergency diesel generators, diesel fuel tanks, switchgear and related work at Port Hadlock, Washington, forming a backup power and microgrid system for existing facilities, with a period of performance to 2028-06-14. The award description says explicitly that the facilities served cannot be relocated, which is the whole justification: the load is fixed to the waterfront, so the power has to come to it. This is a pure incumbent-pricing record — nearly thirty million dollars of diesel plant and fuel storage, in 2026, at one Navy waterfront site.",
+     "microreactor_read": "The Navy is still buying new diesel and new fuel tanks at $29.4M a site in 2026, which means the reactor's competition at a marine terminal is not a legacy asset being tolerated but a fresh capital decision being made today. A microreactor pitch here has to clear $29.4M for a comparable resilience outcome and then argue the fuel tanks away, because the tank farm — not the generator — is what makes a waterfront diesel installation expensive and permanently regulated.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_N4425526F0125 (PIID N44255-26-F-0125), Absher Construction Co., Port Hadlock WA",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/",
+       "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "port-of-los-angeles-epa-clean-ports",
+     "sector": "Marine terminals",
+     "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
+     "country": "US",
+     "region": "San Pedro, California",
+     "parties": {
+      "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
+      "provider": "U.S. Environmental Protection Agency (funder)",
+      "utility": "Los Angeles Department of Water and Power"
+     },
+     "instrument": "grant-funded",
+     "signed": "2025-01",
+     "term_years": 4,
+     "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
+     "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
+     "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
+     "filings": [
+      {
+       "forum": "USAspending.gov (federal assistance record)",
+       "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+       "id": "FAIN 97T27601",
+       "date": "2025-01-01",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+      }
+     ],
+     "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
+     "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+       "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "port-of-long-beach-microgrid-2022",
+     "sector": "Marine terminals",
+     "name": "Port of Long Beach microgrid - Joint Command and Control Center",
+     "country": "US",
+     "region": "Long Beach, California",
+     "parties": {
+      "host": "Port of Long Beach",
+      "provider": "Schneider Electric",
+      "utility": "California Energy Commission (grant funder)"
+     },
+     "instrument": "design-build",
+     "signed": "2018",
+     "capacity": "300 kW solar PV array plus a 250 kW stationary battery energy storage system, producing about 520 MWh annually",
+     "capex": "$12.2 million total project cost, part-funded by a California Energy Commission grant",
+     "price": "Projected to reduce the port's electric costs by more than $60,000 a year",
+     "displaced": "Diesel backup generators serving the port's Joint Command and Control Center",
+     "filings": [],
+     "summary": "The Port of Long Beach contracted Schneider Electric to design and build a microgrid for its Joint Command and Control Center: a 300 kW solar array and a 250 kW battery, generating roughly 520 MWh a year, at a total project cost of $12.2 million and expected online in late 2022. The stated energy benefit is a saving of more than $60,000 a year. That is roughly $22,000 per installed kW and a simple payback on energy alone of about two centuries - the port is buying resilience for its emergency operations centre, not cheap electricity.",
+     "microreactor_read": "This is the clearest evidence that a port's resilience budget is priced completely differently from its energy budget: Long Beach paid $12.2 million for 550 kW of nameplate and 520 MWh a year. A 1-20 MW reactor selling resilience rather than energy at a marine terminal is competing against roughly $22,000/kW of accepted resilience capex - a bar most microreactor cost estimates clear - but the addressable slice is the critical-facility load, not the whole terminal.",
+     "sources": [
+      {
+       "label": "Microgrid Knowledge - Port of Long Beach, Schneider Electric start construction on $12.2 million microgrid project",
+       "url": "https://www.microgridknowledge.com/google-news-feed/article/11427396/port-of-long-beach-schneider-electric-start-construction-on-122-million-microgrid-project",
+       "quote": "reduce the port's electric costs by more than $60,000 a year",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "akademik-lomonosov-delivered-cost",
+     "sector": "Marine terminals",
+     "name": "Akademik Lomonosov - delivered cost of the first floating nuclear plant",
+     "country": "RU",
+     "region": "Pevek, Chukotka",
+     "parties": {
+      "host": "Chaun-Bilibino network, Pevek",
+      "provider": "Rosatom (barge built at Baltic Shipyard, St Petersburg)"
+     },
+     "signed": "2019-12",
+     "capacity": "Two 35 MW KLT-40S reactors (70 MW total) on a 144-metre barge, with a stated 40-year lifetime",
+     "capex": "Reported at 37 billion rubles, converted as $700 million by POWER Magazine and as US$740 million by the World Nuclear Industry Status Report; more than 300% above the original estimate (nine billion rubles / $170 million per POWER, six billion rubles / US$232 million per WNISR)",
+     "displaced": "The retiring Bilibino nuclear plant and Chaun coal generation in the Russian Arctic",
+     "filings": [],
+     "summary": "The Akademik Lomonosov is the only floating nuclear plant in commercial operation and the only one with a published delivered cost. Two 35 MW KLT-40S reactors sit on a 144-metre barge; the plant was connected to the Chaun-Bilibino network at Pevek in December 2019. Reported cost reached 37 billion rubles, about $700 million, against an original 2006 estimate of nine billion rubles ($170 million) - an overrun of more than 300 percent. At $700 million for 70 MW that is roughly $10,000 per kW installed, for a first-of-a-kind unit built over thirteen years.",
+     "microreactor_read": "The only real-world floating nuclear price is about $10,000/kW for a 70 MW twin-reactor barge - which, strikingly, is cheaper per kW than the Port of Long Beach paid for 550 kW of solar-plus-battery microgrid. For a marine terminal the read is that hull-mounted, shipyard-built nuclear has a demonstrated cost point an order of magnitude below one-off port resilience projects, but it took thirteen years and a 300 percent overrun to get there, and nothing in the Western regulatory system currently permits a moored reactor at a commercial berth.",
+     "sources": [
+      {
+       "label": "POWER Magazine - Russia Sees Floating Nuclear Power Plant Costs Balloon",
+       "url": "https://www.powermag.com/russia-sees-floating-power-plant-costs-balloon/",
+       "quote": "mushroomed to 37 billion rubles ($700 million), an increase of more than 300% from the original 2006 estimate",
+       "status": "fetched"
+      },
+      {
+       "label": "World Nuclear Industry Status Report - Russia Connects World's First Floating Mini Nuclear Power Plant to Grid (27 December 2019)",
+       "url": "https://www.worldnuclearreport.org/Russia-Connects-World-s-First-Floating-Mini-Nuclear-Power-Plant-to-Grid",
+       "quote": "70 MW Akademik Lomonosov floating nuclear power plant",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "epa-clean-ports-2024-selections",
+     "sector": "Marine terminals",
+     "name": "EPA Clean Ports Program - 2024 selections (nearly $3 billion)",
+     "country": "US",
+     "region": "27 states and territories",
+     "parties": {
+      "host": "US port authorities and terminal operators",
+      "provider": "US EPA (Inflation Reduction Act funding)"
+     },
+     "instrument": "grant-funded",
+     "signed": "2024-10",
+     "capacity": "Over 1,500 units of cargo handling equipment, 1,000 drayage trucks, 10 locomotives, 20 vessels, plus shore power systems, charging infrastructure and solar generation",
+     "capex": "Nearly $3 billion across 55 selectees. Named awards include Port Authority of New York and New Jersey $344,138,135; Port of Oakland $322,167,584; Port of Philadelphia $77,650,965; Georgia Ports Authority $48,763,746; Detroit/Wayne County Port Authority $21,905,782.",
+     "displaced": "Projected over 3 million metric tons of CO2, 12,000 short tons of NOx and 200 short tons of PM2.5 over ten years",
+     "filings": [],
+     "summary": "EPA selected 55 applicants across 27 states and territories for nearly $3 billion of Inflation Reduction Act money under the Clean Ports Program, with the largest single awards going to the Port Authority of New York and New Jersey ($344.1 million) and the Port of Oakland ($322.2 million). The money buys load, not supply: over 1,500 pieces of cargo handling equipment, 1,000 drayage trucks, 10 locomotives, 20 vessels, shore power systems and charging infrastructure. Solar generation appears in the list but at nothing like the scale of the electrical demand being created. This is the single largest federal commitment to electrifying US marine terminals and it leaves the generation and interconnection problem to the ports and their utilities.",
+     "microreactor_read": "Nearly $3 billion of federal money is converting US marine terminals from diesel-fuelled to electricity-fuelled, and almost none of it builds generation - which is precisely the gap a 1-20 MW on-site reactor would fill. The commercial read: the load is now funded and arriving on a fixed schedule, so the reactor's competitor at a big container port is the utility's interconnection queue and demand charges, not diesel. Sizing follows from the equipment counts, not from the berth: a terminal converting hundreds of yard tractors and RTG cranes lands in exactly the 5-20 MW band.",
+     "sources": [
+      {
+       "label": "US EPA - Selections for Nearly $3 Billion of Investments in Clean Ports",
+       "url": "https://www.epa.gov/newsreleases/biden-harris-administration-announces-selections-nearly-3-billion-investments-clean",
+       "quote": "55 applicants across 27 states and territories",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    },
+    {
+     "id": "marad-pidp-fy2024-awards",
+     "sector": "Marine terminals",
+     "name": "MARAD Port Infrastructure Development Program - FY2024 awards",
+     "country": "US",
+     "region": "15 states and one territory",
+     "parties": {
+      "host": "US port authorities",
+      "provider": "US DOT Maritime Administration (Bipartisan Infrastructure Law funding)"
+     },
+     "instrument": "grant-funded",
+     "signed": "2024-11",
+     "capex": "Almost $580 million funding 31 projects. Named awards include Port Everglades (Broward County, FL) $53,357,402 for electric terminal tractors, forklifts and hybrid equipment with electrical system upgrades and charging civil works; Port of San Juan (Puerto Rico) $53,526,756 for Puerto Nuevo Wharves reconstruction; Anchorage approximately $50 million; Garden City, Georgia approximately $49.9 million; Oakland approximately $49.5 million.",
+     "displaced": "Diesel terminal tractors, forklifts and cargo handling equipment at the electrification-focused awardees",
+     "filings": [],
+     "summary": "MARAD announced almost $580 million of Port Infrastructure Development Program awards for 31 projects across 15 states and one territory, timed to the third anniversary of the Bipartisan Infrastructure Law. The largest awards were $53.5 million to the Port of San Juan for wharf reconstruction and $53.4 million to Port Everglades for a package that is explicitly electrification: electric terminal tractors and forklifts, hybrid equipment, and the electrical system upgrades and civil works needed for charging stations. Anchorage, Garden City (Georgia) and Oakland each took roughly $50 million. As with the EPA programme, no award in the list builds generation.",
+     "microreactor_read": "PIDP is the second federal pipeline turning marine terminals into large electrical loads, and its awards are sized at $50 million per port - the same order as a small reactor project. The salient detail for a microreactor pitch is that Port Everglades' award pays for the substation and charging civil works but not for the electrons, so the port ends up with a new multi-megawatt demand and an unchanged supply arrangement with its utility.",
+     "sources": [
+      {
+       "label": "Maritime Professional - Ports Awarded $580 Million in MARAD Grants",
+       "url": "https://www.maritimeprofessional.com/news/ports-awarded-million-marad-grants-399260",
+       "quote": "almost $580 million in Port Infrastructure Development Program awards, funding 31 projects in 15 states and one territory",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-remote-marine.json"
+    }
+   ]
+  },
+  {
+   "sector": "Medical campuses",
+   "records": [
+    {
+     "id": "salisbury-vamc-campus-generator",
+     "sector": "Medical campuses",
+     "name": "Salisbury VA Medical Center campus generator installation (36C24626C0037)",
+     "country": "US",
+     "region": "Salisbury, North Carolina",
+     "parties": {
+      "host": "U.S. Department of Veterans Affairs, Salisbury VAMC",
+      "provider": "Valiant Construction LLC"
+     },
+     "instrument": "design-build",
+     "signed": "2026-05",
+     "term_years": 1,
+     "capacity": "Campus-wide standby generation for a VA medical center; kW rating not stated in the award record",
+     "capex": "$23,905,280 obligated; base and all options identical, period of performance 2026-05-14 to 2027-07-28",
+     "displaced": "Nothing — this is new or replacement standby diesel capacity bought to keep a hospital campus alive through grid outages",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, PSC Y1DZ construction of other hospital buildings",
+       "id": "PIID 36C24626C0037",
+       "date": "2026-05-14",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "VA Network Contracting Office 6 awarded Valiant Construction LLC $23,905,280 on 2026-05-14 to install a campus generator at the Salisbury VA Medical Center, with a period of performance to 2027-07-28 and no unexercised options. The award buys standby capacity only: the generators run during outages and testing, not as a source of energy. This is one of a class — the same sweep surfaced VA generator awards of $22.9M in New York, $19.0M in Maryland and $10.3M at Loma Linda in California — so $10M to $24M per hospital campus is the going federal rate for backup power that produces almost no kilowatt-hours.",
+     "microreactor_read": "A single VA hospital campus is willing to spend $23.9 million on diesel plant that will idle for 8,700 hours a year, and it will do it again in fifteen or twenty years. That is the number a 1-5 MW microreactor has to be measured against at a medical campus — not the hospital's energy bill, but its resilience capex, because the reactor is the only product that can be charged to both budget lines at once.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_36C24626C0037 (PIID 36C24626C0037), Valiant Construction LLC, Salisbury NC",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/",
+       "quote": "INSTALL CAMPUS GENERATOR SALISBURY VAMC",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "san-juan-va-generator-farm-hurricane-hardening",
+     "sector": "Medical campuses",
+     "name": "San Juan VA Medical Center generator farm hurricane hardening (36C24826C0006)",
+     "country": "US",
+     "region": "San Juan, Puerto Rico",
+     "parties": {
+      "host": "U.S. Department of Veterans Affairs, VA Caribbean Healthcare System",
+      "provider": "Project Management Solutions LLC"
+     },
+     "instrument": "design-build",
+     "signed": "2026-04",
+     "term_years": 2,
+     "capacity": "Existing on-site generator farm serving a VA medical center; kW rating not stated in the award record",
+     "capex": "$10,835,000 obligated; base and all options identical, period of performance 2026-04-22 to 2028-09-05",
+     "displaced": "Nothing is displaced — the award hardens diesel plant that already exists so it survives the next hurricane",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, PSC Z2DA repair or alteration of hospitals and infirmaries",
+       "id": "PIID 36C24826C0006",
+       "date": "2026-04-22",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "VA Network Contract Office 8 awarded Project Management Solutions LLC $10,835,000 on 2026-04-22 for construction to hurricane-harden the generator farm at the VA medical campus in San Juan, Puerto Rico, running to 2028-09-05. The scope is the enclosure and protection of existing diesel plant, not new capacity and not energy. On an island whose grid has failed repeatedly, the VA is spending eleven million dollars purely on making its backup diesels weatherproof — a cost line that exists only because the primary supply is untrustworthy and the backup is exposed.",
+     "microreactor_read": "Hurricane hardening is a recurring cost that a buried or hardened microreactor would not incur in the same form, and Puerto Rico prices it at $10.8M for one hospital's generator yard alone. Selling into a Caribbean medical campus means beating the sum of three lines the VA already pays separately — backup capex in the $10-24M band, hardening at $10.8M, and grid energy at PREPA's rates — rather than beating any one of them.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_36C24826C0006 (PIID 36C24826C0006), Project Management Solutions LLC, San Juan PR",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/",
+       "quote": "PROVIDE HURRICANE HARDENING AT GENERATOR FARM - CONSTRUCTION",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "loma-linda-faculty-medical-clinics-ppa",
+     "sector": "Medical campuses",
+     "name": "Loma Linda University Health Faculty Medical Clinics solar-plus-storage microgrid, 30-year PPA at 15 cents/kWh",
+     "country": "US",
+     "region": "Loma Linda, California",
+     "parties": {
+      "host": "Loma Linda University Health (Faculty Medical Clinics)",
+      "provider": "Renewable Energy Partners, Corona CA (owns and operates)",
+      "utility": "Southern California Edison"
+     },
+     "instrument": "PPA",
+     "signed": "2025-08",
+     "term_years": 30,
+     "capacity": "3,622 solar panels generating up to 2 MW plus a 1 MW Tesla battery giving about six hours of backup; expected to meet up to 87% of a facility that averages 1.7 MW",
+     "price": "15 cents per kWh for the power for the entire term of the contract, flat with no escalator",
+     "capex": "Not disclosed; the developer owns the system, the clinic pays only for delivered energy",
+     "displaced": "Southern California Edison retail supply ranging between 17 cents/kWh and 24 cents/kWh during peak times; about $500,000 a year of savings at current rates, up to $1.5 million a year if SCE reaches 30 cents/kWh",
+     "summary": "Loma Linda University Health's Faculty Medical Clinics energised a solar-plus-storage microgrid on 22 August 2025 built, owned and operated by Renewable Energy Partners under a 30-year power purchase agreement. The clinic pays a flat 15 cents per kWh for the whole term against SCE rates of 17-24 cents, saving an expected $500,000 a year now and up to $1.5 million if utility rates hit 30 cents. The system is 3,622 panels rated up to 2 MW plus a 1 MW Tesla battery good for roughly six hours, covering as much as 87% of a facility whose average demand is 1.7 MW.",
+     "microreactor_read": "Here is the number a microreactor has to beat in the richest healthcare power market in the country: 15 cents per kWh, fixed and unescalated for thirty years, behind the meter, with zero host capex. And the load is 1.7 MW average - one small reactor - but the incumbent already covers 87% of it and the remaining gap is a six-hour battery, so the reactor's only differentiated product is multi-day firmness.",
+     "sources": [
+      {
+       "label": "Microgrid Knowledge — University Healthcare Clinic Powers Up Microgrid with On-Site Solar and Tesla Battery in California",
+       "url": "https://www.microgridknowledge.com/microgrids/critical-services/news/55312608/university-healthcare-clinic-powers-up-microgrid-with-on-site-solar-and-tesla-battery-in-california",
+       "quote": "15 cents per kWh for the power for the entire term of the contract",
+       "status": "fetched"
+      },
+      {
+       "label": "Microgrid Knowledge — same article, utility rate comparison",
+       "url": "https://www.microgridknowledge.com/microgrids/critical-services/news/55312608/university-healthcare-clinic-powers-up-microgrid-with-on-site-solar-and-tesla-battery-in-california",
+       "quote": "power purchased from Southern California Edison ranges between 17 cents per kWh to 24 cents per kWh during peak times",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "nextnrg-sunnyside-topanga-microgrid-ppas",
+     "sector": "Medical campuses",
+     "name": "NextNRG 28-year microgrid PPAs with Sunnyside Nursing and Topanga Terrace, California",
+     "country": "US",
+     "region": "Torrance and Canoga Park, California",
+     "parties": {
+      "host": "Sunnyside Nursing and Post-Acute Care; Topanga Terrace Rehabilitation and Subacute Care",
+      "provider": "NextNRG Inc. (owns and operates the smart microgrids)",
+      "utility": "Southern California Edison"
+     },
+     "instrument": "PPA",
+     "signed": "2025",
+     "term_years": 28,
+     "capacity": "Smart microgrids with on-site generation, storage, wireless EV charging and mobile fuel delivery; individual solar kW and storage kWh not disclosed",
+     "price": "Sunnyside PPA priced at 25 cents per kWh with a 2% annual escalator; Topanga PPA at 22 cents per kWh with the same escalator",
+     "capex": "Borne entirely by NextNRG; no upfront cost to either healthcare facility",
+     "displaced": "Southern California Edison retail supply at the two post-acute care facilities",
+     "summary": "NextNRG signed separate 28-year power purchase agreements in 2025 with two California post-acute care facilities, Sunnyside Nursing and Post-Acute Care and Topanga Terrace Rehabilitation and Subacute Care, under which NextNRG owns and operates smart microgrids and sells power back to the facilities. Sunnyside pays 25 cents per kWh with a 2% annual escalator; Topanga pays 22 cents with the same escalator. Neither facility puts up capital. Capacities and construction dates were not disclosed.",
+     "microreactor_read": "Sub-acute care facilities are signing 28-year contracts at 22-25 cents/kWh with a 2% escalator - roughly double the Loma Linda price and well above utility retail - which shows what healthcare hosts will actually pay for resilience plus off-balance-sheet treatment. That, not the wholesale market, is the ceiling a microreactor PPA is competing under; the binding constraint is contract length, since these hosts will sign for 28-30 years.",
+     "sources": [
+      {
+       "label": "Microgrid Knowledge — Two California Healthcare Facilities Choose Long-Term Microgrid PPAs with New Developer",
+       "url": "https://www.microgridknowledge.com/commercial-microgrids/news/55303895/two-california",
+       "quote": "The Sunnyside PPA is designed to generate revenue at 25 cents per kWh with a 2% annual escalator",
+       "status": "fetched"
+      },
+      {
+       "label": "Microgrid Knowledge — same article, Topanga pricing",
+       "url": "https://www.microgridknowledge.com/commercial-microgrids/news/55303895/two-california",
+       "quote": "the Topanga PPA will generate 22 cents per kWh with the same rate of price escalator",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "kaiser-ontario-medical-center-microgrid",
+     "sector": "Medical campuses",
+     "name": "Kaiser Permanente Ontario Medical Center renewable microgrid",
+     "country": "US",
+     "region": "Ontario, California",
+     "parties": {
+      "host": "Kaiser Permanente",
+      "provider": "Faraday Microgrids (storage) and Ameresco (solar canopies, under PPA)",
+      "utility": "Southern California Edison"
+     },
+     "instrument": "PPA",
+     "signed": "2025-04",
+     "capacity": "2 MW on-site solar + 9 MWh non-lithium battery storage + 1 MW fuel cell; produces roughly 3,300 MWh per year",
+     "capex": "Battery storage funded by an $8.3 million California Energy Commission grant to Faraday Microgrids; total project cost not disclosed",
+     "price": "Solar sold to the hospital under a power purchase agreement with Ameresco; $/kWh not published",
+     "displaced": "Diesel emergency generation duty: the microgrid can serve all the hospital's emergency power needs for 10 continuous hours",
+     "summary": "Kaiser Permanente brought what it calls the largest hospital-based renewable microgrid in the US online at its Ontario Medical Center in April 2025: 2 MW of solar canopies installed by Ameresco under a PPA, 9 MWh of non-lithium battery storage funded by an $8.3 million California Energy Commission grant to Faraday Microgrids, and a 1 MW fuel cell. The system is sized to carry the hospital's entire emergency power load for 10 continuous hours and to generate about 3,300 MWh a year. Kaiser paid no capital for the storage and buys the solar output rather than owning it.",
+     "microreactor_read": "Ten hours is the honest number: even the largest hospital renewable microgrid in the country buys ride-through, not independence, and it took an $8.3M state grant to buy those ten hours of 9 MWh storage. A 1-5 MW reactor sells against the gap between 10 hours and a multi-day regional outage - but it must arrive already paired with storage, because NFPA 110 wants load carried in 10 seconds and no reactor ramps that fast.",
+     "sources": [
+      {
+       "label": "PR Newswire / Kaiser Permanente — Kaiser Permanente Debuts Largest Hospital-based Renewable Microgrid in U.S.",
+       "url": "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
+       "quote": "capacity to serve all the hospital's emergency power needs for 10 continuous hours",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "baystate-health-springfield-chp",
+     "sector": "Medical campuses",
+     "name": "Baystate Medical Center 4.6 MW CHP plant, Springfield MA",
+     "country": "US",
+     "region": "Springfield, Massachusetts",
+     "parties": {
+      "host": "Baystate Health / City of Springfield",
+      "provider": "City of Springfield-led project (Massachusetts DOER Community Clean Energy Resiliency Initiative award)",
+      "utility": "Eversource Energy"
+     },
+     "instrument": "grant-funded",
+     "signed": "2014-10",
+     "capacity": "4.6 MW gas-turbine CHP with heat recovery steam generator, absorption chiller, black-start diesel generator and load management; designed to supply 80% of the hospital's annual energy, 68% of electricity and 97% of steam",
+     "capex": "$27 million total project cost, of which $2.79 million was a Massachusetts DOER resiliency grant and about $5 million an Eversource Energy investment; the wider Springfield resilience effort drew $17 million+ from HUD's National Disaster Resilience Competition",
+     "displaced": "Purchased electricity and steam: an estimated $2.7 million a year in energy costs; hospital backup endurance extended from 96 hours to 30 days or more",
+     "summary": "Massachusetts DOER awarded Springfield $2.79 million in October 2014 under the Community Clean Energy Resiliency Initiative for a 4.6 MW CHP plant serving Baystate Medical Center with electricity, chilled water and steam. Ground was broken 2 November 2016 on a $27 million project part-funded by roughly $5 million from Eversource and sitting inside a HUD National Disaster Resilience Competition award of more than $17 million. The plant is designed to carry 80% of the hospital's annual energy use and to island the campus, extending ride-through from 96 hours of diesel to 30 days or more. Projected savings are about $2.7 million a year.",
+     "microreactor_read": "This is the cleanest medical-campus price benchmark available: $27M for 4.6 MW is roughly $5,900/kW installed, retiring $2.7M/yr of purchased energy - a ~10-year simple payback that a hospital board already said yes to. A 5 MW microreactor must land near that capex AND cover the steam load, because the CHP wins on heat; note also that the plant still needed a black-start diesel, since NFPA 110 Type 10 requires the emergency supply on load within 10 seconds and no thermal plant can meet that alone.",
+     "sources": [
+      {
+       "label": "City of Springfield, MA — Baystate Health Breaks Ground on Innovative Heat and Power Plant",
+       "url": "https://www.springfield-ma.gov/cos/news-story?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=13266&cHash=77a50ee7828db431a83f867fb85179f5",
+       "quote": "The project will save Baystate Health an estimated $2.7 million in energy costs annually.",
+       "status": "fetched"
+      },
+      {
+       "label": "Microgrid Knowledge — Massachusetts Awards $7M for Community Microgrid & Resiliency Projects",
+       "url": "https://microgridknowledge.com/massachusetts-awards-7m-community-microgrid-resiliency-projects",
+       "quote": "The plant will produce 80 percent of the hospital's annual energy consumption, 68 percent of electricity and 97 percent of steam",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "teco-texas-medical-center-central-plant",
+     "sector": "Medical campuses",
+     "name": "Thermal Energy Corporation (TECO) central utility plant expansion, Texas Medical Center",
+     "country": "US",
+     "region": "Houston, Texas",
+     "parties": {
+      "host": "Thermal Energy Corporation, a nonprofit cooperative owned by the Texas Medical Center institutions",
+      "provider": "Burns & McDonnell (engineering, procurement, construction)",
+      "utility": "CenterPoint Energy (138-kV service)"
+     },
+     "instrument": "design-build",
+     "signed": "2011",
+     "capacity": "48 MW gas-turbine CHP producing up to 330,000 lb/hr of steam, plus a 6 MW back-pressure steam turbine, an 8.8 million-gallon / 76,000 ton-hour chilled water storage tank and a new East Chiller Plant; serves ~24 million sq ft across 50 buildings and 18 medical institutions",
+     "capex": "$377 million construction cost",
+     "displaced": "Cut Texas Medical Center's grid demand by 50%; customer rates fell 4.1% by 2015 and more than $3 million was refunded to TMC customers",
+     "summary": "TECO, the nonprofit district-energy cooperative owned by the Texas Medical Center's member hospitals, executed a $377 million expansion completed in 2011 under a 50-year master plan, adding a 48 MW combined-cycle-style CHP plant with up to 330,000 lb/hr of steam, a 6 MW back-pressure steam turbine, 8.8 million gallons of chilled water storage and a rebuilt 138-kV substation, all without interrupting service. The plant runs at about 80% fuel efficiency, halved TMC's grid demand, cut member rates 4.1% by 2015 and refunded over $3 million to customers. It rode through Hurricane Harvey in 2017 in island mode with full service to every TMC facility.",
+     "microreactor_read": "The world's largest medical complex needed 48 MW and got it for $377 million (~$7,850/kW all-in with chillers and storage) - so a medical 'campus' at true district scale is a 5-10 microreactor site, not a 1 MW one. The decisive fact for a reactor vendor is thermal: 330,000 lb/hr of steam and 76,000 ton-hours of cooling is what the hospitals actually buy, and CBECS says space heating alone is 32% of inpatient energy use, so an electricity-only reactor loses this customer to gas.",
+     "sources": [
+      {
+       "label": "Burns & McDonnell — Case Study: TECO Central Utility Plant, A District Energy System Is Bigger In Texas",
+       "url": "https://info.burnsmcd.com/hubfs/Collateral/Case%20Studies/District-Energy-Systems-Are-Bigger-in-Texas-Too-case-study-burns-mcdonnell-12092.pdf",
+       "quote": "we provided engineering, procurement and construction services for the $377 million expansion, all without hindering the medical center's ongoing operation",
+       "status": "fetched"
+      },
+      {
+       "label": "U.S. Energy Information Administration — CBECS 2018: Health care buildings",
+       "url": "https://www.eia.gov/consumption/commercial/pba/health-care.php",
+       "quote": "Space heating accounted for the largest share of end-use consumption for both inpatient (32%)",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "kaiser-richmond-medical-center-microgrid",
+     "sector": "Medical campuses",
+     "name": "Kaiser Permanente Richmond Medical Center microgrid (CEC EPIC-funded)",
+     "country": "US",
+     "region": "Richmond, California",
+     "parties": {
+      "host": "Kaiser Permanente",
+      "provider": "Charge Bliss (CEC grant recipient, developer)",
+      "utility": "Pacific Gas & Electric"
+     },
+     "instrument": "grant-funded",
+     "signed": "2017",
+     "capacity": "250 kW solar PV plus on-site battery storage serving the medical center's critical-care load",
+     "capex": "$4.77 million California Energy Commission grant awarded to Charge Bliss; total project cost not published",
+     "displaced": "Utility demand charges - the battery is discharged into demand peaks to cut billed demand; the developer claims solar plus storage can carry the critical-care load potentially indefinitely",
+     "summary": "The California Energy Commission ran an RFP to demonstrate a renewable microgrid at a medical center and awarded Charge Bliss a $4.77 million grant; Charge Bliss partnered with Kaiser Permanente to build California's first medical-center microgrid at Richmond in 2017, with 250 kW of solar and battery storage. Kaiser's own energy lead describes the value as peak-demand shaving on the bill plus the ability to carry critical-care load. The state paid for the demonstration; the amount Kaiser contributed was not published.",
+     "microreactor_read": "The first medical-campus microgrid in California needed a $4.77M state grant to install 250 kW - roughly $19,000/kW of subsidised demonstration capital for a fraction of a hospital's load. That is the fiscal precedent a microreactor vendor should cite: hospitals do not fund resilience from operating budgets, they take state demonstration money, so the addressable first customer is a state energy commission, not a health system CFO.",
+     "sources": [
+      {
+       "label": "The Planning Report — Kaiser Permanente's Richmond Medical Center Solar-Battery Microgrid a CEC-Funded Model",
+       "url": "https://www.planningreport.com/2018/08/24/kaiser-permanente-s-richmond-medical-center-solar-battery-microgrid-cec-funded-model",
+       "quote": "The combination of solar arrays and battery storage onsite can provide power to the critical care load to the facility potentially indefinitely.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    }
+   ]
+  },
+  {
+   "sector": "Critical civic infrastructure",
+   "records": [
+    {
+     "id": "ohio-state-energy-concession-chp",
+     "sector": "Critical civic infrastructure",
+     "name": "Ohio State University 50-year energy concession and campus CHP plant (Ohio State Energy Partners)",
+     "country": "US",
+     "region": "Columbus, Ohio",
+     "parties": {
+      "host": "The Ohio State University",
+      "provider": "Ohio State Energy Partners (ENGIE North America 50% / Axium Infrastructure 50%)",
+      "utility": "AEP Ohio"
+     },
+     "instrument": "lease",
+     "signed": "2017-04",
+     "term_years": 50,
+     "capacity": "Utility system for a 485-building campus; new natural-gas combined heat and power plant reported at about 105 MW with an 8,000-ton cooling facility expandable to 13,000 tons",
+     "capex": "CHP plant budget rose from about $278 million to roughly $290-300 million, funded by the concessionaire, not the university",
+     "price": "Concession and lease agreement valued at $1.165 billion to the university, including an upfront payment; the university pays OSEP fees for utility service over the 50-year term",
+     "displaced": "Purchased power and the university's own aging steam plant; the CHP is projected to cut energy costs by $10 million a year and to deliver a 25% efficiency improvement within 10 years",
+     "filings": [
+      {
+       "forum": "University Board of Trustees",
+       "type": "Board resolution approving the public-private partnership",
+       "id": "Board of Trustees action, 7 April 2017",
+       "date": "2017-04-07",
+       "url": "https://busfin.osu.edu/university-business/comprehensive-energy-management/energy-concession-agreement"
+      }
+     ],
+     "summary": "On 7 April 2017 Ohio State's Board of Trustees approved a 50-year concession and lease of the university's entire utility system to Ohio State Energy Partners, an ENGIE/Axium consortium, in a deal valued at $1.165 billion to the university including a large upfront payment plus a $50 million research centre. OSEP took over operations, committed to a 25% efficiency improvement in ten years, and financed and built a natural-gas CHP plant whose budget rose from about $278 million to roughly $290-300 million after the original EPC contractor was defaulted. The plant is projected to cut campus energy costs by about $10 million a year.",
+     "microreactor_read": "This is the largest civic-anchor energy contract in the US and it proves the instrument a microreactor needs: a 50-year concession where a private consortium owns the generation, takes the construction risk (including a defaulted EPC and a $20M+ overrun) and gets paid a utility fee. The capex bar is ~$2,800/kW for gas CHP with an $10M/yr savings claim - and note the schedule risk cuts both ways: this gas plant slipped roughly four years, which is the delay a reactor is usually assumed to have a monopoly on.",
+     "sources": [
+      {
+       "label": "The Ohio State University, Business and Finance — Energy Concession Agreement",
+       "url": "https://busfin.osu.edu/university-business/comprehensive-energy-management/energy-concession-agreement",
+       "quote": "On April 7, 2017, the Board of Trustees approved a public-private partnership",
+       "status": "fetched"
+      },
+      {
+       "label": "Energy Tech — Ohio State University leaders confirm new CHP power plant delayed again, rises in cost",
+       "url": "https://www.energytech.com/energy-efficiency/article/21260595/ohio-state-university-leaders-confirm-new-chp-power-plant-delayed-again-rises-in-cost",
+       "quote": "The OSU CHP plant was expected to be about $278 million and has risen to an expected $300 million.",
+       "status": "fetched"
+      },
+      {
+       "label": "Ohio State Facilities Design and Construction — Combined Heat and Power Plant",
+       "url": "https://fdc.osu.edu/combined-heat-and-power-plant",
+       "quote": "The CHP plant is managed by Ohio State Energy Partners (OSEP) and will contain an 8,000-ton cooling facility with future build-out potential to 13,000-ton.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "beaufort-parris-island-utility-privatization-water",
+     "sector": "Critical civic infrastructure",
+     "name": "MCRD Parris Island / MCAS Beaufort 50-year water and wastewater privatization (N69450-08-C-0070)",
+     "country": "US",
+     "region": "Beaufort, South Carolina",
+     "parties": {
+      "host": "U.S. Navy / NAVFAC (MCRD Parris Island, MCAS Beaufort, Naval Hospital Beaufort, Laurel Bay housing)",
+      "provider": "Beaufort-Jasper Water & Sewer Authority",
+      "utility": "Beaufort-Jasper Water & Sewer Authority"
+     },
+     "instrument": "utility tariff",
+     "signed": "2008-02",
+     "term_years": 50,
+     "capacity": "Water distribution and wastewater collection systems at four Navy and Marine Corps sites; no electric generation in scope",
+     "capex": "$20,987,602.80 obligated as of the record's last modification on 2019-07-16, against a base-and-all-options value of $254,977,740.80; period of performance 2008-02-28 to 2058-02-27",
+     "displaced": "Government ownership and operation of the installations' water and wastewater systems",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Utility privatization contract, fixed price redetermination",
+       "id": "PIID N69450-08-C-0070",
+       "date": "2008-02-28",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "This record exists to correct a lead. The NAVFAC Beaufort utility privatization reported at roughly $251.4 million over 50 years resolves in the federal award data to N69450-08-C-0070, awarded to the Beaufort-Jasper Water & Sewer Authority on 2008-02-28 with a period of performance to 2058-02-27 — exactly 50 years — and a current base-and-all-options value of $254,977,740.80, close to but not identical with the reported figure. The material correction is the commodity: the contract covers the water distribution and wastewater collection systems at MCRD Parris Island, MCAS Beaufort, the Naval Hospital and Laurel Bay housing. It contains no electricity. USAspending shows only $20,987,602.80 obligated, but the award record was last modified on 2019-07-16, so that obligation figure is a floor that stops eleven years into a fifty-year term rather than a current total.",
+     "microreactor_read": "A quarter-billion-dollar, fifty-year Beaufort utility deal is real but it is not an electricity market, so it prices nothing a reactor sells; the number to carry forward from Beaufort is the separate $212.7M Parris Island ESPC, not this one. The transferable fact is structural: DoD is comfortable handing a single counterparty a 50-year franchise over a commodity utility at a base, and that is precisely the tenor a microreactor needs and cannot get from a construction contract.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_N6945008C0070 (PIID N69450-08-C-0070), Beaufort-Jasper Water & Sewer Authority",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/",
+       "quote": "MCRD PARRIS ISLAND, MCAS BEAUFORT, NAVAL HOSPITAL AND LAUREL BAY HOUSING WATER AND WASTEWATER SYSTEM PRIVATIZATION CONTRACT",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "camden-us-courthouse-standby-generator",
+     "sector": "Critical civic infrastructure",
+     "name": "Mitchell H. Cohen U.S. Courthouse standby generator replacement (47PD0125C0002)",
+     "country": "US",
+     "region": "Camden, New Jersey",
+     "parties": {
+      "host": "U.S. General Services Administration, Public Buildings Service Region 3",
+      "provider": "JD Bravo Co Inc."
+     },
+     "instrument": "design-build",
+     "signed": "2025-02",
+     "term_years": 2,
+     "capacity": "One emergency standby generator serving a federal courthouse and annex; kW rating not stated in the award record",
+     "capex": "$2,914,260 obligated, $2,766,002 already outlaid; base and all options identical, period of performance 2025-02-26 to 2026-08-31",
+     "displaced": "The building's previous emergency standby generator, removed and replaced",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract, PSC Z2AA repair or alteration of office buildings",
+       "id": "PIID 47PD0125C0002",
+       "date": "2025-02-26",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "GSA awarded JD Bravo Co $2,914,260 on 2025-02-26 to remove and replace the emergency standby generator at the Mitchell H. Cohen U.S. Courthouse and Annex in Camden, New Jersey, and the job is nearly complete — $2,766,002 has already been outlaid. This is the low end of the federal resilience ladder and it is here for scale calibration: a single generator swap at one mid-sized civic building, priced as a standalone construction contract with no energy, no fuel and no service term attached.",
+     "microreactor_read": "Three million dollars is what one grid-connected federal civic building pays for the right to survive an outage, and it buys no energy at all. That sets the floor of the civic market a microreactor can address: below roughly $3M of resilience spend per building, no nuclear product of any size is in the conversation, which is why the sector's real targets are campuses and districts aggregating dozens of these line items, not individual buildings.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_47PD0125C0002 (PIID 47PD0125C0002), JD Bravo Co Inc., Camden NJ",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/",
+       "quote": "THIS AWARD IS FOR THE REMOVAL AND REPLACEMENT OF THE EMERGENCY STANDBY GENERATOR AND ASSOCIATED TASKS.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "ramey-arc-microgrid-puerto-rico",
+     "sector": "Critical civic infrastructure",
+     "name": "Ramey Army Reserve Center microgrid, ERCIP (W912QR24C0029)",
+     "country": "US",
+     "region": "Aguadilla, Puerto Rico",
+     "parties": {
+      "host": "U.S. Army Reserve, contracting through USACE Louisville District",
+      "provider": "RQ-LORD JV"
+     },
+     "instrument": "design-build",
+     "signed": "2024-08",
+     "term_years": 3,
+     "capacity": "Site microgrid at an Army Reserve Center; MW rating not stated in the award record",
+     "capex": "$19,490,971.86 obligated against a base-and-all-options value of $21,403,321.86; period of performance 2024-08-30 to 2027-12-07",
+     "displaced": "Dependence on the Puerto Rico grid at a reserve center used as a staging point in emergencies",
+     "filings": [
+      {
+       "forum": "USAspending.gov (FPDS-derived contract record)",
+       "type": "Definitive contract under the Energy Resilience and Conservation Investment Program, PSC Y1NZ",
+       "id": "PIID W912QR24C0029",
+       "date": "2024-08-30",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/"
+      }
+     ],
+     "summary": "USACE Louisville District awarded RQ-LORD JV $19,490,971.86 on 2024-08-30 to build a microgrid at the Ramey Army Reserve Center in Aguadilla, Puerto Rico, under the Energy Resilience and Conservation Investment Program, with $21,403,321.86 of total potential value and a period of performance to 2027-12-07. A companion Louisville District award of $17,158,600.75 built the LTC Hernan G. Pesquera ARC microgrid in Juana Diaz on the same island. Together they show the Army spending roughly $37 million on two reserve-center microgrids in one territory, driven by a grid that failed catastrophically and has not been trusted since.",
+     "microreactor_read": "Puerto Rico is the clearest place in the federal data where resilience capex is being spent because the grid itself is the risk, and the Army is paying $17-20M per site for a microgrid at facilities far smaller than a base. For a microreactor that means the competing offer at a civic site on an unreliable grid is already a $20M microgrid — so the reactor has to displace that $20M and the diesel fuel logistics behind it, not merely add to them.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Award CONT_AWD_W912QR24C0029 (PIID W912QR24C0029), RQ-LORD JV, Aguadilla PR",
+       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/",
+       "quote": "RAMEY ARC MICROGRID ERCIP",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-federal-awards.json"
+    },
+    {
+     "id": "dc-water-blue-plains-biogas-chp",
+     "sector": "Critical civic infrastructure",
+     "name": "DC Water Blue Plains AWTP thermal hydrolysis + biogas CHP (Pepco Energy Services DBO)",
+     "country": "US",
+     "region": "Washington, DC",
+     "parties": {
+      "host": "DC Water (District of Columbia Water and Sewer Authority)",
+      "provider": "Pepco Energy Services (design-build-operate contractor)",
+      "utility": "Pepco"
+     },
+     "instrument": "design-build",
+     "signed": "2012-03",
+     "term_years": 15,
+     "capacity": "CHP rated at least 14 MW gross on digester biogas (DOE reports up to 13 MW output), covering roughly 30-33% of the 157-acre plant's average power demand",
+     "price": "O&M services valued at more than $89 million over the 15-year contract term",
+     "capex": "$81 million design-build for the CHP island; ~$170 million total Pepco Energy Services contract; ~$470 million for the whole waste-to-energy program including Cambi thermal hydrolysis and digesters",
+     "displaced": "Purchased grid electricity: about $10 million per year of electricity cost avoided",
+     "summary": "DC Water selected Pepco Energy Services in March 2012 under a design-build-operate contract to build a combined heat and power plant burning biogas from North America's first Cambi thermal hydrolysis + anaerobic digestion train at Blue Plains, the largest advanced wastewater treatment plant in the world. The build price was $81 million; a 15-year O&M contract worth more than $89 million brought the deal to roughly $170 million, inside a ~$470 million overall waste-to-energy program. The CHP is rated at least 14 MW and supplies about a third of plant load, saving roughly $10 million a year in electricity. Blue Plains still buys the other two-thirds of its power from the grid.",
+     "microreactor_read": "A single large municipal wastewater plant is a 30-45 MW electrical load with a firm 24/7 duty cycle and a real steam demand - two to three microreactors' worth on one fenced federal-adjacent site. But the price to beat is brutal: $81M for 14 MW is ~$5,800/kW installed for a machine whose fuel is free digester gas, so a reactor has to sell against the remaining grid-supplied two-thirds of load, not against the CHP.",
+     "sources": [
+      {
+       "label": "DC Water — Pepco Energy Services Selected by DC Water to Build and Operate a $170 million Combined Heat & Power Plant",
+       "url": "https://www.dcwater.com/about-dc-water/media/news/pepco-energy-services-selected-dc-water-build-and-operate-170-million",
+       "quote": "The CHP project will produce at least 14 MW of electric power that will supply the Blue Plains facility with nearly 30 percent",
+       "status": "fetched"
+      },
+      {
+       "label": "U.S. Department of Energy (CMEI) — A National First in Community Waste to Energy in our Nation's Capital",
+       "url": "https://www.energy.gov/cmei/articles/national-first-community-waste-energy-our-nations-capital",
+       "quote": "an electrical cost savings of about $10 million per year",
+       "status": "fetched"
+      },
+      {
+       "label": "US EPA — Energy Efficiency for Water Utilities",
+       "url": "https://www.epa.gov/sustainable-water-infrastructure/energy-efficiency-water-utilities",
+       "quote": "drinking water and wastewater plants typically are the largest energy consumers, often accounting for 30 to 40 percent of total energy consumed",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "montgomery-county-md-pshq-mccf-microgrids",
+     "sector": "Critical civic infrastructure",
+     "name": "Montgomery County MD microgrids at Public Safety Headquarters and the County Correctional Facility",
+     "country": "US",
+     "region": "Gaithersburg and Boyds, Maryland",
+     "parties": {
+      "host": "Montgomery County, Maryland (Dept. of General Services)",
+      "provider": "Duke Energy Renewables (owner-operator) with REC Solar and Schneider Electric",
+      "utility": "Pepco"
+     },
+     "instrument": "ESA (energy services agreement)",
+     "signed": "2016",
+     "term_years": 25,
+     "capacity": "Public Safety HQ: 2 MW solar PV parking canopies (2.5 MW per Maryland Energy Administration) plus an 800 kW CHP system. Correctional Facility: 220 kW CHP with existing generators. Combined output over 11 million kWh per year.",
+     "capex": "No upfront capital cost to the county; partially funded by two Maryland Energy Administration grants totaling $494,250",
+     "price": "Energy services agreement - the county pays for energy delivered; Duke Energy Renewables owns and operates both microgrids over a 25-year service life",
+     "displaced": "Grid supply plus standby diesel duty at two facilities that must run through a regional outage: a 911/emergency-operations complex and a jail",
+     "summary": "Montgomery County procured microgrids at its Public Safety Headquarters and its Correctional Facility under a public-private partnership in which Duke Energy Renewables owns and operates the assets for a 25-year service life, Schneider Electric builds and maintains them, and the county pays nothing upfront. PSHQ got 2 MW of solar canopies over nine acres of parking plus an 800 kW CHP unit; the jail got a 220 kW CHP tied into its existing generators. Together they produce over 11 million kWh a year. The Maryland Energy Administration contributed two grants totaling $494,250. Both went live on 24 October 2018.",
+     "microreactor_read": "This is the template contract for civic microreactor sales: a county with no capital budget, an asset owned by a third party for 25 years, and an energy services payment out of the operating line. But the scale is the warning - the jail's whole CHP is 220 kW and the public-safety complex's is 800 kW, so a single 1 MW reactor already oversizes the two most critical buildings a US county owns. Civic sales have to aggregate campuses, not chase single facilities.",
+     "sources": [
+      {
+       "label": "Montgomery County MD Dept. of General Services — Advanced Energy Projects",
+       "url": "https://www.montgomerycountymd.gov/department-general-services/dgs-divisions-offices/office-energy-sustainability/advanced-energy-projects",
+       "quote": "a 220 KW Combined Heat and Power (CHP) system combined with existing generators",
+       "status": "fetched"
+      },
+      {
+       "label": "Maryland Energy Administration — Montgomery County Amplifies Sustainability with Two Energy Resilience Microgrids",
+       "url": "https://news.maryland.gov/mea/2018/10/25/montgomery-county-amplifies-sustainability-with-two-energy-resilience-microgrids/",
+       "quote": "This project is partially funded by two grants from the Maryland Energy Administration (MEA) totaling $494,250 dollars.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "jfk-new-terminal-one-microgrid",
+     "sector": "Critical civic infrastructure",
+     "name": "JFK New Terminal One microgrid (AlphaStruxure Energy-as-a-Service)",
+     "country": "US",
+     "region": "Queens, New York",
+     "parties": {
+      "host": "Port Authority of New York & New Jersey / New Terminal One at JFK",
+      "provider": "AlphaStruxure (finances, designs, builds, owns, operates)",
+      "utility": "Con Edison"
+     },
+     "instrument": "EaaS",
+     "signed": "2024-09",
+     "capacity": "About 10.5 MW: 7.7 MWdc rooftop solar (~13,000 panels over 370,000 sq ft), 3.84 MW of RNG-ready fuel cells in CHP configuration, plus battery storage; sized to cover roughly half the terminal's daily operations",
+     "capex": "No upfront capital expenditure by the Port Authority; AlphaStruxure finances the whole system under the EaaS agreement",
+     "price": "Long-term Energy-as-a-Service agreement with predictable operating costs and guaranteed performance; $/kWh not published",
+     "displaced": "Con Edison supply and terminal standby generation; generation equivalent to 2,386 average US homes' annual electricity use",
+     "summary": "The Port Authority of New York & New Jersey and New Terminal One broke ground on 24 September 2024 on what will be the largest airport microgrid in the US, financed entirely by AlphaStruxure under an Energy-as-a-Service contract with zero upfront capital cost to the Port Authority. AlphaStruxure designs, builds, owns, operates and maintains a roughly 10.5 MW system of rooftop solar, 3.84 MW of RNG-ready fuel cells running CHP, and battery storage, covering about half the terminal's daily electricity. Gates open in 2026.",
+     "microreactor_read": "A transport authority with balance-sheet capacity chose to take zero capital risk: the whole 10.5 MW is off the Port Authority's books under an EaaS contract that guarantees performance. For a microreactor this is the only viable civic instrument - and the direct competitor is a 3.84 MW fuel cell that already delivers firm, dispatchable, low-emission CHP behind the meter today, with no licensing queue.",
+     "sources": [
+      {
+       "label": "AlphaStruxure — Port Authority, New Terminal One at JFK and AlphaStruxure Begin Construction of a Microgrid",
+       "url": "https://alphastruxure.com/news-press-release/jfkmicrogridconstruction/",
+       "quote": "AlphaStruxure is financing the microgrid project through an EaaS model, which is a long-term agreement ensuring predictable operating costs and guaranteed performance",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "pittsburgh-international-airport-microgrid",
+     "sector": "Critical civic infrastructure",
+     "name": "Pittsburgh International Airport microgrid (Peoples Natural Gas, 20-year build-own-operate)",
+     "country": "US",
+     "region": "Pittsburgh, Pennsylvania",
+     "parties": {
+      "host": "Allegheny County Airport Authority",
+      "provider": "Peoples Natural Gas (with CNX Resources, IMG Energy Solutions, EIS Solar, PJ Dick, LLI Engineering)",
+      "utility": "Duquesne Light Company"
+     },
+     "instrument": "BOO",
+     "signed": "2019",
+     "term_years": 20,
+     "capacity": "Five natural-gas-fueled generators plus 9,360 solar panels across eight acres; more than 20 MW capable against an airport peak demand of approximately 14 MW",
+     "price": "No capital cost to the airport; natural gas price locked for the first five years with no rate increases",
+     "displaced": "Retail utility supply: about $1 million saved in the first year of operation; the airport's consultant expected rate increases of at least 15-20% absent the deal",
+     "summary": "In 2019 the Allegheny County Airport Authority board awarded Peoples Natural Gas a 20-year contract to build, own, maintain and operate a microgrid at no capital cost to the airport, fed by five gas gensets burning gas produced on airport land plus a 9,360-panel solar array on a former landfill. The microgrid went live in July 2021 and made PIT the first airport in the world running entirely on its own generation, with a grid tie to Duquesne Light retained. Peak airport demand is about 14 MW against more than 20 MW of installed capacity. The airport reported roughly $1 million in energy savings in year one, with gas prices locked for five years. A ~4.7 MW solar expansion of 11,216 additional panels was announced in 2025.",
+     "microreactor_read": "A major international airport peaks at ~14 MW - one microreactor's output - and the incumbent structure is exactly the one a reactor vendor must copy: zero host capex, developer owns the asset, host buys power on a 20-year fixed-price agreement. The number to beat is the delivered price that produced $1M/yr of savings against Duquesne Light retail, not a capex comparison.",
+     "sources": [
+      {
+       "label": "PR Newswire / Allegheny County Airport Authority — Pittsburgh International Airport Goes Live with First-of-Its-Kind Microgrid",
+       "url": "https://www.prnewswire.com/news-releases/pittsburgh-international-airport-goes-live-with-first-of-its-kind-microgrid-powering-entire-facility-with-natural-gas-and-solar-energy-301333349.html",
+       "quote": "The Allegheny County Airport Authority Board of Directors in 2019 awarded Peoples Natural Gas a 20-year contract to build, maintain and operate the microgrid",
+       "status": "fetched"
+      },
+      {
+       "label": "Microgrid Knowledge — How a microgrid saved Pittsburgh International Airport $1 million",
+       "url": "https://www.microgridknowledge.com/editors-choice/article/11427168/how-a-microgrid-saved-pittsburgh-international-airport-1-million",
+       "quote": "But it is the $1 million in energy savings, achieved in its first year of operation, that is most eye popping.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    },
+    {
+     "id": "sterling-mmld-battery-police-dispatch",
+     "sector": "Critical civic infrastructure",
+     "name": "Sterling Municipal Light Department battery storage backing the town police station and dispatch centre",
+     "country": "US",
+     "region": "Sterling, Massachusetts",
+     "parties": {
+      "host": "Town of Sterling / Sterling Municipal Light Department",
+      "provider": "NEC Energy Solutions (batteries); DOE Office of Electricity and Sandia National Laboratories provided technical support",
+      "utility": "Sterling Municipal Light Department (municipal utility)"
+     },
+     "instrument": "grant-funded",
+     "signed": "2016",
+     "capacity": "2 MW / 3.9 MWh battery at the Chocksett Road substation, paired with existing solar; islands to give up to 12 days of backup power to the police station and dispatch centre",
+     "capex": "About $2.7 million total, of which a $1.46 million Massachusetts DOER resiliency grant and a $250,000 US Department of Energy grant",
+     "displaced": "Peak demand and capacity charges: projected to save SMLD customers over $400,000 a year; Sandia calculated payback in fewer than seven years",
+     "summary": "Sterling, a town of about 7,800 with its own municipal light department, installed the state's first utility-scale battery in 2016: 2 MW / 3.9 MWh from NEC Energy Solutions at the Chocksett Road substation, for roughly $2.7 million with a $1.46 million DOER resiliency grant and $250,000 from DOE. The system pays for itself on peak shaving - Sandia National Laboratories calculated payback under seven years and SMLD projects over $400,000 a year of customer savings - while the resilience benefit is that it can island with existing solar and carry the town's police station and 911 dispatch centre for up to 12 days.",
+     "microreactor_read": "The entire critical civic load of a New England town - police station plus PSAP dispatch - is small enough that 3.9 MWh of batteries covers it for twelve days, and the economics were carried by peak shaving, not by resilience. A microreactor has no addressable product at this scale; the only civic entry point is the municipal utility itself, which buys on payback-under-seven-years arithmetic.",
+     "sources": [
+      {
+       "label": "Clean Energy States Alliance — Sterling, Massachusetts Breaks Ground on a Resilient Energy Storage System",
+       "url": "https://www.cesa.org/sterling-energy-storage-project/",
+       "quote": "provide up to 12 days of backup power to the town's police station and dispatch center",
+       "status": "fetched"
+      },
+      {
+       "label": "Clean Energy States Alliance — Sterling project page (grant detail)",
+       "url": "https://www.cesa.org/sterling-energy-storage-project/",
+       "quote": "$1.46M grant from the Massachusetts Department of Energy Resources",
+       "status": "fetched"
+      }
+     ],
+     "_from": "apps-medical-civic.json"
+    }
+   ]
+  }
+ ]
+}
