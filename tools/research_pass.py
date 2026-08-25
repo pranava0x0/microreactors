@@ -42,7 +42,11 @@ CASE_REQUIRED = ["id", "sector", "name", "summary", "microreactor_read", "source
 CASE_NUMERIC_ANY = ["price", "capex", "displaced", "capacity", "term_years", "filings"]
 
 PLACEHOLDER = re.compile(r"^\s*(tbd|todo|n/?a|unknown|none|\.\.\.|-+)\s*$", re.I)
-YEAR = re.compile(r"(19|20)\d{2}")
+# The claim's own date field is an ISO-ish date, so a trailing hyphen is expected.
+CLAIM_YEAR = re.compile(r"^\s*((?:19|20)\d{2})")
+# A source label is prose, where a 4-digit run inside a longer token is a contract
+# number (N69450-16-C-1901), not a year. Require clean boundaries on both sides.
+LABEL_YEAR = re.compile(r"(?<![\w\-/])(19|20)\d{2}(?![\w\-/])")
 
 
 def fail(errors: list, path: pathlib.Path, rec_id: str, msg: str) -> None:
@@ -82,13 +86,15 @@ def check_impossible_citation(rec, sources, path, rec_id, errors) -> None:
     do not always carry a date, so silence here proves nothing.
     """
     claim = str(rec.get("signed") or rec.get("date") or "")
-    m = YEAR.search(claim)
+    m = CLAIM_YEAR.search(claim)
     if not m:
         return
     claim_year = int(m.group(0))
+    horizon = dt.date.today().year + 1
     source_years = []
     for s in sources:
-        years = [int(y.group(0)) for y in YEAR.finditer(str(s.get("label", "")))]
+        years = [int(y.group(0)) for y in LABEL_YEAR.finditer(str(s.get("label", "")))
+                 if 1900 <= int(y.group(0)) <= horizon]
         if years:
             source_years.append(max(years))
     if source_years and claim_year > max(source_years):
