@@ -388,7 +388,14 @@
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt",
                                         srcs: srcsOf(a) });
   });
-  var MAX = 850;
+  // Axis ceiling derived from the bands themselves, rounded up to a clean step.
+  // A hard-coded ceiling silently renders any band above it wider than the
+  // chart: raising rural Alaska to $1,950/MWh against a literal 850 produced a
+  // 1,945px bar inside a 1,280px page.
+  var MAX = (function () {
+    var top = bands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
+    return Math.max(850, Math.ceil(top / 250) * 250);
+  }());
   // Round for display: the underlying study reports cents, but a chart label
   // implying two-decimal precision on a forward-looking cost estimate is false
   // precision. Full values stay in data/costs.json.
@@ -407,7 +414,8 @@
       '%"><span class="t">' + esc(txt) + "</span></div></div>" +
       (b.caveat ? '<div class="caveat">' + esc(b.caveat) + "</div>" : "") + "</div>";
   }).join("") +
-    '<div class="axis"><span>$0</span><span>$' + MAX / 2 + "</span><span>$" + MAX + "/MWh</span></div>");
+    '<div class="axis"><span>$0</span><span>$' + Math.round(MAX / 2) + "</span><span>$" +
+    MAX + "/MWh</span></div>");
 
   render($("altnotes"), D.costs.displaced_alternatives.filter(function (a) {
     return a.low_mwh == null;
