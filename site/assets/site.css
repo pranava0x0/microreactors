@@ -448,3 +448,18 @@ details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
    `details` so it can never match a non-details element carrying the same class. */
 details.prec:not([open]) > :not(summary),
 details.sector:not([open]) > :not(summary){display:none}
+
+/* "Why a small reactor, case by case" — every microreactor-specific note on the
+   site, gathered onto the Top options sub-tab. One disclosure per group, reusing
+   details.prec so it inherits that component's closed-state rule and styling. */
+.edgeband{margin-top:var(--space-10);border-top:1px solid var(--border-subtle);padding-top:var(--space-6)}
+.edgeband > .prose{margin-bottom:var(--space-5);font-size:var(--size-body-sm);line-height:var(--lh-body)}
+.egolink{margin:0 0 var(--space-3)}
+.egolink a{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  text-decoration:none;border-bottom:1px solid var(--border-subtle)}
+.egolink a:hover{color:var(--antares-red)}
+.edgerow{padding:var(--space-3) 0;border-top:1px solid var(--border-subtle)}
+.edgerow .en{display:block;font-weight:var(--weight-semibold);font-size:var(--size-body-sm);
+  margin-bottom:var(--space-1)}
+.edgerow p{margin:0;font-size:var(--size-body-sm);color:var(--text-secondary);
+  line-height:var(--lh-body);max-width:var(--measure-prose)}

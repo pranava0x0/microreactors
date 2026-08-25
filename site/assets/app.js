@@ -610,6 +610,57 @@
       "</div>";
   }).join("") + "</div>";
 
+  /* Every microreactor-specific note on the site, gathered in one place. Each
+     record on the Policy and Costs tabs ends with what a 1-20 MW unit changes
+     that a large reactor does not; read together they are the argument for the
+     size, which is otherwise scattered across two tabs and nine sub-tabs. */
+  var edgeGroups = [];
+  var policyName = {}, policySlug = {};
+  ((D.policy && D.policy.groups) || []).forEach(function (g) {
+    policyName[g.id] = g.name;
+    policySlug[g.id] = slug(g.name);
+  });
+  ((D.instruments && D.instruments.groups) || []).forEach(function (g) {
+    var rows = g.records.filter(function (r) { return r.microreactor_edge; });
+    if (!rows.length) { return; }
+    edgeGroups.push({
+      label: policyName[g.group] || g.group,
+      href: "#policy/" + (policySlug[g.group] || slug(g.group)),
+      linkText: "the rules behind these",
+      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_edge }; })
+    });
+  });
+  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (sec) {
+    var rows = sec.records.filter(function (r) { return r.microreactor_read; });
+    if (!rows.length) { return; }
+    edgeGroups.push({
+      label: sec.sector,
+      href: "#economics/price-to-beat",
+      linkText: "the deals behind these",
+      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_read }; })
+    });
+  });
+  var edgeCount = edgeGroups.reduce(function (n, g) { return n + g.rows.length; }, 0);
+
+  var edgeHTML = !edgeCount ? "" :
+    '<div class="edgeband"><div class="subhead"><h3>Why a small reactor, case by case</h3></div>' +
+    '<p class="prose">' + edgeCount + " notes from across the site, each on what a 1\u201320 MW " +
+    "unit changes that a bigger one does not. They sit on the Policy and Costs tabs one at a " +
+    "time; together they are the case for the size.</p>" +
+    '<div class="precgrid">' + edgeGroups.map(function (g) {
+      // One disclosure per group, closed like the sector accordions on this same
+      // tab. Open, all nine run to about 47,000px at 375px wide — the length that
+      // forced the sub-tab split in the first place.
+      return '<details class="prec"><summary><span class="nm">' + esc(g.label) + "</span>" +
+        '<span class="cat">' + g.rows.length + " notes</span></summary>" +
+        '<div class="body"><p class="egolink"><a href="' + esc(g.href) + '">' +
+        esc(g.linkText) + "</a></p>" +
+        g.rows.map(function (r) {
+          return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
+            "<p>" + esc(r.note) + "</p></div>";
+        }).join("") + "</div></details>";
+    }).join("") + "</div></div>";
+
   var secItems = [
     { id: "top", label: "Top options" },
     { id: "all", label: "All sectors" }
@@ -621,7 +672,7 @@
 
   render($("sectors"),
     '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
-      topGridHTML + "</div>" +
+      topGridHTML + edgeHTML + "</div>" +
     '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
     D.sectors.sectors.map(function (sec) {
       return '<details class="sector"><summary>' +
