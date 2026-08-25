@@ -155,3 +155,35 @@
   there are really 5 sections each containing rows. Demote the filing-trail heading, or give it
   `role="heading" aria-level="5"`.
 
+## From the copy sweep and the "why a small reactor" roll-up (2026-08-25)
+
+- **high** · Synthesise the 136 "why a small reactor" notes into the handful of arguments they
+  actually make. Reading them together, most reduce to a short list — sized to one property's own
+  load so no sale of electricity occurs; small enough to sit under a threshold (SGIP Fast Track's
+  2 MW synchronous cap, ERCOT's 10 MW, the 65 MW Connecticut ceiling); a fleet gives N+1 without a
+  second site; factory build decouples schedule from the queue; relocatable at end of lease; no
+  potential-to-emit; a small EPZ keeps a project inside the single-property regime; Price-Anderson
+  is a ~100× step at 100 MWe. That ranked list is the single most useful page on the site and it
+  does not exist yet — the roll-up is raw material for it, not a substitute.
+- **med** · Dedupe the roll-up. 136 notes were written by ten agents working independently, so the
+  same argument is almost certainly restated many times in different words. Cluster them before
+  anyone tries to read all nine groups, and show a count per distinct argument rather than per
+  record.
+- **med** · Tag each note by which argument it makes (size, siting, schedule, fleet, licensing,
+  emissions, contract structure) and let the Top options sub-tab filter on that tag. Grouping by
+  where a note came from is the right default; grouping by what it argues is what a reader
+  actually wants.
+- **low** · The About sub-tab is thin — it carries what the site is and the design credit. It is
+  the natural home for the method: how a record gets written, what `not found` means, why some
+  sources are marked with a dagger, and the refresh cadence. Move that content there rather than
+  letting it creep back into per-page prose.
+- **low** · Consider a cache-busting query on `site.css` and `assets/app.js` in dev, or serve them
+  with `Cache-Control: no-store` from the preview config. Twice on 2026-08-25 a browser check
+  measured stale CSS and stale markup after an edit, once producing a reading-width "bug" that did
+  not exist. Busting `index.html` alone does not reload its subresources.
+- **low** · `site/data.js` is now 830 KB. Filed above under the research pass, but the roll-up
+  makes it sharper: the same 136 notes are serialised twice, once under `instruments`/`benchmarks`
+  and once more read by the Top options renderer. The renderer reads the same objects, so this is
+  not literal duplication in the payload — but it does mean any lazy-loading split has to keep
+  Policy, Costs and Applications reading one copy.
+
