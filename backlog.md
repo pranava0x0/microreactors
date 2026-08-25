@@ -60,7 +60,9 @@
   `tools/verify_quotes.py --cache`. 124 registered URLs are still not-in-cache. Until they are,
   the site's own quote-lock gate cannot speak for the new rows. Run `fetch_source.py` from the
   main session only — it writes a shared index and concurrent agents corrupt it.
-- **high** · Finish the four agents the session limit killed on 2026-08-25. Targets are recorded
+- **high** · ~~Finish the four agents the session limit killed on 2026-08-25.~~ Re-fired 2026-08-25;
+  federal awards completed at 26 records. Original scope below for the remainder:
+  **Finish the four agents the session limit killed on 2026-08-25.** Targets are recorded
   verbatim in each partial file's `_meta.absences` (`_meta.incomplete: true`) and summarised in
   `docs/RESUME-2026-08-25.md`: `mech-dockets.json` (2 of ~8 records — CT PURA 20-03-17, CT DEEP
   per-site award chart, NJ BPU TCDER + the DCO Energy intersection ruling, CPUC 2025 SGIP
@@ -113,3 +115,20 @@
   anything with any battery major as of 2026-08-24. The site currently states this as a `finding`
   row; the research pass re-confirmed it across a second independent search, which is worth noting
   so a third pass does not re-spend on it.
+
+- **high** · Surface FEMA's benefit-cost data as its own figure. The federal-awards pass found that
+  FEMA publishes a benefit-cost ratio and a net-value-of-benefits per project, and the numbers are
+  one to two orders of magnitude above what is actually spent on the generator: WaterOne (Johnson
+  County, KS) carries a 38.09 BCR and $261,096,991 of net benefits against a $6.54M project; Erie
+  County Medical Center $67.6M against $15.1M; Cayuga Medical Center $81.1M against $11.6M. That is
+  a published, federally-modelled willingness-to-pay ceiling for firm power at named critical sites
+  — a far stronger anchor for a microreactor pitch than any $/kW, and nothing on the site uses it.
+- **med** · Correct the "utility privatization" framing wherever it appears. The NAVFAC Beaufort
+  contract carried at $251.4M is really $254,977,740.80 **for water and wastewater, containing no
+  electricity at all**. Any argument that reads the 50-year utility-privatization vehicle as an
+  electricity precedent needs re-checking against what each contract actually covers.
+- **med** · Clean Ports has committed roughly $1.45B at two ports (PANYNJ $451.6M federal + $350.2M
+  cost share, plus Los Angeles) to create electrical load and not one dollar to supply. Where no
+  shore power exists MARAD's answer is to *rent* a mobile diesel generator — $9.86M obligated over
+  five years for one laid-up vessel, leaving no asset behind. That pairing is the clearest
+  load-without-supply story in the dataset and deserves a callout on the Applications tab.

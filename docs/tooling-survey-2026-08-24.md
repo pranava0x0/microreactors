@@ -6,8 +6,8 @@ shell out to, rather than rebuild.
 **Scope.** 37 repos returned by `gh repo list pranava0x0 --limit 200`; 10 are private
 (`DryDock`, `website`, `PersonalCRM`, `pitches`, `teaching-ideas`, and five pre-2018
 personal repos) and were not opened. That leaves **26 public repos other than this
-one**, of which **9 hold machinery worth taking** (two more are listed in the table
-and rejected, so nobody re-opens them). None is archived.
+one**, of which **10 hold machinery worth taking** (three more appear in the
+table with a `skip` verdict, so nobody re-opens them). None is archived.
 
 **Licence, for all of them: `null` — no `LICENSE` file in any repo surveyed.** Same
 owner, so reuse is not a legal problem here, but nothing is licensed for third-party
@@ -27,7 +27,7 @@ or run out-of-process in their own repo and their output committed here.
 | Repo | What it does | Verdict | What it unlocks here |
 |---|---|---|---|
 | **brownfield-opportunities** | 21-connector siting pipeline over ~46.8k contaminated/federal sites; pure-Python spatial index; **already carries a 12-vendor / 32-commitment microreactor fleet file and a microreactor siting score** | `adapt` (data) + `copy-as-is` (`spatial.py`, `geom.py`) + `call-out-of-process` (connectors) | **Sites** and **Vendors** tabs: 21 commitment rows this repo does not have (9 Janus installations geocoded, 6 INL pilot-program reactors, Penn State, UIUC, 2 RELLIS, Valar, Deep Fission), each with source URLs; grid/rail/road/substation proximity for any site we add |
-| **FERCforms** | The FERC document-audit tool. Downloads FERC audit-report PDFs out of eLibrary through the F5 WAF, extracts per-page text, structures findings→recommendations; plus a 50-state PUC crawler | `adapt` (the eLibrary PDF fetch) + `call-out-of-process` (the rest) | Closes the gap in `tools/ferc_elibrary.py`, which today returns filing *metadata* only. Lets a research pass read the text of a FERC filing, not just find it |
+| **FERCforms** | The FERC document-audit tool. Downloads FERC audit-report PDFs out of eLibrary through the F5 WAF, extracts per-page text, structures findings→recommendations; plus a 50-state PUC crawler | `adapt` (the eLibrary PDF fetch) + `call-out-of-process` (the rest) | Closes the gap in `tools/ferc_elibrary.py`, which today returns filing *metadata* only. Lets a research pass read the text of a FERC filing, not just find it. **Caveat: I retested the combined-PDF endpoint on 2026-08-25 — the auth half still works from stdlib, but it now 524s at ~125 s. See §1.** |
 | **FERC-Orders-June-2026** | RM26-4 / large-load docket site: browser-side eLibrary docket-sheet sweeper and bulk comment downloader, PDF/DOCX→text with page markers, corpus validator | `adapt` (`elibrary-sweep.js`, `validate-comments.py`) | **Market design** and **Policy** tabs: a repeatable way to pull a whole FERC docket sheet and its comment bodies when the JSON search API is not enough |
 | **nucleardeployment** | The sibling nuclear tracker (Node/Next). Source cache, **claim-term validator against cached text**, newsroom freshness canary, AI-prose linter, source-tier validator | `adapt` (port `validate-claims` and `check-news` to Python) | `validate-claims` catches the exact defect the 2026-08-21 audit found by hand (cited paper does not contain the number). `check-news` addresses the 2026-08-23 finding that 3 of 5 deep-dive rows were stale |
 | **datacentercommunitybenefits** | Data-centre community-benefit tracker. **Stdlib-only** HTML→publication-date/quote extractor, link checker with Wayback fallback, scout/recheck research accelerators | `copy-as-is` (`connectors/extract.py`) + `adapt` (`check_links.py`) | Auto-extracting a source's publication date makes the "claim dated after its source" lint from 2026-08-23 mechanical. Wayback fallback turns a dead citation into a recoverable one |
@@ -35,6 +35,8 @@ or run out-of-process in their own repo and their output committed here.
 | **virginia-budget-explorer** | Source-verified static budget dashboard | `adapt` (`scripts/freshness.py`) | A drift canary: HEAD every cited source, compare `Content-Length` against the byte count recorded at capture, report re-issued documents. Feeds the **Sources** tab's staleness story |
 | **datacenterwaterusage** | Water-use document pipeline; 20+ state/local scrapers (VA DEQ, Ohio EPA), EPA ECHO DMR, PDF text+table extraction | `call-out-of-process` | Cooling-water and siting-constraint evidence for the **Sites** tab, if that question is ever taken up. Too heavy (asyncio, structlog, pdfplumber) to import |
 | **us-tpd-tracker** | Tech-prosperity-deals tracker | `adapt` (`pipeline/scrapers/federal_register.py`) | Federal Register JSON API, no key, full-text + date filters — a real source for the **Policy** tab that this repo currently has no connector for |
+| **FirstPassRx** | Formulary/prior-auth reference site. Node-builtins-only source archiver with sha256 drift detection and **secret redaction before write**; offline provenance gate | `adapt` (the redaction step for `tools/fetch_source.py`) | Closes a live path from a third-party page's embedded API key to a commit — a documented 2026-07-07 incident there. Also a cleaner `last_verified`-vs-`sha256` drift model than this repo's single `fetched` date |
+| **roboticsleadership** | Robotics-leadership tracker | `skip` | Same archive/check pattern as FirstPassRx, less well documented |
 | **usgs-mineral-commodity-summaries** | USGS MCS viewer | `skip` (see Not relevant, with one exception noted) | PDF page-screenshot provenance pattern only |
 | **uscbp-trade-tracker** | CBP trade-action tracker | `skip` | Generic cache/classify/crawl layer, nothing this repo lacks |
 
@@ -229,4 +231,309 @@ exact thesis ("stranded high-voltage interconnection → fastest path to energis
 campus; the interconnect agreement is already grandfathered in many RTO tariffs").
 `connectors/planned_retirements.py` and `scripts/build_retired_industrial.py` are its
 forward-looking siblings. That is the **Sites** tab's missing screen, already built.
+
+### 3. `datacentercommunitybenefits` — the data-centre community-benefits tool
+
+`https://github.com/pranava0x0/datacentercommunitybenefits` · Python · last push
+**2026-08-24** · licence **none** · not archived · public.
+
+**Purpose.** Track what hyperscalers promise a community when they site a data centre,
+what the community says back, and what the tariff/rate case actually does — companies,
+claims, projects, community responses, moratoriums, ratepayer-protection provisions.
+
+**Entry points.**
+
+- `python refresh.py` — the pipeline driver.
+- `python check_links.py` · `--fix` (write `wayback_url` back into the seed JSON and
+  append to `ISSUES.md`) · `--dry-run`. Writes `dead_links_report.json`.
+- `python scripts/validate_moratoriums.py`, `scripts/build_rate_cases.py`,
+  `scripts/build_signatories.py`, `scripts/update_ratepayer_v119.py`,
+  `tools/build_preview.py`.
+- `connectors/` is a library, not a CLI: `scout.py` (find candidate records),
+  `research.py`, `recheck.py` (re-verify what was found), `dedupe.py`, `extract.py`,
+  `http.py`. `scout`/`harvest` take `--html-file` so a page fetched through a real
+  browser can be fed back in.
+
+**Data sources hit.** Named news outlets and company first-party data-centre pages,
+fetched as **HTML and parsed with regex — no API**. Plus the **Wayback Machine CDX API**
+(public, keyless) for dead-link recovery. `connectors/extract.py` maintains an explicit
+first-party domain map (`datacenters.atmeta.com` → meta, `local.microsoft.com` →
+microsoft, …) and, usefully, a `JS_RENDERED_DOMAINS` set plus a `needs_browser(url, page)`
+heuristic that flags a 200 with under 600 characters of body text as an SPA shell —
+the exact failure this project hit on 2026-08-23 when a fetched page turned out to be a
+JS stub.
+
+**Dependencies.** The repo as a whole needs `pydantic` and `requests`. **But the two
+files worth taking are stdlib-only and say so in their own docstrings:**
+
+- `connectors/extract.py` — "Stdlib only (no bs4 dependency)": `html`, `json`, `re`,
+  `datetime`, `urllib.parse`.
+- `check_links.py` — `urllib.request`, `urllib.error`, `json`, `time`, `collections`.
+
+**Verdict: `copy-as-is` for `connectors/extract.py`; `adapt` for `check_links.py`; `skip`
+the rest.** The scout/research/recheck loop is bound to that project's Pydantic schema
+and its editorial rules about stance and constituency, none of which transfer.
+
+**What it unlocks here.**
+
+- `extract_pub_date(page)` walks JSON-LD (`datePublished`/`dateCreated`/`uploadDate`,
+  nested, via a recursive `_walk_ld`), then a meta-tag alternation covering
+  `article:published_time`, `og:published_time`, `datePublished`, `sailthru.date`,
+  `parsely-pub-date`, then `<time datetime=…>` — and validates the result is a real
+  calendar date before returning it, returning `None` rather than guessing. That turns
+  the **2026-08-23 candidate lint into something mechanical**: this repo recorded
+  "flag any milestone whose source predates its date" as a lesson after a 2026-02-28
+  claim cited a 2025-02-17 document, but has no way to *get* a source's publication
+  date. This is that missing half, and it drops straight into `tools/fetch_source.py`
+  as an extra index field.
+- `extract_quotes` surfaces `<blockquote>` and commitment-cue sentences from a page as
+  candidate verbatim spans — a feeder for `tools/verify_quotes.py`, which today needs a
+  quote span chosen by hand.
+- `check_links.py`'s **Wayback CDX fallback** is the piece `tools/check_links.py` lacks:
+  today a dead citation is classified dead and stays dead. With a CDX lookup a dead URL
+  becomes a recoverable one, and `--fix` writes the archived URL back into the data.
+
+---
+
+## Other reusable machinery
+
+### `nucleardeployment` — `scripts/validate-claims.mjs` and `scripts/check-news.mjs`
+
+TypeScript/Next, last push 2026-08-23, licence none. `npm run data:claims`
+(`-- --web`, `-- --company X`, `-- --json`) checks **every record against its own cited
+source**: does the cached page actually contain the figures, dates and names the record
+claims? Cache first, web second, so a normal run is free, offline and deterministic.
+Its docstring is blunt that this catches "a real, reachable, plausible URL that does not
+say what the site says it says", and that the defect shipped there and survived three
+review rounds. That is precisely the 2026-08-21 finding in this repo — three cost rows
+citing a real paper for capex/LCOE figures it does not contain, all of which survived an
+expert-review pass because that pass checked reasoning, not provenance.
+`npm run data:news` derives a newsroom watch list by truncating already-cited URLs down
+to their `/news//press//newsroom/` index and reports which have changed — a canary for
+the 2026-08-23 finding that 3 of 5 deep-dive subjects had status-changing corrections.
+
+`scripts/lib/source-cache.mjs` is the reusable core: `urlHash`, `readCachedText`,
+`htmlToText`, `claimTerms(label)`, `missingTerms(text, terms)`, `looksLikeWall(text)`,
+plus `apiUrlFor` / `textFromFederalRegisterApi` for the Federal Register.
+
+**Dependencies.** The scripts themselves import only `node:crypto` and `node:fs/promises`
+— no npm packages. But `scripts/lib/records.mjs` does `import("../../app/data.ts")`,
+so running them out-of-process needs that repo's TypeScript data modules and a
+type-stripping Node. **Verdict: `adapt` — port the algorithm, not the script.** The
+`claimTerms`/`missingTerms`/`looksLikeWall` trio is maybe 80 lines of stdlib Python
+against `data/cache/` and `data/research/source_index.json`, which this repo already
+maintains. It would slot in beside `tools/check_citations.py` as the check that closes
+the loop between a citation existing and a citation being true.
+
+### `FERC-Orders-June-2026` — docket sweep and comment corpus
+
+JavaScript, last push 2026-08-23, licence none. Three pieces:
+
+- **`tools/elibrary-sweep.js`** — a *browser snippet*, explicitly not a Node script,
+  pasted into an eLibrary docket-sheet page via the Chrome bridge and read back from
+  `window.__sweep`. It encodes two facts that cost a sweep to learn: eLibrary sorts
+  ascending so the newest rows are **not** all on the last page (AD26-7 had 32 of 67
+  recent filings sitting on page 1), and the Chrome bridge discards an async IIFE's
+  return value. Rows accumulate into a `Map` keyed by accession.
+- **`tools/grind-comment-downloads.js`** — bulk comment-body download via hidden
+  iframes, with the one-time `chrome://settings/content/automaticDownloads` prerequisite
+  documented (without it every download past the first silently fails).
+- **`tools/validate-comments.py`** — corpus gate: every inventoried comment has a body
+  on disk, every PDF opens with pages, every body has >200 chars of real text.
+  Distinguishes missing / corrupt / **scanned** (image-only, empty text layer) and exits
+  non-zero only on an unexpected problem, with a `KNOWN_MISSING` allowlist. Needs
+  PyMuPDF. `tools/organize-comment-files.py` does the `~/Downloads` → per-accession
+  directory move with `--- PAGE n ---` markers in the extracted text.
+
+**Verdict: `adapt`.** The scanned-vs-corrupt-vs-missing classification and the
+`--- PAGE n ---` marker convention are worth copying into whatever this repo builds on
+top of a FERC download path. The browser snippets are the documented fallback for
+exactly the case my 524 test above hit.
+
+### `vibe-coding-security` — `tools/check-external-links.py`
+
+Python, last push 2026-08-24, licence none. **Stdlib only** (`urllib.request`, `re`,
+`ipaddress`, `glob`). A sharper sibling of this repo's `tools/check_links.py`:
+
+- Treats **401/403/405/429 as ALIVE** ("security sites routinely bot-block HEAD/GET"),
+  failing only on 404/410/451 and DNS/connection failure. This repo's `check_links.py`
+  reaches the same conclusion by a different route (`blocked` vs `dead` sentinels), so
+  the two are worth reconciling into one classifier.
+- **Skips non-citation URLs** — localhost, RFC1918/link-local via `ipaddress`,
+  `*.test`/`*.local`/`*.invalid`, `example.*`, and placeholder hosts containing
+  `attacker`/`evil`/`victim`/`malicious`. This repo has no such skip list.
+- **Gate-shaped exit codes**: `0` clean, `1` a dead citation with no Wayback snapshot,
+  `2` bad invocation — and transient DNS/timeout errors are reported but do **not** fail
+  the gate, which is the right call given the 2026-08-19 lesson about giving a network
+  failure one retry before it becomes a finding.
+
+**Verdict: `copy-as-is`, then merge.** Take the ignorable-host filter and the exit-code
+contract into `tools/check_links.py`; do not keep two link checkers.
+
+### `virginia-budget-explorer` — `scripts/freshness.py`
+
+Python, last push 2026-07-06, licence none. Only third-party dependency in the whole
+repo is `PyMuPDF==1.26.5`, and `freshness.py` itself is **stdlib** (`urllib.request`,
+`json`, `socket`, `os`) apart from two local imports.
+
+`python3 scripts/freshness.py` (add `--check` to exit non-zero on drift) HEADs every
+URL in `sources/manifest.json` and compares the live `Content-Length` against the byte
+count recorded at capture; a size change or a newly-erroring URL means the document was
+re-issued. It exists because the site once silently presented a superseded budget stage
+as current. It **never auto-ingests** — detection only. Under GitHub Actions it writes
+`drift=true|false` to `$GITHUB_OUTPUT` and a Markdown report.
+
+**Verdict: `adapt`.** `data/research/source_index.json` in this repo already records
+`sha256`, `bytes` and `content_type` per source — every input this needs. It is close to
+a drop-in, and it is the cheapest available answer to "which of our cited documents has
+been re-issued since we read it".
+
+### `us-tpd-tracker` — `pipeline/scrapers/federal_register.py`
+
+Python, last push 2026-02-24 (the least active relevant repo), licence none.
+Repo needs `httpx`, `bs4`, `lxml`, `pydantic`, `anthropic`, `feedparser` — but the
+Federal Register scraper is thin, and the thing worth taking is the **URL contract**:
+`https://www.federalregister.gov/api/v1/documents.json` with PHP-style bracket params
+(`conditions[term]`, `conditions[publication_date][gte]`, `per_page`, `order=newest`,
+`fields[]=…`), free, keyless, structured JSON, full-text search plus date filtering.
+The file also records a live gotcha: the `agencies` filter 400s in certain combinations,
+so term-only search is what actually works.
+
+**Verdict: `adapt` — write a ~60-line stdlib `tools/federal_register.py`.** This repo
+has connectors for NRC ADAMS, FERC eLibrary and USAspending but **none for the Federal
+Register**, which is where DOE/NRC rulemakings, NOITAs and program notices are published
+— the primary-source layer under the **Policy** tab.
+
+### `datacenterwaterusage` — 20+ state and local scrapers
+
+Python, last push 2026-08-25, licence none. VA DEQ (ArcGIS, Tableau, VPDES Excel, VWP,
+public notices), Ohio EPA (eDocument, general permit, NPDES ArcGIS), ODNR water
+withdrawal, Columbus Legistar, Loudoun BoardDocs/Highbond/ACFR, PWC eServices, EPA ECHO
+DMR and NAICS, plus `extractors/pdf_extractor.py` (text **and tables**) and
+`extractors/excel_extractor.py`.
+
+**Dependencies: the heaviest in the survey** — `playwright`, `httpx`, `bs4`, `lxml`,
+`pdfplumber`, `PyMuPDF`, `openpyxl`, `pandas`, `tenacity`, `aiosqlite`, `structlog`,
+`click`, `streamlit`, `plotly`, `markdown`. Nothing here can be pasted into a
+stdlib-only repo.
+
+**Verdict: `call-out-of-process`, and only if the water question is ever taken up.**
+The genuinely transferable asset is the *knowledge* of which state portals expose what:
+the Legistar and BoardDocs scrapers are the pattern for reading county-board minutes,
+which is where a microreactor siting approval would first appear.
+
+### `FirstPassRx` — `scripts/archive-sources.mjs`
+
+JavaScript, last push 2026-08-25, licence none. Node builtins only (`node:fs`,
+`node:crypto`, `node:url`, `node:path`) — runnable with plain `node`, no install.
+Archives every cited source with url, final url, HTTP status, content-type, byte size,
+sha256, fetch method, first-archived and last-verified timestamps; a re-run only bumps
+`last_verified` when the bytes are unchanged and **flags a new sha256 as drift**.
+
+It carries one thing `tools/fetch_source.py` does not, and the reason is documented as
+a real incident: these are **third-party pages, and an embedded map/analytics/chat widget
+can carry a live API key in the raw HTML** — on 2026-07-07 a Mapbox token embedded in an
+Illinois state page reached a commit before GitHub push protection caught it. So every
+fetched body is scanned for secret patterns and **redacted before it is written to disk**.
+
+`tools/fetch_source.py` here writes `body` to `data/cache/` verbatim. `data/cache/` is
+gitignored, which is most of the protection — but the gitignore is the only thing
+standing between a third-party page's embedded credential and a commit.
+
+**Verdict: `adapt` — take the redaction step, not the script.** Roughly 20 lines in
+`fetch_source.py`'s `add()`, before `p.write_bytes(body)`. Its `last_verified`-vs-`sha256`
+drift distinction is also a cleaner model than this repo's single `fetched` date.
+
+### `roboticsleadership` — `scripts/archive-sources.js`, `check-sources.js`
+
+JavaScript, last push 2026-08-24, licence none. The same archive/check pattern as
+FirstPassRx plus `enrich.js` and two scrapers (`scraper-news.js`, `scraper-policy.js`),
+each with a colocated `.test.js`. **Verdict: `skip` — superseded.** FirstPassRx's version
+of the same idea is better documented and carries the secret-redaction incident.
+
+---
+
+## Not relevant
+
+One line each, so nobody re-opens them.
+
+| Repo | Language | Why not |
+|---|---|---|
+| `usgs-mineral-commodity-summaries` | Python | USGS MCS viewer over public-domain PDFs. The only transferable idea is the page-screenshot provenance pattern; the data has no bearing on microreactor siting. |
+| `uscbp-trade-tracker` | JavaScript | CBP trade-action tracker. Its cache/classify/crawl layer is a weaker version of what `us-tpd-tracker` and this repo already have. |
+| `iran-infrastructure-tracker` | TypeScript | Next app, no `scripts/` or `tools/` directory at all — the data-handling lives in app code. Nothing extractable. |
+| `PPAhelper` | JavaScript | Interactive PPA course. No pipeline, no scripts directory. Domain-adjacent, machinery-empty. |
+| `dcelectionstracker` | TypeScript | One script, `merge-positions.mjs`, specific to candidate/position records. |
+| `FERC-Orders-June-2026` UI half | JavaScript | The site, tests and summary tooling are docket-specific; only the three tools named above transfer. |
+| `nucleardeployment` app half | TypeScript | Cloudflare/vinext/drizzle app. Only `scripts/` transfers. |
+| `VisionZeroDC`, `TBDC50K`, `dayssincelastblunder`, `gyn-journal-club` | JavaScript | Single-purpose civic/hobby sites. No connectors, no gates. |
+| `ratemypupusa`, `settle`, `keeper`, `bubblebook` | TypeScript | Consumer apps with backends. Nothing static-site or research-pipeline shaped. |
+| `shirtpost`, `FantasyGM` | Python | Unrelated domains; no source-verification or fetch machinery worth porting. |
+| `datacenterwaterusage` dashboard half | Python | Streamlit/plotly. Only the scrapers and extractors were considered above. |
+| `DryDock`, `website`, `PersonalCRM`, `pitches`, `teaching-ideas`, and 5 pre-2018 repos | — | **Private — not opened.** Named here only so the count reconciles. |
+
+---
+
+## Recommended next steps
+
+Ranked. Each is sized as one task.
+
+1. **Port the eLibrary document download into `tools/ferc_elibrary.py` as
+   `--download ACCESSION`.** ~40 lines of stdlib (`http.cookiejar` + `urllib.request`),
+   lifted from `FERCforms/pipeline/fetch.py`: warm the filelist URL, POST
+   `DownloadPDF?accesssionNumber=…` with `{"serverLocation": ""}`, accept only
+   `%PDF-`, write through a `.part` file. **Start by finding the per-file route** — open
+   an eLibrary filelist page in the browser, watch the network tab, and record the real
+   route and param spelling for a `transmittals[].fileId` download; the combined-PDF
+   route 524s at ~125 s today (verified above) and guessing the route name is futile
+   because the API answers `200 ""` to anything it does not recognise. Highest value in
+   the survey: it is the only item that changes what this project can *know*, rather
+   than how well it checks what it already knows.
+
+2. **Import the 15-or-so genuinely-new commitment rows and 9 vendor rows from
+   `brownfield-opportunities/docs/data/microreactor-fleet.json`, and de-aggregate
+   `janus` and `doe-pilot`.** Re-verify each against its own `sources[]` first — that
+   file is a downstream consumer of this project, not an independent source. Bring the
+   `lat`/`lon` fields across: nothing in `data/` currently has a coordinate, so this is
+   also the enabling step for anything map-shaped.
+
+3. **Add publication-date extraction to `tools/fetch_source.py`.** Copy
+   `extract_pub_date` from `datacentercommunitybenefits/connectors/extract.py`
+   (stdlib, JSON-LD → meta → `<time>`, validates the calendar date, returns `None`
+   rather than guessing) and record it as `published` in `source_index.json`. Then the
+   2026-08-23 lint becomes one line: **fail any claim whose date is after its source's
+   publication date.** That check exists today only as a paragraph in `CLAUDE.md`.
+
+4. **Merge `vibe-coding-security/tools/check-external-links.py` into
+   `tools/check_links.py`, and add the Wayback CDX fallback from
+   `datacentercommunitybenefits/check_links.py`.** Take the ignorable-host filter, the
+   401/403/405-is-alive rule, and the three-way exit-code contract; add archived-URL
+   recovery so a dead citation becomes a recoverable one instead of a permanent failure.
+   One checker, not three.
+
+5. **Port `nucleardeployment`'s `claimTerms` / `missingTerms` / `looksLikeWall` into a
+   `tools/check_claims.py`.** ~80 lines of stdlib against `data/cache/` and
+   `data/research/source_index.json`, both of which already exist. This is the gate that
+   would have caught the 2026-08-21 defect — three cost rows citing a real paper for
+   figures it does not contain — without a 300K-token agent pass.
+
+6. **Write `tools/federal_register.py`** against
+   `https://www.federalregister.gov/api/v1/documents.json` (keyless, bracket params,
+   term-only search — the `agencies` filter 400s). Fills the one obvious hole in this
+   repo's connector set for the **Policy** tab.
+
+7. **Add secret redaction to `tools/fetch_source.py` before `write_bytes`**, per the
+   documented FirstPassRx incident. Small, and it removes a live path from a third-party
+   page's embedded credential to a commit.
+
+8. **Run `brownfield-opportunities`' `refresh.py --source infra-proximity` and
+   `--source eia-retired-plants` out-of-process, commit the output here, and copy
+   `connectors/spatial.py` + `connectors/geom.py` in as-is** (both already stdlib-only)
+   so this repo can compute proximity locally for any site added later. Do this after
+   step 2, since it needs coordinates to be useful.
+
+9. **Adopt `virginia-budget-explorer/scripts/freshness.py` as a source-drift canary.**
+   `source_index.json` already records `sha256`, `bytes` and `content_type` per source,
+   so it is close to a drop-in. Lowest urgency of the list, but it is the standing answer
+   to "which of our cited documents changed since we read it".
 

@@ -11,6 +11,20 @@ one overstates the market by an order of magnitude on multi-year vehicles:
 
 Both are reported for every award, never merged into one "value".
 
+**The distinction inverts on assistance awards, and the API does not warn you.**
+On a contract, `total_obligation` is the conservative figure. On a multi-phase
+cooperative agreement it can be the full federal *ceiling*: the Tanana Chiefs
+Conference ERA award reports $26,062,370 while DOE's own announcement says only
+$4.1M was released for Phase 1 — a 6x overstatement if read as money committed.
+Never quote an assistance award's obligation without checking the awarding
+agency's announcement for a phase release.
+
+Keyword search is also weaker than it looks on assistance awards: DOE's Energy
+Improvements in Rural or Remote Areas awards contain no text matching that
+programme name and surface only under CFDA 81.255 (Clean Energy Demonstrations).
+A programme that returns nothing by keyword is not absent — search its CFDA
+number or its awarding agency instead.
+
 It also reports whether the result set hit the page limit. A capped list is a
 floor, not a total.
 
@@ -148,7 +162,10 @@ def main() -> int:
             "queried": dt.date.today().isoformat(),
             "time_period": [start, end],
             "caveat": "'obligated' is money on contract to date, not the ceiling if all option "
-                      "years are exercised. Any result marked capped:true is a floor.",
+                      "years are exercised. Any result marked capped:true is a floor. On "
+                      "multi-phase cooperative agreements the obligation can instead be the full "
+                      "federal ceiling — check the awarding agency's own announcement for a "
+                      "phase release before quoting it.",
         }, "queries": results}, indent=2, ensure_ascii=False) + "\n")
         print(f"\nwrote {out.relative_to(ROOT)}")
     return 0
