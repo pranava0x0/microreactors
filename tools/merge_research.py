@@ -15,9 +15,15 @@ Records are ordered so the ones carrying the most evidence come first — a
 mechanism with real precedents, or a case with a filing and a price, outranks one
 with neither. That ordering is what the page's reading order inherits.
 
+A pass accumulates: every subsequent call takes ALL the pass directories that
+should be merged, not just the newest one — the output is rebuilt from scratch
+each time, so a call naming only the new pass would silently drop every sector
+an earlier pass had already contributed.
+
 Usage:
   python3 tools/merge_research.py data/research/deep-2026-08-24
-  python3 tools/merge_research.py data/research/deep-2026-08-24 --check   # drift gate
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/apps-2026-08-28
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/apps-2026-08-28 --check
 
 Stdlib only, like every tool in this repo.
 """
@@ -35,6 +41,11 @@ SECTOR_ORDER = [
     "Marine terminals",
     "Medical campuses",
     "Critical civic infrastructure",
+    # Added 2026-08-28 (data/research/apps-2026-08-28): named to match the
+    # Applications tab's own sector names (data/sectors.json) exactly.
+    "Compute",
+    "Manufacturing",
+    "Agriculture & Food",
 ]
 
 
@@ -50,25 +61,29 @@ def evidence_rank(rec: dict, kind: str) -> tuple:
     return (-depth, -extra, -fetched, rec.get("name", ""))
 
 
-def collect(pass_dir: pathlib.Path):
+def collect(pass_dirs: list):
     mechanisms, cases, provenance = [], [], []
-    for path in sorted(pass_dir.glob("*.json")):
-        doc = json.loads(path.read_text())
-        meta = doc.get("_meta") or {}
-        recs = doc.get("mechanisms") or doc.get("cases") or []
-        if not recs:
-            continue
-        kind = "mechanism" if "mechanisms" in doc else "case"
-        for r in recs:
-            r = dict(r)
-            r["_from"] = path.name
-            (mechanisms if kind == "mechanism" else cases).append(r)
-        provenance.append({
-            "file": path.name, "kind": kind, "records": len(recs),
-            "scope": meta.get("scope", ""),
-            "incomplete": bool(meta.get("incomplete")),
-            "absences": meta.get("absences") or [],
-        })
+    for pass_dir in pass_dirs:
+        for path in sorted(pass_dir.glob("*.json")):
+            doc = json.loads(path.read_text())
+            meta = doc.get("_meta") or {}
+            recs = doc.get("mechanisms") or doc.get("cases") or []
+            if not recs:
+                continue
+            kind = "mechanism" if "mechanisms" in doc else "case"
+            # Namespaced by pass so two passes can each hold a file with the
+            # same basename without one's provenance entry shadowing the other's.
+            from_tag = f"{pass_dir.name}/{path.name}"
+            for r in recs:
+                r = dict(r)
+                r["_from"] = from_tag
+                (mechanisms if kind == "mechanism" else cases).append(r)
+            provenance.append({
+                "file": from_tag, "kind": kind, "records": len(recs),
+                "scope": meta.get("scope", ""),
+                "incomplete": bool(meta.get("incomplete")),
+                "absences": meta.get("absences") or [],
+            })
     return mechanisms, cases, provenance
 
 
@@ -103,12 +118,12 @@ def capture_date(dir_name: str) -> str:
     return m.group(1)
 
 
-def build(pass_dir: pathlib.Path) -> dict:
-    mechanisms, cases, provenance = collect(pass_dir)
-    captured = capture_date(pass_dir.name)
+def build(pass_dirs: list) -> dict:
+    mechanisms, cases, provenance = collect(pass_dirs)
+    captured = max(capture_date(d.name) for d in pass_dirs)
     common = {
         "captured": captured,
-        "pass": f"data/research/{pass_dir.name}",
+        "pass": [f"data/research/{d.name}" for d in pass_dirs],
         "generated_by": "tools/merge_research.py",
         "provenance": provenance,
     }
@@ -134,24 +149,26 @@ def build(pass_dir: pathlib.Path) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("pass_dir", type=pathlib.Path)
+    ap.add_argument("pass_dirs", type=pathlib.Path, nargs="+")
     ap.add_argument("--check", action="store_true",
                     help="exit 1 if the committed files differ from what this would write")
     a = ap.parse_args()
-    pass_dir = a.pass_dir if a.pass_dir.is_absolute() else ROOT / a.pass_dir
-    if not pass_dir.is_dir():
-        print(f"no such pass directory: {pass_dir}", file=sys.stderr)
-        return 1
+    pass_dirs = [p if p.is_absolute() else ROOT / p for p in a.pass_dirs]
+    for pass_dir in pass_dirs:
+        if not pass_dir.is_dir():
+            print(f"no such pass directory: {pass_dir}", file=sys.stderr)
+            return 1
 
+    rerun = " ".join(str(p) for p in a.pass_dirs)
     drift = 0
-    for rel, doc in build(pass_dir).items():
+    for rel, doc in build(pass_dirs).items():
         text = json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
         target = ROOT / rel
         n = sum(len(g["records"]) for g in (doc.get("groups") or doc.get("sectors")))
         if a.check:
             current = target.read_text() if target.exists() else ""
             if current != text:
-                print(f"DRIFT {rel} — re-run tools/merge_research.py {a.pass_dir}")
+                print(f"DRIFT {rel} — re-run tools/merge_research.py {rerun}")
                 drift = 1
             else:
                 print(f"ok    {rel} ({n} records)")

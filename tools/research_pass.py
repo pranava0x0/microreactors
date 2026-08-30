@@ -33,6 +33,12 @@ MECH_FAMILIES = {"commercial-contract", "regulatory-rule", "utility-tariff",
 CASE_SECTORS = {
     "Remote outposts & microgrids", "Marine terminals", "Medical campuses",
     "Critical civic infrastructure", "Off-grid mining & mineral processing",
+    # Added 2026-08-28: named to match the Applications tab's own sector names
+    # (data/sectors.json) exactly, so a case in one of these three sectors is
+    # picked up automatically by the "why a small reactor" cross-link on the
+    # Applications tab without any renderer change (site/assets/app.js keys
+    # that band off D.benchmarks.sectors[].sector verbatim).
+    "Compute", "Manufacturing", "Agriculture & Food",
 }
 SOURCE_STATUS = {"fetched", "snippet-only"}
 

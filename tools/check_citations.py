@@ -109,6 +109,23 @@ def check() -> List[Tuple[str, str]]:
             key = "policy.json:idea" if pw.get("kind") == "idea" else ""
             need(pw, f"policy:{pw['name'][:40]}", key)
 
+    bench = json.loads((DATA / "benchmarks.json").read_text())
+    for sec in bench["sectors"]:
+        for r in sec["records"]:
+            need(r, f"benchmarks:{sec['sector']}:{r['name'][:40]}")
+
+    inst = json.loads((DATA / "instruments.json").read_text())
+    for g in inst["groups"]:
+        for r in g["records"]:
+            need(r, f"instruments:{g['group']}:{r['name'][:40]}")
+            r_sources = r.get("sources") or []
+            for p in r.get("precedents", []):
+                idx = p.get("source_idx")
+                p_sources = ([r_sources[idx]] if isinstance(idx, int) and 0 <= idx < len(r_sources)
+                             else r_sources)
+                need(dict(p, sources=p_sources),
+                     f"instruments:{g['group']}:{r['name'][:40]}:precedent:{p.get('name', '')[:30]}")
+
     sites_p = DATA / "deployment_sites.json"
     if sites_p.exists():
         sites = json.loads(sites_p.read_text())
