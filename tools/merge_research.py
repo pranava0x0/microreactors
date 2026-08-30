@@ -62,7 +62,7 @@ def evidence_rank(rec: dict, kind: str) -> tuple:
 
 
 def collect(pass_dirs: list):
-    mechanisms, cases, provenance = [], [], []
+    mechanisms, cases, provenance, file_captured = [], [], [], []
     for pass_dir in pass_dirs:
         for path in sorted(pass_dir.glob("*.json")):
             doc = json.loads(path.read_text())
@@ -84,7 +84,15 @@ def collect(pass_dirs: list):
                 "incomplete": bool(meta.get("incomplete")),
                 "absences": meta.get("absences") or [],
             })
-    return mechanisms, cases, provenance
+            # A file's own _meta.captured can postdate its pass directory's
+            # name — an agent resumed against an existing pass dir days later
+            # (data/research/2026-08-28-apps/apps-gapfill.json was captured
+            # 2026-08-29). Deriving the stamp from the directory name alone
+            # would permanently backdate it and freeze the site's build stamp.
+            m = ISO_IN_NAME.search(meta.get("captured") or "")
+            if m:
+                file_captured.append(m.group(1))
+    return mechanisms, cases, provenance, file_captured
 
 
 def bucket(records: list, key: str, order: list, kind: str) -> list:
@@ -119,8 +127,8 @@ def capture_date(dir_name: str) -> str:
 
 
 def build(pass_dirs: list) -> dict:
-    mechanisms, cases, provenance = collect(pass_dirs)
-    captured = max(capture_date(d.name) for d in pass_dirs)
+    mechanisms, cases, provenance, file_captured = collect(pass_dirs)
+    captured = max([capture_date(d.name) for d in pass_dirs] + file_captured)
     common = {
         "captured": captured,
         "pass": [f"data/research/{d.name}" for d in pass_dirs],

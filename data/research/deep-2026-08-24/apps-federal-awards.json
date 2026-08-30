@@ -691,14 +691,15 @@
    "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
    "parties": {
     "host": "Kokhanok Village Council",
-    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)"
+    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
+    "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
    },
    "instrument": "grant-funded",
    "signed": "2024-08",
    "term_years": 4,
-   "capacity": "943 kWh battery energy storage system, plus solar PV, a new wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
+   "capacity": "1 MW / 943 kWh battery energy storage system, plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
    "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
-   "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE",
+   "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE. Alaska RCA's FY2024 rate filing puts the village's actual load at 358,953 kWh test-period sales (roughly 41 kW average) and its certified cost of service at $1.0209/kWh, of which $0.6498/kWh is fuel — a fuel bill of roughly $233,000/year the grant is displacing.",
    "filings": [
     {
      "forum": "USAspending.gov (federal assistance record)",
@@ -706,10 +707,17 @@
      "id": "FAIN DECD0000120",
      "date": "2024-08-13",
      "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
+    },
+    {
+     "forum": "State PUC",
+     "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+     "id": "L2300184 (docket U-23-010)",
+     "date": "2023-06-26",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
     }
    ],
-   "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 943 kWh battery, solar PV, a wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection.",
-   "microreactor_read": "Five million dollars of federal money for a village of 170 people is roughly $29,200 per resident to remove 70 percent of the diesel — a willingness to pay that no commercial power market would support and that only a grant can. The award record does not state the village's peak load, but a 170-person microgrid sits an order of magnitude below the 1 MW floor of the smallest microreactors, so Kokhanok prices the sector's opportunity and simultaneously proves the unit is too big for the single-village case.",
+   "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 1 MW/943 kWh battery, 100 kW solar, a 100 kW wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection. The load being served is genuinely tiny: Alaska RCA's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load, against a certified cost of service of $1.0209/kWh ($0.6498/kWh of which is fuel).",
+   "microreactor_read": "Five million dollars of federal money for a village of 170 people (roughly $29,200 per resident) is buying about $5,000 per installed kW of non-diesel capacity to displace $0.6498/kWh diesel fuel — a willingness to pay, and a capex benchmark, that no commercial power market would support without a grant. Against a 41 kW average load, a 1 MW-class microreactor would be roughly 20x oversized for this single village: Kokhanok prices the sector's grant economics and simultaneously proves the smallest microreactor is still too big for the single-village case.",
    "sources": [
     {
      "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
@@ -721,6 +729,12 @@
      "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
      "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
      "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska — Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+     "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
      "status": "fetched"
     }
    ],

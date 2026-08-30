@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "captured": "2026-08-28",
+  "captured": "2026-08-29",
   "pass": [
    "data/research/deep-2026-08-24",
    "data/research/2026-08-28-apps"
@@ -70,7 +70,7 @@
    {
     "file": "deep-2026-08-24/apps-remote-marine.json",
     "kind": "case",
-    "records": 11,
+    "records": 10,
     "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -276,7 +276,7 @@
    {
     "file": "2026-08-28-apps/apps-manufacturing.json",
     "kind": "case",
-    "records": 7,
+    "records": 6,
     "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
     "incomplete": false,
     "absences": [
@@ -296,6 +296,66 @@
   {
    "sector": "Remote outposts & microgrids",
    "records": [
+    {
+     "id": "kokhanok-paradigm-shift-era-microgrid",
+     "sector": "Remote outposts & microgrids",
+     "name": "Kokhanok Paradigm Shift microgrid upgrade, DOE ERA (DE-CD0000120)",
+     "country": "US",
+     "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
+     "parties": {
+      "host": "Kokhanok Village Council",
+      "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
+      "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
+     },
+     "instrument": "grant-funded",
+     "signed": "2024-08",
+     "term_years": 4,
+     "capacity": "1 MW / 943 kWh battery energy storage system, plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
+     "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
+     "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE. Alaska RCA's FY2024 rate filing puts the village's actual load at 358,953 kWh test-period sales (roughly 41 kW average) and its certified cost of service at $1.0209/kWh, of which $0.6498/kWh is fuel — a fuel bill of roughly $233,000/year the grant is displacing.",
+     "filings": [
+      {
+       "forum": "USAspending.gov (federal assistance record)",
+       "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
+       "id": "FAIN DECD0000120",
+       "date": "2024-08-13",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
+      },
+      {
+       "forum": "State PUC",
+       "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+       "id": "L2300184 (docket U-23-010)",
+       "date": "2023-06-26",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+      }
+     ],
+     "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 1 MW/943 kWh battery, 100 kW solar, a 100 kW wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection. The load being served is genuinely tiny: Alaska RCA's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load, against a certified cost of service of $1.0209/kWh ($0.6498/kWh of which is fuel).",
+     "microreactor_read": "Five million dollars of federal money for a village of 170 people (roughly $29,200 per resident) is buying about $5,000 per installed kW of non-diesel capacity to displace $0.6498/kWh diesel fuel — a willingness to pay, and a capex benchmark, that no commercial power market would support without a grant. Against a 41 kW average load, a 1 MW-class microreactor would be roughly 20x oversized for this single village: Kokhanok prices the sector's grant economics and simultaneously proves the smallest microreactor is still too big for the single-village case.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/",
+       "quote": "THIS PROJECT SEEKS TO INSTALL A 943 KWH BATTERY ENERGY STORAGE SYSTEM",
+       "status": "fetched"
+      },
+      {
+       "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
+       "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
+       "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
+       "status": "fetched"
+      },
+      {
+       "label": "Regulatory Commission of Alaska — Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+       "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
+       "status": "fetched"
+      }
+     ],
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
+    },
     {
      "id": "doyon-utilities-alaska-utility-privatization",
      "sector": "Remote outposts & microgrids",
@@ -529,98 +589,6 @@
      ],
      "load": [
       "Regional grids serving several communities"
-     ],
-     "_from": "deep-2026-08-24/apps-federal-awards.json"
-    },
-    {
-     "id": "kokhanok-era-microgrid-2024",
-     "sector": "Remote outposts & microgrids",
-     "name": "Kokhanok Paradigm Shift - DOE OCED Energy Improvements in Rural or Remote Areas award",
-     "country": "US",
-     "region": "Kokhanok, Alaska",
-     "parties": {
-      "host": "Kokhanok Village Council",
-      "provider": "US DOE Office of Clean Energy Demonstrations (ERA programme)",
-      "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
-     },
-     "instrument": "grant-funded",
-     "signed": "2024-08",
-     "capacity": "1 MW battery energy storage system plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage, added to an existing diesel microgrid serving ~170 residents",
-     "capex": "Nearly $5 million federal cost share from DOE OCED",
-     "displaced": "Anticipated 70% of the local power plant's diesel use. RCA FY2024 Appendix 1 for Kokhanok Village Council: 358,953 kWh test-period sales, total power cost $1.0209/kWh, of which fuel/purchased power is $0.6498/kWh.",
-     "filings": [
-      {
-       "forum": "State PUC",
-       "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
-       "id": "L2300184 (docket U-23-010)",
-       "date": "2023-06-26",
-       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
-      }
-     ],
-     "summary": "DOE's Office of Clean Energy Demonstrations announced roughly $5 million for the Kokhanok Village Council to bolt a 1 MW battery, 100 kW of solar, a 100 kW wind turbine and electric thermal storage onto the village's diesel microgrid, targeting displacement of about 70% of the powerhouse's diesel within two years. The load being served is genuinely tiny: the regulator's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load. Against that, the village's certified cost of service is $1.0209/kWh, of which $0.6498/kWh is fuel. So the federal grant is buying about $5 million of hardware to cut a fuel bill of roughly $233,000 a year.",
-     "microreactor_read": "Kokhanok shows what the remote-village market actually pays and how small it is: $5 million of public capital against a 41 kW average load and a $0.65/kWh fuel bill. A microreactor sized at 1 MW would be 20x oversized for this village, so the reachable price signal is not the village itself but the fact that grant-makers will fund roughly $5,000 per installed kW of non-diesel capacity to displace $0.65/kWh diesel - a capex benchmark a reactor must land near, since the alternative here is already funded.",
-     "sources": [
-      {
-       "label": "US DOE Office of Clean Energy Demonstrations - Award Wednesdays, August 14, 2024",
-       "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
-       "quote": "an anticipated 70% of the local power",
-       "status": "fetched"
-      },
-      {
-       "label": "Regulatory Commission of Alaska - Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
-       "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
-       "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
-       "status": "fetched"
-      }
-     ],
-     "load": [
-      "Individual remote grids with sufficient year-round demand"
-     ],
-     "_from": "deep-2026-08-24/apps-remote-marine.json"
-    },
-    {
-     "id": "kokhanok-paradigm-shift-era-microgrid",
-     "sector": "Remote outposts & microgrids",
-     "name": "Kokhanok Paradigm Shift microgrid upgrade, DOE ERA (DE-CD0000120)",
-     "country": "US",
-     "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
-     "parties": {
-      "host": "Kokhanok Village Council",
-      "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)"
-     },
-     "instrument": "grant-funded",
-     "signed": "2024-08",
-     "term_years": 4,
-     "capacity": "943 kWh battery energy storage system, plus solar PV, a new wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
-     "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
-     "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE",
-     "filings": [
-      {
-       "forum": "USAspending.gov (federal assistance record)",
-       "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
-       "id": "FAIN DECD0000120",
-       "date": "2024-08-13",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
-      }
-     ],
-     "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 943 kWh battery, solar PV, a wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection.",
-     "microreactor_read": "Five million dollars of federal money for a village of 170 people is roughly $29,200 per resident to remove 70 percent of the diesel — a willingness to pay that no commercial power market would support and that only a grant can. The award record does not state the village's peak load, but a 170-person microgrid sits an order of magnitude below the 1 MW floor of the smallest microreactors, so Kokhanok prices the sector's opportunity and simultaneously proves the unit is too big for the single-village case.",
-     "sources": [
-      {
-       "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/",
-       "quote": "THIS PROJECT SEEKS TO INSTALL A 943 KWH BATTERY ENERGY STORAGE SYSTEM",
-       "status": "fetched"
-      },
-      {
-       "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
-       "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
-       "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
-       "status": "fetched"
-      }
-     ],
-     "load": [
-      "Individual remote grids with sufficient year-round demand"
      ],
      "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
@@ -3575,51 +3543,6 @@
        "label": "Pulp and Paper Canada - NL Hydro extends power purchase agreement with Corner Brook Pulp and Paper",
        "url": "https://www.pulpandpapercanada.com/nl-hydro-extends-power-purchase-agreement-with-corner-brook-pulp-and-paper/",
        "quote": "NL Hydro will buy up to 280,000 MWh of power, at a rate of $187 per MWh",
-       "status": "fetched"
-      }
-     ],
-     "_from": "2026-08-28-apps/apps-manufacturing.json"
-    },
-    {
-     "id": "intel-ohio-aep-green-chapel-substation",
-     "sector": "Manufacturing",
-     "load": [
-      "Semiconductor fabs"
-     ],
-     "name": "Intel Ohio \"Silicon Heartland\" Fab - AEP Ohio Dedicated Substation Agreement",
-     "country": "US",
-     "region": "New Albany / Licking County, Ohio",
-     "parties": {
-      "host": "Intel Corporation",
-      "utility": "AEP Ohio"
-     },
-     "instrument": "utility tariff",
-     "signed": "2024-09",
-     "term_years": 20,
-     "capacity": "up to 500 MW dedicated electric load via a new substation",
-     "capex": "$95.1 million (AEP Ohio-funded substation construction)",
-     "filings": [
-      {
-       "forum": "Public Utilities Commission of Ohio",
-       "type": "Electric Service Agreement approval order",
-       "id": "24-734-EL-AEC",
-       "date": "2024-09-06",
-       "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html"
-      }
-     ],
-     "summary": "PUCO approved a 20-year electric service arrangement under which AEP Ohio spends $95.1 million to build a dedicated substation delivering up to 500 MW to Intel's planned Ohio fab, in exchange for Intel's commitment to invest $20 billion over the agreement term. The substation (later reported as Green Chapel Station) was built and largely completed, but Intel pushed the fab's start of chip production to 2031, leaving the substation idle for years after AEP Ohio had already spent the capital. In June 2025 Intel and AEP submitted a request to PUCO to amend the original agreement.",
-     "microreactor_read": "500 MW is 25-100x the size of a single microreactor and this is the incumbent utility-anchor-tenant model, not a distributed-generation one - but the contract shape (a 20-year term tied to a committed capacity payment, with the seller bearing upfront capital risk against the buyer's investment promise) is exactly the structure a microreactor vendor would need at any scale, and the substation's multi-year idle period after Intel's delay is a direct warning: a reactor sized to one industrial tenant's committed ramp carries the same stranded-asset risk if that tenant's own project timeline slips.",
-     "sources": [
-      {
-       "label": "WOSU Public Media - Electric build up for Intel will cost $95 million, all of AEP Ohio's customers could be on the hook",
-       "url": "https://www.wosu.org/politics-government/2024-08-02/electric-build-up-for-intel-will-cost-95-million-all-of-aep-ohios-customers-could-be-on-the-hook",
-       "quote": "The plants will need up to 500 megawatts of electricity, the equivalent of power needed for 500,000 homes.",
-       "status": "fetched"
-      },
-      {
-       "label": "Newswatchman - PUCO authorizes AEP Ohio, Intel arrangement",
-       "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html",
-       "quote": "Intel will be required to demonstrate ongoing commitment to invest $20 billion over the term of the 20-year agreement.",
        "status": "fetched"
       }
      ],

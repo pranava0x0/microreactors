@@ -28,29 +28,6 @@
  },
  "cases": [
   {
-   "id": "intel-ohio-aep-green-chapel-substation",
-   "sector": "Manufacturing",
-   "load": ["Semiconductor fabs"],
-   "name": "Intel Ohio \"Silicon Heartland\" Fab - AEP Ohio Dedicated Substation Agreement",
-   "country": "US",
-   "region": "New Albany / Licking County, Ohio",
-   "parties": {"host": "Intel Corporation", "utility": "AEP Ohio"},
-   "instrument": "utility tariff",
-   "signed": "2024-09",
-   "term_years": 20,
-   "capacity": "up to 500 MW dedicated electric load via a new substation",
-   "capex": "$95.1 million (AEP Ohio-funded substation construction)",
-   "filings": [
-    {"forum": "Public Utilities Commission of Ohio", "type": "Electric Service Agreement approval order", "id": "24-734-EL-AEC", "date": "2024-09-06", "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html"}
-   ],
-   "summary": "PUCO approved a 20-year electric service arrangement under which AEP Ohio spends $95.1 million to build a dedicated substation delivering up to 500 MW to Intel's planned Ohio fab, in exchange for Intel's commitment to invest $20 billion over the agreement term. The substation (later reported as Green Chapel Station) was built and largely completed, but Intel pushed the fab's start of chip production to 2031, leaving the substation idle for years after AEP Ohio had already spent the capital. In June 2025 Intel and AEP submitted a request to PUCO to amend the original agreement.",
-   "microreactor_read": "500 MW is 25-100x the size of a single microreactor and this is the incumbent utility-anchor-tenant model, not a distributed-generation one - but the contract shape (a 20-year term tied to a committed capacity payment, with the seller bearing upfront capital risk against the buyer's investment promise) is exactly the structure a microreactor vendor would need at any scale, and the substation's multi-year idle period after Intel's delay is a direct warning: a reactor sized to one industrial tenant's committed ramp carries the same stranded-asset risk if that tenant's own project timeline slips.",
-   "sources": [
-    {"label": "WOSU Public Media - Electric build up for Intel will cost $95 million, all of AEP Ohio's customers could be on the hook", "url": "https://www.wosu.org/politics-government/2024-08-02/electric-build-up-for-intel-will-cost-95-million-all-of-aep-ohios-customers-could-be-on-the-hook", "quote": "The plants will need up to 500 megawatts of electricity, the equivalent of power needed for 500,000 homes.", "status": "fetched"},
-    {"label": "Newswatchman - PUCO authorizes AEP Ohio, Intel arrangement", "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html", "quote": "Intel will be required to demonstrate ongoing commitment to invest $20 billion over the term of the 20-year agreement.", "status": "fetched"}
-   ]
-  },
-  {
    "id": "aces-delta-green-hydrogen-electrolyzer-utah",
    "sector": "Manufacturing",
    "load": ["Hydrogen and low-carbon fuel plants"],
