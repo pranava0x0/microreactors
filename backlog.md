@@ -207,3 +207,39 @@
   for any tab. Scoped out of the PR that added the Applications-side link (routing/anchor
   plumbing, not data or citations); worth doing once, fixing both link sources at once.
 
+
+## From the 2026-08-29 cost and Janus pass
+
+- **high** · Browser-capture the three Janus/Antares sources that 403 non-browser clients, so their
+  quotes can be quote-locked instead of shipping as snippet-only: Radiant's own $750M release
+  (`radiantnuclear.com/news/radiant-wins-750m-janus-army-contract`), the Businesswire announcement of
+  Rian Bahran as Chief Nuclear Officer, and `army.mil/article/294891`. Four quotes in `voices.json`
+  and `vendors.json` currently carry the dagger because of this, including both the Bramble Janus
+  quote and the Shivanandan quote.
+- **high** · Surface FEMA's benefit-cost data as its own figure (already filed above, now sharper):
+  the commercial pitch documents lean on it as the willingness-to-pay ceiling for the critical-
+  facilities segment, and it is still not a figure anywhere on the site. WaterOne 38.09 BCR /
+  $261,096,991 against a $6,541,600 project; Erie County Medical Center 4.43 / $67,624,384 against
+  $15,144,418; Cayuga 6.91 / $81,099,633 against $11,612,000. All three already sit in
+  `benchmarks.json` as prose.
+- **med** · Track the Janus contract values as they surface. Four of five are undisclosed (only
+  Radiant's $750M ceiling is public), and Antares explicitly declined. Any per-unit figure derived
+  from an award is wrong by the Army's own warning — the site should carry that warning next to any
+  Janus money it ever prints.
+- **med** · Find the Army Reactor Regulatory Office authorisation documents. Janus reactors generate
+  no NRC docket and no state utility filing, so ARRO is the only paper trail that exists for five
+  sites. `deployment_sites.json` records this as a feature of the contracting route rather than a
+  research gap, but no ARRO document has been located at all.
+- **med** · The two INL reports define Nth-of-a-kind differently — 20 units in INL/RPT-24-80433,
+  100 units in INL/RPT-25-87273. `costs.learning_curve.definitions_warning` says so, but the cost
+  bands rendered on the Cost bands sub-tab still mix NEI's 2019 NOAK with INL's. Worth one pass to
+  label each band with the unit count it assumes.
+- **low** · The heat-pipe archetype prices worst in INL's model ($980/MWh FOAK) and that is the
+  closest published analogue to both Antares' R1 and Westinghouse's eVinci. The site states this
+  honestly on the Unit economics sub-tab. Worth checking whether a later INL run models a heat-pipe
+  at 20 MWt, which would separate the size penalty from the technology penalty — right now the two
+  are confounded and the site can only say so, not resolve it.
+- **low** · No public $/MWh exists for any Janus vendor. The only observable microreactor prices are
+  Oklo (~$145M for 50 MWe; $64-73/MWh claimed), Last Energy (~$100M per 20 MWe unit) and the DOE
+  clean-firm band Oklo publishes ($63-119/MWh across three technologies). If a Costs comparison of
+  vendor-stated prices is ever built, it has three rows and none of them is a Janus company.
