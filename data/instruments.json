@@ -16,7 +16,7 @@
     "absences": [
      "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
      "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
-     "DOE Energy Improvements in Rural or Remote Areas: the programme name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the programme.",
+     "DOE Energy Improvements in Rural or Remote Areas: the program name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the program.",
      "Grid Resilience 40101(d) state formula allocations: not separated from 40103 GRIP competitive awards. Both sit under CFDA 81.254, and the award records do not distinguish them, so the Barnstable record is reported as CFDA 81.254 without claiming which section funded it.",
      "DOE OCED's own ERA project pages (energy.gov/oced/energy-improvements-rural-or-remote-areas and the /arctic Alaska ERA article) both return HTTP 404 as of 2026-08-25; the surviving fetchable DOE source for these awards is the Award Wednesdays post of 2024-08-14.",
      "MARAD's layberth locations PDF (maritime.dot.gov, 19 Apr 2024) returns HTTP 403 to a direct fetch, so 'Terminal 2, Berths 205-206' could not be tied to a named port from a primary document. Search summaries point to the Port of Portland, Oregon; that is unverified and is not asserted in the record.",
@@ -43,7 +43,7 @@
      "No FEMA BRIC or HMGP award for a hospital or water-plant microgrid with a named site and dollar value surfaced in the searches run.",
      "Kaiser Richmond battery capacity (reported elsewhere as 1 MWh) and total project cost beyond the $4.77M CEC grant are unverified.",
      "Ohio State CHP nameplate of ~105 MW appears only in search summaries, not in a page I fetched; the fetched OSU page gives only the 8,000-ton cooling capacity, and the fetched cost source gives $278M rising to $300M.",
-     "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency centre) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
+     "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency center) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
      "Deer Island (Boston), Hyperion (Los Angeles) and Stickney (Chicago) wastewater plants were not researched to a numbers-plus-document standard within budget.",
      "No state PUC docket, FERC filing or NRC accession applies to any of these deals - they are procurement awards, board resolutions, grant awards and bilateral PPAs, not rate filings. Only the Ohio State board action is recorded in `filings`.",
      "EIA CBECS electricity intensity for inpatient hospitals in kWh per square foot (commonly quoted as 31 kWh/sq ft from CBECS 2012) is not present on the CBECS 2018 health-care page that was fetched; only average floorspace of 264,800 sq ft and the 32% space-heating share were verified."
@@ -137,10 +137,10 @@
      "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
      "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
      "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
-     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's program page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot program.",
      "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
      "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
-     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid program, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's program page only.",
      "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
      "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
     ]
@@ -183,7 +183,7 @@
      "No named, executed flexible/curtailable INTERCONNECTION agreement with MW and price was found. Enchanted Rock returned nothing in this context; Google's flexible capacity is published only as 'gigawatt scale across multiple utility territories' with no agreement, MW or price. The flexible-interconnection angle produced rulemakings, not contracts.",
      "Could not verify what happened to the pre-existing 300 MW Talen/Amazon Susquehanna co-located arrangement after FERC's 1 November 2024 rejection of the 480 MW amendment.",
      "The text of FERC's 18 December 2025 co-location order (193 FERC para. 61,217) and the 18 June 2026 show cause orders could not be read directly - ferc.gov HTML and White & Case both 403'd. The FERC E-1 slide deck PDF was retrievable and is the primary source used; compliance deadlines come from a law-firm summary.",
-     "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
+     "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-center site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
      "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
      "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
      "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report.",
@@ -301,7 +301,7 @@
      "group": "diesel",
      "family": "public-procurement",
      "name": "Connecticut Microgrid Grant and Loan Program (Public Act 12-148 Sec. 7) — the per-site civic-resilience cost dataset",
-     "what_it_is": "Connecticut's post-Irene/Sandy statute directed DEEP to run a microgrid grant and loan programme for critical facilities. A municipality, electric distribution company, municipal electric utility, energy improvement district or private entity applies in a competitive round; DEEP awards a grant or loan and the recipient owns and operates the microgrid, reporting annually to PURA, the Office of Consumer Counsel, DEEP and two legislative committees for five years. The decisive statutory limit is on what the money buys: under the pilot the grants and loans pay only for design, engineering services and interconnection infrastructure — not the generator. A 2016 bond expansion widened this to matching funds or low-interest loans for energy storage and clean distributed generation. DEEP's own award-tracking chart is the per-site dataset: 12 operational microgrids and $22,265,935 of awards.",
+     "what_it_is": "Connecticut's post-Irene/Sandy statute directed DEEP to run a microgrid grant and loan program for critical facilities. A municipality, electric distribution company, municipal electric utility, energy improvement district or private entity applies in a competitive round; DEEP awards a grant or loan and the recipient owns and operates the microgrid, reporting annually to PURA, the Office of Consumer Counsel, DEEP and two legislative committees for five years. The decisive statutory limit is on what the money buys: under the pilot the grants and loans pay only for design, engineering services and interconnection infrastructure — not the generator. A 2016 bond expansion widened this to matching funds or low-interest loans for energy storage and clean distributed generation. DEEP's own award-tracking chart is the per-site dataset: 12 operational microgrids and $22,265,935 of awards.",
      "who_signs": "Municipality, EDC, municipal electric utility, energy improvement district or private entity <-> Connecticut Department of Energy & Environmental Protection, following a competitive Request for Proposals/Applications",
      "asset_owner": "host",
      "term": "Grant or loan; recipient must report project status annually for five years to PURA, OCC, DEEP and the appropriations and energy committees",
@@ -326,12 +326,12 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "Admits a reactor by construction — the only mechanism in this file that does. Public Act 12-148 Sec. 7(a)(3) defines the eligible resource purely by size and location: 'the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user'. There is no fuel list, no emissions test, no efficiency gate and no renewability requirement — the exact opposite of the PUCT's closed natural-gas-or-propane enumeration and the CPUC's combustion-or-chemical-reaction-and-renewable fuel rule. A 1-20 MW reactor on a hospital or municipal campus satisfies the definition on its face. The statutory 'critical facility' list is equally accommodating: hospital, police station, fire station, water treatment plant, sewage treatment plant, public shelter, correctional facility, any commercial area of a municipality, a municipal centre, or anything else DEEP identifies as critical. The catch is on the money, not the eligibility: the pilot grant may fund only design, engineering services and interconnection infrastructure, so a reactor developer gets its wires and controls paid for and none of its capex.",
+     "nuclear_fit": "Admits a reactor by construction — the only mechanism in this file that does. Public Act 12-148 Sec. 7(a)(3) defines the eligible resource purely by size and location: 'the generation of electricity from a unit with a rating of not more than sixty-five megawatts on the premises of a retail end user'. There is no fuel list, no emissions test, no efficiency gate and no renewability requirement — the exact opposite of the PUCT's closed natural-gas-or-propane enumeration and the CPUC's combustion-or-chemical-reaction-and-renewable fuel rule. A 1-20 MW reactor on a hospital or municipal campus satisfies the definition on its face. The statutory 'critical facility' list is equally accommodating: hospital, police station, fire station, water treatment plant, sewage treatment plant, public shelter, correctional facility, any commercial area of a municipality, a municipal center, or anything else DEEP identifies as critical. The catch is on the money, not the eligibility: the pilot grant may fund only design, engineering services and interconnection infrastructure, so a reactor developer gets its wires and controls paid for and none of its capex.",
      "microreactor_edge": "Two things. First, the 65 MW statutory ceiling is written as a maximum, so a smaller unit is strictly safer under it while a full-size reactor is excluded outright — this is one of the few rules where being small is legally load-bearing rather than merely commercially convenient. Second, the delivered fleet shows what a reactor would be replacing: ten of the twelve operational Connecticut microgrids are anchored on natural gas CHP, fuel cells or diesel, and the only battery-led project kept a natural gas generator on site anyway. On capacity the fit is direct — the built systems run from about 200 kW to 4.2 MW, so a single unit at the bottom of the microreactor band covers any of them and most of them several times over.",
      "blockers": [
       "PA 12-148 Sec. 7(c): grants and loans may only fund design, engineering services and interconnection infrastructure — no generation capex under the pilot authority",
-      "Statutory pilot cap of $15,000,000 total (PA 13-298 later authorised a further $30,000,000)",
-      "No open Request for Applications; DEEP's programme page states none is currently open and its content was last updated January 2020",
+      "Statutory pilot cap of $15,000,000 total (PA 13-298 later authorized a further $30,000,000)",
+      "No open Request for Applications; DEEP's program page states none is currently open and its content was last updated January 2020",
       "Award-to-operation attrition is high: 7 of 9 pilot awards and 1 of 3 Round 4 awards appear as operational in DEEP's tracker",
       "Five years of annual status reporting to PURA, OCC, DEEP and two legislative committees",
       "Awards were to be distributed as evenly as possible between small, medium and large municipalities — a political allocation rule, not a technical one"
@@ -390,8 +390,8 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centres happen to be.",
-     "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance programme — the same permitting relief, available to a hospital rather than only to a refinery.",
+     "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centers happen to be.",
+     "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance program — the same permitting relief, available to a hospital rather than only to a refinery.",
      "blockers": [
       "Potential to emit is computed from capacity, not expected use",
       "Non-attainment areas apply extremely low triggering thresholds",
@@ -443,11 +443,11 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "The Army-regulated pathway is the structural innovation: a reactor on a federal installation can be authorised by the Army under its own authority instead of by the NRC, which removes the single longest item from the schedule. It also removes the thing a commercial lender underwrites - an NRC licence is an asset, an Army authorisation is not transferable to a civilian site. Any vendor financing a Janus unit is financing an asset whose regulatory basis dies with the contract.",
-     "microreactor_edge": "Nine installations at once only works if the unit is a product. The programme is explicitly buying 'commercially available dual use microreactor technology' from a pool of eight vendors, which is a supply-chain posture, not a project posture. A 300 MW reactor would be one site, one vendor, one 10-year programme; the microreactor version is a fleet buy with milestone payments and interchangeable suppliers - and a base load of a few tens of MW is exactly what one or two units serve.",
+     "nuclear_fit": "The Army-regulated pathway is the structural innovation: a reactor on a federal installation can be authorized by the Army under its own authority instead of by the NRC, which removes the single longest item from the schedule. It also removes the thing a commercial lender underwrites - an NRC license is an asset, an Army authorization is not transferable to a civilian site. Any vendor financing a Janus unit is financing an asset whose regulatory basis dies with the contract.",
+     "microreactor_edge": "Nine installations at once only works if the unit is a product. The program is explicitly buying 'commercially available dual use microreactor technology' from a pool of eight vendors, which is a supply-chain posture, not a project posture. A 300 MW reactor would be one site, one vendor, one 10-year program; the microreactor version is a fleet buy with milestone payments and interchangeable suppliers - and a base load of a few tens of MW is exactly what one or two units serve.",
      "blockers": [
       "No dollar value has ever been published for any ANPI or Janus Other Transaction",
-      "Army-regulated authorisation is not an NRC licence and does not travel to a commercial site",
+      "Army-regulated authorization is not an NRC license and does not travel to a commercial site",
       "EO 14299's 2028-09-30 deadline is shorter than any microreactor has ever taken from award to operation",
       "Eligibility in the ANPI pool is not an award; as of this capture no ANPI OT value is public"
      ],
@@ -496,12 +496,12 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "The structure itself is ordinary - DoD has bought third-party-owned energy on long-term PPAs for solar and cogeneration for years. What nuclear changes is the sequencing: the vendor cannot deliver energy without an NRC licence, so the PPA is signed years before the licence application is filed, and the government is contracting against a permitting risk it cannot itself resolve. It also changes the protest surface: the $100M Federal Acquisition Regulation threshold for required discussions is trivially crossed by a reactor and not by a solar array, which is exactly what killed the first Eielson award.",
+     "nuclear_fit": "The structure itself is ordinary - DoD has bought third-party-owned energy on long-term PPAs for solar and cogeneration for years. What nuclear changes is the sequencing: the vendor cannot deliver energy without an NRC license, so the PPA is signed years before the license application is filed, and the government is contracting against a permitting risk it cannot itself resolve. It also changes the protest surface: the $100M Federal Acquisition Regulation threshold for required discussions is trivially crossed by a reactor and not by a solar array, which is exactly what killed the first Eielson award.",
      "microreactor_edge": "At 1-20 MW the whole plant serves one host, so there is no wholesale market to sell surplus into and no second offtaker to diversify credit risk - the installation IS the market, and the PPA is the entire revenue stream. A 300 MW unit at the same base would have to sell 90% of its output to the grid and therefore needs an interconnection agreement, a transmission study and a utility counterparty; the 1-20 MW unit needs none of those, which is why the microreactor case can be a pure bilateral government PPA and the large-reactor case cannot.",
      "blockers": [
       "FAR $100M threshold for required discussions - the basis of the successful Ultra Safe Nuclear protest that voided the 2023 Eielson award",
       "A NOITA is not a contract; no executed Eielson agreement has been published as of 2026-08",
-      "NRC licence must be obtained after the PPA is signed, so the offtaker holds schedule risk it cannot price",
+      "NRC license must be obtained after the PPA is signed, so the offtaker holds schedule risk it cannot price",
       "No published price means no comparator for the next installation to negotiate against"
      ],
      "sources": [
@@ -540,7 +540,7 @@
        "source_idx": 0
       },
       {
-       "name": "New Jersey Town Center Distributed Energy Resource (TCDER) programme",
+       "name": "New Jersey Town Center Distributed Energy Resource (TCDER) program",
        "year": "2016",
        "parties": "New Jersey Board of Public Utilities",
        "note": "A post-Sandy programmatic pathway that de-risks the right-of-way crossing for municipally-led resilience projects from the outset.",
@@ -575,7 +575,7 @@
      "group": "diesel",
      "family": "public-procurement",
      "name": "New Jersey Town Center DER Microgrid Program, Phases I and II (NJBPU Docket No. QO16100967)",
-     "what_it_is": "A post-Sandy state programme in which a municipality, county or state agency that owns critical facilities applies to the NJ Board of Public Utilities for a cash incentive, first to fund a feasibility study (Phase I) and then, competitively, to fund the engineering design of a 'Town Center DER Microgrid' — a cluster of FEMA Category III and IV critical facilities inside one municipal boundary, connected to DER that can island from the grid. The awardee signs an MOU with the Board, takes 75% of the award on execution and 25% on Staff's verification that the delivered design matches the application. The public agency owns the asset and bears every downstream risk; the Board funds paper, not steel, and states explicitly that an award 'does not indicate Board approval of any TCDER Microgrid project'.",
+     "what_it_is": "A post-Sandy state program in which a municipality, county or state agency that owns critical facilities applies to the NJ Board of Public Utilities for a cash incentive, first to fund a feasibility study (Phase I) and then, competitively, to fund the engineering design of a 'Town Center DER Microgrid' — a cluster of FEMA Category III and IV critical facilities inside one municipal boundary, connected to DER that can island from the grid. The awardee signs an MOU with the Board, takes 75% of the award on execution and 25% on Staff's verification that the delivered design matches the application. The public agency owns the asset and bears every downstream risk; the Board funds paper, not steel, and states explicitly that an award 'does not indicate Board approval of any TCDER Microgrid project'.",
      "who_signs": "Municipality / county / state agency <-> New Jersey Board of Public Utilities, via a Memorandum of Understanding executed within 60 days of the order",
      "asset_owner": "public agency",
      "term": "Design-stage only; MOU plus quarterly status reports to Board Staff and six-monthly meetings with the electric distribution company",
@@ -586,8 +586,8 @@
        "year": "2021",
        "parties": "NJBPU; Township of Montclair; Borough of Highland Park; Hudson County; City of Hoboken; Township of Neptune; NJ Dept of Treasury (for City of Trenton); City of Atlantic City (DCO Energy); Township of Woodbridge",
        "size": "8 awards of 11 applications. Project sizes: Hudson County 1.7 MW, Montclair 2.3 MW, Highland Park 2.4 MW, Woodbridge 2.6 MW, Hoboken 4.375 MW, Neptune 7.8 MW, Atlantic City 20 MW, Trenton (20 MW gas CHP + 4.5 MW PV). Collectively 24 FEMA Category IV and 32 Category III facilities, 10.5 MW PV and 2.9 MW storage.",
-       "price": "$4,000,000 authorised, $4,053,050 requested. Awards: Atlantic City $1,125,000; Montclair $679,500; Hoboken $550,000; Neptune $526,100; Hudson County $376,000; Woodbridge $296,950 (of $350,000 requested); Trenton $250,000; Highland Park $196,450. Estimated design costs ran $196,450 to $4,167,000.",
-       "note": "Order dated 2021-03-03, effective 2021-03-13. Camden County, Middletown Township and Paterson got nothing and the programme closed on depletion. This is the per-site cost chart for civic resilience microgrid DESIGN; note it is design cost only, roughly 10-27% of design cost covered for the larger projects.",
+       "price": "$4,000,000 authorized, $4,053,050 requested. Awards: Atlantic City $1,125,000; Montclair $679,500; Hoboken $550,000; Neptune $526,100; Hudson County $376,000; Woodbridge $296,950 (of $350,000 requested); Trenton $250,000; Highland Park $196,450. Estimated design costs ran $196,450 to $4,167,000.",
+       "note": "Order dated 2021-03-03, effective 2021-03-13. Camden County, Middletown Township and Paterson got nothing and the program closed on depletion. This is the per-site cost chart for civic resilience microgrid DESIGN; note it is design cost only, roughly 10-27% of design cost covered for the larger projects.",
        "source_idx": 0
       },
       {
@@ -595,19 +595,19 @@
        "year": "2017",
        "parties": "NJBPU and 13 applicants: Atlantic City, Camden County, Cape May County MUA, Galloway, Highland Park, Hoboken, Hudson County, Middletown, Montclair, Neptune, Paterson, NJ Treasury (Trenton), Woodbridge",
        "size": "13 feasibility studies, all delivered by 2018-12-31 and all deemed acceptable; Cape May County MUA then withdrew",
-       "price": "$2,133,980 total authorised across 13 orders issued 2017-06-30 (Docket Nos. 0017060629 through 0017060641) — about $164,000 per study",
-       "note": "The full funnel is legible: $2.1M of studies produced 12 eligible projects, $4.0M of design money produced 8 designs, and the programme then closed with no construction funding at all.",
+       "price": "$2,133,980 total authorized across 13 orders issued 2017-06-30 (Docket Nos. 0017060629 through 0017060641) — about $164,000 per study",
+       "note": "The full funnel is legible: $2.1M of studies produced 12 eligible projects, $4.0M of design money produced 8 designs, and the program then closed with no construction funding at all.",
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "Ignores nuclear, because the eligibility rule is about which buildings are in the cluster, not which machine powers it. It also contains the most useful regulator finding in this file for a firm non-emitting resource. The Board found that 'existing technology and cost considerations currently do not allow for renewable DERs alone, or renewable DERs coupled with energy storage, to provide the level and length of resilience that critical facilities need', and therefore that 'the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time'. All eight funded designs prove it: each carries natural gas CHP or gas/diesel gensets, while the Board simultaneously urges awardees to minimise fossil DER. That is a regulator publicly stating a capability gap it cannot close with the technologies on its own list. The gating constraint for a reactor is not eligibility but the applicant's own certification that the project 'is legally permissible' under existing law, code and standing Board Orders. For a multi-building municipal cluster that means crossing public streets, which raises New Jersey's right-of-way question squarely.",
-     "microreactor_edge": "The size match is almost exact and it is measured, not asserted: six of the eight funded designs sit between 1.7 MW and 4.4 MW, and the median awarded project is about 2.5 MW. A single 1-20 MW unit covers any of them, and covers the two 20 MW outliers (Atlantic City, Trenton) as a small fleet. Crucially these are multi-day-outage resilience assets whose fossil DER exists precisely because storage cannot hold the duration — the one attribute a reactor has for free. The programme's own money is far too small (a $196K-$1.1M design grant) to matter, so the value here is the documented demand shape and the named counterparties, not the funding.",
+     "nuclear_fit": "Ignores nuclear, because the eligibility rule is about which buildings are in the cluster, not which machine powers it. It also contains the most useful regulator finding in this file for a firm non-emitting resource. The Board found that 'existing technology and cost considerations currently do not allow for renewable DERs alone, or renewable DERs coupled with energy storage, to provide the level and length of resilience that critical facilities need', and therefore that 'the inclusion of fossil fueled DER in TCDER Phase II Incentive Program projects is necessary at this time'. All eight funded designs prove it: each carries natural gas CHP or gas/diesel gensets, while the Board simultaneously urges awardees to minimize fossil DER. That is a regulator publicly stating a capability gap it cannot close with the technologies on its own list. The gating constraint for a reactor is not eligibility but the applicant's own certification that the project 'is legally permissible' under existing law, code and standing Board Orders. For a multi-building municipal cluster that means crossing public streets, which raises New Jersey's right-of-way question squarely.",
+     "microreactor_edge": "The size match is almost exact and it is measured, not asserted: six of the eight funded designs sit between 1.7 MW and 4.4 MW, and the median awarded project is about 2.5 MW. A single 1-20 MW unit covers any of them, and covers the two 20 MW outliers (Atlantic City, Trenton) as a small fleet. Crucially these are multi-day-outage resilience assets whose fossil DER exists precisely because storage cannot hold the duration — the one attribute a reactor has for free. The program's own money is far too small (a $196K-$1.1M design grant) to matter, so the value here is the documented demand shape and the named counterparties, not the funding.",
      "blockers": [
       "Board FINDS fossil-fuelled DER 'necessary at this time' — the incumbent is written into the record, not merely tolerated",
       "Applicant must certify its project is legally permissible under existing law, code and standing Board Orders (Appendix A certification)",
       "TCDER Microgrid is defined as a cluster of critical facilities 'within a municipal boundary' — a multi-town or regional siting is out of scope",
       "Only one Basis of Design per applicant; no alternatives and no future expansion capability considered",
-      "Design-stage funding only; the programme closed on depletion of the $4M with no construction tranche",
+      "Design-stage funding only; the program closed on depletion of the $4M with no construction tranche",
       "'An award under this Phase II Incentive Program does not indicate Board approval of any TCDER Microgrid project'",
       "Board Staff itself recorded 'several regulatory and statutory barriers constraining the wide-spread development of TCDER Microgrids' and directed a separate stakeholder process to identify them"
      ],
@@ -661,10 +661,10 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "This is the cleanest structure for a reactor and the one every early order should assume. A host that owns the reactor and consumes all its output is not selling power, so no PUC has jurisdiction over the transaction — the entire regulatory load falls on the NRC licence and the local AHJ instead of on utility law. The catch is that it requires the host to own a nuclear facility, which means the host, not the vendor, is the NRC licensee and carries decommissioning funding assurance.",
+     "nuclear_fit": "This is the cleanest structure for a reactor and the one every early order should assume. A host that owns the reactor and consumes all its output is not selling power, so no PUC has jurisdiction over the transaction — the entire regulatory load falls on the NRC license and the local AHJ instead of on utility law. The catch is that it requires the host to own a nuclear facility, which means the host, not the vendor, is the NRC licensee and carries decommissioning funding assurance.",
      "microreactor_edge": "A 1–20 MW unit is small enough that a single campus, mine or terminal can absorb its entire output, which is what makes self-service viable at all. A 300 MW reactor forces its owner to sell the surplus, and the moment it sells, every structure below applies. Sizing the machine to one property's own load is therefore not just an engineering choice — it is what keeps the deal out of utility regulation.",
      "blockers": [
-      "The host becomes the NRC licensee, with the operating organisation, security plan and decommissioning funding that implies",
+      "The host becomes the NRC licensee, with the operating organization, security plan and decommissioning funding that implies",
       "Full capital cost on the host's balance sheet, with no tax-equity path unless the host has tax appetite",
       "Contiguity: the moment the wires leave the parcel the structure changes (see the ROW records)"
      ],
@@ -689,31 +689,31 @@
      "group": "diesel",
      "family": "commercial-contract",
      "name": "Resiliency-as-a-Service (RaaS): third-party-owned backup microgrid sold as a monthly subscription",
-     "what_it_is": "The host signs a long-term services agreement with a microgrid developer instead of buying generators. The developer finances, owns, permits, operates and maintains the generating plant on the host's land; the host grants a site licence/easement and pays a one-time set-up fee for construction plus a recurring monthly service fee. Availability and maintenance risk sit with the developer; the host typically pays fuel only during an actual outage. The developer keeps the merchant upside (grid-services and demand-response revenue from the same iron), which is what subsidises the service fee below the cost of owning a diesel fleet.",
-     "who_signs": "Host facility (data centre, grocery chain, water utility, hospital) <-> microgrid developer (Enchanted Rock, Scale Microgrid Solutions, PowerSecure, Bloom Energy)",
+     "what_it_is": "The host signs a long-term services agreement with a microgrid developer instead of buying generators. The developer finances, owns, permits, operates and maintains the generating plant on the host's land; the host grants a site license/easement and pays a one-time set-up fee for construction plus a recurring monthly service fee. Availability and maintenance risk sit with the developer; the host typically pays fuel only during an actual outage. The developer keeps the merchant upside (grid-services and demand-response revenue from the same iron), which is what subsidises the service fee below the cost of owning a diesel fleet.",
+     "who_signs": "Host facility (data center, grocery chain, water utility, hospital) <-> microgrid developer (Enchanted Rock, Scale Microgrid Solutions, PowerSecure, Bloom Energy)",
      "asset_owner": "third-party developer",
      "term": "typically 10-20 years of service; the developer's economics assume it keeps the asset and its grid-services revenue",
      "price_form": "one-time set-up fee + fixed monthly service fee ($/month or $/kW-month), fuel passed through only during outages",
      "precedents": [
       {
-       "name": "Microsoft San Jose data centre backup microgrid",
+       "name": "Microsoft San Jose data center backup microgrid",
        "year": "2022",
        "parties": "Microsoft (host) <-> Enchanted Rock (developer/owner-operator); U.S. Energy (RNG supply)",
        "size": "100 MW; 224 natural gas gensets at 0.45 MW each",
-       "note": "Announced June 2022 as California's largest data-centre microgrid; install from late 2023, complete mid-2024. Sold explicitly as the backup power supply for grid outages and California Base Interruptible Program events, in place of a diesel standby fleet. Contract price not published.",
+       "note": "Announced June 2022 as California's largest data-center microgrid; install from late 2023, complete mid-2024. Sold explicitly as the backup power supply for grid outages and California Base Interruptible Program events, in place of a diesel standby fleet. Contract price not published.",
        "source_idx": 1
       },
       {
        "name": "Enchanted Rock standard RaaS commercial structure",
        "year": "2025",
        "parties": "Enchanted Rock <-> commercial & industrial hosts (grocery, hospitals)",
-       "size": "standardised 0.5 MW gas gensets; ~10 units for a hospital, 2-3 for a grocery store",
+       "size": "standardized 0.5 MW gas gensets; ~10 units for a hospital, 2-3 for a grocery store",
        "note": "Described on the record 2025-03-17: set-up fee then monthly subscription; developer owns the plant and the surplus-power revenue, which reduces the host's fee. Host pays fuel only during an outage.",
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "The instrument itself is technology-agnostic and is the single closest commercial analogue to selling a reactor as a service: the host never takes title, never operates, and never carries fuel logistics. But three things break for a reactor. (1) The developer-owner must hold the NRC licence and be the operator, so the 'we own and operate it on your land' clause maps to a real NRC 10 CFR 50/52 licensee obligation and a site that is now a licensed nuclear facility with an emergency-planning zone. (2) State retail-sale law: in most regulated states a non-utility selling metered electricity to a host across a property line needs a third-party-sale exemption; RaaS providers avoid this today by selling a *service* (availability) rather than kWh. (3) The merchant upside that subsidises the fee — bidding the asset into demand response and grid services — is exactly what an emergency-only diesel engine cannot do and what a reactor, as a baseload machine, also cannot do well, because a reactor wants to run 24/7 rather than sit idle for 8,700 hours.",
-     "microreactor_edge": "A factory-built 1-20 MW unit fits the RaaS balance sheet in a way a large reactor cannot: the developer's model is a fleet of identical, standardised, factory-produced 0.45-0.5 MW blocks replicated across hundreds of sites, financed on the developer's balance sheet and amortised over a subscription. A modular reactor is the same product shape one or two orders of magnitude up in unit size. Relocatability also matches the RaaS covenant that the developer takes the asset away at end of term rather than leaving a stranded plant on the host's land.",
+     "nuclear_fit": "The instrument itself is technology-agnostic and is the single closest commercial analogue to selling a reactor as a service: the host never takes title, never operates, and never carries fuel logistics. But three things break for a reactor. (1) The developer-owner must hold the NRC license and be the operator, so the 'we own and operate it on your land' clause maps to a real NRC 10 CFR 50/52 licensee obligation and a site that is now a licensed nuclear facility with an emergency-planning zone. (2) State retail-sale law: in most regulated states a non-utility selling metered electricity to a host across a property line needs a third-party-sale exemption; RaaS providers avoid this today by selling a *service* (availability) rather than kWh. (3) The merchant upside that subsidises the fee — bidding the asset into demand response and grid services — is exactly what an emergency-only diesel engine cannot do and what a reactor, as a baseload machine, also cannot do well, because a reactor wants to run 24/7 rather than sit idle for 8,700 hours.",
+     "microreactor_edge": "A factory-built 1-20 MW unit fits the RaaS balance sheet in a way a large reactor cannot: the developer's model is a fleet of identical, standardized, factory-produced 0.45-0.5 MW blocks replicated across hundreds of sites, financed on the developer's balance sheet and amortised over a subscription. A modular reactor is the same product shape one or two orders of magnitude up in unit size. Relocatability also matches the RaaS covenant that the developer takes the asset away at end of term rather than leaving a stranded plant on the host's land.",
      "blockers": [
       "NRC licensing sits with the owner-operator, so a RaaS developer becomes a nuclear licensee — a different corporate risk profile from owning gas gensets",
       "State third-party retail-sale restrictions in regulated states (the reason today's providers sell availability, not kWh)",
@@ -751,7 +751,7 @@
        "name": "PUCT Project No. 59024 — Order Adopting New 16 TAC 25.513",
        "year": "2026",
        "parties": "Public Utility Commission of Texas; 38 commenting parties incl. Oncor, NRG, Vistra, Bloom Energy, Generac, PowerSecure, FCHEA, Texas Hydrogen Alliance",
-       "size": "each site aggregated to serve not more than 2.5 MW of critical load; 48 continuous hours without refuelling",
+       "size": "each site aggregated to serve not more than 2.5 MW of critical load; 48 continuous hours without refueling",
        "price": "grant award may not exceed $500 per kilowatt",
        "note": "Adopted 2026-05-07, effective 2026-05-27, implementing PURA 34.0204/34.0205/35.005(g) from SB 2627. Rule text adopted after 46 filings in the project.",
        "source_idx": 0
@@ -765,7 +765,7 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "Excluded by construction, and the exclusion has now been tested. Adopted 25.513(b)(3)(A)(vi) requires a package to 'provide power sourced from a combination of natural gas or propane with photovoltaic panels and battery storage,' and new subparagraph (vii) requires it to 'prioritize power sourced from natural gas when it is available on site.' When five parties asked to add hydrogen and fuel cells, the commission refused 'because the statute does not authorize inclusion of alternative fuel sources' — so the list is a closed statutory enumeration a nuclear unit cannot enter by demonstrating equivalent performance. The 48-continuous-hour-without-refuelling rule is the one criterion a reactor passes trivially and a diesel set fails without a fuel farm, but it buys nothing here because eligibility gates on fuel type first. The no-export rule (b)(3)(A)(iii) and (b)(3)(B) additionally forbid the wholesale or retail sale of energy, ancillary services, ERS, ADER participation, solar buyback, or any demand-response participation — so a host cannot monetise off-hours output, which is the entire economic case for putting a baseload reactor behind a 2.5 MW critical load.",
+     "nuclear_fit": "Excluded by construction, and the exclusion has now been tested. Adopted 25.513(b)(3)(A)(vi) requires a package to 'provide power sourced from a combination of natural gas or propane with photovoltaic panels and battery storage,' and new subparagraph (vii) requires it to 'prioritize power sourced from natural gas when it is available on site.' When five parties asked to add hydrogen and fuel cells, the commission refused 'because the statute does not authorize inclusion of alternative fuel sources' — so the list is a closed statutory enumeration a nuclear unit cannot enter by demonstrating equivalent performance. The 48-continuous-hour-without-refueling rule is the one criterion a reactor passes trivially and a diesel set fails without a fuel farm, but it buys nothing here because eligibility gates on fuel type first. The no-export rule (b)(3)(A)(iii) and (b)(3)(B) additionally forbid the wholesale or retail sale of energy, ancillary services, ERS, ADER participation, solar buyback, or any demand-response participation — so a host cannot monetise off-hours output, which is the entire economic case for putting a baseload reactor behind a 2.5 MW critical load.",
      "microreactor_edge": "The 2.5 MW cap and the definition of 'critical load' (life-safety, medical, emergency comms, potable water) size these packages exactly in the 1-20 MW microreactor band's bottom end — but the cap is on critical load, not on the resource, and the no-export prohibition means the other 90% of a microreactor's annual output would be curtailed. A Texas critical facility is a good technical fit and a terrible TBPP fit; the honest path is the loan side of the Texas Energy Fund or a separate ESA, not this rule.",
      "blockers": [
       "16 TAC 25.513(b)(3)(A)(vi) enumerates natural gas or propane + PV + battery storage — a closed list, not a performance standard",
@@ -921,7 +921,7 @@
      "nuclear_fit": "This is the strongest structural fit for nuclear of any vehicle in this dataset, and for one reason only: the 50-year term. A reactor's capital cost can be amortised over 50 years of utility service charges in a way it cannot over an ESPC's 25 years or a commercial ESA's 15-20. The conveyance also removes the awkward question of a private party operating equipment on federal land, because title genuinely leaves the government. The blockers are that 2688 governs the conveyance of a UTILITY SYSTEM (distribution infrastructure), not the construction of new generation, and that a reactor on a military installation triggers NRC licensing plus base-security and NEPA questions no 2688 conveyance has ever contemplated. Note also that DoD has been pursuing nuclear through separate pilot authorities rather than through 2688, which is itself evidence about the fit.",
      "microreactor_edge": "The relocatability argument lands hardest here. A 50-year contract on a base that may be realigned is a stranded-asset risk for any fixed plant; a factory-built unit that can be removed and redeployed to another installation at end of term turns that risk into a fleet-management decision. The absence of a fuel-delivery tail is also directly monetisable inside a 2688 services contract, because delivered fuel to a remote installation is a line item the contractor is already pricing.",
      "blockers": [
-      "10 U.S.C. 2688 authorises conveyance of an existing utility SYSTEM, not procurement of new generation",
+      "10 U.S.C. 2688 authorizes conveyance of an existing utility SYSTEM, not procurement of new generation",
       "50-year term requires a Secretary-level cost-effectiveness determination backed by business case analysis",
       "NRC licensing of a reactor on a military installation is unprecedented and adds NEPA and security review",
       "Base realignment/closure risk over a 50-year horizon",
@@ -963,11 +963,11 @@
        "source_idx": 0
       },
       {
-       "name": "Virginia DEQ presumptive BACT for data-centre gen-sets",
+       "name": "Virginia DEQ presumptive BACT for data-center gen-sets",
        "year": "2026",
-       "parties": "Virginia Department of Environmental Quality <-> data-centre operators, applications received on or after 2026-07-01",
+       "parties": "Virginia Department of Environmental Quality <-> data-center operators, applications received on or after 2026-07-01",
        "size": "applies against a permitted fleet of ~9,000 generators statewide, ~4,700 in Loudoun County",
-       "note": "Presumptive BACT for both emergency and non-emergency data-centre gen-sets is now SCR or equivalent for NOx, a diesel oxidation catalyst for CO, and a diesel particulate filter for PM. That is a large per-engine capex increase applied to the densest diesel-backup market in the United States. From search-result summaries; the underlying DEQ guidance document was not fetched.",
+       "note": "Presumptive BACT for both emergency and non-emergency data-center gen-sets is now SCR or equivalent for NOx, a diesel oxidation catalyst for CO, and a diesel particulate filter for PM. That is a large per-engine capex increase applied to the densest diesel-backup market in the United States. From search-result summaries; the underlying DEQ guidance document was not fetched.",
        "source_idx": 1
       }
      ],
@@ -999,7 +999,7 @@
      "group": "diesel",
      "family": "utility-tariff",
      "name": "Regulated utility owns the customer's backup generator and bills it as a tariffed service (Entergy 'Power Through')",
-     "what_it_is": "The regulated utility — not a third-party developer — finances, installs, owns, operates and maintains a natural-gas generator at the customer's own premises, and recovers it as a line item on the customer's monthly electric bill under a commission-approved tariff. The customer signs a service agreement, not a construction contract, and supplies only the site. Availability, maintenance and fuel-supply risk stay with the utility. The economics work because the utility dispatches the same machines into system peaks when the host is not in outage, so the resilience service is cross-subsidised by capacity value the customer could never monetise on its own (see the RICE NESHAP record: an emergency-only diesel is legally barred from doing this).",
+     "what_it_is": "The regulated utility — not a third-party developer — finances, installs, owns, operates and maintains a natural-gas generator at the customer's own premises, and recovers it as a line item on the customer's monthly electric bill under a commission-approved tariff. The customer signs a service agreement, not a construction contract, and supplies only the site. Availability, maintenance and fuel-supply risk stay with the utility. The economics work because the utility dispatches the same machines into system peaks when the host is not in outage, so the resilience service is cross-subsidized by capacity value the customer could never monetise on its own (see the RICE NESHAP record: an emergency-only diesel is legally barred from doing this).",
      "who_signs": "Regulated utility <-> retail customer, under a tariff approved by the state commission",
      "asset_owner": "utility",
      "term": "multi-year tariffed service; utility keeps the asset",
@@ -1010,7 +1010,7 @@
        "year": "2025",
        "parties": "Entergy Texas <-> H-E-B (5 grocery stores) and Lone Star College System (1 campus); approved by the Public Utility Commission of Texas",
        "size": "six pilot units; whole-facility backup generation",
-       "note": "PUCT unanimously approved the program on 2025-02-20 after the six-unit pilot. Entergy maintains the units at no additional cost to the host, and dispatches them into summer/winter system peaks when they are not covering an outage. Entergy runs sibling programmes in Louisiana and Arkansas.",
+       "note": "PUCT unanimously approved the program on 2025-02-20 after the six-unit pilot. Entergy maintains the units at no additional cost to the host, and dispatches them into summer/winter system peaks when they are not covering an outage. Entergy runs sibling programs in Louisiana and Arkansas.",
        "source_idx": 0
       },
       {
@@ -1061,7 +1061,7 @@
       {
        "name": "AEP / Bloom Energy gigawatt fuel cell procurement",
        "year": "2024",
-       "parties": "American Electric Power <-> Bloom Energy (supply); AEP <-> AI data-centre customers in central Ohio (special contracts)",
+       "parties": "American Electric Power <-> Bloom Energy (supply); AEP <-> AI data-center customers in central Ohio (special contracts)",
        "size": "up to 1 GW of solid oxide fuel cells; initial order reported at 100 MW",
        "note": "Announced 2024-11-14 and described as the largest commercial fuel cell procurement to date. AEP states costs are borne by the large customers under special contract and the installations are designed not to export. This is the template for a utility buying a fleet of factory-built on-site generators and placing them at customer premises.",
        "source_idx": 0
@@ -1069,14 +1069,14 @@
       {
        "name": "Large-load tariff proliferation",
        "year": "2025",
-       "parties": "State commissions nationwide; Public Utilities Commission of Ohio approved AEP's data-centre tariff July 2025",
+       "parties": "State commissions nationwide; Public Utilities Commission of Ohio approved AEP's data-center tariff July 2025",
        "size": "29 large-load tariffs approved by state regulators in 2025 alone, against 14 approved in 2018-2024 combined",
        "note": "The AEP Ohio tariff carries an 85% minimum demand charge, 12-year contract terms and exit penalties for customers above 25 MW. Figures from search-result summaries of a SEPA analysis; the article returned 403 and was not fetched.",
        "source_idx": 1
       }
      ],
      "nuclear_fit": "This mechanism solves the two hardest nuclear problems at once and creates a third. It solves the third-party-sale problem, because the seller is the utility. It solves the cost-recovery problem, because the special contract makes one creditworthy customer pay for the asset rather than a rate case. It creates a licensing problem: the utility becomes the NRC licensee for a reactor sitting on a customer's premises, with the customer's site inside the emergency planning zone and subject to security requirements the customer never agreed to. The AEP structure also depends on the asset not exporting, which for a reactor means it must be sized at or below the host's firm load — the same cap as everywhere else in this dataset.",
-     "microreactor_edge": "The AEP-Bloom deal is explicitly a FLEET purchase of standardised factory-built units placed one or a few at a time across many customer sites — 1 GW bought as a supply agreement, deployed as ~100 MW increments. That is a microreactor sales motion, not a large-reactor one: the utility's purchasing behaviour here is buying a product, not commissioning a plant, and the unit economics only work if units are identical and manufactured.",
+     "microreactor_edge": "The AEP-Bloom deal is explicitly a FLEET purchase of standardized factory-built units placed one or a few at a time across many customer sites — 1 GW bought as a supply agreement, deployed as ~100 MW increments. That is a microreactor sales motion, not a large-reactor one: the utility's purchasing behavior here is buying a product, not commissioning a plant, and the unit economics only work if units are identical and manufactured.",
      "blockers": [
       "Utility becomes the NRC licensee for equipment on a customer's site",
       "Special contracts require commission approval and are contested by consumer advocates over cross-subsidy",
@@ -1105,7 +1105,7 @@
      "family": "commercial-contract",
      "name": "Host-owned reactor selling itself steam: the industrial offtaker becomes the NRC licensee",
      "what_it_is": "The industrial host does not buy power from anyone. It creates a wholly owned single-purpose subsidiary, that subsidiary becomes the NRC construction permit applicant and eventual licensee, and the reactor delivers high-pressure steam and electricity across the fence to the parent's own plant. There is no PPA, no third-party developer owning the asset, and therefore no negotiated price at all - the transfer is internal. The vendor's role collapses to technology supply and EPC. This is the structural inverse of the build-own-operate PPA model, and it is what a buyer chooses when the product is process heat rather than electricity, because heat cannot be wheeled and has no market price.",
-     "who_signs": "Dow Inc. (via wholly owned subsidiary Long Mott Energy, LLC) <-> X-energy as reactor supplier; Long Mott Energy <-> NRC as licence applicant",
+     "who_signs": "Dow Inc. (via wholly owned subsidiary Long Mott Energy, LLC) <-> X-energy as reactor supplier; Long Mott Energy <-> NRC as license applicant",
      "asset_owner": "host",
      "term": "no offtake term - the asset is owned by the consumer of its output",
      "price_form": "NO PRICE. The output is transferred internally; Dow states only that it expects its cost of energy net of subsidies to be competitive with other firm clean energy.",
@@ -1121,10 +1121,10 @@
       }
      ],
      "nuclear_fit": "Heat changes the contract, not just the product. Electricity has a market price, a wholesale node and a settlement convention; industrial steam has none of those, so a steam deal has to invent its own price basis - usually indexed to the gas price of the boiler it replaces, plus a fixed capacity charge. When the asset is nuclear, the host has a further reason to own rather than buy: the reactor must sit inside the fence to deliver steam at all, so the host is accepting the reactor's siting, security and emergency-planning footprint on its own site regardless of who owns it. Once you have accepted the footprint, third-party ownership buys you much less than it does for a solar farm across the road.",
-     "microreactor_edge": "Dow's four-unit plant is 800 MWt because a large petrochemical complex has an enormous steam load; a 1-20 MW microreactor's thermal output is a few tens of MWt at most, which suits a food-processing plant, a district heat loop, a mine's process circuit or a campus - not a cracker. The commercially decisive difference is the licensee: Dow could afford to stand up a subsidiary, a nuclear organisation and a Part 50 application because it is spreading that overhead across 800 MWt. A single 15 MWt host cannot, which forces the microreactor back into a third-party-owned model where the vendor holds the licence and sells heat - a structure for which no signed, priced precedent exists.",
+     "microreactor_edge": "Dow's four-unit plant is 800 MWt because a large petrochemical complex has an enormous steam load; a 1-20 MW microreactor's thermal output is a few tens of MWt at most, which suits a food-processing plant, a district heat loop, a mine's process circuit or a campus - not a cracker. The commercially decisive difference is the licensee: Dow could afford to stand up a subsidiary, a nuclear organization and a Part 50 application because it is spreading that overhead across 800 MWt. A single 15 MWt host cannot, which forces the microreactor back into a third-party-owned model where the vendor holds the license and sells heat - a structure for which no signed, priced precedent exists.",
      "blockers": [
       "No published price basis of any kind for nuclear process heat - not $/klb steam, not $/MMBtu, not a gas-index formula",
-      "Host ownership means the industrial company must become an NRC licensee and build a nuclear operating organisation",
+      "Host ownership means the industrial company must become an NRC licensee and build a nuclear operating organization",
       "The Xe-100 has never been reviewed by the NRC before; Long Mott is the first application of the design",
       "Steam cannot be wheeled, so there is no alternative buyer and no residual value if the host's plant closes",
       "Construction had not begun as of August 2026; permit decision expected first half of 2027"
@@ -1156,8 +1156,8 @@
      "group": "diesel",
      "family": "regulatory-rule",
      "name": "CMS categorical waiver QSO-23-11-LSC — the document that lets something other than a generator legally be a hospital's emergency power source",
-     "what_it_is": "This is the load-bearing permission for the whole diesel-replacement question in healthcare. CMS conditions of participation bind hospitals to the 2012 edition of NFPA 99, which requires the essential electrical system to be fed by a generator set or a battery system — full stop. On 31 March 2023 CMS issued a categorical waiver letting facilities instead comply with the 2021 edition of NFPA 99, which recognises a 'health care microgrid system' (HCMS) as an acceptable alternate power source. No application is filed: the facility simply elects the waiver, documents it, and declares it at the survey entrance conference. Long-term care facilities providing life support are excluded and must still have an emergency generator.",
-     "who_signs": "No contract. CMS (via QSO memo) <-> the certified facility, which elects the waiver unilaterally and declares it to the state survey agency / accrediting organisation at entrance conference",
+     "what_it_is": "This is the load-bearing permission for the whole diesel-replacement question in healthcare. CMS conditions of participation bind hospitals to the 2012 edition of NFPA 99, which requires the essential electrical system to be fed by a generator set or a battery system — full stop. On 31 March 2023 CMS issued a categorical waiver letting facilities instead comply with the 2021 edition of NFPA 99, which recognizes a 'health care microgrid system' (HCMS) as an acceptable alternate power source. No application is filed: the facility simply elects the waiver, documents it, and declares it at the survey entrance conference. Long-term care facilities providing life support are excluded and must still have an emergency generator.",
+     "who_signs": "No contract. CMS (via QSO memo) <-> the certified facility, which elects the waiver unilaterally and declares it to the state survey agency / accrediting organization at entrance conference",
      "asset_owner": "host (but the waiver is silent on ownership, so a third-party-owned microgrid qualifies)",
      "term": "standing waiver until CMS adopts a newer NFPA edition by rulemaking",
      "price_form": "not priced — it is the legal precondition that makes any of the commercial instruments sellable into healthcare",
@@ -1201,7 +1201,7 @@
      "group": "diesel",
      "family": "public-procurement",
      "name": "Cost-type prime contract for a government-owned transportable reactor",
-     "what_it_is": "The government contracts a manufacturer on a cost-reimbursement basis to build a reactor that the government owns, and operates it on a federal site under DOE safety oversight rather than an NRC licence. There is no PPA and no price per MWh, because the government is not buying energy - it is buying a machine and a demonstration. All cost overrun risk sits with the government; the vendor is paid its costs. This is the only reactor structure where the published dollar figure is the whole truth, and it is brutal: about $300 million of contract value against 1 to 5 MWe of output.",
+     "what_it_is": "The government contracts a manufacturer on a cost-reimbursement basis to build a reactor that the government owns, and operates it on a federal site under DOE safety oversight rather than an NRC license. There is no PPA and no price per MWh, because the government is not buying energy - it is buying a machine and a demonstration. All cost overrun risk sits with the government; the vendor is paid its costs. This is the only reactor structure where the published dollar figure is the whole truth, and it is brutal: about $300 million of contract value against 1 to 5 MWe of output.",
      "who_signs": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
      "asset_owner": "public agency",
      "term": "roughly two years to build the prototype (award 2022, operation targeted 2026)",
@@ -1213,15 +1213,15 @@
        "parties": "DoD Strategic Capabilities Office <-> BWXT Advanced Technologies LLC",
        "size": "1 to 5 MWe, connected to Idaho National Laboratory's microgrid",
        "price": "cost-type contract valued at about $300 million. At 1-5 MWe that is roughly $60,000-$300,000 per kW - one to two orders of magnitude above any commercial generation benchmark, because it buys a first-of-a-kind prototype, not electricity.",
-       "note": "Awarded June 2022. Operates at INL's Critical Infrastructure Test Range Complex under the safety oversight of DOE's Idaho Operations Office, not an NRC licence. TRISO fuel delivered to INL December 2025; core manufacturing began 2025.",
+       "note": "Awarded June 2022. Operates at INL's Critical Infrastructure Test Range Complex under the safety oversight of DOE's Idaho Operations Office, not an NRC license. TRISO fuel delivered to INL December 2025; core manufacturing began 2025.",
        "source_idx": 0
       }
      ],
      "nuclear_fit": "A cost-type contract is what a buyer uses when nobody can price the work - which is precisely the condition of every first-of-a-kind reactor. It is also why this number is so often misused: the $300 million is a prototype development cost, and citing it as a microreactor capex is wrong in the same way that citing an X-plane's cost as an airliner's would be. What it does establish honestly is the floor on what a government pays to get a first unit built when it refuses to transfer risk to a vendor.",
-     "microreactor_edge": "Transportability is the whole point and it only exists at this scale: Pele is designed to be shipped in commercial containers and moved between sites, which is a capability a 300 MW plant cannot have at any price. The corresponding commercial consequence is that the asset is not tied to a site, so it is not real property, is not rate-basable, and cannot be financed against a site licence - it has to be financed as equipment.",
+     "microreactor_edge": "Transportability is the whole point and it only exists at this scale: Pele is designed to be shipped in commercial containers and moved between sites, which is a capability a 300 MW plant cannot have at any price. The corresponding commercial consequence is that the asset is not tied to a site, so it is not real property, is not rate-basable, and cannot be financed against a site license - it has to be financed as equipment.",
      "blockers": [
       "Government ownership means no PPA, no offtake, no revenue model and no price signal for a commercial buyer",
-      "DOE Idaho Operations Office safety oversight is not an NRC licence and does not transfer to a commercial site",
+      "DOE Idaho Operations Office safety oversight is not an NRC license and does not transfer to a commercial site",
       "$300 million for 1-5 MWe is not a commercial capex and must never be quoted as one"
      ],
      "sources": [
@@ -1252,15 +1252,15 @@
      "price_form": "not a price — a use restriction that strands the host's capital",
      "precedents": [
       {
-       "name": "Virginia data-centre diesel fleet and the DEQ 'planned outage' guidance fight",
+       "name": "Virginia data-center diesel fleet and the DEQ 'planned outage' guidance fight",
        "year": "2025",
-       "parties": "Virginia DEQ (Mike Dowd, Air and Renewable Energy Division) <-> data-centre operators; opposed by Southern Environmental Law Center and Piedmont Environmental Council",
+       "parties": "Virginia DEQ (Mike Dowd, Air and Renewable Energy Division) <-> data-center operators; opposed by Southern Environmental Law Center and Piedmont Environmental Council",
        "size": "~9,000 permitted generators in Virginia, ~4,700 of them in Loudoun County; ~8,000 are Tier II",
        "note": "DEQ's 30 September 2025 memo would widen what counts as an 'emergency' to include utility 'planned outage' events noticed within 14 days, which is precisely the class of hours the federal emergency-engine definition excludes. The scale of the fight is the tell: the hour cap is the binding constraint on whether a very large installed diesel fleet is usable for anything.",
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "A reactor is not a RICE engine and is not hour-capped by this rule at all — it can run 8,760 hours a year and sell into the grid, which is the exact freedom the diesel fleet is denied. That inverts the business case: diesel is a pure cost centre that can never amortise, while a reactor's capital can be amortised against continuous output. But the same inversion is the trap: a reactor sized to cover an emergency load will be economically dead unless it can sell its output the other 99% of the time, which throws it back onto the interconnection and third-party-sale questions the diesel fleet never has to answer.",
+     "nuclear_fit": "A reactor is not a RICE engine and is not hour-capped by this rule at all — it can run 8,760 hours a year and sell into the grid, which is the exact freedom the diesel fleet is denied. That inverts the business case: diesel is a pure cost center that can never amortise, while a reactor's capital can be amortised against continuous output. But the same inversion is the trap: a reactor sized to cover an emergency load will be economically dead unless it can sell its output the other 99% of the time, which throws it back onto the interconnection and third-party-sale questions the diesel fleet never has to answer.",
      "microreactor_edge": "A 1-20 MW unit is small enough to be sized to a site's actual continuous load rather than its peak emergency load, so it can plausibly run at high capacity factor behind the meter and never need to export — sidestepping both the hour cap and the export/third-party-sale problem in one move. A 300 MW+ unit at a single host cannot do that.",
      "blockers": [
       "The 100-hour cap makes diesel cheap-per-year to keep, which raises the bar an alternative must clear on total cost, not on emissions",
@@ -1288,7 +1288,7 @@
      "group": "diesel",
      "family": "public-procurement",
      "name": "California Self-Generation Incentive Program (SGIP) — a ratepayer-funded capital subsidy with a closed technology list, an efficiency gate, and an explicit ban on backup-only assets",
-     "what_it_is": "CPUC-administered, ratepayer-funded capital incentives paid to a Host Customer (or assigned to the developer) for behind-the-meter storage and generation. The applicant reserves an incentive, builds, and is paid on commissioning and, for storage, on performance. For a diesel-replacement question this programme is the most instructive rulebook in the country because its exclusions are explicit: equipment 'capable of operating on, or switching to, diesel fuel or diesel cycle for start-up or continuous operation' is ineligible, and so — critically — are 'backup systems intended solely for emergency purposes'. Generation must also clear a minimum operating efficiency gate: either waste-heat utilisation of at least 5% under P.U. Code 216.6(a), or electrical efficiency of at least 40%.",
+     "what_it_is": "CPUC-administered, ratepayer-funded capital incentives paid to a Host Customer (or assigned to the developer) for behind-the-meter storage and generation. The applicant reserves an incentive, builds, and is paid on commissioning and, for storage, on performance. For a diesel-replacement question this program is the most instructive rulebook in the country because its exclusions are explicit: equipment 'capable of operating on, or switching to, diesel fuel or diesel cycle for start-up or continuous operation' is ineligible, and so — critically — are 'backup systems intended solely for emergency purposes'. Generation must also clear a minimum operating efficiency gate: either waste-heat utilization of at least 5% under P.U. Code 216.6(a), or electrical efficiency of at least 40%.",
      "who_signs": "Host Customer (or assigned developer) <-> SGIP Program Administrator (PG&E, SCE, SoCalGas, CSE) under CPUC rules",
      "asset_owner": "host (incentive may be assigned to a third-party owner)",
      "term": "one-time capital incentive; 10-year operational and permanency requirements",
@@ -1299,17 +1299,17 @@
        "year": "2025",
        "parties": "California Public Utilities Commission <-> SGIP Program Administrators and applicants",
        "size": "Eligible generation is a closed list: pressure reduction turbines, photovoltaics, wind turbines, gas turbines, waste heat to power, microturbines, steam turbine CHP, internal combustion engines, linear generators, fuel cell CHP, fuel cell electric. Storage sizing capped at the Host Customer's previous 12-month annual peak demand.",
-       "price": "$280 million authorised for the Residential Solar and Storage Equity budget; up to $1,100/kWh storage and $3,100/kW solar under that budget",
-       "note": "The word 'nuclear' does not appear anywhere in the 139-page 2025 handbook. The programme also refuses to fund pure resilience: 'Backup systems intended solely for emergency purposes' are ineligible equipment. The incentive amounts are from search-result summaries, not read in the handbook; the eligibility and exclusion language was read directly in the PDF.",
+       "price": "$280 million authorized for the Residential Solar and Storage Equity budget; up to $1,100/kWh storage and $3,100/kW solar under that budget",
+       "note": "The word 'nuclear' does not appear anywhere in the 139-page 2025 handbook. The program also refuses to fund pure resilience: 'Backup systems intended solely for emergency purposes' are ineligible equipment. The incentive amounts are from search-result summaries, not read in the handbook; the eligibility and exclusion language was read directly in the PDF.",
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "Three independent disqualifications, each of which would need a CPUC rulemaking to change. (1) Nuclear is absent from the closed eligible-technology list — not banned, just not enumerated, which in a programme with an enumerated list is the same thing. (2) The minimum operating efficiency gate requires 40% electrical efficiency OR meaningful waste-heat utilisation; a light-water microreactor operating electricity-only sits around 30-33% thermal-to-electric and would FAIL, so the only compliant configuration is CHP with a real thermal host. (3) The sizing rule caps incentivised capacity at the Host Customer's own annual peak demand and requires combined on-site generation to be no more than the host's maximum site electric load — the same output-cap trap as the third-party-sale rules.",
+     "nuclear_fit": "Three independent disqualifications, each of which would need a CPUC rulemaking to change. (1) Nuclear is absent from the closed eligible-technology list — not banned, just not enumerated, which in a program with an enumerated list is the same thing. (2) The minimum operating efficiency gate requires 40% electrical efficiency OR meaningful waste-heat utilization; a light-water microreactor operating electricity-only sits around 30-33% thermal-to-electric and would FAIL, so the only compliant configuration is CHP with a real thermal host. (3) The sizing rule caps incentivised capacity at the Host Customer's own annual peak demand and requires combined on-site generation to be no more than the host's maximum site electric load — the same output-cap trap as the third-party-sale rules.",
      "microreactor_edge": "The efficiency gate points at a real product decision: a microreactor sold as a CHP machine (process heat, district heat, desalination, industrial steam) clears an efficiency test that an electricity-only unit fails, and CHP is also what the incentive tables reward. The sizing cap at the host's own peak demand is again only satisfiable at 1-20 MW.",
      "blockers": [
       "Nuclear absent from the enumerated eligible-technology list",
-      "40% electrical efficiency / waste-heat utilisation gate that an electricity-only light-water microreactor fails",
-      "'Backup systems intended solely for emergency purposes' are explicitly ineligible — the programme will not pay for resilience alone",
+      "40% electrical efficiency / waste-heat utilization gate that an electricity-only light-water microreactor fails",
+      "'Backup systems intended solely for emergency purposes' are explicitly ineligible — the program will not pay for resilience alone",
       "Incentivised capacity capped at the Host Customer's previous 12-month annual peak demand",
       "System must be installed on the Host Customer's side of the utility meter and interconnected to the distribution system"
      ],
@@ -1345,7 +1345,7 @@
       }
      ],
      "nuclear_fit": "ESPC is structurally hostile to nuclear for one specific reason: the payment stream is capped by verified energy and O&M SAVINGS relative to the baseline utility bill, and it must repay the full project cost within 25 years. A reactor's capital cost per kW is far above what a federal site's utility savings can amortise, so the arithmetic fails before any licensing question arises. The related UESC (Utility Energy Service Contract) vehicle is more promising because the serving utility finances the work and there is no statutory savings-repayment test of the same severity. Separately, DoD has been buying nuclear outside these vehicles — via direct power purchase and pilot authorities — precisely because ESPC cannot carry it.",
-     "microreactor_edge": "Real but narrow: at a genuinely remote or islanded federal site, the displaced baseline is not grid power at $0.08/kWh but delivered diesel, and delivered-diesel costs at remote sites are high enough that an ESPC savings stream could plausibly amortise a small unit. The fuel-logistics tail is the savings line item — a microreactor with a multi-year refuelling interval removes the convoy, the fuel farm and the fuel-quality maintenance, all of which are O&M savings an ESCO is allowed to count.",
+     "microreactor_edge": "Real but narrow: at a genuinely remote or islanded federal site, the displaced baseline is not grid power at $0.08/kWh but delivered diesel, and delivered-diesel costs at remote sites are high enough that an ESPC savings stream could plausibly amortise a small unit. The fuel-logistics tail is the savings line item — a microreactor with a multi-year refueling interval removes the convoy, the fuel farm and the fuel-quality maintenance, all of which are O&M savings an ESCO is allowed to count.",
      "blockers": [
       "Statutory 25-year maximum term and the requirement that guaranteed savings repay the entire project cost",
       "Annual measurement and verification of savings — a reactor's output is easy to verify but its cost is not repayable from savings at typical grid baselines",
@@ -1381,11 +1381,11 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "A lease is a poor fit for a reactor in its usual form, because the NRC licence attaches to the operator and few hosts want to operate a reactor. The workable hybrid is a lease of the plant plus a separate operations-and-maintenance contract — but the tighter the O&M contract, the more operational control sits with the owner, and the closer the arrangement drifts back toward the disguised-PPA finding it was built to avoid. This tension is unresolved and worth naming to any counsel early.",
+     "nuclear_fit": "A lease is a poor fit for a reactor in its usual form, because the NRC license attaches to the operator and few hosts want to operate a reactor. The workable hybrid is a lease of the plant plus a separate operations-and-maintenance contract — but the tighter the O&M contract, the more operational control sits with the owner, and the closer the arrangement drifts back toward the disguised-PPA finding it was built to avoid. This tension is unresolved and worth naming to any counsel early.",
      "microreactor_edge": "This is the structure a factory-built, sealed, relocatable unit is best suited to, because a leased asset that can be removed and re-sited at the end of the term is a genuinely different proposition from a leased power plant that has to be demolished in place. A microreactor fleet operator leasing units and taking them back is the closest thing in this space to an aircraft-leasing model.",
      "blockers": [
       "The lease/PPA line is fact-intensive and decided after the fact by a regulator or a court",
-      "NRC licensing assumes an operating organisation; splitting title from operation needs deliberate structuring",
+      "NRC licensing assumes an operating organization; splitting title from operation needs deliberate structuring",
       "No lease of a nuclear plant to a non-nuclear host has been tested in any state"
      ],
      "sources": [
@@ -1417,7 +1417,7 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "The most expedient route for a reactor in a restrictive state, and the only route in some. It also solves the licensee problem cleanly, because a utility already runs a nuclear-capable operating organisation in many jurisdictions. What it costs is speed of a different kind: a prudence review and a rate case put the reactor's cost in front of intervenors, and a first-of-a-kind capital number is exactly what a prudence review is designed to disallow.",
+     "nuclear_fit": "The most expedient route for a reactor in a restrictive state, and the only route in some. It also solves the licensee problem cleanly, because a utility already runs a nuclear-capable operating organization in many jurisdictions. What it costs is speed of a different kind: a prudence review and a rate case put the reactor's cost in front of intervenors, and a first-of-a-kind capital number is exactly what a prudence review is designed to disallow.",
      "microreactor_edge": "A 1–20 MW unit is small enough to be approved as a pilot rather than a rate case — the dollar figure sits in the range utilities already spend on distribution projects without a contested proceeding. That is a real and under-used advantage: the same machine that is a rounding error on a utility's capital plan is a bet-the-company project for a single industrial host.",
      "blockers": [
       "Prudence review of first-of-a-kind capital",
@@ -1454,13 +1454,13 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "The size caps are the finding that matters and nobody writes them down in a nuclear context. In Texas, Colorado and Nevada the authorisation to sell behind the meter is conditioned on the system generating no more than roughly the host's own annual consumption (100%, 120%, 150% respectively). A reactor sized only to a single host's load has no scale economics, and a reactor sized to serve several hosts or export is outside the authorisation and becomes a regulated utility. In North Carolina and South Carolina a third-party sale is flatly prohibited, so a reactor developer must lease the machine to the host and let the host be the operator — which collides directly with NRC licensing, since the host would then need to be the licensee. The commercial structure and the licensing structure are coupled through this rule and neither can be chosen independently.",
+     "nuclear_fit": "The size caps are the finding that matters and nobody writes them down in a nuclear context. In Texas, Colorado and Nevada the authorization to sell behind the meter is conditioned on the system generating no more than roughly the host's own annual consumption (100%, 120%, 150% respectively). A reactor sized only to a single host's load has no scale economics, and a reactor sized to serve several hosts or export is outside the authorization and becomes a regulated utility. In North Carolina and South Carolina a third-party sale is flatly prohibited, so a reactor developer must lease the machine to the host and let the host be the operator — which collides directly with NRC licensing, since the host would then need to be the licensee. The commercial structure and the licensing structure are coupled through this rule and neither can be chosen independently.",
      "microreactor_edge": "A 1-20 MW unit is the only reactor scale that can sit under a 100-150% of-host-consumption cap at a real industrial or campus load without wasting most of its output. At 5 MW the cap is satisfiable by a single large data hall, hospital campus, mine or port terminal; at 300 MW there is no single host in any of these sectors whose annual consumption the cap would allow you to match.",
      "blockers": [
       "North Carolina G.S. 62-3(23) and South Carolina Code 58-27-2610(E) prohibit third-party retail sales outright",
       "Texas S.B. 981 (2011), Colorado 120% cap, Nevada 150% cap all size-limit the system to the host's own consumption",
       "Arizona limits third-party PPAs to schools, governments and non-profits",
-      "Municipal and cooperative utility territories may bar third-party PPAs even in states that authorise them",
+      "Municipal and cooperative utility territories may bar third-party PPAs even in states that authorize them",
       "The maps and orders are all written about solar PV; none of them contemplate a nuclear generator and none has been tested for one"
      ],
      "sources": [
@@ -1517,7 +1517,7 @@
      "group": "diesel",
      "family": "public-procurement",
      "name": "Texas Backup Power Package (TBPP) Program — state money that buys the replacement outright, with a technology list",
-     "what_it_is": "Texas capitalised a $10 billion Texas Energy Fund in 2023 and dedicated $1.8 billion of it to buying standardised behind-the-meter resilience packages for critical facilities. The PUCT adopted the implementing rule under Project No. 59024. A qualifying entity (hospital, nursing home, water/wastewater utility, 911 centre, fire station, rural fuel station on an evacuation route) applies for a grant of up to $500/kW plus a forgivable low-cost loan for the balance; the host owns the package. The defining feature for this research is the prescriptive technology definition: a package is a 'standardised, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel' that must run its host for at least 48 hours without refuelling or recharging from the grid, and must be under 2.5 MW. It may not export to the grid under any circumstance.",
+     "what_it_is": "Texas capitalized a $10 billion Texas Energy Fund in 2023 and dedicated $1.8 billion of it to buying standardized behind-the-meter resilience packages for critical facilities. The PUCT adopted the implementing rule under Project No. 59024. A qualifying entity (hospital, nursing home, water/wastewater utility, 911 center, fire station, rural fuel station on an evacuation route) applies for a grant of up to $500/kW plus a forgivable low-cost loan for the balance; the host owns the package. The defining feature for this research is the prescriptive technology definition: a package is a 'standardized, stand-alone, behind-the-meter combination of backup generator, photovoltaic arrays, batteries and on-site fuel' that must run its host for at least 48 hours without refueling or recharging from the grid, and must be under 2.5 MW. It may not export to the grid under any circumstance.",
      "who_signs": "Public Utility Commission of Texas <-> qualifying critical facility (grant + loan agreement); facility contracts separately with an installer",
      "asset_owner": "host (public agency or private critical facility)",
      "term": "one-time capital grant plus forgivable loan; asset life 20+ years",
@@ -1528,17 +1528,17 @@
        "year": "2026",
        "parties": "Public Utility Commission of Texas; funded from the Texas Energy Fund created by the Texas Legislature in 2023",
        "size": "packages capped at under 2.5 MW each; 48-hour minimum autonomy",
-       "price": "$1.8 billion programme; grants up to $500/kW",
+       "price": "$1.8 billion program; grants up to $500/kW",
        "note": "PUCT Project No. 59024. Eligible hosts are exactly the sectors a microreactor would target — hospitals, water utilities, emergency communications — and the money is real and already appropriated. But the eligible technology list is closed and nuclear is not on it.",
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "This is the cleanest example of a technology list excluding nuclear by construction rather than by hostility. Three separate clauses each independently disqualify a reactor: (1) the package must be a combination of generator + PV + batteries + on-site fuel, and 'on-site fuel' in the rule's sense is natural gas or propane; (2) the whole package must be under 2.5 MW, which is below even the small end of most microreactor designs and far below the point where reactor economics work; (3) the package must be 'stand-alone' and behind-the-meter with no export under any circumstance, which forecloses the capacity-factor economics a reactor needs. Getting nuclear into a programme like this requires the statute or rule to be amended, not a waiver.",
-     "microreactor_edge": "A sub-2.5 MW factory-built unit is the ONLY reactor form factor that could ever fit this size cap, and the 48-hour-without-refuelling requirement is the one criterion where a reactor wins outright and by orders of magnitude — a diesel or gas package needs an on-site fuel farm sized for 48 hours, while a reactor's refuelling interval is measured in years. If a state programme of this shape ever re-opened its technology list, the 48-hour autonomy clause is the argument to lead with.",
+     "nuclear_fit": "This is the cleanest example of a technology list excluding nuclear by construction rather than by hostility. Three separate clauses each independently disqualify a reactor: (1) the package must be a combination of generator + PV + batteries + on-site fuel, and 'on-site fuel' in the rule's sense is natural gas or propane; (2) the whole package must be under 2.5 MW, which is below even the small end of most microreactor designs and far below the point where reactor economics work; (3) the package must be 'stand-alone' and behind-the-meter with no export under any circumstance, which forecloses the capacity-factor economics a reactor needs. Getting nuclear into a program like this requires the statute or rule to be amended, not a waiver.",
+     "microreactor_edge": "A sub-2.5 MW factory-built unit is the ONLY reactor form factor that could ever fit this size cap, and the 48-hour-without-refueling requirement is the one criterion where a reactor wins outright and by orders of magnitude — a diesel or gas package needs an on-site fuel farm sized for 48 hours, while a reactor's refueling interval is measured in years. If a state program of this shape ever re-opened its technology list, the 48-hour autonomy clause is the argument to lead with.",
      "blockers": [
       "Closed technology list: generator + PV + battery + on-site fuel; nuclear not named",
       "Under-2.5 MW size cap excludes most microreactor designs and destroys the economics of the rest",
-      "No grid export permitted under any circumstance, and no participation in retail demand-response programmes",
+      "No grid export permitted under any circumstance, and no participation in retail demand-response programs",
       "$500/kW grant ceiling is roughly an order of magnitude below plausible microreactor overnight capital cost"
      ],
      "sources": [
@@ -1567,7 +1567,7 @@
        "year": "2020",
        "parties": "Connecticut PURA; Town of Coventry; Coventry Housing Authority; Office of Consumer Counsel",
        "size": "71 residential meters consolidated into one",
-       "note": "PURA had to waive the statewide master-metering prohibition and separately authorise reassigning Zero Emission Renewable Energy Credit meters so the project kept its subsidy. The Office of Consumer Counsel showed consolidation would extinguish tenants' access to Eversource hardship programmes; PURA approved conditionally anyway.",
+       "note": "PURA had to waive the statewide master-metering prohibition and separately authorize reassigning Zero Emission Renewable Energy Credit meters so the project kept its subsidy. The Office of Consumer Counsel showed consolidation would extinguish tenants' access to Eversource hardship programs; PURA approved conditionally anyway.",
        "source_idx": 0
       }
      ],
@@ -1593,7 +1593,7 @@
      "group": "diesel",
      "family": "regulatory-rule",
      "name": "Uptime Institute Tier III/IV engine-generator rating rule — the private standard that requires the diesel fleet to exist and to be unlimited-runtime",
-     "what_it_is": "Not a law and not a contract, but the certification that data-centre tenants, lenders and insurers actually ask for. Uptime Institute's Tier Standard requires that the on-site engine generators for a Tier III or Tier IV site carry a rating with NO limitation on consecutive hours of operation at N demand: only continuous ratings, derated prime ratings, or standby ratings without runtime limits qualify. Tier I and Tier II may use runtime-limited machines. The practical effect is that the highest-value data-centre sites are contractually and commercially obliged to keep a fleet of engine generators capable of running indefinitely — which is why the diesel fleet survives even at sites that have added batteries, fuel cells or on-site gas.",
+     "what_it_is": "Not a law and not a contract, but the certification that data-center tenants, lenders and insurers actually ask for. Uptime Institute's Tier Standard requires that the on-site engine generators for a Tier III or Tier IV site carry a rating with NO limitation on consecutive hours of operation at N demand: only continuous ratings, derated prime ratings, or standby ratings without runtime limits qualify. Tier I and Tier II may use runtime-limited machines. The practical effect is that the highest-value data-center sites are contractually and commercially obliged to keep a fleet of engine generators capable of running indefinitely — which is why the diesel fleet survives even at sites that have added batteries, fuel cells or on-site gas.",
      "who_signs": "Uptime Institute <-> the owner/operator seeking Tier Certification; downstream this appears as a covenant in colocation contracts, tenant SLAs and lender/insurer diligence",
      "asset_owner": "host",
      "term": "per-certification; re-verified on Tier Certification of Constructed Facility and operational sustainability reviews",
@@ -1602,7 +1602,7 @@
       {
        "name": "Uptime Institute Accredited Tier Designer Technical Paper: Engine-Generator Ratings",
        "year": "2026",
-       "parties": "Uptime Institute (standards body) <-> Tier-certified data centre operators worldwide",
+       "parties": "Uptime Institute (standards body) <-> Tier-certified data center operators worldwide",
        "size": "applies to every Tier III and Tier IV certified facility",
        "note": "Document reference UITPEGEN211-2026. The rule creates a direct collision with EPA RICE NESHAP: the federal rule gives an engine cheap 'emergency' status only if it runs under 100 hours a year, while Uptime requires the machine's RATING to have no runtime limit at all. Operators satisfy both by buying continuous-rated iron and then never using it — the worst possible capital outcome, and the strongest economic argument for replacing it with something that can run.",
        "source_idx": 0
@@ -1666,7 +1666,7 @@
      "blockers": [
       "Eligible Equipment is a closed enumerated list of storage plus 11 named generation technologies; no equivalent-performance pathway",
       "Renewable Fuel Eligibility (Sec. 7.4): eligible fuels must undergo combustion or a chemical reaction AND be classified as renewable; 100% renewable fuel required for project life",
-      "Operational eligibility (Sec. 7.1): waste-heat utilisation >=5% per P.U. Code 216.6(a), or Electrical Efficiency E/F_HHV >= 40% — both defined over fuel heating value",
+      "Operational eligibility (Sec. 7.1): waste-heat utilization >=5% per P.U. Code 216.6(a), or Electrical Efficiency E/F_HHV >= 40% — both defined over fuel heating value",
       "Ineligible Equipment: 'Backup systems intended solely for emergency purposes'; also any generation capable of operating on or switching to diesel fuel for start-up or continuous operation",
       "Permanent-installation test rejects any indication of portability (wheels, trailer, platform, quick disconnects)",
       "Incentive rated-capacity ceiling of 3 MW, declining from 100% to 0% between 1 MW and 3 MW",
@@ -1724,7 +1724,7 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "This is the concrete answer to 'what would a utility make a reactor promise'. Every line of the storage guarantee stack has a nuclear analogue and each is harder: guaranteed power capacity becomes guaranteed net electrical output at reference conditions; round-trip efficiency becomes thermal efficiency and house load; the availability guarantee becomes a capacity-factor guarantee net of refuelling; the ramp-rate test becomes the reactor's licensed manoeuvring envelope, which for most microreactor designs is the binding constraint. The professional-engineer certification at commercial operation is the interesting enabler: it means the utility's acceptance test is an engineering document, not a regulatory one, so a design that can demonstrate its numbers can be accepted on the same terms as a battery. The blocker is AGC: these templates give the utility direct set-point control of the asset, and no reactor licence contemplates a utility dispatcher moving reactor power.",
+     "nuclear_fit": "This is the concrete answer to 'what would a utility make a reactor promise'. Every line of the storage guarantee stack has a nuclear analogue and each is harder: guaranteed power capacity becomes guaranteed net electrical output at reference conditions; round-trip efficiency becomes thermal efficiency and house load; the availability guarantee becomes a capacity-factor guarantee net of refueling; the ramp-rate test becomes the reactor's licensed manoeuvring envelope, which for most microreactor designs is the binding constraint. The professional-engineer certification at commercial operation is the interesting enabler: it means the utility's acceptance test is an engineering document, not a regulatory one, so a design that can demonstrate its numbers can be accepted on the same terms as a battery. The blocker is AGC: these templates give the utility direct set-point control of the asset, and no reactor license contemplates a utility dispatcher moving reactor power.",
      "microreactor_edge": "Pairing solves the ramp-rate exhibit outright. A reactor cannot pass a storage ramp-rate test and should not try; a battery on the same point of delivery can, and the combined facility is what gets certified. That is the single most useful thing pairing does for a bid into an all-source RFP: it lets a slow, always-on machine be sold under a contract form written for fast machines. The relocatability of a 1-20 MW unit also changes the delay-damages and security calculus, since a factory unit that misses a milestone at one site is not a stranded construction project.",
      "blockers": [
       "AGC set-point control by the utility is incompatible with current reactor licensing bases",
@@ -1813,7 +1813,7 @@
      "group": "batteries",
      "family": "regulatory-rule",
      "name": "ELCC capacity accreditation — what the pair is allowed to count as",
-     "what_it_is": "In an organised capacity market the revenue a resource earns is its installed capacity multiplied by an accreditation factor set by the RTO, not by the owner. PJM computes an ELCC class rating for every class by adding an increment of that class to a probabilistic model and measuring how much expected unserved energy it removes, divided by what perfect capacity would remove. Nobody signs anything; the number is published annually and it moves. It is the single largest determinant of whether a paired asset earns capacity revenue, and it is where a steady generator and a duration-limited battery are valued on completely different curves.",
+     "what_it_is": "In an organized capacity market the revenue a resource earns is its installed capacity multiplied by an accreditation factor set by the RTO, not by the owner. PJM computes an ELCC class rating for every class by adding an increment of that class to a probabilistic model and measuring how much expected unserved energy it removes, divided by what perfect capacity would remove. Nobody signs anything; the number is published annually and it moves. It is the single largest determinant of whether a paired asset earns capacity revenue, and it is where a steady generator and a duration-limited battery are valued on completely different curves.",
      "who_signs": "RTO/ISO tariff (PJM Manual 21A / RAA) <-> every capacity resource, by operation of the tariff",
      "asset_owner": "utility | third-party developer | host",
      "term": "Set per Delivery Year; recalculated annually and applied prospectively",
@@ -1892,7 +1892,7 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "The ESA/P3 form is the natural wrapper for a reactor because it keeps the licensee and the operator in one entity — the developer — and gives the host a service it can procure without a nuclear engineering staff or a capital vote. Two things break. First, term: a microgrid ESA runs 15-25 years against a reactor's design life and licence renewal cycle, so the residual-value and decommissioning questions land inside the contract rather than after it. Second, the security and emergency-planning obligations of a licensed facility do not sit comfortably on a county correctional facility or a hospital campus, and no ESA template addresses them.",
+     "nuclear_fit": "The ESA/P3 form is the natural wrapper for a reactor because it keeps the licensee and the operator in one entity — the developer — and gives the host a service it can procure without a nuclear engineering staff or a capital vote. Two things break. First, term: a microgrid ESA runs 15-25 years against a reactor's design life and license renewal cycle, so the residual-value and decommissioning questions land inside the contract rather than after it. Second, the security and emergency-planning obligations of a licensed facility do not sit comfortably on a county correctional facility or a hospital campus, and no ESA template addresses them.",
      "microreactor_edge": "Montgomery County's two microgrids together deliver about 11 GWh/year, which is roughly 1.25 MW average. A single 5 MW block would serve that county's whole critical-facility portfolio four times over with the surplus available for export or heat — meaning the natural microreactor customer here is not one facility but an aggregated municipal or campus portfolio. Factory build and relocatability also match the P3 risk allocation: the developer's downside on a stranded asset is bounded if the unit can be removed and redeployed, which is not true of a CHP plant poured into a jail's mechanical yard.",
      "blockers": [
       "No ESA template allocates nuclear decommissioning, spent-fuel or security-force obligations between host and developer",
@@ -1974,11 +1974,11 @@
      "id": "single-owner-merchant-arbitrage-pair",
      "group": "batteries",
      "family": "commercial-contract",
-     "name": "Single-owner merchant pair — one entity owns generator and storage and optimises dispatch against price",
-     "what_it_is": "No offtake contract at all: one owner holds both the generator and the battery, and the battery's job is to move the generator's flat output into the hours the market pays for. Because both halves are inside one balance sheet the owner is indifferent to which asset earns the revenue, and the optimisation is purely dispatch against a price series. The economics live or die on price volatility rather than on price level, which makes this the one mechanism where a market with cheap average power can still be the best market. It is also the mechanism most exposed: nothing is contracted, so nothing is bankable.",
+     "name": "Single-owner merchant pair — one entity owns generator and storage and optimizes dispatch against price",
+     "what_it_is": "No offtake contract at all: one owner holds both the generator and the battery, and the battery's job is to move the generator's flat output into the hours the market pays for. Because both halves are inside one balance sheet the owner is indifferent to which asset earns the revenue, and the optimization is purely dispatch against a price series. The economics live or die on price volatility rather than on price level, which makes this the one mechanism where a market with cheap average power can still be the best market. It is also the mechanism most exposed: nothing is contracted, so nothing is bankable.",
      "who_signs": "Nobody — the owner sells into the wholesale market as a price taker; the counterparty is the market operator",
      "asset_owner": "third-party developer | utility",
-     "term": "Asset life; 20-year project life is the standard modelling assumption",
+     "term": "Asset life; 20-year project life is the standard modeling assumption",
      "price_form": "merchant real-time market revenue, plus tax credits on the generation half",
      "precedents": [
       {
@@ -2000,8 +2000,8 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "Idaho National Laboratory modelled exactly this structure for a reactor: a 20 MWth (9.6 MWe) high-temperature gas reactor with a single owner also holding a liquid metal battery, dispatched by stochastic optimisation against ERCOT, PJM and MISO real-time prices over a 20-year life. Two findings matter commercially. First, the battery prefers to charge from the reactor rather than from the grid, so the tax-credit charging restriction that constrains solar hybrids is close to free for a reactor pair. Second, the reactor's own capex dominates: INL's base case assumes $14,001/kWe with a low case of $8,616/kWe, and even at the low case the NPV outcome varies by market rather than being uniformly positive. The paper reports the maximum allowable reactor capex to break even, computed per 9,800 kW of reactor — which is the correct way to state the target and is rarely stated that way in vendor material.",
-     "microreactor_edge": "The most surprising number in the literature is the sizing ratio. INL optimised the battery's power rating across a 0-100 MWe range against a 9.6 MWe reactor, and the optimum sat at the top of the range in all three markets — roughly ten times the reactor's electrical output, with the paper cautioning that beyond 100 MWe the estimates could differ. That is the opposite of the intuition that a small reactor takes a small battery: a flat generator plus a very large short-duration battery is a peaking plant with nuclear fuel. The other quantified finding is that a large share of the reactor's output is better sold as heat or product than as electricity — INL estimates non-electric application potential at 38.6% in ERCOT, 23.7% in PJM and 24% in MISO, and in ERCOT 650 MWh of 1,682 MWh generated is diverted to charging rather than sold. To make the arbitrage return real the battery must sustain 624-633 cycles per year at 72.2% round-trip efficiency, or 730-768 cycles at 80.3%.",
+     "nuclear_fit": "Idaho National Laboratory modeled exactly this structure for a reactor: a 20 MWth (9.6 MWe) high-temperature gas reactor with a single owner also holding a liquid metal battery, dispatched by stochastic optimization against ERCOT, PJM and MISO real-time prices over a 20-year life. Two findings matter commercially. First, the battery prefers to charge from the reactor rather than from the grid, so the tax-credit charging restriction that constrains solar hybrids is close to free for a reactor pair. Second, the reactor's own capex dominates: INL's base case assumes $14,001/kWe with a low case of $8,616/kWe, and even at the low case the NPV outcome varies by market rather than being uniformly positive. The paper reports the maximum allowable reactor capex to break even, computed per 9,800 kW of reactor — which is the correct way to state the target and is rarely stated that way in vendor material.",
+     "microreactor_edge": "The most surprising number in the literature is the sizing ratio. INL optimized the battery's power rating across a 0-100 MWe range against a 9.6 MWe reactor, and the optimum sat at the top of the range in all three markets — roughly ten times the reactor's electrical output, with the paper cautioning that beyond 100 MWe the estimates could differ. That is the opposite of the intuition that a small reactor takes a small battery: a flat generator plus a very large short-duration battery is a peaking plant with nuclear fuel. The other quantified finding is that a large share of the reactor's output is better sold as heat or product than as electricity — INL estimates non-electric application potential at 38.6% in ERCOT, 23.7% in PJM and 24% in MISO, and in ERCOT 650 MWh of 1,682 MWh generated is diverted to charging rather than sold. To make the arbitrage return real the battery must sustain 624-633 cycles per year at 72.2% round-trip efficiency, or 730-768 cycles at 80.3%.",
      "blockers": [
       "Merchant revenue is unbankable for a first-of-a-kind asset; lenders will require an offtake contract that this mechanism by definition lacks",
       "The measured arbitrage margin on a real utility contract was ~9% of cost — a difference between two large, volatile numbers",
@@ -2050,15 +2050,15 @@
        "parties": "US Congress; implemented through IRC Sec. 48E (ITC) and 45Y (PTC)",
        "size": "n/a (statute)",
        "price": "ITC base 6%, 30% with wage/apprenticeship, up to 50% with domestic-content and energy-community bonuses; PTC $5.5/MWh base, $27.5/MWh qualified, up to $33/MWh with bonuses",
-       "note": "Rates as modelled by Idaho National Laboratory for microreactor projects. Standalone storage no longer needs a host generator to be creditable, which removed the legal reason to co-locate — pairings after 2022 are commercial choices, not tax-driven ones.",
+       "note": "Rates as modeled by Idaho National Laboratory for microreactor projects. Standalone storage no longer needs a host generator to be creditable, which removed the legal reason to co-locate — pairings after 2022 are commercial choices, not tax-driven ones.",
        "source_idx": 1
       }
      ],
      "nuclear_fit": "Nuclear is inside the technology-neutral credits: 48E and 45Y apply to zero-carbon generation regardless of technology, so a reactor and a battery can each claim on their own terms and the historical reason to bolt them together is gone. That is an enabler with a sting. The specific choice a reactor project faces, as INL frames it, is ITC versus PTC: high-capex, high-capacity-factor assets sit awkwardly between the two rules of thumb, since high capex argues for the ITC and high capacity factor argues for the PTC. At a $27/MWh PTC, INL finds the claimable PTC exceeds the microreactor's entire variable O&M cost.",
-     "microreactor_edge": "For a 1-20 MW unit the ITC/PTC choice is closer than for a gigawatt plant because the capex per kW is much higher (INL models $14,001/kWe base and $8,616/kWe low case against a conventional plant's few thousand), which pushes toward the ITC, while a microreactor's design capacity factor pushes toward the PTC. The battery half matters here: INL explicitly excludes the LMB from the tax-credit modelling, noting this understates the pair's economics, so a real project can stack a 48E claim on the storage that the published analysis does not credit.",
+     "microreactor_edge": "For a 1-20 MW unit the ITC/PTC choice is closer than for a gigawatt plant because the capex per kW is much higher (INL models $14,001/kWe base and $8,616/kWe low case against a conventional plant's few thousand), which pushes toward the ITC, while a microreactor's design capacity factor pushes toward the PTC. The battery half matters here: INL explicitly excludes the LMB from the tax-credit modeling, noting this understates the pair's economics, so a real project can stack a 48E claim on the storage that the published analysis does not credit.",
      "blockers": [
       "The 75% cliff and pro-rata haircut still bind any structure that claims storage as part of a generator's energy property rather than standalone",
-      "Recapture is tested annually for five years — an operating year in which the reactor is down for refuelling and the battery charges from the grid is a tax event, not just a performance event",
+      "Recapture is tested annually for five years — an operating year in which the reactor is down for refueling and the battery charges from the grid is a tax event, not just a performance event",
       "Tax-equity covenants outlive the tax rule that created them; no-grid-charging language is still standard hybrid-PPA boilerplate",
       "Credit rates depend on wage/apprenticeship, domestic content and energy-community tests that a relocatable factory-built unit may satisfy in one location and not another"
      ],
@@ -2105,7 +2105,7 @@
       }
      ],
      "nuclear_fit": "Pairing a reactor with storage imports the battery's entire code burden into a project that would otherwise have none of it, and puts a second authority having jurisdiction — the fire marshal — alongside the NRC. That is a real cost of the pairing and it is rarely stated when the pairing is pitched.",
-     "microreactor_edge": "The sizing consequence is concrete: LBNL notes that sub-1 MW custom battery packages are hard to source because manufacturers standardise on pre-certified grid-scale units of 1 MW and above. A reactor-plus-storage skid sized for a small campus lands in exactly that awkward band, so the pairing should be specified in multiples of a pre-certified standard unit rather than as a bespoke pack.",
+     "microreactor_edge": "The sizing consequence is concrete: LBNL notes that sub-1 MW custom battery packages are hard to source because manufacturers standardize on pre-certified grid-scale units of 1 MW and above. A reactor-plus-storage skid sized for a small campus lands in exactly that awkward band, so the pairing should be specified in multiples of a pre-certified standard unit rather than as a bespoke pack.",
      "blockers": [
       "Code adoption lags national standards by years and is locally amended",
       "Fire-marshal authority is not waivable by a utility review",
@@ -2196,7 +2196,7 @@
        "parties": "Plus Power (owner) <-> Hawaiian Electric; 158 Tesla Megapack LFP units",
        "size": "185 MW / 565 MWh on Oahu, comprising 135 MW / 540 MWh of capacity and energy plus 50 MW / 25 MWh dedicated to fast frequency response",
        "price": "Hawaiian Electric's filing estimated an average bill reduction of $0.28 per month over the 20-year contract life",
-       "note": "In service January 2024, replacing the retired 180 MW AES coal plant. Contracted to provide fast frequency response, synthetic inertia and black start, responding within 250 milliseconds. HECO modelling projects a 69% reduction in renewable curtailment and 10% more utility-scale renewables integrated in the first five years.",
+       "note": "In service January 2024, replacing the retired 180 MW AES coal plant. Contracted to provide fast frequency response, synthetic inertia and black start, responding within 250 milliseconds. HECO modeling projects a 69% reduction in renewable curtailment and 10% more utility-scale renewables integrated in the first five years.",
        "source_idx": 0
       },
       {
@@ -2263,7 +2263,7 @@
      "nuclear_fit": "Islanding is where a reactor's normal handicap inverts. Everything in IEEE 1547 / UL 1741 is written for inverter-based resources whose failure mode is back-feeding a dead line; a rotating-machine reactor plant behind a microgrid interconnect device sits on the older, better-understood side of that rulebook, closer to how a standby generator is treated than how a PV inverter is. The blocker is the reverse of the battery's: an inverter can form a grid in milliseconds and a reactor cannot, so the reactor cannot be the resource that catches the island at the instant of separation. It has to already be running, or the battery has to hold the island until it is.",
      "microreactor_edge": "A 1-20 MW block plus a battery is the only combination that both catches the island and holds it. The battery's grid-forming inverter picks up the island inside the sub-second window the certification is about; the reactor then carries it for days, which no battery at hospital scale does — Richmond's 1 MWh gives three hours, Ontario's 9 MWh gives ten. The pair also collapses a sizing problem: without a reactor the battery must be sized to the worst-case outage duration, and with one it need only be sized to the transfer transient plus a ramp margin, which is one to two orders of magnitude less energy.",
      "blockers": [
-      "UL 1741 SB has no intentional-islanding type test; neither SA nor SB certifies a multimode inverter's standalone behaviour during an island",
+      "UL 1741 SB has no intentional-islanding type test; neither SA nor SB certifies a multimode inverter's standalone behavior during an island",
       "State interconnection rules are being amended one utility group at a time — a project designed to the published SIR can still be rejected on an added requirement",
       "The certification path is written around inverters; a reactor's protection and synchronisation scheme has no listed-equipment shortcut and will be evaluated by study",
       "Re-synchronisation to the area EPS after an island is the utility's call, not the host's"
@@ -2318,7 +2318,7 @@
      "nuclear_fit": "This is the mechanism most favourable to a reactor, because the benchmark is a transmission project rather than a commodity price. National Grid's alternative was a $200 million cable; that is roughly $33,000 per kW of the 6 MW it was firming, which is more than double INL's high-end microreactor capex assumption of $14,001/kWe. The blocker is regulatory rather than economic: rate-basing a reactor requires the utility to be the NRC licensee and to convince a state commission to put a first-of-a-kind nuclear asset in customer rates, which is exactly the argument that has historically gone badly. It also has to survive prudence review if the unit underperforms.",
      "microreactor_edge": "Nantucket is the archetypal microreactor site and the numbers say so: an island with a hard cable constraint, a summer peak, an existing diesel plant, and a utility willing to spend $81 million to avoid $200 million. A 5-15 MW reactor replaces both the 15 MW diesel and most of the 48 MWh battery, and unlike the battery it does not need the cable at all to recharge — the 8-hour battery's entire value depends on being refilled off-peak through the very cables it is insuring against. That dependency is the specific weakness a reactor removes, and it is invisible in the headline MW/MWh.",
      "blockers": [
-      "Rate-basing puts the utility on the NRC licence and the prudence risk; no US utility has done this for a microreactor",
+      "Rate-basing puts the utility on the NRC license and the prudence risk; no US utility has done this for a microreactor",
       "The deferral case has a clock — once the wires project is eventually built the asset's justification lapses",
       "Island and constrained-area sites are small in number and each requires its own regulatory proceeding",
       "The comparison only works where the avoided wires cost is enormous; on an unconstrained system there is nothing to defer"
@@ -2372,7 +2372,7 @@
      "nuclear_fit": "A single hybrid PPA is the closest existing template for selling a reactor-plus-storage block, because it sells the service rather than the machines — which is what a host actually wants and what keeps the reactor's operating envelope out of the contract. The blocker is that in a solar hybrid the battery exists to make an intermittent source firm; with a reactor the vector reverses. The reactor is already firm and the battery exists to make it *flexible* — to absorb the difference between a flat thermal output and a spiky site load. That flips who benefits from the charging terms: a solar hybrid's PPA restricts grid charging to protect the renewable attribute, whereas a reactor hybrid wants the battery charged almost exclusively from the reactor anyway, which makes the restriction free to accept.",
      "microreactor_edge": "The pricing benchmark transfers directly and it is brutal: Hawai'i, the highest-cost major US grid, buys firm-shaped renewable energy at 9 cents/kWh on a 25-year term. A 1-20 MW reactor selling into any grid-connected hybrid PPA has to clear that. Where the microreactor wins is where the hybrid PPA cannot go at all — off-grid, islanded, or behind a meter where the alternative is diesel at 30-70 cents/kWh, not solar at 9. The right read of this mechanism is that it sets the ceiling price for grid-tied reactor pairs and tells you to sell somewhere else.",
      "blockers": [
-      "A single blended $/kWh forces the seller to absorb degradation and augmentation risk over 25 years — for a battery that is an actuarial problem, for a reactor it is a refuelling and licence-renewal problem the counterparty has never priced",
+      "A single blended $/kWh forces the seller to absorb degradation and augmentation risk over 25 years — for a battery that is an actuarial problem, for a reactor it is a refueling and license-renewal problem the counterparty has never priced",
       "Legacy ITC charging restrictions shaped these contracts (see itc-charging-restriction record) and still appear as boilerplate in hybrid PPAs even where the tax rule no longer requires them",
       "9 cents/kWh in Hawai'i is the number to beat; nothing in the current microreactor cost literature gets there on a grid-tied basis"
      ],
@@ -2421,7 +2421,7 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "The tolling form transfers cleanly to a reactor because it already separates ownership from dispatch: the vendor/SPV owns and operates the plant (which is what NRC licensing wants — a single, competent licensee), and the host or utility buys the right to call on it. What does not transfer is the price form. A battery is paid $/kW-month precisely because it has no fuel and no energy of its own; a reactor generates, so the analogue is a capacity-plus-energy split (a $/kW-month availability fee for the firm block, plus $/MWh for what it actually delivers). The guaranteed-efficiency schedule has a direct reactor analogue that no battery contract has: a guaranteed capacity-factor / availability schedule net of scheduled refuelling and maintenance outages, which is the one number a nuclear tolling agreement will be negotiated on.",
+     "nuclear_fit": "The tolling form transfers cleanly to a reactor because it already separates ownership from dispatch: the vendor/SPV owns and operates the plant (which is what NRC licensing wants — a single, competent licensee), and the host or utility buys the right to call on it. What does not transfer is the price form. A battery is paid $/kW-month precisely because it has no fuel and no energy of its own; a reactor generates, so the analogue is a capacity-plus-energy split (a $/kW-month availability fee for the firm block, plus $/MWh for what it actually delivers). The guaranteed-efficiency schedule has a direct reactor analogue that no battery contract has: a guaranteed capacity-factor / availability schedule net of scheduled refueling and maintenance outages, which is the one number a nuclear tolling agreement will be negotiated on.",
      "microreactor_edge": "A 300 MW/1,200 MWh toll is a wholesale-market instrument; a 1-20 MW reactor's version is the same paper at a site-sized scale, where the offtaker is a single host rather than a utility. The relevant arithmetic: Anaheim is paying $18.76/kW-month = ~$225/kW-yr for 4 hours of shiftable energy with zero energy of its own. A 5 MW reactor plus a 2-4 hour battery sold on the same $/kW-month basis has to clear that number and the diesel it displaces, but it also sells firm energy the battery cannot, so it competes on the energy leg, not the capacity leg.",
      "blockers": [
       "Capacity payments are priced off a market's resource-adequacy value; a behind-the-meter reactor at a single host has no RA market to monetise unless the utility tariff lets it export",
@@ -2515,8 +2515,8 @@
      "group": "interconnection",
      "family": "utility-tariff",
      "name": "AEP Ohio Schedule DCT (Data Center Tariff), P.U.C.O. No. 22 Sheet 223 — large-load minimum-demand tariff",
-     "what_it_is": "A data centre with an aggregate monthly maximum demand above 25,000 kW at a single location (or aggregated across affiliates in the service territory) signs an Electric Service Agreement with Ohio Power Company under Schedule DCT, plus a Letter of Agreement and a Contribution in Aid of Construction agreement for customer-specific plant. The customer commits to a Contract Capacity for an initial term of the Load Ramp Period plus 8 years and pays a minimum monthly billing demand whether or not it consumes the power, so the utility — not the customer — is protected against stranded network investment. Collateral of 50% of total minimum charges over the whole term is posted at signing unless the customer is A-/A3 rated with liquidity above 10x that amount. The customer must own or hold the exclusive right to use a designated site before signing.",
-     "who_signs": "Data-centre customer <-> Ohio Power Company (AEP Ohio), under an ESA + Letter of Agreement + CIAC agreement, on tariff terms approved by the Public Utilities Commission of Ohio",
+     "what_it_is": "A data center with an aggregate monthly maximum demand above 25,000 kW at a single location (or aggregated across affiliates in the service territory) signs an Electric Service Agreement with Ohio Power Company under Schedule DCT, plus a Letter of Agreement and a Contribution in Aid of Construction agreement for customer-specific plant. The customer commits to a Contract Capacity for an initial term of the Load Ramp Period plus 8 years and pays a minimum monthly billing demand whether or not it consumes the power, so the utility — not the customer — is protected against stranded network investment. Collateral of 50% of total minimum charges over the whole term is posted at signing unless the customer is A-/A3 rated with liquidity above 10x that amount. The customer must own or hold the exclusive right to use a designated site before signing.",
+     "who_signs": "Data-center customer <-> Ohio Power Company (AEP Ohio), under an ESA + Letter of Agreement + CIAC agreement, on tariff terms approved by the Public Utilities Commission of Ohio",
      "asset_owner": "utility",
      "term": "Load Ramp Period (max 4 years) plus 8 years — so 12 years only when the ramp runs the full 4; 3-year ramp gives 11. Thereafter evergreen on 3 years' written notice.",
      "price_form": "rate-based: $8.08/kW primary or $9.05/kW secondary distribution demand charge, plus customer charge and all approved riders, applied to a contractual minimum billing demand",
@@ -2525,7 +2525,7 @@
        "name": "PUCO Case No. 24-508-EL-ATA — Schedule DCT stipulation adopted",
        "year": "2025",
        "parties": "AEP Ohio (Ohio Power Company); PUCO Staff; Office of the Ohio Consumers' Counsel; and other signatory parties",
-       "size": "applies to new data-centre load above 25,000 kW aggregate, and to existing customers expanding by more than 25,000 kW",
+       "size": "applies to new data-center load above 25,000 kW aggregate, and to existing customers expanding by more than 25,000 kW",
        "price": "minimum billing demand floor; exit fee of 36 months of minimum charges, available only after the fifth year following the ramp",
        "note": "Order 2025-07-09; compliance tariff filed 2025-07-11; effective 2025-07-23. The sheet now in force was re-issued 2026-04-08 under the Case No. 25-392-EL-AIR rate-case order, effective 2026-04-10 — cite the current sheet, not the 2025 compliance filing.",
        "source_idx": 0
@@ -2541,7 +2541,7 @@
       }
      ],
      "nuclear_fit": "Ignores nuclear, and that neutrality is the opening. Schedule DCT never enumerates generation technologies. Its 'Customer-Owned Generation and Emergency Conditions' section lets a customer elect to use behind-the-meter generation to offset its Contract Capacity on one engineering condition: equipment must exist 'to instantaneously curtail load equal to or greater than the behind-the-meter generation output', plus an OAC 4901:1-22 interconnection agreement. Because the customer's exposure is a minimum billing demand rather than metered consumption, a behind-the-meter generator that merely shaves energy saves nothing. Only lowering Contract Capacity itself does. That makes the netting election the most valuable clause in the tariff for a reactor developer: every MW of firm on-site capacity that reduces Contract Capacity removes roughly 0.85 MW of minimum billing demand for the full 11-12 year term, and cuts the 50%-of-minimum-charges collateral in proportion. Emergency or backup generation not designed to run in parallel sits expressly outside these requirements, which is the escape hatch a diesel farm uses and a baseload reactor cannot.",
-     "microreactor_edge": "A 25 MW data centre is the smallest load Schedule DCT reaches, and it is served entirely by the top of the 1-20 MW microreactor band or a two-unit plant — so the microreactor is the only reactor class that can address the tariff's entry tier rather than only hyperscale campuses. The instantaneous-curtailment requirement is also easier to satisfy for a small, steadily-loaded unit than for a large one whose trip drops a step the site cannot absorb. Against that, the tariff's site rule ('must own or have the exclusive right to use the land') and the 8-year-post-ramp commitment are indifferent to relocatability, so the microreactor's mobility earns nothing here.",
+     "microreactor_edge": "A 25 MW data center is the smallest load Schedule DCT reaches, and it is served entirely by the top of the 1-20 MW microreactor band or a two-unit plant — so the microreactor is the only reactor class that can address the tariff's entry tier rather than only hyperscale campuses. The instantaneous-curtailment requirement is also easier to satisfy for a small, steadily-loaded unit than for a large one whose trip drops a step the site cannot absorb. Against that, the tariff's site rule ('must own or have the exclusive right to use the land') and the 8-year-post-ramp commitment are indifferent to relocatability, so the microreactor's mobility earns nothing here.",
      "blockers": [
       "Minimum billing demand is owed 'regardless of the customer choosing to curtail, reduce, suspend, or terminate service' during the initial term",
       "Exit only after the fifth year following the Load Ramp Period, and only on paying 36 months of minimum charges",
@@ -2605,7 +2605,7 @@
       }
      ],
      "nuclear_fit": "A 50% cost share is the only instrument that has moved a first-of-a-kind reactor from paper to a construction site in the United States, and its structural weakness is exactly the thing it is praised for: because DOE pays a percentage of whatever the project costs, a cost overrun is shared rather than absorbed, so neither party has the incentive a fixed-price contract creates. It also does not solve the offtake problem at all - a fully cost-shared reactor still has no customer, which is what killed the one ARDP-adjacent project that had a price.",
-     "microreactor_edge": "The 50% floor is written as a percentage, so it is technology-neutral and scale-neutral - which quietly disadvantages microreactors twice. First, at $2-4 billion of total project cost a large demonstration can absorb a nine-figure federal award, while a $50-150 million microreactor's 50% is a rounding error to DOE and does not justify the cooperative agreement's administrative load. Second, the developer must fund its half BEFORE invoicing, and for a microreactor firm that means raising the entire unit cost in venture equity anyway - which is why the microreactor cohort ended up in the DOE Reactor Pilot Program's no-money authorisation pathway instead of in ARDP.",
+     "microreactor_edge": "The 50% floor is written as a percentage, so it is technology-neutral and scale-neutral - which quietly disadvantages microreactors twice. First, at $2-4 billion of total project cost a large demonstration can absorb a nine-figure federal award, while a $50-150 million microreactor's 50% is a rounding error to DOE and does not justify the cooperative agreement's administrative load. Second, the developer must fund its half BEFORE invoicing, and for a microreactor firm that means raising the entire unit cost in venture equity anyway - which is why the microreactor cohort ended up in the DOE Reactor Pilot Program's no-money authorization pathway instead of in ARDP.",
      "blockers": [
       "DOE's dollar commitment is 'subject to the availability of future appropriations' - it is a ceiling, not a budget",
       "The non-federal 50% applies to each invoice each year, so a developer that cannot fund its half stops drawing federal money immediately",
@@ -2785,7 +2785,7 @@
        "year": "2025",
        "parties": "Tennessee Valley Authority <-> its own Board; NRC construction permit application docketed 2025",
        "size": "one BWRX-300, roughly 300 MWe, Oak Ridge, Tennessee",
-       "price": "No total project cost has been published by TVA. What is public is the incremental development spend its Board has authorised: $200 million approved February 2022 and a further $150 million in April 2024, for $350 million to date on design and development alone - before any construction commitment.",
+       "price": "No total project cost has been published by TVA. What is public is the incremental development spend its Board has authorized: $200 million approved February 2022 and a further $150 million in April 2024, for $350 million to date on design and development alone - before any construction commitment.",
        "note": "TVA is federally owned and self-financing, so there is no state commission order to disallow a cost overrun and no adversarial rate proceeding in which a total cost has to be defended. A widely cited overnight cost of $17,949/kW in 2024 dollars is an intervenor's reading of TVA filings (David Schlissel, reported by the Southern Alliance for Clean Energy), not a figure TVA has published, and it should be cited that way.",
        "source_idx": 2
       }
@@ -2795,7 +2795,7 @@
      "blockers": [
       "No US state commission has approved rate-basing a reactor under 100 MW; every rate-base precedent found is 300 MW-class or larger",
       "OPG's CAD 20.9 billion includes interest and escalation, so it is routinely mis-compared against overnight costs that exclude both",
-      "TVA has published no total cost for Clinch River, only $350 million of authorised development spend",
+      "TVA has published no total cost for Clinch River, only $350 million of authorized development spend",
       "PacifiCorp's Natrium offtake is a PPA with an undisclosed price, so the largest US utility-linked small-reactor deal produces no comparator either",
       "Ratepayers, not the developer, carry construction overrun risk in this structure"
      ],
@@ -2847,7 +2847,7 @@
        "parties": "IRS / Treasury <-> facility owner",
        "size": "percentage of qualified investment in the facility",
        "price": "6 percent of the qualified investment as the base amount, multiplied by five to up to 30 percent where prevailing wage and registered apprenticeship requirements are met, plus 10 percentage points for domestic content in steel, iron and manufactured products, plus 10 percentage points for an energy community. The One Big Beautiful Bill Act added a further nuclear-specific adder of 10% (or two percentage points without prevailing wage and apprenticeship) for an advanced nuclear facility in a metropolitan statistical area with at least 0.17% direct nuclear-related employment at any time since 2010.",
-       "note": "The nuclear energy community adder is available ONLY against 45Y, not 48E - so a developer choosing the investment credit forfeits the one credit provision written specifically for nuclear. That makes the 45Y-versus-48E election a genuine structuring decision rather than a modelling preference, and it pushes a nuclear project toward the production credit if its site qualifies.",
+       "note": "The nuclear energy community adder is available ONLY against 45Y, not 48E - so a developer choosing the investment credit forfeits the one credit provision written specifically for nuclear. That makes the 45Y-versus-48E election a genuine structuring decision rather than a modeling preference, and it pushes a nuclear project toward the production credit if its site qualifies.",
        "source_idx": 1
       }
      ],
@@ -2897,7 +2897,7 @@
        "name": "Socrates South Power Generation Project (Williams / Meta), New Albany, Ohio",
        "year": "2025",
        "parties": "Will-Power OH (subsidiary of The Williams Companies) -> Sidecat, LLC (Meta affiliate)",
-       "size": "200 MW per site, two sites (400 MW total); serving a 740-acre data centre campus",
+       "size": "200 MW per site, two sites (400 MW total); serving a 740-acre data center campus",
        "note": "Approved by the Ohio Power Siting Board on 9 June 2025. The plant's output is dedicated to a single customer's load and is NOT physically connected to the electric grid - three Solar Turbines Titan 250s, nine PGM 130s, three Siemens SGT400s and 15 Caterpillar 3520 reciprocating engines. Construction from June 2025, in service before end-2026: roughly 18 months from approval to power.",
        "source_idx": 0
       },
@@ -2910,7 +2910,7 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "The single most important negative precedent in this space is nuclear. On 1 November 2024 FERC rejected, 2-1, the amended Susquehanna ISA that would have raised Amazon's co-located data centre load from 300 MW to 480 MW (with a path to 960 MW in 120 MW increments), on the ground that PJM had not justified the non-conforming provisions. That rejection is what triggered the EL25-49 show-cause proceeding. So the co-location route for a reactor is not a settled commercial structure - it is an open FERC docket in which the first mover was told no, and where the pending remedy explicitly includes a cap on how much load may be netted behind the meter.",
+     "nuclear_fit": "The single most important negative precedent in this space is nuclear. On 1 November 2024 FERC rejected, 2-1, the amended Susquehanna ISA that would have raised Amazon's co-located data center load from 300 MW to 480 MW (with a path to 960 MW in 120 MW increments), on the ground that PJM had not justified the non-conforming provisions. That rejection is what triggered the EL25-49 show-cause proceeding. So the co-location route for a reactor is not a settled commercial structure - it is an open FERC docket in which the first mover was told no, and where the pending remedy explicitly includes a cap on how much load may be netted behind the meter.",
      "microreactor_edge": "A 1-20 MW unit is small enough that the co-located load can plausibly be ALL of the plant's output, which is the cleanest version of this structure: no export, no netting question, no capacity-market interaction, and arguably no interconnection request at all. The FERC fight is about hundreds of megawatts being pulled out of a capacity market; a 5 MW machine serving a 5 MW hospital or fab does not create the resource-adequacy problem that made Susquehanna contentious. But watch the pending BTMG MW threshold - if PJM sets it low, it binds small units too, and if it is set high, the microreactor case is trivially inside it.",
      "blockers": [
       "FERC rejected the Talen/Amazon amended ISA 2-1 on 1 Nov 2024; the structure is not settled law",
@@ -3018,9 +3018,9 @@
       }
      ],
      "nuclear_fit": "SB6's curtailability mandate is the interesting one for nuclear: a large load that self-supplies from an on-site reactor still has to accept remote curtailment if it interconnects after 31 December 2025, unless it qualifies as a critical load. And a reactor paired with an EXISTING ERCOT generation resource under a net-metering arrangement drags in a PUCT approval that did not exist before mid-2025. Against that, ERCOT's generator side remains the fastest in the country because connect-and-manage studies only local upgrades rather than broad network upgrades, and generators are not allocated transmission costs.",
-     "microreactor_edge": "A 1-20 MW reactor serving a co-located host is very likely to sit entirely outside the ERCOT Large Load Interconnection Process, because PGRR115 raised the co-located trigger from 20 MW to the flat 75 MW load threshold - a rules change made in 2025 that a 2024-vintage analysis would get exactly backwards. That is a real, dated, numeric advantage: a 20 MW co-located campus that would have been captured under the interim process is now exempt. It disappears the moment the host's own peak demand crosses 75 MW, which most AI data centres do; so the microreactor's ERCOT market is the sub-75 MW host, not the hyperscaler.",
+     "microreactor_edge": "A 1-20 MW reactor serving a co-located host is very likely to sit entirely outside the ERCOT Large Load Interconnection Process, because PGRR115 raised the co-located trigger from 20 MW to the flat 75 MW load threshold - a rules change made in 2025 that a 2024-vintage analysis would get exactly backwards. That is a real, dated, numeric advantage: a 20 MW co-located campus that would have been captured under the interim process is now exempt. It disappears the moment the host's own peak demand crosses 75 MW, which most AI data centers do; so the microreactor's ERCOT market is the sub-75 MW host, not the hyperscaler.",
      "blockers": [
-      "75 MW load threshold captures any serious data-centre host regardless of how the generation is arranged",
+      "75 MW load threshold captures any serious data-center host regardless of how the generation is arranged",
       "SB6 Net Metering Review adds ~180 days (120-day ERCOT study + 60-day PUCT decision) to any deal with an EXISTING generation resource",
       "Mandatory remote curtailability for large loads interconnecting after 31 December 2025",
       "Minimum $100,000 initial transmission screening study payment per interconnection request",
@@ -3281,7 +3281,7 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "Nothing in the LGIP is nuclear-specific: a reactor is a synchronous machine like any thermal plant and enters the same cluster. The mismatch is schedule. A reactor's licensing path (NRC construction permit + operating licence, or a combined licence) runs on its own clock and is not accelerated by holding a queue position, while Order 2023's readiness rules run the other way - 90% site control at request, escalating withdrawal penalties, and a 20%-of-upgrade-cost deposit at LGIA - all of which punish a project that must sit still waiting on a regulator. Firm, dispatchable output is the enabler: a reactor's high capacity factor makes it far more likely to trigger, and be charged for, deliverability-driven network upgrades than an equivalent-MW solar plant.",
+     "nuclear_fit": "Nothing in the LGIP is nuclear-specific: a reactor is a synchronous machine like any thermal plant and enters the same cluster. The mismatch is schedule. A reactor's licensing path (NRC construction permit + operating license, or a combined license) runs on its own clock and is not accelerated by holding a queue position, while Order 2023's readiness rules run the other way - 90% site control at request, escalating withdrawal penalties, and a 20%-of-upgrade-cost deposit at LGIA - all of which punish a project that must sit still waiting on a regulator. Firm, dispatchable output is the enabler: a reactor's high capacity factor makes it far more likely to trigger, and be charged for, deliverability-driven network upgrades than an equivalent-MW solar plant.",
      "microreactor_edge": "A 1-20 MW unit should never be in this process at all - it falls under the pro forma Small Generator Interconnection Procedures, which apply at 20 MW and below (see sgip-study-process). The real edge is that a factory-built unit's construction schedule (months on site) is decoupled from the queue: unlike a gas plant whose EPC schedule and queue position must be co-managed over years, a microreactor fleet can hold the connection first and drop the machine in later. The claim that a small unit dodges the queue entirely is only true below the SGIP threshold; above 20 MW, an aggregated fleet at one site re-enters the full LGIP.",
      "blockers": [
       "Median 3+ years request-to-IA and 5+ years to commercial operation (LBNL, 2025)",
@@ -3365,7 +3365,7 @@
      "group": "interconnection",
      "family": "commercial-contract",
      "name": "Deliberately never interconnecting (fully islanded on-site generation)",
-     "what_it_is": "The host builds generation that is never electrically connected to the utility system. There is no interconnection request, no study, no interconnection agreement, no network upgrade allocation and no RTO relationship at all - the only permits are siting, air and gas/fuel supply. In exchange the host gives up export revenue, capacity payments, ancillary revenue and, critically, grid backup: reserve margin must be self-provided N+1 on site. This has become the default schedule hedge for 2025-2026 data centre builds because the interconnection queue's 5+ year median is incompatible with an 18-36 month build.",
+     "what_it_is": "The host builds generation that is never electrically connected to the utility system. There is no interconnection request, no study, no interconnection agreement, no network upgrade allocation and no RTO relationship at all - the only permits are siting, air and gas/fuel supply. In exchange the host gives up export revenue, capacity payments, ancillary revenue and, critically, grid backup: reserve margin must be self-provided N+1 on site. This has become the default schedule hedge for 2025-2026 data center builds because the interconnection queue's 5+ year median is incompatible with an 18-36 month build.",
      "who_signs": "Host <-> on-site power provider (energy services agreement / BOO); NO agreement with any utility or RTO",
      "asset_owner": "third-party developer (typical) or host",
      "term": "10-20 year energy services agreements",
@@ -3388,12 +3388,12 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "Islanding removes every interconnection blocker at once and leaves nuclear's own blockers untouched - NRC licensing, security, EPZ - so it does not shorten the critical path, it just stops the grid from lengthening it. The genuine technical problem is the opposite of solar's: a reactor cannot follow a data centre's load swings quickly, so an islanded nuclear microgrid needs storage or a dump load, and it cannot lean on the grid as its N+1. Ohio's Socrates precedent is instructive on what an islanded plant must prove to a siting board even with no interconnection at all.",
+     "nuclear_fit": "Islanding removes every interconnection blocker at once and leaves nuclear's own blockers untouched - NRC licensing, security, EPZ - so it does not shorten the critical path, it just stops the grid from lengthening it. The genuine technical problem is the opposite of solar's: a reactor cannot follow a data center's load swings quickly, so an islanded nuclear microgrid needs storage or a dump load, and it cannot lean on the grid as its N+1. Ohio's Socrates precedent is instructive on what an islanded plant must prove to a siting board even with no interconnection at all.",
      "microreactor_edge": "This is the route where small size is unambiguously an advantage rather than a rules artefact. An islanded site must self-provide N+1: a single large unit forces you to build a second large unit or a huge battery, whereas a fleet of 1-20 MW units gives you N+1 from unit count - four 5 MW modules for a 15 MW load is a real redundancy plan, one 20 MW module is not. Relocatability also matters here: with no ISA, no capacity rights and no network upgrades sunk into the site, an islanded microreactor has nothing anchoring it when the host's load moves - which is not true of any grid-connected route, where the interconnection rights are often the most valuable thing on site.",
      "blockers": [
       "No export revenue, no capacity revenue, no ancillary services revenue - the reactor is paid only for what the host consumes",
-      "Host must self-provide N+1 reserve; no grid backup during refuelling or trip",
-      "Load-following: a reactor cannot chase a data-centre load step without storage or a dump load",
+      "Host must self-provide N+1 reserve; no grid backup during refueling or trip",
+      "Load-following: a reactor cannot chase a data-center load step without storage or a dump load",
       "Siting/air/water permits still apply, and a siting board can still say no (Oracle withdrew air permit applications for the earlier Project Jupiter microgrid design)",
       "Stranded-asset risk if the host leaves - though far lower for a relocatable unit"
      ],
@@ -3430,7 +3430,7 @@
        "parties": "NY PSC <-> National Grid, Con Edison and the other NY utilities <-> DG/ESS applicants",
        "size": "AC generator nameplate rating of 5 MW or less, aggregated on the customer side",
        "price": "$750 non-refundable application fee (waived/credited if a pre-application report was bought within 15 business days); $2,500 non-refundable supplemental screening fee with actual costs billable up to $5,000",
-       "note": "Timelines are in business days throughout: utility response to an application within 10 business days; supplemental screening analysis within 20 business days; CESIR completed within 60 business days of authorisation, fee and complete information; executed interconnection contract within 15 business days of a clean screening result. A project change during CESIR can add another 40 business days.",
+       "note": "Timelines are in business days throughout: utility response to an application within 10 business days; supplemental screening analysis within 20 business days; CESIR completed within 60 business days of authorization, fee and complete information; executed interconnection contract within 15 business days of a clean screening result. A project change during CESIR can add another 40 business days.",
        "source_idx": 0
       },
       {
@@ -3640,7 +3640,7 @@
       {
        "name": "FERC docket AD24-11 — technical conference on large loads co-located at generating facilities",
        "year": "2024",
-       "parties": "FERC; PJM; generators; data-centre developers; state commissions and consumer advocates",
+       "parties": "FERC; PJM; generators; data-center developers; state commissions and consumer advocates",
        "size": "42 of the 45 co-location filings made in 2024",
        "note": "A single proceeding accounts for nearly the entire 2024 volume. Counting filings without counting dockets would report a market that does not exist.",
        "source_idx": 0
@@ -3653,7 +3653,7 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "Co-location is the structure most often proposed for large reactors serving data centres, and it is the one FERC has been least willing to bless — the Talen-Amazon interconnection amendment at Susquehanna was rejected twice. A reactor project that depends on co-location is betting on an unsettled question; one that sells behind its host's existing meter is not.",
+     "nuclear_fit": "Co-location is the structure most often proposed for large reactors serving data centers, and it is the one FERC has been least willing to bless — the Talen-Amazon interconnection amendment at Susquehanna was rejected twice. A reactor project that depends on co-location is betting on an unsettled question; one that sells behind its host's existing meter is not.",
      "microreactor_edge": "The genuine advantage of a 1-20 MW machine is that it can be small enough to sit behind the host's meter as ordinary on-site generation, never becoming a co-location question at all. The whole AD24-11 argument is about loads large enough to matter to the transmission system; a microreactor's customer usually is not.",
      "blockers": [
       "The rules governing what a co-located load pays for transmission are still being litigated",
@@ -3726,9 +3726,9 @@
      "id": "reservation-fee-rofr-mfn-offtake",
      "group": "interconnection",
      "family": "commercial-contract",
-     "name": "Reservation fee plus right of first refusal and most-favoured-nation pricing, ahead of any PPA",
-     "what_it_is": "A corporate offtaker pays a large cash reservation fee to a pre-revenue developer in exchange for a right of first refusal over a block of future output and a most-favoured-nation pricing guarantee - without signing a PPA, agreeing a price, or naming a site. The fee is not a prepayment for energy: it is returned to the buyer as a discount against future PPA pricing. The buyer is effectively buying an option on capacity and a promise that no later customer gets better terms; the developer is buying non-dilutive cash and a reference customer. Ownership, fuel risk, availability risk and price are all deferred to a PPA that does not yet exist.",
-     "who_signs": "Hyperscale data-centre operator (Equinix, Inc.) <-> reactor developer (Oklo Inc.)",
+     "name": "Reservation fee plus right of first refusal and most-favored-nation pricing, ahead of any PPA",
+     "what_it_is": "A corporate offtaker pays a large cash reservation fee to a pre-revenue developer in exchange for a right of first refusal over a block of future output and a most-favored-nation pricing guarantee - without signing a PPA, agreeing a price, or naming a site. The fee is not a prepayment for energy: it is returned to the buyer as a discount against future PPA pricing. The buyer is effectively buying an option on capacity and a promise that no later customer gets better terms; the developer is buying non-dilutive cash and a reference customer. Ownership, fuel risk, availability risk and price are all deferred to a PPA that does not yet exist.",
+     "who_signs": "Hyperscale data-center operator (Equinix, Inc.) <-> reactor developer (Oklo Inc.)",
      "asset_owner": "third-party developer",
      "term": "36-month ROFR window; anticipated PPA term of 20 years, renewable for further 20-year terms",
      "price_form": "$/MWh to be set in a future PPA - the price term is REDACTED in the filed exhibit",
@@ -3739,12 +3739,12 @@
        "parties": "Equinix, Inc. <-> Oklo Inc.",
        "size": "approximately 500 MW, stated as 4,380,000 MWh/yr of electric energy output",
        "price": "REDACTED. The filed exhibit replaces every price term with '####'. A $25,000,000 reservation fee is disclosed; the $/MWh is not.",
-       "note": "Signed 2024-02-16, filed as Exhibit 10.19 to AltC Acquisition Corp's S-4/A on 2024-04-15. Fee returned as a 10% discount to most-favoured-nation pricing; MFN clause bars Oklo from giving any later customer better terms without offering them to Equinix. 4,380,000 MWh on 500 MW implies a 100% capacity factor, which is itself a negotiating artefact rather than a plant specification.",
+       "note": "Signed 2024-02-16, filed as Exhibit 10.19 to AltC Acquisition Corp's S-4/A on 2024-04-15. Fee returned as a 10% discount to most-favored-nation pricing; MFN clause bars Oklo from giving any later customer better terms without offering them to Equinix. 4,380,000 MWh on 500 MW implies a 100% capacity factor, which is itself a negotiating artefact rather than a plant specification.",
        "source_idx": 0
       }
      ],
      "nuclear_fit": "This is what an offtake looks like when the asset cannot be delivered for five to ten years and no unit of it has ever been built. There is no price because there is no cost basis - the first-of-a-kind capex is unknown to both parties. The MFN clause is the tell: the buyer is not protecting a price, it is protecting itself against discovering later that the price was set arbitrarily. A gas or solar offtaker does not need MFN protection because a market clearing price exists.",
-     "microreactor_edge": "Equinix's 500 MW is an aggregation of many small units, so the ROFR is written over MWh in a fleet rather than over a single plant's output - the LOI expressly contemplates phased deployment across multiple sites with locations named later. That is only possible with factory-built units. A 300 MW reactor is one site, one licence and one in-service date, so the equivalent contract is a single-site PPA with a fixed COD, not a portfolio option. The microreactor's modularity is what turns the offtake into an option on a production line.",
+     "microreactor_edge": "Equinix's 500 MW is an aggregation of many small units, so the ROFR is written over MWh in a fleet rather than over a single plant's output - the LOI expressly contemplates phased deployment across multiple sites with locations named later. That is only possible with factory-built units. A 300 MW reactor is one site, one license and one in-service date, so the equivalent contract is a single-site PPA with a fixed COD, not a portfolio option. The microreactor's modularity is what turns the offtake into an option on a production line.",
      "blockers": [
       "Price term redacted from the public filing - no comparator exists for any subsequent negotiation",
       "MFN clause creates a ratchet: Oklo cannot discount to a later customer without repricing Equinix",
@@ -3786,7 +3786,7 @@
        "source_idx": 0
       }
      ],
-     "nuclear_fit": "This is the single most under-modelled line item in a behind-the-meter reactor's business case. A reactor is far firmer than the solar-plus-storage the standard tariff was written for, but no tariff gives credit for firmness, so a 5 MW reactor would be billed standby on close to its full 5 MW unless the tariff is renegotiated. Getting a firmness-differentiated standby rate is a live regulatory ask, and the Atlantic City structure — price standby on outage risk — is the template that most favours a reactor.",
+     "nuclear_fit": "This is the single most under-modeled line item in a behind-the-meter reactor's business case. A reactor is far firmer than the solar-plus-storage the standard tariff was written for, but no tariff gives credit for firmness, so a 5 MW reactor would be billed standby on close to its full 5 MW unless the tariff is renegotiated. Getting a firmness-differentiated standby rate is a live regulatory ask, and the Atlantic City structure — price standby on outage risk — is the template that most favours a reactor.",
      "microreactor_edge": "A fleet argument that a single machine cannot make: two 5 MW units on one site are genuinely N+1, so the contracted standby demand should fall to the size of one unit rather than the whole load. That is a concrete, arguable tariff position, and it is only available to a technology small enough to be bought in multiples.",
      "blockers": [
       "Standard tariffs do not differentiate by resource firmness",
@@ -3861,7 +3861,7 @@
        "name": "The departing-load framing in utility ratemaking",
        "year": "2026",
        "parties": "Investor-owned utilities generally; LBNL synthesis of Hyams, Villarreal and Winmill",
-       "note": "LBNL states the position plainly: the microgrid customer leaves behind under-used grid resources and fixed costs that must be recovered from remaining customers. Revenue decoupling is the proposed fix, but decoupling guarantees the utility recovers its authorised revenue anyway, by raising rates later.",
+       "note": "LBNL states the position plainly: the microgrid customer leaves behind under-used grid resources and fixed costs that must be recovered from remaining customers. Revenue decoupling is the proposed fix, but decoupling guarantees the utility recovers its authorized revenue anyway, by raising rates later.",
        "source_idx": 0
       }
      ],
@@ -3892,16 +3892,16 @@
      "group": "licensing",
      "family": "regulatory-rule",
      "name": "The obligations a reactor deal must fund - decommissioning, operators, security, fuel - that a gas or solar deal never mentions",
-     "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection programme, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
+     "what_it_is": "Before a reactor can sell a single MWh it must have funded or committed to a set of obligations with no counterpart in a gas or solar contract: a certified decommissioning fund sized by regulation rather than by engineering, NRC-licensed operators on shift, an armed physical protection program, and material control and accounting. Each is a cost line an offtaker's diligence will find and a lender will size a reserve against. The decommissioning obligation is the one that does not scale: the 10 CFR 50.75 table sets a floor by using a substituted power level for any reactor below 1200 MWt, so a small reactor is charged as if it were a 1200 MWt one. The NRC has proposed a separate framework, Part 57, that would relieve several of these for microreactors - but it is a proposed rule, not law.",
      "who_signs": "NRC licensee <-> US NRC; and the licensee <-> a trustee holding the decommissioning fund",
-     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
-     "term": "funded before or during operation; the decommissioning certification is filed with the licence application and adjusted annually",
+     "asset_owner": "third-party developer | utility | host - applies to whoever holds the license",
+     "term": "funded before or during operation; the decommissioning certification is filed with the license application and adjusted annually",
      "price_form": "no price - these are cost obligations that must be recovered inside whatever price is charged",
      "precedents": [
       {
        "name": "10 CFR 50.75(c)(1) minimum decommissioning funding - the floor that does not scale down",
        "year": "2024",
-       "parties": "NRC <-> every power reactor licensee and combined licence applicant",
+       "parties": "NRC <-> every power reactor licensee and combined license applicant",
        "size": "applies to all power reactors regardless of size",
        "price": "In January 1986 dollars: a PWR at or above 3400 MWt must certify $105 million; between 1200 and 3400 MWt the formula is $(75 + 0.0088P) where P is thermal megawatts. THE CRITICAL CLAUSE: 'For a PWR of less than 1200 MWt, use P = 1200 MWt.' So a 20 MWt microreactor certifies the same $85.56 million (1986 dollars) as a 1200 MWt plant - 60 times its thermal rating. For a BWR the formula is $(104 + 0.009P) with the same substitution, giving $114.8 million. The certified amount must then be escalated annually by a factor at least equal to 0.65L + 0.13E + 0.22B, where L and E are Bureau of Labor Statistics labour and energy escalators and B is the waste burial escalator from NUREG-1307.",
        "note": "Two further points that matter commercially. First, the table lists only PWRs and BWRs - a high-temperature gas, sodium-cooled or heat-pipe microreactor is not in it at all, so its amount has to come from a site-specific estimate rather than the table, which removes the certainty the table was meant to provide. Second, 50.75(a) expressly notes that decommissioning funding may also be regulated by FERC or a state PUC with rate jurisdiction, and that the NRC amount is additional to, not a substitute for, those requirements.",
@@ -3912,7 +3912,7 @@
        "year": "2026",
        "parties": "NRC <-> future microreactor licensees; Docket ID NRC-2025-0379, proposed rule published 2026-05-01",
        "size": "microreactors and reactors of comparable risk profile; explicitly aimed at high-volume deployment",
-       "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general licence with the facility licensee, not the NRC, administering the initial examination; a general licence would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating licence(s) without further prior notice once construction is found substantially complete.",
+       "price": "No dollar figures. The relief is in obligations, not payments: no emergency planning zone would be defined for a Part 57 facility; force-on-force exercises would not be required; reactor operators could hold a general license with the facility licensee, not the NRC, administering the initial examination; a general license would cover certain construction activities before a construction permit is issued for an nth-of-a-kind design; and a single joint application would yield the construction permit and the associated operating license(s) without further prior notice once construction is found substantially complete.",
        "note": "On Price-Anderson the NRC did NOT propose a reduced number. It says it considered reducing the required financial protection for Part 57 facilities and would instead decide case by case on review of a joint application, using the Act's factors - cost and terms of private insurance; type, size and location; and nature and purpose of the activity - and could likewise consider reduced indemnification fees. So the single largest reactor-specific liability term remains, for now, discretionary and unpriced. This is a PROPOSED rule; nothing in it is in force.",
        "source_idx": 1
       },
@@ -3921,13 +3921,13 @@
        "year": "2025",
        "parties": "DOE <-> TRISO-X, TerraPower, Kairos Power, Radiant Industries, Westinghouse Electric Co. (allocation); separately DOE <-> Centrus Energy (production)",
        "size": "five allocations out of fifteen company requests, three needing delivery during 2025",
-       "price": "NO PRICE IN ANY FORM - not $/kgU, not $/SWU, not a delivered core cost, and no per-company allocation quantity. What is public is supply: Centrus delivered 900 kilograms of HALEU to DOE by 2025-06-25 (after an initial 20 kg batch in November 2023), against a congressionally directed programme target of 21 metric tons available by 2026-06-30 in tranches of 3, 8 and 10 metric tons.",
-       "note": "There is no commercial merchant market for HALEU in the United States, so the fuel term in a reactor deal is an application to a federal allocation queue rather than a contract with an enricher. An allocation is a conditional commitment; DOE must still initiate contracting to transfer material. The production contract runs on options - Phase III extended through 2026-06-30 with up to eight further years available - so the supply horizon a developer can show a lender is one year at a time. Allocation priority tracked prior DOE programme participation (ARDP Pathway 1, DOME experiments, ARDP risk reduction), so a developer outside those programmes starts behind.",
+       "price": "NO PRICE IN ANY FORM - not $/kgU, not $/SWU, not a delivered core cost, and no per-company allocation quantity. What is public is supply: Centrus delivered 900 kilograms of HALEU to DOE by 2025-06-25 (after an initial 20 kg batch in November 2023), against a congressionally directed program target of 21 metric tons available by 2026-06-30 in tranches of 3, 8 and 10 metric tons.",
+       "note": "There is no commercial merchant market for HALEU in the United States, so the fuel term in a reactor deal is an application to a federal allocation queue rather than a contract with an enricher. An allocation is a conditional commitment; DOE must still initiate contracting to transfer material. The production contract runs on options - Phase III extended through 2026-06-30 with up to eight further years available - so the supply horizon a developer can show a lender is one year at a time. Allocation priority tracked prior DOE program participation (ARDP Pathway 1, DOME experiments, ARDP risk reduction), so a developer outside those programs starts behind.",
        "source_idx": 3
       }
      ],
      "nuclear_fit": "These are the terms that make a reactor offtake diligence longer than a gas offtake's. A gas plant has a decommissioning obligation measured in demolition cost; a reactor has a federally certified fund whose minimum is set by a table. A solar farm has a fence; a reactor has an armed response force, insider mitigation, vehicle searches and material control and accounting. A CCGT has NERC-qualified operators; a reactor has NRC-licensed operators on shift, and until Part 57 the NRC itself administers the examination. Every one of these is a fixed annual cost that does not shrink with plant size, which is why they dominate a small reactor's operating cost per MWh and are nearly invisible in a large one's. Fuel is the same story in a different register: a gas plant's fuel counterparty is a market, a solar plant has none, and a HALEU reactor's is the federal government running an allocation queue with no published price - so the developer cannot pass through a fuel cost it does not know, the offtaker cannot index a PPA to an index that does not exist, and a lender cannot take security over a conditional commitment.",
-     "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction licence for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones. On fuel the scale asymmetry runs the other way: a microreactor's first core is small enough that a single sub-tonne DOE delivery can fuel several units, so the existing allocation programme can plausibly serve the microreactor cohort while it cannot fuel a fleet of 300 MW-class units - but microreactor designs typically run to higher enrichment and longer core lives, so fuel is a larger share of lifetime cost and it is the one cost line with no published price at all.",
+     "microreactor_edge": "The decommissioning rule is the clearest case in US nuclear regulation of a requirement that is size-blind by construction: the instruction to substitute P = 1200 MWt for any smaller PWR means a 20 MWt unit and a 1200 MWt unit certify the identical amount. On plausible microreactor capital costs that certified fund is of the same order as the plant itself, which is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale - no EPZ, no force-on-force, general-licensed operators, a general construction license for nth-of-a-kind units, one joint application instead of two proceedings - but it is proposed, so every microreactor deal signed today is priced against the Part 50 obligations, not the Part 57 ones. On fuel the scale asymmetry runs the other way: a microreactor's first core is small enough that a single sub-tonne DOE delivery can fuel several units, so the existing allocation program can plausibly serve the microreactor cohort while it cannot fuel a fleet of 300 MW-class units - but microreactor designs typically run to higher enrichment and longer core lives, so fuel is a larger share of lifetime cost and it is the one cost line with no published price at all.",
      "blockers": [
       "10 CFR 50.75(c)(1) forces a sub-1200 MWt reactor to certify a 1200 MWt reactor's decommissioning amount",
       "The 50.75(c)(1) table covers only PWRs and BWRs, so non-water microreactors fall outside it and must produce a site-specific estimate",
@@ -3935,7 +3935,7 @@
       "Part 57 declines to set a reduced Price-Anderson financial protection amount, leaving it to case-by-case NRC discretion",
       "Decommissioning funding may separately be regulated by FERC or a state PUC; the NRC amount is additional, not substitutive",
       "No HALEU price is published in any form, and no per-company allocation quantity has been disclosed - so a fuel cost cannot be passed through, indexed, or secured against",
-      "Domestic HALEU production was 900 kilograms in the year to June 2025 against a 21 metric ton programme target; a HALEU allocation is a conditional commitment, not a supply obligation"
+      "Domestic HALEU production was 900 kilograms in the year to June 2025 against a 21 metric ton program target; a HALEU allocation is a conditional commitment, not a supply obligation"
      ],
      "sources": [
       {
@@ -3978,8 +3978,8 @@
      "name": "Price-Anderson financial protection: a mandatory contract term, priced by reactor size in the regulation itself",
      "what_it_is": "Every NRC power reactor licensee must carry financial protection against public liability, and must sign an indemnity agreement with the Commission. This is not background regulation - it is a term the licensee executes, an insurance premium it pays annually, and a contingent liability it must disclose to lenders and to any offtaker doing diligence. The size of the obligation is set in 10 CFR Part 140 as a step function of reactor size, and the steps are enormous. Crucially, the top tier - a $500 million primary layer plus mandatory participation in the industry retrospective pool - attaches only to reactors rated 100,000 electrical kilowatts or more. Everything smaller sits in a much cheaper regime.",
      "who_signs": "NRC licensee <-> US Nuclear Regulatory Commission (indemnity agreement under section 170 of the Atomic Energy Act), plus the licensee <-> nuclear liability insurer",
-     "asset_owner": "third-party developer | utility | host - applies to whoever holds the licence",
-     "term": "for the life of the licence; the indemnity agreement runs with it",
+     "asset_owner": "third-party developer | utility | host - applies to whoever holds the license",
+     "term": "for the life of the license; the indemnity agreement runs with it",
      "price_form": "annual insurance premium plus a contingent deferred premium assessed only after an incident",
      "precedents": [
       {
@@ -4002,9 +4002,9 @@
       }
      ],
      "nuclear_fit": "There is no analogue in a gas or solar contract. A solar developer carries commercial general liability; a reactor licensee signs a federal indemnity agreement, buys a statutorily specified layer of nuclear liability insurance, and - above 100 MWe - accepts a several contingent obligation for other operators' accidents. For an offtaker's diligence this is the clearest example of a term that exists only because the asset is nuclear, and it is one of the few such terms with an exact published dollar amount rather than a qualitative requirement.",
-     "microreactor_edge": "This is the sharpest quantitative 1-20 MW versus 300 MW distinction in the whole file, and it runs in the microreactor's favour by two orders of magnitude. A 300 MWe unit must carry $500,000,000 of primary protection and accept a contingent $158,026,000 retrospective assessment. A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and it is not assessed the deferred premium because the retrospective plan applies to reactors of 100,000 electrical kilowatts or more. A microreactor's Price-Anderson obligation is roughly 1% of a large reactor's, set by a formula in the regulation rather than by negotiation.",
+     "microreactor_edge": "This is the sharpest quantitative 1-20 MW versus 300 MW distinction in the whole file, and it runs in the microreactor's favor by two orders of magnitude. A 300 MWe unit must carry $500,000,000 of primary protection and accept a contingent $158,026,000 retrospective assessment. A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and it is not assessed the deferred premium because the retrospective plan applies to reactors of 100,000 electrical kilowatts or more. A microreactor's Price-Anderson obligation is roughly 1% of a large reactor's, set by a formula in the regulation rather than by negotiation.",
      "blockers": [
-      "The 10 CFR 140.12 population factor is computed from Census minor civil divisions, so an urban or campus site is penalised up to 2x relative to a remote one",
+      "The 10 CFR 140.12 population factor is computed from Census minor civil divisions, so an urban or campus site is penalized up to 2x relative to a remote one",
       "The $4,500,000 floor binds for any microreactor below about 24 MWt at population factor 1.0, so the smallest units get no further reduction for being smaller",
       "Whether a sub-100 MWe licensee can DRAW on the industry secondary layer it does not pay into was not verified in this pass - only that it is not assessed",
       "The dollar figures are periodically adjusted for inflation, so any number quoted in a contract must name its CFR edition"
@@ -4035,19 +4035,19 @@
      "id": "doe-authorization-ota-test-reactor",
      "group": "licensing",
      "family": "public-procurement",
-     "name": "DOE-authorized test reactor under an Other Transaction Agreement, with no federal money and no NRC licence",
-     "what_it_is": "The developer signs an Other Transaction Agreement with DOE and builds a reactor on its own site with its own capital, authorised under DOE's nuclear safety process rather than an NRC licence. DOE supplies the authorisation pathway (Nuclear Safety Design Agreement, then Preliminary Documented Safety Analysis, then Documented Safety Analysis) and in some cases HALEU fuel; it does not supply construction money. The developer bears 100% of capex and schedule risk in exchange for reaching criticality years earlier than the NRC route allows. A parallel Strategic Partnership Project pathway exists in which a national-lab contractor, not the developer, retains design control.",
+     "name": "DOE-authorized test reactor under an Other Transaction Agreement, with no federal money and no NRC license",
+     "what_it_is": "The developer signs an Other Transaction Agreement with DOE and builds a reactor on its own site with its own capital, authorized under DOE's nuclear safety process rather than an NRC license. DOE supplies the authorization pathway (Nuclear Safety Design Agreement, then Preliminary Documented Safety Analysis, then Documented Safety Analysis) and in some cases HALEU fuel; it does not supply construction money. The developer bears 100% of capex and schedule risk in exchange for reaching criticality years earlier than the NRC route allows. A parallel Strategic Partnership Project pathway exists in which a national-lab contractor, not the developer, retains design control.",
      "who_signs": "US Department of Energy <-> reactor developer (11 selected projects)",
      "asset_owner": "third-party developer",
-     "term": "milestone-based; the programme's own deadline was criticality by 2026-07-04",
-     "price_form": "no price - the developer self-funds; DOE contributes authorisation and, for some, fuel",
+     "term": "milestone-based; the program's own deadline was criticality by 2026-07-04",
+     "price_form": "no price - the developer self-funds; DOE contributes authorization and, for some, fuel",
      "precedents": [
       {
        "name": "DOE Reactor Pilot Program - initial selections",
        "year": "2025",
        "parties": "DOE <-> Aalo Atomics, Antares Nuclear, Atomic Alchemy, Deep Fission, Last Energy, Natura Resources, Oklo (two projects), Radiant Industries, Terrestrial Energy, Valar Atomics",
        "size": "11 projects, predominantly microreactor-scale test units",
-       "price": "no DOE construction funding disclosed; the instrument conveys authorisation, not cash",
+       "price": "no DOE construction funding disclosed; the instrument conveys authorization, not cash",
        "note": "Created under Executive Order 14301. Target was criticality for at least three concepts outside the national laboratories by 2026-07-04.",
        "source_idx": 0
       },
@@ -4056,14 +4056,14 @@
        "year": "2026",
        "parties": "DOE <-> Antares Nuclear (2026-06-04), Valar Atomics (2026-06-18), Aalo Atomics (2026-07-06)",
        "size": "three test reactors; a fourth developer, Deployable Energy, is also reported critical",
-       "note": "STATUS: the programme met its target. DOE's own page lists Antares 2026-06-04 and Valar 2026-06-18 before the 2026-07-04 deadline, Aalo 2026-07-06 just after. Two authorisation pathways are in use: an OTA under which the developer retains design control, and a Strategic Partnership Project under which the lab contractor (Battelle, for Oklo's Pluto) retains it.",
+       "note": "STATUS: the program met its target. DOE's own page lists Antares 2026-06-04 and Valar 2026-06-18 before the 2026-07-04 deadline, Aalo 2026-07-06 just after. Two authorization pathways are in use: an OTA under which the developer retains design control, and a Strategic Partnership Project under which the lab contractor (Battelle, for Oklo's Pluto) retains it.",
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "This is the one mechanism in this file with no non-nuclear analogue at all - it exists because the Atomic Energy Act gives DOE independent authority to authorise reactors on its own terms, so a developer can bypass the NRC entirely for a test unit. The catch is that a DOE-authorized reactor cannot sell power commercially; it buys schedule, not revenue. The design-control question is the commercial crux: under the SPP pathway the developer hands design control to a lab contractor, which is a very different deal from the OTA pathway.",
+     "nuclear_fit": "This is the one mechanism in this file with no non-nuclear analogue at all - it exists because the Atomic Energy Act gives DOE independent authority to authorize reactors on its own terms, so a developer can bypass the NRC entirely for a test unit. The catch is that a DOE-authorized reactor cannot sell power commercially; it buys schedule, not revenue. The design-control question is the commercial crux: under the SPP pathway the developer hands design control to a lab contractor, which is a very different deal from the OTA pathway.",
      "microreactor_edge": "Every one of the 11 selected projects is small enough to be built with venture capital rather than project finance - which is the only reason a self-funded, unfunded-by-DOE pathway is usable at all. A 300 MW unit cannot be built on a company balance sheet with no offtake and no federal cost share; a 1-5 MW test unit can. The pathway therefore selects for microreactors by construction, not by policy preference.",
      "blockers": [
-      "DOE authorisation does not permit commercial power sales - a separate NRC licence is still needed to sell into a host or a grid",
+      "DOE authorization does not permit commercial power sales - a separate NRC license is still needed to sell into a host or a grid",
       "No federal construction funding: the developer carries the whole first-of-a-kind capex",
       "Under the Strategic Partnership Project pathway the lab contractor, not the developer, retains design control",
       "Criticality of a test unit is not evidence of a bankable commercial product"
@@ -4089,7 +4089,7 @@
      "group": "licensing",
      "family": "public-procurement",
      "name": "National-laboratory test bed access as a staged, cost-shared entry into operation",
-     "what_it_is": "DOE, through the National Reactor Innovation Center, awards small design-phase grants that buy a developer a slot in a shared, DOE-authorised test facility. The developer still pays for and owns its reactor; DOE supplies the containment structure, the safety-basis process and a fraction of the engineering cost. Awards are staged: a front-end engineering and experiment design phase, then a detailed engineering and experiment planning phase gated on a Preliminary Documented Safety Analysis. It is the cheapest published route from a paper design to a fuelled operating reactor, and the dollar figures are small enough to be startling.",
+     "what_it_is": "DOE, through the National Reactor Innovation Center, awards small design-phase grants that buy a developer a slot in a shared, DOE-authorized test facility. The developer still pays for and owns its reactor; DOE supplies the containment structure, the safety-basis process and a fraction of the engineering cost. Awards are staged: a front-end engineering and experiment design phase, then a detailed engineering and experiment planning phase gated on a Preliminary Documented Safety Analysis. It is the cheapest published route from a paper design to a fuelled operating reactor, and the dollar figures are small enough to be startling.",
      "who_signs": "DOE Office of Nuclear Energy / NRIC (Idaho National Laboratory) <-> microreactor developers",
      "asset_owner": "third-party developer (reactor); public agency (test bed)",
      "term": "staged phases from 2023 award to first fuelled experiment targeted 2026",
@@ -4114,8 +4114,8 @@
        "source_idx": 1
       }
      ],
-     "nuclear_fit": "There is no non-nuclear equivalent because there is no other technology whose first article cannot legally be switched on anywhere. DOME exists to supply the one thing a reactor developer cannot buy commercially: a place where a fuelled reactor may lawfully operate. The awards are tiny relative to reactor capex, which tells you what is actually scarce - not money, but an authorised site.",
-     "microreactor_edge": "DOME's 20 MWth cap is a hard size gate: it is a microreactor facility by design and a 300 MW SMR cannot use it at all. That asymmetry is the single largest schedule advantage a 1-20 MW unit has - it can reach a fuelled, operating first article inside a shared federal containment for single-digit millions of grant support, while a large SMR's only path to a first article is a full NRC construction permit and operating licence on a bespoke site.",
+     "nuclear_fit": "There is no non-nuclear equivalent because there is no other technology whose first article cannot legally be switched on anywhere. DOME exists to supply the one thing a reactor developer cannot buy commercially: a place where a fuelled reactor may lawfully operate. The awards are tiny relative to reactor capex, which tells you what is actually scarce - not money, but an authorized site.",
+     "microreactor_edge": "DOME's 20 MWth cap is a hard size gate: it is a microreactor facility by design and a 300 MW SMR cannot use it at all. That asymmetry is the single largest schedule advantage a 1-20 MW unit has - it can reach a fuelled, operating first article inside a shared federal containment for single-digit millions of grant support, while a large SMR's only path to a first article is a full NRC construction permit and operating license on a bespoke site.",
      "blockers": [
       "20 MWth per-experiment cap excludes anything above microreactor scale",
       "A DOME experiment is not a licensed commercial plant and produces no revenue",

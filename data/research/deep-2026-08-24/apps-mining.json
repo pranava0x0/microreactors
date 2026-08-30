@@ -1,603 +1,603 @@
 {
- "_meta": {
-  "captured": "2026-08-24",
-  "agent": "apps-mining",
-  "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
-  "angles_run": [
-   "NI 43-101 / feasibility-study disclosure of power supply and power-price assumptions",
-   "Executed off-grid renewable and hybrid PPAs at named mines (term, structure, capex)",
-   "Independent power providers contracting to mines (Aggreko, Zenith, EDL, juwi/Neoen)",
-   "Mineral processing loads and US critical-minerals awards",
-   "National-lab and agency analysis of remote-mine power cost distributions",
-   "Mine-site nuclear interest: signed MOUs and documented negatives",
-   "Fleet electrification load additions"
-  ],
-  "absences": [
-   "No executed off-grid mine PPA in this file publishes its contracted tariff. Agnew, DeGrussa, Essakane, Syama, Salares Norte, Kathleen Valley and Mt Weld all disclose term, capacity and sometimes capex; not one discloses $/kWh. The only usable price anchors are third-party: TUGLIQ's federal completion report ($0.25-$0.60/kWh industrial self-generation in the Canadian North, $1.20/kWh high) and NRCan's 20-60% LCOE advantage claim.",
-   "The primary target - a verbatim power-price assumption from an NI 43-101 or S-K 1300 technical report - was not captured. Graphite One's April 2025 Graphite Creek feasibility-study PDF exceeded the fetch size limit; docs.nrel.gov did not resolve on repeated attempts; the SEC EDGAR full-text search API returned 403; northernminer.com's Costmine power-cost article is paywalled. Searched for but did not verify: power-price assumptions in the technical reports for Donlin Gold (novagold.com returned 403), Meadowbank/Meliadine, Ekati, Voisey's Bay, Eleonore and Fort Knox.",
-   "Red Dog solar capex is unpublished - Teck's spokesperson declined to give an estimate - and the PPA terms with TUGLIQ were still under negotiation as of the March 2026 coverage. Red Dog's own $/kWh generation cost was not found in any Teck filing or Alaska state document.",
-   "Kivalliq Hydro-Fibre Link: the 150 MW line rating appears only in secondary coverage. The federal Question Period Note confirms the 1,200 km route and 44.5 million litres/yr of diesel displacement but states no MW figure, so no C$/kW was computed from it.",
-   "Fekola Phase 1 capex of approximately US$38 million comes from trade coverage, not from the fetched B2Gold release, which discloses no capital cost or dollar saving for either phase.",
-   "Agnico Eagle's Meliadine wind farm was searched as an executed deal and is not one: the Nunavut Impact Review Board rejected the 11-turbine proposal in November 2023 over caribou impacts and again rejected a change of plans, and the only cost figure found (C$60-75 million) dates from an earlier three-turbine phase. No record written.",
-   "Documented negatives on mine-site nuclear could not be captured verbatim: mining.com's 'SMRs are still not on miners' shopping lists' and Idaho National Laboratory's mining-microreactor pages both returned 403.",
-   "No signed supply or construction contract between a miner and a microreactor vendor was found anywhere. What exists is MOU-stage activity concentrated in uranium (Uranium Energy Corp / Radiant, NANO Nuclear / UrAmerica) plus KGHM's large-SMR permit - i.e. the transaction this project is looking for has not happened in mining.",
-   "Angle 4 (mineral processing) partly failed: DOE MESC and DPA Title III award values for US critical-minerals processing (Kings Mountain $150m, American Battery Technology $115m, Standard Lithium/Equinor up to $225m) are published, but no MW load or power price for any of those facilities was found, so none met the numbers bar as a power record."
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "apps-mining",
+    "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
+    "angles_run": [
+      "NI 43-101 / feasibility-study disclosure of power supply and power-price assumptions",
+      "Executed off-grid renewable and hybrid PPAs at named mines (term, structure, capex)",
+      "Independent power providers contracting to mines (Aggreko, Zenith, EDL, juwi/Neoen)",
+      "Mineral processing loads and US critical-minerals awards",
+      "National-lab and agency analysis of remote-mine power cost distributions",
+      "Mine-site nuclear interest: signed MOUs and documented negatives",
+      "Fleet electrification load additions"
+    ],
+    "absences": [
+      "No executed off-grid mine PPA in this file publishes its contracted tariff. Agnew, DeGrussa, Essakane, Syama, Salares Norte, Kathleen Valley and Mt Weld all disclose term, capacity and sometimes capex; not one discloses $/kWh. The only usable price anchors are third-party: TUGLIQ's federal completion report ($0.25-$0.60/kWh industrial self-generation in the Canadian North, $1.20/kWh high) and NRCan's 20-60% LCOE advantage claim.",
+      "The primary target - a verbatim power-price assumption from an NI 43-101 or S-K 1300 technical report - was not captured. Graphite One's April 2025 Graphite Creek feasibility-study PDF exceeded the fetch size limit; docs.nrel.gov did not resolve on repeated attempts; the SEC EDGAR full-text search API returned 403; northernminer.com's Costmine power-cost article is paywalled. Searched for but did not verify: power-price assumptions in the technical reports for Donlin Gold (novagold.com returned 403), Meadowbank/Meliadine, Ekati, Voisey's Bay, Eleonore and Fort Knox.",
+      "Red Dog solar capex is unpublished - Teck's spokesperson declined to give an estimate - and the PPA terms with TUGLIQ were still under negotiation as of the March 2026 coverage. Red Dog's own $/kWh generation cost was not found in any Teck filing or Alaska state document.",
+      "Kivalliq Hydro-Fibre Link: the 150 MW line rating appears only in secondary coverage. The federal Question Period Note confirms the 1,200 km route and 44.5 million litres/yr of diesel displacement but states no MW figure, so no C$/kW was computed from it.",
+      "Fekola Phase 1 capex of approximately US$38 million comes from trade coverage, not from the fetched B2Gold release, which discloses no capital cost or dollar saving for either phase.",
+      "Agnico Eagle's Meliadine wind farm was searched as an executed deal and is not one: the Nunavut Impact Review Board rejected the 11-turbine proposal in November 2023 over caribou impacts and again rejected a change of plans, and the only cost figure found (C$60-75 million) dates from an earlier three-turbine phase. No record written.",
+      "Documented negatives on mine-site nuclear could not be captured verbatim: mining.com's 'SMRs are still not on miners' shopping lists' and Idaho National Laboratory's mining-microreactor pages both returned 403.",
+      "No signed supply or construction contract between a miner and a microreactor vendor was found anywhere. What exists is MOU-stage activity concentrated in uranium (Uranium Energy Corp / Radiant, NANO Nuclear / UrAmerica) plus KGHM's large-SMR permit - i.e. the transaction this project is looking for has not happened in mining.",
+      "Angle 4 (mineral processing) partly failed: DOE MESC and DPA Title III award values for US critical-minerals processing (Kings Mountain $150m, American Battery Technology $115m, Standard Lithium/Equinor up to $225m) are published, but no MW load or power price for any of those facilities was found, so none met the numbers bar as a power record."
+    ]
+  },
+  "cases": [
+    {
+      "id": "agnew-gold-mine-hybrid-microgrid-edl",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Agnew Gold Mine Hybrid Renewable Microgrid",
+      "country": "AU",
+      "region": "Agnew, Western Australia (Goldfields-Esperance)",
+      "parties": {
+        "host": "Gold Fields (Agnew Gold Mine)",
+        "provider": "EDL (Energy Developments Ltd)",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA",
+      "signed": "2019",
+      "term_years": 10,
+      "capacity": "18 MW wind (5 turbines) + 4 MW solar (~10,000 panels) + 13 MW / 4 MWh battery + 16-25 MW gas/diesel engine station; ~47-56 MW total",
+      "capex": "A$111.6 million total project cost, including A$13.5 million ARENA grant",
+      "displaced": "Diesel/gas generation on an isolated mine microgrid; forecast up to 60% renewable share and ~40,000 tCO2e/yr avoided",
+      "filings": [
+        {
+          "forum": "Australian Renewable Energy Agency (ARENA) project record",
+          "type": "Advancing Renewables Program funding record",
+          "id": "Agnew Renewable Energy Microgrid",
+          "date": "2023-01-30",
+          "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/"
+        }
+      ],
+      "summary": "Gold Fields did not build or own the power station at Agnew. EDL built, owns and operates the 18 MW wind / 4 MW solar / 13 MW-4 MWh battery / gas-engine hybrid microgrid and sells power to the mine under a 10-year agreement, with ARENA contributing A$13.5m of the A$111.6m project cost. Wind turbines went in on an off-grid mine site for the first time in Australia. The microgrid started operating in May 2020 and the full hybrid was completed 30 January 2023, running at roughly 50-60% renewable share and up to 85% in good conditions.",
+      "microreactor_read": "This is the exact contracting slot a microreactor would occupy: third-party-owned generation behind the fence, sold to the miner under a ~10-year term with no utility in the transaction. The capital benchmark is blunt - A$111.6m bought ~35 MW of firm-plus-renewable nameplate at Agnew, i.e. roughly A$3.2m/MW installed, and the reactor has to beat the mine's residual gas/diesel energy cost over a term the miner will not extend past its reserve life. Mine life, not reactor life, sets the term.",
+      "sources": [
+        {
+          "label": "ARENA - Agnew Renewable Energy Microgrid project record",
+          "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/",
+          "quote": "deliver up to 60% renewable energy to the Agnew mine and reduce the",
+          "status": "fetched"
+        },
+        {
+          "label": "EDL - Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
+          "url": "https://edlenergy.com/project/agnew/",
+          "quote": "EDL owns and operates the Agnew Hybrid Renewable Microgrid",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "degrussa-solar-battery-juwi-neoen-sandfire",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "DeGrussa Copper-Gold Mine Solar + Battery",
+      "country": "AU",
+      "region": "DeGrussa, Western Australia (~900 km NE of Perth)",
+      "parties": {
+        "host": "Sandfire Resources (DeGrussa copper-gold mine)",
+        "provider": "juwi (developer/operator), Neoen (equity owner)",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA",
+      "signed": "2015-07",
+      "capacity": "10.6 MW solar PV (34,080 single-axis-tracking panels) + 6 MW lithium-ion battery, integrated with the existing 19 MW diesel-fired station",
+      "capex": "A$40 million total, funded with A$20.9 million ARENA recoupable grant and up to A$15 million CEFC debt",
+      "price": "Fixed-rate solar PPA priced below the mine's historical diesel generation cost (rate not published)",
+      "displaced": "About 20% of the mine's diesel consumption, roughly 5 million litres per year, and ~12,000 t CO2/yr",
+      "filings": [
+        {
+          "forum": "Clean Energy Finance Corporation (Australian Government) media release",
+          "type": "Debt finance commitment",
+          "id": "CEFC finances major solar storage project at remote mine",
+          "date": "2015-07-15",
+          "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/"
+        }
+      ],
+      "summary": "The first large off-grid solar-plus-storage build at an Australian mine. juwi developed and operated it, Neoen took the equity, and Sandfire signed a fixed-price PPA rather than buying the plant - the whole A$40m sat off the miner's balance sheet. Two Australian government bodies carried more than half the capital: A$20.9m as an ARENA recoupable grant and up to A$15m of CEFC debt. The CEFC's own release states the pricing test plainly: Sandfire buys the solar at a fixed rate lower than the historical cost of its diesel power. Commissioned June 2016; the array was later relocated when the mine closed.",
+      "microreactor_read": "The signable form here is a fixed $/kWh below the incumbent diesel cost, with the developer carrying capex and the miner carrying nothing but an offtake. That is a microreactor-shaped deal, except two-thirds of DeGrussa's economics came from public money (A$35.9m of A$40m in grant plus concessional debt), which is the honest read: at a remote Australian mine the private hurdle was not cleared on diesel displacement alone.",
+      "sources": [
+        {
+          "label": "CEFC - CEFC finances major solar storage project at remote mine",
+          "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/",
+          "quote": "Sandfire Resources will purchase the solar power generated at a fixed rate that is lower than the historical cost of diesel-generated power",
+          "status": "fetched"
+        },
+        {
+          "label": "ARENA - DeGrussa Solar Project record",
+          "url": "https://arena.gov.au/projects/degrussa-solar-project/",
+          "quote": "$20.9m Funded by ARENA $39.47m Total project cost",
+          "status": "snippet-only"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "raglan-mine-wind-storage-tugliq-glencore",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Glencore Raglan Mine Renewable Electricity Smart-Grid (Raglan I / Raglan 2.0)",
+      "country": "CA",
+      "region": "Nunavik, Quebec (Ungava Peninsula)",
+      "parties": {
+        "host": "Glencore (Raglan nickel mine)",
+        "provider": "TUGLIQ Energy Co.",
+        "utility": "None - off-grid Arctic microgrid"
+      },
+      "instrument": "grant-funded demonstration plus third-party-owned generation",
+      "signed": "2013",
+      "term_years": 20,
+      "capacity": "3 MW Arctic-rated wind turbine (Raglan I, 2014) plus a second 3 MW turbine (Raglan 2.0); storage is a 200 kW / 1.5 kWh flywheel, a 200 kW / 250 kWh Li-ion battery and a 200 kW / 1 MWh hydrogen loop (315 kW electrolyser + 198 kW fuel cell)",
+      "price": "Northern electricity rates of $1.20/kWh high to $0.20/kWh low; industrial self-generators average $0.25-$0.60/kWh (TUGLIQ/ecoEII completion report)",
+      "capex": "About C$20 million for Raglan I; C$7.8 million federal ecoEII contribution, plus C$3.9 million federal EIP contribution and C$7.1 million announced for Raglan 2.0 turbines",
+      "displaced": "Diesel at a mine burning roughly 60 million litres/yr; the first turbine abated 2.4 million litres in 18 months and over 5 million litres across three years; projected savings of C$41 million in fuel and O&M over the turbine's 20-year life",
+      "filings": [
+        {
+          "forum": "Natural Resources Canada - ecoENERGY Innovation Initiative",
+          "type": "Demonstration Component public completion report",
+          "id": "GC 128296",
+          "date": "2016-11-11",
+          "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
+        },
+        {
+          "forum": "Natural Resources Canada - Emerging Innovations / funding partnerships",
+          "type": "Federal contribution record",
+          "id": "Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+          "date": "2024-12-23",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid"
+        }
+      ],
+      "summary": "The single most useful disclosure in this sector. TUGLIQ's federally funded completion report for the Raglan wind-storage pilot states the northern power price band outright: rates range from $1.20/kWh at the high end to $0.20/kWh at the low end, and industrial self-generators - i.e. mines running their own diesel plants - average $0.25 to $0.60/kWh even with grouped purchasing. Against that, a C$20 million, 3 MW turbine with flywheel, lithium and hydrogen storage was projected to return C$41 million in fuel and O&M savings over 20 years at a mine burning ~60 million litres of diesel a year. Ottawa funded C$7.8 million of the pilot and returned with C$3.9 million and a further C$7.1 million for the Raglan 2.0 expansion.",
+      "microreactor_read": "This is the number to beat, from a Government of Canada report rather than a vendor deck: $0.25-$0.60/kWh for an industrial self-generator in the Canadian North, with the tail up to $1.20/kWh. A 5 MW microreactor selling at even $0.30/kWh into a Raglan-class site clears the low end of that band, and the Raglan precedent shows the miner will let a third party own the asset and take federal money to de-risk the first unit. The binding constraint is not price - it is that Raglan's own report frames micro-grid collapse (ventilation loss at -40C) as the reason northern operators distrust new generation, so a reactor must prove it firms the grid rather than adding a new failure mode.",
+      "sources": [
+        {
+          "label": "TUGLIQ Energy Co. / ecoENERGY Innovation Initiative - Glencore RAGLAN Mine Renewable Electricity Smart-Grid Pilot Demonstration, Public Completion Report GC 128296",
+          "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+          "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
+          "status": "fetched"
+        },
+        {
+          "label": "Natural Resources Canada - Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid",
+          "quote": "60%-90% diesel displacement at a Northern mine",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "smr-for-mining-canada-nrcan-20mwe-cost-band",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Natural Resources Canada - SMRs for Mining (national addressable-market and cost band)",
+      "country": "CA",
+      "region": "Canada, off-grid mine sites",
+      "parties": {
+        "host": "24 identified current and potential off-grid Canadian mines",
+        "provider": "Canada's SMR Action Plan participants",
+        "utility": "None - off-grid"
+      },
+      "instrument": "public procurement / government program",
+      "signed": "2020-12",
+      "capacity": "SMR module range from 300 MWe down to 3 MWe per module for micro-SMRs; mining-relevant unit sized at 20 MWe",
+      "capex": "First-of-a-kind units suitable for mining estimated at C$200-350 million for a 20 MWe SMR",
+      "price": "Estimated 20-60% cost advantage in levelized cost of electricity over diesel",
+      "displaced": "Diesel generation at off-grid, remote and northern mines and adjacent communities",
+      "filings": [
+        {
+          "forum": "Natural Resources Canada (Government of Canada)",
+          "type": "Programme page - Small Modular Reactors (SMRs) for Mining",
+          "id": "Canada's SMR Action Plan (launched December 2020)",
+          "date": "2020-12",
+          "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining"
+        }
+      ],
+      "summary": "The Canadian federal government has already sized this market and published the price. NRCan counts 24 current and potential off-grid mines in Canada suitable for SMR deployment, puts a first-of-a-kind 20 MWe mining SMR at C$200-350 million, and claims a 20-60% LCOE advantage over diesel. That capex band is C$10,000-17,500 per kW installed - an order of magnitude above the ~A$3.2m/MW that bought Agnew's hybrid microgrid - which is precisely why the claimed advantage rests on the diesel price rather than on capital cost.",
+      "microreactor_read": "Cross-referenced with the Raglan disclosure, this is the whole business case in two numbers: NRCan's C$200-350m for 20 MWe against a mine paying $0.25-$0.60/kWh for self-generated diesel power. A 20 MWe unit at 90% capacity factor sells ~158 GWh/yr, so at the $0.35/kWh midpoint of the industrial self-generation band it grosses ~C$55m/yr - the FOAK capital is recovered inside a decade only if the site actually runs at that price and that load factor. The market is 24 sites, not hundreds, and NRCan names it.",
+      "sources": [
+        {
+          "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining",
+          "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
+          "quote": "First-of-a-kind units suitable for mining are estimated to cost in the order of $200-350M for a 20 MWe SMR",
+          "status": "fetched"
+        },
+        {
+          "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining (addressable sites)",
+          "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
+          "quote": "Recognized 24 current and potential off-grid mines in Canada that might be suitable for SMR deployment",
+          "status": "fetched"
+        }
+      ],
+      "nuclear": true
+    },
+    {
+      "id": "syama-gold-mine-aggreko-16-year-psa",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Syama Gold Mine Hybrid Power Supply Agreement",
+      "country": "ML",
+      "region": "Syama, southern Mali",
+      "parties": {
+        "host": "Resolute Mining (Syama gold complex)",
+        "provider": "Aggreko",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA",
+      "signed": "2019-12",
+      "term_years": 16,
+      "capacity": "40 MW thermal power plant + 10 MW Aggreko Y.Cube battery storage, with 20 MW of solar planned for 2023",
+      "price": "Not published as $/kWh; contract stated to reduce the mine's power costs by an estimated 40%",
+      "displaced": "Heavy-fuel-oil and diesel self-generation at an off-grid West African gold mine; ~20% carbon reduction once solar was added",
+      "filings": [],
+      "summary": "Aggreko signed a 16-year contract in December 2019 to install, own, operate and maintain the whole power system at Resolute's Syama complex - 40 MW thermal plus a 10 MW battery, with 20 MW of solar to follow. Resolute bought power, not plant. The published economic claim is a 40% cut in Syama's power costs. The contract length is the striking part: 16 years at a single mine, longer than most mine-life assumptions, which shows an off-grid miner will sign a term long enough to amortise capital-heavy generation when the counterparty carries the capital.",
+      "microreactor_read": "A 16-year off-grid PPA at a single gold mine is direct proof that the term problem is solvable - the objection that miners will not sign past ~10 years is contradicted here, and at Mt Weld (15 yr), Kathleen Valley (15 yr), Essakane (15 yr) and KCGM (25 yr). The reactor's competitor at Syama is a 40 MW thermal fleet whose replacement bought a 40% power-cost reduction; a 5-20 MW reactor must beat West African HFO/diesel delivered cost, generally quoted at $0.15-$0.30/kWh, not the Arctic band.",
+      "sources": [
+        {
+          "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
+          "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+          "quote": "power costs by an estimated 40%",
+          "status": "fetched"
+        },
+        {
+          "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract (term and plant)",
+          "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+          "quote": "40 MW thermal power plant",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "essakane-solar-eren-iamgold-15-year-ppa",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Essakane Solar SAS - 15 MWp hybrid solar/HFO at IAMGOLD Essakane",
+      "country": "BF",
+      "region": "Essakane, northeastern Burkina Faso",
+      "parties": {
+        "host": "IAMGOLD Essakane SA",
+        "provider": "Essakane Solar SAS (EREN Renewable Energy / AEMP), Wartsila as EPC and hybrid controller",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA",
+      "signed": "2017",
+      "term_years": 15,
+      "capacity": "15 MWp (12 MWac) solar PV, ~130,000 panels, synchronised to the existing 55-57 MW heavy-fuel-oil plant",
+      "capex": "More than US$20 million",
+      "displaced": "About 6 million litres of fuel per year and ~18,500 t CO2",
+      "filings": [],
+      "summary": "IAMGOLD did not buy the solar plant. A special-purpose company, Essakane Solar SAS - 90% EREN Renewable Energy, 10% IAMGOLD - built and operates it and sells output to the mine under a 15-year PPA, with Wartsila supplying the EPC and the hybrid control system that keeps 12 MWac of PV synchronised to a 55 MW HFO station. Cost was over US$20 million for roughly 6 million litres/yr of avoided fuel. It was, at commissioning in March 2018, the largest hybrid solar/thermal plant at any mine.",
+      "microreactor_read": "The structure a reactor vendor should copy: an SPV majority-owned by the energy party, minority-owned by the miner, selling under a 15-year PPA into an existing thermal plant that stays as backup. West African delivered HFO/diesel power is the beat-price here, well below the Canadian Arctic band - the reactor competes against roughly US$0.15-0.25/kWh, and against a solar plant that cost US$20m for 12 MWac, so the case must be made on night-time and dry-season firmness, not on displacing daytime energy.",
+      "sources": [
+        {
+          "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference",
+          "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
+          "quote": "is jointly owned with (90%/10%) Essakane Solar SAS, who operates the solar PV plant",
+          "status": "fetched"
+        },
+        {
+          "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference (capacity)",
+          "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
+          "quote": "15MWp or 12MWac solar PV",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "fekola-solar-battery-b2gold-owner-built",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Fekola Mine Solar + Battery (Phase 1 and Phase 2)",
+      "country": "ML",
+      "region": "Fekola, western Mali",
+      "parties": {
+        "host": "B2Gold (Fekola gold mine)",
+        "provider": "B2Gold - owner-built and owner-operated",
+        "utility": "None - off-grid"
+      },
+      "instrument": "owner-built (no PPA)",
+      "signed": "2020",
+      "capacity": "Phase 1: 36 MWp solar + 17 MW battery alongside the site HFO plant. Phase 2 (complete Q4 2024, operational January 2025): +22 MW solar and +12.7 MWh battery, for 52 MW solar and 27.7 MWh battery total",
+      "capex": "Approximately US$38 million for Phase 1",
+      "displaced": "Phase 1 saved just over 13 million litres of HFO per year; after Phase 2 the plant reduces HFO consumption by an estimated 20 million litres per year and supplies about 30% of site electricity demand",
+      "filings": [
+        {
+          "forum": "SEC / SEDAR company news release",
+          "type": "News release",
+          "id": "B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
+          "date": "2025-03-18",
+          "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx"
+        }
+      ],
+      "summary": "The counter-example to Agnew, DeGrussa and Essakane: B2Gold built and owns the Fekola solar plant itself rather than signing a PPA. Phase 1 was ~US$38 million for 36 MWp of solar and 17 MW of battery, saving just over 13 million litres of HFO a year. Phase 2, completed in Q4 2024 and operational in January 2025, added 22 MW of solar and 12.7 MWh of battery, taking the site to 52 MW / 27.7 MWh and about 20 million litres of HFO avoided per year - but only ~30% of the site's total electricity demand. The other 70% is still thermal.",
+      "microreactor_read": "The number that matters for a reactor pitch is the 70% residual: even after US$38m-plus of solar and two expansions, Fekola still burns HFO for roughly 30 million-plus litres a year of the load, because solar cannot serve a 24-hour mill. A 20 MWe reactor addresses exactly that residual baseload. It also shows a mid-tier miner will spend its own capital on site power rather than sign a PPA - which means a vendor must be able to sell an owned unit, not only an energy-services contract.",
+      "sources": [
+        {
+          "label": "B2Gold - B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
+          "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
+          "quote": "reduce the annual consumption of heavy fuel oil (\"HFO\") by an estimated 20 million liters",
+          "status": "fetched"
+        },
+        {
+          "label": "B2Gold - Fekola Phase 2 completion (share of demand)",
+          "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
+          "quote": "expected to supply approximately 30% of the site's total electricity demand",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "kathleen-valley-lithium-zenith-95mw-ppa",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Kathleen Valley Lithium Project Hybrid Power Station",
+      "country": "AU",
+      "region": "Kathleen Valley, Western Australia (Goldfields-Esperance)",
+      "parties": {
+        "host": "Liontown Resources (Kathleen Valley lithium mine)",
+        "provider": "Zenith Energy (build-own-operate)",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA",
+      "signed": "2022-12",
+      "term_years": 15,
+      "capacity": "95 MW total: 30 MW wind, 16 MWp fixed-axis solar, 17 MW / 19 MWh BESS, 27 MW gas generation, 5 MW diesel standby",
+      "displaced": "Targets at least 60% renewable energy at project start-up; the remainder is gas and diesel",
+      "filings": [
+        {
+          "forum": "ASX company announcement (via Zenith Energy release)",
+          "type": "Power Purchase Agreement announcement",
+          "id": "Liontown Resources signs PPA with Zenith Energy",
+          "date": "2022-12-21",
+          "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/"
+        }
+      ],
+      "summary": "Australia's largest off-grid renewable hybrid power station, contracted rather than owned: Zenith builds, owns and operates 95 MW of mixed generation at Kathleen Valley and sells to Liontown for 15 years from construction completion. Export Finance Australia provided a A$25 million guarantee facility as part of the PPA security package - the miner's credit, not the developer's, is what made the deal financeable. Even in a design targeting 60%+ renewables, 32 MW of the 95 MW is gas and diesel, sized for the mill's firm load. Zenith repeated the template in July 2024 at Lynas' Mt Weld rare-earths mine: ~65 MW (24 MW wind, 7 MW solar, 12 MW/12 MWh BESS, 17 MW gas, 5 MW standby diesel) on a 15-year PPA targeting up to ~70% renewables - and even there, 22 MW of firm thermal generation stays.",
+      "microreactor_read": "The addressable slice is the 27 MW gas plus 5 MW diesel that sits under a 60%-renewable design - one to two 20 MWe units, not the whole station. Two structural facts a reactor vendor must match: a 15-year term is normal here, and the offtaker's counterparty risk was bridged by a sovereign export-credit guarantee (A$25m from Export Finance Australia), which is the same instrument a first-of-a-kind reactor at a single-asset miner would need. The same 20-plus MW firm residual shows up at Mt Weld, so the addressable unit across Zenith's off-grid portfolio is consistently one 20 MWe reactor per site, not a fleet.",
+      "sources": [
+        {
+          "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
+          "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+          "quote": "15 years from construction completion",
+          "status": "fetched"
+        },
+        {
+          "label": "Zenith Energy - Liontown PPA announcement (renewable target)",
+          "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+          "quote": "at least 60% renewable energy at project start-up and beyond",
+          "status": "fetched"
+        },
+        {
+          "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
+          "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
+          "quote": "up to approximately 70%",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote lithium and rare-earth mines with onsite processing"
+      ]
+    },
+    {
+      "id": "diavik-wind-farm-and-solar-rio-tinto",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Diavik Diamond Mine Wind Farm (2012) and Solar Plant (2024)",
+      "country": "CA",
+      "region": "Lac de Gras, Northwest Territories",
+      "parties": {
+        "host": "Rio Tinto (Diavik Diamond Mine)",
+        "provider": "Rio Tinto - owner-built; Solvest as solar contractor",
+        "utility": "None - off-grid, ice-road resupplied"
+      },
+      "instrument": "owner-built, part grant-funded",
+      "signed": "2012",
+      "capacity": "9.2 MW wind (four 2.3 MW turbines, 2012) plus 3.5 MW solar (6,620 bifacial panels, 2024)",
+      "capex": "C$31 million for the wind farm (C$1 million under budget); solar supported by C$3.3 million from the NWT Large Emitters GHG Reducing Investment Grant Program",
+      "displaced": "Wind: about four million fewer litres of diesel per year, worth C$5 million/yr, against a site burning ~40 million litres/yr before the turbines. Solar: 4.2 million kWh/yr and 1 million litres of diesel per year, up to 25% of Diavik's electricity during closure works",
+      "filings": [],
+      "summary": "The clearest owner-built Arctic case, and the one with an explicit payback. Rio Tinto spent C$31 million on 9.2 MW of wind at Diavik in 2012 and reported roughly 4 million litres and C$5 million a year of diesel avoided, for a stated 6-8 year payback at a mine that was burning about 40 million litres of diesel annually hauled over a 353 km ice road. Twelve years later it added 3.5 MW of solar - Canada's largest off-grid array in the territories - producing 4.2 million kWh/yr and displacing another million litres, with C$3.3 million of NWT grant support. Commercial production is expected to end in 2026 with closure work to 2029.",
+      "microreactor_read": "The implied diesel-electricity price here is roughly C$1.25/litre of fuel alone, and C$5m of savings for 4 million litres sets the fuel-only avoided cost the reactor must undercut before any O&M credit. The decisive lesson is timing, not price: Diavik justified 9.2 MW of wind on a 6-8 year payback, and its solar arrived with only two years of production left. A microreactor whose payback exceeds remaining mine life cannot be sold to an operating mine no matter how good the $/kWh - which pushes the addressable set toward new long-life mines and toward relocatable units that can move to the next site.",
+      "sources": [
+        {
+          "label": "Nunatsiaq News - Diavik mine's wind-driven power saves $5 million a year in diesel costs",
+          "url": "https://nunatsiaq.com/stories/article/65674diavik_mines_wind-driven_power_saves_5_million_in_diesel_costs/",
+          "quote": "about four million fewer litres of diesel fuel per year",
+          "status": "fetched"
+        },
+        {
+          "label": "Rio Tinto - Rio Tinto completes construction of its solar power plant at Diavik Diamond Mine",
+          "url": "https://www.riotinto.com/en/news/releases/2024/rio-tinto-completes-construction-of-its-solar-power-plant-at-diavik-diamond-mine",
+          "quote": "bi-facial panels which not only generate energy from direct sunlight, but also from the light that reflects off the snow",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "red-dog-mine-solar-teck-nana-tugliq",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Red Dog Mine Solar Farm + Battery",
+      "country": "US",
+      "region": "De Long Mountains, Northwest Arctic Borough, Alaska",
+      "parties": {
+        "host": "Teck Alaska Incorporated (Red Dog zinc-lead mine), NANA Regional Corporation as landowner",
+        "provider": "TUGLIQ Energy",
+        "utility": "None - off-grid"
+      },
+      "instrument": "PPA (terms under negotiation as of March 2026)",
+      "signed": "2026",
+      "capacity": "8.8 MW solar farm on ~30 acres plus a battery system; expected to deliver about 2 MW in summer against a site load of roughly 25 MW",
+      "displaced": "Diesel at a mine burning roughly 40,000 gallons per day (about 14.6 million gallons/yr) for a 24.5 MW on-site diesel plant",
+      "filings": [],
+      "summary": "Red Dog would be the first large Alaskan mine to take substantial on-site solar. TUGLIQ - the same Quebec firm behind Raglan - would build and operate an 8.8 MW array plus battery on 30 acres partly on NANA land, with Teck negotiating power-purchase terms rather than buying the plant. Teck declined to give a cost estimate. The scale gap is the story: 8.8 MW nameplate yields about 2 MW in summer against a site that needs roughly 25 MW and burns about 40,000 gallons of diesel a day, and the build is being rushed to start by June 2026 to catch a federal tax-credit deadline in July. The mine is projected to close around 2032.",
+      "microreactor_read": "Red Dog is the sharpest microreactor-shaped load in North America: ~25 MW, off-grid, diesel-only, and a solar answer that covers under a tenth of it. A single 20 MWe unit replaces the entire 24.5 MW diesel station. Two hard constraints: the incumbent price is the delivered cost of ~14.6 million gallons of barged diesel a year (Alaskan remote power is commonly quoted at 40 cents to over $1.00/kWh), and closure around 2032 means the economic window for a fixed asset has already shut - only a relocatable unit fits.",
+      "sources": [
+        {
+          "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun",
+          "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+          "quote": "8.8-megawatt solar farm",
+          "status": "fetched"
+        },
+        {
+          "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun (diesel burn)",
+          "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+          "quote": "roughly 40,000 gallons each day",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "kivalliq-hydro-fibre-link-agnico-nukik",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Kivalliq Hydro-Fibre Link (transmission alternative to on-site generation)",
+      "country": "CA",
+      "region": "Gillam, Manitoba to Arviat / Rankin Inlet / Baker Lake, Nunavut",
+      "parties": {
+        "host": "Agnico Eagle (Meadowbank Complex, Meliadine mine) plus five Kivalliq communities",
+        "provider": "Nukik Corp. (Kivalliq Inuit Association / Sakku Investments)",
+        "utility": "Qulliq Energy Corporation, Manitoba Hydro"
+      },
+      "instrument": "MOU (technical collaboration and commercial discussions)",
+      "signed": "2025",
+      "capacity": "1,200 km overhead high-voltage transmission line from Manitoba to Nunavut, plus fibre. Secondary coverage cites a 150 MW rating; the federal Question Period Note does not state a MW figure",
+      "capex": "C$3.2 billion estimated (revised up from C$1.2 billion in 2019)",
+      "displaced": "Roughly 44.5 million litres of diesel per year - about 11 million litres across five communities and about 33.5 million litres at the Meadowbank gold mine alone",
+      "filings": [
+        {
+          "forum": "Nunavut Legislative Assembly",
+          "type": "Ministerial disclosure of revised project cost",
+          "id": "Statement by John Main, minister responsible for Qulliq Energy Corp.",
+          "date": "2025-06-02",
+          "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/"
+        }
+      ],
+      "summary": "The direct competitor to a microreactor at Canada's most diesel-exposed mines is a wire, and it is priced. Nunavut's minister responsible for Qulliq Energy told the legislature in June 2025 that the Kivalliq Hydro-Fibre Link now costs an estimated C$3.2 billion, up from C$1.2 billion in 2019, for a 1,200 km line from Gillam, Manitoba to five Kivalliq communities, completion pushed to 2032. Agnico Eagle and the Inuit-owned proponent Nukik signed an MOU to work through the technical case and formalise commercial discussions. Meadowbank alone burns about 33.5 million litres of diesel a year - the mine is the anchor load that makes the line bankable.",
+      "microreactor_read": "The reactor's competitor at Meadowbank and Meliadine is a C$3.2 billion wire that does not arrive until 2032 - and the mine, at about 33.5 of the 44.5 million litres of displaced diesel, is three-quarters of its justification. Priced against NRCan's C$200-350m for a 20 MWe mining SMR, a handful of on-site units would cover the mine's load for a small fraction of the line's cost and years sooner. What the reactor cannot buy is the rest of the package: the line also takes five Inuit communities off diesel under Inuit ownership, which is what is actually mobilising the public money.",
+      "sources": [
+        {
+          "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B",
+          "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
+          "quote": "$3.2 billion instead of the initial estimate of $1.2 billion from 2019",
+          "status": "fetched"
+        },
+        {
+          "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B (route)",
+          "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
+          "quote": "1,200-kilometre high-voltage transmission line connecting Gillam, Man., to Arviat, Whale Cove, Rankin Inlet, Chesterfield Inlet and Baker Lake",
+          "status": "fetched"
+        },
+        {
+          "label": "Government of Canada (CIRNAC) - Question Period Note: Kivalliq Hydro-Fibre Link",
+          "url": "https://search.open.canada.ca/qpnotes/record/aandc-aadnc,NA-2020-QP-0012",
+          "quote": "44.5 million litres of diesel annually",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "copper-mountain-trolley-assist-12mw-load",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "Copper Mountain Mine Trolley Assist (haul-fleet electrification load)",
+      "country": "CA",
+      "region": "Princeton, British Columbia",
+      "parties": {
+        "host": "Copper Mountain Mining Corporation",
+        "provider": "Komatsu, SMS Equipment, ABB",
+        "utility": "BC Hydro"
+      },
+      "instrument": "design-build with utility supply upgrade and CleanBC support",
+      "signed": "2019",
+      "capacity": "Trolley line drawing up to 12 MW at any one time, serving four of eleven 830E hybrid haul trucks simultaneously; each truck's electric drive needs about 3 MW of peak power",
+      "capex": "Around C$40 million",
+      "displaced": "About 400 litres of diesel per truck-hour on trolley, roughly one tonne of CO2 per truck-hour",
+      "filings": [],
+      "summary": "The load-growth case, with a published number. Copper Mountain's trolley-assist installation - feasibility funded 2019, commissioned spring 2022 for around C$40 million - draws up to 12 MW when four of its eleven Komatsu 830E hybrid trucks are on the ramp, each truck's drive peaking near 3 MW. Diesel falls by about 400 litres per truck-hour. Copper Mountain is grid-connected and had to work with BC Hydro to upgrade supply; an off-grid mine doing the same thing has no such option.",
+      "microreactor_read": "This is the number that changes reactor sizing: partially electrifying eleven haul trucks adds up to 12 MW of highly variable load to a single pit. A mine that today needs 25 MW of diesel needs 35-40 MW after fleet electrification, which moves the answer from one microreactor to several - or from a microreactor to an SMR. It also sets the hardest technical requirement: the load is 3 MW steps as trucks pantograph on and off a ramp, so a reactor sold into this must be paired with storage or accept ramping no thermal plant enjoys.",
+      "sources": [
+        {
+          "label": "BC Hydro - A net-zero mine? Copper Mountain takes electrifying first step",
+          "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
+          "quote": "12 megawatts at any one time – enough for four trucks to be on the ramp",
+          "status": "fetched"
+        },
+        {
+          "label": "BC Hydro - Copper Mountain trolley project cost and diesel saving",
+          "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
+          "quote": "400 litres of diesel per hour, or about a tonne of CO2 emissions",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    },
+    {
+      "id": "kghm-nuscale-voygr-6-poland-copper",
+      "sector": "Off-grid mining & mineral processing",
+      "name": "KGHM Polska Miedz - NuScale VOYGR-6 SMR for copper mining and smelting",
+      "country": "PL",
+      "region": "Lower Silesia, Poland",
+      "parties": {
+        "host": "KGHM Polska Miedz S.A. (copper mines, smelters and refineries)",
+        "provider": "NuScale Power",
+        "utility": "Polish national grid"
+      },
+      "instrument": "Early Works Agreement plus Task Order; state decision-in-principle obtained",
+      "signed": "2022-02",
+      "capacity": "VOYGR-6 plant: 462 MWe from six 77 MWe NuScale Power Modules",
+      "filings": [
+        {
+          "forum": "SEC",
+          "type": "NuScale Power Corp Form 8-K exhibit (KGHM press release)",
+          "id": "NuScale Power Corp 8-K, FY2022",
+          "date": "2022-09-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1822966/000182296622000068/kghmpressrelease.htm"
+        },
+        {
+          "forum": "Polish Ministry of Climate and Environment",
+          "type": "Decision-in-principle (first administrative permit for a nuclear facility in Poland)",
+          "id": "KGHM SMR decision-in-principle",
+          "date": "2023-07-13",
+          "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant"
+        }
+      ],
+      "summary": "The only mining company anywhere to have taken a nuclear project through a national administrative permit. KGHM - a copper miner that also runs smelters and refineries - signed with NuScale in February 2022, executed a Task Order and Statement of Commencement under an Early Works Agreement in September 2022 at the Karpacz Economic Forum, applied to Poland's National Atomic Energy Agency for a 462 MWe six-module plant, and received the decision-in-principle in July 2023, the first step in Poland's permit chain for nuclear facilities. KGHM publicly denied reports in November 2023 that NuScale had terminated the arrangement. No construction contract or price has been published.",
+      "microreactor_read": "The instructive part is the size: the miner that actually went nuclear specified 462 MWe, not 5 or 20, because its load is smelting and refining rather than a mill on a diesel microgrid. Mineral processing - not mining - is where the megawatts are, and it is usually grid-connected, so the reactor competes against a wholesale tariff rather than the $0.25-$0.60/kWh diesel band. For a 1-20 MW unit the read is negative on this precedent and positive on the pattern: process heat and refinery load justify nuclear at a miner's board, while a pit and a mill alone have not yet done so anywhere.",
+      "sources": [
+        {
+          "label": "NuScale Power - NuScale Power and KGHM Sign Task Order to Initiate the Deployment of First Small Modular Reactor in Poland",
+          "url": "https://www.nuscalepower.com/press-releases/2022/nuscale-and-kghm-sign-task-order-to-initiate-the-deployment-of-first-smr-in-poland",
+          "quote": "SMR power plant deployment in Poland and Central Europe",
+          "status": "fetched"
+        },
+        {
+          "label": "KGHM Polska Miedz - KGHM has received the basic decision regarding the construction of a small modular reactor (SMR) power plant",
+          "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant",
+          "quote": "six modules, each with a capacity of 77 MW",
+          "status": "fetched"
+        }
+      ],
+      "nuclear": true,
+      "load": [
+        "Remote copper and other large mines"
+      ]
+    }
   ]
- },
- "cases": [
-  {
-   "id": "agnew-gold-mine-hybrid-microgrid-edl",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Agnew Gold Mine Hybrid Renewable Microgrid",
-   "country": "AU",
-   "region": "Agnew, Western Australia (Goldfields-Esperance)",
-   "parties": {
-    "host": "Gold Fields (Agnew Gold Mine)",
-    "provider": "EDL (Energy Developments Ltd)",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA",
-   "signed": "2019",
-   "term_years": 10,
-   "capacity": "18 MW wind (5 turbines) + 4 MW solar (~10,000 panels) + 13 MW / 4 MWh battery + 16-25 MW gas/diesel engine station; ~47-56 MW total",
-   "capex": "A$111.6 million total project cost, including A$13.5 million ARENA grant",
-   "displaced": "Diesel/gas generation on an isolated mine microgrid; forecast up to 60% renewable share and ~40,000 tCO2e/yr avoided",
-   "filings": [
-    {
-     "forum": "Australian Renewable Energy Agency (ARENA) project record",
-     "type": "Advancing Renewables Program funding record",
-     "id": "Agnew Renewable Energy Microgrid",
-     "date": "2023-01-30",
-     "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/"
-    }
-   ],
-   "summary": "Gold Fields did not build or own the power station at Agnew. EDL built, owns and operates the 18 MW wind / 4 MW solar / 13 MW-4 MWh battery / gas-engine hybrid microgrid and sells power to the mine under a 10-year agreement, with ARENA contributing A$13.5m of the A$111.6m project cost. Wind turbines went in on an off-grid mine site for the first time in Australia. The microgrid started operating in May 2020 and the full hybrid was completed 30 January 2023, running at roughly 50-60% renewable share and up to 85% in good conditions.",
-   "microreactor_read": "This is the exact contracting slot a microreactor would occupy: third-party-owned generation behind the fence, sold to the miner under a ~10-year term with no utility in the transaction. The capital benchmark is blunt - A$111.6m bought ~35 MW of firm-plus-renewable nameplate at Agnew, i.e. roughly A$3.2m/MW installed, and the reactor has to beat the mine's residual gas/diesel energy cost over a term the miner will not extend past its reserve life. Mine life, not reactor life, sets the term.",
-   "sources": [
-    {
-     "label": "ARENA - Agnew Renewable Energy Microgrid project record",
-     "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/",
-     "quote": "deliver up to 60% renewable energy to the Agnew mine and reduce the",
-     "status": "fetched"
-    },
-    {
-     "label": "EDL - Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
-     "url": "https://edlenergy.com/project/agnew/",
-     "quote": "EDL owns and operates the Agnew Hybrid Renewable Microgrid",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "degrussa-solar-battery-juwi-neoen-sandfire",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "DeGrussa Copper-Gold Mine Solar + Battery",
-   "country": "AU",
-   "region": "DeGrussa, Western Australia (~900 km NE of Perth)",
-   "parties": {
-    "host": "Sandfire Resources (DeGrussa copper-gold mine)",
-    "provider": "juwi (developer/operator), Neoen (equity owner)",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA",
-   "signed": "2015-07",
-   "capacity": "10.6 MW solar PV (34,080 single-axis-tracking panels) + 6 MW lithium-ion battery, integrated with the existing 19 MW diesel-fired station",
-   "capex": "A$40 million total, funded with A$20.9 million ARENA recoupable grant and up to A$15 million CEFC debt",
-   "price": "Fixed-rate solar PPA priced below the mine's historical diesel generation cost (rate not published)",
-   "displaced": "About 20% of the mine's diesel consumption, roughly 5 million litres per year, and ~12,000 t CO2/yr",
-   "filings": [
-    {
-     "forum": "Clean Energy Finance Corporation (Australian Government) media release",
-     "type": "Debt finance commitment",
-     "id": "CEFC finances major solar storage project at remote mine",
-     "date": "2015-07-15",
-     "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/"
-    }
-   ],
-   "summary": "The first large off-grid solar-plus-storage build at an Australian mine. juwi developed and operated it, Neoen took the equity, and Sandfire signed a fixed-price PPA rather than buying the plant - the whole A$40m sat off the miner's balance sheet. Two Australian government bodies carried more than half the capital: A$20.9m as an ARENA recoupable grant and up to A$15m of CEFC debt. The CEFC's own release states the pricing test plainly: Sandfire buys the solar at a fixed rate lower than the historical cost of its diesel power. Commissioned June 2016; the array was later relocated when the mine closed.",
-   "microreactor_read": "The signable form here is a fixed $/kWh below the incumbent diesel cost, with the developer carrying capex and the miner carrying nothing but an offtake. That is a microreactor-shaped deal, except two-thirds of DeGrussa's economics came from public money (A$35.9m of A$40m in grant plus concessional debt), which is the honest read: at a remote Australian mine the private hurdle was not cleared on diesel displacement alone.",
-   "sources": [
-    {
-     "label": "CEFC - CEFC finances major solar storage project at remote mine",
-     "url": "https://www.cefc.com.au/media/media-release/cefc-finances-major-solar-storage-project-at-remote-mine/",
-     "quote": "Sandfire Resources will purchase the solar power generated at a fixed rate that is lower than the historical cost of diesel-generated power",
-     "status": "fetched"
-    },
-    {
-     "label": "ARENA - DeGrussa Solar Project record",
-     "url": "https://arena.gov.au/projects/degrussa-solar-project/",
-     "quote": "$20.9m Funded by ARENA $39.47m Total project cost",
-     "status": "snippet-only"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "raglan-mine-wind-storage-tugliq-glencore",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Glencore Raglan Mine Renewable Electricity Smart-Grid (Raglan I / Raglan 2.0)",
-   "country": "CA",
-   "region": "Nunavik, Quebec (Ungava Peninsula)",
-   "parties": {
-    "host": "Glencore (Raglan nickel mine)",
-    "provider": "TUGLIQ Energy Co.",
-    "utility": "None - off-grid Arctic microgrid"
-   },
-   "instrument": "grant-funded demonstration plus third-party-owned generation",
-   "signed": "2013",
-   "term_years": 20,
-   "capacity": "3 MW Arctic-rated wind turbine (Raglan I, 2014) plus a second 3 MW turbine (Raglan 2.0); storage is a 200 kW / 1.5 kWh flywheel, a 200 kW / 250 kWh Li-ion battery and a 200 kW / 1 MWh hydrogen loop (315 kW electrolyser + 198 kW fuel cell)",
-   "price": "Northern electricity rates of $1.20/kWh high to $0.20/kWh low; industrial self-generators average $0.25-$0.60/kWh (TUGLIQ/ecoEII completion report)",
-   "capex": "About C$20 million for Raglan I; C$7.8 million federal ecoEII contribution, plus C$3.9 million federal EIP contribution and C$7.1 million announced for Raglan 2.0 turbines",
-   "displaced": "Diesel at a mine burning roughly 60 million litres/yr; the first turbine abated 2.4 million litres in 18 months and over 5 million litres across three years; projected savings of C$41 million in fuel and O&M over the turbine's 20-year life",
-   "filings": [
-    {
-     "forum": "Natural Resources Canada - ecoENERGY Innovation Initiative",
-     "type": "Demonstration Component public completion report",
-     "id": "GC 128296",
-     "date": "2016-11-11",
-     "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
-    },
-    {
-     "forum": "Natural Resources Canada - Emerging Innovations / funding partnerships",
-     "type": "Federal contribution record",
-     "id": "Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
-     "date": "2024-12-23",
-     "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid"
-    }
-   ],
-   "summary": "The single most useful disclosure in this sector. TUGLIQ's federally funded completion report for the Raglan wind-storage pilot states the northern power price band outright: rates range from $1.20/kWh at the high end to $0.20/kWh at the low end, and industrial self-generators - i.e. mines running their own diesel plants - average $0.25 to $0.60/kWh even with grouped purchasing. Against that, a C$20 million, 3 MW turbine with flywheel, lithium and hydrogen storage was projected to return C$41 million in fuel and O&M savings over 20 years at a mine burning ~60 million litres of diesel a year. Ottawa funded C$7.8 million of the pilot and returned with C$3.9 million and a further C$7.1 million for the Raglan 2.0 expansion.",
-   "microreactor_read": "This is the number to beat, from a Government of Canada report rather than a vendor deck: $0.25-$0.60/kWh for an industrial self-generator in the Canadian North, with the tail up to $1.20/kWh. A 5 MW microreactor selling at even $0.30/kWh into a Raglan-class site clears the low end of that band, and the Raglan precedent shows the miner will let a third party own the asset and take federal money to de-risk the first unit. The binding constraint is not price - it is that Raglan's own report frames micro-grid collapse (ventilation loss at -40C) as the reason northern operators distrust new generation, so a reactor must prove it firms the grid rather than adding a new failure mode.",
-   "sources": [
-    {
-     "label": "TUGLIQ Energy Co. / ecoENERGY Innovation Initiative - Glencore RAGLAN Mine Renewable Electricity Smart-Grid Pilot Demonstration, Public Completion Report GC 128296",
-     "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
-     "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
-     "status": "fetched"
-    },
-    {
-     "label": "Natural Resources Canada - Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
-     "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid",
-     "quote": "60%-90% diesel displacement at a Northern mine",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "smr-for-mining-canada-nrcan-20mwe-cost-band",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Natural Resources Canada - SMRs for Mining (national addressable-market and cost band)",
-   "country": "CA",
-   "region": "Canada, off-grid mine sites",
-   "parties": {
-    "host": "24 identified current and potential off-grid Canadian mines",
-    "provider": "Canada's SMR Action Plan participants",
-    "utility": "None - off-grid"
-   },
-   "instrument": "public procurement / government programme",
-   "signed": "2020-12",
-   "capacity": "SMR module range from 300 MWe down to 3 MWe per module for micro-SMRs; mining-relevant unit sized at 20 MWe",
-   "capex": "First-of-a-kind units suitable for mining estimated at C$200-350 million for a 20 MWe SMR",
-   "price": "Estimated 20-60% cost advantage in levelized cost of electricity over diesel",
-   "displaced": "Diesel generation at off-grid, remote and northern mines and adjacent communities",
-   "filings": [
-    {
-     "forum": "Natural Resources Canada (Government of Canada)",
-     "type": "Programme page - Small Modular Reactors (SMRs) for Mining",
-     "id": "Canada's SMR Action Plan (launched December 2020)",
-     "date": "2020-12",
-     "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining"
-    }
-   ],
-   "summary": "The Canadian federal government has already sized this market and published the price. NRCan counts 24 current and potential off-grid mines in Canada suitable for SMR deployment, puts a first-of-a-kind 20 MWe mining SMR at C$200-350 million, and claims a 20-60% LCOE advantage over diesel. That capex band is C$10,000-17,500 per kW installed - an order of magnitude above the ~A$3.2m/MW that bought Agnew's hybrid microgrid - which is precisely why the claimed advantage rests on the diesel price rather than on capital cost.",
-   "microreactor_read": "Cross-referenced with the Raglan disclosure, this is the whole business case in two numbers: NRCan's C$200-350m for 20 MWe against a mine paying $0.25-$0.60/kWh for self-generated diesel power. A 20 MWe unit at 90% capacity factor sells ~158 GWh/yr, so at the $0.35/kWh midpoint of the industrial self-generation band it grosses ~C$55m/yr - the FOAK capital is recovered inside a decade only if the site actually runs at that price and that load factor. The market is 24 sites, not hundreds, and NRCan names it.",
-   "sources": [
-    {
-     "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining",
-     "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
-     "quote": "First-of-a-kind units suitable for mining are estimated to cost in the order of $200-350M for a 20 MWe SMR",
-     "status": "fetched"
-    },
-    {
-     "label": "Natural Resources Canada - Small Modular Reactors (SMRs) for Mining (addressable sites)",
-     "url": "https://natural-resources.canada.ca/energy-sources/nuclear-energy-uranium/small-modular-reactors-smrs-mining",
-     "quote": "Recognized 24 current and potential off-grid mines in Canada that might be suitable for SMR deployment",
-     "status": "fetched"
-    }
-   ],
-   "nuclear": true
-  },
-  {
-   "id": "syama-gold-mine-aggreko-16-year-psa",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Syama Gold Mine Hybrid Power Supply Agreement",
-   "country": "ML",
-   "region": "Syama, southern Mali",
-   "parties": {
-    "host": "Resolute Mining (Syama gold complex)",
-    "provider": "Aggreko",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA",
-   "signed": "2019-12",
-   "term_years": 16,
-   "capacity": "40 MW thermal power plant + 10 MW Aggreko Y.Cube battery storage, with 20 MW of solar planned for 2023",
-   "price": "Not published as $/kWh; contract stated to reduce the mine's power costs by an estimated 40%",
-   "displaced": "Heavy-fuel-oil and diesel self-generation at an off-grid West African gold mine; ~20% carbon reduction once solar was added",
-   "filings": [],
-   "summary": "Aggreko signed a 16-year contract in December 2019 to install, own, operate and maintain the whole power system at Resolute's Syama complex - 40 MW thermal plus a 10 MW battery, with 20 MW of solar to follow. Resolute bought power, not plant. The published economic claim is a 40% cut in Syama's power costs. The contract length is the striking part: 16 years at a single mine, longer than most mine-life assumptions, which shows an off-grid miner will sign a term long enough to amortise capital-heavy generation when the counterparty carries the capital.",
-   "microreactor_read": "A 16-year off-grid PPA at a single gold mine is direct proof that the term problem is solvable - the objection that miners will not sign past ~10 years is contradicted here, and at Mt Weld (15 yr), Kathleen Valley (15 yr), Essakane (15 yr) and KCGM (25 yr). The reactor's competitor at Syama is a 40 MW thermal fleet whose replacement bought a 40% power-cost reduction; a 5-20 MW reactor must beat West African HFO/diesel delivered cost, generally quoted at $0.15-$0.30/kWh, not the Arctic band.",
-   "sources": [
-    {
-     "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
-     "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
-     "quote": "power costs by an estimated 40%",
-     "status": "fetched"
-    },
-    {
-     "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract (term and plant)",
-     "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
-     "quote": "40 MW thermal power plant",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "essakane-solar-eren-iamgold-15-year-ppa",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Essakane Solar SAS - 15 MWp hybrid solar/HFO at IAMGOLD Essakane",
-   "country": "BF",
-   "region": "Essakane, northeastern Burkina Faso",
-   "parties": {
-    "host": "IAMGOLD Essakane SA",
-    "provider": "Essakane Solar SAS (EREN Renewable Energy / AEMP), Wartsila as EPC and hybrid controller",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA",
-   "signed": "2017",
-   "term_years": 15,
-   "capacity": "15 MWp (12 MWac) solar PV, ~130,000 panels, synchronised to the existing 55-57 MW heavy-fuel-oil plant",
-   "capex": "More than US$20 million",
-   "displaced": "About 6 million litres of fuel per year and ~18,500 t CO2",
-   "filings": [],
-   "summary": "IAMGOLD did not buy the solar plant. A special-purpose company, Essakane Solar SAS - 90% EREN Renewable Energy, 10% IAMGOLD - built and operates it and sells output to the mine under a 15-year PPA, with Wartsila supplying the EPC and the hybrid control system that keeps 12 MWac of PV synchronised to a 55 MW HFO station. Cost was over US$20 million for roughly 6 million litres/yr of avoided fuel. It was, at commissioning in March 2018, the largest hybrid solar/thermal plant at any mine.",
-   "microreactor_read": "The structure a reactor vendor should copy: an SPV majority-owned by the energy party, minority-owned by the miner, selling under a 15-year PPA into an existing thermal plant that stays as backup. West African delivered HFO/diesel power is the beat-price here, well below the Canadian Arctic band - the reactor competes against roughly US$0.15-0.25/kWh, and against a solar plant that cost US$20m for 12 MWac, so the case must be made on night-time and dry-season firmness, not on displacing daytime energy.",
-   "sources": [
-    {
-     "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference",
-     "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
-     "quote": "is jointly owned with (90%/10%) Essakane Solar SAS, who operates the solar PV plant",
-     "status": "fetched"
-    },
-    {
-     "label": "Wartsila - Essakane Solar SAS, Burkina Faso reference (capacity)",
-     "url": "https://www.wartsila.com/energy/learn-more/references/mining-cement/essakane-solar-sas-burkina-faso",
-     "quote": "15MWp or 12MWac solar PV",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "fekola-solar-battery-b2gold-owner-built",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Fekola Mine Solar + Battery (Phase 1 and Phase 2)",
-   "country": "ML",
-   "region": "Fekola, western Mali",
-   "parties": {
-    "host": "B2Gold (Fekola gold mine)",
-    "provider": "B2Gold - owner-built and owner-operated",
-    "utility": "None - off-grid"
-   },
-   "instrument": "owner-built (no PPA)",
-   "signed": "2020",
-   "capacity": "Phase 1: 36 MWp solar + 17 MW battery alongside the site HFO plant. Phase 2 (complete Q4 2024, operational January 2025): +22 MW solar and +12.7 MWh battery, for 52 MW solar and 27.7 MWh battery total",
-   "capex": "Approximately US$38 million for Phase 1",
-   "displaced": "Phase 1 saved just over 13 million litres of HFO per year; after Phase 2 the plant reduces HFO consumption by an estimated 20 million litres per year and supplies about 30% of site electricity demand",
-   "filings": [
-    {
-     "forum": "SEC / SEDAR company news release",
-     "type": "News release",
-     "id": "B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
-     "date": "2025-03-18",
-     "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx"
-    }
-   ],
-   "summary": "The counter-example to Agnew, DeGrussa and Essakane: B2Gold built and owns the Fekola solar plant itself rather than signing a PPA. Phase 1 was ~US$38 million for 36 MWp of solar and 17 MW of battery, saving just over 13 million litres of HFO a year. Phase 2, completed in Q4 2024 and operational in January 2025, added 22 MW of solar and 12.7 MWh of battery, taking the site to 52 MW / 27.7 MWh and about 20 million litres of HFO avoided per year - but only ~30% of the site's total electricity demand. The other 70% is still thermal.",
-   "microreactor_read": "The number that matters for a reactor pitch is the 70% residual: even after US$38m-plus of solar and two expansions, Fekola still burns HFO for roughly 30 million-plus litres a year of the load, because solar cannot serve a 24-hour mill. A 20 MWe reactor addresses exactly that residual baseload. It also shows a mid-tier miner will spend its own capital on site power rather than sign a PPA - which means a vendor must be able to sell an owned unit, not only an energy-services contract.",
-   "sources": [
-    {
-     "label": "B2Gold - B2Gold Completes Phase 2 Expansion of Fekola Solar Plant in Mali",
-     "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
-     "quote": "reduce the annual consumption of heavy fuel oil (\"HFO\") by an estimated 20 million liters",
-     "status": "fetched"
-    },
-    {
-     "label": "B2Gold - Fekola Phase 2 completion (share of demand)",
-     "url": "https://www.b2gold.com/news-media/news-releases/news-details/2025/B2Gold-Completes-Phase-2-Expansion-of-Fekola-Solar-Plant-in-Mali/default.aspx",
-     "quote": "expected to supply approximately 30% of the site's total electricity demand",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "kathleen-valley-lithium-zenith-95mw-ppa",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Kathleen Valley Lithium Project Hybrid Power Station",
-   "country": "AU",
-   "region": "Kathleen Valley, Western Australia (Goldfields-Esperance)",
-   "parties": {
-    "host": "Liontown Resources (Kathleen Valley lithium mine)",
-    "provider": "Zenith Energy (build-own-operate)",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA",
-   "signed": "2022-12",
-   "term_years": 15,
-   "capacity": "95 MW total: 30 MW wind, 16 MWp fixed-axis solar, 17 MW / 19 MWh BESS, 27 MW gas generation, 5 MW diesel standby",
-   "displaced": "Targets at least 60% renewable energy at project start-up; the remainder is gas and diesel",
-   "filings": [
-    {
-     "forum": "ASX company announcement (via Zenith Energy release)",
-     "type": "Power Purchase Agreement announcement",
-     "id": "Liontown Resources signs PPA with Zenith Energy",
-     "date": "2022-12-21",
-     "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/"
-    }
-   ],
-   "summary": "Australia's largest off-grid renewable hybrid power station, contracted rather than owned: Zenith builds, owns and operates 95 MW of mixed generation at Kathleen Valley and sells to Liontown for 15 years from construction completion. Export Finance Australia provided a A$25 million guarantee facility as part of the PPA security package - the miner's credit, not the developer's, is what made the deal financeable. Even in a design targeting 60%+ renewables, 32 MW of the 95 MW is gas and diesel, sized for the mill's firm load. Zenith repeated the template in July 2024 at Lynas' Mt Weld rare-earths mine: ~65 MW (24 MW wind, 7 MW solar, 12 MW/12 MWh BESS, 17 MW gas, 5 MW standby diesel) on a 15-year PPA targeting up to ~70% renewables - and even there, 22 MW of firm thermal generation stays.",
-   "microreactor_read": "The addressable slice is the 27 MW gas plus 5 MW diesel that sits under a 60%-renewable design - one to two 20 MWe units, not the whole station. Two structural facts a reactor vendor must match: a 15-year term is normal here, and the offtaker's counterparty risk was bridged by a sovereign export-credit guarantee (A$25m from Export Finance Australia), which is the same instrument a first-of-a-kind reactor at a single-asset miner would need. The same 20-plus MW firm residual shows up at Mt Weld, so the addressable unit across Zenith's off-grid portfolio is consistently one 20 MWe reactor per site, not a fleet.",
-   "sources": [
-    {
-     "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
-     "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
-     "quote": "15 years from construction completion",
-     "status": "fetched"
-    },
-    {
-     "label": "Zenith Energy - Liontown PPA announcement (renewable target)",
-     "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
-     "quote": "at least 60% renewable energy at project start-up and beyond",
-     "status": "fetched"
-    },
-    {
-     "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
-     "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
-     "quote": "up to approximately 70%",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote lithium and rare-earth mines with onsite processing"
-   ]
-  },
-  {
-   "id": "diavik-wind-farm-and-solar-rio-tinto",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Diavik Diamond Mine Wind Farm (2012) and Solar Plant (2024)",
-   "country": "CA",
-   "region": "Lac de Gras, Northwest Territories",
-   "parties": {
-    "host": "Rio Tinto (Diavik Diamond Mine)",
-    "provider": "Rio Tinto - owner-built; Solvest as solar contractor",
-    "utility": "None - off-grid, ice-road resupplied"
-   },
-   "instrument": "owner-built, part grant-funded",
-   "signed": "2012",
-   "capacity": "9.2 MW wind (four 2.3 MW turbines, 2012) plus 3.5 MW solar (6,620 bifacial panels, 2024)",
-   "capex": "C$31 million for the wind farm (C$1 million under budget); solar supported by C$3.3 million from the NWT Large Emitters GHG Reducing Investment Grant Program",
-   "displaced": "Wind: about four million fewer litres of diesel per year, worth C$5 million/yr, against a site burning ~40 million litres/yr before the turbines. Solar: 4.2 million kWh/yr and 1 million litres of diesel per year, up to 25% of Diavik's electricity during closure works",
-   "filings": [],
-   "summary": "The clearest owner-built Arctic case, and the one with an explicit payback. Rio Tinto spent C$31 million on 9.2 MW of wind at Diavik in 2012 and reported roughly 4 million litres and C$5 million a year of diesel avoided, for a stated 6-8 year payback at a mine that was burning about 40 million litres of diesel annually hauled over a 353 km ice road. Twelve years later it added 3.5 MW of solar - Canada's largest off-grid array in the territories - producing 4.2 million kWh/yr and displacing another million litres, with C$3.3 million of NWT grant support. Commercial production is expected to end in 2026 with closure work to 2029.",
-   "microreactor_read": "The implied diesel-electricity price here is roughly C$1.25/litre of fuel alone, and C$5m of savings for 4 million litres sets the fuel-only avoided cost the reactor must undercut before any O&M credit. The decisive lesson is timing, not price: Diavik justified 9.2 MW of wind on a 6-8 year payback, and its solar arrived with only two years of production left. A microreactor whose payback exceeds remaining mine life cannot be sold to an operating mine no matter how good the $/kWh - which pushes the addressable set toward new long-life mines and toward relocatable units that can move to the next site.",
-   "sources": [
-    {
-     "label": "Nunatsiaq News - Diavik mine's wind-driven power saves $5 million a year in diesel costs",
-     "url": "https://nunatsiaq.com/stories/article/65674diavik_mines_wind-driven_power_saves_5_million_in_diesel_costs/",
-     "quote": "about four million fewer litres of diesel fuel per year",
-     "status": "fetched"
-    },
-    {
-     "label": "Rio Tinto - Rio Tinto completes construction of its solar power plant at Diavik Diamond Mine",
-     "url": "https://www.riotinto.com/en/news/releases/2024/rio-tinto-completes-construction-of-its-solar-power-plant-at-diavik-diamond-mine",
-     "quote": "bi-facial panels which not only generate energy from direct sunlight, but also from the light that reflects off the snow",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "red-dog-mine-solar-teck-nana-tugliq",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Red Dog Mine Solar Farm + Battery",
-   "country": "US",
-   "region": "De Long Mountains, Northwest Arctic Borough, Alaska",
-   "parties": {
-    "host": "Teck Alaska Incorporated (Red Dog zinc-lead mine), NANA Regional Corporation as landowner",
-    "provider": "TUGLIQ Energy",
-    "utility": "None - off-grid"
-   },
-   "instrument": "PPA (terms under negotiation as of March 2026)",
-   "signed": "2026",
-   "capacity": "8.8 MW solar farm on ~30 acres plus a battery system; expected to deliver about 2 MW in summer against a site load of roughly 25 MW",
-   "displaced": "Diesel at a mine burning roughly 40,000 gallons per day (about 14.6 million gallons/yr) for a 24.5 MW on-site diesel plant",
-   "filings": [],
-   "summary": "Red Dog would be the first large Alaskan mine to take substantial on-site solar. TUGLIQ - the same Quebec firm behind Raglan - would build and operate an 8.8 MW array plus battery on 30 acres partly on NANA land, with Teck negotiating power-purchase terms rather than buying the plant. Teck declined to give a cost estimate. The scale gap is the story: 8.8 MW nameplate yields about 2 MW in summer against a site that needs roughly 25 MW and burns about 40,000 gallons of diesel a day, and the build is being rushed to start by June 2026 to catch a federal tax-credit deadline in July. The mine is projected to close around 2032.",
-   "microreactor_read": "Red Dog is the sharpest microreactor-shaped load in North America: ~25 MW, off-grid, diesel-only, and a solar answer that covers under a tenth of it. A single 20 MWe unit replaces the entire 24.5 MW diesel station. Two hard constraints: the incumbent price is the delivered cost of ~14.6 million gallons of barged diesel a year (Alaskan remote power is commonly quoted at 40 cents to over $1.00/kWh), and closure around 2032 means the economic window for a fixed asset has already shut - only a relocatable unit fits.",
-   "sources": [
-    {
-     "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun",
-     "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
-     "quote": "8.8-megawatt solar farm",
-     "status": "fetched"
-    },
-    {
-     "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun (diesel burn)",
-     "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
-     "quote": "roughly 40,000 gallons each day",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "kivalliq-hydro-fibre-link-agnico-nukik",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Kivalliq Hydro-Fibre Link (transmission alternative to on-site generation)",
-   "country": "CA",
-   "region": "Gillam, Manitoba to Arviat / Rankin Inlet / Baker Lake, Nunavut",
-   "parties": {
-    "host": "Agnico Eagle (Meadowbank Complex, Meliadine mine) plus five Kivalliq communities",
-    "provider": "Nukik Corp. (Kivalliq Inuit Association / Sakku Investments)",
-    "utility": "Qulliq Energy Corporation, Manitoba Hydro"
-   },
-   "instrument": "MOU (technical collaboration and commercial discussions)",
-   "signed": "2025",
-   "capacity": "1,200 km overhead high-voltage transmission line from Manitoba to Nunavut, plus fibre. Secondary coverage cites a 150 MW rating; the federal Question Period Note does not state a MW figure",
-   "capex": "C$3.2 billion estimated (revised up from C$1.2 billion in 2019)",
-   "displaced": "Roughly 44.5 million litres of diesel per year - about 11 million litres across five communities and about 33.5 million litres at the Meadowbank gold mine alone",
-   "filings": [
-    {
-     "forum": "Nunavut Legislative Assembly",
-     "type": "Ministerial disclosure of revised project cost",
-     "id": "Statement by John Main, minister responsible for Qulliq Energy Corp.",
-     "date": "2025-06-02",
-     "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/"
-    }
-   ],
-   "summary": "The direct competitor to a microreactor at Canada's most diesel-exposed mines is a wire, and it is priced. Nunavut's minister responsible for Qulliq Energy told the legislature in June 2025 that the Kivalliq Hydro-Fibre Link now costs an estimated C$3.2 billion, up from C$1.2 billion in 2019, for a 1,200 km line from Gillam, Manitoba to five Kivalliq communities, completion pushed to 2032. Agnico Eagle and the Inuit-owned proponent Nukik signed an MOU to work through the technical case and formalise commercial discussions. Meadowbank alone burns about 33.5 million litres of diesel a year - the mine is the anchor load that makes the line bankable.",
-   "microreactor_read": "The reactor's competitor at Meadowbank and Meliadine is a C$3.2 billion wire that does not arrive until 2032 - and the mine, at about 33.5 of the 44.5 million litres of displaced diesel, is three-quarters of its justification. Priced against NRCan's C$200-350m for a 20 MWe mining SMR, a handful of on-site units would cover the mine's load for a small fraction of the line's cost and years sooner. What the reactor cannot buy is the rest of the package: the line also takes five Inuit communities off diesel under Inuit ownership, which is what is actually mobilising the public money.",
-   "sources": [
-    {
-     "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B",
-     "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
-     "quote": "$3.2 billion instead of the initial estimate of $1.2 billion from 2019",
-     "status": "fetched"
-    },
-    {
-     "label": "Nunatsiaq News - Kivalliq Hydro-Fibre Link estimated cost rises to $3.2B (route)",
-     "url": "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
-     "quote": "1,200-kilometre high-voltage transmission line connecting Gillam, Man., to Arviat, Whale Cove, Rankin Inlet, Chesterfield Inlet and Baker Lake",
-     "status": "fetched"
-    },
-    {
-     "label": "Government of Canada (CIRNAC) - Question Period Note: Kivalliq Hydro-Fibre Link",
-     "url": "https://search.open.canada.ca/qpnotes/record/aandc-aadnc,NA-2020-QP-0012",
-     "quote": "44.5 million litres of diesel annually",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "copper-mountain-trolley-assist-12mw-load",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "Copper Mountain Mine Trolley Assist (haul-fleet electrification load)",
-   "country": "CA",
-   "region": "Princeton, British Columbia",
-   "parties": {
-    "host": "Copper Mountain Mining Corporation",
-    "provider": "Komatsu, SMS Equipment, ABB",
-    "utility": "BC Hydro"
-   },
-   "instrument": "design-build with utility supply upgrade and CleanBC support",
-   "signed": "2019",
-   "capacity": "Trolley line drawing up to 12 MW at any one time, serving four of eleven 830E hybrid haul trucks simultaneously; each truck's electric drive needs about 3 MW of peak power",
-   "capex": "Around C$40 million",
-   "displaced": "About 400 litres of diesel per truck-hour on trolley, roughly one tonne of CO2 per truck-hour",
-   "filings": [],
-   "summary": "The load-growth case, with a published number. Copper Mountain's trolley-assist installation - feasibility funded 2019, commissioned spring 2022 for around C$40 million - draws up to 12 MW when four of its eleven Komatsu 830E hybrid trucks are on the ramp, each truck's drive peaking near 3 MW. Diesel falls by about 400 litres per truck-hour. Copper Mountain is grid-connected and had to work with BC Hydro to upgrade supply; an off-grid mine doing the same thing has no such option.",
-   "microreactor_read": "This is the number that changes reactor sizing: partially electrifying eleven haul trucks adds up to 12 MW of highly variable load to a single pit. A mine that today needs 25 MW of diesel needs 35-40 MW after fleet electrification, which moves the answer from one microreactor to several - or from a microreactor to an SMR. It also sets the hardest technical requirement: the load is 3 MW steps as trucks pantograph on and off a ramp, so a reactor sold into this must be paired with storage or accept ramping no thermal plant enjoys.",
-   "sources": [
-    {
-     "label": "BC Hydro - A net-zero mine? Copper Mountain takes electrifying first step",
-     "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
-     "quote": "12 megawatts at any one time – enough for four trucks to be on the ramp",
-     "status": "fetched"
-    },
-    {
-     "label": "BC Hydro - Copper Mountain trolley project cost and diesel saving",
-     "url": "https://www.bchydro.com/news/conservation/2022/mining-trolley-trucks.html",
-     "quote": "400 litres of diesel per hour, or about a tonne of CO2 emissions",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  },
-  {
-   "id": "kghm-nuscale-voygr-6-poland-copper",
-   "sector": "Off-grid mining & mineral processing",
-   "name": "KGHM Polska Miedz - NuScale VOYGR-6 SMR for copper mining and smelting",
-   "country": "PL",
-   "region": "Lower Silesia, Poland",
-   "parties": {
-    "host": "KGHM Polska Miedz S.A. (copper mines, smelters and refineries)",
-    "provider": "NuScale Power",
-    "utility": "Polish national grid"
-   },
-   "instrument": "Early Works Agreement plus Task Order; state decision-in-principle obtained",
-   "signed": "2022-02",
-   "capacity": "VOYGR-6 plant: 462 MWe from six 77 MWe NuScale Power Modules",
-   "filings": [
-    {
-     "forum": "SEC",
-     "type": "NuScale Power Corp Form 8-K exhibit (KGHM press release)",
-     "id": "NuScale Power Corp 8-K, FY2022",
-     "date": "2022-09-07",
-     "url": "https://www.sec.gov/Archives/edgar/data/1822966/000182296622000068/kghmpressrelease.htm"
-    },
-    {
-     "forum": "Polish Ministry of Climate and Environment",
-     "type": "Decision-in-principle (first administrative permit for a nuclear facility in Poland)",
-     "id": "KGHM SMR decision-in-principle",
-     "date": "2023-07-13",
-     "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant"
-    }
-   ],
-   "summary": "The only mining company anywhere to have taken a nuclear project through a national administrative permit. KGHM - a copper miner that also runs smelters and refineries - signed with NuScale in February 2022, executed a Task Order and Statement of Commencement under an Early Works Agreement in September 2022 at the Karpacz Economic Forum, applied to Poland's National Atomic Energy Agency for a 462 MWe six-module plant, and received the decision-in-principle in July 2023, the first step in Poland's permit chain for nuclear facilities. KGHM publicly denied reports in November 2023 that NuScale had terminated the arrangement. No construction contract or price has been published.",
-   "microreactor_read": "The instructive part is the size: the miner that actually went nuclear specified 462 MWe, not 5 or 20, because its load is smelting and refining rather than a mill on a diesel microgrid. Mineral processing - not mining - is where the megawatts are, and it is usually grid-connected, so the reactor competes against a wholesale tariff rather than the $0.25-$0.60/kWh diesel band. For a 1-20 MW unit the read is negative on this precedent and positive on the pattern: process heat and refinery load justify nuclear at a miner's board, while a pit and a mill alone have not yet done so anywhere.",
-   "sources": [
-    {
-     "label": "NuScale Power - NuScale Power and KGHM Sign Task Order to Initiate the Deployment of First Small Modular Reactor in Poland",
-     "url": "https://www.nuscalepower.com/press-releases/2022/nuscale-and-kghm-sign-task-order-to-initiate-the-deployment-of-first-smr-in-poland",
-     "quote": "SMR power plant deployment in Poland and Central Europe",
-     "status": "fetched"
-    },
-    {
-     "label": "KGHM Polska Miedz - KGHM has received the basic decision regarding the construction of a small modular reactor (SMR) power plant",
-     "url": "https://media.kghm.com/en/news-and-press-releases/kghm-has-received-the-basic-decision-regarding-the-construction-of-a-small-modular-reactor-smr-power-plant",
-     "quote": "six modules, each with a capacity of 77 MW",
-     "status": "fetched"
-    }
-   ],
-   "nuclear": true,
-   "load": [
-    "Remote copper and other large mines"
-   ]
-  }
- ]
 }

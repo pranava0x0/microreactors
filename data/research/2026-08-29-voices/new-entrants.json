@@ -1,0 +1,802 @@
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "new-entrants-voices",
+    "companies": [
+      "Aalo Atomics",
+      "Valar Atomics",
+      "Deep Fission"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "aalo.com/team fetch (raw HTML verified)",
+      "deepfission.com executive-leadership fetch (raw HTML verified)",
+      "valaratomics.com root fetch",
+      "MCJ Inevitable podcast episodes for Aalo and Deep Fission (raw HTML verified)",
+      "Deep Fission SEC EDGAR: FY2025 Form 10-K and Form S-1 (raw filing text, curl+grep verified)",
+      "Neutron Bytes Valar skeptic piece (raw HTML verified)",
+      "Utah Investigative Journalism Project Valar piece (raw HTML verified)",
+      "KSL.com Valar criticality article (raw HTML verified)",
+      "GMA News and Greenpeace Philippines on Valar/PNRI deal (raw HTML verified)",
+      "POWER Magazine Aalo/Crusoe partnership article (raw HTML verified)",
+      "Aalo, Deep Fission, Valar company blogs and press releases",
+      "World Nuclear News, NEI Magazine, Deseret News on Valar criticality/leadership"
+    ],
+    "absences": [
+      "No verbatim, independently fetchable primary-source quote found for Valar's often-cited 'safe enough to hold by hand' / CAT-scan spent-fuel radiation claim itself -- only search-summary paraphrases exist for the original claim, so it is omitted per the no-synthesis-from-summaries rule. Only Taylor's own combative reply to the ensuing criticism, and the critics' replies, could be verbatim-verified and are included.",
+      "No manufacturing units-per-year figure found stated by any of the three companies for their eventual factories (Aalo's Austin 'Reactor Factory', Valar's Utah fabrication facility, or Deep Fission's borehole-drilling operation) -- all three describe factory/site locations but none states a production-rate target in a fetchable source.",
+      "No verbatim quote found from Mo Shahzad or Mark Mitchell themselves in the 2024-08 to 2026-08 window (Mitchell's only located quote is from his April 2024 hire announcement, one month before the window opens, so it was used only for the leader bio, not the quotes array).",
+      "Valar Atomics' own site (valaratomics.com root and /docs) carries almost no leadership-bio or hard-number content; all Valar leader and quote material came from third-party press coverage and one prior hire press release instead.",
+      "No SEC filing (10-K or S-1) from Deep Fission repeats the $50-70/MWh LCOE or 5-7 cents/kWh figures that CEO Liz Muller has stated in press releases and podcasts; this discrepancy is treated as a finding (see quotes), not an absence, but the underlying 'why' (e.g. an SEC comment-letter objection) was not found in a fetchable source.",
+      "Dropped deepfission-muller-leu-fuel 2026-08-30: fewer than six words of the transcribed podcast quote appear verbatim in the cited page, so it could not ship as a quotation. The underlying fact (Deep Fission buys 5% low-enriched uranium) is carried by deepfission-10k-leu-commitment, sourced to the company's own 10-K, which is the stronger citation anyway."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "aalo-loszak",
+      "company": "Aalo Atomics",
+      "name": "Matt Loszak",
+      "title": "CEO & Cofounder",
+      "background": "Nuclear engineering and physics degree. Founded Humi (HR software) and had a nine-figure exit. Y Combinator alum.",
+      "why_they_matter": "Non-traditional-nuclear founder background (a software exit) signals a startup-speed, product-company approach rather than an incumbent-nuclear pedigree.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Nuclear engineering & physics degree, founded Humi with a 9-figure exit, YC alum.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-arafat",
+      "company": "Aalo Atomics",
+      "name": "Yasir Arafat",
+      "title": "CTO, President, & Cofounder",
+      "background": "Former lead of Idaho National Laboratory's MARVEL microreactor program. Founded the Westinghouse eVinci program. Ten years of R&D on the AP1000 reactor.",
+      "why_they_matter": "Brings direct DOE/national-lab microreactor program leadership (MARVEL) and incumbent-vendor (Westinghouse) reactor-design experience into a startup.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Former Lead of INL’s MARVEL, founded Westinghouse eVinci, 10 years on AP1000 R&D.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-reynolds",
+      "company": "Aalo Atomics",
+      "name": "Scott Reynolds",
+      "title": "CFO",
+      "background": "Previously Head of Corporate Development at Bloom Energy, a publicly traded fuel-cell company.",
+      "why_they_matter": "Brings public-company-adjacent finance and corporate-development experience from a distributed-generation hardware company as Aalo raises large private rounds.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Previously Head of Corporate Development at Bloom Energy.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-so",
+      "company": "Aalo Atomics",
+      "name": "Michael So",
+      "title": "VP of Programs",
+      "background": "Formerly led Cybercab, Cybertruck, and Model Y product launches at Tesla.",
+      "why_they_matter": "Tesla high-volume vehicle-launch experience signals Aalo is importing consumer-hardware program management into reactor deployment.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Former Head of Cybercab, Cybertruck, and Model Y Product Launches at Tesla.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-guidroz",
+      "company": "Aalo Atomics",
+      "name": "Jon Guidroz",
+      "title": "SVP, Commercial & Strategy",
+      "background": "Previously a Director of Energy at Microsoft, Google, and Amazon.",
+      "why_they_matter": "Direct hyperscaler energy-procurement experience, from the buyer side, positions Aalo to sell directly to the data-center customers it is targeting.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Previously a Director of Energy at Microsoft, Google, and Amazon.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-frazier",
+      "company": "Aalo Atomics",
+      "name": "Tim Frazier",
+      "title": "SVP, Government Programs",
+      "background": "Formerly Director of Government Programs at GE Hitachi.",
+      "why_they_matter": "Brings incumbent-nuclear-vendor government-relations experience to Aalo's DOE and regulatory push.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Previously Director of Government Programs at GE Hitachi.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-aaron",
+      "company": "Aalo Atomics",
+      "name": "Stu Aaron",
+      "title": "VP, Product",
+      "background": "Previously VP of Product and Marketing at Bloom Energy.",
+      "why_they_matter": "A second Bloom Energy alum on the team; Bloom's distributed-generation product/marketing playbook is an explicit reference point for Aalo.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Previously VP of Product and Marketing at Bloom Energy",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-gentile",
+      "company": "Aalo Atomics",
+      "name": "Bryson Gentile",
+      "title": "Advisor, Manufacturing",
+      "background": "Previously Head of Manufacturing at SpaceX on the Falcon 9 program.",
+      "why_they_matter": "SpaceX Falcon 9 manufacturing pedigree speaks directly to Aalo's core pitch: mass-manufactured reactors rather than bespoke plants.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Previously Head of Manufacturing at SpaceX on Falcon 9",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-taggart",
+      "company": "Aalo Atomics",
+      "name": "Les Taggart",
+      "title": "Director, Quality Assurance",
+      "background": "Brings over 40 years of nuclear quality-assurance experience.",
+      "why_they_matter": "Deep, specifically nuclear (not general-industrial) QA experience is a credibility signal for NRC-facing documentation.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Brings 40+ Years of Nuclear Quality Assurance Experience.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-teng",
+      "company": "Aalo Atomics",
+      "name": "Alex Teng",
+      "title": "Board Member",
+      "background": "Partner at Fifty Years, a deep-tech venture capital firm.",
+      "why_they_matter": "Signals early institutional hard-tech/deep-tech investor backing on the board.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Partner at Fifty Years",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-soong",
+      "company": "Aalo Atomics",
+      "name": "Ying Soong",
+      "title": "Board Member",
+      "background": "Managing Director at Ontario Teachers' Pension Plan.",
+      "why_they_matter": "A large pension fund's board presence signals institutional, long-duration capital interested in infrastructure-like returns.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Managing Director at Ontario Teachers’ Pension Plan",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-jaysanedarr",
+      "company": "Aalo Atomics",
+      "name": "Evan Jaysane-Darr",
+      "title": "Board Member",
+      "background": "Principal at Valor Equity Partners.",
+      "why_they_matter": "Valor Equity Partners is a growth-equity firm known for backing Tesla and SpaceX; the board seat echoes Aalo's SpaceX-manufacturing-model framing.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- Leadership Team (raw page text)",
+          "url": "https://aalo.com/team",
+          "quote": "Principal at Valor Equity Partners",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-muller-liz",
+      "company": "Deep Fission",
+      "name": "Liz Muller",
+      "title": "Co-Founder & CEO, Board Chair",
+      "background": "Serial nuclear-adjacent entrepreneur. Previously co-founded Deep Isolation (nuclear waste disposal, where she served as CEO) and Berkeley Earth (a climate-data nonprofit). B.A. in Mathematics from UC San Diego; Master's in International Management from ESCP Business School, Paris.",
+      "why_they_matter": "A repeat founder in nuclear-adjacent ventures (waste disposal, climate data) rather than reactor engineering itself -- her track record is in moving regulated, technically complex ideas into companies, not in nuclear design.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "Liz is a serial nuclear entrepreneur with a track record of building organizations that move technically complex, highly regulated energy solutions from concept to reality.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-muller-rich",
+      "company": "Deep Fission",
+      "name": "Rich Muller, Ph.D.",
+      "title": "Co-Founder & CTO",
+      "background": "Professor Emeritus of Physics at UC Berkeley. Over 80 issued patents and 100+ peer-reviewed articles, including work on the safety of deeply buried nuclear waste. MacArthur 'Genius' Prize, NSF Alan T. Waterman Award, and Breakthrough Prize recipient; member of the American Academy of Arts and Sciences. B.A. in Physics from Columbia; Ph.D. in Physics from UC Berkeley. Reported 30+ years as a national-security advisor.",
+      "why_they_matter": "A MacArthur/Breakthrough-Prize physicist as CTO gives an early-stage company unusual scientific credibility, and his decades of national-security advisory work are directly relevant to a company proposing to bury nuclear material underground.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "A prolific inventor with over 80 issued patents, Rich has authored more than 100 peer-reviewed scientific articles",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-schmitz",
+      "company": "Deep Fission",
+      "name": "Mark Schmitz",
+      "title": "Chief Financial Officer",
+      "background": "40+ years in financial leadership. Has served as CFO of Goodyear, Itron, Plug Power, and Alghanim Industries, with roles across North America, China, Brazil, the UK, and the Middle East, including scaling a company from roughly $2 billion to more than $6 billion in revenue. Undergraduate and MBA from The Ohio State University.",
+      "why_they_matter": "Multiple prior public-company CFO roles signal the finance discipline now needed as Deep Fission itself trades publicly under ticker FISN.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "Mark has served as CFO of several major organizations, including Goodyear, Itron, Plug Power, and Alghanim Industries",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-brasel",
+      "company": "Deep Fission",
+      "name": "Michael Brasel",
+      "title": "Chief Operating Officer",
+      "background": "Nearly three decades in nuclear, fossil, and renewable energy. Held leadership roles at NuScale Power (Vice President of Nuclear Programs, Senior Project Director for the Carbon Free Power Project) and was Plant Manager at the La Crosse Boiling Water Reactor; started as a U.S. Navy nuclear plant operator. MBA, University of Wisconsin-La Crosse; B.S. in Mechanical Engineering Technology, Old Dominion University.",
+      "why_they_matter": "NuScale's SMR licensing and multi-billion-dollar project-management experience gives Deep Fission one of its few executives with hands-on advanced-reactor operating history.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "Prior to joining Deep Fission, Mike held key leadership roles at NuScale Power, where he managed multi-billion-dollar nuclear projects",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-peres",
+      "company": "Deep Fission",
+      "name": "Mark Pérès",
+      "title": "Chief Nuclear Officer",
+      "background": "Over 40 years across nuclear design, construction, commissioning, operations, cleanup, and decommissioning, including roles at Kairos Power, NuScale, Fluor, Los Alamos, and DOE's Hanford site. Started his career as a Reactor Operator at the Fast Flux Test Facility. Undergraduate and Master's degrees in mechanical engineering; reported as a Ph.D. candidate in nuclear engineering at the University of South Carolina.",
+      "why_they_matter": "Experience at Kairos Power and NuScale -- two other advanced-reactor licensing efforts -- gives Deep Fission construction and NRC-process expertise from direct peers.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "He has over forty years of experience in the nuclear industry including design, construction, commissioning, engineering, operations, cleanup, and decommissioning.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-scales",
+      "company": "Deep Fission",
+      "name": "ShawnTrell Scales",
+      "title": "Chief People Officer",
+      "background": "25+ years building and transforming organizations across high-growth technology and energy. Former Chief Human Resources Officer at Farmers Business Network, where she led workforce restructuring, acquisitions, and divestitures. Earlier senior HR roles at Matthews SGK, Linn Energy, QEP Resources, and the Chickasaw Nation Division of Commerce.",
+      "why_they_matter": "Signals the company is building organizational/HR infrastructure ahead of commercial operation, not just engineering headcount.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "Over 25 years, ShawnTrell has built and transformed organizations across high-growth technology, energy, and other complex operating environments",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-patterson",
+      "company": "Deep Fission",
+      "name": "Stacy Tarver Patterson",
+      "title": "Chief Marketing Officer",
+      "background": "19 years in global marketing strategy and brand transformation, including roles at Nike, Code and Theory, and West Ventures. Co-founded a venture-backed digital-health startup and has been CMO-in-Residence at Columbia Startup Lab.",
+      "why_they_matter": "A consumer-brand marketing background rather than an energy-industry one signals heavy investment in public-facing brand building, consistent with the company's frequent press and podcast presence.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "Stacy brings 19 years of experience across global marketing strategy, digital product growth, and brand transformation for technology and consumer platforms.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-gordon",
+      "company": "Deep Fission",
+      "name": "Jon Gordon",
+      "title": "General Counsel & Secretary",
+      "background": "20+ years guiding energy and industrial companies through transactions and regulatory matters. Former General Counsel/Chief Commercial Officer at a hydrogen electrolyzer company and co-founder of Universal Hydrogen; earlier, Deputy General Counsel for Technology and Digital at United Technologies (now Raytheon) and Senior Counsel at Two Sigma. Began his career in M&A and securities law at Cravath, Swaine & Moore and Wachtell, Lipton, Rosen & Katz. B.A. and J.D. from the University of Chicago.",
+      "why_they_matter": "Elite M&A/securities-law training plus a prior public-facing GC role is standard preparation for a company that has just gone through SEC filings and a public listing.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Executive Leadership (raw page text)",
+          "url": "https://www.deepfission.com/about-us/executive-leadership",
+          "quote": "He began his career practicing mergers and acquisitions and securities law at Cravath, Swaine & Moore and Wachtell, Lipton, Rosen & Katz.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-taylor",
+      "company": "Valar Atomics",
+      "name": "Isaiah Taylor",
+      "title": "Founder & CEO",
+      "since": "2023-07",
+      "background": "Dropped out of high school at 16 to start an auto-repair shop in Moscow, Idaho with childhood friend Kip Mock; later founded and saw fail an automotive-software startup, worked briefly at a hedge fund, and did engineering work for the Department of Defense. Founded Valar Atomics on July 4, 2023. Descended from Ward Schaap, a Manhattan Project physicist.",
+      "why_they_matter": "A founder with no traditional nuclear-industry or elite-technical pedigree, whose central credibility claim is speed of execution ('metal beats paper') rather than institutional nuclear experience -- precisely the profile independent nuclear engineers have publicly challenged (see quotes).",
+      "sources": [
+        {
+          "label": "Deseret News -- \"Who is Isaiah Taylor? What is Valar Atomics?\"",
+          "url": "https://www.deseret.com/business/2026/03/17/isaiah-taylor-who-founded-valar-atomics-is-bringing-nuclear-power-online/",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "valar-shahzad",
+      "company": "Valar Atomics",
+      "name": "Muhammad \"Mo\" Shahzad",
+      "title": "President and CFO",
+      "since": "2025-11",
+      "background": "Former President and CFO of Relativity Space, an aerospace manufacturer. Reported earlier career in investment banking and as CFO of The Honest Company.",
+      "why_they_matter": "A finance/scaling executive from a well-capitalized, high-burn aerospace manufacturer, not a nuclear background -- mirrors Taylor's own non-nuclear pedigree and suggests Valar is optimizing its C-suite for fundraising and operational scale-up over nuclear-specific credentials.",
+      "sources": [
+        {
+          "label": "KSL.com -- \"Valar Atomics' nuclear reactor reaches criticality in Utah\"",
+          "url": "https://www.ksl.com/article/news/business/valar-atomics-nuclear-reactor-reaches-criticality-in-utah/51513785",
+          "quote": "Muhammad Shahzad, the former president and CFO of Relativity Space, an aerospace manufacturer",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-mitchell",
+      "company": "Valar Atomics",
+      "name": "Mark Mitchell",
+      "title": "Chief Nuclear Officer",
+      "since": "2024-04",
+      "background": "Mechanical engineer with 20+ years in advanced nuclear energy. Started his nuclear career at the South African Pebble Bed Modular Reactor company; established and led Ultra Safe Nuclear Corporation's (USNC) Micro Modular Reactor program before USNC filed for bankruptcy in October 2024. Member of the ASME Boiler and Pressure Vessel Committee on Construction of Nuclear Facility Components. B.Eng., University of Pretoria.",
+      "why_they_matter": "The most nuclear-credentialed executive at Valar, but his prior company (Ultra Safe Nuclear) went bankrupt in 2024 after also pursuing a fast-moving microreactor program -- a cautionary parallel worth watching given Valar's own aggressive timeline.",
+      "sources": [
+        {
+          "label": "Press release -- \"Advanced Nuclear Industry Innovator, Mark Mitchell, Joins Valar Atomics as Chief Nuclear Officer\" (April 2024)",
+          "url": "https://business.thepilotnews.com/thepilotnews/article/bizwire-2024-4-29-advanced-nuclear-industry-innovator-mark-mitchell-joins-valar-atomics-as-chief-nuclear-officer",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "valar-mock",
+      "company": "Valar Atomics",
+      "name": "Kip Mock",
+      "title": "President, Valar Atomics Research Institute",
+      "background": "Isaiah Taylor's childhood friend; co-founded their teenage auto-repair-shop venture in Moscow, Idaho. Now leads Valar's Philippines-facing research entity overseeing the PNRI/PNSF reactor partnership.",
+      "why_they_matter": "A founder's decades-long personal friend running the company's highest-profile international deployment (Philippines) is a notable staffing/governance signal for that project.",
+      "sources": [
+        {
+          "label": "GMA News -- \"US nuke firm partners with PNRI to build 'research reactor' in PH\"",
+          "url": "https://www.gmanetwork.com/news/money/companies/940277/us-nuke-firm-partners-with-pnri-to-build-research-reactor-in-ph/story/",
+          "quote": "Valar Atomics Research Institute president Kip Mock said that the reactor will be used for research purposes",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "aalo-arafat-haleu-russia",
+      "company": "Aalo Atomics",
+      "speaker": "Yasir Arafat",
+      "role": "CTO, President & Cofounder",
+      "date": "2025-06-16",
+      "venue": "Aalo Atomics company blog -- \"Unlocking Hypergrowth: Our Bold Move in Nuclear Fuel\"",
+      "topic": "supply-chain",
+      "quote": "HALEU, once promising for its improved performance, encountered major setbacks when geopolitical tensions disrupted its primary supply route from Russia",
+      "what_it_means": "Aalo publicly rejected HALEU -- the fuel most other advanced-reactor startups are chasing -- citing Russia-linked enrichment supply risk, not just cost or performance. It chose standard 5-8% enriched UO2 instead, trading some reactor performance for near-term fuel availability. Deep Fission, in this same file, cites the identical rationale (see its supply-chain quotes).",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- \"Unlocking Hypergrowth: Our Bold Move in Nuclear Fuel\"",
+          "url": "https://www.aalo.com/post/unlocking-hypergrowth-our-bold-move-in-nuclear-fuel",
+          "quote": "HALEU, once promising for its improved performance, encountered major setbacks when geopolitical tensions disrupted its primary supply route from Russia",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-cavness-crusoe-partnership",
+      "company": "Aalo Atomics",
+      "speaker": "Cully Cavness",
+      "role": "Co-Founder, President and Chief Strategy Officer, Crusoe",
+      "date": "2026-07-30",
+      "venue": "POWER Magazine -- \"Aalo, Crusoe Plan 2027 INL Demonstration Pairing Nuclear Power and AI Data Center Load\"",
+      "topic": "customers",
+      "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale, and Aalo's nuclear reactors are built to meet that",
+      "what_it_means": "Crusoe -- a named, operating AI-infrastructure company -- is Aalo's first publicly identified data-center partner, for a planned 2027 demonstration at Idaho National Laboratory. This is a partnership/demonstration commitment, not a disclosed power-purchase agreement or price.",
+      "sources": [
+        {
+          "label": "POWER Magazine -- Aalo, Crusoe Plan 2027 INL Demonstration",
+          "url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-loszak-only-nuclear-tech-company",
+      "company": "Aalo Atomics",
+      "speaker": "Matt Loszak",
+      "role": "CEO & Cofounder",
+      "date": "2026-07-30",
+      "venue": "POWER Magazine -- Aalo/Crusoe partnership article",
+      "topic": "units-manufacturing",
+      "quote": "We are now the only nuclear technology company to design and build a nuclear reactor fueled to produce 10 MW of electricity—an achievement that positions Aalo as the premier power provider for the modern data center.",
+      "what_it_means": "This is Loszak's own characterization of Aalo's July 2026 criticality milestone (the Aalo-X Critical Test Reactor, en route to a planned 10 MWe), not an independently verified industry-wide ranking. 'Only' and 'premier' are the company's own framing, made the same day as the Crusoe partnership announcement.",
+      "sources": [
+        {
+          "label": "POWER Magazine -- Aalo, Crusoe Plan 2027 INL Demonstration",
+          "url": "https://www.powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load/",
+          "quote": "We are now the only nuclear technology company to design and build a nuclear reactor fueled to produce 10 MW of electricity",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-loszak-off-the-shelf-fuel",
+      "company": "Aalo Atomics",
+      "speaker": "Matt Loszak",
+      "role": "CEO & Cofounder",
+      "date": "2025-05-19",
+      "venue": "MCJ Inevitable podcast -- \"Redesigning Nuclear Reactors for Mass Manufacturing with Aalo\"",
+      "topic": "supply-chain",
+      "quote": "We're using off-the-shelf uranium dioxide fuel that's in a very typical form factor that can be at a very typical enrichment level that can be mass-produced",
+      "what_it_means": "Loszak, in his own words, frames Aalo's fuel choice around manufacturability and existing supply chains rather than reactor performance -- consistent with Arafat's written rationale for avoiding HALEU.",
+      "sources": [
+        {
+          "label": "MCJ Inevitable podcast -- Redesigning Nuclear Reactors for Mass Manufacturing with Aalo",
+          "url": "https://mcj.vc/inevitable-podcast/aalo",
+          "quote": "we're using off-the-shelf uranium dioxide fuel that's in a very typical form factor",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-fastest-reactor-build",
+      "company": "Aalo Atomics",
+      "speaker": "Aalo Atomics",
+      "role": "Company statement (press announcement)",
+      "date": "2026-07-04",
+      "venue": "Aalo Atomics company blog -- \"Aalo Achieves Criticality\"",
+      "topic": "units-manufacturing",
+      "quote": "Our Critical Test Reactor (CTR) went from groundbreaking to a sustained chain reaction in less than eight months—one of the fastest reactor builds in 80 years—and our company has gone from founding to fission in less than three years.",
+      "what_it_means": "This is Aalo's own characterization of its non-power-producing Critical Test Reactor's build timeline, achieved the same day (July 4, 2026) that DOE's Reactor Pilot Program required at least three companies to reach criticality -- Aalo says it was the fourth of what ended up being (per other reporting) four. 'Fastest...in 80 years' is a claim about construction speed for a test reactor, not a commercial power plant.",
+      "sources": [
+        {
+          "label": "Aalo Atomics -- \"Aalo Achieves Criticality\"",
+          "url": "https://www.aalo.com/post/aalo-achieves-first-criticality",
+          "quote": "went from groundbreaking to a sustained chain reaction in less than eight months",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-muller-cost-foak",
+      "company": "Deep Fission",
+      "speaker": "Liz Muller",
+      "role": "Co-Founder & CEO",
+      "date": "2025-04-10",
+      "venue": "MCJ Inevitable podcast -- \"Underground Nuclear Reactors? Inside Deep Fission's Energy Solution\"",
+      "topic": "costs",
+      "quote": "So we're expecting to be about 20% of the cost. We're talking publicly about five to 7 cents per kilowatt hour for the first of a kind.",
+      "what_it_means": "Muller states this explicitly as a first-of-a-kind (FOAK) target, not an achieved cost and not the cost of a mature/Nth-of-a-kind unit, which she says elsewhere the company expects to be lower. No Deep Fission SEC filing repeats this cents/kWh figure (see the S-1 PPA-pricing quote below for the only $-denominated figure that does appear in a filing).",
+      "sources": [
+        {
+          "label": "MCJ Inevitable podcast -- Underground Nuclear Reactors? Inside Deep Fission's Energy Solution",
+          "url": "https://mcj.vc/inevitable-podcast/deep-fission",
+          "quote": "We're talking publicly about five to 7 cents per kilowatt hour for the first of a kind",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-muller-capex-per-reactor",
+      "company": "Deep Fission",
+      "speaker": "Liz Muller",
+      "role": "Co-Founder & CEO",
+      "date": "2025-04-10",
+      "venue": "MCJ Inevitable podcast -- \"Underground Nuclear Reactors? Inside Deep Fission's Energy Solution\"",
+      "topic": "costs",
+      "quote": "five to 7 cents per kilowatt hour and a cost of approximately 25 million per reactor of 15 megawatts. So that's a remarkably good price.",
+      "what_it_means": "A distinct, per-unit capex claim (about $1,667/kW implied) alongside the LCOE figure above -- again presented as a first-of-a-kind target in a podcast, with no equivalent capex number appearing in Deep Fission's SEC filings.",
+      "sources": [
+        {
+          "label": "MCJ Inevitable podcast -- Underground Nuclear Reactors? Inside Deep Fission's Energy Solution",
+          "url": "https://mcj.vc/inevitable-podcast/deep-fission",
+          "quote": "a cost of approximately 25 million per reactor of 15 megawatts",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-muller-endeavor-order",
+      "company": "Deep Fission",
+      "speaker": "Liz Muller",
+      "role": "Co-Founder & CEO",
+      "date": "2025-04-10",
+      "venue": "MCJ Inevitable podcast -- \"Underground Nuclear Reactors? Inside Deep Fission's Energy Solution\"",
+      "topic": "orders",
+      "quote": "They have confirmed two gigawatts as sort of our first order with them.",
+      "what_it_means": "Muller describes a 2 GW relationship with 'Endeavor Data Centers' as a confirmed order in this April 2025 podcast. Deep Fission's own FY2025 Form 10-K, filed a year later, describes what is almost certainly the same relationship (with 'Endeavour Energy, LLC') as a non-binding term sheet that explicitly 'does not create commitments to purchase electricity... or deploy a specified number of reactors' -- a materially more cautious legal characterization than 'confirmed order' (see companion 10-K record below).",
+      "sources": [
+        {
+          "label": "MCJ Inevitable podcast -- Underground Nuclear Reactors? Inside Deep Fission's Energy Solution",
+          "url": "https://mcj.vc/inevitable-podcast/deep-fission",
+          "quote": "They have confirmed two gigawatts as sort of our first order with them",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-10k-endeavour-nonbinding",
+      "company": "Deep Fission",
+      "speaker": "Deep Fission, Inc.",
+      "role": "SEC Form 10-K disclosure (FY2025 annual report)",
+      "date": "2026-04-15",
+      "venue": "Deep Fission, Inc. -- Form 10-K for fiscal year 2025 (SEC EDGAR)",
+      "topic": "orders",
+      "quote": "The Endeavour relationship is governed by a non-binding term sheet and does not create commitments to purchase electricity, finance projects, construct facilities, grant exclusivity, or deploy a specified number of reactors.",
+      "what_it_means": "This is Deep Fission's own SEC-filed description of the same Endeavour relationship CEO Liz Muller called a 'confirmed' 2 GW 'first order' on a podcast a year earlier (see companion record). The 10-K also caps the relationship at 'up to 1.5 gigawatts... at a single location, within a broader potential co-development framework of up to 2 gigawatts across multiple projects' -- a ceiling, not a purchase commitment.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Form 10-K for FY2025 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1918102/000110465926043870/tmb-20251231x10k.htm",
+          "quote": "The Endeavour relationship is governed by a non-binding term sheet and does not create commitments to purchase electricity",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-10k-leu-commitment",
+      "company": "Deep Fission",
+      "speaker": "Deep Fission, Inc.",
+      "role": "SEC Form 10-K disclosure (FY2025 annual report)",
+      "date": "2026-04-15",
+      "venue": "Deep Fission, Inc. -- Form 10-K for fiscal year 2025 (SEC EDGAR)",
+      "topic": "supply-chain",
+      "quote": "In January 2026, the Company entered into a commitment with a supplier to purchase low-enriched uranium fuel at a cost of $9.2 million.",
+      "what_it_means": "A real, dated, priced fuel-purchase commitment disclosed as a subsequent event -- concrete evidence Deep Fission has actually contracted for LEU fuel, not merely described a sourcing strategy, consistent with Muller's podcast statement that they use standard 5% enriched PWR fuel.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Form 10-K for FY2025 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1918102/000110465926043870/tmb-20251231x10k.htm",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-10k-criticality-deprioritized",
+      "company": "Deep Fission",
+      "speaker": "Deep Fission, Inc.",
+      "role": "SEC Form 10-K disclosure (FY2025 annual report)",
+      "date": "2026-04-15",
+      "venue": "Deep Fission, Inc. -- Form 10-K for fiscal year 2025 (SEC EDGAR)",
+      "topic": "regulatory",
+      "quote": "The Company has updated certain previously identified development milestones, including those related to the timing of reactor criticality, to better align with its current development priorities.",
+      "what_it_means": "Deep Fission's November 2025 press release had targeted first criticality by July 4, 2026 -- the same DOE Reactor Pilot Program deadline Aalo and Valar both publicly met (see their quotes above). This 10-K, filed after that deadline passed, quietly walks the criticality timeline back; the same filing elsewhere frames criticality as a secondary technical priority given how long PWR technology has operated commercially, unlike its two microreactor peers in this file who each made criticality their headline milestone.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Form 10-K for FY2025 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1918102/000110465926043870/tmb-20251231x10k.htm",
+          "quote": "The Company has updated certain previously identified development milestones, including those related to the timing of reactor criticality",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deepfission-s1-ppa-pricing-assumption",
+      "company": "Deep Fission",
+      "speaker": "Deep Fission, Inc.",
+      "role": "SEC Form S-1 disclosure",
+      "date": "2026-05-20",
+      "venue": "Deep Fission, Inc. -- Form S-1 (SEC EDGAR)",
+      "topic": "costs",
+      "quote": "that PPAs are secured for the entire amount of assumed output, with initial pricing of approximately $110 per MWh (which represents our estimate based on a survey of market pricing in certain U.S. markets in 2024)",
+      "what_it_means": "This $110/MWh figure is a REVENUE assumption for an illustrative financial model -- what Deep Fission assumes it could sell power for under a future PPA, based on a survey of 2024 market prices -- not a cost or LCOE claim. It should not be confused with the $50-70/MWh LCOE or 5-7 cents/kWh cost figures Muller has quoted elsewhere as Deep Fission's target cost; neither of those cost figures appears anywhere in Deep Fission's SEC filings.",
+      "sources": [
+        {
+          "label": "Deep Fission, Inc. -- Form S-1 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1918102/000110465926064074/tmb-20260331xs1.htm",
+          "quote": "initial pricing of approximately $110 per MWh (which represents our estimate based on a survey of market pricing in certain U.S. markets in 2024)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-taylor-first-criticality-claim",
+      "company": "Valar Atomics",
+      "speaker": "Isaiah Taylor",
+      "role": "Founder & CEO",
+      "date": "2026-02-17",
+      "venue": "Nuclear Engineering International -- \"Valar Atomics reactor airlifted to Utah\"",
+      "topic": "regulatory",
+      "quote": "Zero power criticality is a reactor's first heartbeat, proof the physics holds. I'm incredibly proud of the Valar team that took this from blueprint to splitting the atom, securing the first criticality ever achieved by a venture-backed company.",
+      "what_it_means": "This February 2026 claim is distinct from Valar's later, fueled zero-power criticality demonstration at Utah's USREL site in June 2026 (below), which World Nuclear News describes as the SECOND of four companies to meet the DOE Reactor Pilot Program's July 4, 2026 deadline, after Antares Nuclear. Neutron Bytes, citing former DOE official Katy Huff, reports that this February event was 'a cold zero power test that did not take the fuel up to actual power densities' -- a lower bar than a fueled test at power, and the specific claim this quote is describing.",
+      "sources": [
+        {
+          "label": "Nuclear Engineering International -- Valar Atomics reactor airlifted to Utah",
+          "url": "https://www.neimagazine.com/news/valar-atomics-reactor-airlifted-to-utah/",
+          "quote": "securing the first criticality ever achieved by a venture-backed company",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-taylor-ward250-critical",
+      "company": "Valar Atomics",
+      "speaker": "Isaiah Taylor",
+      "role": "Founder & CEO",
+      "date": "2026-06-19",
+      "venue": "KSL.com -- \"Valar Atomics' nuclear reactor reaches criticality in Utah\"",
+      "topic": "regulatory",
+      "quote": "A few minutes ago, we took Ward250",
+      "what_it_means": "This is the DOE Reactor Pilot Program milestone: a fueled, zero-power criticality demonstration at the Utah San Rafael Energy Lab (USREL), reported as the second of four companies to meet the program's July 4, 2026 deadline. Taylor also told KSL that Valar's 'guiding principle was that metal beats paper' -- build hardware before finishing analysis -- which is the same fast-over-rigorous approach independent nuclear engineers criticize in the skeptic-case quotes below. It is zero-power only, not the reactor generating electricity.",
+      "sources": [
+        {
+          "label": "KSL.com -- Valar Atomics' nuclear reactor reaches criticality in Utah",
+          "url": "https://www.ksl.com/article/news/business/valar-atomics-nuclear-reactor-reaches-criticality-in-utah/51513785",
+          "quote": "A few minutes ago, we took Ward250 critical",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-critique-huff-criticality-meaning",
+      "company": "Valar Atomics",
+      "speaker": "Katy Huff",
+      "role": "Former U.S. DOE Assistant Secretary for Nuclear Energy -- independent critic quoted by Neutron Bytes, not affiliated with Valar",
+      "date": "2026-02-28",
+      "venue": "Neutron Bytes -- \"Questions Abound About Valar Atomics\" (citing Huff's comments to Latitude News Media)",
+      "topic": "regulatory",
+      "quote": "A 'zero power criticality test' can be achieved without making real engineering progress on fuel or design; it simply checks if you can multiply neutrons.",
+      "what_it_means": "Huff, a former senior DOE nuclear-energy official, directly deflates the significance of a 'criticality' headline -- the same milestone Taylor celebrated as 'the first heartbeat' (above). The same source states Valar's February 2026 Los Alamos test 'was a cold zero power test that did not take the fuel up to actual power densities.'",
+      "sources": [
+        {
+          "label": "Neutron Bytes -- Questions Abound About Valar Atomics",
+          "url": "https://neutronbytes.com/2026/02/28/questions-abound-about-valar-atomics/",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "valar-taylor-response-to-touran",
+      "company": "Valar Atomics",
+      "speaker": "Isaiah Taylor",
+      "role": "Founder & CEO",
+      "date": "2025-07-08",
+      "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
+      "topic": "regulatory",
+      "quote": "Nick, a good engineer does not make claims about things he simply has no knowledge of.",
+      "what_it_means": "Taylor's public response after nuclear engineer Nick Touran disputed a Valar claim (posted on Valar's own site) that spent fuel from its reactor would be safe to hold in one's hand for several minutes -- a claim Touran called impossible. Rather than engage on the technical substance in this reply, Taylor challenges Touran's standing to comment, which is itself illustrative of how Valar has handled public technical criticism.",
+      "sources": [
+        {
+          "label": "Utah Investigative Journalism Project -- Who is Valar Atomics?",
+          "url": "https://www.utahinvestigative.org/who-is-valar-atomics/",
+          "quote": "Nick, a good engineer does not make claims about things he simply has no knowledge of",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-critique-touran-scrutinized",
+      "company": "Valar Atomics",
+      "speaker": "Nick Touran",
+      "role": "Nuclear engineer (TerraPower; runs whatisnuclear.com) -- independent critic, not affiliated with Valar",
+      "date": "2025-07-08",
+      "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
+      "topic": "regulatory",
+      "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim, I think his reactor should be scrutinized quite a bit by independent experts before anyone allows him to turn it",
+      "what_it_means": "Touran's response to Taylor's pushback (companion record above): his substantive point is that Valar's spent-fuel radiation-safety claim was not just wrong but 'outrageous,' and that Taylor reacting to being challenged rather than engaging on the engineering is itself a reason for third-party scrutiny before licensing.",
+      "sources": [
+        {
+          "label": "Utah Investigative Journalism Project -- Who is Valar Atomics?",
+          "url": "https://www.utahinvestigative.org/who-is-valar-atomics/",
+          "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-critique-erickson-fairy-dust",
+      "company": "Valar Atomics",
+      "speaker": "Anna Erickson",
+      "role": "Nuclear engineering professor, Georgia Institute of Technology -- independent critic, not affiliated with Valar",
+      "date": "2025-07-08",
+      "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
+      "topic": "regulatory",
+      "quote": "I don't know how you can claim your design is so safe without doing engineering. It's not fairy dust — this is engineering. We can't take your word for",
+      "what_it_means": "A third, independent academic nuclear engineer -- not party to the original Touran exchange -- making the same core point: Valar's public safety claims have outpaced any published engineering analysis a third party could evaluate.",
+      "sources": [
+        {
+          "label": "Utah Investigative Journalism Project -- Who is Valar Atomics?",
+          "url": "https://www.utahinvestigative.org/who-is-valar-atomics/",
+          "quote": "I don't know how you can claim your design is so safe without doing engineering",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-mock-philippines-reactor",
+      "company": "Valar Atomics",
+      "speaker": "Kip Mock",
+      "role": "President, Valar Atomics Research Institute",
+      "date": "2025-03-24",
+      "venue": "GMA News -- \"US nuke firm partners with PNRI to build 'research reactor' in PH\"",
+      "topic": "international",
+      "quote": "We think that it's really important to develop this technology here and collaborate with the PNRI and PNSF, and local universities",
+      "what_it_means": "Valar's Philippines project, with the Philippine Nuclear Research Institute, is explicitly a non-grid-connected, sub-scale proof-of-concept -- Mock elsewhere in the same article calls the reactor 'a micro high temperature gas reactor' and says it is 'the first time this type of reactor has been built in the Philippines.' It is not a power-producing customer deployment, and it is the only announced overseas site among the three companies in this file.",
+      "sources": [
+        {
+          "label": "GMA News -- US nuke firm partners with PNRI to build 'research reactor' in PH",
+          "url": "https://www.gmanetwork.com/news/money/companies/940277/us-nuke-firm-partners-with-pnri-to-build-research-reactor-in-ph/story/",
+          "quote": "the first time this type of reactor has been built in the Philippines",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-critique-greenpeace-guinea-pigs",
+      "company": "Valar Atomics",
+      "speaker": "Khevin Yu",
+      "role": "Campaigner, Greenpeace Philippines -- critic, not affiliated with Valar",
+      "date": "2024-11",
+      "venue": "Greenpeace Philippines press release -- \"Greenpeace denounces PNRI-Valar Atomics nuclear deal\"",
+      "topic": "international",
+      "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper. This agreement effectively sets up our people as guinea pigs for unproven and inherently risky",
+      "what_it_means": "Local environmental opposition in the Philippines predates Valar's actual construction there -- this statement is from around November 2024, before the specific reactor design and university site were finalized -- and frames the deployment as testing unproven technology on Filipino citizens, a distinct international-relations risk alongside the domestic technical-credibility questions raised by Touran and Erickson.",
+      "sources": [
+        {
+          "label": "Greenpeace Philippines press release -- Greenpeace denounces PNRI-Valar Atomics nuclear deal",
+          "url": "https://www.greenpeace.org/philippines/press/67732/greenpeace-denounces-pnri-valar-atomics-nuclear-deal-filipinos-are-not-guinea-pigs/",
+          "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

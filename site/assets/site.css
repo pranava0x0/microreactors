@@ -470,3 +470,56 @@ details.sector:not([open]) > :not(summary){display:none}
 .nuctag{font-family:var(--font-mono);font-size:var(--size-label-sm);letter-spacing:var(--track-label);
   text-transform:uppercase;color:var(--antares-red);border:1px solid var(--antares-red);
   padding:1px var(--space-2);margin-left:var(--space-2);white-space:nowrap}
+
+/* In their words — quotes from builders, the buyer and the critics. The
+   attribution line carries the citation chip, so a quote can never appear
+   without its source next to it. */
+.voicegroup{margin-bottom:var(--space-10)}
+.voicegroup h4{font-size:var(--size-caption);text-transform:uppercase;letter-spacing:var(--track-label);
+  color:var(--antares-red);margin:0 0 var(--space-2) 0}
+.voicegroup > .note{margin:0 0 var(--space-5) 0;color:var(--text-tertiary)}
+.voice{margin:0 0 var(--space-5) 0;padding-left:var(--space-4);
+  border-left:2px solid var(--antares-red-40);min-width:0}
+.voice blockquote{margin:0;color:var(--text-primary);font-size:var(--size-body);
+  line-height:1.55;overflow-wrap:anywhere}
+.voice blockquote::before{content:"\201C"}
+.voice blockquote::after{content:"\201D"}
+.voice figcaption{margin-top:var(--space-2);display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:var(--space-2);font-size:var(--size-caption)}
+.voicewho{color:var(--text-primary);font-weight:var(--weight-medium)}
+.voicerole{color:var(--text-tertiary)}
+.voicetopic{font-family:var(--font-mono);color:var(--antares-red);text-transform:uppercase;
+  letter-spacing:var(--track-label);font-size:var(--size-caption)}
+.voicemeans{margin:var(--space-2) 0 0 0;color:var(--text-secondary);font-size:var(--size-caption);
+  line-height:1.55}
+
+/* Unit economics — capacity cost, the learning multipliers, and cost by
+   reactor type. One row shape for all three tables: name, figure, basis. */
+.unitrows{border-top:1px solid var(--border-subtle);margin:var(--space-4) 0}
+.unitrow{padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);
+  display:flex;flex-direction:column;gap:var(--space-1);min-width:0}
+@media(min-width:720px){
+  .unitrow{display:grid;grid-template-columns:minmax(0,14rem) auto minmax(0,1fr);
+    gap:var(--space-4);align-items:baseline}
+}
+.unitname{color:var(--text-primary);font-weight:var(--weight-medium);min-width:0;
+  overflow-wrap:anywhere}
+.unitval{font-family:var(--font-mono);color:var(--antares-red);white-space:nowrap;
+  font-weight:var(--weight-medium)}
+.unitbasis{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
+  line-height:1.55;overflow-wrap:anywhere}
+
+/* Voice groups collapse: 120 quotes is a wall open, and the summary carries the
+   count so a group is never opened just to find out how big it is. */
+details.voicegroup > summary{cursor:pointer;list-style:none;display:flex;
+  align-items:baseline;gap:var(--space-3);padding:var(--space-3) 0;
+  border-bottom:1px solid var(--border-subtle)}
+details.voicegroup > summary::-webkit-details-marker{display:none}
+.vgname{font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red)}
+.vgcount{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}
+details.voicegroup:not([open]) > :not(summary){display:none}
+details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
+.unitval2{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
+  overflow-wrap:anywhere}
+.voicedate{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}

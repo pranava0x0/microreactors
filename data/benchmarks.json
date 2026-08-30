@@ -16,7 +16,7 @@
     "absences": [
      "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
      "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
-     "DOE Energy Improvements in Rural or Remote Areas: the programme name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the programme.",
+     "DOE Energy Improvements in Rural or Remote Areas: the program name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the program.",
      "Grid Resilience 40101(d) state formula allocations: not separated from 40103 GRIP competitive awards. Both sit under CFDA 81.254, and the award records do not distinguish them, so the Barnstable record is reported as CFDA 81.254 without claiming which section funded it.",
      "DOE OCED's own ERA project pages (energy.gov/oced/energy-improvements-rural-or-remote-areas and the /arctic Alaska ERA article) both return HTTP 404 as of 2026-08-25; the surviving fetchable DOE source for these awards is the Award Wednesdays post of 2024-08-14.",
      "MARAD's layberth locations PDF (maritime.dot.gov, 19 Apr 2024) returns HTTP 403 to a direct fetch, so 'Terminal 2, Berths 205-206' could not be tied to a named port from a primary document. Search summaries point to the Port of Portland, Oregon; that is unverified and is not asserted in the record.",
@@ -43,7 +43,7 @@
      "No FEMA BRIC or HMGP award for a hospital or water-plant microgrid with a named site and dollar value surfaced in the searches run.",
      "Kaiser Richmond battery capacity (reported elsewhere as 1 MWh) and total project cost beyond the $4.77M CEC grant are unverified.",
      "Ohio State CHP nameplate of ~105 MW appears only in search summaries, not in a page I fetched; the fetched OSU page gives only the 8,000-ton cooling capacity, and the fetched cost source gives $278M rising to $300M.",
-     "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency centre) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
+     "Huntington NY's $22.9M / 7.7 MW NY Prize community microgrid (Huntington Hospital plus the wastewater plant plus an emergency center) had good numbers but no verifiable signing date or executed instrument, so it was dropped.",
      "Deer Island (Boston), Hyperion (Los Angeles) and Stickney (Chicago) wastewater plants were not researched to a numbers-plus-document standard within budget.",
      "No state PUC docket, FERC filing or NRC accession applies to any of these deals - they are procurement awards, board resolutions, grant awards and bilateral PPAs, not rate filings. Only the Ohio State board action is recorded in `filings`.",
      "EIA CBECS electricity intensity for inpatient hospitals in kWh per square foot (commonly quoted as 31 kWh/sq ft from CBECS 2012) is not present on the CBECS 2018 health-care page that was fetched; only average floorspace of 264,800 sq ft and the 32% space-heating share were verified."
@@ -137,10 +137,10 @@
      "PUCO's own Opinion and Order in Case No. 24-508-EL-ATA — NOT retrieved. dis.puc.state.oh.us returns an F5/BIG-IP 'The requested URL was rejected' page for CaseRecord.aspx?CaseNo=24-0508 and for all three DocumentRecord.aspx DocIDs linked from AEP Ohio's own page (153076d7-0a2f-4ae3-9f32-c908d3085339, 5977c990-79bf-426a-94a8-e633637d3783, badab793-e041-4173-9b6d-436e51f80e5c) and for ViewImage.aspx?CMID=A1001001A26B12B61453D00940, via curl with full browser headers and a cookie jar, and via WebFetch. https://puco.ohio.gov/news/puco-orders-aep-ohio-to-create-data-center-specific-tariff, offered by search, is a 404. Substituted the operative text: Schedule DCT as filed in AEP Ohio's own P.U.C.O. No. 22 tariff book.",
      "CORRECTION — the widely reported 'AEP Ohio: 85% minimum demand over 12 years above 25 MW' is wrong in two of its three numbers. 85% is not the floor: for New Load between 25,001 kW and 75,000 kW the Minimum Demand is 15,000 kW plus 85% of the marginal amount over 25,000 kW, so a 25 MW customer's floor is 15 MW, i.e. 60% of contract capacity; above 75,000 kW the marginal rate is 100%, not 85%, subject to an overall 85%-of-contract-capacity cap. And the term is the Load Ramp Period plus 8 years, which equals 12 only when the ramp runs its full 4 years. Existing Load sits at a 60% floor throughout. Verified against Schedule DCT Original Sheets 223-1 through 223-7.",
      "CORRECTION — the AEP Ohio DCT sheet now in force was re-issued 2026-04-08 under the order of 2026-04-01 in Case No. 25-392-EL-AIR, effective 2026-04-10. The 2025-07-23 compliance tariff from Case No. 24-508-EL-ATA has been superseded; citing the 2025 version as current would be a currency error.",
-     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's programme page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot programme.",
+     "CORRECTION — CT DEEP's announced round totals and its own delivery record diverge. DEEP's program page reports roughly $36.6M awarded across four rounds ($18M pilot to nine projects, ~$5.1M round 2, $424,000 round 3, ~$13.1M round 4 to three projects), but DEEP's award-tracking chart of 2022-08-02 lists only 12 operational microgrids totalling $22,265,935 — about 61%. The pilot shows 7 of 9 and round 4 shows 1 of 3; rounds 2 and 3 delivered in full. Separately, the statutory pilot cap in PA 12-148 Sec. 7(c) is $15,000,000, which is why the Governor's $18M figure is qualified as 'primarily through' the pilot program.",
      "CAVEAT on the CT per-site chart — these are STATE AWARDS, not project capital costs, and PA 12-148 Sec. 7(c) restricts pilot awards to 'design, engineering services and interconnection infrastructure'. Do not derive $/kW of generation from them. The one clean datapoint for the microgrid wrapper alone is Wesleyan's Round 3 expansion: $424,000 to add three buildings with no new generation at all. Total installed cost per CT microgrid site was searched for and NOT found published.",
      "NJBPU's Microgrid Report of 2016-11-30 (Docket QO16100967) was not fetched as a document; its content appears here only through the 2021 TCDER II order's recital and is not cited as a source.",
-     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid programme, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's programme page only.",
+     "Not verified: whether 'clean distributed generation', the phrase DEEP uses for the 2016 bond expansion of the CT microgrid program, is a defined statutory term that would narrow PA 12-148 Sec. 7(a)(3)'s technology-neutral 65 MW definition. The 65 MW definition is quoted from the act itself; the 2016 expansion language comes from DEEP's program page only.",
      "Not verified: whether the CPUC's Eligible Equipment list is closed by a Commission decision rather than by handbook drafting. The closure is inferred from the 2025 Handbook's own Eligible/Ineligible Equipment tables plus Sec. 7.4's fuel rule, not from an ordering paragraph. The PUCT record is stronger on this point because the commission there refused an explicit request to widen the list.",
      "Not attempted after quota: NV Energy Clean Transition Tariff, Georgia PSC large-load rules, and Pacific Power / Rocky Mountain Power Schedule 43 as third and fourth large-load comparisons."
     ]
@@ -183,7 +183,7 @@
      "No named, executed flexible/curtailable INTERCONNECTION agreement with MW and price was found. Enchanted Rock returned nothing in this context; Google's flexible capacity is published only as 'gigawatt scale across multiple utility territories' with no agreement, MW or price. The flexible-interconnection angle produced rulemakings, not contracts.",
      "Could not verify what happened to the pre-existing 300 MW Talen/Amazon Susquehanna co-located arrangement after FERC's 1 November 2024 rejection of the 480 MW amendment.",
      "The text of FERC's 18 December 2025 co-location order (193 FERC para. 61,217) and the 18 June 2026 show cause orders could not be read directly - ferc.gov HTML and White & Case both 403'd. The FERC E-1 slide deck PDF was retrievable and is the primary source used; compliance deadlines come from a law-firm summary.",
-     "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-centre site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
+     "No primary-source capex figure ($/kW or $/MW) for a fully islanded industrial or data-center site was verified. A $700k-$1.4M per MW band appeared only in a vendor-page search summary and was dropped rather than cited.",
      "No published elapsed time, study cost, or network-upgrade cost for any NUCLEAR interconnection request under the SGIP or an RTO small-generator process was found - the entire nuclear side of this question is still un-evidenced.",
      "Massachusetts' flexible-interconnection subgroup (National Grid co-chair, formed May 2025) has no published guidelines or agreement yet, so it carried no numbers and was dropped.",
      "MISO's and ERCOT's own surplus-interconnection tariff sections were not read directly; MISO figures come from a trade-press account of a report.",
@@ -513,7 +513,7 @@
      },
      "instrument": "utility tariff",
      "signed": "2023-06",
-     "capacity": "Statewide programme covering the diesel-dominated rural utilities; individual utilities range from ~50 MWh/yr (Lime Village) to ~19.7 GWh/yr (Kotzebue Electric Association) of test-period sales",
+     "capacity": "Statewide program covering the diesel-dominated rural utilities; individual utilities range from ~50 MWh/yr (Lime Village) to ~19.7 GWh/yr (Kotzebue Electric Association) of test-period sales",
      "price": "PCE base rate set at $0.1935/kWh effective 2023-07-01 (down from $0.1958/kWh); statutory maximum eligible cost is $1.00/kWh less the base rate, i.e. $0.8065/kWh of PCE credit",
      "displaced": "RCA Appendix 1 cost-of-service calculations for FY2024: Igiugig Village Council total power cost $1.0944/kWh of which fuel/purchased power is $0.8140/kWh; Kokhanok Village Council $1.0209/kWh total, $0.6498/kWh fuel; Chitina Electric $1.0669/kWh total, $0.4015/kWh fuel; Lime Village $1.9487/kWh total, $1.5288/kWh fuel; Galena $0.6242/kWh total, $0.3813/kWh fuel; Kotzebue Electric Association $0.4079/kWh total, $0.1885/kWh fuel",
      "filings": [
@@ -772,7 +772,7 @@
      "filings": [
       {
        "forum": "Utility Rates Review Council (Nunavut)",
-       "type": "General Rate Application, interim rates authorised",
+       "type": "General Rate Application, interim rates authorized",
        "id": "QEC 2025-2026 GRA",
        "date": "2024-11-29",
        "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application"
@@ -817,7 +817,7 @@
      "price": "Not disclosed. Reporting states the Air Force will settle the price of the contract and the rate it pays for power during negotiations.",
      "displaced": "Supplements Eielson's existing coal-fired power plant (23 MW max capacity) and the base's winter heating fuel burn",
      "filings": [],
-     "summary": "On 11 June 2025 the Defense Logistics Agency Energy, acting for the Department of the Air Force, issued a Notice of Intent to Award to Oklo for the DoD's first commercial microreactor. The structure is a build-own-operate arrangement: Oklo would design, construct, own and operate the plant and sell electricity and steam to the base under a long-term, firm-fixed-price power purchase agreement reported at 30 years. Capacity is up to 5 MWe, sitting alongside Eielson's existing 23 MW coal-fired plant. No price has been published; the rate for power is explicitly left to contract negotiation, and the award is contingent on Oklo obtaining an NRC licence.",
+     "summary": "On 11 June 2025 the Defense Logistics Agency Energy, acting for the Department of the Air Force, issued a Notice of Intent to Award to Oklo for the DoD's first commercial microreactor. The structure is a build-own-operate arrangement: Oklo would design, construct, own and operate the plant and sell electricity and steam to the base under a long-term, firm-fixed-price power purchase agreement reported at 30 years. Capacity is up to 5 MWe, sitting alongside Eielson's existing 23 MW coal-fired plant. No price has been published; the rate for power is explicitly left to contract negotiation, and the award is contingent on Oklo obtaining an NRC license.",
      "microreactor_read": "This is the cleanest template for selling a 1-20 MW reactor into a remote outpost: the host buys energy, not a reactor, on a 30-year firm-fixed-price PPA from a private owner-operator, contracted by a central buying agency (DLA Energy) rather than the base. The commercially important gap is that no price is published, so the deal proves the instrument exists but sets no benchmark - and the reactor is sized at 5 MW against a 23 MW incumbent, i.e. it is a supplement, not a replacement.",
      "sources": [
       {
@@ -859,7 +859,7 @@
      "signed": "2022-06",
      "capacity": "High-temperature gas-cooled transportable microreactor shipped in 20-foot ISO CONEX containers. BWXT's own 2025 statement calls it a 1.5-megawatt demonstration microreactor; the 2022 award was reported as a 1 MWe to 5 MWe design.",
      "capex": "Cost-type contract of approximately $300 million, depending on options selected",
-     "displaced": "Diesel fuel convoys to forward and remote military sites; the reactor is designed to run up to three years without refuelling",
+     "displaced": "Diesel fuel convoys to forward and remote military sites; the reactor is designed to run up to three years without refueling",
      "filings": [],
      "summary": "In June 2022 the DoD's Strategic Capabilities Office selected BWXT Advanced Technologies to build the Project Pele transportable microreactor prototype under a cost-type contract worth approximately $300 million depending on options. The unit is a high-temperature gas-cooled reactor rated 1 to 5 MWe, packaged into 20-foot ISO-compliant CONEX containers, designed to reach operation within 72 hours of on-site assembly and to be removed in under seven days. Core fabrication began in 2025 and the unit is expected to produce electricity at Idaho National Laboratory in 2028, roughly four years later than the original 2024 delivery target.",
      "microreactor_read": "Pele prices the first-of-a-kind transportable microreactor at roughly $300 million for 1-5 MWe, i.e. $60-300 million per MW - one to two orders of magnitude above anything a remote community pays. It is a capability purchase, not an energy purchase, and it is the number a commercial microreactor pitch has to explicitly distance itself from: Pele proves transportability and the DoD's willingness to fund it, and simultaneously proves that prototype economics do not touch even the $1.95/kWh worst-case rural Alaska cost of service.",
@@ -1006,7 +1006,7 @@
       "provider": "Canada's SMR Action Plan participants",
       "utility": "None - off-grid"
      },
-     "instrument": "public procurement / government programme",
+     "instrument": "public procurement / government program",
      "signed": "2020-12",
      "capacity": "SMR module range from 300 MWe down to 3 MWe per module for micro-SMRs; mining-relevant unit sized at 20 MWe",
      "capex": "First-of-a-kind units suitable for mining estimated at C$200-350 million for a 20 MWe SMR",
@@ -1551,7 +1551,7 @@
        "url": "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf"
       }
      ],
-     "summary": "California's Standardized Regulatory Impact Assessment for the At-Berth Regulation is the rare document that puts a defensible dollar figure on port electrification. It records a container/reefer berth shore power retrofit capital cost of $7,010,813 per berth, taken from CARB's June 2018 vessel operator surveys, and uses it as the basis for maintenance cost assumptions. It also states the load: about 1 MW for a container vessel and 5 MW or more for a large cruise vessel while hotelling. Where shore power was rejected in favour of shore-side capture and control, the assessment carries even larger per-berth numbers, including $7 million per berth of structural work, $4.5 million of piping and $10 million per crane support structure.",
+     "summary": "California's Standardized Regulatory Impact Assessment for the At-Berth Regulation is the rare document that puts a defensible dollar figure on port electrification. It records a container/reefer berth shore power retrofit capital cost of $7,010,813 per berth, taken from CARB's June 2018 vessel operator surveys, and uses it as the basis for maintenance cost assumptions. It also states the load: about 1 MW for a container vessel and 5 MW or more for a large cruise vessel while hotelling. Where shore power was rejected in favor of shore-side capture and control, the assessment carries even larger per-berth numbers, including $7 million per berth of structural work, $4.5 million of piping and $10 million per crane support structure.",
      "microreactor_read": "This sets the terminal-side willingness to pay: a port already accepts roughly $7 million of capital per berth to electrify a 1-5 MW, highly intermittent hotelling load. A 1-20 MW reactor at a marine terminal is competing not against grid energy price but against that $7 million per berth of connection capex plus whatever the utility charges for the demand spike - and its problem is duty cycle, because a berth's shore power draw only exists while a ship is alongside.",
      "sources": [
       {
@@ -1580,24 +1580,24 @@
      "region": "Seattle, Washington",
      "parties": {
       "host": "Port of Seattle",
-      "provider": "Port of Seattle capital programme (Pier 66 system purchased from a proprietary supplier)",
+      "provider": "Port of Seattle capital program (Pier 66 system purchased from a proprietary supplier)",
       "utility": "Seattle City Light"
      },
      "instrument": "design-build",
      "signed": "2021-12",
      "capacity": "Three cruise berths equipped with shore power. CARB's regulatory assessment puts a large cruise vessel's hotelling draw at 5 MW or more, so the three berths represent roughly 15 MW of intermittent connected load.",
-     "capex": "$44 million investment across the three cruise berths, i.e. roughly $14.7 million per berth. The Port of Seattle Commission separately authorised $7.6 million for the Pier 66 installation on 14 December 2021.",
+     "capex": "$44 million investment across the three cruise berths, i.e. roughly $14.7 million per berth. The Port of Seattle Commission separately authorized $7.6 million for the Pier 66 installation on 14 December 2021.",
      "displaced": "Auxiliary diesel engine hotelling emissions from cruise vessels at berth",
      "filings": [
       {
        "forum": "Port of Seattle Commission",
-       "type": "Commission authorisation to purchase and install shore power at Pier 66",
+       "type": "Commission authorization to purchase and install shore power at Pier 66",
        "id": "Commission action, 14 December 2021",
        "date": "2021-12-14",
        "url": "https://www.portseattle.org/blog/past-present-and-future-shore-power"
       }
      ],
-     "summary": "The Port of Seattle finished equipping all three of its cruise berths with shore power at a stated cost of $44 million, with the Pier 66 element authorised by the Port Commission on 14 December 2021 at $7.6 million and delivered in partnership with Seattle City Light. The Northwest Seaport Alliance separately installed shore power at both Terminal 5 container berths as part of that terminal's modernisation, part-funded by a Washington State appropriation. At roughly $14.7 million per cruise berth this is more than double CARB's $7.0 million per berth container figure, which is what you would expect given a large cruise vessel draws 5 MW or more against a container vessel's 1 MW.",
+     "summary": "The Port of Seattle finished equipping all three of its cruise berths with shore power at a stated cost of $44 million, with the Pier 66 element authorized by the Port Commission on 14 December 2021 at $7.6 million and delivered in partnership with Seattle City Light. The Northwest Seaport Alliance separately installed shore power at both Terminal 5 container berths as part of that terminal's modernisation, part-funded by a Washington State appropriation. At roughly $14.7 million per cruise berth this is more than double CARB's $7.0 million per berth container figure, which is what you would expect given a large cruise vessel draws 5 MW or more against a container vessel's 1 MW.",
      "microreactor_read": "Seattle prices the cruise-terminal case at about $14.7 million per berth for a 5 MW-plus connection that is used only while a ship is alongside during a summer season. A 1-20 MW reactor at a cruise terminal would be nearly perfectly sized to the three-berth load but catastrophically mismatched on duty cycle; the sellable proposition is a reactor serving a year-round base load with the cruise berths as a seasonal add, not a reactor dedicated to shore power.",
      "sources": [
       {
@@ -1644,7 +1644,7 @@
       }
      ],
      "summary": "MARAD's delivery order to Pacific Layberthing South totals $9,857,825.76 with obligated and total-potential values identical, and $6,923,481.90 already disbursed. Its recorded purpose is to reimburse the layberth operator for renting a mobile shore power generator to power a Ready Reserve Force vessel moored at Terminal 2, Berths 205-206. The important limit on this record: the $9.86M is the delivery order's whole value, which also covers the layberth service, and the award record does not break out the generator's share — so this prices the vehicle, not the generator alone. What it does establish is that when shore power infrastructure is absent, the federal answer is to rent a diesel generator on a multi-year contract rather than build a connection.",
-     "microreactor_read": "This is the honest floor case for a marine terminal: no pier electrification, no grid tie, just a rented diesel on a five-year delivery order feeding one ship. It is also the clearest reason the $18M-$44M shore power projects elsewhere in this file get funded — the alternative is a recurring rental with no terminal value. A microreactor at a layberth or a small terminal is competing against an operating expense with no asset at the end of it, which is a far weaker incumbent than a capitalised generator.",
+     "microreactor_read": "This is the honest floor case for a marine terminal: no pier electrification, no grid tie, just a rented diesel on a five-year delivery order feeding one ship. It is also the clearest reason the $18M-$44M shore power projects elsewhere in this file get funded — the alternative is a recurring rental with no terminal value. A microreactor at a layberth or a small terminal is competing against an operating expense with no asset at the end of it, which is a far weaker incumbent than a capitalized generator.",
      "sources": [
       {
        "label": "USAspending.gov API — Award CONT_AWD_693JF723F00011N (PIID 693JF723F00011N), Pacific Layberthing South LLC, Maritime Administration",
@@ -1805,7 +1805,7 @@
       }
      ],
      "summary": "EPA obligated $451,635,800 to the Port Authority of New York and New Jersey on 2024-12-20 — the largest single Clean Ports award — against $350,216,091 of non-federal cost share, for $801,851,891 of total project value running to 2028-12-31. The scope is electrification of the load across Newark, Elizabeth, Bayonne and New York City: battery-electric material handling equipment, charging infrastructure, shore power connections for vessels, and the replacement of a cement hauler barge's diesel engines with electric power. Together with the $644.2M Port of Los Angeles award already in this file, two ports alone carry roughly $1.45 billion of new electrified port load, none of which is matched by a single dollar of new generation in the same awards.",
-     "microreactor_read": "The Clean Ports programme has now committed over $1.4 billion at two ports to convert diesel machinery into electrical load, and paid for zero megawatts of supply — the entire gap falls on two urban distribution utilities inside four years. That gap, not a $/kW comparison, is the microreactor's opening at a marine terminal: the number to beat is the cost of the distribution upgrade plus demand charges the port has not yet priced, at a site where the alternative supply is a congested urban feeder.",
+     "microreactor_read": "The Clean Ports program has now committed over $1.4 billion at two ports to convert diesel machinery into electrical load, and paid for zero megawatts of supply — the entire gap falls on two urban distribution utilities inside four years. That gap, not a $/kW comparison, is the microreactor's opening at a marine terminal: the number to beat is the cost of the distribution upgrade plus demand charges the port has not yet priced, at a site where the alternative supply is a congested urban feeder.",
      "sources": [
       {
        "label": "USAspending.gov API — Assistance award ASST_NON_96275025 (FAIN 96275025), Port Authority of New York & New Jersey, Clean Ports Program",
@@ -1837,7 +1837,7 @@
      "price": "Projected to reduce the port's electric costs by more than $60,000 a year",
      "displaced": "Diesel backup generators serving the port's Joint Command and Control Center",
      "filings": [],
-     "summary": "The Port of Long Beach contracted Schneider Electric to design and build a microgrid for its Joint Command and Control Center: a 300 kW solar array and a 250 kW battery, generating roughly 520 MWh a year, at a total project cost of $12.2 million and expected online in late 2022. The stated energy benefit is a saving of more than $60,000 a year. That is roughly $22,000 per installed kW and a simple payback on energy alone of about two centuries - the port is buying resilience for its emergency operations centre, not cheap electricity.",
+     "summary": "The Port of Long Beach contracted Schneider Electric to design and build a microgrid for its Joint Command and Control Center: a 300 kW solar array and a 250 kW battery, generating roughly 520 MWh a year, at a total project cost of $12.2 million and expected online in late 2022. The stated energy benefit is a saving of more than $60,000 a year. That is roughly $22,000 per installed kW and a simple payback on energy alone of about two centuries - the port is buying resilience for its emergency operations center, not cheap electricity.",
      "microreactor_read": "This is the clearest evidence that a port's resilience budget is priced completely differently from its energy budget: Long Beach paid $12.2 million for 550 kW of nameplate and 520 MWh a year. A 1-20 MW reactor selling resilience rather than energy at a marine terminal is competing against roughly $22,000/kW of accepted resilience capex - a bar most microreactor cost estimates clear - but the addressable slice is the critical-facility load, not the whole terminal.",
      "sources": [
       {
@@ -1863,11 +1863,11 @@
       "provider": "Rosatom (barge built at Baltic Shipyard, St Petersburg)"
      },
      "signed": "2019-12",
-     "capacity": "Two 35 MW KLT-40S reactors (70 MW total) on a 144-metre barge, with a stated 40-year lifetime",
+     "capacity": "Two 35 MW KLT-40S reactors (70 MW total) on a 144-meter barge, with a stated 40-year lifetime",
      "capex": "Reported at 37 billion rubles, converted as $700 million by POWER Magazine and as US$740 million by the World Nuclear Industry Status Report; more than 300% above the original estimate (nine billion rubles / $170 million per POWER, six billion rubles / US$232 million per WNISR)",
      "displaced": "The retiring Bilibino nuclear plant and Chaun coal generation in the Russian Arctic",
      "filings": [],
-     "summary": "The Akademik Lomonosov is the only floating nuclear plant in commercial operation and the only one with a published delivered cost. Two 35 MW KLT-40S reactors sit on a 144-metre barge; the plant was connected to the Chaun-Bilibino network at Pevek in December 2019. Reported cost reached 37 billion rubles, about $700 million, against an original 2006 estimate of nine billion rubles ($170 million) - an overrun of more than 300 percent. At $700 million for 70 MW that is roughly $10,000 per kW installed, for a first-of-a-kind unit built over thirteen years.",
+     "summary": "The Akademik Lomonosov is the only floating nuclear plant in commercial operation and the only one with a published delivered cost. Two 35 MW KLT-40S reactors sit on a 144-meter barge; the plant was connected to the Chaun-Bilibino network at Pevek in December 2019. Reported cost reached 37 billion rubles, about $700 million, against an original 2006 estimate of nine billion rubles ($170 million) - an overrun of more than 300 percent. At $700 million for 70 MW that is roughly $10,000 per kW installed, for a first-of-a-kind unit built over thirteen years.",
      "microreactor_read": "The only real-world floating nuclear price is about $10,000/kW for a 70 MW twin-reactor barge - which, strikingly, is cheaper per kW than the Port of Long Beach paid for 550 kW of solar-plus-battery microgrid. For a marine terminal the read is that hull-mounted, shipyard-built nuclear has a demonstrated cost point an order of magnitude below one-off port resilience projects, but it took thirteen years and a 300 percent overrun to get there, and nothing in the Western regulatory system currently permits a moored reactor at a commercial berth.",
      "sources": [
       {
@@ -1932,7 +1932,7 @@
      "capex": "Almost $580 million funding 31 projects. Named awards include Port Everglades (Broward County, FL) $53,357,402 for electric terminal tractors, forklifts and hybrid equipment with electrical system upgrades and charging civil works; Port of San Juan (Puerto Rico) $53,526,756 for Puerto Nuevo Wharves reconstruction; Anchorage approximately $50 million; Garden City, Georgia approximately $49.9 million; Oakland approximately $49.5 million.",
      "displaced": "Diesel terminal tractors, forklifts and cargo handling equipment at the electrification-focused awardees",
      "filings": [],
-     "summary": "MARAD announced almost $580 million of Port Infrastructure Development Program awards for 31 projects across 15 states and one territory, timed to the third anniversary of the Bipartisan Infrastructure Law. The largest awards were $53.5 million to the Port of San Juan for wharf reconstruction and $53.4 million to Port Everglades for a package that is explicitly electrification: electric terminal tractors and forklifts, hybrid equipment, and the electrical system upgrades and civil works needed for charging stations. Anchorage, Garden City (Georgia) and Oakland each took roughly $50 million. As with the EPA programme, no award in the list builds generation.",
+     "summary": "MARAD announced almost $580 million of Port Infrastructure Development Program awards for 31 projects across 15 states and one territory, timed to the third anniversary of the Bipartisan Infrastructure Law. The largest awards were $53.5 million to the Port of San Juan for wharf reconstruction and $53.4 million to Port Everglades for a package that is explicitly electrification: electric terminal tractors and forklifts, hybrid equipment, and the electrical system upgrades and civil works needed for charging stations. Anchorage, Garden City (Georgia) and Oakland each took roughly $50 million. As with the EPA program, no award in the list builds generation.",
      "microreactor_read": "PIDP is the second federal pipeline turning marine terminals into large electrical loads, and its awards are sized at $50 million per port - the same order as a small reactor project. The salient detail for a microreactor pitch is that Port Everglades' award pays for the substation and charging civil works but not for the electrons, so the port ends up with a new multi-megawatt demand and an unchanged supply arrangement with its utility.",
      "sources": [
       {
@@ -2030,8 +2030,8 @@
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27"
       }
      ],
-     "summary": "FEMA approved an $11,612,000 generator project for Cayuga Medical Center in Tompkins County, New York on 2024-02-14 and obligated $10,450,800 the following day at a 90 percent federal cost share. Its benefit-cost ratio is 6.91 and FEMA's modelled net value of benefits is $81,099,633 — a larger avoided loss than at the bigger Erie County project, on a smaller generator spend. Read alongside the Erie record, the pair sets the going federal rate for hospital standby power in one state in one year: $11.6M and $15.1M of project cost, 90 percent of it federal, against $81.1M and $67.6M of modelled avoided loss.",
-     "microreactor_read": "Two New York hospitals in the same programme year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — more than five dollars of avoided damage per dollar of project cost — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
+     "summary": "FEMA approved an $11,612,000 generator project for Cayuga Medical Center in Tompkins County, New York on 2024-02-14 and obligated $10,450,800 the following day at a 90 percent federal cost share. Its benefit-cost ratio is 6.91 and FEMA's modeled net value of benefits is $81,099,633 — a larger avoided loss than at the bigger Erie County project, on a smaller generator spend. Read alongside the Erie record, the pair sets the going federal rate for hospital standby power in one state in one year: $11.6M and $15.1M of project cost, 90 percent of it federal, against $81.1M and $67.6M of modeled avoided loss.",
+     "microreactor_read": "Two New York hospitals in the same program year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — more than five dollars of avoided damage per dollar of project cost — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
      "sources": [
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0080-R (Cayuga Medical Center)",
@@ -2060,7 +2060,7 @@
      "signed": "2024-03",
      "capacity": "Generators plus other equipment purchase and installation at a hospital campus; kW rating not published in the FEMA project record",
      "capex": "$15,144,418 total project amount; $13,629,976 federal share obligated at a 90 percent cost share, leaving roughly $1.5M to the hospital",
-     "displaced": "Nothing is displaced — this is added standby capacity so a county medical centre can ride through a grid failure",
+     "displaced": "Nothing is displaced — this is added standby capacity so a county medical center can ride through a grid failure",
      "price": "FEMA's own benefit-cost analysis scores the project at a 4.43 benefit-cost ratio with $67,624,384 of net value of benefits",
      "filings": [
       {
@@ -2071,7 +2071,7 @@
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27"
       }
      ],
-     "summary": "FEMA approved a $15,144,418 hazard-mitigation project for Erie County Medical Center on 2024-03-05 and obligated $13,629,976 of it the next day, at a 90 percent federal cost share, to install generators and associated equipment at the hospital campus. The number that matters more than the price is FEMA's own appraisal of what the generators are worth: a benefit-cost ratio of 4.43 and a net value of benefits of $67,624,384. That is the federal government's modelled estimate of the losses a single hospital avoids by not losing power, and it is four and a half times what it costs to prevent them.",
+     "summary": "FEMA approved a $15,144,418 hazard-mitigation project for Erie County Medical Center on 2024-03-05 and obligated $13,629,976 of it the next day, at a 90 percent federal cost share, to install generators and associated equipment at the hospital campus. The number that matters more than the price is FEMA's own appraisal of what the generators are worth: a benefit-cost ratio of 4.43 and a net value of benefits of $67,624,384. That is the federal government's modeled estimate of the losses a single hospital avoids by not losing power, and it is four and a half times what it costs to prevent them.",
      "microreactor_read": "The generator sticker at a large hospital is $15.1M, but the number a microreactor should actually be priced against is the $67.6M of avoided loss FEMA has already put on paper for this one campus — that is the value of firm power at a hospital, and it is the ceiling any resilience product can argue toward. A 1-5 MW reactor at $15M that also sells energy every hour, instead of idling, is inside a band the federal government has already validated with money.",
      "sources": [
       {
@@ -2365,7 +2365,7 @@
      "capex": "$4.77 million California Energy Commission grant awarded to Charge Bliss; total project cost not published",
      "displaced": "Utility demand charges - the battery is discharged into demand peaks to cut billed demand; the developer claims solar plus storage can carry the critical-care load potentially indefinitely",
      "summary": "The California Energy Commission ran an RFP to demonstrate a renewable microgrid at a medical center and awarded Charge Bliss a $4.77 million grant; Charge Bliss partnered with Kaiser Permanente to build California's first medical-center microgrid at Richmond in 2017, with 250 kW of solar and battery storage. Kaiser's own energy lead describes the value as peak-demand shaving on the bill plus the ability to carry critical-care load. The state paid for the demonstration; the amount Kaiser contributed was not published.",
-     "microreactor_read": "The first medical-campus microgrid in California needed a $4.77M state grant to install 250 kW - roughly $19,000/kW of subsidised demonstration capital for a fraction of a hospital's load. That is the fiscal precedent a microreactor vendor should cite: hospitals do not fund resilience from operating budgets, they take state demonstration money, so the addressable first customer is a state energy commission, not a health system CFO.",
+     "microreactor_read": "The first medical-campus microgrid in California needed a $4.77M state grant to install 250 kW - roughly $19,000/kW of subsidized demonstration capital for a fraction of a hospital's load. That is the fiscal precedent a microreactor vendor should cite: hospitals do not fund resilience from operating budgets, they take state demonstration money, so the addressable first customer is a state energy commission, not a health system CFO.",
      "sources": [
       {
        "label": "The Planning Report — Kaiser Permanente's Richmond Medical Center Solar-Battery Microgrid a CEC-Funded Model",
@@ -2411,7 +2411,7 @@
        "url": "https://busfin.osu.edu/university-business/comprehensive-energy-management/energy-concession-agreement"
       }
      ],
-     "summary": "On 7 April 2017 Ohio State's Board of Trustees approved a 50-year concession and lease of the university's entire utility system to Ohio State Energy Partners, an ENGIE/Axium consortium, in a deal valued at $1.165 billion to the university including a large upfront payment plus a $50 million research centre. OSEP took over operations, committed to a 25% efficiency improvement in ten years, and financed and built a natural-gas CHP plant whose budget rose from about $278 million to roughly $290-300 million after the original EPC contractor was defaulted. The plant is projected to cut campus energy costs by about $10 million a year.",
+     "summary": "On 7 April 2017 Ohio State's Board of Trustees approved a 50-year concession and lease of the university's entire utility system to Ohio State Energy Partners, an ENGIE/Axium consortium, in a deal valued at $1.165 billion to the university including a large upfront payment plus a $50 million research center. OSEP took over operations, committed to a 25% efficiency improvement in ten years, and financed and built a natural-gas CHP plant whose budget rose from about $278 million to roughly $290-300 million after the original EPC contractor was defaulted. The plant is projected to cut campus energy costs by about $10 million a year.",
      "microreactor_read": "This is the largest civic-anchor energy contract in the US and it proves the instrument a microreactor needs: a 50-year concession where a private consortium owns the generation, takes the construction risk (including a defaulted EPC and a $20M+ overrun) and gets paid a utility fee. The capex bar is ~$2,800/kW for gas CHP with an $10M/yr savings claim - and note the schedule risk cuts both ways: this gas plant slipped roughly four years, which is the delay a reactor is usually assumed to have a monopoly on.",
      "sources": [
       {
@@ -2463,7 +2463,7 @@
        "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27"
       }
      ],
-     "summary": "FEMA is funding $16,502,820.72 of generators for the Puerto Rico Aqueduct and Sewer Authority in Toa Alta under the Hurricane Maria hazard-mitigation programme, at a 100 percent federal cost share — PRASA pays nothing. The obligation history is the interesting part and it is exactly the obligated-versus-potential trap: $661,523.70 was obligated on 2021-05-25, and $12,436,047.31 has been obligated as of the 2025-06-05 re-approval, still $4.07M short of the approved project amount. Quoting the project amount as spending would overstate the actual federal outlay by a third. FEMA's benefit-cost model scores the generators at 4.22 with $150,804,923 of net benefits.",
+     "summary": "FEMA is funding $16,502,820.72 of generators for the Puerto Rico Aqueduct and Sewer Authority in Toa Alta under the Hurricane Maria hazard-mitigation program, at a 100 percent federal cost share — PRASA pays nothing. The obligation history is the interesting part and it is exactly the obligated-versus-potential trap: $661,523.70 was obligated on 2021-05-25, and $12,436,047.31 has been obligated as of the 2025-06-05 re-approval, still $4.07M short of the approved project amount. Quoting the project amount as spending would overstate the actual federal outlay by a third. FEMA's benefit-cost model scores the generators at 4.22 with $150,804,923 of net benefits.",
      "microreactor_read": "The federal government values keeping one municipality's water pumps energised through Puerto Rico's outages at $150.8M, and is paying $16.5M of diesel generators to do it — the whole thing, no local match. At a water utility a microreactor is not competing on energy price at all; it is competing against a fully-funded diesel fleet with a 4:1 benefit case, and its only edge is that a generator's fuel has to keep arriving during the same storm that took the grid down, and a reactor's does not.",
      "sources": [
       {
@@ -2487,7 +2487,7 @@
      "region": "Johnson County, Kansas",
      "parties": {
       "host": "WaterOne (Water District No. 1 of Johnson County)",
-      "provider": "FEMA Legislative Pre-Disaster Mitigation programme, administered by the Adjutant General of Kansas - KDEM"
+      "provider": "FEMA Legislative Pre-Disaster Mitigation program, administered by the Adjutant General of Kansas - KDEM"
      },
      "instrument": "grant-funded",
      "signed": "2022-09",
@@ -2505,7 +2505,7 @@
       }
      ],
      "summary": "FEMA obligated $4,906,200 to WaterOne, the water utility for Johnson County, Kansas, on 2022-09-15 against a $6,541,600 generator project, at a 74 percent federal cost share. FEMA's benefit-cost model scores it at 38.09 with $261,096,991 of net value of benefits — roughly forty dollars of avoided loss for every dollar of generator. Nothing about the hardware is exotic; the ratio comes from what happens to a metropolitan area when its water system loses pressure. This is the clearest statement in the federal data of how much a public utility's continuity is worth relative to what anyone actually spends securing it.",
-     "microreactor_read": "The gap here is the whole argument: $6.5M of generators against $261M of modelled avoided loss means the ceiling on what a water utility could rationally pay for guaranteed power is two orders of magnitude above what it currently does. A microreactor sold to a water utility is not fighting for the $6.5M generator line — it is arguing that the $261M exposure justifies a firm-power asset in the tens of millions, and the FEMA benefit-cost worksheet is the document that makes that argument for the seller.",
+     "microreactor_read": "The gap here is the whole argument: $6.5M of generators against $261M of modeled avoided loss means the ceiling on what a water utility could rationally pay for guaranteed power is two orders of magnitude above what it currently does. A microreactor sold to a water utility is not fighting for the $6.5M generator line — it is arguing that the $261M exposure justifies a firm-power asset in the tens of millions, and the FEMA benefit-cost worksheet is the document that makes that argument for the seller.",
      "sources": [
       {
        "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project LPDM-PJ-07-KS-2022-001 (WaterOne, Johnson County KS)",
@@ -2830,7 +2830,7 @@
     {
      "id": "sterling-mmld-battery-police-dispatch",
      "sector": "Critical civic infrastructure",
-     "name": "Sterling Municipal Light Department battery storage backing the town police station and dispatch centre",
+     "name": "Sterling Municipal Light Department battery storage backing the town police station and dispatch center",
      "country": "US",
      "region": "Sterling, Massachusetts",
      "parties": {
@@ -2840,10 +2840,10 @@
      },
      "instrument": "grant-funded",
      "signed": "2016",
-     "capacity": "2 MW / 3.9 MWh battery at the Chocksett Road substation, paired with existing solar; islands to give up to 12 days of backup power to the police station and dispatch centre",
+     "capacity": "2 MW / 3.9 MWh battery at the Chocksett Road substation, paired with existing solar; islands to give up to 12 days of backup power to the police station and dispatch center",
      "capex": "About $2.7 million total, of which a $1.46 million Massachusetts DOER resiliency grant and a $250,000 US Department of Energy grant",
      "displaced": "Peak demand and capacity charges: projected to save SMLD customers over $400,000 a year; Sandia calculated payback in fewer than seven years",
-     "summary": "Sterling, a town of about 7,800 with its own municipal light department, installed the state's first utility-scale battery in 2016: 2 MW / 3.9 MWh from NEC Energy Solutions at the Chocksett Road substation, for roughly $2.7 million with a $1.46 million DOER resiliency grant and $250,000 from DOE. The system pays for itself on peak shaving - Sandia National Laboratories calculated payback under seven years and SMLD projects over $400,000 a year of customer savings - while the resilience benefit is that it can island with existing solar and carry the town's police station and 911 dispatch centre for up to 12 days.",
+     "summary": "Sterling, a town of about 7,800 with its own municipal light department, installed the state's first utility-scale battery in 2016: 2 MW / 3.9 MWh from NEC Energy Solutions at the Chocksett Road substation, for roughly $2.7 million with a $1.46 million DOER resiliency grant and $250,000 from DOE. The system pays for itself on peak shaving - Sandia National Laboratories calculated payback under seven years and SMLD projects over $400,000 a year of customer savings - while the resilience benefit is that it can island with existing solar and carry the town's police station and 911 dispatch center for up to 12 days.",
      "microreactor_read": "The entire critical civic load of a New England town - police station plus PSAP dispatch - is small enough that 3.9 MWh of batteries covers it for twelve days, and the economics were carried by peak shaving, not by resilience. A microreactor has no addressable product at this scale; the only civic entry point is the municipal utility itself, which buys on payback-under-seven-years arithmetic.",
      "sources": [
       {

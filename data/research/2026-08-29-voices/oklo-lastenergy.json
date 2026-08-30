@@ -1,0 +1,550 @@
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "oklo-lastenergy-voices",
+    "companies": [
+      "Oklo",
+      "Last Energy"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "Oklo leadership roster (SEC DEF 14A proxy, July 2026 8-K executive appointments)",
+      "Oklo earnings-call transcripts Q2 2024 / Q3 2025 / Q4 2025 / Q1 2026 / Q2 2026 (cost, customers, supply chain, manufacturing)",
+      "Oklo Q2 2024 shareholder letter (SEC 8-K Ex-99.1)",
+      "Oklo Switch/Meta/Diamondback/Eielson customer-agreement press and SEC search",
+      "Oklo DOE clean-firm cost-band figures (could not independently verify primary doc)",
+      "Last Energy leadership (company site, The Org, Equilar aggregator, press)",
+      "Last Energy UK (Llynfi/South Wales, PDR regulatory milestone, EXIM financing)",
+      "Last Energy Texas/Haskell County and Poland (KSSE) projects",
+      "Last Energy fuel/supply-chain (LEU vs HALEU) via company FAQ/technology pages"
+    ],
+    "absences": [
+      "Oklo: no Chief Commercial Officer or Chief Revenue Officer role found in the April 2026 DEF 14A or the July 2026 8-K executive-appointment list -- the 9 confirmed executive officers are CEO, COO, CFO, Chief Legal and Strategy Officer, Chief Product Officer, Chief of Staff, General Counsel, SVP Engineering, and VP Accounting/Controller.",
+      "Oklo: the widely-reported '$64-73/MWh' LCOE figure and the '~$145 million first 50 MW powerhouse' figure could not be verified verbatim in any primary Oklo document I could fetch -- oklo.com (investor-relations and newsroom) returns 403 to automated fetches, and the SEC-filed Q2 2024 8-K shareholder-letter exhibit renders its charts as JPG images with no extractable text layer, so the numbers (reported by Utility Dive as coming from a since-unfetchable 'Oklo-Inc-Q2-2024-Company-Update-Presentation-August-2024.pdf') could not be independently confirmed and were dropped rather than quoted secondhand.",
+      "Oklo: same issue for the DOE clean-firm cost-comparison bands (gas w/ CCS $63-99/MWh, non-Oklo advanced nuclear $66-109/MWh, renewables+storage $69-119/MWh) -- confirmed to exist via Utility Dive's direct reporting on Oklo's August 2024 investor presentation, but the primary PDF itself was not independently fetchable, so no quote record was created for it.",
+      "Oklo: Diamondback Energy LOI (50 MW, signed April 2024) predates the research window and was not mentioned in any of the Q2 2024, Q3 2025, Q4 2025, Q1 2026, or Q2 2026 earnings-call transcripts I fetched -- no in-window reaffirmation found, suggesting the relationship has gone quiet since the original announcement.",
+      "Oklo: no earnings-call mention of the Switch 12 GW master power agreement with specific dollar or capacity detail beyond the original December 2024 announcement; could not find an in-window CEO/CFO quote elaborating on Switch specifically (only a passing 'Switch and Meta' mention in the Q1 2026 call).",
+      "Last Energy: no CFO, COO, or General Counsel name could be confirmed against a fetchable primary source. Secondary aggregators (ZoomInfo, Equilar) name Adam Wyrick as CFO and cite Eric Johannessen/Anton van Saase as General Counsel at different points, but none of these pages were fetchable (403 or no bio content), so none were added as leader records.",
+      "Last Energy: the widely-cited '24 units sold in the UK for GBP2.4bn' (part of a 34-unit/$18.9bn Poland+UK figure) is dated to a March 29, 2023 announcement (confirmed via ANS Nuclear Newswire), which predates the research window. No in-window restatement of that specific aggregate figure was found -- the only in-window UK figures are project-specific (4 units / GBP300m at Llynfi, South Wales, announced October 2024).",
+      "Last Energy: found the company's own FAQ/technology pages stating the PWR-20 uses 'sub-5% low enriched uranium fuel' (i.e., no HALEU required at all), but this is unattributed marketing copy, not a named speaker's verbatim quote, so it was not added as a quotes record despite being a significant supply-chain finding -- see summary."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "oklo-dewitte-jacob",
+      "company": "Oklo",
+      "name": "Jacob DeWitte",
+      "title": "Chairman and Chief Executive Officer",
+      "since": "2013-07",
+      "background": "Co-founded Legacy Oklo in July 2013 and served as its CEO and a board member until the May 2024 business combination with AltC Acquisition Corp, becoming CEO and a director of the public Oklo Inc.; added Chairman of the Board in April 2025. Holds a Ph.D. and S.M. in Nuclear Engineering from MIT (studied nuclear engineering 2004-2014); prior internships at Sandia National Laboratories, Urenco Limited, GE, and the U.S. Naval Nuclear Laboratory.",
+      "why_they_matter": "Founder-CEO who has led Oklo continuously since 2013, now steering its public-company commercialization push (Aurora powerhouse, hyperscaler deals, DOE relationships).",
+      "sources": [
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement (2026 Annual Meeting, filed April 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "Mr. DeWitte co-founded Legacy Oklo and served as its Chief Executive Officer and a member of the board of directors of Legacy Oklo from its",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-caroline",
+      "company": "Oklo",
+      "name": "Caroline DeWitte (formerly Caroline Cochran)",
+      "title": "Chief Operating Officer and Director",
+      "since": "2013-07",
+      "background": "Co-founded Legacy Oklo in July 2013 under the name Caroline Cochran and served as its COO and a board member until the May 2024 business combination, becoming COO and a director of the public Oklo Inc. Studied nuclear engineering at MIT (2007-2010); served on the DOE Nuclear Energy Advisory Committee (2018-2019). Married to co-founder and CEO Jacob DeWitte.",
+      "why_they_matter": "Co-founder and operations lead; SEC filings now list her under her married name, DeWitte, which is why later filings and press can look like two different people.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement (2026 Annual Meeting, filed April 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "Ms. DeWitte co-founded Legacy Oklo and served as its Chief Operating Officer and a member of the board of directors of Legacy Oklo from its",
+          "status": "fetched"
+        },
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement, Delinquent Section 16(a) Reports",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "Caroline DeWitte and Jacob DeWitte are married to each other.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-bealmear",
+      "company": "Oklo",
+      "name": "R. Craig Bealmear",
+      "title": "Chief Financial Officer",
+      "since": "2024-05",
+      "background": "CFO of Legacy Oklo from August 2023, continuing as CFO of the public Oklo Inc. since May 2024. Previously CFO of Renewable Energy Group (acquired by Chevron, June 2022) from April 2021-December 2022; 28-year career at BP plc including Chief Financial Officer - North America Downstream (2015-2020) and Deputy CFO, Refining and Marketing Segment (2013-2015).",
+      "why_they_matter": "Brings large-cap energy-company financial discipline (BP, Chevron-acquired REG) to a newly public nuclear startup managing capex-heavy powerhouse buildout.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement (2026 Annual Meeting, filed April 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "R. Craig Bealmear has served as the Company's Chief Financial Officer since May 2024. He previously served as Legacy Oklo's Chief Financial Officer from August",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-goodwin",
+      "company": "Oklo",
+      "name": "William Goodwin",
+      "title": "Chief Legal and Strategy Officer",
+      "since": "2024-08",
+      "background": "Joined Oklo as Chief Legal and Strategy Officer in August 2024. Previously held senior leadership roles at Joby Aviation including special projects and strategy, and worked as Deputy General Counsel supporting Joby's government affairs, Department of Defense initiatives, and regulatory strategy.",
+      "why_they_matter": "Brings a playbook from Joby Aviation's advanced-manufacturing/eVTOL certification fight to Oklo's own novel-reactor licensing and government-contracting strategy.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement (2026 Annual Meeting, filed April 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "William Goodwin has served as the Company's Chief Legal and Strategy Officer since August 2024. Prior to joining the Company, Mr. Goodwin held senior leadership",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-renner",
+      "company": "Oklo",
+      "name": "Alexandra Renner",
+      "title": "Chief Product Officer",
+      "since": "2024-05",
+      "background": "Has served as Chief Product Officer since May 2024, after Senior Director of Product (2021-2024), Director of Licensing (2018-2022), and Engineer (2016-2018) roles at Oklo. Before Oklo, worked at the U.S. Nuclear Regulatory Commission (2013-2016) as a Reactor Engineer, Project Manager, and Reactor Inspector, including on the Watts Bar Unit 2 startup. Holds a B.S. in Nuclear Engineering from the University of Tennessee, Knoxville.",
+      "why_they_matter": "A former NRC reactor inspector now owns Oklo's product and licensing strategy, a direct pipeline from regulator to regulated.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Item 5.02 (filed July 28, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000184905626000039/oklo-20260722.htm",
+          "quote": "Prior to joining the Company, she served in various positions at the U.S. Nuclear Regulatory Commission from 2013 to 2016, including Reactor Engineer, Project Manager,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-hanson",
+      "company": "Oklo",
+      "name": "John Hanson",
+      "title": "Chief of Staff",
+      "since": "2024-05",
+      "background": "Chief of Staff since May 2024; joined Oklo in 2015 and held Senior Director of Special Projects (2022-2024), Director of Policies and Procedures (2019-2022), and Reactor Engineer roles. Previously a DOE Office of Science Graduate Research Fellow at MIT researching nuclear materials and corrosion science. Holds a Ph.D. in Nuclear Science and Engineering from MIT and B.S. degrees in Mechanical Engineering and Economics from Ohio State.",
+      "why_they_matter": "An 11-year Oklo veteran (since 2015, pre-dating most of the executive team) now centralizing cross-functional execution as the company scales past its 2024 public listing.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Item 5.02 (filed July 28, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000184905626000039/oklo-20260722.htm",
+          "quote": "John Hanson, 39, has served as Chief of Staff of the Company since May 2024. He has held several leadership and technical roles at the",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-narayanadas",
+      "company": "Oklo",
+      "name": "Vivek Narayanadas",
+      "title": "General Counsel and Corporate Secretary",
+      "since": "2025-10",
+      "background": "General Counsel and Corporate Secretary since October 2025, after serving as Head of Legal at Oklo from February 2025. Previously Deputy General Counsel at Maven Clinic (2023-2025), General Counsel and Corporate Secretary at MetaMap (2021-2023), and senior legal roles at Shopify and The Rubicon Project; began his career as a litigator in IP, securities, and class-action law. J.D. from Columbia Law School; B.A. in History and Economics from UC Berkeley.",
+      "why_they_matter": "Adds hyperscaler-adjacent (Shopify) and high-growth-startup legal experience as Oklo negotiates data-center power deals.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Item 5.02 (filed July 28, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000184905626000039/oklo-20260722.htm",
+          "quote": "Vivek Narayanadas, 42, has served as General Counsel and Corporate Secretary of the Company since October 2025. He served as Head of Legal at the",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-lassen",
+      "company": "Oklo",
+      "name": "Erik Lassen",
+      "title": "Senior Vice President of Engineering",
+      "since": "2026-04",
+      "background": "SVP of Engineering since April 2026, after Senior Director, Manufacturing Center of Excellence (January-April 2026). Held engineering/manufacturing leadership roles at Joby Aviation (2019-2026), most recently Aircraft Final Assembly and Integration Lead; founded and was CTO of Monolith Aeroworks (2011-2019); earlier engineering roles at Virgin Galactic and Scaled Composites. B.S. in Manufacturing Engineering, Brigham Young University.",
+      "why_they_matter": "An aerospace serial-production hire (Joby, Scaled Composites, Virgin Galactic) leading engineering just as Oklo pushes toward factory-built, repeatable Aurora powerhouses.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Item 5.02 (filed July 28, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000184905626000039/oklo-20260722.htm",
+          "quote": "Prior to joining the Company, he held various engineering and manufacturing leadership roles at Joby Aviation, Inc. from 2019 to 2026, most recently serving as",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dixon",
+      "company": "Oklo",
+      "name": "Michael Dixon",
+      "title": "Vice President of Accounting and Controller (Principal Accounting Officer)",
+      "since": "2026-05",
+      "background": "VP of Accounting and Controller, and Principal Accounting Officer, since May 2026. Previously at National Grid USA (2020-2026), most recently VP, US/New York Controller and FP&A (2024-2026), responsible for SOX certifications and financial statements of National Grid's North America and New York regulated-utility subsidiaries. Before that, at PricewaterhouseCoopers (2006-2020). Chartered Accountant (Institute of Chartered Accountants in England and Wales); B.S. in Mathematics, University of Edinburgh.",
+      "why_they_matter": "Regulated-utility accounting/SOX background signals Oklo building out public-company financial controls as it scales.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Item 5.02 (filed July 28, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000184905626000039/oklo-20260722.htm",
+          "quote": "Michael Dixon, 42, has served as Vice President of Accounting and Controller of the Company since May 2026. Mr. Dixon will serve as the Company's",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-poneman",
+      "company": "Oklo",
+      "name": "Daniel B. Poneman",
+      "title": "Director",
+      "since": "2025-03",
+      "background": "Board member since March 2025. President and CEO of Poneman Strategies LLC since 2024. President and CEO of Centrus Energy Corp. (2015-2023), where he led the launch of the first U.S.-technology-enabled domestic uranium enrichment production since 1954. Deputy Secretary of Energy at the U.S. DOE (2009-2014). J.D. and B.A. from Harvard; MLitt in Politics from Oxford.",
+      "why_they_matter": "A director who literally ran the country's newest HALEU/enrichment supplier (Centrus) and ran DOE nuclear policy sits on Oklo's board while fuel sourcing is a top commercial risk.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — DEF 14A Proxy Statement (2026 Annual Meeting, filed April 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000184905626000023/a2025proxy.htm",
+          "quote": "Mr. Poneman served as President and Chief Executive Officer of Centrus Energy Corp., where he was responsible for launching the first U.S.-technology enabled domestic uranium",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-kugelmass",
+      "company": "Last Energy",
+      "name": "Bret Kugelmass",
+      "title": "Founder and Chief Executive Officer",
+      "since": "2019-01",
+      "background": "Founded Last Energy in 2019 as a commercial spin-off of the Energy Impact Center (EIC), a nuclear-focused research institute he founded in Washington, D.C. in 2017 (EIC also launched the Titans of Nuclear podcast in 2018). Earlier career: mechanical/robotics engineer -- roles included Roboticist at NASA Goddard Space Flight Center, Mechatronics Engineer at Nanosolar, and Innovation Lab Lead Researcher at Panasonic -- before founding and selling drone company Airphrame in 2017. B.A. in Mathematics from Stony Brook University; M.S. in Mechanical Engineering (robotics) from Stanford.",
+      "why_they_matter": "Sole founder-CEO of a private company with no other named C-suite executive on its own public leadership page; his framing (\"off-the-shelf\" LWR technology, no new fuel enrichment needed, mass manufacturing) is effectively the company's entire public voice.",
+      "sources": [
+        {
+          "label": "Last Energy — Company Page (\"Our Story\")",
+          "url": "https://www.lastenergy.com/about",
+          "quote": "2017 Bret Kugelmass founded the Energy Impact Center (EIC), a research institute with a mission to identify the most scalable path to unlocking affordable clean",
+          "status": "fetched"
+        },
+        {
+          "label": "Last Energy — Leadership Team (The Org)",
+          "url": "https://theorg.com/org/last-energy/teams/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-jenner",
+      "company": "Last Energy",
+      "name": "Michael Jenner",
+      "title": "Chief Executive Officer, Last Energy UK",
+      "background": "Leads Last Energy's UK subsidiary, based in London, overseeing commercial deployment plus government and regulatory engagement. Studied at the London School of Economics and Political Science (LSE). Described in press as having wide-ranging commercial experience designing and delivering decarbonisation initiatives before Last Energy.",
+      "why_they_matter": "The public face and quoted spokesperson for Last Energy's largest disclosed market (UK), fronting both the South Wales project announcement and the UK regulator's Preliminary Design Review milestone.",
+      "sources": [
+        {
+          "label": "Nuclear Industry Association (UK) — \"Last Energy Announces Project in South Wales to Build Four Micro-Nuclear Plants\" (15 October 2024)",
+          "url": "https://www.niauk.org/last-energy-announces-project-in-south-wales-to-build-four-micro-nuclear-plants/",
+          "quote": "Michael Jenner, CEO of Last Energy UK, a subsidiary of Last Energy, said: \"Last Energy's Llynfi project will not only transform a vacant coal site",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-jamroz",
+      "company": "Last Energy",
+      "name": "Damian Jamroz",
+      "title": "President of the Management Board / country lead, Last Energy Poland",
+      "background": "Leads Last Energy's Polish subsidiary (Last Energy Polska); pictured and credited as Last Energy's representative on the company's own Katowice Special Economic Zone (KSSE) case study. Exact title sourced from a secondary corporate-data aggregator (Equilar ExecAtlas), not independently confirmed via a fetched primary bio page.",
+      "why_they_matter": "Poland is Last Energy's most advanced non-US market (KSSE and Legnica SEZ deals, a first nuclear-island prototype shown publicly at PGE Narodowy), and Jamroz is the named local lead across both.",
+      "sources": [
+        {
+          "label": "Last Energy — Case Study: \"Last Energy agrees to develop 10 of its 20 MWe micro nuclear power plants in KSSE\"",
+          "url": "https://www.lastenergy.com/case-studies/ksse",
+          "quote": "Damian Jamroz (Last Energy) and Mateusz Rzeszowski (KSSE)",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "oklo-dewitte-eielson-q2-2026",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "customers",
+      "quote": "At Eielson Air Force Base, we are developing an Aurora application designed to provide both electricity and heat for a mission-critical defense installation.",
+      "what_it_means": "Confirms Eielson as a cogeneration (heat + power) project, not a standard grid-power sale, for a defense customer.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "At Eielson Air Force Base, we are developing an Aurora application designed to provide both electricity and heat for a mission-critical defense installation.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-bealmear-meta-equinix-payments",
+      "company": "Oklo",
+      "speaker": "R. Craig Bealmear",
+      "role": "Chief Financial Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "orders",
+      "quote": "we've already had the Meta payment. We've had the Equinix payment. And so it does feel like those discussions are a little bit more advanced.",
+      "what_it_means": "CFO confirms Oklo has actually received cash payments (not just signed LOIs) from both Meta and Equinix, ahead of finalized PPAs.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "we've already had the Meta payment. We've had the Equinix payment. And so it does feel like those discussions are a little bit more advanced.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-ai-design-speed",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "units-manufacturing",
+      "quote": "We're doing work that would take weeks to -- I mean, months or several months, getting it done in less than a day, right? We're getting it done in hours.",
+      "what_it_means": "CEO claims AI-accelerated reactor-design workflows compress months of engineering iteration into hours, part of the pitch for lowering per-unit costs.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "We're doing work that would take weeks to -- I mean, months or several months, getting it done in less than a day, right? We're",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-centrus-haleu-loi",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "supply-chain",
+      "quote": "Under the letter of intent, which anticipates a further definitive agreement, Centrus would supply HALEU for multiple years of initial core and reload needs for up to 5 Aurora powerhouses with deliveries expected to begin in 2029.",
+      "what_it_means": "First deliveries under the Centrus HALEU LOI are not expected until 2029, five years after the partnership was first announced in 2024 -- fuel supply remains a long-lead item.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "Under the letter of intent, which anticipates a further definitive agreement, Centrus would supply HALEU for multiple years of initial core and reload needs for",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-genesis-doe",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "regulatory",
+      "quote": "DOE is bringing together its 17 national laboratories, industry, academia, advanced computing infrastructure, experimental facilities, scientific data and artificial intelligence capabilities. In July, DOE announced the first project selections and more than $800 million in mission-wide partner commitments.",
+      "what_it_means": "Oklo is positioning itself inside DOE's Genesis Mission (won a $60M Prometheus Phase I award with INL), an added government-funding channel beyond direct reactor sales.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "DOE is bringing together its 17 national laboratories, industry, academia, advanced computing infrastructure, experimental facilities, scientific data and artificial intelligence capabilities. In July, DOE announced",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-armec-manufacturing",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "units-manufacturing",
+      "quote": "These acquisitions shorten the feedback loop between engineering, procurement, manufacturing, testing and deployment. The experience gained on one project can then be retained and applied across the next.",
+      "what_it_means": "Oklo is buying, not just hiring, its way into manufacturing (ARMEC, Creative Engineers acquisitions in Q2 2026) to internalize the fabrication capability it needs for repeatable powerhouse deployment.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "These acquisitions shorten the feedback loop between engineering, procurement, manufacturing, testing and deployment. The experience gained on one project can then be retained and applied",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-meta-phase1-150mw",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-03-18",
+      "venue": "Oklo Inc. Q4 2025 / Full-Year 2025 Earnings Call",
+      "topic": "orders",
+      "quote": "The agreement advances plans for phase deployment with an initial phase of 150 megawatts targeted around 2030, and it is supported by prepayment for power structure designed to improve project certainty and support Phase 1 development.",
+      "what_it_means": "Gives the first concrete phasing on the Meta deal: only 150 MW of the eventual 1.2 GW Ohio campus is targeted for around 2030, with the rest unscheduled.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q4 2025 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/03/18/oklo-oklo-q4-2025-earnings-call-transcript/",
+          "quote": "The agreement advances plans for phase deployment with an initial phase of 150 megawatts targeted around 2030, and it is supported by prepayment for power",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-eielson-dla-award",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-05-13",
+      "venue": "Oklo Inc. Q1 2026 Earnings Call",
+      "topic": "customers",
+      "quote": "Aurora-Eielson represents a different but highly strategic power use case. The Defense Logistics Agency Energy on behalf of the Department of the Air Force issued an notice of intent to award to Oklo.",
+      "what_it_means": "Eielson is a notice of intent to award (not yet a signed, binding contract) from the Defense Logistics Agency Energy on behalf of the Air Force, for a small (5 MWe/60 MWt) cogeneration unit in Alaska.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q1 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/05/13/oklo-oklo-q1-2026-earnings-call-transcript/",
+          "quote": "Aurora-Eielson represents a different but highly strategic power use case. The Defense Logistics Agency Energy on behalf of the Department of the Air Force issued",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-product-line-mw",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Co-Founder and Chief Executive Officer",
+      "date": "2026-05-13",
+      "venue": "Oklo Inc. Q1 2026 Earnings Call",
+      "topic": "units-manufacturing",
+      "quote": "There are some differences, of course, between the Aurora product line that's focused on the sort of 35-megawatt plus data center side and then this, but this has been core to some opportunities we see in defense and the other industrial applications.",
+      "what_it_means": "DeWitte describes the standard commercial Aurora product line as \"35-megawatt plus,\" while the analyst asking the question referred to a \"75-megawatt standard\" -- the company's own stated baseline unit capacity is not fixed even within a single call and differs from the ~50 MWe figure commonly cited in press.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q1 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/05/13/oklo-oklo-q1-2026-earnings-call-transcript/",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "oklo-dewitte-1350mw-pipeline-2024",
+      "company": "Oklo",
+      "speaker": "Jacob DeWitte",
+      "role": "Founder and Chief Executive Officer",
+      "date": "2024-08-13",
+      "venue": "Oklo Inc. Q2 2024 Shareholder Letter (SEC Form 8-K, Exhibit 99.1)",
+      "topic": "orders",
+      "quote": "we have signed over 1,350 megawatts under non-binding indications of interest from the data center, energy, and industrial sectors, showcasing the broad applicability of our technology",
+      "what_it_means": "Earliest in-window pipeline figure from Oklo's own shareholder letter: 1,350 MW of non-binding interest as of August 2024, before Switch (Dec 2024) or Meta (Jan 2026) were added.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 8-K, Exhibit 99.1 (Q2 2024 Shareholder Letter, filed August 13, 2024)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924088946/tm2421217d1_ex99-1.htm",
+          "quote": "Demand is strong; we have signed over 1,350 megawatts under non-binding indications of interest from the data center, energy, and industrial sectors, showcasing the broad",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-bealmear-capex-guidance",
+      "company": "Oklo",
+      "speaker": "R. Craig Bealmear",
+      "role": "Chief Financial Officer",
+      "date": "2026-08-07",
+      "venue": "Oklo Inc. Q2 2026 Earnings Call",
+      "topic": "costs",
+      "quote": "We also now expect cash used for purchases of property, plant and equipment to be in the range of $400 million to $500 million compared with our prior range of $350 million to $450 million.",
+      "what_it_means": "Company-wide capex guidance, not a per-unit powerhouse cost -- Oklo raised its 2026 capex guidance mid-year, driven by accelerated Aurora-INL procurement and an opportunistic fuel purchase. No public per-MWh or per-powerhouse cost figure was found stated verbatim in any 2025-2026 earnings call transcript located.",
+      "sources": [
+        {
+          "label": "The Motley Fool — Oklo (OKLO) Q2 2026 Earnings Call Transcript",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/oklo-oklo-q2-2026-earnings-call-transcript/",
+          "quote": "We also now expect cash used for purchases of property, plant and equipment to be in the range of $400 million to $500 million compared",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-kugelmass-data-centers-2024",
+      "company": "Last Energy",
+      "speaker": "Bret Kugelmass",
+      "role": "Founder and Chief Executive Officer",
+      "date": "2024-08-29",
+      "venue": "Canary Media (quoting Last Energy's August 2024 Series B press release)",
+      "topic": "customers",
+      "quote": "Data centers and heavy industry are trying to grapple with a very complex set of energy challenges, and Last Energy has seen them realize that micro-nuclear is the only capable solution",
+      "what_it_means": "Same day as announcing a $40 million Series B (total raised since 2019: $64 million), Kugelmass pitched data centers and heavy industry as the company's core demand driver, with 80 units under commercial agreement and 39 of those for data-center customers.",
+      "sources": [
+        {
+          "label": "Canary Media — \"Last Energy nabs $40M to realize vision of super-small nuclear reactors\" (Eric Wesoff, August 29, 2024)",
+          "url": "https://www.canarymedia.com/articles/nuclear/last-energy-nabs-40m-to-realize-vision-of-super-small-nuclear-reactors",
+          "quote": "Data centers and heavy industry are trying to grapple with a very complex set of energy challenges, and Last Energy has seen them realize that",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-kugelmass-texas-haskell",
+      "company": "Last Energy",
+      "speaker": "Bret Kugelmass",
+      "role": "Founder and Chief Executive Officer",
+      "date": "2025-02-28",
+      "venue": "World Nuclear News (Last Energy Texas/Haskell County announcement)",
+      "topic": "customers",
+      "quote": "Texas is America's undisputed energy leader, but skyrocketing population growth and data centre development is forcing policymakers, customers, and energy providers to embrace new technologies. Nuclear power is the most effective way to meet Texas' demand, but our solution - plug-and-play microreactors, designed for scalability and siting flexibility - is the best way to meet it quickly.",
+      "what_it_means": "Announces a 200-acre, 30-unit (600 MWe) site in Haskell County aimed at Texas data-center demand -- Last Energy's first announced US deployment site, distinct from its Texas HQ/manufacturing base. Company said its existing commercial agreements (delivery of 80+ microreactors, all in Europe) would remain separate from this new US pipeline.",
+      "sources": [
+        {
+          "label": "World Nuclear News — \"Last Energy plans Texan microreactor plant\"",
+          "url": "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-jenner-wales-manufacturability",
+      "company": "Last Energy",
+      "speaker": "Michael Jenner",
+      "role": "CEO, Last Energy UK",
+      "date": "2024-10-15",
+      "venue": "Nuclear Industry Association (UK) — South Wales project announcement",
+      "topic": "international",
+      "quote": "Last Energy's emphasis on mass-manufacturability allows us to deliver significantly smaller plants in under 24 months with purely private financing. We look forward to engaging with the public, meeting local suppliers",
+      "what_it_means": "Frames the UK South Wales (Llynfi) project -- four 20 MWe units, GBP300m capital investment, first plant targeted 2027 -- as funded with \"purely private financing,\" and explicitly ties the 24-month build claim to mass-manufacturability rather than one-off construction.",
+      "sources": [
+        {
+          "label": "Nuclear Industry Association (UK) — \"Last Energy Announces Project in South Wales to Build Four Micro-Nuclear Plants\" (15 October 2024)",
+          "url": "https://www.niauk.org/last-energy-announces-project-in-south-wales-to-build-four-micro-nuclear-plants/",
+          "quote": "Last Energy's emphasis on mass-manufacturability allows us to deliver significantly smaller plants in under 24 months with purely private financing. We look forward to engaging",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "lastenergy-jenner-pdr-regulatory",
+      "company": "Last Energy",
+      "speaker": "Michael Jenner",
+      "role": "Last Energy UK CEO",
+      "date": "2025-07-29",
+      "venue": "World Nuclear News — \"Regulatory progress for Last Energy's UK project\"",
+      "topic": "regulatory",
+      "quote": "Unlocking nuclear power at scale is essential to decarbonising the industrial economy and driving economic growth across the UK. Completing our PDR has provided essential guidance to efficiently undertake and complete licensing processes, positioning Last Energy to deliver the UK's first commercial microreactor.",
+      "what_it_means": "Marks Last Energy as the first micro-nuclear developer to complete a UK Preliminary Design Review (with ONR, the Environment Agency, and Natural Resources Wales); financing context from the same period includes a $103.7 million debt-financing letter of intent from the US Export-Import Bank (December 2024) and a 22 MW grid-connection offer (January 2025).",
+      "sources": [
+        {
+          "label": "World Nuclear News — \"Regulatory progress for Last Energy's UK project\" (29 July 2025)",
+          "url": "https://www.world-nuclear-news.org/articles/regulatory-progress-for-last-energys-uk-project",
+          "quote": "said Last Energy UK CEO Michael Jenner. \"Unlocking nuclear power at scale is essential to decarbonising the industrial economy and driving economic growth across the",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

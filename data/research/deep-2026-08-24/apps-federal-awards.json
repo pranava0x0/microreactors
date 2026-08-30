@@ -1,1117 +1,1117 @@
 {
- "_meta": {
-  "captured": "2026-08-24",
-  "agent": "apps-federal-awards",
-  "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
-  "angles_run": [
-   "USAspending /api/v2/search/spending_by_award keyword sweeps: microgrid, diesel generator, standby generator, shore power, cold ironing, energy savings performance contract, utility privatization, Clean Ports, port electrification, Grid Resilience",
-   "USAspending /api/v2/awards/{id} detail pulls to separate total_obligation from base_and_all_options on multi-decade vehicles",
-   "EPA Clean Ports Program (CFDA 66.051) award records for per-port federal + cost-share values and equipment counts",
-   "Confirmation of two named leads: Parris Island ESPC and NAVFAC Beaufort utility privatization",
-   "Capacity (MW) corroboration from contractor and Navy publications where the award record gives dollars but not megawatts",
-   "USAspending assistance search filtered by awarding agency 'Department of Energy' on keyword 'microgrid', which is what actually surfaces the ERA/OCED awards that a keyword sweep on the programme's own name misses entirely",
-   "USAspending /api/v2/awards/{id} detail pulls on DOE assistance awards to separate total_obligation from non_federal_funding and total_funding",
-   "OpenFEMA HazardMitigationAssistanceProjects v4: filters on contains(projectType,'enerator') crossed with hospital, medical, water and sewer subrecipients, plus a programArea='BRIC' sweep, sorted by projectAmount",
-   "EPA Clean Ports Program by CFDA program_numbers 66.051 rather than by keyword, to enumerate per-port federal and cost-share values",
-   "USAspending contract sweep on 'shore power' to find the Navy's per-waterfront connection cost band and the MARAD layberth generator rental"
-  ],
-  "absences": [
-   "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
-   "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
-   "DOE Energy Improvements in Rural or Remote Areas: the programme name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the programme.",
-   "Grid Resilience 40101(d) state formula allocations: not separated from 40103 GRIP competitive awards. Both sit under CFDA 81.254, and the award records do not distinguish them, so the Barnstable record is reported as CFDA 81.254 without claiming which section funded it.",
-   "DOE OCED's own ERA project pages (energy.gov/oced/energy-improvements-rural-or-remote-areas and the /arctic Alaska ERA article) both return HTTP 404 as of 2026-08-25; the surviving fetchable DOE source for these awards is the Award Wednesdays post of 2024-08-14.",
-   "MARAD's layberth locations PDF (maritime.dot.gov, 19 Apr 2024) returns HTTP 403 to a direct fetch, so 'Terminal 2, Berths 205-206' could not be tied to a named port from a primary document. Search summaries point to the Port of Portland, Oregon; that is unverified and is not asserted in the record.",
-   "FEMA project records carry no kW ratings, no equipment counts and no narrative — only a project-type taxonomy. Every FEMA record here therefore has a named site and a dollar value but no capacity, which is why no $/kW is derived from any of them.",
-   "Off-grid mining & mineral processing: skipped by instruction after a prior run reported the angle dry; no federal award record with a named mine site and a generation dollar value is in this file.",
-   "No award record published a $/kWh energy price. Federal construction, ESPC and grant awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex, contract value or a FEMA benefit-cost figure, never an energy rate.",
-   "Heat rate, fuel burn and annual generation are not in the award records; where a $/MWh comparison would be useful it could not be derived from the award's own numbers.",
-   "The USAspending keyword sweeps that produced the contract records were read at their page limits (20-30 rows sorted by award amount, hasNext true on the DOE microgrid and Clean Ports queries). Every 'this is the going rate' statement in this file is a floor drawn from the top of a capped list, not a population total."
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "apps-federal-awards",
+    "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
+    "angles_run": [
+      "USAspending /api/v2/search/spending_by_award keyword sweeps: microgrid, diesel generator, standby generator, shore power, cold ironing, energy savings performance contract, utility privatization, Clean Ports, port electrification, Grid Resilience",
+      "USAspending /api/v2/awards/{id} detail pulls to separate total_obligation from base_and_all_options on multi-decade vehicles",
+      "EPA Clean Ports Program (CFDA 66.051) award records for per-port federal + cost-share values and equipment counts",
+      "Confirmation of two named leads: Parris Island ESPC and NAVFAC Beaufort utility privatization",
+      "Capacity (MW) corroboration from contractor and Navy publications where the award record gives dollars but not megawatts",
+      "USAspending assistance search filtered by awarding agency 'Department of Energy' on keyword 'microgrid', which is what actually surfaces the ERA/OCED awards that a keyword sweep on the program's own name misses entirely",
+      "USAspending /api/v2/awards/{id} detail pulls on DOE assistance awards to separate total_obligation from non_federal_funding and total_funding",
+      "OpenFEMA HazardMitigationAssistanceProjects v4: filters on contains(projectType,'enerator') crossed with hospital, medical, water and sewer subrecipients, plus a programArea='BRIC' sweep, sorted by projectAmount",
+      "EPA Clean Ports Program by CFDA program_numbers 66.051 rather than by keyword, to enumerate per-port federal and cost-share values",
+      "USAspending contract sweep on 'shore power' to find the Navy's per-waterfront connection cost band and the MARAD layberth generator rental"
+    ],
+    "absences": [
+      "USAspending keyword 'cold ironing' returned zero awards in FY2008-FY2026 — the term does not appear in federal contract descriptions, so shore power is the only searchable handle.",
+      "DOT/MARAD Port Infrastructure Development Program: not resolved to per-award records inside this pass; PIDP awards are announced by press release and did not surface under the keyword sweeps used here.",
+      "DOE Energy Improvements in Rural or Remote Areas: the program name is not a searchable keyword in USAspending — the awards carry no such text and surface only under CFDA 81.255 (Clean Energy Demonstrations) via an awarding-agency filter. The three ERA records here were found that way. The full ERA selection list was NOT enumerated, so this file holds a sample and not the program.",
+      "Grid Resilience 40101(d) state formula allocations: not separated from 40103 GRIP competitive awards. Both sit under CFDA 81.254, and the award records do not distinguish them, so the Barnstable record is reported as CFDA 81.254 without claiming which section funded it.",
+      "DOE OCED's own ERA project pages (energy.gov/oced/energy-improvements-rural-or-remote-areas and the /arctic Alaska ERA article) both return HTTP 404 as of 2026-08-25; the surviving fetchable DOE source for these awards is the Award Wednesdays post of 2024-08-14.",
+      "MARAD's layberth locations PDF (maritime.dot.gov, 19 Apr 2024) returns HTTP 403 to a direct fetch, so 'Terminal 2, Berths 205-206' could not be tied to a named port from a primary document. Search summaries point to the Port of Portland, Oregon; that is unverified and is not asserted in the record.",
+      "FEMA project records carry no kW ratings, no equipment counts and no narrative — only a project-type taxonomy. Every FEMA record here therefore has a named site and a dollar value but no capacity, which is why no $/kW is derived from any of them.",
+      "Off-grid mining & mineral processing: skipped by instruction after a prior run reported the angle dry; no federal award record with a named mine site and a generation dollar value is in this file.",
+      "No award record published a $/kWh energy price. Federal construction, ESPC and grant awards publish capital and lifecycle dollars, not tariffs, so every price figure here is capex, contract value or a FEMA benefit-cost figure, never an energy rate.",
+      "Heat rate, fuel burn and annual generation are not in the award records; where a $/MWh comparison would be useful it could not be derived from the award's own numbers.",
+      "The USAspending keyword sweeps that produced the contract records were read at their page limits (20-30 rows sorted by award amount, hasNext true on the DOE microgrid and Clean Ports queries). Every 'this is the going rate' statement in this file is a floor drawn from the top of a capped list, not a population total."
+    ]
+  },
+  "cases": [
+    {
+      "id": "fort-stewart-10mw-generation-plant-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "Fort Stewart 10 MW generation plant with microgrid controls (W912HN26CA001)",
+      "country": "US",
+      "region": "Fort Stewart, Georgia",
+      "parties": {
+        "host": "U.S. Army / USACE Savannah District",
+        "provider": "David Boland Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2025-11",
+      "term_years": 3,
+      "capacity": "10 MW generation plant with microgrid controls",
+      "capex": "$54,333,598 obligated; base and all options also $54,333,598 (firm, no unexercised options)",
+      "displaced": "Grid dependence at an Army installation; the award buys islandable on-site generation rather than replacing an existing plant",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Y1BG, NAICS 237130",
+          "id": "PIID W912HN26CA001",
+          "date": "2025-11-03",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "USACE Savannah District awarded David Boland Inc. a definitive construction contract on 2025-11-03 to build a 10 MW generation plant with microgrid controls at Fort Stewart, Georgia, with a period of performance running to 2028-12-15. The award record shows $54,333,598 obligated and an identical base-and-all-options value, so this is the whole contract, not a first tranche. Place of performance is recorded as FORT STEWART, LIBERTY COUNTY, GA 31315. The award is a construction contract only — no fuel, no operations, no long-term service.",
+      "microreactor_read": "This is the cleanest federal price stamp available for on-site firm generation at a defended site: $54.33M for 10 MW is $5,433/kW of installed capacity, engineering and construction included, with fuel and O&M still to come on top. A 1-20 MW microreactor sold into an Army installation has to land near or below $5,400/kW installed to be argued on capital cost alone, and its pitch has to be the fuel and O&M line the Boland contract does not cover.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_W912HN26CA001 (PIID W912HN26CA001), David Boland Inc.",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/",
+          "quote": "CONSTRUCT A 10MW GENERATION PLANT, WITH MICROGRID CONTROLS",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "parris-island-espc-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "MCRD Parris Island site-wide microgrid ESPC (N39430-17-F-1901)",
+      "country": "US",
+      "region": "Parris Island, South Carolina",
+      "parties": {
+        "host": "U.S. Marine Corps / NAVFAC EXWC",
+        "provider": "Ameresco, Inc."
+      },
+      "instrument": "ESPC/UESC",
+      "signed": "2016-12",
+      "term_years": 25,
+      "capacity": "3.5 MW natural-gas CHP + 6.7 MW-DC solar PV + 8.0 MWh battery + existing diesel backup, under one microgrid controller; announced as 10 MW of new on-site generation",
+      "price": "$91.1 million self-funding ESPC investment as announced by the contractor",
+      "capex": "$66,631,952 obligated to date against a base-and-all-options value of $212,716,674 (USAspending, award last modified 2026-05-01)",
+      "displaced": "An end-of-life central steam plant and grid purchases; announced as a 79% reduction in the depot's utility energy demand",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29029",
+          "id": "PIID N3943017F1901",
+          "date": "2016-12-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/"
+        }
+      ],
+      "summary": "NAVFAC EXWC issued Ameresco a task order under the DOE ESPC IDIQ on 2016-12-28 to build and then operate a site-wide microgrid at Marine Corps Recruit Depot Parris Island, with a period of performance running to 2041-11-30. Ameresco announced the deal as a $91.1 million self-funding ESPC covering 10 MW of new on-site generation, a 3.5 MW gas CHP plant replacing the end-of-life steam plant, 6.7 MW-DC of solar PV and an 8.0 MWh battery. The federal award record tells a different story about size: $66,631,952 has been obligated so far and the contract's base-and-all-options value is $212,716,674 — 2.3x the announced $91.1M, because the ESPC's later years are performance-period service payments, not construction. The host pays nothing up front and repays out of guaranteed savings across roughly 25 years.",
+      "microreactor_read": "Two numbers matter to a microreactor seller here and they are far apart: the capital comparison is $91.1M for about 10 MW of mixed generation, i.e. roughly $9,100/kW nameplate and about $26,000/kW if you count only the 3.5 MW of firm dispatchable CHP; the commercial comparison is the $212.7M of lifecycle contract value a 25-year vehicle at one recruit depot can actually carry. A 5-10 MW microreactor priced against the $91.1M sticker looks expensive and priced against the $212.7M lifecycle envelope looks financeable — which is why the instrument, not the capex, is the thing to copy.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
+          "quote": "\"total_obligation\":66631952.0",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
+        },
+        {
+          "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
+          "url": "https://ir.ameresco.com/news-events/press-releases/detail/244/ameresco-to-build-microgrid-integrating-onsite-generation",
+          "quote": "$91.1 million self-funding Energy Savings Performance Contract (ESPC)",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "guantanamo-bay-lng-espc",
+      "sector": "Remote outposts & microgrids",
+      "name": "Naval Station Guantanamo Bay 20 MW LNG combined-cycle plant ESPC (N39430-19-F-9909)",
+      "country": "US",
+      "region": "Naval Station Guantanamo Bay, Cuba",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Southeast",
+        "provider": "Siemens Government Technologies, Inc."
+      },
+      "instrument": "ESPC/UESC",
+      "signed": "2019-07",
+      "term_years": 24,
+      "capacity": "20 MW LNG dual-fuel combined-cycle plant, plus a 13.7 MW solar facility; 15 existing diesel generators retained for outages and peaks",
+      "price": "Projected annual energy savings of $24.6 million over a 22-year performance period",
+      "capex": "$368.8 million for the power plant itself; $828.8 million announced ESPC value; USAspending shows $101,059,504 obligated against a base-and-all-options value of $927,391,394 running to 2043-04-24",
+      "displaced": "Diesel generation on an isolated island base — LNG substitution announced at approximately $9 million a year in fuel cost savings versus diesel, and a 27.4 percent cut in annual fuel consumption",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29041, firm fixed price",
+          "id": "PIID N3943019F9909",
+          "date": "2019-07-24",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
+        }
+      ],
+      "summary": "In July 2019 NAVFAC Southeast awarded Siemens Government Technologies an ESPC task order — announced at $828.8 million and issued for 25 years of construction plus operation — to replace diesel generation at Naval Station Guantanamo Bay with a dual-fuel LNG combined-cycle plant and a solar field. The plant was commissioned on 2023-09-07 and is rated 20 MW; the plant alone cost $368.8 million. The federal award record shows $101,059,504 obligated so far against a base-and-all-options value of $927,391,394 with a potential end date of 2043-04-24, so the contract has grown roughly $100M past its announced value and only about 11 percent of the ceiling has been obligated. The 15 pre-existing diesel generators were not retired; they were kept for outages and peaks.",
+      "microreactor_read": "Guantanamo is the strongest capex-per-MW argument in this file and it runs the reactor's way: $368.8M for 20 MW of island generation is $18,440/kW, and that is for a gas plant whose fuel still has to arrive by ship. A 1-20 MW microreactor competing at an isolated base does not need to beat $5,400/kW — at a site with no pipeline and no grid tie it needs to beat roughly $18,000/kW plus a fuel logistics chain, against a counterfactual the Navy itself valued at $24.6M a year in savings over 22 years.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
+          "quote": "\"total_obligation\":101059504.3",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
+        },
+        {
+          "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
+          "url": "https://www.dvidshub.net/news/453129/naval-station-guantanamo-bay-commissions-new-energy-efficient-power-plant",
+          "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "doyon-utilities-alaska-utility-privatization",
+      "sector": "Remote outposts & microgrids",
+      "name": "Doyon Utilities 50-year utility privatization, Alaska Army installations (SP0600-07-C-8263)",
+      "country": "US",
+      "region": "Fort Wainwright, Alaska (plus Fort Greely and JBER-Richardson under the Doyon Utilities program)",
+      "parties": {
+        "host": "U.S. Army, contracting through DLA Energy",
+        "provider": "Doyon Utilities, LLC (Alaska Native corporation joint venture)",
+        "utility": "Doyon Utilities, LLC — regulated by the Regulatory Commission of Alaska"
+      },
+      "instrument": "utility tariff",
+      "signed": "2007-09",
+      "term_years": 51,
+      "capacity": "Full electric, heat, water and wastewater utility systems at Alaska Army installations; capacity not stated in the award record",
+      "capex": "$894,733,810 obligated to date against a base-and-all-options value of $3,082,072,958; period of performance 2007-09-28 to 2058-08-14",
+      "displaced": "Government ownership and operation of installation utility systems in interior Alaska, where the incumbent generation is coal and oil-fired central plant",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Utility service contract for utility privatization, firm fixed price",
+          "id": "PIID SP0600-07-C-8263",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
+        },
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Companion utility privatization contract, same recipient and date",
+          "id": "PIID SP0600-07-C-8261",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "DLA Energy awarded Doyon Utilities a utility privatization contract on 2007-09-28 covering Army installation utility systems in Alaska, with a period of performance that runs to 2058-08-14 — a fifty-one year term. The award record shows $894,733,810 already obligated and a base-and-all-options value of $3,082,072,958, making this by a wide margin the largest single utility vehicle surfaced in this sweep. A companion contract to the same recipient on the same day (SP0600-07-C-8261) carries a further $212,665,748 obligated. The contractor is a regulated utility: its rates at these installations are set by the Regulatory Commission of Alaska, not by the contract alone.",
+      "microreactor_read": "This is the instrument a microreactor should be sold into rather than around: a single counterparty already holds a fifty-year, three-billion-dollar franchise to supply heat and power to Alaska Army installations, and its generation is coal and oil in a place where fuel arrives by rail and barge. The reactor does not need to beat a $/kW number to enter — it needs to become an asset inside a rate base a regulator already approves, and the addressable line is the roughly $60M a year of obligations this one contract has averaged since 2007.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_SP060007C8263 (PIID SP0600-07-C-8263), Doyon Utilities LLC, Fort Wainwright AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
+          "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "port-of-los-angeles-epa-clean-ports",
+      "sector": "Marine terminals",
+      "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
+      "country": "US",
+      "region": "San Pedro, California",
+      "parties": {
+        "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
+        "provider": "U.S. Environmental Protection Agency (funder)",
+        "utility": "Los Angeles Department of Water and Power"
+      },
+      "instrument": "grant-funded",
+      "signed": "2025-01",
+      "term_years": 4,
+      "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
+      "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
+      "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+          "id": "FAIN 97T27601",
+          "date": "2025-01-01",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+        }
+      ],
+      "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
+      "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+          "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    },
+    {
+      "id": "nbvc-point-mugu-shore-power-replacement",
+      "sector": "Marine terminals",
+      "name": "Naval Base Ventura County / Point Mugu shore power mound repair and replacement (N62473-24-F-4934)",
+      "country": "US",
+      "region": "Point Mugu, California",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Southwest",
+        "provider": "South Bay EDC Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2024-07",
+      "term_years": 3,
+      "capacity": "Shore power mounds serving berthed vessels; megawatt rating not stated in the award record",
+      "capex": "$44,323,562 obligated; base and all options identical, so the full contract value is $44.3M with no unexercised options",
+      "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life shore power distribution equipment",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Design-build task order under IDIQ N6247324D5205",
+          "id": "PIID N62473-24-F-4934",
+          "date": "2024-07-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
+        }
+      ],
+      "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
+      "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6247324F4934 (PIID N62473-24-F-4934), South Bay EDC Inc., Point Mugu NAWC CA",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/",
+          "quote": "DB REPAIR AND REPLACE SHORE POWER MOUND NAVBASE VENTURA COUNTY/PT MUGU CALIFORNIA.",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    },
+    {
+      "id": "beaufort-parris-island-utility-privatization-water",
+      "sector": "Critical civic infrastructure",
+      "name": "MCRD Parris Island / MCAS Beaufort 50-year water and wastewater privatization (N69450-08-C-0070)",
+      "country": "US",
+      "region": "Beaufort, South Carolina",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC (MCRD Parris Island, MCAS Beaufort, Naval Hospital Beaufort, Laurel Bay housing)",
+        "provider": "Beaufort-Jasper Water & Sewer Authority",
+        "utility": "Beaufort-Jasper Water & Sewer Authority"
+      },
+      "instrument": "utility tariff",
+      "signed": "2008-02",
+      "term_years": 50,
+      "capacity": "Water distribution and wastewater collection systems at four Navy and Marine Corps sites; no electric generation in scope",
+      "capex": "$20,987,602.80 obligated as of the record's last modification on 2019-07-16, against a base-and-all-options value of $254,977,740.80; period of performance 2008-02-28 to 2058-02-27",
+      "displaced": "Government ownership and operation of the installations' water and wastewater systems",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Utility privatization contract, fixed price redetermination",
+          "id": "PIID N69450-08-C-0070",
+          "date": "2008-02-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "This record exists to correct a lead. The NAVFAC Beaufort utility privatization reported at roughly $251.4 million over 50 years resolves in the federal award data to N69450-08-C-0070, awarded to the Beaufort-Jasper Water & Sewer Authority on 2008-02-28 with a period of performance to 2058-02-27 — exactly 50 years — and a current base-and-all-options value of $254,977,740.80, close to but not identical with the reported figure. The material correction is the commodity: the contract covers the water distribution and wastewater collection systems at MCRD Parris Island, MCAS Beaufort, the Naval Hospital and Laurel Bay housing. It contains no electricity. USAspending shows only $20,987,602.80 obligated, but the award record was last modified on 2019-07-16, so that obligation figure is a floor that stops eleven years into a fifty-year term rather than a current total.",
+      "microreactor_read": "A quarter-billion-dollar, fifty-year Beaufort utility deal is real but it is not an electricity market, so it prices nothing a reactor sells; the number to carry forward from Beaufort is the separate $212.7M Parris Island ESPC, not this one. The transferable fact is structural: DoD is comfortable handing a single counterparty a 50-year franchise over a commodity utility at a base, and that is precisely the tenor a microreactor needs and cannot get from a construction contract.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6945008C0070 (PIID N69450-08-C-0070), Beaufort-Jasper Water & Sewer Authority",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/",
+          "quote": "MCRD PARRIS ISLAND, MCAS BEAUFORT, NAVAL HOSPITAL AND LAUREL BAY HOUSING WATER AND WASTEWATER SYSTEM PRIVATIZATION CONTRACT",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Regional drinking-water treatment and pumping systems",
+        "Major city wastewater plants"
+      ]
+    },
+    {
+      "id": "salisbury-vamc-campus-generator",
+      "sector": "Medical campuses",
+      "name": "Salisbury VA Medical Center campus generator installation (36C24626C0037)",
+      "country": "US",
+      "region": "Salisbury, North Carolina",
+      "parties": {
+        "host": "U.S. Department of Veterans Affairs, Salisbury VAMC",
+        "provider": "Valiant Construction LLC"
+      },
+      "instrument": "design-build",
+      "signed": "2026-05",
+      "term_years": 1,
+      "capacity": "Campus-wide standby generation for a VA medical center; kW rating not stated in the award record",
+      "capex": "$23,905,280 obligated; base and all options identical, period of performance 2026-05-14 to 2027-07-28",
+      "displaced": "Nothing — this is new or replacement standby diesel capacity bought to keep a hospital campus alive through grid outages",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Y1DZ construction of other hospital buildings",
+          "id": "PIID 36C24626C0037",
+          "date": "2026-05-14",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "VA Network Contracting Office 6 awarded Valiant Construction LLC $23,905,280 on 2026-05-14 to install a campus generator at the Salisbury VA Medical Center, with a period of performance to 2027-07-28 and no unexercised options. The award buys standby capacity only: the generators run during outages and testing, not as a source of energy. This is one of a class — the same sweep surfaced VA generator awards of $22.9M in New York, $19.0M in Maryland and $10.3M at Loma Linda in California — so $10M to $24M per hospital campus is the going federal rate for backup power that produces almost no kilowatt-hours.",
+      "microreactor_read": "A single VA hospital campus is willing to spend $23.9 million on diesel plant that will idle for 8,700 hours a year, and it will do it again in fifteen or twenty years. That is the number a 1-5 MW microreactor has to be measured against at a medical campus — not the hospital's energy bill, but its resilience capex, because the reactor is the only product that can be charged to both budget lines at once.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_36C24626C0037 (PIID 36C24626C0037), Valiant Construction LLC, Salisbury NC",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/",
+          "quote": "INSTALL CAMPUS GENERATOR SALISBURY VAMC",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Large individual hospitals"
+      ]
+    },
+    {
+      "id": "san-juan-va-generator-farm-hurricane-hardening",
+      "sector": "Medical campuses",
+      "name": "San Juan VA Medical Center generator farm hurricane hardening (36C24826C0006)",
+      "country": "US",
+      "region": "San Juan, Puerto Rico",
+      "parties": {
+        "host": "U.S. Department of Veterans Affairs, VA Caribbean Healthcare System",
+        "provider": "Project Management Solutions LLC"
+      },
+      "instrument": "design-build",
+      "signed": "2026-04",
+      "term_years": 2,
+      "capacity": "Existing on-site generator farm serving a VA medical center; kW rating not stated in the award record",
+      "capex": "$10,835,000 obligated; base and all options identical, period of performance 2026-04-22 to 2028-09-05",
+      "displaced": "Nothing is displaced — the award hardens diesel plant that already exists so it survives the next hurricane",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Z2DA repair or alteration of hospitals and infirmaries",
+          "id": "PIID 36C24826C0006",
+          "date": "2026-04-22",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "VA Network Contract Office 8 awarded Project Management Solutions LLC $10,835,000 on 2026-04-22 for construction to hurricane-harden the generator farm at the VA medical campus in San Juan, Puerto Rico, running to 2028-09-05. The scope is the enclosure and protection of existing diesel plant, not new capacity and not energy. On an island whose grid has failed repeatedly, the VA is spending eleven million dollars purely on making its backup diesels weatherproof — a cost line that exists only because the primary supply is untrustworthy and the backup is exposed.",
+      "microreactor_read": "Hurricane hardening is a recurring cost that a buried or hardened microreactor would not incur in the same form, and Puerto Rico prices it at $10.8M for one hospital's generator yard alone. Selling into a Caribbean medical campus means beating the sum of three lines the VA already pays separately — backup capex in the $10-24M band, hardening at $10.8M, and grid energy at PREPA's rates — rather than beating any one of them.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_36C24826C0006 (PIID 36C24826C0006), Project Management Solutions LLC, San Juan PR",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/",
+          "quote": "PROVIDE HURRICANE HARDENING AT GENERATOR FARM - CONSTRUCTION",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Large individual hospitals"
+      ]
+    },
+    {
+      "id": "camp-buehring-resilient-power-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "Camp Buehring ARCENT Readiness Training Center resilient power microgrid (W912QR26CA007)",
+      "country": "KW",
+      "region": "Camp Buehring, Kuwait",
+      "parties": {
+        "host": "U.S. Army Central (ARCENT), contracting through USACE Louisville District",
+        "provider": "AGCO-PS JV"
+      },
+      "instrument": "design-build",
+      "signed": "2026-01",
+      "term_years": 3,
+      "capacity": "1.5 MW diesel generator + 700 kW PV + 1.5 MW / 1.5 MWh battery + 1,500 kVA transformer, synchronised under one microgrid controller",
+      "capex": "$5,222,331 obligated; base and all options identical, period of performance 2026-01-23 to 2028-08-04",
+      "displaced": "Unbacked grid supply at a forward training site; the diesel is added, not removed",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, firm fixed price",
+          "id": "PIID W912QR26CA007",
+          "date": "2026-01-23",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "USACE Louisville District awarded AGCO-PS JV $5,222,331 on 2026-01-23 to supply resilient power to the ARCENT Readiness Training Center at Camp Buehring, Kuwait, running to 2028-08-04. Unusually for a federal award, the description itemises the whole power block: a 1,500 kVA transformer, a 1.5 MW diesel generator, 700 kW of solar PV and a 1.5 MW / 1.5 MWh battery, all synchronised. This is the smallest complete microgrid in this file and the only one whose full equipment list and price are both in the award record, which makes it the cleanest unit-cost benchmark available for a small forward site.",
+      "microreactor_read": "Against 1.5 MW of firm diesel capacity the whole package costs $5.22M, so the Army's blended price for a small resilient power block including storage, solar and interconnection is about $3,480 per kW of firm capacity — the toughest number in this file for a reactor to beat, and it is the number that applies at exactly the 1-5 MW size microreactors target. A microreactor wins this comparison only on fuel: diesel delivered to a Kuwait training camp, not the $5.2M of steel.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_W912QR26CA007 (PIID W912QR26CA007), AGCO-PS JV",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/",
+          "quote": "NEW 1500 KVA TRANSFORMER, 1.5MW DIESEL GENERATOR AND INSTALL A MG SYSTEM INCLUDING 700 KW PV SOLAR PANELS AND A 1.5MW/1.5MWH BESS",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "port-hadlock-emergency-diesel-generators",
+      "sector": "Marine terminals",
+      "name": "Port Hadlock emergency diesel generators, fuel tanks and microgrid (N44255-26-F-0125)",
+      "country": "US",
+      "region": "Port Hadlock, Jefferson County, Washington",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Northwest",
+        "provider": "Absher Construction Co."
+      },
+      "instrument": "design-build",
+      "signed": "2026-04",
+      "term_years": 2,
+      "capacity": "Emergency diesel generators, diesel fuel tanks and switchgear forming a backup power and microgrid system; MW rating not stated in the award record",
+      "capex": "$29,395,000 obligated; base and all options identical, period of performance 2026-04-28 to 2028-06-14",
+      "displaced": "Nothing — the award adds diesel capacity and the fuel storage to run it",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Task order under IDIQ N4425523D1700, PSC Y1JZ",
+          "id": "PIID N44255-26-F-0125",
+          "date": "2026-04-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/"
+        }
+      ],
+      "summary": "NAVFAC Northwest awarded Absher Construction $29,395,000 on 2026-04-28 to construct emergency diesel generators, diesel fuel tanks, switchgear and related work at Port Hadlock, Washington, forming a backup power and microgrid system for existing facilities, with a period of performance to 2028-06-14. The award description says explicitly that the facilities served cannot be relocated, which is the whole justification: the load is fixed to the waterfront, so the power has to come to it. This is a pure incumbent-pricing record — nearly thirty million dollars of diesel plant and fuel storage, in 2026, at one Navy waterfront site.",
+      "microreactor_read": "The Navy is still buying new diesel and new fuel tanks at $29.4M a site in 2026, which means the reactor's competition at a marine terminal is not a legacy asset being tolerated but a fresh capital decision being made today. A microreactor pitch here has to clear $29.4M for a comparable resilience outcome and then argue the fuel tanks away, because the tank farm — not the generator — is what makes a waterfront diesel installation expensive and permanently regulated.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N4425526F0125 (PIID N44255-26-F-0125), Absher Construction Co., Port Hadlock WA",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/",
+          "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    },
+    {
+      "id": "camden-us-courthouse-standby-generator",
+      "sector": "Critical civic infrastructure",
+      "name": "Mitchell H. Cohen U.S. Courthouse standby generator replacement (47PD0125C0002)",
+      "country": "US",
+      "region": "Camden, New Jersey",
+      "parties": {
+        "host": "U.S. General Services Administration, Public Buildings Service Region 3",
+        "provider": "JD Bravo Co Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2025-02",
+      "term_years": 2,
+      "capacity": "One emergency standby generator serving a federal courthouse and annex; kW rating not stated in the award record",
+      "capex": "$2,914,260 obligated, $2,766,002 already outlaid; base and all options identical, period of performance 2025-02-26 to 2026-08-31",
+      "displaced": "The building's previous emergency standby generator, removed and replaced",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Z2AA repair or alteration of office buildings",
+          "id": "PIID 47PD0125C0002",
+          "date": "2025-02-26",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "GSA awarded JD Bravo Co $2,914,260 on 2025-02-26 to remove and replace the emergency standby generator at the Mitchell H. Cohen U.S. Courthouse and Annex in Camden, New Jersey, and the job is nearly complete — $2,766,002 has already been outlaid. This is the low end of the federal resilience ladder and it is here for scale calibration: a single generator swap at one mid-sized civic building, priced as a standalone construction contract with no energy, no fuel and no service term attached.",
+      "microreactor_read": "Three million dollars is what one grid-connected federal civic building pays for the right to survive an outage, and it buys no energy at all. That sets the floor of the civic market a microreactor can address: below roughly $3M of resilience spend per building, no nuclear product of any size is in the conversation, which is why the sector's real targets are campuses and districts aggregating dozens of these line items, not individual buildings.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_47PD0125C0002 (PIID 47PD0125C0002), JD Bravo Co Inc., Camden NJ",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/",
+          "quote": "THIS AWARD IS FOR THE REMOVAL AND REPLACEMENT OF THE EMERGENCY STANDBY GENERATOR AND ASSOCIATED TASKS.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ramey-arc-microgrid-puerto-rico",
+      "sector": "Critical civic infrastructure",
+      "name": "Ramey Army Reserve Center microgrid, ERCIP (W912QR24C0029)",
+      "country": "US",
+      "region": "Aguadilla, Puerto Rico",
+      "parties": {
+        "host": "U.S. Army Reserve, contracting through USACE Louisville District",
+        "provider": "RQ-LORD JV"
+      },
+      "instrument": "design-build",
+      "signed": "2024-08",
+      "term_years": 3,
+      "capacity": "Site microgrid at an Army Reserve Center; MW rating not stated in the award record",
+      "capex": "$19,490,971.86 obligated against a base-and-all-options value of $21,403,321.86; period of performance 2024-08-30 to 2027-12-07",
+      "displaced": "Dependence on the Puerto Rico grid at a reserve center used as a staging point in emergencies",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract under the Energy Resilience and Conservation Investment Program, PSC Y1NZ",
+          "id": "PIID W912QR24C0029",
+          "date": "2024-08-30",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "USACE Louisville District awarded RQ-LORD JV $19,490,971.86 on 2024-08-30 to build a microgrid at the Ramey Army Reserve Center in Aguadilla, Puerto Rico, under the Energy Resilience and Conservation Investment Program, with $21,403,321.86 of total potential value and a period of performance to 2027-12-07. A companion Louisville District award of $17,158,600.75 built the LTC Hernan G. Pesquera ARC microgrid in Juana Diaz on the same island. Together they show the Army spending roughly $37 million on two reserve-center microgrids in one territory, driven by a grid that failed catastrophically and has not been trusted since.",
+      "microreactor_read": "Puerto Rico is the clearest place in the federal data where resilience capex is being spent because the grid itself is the risk, and the Army is paying $17-20M per site for a microgrid at facilities far smaller than a base. For a microreactor that means the competing offer at a civic site on an unreliable grid is already a $20M microgrid — so the reactor has to displace that $20M and the diesel fuel logistics behind it, not merely add to them.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_W912QR24C0029 (PIID W912QR24C0029), RQ-LORD JV, Aguadilla PR",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/",
+          "quote": "RAMEY ARC MICROGRID ERCIP",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aberdeen-proving-ground-microgrid-backup-power",
+      "sector": "Remote outposts & microgrids",
+      "name": "Aberdeen Proving Ground microgrid and backup power (W912QR25CA034)",
+      "country": "US",
+      "region": "Aberdeen Proving Ground, Harford County, Maryland",
+      "parties": {
+        "host": "U.S. Army, contracting through USACE Louisville District",
+        "provider": "City Light & Power Aberdeen, LLC",
+        "utility": "City Light & Power (installation utility privatization contractor)"
+      },
+      "instrument": "design-build",
+      "signed": "2025-09",
+      "term_years": 4,
+      "capacity": "Installation microgrid plus backup power; MW rating not stated in the award record",
+      "capex": "$28,550,078 obligated against a base-and-all-options value of $30,700,239; period of performance 2025-09-26 to 2029-05-18, potential end 2031-08-17",
+      "displaced": "Grid-only supply at an Army installation",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Definitive contract, PSC Y1NZ construction of other utilities",
+          "id": "PIID W912QR25CA034",
+          "date": "2025-09-26",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/"
+        }
+      ],
+      "summary": "USACE Louisville District awarded City Light & Power Aberdeen $28,550,078 on 2025-09-26 for a microgrid and backup power at Aberdeen Proving Ground, with $30,700,239 of total potential value and a potential end date of 2031-08-17. The recipient is notable: City Light & Power is the installation's utility privatization contractor, and the same corporate family holds the parallel microgrid awards at Joint Base Lewis-McChord ($33,506,686 and $28,047,244) and Fort Riley ($24,201,003). The Army is routing installation microgrid construction through the entities that already own the distribution systems rather than through open construction competition.",
+      "microreactor_read": "The buyer of on-base generation is increasingly the privatized utility that owns the wires, not the Army directly, and that counterparty is signing $24-34M microgrid contracts at four installations at once. A microreactor developer selling to the Army should be selling to City Light & Power and its peers, because those firms already hold the site, the distribution assets and the long-term utility contract that can carry a reactor's capital cost across decades — the Army's own construction line cannot.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_W912QR25CA034 (PIID W912QR25CA034), City Light & Power Aberdeen LLC",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/",
+          "quote": "ABERDEEN PROVING GROUND MICROGRID AND BACKUP POWER",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "avec-new-stuyahok-ekwok-era-solar-storage",
+      "sector": "Remote outposts & microgrids",
+      "name": "New Stuyahok and Ekwok solar-plus-storage, DOE Energy Improvements in Rural or Remote Areas (DE-CD0000119)",
+      "country": "US",
+      "region": "New Stuyahok, Alaska (Dillingham Census Area)",
+      "parties": {
+        "host": "Alaska Village Electric Cooperative, on behalf of New Stuyahok and Ekwok",
+        "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
+        "utility": "Alaska Village Electric Cooperative"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-09",
+      "term_years": 3,
+      "capacity": "500 kW solar PV array + 540 kWh battery energy storage system + microgrid controller, integrated with the existing village diesel power plant",
+      "capex": "$4,340,079 federal obligation, no non-federal cost share, so total project funding is also $4,340,079. Only $36,013 had been outlaid as of the record's last modification on 2026-07-20.",
+      "displaced": "An estimated 24 percent of the fuel burned at the existing diesel power plant serving New Stuyahok and Ekwok",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
+          "id": "FAIN DECD0000119",
+          "date": "2024-09-24",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000119_089/"
+        }
+      ],
+      "summary": "DOE's Office of Clean Energy Demonstrations awarded Alaska Village Electric Cooperative $4,340,079 on 2024-09-24 under the Energy Improvements in Rural or Remote Areas program, to build a 500 kW solar array, a 540 kWh battery and a microgrid controller for the Yup'ik villages of New Stuyahok and Ekwok in the Dillingham region of southwest Alaska. The federal share is 100 percent — the award record shows no non-federal funding at all — and the stated benefit is a 24 percent cut in the existing diesel plant's fuel consumption, plus a reduction in the volume of fuel barged up the Nushagak River. This is the first record in this file to come from the ERA program, and its shape is the ERA shape: a grant, not a supply contract, with no price per kilowatt-hour anywhere in it.",
+      "microreactor_read": "The award buys 500 kW of solar nameplate in southwest Alaska for $4.34M — $8,680 per kW of a resource that produces nothing in December — and gets a 24 percent diesel cut for it. Scaled linearly off the award's own numbers, a full diesel displacement at these two villages is worth roughly $18M of public money, which is the ceiling a 1 MW microreactor has to sit under; the reactor's real advantage is that it is the only item on that list that supplies firm capacity in the dark months, when the PV contributes zero and the diesel contributes everything.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000119 (FAIN DECD0000119), Alaska Village Electric Cooperative Inc., New Stuyahok AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000119_089/",
+          "quote": "THIS PROJECT PROPOSES TO CONSTRUCT A 500 KW SOLAR PHOTOVOLTAIC (PV) ARRAY, A 540 KWH BATTERY ENERGY",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Regional grids serving several communities"
+      ]
+    },
+    {
+      "id": "tanana-chiefs-alaskan-tribal-energy-sovereignty-era",
+      "sector": "Remote outposts & microgrids",
+      "name": "Alaskan Tribal Energy Sovereignty — eight-village microgrid upgrade, DOE ERA (DE-CD0000069)",
+      "country": "US",
+      "region": "Nulato, Huslia, Minto, Kaltag, Grayling, Anvik, Shageluk and Holy Cross, Alaska",
+      "parties": {
+        "host": "Tanana Chiefs Conference (Dena Nena Henash), with Alaska Village Electric Cooperative",
+        "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-08",
+      "term_years": 6,
+      "capacity": "High-penetration solar PV and battery storage retrofitted into eight existing village microgrids; individual MW ratings not stated in the award record",
+      "capex": "$26,062,370 federal cost share plus $6,521,843 non-federal, $32,584,213 total funding. DOE released $4.1 million of that for Phase 1 activities; USAspending's obligation field carries the full multi-phase federal share, and total outlays stood at $431,606 as of 2026-08-14.",
+      "displaced": "Eight communities that rely on diesel for 100 percent of their electricity; the project targets a 40 percent cut in regional diesel consumption and more than 1,550 tonnes a year of avoided CO2",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Cooperative agreement under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
+          "id": "FAIN DECD0000069",
+          "date": "2024-08-13",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000069_089/"
+        }
+      ],
+      "summary": "OCED awarded the Tanana Chiefs Conference a cooperative agreement on 2024-08-13 under the ERA program to put solar and storage into the existing microgrids of eight roadless interior Alaska villages, all of which currently generate 100 percent of their electricity from diesel and pay more than four times the national average for it. The federal share is $26,062,370 against $6,521,843 of non-federal money, for $32,584,213 total — about $4.07 million per village — and the goal is a 40 percent regional diesel offset. The obligated-versus-potential distinction here is unusually sharp and the award record hides it: USAspending reports $26,062,370 as the obligation, while DOE's own award announcement says only 'more than $4.1 million' was released to begin Phase 1. The stated end-state is Alaska's largest tribally owned independent power producer.",
+      "microreactor_read": "$4.07M of public money per village buys a 40 percent diesel cut, which extrapolates to roughly $10.2M per village for full displacement — the price band a microreactor would have to hit at any one of these eight sites. The binding constraint is not that number but the load: a village whose whole electrical demand is served by a small diesel plant is well below the 1 MW floor of the smallest microreactor, so the addressable buyer is the eight-village tribal IPP this award creates, not any single village.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000069 (FAIN DECD0000069), Dena Nena Henash (Tanana Chiefs Conference), AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000069_089/",
+          "quote": "MICROGRIDS IN EIGHT REMOTE TRIBAL COMMUNITIES CURRENTLY RELYING ON DIESEL FOR 100% OF THEIR",
+          "status": "fetched"
+        },
+        {
+          "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
+          "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
+          "quote": "with more than $4.1 million (of the total federal cost share of up to $26.06 million) to begin Phase 1 activities",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Regional grids serving several communities"
+      ]
+    },
+    {
+      "id": "kokhanok-paradigm-shift-era-microgrid",
+      "sector": "Remote outposts & microgrids",
+      "name": "Kokhanok Paradigm Shift microgrid upgrade, DOE ERA (DE-CD0000120)",
+      "country": "US",
+      "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
+      "parties": {
+        "host": "Kokhanok Village Council",
+        "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
+        "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-08",
+      "term_years": 4,
+      "capacity": "1 MW / 943 kWh battery energy storage system, plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
+      "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
+      "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE. Alaska RCA's FY2024 rate filing puts the village's actual load at 358,953 kWh test-period sales (roughly 41 kW average) and its certified cost of service at $1.0209/kWh, of which $0.6498/kWh is fuel — a fuel bill of roughly $233,000/year the grant is displacing.",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
+          "id": "FAIN DECD0000120",
+          "date": "2024-08-13",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
+        },
+        {
+          "forum": "State PUC",
+          "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+          "id": "L2300184 (docket U-23-010)",
+          "date": "2023-06-26",
+          "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+        }
+      ],
+      "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 1 MW/943 kWh battery, 100 kW solar, a 100 kW wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection. The load being served is genuinely tiny: Alaska RCA's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load, against a certified cost of service of $1.0209/kWh ($0.6498/kWh of which is fuel).",
+      "microreactor_read": "Five million dollars of federal money for a village of 170 people (roughly $29,200 per resident) is buying about $5,000 per installed kW of non-diesel capacity to displace $0.6498/kWh diesel fuel — a willingness to pay, and a capex benchmark, that no commercial power market would support without a grant. Against a 41 kW average load, a 1 MW-class microreactor would be roughly 20x oversized for this single village: Kokhanok prices the sector's grant economics and simultaneously proves the smallest microreactor is still too big for the single-village case.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/",
+          "quote": "THIS PROJECT SEEKS TO INSTALL A 943 KWH BATTERY ENERGY STORAGE SYSTEM",
+          "status": "fetched"
+        },
+        {
+          "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
+          "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
+          "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
+          "status": "fetched"
+        },
+        {
+          "label": "Regulatory Commission of Alaska — Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+          "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+          "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Individual remote grids with sufficient year-round demand"
+      ]
+    },
+    {
+      "id": "san-carlos-apache-hospital-community-microgrid",
+      "sector": "Medical campuses",
+      "name": "San Carlos Hospital Community Microgrid, DOE Office of Indian Energy (DE-IE0000170)",
+      "country": "US",
+      "region": "Peridot, Gila County, Arizona (San Carlos Apache Reservation)",
+      "parties": {
+        "host": "San Carlos Apache Tribal Council / San Carlos Apache Healthcare Corporation",
+        "provider": "U.S. Department of Energy, Office of Indian Energy (funder)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-07",
+      "term_years": 3,
+      "capacity": "750 kW solar PV array + 500 kW grid-forming battery energy storage system + microgrid controller, alongside the hospital's existing diesel generators",
+      "capex": "$4,000,000 federal obligation plus $4,435,784 non-federal cost share, $8,435,784 total funding; $361,286 outlaid as of 2026-08-10. Period of performance 2024-08-01 to 2027-07-31.",
+      "displaced": "Grid outages at a reservation hospital that today rides them out on diesel generators; the microgrid supplements rather than retires them",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Project grant under CFDA 81.087, Renewable Energy Research and Development",
+          "id": "FAIN DEIE0000170",
+          "date": "2024-07-11",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEIE0000170_089/"
+        },
+        {
+          "forum": "DOE Office of NEPA Policy and Compliance",
+          "type": "Categorical exclusion determination",
+          "id": "CX-270928",
+          "date": "2026-02-11",
+          "url": "https://www.energy.gov/nepa/articles/cx-270928-san-carlos-hospital-community-microgrid"
+        }
+      ],
+      "summary": "DOE's Office of Indian Energy awarded the San Carlos Apache Tribal Council $4,000,000 on 2024-07-11 for a microgrid serving the tribe's hospital campus at Peridot, Arizona, and the tribe put up $4,435,784 of its own money — a 53 percent non-federal share, unusual among the grant-funded records in this file. DOE's NEPA determination describes the package as a 750 kW solar array, a 500 kW grid-forming battery and a microgrid controller. The hospital's existing diesel generators stay; the microgrid is layered on top of them. The award record publishes no energy price and no term of supply, because there is no supply contract — the tribe owns the asset outright at the end.",
+      "microreactor_read": "This is the shape of the medical-campus opportunity at its small end: $8.44M all-in for 750 kW of solar and 500 kW of storage that still leans on diesel for a real outage, at a hospital whose owner was willing to fund the majority of it. A 1-5 MW microreactor would have to come in near $8.4M to match the total capital the campus could raise here, and it would be selling against a package that has already been bought — which is why the sellable moment at a hospital is the diesel replacement cycle, not the year after a microgrid lands.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_DEIE0000170 (FAIN DEIE0000170), San Carlos Apache Tribal Council, Peridot AZ",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEIE0000170_089/",
+          "quote": "\"description\":\"SAN CARLOS HOSPITAL COMMUNITY MICROGRID\"",
+          "status": "fetched"
+        },
+        {
+          "label": "DOE Office of NEPA Policy and Compliance — CX-270928: San Carlos Hospital Community Microgrid",
+          "url": "https://www.energy.gov/nepa/articles/cx-270928-san-carlos-hospital-community-microgrid",
+          "quote": "a 500 kilowatt (kW) battery energy storage system (BESS), a 750 kW solar photovoltaic (PV) array, and a microgrid controller",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Large individual hospitals"
+      ]
+    },
+    {
+      "id": "erie-county-medical-center-fema-generators",
+      "sector": "Medical campuses",
+      "name": "Erie County Medical Center standby generators, FEMA HMGP (DR-4480-0059-R)",
+      "country": "US",
+      "region": "Erie County, New York",
+      "parties": {
+        "host": "Erie County Medical Center",
+        "provider": "FEMA Hazard Mitigation Grant Program, administered by New York State"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-03",
+      "capacity": "Generators plus other equipment purchase and installation at a hospital campus; kW rating not published in the FEMA project record",
+      "capex": "$15,144,418 total project amount; $13,629,976 federal share obligated at a 90 percent cost share, leaving roughly $1.5M to the hospital",
+      "displaced": "Nothing is displaced — this is added standby capacity so a county medical center can ride through a grid failure",
+      "price": "FEMA's own benefit-cost analysis scores the project at a 4.43 benefit-cost ratio with $67,624,384 of net value of benefits",
+      "filings": [
+        {
+          "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
+          "type": "HMGP project, project type 601.1 Generators; 602.1 Other Equipment Purchase and Installation, disaster DR-4480",
+          "id": "DR-4480-0059-R",
+          "date": "2024-03-05",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27"
+        }
+      ],
+      "summary": "FEMA approved a $15,144,418 hazard-mitigation project for Erie County Medical Center on 2024-03-05 and obligated $13,629,976 of it the next day, at a 90 percent federal cost share, to install generators and associated equipment at the hospital campus. The number that matters more than the price is FEMA's own appraisal of what the generators are worth: a benefit-cost ratio of 4.43 and a net value of benefits of $67,624,384. That is the federal government's modeled estimate of the losses a single hospital avoids by not losing power, and it is four and a half times what it costs to prevent them.",
+      "microreactor_read": "The generator sticker at a large hospital is $15.1M, but the number a microreactor should actually be priced against is the $67.6M of avoided loss FEMA has already put on paper for this one campus — that is the value of firm power at a hospital, and it is the ceiling any resilience product can argue toward. A 1-5 MW reactor at $15M that also sells energy every hour, instead of idling, is inside a band the federal government has already validated with money.",
+      "sources": [
+        {
+          "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0059-R (Erie County Medical Center)",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27",
+          "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\"",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
+        }
+      ],
+      "load": [
+        "Large individual hospitals"
+      ]
+    },
+    {
+      "id": "cayuga-medical-center-fema-generators",
+      "sector": "Medical campuses",
+      "name": "Cayuga Medical Center standby generators, FEMA HMGP (DR-4480-0080-R)",
+      "country": "US",
+      "region": "Tompkins County, New York",
+      "parties": {
+        "host": "Cayuga Medical Center",
+        "provider": "FEMA Hazard Mitigation Grant Program, administered by New York State"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-02",
+      "capacity": "Generators at a hospital campus; kW rating not published in the FEMA project record",
+      "capex": "$11,612,000 total project amount; $10,450,800 federal share obligated at a 90 percent cost share",
+      "price": "FEMA scores the project at a 6.91 benefit-cost ratio with $81,099,633 of net value of benefits",
+      "displaced": "Nothing is displaced — added standby capacity at a hospital that would otherwise lose power with the grid",
+      "filings": [
+        {
+          "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
+          "type": "HMGP project, project type 601.1 Generators, disaster DR-4480",
+          "id": "DR-4480-0080-R",
+          "date": "2024-02-14",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27"
+        }
+      ],
+      "summary": "FEMA approved an $11,612,000 generator project for Cayuga Medical Center in Tompkins County, New York on 2024-02-14 and obligated $10,450,800 the following day at a 90 percent federal cost share. Its benefit-cost ratio is 6.91 and FEMA's modeled net value of benefits is $81,099,633 — a larger avoided loss than at the bigger Erie County project, on a smaller generator spend. Read alongside the Erie record, the pair sets the going federal rate for hospital standby power in one state in one year: $11.6M and $15.1M of project cost, 90 percent of it federal, against $81.1M and $67.6M of modeled avoided loss.",
+      "microreactor_read": "Two New York hospitals in the same program year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — more than five dollars of avoided damage per dollar of project cost — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
+      "sources": [
+        {
+          "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0080-R (Cayuga Medical Center)",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27",
+          "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\"",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
+        }
+      ],
+      "load": [
+        "Large individual hospitals"
+      ]
+    },
+    {
+      "id": "prasa-toa-alta-fema-generators",
+      "sector": "Critical civic infrastructure",
+      "name": "Puerto Rico Aqueduct and Sewer Authority generators, Toa Alta, FEMA HMGP (DR-4339-0019-R)",
+      "country": "US",
+      "region": "Toa Alta, Puerto Rico",
+      "parties": {
+        "host": "Puerto Rico Aqueduct and Sewer Authority (PRASA)",
+        "provider": "FEMA Hazard Mitigation Grant Program, administered by Puerto Rico"
+      },
+      "instrument": "grant-funded",
+      "signed": "2021-05",
+      "capacity": "Regular generators at PRASA water and wastewater facilities in Toa Alta; kW rating not published in the FEMA project record",
+      "capex": "$16,502,820.72 total project amount at a 100 percent federal cost share. $12,436,047.31 obligated to date; the initial obligation on 2021-05-25 was only $661,523.70, and the project was re-approved on 2025-06-05.",
+      "price": "Benefit-cost ratio 4.22, net value of benefits $150,804,923",
+      "displaced": "Nothing is displaced — the award buys diesel generators so a water utility keeps pumping when the Puerto Rico grid fails",
+      "filings": [
+        {
+          "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
+          "type": "HMGP project, project type 601.2 Generators - Regular, disaster DR-4339 (Hurricane Maria)",
+          "id": "DR-4339-0019-R",
+          "date": "2025-06-05",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27"
+        }
+      ],
+      "summary": "FEMA is funding $16,502,820.72 of generators for the Puerto Rico Aqueduct and Sewer Authority in Toa Alta under the Hurricane Maria hazard-mitigation program, at a 100 percent federal cost share — PRASA pays nothing. The obligation history is the interesting part and it is exactly the obligated-versus-potential trap: $661,523.70 was obligated on 2021-05-25, and $12,436,047.31 has been obligated as of the 2025-06-05 re-approval, still $4.07M short of the approved project amount. Quoting the project amount as spending would overstate the actual federal outlay by a third. FEMA's benefit-cost model scores the generators at 4.22 with $150,804,923 of net benefits.",
+      "microreactor_read": "The federal government values keeping one municipality's water pumps energised through Puerto Rico's outages at $150.8M, and is paying $16.5M of diesel generators to do it — the whole thing, no local match. At a water utility a microreactor is not competing on energy price at all; it is competing against a fully-funded diesel fleet with a 4:1 benefit case, and its only edge is that a generator's fuel has to keep arriving during the same storm that took the grid down, and a reactor's does not.",
+      "sources": [
+        {
+          "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4339-0019-R (Puerto Rico Aqueduct and Sewer Authority, Toa Alta)",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27",
+          "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\"",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Regional drinking-water treatment and pumping systems",
+        "Major city wastewater plants"
+      ]
+    },
+    {
+      "id": "waterone-johnson-county-fema-generators",
+      "sector": "Critical civic infrastructure",
+      "name": "WaterOne standby generators, FEMA Legislative Pre-Disaster Mitigation (LPDM-PJ-07-KS-2022-001)",
+      "country": "US",
+      "region": "Johnson County, Kansas",
+      "parties": {
+        "host": "WaterOne (Water District No. 1 of Johnson County)",
+        "provider": "FEMA Legislative Pre-Disaster Mitigation program, administered by the Adjutant General of Kansas - KDEM"
+      },
+      "instrument": "grant-funded",
+      "signed": "2022-09",
+      "capacity": "Regular generators at a metropolitan water utility; kW rating not published in the FEMA project record",
+      "capex": "$6,541,600 total project amount; $4,906,200 federal share obligated on 2022-09-15 at a 74 percent cost share, so WaterOne funds roughly $1.6M",
+      "price": "Benefit-cost ratio 38.09, net value of benefits $261,096,991 — the highest ratio found in the FEMA generator dataset for a project of this size",
+      "displaced": "Nothing is displaced — added standby diesel so a metropolitan water system keeps pressure through a grid outage",
+      "filings": [
+        {
+          "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
+          "type": "LPDM FY2022 project, project type 601.2 Generators - Regular, status Obligated",
+          "id": "LPDM-PJ-07-KS-2022-001",
+          "date": "2022-09-09",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27"
+        }
+      ],
+      "summary": "FEMA obligated $4,906,200 to WaterOne, the water utility for Johnson County, Kansas, on 2022-09-15 against a $6,541,600 generator project, at a 74 percent federal cost share. FEMA's benefit-cost model scores it at 38.09 with $261,096,991 of net value of benefits — roughly forty dollars of avoided loss for every dollar of generator. Nothing about the hardware is exotic; the ratio comes from what happens to a metropolitan area when its water system loses pressure. This is the clearest statement in the federal data of how much a public utility's continuity is worth relative to what anyone actually spends securing it.",
+      "microreactor_read": "The gap here is the whole argument: $6.5M of generators against $261M of modeled avoided loss means the ceiling on what a water utility could rationally pay for guaranteed power is two orders of magnitude above what it currently does. A microreactor sold to a water utility is not fighting for the $6.5M generator line — it is arguing that the $261M exposure justifies a firm-power asset in the tens of millions, and the FEMA benefit-cost worksheet is the document that makes that argument for the seller.",
+      "sources": [
+        {
+          "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project LPDM-PJ-07-KS-2022-001 (WaterOne, Johnson County KS)",
+          "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27",
+          "quote": "\"subrecipient\":\"WaterOne\"",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
+        }
+      ],
+      "load": [
+        "Regional drinking-water treatment and pumping systems"
+      ]
+    },
+    {
+      "id": "barnstable-school-microgrid-grip",
+      "sector": "Critical civic infrastructure",
+      "name": "Barnstable School Microgrid, DOE Grid Resilience and Innovation Partnerships (DE-GD0000986)",
+      "country": "US",
+      "region": "Hyannis, Barnstable County, Massachusetts",
+      "parties": {
+        "host": "Town of Barnstable public high school, middle school and adult community center complex",
+        "provider": "Massachusetts Department of Energy Resources (recipient of record)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2025-01",
+      "term_years": 7,
+      "capacity": "Renewable-supported microgrid across a multi-building school and community-center complex; MW rating not stated in the award record",
+      "capex": "$42,328,000 federal obligation plus $3,256,000 non-federal cost share, $45,584,000 total funding; period of performance 2025-01-10 to 2031-09-30",
+      "displaced": "Grid-only supply and purchased energy at a school complex that doubles as the town's emergency shelter",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Cooperative agreement under CFDA 81.254, Grid Infrastructure Deployment and Resilience (IRA-funded)",
+          "id": "FAIN DEGD0000986",
+          "date": "2025-01-15",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEGD0000986_089/"
+        }
+      ],
+      "summary": "DOE obligated $42,328,000 to the Massachusetts Department of Energy Resources on 2025-01-15 for a microgrid across Barnstable's public high school, middle school and adult community center in Hyannis, with $3,256,000 of non-federal money and a period of performance to 2031-09-30. The stated objectives put resilience alongside cost: lower energy expenses for the education facilities, a smaller carbon footprint, and an explicit increase in multi-building emergency shelter capacity. This is the civic analogue of the base microgrids elsewhere in this file — a public campus, not a single building, and a federal grant covering 93 percent of it.",
+      "microreactor_read": "A school district complex on Cape Cod is carrying a $45.6M microgrid, which is the same order as an Army installation microgrid and roughly fifteen times the $2.9M a single federal courthouse spends on a generator. That is the aggregation threshold for the civic sector: once several buildings and an emergency-shelter obligation are bundled behind one meter, the capital envelope reaches microreactor scale, and $45M for a campus microgrid is the number a 1-5 MW unit has to sit inside.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_DEGD0000986 (FAIN DEGD0000986), Massachusetts Department of Energy Resources, Hyannis MA",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEGD0000986_089/",
+          "quote": "INFLATION REDUCTION ACT (IRA) - BARNSTABLE SCHOOL MICROGRID",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "port-authority-ny-nj-epa-clean-ports",
+      "sector": "Marine terminals",
+      "name": "Port of New York and New Jersey zero-emission deployment, EPA Clean Ports Program (96275025)",
+      "country": "US",
+      "region": "Newark, Elizabeth and Bayonne, New Jersey and New York City, New York",
+      "parties": {
+        "host": "Port Authority of New York and New Jersey",
+        "provider": "U.S. Environmental Protection Agency (funder)"
+      },
+      "instrument": "grant-funded",
+      "signed": "2024-12",
+      "term_years": 4,
+      "capacity": "Battery-electric material handling equipment replacing diesel, EV charging infrastructure, shore power connections for marine vessels, and electrification of a cement hauler barge's diesel engines",
+      "capex": "$451,635,800 federal obligation plus $350,216,091 non-federal cost share, $801,851,891 total funding; period of performance 2025-01-01 to 2028-12-31",
+      "displaced": "Diesel material handling equipment, diesel drayage, at-berth vessel auxiliary diesel and a barge's diesel main engines",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Project grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+          "id": "FAIN 96275025",
+          "date": "2024-12-20",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/"
+        }
+      ],
+      "summary": "EPA obligated $451,635,800 to the Port Authority of New York and New Jersey on 2024-12-20 — the largest single Clean Ports award — against $350,216,091 of non-federal cost share, for $801,851,891 of total project value running to 2028-12-31. The scope is electrification of the load across Newark, Elizabeth, Bayonne and New York City: battery-electric material handling equipment, charging infrastructure, shore power connections for vessels, and the replacement of a cement hauler barge's diesel engines with electric power. Together with the $644.2M Port of Los Angeles award already in this file, two ports alone carry roughly $1.45 billion of new electrified port load, none of which is matched by a single dollar of new generation in the same awards.",
+      "microreactor_read": "The Clean Ports program has now committed over $1.4 billion at two ports to convert diesel machinery into electrical load, and paid for zero megawatts of supply — the entire gap falls on two urban distribution utilities inside four years. That gap, not a $/kW comparison, is the microreactor's opening at a marine terminal: the number to beat is the cost of the distribution upgrade plus demand charges the port has not yet priced, at a site where the alternative supply is a congested urban feeder.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_96275025 (FAIN 96275025), Port Authority of New York & New Jersey, Clean Ports Program",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/",
+          "quote": "THE INSTALLATION OF SHORE POWER CONNECTIONS FOR MARINE VESSELS, THE REPLACEMENT OF DIESEL ENGINES ON A CEMENT HAULER BARGE WITH ELECTRIC POWER",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    },
+    {
+      "id": "jbphh-bravo-piers-shore-power-upgrade",
+      "sector": "Marine terminals",
+      "name": "Bravo Piers Nos. 1 and 2 shore power upgrade, Joint Base Pearl Harbor-Hickam (N62478-24-F-4131)",
+      "country": "US",
+      "region": "Pearl Harbor, Honolulu, Hawaii",
+      "parties": {
+        "host": "U.S. Navy / NAVFAC Hawaii",
+        "provider": "Nan Inc."
+      },
+      "instrument": "design-build",
+      "signed": "2024-05",
+      "term_years": 2,
+      "capacity": "Shore power distribution serving two piers; megawatt rating not stated in the award record",
+      "capex": "$18,232,308.77 obligated; base and all options identical, so this is the whole job. Period of performance 2024-05-23 to 2026-08-22.",
+      "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life pier electrical distribution",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Delivery order under IDIQ N6247822D4009",
+          "id": "PIID N62478-24-F-4131",
+          "date": "2024-05-24",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4131_9700_N6247822D4009_9700/"
+        }
+      ],
+      "summary": "NAVFAC issued Nan Inc. a delivery order on 2024-05-24 to upgrade shore power at Bravo Piers Nos. 1 and 2 at Joint Base Pearl Harbor-Hickam for $18,232,308.77, with obligated and total-potential values identical and a period of performance ending 2026-08-22. Like the $44.3M Point Mugu mound replacement already in this file, the money buys electrical connection and no generation at all. A parallel Pearl Harbor award — $5,650,236.30 to D Square Construction for Wharf M1/M2 shore power distribution under MCON project P-8014U — was signed four months later, so the base was spending roughly $24M on pierside electrical distribution inside a single year.",
+      "microreactor_read": "Across Point Mugu, Pearl Harbor's Bravo Piers and Pearl Harbor's Wharf M1/M2, the Navy's cost band for connecting berthed vessels to shore power is $5.7M to $44.3M per waterfront, all of it wires. At Pearl Harbor that connection terminates in an isolated island grid with no mainland interconnection, so every megawatt moved off a ship's diesel lands on Oahu's generation stack — which is the specific condition under which a 1-20 MW reactor sited at the pier is buying supply the shore power projects assume and never fund.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6247824F4131 (PIID N62478-24-F-4131), Nan Inc., Pearl Harbor HI",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4131_9700_N6247822D4009_9700/",
+          "quote": "RM21-1992 BRAVO PIERS NOS. 1 & 2, UPGRADE SHORE POWER, JBPHH, HI",
+          "status": "fetched"
+        },
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N6247824F4298 (PIID N62478-24-F-4298), D Square Construction LLC, Wharf M1/M2 shore power distribution, JBPHH",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4298_9700_N6247822D4000_9700/",
+          "quote": "FY 2024 MCON PROGRAM PROJECT P-8014U WHARF M1/M2 SHORE POWER DISTRIBUTION, JBPHH, HI",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    },
+    {
+      "id": "marad-rrf-layberth-mobile-shore-power-generator",
+      "sector": "Marine terminals",
+      "name": "MARAD Ready Reserve Force layberth, mobile shore power generator at Terminal 2 Berths 205-206 (693JF723F00011N)",
+      "country": "US",
+      "region": "Terminal 2, Berths 205-206 (the award record names the berth but not the port; contracting office place of performance is MARAD headquarters, Washington DC)",
+      "parties": {
+        "host": "U.S. Department of Transportation, Maritime Administration",
+        "provider": "Pacific Layberthing South, LLC"
+      },
+      "instrument": "lease",
+      "signed": "2022-11",
+      "term_years": 5,
+      "capacity": "One rented mobile shore power generator supplying a single moored Ready Reserve Force vessel; kW rating not stated in the award record",
+      "capex": "$9,857,825.76 obligated, identical to base and all options; $6,923,481.90 already outlaid. Period of performance 2022-11-28 to a potential end of 2027-09-14.",
+      "displaced": "The vessel's own auxiliary diesel generation while laid up — replaced by a rented diesel generator on the pier, not by grid power",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Delivery order under IDIQ 693JF722D000014",
+          "id": "PIID 693JF723F00011N",
+          "date": "2022-11-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_693JF723F00011N_6938_693JF722D000014_6938/"
+        }
+      ],
+      "summary": "MARAD's delivery order to Pacific Layberthing South totals $9,857,825.76 with obligated and total-potential values identical, and $6,923,481.90 already disbursed. Its recorded purpose is to reimburse the layberth operator for renting a mobile shore power generator to power a Ready Reserve Force vessel moored at Terminal 2, Berths 205-206. The important limit on this record: the $9.86M is the delivery order's whole value, which also covers the layberth service, and the award record does not break out the generator's share — so this prices the vehicle, not the generator alone. What it does establish is that when shore power infrastructure is absent, the federal answer is to rent a diesel generator on a multi-year contract rather than build a connection.",
+      "microreactor_read": "This is the honest floor case for a marine terminal: no pier electrification, no grid tie, just a rented diesel on a five-year delivery order feeding one ship. It is also the clearest reason the $18M-$44M shore power projects elsewhere in this file get funded — the alternative is a recurring rental with no terminal value. A microreactor at a layberth or a small terminal is competing against an operating expense with no asset at the end of it, which is a far weaker incumbent than a capitalized generator.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_693JF723F00011N (PIID 693JF723F00011N), Pacific Layberthing South LLC, Maritime Administration",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_693JF723F00011N_6938_693JF722D000014_6938/",
+          "quote": "REIMBURSE THE LAYBERTH OPERATOR FOR EXPENSES INCURRED TO RENT A MOBILE SHORE POWER GENERATOR TO PROVIDE POWER TO THE RRF VESSEL MOORED AT TERMINAL 2 BERTH 205-206",
+          "status": "fetched"
+        }
+      ],
+      "load": [
+        "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+      ]
+    }
   ]
- },
- "cases": [
-  {
-   "id": "fort-stewart-10mw-generation-plant-microgrid",
-   "sector": "Remote outposts & microgrids",
-   "name": "Fort Stewart 10 MW generation plant with microgrid controls (W912HN26CA001)",
-   "country": "US",
-   "region": "Fort Stewart, Georgia",
-   "parties": {
-    "host": "U.S. Army / USACE Savannah District",
-    "provider": "David Boland Inc."
-   },
-   "instrument": "design-build",
-   "signed": "2025-11",
-   "term_years": 3,
-   "capacity": "10 MW generation plant with microgrid controls",
-   "capex": "$54,333,598 obligated; base and all options also $54,333,598 (firm, no unexercised options)",
-   "displaced": "Grid dependence at an Army installation; the award buys islandable on-site generation rather than replacing an existing plant",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, PSC Y1BG, NAICS 237130",
-     "id": "PIID W912HN26CA001",
-     "date": "2025-11-03",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "USACE Savannah District awarded David Boland Inc. a definitive construction contract on 2025-11-03 to build a 10 MW generation plant with microgrid controls at Fort Stewart, Georgia, with a period of performance running to 2028-12-15. The award record shows $54,333,598 obligated and an identical base-and-all-options value, so this is the whole contract, not a first tranche. Place of performance is recorded as FORT STEWART, LIBERTY COUNTY, GA 31315. The award is a construction contract only — no fuel, no operations, no long-term service.",
-   "microreactor_read": "This is the cleanest federal price stamp available for on-site firm generation at a defended site: $54.33M for 10 MW is $5,433/kW of installed capacity, engineering and construction included, with fuel and O&M still to come on top. A 1-20 MW microreactor sold into an Army installation has to land near or below $5,400/kW installed to be argued on capital cost alone, and its pitch has to be the fuel and O&M line the Boland contract does not cover.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_W912HN26CA001 (PIID W912HN26CA001), David Boland Inc.",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912HN26CA001_9700_-NONE-_-NONE-/",
-     "quote": "CONSTRUCT A 10MW GENERATION PLANT, WITH MICROGRID CONTROLS",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "parris-island-espc-microgrid",
-   "sector": "Remote outposts & microgrids",
-   "name": "MCRD Parris Island site-wide microgrid ESPC (N39430-17-F-1901)",
-   "country": "US",
-   "region": "Parris Island, South Carolina",
-   "parties": {
-    "host": "U.S. Marine Corps / NAVFAC EXWC",
-    "provider": "Ameresco, Inc."
-   },
-   "instrument": "ESPC/UESC",
-   "signed": "2016-12",
-   "term_years": 25,
-   "capacity": "3.5 MW natural-gas CHP + 6.7 MW-DC solar PV + 8.0 MWh battery + existing diesel backup, under one microgrid controller; announced as 10 MW of new on-site generation",
-   "price": "$91.1 million self-funding ESPC investment as announced by the contractor",
-   "capex": "$66,631,952 obligated to date against a base-and-all-options value of $212,716,674 (USAspending, award last modified 2026-05-01)",
-   "displaced": "An end-of-life central steam plant and grid purchases; announced as a 79% reduction in the depot's utility energy demand",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29029",
-     "id": "PIID N3943017F1901",
-     "date": "2016-12-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/"
-    }
-   ],
-   "summary": "NAVFAC EXWC issued Ameresco a task order under the DOE ESPC IDIQ on 2016-12-28 to build and then operate a site-wide microgrid at Marine Corps Recruit Depot Parris Island, with a period of performance running to 2041-11-30. Ameresco announced the deal as a $91.1 million self-funding ESPC covering 10 MW of new on-site generation, a 3.5 MW gas CHP plant replacing the end-of-life steam plant, 6.7 MW-DC of solar PV and an 8.0 MWh battery. The federal award record tells a different story about size: $66,631,952 has been obligated so far and the contract's base-and-all-options value is $212,716,674 — 2.3x the announced $91.1M, because the ESPC's later years are performance-period service payments, not construction. The host pays nothing up front and repays out of guaranteed savings across roughly 25 years.",
-   "microreactor_read": "Two numbers matter to a microreactor seller here and they are far apart: the capital comparison is $91.1M for about 10 MW of mixed generation, i.e. roughly $9,100/kW nameplate and about $26,000/kW if you count only the 3.5 MW of firm dispatchable CHP; the commercial comparison is the $212.7M of lifecycle contract value a 25-year vehicle at one recruit depot can actually carry. A 5-10 MW microreactor priced against the $91.1M sticker looks expensive and priced against the $212.7M lifecycle envelope looks financeable — which is why the instrument, not the capex, is the thing to copy.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N3943017F1901 (PIID N3943017F1901), Ameresco Inc., place of performance Parris Island SC",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943017F1901_9700_DEAM3609GO29029_8900/",
-     "quote": "\"total_obligation\":66631952.0",
-     "status": "fetched",
-     "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
-    },
-    {
-     "label": "Ameresco — Ameresco to Build Microgrid Integrating Onsite Generation and Storage at Marine Corps Recruit Depot Parris Island, South Carolina",
-     "url": "https://ir.ameresco.com/news-events/press-releases/detail/244/ameresco-to-build-microgrid-integrating-onsite-generation",
-     "quote": "$91.1 million self-funding Energy Savings Performance Contract (ESPC)",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "guantanamo-bay-lng-espc",
-   "sector": "Remote outposts & microgrids",
-   "name": "Naval Station Guantanamo Bay 20 MW LNG combined-cycle plant ESPC (N39430-19-F-9909)",
-   "country": "US",
-   "region": "Naval Station Guantanamo Bay, Cuba",
-   "parties": {
-    "host": "U.S. Navy / NAVFAC Southeast",
-    "provider": "Siemens Government Technologies, Inc."
-   },
-   "instrument": "ESPC/UESC",
-   "signed": "2019-07",
-   "term_years": 24,
-   "capacity": "20 MW LNG dual-fuel combined-cycle plant, plus a 13.7 MW solar facility; 15 existing diesel generators retained for outages and peaks",
-   "price": "Projected annual energy savings of $24.6 million over a 22-year performance period",
-   "capex": "$368.8 million for the power plant itself; $828.8 million announced ESPC value; USAspending shows $101,059,504 obligated against a base-and-all-options value of $927,391,394 running to 2043-04-24",
-   "displaced": "Diesel generation on an isolated island base — LNG substitution announced at approximately $9 million a year in fuel cost savings versus diesel, and a 27.4 percent cut in annual fuel consumption",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29041, firm fixed price",
-     "id": "PIID N3943019F9909",
-     "date": "2019-07-24",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
-    }
-   ],
-   "summary": "In July 2019 NAVFAC Southeast awarded Siemens Government Technologies an ESPC task order — announced at $828.8 million and issued for 25 years of construction plus operation — to replace diesel generation at Naval Station Guantanamo Bay with a dual-fuel LNG combined-cycle plant and a solar field. The plant was commissioned on 2023-09-07 and is rated 20 MW; the plant alone cost $368.8 million. The federal award record shows $101,059,504 obligated so far against a base-and-all-options value of $927,391,394 with a potential end date of 2043-04-24, so the contract has grown roughly $100M past its announced value and only about 11 percent of the ceiling has been obligated. The 15 pre-existing diesel generators were not retired; they were kept for outages and peaks.",
-   "microreactor_read": "Guantanamo is the strongest capex-per-MW argument in this file and it runs the reactor's way: $368.8M for 20 MW of island generation is $18,440/kW, and that is for a gas plant whose fuel still has to arrive by ship. A 1-20 MW microreactor competing at an isolated base does not need to beat $5,400/kW — at a site with no pipeline and no grid tie it needs to beat roughly $18,000/kW plus a fuel logistics chain, against a counterfactual the Navy itself valued at $24.6M a year in savings over 22 years.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
-     "quote": "\"total_obligation\":101059504.3",
-     "status": "fetched",
-     "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
-    },
-    {
-     "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
-     "url": "https://www.dvidshub.net/news/453129/naval-station-guantanamo-bay-commissions-new-energy-efficient-power-plant",
-     "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "doyon-utilities-alaska-utility-privatization",
-   "sector": "Remote outposts & microgrids",
-   "name": "Doyon Utilities 50-year utility privatization, Alaska Army installations (SP0600-07-C-8263)",
-   "country": "US",
-   "region": "Fort Wainwright, Alaska (plus Fort Greely and JBER-Richardson under the Doyon Utilities program)",
-   "parties": {
-    "host": "U.S. Army, contracting through DLA Energy",
-    "provider": "Doyon Utilities, LLC (Alaska Native corporation joint venture)",
-    "utility": "Doyon Utilities, LLC — regulated by the Regulatory Commission of Alaska"
-   },
-   "instrument": "utility tariff",
-   "signed": "2007-09",
-   "term_years": 51,
-   "capacity": "Full electric, heat, water and wastewater utility systems at Alaska Army installations; capacity not stated in the award record",
-   "capex": "$894,733,810 obligated to date against a base-and-all-options value of $3,082,072,958; period of performance 2007-09-28 to 2058-08-14",
-   "displaced": "Government ownership and operation of installation utility systems in interior Alaska, where the incumbent generation is coal and oil-fired central plant",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Utility service contract for utility privatization, firm fixed price",
-     "id": "PIID SP0600-07-C-8263",
-     "date": "2007-09-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
-    },
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Companion utility privatization contract, same recipient and date",
-     "id": "PIID SP0600-07-C-8261",
-     "date": "2007-09-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "DLA Energy awarded Doyon Utilities a utility privatization contract on 2007-09-28 covering Army installation utility systems in Alaska, with a period of performance that runs to 2058-08-14 — a fifty-one year term. The award record shows $894,733,810 already obligated and a base-and-all-options value of $3,082,072,958, making this by a wide margin the largest single utility vehicle surfaced in this sweep. A companion contract to the same recipient on the same day (SP0600-07-C-8261) carries a further $212,665,748 obligated. The contractor is a regulated utility: its rates at these installations are set by the Regulatory Commission of Alaska, not by the contract alone.",
-   "microreactor_read": "This is the instrument a microreactor should be sold into rather than around: a single counterparty already holds a fifty-year, three-billion-dollar franchise to supply heat and power to Alaska Army installations, and its generation is coal and oil in a place where fuel arrives by rail and barge. The reactor does not need to beat a $/kW number to enter — it needs to become an asset inside a rate base a regulator already approves, and the addressable line is the roughly $60M a year of obligations this one contract has averaged since 2007.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_SP060007C8263 (PIID SP0600-07-C-8263), Doyon Utilities LLC, Fort Wainwright AK",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
-     "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "port-of-los-angeles-epa-clean-ports",
-   "sector": "Marine terminals",
-   "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
-   "country": "US",
-   "region": "San Pedro, California",
-   "parties": {
-    "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
-    "provider": "U.S. Environmental Protection Agency (funder)",
-    "utility": "Los Angeles Department of Water and Power"
-   },
-   "instrument": "grant-funded",
-   "signed": "2025-01",
-   "term_years": 4,
-   "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
-   "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
-   "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
-     "id": "FAIN 97T27601",
-     "date": "2025-01-01",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
-    }
-   ],
-   "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
-   "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
-     "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  },
-  {
-   "id": "nbvc-point-mugu-shore-power-replacement",
-   "sector": "Marine terminals",
-   "name": "Naval Base Ventura County / Point Mugu shore power mound repair and replacement (N62473-24-F-4934)",
-   "country": "US",
-   "region": "Point Mugu, California",
-   "parties": {
-    "host": "U.S. Navy / NAVFAC Southwest",
-    "provider": "South Bay EDC Inc."
-   },
-   "instrument": "design-build",
-   "signed": "2024-07",
-   "term_years": 3,
-   "capacity": "Shore power mounds serving berthed vessels; megawatt rating not stated in the award record",
-   "capex": "$44,323,562 obligated; base and all options identical, so the full contract value is $44.3M with no unexercised options",
-   "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life shore power distribution equipment",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Design-build task order under IDIQ N6247324D5205",
-     "id": "PIID N62473-24-F-4934",
-     "date": "2024-07-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
-    }
-   ],
-   "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
-   "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N6247324F4934 (PIID N62473-24-F-4934), South Bay EDC Inc., Point Mugu NAWC CA",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/",
-     "quote": "DB REPAIR AND REPLACE SHORE POWER MOUND NAVBASE VENTURA COUNTY/PT MUGU CALIFORNIA.",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  },
-  {
-   "id": "beaufort-parris-island-utility-privatization-water",
-   "sector": "Critical civic infrastructure",
-   "name": "MCRD Parris Island / MCAS Beaufort 50-year water and wastewater privatization (N69450-08-C-0070)",
-   "country": "US",
-   "region": "Beaufort, South Carolina",
-   "parties": {
-    "host": "U.S. Navy / NAVFAC (MCRD Parris Island, MCAS Beaufort, Naval Hospital Beaufort, Laurel Bay housing)",
-    "provider": "Beaufort-Jasper Water & Sewer Authority",
-    "utility": "Beaufort-Jasper Water & Sewer Authority"
-   },
-   "instrument": "utility tariff",
-   "signed": "2008-02",
-   "term_years": 50,
-   "capacity": "Water distribution and wastewater collection systems at four Navy and Marine Corps sites; no electric generation in scope",
-   "capex": "$20,987,602.80 obligated as of the record's last modification on 2019-07-16, against a base-and-all-options value of $254,977,740.80; period of performance 2008-02-28 to 2058-02-27",
-   "displaced": "Government ownership and operation of the installations' water and wastewater systems",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Utility privatization contract, fixed price redetermination",
-     "id": "PIID N69450-08-C-0070",
-     "date": "2008-02-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "This record exists to correct a lead. The NAVFAC Beaufort utility privatization reported at roughly $251.4 million over 50 years resolves in the federal award data to N69450-08-C-0070, awarded to the Beaufort-Jasper Water & Sewer Authority on 2008-02-28 with a period of performance to 2058-02-27 — exactly 50 years — and a current base-and-all-options value of $254,977,740.80, close to but not identical with the reported figure. The material correction is the commodity: the contract covers the water distribution and wastewater collection systems at MCRD Parris Island, MCAS Beaufort, the Naval Hospital and Laurel Bay housing. It contains no electricity. USAspending shows only $20,987,602.80 obligated, but the award record was last modified on 2019-07-16, so that obligation figure is a floor that stops eleven years into a fifty-year term rather than a current total.",
-   "microreactor_read": "A quarter-billion-dollar, fifty-year Beaufort utility deal is real but it is not an electricity market, so it prices nothing a reactor sells; the number to carry forward from Beaufort is the separate $212.7M Parris Island ESPC, not this one. The transferable fact is structural: DoD is comfortable handing a single counterparty a 50-year franchise over a commodity utility at a base, and that is precisely the tenor a microreactor needs and cannot get from a construction contract.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N6945008C0070 (PIID N69450-08-C-0070), Beaufort-Jasper Water & Sewer Authority",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6945008C0070_9700_-NONE-_-NONE-/",
-     "quote": "MCRD PARRIS ISLAND, MCAS BEAUFORT, NAVAL HOSPITAL AND LAUREL BAY HOUSING WATER AND WASTEWATER SYSTEM PRIVATIZATION CONTRACT",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Regional drinking-water treatment and pumping systems",
-    "Major city wastewater plants"
-   ]
-  },
-  {
-   "id": "salisbury-vamc-campus-generator",
-   "sector": "Medical campuses",
-   "name": "Salisbury VA Medical Center campus generator installation (36C24626C0037)",
-   "country": "US",
-   "region": "Salisbury, North Carolina",
-   "parties": {
-    "host": "U.S. Department of Veterans Affairs, Salisbury VAMC",
-    "provider": "Valiant Construction LLC"
-   },
-   "instrument": "design-build",
-   "signed": "2026-05",
-   "term_years": 1,
-   "capacity": "Campus-wide standby generation for a VA medical center; kW rating not stated in the award record",
-   "capex": "$23,905,280 obligated; base and all options identical, period of performance 2026-05-14 to 2027-07-28",
-   "displaced": "Nothing — this is new or replacement standby diesel capacity bought to keep a hospital campus alive through grid outages",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, PSC Y1DZ construction of other hospital buildings",
-     "id": "PIID 36C24626C0037",
-     "date": "2026-05-14",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "VA Network Contracting Office 6 awarded Valiant Construction LLC $23,905,280 on 2026-05-14 to install a campus generator at the Salisbury VA Medical Center, with a period of performance to 2027-07-28 and no unexercised options. The award buys standby capacity only: the generators run during outages and testing, not as a source of energy. This is one of a class — the same sweep surfaced VA generator awards of $22.9M in New York, $19.0M in Maryland and $10.3M at Loma Linda in California — so $10M to $24M per hospital campus is the going federal rate for backup power that produces almost no kilowatt-hours.",
-   "microreactor_read": "A single VA hospital campus is willing to spend $23.9 million on diesel plant that will idle for 8,700 hours a year, and it will do it again in fifteen or twenty years. That is the number a 1-5 MW microreactor has to be measured against at a medical campus — not the hospital's energy bill, but its resilience capex, because the reactor is the only product that can be charged to both budget lines at once.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_36C24626C0037 (PIID 36C24626C0037), Valiant Construction LLC, Salisbury NC",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24626C0037_3600_-NONE-_-NONE-/",
-     "quote": "INSTALL CAMPUS GENERATOR SALISBURY VAMC",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Large individual hospitals"
-   ]
-  },
-  {
-   "id": "san-juan-va-generator-farm-hurricane-hardening",
-   "sector": "Medical campuses",
-   "name": "San Juan VA Medical Center generator farm hurricane hardening (36C24826C0006)",
-   "country": "US",
-   "region": "San Juan, Puerto Rico",
-   "parties": {
-    "host": "U.S. Department of Veterans Affairs, VA Caribbean Healthcare System",
-    "provider": "Project Management Solutions LLC"
-   },
-   "instrument": "design-build",
-   "signed": "2026-04",
-   "term_years": 2,
-   "capacity": "Existing on-site generator farm serving a VA medical center; kW rating not stated in the award record",
-   "capex": "$10,835,000 obligated; base and all options identical, period of performance 2026-04-22 to 2028-09-05",
-   "displaced": "Nothing is displaced — the award hardens diesel plant that already exists so it survives the next hurricane",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, PSC Z2DA repair or alteration of hospitals and infirmaries",
-     "id": "PIID 36C24826C0006",
-     "date": "2026-04-22",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "VA Network Contract Office 8 awarded Project Management Solutions LLC $10,835,000 on 2026-04-22 for construction to hurricane-harden the generator farm at the VA medical campus in San Juan, Puerto Rico, running to 2028-09-05. The scope is the enclosure and protection of existing diesel plant, not new capacity and not energy. On an island whose grid has failed repeatedly, the VA is spending eleven million dollars purely on making its backup diesels weatherproof — a cost line that exists only because the primary supply is untrustworthy and the backup is exposed.",
-   "microreactor_read": "Hurricane hardening is a recurring cost that a buried or hardened microreactor would not incur in the same form, and Puerto Rico prices it at $10.8M for one hospital's generator yard alone. Selling into a Caribbean medical campus means beating the sum of three lines the VA already pays separately — backup capex in the $10-24M band, hardening at $10.8M, and grid energy at PREPA's rates — rather than beating any one of them.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_36C24826C0006 (PIID 36C24826C0006), Project Management Solutions LLC, San Juan PR",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_36C24826C0006_3600_-NONE-_-NONE-/",
-     "quote": "PROVIDE HURRICANE HARDENING AT GENERATOR FARM - CONSTRUCTION",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Large individual hospitals"
-   ]
-  },
-  {
-   "id": "camp-buehring-resilient-power-microgrid",
-   "sector": "Remote outposts & microgrids",
-   "name": "Camp Buehring ARCENT Readiness Training Center resilient power microgrid (W912QR26CA007)",
-   "country": "KW",
-   "region": "Camp Buehring, Kuwait",
-   "parties": {
-    "host": "U.S. Army Central (ARCENT), contracting through USACE Louisville District",
-    "provider": "AGCO-PS JV"
-   },
-   "instrument": "design-build",
-   "signed": "2026-01",
-   "term_years": 3,
-   "capacity": "1.5 MW diesel generator + 700 kW PV + 1.5 MW / 1.5 MWh battery + 1,500 kVA transformer, synchronised under one microgrid controller",
-   "capex": "$5,222,331 obligated; base and all options identical, period of performance 2026-01-23 to 2028-08-04",
-   "displaced": "Unbacked grid supply at a forward training site; the diesel is added, not removed",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, firm fixed price",
-     "id": "PIID W912QR26CA007",
-     "date": "2026-01-23",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "USACE Louisville District awarded AGCO-PS JV $5,222,331 on 2026-01-23 to supply resilient power to the ARCENT Readiness Training Center at Camp Buehring, Kuwait, running to 2028-08-04. Unusually for a federal award, the description itemises the whole power block: a 1,500 kVA transformer, a 1.5 MW diesel generator, 700 kW of solar PV and a 1.5 MW / 1.5 MWh battery, all synchronised. This is the smallest complete microgrid in this file and the only one whose full equipment list and price are both in the award record, which makes it the cleanest unit-cost benchmark available for a small forward site.",
-   "microreactor_read": "Against 1.5 MW of firm diesel capacity the whole package costs $5.22M, so the Army's blended price for a small resilient power block including storage, solar and interconnection is about $3,480 per kW of firm capacity — the toughest number in this file for a reactor to beat, and it is the number that applies at exactly the 1-5 MW size microreactors target. A microreactor wins this comparison only on fuel: diesel delivered to a Kuwait training camp, not the $5.2M of steel.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_W912QR26CA007 (PIID W912QR26CA007), AGCO-PS JV",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR26CA007_9700_-NONE-_-NONE-/",
-     "quote": "NEW 1500 KVA TRANSFORMER, 1.5MW DIESEL GENERATOR AND INSTALL A MG SYSTEM INCLUDING 700 KW PV SOLAR PANELS AND A 1.5MW/1.5MWH BESS",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "port-hadlock-emergency-diesel-generators",
-   "sector": "Marine terminals",
-   "name": "Port Hadlock emergency diesel generators, fuel tanks and microgrid (N44255-26-F-0125)",
-   "country": "US",
-   "region": "Port Hadlock, Jefferson County, Washington",
-   "parties": {
-    "host": "U.S. Navy / NAVFAC Northwest",
-    "provider": "Absher Construction Co."
-   },
-   "instrument": "design-build",
-   "signed": "2026-04",
-   "term_years": 2,
-   "capacity": "Emergency diesel generators, diesel fuel tanks and switchgear forming a backup power and microgrid system; MW rating not stated in the award record",
-   "capex": "$29,395,000 obligated; base and all options identical, period of performance 2026-04-28 to 2028-06-14",
-   "displaced": "Nothing — the award adds diesel capacity and the fuel storage to run it",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Task order under IDIQ N4425523D1700, PSC Y1JZ",
-     "id": "PIID N44255-26-F-0125",
-     "date": "2026-04-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/"
-    }
-   ],
-   "summary": "NAVFAC Northwest awarded Absher Construction $29,395,000 on 2026-04-28 to construct emergency diesel generators, diesel fuel tanks, switchgear and related work at Port Hadlock, Washington, forming a backup power and microgrid system for existing facilities, with a period of performance to 2028-06-14. The award description says explicitly that the facilities served cannot be relocated, which is the whole justification: the load is fixed to the waterfront, so the power has to come to it. This is a pure incumbent-pricing record — nearly thirty million dollars of diesel plant and fuel storage, in 2026, at one Navy waterfront site.",
-   "microreactor_read": "The Navy is still buying new diesel and new fuel tanks at $29.4M a site in 2026, which means the reactor's competition at a marine terminal is not a legacy asset being tolerated but a fresh capital decision being made today. A microreactor pitch here has to clear $29.4M for a comparable resilience outcome and then argue the fuel tanks away, because the tank farm — not the generator — is what makes a waterfront diesel installation expensive and permanently regulated.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N4425526F0125 (PIID N44255-26-F-0125), Absher Construction Co., Port Hadlock WA",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/",
-     "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  },
-  {
-   "id": "camden-us-courthouse-standby-generator",
-   "sector": "Critical civic infrastructure",
-   "name": "Mitchell H. Cohen U.S. Courthouse standby generator replacement (47PD0125C0002)",
-   "country": "US",
-   "region": "Camden, New Jersey",
-   "parties": {
-    "host": "U.S. General Services Administration, Public Buildings Service Region 3",
-    "provider": "JD Bravo Co Inc."
-   },
-   "instrument": "design-build",
-   "signed": "2025-02",
-   "term_years": 2,
-   "capacity": "One emergency standby generator serving a federal courthouse and annex; kW rating not stated in the award record",
-   "capex": "$2,914,260 obligated, $2,766,002 already outlaid; base and all options identical, period of performance 2025-02-26 to 2026-08-31",
-   "displaced": "The building's previous emergency standby generator, removed and replaced",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, PSC Z2AA repair or alteration of office buildings",
-     "id": "PIID 47PD0125C0002",
-     "date": "2025-02-26",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "GSA awarded JD Bravo Co $2,914,260 on 2025-02-26 to remove and replace the emergency standby generator at the Mitchell H. Cohen U.S. Courthouse and Annex in Camden, New Jersey, and the job is nearly complete — $2,766,002 has already been outlaid. This is the low end of the federal resilience ladder and it is here for scale calibration: a single generator swap at one mid-sized civic building, priced as a standalone construction contract with no energy, no fuel and no service term attached.",
-   "microreactor_read": "Three million dollars is what one grid-connected federal civic building pays for the right to survive an outage, and it buys no energy at all. That sets the floor of the civic market a microreactor can address: below roughly $3M of resilience spend per building, no nuclear product of any size is in the conversation, which is why the sector's real targets are campuses and districts aggregating dozens of these line items, not individual buildings.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_47PD0125C0002 (PIID 47PD0125C0002), JD Bravo Co Inc., Camden NJ",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_47PD0125C0002_4740_-NONE-_-NONE-/",
-     "quote": "THIS AWARD IS FOR THE REMOVAL AND REPLACEMENT OF THE EMERGENCY STANDBY GENERATOR AND ASSOCIATED TASKS.",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "ramey-arc-microgrid-puerto-rico",
-   "sector": "Critical civic infrastructure",
-   "name": "Ramey Army Reserve Center microgrid, ERCIP (W912QR24C0029)",
-   "country": "US",
-   "region": "Aguadilla, Puerto Rico",
-   "parties": {
-    "host": "U.S. Army Reserve, contracting through USACE Louisville District",
-    "provider": "RQ-LORD JV"
-   },
-   "instrument": "design-build",
-   "signed": "2024-08",
-   "term_years": 3,
-   "capacity": "Site microgrid at an Army Reserve Center; MW rating not stated in the award record",
-   "capex": "$19,490,971.86 obligated against a base-and-all-options value of $21,403,321.86; period of performance 2024-08-30 to 2027-12-07",
-   "displaced": "Dependence on the Puerto Rico grid at a reserve center used as a staging point in emergencies",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract under the Energy Resilience and Conservation Investment Program, PSC Y1NZ",
-     "id": "PIID W912QR24C0029",
-     "date": "2024-08-30",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "USACE Louisville District awarded RQ-LORD JV $19,490,971.86 on 2024-08-30 to build a microgrid at the Ramey Army Reserve Center in Aguadilla, Puerto Rico, under the Energy Resilience and Conservation Investment Program, with $21,403,321.86 of total potential value and a period of performance to 2027-12-07. A companion Louisville District award of $17,158,600.75 built the LTC Hernan G. Pesquera ARC microgrid in Juana Diaz on the same island. Together they show the Army spending roughly $37 million on two reserve-center microgrids in one territory, driven by a grid that failed catastrophically and has not been trusted since.",
-   "microreactor_read": "Puerto Rico is the clearest place in the federal data where resilience capex is being spent because the grid itself is the risk, and the Army is paying $17-20M per site for a microgrid at facilities far smaller than a base. For a microreactor that means the competing offer at a civic site on an unreliable grid is already a $20M microgrid — so the reactor has to displace that $20M and the diesel fuel logistics behind it, not merely add to them.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_W912QR24C0029 (PIID W912QR24C0029), RQ-LORD JV, Aguadilla PR",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR24C0029_9700_-NONE-_-NONE-/",
-     "quote": "RAMEY ARC MICROGRID ERCIP",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "aberdeen-proving-ground-microgrid-backup-power",
-   "sector": "Remote outposts & microgrids",
-   "name": "Aberdeen Proving Ground microgrid and backup power (W912QR25CA034)",
-   "country": "US",
-   "region": "Aberdeen Proving Ground, Harford County, Maryland",
-   "parties": {
-    "host": "U.S. Army, contracting through USACE Louisville District",
-    "provider": "City Light & Power Aberdeen, LLC",
-    "utility": "City Light & Power (installation utility privatization contractor)"
-   },
-   "instrument": "design-build",
-   "signed": "2025-09",
-   "term_years": 4,
-   "capacity": "Installation microgrid plus backup power; MW rating not stated in the award record",
-   "capex": "$28,550,078 obligated against a base-and-all-options value of $30,700,239; period of performance 2025-09-26 to 2029-05-18, potential end 2031-08-17",
-   "displaced": "Grid-only supply at an Army installation",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Definitive contract, PSC Y1NZ construction of other utilities",
-     "id": "PIID W912QR25CA034",
-     "date": "2025-09-26",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/"
-    }
-   ],
-   "summary": "USACE Louisville District awarded City Light & Power Aberdeen $28,550,078 on 2025-09-26 for a microgrid and backup power at Aberdeen Proving Ground, with $30,700,239 of total potential value and a potential end date of 2031-08-17. The recipient is notable: City Light & Power is the installation's utility privatization contractor, and the same corporate family holds the parallel microgrid awards at Joint Base Lewis-McChord ($33,506,686 and $28,047,244) and Fort Riley ($24,201,003). The Army is routing installation microgrid construction through the entities that already own the distribution systems rather than through open construction competition.",
-   "microreactor_read": "The buyer of on-base generation is increasingly the privatized utility that owns the wires, not the Army directly, and that counterparty is signing $24-34M microgrid contracts at four installations at once. A microreactor developer selling to the Army should be selling to City Light & Power and its peers, because those firms already hold the site, the distribution assets and the long-term utility contract that can carry a reactor's capital cost across decades — the Army's own construction line cannot.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_W912QR25CA034 (PIID W912QR25CA034), City Light & Power Aberdeen LLC",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/",
-     "quote": "ABERDEEN PROVING GROUND MICROGRID AND BACKUP POWER",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "avec-new-stuyahok-ekwok-era-solar-storage",
-   "sector": "Remote outposts & microgrids",
-   "name": "New Stuyahok and Ekwok solar-plus-storage, DOE Energy Improvements in Rural or Remote Areas (DE-CD0000119)",
-   "country": "US",
-   "region": "New Stuyahok, Alaska (Dillingham Census Area)",
-   "parties": {
-    "host": "Alaska Village Electric Cooperative, on behalf of New Stuyahok and Ekwok",
-    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
-    "utility": "Alaska Village Electric Cooperative"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-09",
-   "term_years": 3,
-   "capacity": "500 kW solar PV array + 540 kWh battery energy storage system + microgrid controller, integrated with the existing village diesel power plant",
-   "capex": "$4,340,079 federal obligation, no non-federal cost share, so total project funding is also $4,340,079. Only $36,013 had been outlaid as of the record's last modification on 2026-07-20.",
-   "displaced": "An estimated 24 percent of the fuel burned at the existing diesel power plant serving New Stuyahok and Ekwok",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
-     "id": "FAIN DECD0000119",
-     "date": "2024-09-24",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000119_089/"
-    }
-   ],
-   "summary": "DOE's Office of Clean Energy Demonstrations awarded Alaska Village Electric Cooperative $4,340,079 on 2024-09-24 under the Energy Improvements in Rural or Remote Areas program, to build a 500 kW solar array, a 540 kWh battery and a microgrid controller for the Yup'ik villages of New Stuyahok and Ekwok in the Dillingham region of southwest Alaska. The federal share is 100 percent — the award record shows no non-federal funding at all — and the stated benefit is a 24 percent cut in the existing diesel plant's fuel consumption, plus a reduction in the volume of fuel barged up the Nushagak River. This is the first record in this file to come from the ERA program, and its shape is the ERA shape: a grant, not a supply contract, with no price per kilowatt-hour anywhere in it.",
-   "microreactor_read": "The award buys 500 kW of solar nameplate in southwest Alaska for $4.34M — $8,680 per kW of a resource that produces nothing in December — and gets a 24 percent diesel cut for it. Scaled linearly off the award's own numbers, a full diesel displacement at these two villages is worth roughly $18M of public money, which is the ceiling a 1 MW microreactor has to sit under; the reactor's real advantage is that it is the only item on that list that supplies firm capacity in the dark months, when the PV contributes zero and the diesel contributes everything.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000119 (FAIN DECD0000119), Alaska Village Electric Cooperative Inc., New Stuyahok AK",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000119_089/",
-     "quote": "THIS PROJECT PROPOSES TO CONSTRUCT A 500 KW SOLAR PHOTOVOLTAIC (PV) ARRAY, A 540 KWH BATTERY ENERGY",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Regional grids serving several communities"
-   ]
-  },
-  {
-   "id": "tanana-chiefs-alaskan-tribal-energy-sovereignty-era",
-   "sector": "Remote outposts & microgrids",
-   "name": "Alaskan Tribal Energy Sovereignty — eight-village microgrid upgrade, DOE ERA (DE-CD0000069)",
-   "country": "US",
-   "region": "Nulato, Huslia, Minto, Kaltag, Grayling, Anvik, Shageluk and Holy Cross, Alaska",
-   "parties": {
-    "host": "Tanana Chiefs Conference (Dena Nena Henash), with Alaska Village Electric Cooperative",
-    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-08",
-   "term_years": 6,
-   "capacity": "High-penetration solar PV and battery storage retrofitted into eight existing village microgrids; individual MW ratings not stated in the award record",
-   "capex": "$26,062,370 federal cost share plus $6,521,843 non-federal, $32,584,213 total funding. DOE released $4.1 million of that for Phase 1 activities; USAspending's obligation field carries the full multi-phase federal share, and total outlays stood at $431,606 as of 2026-08-14.",
-   "displaced": "Eight communities that rely on diesel for 100 percent of their electricity; the project targets a 40 percent cut in regional diesel consumption and more than 1,550 tonnes a year of avoided CO2",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Cooperative agreement under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
-     "id": "FAIN DECD0000069",
-     "date": "2024-08-13",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000069_089/"
-    }
-   ],
-   "summary": "OCED awarded the Tanana Chiefs Conference a cooperative agreement on 2024-08-13 under the ERA program to put solar and storage into the existing microgrids of eight roadless interior Alaska villages, all of which currently generate 100 percent of their electricity from diesel and pay more than four times the national average for it. The federal share is $26,062,370 against $6,521,843 of non-federal money, for $32,584,213 total — about $4.07 million per village — and the goal is a 40 percent regional diesel offset. The obligated-versus-potential distinction here is unusually sharp and the award record hides it: USAspending reports $26,062,370 as the obligation, while DOE's own award announcement says only 'more than $4.1 million' was released to begin Phase 1. The stated end-state is Alaska's largest tribally owned independent power producer.",
-   "microreactor_read": "$4.07M of public money per village buys a 40 percent diesel cut, which extrapolates to roughly $10.2M per village for full displacement — the price band a microreactor would have to hit at any one of these eight sites. The binding constraint is not that number but the load: a village whose whole electrical demand is served by a small diesel plant is well below the 1 MW floor of the smallest microreactor, so the addressable buyer is the eight-village tribal IPP this award creates, not any single village.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000069 (FAIN DECD0000069), Dena Nena Henash (Tanana Chiefs Conference), AK",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000069_089/",
-     "quote": "MICROGRIDS IN EIGHT REMOTE TRIBAL COMMUNITIES CURRENTLY RELYING ON DIESEL FOR 100% OF THEIR",
-     "status": "fetched"
-    },
-    {
-     "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
-     "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
-     "quote": "with more than $4.1 million (of the total federal cost share of up to $26.06 million) to begin Phase 1 activities",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Regional grids serving several communities"
-   ]
-  },
-  {
-   "id": "kokhanok-paradigm-shift-era-microgrid",
-   "sector": "Remote outposts & microgrids",
-   "name": "Kokhanok Paradigm Shift microgrid upgrade, DOE ERA (DE-CD0000120)",
-   "country": "US",
-   "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
-   "parties": {
-    "host": "Kokhanok Village Council",
-    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
-    "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-08",
-   "term_years": 4,
-   "capacity": "1 MW / 943 kWh battery energy storage system, plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
-   "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
-   "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE. Alaska RCA's FY2024 rate filing puts the village's actual load at 358,953 kWh test-period sales (roughly 41 kW average) and its certified cost of service at $1.0209/kWh, of which $0.6498/kWh is fuel — a fuel bill of roughly $233,000/year the grant is displacing.",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Project grant under CFDA 81.255, Clean Energy Demonstrations (ERA program)",
-     "id": "FAIN DECD0000120",
-     "date": "2024-08-13",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
-    },
-    {
-     "forum": "State PUC",
-     "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
-     "id": "L2300184 (docket U-23-010)",
-     "date": "2023-06-26",
-     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
-    }
-   ],
-   "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 1 MW/943 kWh battery, 100 kW solar, a 100 kW wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection. The load being served is genuinely tiny: Alaska RCA's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load, against a certified cost of service of $1.0209/kWh ($0.6498/kWh of which is fuel).",
-   "microreactor_read": "Five million dollars of federal money for a village of 170 people (roughly $29,200 per resident) is buying about $5,000 per installed kW of non-diesel capacity to displace $0.6498/kWh diesel fuel — a willingness to pay, and a capex benchmark, that no commercial power market would support without a grant. Against a 41 kW average load, a 1 MW-class microreactor would be roughly 20x oversized for this single village: Kokhanok prices the sector's grant economics and simultaneously proves the smallest microreactor is still too big for the single-village case.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/",
-     "quote": "THIS PROJECT SEEKS TO INSTALL A 943 KWH BATTERY ENERGY STORAGE SYSTEM",
-     "status": "fetched"
-    },
-    {
-     "label": "DOE Office of Clean Energy Demonstrations — Award Wednesdays, August 14, 2024",
-     "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
-     "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
-     "status": "fetched"
-    },
-    {
-     "label": "Regulatory Commission of Alaska — Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
-     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
-     "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Individual remote grids with sufficient year-round demand"
-   ]
-  },
-  {
-   "id": "san-carlos-apache-hospital-community-microgrid",
-   "sector": "Medical campuses",
-   "name": "San Carlos Hospital Community Microgrid, DOE Office of Indian Energy (DE-IE0000170)",
-   "country": "US",
-   "region": "Peridot, Gila County, Arizona (San Carlos Apache Reservation)",
-   "parties": {
-    "host": "San Carlos Apache Tribal Council / San Carlos Apache Healthcare Corporation",
-    "provider": "U.S. Department of Energy, Office of Indian Energy (funder)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-07",
-   "term_years": 3,
-   "capacity": "750 kW solar PV array + 500 kW grid-forming battery energy storage system + microgrid controller, alongside the hospital's existing diesel generators",
-   "capex": "$4,000,000 federal obligation plus $4,435,784 non-federal cost share, $8,435,784 total funding; $361,286 outlaid as of 2026-08-10. Period of performance 2024-08-01 to 2027-07-31.",
-   "displaced": "Grid outages at a reservation hospital that today rides them out on diesel generators; the microgrid supplements rather than retires them",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Project grant under CFDA 81.087, Renewable Energy Research and Development",
-     "id": "FAIN DEIE0000170",
-     "date": "2024-07-11",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEIE0000170_089/"
-    },
-    {
-     "forum": "DOE Office of NEPA Policy and Compliance",
-     "type": "Categorical exclusion determination",
-     "id": "CX-270928",
-     "date": "2026-02-11",
-     "url": "https://www.energy.gov/nepa/articles/cx-270928-san-carlos-hospital-community-microgrid"
-    }
-   ],
-   "summary": "DOE's Office of Indian Energy awarded the San Carlos Apache Tribal Council $4,000,000 on 2024-07-11 for a microgrid serving the tribe's hospital campus at Peridot, Arizona, and the tribe put up $4,435,784 of its own money — a 53 percent non-federal share, unusual among the grant-funded records in this file. DOE's NEPA determination describes the package as a 750 kW solar array, a 500 kW grid-forming battery and a microgrid controller. The hospital's existing diesel generators stay; the microgrid is layered on top of them. The award record publishes no energy price and no term of supply, because there is no supply contract — the tribe owns the asset outright at the end.",
-   "microreactor_read": "This is the shape of the medical-campus opportunity at its small end: $8.44M all-in for 750 kW of solar and 500 kW of storage that still leans on diesel for a real outage, at a hospital whose owner was willing to fund the majority of it. A 1-5 MW microreactor would have to come in near $8.4M to match the total capital the campus could raise here, and it would be selling against a package that has already been bought — which is why the sellable moment at a hospital is the diesel replacement cycle, not the year after a microgrid lands.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_DEIE0000170 (FAIN DEIE0000170), San Carlos Apache Tribal Council, Peridot AZ",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEIE0000170_089/",
-     "quote": "\"description\":\"SAN CARLOS HOSPITAL COMMUNITY MICROGRID\"",
-     "status": "fetched"
-    },
-    {
-     "label": "DOE Office of NEPA Policy and Compliance — CX-270928: San Carlos Hospital Community Microgrid",
-     "url": "https://www.energy.gov/nepa/articles/cx-270928-san-carlos-hospital-community-microgrid",
-     "quote": "a 500 kilowatt (kW) battery energy storage system (BESS), a 750 kW solar photovoltaic (PV) array, and a microgrid controller",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Large individual hospitals"
-   ]
-  },
-  {
-   "id": "erie-county-medical-center-fema-generators",
-   "sector": "Medical campuses",
-   "name": "Erie County Medical Center standby generators, FEMA HMGP (DR-4480-0059-R)",
-   "country": "US",
-   "region": "Erie County, New York",
-   "parties": {
-    "host": "Erie County Medical Center",
-    "provider": "FEMA Hazard Mitigation Grant Program, administered by New York State"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-03",
-   "capacity": "Generators plus other equipment purchase and installation at a hospital campus; kW rating not published in the FEMA project record",
-   "capex": "$15,144,418 total project amount; $13,629,976 federal share obligated at a 90 percent cost share, leaving roughly $1.5M to the hospital",
-   "displaced": "Nothing is displaced — this is added standby capacity so a county medical centre can ride through a grid failure",
-   "price": "FEMA's own benefit-cost analysis scores the project at a 4.43 benefit-cost ratio with $67,624,384 of net value of benefits",
-   "filings": [
-    {
-     "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
-     "type": "HMGP project, project type 601.1 Generators; 602.1 Other Equipment Purchase and Installation, disaster DR-4480",
-     "id": "DR-4480-0059-R",
-     "date": "2024-03-05",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27"
-    }
-   ],
-   "summary": "FEMA approved a $15,144,418 hazard-mitigation project for Erie County Medical Center on 2024-03-05 and obligated $13,629,976 of it the next day, at a 90 percent federal cost share, to install generators and associated equipment at the hospital campus. The number that matters more than the price is FEMA's own appraisal of what the generators are worth: a benefit-cost ratio of 4.43 and a net value of benefits of $67,624,384. That is the federal government's modelled estimate of the losses a single hospital avoids by not losing power, and it is four and a half times what it costs to prevent them.",
-   "microreactor_read": "The generator sticker at a large hospital is $15.1M, but the number a microreactor should actually be priced against is the $67.6M of avoided loss FEMA has already put on paper for this one campus — that is the value of firm power at a hospital, and it is the ceiling any resilience product can argue toward. A 1-5 MW reactor at $15M that also sells energy every hour, instead of idling, is inside a band the federal government has already validated with money.",
-   "sources": [
-    {
-     "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0059-R (Erie County Medical Center)",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0059-R%27",
-     "quote": "\"subrecipient\":\"ERIE COUNTY MEDICAL CTR\"",
-     "status": "fetched",
-     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
-    }
-   ],
-   "load": [
-    "Large individual hospitals"
-   ]
-  },
-  {
-   "id": "cayuga-medical-center-fema-generators",
-   "sector": "Medical campuses",
-   "name": "Cayuga Medical Center standby generators, FEMA HMGP (DR-4480-0080-R)",
-   "country": "US",
-   "region": "Tompkins County, New York",
-   "parties": {
-    "host": "Cayuga Medical Center",
-    "provider": "FEMA Hazard Mitigation Grant Program, administered by New York State"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-02",
-   "capacity": "Generators at a hospital campus; kW rating not published in the FEMA project record",
-   "capex": "$11,612,000 total project amount; $10,450,800 federal share obligated at a 90 percent cost share",
-   "price": "FEMA scores the project at a 6.91 benefit-cost ratio with $81,099,633 of net value of benefits",
-   "displaced": "Nothing is displaced — added standby capacity at a hospital that would otherwise lose power with the grid",
-   "filings": [
-    {
-     "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
-     "type": "HMGP project, project type 601.1 Generators, disaster DR-4480",
-     "id": "DR-4480-0080-R",
-     "date": "2024-02-14",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27"
-    }
-   ],
-   "summary": "FEMA approved an $11,612,000 generator project for Cayuga Medical Center in Tompkins County, New York on 2024-02-14 and obligated $10,450,800 the following day at a 90 percent federal cost share. Its benefit-cost ratio is 6.91 and FEMA's modelled net value of benefits is $81,099,633 — a larger avoided loss than at the bigger Erie County project, on a smaller generator spend. Read alongside the Erie record, the pair sets the going federal rate for hospital standby power in one state in one year: $11.6M and $15.1M of project cost, 90 percent of it federal, against $81.1M and $67.6M of modelled avoided loss.",
-   "microreactor_read": "Two New York hospitals in the same programme year drew a combined $24.1M of federal money for diesel that will almost never run, against $148.7M of avoided-loss value FEMA itself calculated. That ratio — more than five dollars of avoided damage per dollar of project cost — is the argument a microreactor should be making, and the price to beat is about $12M for a hospital-scale block of firm power that, unlike the generators, would also earn revenue in the 8,700 hours a year the grid is up.",
-   "sources": [
-    {
-     "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4480-0080-R (Cayuga Medical Center)",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4480-0080-R%27",
-     "quote": "\"subrecipient\":\"CAYUGA MEDICAL CENTER\"",
-     "status": "fetched",
-     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
-    }
-   ],
-   "load": [
-    "Large individual hospitals"
-   ]
-  },
-  {
-   "id": "prasa-toa-alta-fema-generators",
-   "sector": "Critical civic infrastructure",
-   "name": "Puerto Rico Aqueduct and Sewer Authority generators, Toa Alta, FEMA HMGP (DR-4339-0019-R)",
-   "country": "US",
-   "region": "Toa Alta, Puerto Rico",
-   "parties": {
-    "host": "Puerto Rico Aqueduct and Sewer Authority (PRASA)",
-    "provider": "FEMA Hazard Mitigation Grant Program, administered by Puerto Rico"
-   },
-   "instrument": "grant-funded",
-   "signed": "2021-05",
-   "capacity": "Regular generators at PRASA water and wastewater facilities in Toa Alta; kW rating not published in the FEMA project record",
-   "capex": "$16,502,820.72 total project amount at a 100 percent federal cost share. $12,436,047.31 obligated to date; the initial obligation on 2021-05-25 was only $661,523.70, and the project was re-approved on 2025-06-05.",
-   "price": "Benefit-cost ratio 4.22, net value of benefits $150,804,923",
-   "displaced": "Nothing is displaced — the award buys diesel generators so a water utility keeps pumping when the Puerto Rico grid fails",
-   "filings": [
-    {
-     "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
-     "type": "HMGP project, project type 601.2 Generators - Regular, disaster DR-4339 (Hurricane Maria)",
-     "id": "DR-4339-0019-R",
-     "date": "2025-06-05",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27"
-    }
-   ],
-   "summary": "FEMA is funding $16,502,820.72 of generators for the Puerto Rico Aqueduct and Sewer Authority in Toa Alta under the Hurricane Maria hazard-mitigation programme, at a 100 percent federal cost share — PRASA pays nothing. The obligation history is the interesting part and it is exactly the obligated-versus-potential trap: $661,523.70 was obligated on 2021-05-25, and $12,436,047.31 has been obligated as of the 2025-06-05 re-approval, still $4.07M short of the approved project amount. Quoting the project amount as spending would overstate the actual federal outlay by a third. FEMA's benefit-cost model scores the generators at 4.22 with $150,804,923 of net benefits.",
-   "microreactor_read": "The federal government values keeping one municipality's water pumps energised through Puerto Rico's outages at $150.8M, and is paying $16.5M of diesel generators to do it — the whole thing, no local match. At a water utility a microreactor is not competing on energy price at all; it is competing against a fully-funded diesel fleet with a 4:1 benefit case, and its only edge is that a generator's fuel has to keep arriving during the same storm that took the grid down, and a reactor's does not.",
-   "sources": [
-    {
-     "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project DR-4339-0019-R (Puerto Rico Aqueduct and Sewer Authority, Toa Alta)",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27",
-     "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\"",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Regional drinking-water treatment and pumping systems",
-    "Major city wastewater plants"
-   ]
-  },
-  {
-   "id": "waterone-johnson-county-fema-generators",
-   "sector": "Critical civic infrastructure",
-   "name": "WaterOne standby generators, FEMA Legislative Pre-Disaster Mitigation (LPDM-PJ-07-KS-2022-001)",
-   "country": "US",
-   "region": "Johnson County, Kansas",
-   "parties": {
-    "host": "WaterOne (Water District No. 1 of Johnson County)",
-    "provider": "FEMA Legislative Pre-Disaster Mitigation programme, administered by the Adjutant General of Kansas - KDEM"
-   },
-   "instrument": "grant-funded",
-   "signed": "2022-09",
-   "capacity": "Regular generators at a metropolitan water utility; kW rating not published in the FEMA project record",
-   "capex": "$6,541,600 total project amount; $4,906,200 federal share obligated on 2022-09-15 at a 74 percent cost share, so WaterOne funds roughly $1.6M",
-   "price": "Benefit-cost ratio 38.09, net value of benefits $261,096,991 — the highest ratio found in the FEMA generator dataset for a project of this size",
-   "displaced": "Nothing is displaced — added standby diesel so a metropolitan water system keeps pressure through a grid outage",
-   "filings": [
-    {
-     "forum": "FEMA OpenFEMA (Hazard Mitigation Assistance Projects v4)",
-     "type": "LPDM FY2022 project, project type 601.2 Generators - Regular, status Obligated",
-     "id": "LPDM-PJ-07-KS-2022-001",
-     "date": "2022-09-09",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27"
-    }
-   ],
-   "summary": "FEMA obligated $4,906,200 to WaterOne, the water utility for Johnson County, Kansas, on 2022-09-15 against a $6,541,600 generator project, at a 74 percent federal cost share. FEMA's benefit-cost model scores it at 38.09 with $261,096,991 of net value of benefits — roughly forty dollars of avoided loss for every dollar of generator. Nothing about the hardware is exotic; the ratio comes from what happens to a metropolitan area when its water system loses pressure. This is the clearest statement in the federal data of how much a public utility's continuity is worth relative to what anyone actually spends securing it.",
-   "microreactor_read": "The gap here is the whole argument: $6.5M of generators against $261M of modelled avoided loss means the ceiling on what a water utility could rationally pay for guaranteed power is two orders of magnitude above what it currently does. A microreactor sold to a water utility is not fighting for the $6.5M generator line — it is arguing that the $261M exposure justifies a firm-power asset in the tens of millions, and the FEMA benefit-cost worksheet is the document that makes that argument for the seller.",
-   "sources": [
-    {
-     "label": "FEMA OpenFEMA API — Hazard Mitigation Assistance Projects v4, project LPDM-PJ-07-KS-2022-001 (WaterOne, Johnson County KS)",
-     "url": "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27",
-     "quote": "\"subrecipient\":\"WaterOne\"",
-     "status": "fetched",
-     "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
-    }
-   ],
-   "load": [
-    "Regional drinking-water treatment and pumping systems"
-   ]
-  },
-  {
-   "id": "barnstable-school-microgrid-grip",
-   "sector": "Critical civic infrastructure",
-   "name": "Barnstable School Microgrid, DOE Grid Resilience and Innovation Partnerships (DE-GD0000986)",
-   "country": "US",
-   "region": "Hyannis, Barnstable County, Massachusetts",
-   "parties": {
-    "host": "Town of Barnstable public high school, middle school and adult community center complex",
-    "provider": "Massachusetts Department of Energy Resources (recipient of record)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2025-01",
-   "term_years": 7,
-   "capacity": "Renewable-supported microgrid across a multi-building school and community-center complex; MW rating not stated in the award record",
-   "capex": "$42,328,000 federal obligation plus $3,256,000 non-federal cost share, $45,584,000 total funding; period of performance 2025-01-10 to 2031-09-30",
-   "displaced": "Grid-only supply and purchased energy at a school complex that doubles as the town's emergency shelter",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Cooperative agreement under CFDA 81.254, Grid Infrastructure Deployment and Resilience (IRA-funded)",
-     "id": "FAIN DEGD0000986",
-     "date": "2025-01-15",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEGD0000986_089/"
-    }
-   ],
-   "summary": "DOE obligated $42,328,000 to the Massachusetts Department of Energy Resources on 2025-01-15 for a microgrid across Barnstable's public high school, middle school and adult community center in Hyannis, with $3,256,000 of non-federal money and a period of performance to 2031-09-30. The stated objectives put resilience alongside cost: lower energy expenses for the education facilities, a smaller carbon footprint, and an explicit increase in multi-building emergency shelter capacity. This is the civic analogue of the base microgrids elsewhere in this file — a public campus, not a single building, and a federal grant covering 93 percent of it.",
-   "microreactor_read": "A school district complex on Cape Cod is carrying a $45.6M microgrid, which is the same order as an Army installation microgrid and roughly fifteen times the $2.9M a single federal courthouse spends on a generator. That is the aggregation threshold for the civic sector: once several buildings and an emergency-shelter obligation are bundled behind one meter, the capital envelope reaches microreactor scale, and $45M for a campus microgrid is the number a 1-5 MW unit has to sit inside.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_DEGD0000986 (FAIN DEGD0000986), Massachusetts Department of Energy Resources, Hyannis MA",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DEGD0000986_089/",
-     "quote": "INFLATION REDUCTION ACT (IRA) - BARNSTABLE SCHOOL MICROGRID",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "port-authority-ny-nj-epa-clean-ports",
-   "sector": "Marine terminals",
-   "name": "Port of New York and New Jersey zero-emission deployment, EPA Clean Ports Program (96275025)",
-   "country": "US",
-   "region": "Newark, Elizabeth and Bayonne, New Jersey and New York City, New York",
-   "parties": {
-    "host": "Port Authority of New York and New Jersey",
-    "provider": "U.S. Environmental Protection Agency (funder)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-12",
-   "term_years": 4,
-   "capacity": "Battery-electric material handling equipment replacing diesel, EV charging infrastructure, shore power connections for marine vessels, and electrification of a cement hauler barge's diesel engines",
-   "capex": "$451,635,800 federal obligation plus $350,216,091 non-federal cost share, $801,851,891 total funding; period of performance 2025-01-01 to 2028-12-31",
-   "displaced": "Diesel material handling equipment, diesel drayage, at-berth vessel auxiliary diesel and a barge's diesel main engines",
-   "filings": [
-    {
-     "forum": "USAspending.gov (federal assistance record)",
-     "type": "Project grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
-     "id": "FAIN 96275025",
-     "date": "2024-12-20",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/"
-    }
-   ],
-   "summary": "EPA obligated $451,635,800 to the Port Authority of New York and New Jersey on 2024-12-20 — the largest single Clean Ports award — against $350,216,091 of non-federal cost share, for $801,851,891 of total project value running to 2028-12-31. The scope is electrification of the load across Newark, Elizabeth, Bayonne and New York City: battery-electric material handling equipment, charging infrastructure, shore power connections for vessels, and the replacement of a cement hauler barge's diesel engines with electric power. Together with the $644.2M Port of Los Angeles award already in this file, two ports alone carry roughly $1.45 billion of new electrified port load, none of which is matched by a single dollar of new generation in the same awards.",
-   "microreactor_read": "The Clean Ports programme has now committed over $1.4 billion at two ports to convert diesel machinery into electrical load, and paid for zero megawatts of supply — the entire gap falls on two urban distribution utilities inside four years. That gap, not a $/kW comparison, is the microreactor's opening at a marine terminal: the number to beat is the cost of the distribution upgrade plus demand charges the port has not yet priced, at a site where the alternative supply is a congested urban feeder.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Assistance award ASST_NON_96275025 (FAIN 96275025), Port Authority of New York & New Jersey, Clean Ports Program",
-     "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/",
-     "quote": "THE INSTALLATION OF SHORE POWER CONNECTIONS FOR MARINE VESSELS, THE REPLACEMENT OF DIESEL ENGINES ON A CEMENT HAULER BARGE WITH ELECTRIC POWER",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  },
-  {
-   "id": "jbphh-bravo-piers-shore-power-upgrade",
-   "sector": "Marine terminals",
-   "name": "Bravo Piers Nos. 1 and 2 shore power upgrade, Joint Base Pearl Harbor-Hickam (N62478-24-F-4131)",
-   "country": "US",
-   "region": "Pearl Harbor, Honolulu, Hawaii",
-   "parties": {
-    "host": "U.S. Navy / NAVFAC Hawaii",
-    "provider": "Nan Inc."
-   },
-   "instrument": "design-build",
-   "signed": "2024-05",
-   "term_years": 2,
-   "capacity": "Shore power distribution serving two piers; megawatt rating not stated in the award record",
-   "capex": "$18,232,308.77 obligated; base and all options identical, so this is the whole job. Period of performance 2024-05-23 to 2026-08-22.",
-   "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life pier electrical distribution",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Delivery order under IDIQ N6247822D4009",
-     "id": "PIID N62478-24-F-4131",
-     "date": "2024-05-24",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4131_9700_N6247822D4009_9700/"
-    }
-   ],
-   "summary": "NAVFAC issued Nan Inc. a delivery order on 2024-05-24 to upgrade shore power at Bravo Piers Nos. 1 and 2 at Joint Base Pearl Harbor-Hickam for $18,232,308.77, with obligated and total-potential values identical and a period of performance ending 2026-08-22. Like the $44.3M Point Mugu mound replacement already in this file, the money buys electrical connection and no generation at all. A parallel Pearl Harbor award — $5,650,236.30 to D Square Construction for Wharf M1/M2 shore power distribution under MCON project P-8014U — was signed four months later, so the base was spending roughly $24M on pierside electrical distribution inside a single year.",
-   "microreactor_read": "Across Point Mugu, Pearl Harbor's Bravo Piers and Pearl Harbor's Wharf M1/M2, the Navy's cost band for connecting berthed vessels to shore power is $5.7M to $44.3M per waterfront, all of it wires. At Pearl Harbor that connection terminates in an isolated island grid with no mainland interconnection, so every megawatt moved off a ship's diesel lands on Oahu's generation stack — which is the specific condition under which a 1-20 MW reactor sited at the pier is buying supply the shore power projects assume and never fund.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N6247824F4131 (PIID N62478-24-F-4131), Nan Inc., Pearl Harbor HI",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4131_9700_N6247822D4009_9700/",
-     "quote": "RM21-1992 BRAVO PIERS NOS. 1 & 2, UPGRADE SHORE POWER, JBPHH, HI",
-     "status": "fetched"
-    },
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_N6247824F4298 (PIID N62478-24-F-4298), D Square Construction LLC, Wharf M1/M2 shore power distribution, JBPHH",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247824F4298_9700_N6247822D4000_9700/",
-     "quote": "FY 2024 MCON PROGRAM PROJECT P-8014U WHARF M1/M2 SHORE POWER DISTRIBUTION, JBPHH, HI",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  },
-  {
-   "id": "marad-rrf-layberth-mobile-shore-power-generator",
-   "sector": "Marine terminals",
-   "name": "MARAD Ready Reserve Force layberth, mobile shore power generator at Terminal 2 Berths 205-206 (693JF723F00011N)",
-   "country": "US",
-   "region": "Terminal 2, Berths 205-206 (the award record names the berth but not the port; contracting office place of performance is MARAD headquarters, Washington DC)",
-   "parties": {
-    "host": "U.S. Department of Transportation, Maritime Administration",
-    "provider": "Pacific Layberthing South, LLC"
-   },
-   "instrument": "lease",
-   "signed": "2022-11",
-   "term_years": 5,
-   "capacity": "One rented mobile shore power generator supplying a single moored Ready Reserve Force vessel; kW rating not stated in the award record",
-   "capex": "$9,857,825.76 obligated, identical to base and all options; $6,923,481.90 already outlaid. Period of performance 2022-11-28 to a potential end of 2027-09-14.",
-   "displaced": "The vessel's own auxiliary diesel generation while laid up — replaced by a rented diesel generator on the pier, not by grid power",
-   "filings": [
-    {
-     "forum": "USAspending.gov (FPDS-derived contract record)",
-     "type": "Delivery order under IDIQ 693JF722D000014",
-     "id": "PIID 693JF723F00011N",
-     "date": "2022-11-28",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_693JF723F00011N_6938_693JF722D000014_6938/"
-    }
-   ],
-   "summary": "MARAD's delivery order to Pacific Layberthing South totals $9,857,825.76 with obligated and total-potential values identical, and $6,923,481.90 already disbursed. Its recorded purpose is to reimburse the layberth operator for renting a mobile shore power generator to power a Ready Reserve Force vessel moored at Terminal 2, Berths 205-206. The important limit on this record: the $9.86M is the delivery order's whole value, which also covers the layberth service, and the award record does not break out the generator's share — so this prices the vehicle, not the generator alone. What it does establish is that when shore power infrastructure is absent, the federal answer is to rent a diesel generator on a multi-year contract rather than build a connection.",
-   "microreactor_read": "This is the honest floor case for a marine terminal: no pier electrification, no grid tie, just a rented diesel on a five-year delivery order feeding one ship. It is also the clearest reason the $18M-$44M shore power projects elsewhere in this file get funded — the alternative is a recurring rental with no terminal value. A microreactor at a layberth or a small terminal is competing against an operating expense with no asset at the end of it, which is a far weaker incumbent than a capitalised generator.",
-   "sources": [
-    {
-     "label": "USAspending.gov API — Award CONT_AWD_693JF723F00011N (PIID 693JF723F00011N), Pacific Layberthing South LLC, Maritime Administration",
-     "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_693JF723F00011N_6938_693JF722D000014_6938/",
-     "quote": "REIMBURSE THE LAYBERTH OPERATOR FOR EXPENSES INCURRED TO RENT A MOBILE SHORE POWER GENERATOR TO PROVIDE POWER TO THE RRF VESSEL MOORED AT TERMINAL 2 BERTH 205-206",
-     "status": "fetched"
-    }
-   ],
-   "load": [
-    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-   ]
-  }
- ]
 }

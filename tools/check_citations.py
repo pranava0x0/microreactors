@@ -83,6 +83,36 @@ def check() -> List[Tuple[str, str]]:
           "caveat": inc.get("caveat", ""), "sources": inc_sources},
          "costs:incentives:summary-prose")
 
+    # capex, learning_curve and archetypes carry the hardest numbers on the site
+    # ($/kWe, the unit-1-to-unit-20 multipliers, per-archetype LCOE). They are
+    # walked here explicitly because this gate hand-lists record shapes: a block
+    # added to costs.json and not added here is silently uncovered, which has
+    # already happened twice in this repo.
+    for r in costs["capex"]["rows"]:
+        # A capex row's claim is its low_kwe/high_kwe pair. Those are bare
+        # integers, and NUMBER_RE only matches a digit carrying a unit or a
+        # currency mark, so need() alone would pass a $14,500/kWe row that
+        # cites nothing. Require the source outright.
+        if not has_source(r):
+            violations.append((f"costs:capex:{r['scenario'][:40]}", "capacity cost with no source"))
+        need(r, f"costs:capex:{r['scenario'][:40]}")
+    need({"note": costs["capex"].get("note", ""), "reading": costs["capex"].get("reading", ""),
+          "sources": [s for r in costs["capex"]["rows"] for s in r.get("sources", [])]},
+         "costs:capex:summary-prose")
+    lc = costs["learning_curve"]
+    need({"worked": lc.get("worked", ""), "floor": lc.get("floor", ""), "rates": lc.get("rates", ""),
+          "formula": lc.get("formula", ""), "definitions_warning": lc.get("definitions_warning", ""),
+          "classes": " ".join(c.get("detail", "") for c in lc.get("classes", [])),
+          "sources": lc.get("sources", [])},
+         "costs:learning_curve")
+    arch = costs["archetypes"]
+    arch_sources = arch.get("sources", [])
+    for r in arch["rows"]:
+        need(dict(r, sources=arch_sources), f"costs:archetypes:{r['archetype'][:40]}")
+    need({"finding": arch.get("finding", ""), "convergence": arch.get("convergence", ""),
+          "note": arch.get("note", ""), "sources": arch_sources},
+         "costs:archetypes:summary-prose")
+
     sectors = json.loads((DATA / "sectors.json").read_text())
     uncited = set(sectors["_meta"].get("uncited", []))
     for s in sectors["sectors"]:
@@ -125,6 +155,18 @@ def check() -> List[Tuple[str, str]]:
                              else r_sources)
                 need(dict(p, sources=p_sources),
                      f"instruments:{g['group']}:{r['name'][:40]}:precedent:{p.get('name', '')[:30]}")
+
+    voices_p = DATA / "voices.json"
+    if voices_p.exists():
+        voices = json.loads(voices_p.read_text())
+        for g in voices["groups"]:
+            for q in g["voices"]:
+                # A quote is a claim about who said what: it needs a source
+                # whether or not it happens to contain a digit.
+                if not has_source(q):
+                    violations.append((f"voices:{q['id']}", "quote with no source"))
+                need({"what_it_means": q.get("what_it_means", ""), "sources": q.get("sources", [])},
+                     f"voices:{q['id']}:gloss")
 
     sites_p = DATA / "deployment_sites.json"
     if sites_p.exists():
