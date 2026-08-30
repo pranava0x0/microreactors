@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "wave2-csuite",
+    "companies": ["TerraPower", "X-energy", "Terrestrial Energy", "Natura Resources"],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "TerraPower press release: 'TerraPower Announces Expansion of Executive Leadership Team' (May 2025) - Hellman (CFO), Williams (COO), Burkey retirement",
+      "X-energy press release: Jesse B. Walker Chief Supply Chain Officer (May 21, 2025)",
+      "Terrestrial Energy press releases: Thrasher (CFO)/Romanzo (GC) appointment (May 29, 2025); Howe (VP Govt Relations)/O'Keefe (VP BD & Project Mgmt) appointment (Nov 13, 2025); Millsap GC/Secretary/CCO departure announcement (Sept 12, 2026 effective)",
+      "Natura Resources press releases: strategic executive appointments (Feb 9, 2026 - McWhirter, Jessup, Herndon); Jordan Robison CEO appointment (July 15, 2026)",
+      "in progress - see incomplete flag"
+    ],
+    "absences": [],
+    "incomplete": true
+  },
+  "leaders": [
+    {
+      "id": "terrapower-hellman",
+      "company": "TerraPower",
+      "name": "Steven Hellman",
+      "title": "Executive Vice President and Chief Financial Officer",
+      "since": "2025-05",
+      "background": "35-year career spanning investment banking, business and law, including 25+ years as an investment banker at Credit Suisse and UBS, most recently Managing Director and Co-Head of UBS's Energy Transition investment banking group, where he advised TerraPower on financing strategy from 2021-2025. Earlier in his career he was a business/finance attorney at Latham & Watkins and EVP at UniSite, Inc. Holds a B.A. in Soviet Studies from UC Berkeley and a J.D. from UC Berkeley School of Law.",
+      "why_they_matter": "Succeeded longtime CFO Marcia Burkey at the moment TerraPower needs to close Natrium project financing and structure commercial partnerships beyond its DOE-backed demonstration plant.",
+      "sources": [
+        {
+          "label": "TerraPower — \"TerraPower Announces Expansion of Executive Leadership Team\"",
+          "url": "https://www.terrapower.com/terrapower-announces-expansion-of-executive-leadership-team",
+          "quote": "Steven brings robust, global credentials that will be invaluable as we enter the next phase of growth.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-williams",
+      "company": "TerraPower",
+      "name": "Eric Williams",
+      "title": "Executive Vice President and Chief Operating Officer",
+      "since": "2025-05",
+      "background": "22-year engineering career including 15 years developing nuclear power plant designs; spent four years at B&W mPower developing a small modular reactor and led Integrated Systems Test facility development; earlier career work included severe accident analysis and current-fleet modernization. Promoted to COO from Senior Vice President and Design Authority for Natrium technology. Holds a B.S. in mechanical engineering from the University of Florida, an MBA from Lynchburg College, and is a licensed Professional Engineer.",
+      "why_they_matter": "TerraPower's first COO, promoted from the engineer who was Natrium's own design authority rather than hired from outside — signals the company putting a technical insider in charge of execution as Natrium moves from construction into commissioning.",
+      "sources": [
+        {
+          "label": "TerraPower — \"TerraPower Announces Expansion of Executive Leadership Team\"",
+          "url": "https://www.terrapower.com/terrapower-announces-expansion-of-executive-leadership-team",
+          "quote": "Eric's deep experience, proven leadership, and commitment to TerraPower's mission uniquely position him for this role",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-walker",
+      "company": "X-energy",
+      "name": "Jesse B. Walker",
+      "title": "Vice President, Chief Supply Chain Officer",
+      "since": "2025-05",
+      "background": "21-year career at Northrop Grumman, including Vice President of Global Supply Chain and Corporate Director of Supplier Management, with senior supply chain and operations leadership roles in the Tactical Space Systems and Navigation and Targeting divisions. U.S. Air Force veteran (active duty and civil service). Holds an MBA with Honors from Webster University and a B.A. in Economics from the University of Illinois at Urbana-Champaign.",
+      "why_they_matter": "X-energy's first named chief supply chain officer, hired as the company signs multi-year long-lead-component agreements (e.g. the Jan 2026 SGL Carbon graphite deal) to move Xe-100/TRISO-X from pilot to fleet-scale sourcing.",
+      "sources": [
+        {
+          "label": "X-energy — \"X-energy Adds Jesse B. Walker to Leadership Team as Chief Supply Chain Officer\"",
+          "url": "https://x-energy.com/news/jesse-b-walker-chief-supply-chain-officer/",
+          "quote": "Jesse's exceptional background in global supply chain strategy and program management will be a critical asset",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "xenergy-walker-supply-chain-scale",
+      "company": "X-energy",
+      "speaker": "Jesse B. Walker",
+      "role": "Vice President, Chief Supply Chain Officer, X-energy",
+      "date": "2025-05-21",
+      "venue": "X-energy company newsroom (appointment announcement)",
+      "topic": "supply-chain",
+      "quote": "Strengthening the company's global supply chain strategy presents an incredibly exciting opportunity to support the next generation of nuclear technologies.",
+      "what_it_means": "X-energy's newly hired supply chain chief frames his own mandate as global sourcing strategy, not just procurement execution -- consistent with the company's parallel moves to lock in long-lead components (graphite, TRISO fuel) via named supplier agreements.",
+      "sources": [
+        {
+          "label": "X-energy — \"X-energy Adds Jesse B. Walker to Leadership Team as Chief Supply Chain Officer\"",
+          "url": "https://x-energy.com/news/jesse-b-walker-chief-supply-chain-officer/",
+          "quote": "Strengthening the company's global supply chain strategy presents an incredibly exciting opportunity to support the next generation of nuclear technologies.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

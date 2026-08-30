@@ -101,6 +101,45 @@
   var tablist = $("tabs");
   var tabEls = Array.prototype.slice.call(tablist.querySelectorAll(".tab"));
 
+  /* Lazy datasets. instruments (421 KB) and voices (232 KB) are 46% of the
+     bundle and each is read by exactly one panel, so they ship as separate
+     files and load when that panel first opens.
+
+     The cache holds the in-flight PROMISE, not a boolean set after the fetch
+     resolves. A boolean is not idempotent under concurrency: two callers in the
+     same tick both read it as false before either settles, and the payload
+     downloads twice. Every caller here gets the same promise. */
+  var LAZY = {};
+  function loadLazy(name) {
+    if (!(D.lazy || []).length || (D.lazy || []).indexOf(name) === -1) {
+      return Promise.resolve(D[name]);          // not split; already present
+    }
+    if (D[name]) { return Promise.resolve(D[name]); }
+    if (!LAZY[name]) {
+      LAZY[name] = new Promise(function (resolve, reject) {
+        var s = document.createElement("script");
+        s.src = "data-" + name + ".js";
+        s.onload = function () { resolve(D[name]); };
+        // Fail loud: a swallowed error here leaves a panel permanently empty
+        // with no explanation, which reads as a rendering bug for weeks.
+        s.onerror = function () { reject(new Error("could not load data-" + name + ".js")); };
+        document.head.appendChild(s);
+      });
+    }
+    return LAZY[name];
+  }
+  function lazyPanel(name, el, render) {
+    var host = $(el);
+    if (host && !host.innerHTML) { host.innerHTML = '<p class="prose note">Loading\u2026</p>'; }
+    return loadLazy(name).then(render).catch(function (err) {
+      if (host) {
+        host.innerHTML = '<p class="prose">This section could not load its data. ' +
+          esc(String(err.message || err)) + "</p>";
+      }
+      throw err;
+    });
+  }
+
   function activate(route, opts) {
     opts = opts || {};
     var parts = String(route || "").split("/");
@@ -120,6 +159,14 @@
       t.tabIndex = on ? 0 : -1;
       if (on && opts.focus) t.focus();
     });
+    // Panels whose data ships separately render on first open. loadLazy caches the
+    // in-flight promise, so a fast double-activate fetches once.
+    if (id === "policy" && !policyRendered) {
+      lazyPanel("instruments", "pathways", renderPolicy);
+    }
+    if (id === "sources" && !voicesRendered) {
+      lazyPanel("voices", "voices", renderVoices);
+    }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
     var here = id + (subRes ? "/" + subRes : "");
     if (location.hash.slice(1) !== here) {
@@ -658,57 +705,6 @@
       "</div>";
   }).join("") + "</div>";
 
-  /* Every microreactor-specific note on the site, gathered in one place. Each
-     record on the Policy and Costs tabs ends with what a 1-20 MW unit changes
-     that a large reactor does not; read together they are the argument for the
-     size, which is otherwise scattered across two tabs and nine sub-tabs. */
-  var edgeGroups = [];
-  var policyName = {}, policySlug = {};
-  ((D.policy && D.policy.groups) || []).forEach(function (g) {
-    policyName[g.id] = g.name;
-    policySlug[g.id] = slug(g.name);
-  });
-  ((D.instruments && D.instruments.groups) || []).forEach(function (g) {
-    var rows = g.records.filter(function (r) { return r.microreactor_edge; });
-    if (!rows.length) { return; }
-    edgeGroups.push({
-      label: policyName[g.group] || g.group,
-      href: "#policy/" + (policySlug[g.group] || slug(g.group)),
-      linkText: "the rules behind these",
-      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_edge }; })
-    });
-  });
-  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (sec) {
-    var rows = sec.records.filter(function (r) { return r.microreactor_read; });
-    if (!rows.length) { return; }
-    edgeGroups.push({
-      label: sec.sector,
-      href: "#economics/price-to-beat",
-      linkText: "the deals behind these",
-      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_read }; })
-    });
-  });
-  var edgeCount = edgeGroups.reduce(function (n, g) { return n + g.rows.length; }, 0);
-
-  var edgeHTML = !edgeCount ? "" :
-    '<div class="edgeband"><div class="subhead"><h3>Why a small reactor, case by case</h3></div>' +
-    '<p class="prose">' + edgeCount + " notes from across the site, each on what a 1\u201320 MW " +
-    "unit changes that a bigger one does not. They sit on the Policy and Costs tabs one at a " +
-    "time; together they are the case for the size.</p>" +
-    '<div class="precgrid">' + edgeGroups.map(function (g) {
-      // One disclosure per group, closed like the sector accordions on this same
-      // tab. Open, all nine run to about 47,000px at 375px wide — the length that
-      // forced the sub-tab split in the first place.
-      return '<details class="prec"><summary><span class="nm">' + esc(g.label) + "</span>" +
-        '<span class="cat">' + g.rows.length + " notes</span></summary>" +
-        '<div class="body"><p class="egolink"><a href="' + esc(g.href) + '">' +
-        esc(g.linkText) + "</a></p>" +
-        g.rows.map(function (r) {
-          return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
-            "<p>" + esc(r.note) + "</p></div>";
-        }).join("") + "</div></details>";
-    }).join("") + "</div></div>";
-
   /* Why microreactors. The 74 instrument notes each answer one question about one
      rule; clustered, they are twelve arguments and seven places the argument
      fails. The counters are not a disclaimer section - six of them come out of
@@ -856,8 +852,15 @@
   }
 
   /* ---------- policy pathways ---------- */
+  /* Deferred: the instrument bands on this tab read the 421 KB instruments
+     payload, which now ships separately. Rendering the pathway cards first and
+     filling the bands in later would show a half-built tab, so the whole panel
+     waits on one promise instead. */
   var P = D.policy;
-  if (P) {
+  var policyRendered = false;
+  function renderPolicy() {
+    if (policyRendered || !P) { return; }
+    policyRendered = true;
     /* Instruments, keyed by the policy group they belong to. The Policy tab answers
        two questions per group: what the rule says (the pathway cards above) and how a
        deal actually gets signed under it (these). */
@@ -966,7 +969,14 @@
      selling, the government buying, and the analysts arguing it does not add
      up. A quote whose page could not be fetched keeps the dagger every other
      snippet-only citation on this site carries. */
-  if (D.voices && D.voices.groups) {
+  /* Rendered when the Sources panel first opens, because voices ships as a
+     separate 232 KB payload. renderVoices is idempotent; loadLazy hands every
+     caller the same promise, so opening the tab twice fetches once. */
+  var voicesRendered = false;
+  function renderVoices() {
+    if (voicesRendered || !(D.voices && D.voices.groups)) { return; }
+    voicesRendered = true;
+
     render($("voices-head"), esc("In their words"));
     render($("voices-intro"), esc(D.voices._meta.what_this_is));
     var voiceRow = function (q) {
@@ -1011,7 +1021,7 @@
           }).join("") + "</div></details>";
       }).join(""));
     }
-  }
+    }
 
   makeSubnav("sources", [{ id: "register", label: "Source register" },
                          { id: "coverage", label: "Field coverage" },

@@ -49,12 +49,23 @@ KEEP_LAST = ("buyer", "skeptics")
 
 
 def load_pass(pass_dir: pathlib.Path) -> Dict[str, List[dict]]:
-    quotes, leaders = [], []
+    """Merge every COMPLETE agent file in the pass.
+
+    Files carrying `_meta.incomplete: true` are skipped. The contract defines
+    that flag for an agent that ran out of budget, and half a roster should not
+    ship either way — but it also makes this merge safe to run while a later
+    agent is still writing into the same directory, which is how the sync gate
+    first caught it.
+    """
+    quotes, leaders, skipped = [], [], []
     for f in sorted(pass_dir.glob("*.json")):
         d = json.loads(f.read_text())
+        if d.get("_meta", {}).get("incomplete"):
+            skipped.append(f.name)
+            continue
         quotes.extend(d.get("quotes", []))
         leaders.extend(d.get("leaders", []))
-    return {"quotes": quotes, "leaders": leaders}
+    return {"quotes": quotes, "leaders": leaders, "skipped": skipped}
 
 
 def build(pass_dir: pathlib.Path) -> Dict[str, Any]:
@@ -96,8 +107,13 @@ def build(pass_dir: pathlib.Path) -> Dict[str, Any]:
     groups.extend(keep)
 
     leaders = sorted(p["leaders"], key=lambda l: (l.get("company", ""), l.get("name", "")))
+    if p["skipped"]:
+        meta_skip = ", ".join(p["skipped"])
     meta = dict(existing["_meta"])
     meta["captured"] = "2026-08-29"
+    if p["skipped"]:
+        meta["pending"] = ("Not yet merged, still being written: " + ", ".join(p["skipped"]) +
+                           ". Re-run tools/merge_voices.py when complete.")
     # State the verification mix rather than claiming it is uniform. Sources marked
     # snippet-only were corroborated by search and never page-read, and the roster
     # note sits above rows carrying both kinds.

@@ -143,3 +143,55 @@ class BundleConsistency(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LazyPayloads(unittest.TestCase):
+    """instruments and voices ship as separate files fetched when their panel
+    opens. Three things can silently undo that: the split disappearing from the
+    builder, a lazy dataset leaking back into the main bundle, and the loader
+    caching a boolean instead of the in-flight promise (which double-fetches
+    under concurrent callers and looks fine in a single-threaded read)."""
+
+    def setUp(self):
+        import json
+        self.js = (ROOT / "site" / "data.js").read_text()
+        i = self.js.index("{")
+        self.bundle = json.loads(self.js[i:self.js.rindex("}") + 1])
+        self.app = (ROOT / "site" / "assets" / "app.js").read_text()
+
+    def test_lazy_datasets_are_absent_from_the_main_bundle(self):
+        for name in self.bundle["lazy"]:
+            self.assertNotIn(name, self.bundle,
+                             f"{name} is declared lazy but still ships in data.js")
+            self.assertTrue((ROOT / "site" / f"data-{name}.js").exists(),
+                            f"data-{name}.js was not emitted")
+
+    def test_citation_numbering_still_covers_lazy_data(self):
+        """The register is built before the split, so a chip inside a lazy
+        payload must still resolve to a number in the main bundle."""
+        import json
+        nums = self.bundle["source_numbers"]
+        for name in self.bundle["lazy"]:
+            chunk = (ROOT / "site" / f"data-{name}.js").read_text()
+            payload = json.loads(chunk[chunk.index("=") + 1:chunk.rindex(";window.dispatchEvent")])
+            urls = set()
+
+            def walk(n):
+                if isinstance(n, dict):
+                    if isinstance(n.get("url"), str) and n["url"].startswith("http"):
+                        urls.add(n["url"])
+                    for v in n.values():
+                        walk(v)
+                elif isinstance(n, list):
+                    for v in n:
+                        walk(v)
+            walk(payload)
+            missing = [u for u in urls if u not in nums]
+            self.assertEqual(missing, [], f"{name}: {len(missing)} urls have no citation number")
+
+    def test_loader_caches_the_promise_not_a_boolean(self):
+        self.assertIn("if (!LAZY[name])", self.app,
+                      "loadLazy must guard on the cached promise")
+        self.assertIn("LAZY[name] = new Promise", self.app)
+        # the failure mode this replaces: a flag set after the fetch resolves
+        self.assertNotIn("Loaded = true;", self.app)
