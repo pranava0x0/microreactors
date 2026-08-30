@@ -1,273 +1,273 @@
 {
- "_meta": {
-  "captured": "2026-08-24",
-  "agent": "main-session (LBNL Report 1 primary read)",
-  "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
-  "angles_run": [
-   "LBNL Report No. 1 sections 3.1-3.3 read in full from the cached PDF"
-  ],
-  "absences": [
-   "No standby-tariff rate sheet was read in the original; LBNL describes the structure but publishes no $/kW-month figures. A follow-up pass should pull two or three actual standby tariffs and price them against a 5 MW reactor.",
-   "The Atlantic City outage-risk standby tariff is described as a proposal (2018); whether New Jersey ever adopted it was not established here.",
-   "No source found that prices what a nuclear unit's standby charge would be, because no utility tariff yet contemplates one."
+  "_meta": {
+    "captured": "2026-08-24",
+    "agent": "main-session (LBNL Report 1 primary read)",
+    "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
+    "angles_run": [
+      "LBNL Report No. 1 sections 3.1-3.3 read in full from the cached PDF"
+    ],
+    "absences": [
+      "No standby-tariff rate sheet was read in the original; LBNL describes the structure but publishes no $/kW-month figures. A follow-up pass should pull two or three actual standby tariffs and price them against a 5 MW reactor.",
+      "The Atlantic City outage-risk standby tariff is described as a proposal (2018); whether New Jersey ever adopted it was not established here.",
+      "No source found that prices what a nuclear unit's standby charge would be, because no utility tariff yet contemplates one."
+    ]
+  },
+  "mechanisms": [
+    {
+      "id": "standby-charges",
+      "group": "interconnection",
+      "family": "utility-tariff",
+      "name": "The bill you keep paying after you make your own power",
+      "what_it_is": "A customer with on-site generation still pays the utility a monthly fee for standing ready to serve the whole load if the on-site plant trips. The fee is justified by cost causation and is usually sized off the customer's peak demand, which means a site that generates nearly all its own energy can still see a demand-based bill close to what it paid before. Standard standby tariffs were written for intermittent or unreliable on-site generation and give no credit for a resource that is actually firm.",
+      "who_signs": "Host <-> utility, under the utility's filed standby tariff",
+      "asset_owner": "unchanged",
+      "term": "as long as the site stays interconnected",
+      "price_form": "$/kW-month of contracted standby demand, plus a customer charge",
+      "precedents": [
+        {
+          "name": "Atlantic City microgrid standby-tariff proposal",
+          "year": "2018",
+          "parties": "City of Atlantic City; Atlantic City Electric; New Jersey planners",
+          "note": "Rather than fight the standard standby tariff, the planners proposed a new pilot microgrid resiliency standby tariff priced on outage risk instead of peak usage — and proposed the utility operate and maintain the microgrid.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "This is the single most under-modeled line item in a behind-the-meter reactor's business case. A reactor is far firmer than the solar-plus-storage the standard tariff was written for, but no tariff gives credit for firmness, so a 5 MW reactor would be billed standby on close to its full 5 MW unless the tariff is renegotiated. Getting a firmness-differentiated standby rate is a live regulatory ask, and the Atlantic City structure — price standby on outage risk — is the template that most favours a reactor.",
+      "microreactor_edge": "A fleet argument that a single machine cannot make: two 5 MW units on one site are genuinely N+1, so the contracted standby demand should fall to the size of one unit rather than the whole load. That is a concrete, arguable tariff position, and it is only available to a technology small enough to be bought in multiples.",
+      "blockers": [
+        "Standard tariffs do not differentiate by resource firmness",
+        "Demand-based billing survives even near-total self-generation",
+        "Renegotiating a tariff means a commission proceeding"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "monthly fees for customers with on-site generation that compensate the utility for being continuously available to provide backup power",
+          "status": "fetched"
+        },
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "Rather than basing costs on standard peak usage, this new tariff would be calculated on an",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "departing-load-economics",
+      "group": "interconnection",
+      "family": "utility-tariff",
+      "name": "You are departing load, and the utility bills accordingly",
+      "what_it_is": "An investor-owned utility earns by selling kilowatt-hours and by growing its rate base. A customer who self-generates does neither, and from the utility's side leaves behind under-used infrastructure whose fixed cost has to be recovered from everyone else. That framing — not hostility — is what produces exit fees, departing-load charges and unfavourable standby terms, and it is why the utility's default posture toward an on-site reactor is a cost-recovery negotiation rather than a sale.",
+      "who_signs": "Host <-> utility; commission arbitrates",
+      "asset_owner": "unchanged",
+      "term": "ongoing",
+      "price_form": "exit fees, departing-load charges, non-bypassable charges",
+      "precedents": [
+        {
+          "name": "The departing-load framing in utility ratemaking",
+          "year": "2026",
+          "parties": "Investor-owned utilities generally; LBNL synthesis of Hyams, Villarreal and Winmill",
+          "note": "LBNL states the position plainly: the microgrid customer leaves behind under-used grid resources and fixed costs that must be recovered from remaining customers. Revenue decoupling is the proposed fix, but decoupling guarantees the utility recovers its authorized revenue anyway, by raising rates later.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "Identical in kind, larger in degree. A reactor removes a large industrial customer's entire load permanently rather than shaving a peak, so it is the maximal case of departing load — and unlike solar, it does not leave the customer dependent on the grid at night. Expect the utility to seek the largest exit charge it can justify, and expect that number to be a real term in the deal rather than a footnote.",
+      "microreactor_edge": "The inverse framing is the sales pitch: a microreactor is small enough that the utility can own it. Where the utility is the counterparty rather than the loser, departing load stops being an objection — which is exactly why the utility-owned and rate-based route deserves equal billing with the third-party PPA.",
+      "blockers": [
+        "Exit and non-bypassable charges can be large enough to invert the business case",
+        "Decoupling does not remove the utility's incentive, it defers it",
+        "The charge is negotiated with the party that loses the customer"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "leaving behind under-utilized grid resources and fixed infrastructure costs that must be recovered from the remaining customers",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "blue-sky-revenue-gap",
+      "group": "interconnection",
+      "family": "regulatory-rule",
+      "name": "No market to sell into on a blue-sky day",
+      "what_it_is": "Resilience assets earn their keep during outages and sit idle the rest of the year, and in most states there is simply no product to sell the idle capacity into. Frequency regulation, voltage support, peak reduction, load shedding and black start rarely have an established compensation mechanism at the distribution level. FERC Order 2222 was meant to open these markets to distributed resources, but implementation varies state by state. The consequence is that a resilience project's financial case leans on the value of avoided outages, which is hard to bank.",
+      "who_signs": "No counterparty exists in most states — that is the mechanism",
+      "asset_owner": "unchanged",
+      "term": "n/a",
+      "price_form": "absent; where markets exist, wholesale energy and ancillary-service prices",
+      "precedents": [
+        {
+          "name": "FERC Order 2222 and its uneven state implementation",
+          "year": "2021",
+          "parties": "FERC; state commissions; distributed-resource aggregators",
+          "note": "The federal rule intended to let distributed resources into wholesale markets is expected to be implemented inconsistently across states, so the revenue it promises cannot be assumed at a given site.",
+          "source_idx": 0
+        },
+        {
+          "name": "PURPA qualifying-facility limits",
+          "year": "2006",
+          "parties": "FERC; qualifying facilities in competitive markets",
+          "note": "Standalone battery storage is generally outside the QF definition, and in competitive markets a rebuttable presumption of wholesale market access relieves the utility of its mandatory purchase obligation — removing the guaranteed revenue stream QF status is assumed to provide.",
+          "source_idx": 1
+        }
+      ],
+      "nuclear_fit": "This gap hurts a reactor more than it hurts a battery, because a reactor is a high-capital-factor machine whose economics assume it runs flat out. A resilience-only duty cycle wastes it. The reactor's answer is to be the site's baseload rather than its backup — which converts the question from 'what market can I sell into' to 'what load can I serve behind the meter', and is why the diesel-replacement pitch has to be a baseload pitch, not a standby pitch.",
+      "microreactor_edge": "The genuinely microreactor-specific version is siting the unit where the host's own load already absorbs the full output, so no market access is needed at all. A 1-20 MW block is the largest machine for which that is routinely true.",
+      "blockers": [
+        "No distribution-level product for resilience services in most states",
+        "Order 2222 implementation is state-by-state",
+        "QF mandatory-purchase protection is unavailable in competitive markets"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "the market for earning revenue by providing energy and distribution level grid services back to the utility is underdeveloped or non-existent in most states",
+          "status": "fetched"
+        },
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "standalone battery storage, a core component for modern microgrids, is generally not included in the QF definition",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "potential-to-emit-trap",
+      "group": "diesel",
+      "family": "regulatory-rule",
+      "name": "A diesel is permitted as if it never switches off",
+      "what_it_is": "Air permitting sizes a source by its potential to emit, calculated at maximum rated capacity for all 8,760 hours of the year, whether or not the engine ever runs that much. A standby fleet expected to run a few dozen hours annually is therefore assessed as though it ran continuously, and can be pushed over the major-source threshold into New Source Review and a Title V operating permit. In non-attainment areas the triggering thresholds are lower still.",
+      "who_signs": "Host <-> EPA or the delegated state environmental agency",
+      "asset_owner": "unchanged",
+      "term": "permit life, with renewals",
+      "price_form": "permitting cost and schedule, plus any control equipment the classification forces",
+      "precedents": [
+        {
+          "name": "Santa Rita Jail microgrid",
+          "year": "2014",
+          "parties": "Alameda County; Chevron Energy Solutions; local air district",
+          "note": "Avoided the air permit outright by selecting a pre-certified fuel cell, and scoped the work as upgrades to an existing facility to use that exemption. The permitting problem was solved by technology choice, not by argument.",
+          "source_idx": 1
+        },
+        {
+          "name": "Borrego Springs microgrid phased air permit",
+          "year": "2024",
+          "parties": "San Diego Gas & Electric; local air district",
+          "note": "De-risked the schedule by splitting the diesel air permit into an Authority to Construct followed by a Permit to Operate, so construction could start before the final permit landed.",
+          "source_idx": 1
+        }
+      ],
+      "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centers happen to be.",
+      "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance program — the same permitting relief, available to a hospital rather than only to a refinery.",
+      "blockers": [
+        "Potential to emit is computed from capacity, not expected use",
+        "Non-attainment areas apply extremely low triggering thresholds",
+        "Authority is delegated to state agencies that may be stricter than EPA"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "assuming the generator operates continuously (8,760 hours per year) at its maximum rated capacity",
+          "status": "fetched"
+        },
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "Selected an AHJ certified fuel cell to gain exemption from air permit",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "interconnection-cost-blowup",
+      "group": "interconnection",
+      "family": "utility-tariff",
+      "name": "The interconnection cost that lands after the agreement is signed",
+      "what_it_is": "Interconnection cost estimates are not binding, and a utility design change late in the process can multiply them. LBNL's worked example is a project that budgeted between $75,000 and $100,000 for interconnection and finished at roughly $461,000, because PG&E required an underground vault in the public right-of-way after the interconnection agreement had already been executed. The project's response was to redesign around a smaller system that avoided the vault entirely.",
+      "who_signs": "Host or developer <-> utility, under an interconnection agreement",
+      "asset_owner": "unchanged",
+      "term": "one-time, but assessed late",
+      "price_form": "lump-sum network upgrade and interconnection facility costs",
+      "precedents": [
+        {
+          "name": "Clean Coalition-documented California interconnection overrun",
+          "year": "2021",
+          "parties": "Project developer; Pacific Gas & Electric",
+          "size": "cost rose from a $75,000-$100,000 estimate to roughly $461,000",
+          "note": "A late utility-imposed underground vault requirement quadrupled the cost after the agreement was executed, and forced a redesign to a smaller system.",
+          "source_idx": 0
+        }
+      ],
+      "nuclear_fit": "A reactor's interconnection cost exposure is the same in kind but the redesign escape route is not available: you cannot shrink a licensed reactor to dodge a vault requirement. That asymmetry argues for settling interconnection scope before the NRC application locks the design, and for preferring sites with an existing, adequate point of interconnection over greenfield ones.",
+      "microreactor_edge": "Real and specific: a 1-20 MW machine is small enough that the redesign escape hatch exists at the fleet level instead of the unit level — drop one unit from the order rather than redesign the plant. It also sits under the thresholds that trigger the most expensive study classes.",
+      "blockers": [
+        "Estimates are non-binding and can change after execution",
+        "Network upgrade costs are assigned to the interconnecting customer",
+        "The redesign remedy is unavailable to a licensed nuclear design"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "saw its final interconnection cost rise to approximately $461,000",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bess-code-patchwork",
+      "group": "batteries",
+      "family": "regulatory-rule",
+      "name": "The fire marshal, not the utility, decides whether the battery gets built",
+      "what_it_is": "Battery installations answer to the International Fire Code and NFPA 855, which are revised roughly every three years while state and local adoption lags by years and is then amended locally. The practical result is that the applicable rule is whatever the local fire marshal has adopted, which no utility technical review can waive. Requirements reach into siting: explosion control, thermal management, setback distances and firewalls.",
+      "who_signs": "Host <-> local building department and fire marshal",
+      "asset_owner": "unchanged",
+      "term": "permit-specific",
+      "price_form": "setbacks, enclosures and suppression are capital cost; delay is schedule cost",
+      "precedents": [
+        {
+          "name": "The 2019 Surprise, Arizona battery fire",
+          "year": "2019",
+          "parties": "Arizona Public Service; City of Surprise firefighters",
+          "note": "Severe firefighter injuries from trapped flammable gases; the incident is what drove explosion-control requirements into the codes now governing every new installation.",
+          "source_idx": 0
+        },
+        {
+          "name": "Local amendment patchwork",
+          "year": "2023",
+          "parties": "Daly City, California; Yarmouth, Maine; PNNL survey",
+          "note": "Daly City amended the state fire code with its own battery disconnection requirements while Yarmouth independently adopted NFPA 855 into municipal code — two jurisdictions, two different rules, neither derivable from the state code.",
+          "source_idx": 1
+        }
+      ],
+      "nuclear_fit": "Pairing a reactor with storage imports the battery's entire code burden into a project that would otherwise have none of it, and puts a second authority having jurisdiction — the fire marshal — alongside the NRC. That is a real cost of the pairing and it is rarely stated when the pairing is pitched.",
+      "microreactor_edge": "The sizing consequence is concrete: LBNL notes that sub-1 MW custom battery packages are hard to source because manufacturers standardize on pre-certified grid-scale units of 1 MW and above. A reactor-plus-storage skid sized for a small campus lands in exactly that awkward band, so the pairing should be specified in multiples of a pre-certified standard unit rather than as a bespoke pack.",
+      "blockers": [
+        "Code adoption lags national standards by years and is locally amended",
+        "Fire-marshal authority is not waivable by a utility review",
+        "Sub-1 MW pre-certified battery products are scarce"
+      ],
+      "sources": [
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "state and local adoption of these updates can take years, creating an inconsistent",
+          "status": "fetched"
+        },
+        {
+          "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
+          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
+          "quote": "many major manufacturers focus on standardized, grid-scale systems (1 MW or greater)",
+          "status": "fetched"
+        }
+      ]
+    }
   ]
- },
- "mechanisms": [
-  {
-   "id": "standby-charges",
-   "group": "interconnection",
-   "family": "utility-tariff",
-   "name": "The bill you keep paying after you make your own power",
-   "what_it_is": "A customer with on-site generation still pays the utility a monthly fee for standing ready to serve the whole load if the on-site plant trips. The fee is justified by cost causation and is usually sized off the customer's peak demand, which means a site that generates nearly all its own energy can still see a demand-based bill close to what it paid before. Standard standby tariffs were written for intermittent or unreliable on-site generation and give no credit for a resource that is actually firm.",
-   "who_signs": "Host <-> utility, under the utility's filed standby tariff",
-   "asset_owner": "unchanged",
-   "term": "as long as the site stays interconnected",
-   "price_form": "$/kW-month of contracted standby demand, plus a customer charge",
-   "precedents": [
-    {
-     "name": "Atlantic City microgrid standby-tariff proposal",
-     "year": "2018",
-     "parties": "City of Atlantic City; Atlantic City Electric; New Jersey planners",
-     "note": "Rather than fight the standard standby tariff, the planners proposed a new pilot microgrid resiliency standby tariff priced on outage risk instead of peak usage — and proposed the utility operate and maintain the microgrid.",
-     "source_idx": 0
-    }
-   ],
-   "nuclear_fit": "This is the single most under-modelled line item in a behind-the-meter reactor's business case. A reactor is far firmer than the solar-plus-storage the standard tariff was written for, but no tariff gives credit for firmness, so a 5 MW reactor would be billed standby on close to its full 5 MW unless the tariff is renegotiated. Getting a firmness-differentiated standby rate is a live regulatory ask, and the Atlantic City structure — price standby on outage risk — is the template that most favours a reactor.",
-   "microreactor_edge": "A fleet argument that a single machine cannot make: two 5 MW units on one site are genuinely N+1, so the contracted standby demand should fall to the size of one unit rather than the whole load. That is a concrete, arguable tariff position, and it is only available to a technology small enough to be bought in multiples.",
-   "blockers": [
-    "Standard tariffs do not differentiate by resource firmness",
-    "Demand-based billing survives even near-total self-generation",
-    "Renegotiating a tariff means a commission proceeding"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "monthly fees for customers with on-site generation that compensate the utility for being continuously available to provide backup power",
-     "status": "fetched"
-    },
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "Rather than basing costs on standard peak usage, this new tariff would be calculated on an",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "departing-load-economics",
-   "group": "interconnection",
-   "family": "utility-tariff",
-   "name": "You are departing load, and the utility bills accordingly",
-   "what_it_is": "An investor-owned utility earns by selling kilowatt-hours and by growing its rate base. A customer who self-generates does neither, and from the utility's side leaves behind under-used infrastructure whose fixed cost has to be recovered from everyone else. That framing — not hostility — is what produces exit fees, departing-load charges and unfavourable standby terms, and it is why the utility's default posture toward an on-site reactor is a cost-recovery negotiation rather than a sale.",
-   "who_signs": "Host <-> utility; commission arbitrates",
-   "asset_owner": "unchanged",
-   "term": "ongoing",
-   "price_form": "exit fees, departing-load charges, non-bypassable charges",
-   "precedents": [
-    {
-     "name": "The departing-load framing in utility ratemaking",
-     "year": "2026",
-     "parties": "Investor-owned utilities generally; LBNL synthesis of Hyams, Villarreal and Winmill",
-     "note": "LBNL states the position plainly: the microgrid customer leaves behind under-used grid resources and fixed costs that must be recovered from remaining customers. Revenue decoupling is the proposed fix, but decoupling guarantees the utility recovers its authorised revenue anyway, by raising rates later.",
-     "source_idx": 0
-    }
-   ],
-   "nuclear_fit": "Identical in kind, larger in degree. A reactor removes a large industrial customer's entire load permanently rather than shaving a peak, so it is the maximal case of departing load — and unlike solar, it does not leave the customer dependent on the grid at night. Expect the utility to seek the largest exit charge it can justify, and expect that number to be a real term in the deal rather than a footnote.",
-   "microreactor_edge": "The inverse framing is the sales pitch: a microreactor is small enough that the utility can own it. Where the utility is the counterparty rather than the loser, departing load stops being an objection — which is exactly why the utility-owned and rate-based route deserves equal billing with the third-party PPA.",
-   "blockers": [
-    "Exit and non-bypassable charges can be large enough to invert the business case",
-    "Decoupling does not remove the utility's incentive, it defers it",
-    "The charge is negotiated with the party that loses the customer"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "leaving behind under-utilized grid resources and fixed infrastructure costs that must be recovered from the remaining customers",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "blue-sky-revenue-gap",
-   "group": "interconnection",
-   "family": "regulatory-rule",
-   "name": "No market to sell into on a blue-sky day",
-   "what_it_is": "Resilience assets earn their keep during outages and sit idle the rest of the year, and in most states there is simply no product to sell the idle capacity into. Frequency regulation, voltage support, peak reduction, load shedding and black start rarely have an established compensation mechanism at the distribution level. FERC Order 2222 was meant to open these markets to distributed resources, but implementation varies state by state. The consequence is that a resilience project's financial case leans on the value of avoided outages, which is hard to bank.",
-   "who_signs": "No counterparty exists in most states — that is the mechanism",
-   "asset_owner": "unchanged",
-   "term": "n/a",
-   "price_form": "absent; where markets exist, wholesale energy and ancillary-service prices",
-   "precedents": [
-    {
-     "name": "FERC Order 2222 and its uneven state implementation",
-     "year": "2021",
-     "parties": "FERC; state commissions; distributed-resource aggregators",
-     "note": "The federal rule intended to let distributed resources into wholesale markets is expected to be implemented inconsistently across states, so the revenue it promises cannot be assumed at a given site.",
-     "source_idx": 0
-    },
-    {
-     "name": "PURPA qualifying-facility limits",
-     "year": "2006",
-     "parties": "FERC; qualifying facilities in competitive markets",
-     "note": "Standalone battery storage is generally outside the QF definition, and in competitive markets a rebuttable presumption of wholesale market access relieves the utility of its mandatory purchase obligation — removing the guaranteed revenue stream QF status is assumed to provide.",
-     "source_idx": 1
-    }
-   ],
-   "nuclear_fit": "This gap hurts a reactor more than it hurts a battery, because a reactor is a high-capital-factor machine whose economics assume it runs flat out. A resilience-only duty cycle wastes it. The reactor's answer is to be the site's baseload rather than its backup — which converts the question from 'what market can I sell into' to 'what load can I serve behind the meter', and is why the diesel-replacement pitch has to be a baseload pitch, not a standby pitch.",
-   "microreactor_edge": "The genuinely microreactor-specific version is siting the unit where the host's own load already absorbs the full output, so no market access is needed at all. A 1-20 MW block is the largest machine for which that is routinely true.",
-   "blockers": [
-    "No distribution-level product for resilience services in most states",
-    "Order 2222 implementation is state-by-state",
-    "QF mandatory-purchase protection is unavailable in competitive markets"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "the market for earning revenue by providing energy and distribution level grid services back to the utility is underdeveloped or non-existent in most states",
-     "status": "fetched"
-    },
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "standalone battery storage, a core component for modern microgrids, is generally not included in the QF definition",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "potential-to-emit-trap",
-   "group": "diesel",
-   "family": "regulatory-rule",
-   "name": "A diesel is permitted as if it never switches off",
-   "what_it_is": "Air permitting sizes a source by its potential to emit, calculated at maximum rated capacity for all 8,760 hours of the year, whether or not the engine ever runs that much. A standby fleet expected to run a few dozen hours annually is therefore assessed as though it ran continuously, and can be pushed over the major-source threshold into New Source Review and a Title V operating permit. In non-attainment areas the triggering thresholds are lower still.",
-   "who_signs": "Host <-> EPA or the delegated state environmental agency",
-   "asset_owner": "unchanged",
-   "term": "permit life, with renewals",
-   "price_form": "permitting cost and schedule, plus any control equipment the classification forces",
-   "precedents": [
-    {
-     "name": "Santa Rita Jail microgrid",
-     "year": "2014",
-     "parties": "Alameda County; Chevron Energy Solutions; local air district",
-     "note": "Avoided the air permit outright by selecting a pre-certified fuel cell, and scoped the work as upgrades to an existing facility to use that exemption. The permitting problem was solved by technology choice, not by argument.",
-     "source_idx": 1
-    },
-    {
-     "name": "Borrego Springs microgrid phased air permit",
-     "year": "2024",
-     "parties": "San Diego Gas & Electric; local air district",
-     "note": "De-risked the schedule by splitting the diesel air permit into an Authority to Construct followed by a Permit to Operate, so construction could start before the final permit landed.",
-     "source_idx": 1
-    }
-   ],
-   "nuclear_fit": "A reactor has no potential to emit criteria pollutants at all, so the entire New Source Review and Title V branch of the permitting tree disappears. This is the cleanest, most quantifiable regulatory advantage nuclear has over every combustion alternative including gas, and it is worth more in non-attainment areas than anywhere else — which is where the large urban campuses, ports and medical centres happen to be.",
-   "microreactor_edge": "The advantage is nuclear's, not the microreactor's, and it should be argued that way. What a small unit adds is that the exemption becomes reachable for sites too small to fund a Title V compliance programme — the same permitting relief, available to a hospital rather than only to a refinery.",
-   "blockers": [
-    "Potential to emit is computed from capacity, not expected use",
-    "Non-attainment areas apply extremely low triggering thresholds",
-    "Authority is delegated to state agencies that may be stricter than EPA"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "assuming the generator operates continuously (8,760 hours per year) at its maximum rated capacity",
-     "status": "fetched"
-    },
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "Selected an AHJ certified fuel cell to gain exemption from air permit",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "interconnection-cost-blowup",
-   "group": "interconnection",
-   "family": "utility-tariff",
-   "name": "The interconnection cost that lands after the agreement is signed",
-   "what_it_is": "Interconnection cost estimates are not binding, and a utility design change late in the process can multiply them. LBNL's worked example is a project that budgeted between $75,000 and $100,000 for interconnection and finished at roughly $461,000, because PG&E required an underground vault in the public right-of-way after the interconnection agreement had already been executed. The project's response was to redesign around a smaller system that avoided the vault entirely.",
-   "who_signs": "Host or developer <-> utility, under an interconnection agreement",
-   "asset_owner": "unchanged",
-   "term": "one-time, but assessed late",
-   "price_form": "lump-sum network upgrade and interconnection facility costs",
-   "precedents": [
-    {
-     "name": "Clean Coalition-documented California interconnection overrun",
-     "year": "2021",
-     "parties": "Project developer; Pacific Gas & Electric",
-     "size": "cost rose from a $75,000-$100,000 estimate to roughly $461,000",
-     "note": "A late utility-imposed underground vault requirement quadrupled the cost after the agreement was executed, and forced a redesign to a smaller system.",
-     "source_idx": 0
-    }
-   ],
-   "nuclear_fit": "A reactor's interconnection cost exposure is the same in kind but the redesign escape route is not available: you cannot shrink a licensed reactor to dodge a vault requirement. That asymmetry argues for settling interconnection scope before the NRC application locks the design, and for preferring sites with an existing, adequate point of interconnection over greenfield ones.",
-   "microreactor_edge": "Real and specific: a 1-20 MW machine is small enough that the redesign escape hatch exists at the fleet level instead of the unit level — drop one unit from the order rather than redesign the plant. It also sits under the thresholds that trigger the most expensive study classes.",
-   "blockers": [
-    "Estimates are non-binding and can change after execution",
-    "Network upgrade costs are assigned to the interconnecting customer",
-    "The redesign remedy is unavailable to a licensed nuclear design"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "saw its final interconnection cost rise to approximately $461,000",
-     "status": "fetched"
-    }
-   ]
-  },
-  {
-   "id": "bess-code-patchwork",
-   "group": "batteries",
-   "family": "regulatory-rule",
-   "name": "The fire marshal, not the utility, decides whether the battery gets built",
-   "what_it_is": "Battery installations answer to the International Fire Code and NFPA 855, which are revised roughly every three years while state and local adoption lags by years and is then amended locally. The practical result is that the applicable rule is whatever the local fire marshal has adopted, which no utility technical review can waive. Requirements reach into siting: explosion control, thermal management, setback distances and firewalls.",
-   "who_signs": "Host <-> local building department and fire marshal",
-   "asset_owner": "unchanged",
-   "term": "permit-specific",
-   "price_form": "setbacks, enclosures and suppression are capital cost; delay is schedule cost",
-   "precedents": [
-    {
-     "name": "The 2019 Surprise, Arizona battery fire",
-     "year": "2019",
-     "parties": "Arizona Public Service; City of Surprise firefighters",
-     "note": "Severe firefighter injuries from trapped flammable gases; the incident is what drove explosion-control requirements into the codes now governing every new installation.",
-     "source_idx": 0
-    },
-    {
-     "name": "Local amendment patchwork",
-     "year": "2023",
-     "parties": "Daly City, California; Yarmouth, Maine; PNNL survey",
-     "note": "Daly City amended the state fire code with its own battery disconnection requirements while Yarmouth independently adopted NFPA 855 into municipal code — two jurisdictions, two different rules, neither derivable from the state code.",
-     "source_idx": 1
-    }
-   ],
-   "nuclear_fit": "Pairing a reactor with storage imports the battery's entire code burden into a project that would otherwise have none of it, and puts a second authority having jurisdiction — the fire marshal — alongside the NRC. That is a real cost of the pairing and it is rarely stated when the pairing is pitched.",
-   "microreactor_edge": "The sizing consequence is concrete: LBNL notes that sub-1 MW custom battery packages are hard to source because manufacturers standardise on pre-certified grid-scale units of 1 MW and above. A reactor-plus-storage skid sized for a small campus lands in exactly that awkward band, so the pairing should be specified in multiples of a pre-certified standard unit rather than as a bespoke pack.",
-   "blockers": [
-    "Code adoption lags national standards by years and is locally amended",
-    "Fire-marshal authority is not waivable by a utility review",
-    "Sub-1 MW pre-certified battery products are scarce"
-   ],
-   "sources": [
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "state and local adoption of these updates can take years, creating an inconsistent",
-     "status": "fetched"
-    },
-    {
-     "label": "LBNL — Regulatory Barriers Affecting Microgrids, Report No. 1: Foundational Issues (2026-03)",
-     "url": "https://eta-publications.lbl.gov/sites/default/files/2026-03/microgrids_report_1_2026_03_11_final_0.pdf",
-     "quote": "many major manufacturers focus on standardized, grid-scale systems (1 MW or greater)",
-     "status": "fetched"
-    }
-   ]
-  }
- ]
 }

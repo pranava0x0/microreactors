@@ -7,6 +7,7 @@ Two distinct failures are covered:
 """
 import json
 import pathlib
+import re
 import subprocess
 import sys
 import unittest
@@ -35,6 +36,25 @@ class ResearchPass(unittest.TestCase):
         for pass_dir in PASS_DIRS:
             r = run("tools/research_pass.py", "validate", str(pass_dir.relative_to(ROOT)))
             self.assertEqual(r.returncode, 0, pass_dir.name + "\n" + r.stdout + r.stderr)
+
+    def test_voices_meta_carries_every_field_the_renderer_reads(self):
+        """site/assets/app.js reads _meta.what_this_is and _meta.roster_note.
+        Extracting the curated base dropped what_this_is, and the sub-tab
+        rendered an empty paragraph on every visit - invisible to a browser
+        check that counted rows and citations but never read the prose."""
+        import json
+        meta = json.loads((ROOT / "data" / "voices.json").read_text())["_meta"]
+        app = (ROOT / "site" / "assets" / "app.js").read_text()
+        for field in re.findall(r"D\.voices\._meta\.(\w+)", app):
+            self.assertIn(field, meta, f"app.js renders _meta.{field}, which voices.json lacks")
+            self.assertTrue(str(meta[field]).strip(), f"_meta.{field} is empty")
+
+    def test_voices_matches_its_pass(self):
+        """data/voices.json is derived from the 2026-08-29 pass plus the curated
+        base. Nothing runs merge_voices.py automatically, so without this an edit
+        to a research file that never reaches data/ ships as silent drift."""
+        r = run("tools/merge_voices.py", "data/research/2026-08-29-voices", "--check")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
     def test_derived_datasets_match_the_pass(self):
         """data/instruments.json and data/benchmarks.json are generated. Editing a

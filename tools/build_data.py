@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
-         "instruments", "deployment_sites", "gaps"]
+         "instruments", "deployment_sites", "voices", "gaps"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
@@ -27,7 +27,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # benchmarks render on the Costs tab and instruments on the Policy tab, so each sits
 # beside the dataset it shares a tab with.
 CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mechanisms",
-              "policy", "instruments", "deployment_sites", "gaps"]
+              "policy", "instruments", "deployment_sites", "voices", "gaps"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.

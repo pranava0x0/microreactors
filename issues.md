@@ -199,3 +199,20 @@ vs test bug), status.
   on the page, not that a paraphrased field (like `capacity`) attributes the right number to the
   right thing. Both merged into one canonical record carrying the union of evidence; a broader
   post-merge duplicate sweep (by shared source URL, then by name/region/date) found no others.
+
+## 2026-08-29 — link rot found by check_links (pre-existing, not introduced)
+
+Three registered URLs are dead as of 2026-08-29. All three predate this session's changes
+(confirmed present in `origin/main`'s `site/data.js`). `tools/check_links.py` exits 1 on them;
+the test suite only imports its `collect_urls()`, so CI stays green.
+
+| Status | URL | Area |
+|---|---|---|
+| -1 (no response) | `https://data.nrel.gov/submissions/162` | costs / benchmarks |
+| 404 | `https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf` | instruments (utility tariff) |
+| 404 | `https://www.cnsc-ccsn.gc.ca/.../global-first-micro-modular-reactor-project/gfp-admin/` | deployment sites (Chalk River MMR) |
+
+Root cause: **link rot at the publisher**, not a code or data bug. The AEP Ohio tariff book is
+re-issued under a new dated filename each cycle, and the CNSC page moved after the Chalk River MMR
+project was paused. Status: Open. Each needs a replacement URL or an archived copy; the Chalk River
+one may simply have no live equivalent now that the project is off.

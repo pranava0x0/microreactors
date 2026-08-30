@@ -1,167 +1,379 @@
 {
- "_meta": {
-  "captured": "2026-08-25",
-  "warning": "No microreactor has sold power commercially, so no figure in this table is a price anyone has paid. The ranges are wide because sources disagree about what the first units cost to build. The displaced-alternative bands were re-sourced to primary documents on 2026-08-25.",
-  "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do.",
-  "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low."
- },
- "microreactor_lcoe": [
-  {
-   "scenario": "First-of-a-kind (FOAK)",
-   "low_mwh": 140,
-   "high_mwh": 410,
-   "low_kwh": 0.14,
-   "high_kwh": 0.41,
-   "basis": "NEI reference plant: two co-located 5 MWe reactors, 40-year life, 10-year core, 95% capacity factor, built on proprietary developer cost data",
-   "source": {
-    "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
-    "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
-   },
-   "caveat": "This is where the FOAK numbers on this page come from: an NEI study built on proprietary cost data from several microreactor developers. It is the root source most later papers (including the U-Michigan optimization below) cite for capital cost."
+  "_meta": {
+    "captured": "2026-08-29",
+    "warning": "No microreactor has sold power commercially, so no figure in this table is a price anyone has paid. The ranges are wide because sources disagree about what the first units cost to build. The displaced-alternative bands were re-sourced to primary documents on 2026-08-25.",
+    "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do.",
+    "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low.",
+    "cost_pass": "2026-08-29: added capital cost per kW, the unit-1-to-unit-20 learning curve, and a per-reactor-type comparison, all from Idaho National Laboratory's microreactor technoeconomic reports and the University of Michigan optimization. Before this pass the site carried levelized energy costs only and no capital cost at all."
   },
-  {
-   "scenario": "Nth-of-a-kind (NOAK)",
-   "low_mwh": 90,
-   "high_mwh": 330,
-   "low_kwh": 0.09,
-   "high_kwh": 0.33,
-   "basis": "Same NEI reference plant with a 15% learning rate applied FOAK→NOAK, easing to 5–15% after the first 50 units",
-   "source": {
-    "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
-    "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
-   }
-  },
-  {
-   "scenario": "Published range, general",
-   "low_mwh": 200,
-   "high_mwh": 330,
-   "low_kwh": 0.2,
-   "high_kwh": 0.33,
-   "basis": "Market-review estimate; comparable to or below diesel-based electricity in remote locations",
-   "source": {
-    "label": "Nuclear Business Platform — microreactor market review",
-    "url": "https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution"
-   }
-  },
-  {
-   "scenario": "Optimized design, with PTC (U.S. only)",
-   "low_mwh": 48.21,
-   "high_mwh": 78.32,
-   "basis": "Genetic-algorithm optimization over design parameters; capital cost drawn from a $2,500–4,000/kW (nominal $3,000) nth-of-a-kind distribution, itself sourced to the NEI study above. The paper reports the PTC cutting LCOE by 22–24%, so the same optimization unsubsidised lands near $63–103/MWh (derived, not published).",
-   "source": {
-    "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361)",
-    "url": "https://arxiv.org/abs/2506.13361"
-   },
-   "caveat": "The PTC is a U.S. federal incentive and does not apply to the international track. Any export case should be read against the unsubsidised bands. See the incentives note below for why the PTC is still alive for nuclear after the 2025 budget law."
-  }
- ],
- "incentives": {
-  "question": "Is the PTC still relevant in 2026, after the One Big Beautiful Bill Act?",
-  "answer": "Yes, for nuclear specifically. The OBBBA (signed July 2025) terminated the tech-neutral §45Y/§48E credits early for wind and solar but kept them for nuclear: a nuclear plant qualifies if construction begins before 2034, with a three-year phase-out after that. The deployments this site tracks target operation between 2028 and 2030, comfortably inside that window; most rows publish no construction date, so start-of-construction timing is an open item per project.",
-  "points": [
-   {
-    "fact": "§45Y/§48E survive for new nuclear that begins construction before 2034, then phase out over three years; the emissions-based sunset trigger was replaced by these fixed dates.",
-    "source": {
-     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives (July 2025)",
-     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+  "microreactor_lcoe": [
+    {
+      "scenario": "First-of-a-kind (FOAK)",
+      "low_mwh": 140,
+      "high_mwh": 410,
+      "low_kwh": 0.14,
+      "high_kwh": 0.41,
+      "basis": "NEI reference plant: two co-located 5 MWe reactors, 40-year life, 10-year core, 95% capacity factor, built on proprietary developer cost data",
+      "source": {
+        "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+        "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+      },
+      "caveat": "This is where the FOAK numbers on this page come from: an NEI study built on proprietary cost data from several microreactor developers. It is the root source most later papers (including the U-Michigan optimization below) cite for capital cost."
+    },
+    {
+      "scenario": "Nth-of-a-kind (NOAK)",
+      "low_mwh": 90,
+      "high_mwh": 330,
+      "low_kwh": 0.09,
+      "high_kwh": 0.33,
+      "basis": "Same NEI reference plant with a 15% learning rate applied FOAK→NOAK, easing to 5–15% after the first 50 units",
+      "source": {
+        "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+        "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+      }
+    },
+    {
+      "scenario": "INL reference design, first unit",
+      "low_mwh": 325,
+      "high_mwh": 325,
+      "low_kwh": 0.325,
+      "high_kwh": 0.325,
+      "basis": "Idaho National Laboratory's LMTR-20, a 20 MWth liquid-metal reference design drawn up so a commercial microreactor could be costed from the bottom up. This is a single point estimate, not a band: one well-executed first unit.",
+      "source": {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "This results in a levelized cost of energy (LCOE) of $325 per megawatt-hour (MWh)",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      "caveat": "A national-lab bottom-up build-up, not a price. It assumes the first unit goes well."
+    },
+    {
+      "scenario": "INL reference design, mass-produced",
+      "low_mwh": 120,
+      "high_mwh": 150,
+      "low_kwh": 0.12,
+      "high_kwh": 0.15,
+      "basis": "The same design costed again on an assembly line building 10 units a year. The overnight cost falls 57% and operations and maintenance falls 62%.",
+      "source": {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "an NOAK microreactor could reach overnight costs of around ~$6,000/kWe",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      "caveat": "The report gives two different answers for this number. Its abstract says about $120/MWh; its conclusion says about $150/MWh, allowing a more modest learning rate on the work done at the site. Both are printed here rather than picking one."
+    },
+    {
+      "scenario": "Published range, general",
+      "low_mwh": 200,
+      "high_mwh": 330,
+      "low_kwh": 0.2,
+      "high_kwh": 0.33,
+      "basis": "Market-review estimate; comparable to or below diesel-based electricity in remote locations",
+      "source": {
+        "label": "Nuclear Business Platform — microreactor market review",
+        "url": "https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution"
+      }
+    },
+    {
+      "scenario": "Optimized design, with PTC (U.S. only)",
+      "low_mwh": 48.21,
+      "high_mwh": 78.32,
+      "basis": "Genetic-algorithm optimization over design parameters; capital cost drawn from a $2,500–4,000/kW (nominal $3,000) nth-of-a-kind distribution, itself sourced to the NEI study above. The paper reports the PTC cutting LCOE by 22–24%, so the same optimization unsubsidised lands near $63–103/MWh (derived, not published).",
+      "source": {
+        "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361)",
+        "url": "https://arxiv.org/abs/2506.13361"
+      },
+      "caveat": "The PTC is a U.S. federal incentive and does not apply to the international track. Any export case should be read against the unsubsidised bands. See the incentives note below for why the PTC is still alive for nuclear after the 2025 budget law."
     }
-   },
-   {
-    "fact": "New 10% credit adder for facilities in “nuclear energy communities” (metro areas with ≥0.17% direct nuclear employment since 2010), §45Y only.",
-    "source": {
-     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
-     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
-    }
-   },
-   {
-    "fact": "New risk: foreign-entity-of-concern (FEOC) restrictions apply from 2026: material-assistance thresholds on the supply chain that a HALEU/TRISO vendor has to clear to keep the credit.",
-    "source": {
-     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
-     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
-    }
-   },
-   {
-    "fact": "Credit transferability (§6418) survives, except transfers to specified foreign entities; advanced nuclear companies also gain master-limited-partnership eligibility from 2026.",
-    "source": {
-     "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
-     "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
-    }
-   }
   ],
-  "caveat": "A DoD contractor-owned/contractor-operated unit still needs tax capacity or a transfer counterparty to monetise the credit."
- },
- "displaced_alternatives": [
-  {
-   "alternative": "Remote industrial diesel",
-   "low_mwh": 250,
-   "high_mwh": 600,
-   "low_kwh": 0.25,
-   "high_kwh": 0.6,
-   "note": "What a remote industrial site pays to run its own diesel plant. TUGLIQ's public completion report for the Glencore Raglan smart-grid pilot, funded under Canada's ecoENERGY Innovation Initiative, puts industrial self-generators at $0.25-$0.60/kWh — and northern electricity generally between $0.20 and $1.20/kWh.",
-   "source": {
-    "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
-    "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
-   },
-   "delta_note": "Corrected 2026-08-25. This band previously read $0.25-$0.40/kWh sourced to a vendor marketing page. The ceiling was too low: the same $0.25 floor holds, but a federally-funded completion report puts the top of industrial self-generation at $0.60/kWh, and remote community utilities run far higher still — see the rural-Alaska row, where the state regulator certifies up to $1.95/kWh.",
-   "sources": [
+  "incentives": {
+    "question": "Is the PTC still relevant in 2026, after the One Big Beautiful Bill Act?",
+    "answer": "Yes, for nuclear specifically. The OBBBA (signed July 2025) terminated the tech-neutral §45Y/§48E credits early for wind and solar but kept them for nuclear: a nuclear plant qualifies if construction begins before 2034, with a three-year phase-out after that. The deployments this site tracks target operation between 2028 and 2030, comfortably inside that window; most rows publish no construction date, so start-of-construction timing is an open item per project.",
+    "points": [
+      {
+        "fact": "§45Y/§48E survive for new nuclear that begins construction before 2034, then phase out over three years; the emissions-based sunset trigger was replaced by these fixed dates.",
+        "source": {
+          "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives (July 2025)",
+          "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+        }
+      },
+      {
+        "fact": "New 10% credit adder for facilities in “nuclear energy communities” (metro areas with ≥0.17% direct nuclear employment since 2010), §45Y only.",
+        "source": {
+          "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+          "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+        }
+      },
+      {
+        "fact": "New risk: foreign-entity-of-concern (FEOC) restrictions apply from 2026: material-assistance thresholds on the supply chain that a HALEU/TRISO vendor has to clear to keep the credit.",
+        "source": {
+          "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+          "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+        }
+      },
+      {
+        "fact": "Credit transferability (§6418) survives, except transfers to specified foreign entities; advanced nuclear companies also gain master-limited-partnership eligibility from 2026.",
+        "source": {
+          "label": "Morgan Lewis — OBBBA impact on nuclear tax incentives",
+          "url": "https://www.morganlewis.com/pubs/2025/07/the-impact-of-the-one-big-beautiful-bill-act-on-nuclear-tax-incentives"
+        }
+      }
+    ],
+    "caveat": "A DoD contractor-owned/contractor-operated unit still needs tax capacity or a transfer counterparty to monetise the credit."
+  },
+  "displaced_alternatives": [
     {
-     "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
-     "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
-     "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
-     "status": "fetched",
-     "verified": "2026-08-25 quote confirmed in cached copy"
+      "alternative": "Remote industrial diesel",
+      "low_mwh": 250,
+      "high_mwh": 600,
+      "low_kwh": 0.25,
+      "high_kwh": 0.6,
+      "note": "What a remote industrial site pays to run its own diesel plant. TUGLIQ's public completion report for the Glencore Raglan smart-grid pilot, funded under Canada's ecoENERGY Innovation Initiative, puts industrial self-generators at $0.25-$0.60/kWh — and northern electricity generally between $0.20 and $1.20/kWh.",
+      "source": {
+        "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
+        "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
+      },
+      "delta_note": "Corrected 2026-08-25. This band previously read $0.25-$0.40/kWh sourced to a vendor marketing page. The ceiling was too low: the same $0.25 floor holds, but a federally-funded completion report puts the top of industrial self-generation at $0.60/kWh, and remote community utilities run far higher still — see the rural-Alaska row, where the state regulator certifies up to $1.95/kWh.",
+      "sources": [
+        {
+          "label": "TUGLIQ Energy / ecoENERGY Innovation Initiative — Glencore Raglan Mine Renewable Smart-Grid Pilot, Public Completion Report GC 128296",
+          "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+          "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
+          "status": "fetched",
+          "verified": "2026-08-25 quote confirmed in cached copy"
+        }
+      ]
+    },
+    {
+      "alternative": "Small rural Alaskan communities (diesel-fired)",
+      "low_mwh": 410,
+      "high_mwh": 1950,
+      "note": "These grids run on diesel. The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet: its per-utility appendix gives total power cost per kWh for every participating rural utility, running from about $0.41/kWh at wind-equipped Kotzebue to $1.95/kWh at Lime Village, with fuel alone between $0.19 and $1.53/kWh. The PCE base rate was set at 19.35 cents/kWh and the subsidy covers only residential use up to 750 kWh a month; commercial and industrial load pays the full unsubsidised cost, which is the number a microreactor has to beat.",
+      "sources": [
+        {
+          "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
+          "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+          "quote": "On June 13, 2023, the Commission established a new base rate of 19.35 cents per kilowatt-hour (kWh) for PCE calculations.",
+          "status": "fetched",
+          "verified": "2026-08-25 quote confirmed in cached copy"
+        },
+        {
+          "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+          "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+        },
+        {
+          "label": "Alaska Energy Transparency Project — Power Cost Equalization explained",
+          "url": "https://www.akenergytransparency.org/news/power-cost-equalization-explained"
+        },
+        {
+          "label": "Macdonald & Parsons, MIT CEEPR WP 2021-018 — The Value of Nuclear Microreactors in Providing Heat and Electricity to Alaskan Communities",
+          "url": "https://ceepr.mit.edu/workingpaper/the-value-of-nuclear-microreactors-in-providing-heat-and-electricity-to-alaskan-communities/"
+        }
+      ],
+      "source": {
+        "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
+        "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
+      },
+      "delta_note": "Revised 2026-08-25 from $300-800/MWh. The earlier band came from secondary summaries of the PCE program; the regulator's own order is both wider and higher at the top."
+    },
+    {
+      "alternative": "Diesel breakeven threshold",
+      "note": "Microreactors were found cost-competitive with diesel gensets for off-grid community microgrids once diesel fuel exceeds $1.50/litre",
+      "threshold_usd_per_litre": 1.5,
+      "source": {
+        "label": "A Techno-Economic Evaluation of Microreactors for Off-Grid and Microgrid Applications",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210670723002317"
+      }
+    },
+    {
+      "alternative": "NEI position",
+      "note": "NEI report concludes electricity from microreactors will cost less than diesel generators",
+      "source": {
+        "label": "NucNet — NEI report",
+        "url": "https://www.nucnet.org/news/electricity-from-micro-reactors-will-cost-less-than-diesel-generators-says-nei-report"
+      }
     }
-   ]
+  ],
+  "reading": "What matters is where the bands overlap. Against **rural Alaska** — which the state regulator puts at **$410–1,950/MWh**, and where commercial customers get no PCE subsidy — even a **first-of-a-kind** microreactor at $140–410 wins across the whole range. That is the one market where the cost case is not in doubt, and it is why Fort Wainwright is the row worth watching in the Army Janus table.\n\nAgainst **remote industrial diesel** at $250–600 the bands cross. A first unit at the top of its range loses to cheap diesel at the bottom of its. So 'cheaper than diesel' is a claim you have to make site by site, and it turns on how hard the fuel is to deliver, until **later units** at $90–330 arrive.\n\nAgainst ordinary grid power in the U.S., the microreactor loses in every published case except one that assumes the tax credit ($48–78), which is a forecast rather than a price anyone has paid. The upshot is that the sales pitch changes by sector. Off-grid sites can buy on cost right now. On-grid sites are buying resilience, speed, or clean power, and paying extra for it.",
+  "capex": {
+    "question": "What does one unit cost to build?",
+    "note": "Everything above is a price per unit of energy. This is the price per unit of capacity, which is what a buyer actually signs for. The published estimates disagree by roughly five times, and the disagreement is not noise: the low numbers describe a unit coming off a production line, the high ones describe the first unit anybody builds.",
+    "rows": [
+      {
+        "scenario": "First unit, excluding fuel",
+        "low_kwe": 14500,
+        "high_kwe": 14500,
+        "basis": "INL LMTR-20 overnight construction cost.",
+        "sources": [
+          {
+            "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+            "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+            "quote": "approximately $14,500 per kilowatt electrical (kWe)",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        ]
+      },
+      {
+        "scenario": "First unit, including fuel",
+        "low_kwe": 19800,
+        "high_kwe": 19800,
+        "basis": "The same unit once the first core is paid for.",
+        "sources": [
+          {
+            "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+            "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+            "quote": "the overnight construction cost (OCC) is projected to be",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        ]
+      },
+      {
+        "scenario": "First unit, including fuel and interest",
+        "low_kwe": 22000,
+        "high_kwe": 22000,
+        "basis": "Total capital investment. INL states this as a floor, not a midpoint.",
+        "sources": [
+          {
+            "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+            "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+            "quote": "the total capital investment (TCI) is estimated to exceed",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        ]
+      },
+      {
+        "scenario": "Mass-produced unit",
+        "low_kwe": 6000,
+        "high_kwe": 6000,
+        "basis": "INL's Nth-of-a-kind figure, from an assembly line building 10 units a year.",
+        "sources": [
+          {
+            "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+            "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+            "quote": "an NOAK microreactor could reach overnight costs of around ~$6,000/kWe",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        ]
+      },
+      {
+        "scenario": "Optimized design, modeled",
+        "low_kwe": 2515,
+        "high_kwe": 3970,
+        "basis": "The capital costs fed into the University of Michigan optimization that produces the $48-$78/MWh band above. These are inputs the model was allowed to choose from, not observed costs, and they sit below even INL's mass-produced figure.",
+        "sources": [
+          {
+            "label": "Abdussami, Khaleb, Gao & Verma (Univ. of Michigan) — Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv:2506.13361)",
+            "url": "https://arxiv.org/pdf/2506.13361",
+            "quote": "microreactors can achieve competitive LCOE, ranging from",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        ]
+      }
+    ],
+    "reading": "The gap between $22,000/kWe and $2,515/kWe is the whole argument about microreactors. Nobody has built enough of them to say which end is right. Any figure quoted without saying which unit it describes — the first or the hundredth — is not telling you anything."
   },
-  {
-   "alternative": "Small rural Alaskan communities (diesel-fired)",
-   "low_mwh": 410,
-   "high_mwh": 1950,
-   "note": "These grids run on diesel. The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet: its per-utility appendix gives total power cost per kWh for every participating rural utility, running from about $0.41/kWh at wind-equipped Kotzebue to $1.95/kWh at Lime Village, with fuel alone between $0.19 and $1.53/kWh. The PCE base rate was set at 19.35 cents/kWh and the subsidy covers only residential use up to 750 kWh a month; commercial and industrial load pays the full unsubsidised cost, which is the number a microreactor has to beat.",
-   "sources": [
-    {
-     "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
-     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
-     "quote": "On June 13, 2023, the Commission established a new base rate of 19.35 cents per kilowatt-hour (kWh) for PCE calculations.",
-     "status": "fetched",
-     "verified": "2026-08-25 quote confirmed in cached copy"
-    },
-    {
-     "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
-     "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
-    },
-    {
-     "label": "Alaska Energy Transparency Project — Power Cost Equalization explained",
-     "url": "https://www.akenergytransparency.org/news/power-cost-equalization-explained"
-    },
-    {
-     "label": "Macdonald & Parsons, MIT CEEPR WP 2021-018 — The Value of Nuclear Microreactors in Providing Heat and Electricity to Alaskan Communities",
-     "url": "https://ceepr.mit.edu/workingpaper/the-value-of-nuclear-microreactors-in-providing-heat-and-electricity-to-alaskan-communities/"
-    }
-   ],
-   "source": {
-    "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
-    "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
-   },
-   "delta_note": "Revised 2026-08-25 from $300-800/MWh. The earlier band came from secondary summaries of the PCE programme; the regulator's own order is both wider and higher at the top."
+  "learning_curve": {
+    "question": "What does the 20th unit cost, and what never gets cheaper?",
+    "formula": "cost of unit N = cost of unit 1 x (1 - learning rate) ^ log2(N)",
+    "worked": "INL runs this at a learning rate of 8% over 20 units. That works out to a multiplier of about 0.70 — the 20th unit costs roughly 30% less than the first. But the multiplier is only applied to work done at the site. Other parts of the bill fall much faster, and some do not fall at all.",
+    "classes": [
+      {
+        "klass": "Falls fastest — factory work",
+        "multiplier": 0.3,
+        "detail": "Reactor vessel and internals, control drums, shielding, pumps, heat exchangers, instrumentation, and fabricating the first core's fuel assemblies. A 70% cut, taken from a study of a dedicated line building 10 units a year."
+      },
+      {
+        "klass": "Falls slowly — work done at the site",
+        "multiplier": 0.7,
+        "detail": "Site preparation, buildings, startup, shipping, engineering, project and construction management, licensing and regulatory cost. This is the 8%-over-20-units curve."
+      },
+      {
+        "klass": "Does not fall at all",
+        "multiplier": 1.0,
+        "detail": "Land, permits, plant studies, the initial coolant, mining, converting and enriching the first core, recruiting and training operators, technicians and security, refueling, and spent fuel management."
+      }
+    ],
+    "floor": "The third row is the one that decides whether this technology works. Uranium, and the people who run and guard the plant, cost the same on the 20th unit as on the first. INL models 6 to 10 full-time staff at $162,000 to $188,000 each. That is the floor the curve flattens onto, and it is why the levelized cost stops falling well above zero.",
+    "rates": "Where INL does apply a rate, it varies by component: 8% for work at the site, 18% for the reactor's primary structure, 23% for plant equipment and instrumentation, 24% for the reactivity control system, and 40% for anything made of beryllium.",
+    "definitions_warning": "The two INL reports do not mean the same thing by \"Nth-of-a-kind\". The 2024 report computes learning over 20 units. The 2025 report assumes cost stops falling after 100. Numbers from the two are not interchangeable.",
+    "sources": [
+      {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "8% and 20 units are assumed for LR and N, respectively",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "An OCC reduction of 57% was calculated by shifting",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      {
+        "label": "Idaho National Laboratory — A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Sept 2025)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/09/2025-Document-INL-RPT-25-87273.pdf",
+        "quote": "it is assumed that there are no further costs after 100 reactor units have been built",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      {
+        "label": "Abdussami, Khaleb, Gao & Verma (Univ. of Michigan) — Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv:2506.13361)",
+        "url": "https://arxiv.org/pdf/2506.13361",
+        "quote": "depending on factors such as rated power capacity, the number of units deployed, and specific cost assumptions",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      }
+    ]
   },
-  {
-   "alternative": "Diesel breakeven threshold",
-   "note": "Microreactors were found cost-competitive with diesel gensets for off-grid community microgrids once diesel fuel exceeds $1.50/litre",
-   "threshold_usd_per_litre": 1.5,
-   "source": {
-    "label": "A Techno-Economic Evaluation of Microreactors for Off-Grid and Microgrid Applications",
-    "url": "https://www.sciencedirect.com/science/article/abs/pii/S2210670723002317"
-   }
-  },
-  {
-   "alternative": "NEI position",
-   "note": "NEI report concludes electricity from microreactors will cost less than diesel generators",
-   "source": {
-    "label": "NucNet — NEI report",
-    "url": "https://www.nucnet.org/news/electricity-from-micro-reactors-will-cost-less-than-diesel-generators-says-nei-report"
-   }
+  "archetypes": {
+    "question": "Does the choice of reactor type change the answer?",
+    "note": "INL costed three generic designs with the same tool, so they can be compared directly. These are the lab's own reference designs, not any company's product. No vendor's reactor is priced here.",
+    "rows": [
+      {
+        "archetype": "20 MWt liquid-metal, uranium-zirconium-hydride fuel",
+        "foak_mwh": 330,
+        "noak_mwh": 160,
+        "analogue": "INL's own reference design. No announced military microreactor uses it."
+      },
+      {
+        "archetype": "15 MWt gas-cooled, TRISO fuel",
+        "foak_mwh": 410,
+        "noak_mwh": 170,
+        "analogue": "The closest published archetype to the gas-cooled designs in the field, including Radiant's Kaleidos, BWXT's BANR and General Atomics' GA-TES."
+      },
+      {
+        "archetype": "7 MWt heat-pipe, TRISO fuel",
+        "foak_mwh": 980,
+        "noak_mwh": 450,
+        "analogue": "The closest published archetype to the heat-pipe designs, including Antares' R1 and Westinghouse's eVinci."
+      }
+    ],
+    "finding": "The heat-pipe archetype is by far the most expensive in INL's model, at $980/MWh for a first unit against $330 for the liquid-metal design. Most of that gap is size, not technology: the heat-pipe case is modeled at 7 MWt against 20 MWt, and INL's own sensitivity says halving a reactor's output raises its levelized cost by about half. The rest is fuel — INL cites work putting heat-pipe fuel cost at two to three times other microreactor types, and its major equipment at about twice. The modeled unit also refuels every 3 years, where Antares states 6 or more for the R1.",
+    "convergence": "Type matters far more for the first unit than the twentieth. The liquid-metal design is 25% cheaper than the gas-cooled one as a first unit, but only 6% cheaper once both are mass-produced.",
+    "sources": [
+      {
+        "label": "Idaho National Laboratory — A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Sept 2025)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/09/2025-Document-INL-RPT-25-87273.pdf",
+        "quote": "the LCOE for the FOAK LTMR is 25% cheaper",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "a levelized cost of energy in the",
+        "status": "fetched",
+        "verified": "2026-08-29 quote confirmed in cached copy"
+      }
+    ]
   }
- ],
- "reading": "What matters is where the bands overlap. Against **rural Alaska** — which the state regulator puts at **$410–1,950/MWh**, and where commercial customers get no PCE subsidy — even a **first-of-a-kind** microreactor at $140–410 wins across the whole range. That is the one market where the cost case is not in doubt, and it is why Fort Wainwright is the row worth watching in the Army Janus table.\n\nAgainst **remote industrial diesel** at $250–600 the bands cross. A first unit at the top of its range loses to cheap diesel at the bottom of its. So 'cheaper than diesel' is a claim you have to make site by site, and it turns on how hard the fuel is to deliver, until **later units** at $90–330 arrive.\n\nAgainst ordinary grid power in the U.S., the microreactor loses in every published case except one that assumes the tax credit ($48–78), which is a forecast rather than a price anyone has paid. The upshot is that the sales pitch changes by sector. Off-grid sites can buy on cost right now. On-grid sites are buying resilience, speed, or clean power, and paying extra for it."
 }

@@ -3,7 +3,7 @@
     "captured": "2026-08-23",
     "method": "Web search only. No agent fan-out. Every row carries at least one source URL; rows without one were not written.",
     "field_coverage_warning": "Sector, owner, timeline and power are well covered. LAND AREA, SHELL/ENCLOSURE and UTILITY FILINGS are sparse across the whole set — see data/gaps.json. Web search does not reach docket systems; those three fields need a targeted pass against FERC eLibrary, state PUC dockets and NRC ADAMS.",
-    "binding_note": "binding=true marks rows holding a signed, funded or awarded instrument (selection with a named site, purchase agreement with deposits, FID, operating infrastructure); consortia, MOUs, unfunded programmes and channel agreements are false. Set 2026-08-21.",
+    "binding_note": "binding=true marks rows holding a signed, funded or awarded instrument (selection with a named site, purchase agreement with deposits, FID, operating infrastructure); consortia, MOUs, unfunded programs and channel agreements are false. Set 2026-08-21.",
     "delisting_policy": "A stalled or cancelled opportunity stays as a named row with its status, never silently delisted — the NRC keeps suspended and cancelled applications individually visible, and a tracker that quietly drops rows reads as less credible, not more. Adopted 2026-08-21."
   },
   "tracks": [
@@ -165,7 +165,7 @@
       "instrument": "DOE National Reactor Innovation Center test-bed access",
       "land_acres": null,
       "shell": "Repurposed 80-ft EBR-II steel-and-concrete containment, retrofitted electrical/mechanical/HVAC",
-      "utility_filing": "N/A; authorised by DOE, not licensed by NRC",
+      "utility_filing": "N/A; authorized by DOE, not licensed by NRC",
       "status": "Operating",
       "sources": [
         {
@@ -194,10 +194,10 @@
       "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
       "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe",
       "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
-      "instrument": "EO 14301 pilot programme under DOE's own authorization authority, with no NRC licence",
+      "instrument": "EO 14301 pilot program under DOE's own authorization authority, with no NRC license",
       "land_acres": null,
       "shell": null,
-      "utility_filing": "N/A; DOE-authorised test reactors",
+      "utility_filing": "N/A; DOE-authorized test reactors",
       "status": "Three critical, others in safety review",
       "sources": [
         {
@@ -264,7 +264,7 @@
     {
       "id": "equinix-radiant",
       "track": "us-commercial",
-      "sector": "Compute · colocation data centres",
+      "sector": "Compute · colocation data centers",
       "name": "Equinix — 20-reactor purchase agreement",
       "owner": "Equinix, Inc. (NASDAQ: EQIX)",
       "location": "Not site-assigned",
@@ -297,12 +297,12 @@
     {
       "id": "oklo-switch",
       "track": "us-commercial",
-      "sector": "Compute · AI/cloud data centres",
+      "sector": "Compute · AI/cloud data centers",
       "name": "Switch — 12 GW Oklo master power agreement",
-      "owner": "Switch (AI/cloud data centres)",
+      "owner": "Switch (AI/cloud data centers)",
       "location": "Not site-assigned (Switch campuses: NV, MI, GA, TX)",
       "vendor": "Oklo (Aurora)",
-      "power_mw": "12 GW programme through 2044; 50 MWe units",
+      "power_mw": "12 GW program through 2044; 50 MWe units",
       "timeline": "Framework signed 2024-12; individual binding PPAs to follow per project",
       "instrument": "Non-binding Master Power Agreement, the largest announced corporate nuclear framework; it grew Oklo's order book to ~14 GW",
       "land_acres": null,
@@ -367,7 +367,7 @@
       "vendor": "NANO Nuclear",
       "power_mw": "Not specified",
       "timeline": "MOU signed May 2026",
-      "instrument": "Strategic MOU for a standardised microreactor power package for data centres, pre-integrated with compute",
+      "instrument": "Strategic MOU for a standardized microreactor power package for data centers, pre-integrated with compute",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
@@ -393,11 +393,11 @@
       "vendor": "None; currently solar, battery and gas",
       "power_mw": "Site-scale backup at hospitals, water treatment, nursing homes, police/fire",
       "timeline": "Announced 2025-06-11",
-      "instrument": "$1.8B state funding programme",
+      "instrument": "$1.8B state funding program",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "Live programme, nuclear not yet eligible",
+      "status": "Live program, nuclear not yet eligible",
       "sources": [
         {
           "label": "University of Houston Energy Innovation — Texas backup power microgrid resilience (2025)",
@@ -444,7 +444,7 @@
       "location": "Saskatchewan, Canada",
       "vendor": "Westinghouse (eVinci)",
       "power_mw": "up to 5 MWe",
-      "timeline": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defence and government applications and away from commercial markets",
+      "timeline": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
       "instrument": "Was the first eVinci customer (CA$80M government funding, SRC as licensed operator); Westinghouse cancelled the contract in fall 2025",
       "land_acres": null,
       "shell": null,
