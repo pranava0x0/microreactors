@@ -64,6 +64,9 @@
      "quote": "CONSTRUCT A 10MW GENERATION PLANT, WITH MICROGRID CONTROLS",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -108,6 +111,9 @@
      "quote": "$91.1 million self-funding Energy Savings Performance Contract (ESPC)",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -152,6 +158,9 @@
      "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -196,6 +205,9 @@
      "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -233,6 +245,9 @@
      "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -269,6 +284,9 @@
      "quote": "DB REPAIR AND REPLACE SHORE POWER MOUND NAVBASE VENTURA COUNTY/PT MUGU CALIFORNIA.",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -306,6 +324,10 @@
      "quote": "MCRD PARRIS ISLAND, MCAS BEAUFORT, NAVAL HOSPITAL AND LAUREL BAY HOUSING WATER AND WASTEWATER SYSTEM PRIVATIZATION CONTRACT",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Regional drinking-water treatment and pumping systems",
+    "Major city wastewater plants"
    ]
   },
   {
@@ -342,6 +364,9 @@
      "quote": "INSTALL CAMPUS GENERATOR SALISBURY VAMC",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Large individual hospitals"
    ]
   },
   {
@@ -378,6 +403,9 @@
      "quote": "PROVIDE HURRICANE HARDENING AT GENERATOR FARM - CONSTRUCTION",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Large individual hospitals"
    ]
   },
   {
@@ -414,6 +442,9 @@
      "quote": "NEW 1500 KVA TRANSFORMER, 1.5MW DIESEL GENERATOR AND INSTALL A MG SYSTEM INCLUDING 700 KW PV SOLAR PANELS AND A 1.5MW/1.5MWH BESS",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -450,6 +481,9 @@
      "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -559,6 +593,9 @@
      "quote": "ABERDEEN PROVING GROUND MICROGRID AND BACKUP POWER",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -596,6 +633,9 @@
      "quote": "THIS PROJECT PROPOSES TO CONSTRUCT A 500 KW SOLAR PHOTOVOLTAIC (PV) ARRAY, A 540 KWH BATTERY ENERGY",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Regional grids serving several communities"
    ]
   },
   {
@@ -638,6 +678,9 @@
      "quote": "with more than $4.1 million (of the total federal cost share of up to $26.06 million) to begin Phase 1 activities",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Regional grids serving several communities"
    ]
   },
   {
@@ -648,14 +691,15 @@
    "region": "Kokhanok, Lake and Peninsula Borough, Alaska (Iliamna Lake)",
    "parties": {
     "host": "Kokhanok Village Council",
-    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)"
+    "provider": "U.S. Department of Energy, Office of Clean Energy Demonstrations (funder)",
+    "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
    },
    "instrument": "grant-funded",
    "signed": "2024-08",
    "term_years": 4,
-   "capacity": "943 kWh battery energy storage system, plus solar PV, a new wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
+   "capacity": "1 MW / 943 kWh battery energy storage system, plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage heating units, added to the village's existing diesel-supplemented microgrid",
    "capex": "$4,969,257 federal obligation, no non-federal cost share; $1,567,876 outlaid as of 2026-07-14",
-   "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE",
+   "displaced": "70 percent or more of the village power plant's fossil fuel use within the first two years of operation, per DOE. Alaska RCA's FY2024 rate filing puts the village's actual load at 358,953 kWh test-period sales (roughly 41 kW average) and its certified cost of service at $1.0209/kWh, of which $0.6498/kWh is fuel — a fuel bill of roughly $233,000/year the grant is displacing.",
    "filings": [
     {
      "forum": "USAspending.gov (federal assistance record)",
@@ -663,10 +707,17 @@
      "id": "FAIN DECD0000120",
      "date": "2024-08-13",
      "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
+    },
+    {
+     "forum": "State PUC",
+     "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
+     "id": "L2300184 (docket U-23-010)",
+     "date": "2023-06-26",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
     }
    ],
-   "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 943 kWh battery, solar PV, a wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection.",
-   "microreactor_read": "Five million dollars of federal money for a village of 170 people is roughly $29,200 per resident to remove 70 percent of the diesel — a willingness to pay that no commercial power market would support and that only a grant can. The award record does not state the village's peak load, but a 170-person microgrid sits an order of magnitude below the 1 MW floor of the smallest microreactors, so Kokhanok prices the sector's opportunity and simultaneously proves the unit is too big for the single-village case.",
+   "summary": "OCED awarded Kokhanok Village $4,969,257 on 2024-08-13 under the ERA program to add a 1 MW/943 kWh battery, 100 kW solar, a 100 kW wind turbine and electric thermal storage to the microgrid of a 170-resident Alutiiq, Dena'ina and Yup'ik village reachable only by barge and plane. DOE's own write-up says the upgrade would displace 70 percent of the local power plant's diesel within two years. Federal money covers 100 percent of it, and about a third of the award had already been outlaid by mid-2026, so this is a project in construction rather than a paper selection. The load being served is genuinely tiny: Alaska RCA's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load, against a certified cost of service of $1.0209/kWh ($0.6498/kWh of which is fuel).",
+   "microreactor_read": "Five million dollars of federal money for a village of 170 people (roughly $29,200 per resident) is buying about $5,000 per installed kW of non-diesel capacity to displace $0.6498/kWh diesel fuel — a willingness to pay, and a capex benchmark, that no commercial power market would support without a grant. Against a 41 kW average load, a 1 MW-class microreactor would be roughly 20x oversized for this single village: Kokhanok prices the sector's grant economics and simultaneously proves the smallest microreactor is still too big for the single-village case.",
    "sources": [
     {
      "label": "USAspending.gov API — Assistance award ASST_NON_DECD0000120 (FAIN DECD0000120), Kokhanok Village, Lake and Peninsula AK",
@@ -679,7 +730,16 @@
      "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
      "quote": "would displace an anticipated 70% of the local power plant’s diesel use within the first two years of operation",
      "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska — Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
+     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
+     "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
+     "status": "fetched"
     }
+   ],
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
    ]
   },
   {
@@ -729,6 +789,9 @@
      "quote": "a 500 kilowatt (kW) battery energy storage system (BESS), a 750 kW solar photovoltaic (PV) array, and a microgrid controller",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Large individual hospitals"
    ]
   },
   {
@@ -766,6 +829,9 @@
      "status": "fetched",
      "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
+   ],
+   "load": [
+    "Large individual hospitals"
    ]
   },
   {
@@ -803,6 +869,9 @@
      "status": "fetched",
      "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
+   ],
+   "load": [
+    "Large individual hospitals"
    ]
   },
   {
@@ -839,6 +908,10 @@
      "quote": "\"subrecipient\":\"PUERTO RICO AQUEDUCT AND SEWER AUTHORITY\"",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Regional drinking-water treatment and pumping systems",
+    "Major city wastewater plants"
    ]
   },
   {
@@ -876,6 +949,9 @@
      "status": "fetched",
      "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
     }
+   ],
+   "load": [
+    "Regional drinking-water treatment and pumping systems"
    ]
   },
   {
@@ -948,6 +1024,9 @@
      "quote": "THE INSTALLATION OF SHORE POWER CONNECTIONS FOR MARINE VESSELS, THE REPLACEMENT OF DIESEL ENGINES ON A CEMENT HAULER BARGE WITH ELECTRIC POWER",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -990,6 +1069,9 @@
      "quote": "FY 2024 MCON PROGRAM PROJECT P-8014U WHARF M1/M2 SHORE POWER DISTRIBUTION, JBPHH, HI",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -1026,6 +1108,9 @@
      "quote": "REIMBURSE THE LAYBERTH OPERATOR FOR EXPENSES INCURRED TO RENT A MOBILE SHORE POWER GENERATOR TO PROVIDE POWER TO THE RRF VESSEL MOORED AT TERMINAL 2 BERTH 205-206",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   }
  ]

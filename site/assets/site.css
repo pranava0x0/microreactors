@@ -323,6 +323,10 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
 .load .delta{display:block;color:var(--text-tertiary);font-size:var(--size-caption);
   margin-top:var(--space-2);line-height:1.45;border-left:2px solid var(--antares-red-40);
   padding:2px 0 2px var(--space-3)}
+.load .priced{display:block;margin-top:var(--space-2)}
+.load .priced a{font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);text-decoration:none}
+.load .priced a:hover{color:var(--antares-red)}
 
 /* ---------- market design ---------- */
 .mech{display:grid;gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);

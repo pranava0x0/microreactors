@@ -673,6 +673,39 @@
     })
   );
 
+  /* Load -> priced real-world case(s), built once from D.benchmarks.sectors[].
+     records[].load (case records opt into a load label; most sectors and most
+     older-pass cases carry no `load` tag at all, so this is additive — it
+     never hides a load that already had nothing). Read by loadRow() below,
+     which renders both the "All sectors" and per-sector views: one function so
+     a future edit to a load row cannot fix one copy and silently leave the
+     other stale (see 2026-08-24 CLAUDE.md note on duplicated render paths). */
+  var loadCaseIndex = {};
+  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (bsec) {
+    bsec.records.forEach(function (c) {
+      // Same "priced" test as tools/build_data.py's benchmarks_priced stat — a
+      // case with only a capacity figure or a filing is real evidence, but
+      // calling it "priced" without a price, capex or displaced-cost number
+      // overclaims. Six of the ten Compute/"AI and very large cloud data
+      // centers" cases are MOUs and fleet agreements with none of the three.
+      if (!(c.price || c.capex || c.displaced)) { return; }
+      (c.load || []).forEach(function (label) {
+        (loadCaseIndex[label] = loadCaseIndex[label] || []).push(c);
+      });
+    });
+  });
+  function loadRow(l) {
+    var cases = loadCaseIndex[l.label] || [];
+    var priced = !cases.length ? "" :
+      '<span class="priced"><a href="#economics/price-to-beat">' + cases.length +
+      (cases.length === 1 ? " priced example" : " priced examples") + " →</a></span>";
+    return '<div class="load"><span>' + esc(l.label) +
+      (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
+      (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
+      priced +
+      '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
+  }
+
   render($("sectors"),
     '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
       topGridHTML + edgeHTML + "</div>" +
@@ -685,12 +718,7 @@
           ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
           : "") +
         '<div class="loads">' +
-        sec.loads.map(function (l) {
-          return '<div class="load"><span>' + esc(l.label) +
-            (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
-            (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
-            '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
-        }).join("") + "</div></details>";
+        sec.loads.map(loadRow).join("") + "</div></details>";
     }).join("") + "</div>" +
     D.sectors.sectors.map(function (sec) {
       var sId = slug(sec.sector);
@@ -702,12 +730,7 @@
           ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
           : "") +
         '<div class="loads">' +
-        sec.loads.map(function (l) {
-          return '<div class="load"><span>' + esc(l.label) +
-            (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
-            (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
-            '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
-        }).join("") + "</div></div></div>";
+        sec.loads.map(loadRow).join("") + "</div></div></div>";
     }).join("")
   );
   makeSubnav("demand", secItems);
