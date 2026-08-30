@@ -178,3 +178,24 @@ vs test bug), status.
 - **2026-08-25 · docs · An earlier claim in-session that the Vendors `[?]` was a bug — Not a bug.**
   It is the placeholder `app.js` fills from the register, which is why the browser check reported
   zero unresolved chips. Recorded so the next reader does not "fix" it.
+- **2026-08-29 · tooling · `check_citations.py` never checked `benchmarks.json` or `instruments.json` — Fixed.**
+  The claim-coverage scanner's docstring claimed full coverage of every data file, but its `check()`
+  hand-lists which files to walk and these two — the ones actually carrying dollar figures — were
+  never added when they shipped. Root cause: **gate gap**, the third occurrence of this exact class
+  in this project (see the 2026-08-25 quote-gate and register-lint entries above). Closed in
+  `tools/check_citations.py` before adding more benchmark/instrument records.
+- **2026-08-29 · data · Two independent research agents wrote the same real-world deal as two records with conflicting numbers — Fixed.**
+  (1) An Intel Ohio/AEP Ohio substation deal was researched twice, days apart: the first record's
+  `capacity` field conflated the $95.1M substation's actual 50 MW capacity with Intel's eventual
+  500 MW full-site draw (both real numbers, from the same source, attributed to the wrong thing);
+  the second, independently-researched record had the correct 50 MW figure. (2) A Kokhanok, AK DOE
+  microgrid grant was independently researched by two agents in the *same* wave, each capturing
+  real evidence the other lacked. Root cause: **partitioning failure** — agents partition by named
+  entity within one wave, but a later, independent pass (the Intel case) has no visibility into an
+  earlier pass's records unless explicitly pointed at them, and both duplicates sat invisible in the
+  data until an unrelated feature (the Applications-tab priced-example cross-link) aggregated
+  records by a new dimension (`load`) that made the double-count visible. Caught by a second Codex
+  review round, not by the citation/quote gates — a citation gate only proves a quoted span exists
+  on the page, not that a paraphrased field (like `capacity`) attributes the right number to the
+  right thing. Both merged into one canonical record carrying the union of evidence; a broader
+  post-merge duplicate sweep (by shared source URL, then by name/region/date) found no others.

@@ -127,3 +127,18 @@ sawmills, grain/oilseed mills, integrated ag campuses) stay honestly absent; the
 and why they failed are recorded in `data/research/2026-08-28-apps/apps-gapfill.json` `_meta.absences`
 so a future pass doesn't retread them either. Sizing the follow-up agent to the marginal value of the
 gap — not to the shape of the original fan-out — is what kept this cheap.
+
+**Retrospective, after two Codex review rounds.** The 29-record pass (3 agents) plus the 2-record
+gap-fill (1 agent) validated 0 errors against the contract and 0 citation-coverage/quote-cache
+violations on first merge — but a *second* review round, after fixing round 1's findings, still
+found two real data-quality bugs the gates couldn't catch: the gap-fill agent's Intel/AEP record
+duplicated one the original Manufacturing agent had already written (days apart, no cross-pass
+visibility), and that original record's own `capacity` field misattributed a 500 MW full-site
+figure to a 50 MW substation — both real numbers from the same cited article, matched clean by the
+quote gate, wrong in combination. Neither would have been caught without a reviewer that fetches
+sources and reads past the first matching number; a broader post-merge duplicate sweep (by shared
+source URL, then name/region/date) then found the same class of bug had shipped once already, in
+the original deep-2026-08-24 pass (two agents, one wave, both writing the same Kokhanok, AK DOE
+grant). Net for the wave: 31 candidate records in, 29 shipped, 2 real bugs required a human-grade
+second read to find. Cheaper route in hindsight: none — this is exactly what the second review
+round is for, and the fixes cost three replies and two small edits, not a re-research.
