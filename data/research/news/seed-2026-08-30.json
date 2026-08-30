@@ -3,9 +3,73 @@
     "captured": "2026-08-30",
     "agent": "news-seed",
     "window": "2026-01-01 to 2026-08-30",
-    "queries_run": [],
-    "absences": [],
-    "incomplete": true
+    "queries_run": [
+      "Army Janus program microreactor $2.2 billion August 2026 reaction",
+      "BWXT Tata Chemicals Soda Ash letter of intent BANR Wyoming",
+      "Air Force ANPI microreactor 2026 progress update Malmstrom Buckley",
+      "\"Advanced Nuclear Power for Installations\" Air Force 2026",
+      "Project Pele reactor Hill Air Force Base Utah San Rafael Energy Lab February 2026",
+      "BWXT Project Pele microreactor transport C-17 2026",
+      "GAO report DOE Reactor Pilot Program criticism risk 2026",
+      "Natura Resources ACU molten salt reactor delay problem 2026",
+      "Antares Nuclear Series C $470 million funding round 2026",
+      "Radiant Nuclear Series D $300 million funding round 2026",
+      "microreactor startup Series funding round 2026 Deep Fission Aalo Valar Last Energy Kairos",
+      "NANO Nuclear Energy stock offering funding 2026",
+      "Deep Fission funding round Series A 2026",
+      "Oklo secondary stock offering capital raise 2026",
+      "NRC Part 53 final rule 2026 advanced reactor licensing framework",
+      "NRC Part 57 proposed rule microreactor 2026",
+      "state legislation nuclear microreactor siting law signed 2026",
+      "Texas Wyoming microreactor nuclear bill signed law 2026 governor",
+      "TANEO Texas Advanced Nuclear Energy Office grant award microreactor company 2026",
+      "TANEO grant recipients selected July 2026 nuclear",
+      "microreactor project cancelled delayed 2026 nuclear",
+      "advanced reactor startup layoffs setback withdrawn 2026",
+      "\"walked back\" OR \"put on hold\" OR \"paused\" microreactor nuclear 2026 -Janus",
+      "X-energy Kairos Power delay setback schedule slip 2026",
+      "USNC bankruptcy Chapter 11 2026 update sale assets",
+      "NuScale Kairos Hermes 2 delay 2026 behind schedule cost overrun",
+      "nuclear microreactor company shuts down ceases operations 2026",
+      "Oklo Aurora Frontier delay setback criticism 2026",
+      "Kairos Power Hermes 2 groundbreaking Google Oak Ridge April 2026",
+      "microreactor company chief executive officer hire appointed 2026 nuclear",
+      "Radiant Nuclear R-50 factory Oak Ridge Tennessee groundbreaking construction 2026",
+      "Deep Fission Mark Pérès Chief Nuclear Officer February 2026",
+      "Rian Bahran Antares Chief Nuclear Officer Department of Energy",
+      "DOE HALEU allocation round microreactor companies 2026",
+      "microreactor nuclear news January 2026",
+      "Centrus Energy $900 million DOE task order American Centrifuge Plant HALEU 2026",
+      "Terrestrial Energy DOE Other Transaction Agreement Project Tetra January 2026",
+      "microreactor customer deal PPA offtake agreement signed February March 2026",
+      "Westinghouse eVinci news May 2026",
+      "Terra Innovatum Uvation Solo reactor letter of intent February 2026",
+      "Meta Oklo nuclear power agreement January 2026 megawatts",
+      "Standard Nuclear IPO Nasdaq 2026 TRISO fuel fabricator",
+      "microreactor nuclear news May 2026 -Kairos -Hermes",
+      "General Matter raises $500 million Founders Fund enrichment valuation",
+      "\"General Matter\" nuclear enrichment startup 2026",
+      "nuclear reactor news February 2026 advanced reactor DOE milestone",
+      "microreactor setback lawsuit challenge opposition environmental group 2026",
+      "nuclear microreactor community opposition rejected permit denied 2026",
+      "Cambridge Atomworks Odin microreactor Mott MacDonald MOU 2026",
+      "Natura Resources MSR-1 criticality operating license 2026",
+      "Natura Resources MSR-1 Nuclear Safety Design Agreement NSDA approved date",
+      "X-energy Dow Seadrift construction permit review NRC 2026"
+    ],
+    "absences": [
+      "Radiant's ~$300M Series D closed 2025-12-17 (confirmed via multiple sources) predates the window and is excluded, even though vendors.json's funding_note references it without a precise date.",
+      "General Matter's reported ~$500M raise at a ~$2B pre-money valuation (March 2026) was only found via an unfetched, paywalled Axios Pro 'scoop' item; could not confirm via any page actually retrieved, so it is omitted rather than synthesized. General Matter's $900M DOE enrichment task order (2026-01-05) IS included since that was independently confirmed via ANS.",
+      "Terra Innovatum/Uvation's 1 MWe Solo reactor LOI, and BWXT/Tata Chemicals Soda Ash's up-to-8-BANR-unit LOI, were both found and read in full, but both predate the window (Nov 2025 and Dec 2024 respectively) and are excluded.",
+      "NANO Nuclear Energy: searched specifically for a 2026 financing round; found only its Oct 2025 $400M and May 2025 $105M private placements (both pre-window). No distinct 2026 capital raise was located.",
+      "Deep Fission's Mark Peres was confirmed as Chief Nuclear Officer (quoted in a July 2026 World Nuclear News article) but no fetchable primary source gave a precise hire-announcement date, so no standalone personnel item was written for him.",
+      "NuCube Energy (Idaho Falls) is named throughout the DOE Reactor Pilot Program / Launch Pad coverage as the least-documented participant -- ANS's own deep-dive roundup states 'little is known about NuCube's progress in DOE approvals, site selection, or timeline to deployment.' No dateable news event was found for this company across the window.",
+      "TANEO's Texas Advanced Nuclear Development Fund opened for applications 2026-04-01 (included); recipient selections were expected 'in July 2026' per reporting but no announcement of actual recipients was located as of research date.",
+      "X-energy/Dow's Seadrift, TX construction permit remains under NRC review throughout the window; no discrete 2026 approval, denial or docketing event with its own date was found (construction permit issuance is targeted for Q1 2027, outside this window).",
+      "Westinghouse's cancellation of the SRC eVinci first-customer contract is sourced only to 'fall 2025' language on SRC's own FAQ page (already in vendors.json); no more precise date, and no 2026-dated reporting on it, was found, so no standalone item was written -- the still-open Penn State FRONTIER pathway is the eVinci item covered instead via Janus/ANPI/criticality news.",
+      "Actively searched multiple angles (site queries for 'cancelled', 'delayed', 'paused', 'walked back', 'lawsuit', 'community opposition', 'shuts down') for a genuine 2026 microreactor project cancellation or termination; found real setbacks (Kairos Hermes 1's 28-month NRC deadline extension; a multi-state AG coalition's comment letter calling NRC's Part 57 proposal illegal; a GAO report flagging uncertain HALEU demand) but no outright cancellation of a named 2026 microreactor deployment."
+    ],
+    "incomplete": false
   },
   "items": [
     {
@@ -987,6 +1051,112 @@
           "label": "Renaissance Capital — Small modular reactor fuel developer Standard Nuclear prices previously downsized IPO at $15",
           "url": "https://www.renaissancecapital.com/IPO-Center/News/120497/Small-modular-reactor-fuel-developer-Standard-Nuclear-prices-previously-dow",
           "quote": "The company originally filed to offer the 18.3 million shares at a range of $18 to $21, before it cut the number of shares offered",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "cambridge-atomworks-mottmac-2026-03-17",
+      "date": "2026-03-17",
+      "headline": "UK's Cambridge Atomworks signs Mott MacDonald deal for Odin",
+      "companies": [
+        "Cambridge Atomworks"
+      ],
+      "category": "contract",
+      "what_happened": "Cambridge Atomworks, a UK microreactor developer founded in 2023, signed a memorandum of understanding with engineering consultancy Mott MacDonald on March 17, 2026 to support development of its Odin microreactor, a low-pressure, molten-salt-cooled, solid-fuel design meant to run off-grid without external cooling connections. Mott MacDonald will provide technical support in nuclear engineering, safety and licensing, project delivery, systems integration and digital engineering. Cambridge Atomworks originally developed Odin as an outsourced consultancy for US-based NANO Nuclear before buying back the underlying intellectual property under a letter of intent signed in September 2025; it targets an operational prototype by 2030.",
+      "why_it_matters": "This is the clearest UK-based entrant in the microreactor field in this dataset, and its origin story — designed on contract for an American company, then bought back — is a reminder that microreactor IP has already crossed the Atlantic once before this MoU, not just in the direction usually assumed.",
+      "binding": false,
+      "binding_note": "A memorandum of understanding for technical support, not a funding, construction or purchase commitment.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Cambridge Atomworks, Mott MacDonald sign microreactor MoU",
+          "url": "https://world-nuclear-news.org/articles/cambridge-atomworks-microreactor-mou-with-mott-macdonald",
+          "quote": "The signing of this MoU with a top British engineering consultancy will allow us to accelerate the development of our British-designed Odin nuclear microreactor",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Cambridge Atomworks, Mott MacDonald sign microreactor MoU",
+          "url": "https://world-nuclear-news.org/articles/cambridge-atomworks-microreactor-mou-with-mott-macdonald",
+          "quote": "The International Atomic Energy Agency defines microreactors as being typically up to 10 MWe capacity",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "natura-nsda-approval-2026-07-21",
+      "date": "2026-07-21",
+      "headline": "DOE approves safety design agreement for Natura's reactor",
+      "companies": [
+        "Natura Resources"
+      ],
+      "category": "regulatory",
+      "what_happened": "The DOE approved a Nuclear Safety Design Agreement for Natura Resources' 1 MWt LF-MSR demonstration reactor at Abilene Christian University, reported July 22, 2026. The NSDA covers design requirements, safety analysis approach, regulatory engagement and key safety decisions, and is an early step in the DOE Reactor Pilot Program's authorization pathway, distinct from the parallel NRC licensing process that has been underway for Natura's separate commercial reactor designs since January 2024. Natura's project is one of 11 advanced reactor projects across 10 companies selected for the Reactor Pilot Program.",
+      "why_it_matters": "Natura is running two regulatory tracks at once for essentially the same reactor family — DOE authorization for the ACU demonstration unit and NRC licensing for future commercial units — which is the same dual-track pattern Oklo uses, and it means DOE progress here does not by itself say anything about how the commercial version will fare at the NRC.",
+      "binding": true,
+      "binding_note": "A DOE regulatory approval actually granted, not merely applied for.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Molten salt reactor gets US safety design approval",
+          "url": "https://world-nuclear-news.org/articles/molten-salt-reactor-gets-us-safety-design-approval",
+          "quote": "The NSDA is a critical step in moving from design to deployment,",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Molten salt reactor gets US safety design approval",
+          "url": "https://world-nuclear-news.org/articles/molten-salt-reactor-gets-us-safety-design-approval",
+          "quote": "Natura's 1 MWt molten salt research reactor, the LF-MSR, is one of 11 advanced reactor projects selected last year by the Department of Energy",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ag-coalition-opposes-part57-2026-06-16",
+      "date": "2026-06-16",
+      "headline": "State AGs call NRC's microreactor fast-track rule illegal",
+      "companies": [],
+      "category": "setback",
+      "what_happened": "California Attorney General Rob Bonta led a coalition of state attorneys general in a June 16, 2026 comment letter to the NRC opposing the proposed Part 57 microreactor licensing rule, arguing it violates the National Environmental Policy Act and the Administrative Procedure Act by skirting environmental review for a class of reactors the coalition called largely untested and experimental. The letter came at the close of Part 57's public comment period, which the NRC had opened May 1, 2026 under Executive Order 14300's direction to revise NRC regulations. The states asked the NRC to conduct a full NEPA review of the foreseeable environmental impacts of fleets of microreactors before finalizing any rule.",
+      "why_it_matters": "This is the direct legal counterweight to every regulatory item in this dataset praising Part 57's speed — a coalition of state attorneys general is on record calling the same rule illegal, which means Part 57 is very likely to face litigation if and when it is finalized, adding real legal risk to every vendor counting on its 6-12 month licensing timeline.",
+      "binding": true,
+      "binding_note": "An actual filed comment letter taking a legal position, not a rumor of opposition — though it is advocacy against a not-yet-final rule, not a lawsuit or a court ruling.",
+      "sources": [
+        {
+          "label": "California DOJ — Attorney General Bonta Opposes Trump Administration's Attempt to Expedite Microreactors at the Expense of Safety and the Environment",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-expedite",
+          "quote": "Formulating such a broad suite of licensing regulations on untested and experimental technologies is dangerous and puts public health and the environment at risk,",
+          "status": "fetched"
+        },
+        {
+          "label": "California DOJ — Attorney General Bonta Opposes Trump Administration's Attempt to Expedite Microreactors at the Expense of Safety and the Environment",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-expedite",
+          "quote": "the illegal rulemaking violates the National Environmental Policy Act (NEPA) and the Administrative Procedure Act (APA), as it reduces safety and environmental protections",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-c17-airlift-2026-02-15",
+      "date": "2026-02-15",
+      "headline": "Air Force airlifts Valar's reactor components to Utah",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "construction",
+      "what_happened": "Three U.S. Air Force C-17s carried components of Valar Atomics' Ward 250 test reactor from March Air Reserve Base, California to Hill Air Force Base near Layton, Utah on Sunday, February 15, 2026, for onward delivery to the San Rafael Energy Lab. The event was attended by DOE Secretary Chris Wright, Utah Governor Spencer Cox, Under Secretary of Defense for Acquisition and Sustainment Michael Duffey, and Sen. John Curtis. Officials said the reactor was expected to be switched on by July 4, a target Valar met, reaching criticality on June 18.",
+      "why_it_matters": "This is the physical, load-bearing proof behind every microreactor vendor's claim about factory-built, transportable reactors: a real reactor's components moving by military cargo plane, four months before the machine actually went critical, with three federal officials and the state's governor showing up to watch it land.",
+      "binding": true,
+      "binding_note": "An actual, completed physical transport, not a rendering or a plan.",
+      "sources": [
+        {
+          "label": "The Salt Lake Tribune — U.S. military flies nuclear reactor to Utah. Here's what to know.",
+          "url": "https://www.sltrib.com/news/politics/2026/02/16/us-military-flies-nuclear-reactor/",
+          "quote": "one of the three USAF C-17s that transported components of a small nuclear reactor to Hill Air Force Base near Layton",
+          "status": "fetched"
+        },
+        {
+          "label": "The Salt Lake Tribune — U.S. military flies nuclear reactor to Utah. Here's what to know.",
+          "url": "https://www.sltrib.com/news/politics/2026/02/16/us-military-flies-nuclear-reactor/",
+          "quote": "will deploy at its new home at the San Rafael Energy Lab, where officials expect it to be switched on by July 4",
           "status": "fetched"
         }
       ]

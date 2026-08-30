@@ -83,5 +83,53 @@ class ScriptOrder(unittest.TestCase):
         self.assertGreater(a, d, "data.js must load before app.js")
 
 
+class MarkupIds(unittest.TestCase):
+    """A duplicate id is invalid HTML and silently breaks getElementById.
+
+    A render div was given id="news" inside <section id="news">, so the lazy
+    loader's placeholder wrote into the SECTION and wiped the whole panel. It
+    rendered zero rows with no console error and looked like a data problem.
+    """
+
+    def test_no_duplicate_ids(self):
+        import collections
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        ids = re.findall(r'id="([^"]+)"', html)
+        dupes = [i for i, n in collections.Counter(ids).items() if n > 1]
+        self.assertEqual(dupes, [], f"duplicate id(s) in index.html: {dupes}")
+
+    def test_every_lazy_panel_target_exists_and_is_not_its_panel(self):
+        """The placeholder must land in a child of the panel, never the panel itself.
+
+        lazyPanel's first argument is the DATASET name, its second is the target
+        element id; the PANEL id comes from the `if (id === "...")` guard around
+        the call. Comparing the target against the dataset name is the wrong
+        comparison - lazyPanel("voices", "voices", ...) is fine because that
+        panel is #sources.
+        """
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        app = (ROOT / "site" / "assets" / "app.js").read_text()
+
+        guarded = re.findall(
+            r'if \(id === "(\w+)"[^)]*\)\s*\{\s*lazyPanel\("(\w+)",\s*"([\w-]+)"',
+            app,
+        )
+        # A regex that stops matching passes everything, so prove it still sees
+        # every call site. One extra hit is the `function lazyPanel(` definition.
+        call_sites = len(re.findall(r'\blazyPanel\(', app)) - 1
+        self.assertEqual(len(guarded), call_sites,
+                         f"matched {len(guarded)} guarded lazyPanel calls but app.js has "
+                         f"{call_sites} call sites - the pattern has gone stale")
+
+        for panel, _dataset, target in guarded:
+            self.assertIn(f'id="{panel}"', html, f"panel #{panel} not in markup")
+            self.assertIn(f'id="{target}"', html, f"lazyPanel target #{target} not in markup")
+            self.assertNotEqual(panel, target,
+                                f"lazyPanel writes its placeholder into #{target}, which is also "
+                                f"the id of the panel it lives in - it would erase the panel")
+
+
 if __name__ == "__main__":
     unittest.main()

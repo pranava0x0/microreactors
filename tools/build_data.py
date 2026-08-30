@@ -27,7 +27,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # split that makes the Applications tab wait on a fetch trades bytes for a
 # visible stall. Everything here still ships in site/data-<name>.js and is
 # still counted in the citation register, which is built before the split.
-LAZY = ["instruments", "voices"]
+LAZY = ["instruments", "voices", "news"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that

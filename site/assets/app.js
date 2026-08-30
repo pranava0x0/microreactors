@@ -164,6 +164,9 @@
     if (id === "policy" && !policyRendered) {
       lazyPanel("instruments", "pathways", renderPolicy);
     }
+    if (id === "news" && !newsRendered) {
+      lazyPanel("news", "newslist", renderNews);
+    }
     if (id === "sources" && !voicesRendered) {
       lazyPanel("voices", "voices", renderVoices);
     }
@@ -936,8 +939,12 @@
   /* ---------- news ---------- */
   /* Newest first, grouped by month, with the binding/announced split on every
      row. A selection and a signed contract look identical in a headline, which
-     is the whole reason this site exists. */
-  if (D.news && (D.news.items || []).length) {
+     is the whole reason this site exists. Deferred: news is its own tab and
+     nothing else reads it. */
+  var newsRendered = false;
+  function renderNews() {
+    if (newsRendered || !(D.news && (D.news.items || []).length)) { return; }
+    newsRendered = true;
     var N = D.news;
     render($("news-intro"), esc(N._meta.what_this_is));
     render($("news-binding"), esc(N._meta.binding_note));
@@ -960,7 +967,7 @@
         return '<button class="newschip" data-cat="' + esc(c.id) + '">' +
           esc(c.id) + " " + c.count + "</button>";
       }).join(""));
-    render($("news"), months.map(function (m) {
+    render($("newslist"), months.map(function (m) {
       return '<div class="newsmonth"><h3>' + esc(pretty(m)) + "</h3>" +
         byMonth[m].map(function (it) {
           return '<div class="newsitem" data-cat="' + esc(it.category || "") + '">' +
@@ -982,10 +989,10 @@
       Array.prototype.forEach.call($("news-filter").querySelectorAll(".newschip"), function (x) {
         x.classList.toggle("on", x === b);
       });
-      Array.prototype.forEach.call($("news").querySelectorAll(".newsitem"), function (it) {
+      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsitem"), function (it) {
         it.hidden = !!cat && it.dataset.cat !== cat;
       });
-      Array.prototype.forEach.call($("news").querySelectorAll(".newsmonth"), function (mo) {
+      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsmonth"), function (mo) {
         mo.hidden = !mo.querySelector(".newsitem:not([hidden])");
       });
     });

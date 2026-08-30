@@ -114,14 +114,20 @@ def main() -> int:
 
     for f in files:
         d = json.loads(f.read_text())
-        recs = [("leader", r) for r in d.get("leaders", [])] + \
-               [("quote", r) for r in d.get("quotes", [])]
+        # Record arrays are named per pass. Derive them instead of listing them:
+        # this tool hand-listed leaders and quotes and would have silently skipped
+        # the entire news pass, which is the fourth time that shape has bitten
+        # this repo.
+        recs = [(k[:-1] if k.endswith("s") else k, r)
+                for k, v in d.items()
+                if k != "_meta" and isinstance(v, list)
+                for r in v if isinstance(r, dict) and r.get("sources")]
         for kind, rec in recs:
             where = f"{f.name}:{kind}:{rec.get('id', '?')}"
             # The record's OWN quote is what the site renders, so it is the string
             # that has to be verbatim. Checked against every fetched source: one
             # of them must contain it whole.
-            if kind == "quote" and rec.get("quote"):
+            if rec.get("quote"):
                 fetched = [s for s in rec.get("sources", [])
                            if s.get("status") == "fetched" and s.get("url")]
                 hit = reachable = False
