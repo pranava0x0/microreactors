@@ -22,8 +22,8 @@ an earlier pass had already contributed.
 
 Usage:
   python3 tools/merge_research.py data/research/deep-2026-08-24
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/apps-2026-08-28
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/apps-2026-08-28 --check
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps --check
 
 Stdlib only, like every tool in this repo.
 """
@@ -41,7 +41,7 @@ SECTOR_ORDER = [
     "Marine terminals",
     "Medical campuses",
     "Critical civic infrastructure",
-    # Added 2026-08-28 (data/research/apps-2026-08-28): named to match the
+    # Added 2026-08-28 (data/research/2026-08-28-apps): named to match the
     # Applications tab's own sector names (data/sectors.json) exactly.
     "Compute",
     "Manufacturing",
