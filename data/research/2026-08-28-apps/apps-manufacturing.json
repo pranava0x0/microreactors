@@ -1,0 +1,168 @@
+{
+ "_meta": {
+  "captured": "2026-08-28",
+  "agent": "manufacturing",
+  "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
+  "angles_run": [
+   "DOE Industrial Demonstrations Program awards (cement, chemicals, pulp and paper)",
+   "Semiconductor fab utility large-load agreements and dedicated substations (Intel Ohio, Samsung Taylor TX, Micron Idaho, TSMC Arizona)",
+   "Green hydrogen/electrolyzer power deals (ACES Delta, Plug Power electrolyzer supply agreements)",
+   "Battery gigafactory utility power agreements (BlueOval SK Kentucky, Ultium Cells Ohio, Panasonic Kansas, Ascend Elements/TVA, Redwood Materials Nevada, Li-Cycle Rochester)",
+   "Ammonia/fertilizer plant power supply (CF Industries Blue Point Louisiana; Woodside/OCI Beaumont, Texas)",
+   "Cement plant on-site power/waste-heat and DOE decarbonization awards (Heidelberg Mitchell; Kawasaki/Taiheiyo Saitama)",
+   "Steel rolling/finishing mill demand-response, on-site solar/BESS, and utility power contracts (Nucor Kingman AZ, Nucor Texas/Kentucky VPPAs, Steel Dynamics, Hyundai-POSCO Louisiana)",
+   "Chemical plant SMR/nuclear-for-industry precedent (Dow Seadrift/X-energy)",
+   "Pulp and paper mill biomass cogeneration PPAs (Corner Brook, Resolute Thunder Bay)",
+   "Sawmill and wood-products plant power deals",
+   "Lime plant power deals"
+  ],
+  "absences": [
+   "Steel rolling and finishing plants: no signed PPA, CHP contract, or utility large-load agreement specific to a rolling/finishing-only mill (as opposed to integrated EAF steelmaking) was found with a dollar figure or dedicated MW block. sectors.json's own demand-response case study (16 MW peak, hot-rolling process) is snippet-only and not a contract. Nucor's Kingman, Arizona bar mill was originally rolling-only, but Nucor added an EAF melt shop there in 2022-2024, so its 2025 50 MW/200 MWh Ameresco battery deal cannot cleanly be attributed to a rolling-only load and was not written up. Nucor's and Steel Dynamics' large solar/wind VPPAs (250 MW and 308 MW) are offsite grid-scale renewable offtake deals, not plant-specific power supply contracts. Hyundai-POSCO's new Louisiana mill has a signed Entergy Louisiana electric service agreement, but it is an integrated EAF flat-products mill (melt shop plus rolling), explicitly excluded by this load's own definition.",
+   "Cement plants: Heidelberg Materials' Mitchell, Indiana plant DOE Industrial Demonstrations Program award (up to $500 million OCED cost share, Phase 1 started at $300,000) is a real, dated, dollar-figured award, but it funds carbon capture, not a power purchase or on-site generation deal, and no MW figure for plant electricity demand or a power supply contract was found in DOE or company materials. Not written as a case because it carries no capacity or price number tied to power.",
+   "Lime plants: two search angles (lime kiln waste-heat power generation, lime plant CHP/PPA) surfaced no plant-level power deal with a dollar figure or MW block anywhere. The sector's own demand band (1-3 MW) is the smallest in Manufacturing and appears to be below the threshold at which US/European lime producers sign dedicated power contracts.",
+   "Fertilizer plants: CF Industries' $4 billion Blue Point ammonia complex (Ascension Parish, Louisiana, with Mitsui and JERA) confirms Entergy Louisiana as the site's power supplier, but no MW figure, capex for the power supply itself, or contract term was found in company or trade coverage. Woodside/OCI's $2.35 billion Beaumont, Texas clean-ammonia complex (1.1 Mtpa Phase 1, hydrogen supplied 'over the fence' by Linde) likewise discloses production capacity and project cost but no electricity MW or power-contract figure in any fetched source. Both dropped as candidate cases for lacking a numbers-bearing power figure specific to electricity.",
+   "Large integrated sawmills and wood-products plants: no per-mill power purchase agreement, CHP contract or utility large-load deal was found. Trade press (Forest Business Network, Random Lengths) and USDA Forest Service materials report only aggregate industry energy use, matching the same absence sectors.json already recorded for this load.",
+   "Chemical plants: searched for a named US chemical plant on-site CHP PPA or utility large-load agreement (Dow, LyondellBasell, BASF Freeport); two angles surfaced only general CHP suitability statements (already captured qualitatively in sectors.json's context block) with no plant-specific contract, MW figure or price beyond the Dow/X-energy SMR case written up below.",
+   "Semiconductor fabs: Samsung's Taylor, Texas fab is served by Oncor and county officials cite reliability commitments, but no verified MW figure or contract term for the Oncor-Samsung arrangement was found in a fetched primary or trade source (a search-summary figure of '30 MW initial, 60 MW LOI' could not be confirmed by fetching a page and is dropped per the snippet-only rule); Micron's Boise, Idaho fab expansion (announced 2027 startup) has no new large-load agreement found distinct from a 1990s/2010-era 60-100 MW legacy IPUC contract, which predates the current fab buildout and was judged too stale to cite as evidence of what a modern fab pays. TSMC's Phase 1 north Phoenix fab needs 'approximately 200 megawatts' per a fetched trade-press source, and APS is relocating multiple transmission lines to serve it, but no formal signed electric-service-agreement instrument, capex for the power infrastructure, or contract date was found (Linde's associated $600 million investment is for on-site gas supply, not power) - too thin against the numbers-or-nothing bar next to the fully documented Intel/AEP Ohio case."
+  ]
+ },
+ "cases": [
+  {
+   "id": "aces-delta-green-hydrogen-electrolyzer-utah",
+   "sector": "Manufacturing",
+   "load": ["Hydrogen and low-carbon fuel plants"],
+   "name": "ACES Delta Green Hydrogen Electrolyzer Hub",
+   "country": "US",
+   "region": "Delta, Utah",
+   "parties": {"host": "ACES Delta, LLC (Mitsubishi Power / Chevron New Energies joint venture)", "provider": "Haddington Ventures Equity Syndication Program", "utility": "Intermountain Power Agency"},
+   "instrument": "grant-funded",
+   "signed": "2022-04",
+   "capacity": "220 MW of electrolyzers, up to 100 metric tonnes/day of green hydrogen",
+   "capex": "up to $504.4 million DOE Loan Programs Office debt financing plus $650 million equity financing",
+   "displaced": "Natural gas at the co-located Intermountain Power Agency IPP Renewed 840 MW combined-cycle plant, which is designed to blend in hydrogen (30% by 2025, up to 100% by 2045)",
+   "filings": [
+    {"forum": "US DOE Loan Programs Office", "type": "Conditional loan guarantee commitment", "id": "Advanced Clean Energy Storage I, LLC", "date": "2022-04-26", "url": "https://aces-delta.com/media/advanced-clean-energy-storage-project-receives-500-million-conditional-commitment-from-u-s-department-of-energy/"}
+   ],
+   "summary": "DOE's Loan Programs Office committed up to $504.4 million in debt financing to ACES Delta, a 220 MW electrolyzer facility in Delta, Utah that converts curtailed/off-peak renewable power into green hydrogen, stored in underground salt caverns and burned at Intermountain Power Agency's adjacent 840 MW hydrogen-capable combined-cycle plant. Haddington Ventures separately syndicated $650 million of equity. By early 2026 all 40 of the site's 5.5 MW electrolyzer units were installed and commissioning; Chevron acquired a majority equity stake in 2023.",
+   "microreactor_read": "This is the load shape a microreactor could serve directly: a fixed, round-the-clock electrolyzer block (individual units here are 5.5 MW, well within a single reactor's output) that currently runs on curtailed renewable power rather than firm generation, meaning its actual capacity factor depends on grid surplus timing. A reactor selling firm, dispatchable power to a green-hydrogen block would have to beat the effective cost of that curtailed/off-peak renewable electricity, which is cheap precisely because it is otherwise wasted - a much harder bar than beating retail grid power.",
+   "sources": [
+    {"label": "ACES Delta - Advanced Clean Energy Storage Project Receives $500 Million Conditional Commitment From U.S. Department Of Energy", "url": "https://aces-delta.com/media/advanced-clean-energy-storage-project-receives-500-million-conditional-commitment-from-u-s-department-of-energy/", "quote": "convert renewable energy through 220 MW of electrolyzers to produce up to 100 metric tonnes per day of green hydrogen", "status": "fetched"},
+    {"label": "Decarbonfuse - ACES Delta Hits 220MW Milestone in Utah", "url": "https://decarbonfuse.com/posts/aces-delta-hits-220mw-milestone-in-utah", "quote": "The 220-MW hydrogen conversion facility and associated salt cavern storage are mechanically complete, with performance testing scheduled in the coming weeks.", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "dow-x-energy-seadrift-xe-100-smr",
+   "sector": "Manufacturing",
+   "load": ["Chemical plants"],
+   "name": "Dow Seadrift - X-energy Xe-100 Advanced Reactor Project",
+   "country": "US",
+   "region": "Seadrift, Texas (Gulf Coast, Calhoun County)",
+   "parties": {"host": "Dow (Seadrift manufacturing site)", "provider": "X-energy"},
+   "instrument": "design-build",
+   "signed": "2023-03",
+   "capacity": "4 x 80 MWe Xe-100 units, 320 MWe total (200 MWth of high-pressure, high-temperature steam per unit)",
+   "capex": "up to $50 million joint development agreement for engineering work, up to half DOE-cost-shared under the Advanced Reactor Demonstration Program",
+   "displaced": "On-site natural gas-fired power and steam generation at Dow's second-largest Texas plastics/chemicals facility",
+   "nuclear": true,
+   "filings": [
+    {"forum": "US Nuclear Regulatory Commission", "type": "Construction permit application (docketed)", "id": "Dow/X-energy Seadrift advanced reactor project", "date": "2025-04", "url": "https://www.energy.gov/ne/articles/nrc-dockets-construction-permit-application-dow-advanced-reactor-project"}
+   ],
+   "summary": "Dow and X-energy signed a joint development agreement in March 2023 to build the first grid-scale advanced nuclear plant serving a US industrial site: four 80 MWe Xe-100 high-temperature gas reactors (320 MWe combined) at Dow's Seadrift, Texas chemicals and plastics complex, providing both electricity and process steam. The companies submitted an NRC construction permit application in 2025 and Fluor later signed on as EPC contractor; construction was targeted to begin in 2026 for completion by decade's end. This is the clearest signed, dated precedent anywhere in the Manufacturing sector for a reactor sized for one plant's combined power-and-steam load rather than for grid export.",
+   "microreactor_read": "This is the direct model for microreactor deployment in Manufacturing: individual 80 MWe units, each roughly 4-16x a single 1-20 MW microreactor, purpose-built to supply both electricity and steam to one chemical plant, with the plant host as the offtaker rather than a utility. It also sets the real bar for cost and schedule risk a smaller reactor vendor has to beat: even with a committed industrial anchor tenant and DOE cost-sharing, this project needed a construction permit application and multi-year NRC review before a shovel could go in the ground, so a true 1-20 MW unit's licensing-timeline advantage (if any) is the argument it has to make against this bigger, already-underway precedent.",
+   "sources": [
+    {"label": "World Nuclear News - Dow's Seadrift site selected for X-energy SMR project", "url": "https://www.world-nuclear-news.org/Articles/Dow-s-Seadrift-site-selected-for-X-energy-SMR-proj", "quote": "Each Xe-100 high-temperature gas reactor is engineered to operate as a single 80 MW electric unit, optimised as a four-unit plant delivering 320 MWe", "status": "fetched"},
+    {"label": "World Nuclear News - Dow's Seadrift site selected for X-energy SMR project", "url": "https://www.world-nuclear-news.org/Articles/Dow-s-Seadrift-site-selected-for-X-energy-SMR-proj", "quote": "The two companies' joint development agreement, unveiled in March, provides for up to USD50 million in engineering work", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "blueoval-sk-glendale-kentucky-utilities-special-contract",
+   "sector": "Manufacturing",
+   "load": ["Battery-cell plants"],
+   "name": "BlueOval SK Glendale Megasite - Kentucky Utilities Special Electric Service Contract",
+   "country": "US",
+   "region": "Glendale, Kentucky",
+   "parties": {"host": "BlueOval SK, LLC (Ford Motor Company / SK On joint venture)", "utility": "Kentucky Utilities Company"},
+   "instrument": "utility tariff",
+   "signed": "2023-02",
+   "term_years": 20,
+   "capacity": "140 MW firm power in year one, rising to 260 MW firm power for the remaining term; a separate objective of up to 300 MW of solar generation",
+   "price": "$0.02456/kWh energy charge plus a $49.28/day basic service charge, plus a per-kVA maximum-load demand charge redacted from the public filing",
+   "capex": "approximately $5.8 billion (BlueOval SK's total investment at the Glendale Megasite, not the power-supply infrastructure alone)",
+   "filings": [
+    {"forum": "Kentucky Public Service Commission", "type": "Special Contract for Electric Service", "id": "Case No. 2023-00123", "date": "2023-02-24", "url": "https://psc.ky.gov/pscecf/2023-00123/mike.hornung@lge-ku.com/04142023102139/07_-_KU-BOSK_Special_Contract_-_Contract_FINAL_-_REDACTED.pdf"}
+   ],
+   "summary": "Kentucky Utilities and BlueOval SK executed a 20-year special electric service contract for two new EV battery-cell plants at the Glendale Megasite, with firm contract demand of 140 MW in year one stepping up to 260 MW for the rest of the term at monthly load factors exceeding 95%. The filed rate schedule discloses a base energy charge of $0.02456/kWh, a $49.28/day basic service charge, and a separate per-kVA demand charge that Kentucky redacted as confidential; BlueOval SK also carries a contractual objective (not yet a signed deal) to obtain up to 300 MW of solar generation from Kentucky Utilities. Ford and SK On dissolved the BlueOval SK joint venture in December 2025, with a Ford subsidiary taking full ownership of both Kentucky plants.",
+   "microreactor_read": "This is the rare record in this pass with a published base energy price ($0.02456/kWh) rather than a withheld figure, though it excludes the redacted demand charge that likely dominates the real delivered cost at a >95%-load-factor facility - so it understates, not overstates, what a reactor has to beat. The >95% monthly load factor specified in the contract is also notable: this is about as close to pure baseload as an industrial customer gets, which is the load shape a microreactor is best suited to serve, at a scale (140-260 MW) that would take 7-13 stacked 20 MW units to match.",
+   "sources": [
+    {"label": "Kentucky Public Service Commission - Special Contract for Electric Service between Kentucky Utilities Company and BlueOval SK, LLC (Case No. 2023-00123)", "url": "https://psc.ky.gov/pscecf/2023-00123/mike.hornung@lge-ku.com/04142023102139/07_-_KU-BOSK_Special_Contract_-_Contract_FINAL_-_REDACTED.pdf", "quote": "shall be 140 MW during the first year of the Term of this Contract and shall be 260 MW for each year thereafter", "status": "fetched"},
+    {"label": "Utility Dive - SK On pivots to stationary energy storage after Ford joint venture ends", "url": "https://www.utilitydive.com/news/ford-skon-dissolving-blueoval-sk-ev-battery-joint-venture/808012/", "quote": "A Ford subsidiary will take full ownership of the two battery plants in Kentucky, and SK On will assume full ownership and operate the battery plant in Tennessee.", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "corner-brook-pulp-paper-nl-hydro-ppa",
+   "sector": "Manufacturing",
+   "load": ["Pulp and paper mills"],
+   "name": "Corner Brook Pulp and Paper Mill - Newfoundland and Labrador Hydro Power Purchase Agreement",
+   "country": "CA",
+   "region": "Corner Brook, Newfoundland and Labrador",
+   "parties": {"host": "Kruger Inc. (Corner Brook Pulp and Paper)", "utility": "Newfoundland and Labrador Hydro"},
+   "instrument": "PPA",
+   "signed": "2026-07",
+   "term_years": 1,
+   "capacity": "up to 280,000 MWh/year of excess power sold from the mill's biomass cogeneration and hydroelectric assets",
+   "price": "$187 per MWh",
+   "filings": [
+    {"forum": "Government of Newfoundland and Labrador", "type": "News release - agreement extension", "id": "Newfoundland and Labrador Hydro Extends Power Purchase Agreement with Corner Brook Pulp and Paper", "date": "2026-07-07", "url": "https://www.gov.nl.ca/releases/2026/fin/0707n03/"}
+   ],
+   "summary": "Corner Brook Pulp and Paper, a Kruger-owned mill with two hydroelectric plants and a biomass cogeneration plant, sells its surplus power to the provincial utility NL Hydro under an interim power purchase agreement. NL Hydro buys up to 280,000 MWh per year at a fixed rate of $187/MWh; the agreement has been structured as a series of short-term (roughly one-year) extensions rather than a single long-term contract, most recently extended to run July 2026-June 2027. The mill is a net power seller into the grid rather than a buyer, using its excess self-generation capacity beyond its own paper-making load.",
+   "microreactor_read": "This case runs the opposite direction from most in this file: the mill already self-generates surplus firm power (biomass + hydro) and sells it to the grid at $187/MWh, a real, published price for firm industrial-adjacent power in a remote Canadian grid - useful less as a load a reactor would serve and more as a price benchmark a reactor selling firm baseload into a similar remote pulp-mill-anchored grid would have to beat or match. The mill's own pattern - self-generation big enough to be a net exporter - is also evidence that pulp and paper hosts already think of on-site generation as a normal part of their business, which lowers the sales barrier for a microreactor pitching the same self-generation logic.",
+   "sources": [
+    {"label": "Government of Newfoundland and Labrador - Newfoundland and Labrador Hydro Extends Power Purchase Agreement with Corner Brook Pulp and Paper", "url": "https://www.gov.nl.ca/releases/2026/fin/0707n03/", "quote": "extended its interim power purchase agreement with Corner Brook Pulp and Paper Limited for one year, which began on July 1, 2026, and ends on June 30, 2027", "status": "fetched"},
+    {"label": "Pulp and Paper Canada - NL Hydro extends power purchase agreement with Corner Brook Pulp and Paper", "url": "https://www.pulpandpapercanada.com/nl-hydro-extends-power-purchase-agreement-with-corner-brook-pulp-and-paper/", "quote": "NL Hydro will buy up to 280,000 MWh of power, at a rate of $187 per MWh", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "taiheiyo-cement-saitama-kawasaki-waste-heat-recovery",
+   "sector": "Manufacturing",
+   "load": ["Cement plants"],
+   "name": "Taiheiyo Cement Saitama Plant - Kawasaki Waste Heat Recovery Power Generation System",
+   "country": "JP",
+   "region": "Saitama, Japan",
+   "parties": {"host": "Taiheiyo Cement Corp.", "provider": "Kawasaki Heavy Industries"},
+   "instrument": "design-build",
+   "signed": "2020-01",
+   "capacity": "approximately 8 MW (7,850 kW rated output)",
+   "displaced": "Purchased grid electricity, by recovering waste heat from the calcining stage of cement production that would otherwise be vented",
+   "filings": [
+    {"forum": "Kawasaki Heavy Industries corporate newsroom", "type": "Order and delivery announcements", "id": "Cement Plant Waste Heat Recovery Power Generation System - Saitama Plant", "date": "2022-10-31", "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812"}
+   ],
+   "summary": "Kawasaki Heavy Industries received an order from Taiheiyo Cement in January 2020 to supply a new-model waste heat recovery power generation system for its Saitama cement plant, and delivered the roughly 8 MW (7,850 kW rated) system in October 2022, with operations scheduled to start in September of that year. The system captures waste heat from the calcining stage of cement production - heat that would otherwise be exhausted - and converts it to onsite electricity, reducing the plant's purchased grid power. No capex or per-kWh price was published in Kawasaki's own announcements.",
+   "microreactor_read": "8 MW sits inside this project's own cement-plant demand band (7-25 MW) and is the kind of nameplate a single microreactor could displace or complement directly, but the offer here is capital equipment sold once (a generation system), not a term power-supply contract - a microreactor vendor selling into cement would be competing against a plant's own capex-funded waste-heat recovery investment, which needs no ongoing fuel purchase and has no counterparty risk once installed, a materially different sale than an offtake agreement.",
+   "sources": [
+    {"label": "Kawasaki Heavy Industries - Kawasaki Delivers a New Waste Heat Recovery Power Generation System to Taiheiyo Cement", "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812", "quote": "The new system generates approximately 8 MW (7,850 kW rated output).", "status": "fetched"},
+    {"label": "Kawasaki Heavy Industries - Kawasaki Delivers a New Waste Heat Recovery Power Generation System to Taiheiyo Cement", "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812", "quote": "Kawasaki Receives Order from Taiheiyo Cement for New-model Cement Plant Waste Heat Recovery Power Generation System", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "ascend-elements-apex1-hopkinsville-tva",
+   "sector": "Manufacturing",
+   "load": ["Battery-material plants", "Battery-recycling plants"],
+   "name": "Ascend Elements Apex 1 - Tennessee Valley Authority Power Supply",
+   "country": "US",
+   "region": "Hopkinsville, Kentucky",
+   "parties": {"host": "Ascend Elements", "utility": "Tennessee Valley Authority"},
+   "instrument": "utility tariff",
+   "capacity": "starting at 24 MW, potentially increasing to 50 MW",
+   "capex": "approximately $1 billion total facility investment (site-wide, not power infrastructure alone)",
+   "filings": [
+    {"forum": "US Department of Energy", "type": "Battery Materials Processing and Battery Manufacturing and Recycling Grant selection", "id": "Apex 1: Integrated Sustainable Battery Precursor, Materials Separation and Processing", "date": "2022-10-19", "url": "https://atlaspolicy.com/wp-content/uploads/2025/05/Ascend-Elements-in-Hopkinsville-Case-Study.pdf"}
+   ],
+   "summary": "Ascend Elements' Apex 1 facility in Hopkinsville, Kentucky - a combined battery-recycling and precursor cathode active material (pCAM) manufacturing plant, and the only planned US facility with a committed investment of at least $1 billion able to produce pCAM at scale - will draw power from the Tennessee Valley Authority starting at 24 MW and potentially rising to 50 MW, with Ascend hoping to source it through TVA's Renewable Solutions program. DOE originally awarded Apex 1 $480 million across two IIJA battery grants (announced October 2022); Ascend and DOE mutually cancelled the $164 million cathode-focused half of that award in February 2025 due to weak CAM market conditions, while a separate $316 million pCAM-focused award proceeded. Construction, paused since November 2024 amid a $138 million unpaid-bills lawsuit from its construction joint venture, was expected to restart in Q3 2025 with completion targeted for Q4 2026.",
+   "microreactor_read": "24-50 MW for a single materials-and-recycling plant is a realistic single-reactor or small-multi-unit scale, and TVA's own decision to route this load toward a renewable program signals the utility itself is shopping for a firm clean-power product to sell into exactly this kind of industrial account - a slot a microreactor could fill. But the project's own history (paused construction, a cancelled federal grant tranche, a nine-figure contractor lawsuit) is the more important lesson: an early-stage battery-materials plant is financially fragile enough that a reactor developer sizing a unit to one such tenant's committed ramp is taking on the tenant's project risk, not just its power demand.",
+   "sources": [
+    {"label": "Atlas Public Policy - Ascend Elements Builds Out the Domestic Battery Supply Chain (Hopkinsville, Kentucky case study)", "url": "https://atlaspolicy.com/wp-content/uploads/2025/05/Ascend-Elements-in-Hopkinsville-Case-Study.pdf", "quote": "when operational, Apex 1 will be powered using electricity through the Tennessee Valley Authority (TVA), starting at 24 megawatts (MW) of energy and potentially increasing to 50 MW", "status": "fetched"},
+    {"label": "Canary Media - Facing headwinds, Ascend shifts plans for battery recycling in Kentucky", "url": "https://www.canarymedia.com/articles/batteries/facing-headwinds-ascend-shifts-plans-for-battery-recycling-in-kentucky", "quote": "spokesperson Thomas Frey told Canary Media on Tuesday", "status": "fetched"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "gapfill",
+    "scope": "Second-pass angles on the 9 Manufacturing/Agriculture & Food loads that apps-manufacturing.json and apps-agri-food.json (2026-08-28) could not close: fresh named-facility searches, PUC dockets, and DOE award pages not tried in the prior pass.",
+    "angles_run": [
+      "Semiconductor fabs: Intel Ohio One (New Albany/Licking County) named-facility PUCO rate-agreement docket (not tried in prior pass, which covered Samsung Taylor, Micron Boise, TSMC Phase 1) - CLOSED with real numbers",
+      "Chemical plants: named-facility DOE/national-lab CHP technical-assistance-partnership project profile (Eastman Chemical Kingsport, TN) rather than a signed utility PPA/ESA - CLOSED with real numbers",
+      "Steel rolling/finishing: named rolling-only (no melt shop) mills - California Steel Industries (Fontana, CA) and AM/NS Calvert (Calvert, AL) electric service agreements; ArcelorMittal Calvert new World-Class Electrical Steel facility DOE/IRS 48C award; PRO-TEC Coating Company (Leipsic, OH, JV finishing-only automotive-steel mill) PUCO interruptible-load docket 19-124-EL-AEC; Wheeling-Nippon Steel; JSW Steel Mingo Junction AEP Ohio deal (found but excluded, is an EAF melt-shop mill)",
+      "Cement plants: PUC/state-commission docket search for a named cement plant large-load agreement; National Cement Company of California (Lebec) DOE Industrial Demonstrations Program Lebec Net-Zero award detail page",
+      "Lime plants: Graymont/Mississippi Lime/Carmeuse DOE Better Plants award and kiln-electrification search; United States Lime & Minerals Inc. SEC 10-K capex disclosures",
+      "Fertilizer plants: LSB Industries El Dorado, AR named-facility cogeneration plant; CVR Partners Coffeyville, KS named-facility cogeneration/gasifier complex",
+      "Large integrated sawmills: DOE Better Plants/Industrial Demonstrations Program award search by name; Georgia-Pacific/Canfor/West Fraser/Interfor named-mill PUC docket search",
+      "Large grain and oilseed mills: named new-build soybean crush plants with 2024-2025 utility interconnection stories - High Plains Processing (Mitchell, SD) and Louis Dreyfus Company (Upper Sandusky, OH); ADM/Bunge/CHS SEC 10-K electric capex search",
+      "Integrated agricultural campuses: named vertically-integrated food-processing campuses - Lincoln Premium Poultry/Costco (Fremont, NE) and NatureFresh Farms (Delta, OH) utility/substation search"
+    ],
+    "absences": [
+      "Steel rolling and finishing plants: still no priced power deal for a genuinely rolling/finishing-only mill after this pass. California Steel Industries (Fontana, CA - purchased-slab rolling only) appears only as a named party in an SCE General Order 96-B service-agreement index with no MW or dollar figure attached. AM/NS Calvert (Calvert, AL - finishing only, no melt shop) yielded no power-specific figure in any fetched source. ArcelorMittal Calvert's new $1.2 billion, 150,000 t/yr non-grain-oriented electrical steel facility (announced Feb 2025) has real capex ($1.2B) and a real federal award ($280.5 million IRS Section 48C investment tax credit, confirmed via multiple fetched sources) but zero published electricity/MW figure for the plant, so it was not written up as a case - this is an industrial investment record, not a power deal. PRO-TEC Coating Company (Leipsic, OH - JV finishing-only automotive coated-steel mill) has a PUCO-approved rate agreement (case 19-124-EL-AEC, ~427 jobs, over $700 million in investment during the arrangement) participating in AEP Ohio's interruptible-load program, but the PUCO news page for the case 404'd and no fetched source gave the MW figure for its interruptible block. JSW Steel's Mingo Junction, OH expansion (real: $160 million bond-financed VTD/caster upgrade, AEP Ohio rate agreement, 120 MW curtailable under an interruptible program, $34.5 million in credits over 4 years) was found with hard numbers but is excluded because Mingo Junction is a scrap-fed EAF melt-shop mill, not a rolling/finishing-only plant, matching this load's own exclusion rule from the prior pass.",
+      "Cement plants: no PUC docket or SEC filing surfaced a cement-plant-specific electric service agreement or MW figure. National Cement Company of California's Lebec Net-Zero Project (DOE Industrial Demonstrations Program, up to $500 million matching funds, 950,000 t/yr CO2 target) is real and dated but is a carbon-capture/kiln-fuel-switching award, not a power purchase or generation deal, and carries no electricity MW figure - same pattern the prior pass found for Heidelberg Mitchell.",
+      "Lime plants: no plant-level power deal, PUC docket, or DOE Better Plants award with an MW or power-dollar figure was found for Graymont, Mississippi Lime Company, or Carmeuse. United States Lime & Minerals' FY2024 10-K discloses a new vertical kiln project (~$65 million estimated construction cost) but this is a kiln capex figure, not a power/electricity deal, so it was not written up.",
+      "Fertilizer plants: LSB Industries' El Dorado, AR ammonia plant (375,000 t/yr nameplate) includes an on-site cogeneration facility per company materials, but no MW capacity figure for it was found in any source. CVR Partners' Coffeyville, KS petroleum-coke-gasification ammonia/UAN complex (1,300 t/day ammonia unit, 3,100 t/day UAN unit, 89 MMscf/day gasifier) likewise has no published cogeneration MW figure. Both dropped for lacking a power number, consistent with the prior pass's CF Industries/Woodside-OCI absence.",
+      "Large integrated sawmills and wood-products plants: no DOE award or PUC docket for a named sawmill surfaced anything beyond the pulp-and-paper-sector Vicksburg Containerboard Mill carbon-capture pilot (not a sawmill) and general Interfor/Georgia-Pacific acquisition/capacity news with zero power figures.",
+      "Large grain and oilseed mills: the current 2024-2026 soybean-crush build-out (roughly 189 million bushels/year of new US capacity in the pipeline) is real and well covered in trade press - High Plains Processing near Mitchell, SD ($500 million, 35 million bu/yr, opened Oct 2025, joint venture of South Dakota Soybean Processors and BP Products North America) and Louis Dreyfus Company's Upper Sandusky, OH plant ($500 million, 1.5 Mt/yr crush capacity, AEP Ohio territory) both have real capex and production-capacity numbers but neither source disclosed an electric utility interconnection MW figure or substation cost, so neither qualifies as a power-deal case under this pass's numbers-or-nothing rule.",
+      "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: tried two named vertically-integrated food campuses (Lincoln Premium Poultry/Costco, Fremont, NE - processing plant plus hatchery plus feed mill; NatureFresh Farms, Delta, OH - greenhouse plus distribution/cold-storage). Neither surfaced a power/utility figure. This reinforces the prior pass's conclusion that this load is a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category with its own precedent."
+    ]
+  },
+  "cases": [
+    {
+      "id": "intel-ohio-aep-substation-2024",
+      "sector": "Manufacturing",
+      "load": ["Semiconductor fabs"],
+      "name": "Intel Ohio One (New Albany/Licking County) — AEP Ohio dedicated-substation rate agreement",
+      "country": "US",
+      "region": "New Albany / Licking County, Ohio",
+      "parties": {"host": "Intel", "provider": "AEP Ohio", "utility": "AEP Ohio"},
+      "instrument": "utility tariff",
+      "signed": "2024-09",
+      "term_years": 20,
+      "capacity": "50 MW dedicated new substation (part of a full-site draw of up to 500 MW)",
+      "capex": "$95.1 million AEP Ohio substation investment; Intel commits to $20 billion of capital investment over the 20-year term as the condition that keeps the deal in force",
+      "filings": [{"forum": "State PUC", "type": "unique arrangement / rate agreement approval", "id": "PUCO Case No. 24-734-EL-AEC", "date": "2024-09-04", "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html"}],
+      "summary": "PUCO authorized a rate agreement (unique arrangement) between AEP Ohio and Intel for Intel's two-fab semiconductor campus in Licking County. AEP Ohio invests an estimated $95.1 million to build a new 50 MW-capacity substation dedicated to the site, with Intel responsible for only $740,000 of special circuit-breaker costs directly. The full site's ultimate draw is up to 500 MW. Intel must keep investing toward a cumulative $20 billion in the plant over the 20-year agreement term or it owes AEP the $95.1 million (later cited as ~$94 million) infrastructure cost back.",
+      "microreactor_read": "This is exactly the AEP-owned grid path a microreactor vendor would have to beat or complement at the 50 MW substation scale: AEP recovers its $95.1M/50MW ($1.9M/MW) infrastructure cost through Intel's rates over 20 years, contingent on Intel's own $20B capex commitment staying on track. A microreactor pitch into a fab has to compete with utility infrastructure that is effectively free at the point of use to Intel (Intel pays only $740k directly) and backed by a 20-year regulated rate agreement — the bar is not the price of power itself so much as matching that near-zero marginal capital exposure and multi-decade certainty.",
+      "sources": [
+        {"label": "WOSU — Electric build-up for Intel will cost $95 million, all of AEP Ohio's customers could be on the hook", "url": "https://www.wosu.org/politics-government/2024-08-02/electric-build-up-for-intel-will-cost-95-million-all-of-aep-ohios-customers-could-be-on-the-hook", "quote": "up to 500 megawatts of electricity, the equivalent of power needed for 500,000 homes", "status": "fetched"},
+        {"label": "Spectrum News 1 — AEP Ohio, Intel rate agreement authorized by PUCO", "url": "https://spectrumnews1.com/oh/columbus/news/2024/09/04/aep-ohio--intel-rate-agreement-authorized-by-puco", "quote": "AEP Ohio will invest an estimated $95.1 million into constructing a new electric substation facility with up to 50 megawatts of electric load to serve Intel", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "eastman-kingsport-chp",
+      "sector": "Manufacturing",
+      "load": ["Chemical plants"],
+      "name": "Eastman Chemical Tennessee Operations — self-owned 200 MW coal/gas CHP system",
+      "country": "US",
+      "region": "Kingsport, Tennessee",
+      "parties": {"host": "Eastman Chemical Company", "provider": "Eastman Chemical Company (self-owned, self-operated)"},
+      "instrument": "BOO",
+      "signed": "1930",
+      "capacity": "200 MW maximum electric generating capacity (17 boilers, 19 steam turbines); averages 155 MW supplied to the facility, covering over 90% of site electric and thermal demand",
+      "capex": "not published; DOE profile reports an estimated $45 million/year in savings versus buying power and steam separately",
+      "displaced": "grid electricity purchases and separate steam generation; all electricity generated is consumed on-site",
+      "summary": "Eastman's Kingsport, Tennessee chemical complex (40 million sq ft, one of the largest chemical manufacturing sites in North America) has run a wholly Eastman-owned coal- and natural-gas-fired combined heat and power system since 1930, most recently expanded in 1993. The 200 MW system (individual turbines 6-18 MW each) supplies an average of 155 MW plus 3.6 million lb/hr of steam, meeting over 90% of the site's combined electric and thermal load, with 99.9%+ availability. DOE's Southeast CHP Technical Assistance Partnership profile credits the system with roughly $45 million/year in savings versus buying grid power and steam separately.",
+      "microreactor_read": "This is the real incumbent for a chemical-plant microreactor pitch: a fully self-owned, multi-decade-depreciated 200 MW CHP fleet running at 99.9%+ availability and saving its owner about $45M/year versus buying power and steam apart. A 1-20 MW reactor cannot displace this kind of asset outright, but the site's individual turbine blocks (6-18 MW each) show the granularity at which a reactor-scale thermal/electric block could plausibly slot in as a repowering or capacity-addition option when an aging boiler or turbine is retired, not as a wholesale replacement.",
+      "sources": [
+        {"label": "U.S. DOE Southeast CHP Technical Assistance Partnership — Eastman's 200 MW CHP (Kingsport, TN) Project Profile", "url": "https://chptap.ornl.gov/profile/67/eastman-Project_Profile.pdf", "quote": "the CHP system has a 200 MW maximum electric generating capacity, and supplies an average of 155 MW to the facility", "status": "fetched"},
+        {"label": "U.S. DOE Southeast CHP Technical Assistance Partnership — Eastman's 200 MW CHP (Kingsport, TN) Project Profile", "url": "https://chptap.ornl.gov/profile/67/eastman-Project_Profile.pdf", "quote": "ESTIMATED YEARLY SAVINGS: $45 Million", "status": "fetched"}
+      ]
+    }
+  ]
+}

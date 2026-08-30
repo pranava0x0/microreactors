@@ -1,0 +1,260 @@
+{
+ "_meta": {
+  "captured": "2026-08-28",
+  "agent": "compute",
+  "scope": "Compute sector - data-center/AI power deals: signed hyperscaler nuclear PPAs re-verified against source, plus the non-nuclear incumbent price (utility large-load tariffs, on-site gas backup, colocation power pricing) a 1-20 MW reactor has to beat at data-center scale.",
+  "angles_run": [
+   "Re-verify Microsoft/Constellation, Meta/Constellation, Google/Kairos, Amazon x3 (X-energy, Energy Northwest, Dominion) against primary sources",
+   "State PUC large-load / data-center tariffs (Georgia Power, Dominion Virginia, ERCOT/Oncor large flexible load)",
+   "On-site gas turbine backup capex/opex at hyperscale AI campuses (xAI Colossus, Meta, OpenAI/Stargate)",
+   "Colocation power pricing disclosures (Equinix, Digital Realty investor materials)",
+   "Utility interconnection-queue cost/delay figures specific to data-center load"
+  ],
+  "absences": [
+   "No published $/MWh or $/kWh figure was found for any of the six hyperscaler nuclear PPAs (Microsoft, Meta, Google, Amazon x3) -- all six disclose capacity, term and dates but withhold price, consistent with the pattern noted in the deep-2026-08-24 mining pass.",
+   "Digital Realty and Equinix investor materials did not yield a clean, citable $/kW colocation price figure on the angles searched; used CBRE's independent North America Data Center Trends H2 2025 report instead, which is the industry-standard third-party benchmark and does disclose exact figures.",
+   "Diesel/gas generator on-site backup capex (as opposed to the xAI Memphis capacity/permit figures, which are real but lack a dollar cost) was searched for at hyperscale campuses (Meta, Microsoft, OpenAI/Stargate sites) and not found published; no record written for that angle specifically.",
+   "No utility interconnection-queue cost or multi-year delay figure specific to a named data-center project (as opposed to system-wide PJM queue statistics) was found with a dollar figure attached; PJM's own release states queue backlog volumes (170,000 MW processed since 2023, 30,000 MW remaining in the transition queue) but no cost-to-the-customer figure, so that angle is represented only via the capacity-auction price record.",
+   "No priced case was found specifically naming 'Supercomputing centers' as a load (DOE/national-lab supercomputer power costs are typically appropriated, not market-priced) or 'Dedicated baseload and outage-protection blocks within larger data-center campuses' as a distinct priced instrument -- both loads are covered only indirectly, via the tariff and colocation-pricing records that apply to the campuses hosting such blocks."
+  ]
+ },
+ "cases": [
+  {
+   "id": "microsoft-constellation-crane-clean-energy-center",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "Crane Clean Energy Center (Three Mile Island Unit 1 restart)",
+   "country": "US",
+   "region": "Londonderry Township, Pennsylvania",
+   "parties": {"host": "Microsoft", "provider": "Constellation Energy"},
+   "instrument": "PPA",
+   "signed": "2024-09",
+   "term_years": 20,
+   "capacity": "835 MW (single restarted PWR unit)",
+   "capex": "About $1.6 billion to restart the unit (about $1,916/kW); U.S. DOE closed a $1 billion loan toward that cost on 2025-11-18",
+   "filings": [
+    {"forum": "U.S. Department of Energy — Loan Programs Office", "type": "Loan closing", "id": "Crane Clean Energy Center restart loan", "date": "2025-11-18", "url": "https://www.utilitydive.com/news/doe-loan-constellation-crane-nuclear-restart/805923/"}
+   ],
+   "nuclear": true,
+   "summary": "Microsoft signed a 20-year PPA for the full 835 MW output of the shut-down Three Mile Island Unit 1, which Constellation is restarting and rebranding the Crane Clean Energy Center. Restart cost is about $1.6 billion (~$1,916/kW); as of November 2025 the U.S. DOE had closed a $1 billion federal loan covering most of that cost, and the article puts restart 'possibly as soon as 2027,' while Constellation's own site (checked 2026-08-28) still states 2028 — the target date has moved around in public statements and is not settled.",
+   "microreactor_read": "Microsoft already cleared board sign-off, legal review of a novel 20-year nuclear PPA structure, and public disclosure risk for this exact counterparty class. A 1-20 MW resilience purchase at a Microsoft campus rides on that precedent rather than requiring new organizational appetite. But the number that actually has to be beaten here is $1,916/kW restart capex on an asset that already had turbines, cooling and switchyard in place — a greenfield microreactor's installed $/kW has a much higher bar to clear than this deal implies.",
+   "sources": [
+    {"label": "Constellation Energy — Constellation to Launch Crane Clean Energy Center", "url": "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html", "quote": "approximately 835 megawatts of carbon-free energy to the grid", "status": "fetched"},
+    {"label": "Utility Dive — DOE loans Constellation $1B to restart Three Mile Island nuclear unit", "url": "https://www.utilitydive.com/news/doe-loan-constellation-crane-nuclear-restart/805923/", "quote": "expects to spend about $1.6 billion — about $1,916 per kilowatt — to restart the unit", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "meta-constellation-clinton-clean-energy-center",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "Clinton Clean Energy Center full-output PPA",
+   "country": "US",
+   "region": "Clinton, Illinois",
+   "parties": {"host": "Meta", "provider": "Constellation Energy"},
+   "instrument": "PPA",
+   "signed": "2025-06",
+   "term_years": 20,
+   "capacity": "1,121 MW (single reactor), plus a 30 MW expansion via plant uprates",
+   "nuclear": true,
+   "summary": "Meta signed a 20-year PPA for the entire output of Constellation's Clinton Clean Energy Center, a single 1,121 MW reactor, with deliveries beginning June 2027; the agreement also funds a 30 MW uprate. The deal supports relicensing the plant for another two decades. Meta had issued a 1-4 GW advanced-nuclear RFP in December 2024, six months before signing this specific PPA.",
+   "microreactor_read": "Same precedent-clearing logic as Microsoft: Meta's sustainability and legal teams already own a signed nuclear PPA playbook, so a smaller resilience-scale purchase is procedurally easier, not procedurally novel. The harder fact for a microreactor pitch is that this deal buys into an already-licensed, already-operating 1,121 MW unit with sunk site infrastructure — Meta is paying to keep an existing plant running, not funding new nuclear construction, which is a materially cheaper transaction than a new 1-20 MW build.",
+   "sources": [
+    {"label": "Constellation Energy — Constellation, Meta Sign 20-Year Deal for Clean, Reliable Nuclear Energy in Illinois", "url": "https://www.constellationenergy.com/news/2025/constellation-meta-sign-20-year-deal-for-clean-reliable-nuclear-energy-in-illinois.html", "quote": "Beginning in June of 2027, the agreement supports the relicensing and continued operations of Constellation's high-performing Clinton nuclear facility for another two decades", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "google-kairos-power-fleet-agreement",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "Google-Kairos Power multi-SMR fleet agreement",
+   "country": "US",
+   "region": "United States (site-unspecified fleet agreement; Kairos demo unit in Oak Ridge, TN)",
+   "parties": {"host": "Google", "provider": "Kairos Power"},
+   "instrument": "PPA",
+   "signed": "2024-10",
+   "capacity": "First unit online by 2030, ramping to up to 500 MW by 2035",
+   "nuclear": true,
+   "summary": "Google signed what it calls the first corporate agreement to buy nuclear power from multiple small modular reactors built by one developer, Kairos Power. The plan brings Kairos's first SMR online by 2030 and ramps to up to 500 MW of new 24/7 carbon-free capacity across U.S. grids by 2035. Kairos's design is a molten-fluoride-salt-cooled reactor, still pre-commercial as of this deal.",
+   "microreactor_read": "Unlike the two Constellation deals above, this is a purchase of not-yet-built, not-yet-licensed reactor capacity from a first-of-a-kind vendor — closer in risk profile to a microreactor purchase than either restart or existing-plant PPA. Google accepted first-unit-by-2030 timeline risk from an unproven vendor, which is the precedent a microreactor seller should cite directly: hyperscalers will sign multi-unit fleet PPAs against a vendor roadmap, not just against operating iron.",
+   "sources": [
+    {"label": "Google — Google and Kairos Power sign agreement to advance new nuclear energy technology", "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/", "quote": "the world's first corporate agreement to purchase nuclear energy from multiple small modular reactors", "status": "fetched"},
+    {"label": "Google — Google and Kairos Power sign agreement to advance new nuclear energy technology", "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/", "quote": "bring Kairos Power's first SMR online quickly and safely by 2030, followed by additional reactor deployments through 2035", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "amazon-x-energy-series-c1-investment",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "Amazon Climate Pledge Fund anchor investment in X-energy",
+   "country": "US",
+   "region": "United States (national deployment target; TRISO-X fuel plant in Oak Ridge, TN)",
+   "parties": {"host": "Amazon", "provider": "X-energy"},
+   "signed": "2024-10",
+   "capacity": "Target of more than 5 GW of new Xe-100 SMR projects online across the US by 2039",
+   "capex": "Approximately $500 million Series C-1 financing round, anchored by Amazon's Climate Pledge Fund alongside Ken Griffin, Ares Management, NGP and the University of Michigan",
+   "nuclear": true,
+   "summary": "Amazon anchored a roughly $500 million Series C-1 equity round in X-energy, funding completion of the Xe-100 reactor design/licensing and the first phase of X-energy's TRISO-X fuel fabrication plant in Oak Ridge, Tennessee. Amazon and X-energy set a joint deployment goal of more than 5 GW of Xe-100 projects online across the US by 2039 -- what X-energy calls the largest commercial SMR deployment target to date. This is a corporate/vendor investment, not a site-specific PPA; the Energy Northwest project below is the first named site under this umbrella.",
+   "microreactor_read": "Amazon bought into the supply chain and vendor balance sheet, not a specific megawatt-hour price -- a reminder that hyperscaler nuclear commitments at this scale often precede any priced offtake. A microreactor vendor pitching Amazon should expect the same two-step: an equity/pre-order relationship first, a site-specific priced PPA later, on a multi-year lag.",
+   "sources": [
+    {"label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power", "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/", "quote": "bring more than 5 gigawatts online in the United States by 2039, the largest commercial deployment target of SMRs to date", "status": "fetched"},
+    {"label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power", "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/", "quote": "approximately $500 million", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "amazon-energy-northwest-xe100-washington",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers", "Regional data centers"],
+   "name": "Energy Northwest four-unit Xe-100 project (Amazon Carbon Free Development and Funding Agreement)",
+   "country": "US",
+   "region": "Richland, Washington (central Washington)",
+   "parties": {"host": "Amazon", "provider": "X-energy", "utility": "Energy Northwest (public power consortium)"},
+   "instrument": "PPA",
+   "signed": "2024-10",
+   "capacity": "Four Xe-100 units, initial 320 MWe, with an option to expand to 12 units / 960 MW total",
+   "displaced": "New capacity for early-2030s regional grid demand; no incumbent generation directly displaced",
+   "nuclear": true,
+   "summary": "Amazon signed a Carbon Free Development and Funding Agreement with Energy Northwest, a consortium of Washington state public utilities, to build four X-energy Xe-100 reactors generating roughly 320 MWe, with an option to scale to 12 units and 960 MW. Amazon is funding early development work directly. Target online date is the early 2030s.",
+   "microreactor_read": "This is the closest of the six hyperscaler nuclear deals to a microreactor-shaped transaction: a named utility consortium as intermediary, a phased build-out (start at 320 MW, option to scale), and Amazon funding early development rather than only offtake. The modular Xe-100 unit (~80 MWe each) is still well above the 1-20 MW class, but the phased-option structure is the template a smaller reactor vendor should copy.",
+   "sources": [
+    {"label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power", "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/", "quote": "with the option to increase that project to 12 units and 960 MW", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "amazon-dominion-north-anna-smr-mou",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "Dominion Energy / Amazon North Anna SMR feasibility MOU",
+   "country": "US",
+   "region": "Louisa County, Virginia (North Anna Power Station)",
+   "parties": {"host": "Amazon", "provider": "Dominion Energy Virginia"},
+   "signed": "2024-10",
+   "capacity": "At least 300 MW of new capacity targeted",
+   "nuclear": true,
+   "summary": "Amazon and Dominion Energy Virginia signed a Memorandum of Understanding to jointly explore developing a small modular reactor near Dominion's existing North Anna nuclear station, targeting at least 300 MW of new capacity for the Virginia grid. This followed a July 2024 Dominion RFP to SMR vendors; Dominion's own release stresses the MOU and RFP are exploratory, not a commitment to build. No vendor, price or firm online date had been set as of the announcement.",
+   "microreactor_read": "This is the weakest instrument of the three Amazon nuclear announcements -- an MOU to jointly explore, not a signed PPA with capacity, price or a chosen vendor. For a microreactor pitch it demonstrates Amazon will put its name on early-stage nuclear exploration with a utility partner before economics are settled, but it should not be cited as a priced deal.",
+   "sources": [
+    {"label": "Dominion Energy — Dominion Energy and Amazon to explore advancement of Small Modular Reactor (SMR) nuclear development in Virginia", "url": "https://news.dominionenergy.com/press-releases/press-releases/2024/Dominion-Energy-and-Amazon-to-explore-advancement-of-Small-Modular-Reactor-SMR-nuclear-development-in-Virginia-10-16-2024/default.aspx", "quote": "Memorandum of Understanding (MOU)", "status": "fetched"},
+    {"label": "Amazon — Amazon and nuclear power: Investing in advanced nuclear technologies to combat climate change", "url": "https://www.aboutamazon.com/news/sustainability/amazon-nuclear-small-modular-reactor-net-carbon-zero", "quote": "bring at least 300 megawatts of power to the Virginia region", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "georgia-power-large-load-tariff-100mw",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers", "Regional data centers"],
+   "name": "Georgia Power large-load / data-center service-agreement rule",
+   "country": "US",
+   "region": "Georgia",
+   "parties": {"host": "Georgia Power large-load customers (data centers)", "utility": "Georgia Power"},
+   "instrument": "utility tariff",
+   "signed": "2025-01",
+   "term_years": 15,
+   "capacity": "Applies to any new customer with expected peak demand of 100 MW or greater",
+   "filings": [
+    {"forum": "Georgia Public Service Commission", "type": "Tariff/rate order", "id": "Data center large-load service rule", "date": "2025-01-23", "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power"}
+   ],
+   "summary": "The Georgia PSC unanimously approved a rule, effective February 2025, letting Georgia Power impose minimum billing requirements and recover upstream generation/transmission/distribution costs from any new customer with 100 MW or greater expected peak demand -- squarely data centers. Standard contract length for these large-load customers stretches from 5 years to 15 years, and standard tariffs like PLL-18 are no longer available to new large-load customers signing after February 1, 2025. The article states the per-kWh rate itself did not change; the rule instead adds take-or-pay-style minimum billing and cost-recovery terms.",
+   "microreactor_read": "This is a regulator, not a vendor, defining the contract shape a data-center power buyer in Georgia must now accept: 15-year minimum term with minimum billing regardless of actual load. A microreactor PPA pitched into this market competes against a grid connection that already carries a 15-year committed-revenue floor -- the reactor's own term and take-or-pay terms need to be at least as firm to look comparable to a utility underwriting the load.",
+   "sources": [
+    {"label": "GovTech — Georgia Approves New Rule to Charge Data Centers for Power", "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power", "quote": "give Georgia Power latitude to include minimum billing requirements and other terms into its service agreements with customers that use more than 100 megawatts of electricity", "status": "fetched"},
+    {"label": "GovTech — Georgia Approves New Rule to Charge Data Centers for Power", "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power", "quote": "stretch out contract lengths for these facilities from five years to 15 years", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "xai-colossus-memphis-gas-turbine-backup",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers"],
+   "name": "xAI Colossus on-site gas turbine self-generation, Memphis",
+   "country": "US",
+   "region": "South Memphis, Tennessee",
+   "parties": {"host": "xAI"},
+   "signed": "2025-07",
+   "capacity": "15 Solar Turbines SMT-130 gas turbines permitted, generating up to 247 MW; prior unpermitted build-out reached roughly 421 MW across ~35 turbines",
+   "filings": [
+    {"forum": "Shelby County Health Department", "type": "Air permit (Title V)", "id": "xAI Colossus turbine permit", "date": "2025-07-02", "url": "https://techcrunch.com/2025/07/03/xai-gets-permits-for-15-natural-gas-generators-at-memphis-data-center"}
+   ],
+   "displaced": "Grid interconnection / utility-supplied power at a site MLGW could not serve fast enough for xAI's build timeline",
+   "summary": "xAI ran up to roughly 421 MW of unpermitted gas turbines behind its Memphis Colossus site while awaiting grid capacity, prompting an SELC/NAACP legal challenge over Clean Air Act permitting. In July 2025 the Shelby County Health Department permitted 15 of those turbines (Solar Turbines SMT-130 units) to run permanently, rated at up to 247 MW combined, through 2027, with emissions caps including 13.71 tons/yr of hazardous air pollutants. This is on-site self-generation substituting for a utility connection, not a purchased-power contract.",
+   "microreactor_read": "This is the real incumbent for speed-to-power: a hyperscaler chose unpermitted gas turbines over waiting for a utility interconnection, and even the permitted fallback (247 MW of gas) came online faster than any nuclear licensing path could. A microreactor's pitch here is not price -- it is avoiding the permitting/community-opposition exposure that gas turbines created (1,700+ public comments, multiple lawsuits), not necessarily a lower $/MWh.",
+   "sources": [
+    {"label": "TechCrunch — xAI is facing a lawsuit for operating over 400 MW of gas turbines without permits", "url": "https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits", "quote": "At one point, xAI had enough turbines to generate 421 megawatts", "status": "fetched"},
+    {"label": "TechCrunch — xAI gets permits for 15 natural gas generators at Memphis data center", "url": "https://techcrunch.com/2025/07/03/xai-gets-permits-for-15-natural-gas-generators-at-memphis-data-center", "quote": "xAI can operate 15 Solar SMT-130 generators with certain emissions controls, which can generate up to 247 megawatts", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "dominion-virginia-gs5-data-center-rate-class",
+   "sector": "Compute",
+   "load": ["Regional data centers", "AI and very large cloud data centers"],
+   "name": "Dominion Energy Virginia GS-5 large-load / data-center rate class",
+   "country": "US",
+   "region": "Virginia",
+   "parties": {"host": "Dominion Virginia large-load customers (data centers)", "utility": "Dominion Energy Virginia"},
+   "instrument": "utility tariff",
+   "signed": "2027",
+   "term_years": 14,
+   "capacity": "Applies to customers with demand of 25 MW or greater and a 75 percent load factor",
+   "summary": "Virginia's SCC approved a new GS-5 rate class for Dominion's largest electricity users, chiefly data centers over 25 MW. Starting January 2027, new large-load customers sign 14-year contracts and must pay a minimum of 85 percent of contracted distribution/transmission demand charges and 60 percent of generation demand charges regardless of actual usage -- i.e., customers are liable for those minimums 'regardless of whether they actually end up building the data centers or using all the power they estimate they will need.'",
+   "microreactor_read": "The 85%/60% minimum-demand floors set the real backstop cost of grid power for a Virginia data center: even an under-built or delayed project pays most of its contracted demand charge. A microreactor operator's pitch to a Data Center Alley customer has to beat not the advertised tariff rate but this take-or-pay floor, since it defines the buyer's true downside if grid power is the only source.",
+   "sources": [
+    {"label": "American Action Forum — Virginia's New Data Center Electricity Rate Class", "url": "https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/", "quote": "pay a minimum of 85 percent of contracted distribution and transmission demand, and 60 percent of generation demand", "status": "fetched"},
+    {"label": "American Action Forum — Virginia's New Data Center Electricity Rate Class", "url": "https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/", "quote": "the new rate class of large-scale customers to sign a 14-year contract", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "cbre-wholesale-colocation-pricing-h2-2025",
+   "sector": "Compute",
+   "load": ["Shared data centers", "Company-owned data centers"],
+   "name": "CBRE North America wholesale colocation asking-rate benchmark, H2 2025",
+   "country": "US",
+   "region": "Primary North American wholesale colocation markets",
+   "parties": {"provider": "Wholesale colocation operators (market-wide, e.g. Equinix, Digital Realty, QTS)"},
+   "signed": "2025",
+   "price": "$196.25 per kW/month average asking rate for 250-500 kW requirements in primary markets (+6.6% YoY); pricing for 3-10 MW requirements up 12.5% YoY",
+   "summary": "CBRE's H2 2025 North America Data Center Trends report puts the average asking rate for a 250-500 kW wholesale colocation requirement in primary markets at a record $196.25/kW-month, up 6.6% year over year, with large-block (3-10 MW) pricing up an even steeper 12.5% year over year as AI and hyperscale demand outpaces available supply.",
+   "microreactor_read": "$196.25/kW-month works out to roughly $2,355/kW-year, or about $269/MWh if the space is drawing power continuously -- a genuine market-clearing price for firm, delivered data-center power today, and the number a colocation-sited microreactor deal has to beat on an all-in basis (power plus space plus interconnection) rather than on electricity cost alone. The 12.5% YoY jump for large multi-MW blocks is the more relevant comparison for a multi-MW reactor deployment than the smaller-cabinet figure.",
+   "sources": [
+    {"label": "CBRE — North America Data Center Trends H2 2025", "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025", "quote": "The average asking rate for a 250-to-500-kW requirement in primary wholesale colocation markets rose by 6.6% year-over-year to a record $196.25 per kW/month", "status": "fetched"},
+    {"label": "CBRE — North America Data Center Trends H2 2025", "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025", "quote": "Pricing for 3-to-10-MW requirements jumped by 12.5% year-over-year", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "ercot-sb6-large-load-interconnection-rules",
+   "sector": "Compute",
+   "load": ["AI and very large cloud data centers", "Regional data centers"],
+   "name": "Texas Senate Bill 6 large-load interconnection and curtailment rules",
+   "country": "US",
+   "region": "Texas (ERCOT)",
+   "parties": {"host": "ERCOT large-load customers (data centers)", "utility": "ERCOT / Texas PUCT"},
+   "instrument": "utility tariff",
+   "signed": "2025-06",
+   "capacity": "Applies to new or expanded large loads of 75 MW or greater at a single site",
+   "filings": [
+    {"forum": "Texas Legislature / PUCT", "type": "Statute (Senate Bill 6, 89th Legislature)", "id": "SB6", "date": "2025-06-20", "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/"}
+   ],
+   "summary": "Signed June 20, 2025, Texas SB6 directs the PUCT to adopt large-load interconnection standards for new or expanded single-site loads of 75 MW or more in ERCOT, with a flat minimum study fee of at least $100,000 for initial transmission screening. New large loads interconnecting after December 31, 2025 must be capable of curtailment during firm load-shed events and must install remote-disconnect equipment; sites with on-site backup generation must disclose those facilities to the interconnecting utility and ERCOT, which can direct them to deploy backup power or curtail load during grid emergencies.",
+   "microreactor_read": "SB6 formalizes that a large Texas data-center load is now a grid-management liability that must accept curtailment risk or run its own backup -- which raises the value of firm, non-curtailable on-site generation like a microreactor relative to a straight grid connection. The $100,000 minimum study fee and mandatory backup-disclosure regime are new fixed costs of the grid-only path that a microreactor pitch can price directly against.",
+   "sources": [
+    {"label": "McGuireWoods — Texas Senate Bill 6 Significantly Expands Regulatory Oversight Over Large Loads in ERCOT", "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/", "quote": "Apply to large loads 75 MW and above, unless the PUCT establishes a lower threshold", "status": "fetched"},
+    {"label": "McGuireWoods — Texas Senate Bill 6 Significantly Expands Regulatory Oversight Over Large Loads in ERCOT", "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/", "quote": "Establish a flat study fee of at least $100,000 for initial transmission screening studies", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "pjm-2027-2028-capacity-auction-data-center-driven-price",
+   "sector": "Compute",
+   "name": "PJM 2027/2028 Base Residual Auction capacity clearing price",
+   "country": "US",
+   "region": "PJM Interconnection footprint (13 states + DC)",
+   "parties": {"utility": "PJM Interconnection"},
+   "signed": "2025-12",
+   "price": "$333.44/MW-day (UCAP) -- the FERC-approved price cap -- for the entire PJM footprint",
+   "filings": [
+    {"forum": "PJM Interconnection", "type": "News release / auction results", "id": "2027/2028 Base Residual Auction", "date": "2025-12-17", "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf"}
+   ],
+   "summary": "PJM's December 2025 capacity auction for the 2027/2028 delivery year cleared 134,479 MW at $333.44/MW-day (UCAP), the FERC-approved price cap, up 1.3% from the prior auction and now the second consecutive auction to clear at the cap. PJM's own release states the forecast peak load driving this auction is roughly 5,250 MW higher than the prior year's forecast, and 'nearly 5,100 MW of that increase is attributable to data center demand' -- i.e. data centers are explicitly named as the reason the market cleared at the regulatory ceiling, with total cleared capacity now 6,623 MW short of PJM's own reliability target.",
+   "microreactor_read": "$333.44/MW-day annualizes to about $121,700/MW-year just for capacity -- before any energy charge -- and PJM says data centers are the reason it is pinned at the regulatory cap two auctions running. This is the cleanest available proxy for what firm, dispatchable capacity is worth to the grid a hyperscale data center sits on; a microreactor's capacity value (it counts as firm, non-curtailable UCAP) has a real market price to be benchmarked against, not just an assumed one.",
+   "sources": [
+    {"label": "PJM Interconnection — PJM Auction Procures 134,479 MW of Generation Resources", "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf", "quote": "The price came in at the FERC-approved cap, $333.44/MW-day (UCAP) for the entire PJM footprint", "status": "fetched"},
+    {"label": "PJM Interconnection — PJM Auction Procures 134,479 MW of Generation Resources", "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf", "quote": "Nearly 5,100 MW of that increase is attributable to data center demand", "status": "fetched"}
+   ]
+  }
+ ]
+}

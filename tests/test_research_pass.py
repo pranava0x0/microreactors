@@ -12,7 +12,14 @@ import sys
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PASS_DIR = ROOT / "data" / "research" / "deep-2026-08-24"
+# Every pass folder merged into data/instruments.json and data/benchmarks.json.
+# A pass that stops contributing to those files should drop out of this list;
+# one still contributing but missing here would pass validate/report on its own
+# while test_derived_datasets_match_the_pass silently stopped covering it.
+PASS_DIRS = (
+    ROOT / "data" / "research" / "deep-2026-08-24",
+    ROOT / "data" / "research" / "2026-08-28-apps",
+)
 DERIVED = ("data/instruments.json", "data/benchmarks.json")
 
 
@@ -25,17 +32,19 @@ class ResearchPass(unittest.TestCase):
     def test_pass_satisfies_its_contract(self):
         """Every record still validates: sources deep-linked and status-tagged,
         cases carry a number, mechanisms carry a precedent, ids unique."""
-        r = run("tools/research_pass.py", "validate", str(PASS_DIR.relative_to(ROOT)))
-        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        for pass_dir in PASS_DIRS:
+            r = run("tools/research_pass.py", "validate", str(pass_dir.relative_to(ROOT)))
+            self.assertEqual(r.returncode, 0, pass_dir.name + "\n" + r.stdout + r.stderr)
 
     def test_derived_datasets_match_the_pass(self):
         """data/instruments.json and data/benchmarks.json are generated. Editing a
         research file without re-running the merge would silently leave the site
         rendering the older copy."""
-        r = run("tools/merge_research.py", str(PASS_DIR.relative_to(ROOT)), "--check")
+        rel_dirs = [str(p.relative_to(ROOT)) for p in PASS_DIRS]
+        r = run("tools/merge_research.py", *rel_dirs, "--check")
         self.assertEqual(r.returncode, 0,
                          "run: python3 tools/merge_research.py "
-                         f"{PASS_DIR.relative_to(ROOT)}\n" + r.stdout + r.stderr)
+                         f"{' '.join(rel_dirs)}\n" + r.stdout + r.stderr)
 
     def test_every_derived_record_is_rendered_by_a_known_bucket(self):
         """The renderers key off `group` and `sector`. A record carrying a value

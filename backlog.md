@@ -90,12 +90,20 @@
   The obvious instruments are the NRC pre-application docket, the DOE authorisation route under the
   2025 executive orders, Part 53 vs Part 57 election, and the §104(c) non-profit research-reactor
   pathway Penn State used.
-- **med** · Reconcile `data/benchmarks.json` sectors with the Applications tab's eight sectors.
-  Benchmarks use the five sectors this pass researched; Applications uses Compute, Mining, Electric
-  Utilities, Manufacturing, Oil & Gas, Transportation, Civic Infrastructure, Agriculture & Food.
-  Marine terminals sit inside Transportation and medical campuses inside Civic Infrastructure, so a
-  reader cannot currently get from a load band to the price that sector actually pays. Add a
-  sector-to-sector map and cross-link both ways.
+- **done 2026-08-28** · Reconcile `data/benchmarks.json` sectors with the Applications tab's eight
+  sectors. A new pass (`data/research/2026-08-28-apps/`) added Compute, Manufacturing and
+  Agriculture & Food as benchmark sectors named identically to their Applications counterparts;
+  case records carry an optional `load` field tagging the exact sub-application they price; the
+  Applications tab renders a "N priced examples →" link per load automatically
+  (`site/assets/app.js` `loadCaseIndex`/`loadRow`). The original five sectors (Remote outposts &
+  microgrids, Off-grid mining & mineral processing, Marine terminals, Medical campuses, Critical
+  civic infrastructure) were then hand-tagged with `load` too — 55 of their 62 records, the other 7
+  don't map to any defined sub-application (a courthouse generator, a police-dispatch battery,
+  nursing-home microgrids). Sub-applications with a live priced example: 20 → 29, across all 8
+  sectors. Left open, low priority: 9 sub-applications in Manufacturing/Agriculture & Food still
+  have no priced case after two research passes (steel rolling, cement, lime, fertilizer, sawmills,
+  grain/oilseed mills, integrated ag campuses) — `data/research/2026-08-28-apps/apps-gapfill.json`
+  `_meta.absences` records which angles were already tried so a future pass doesn't retread them.
 - **med** · Verify the surplus-interconnection census against megawatts, not filings. 35 executed
   agreements is a count of documents; no filing description states the capacity inherited, so the
   size distribution — the thing that decides whether a 1–20 MW reactor fits in the leftover
@@ -186,4 +194,16 @@
   and once more read by the Top options renderer. The renderer reads the same objects, so this is
   not literal duplication in the payload — but it does mean any lazy-loading split has to keep
   Policy, Costs and Applications reading one copy.
+
+## Cross-links (2026-08-28, from Codex review on PR #6)
+
+- **low** · The Applications tab's "N priced examples →" link (and the pre-existing "Why a small
+  reactor, case by case" edgeGroups links it's modeled on) all route to the generic
+  `#economics/price-to-beat` tab rather than to the specific matching case(s) — a reader has to
+  scroll/search the sector's accordion for the example the link promised. True per-case deep
+  linking needs the Price-to-beat renderer to expose stable per-case anchors (`id` on each
+  `<details class="prec">`, keyed by the case's own `id`) and the hash router to support a
+  secondary in-page anchor on top of the panel/sub route it already parses — neither exists today
+  for any tab. Scoped out of the PR that added the Applications-side link (routing/anchor
+  plumbing, not data or citations); worth doing once, fixing both link sources at once.
 

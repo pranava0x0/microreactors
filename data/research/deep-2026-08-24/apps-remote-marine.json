@@ -68,48 +68,9 @@
      "quote": "serves 82,000 Alaskans in 193 communities that are largely reliant on diesel fuel for power generation",
      "status": "fetched"
     }
-   ]
-  },
-  {
-   "id": "kokhanok-era-microgrid-2024",
-   "sector": "Remote outposts & microgrids",
-   "name": "Kokhanok Paradigm Shift - DOE OCED Energy Improvements in Rural or Remote Areas award",
-   "country": "US",
-   "region": "Kokhanok, Alaska",
-   "parties": {
-    "host": "Kokhanok Village Council",
-    "provider": "US DOE Office of Clean Energy Demonstrations (ERA programme)",
-    "utility": "Kokhanok Village Council (village utility, PCE participant PC59)"
-   },
-   "instrument": "grant-funded",
-   "signed": "2024-08",
-   "capacity": "1 MW battery energy storage system plus 100 kW solar PV, a new 100 kW wind turbine and electric thermal storage, added to an existing diesel microgrid serving ~170 residents",
-   "capex": "Nearly $5 million federal cost share from DOE OCED",
-   "displaced": "Anticipated 70% of the local power plant's diesel use. RCA FY2024 Appendix 1 for Kokhanok Village Council: 358,953 kWh test-period sales, total power cost $1.0209/kWh, of which fuel/purchased power is $0.6498/kWh.",
-   "filings": [
-    {
-     "forum": "State PUC",
-     "type": "PCE Appendix 1 cost-of-service calculation for Kokhanok Village Council (PC59-0315V)",
-     "id": "L2300184 (docket U-23-010)",
-     "date": "2023-06-26",
-     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
-    }
    ],
-   "summary": "DOE's Office of Clean Energy Demonstrations announced roughly $5 million for the Kokhanok Village Council to bolt a 1 MW battery, 100 kW of solar, a 100 kW wind turbine and electric thermal storage onto the village's diesel microgrid, targeting displacement of about 70% of the powerhouse's diesel within two years. The load being served is genuinely tiny: the regulator's own FY2024 filing puts Kokhanok's test-period sales at 358,953 kWh, i.e. roughly a 41 kW average load. Against that, the village's certified cost of service is $1.0209/kWh, of which $0.6498/kWh is fuel. So the federal grant is buying about $5 million of hardware to cut a fuel bill of roughly $233,000 a year.",
-   "microreactor_read": "Kokhanok shows what the remote-village market actually pays and how small it is: $5 million of public capital against a 41 kW average load and a $0.65/kWh fuel bill. A microreactor sized at 1 MW would be 20x oversized for this village, so the reachable price signal is not the village itself but the fact that grant-makers will fund roughly $5,000 per installed kW of non-diesel capacity to displace $0.65/kWh diesel - a capex benchmark a reactor must land near, since the alternative here is already funded.",
-   "sources": [
-    {
-     "label": "US DOE Office of Clean Energy Demonstrations - Award Wednesdays, August 14, 2024",
-     "url": "https://www.energy.gov/oced/articles/award-wednesdays-august-14-2024",
-     "quote": "an anticipated 70% of the local power",
-     "status": "fetched"
-    },
-    {
-     "label": "Regulatory Commission of Alaska - Letter Order L2300184, Appendix 1 for Kokhanok Village Council",
-     "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf",
-     "quote": "Kokhanok Village Council APPENDIX 1 Power Cost Equalization Calculation Base Rate Change to $0.1935",
-     "status": "fetched"
-    }
+   "load": [
+    "Regional grids serving several communities"
    ]
   },
   {
@@ -152,6 +113,9 @@
      "quote": "a container vessel may draw 1 megawatt (MW) of electricity to replace its auxiliary engine operation at berth",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -194,7 +158,10 @@
      "status": "fetched"
     }
    ],
-   "nuclear": true
+   "nuclear": true,
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
+   ]
   },
   {
    "id": "project-pele-bwxt-2022",
@@ -228,7 +195,10 @@
      "status": "fetched"
     }
    ],
-   "nuclear": true
+   "nuclear": true,
+   "load": [
+    "Individual remote grids with sufficient year-round demand"
+   ]
   },
   {
    "id": "qulliq-nunavut-interim-rates-2025",
@@ -269,6 +239,9 @@
      "quote": "seeks rate increases to meet QEC",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Regional grids serving several communities"
    ]
   },
   {
@@ -296,6 +269,9 @@
      "quote": "55 applicants across 27 states and territories",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -325,6 +301,9 @@
      "quote": "electric costs by more than $60,000 a year",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -367,6 +346,9 @@
      "quote": "while a large cruise vessel may draw 5 MW or more",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {
@@ -393,6 +375,9 @@
      "quote": "almost $580 million in Port Infrastructure Development Program awards, funding 31 projects in 15 states and one territory",
      "status": "fetched"
     }
+   ],
+   "load": [
+    "Cargo-port electrical systems combining terminal operations and ship plug-in power"
    ]
   },
   {

@@ -72,3 +72,73 @@ was re-researched.
    trouble. They were correctly barred from running `tools/` (shared-index race), which means the
    main session has to read the absences as a work list — closing that one seam produced the
    surplus-interconnection census, the strongest single finding in the pass.
+
+## 2026-08-28 — Applications financial-case pass (Compute, Manufacturing, Agriculture & Food)
+
+Three agents, one wave, against `data/research/2026-08-28-apps/CONTRACT.md` — a narrower variant
+of the deep-2026-08-24 contract adding an optional `load` field so a case can name the exact
+Applications sub-application it prices, not just its sector.
+
+| # | Agent | Worked | Quality | ~tokens | Best alternative in hindsight |
+|---|---|---|---|---|---|
+| 1 | Compute | y | high — 12 records (6 nuclear PPAs re-verified against primary sources, 6 non-nuclear incumbent prices); found xAI ran ~421 MW of unpermitted gas turbines at its Memphis site — the real incumbent in fast-growth AI campuses is unpermitted on-site gas, not a utility rate | 175K | none |
+| 2 | Manufacturing | y | high — 7 records covering 8 of 12 loads; found Dow/X-energy's Seadrift, TX project (4×80MWe Xe-100, NRC construction permit docketed) — a real signed reactor-for-industry deal, the clearest "what a microreactor sale looks like" precedent in the whole corpus | 320K | none |
+| 3 | Agriculture & Food | y | high — 8 records covering 5 of 7 loads; found USDA REAP is structurally incapable of reaching reactor scale (caps at $1M) and that a $1B-funded indoor-growing operator (Plenty) ran on ordinary grid tariff with no PPA at all before closing | 198K | none |
+
+**What worked.** All three validated clean against the contract (0 errors, 27 records) on first
+pass. Honest, specific absences throughout — e.g. "7 of 7 mining PPAs withhold $/kWh" pattern held
+again; Manufacturing dropped two promising leads (Nucor Kingman, Intel/AEP Ohio) after the load's
+own definition excluded them on inspection rather than writing weak matches.
+
+**What the merge caught.** `tools/verify_quotes.py --cache` found 6 quote mismatches after merging
+— all real, all fixable, none fabricated: two were verbatim spans crossing a glyph boundary a plain
+tag-strip mangles (a curly-quoted defined term in a PDF, a `&nbsp;`-separated ® symbol, an HTML dollar
+sign split across markup — the numeral+symbol-joint pattern this file already warns about), two were
+paraphrase drift from the true verbatim sentence, and one was a genuinely wrong citation: a Corner
+Brook Pulp and Paper PPA record cited a 2024-11 gov.nl.ca release for a "July 2026–June 2027" term
+that release doesn't cover — the correct 2026-07-07 release existed and was found by a targeted
+WebSearch. Fixed all six by re-checking the cached bytes (or fetching live via the Browser pane where
+`fetch_source.py`'s urllib client hit a 403 — SEC EDGAR, Dominion's newsroom and CBRE all blocked the
+plain UA but rendered fine in a real browser) before touching any quote text.
+
+**Also fixed, orthogonal to this pass:** `tools/check_citations.py` never walked `benchmarks.json` or
+`instruments.json` — the claim-coverage scanner's docstring claimed full coverage while two whole
+data files, the ones carrying the dollar figures, were unchecked. Closed before adding any new
+records so they'd actually be gated. `tools/merge_research.py` also gained multi-pass-dir support
+(`nargs="+"`) — it previously rebuilt the derived files from exactly one pass dir, which would have
+silently dropped the deep-2026-08-24 five sectors the moment this pass merged.
+
+**Backfill, no new agents.** The `load` field only existed in this new pass's contract, so the
+original five benchmark sectors (62 records, deep-2026-08-24) carried none — the priced-example
+cross-link on the Applications tab worked for 3 of 8 sectors only. Tagged 55 of 62 existing records
+by hand against the Applications loads they actually describe (7 left untagged — a courthouse
+generator, a police-dispatch battery, nursing-home microgrids and similar don't map to any defined
+sub-application). Zero web research, one script, one re-merge: sub-applications with a live example
+went from 20 to 29, spanning all 8 sectors instead of 3.
+
+**Gap-fill wave, deliberately small.** 9 sub-applications across Manufacturing and Agriculture & Food
+still had zero priced case after the main pass, each already searched 1-5+ angles and documented as
+absent. Rather than two more full-budget agents, ran one agent with an explicit low-expectation,
+capped-budget brief: try only angles not already listed as tried, bail after two dead ends per load,
+and treat 0-4 new records as a fine outcome. Result: 2 of 9 closed (Intel Ohio One's AEP substation
+rate agreement, PUCO Case 24-734-EL-AEC; Eastman Kingsport's self-owned 200 MW CHP system) for 169K
+tokens — versus ~320K per agent in the main pass. The other 7 (steel rolling, cement, lime, fertilizer,
+sawmills, grain/oilseed mills, integrated ag campuses) stay honestly absent; the fresh angles tried
+and why they failed are recorded in `data/research/2026-08-28-apps/apps-gapfill.json` `_meta.absences`
+so a future pass doesn't retread them either. Sizing the follow-up agent to the marginal value of the
+gap — not to the shape of the original fan-out — is what kept this cheap.
+
+**Retrospective, after two Codex review rounds.** The 29-record pass (3 agents) plus the 2-record
+gap-fill (1 agent) validated 0 errors against the contract and 0 citation-coverage/quote-cache
+violations on first merge — but a *second* review round, after fixing round 1's findings, still
+found two real data-quality bugs the gates couldn't catch: the gap-fill agent's Intel/AEP record
+duplicated one the original Manufacturing agent had already written (days apart, no cross-pass
+visibility), and that original record's own `capacity` field misattributed a 500 MW full-site
+figure to a 50 MW substation — both real numbers from the same cited article, matched clean by the
+quote gate, wrong in combination. Neither would have been caught without a reviewer that fetches
+sources and reads past the first matching number; a broader post-merge duplicate sweep (by shared
+source URL, then name/region/date) then found the same class of bug had shipped once already, in
+the original deep-2026-08-24 pass (two agents, one wave, both writing the same Kokhanok, AK DOE
+grant). Net for the wave: 31 candidate records in, 29 shipped, 2 real bugs required a human-grade
+second read to find. Cheaper route in hindsight: none — this is exactly what the second review
+round is for, and the fixes cost three replies and two small edits, not a re-research.

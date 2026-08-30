@@ -1,11 +1,14 @@
 {
  "_meta": {
-  "captured": "2026-08-24",
-  "pass": "data/research/deep-2026-08-24",
+  "captured": "2026-08-29",
+  "pass": [
+   "data/research/deep-2026-08-24",
+   "data/research/2026-08-28-apps"
+  ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
    {
-    "file": "apps-federal-awards.json",
+    "file": "deep-2026-08-24/apps-federal-awards.json",
     "kind": "case",
     "records": 26,
     "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
@@ -25,7 +28,7 @@
     ]
    },
    {
-    "file": "apps-medical-civic.json",
+    "file": "deep-2026-08-24/apps-medical-civic.json",
     "kind": "case",
     "records": 12,
     "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
@@ -47,7 +50,7 @@
     ]
    },
    {
-    "file": "apps-mining.json",
+    "file": "deep-2026-08-24/apps-mining.json",
     "kind": "case",
     "records": 13,
     "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
@@ -65,9 +68,9 @@
     ]
    },
    {
-    "file": "apps-remote-marine.json",
+    "file": "deep-2026-08-24/apps-remote-marine.json",
     "kind": "case",
-    "records": 11,
+    "records": 10,
     "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -85,7 +88,7 @@
     ]
    },
    {
-    "file": "mech-batteries.json",
+    "file": "deep-2026-08-24/mech-batteries.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
@@ -104,7 +107,7 @@
     ]
    },
    {
-    "file": "mech-diesel.json",
+    "file": "deep-2026-08-24/mech-diesel.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
@@ -124,7 +127,7 @@
     ]
    },
    {
-    "file": "mech-dockets.json",
+    "file": "deep-2026-08-24/mech-dockets.json",
     "kind": "mechanism",
     "records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
@@ -143,7 +146,7 @@
     ]
    },
    {
-    "file": "mech-economics-permitting.json",
+    "file": "deep-2026-08-24/mech-economics-permitting.json",
     "kind": "mechanism",
     "records": 6,
     "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
@@ -155,7 +158,7 @@
     ]
    },
    {
-    "file": "mech-ferc-census.json",
+    "file": "deep-2026-08-24/mech-ferc-census.json",
     "kind": "mechanism",
     "records": 2,
     "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
@@ -169,7 +172,7 @@
     ]
    },
    {
-    "file": "mech-interconnection.json",
+    "file": "deep-2026-08-24/mech-interconnection.json",
     "kind": "mechanism",
     "records": 12,
     "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
@@ -188,7 +191,7 @@
     ]
    },
    {
-    "file": "mech-nuclear-structures.json",
+    "file": "deep-2026-08-24/mech-nuclear-structures.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
@@ -212,7 +215,7 @@
     ]
    },
    {
-    "file": "mech-selling-structure.json",
+    "file": "deep-2026-08-24/mech-selling-structure.json",
     "kind": "mechanism",
     "records": 7,
     "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
@@ -222,6 +225,68 @@
      "No dollar figures: this series is a legal guide and does not price any of the structures it describes. Costs must come from the case records.",
      "No state has yet been found that names nuclear specifically in a microgrid or third-party-sale statute; the structures below are technology-neutral by default, which is a finding rather than a gap",
      "The Coventry PURA docket (20-03-17) and the ComEd ICC petition (2018) are cited via LBNL rather than read in the original — a follow-up pass should pull both from the state dockets"
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-agri-food.json",
+    "kind": "case",
+    "records": 8,
+    "scope": "Agriculture & Food sector - controlled-environment ag and food-processing power deals, the price a 1-20 MW reactor has to beat.",
+    "incomplete": false,
+    "absences": [
+     "No signed power/energy deal with a published $/kWh or $/MWh price was found anywhere in this sector - every priced case below discloses capacity, capex, or a discount mechanism, never a bare rate.",
+     "Large grain and oilseed mills: no grain elevator, flour mill, or oilseed crush plant utility interconnection or large-load agreement with a published MW figure was found after five+ search angles (cooperative utility disputes, new substations, oilseed crush capacity expansions, Cargill/ADM/Bunge, CHS/Ardent Mills/Consolidated Grain & Barge). USDA REAP grant data is genuinely award-level but caps at $1 million for a renewable-energy grant ($500,000 for efficiency) and $25 million for a loan guarantee program-wide - real grain-related awards found were all grain-dryer efficiency projects in the $75k-$400k range, saving ~150,000-420,000 kWh/yr, nowhere near 1-20 MW baseload procurement. No qualifying case record for this load; dropped.",
+     "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: no single named campus with a published power deal or capacity figure was found; this load appears to be a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category.",
+     "Kalera, Local Bounti, and other CEA operators' state utility contracts (e.g. Georgia Power) were searched for by name; none surfaced a company-specific large-load agreement with published numbers.",
+     "Windset Farms' 2024 upgrade to BC Hydro's 69 kV transmission line (from 25 kV distribution) is real and dated but BC Hydro's own writeup gives no MW or capex figure ('we've got the megawatts we need' is the only quote) - dropped for lack of a number after 2 searches.",
+     "No AI/vertical-farming or aquaculture nuclear PPA of any kind (large or SMR) was found in this sector, unlike Compute or Manufacturing.",
+     "Cargill/ADM/Bunge soybean-crush-plant interconnection agreements: searched by name, no MW or dollar figure surfaced."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-compute.json",
+    "kind": "case",
+    "records": 12,
+    "scope": "Compute sector - data-center/AI power deals: signed hyperscaler nuclear PPAs re-verified against source, plus the non-nuclear incumbent price (utility large-load tariffs, on-site gas backup, colocation power pricing) a 1-20 MW reactor has to beat at data-center scale.",
+    "incomplete": false,
+    "absences": [
+     "No published $/MWh or $/kWh figure was found for any of the six hyperscaler nuclear PPAs (Microsoft, Meta, Google, Amazon x3) -- all six disclose capacity, term and dates but withhold price, consistent with the pattern noted in the deep-2026-08-24 mining pass.",
+     "Digital Realty and Equinix investor materials did not yield a clean, citable $/kW colocation price figure on the angles searched; used CBRE's independent North America Data Center Trends H2 2025 report instead, which is the industry-standard third-party benchmark and does disclose exact figures.",
+     "Diesel/gas generator on-site backup capex (as opposed to the xAI Memphis capacity/permit figures, which are real but lack a dollar cost) was searched for at hyperscale campuses (Meta, Microsoft, OpenAI/Stargate sites) and not found published; no record written for that angle specifically.",
+     "No utility interconnection-queue cost or multi-year delay figure specific to a named data-center project (as opposed to system-wide PJM queue statistics) was found with a dollar figure attached; PJM's own release states queue backlog volumes (170,000 MW processed since 2023, 30,000 MW remaining in the transition queue) but no cost-to-the-customer figure, so that angle is represented only via the capacity-auction price record.",
+     "No priced case was found specifically naming 'Supercomputing centers' as a load (DOE/national-lab supercomputer power costs are typically appropriated, not market-priced) or 'Dedicated baseload and outage-protection blocks within larger data-center campuses' as a distinct priced instrument -- both loads are covered only indirectly, via the tariff and colocation-pricing records that apply to the campuses hosting such blocks."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-gapfill.json",
+    "kind": "case",
+    "records": 2,
+    "scope": "Second-pass angles on the 9 Manufacturing/Agriculture & Food loads that apps-manufacturing.json and apps-agri-food.json (2026-08-28) could not close: fresh named-facility searches, PUC dockets, and DOE award pages not tried in the prior pass.",
+    "incomplete": false,
+    "absences": [
+     "Steel rolling and finishing plants: still no priced power deal for a genuinely rolling/finishing-only mill after this pass. California Steel Industries (Fontana, CA - purchased-slab rolling only) appears only as a named party in an SCE General Order 96-B service-agreement index with no MW or dollar figure attached. AM/NS Calvert (Calvert, AL - finishing only, no melt shop) yielded no power-specific figure in any fetched source. ArcelorMittal Calvert's new $1.2 billion, 150,000 t/yr non-grain-oriented electrical steel facility (announced Feb 2025) has real capex ($1.2B) and a real federal award ($280.5 million IRS Section 48C investment tax credit, confirmed via multiple fetched sources) but zero published electricity/MW figure for the plant, so it was not written up as a case - this is an industrial investment record, not a power deal. PRO-TEC Coating Company (Leipsic, OH - JV finishing-only automotive coated-steel mill) has a PUCO-approved rate agreement (case 19-124-EL-AEC, ~427 jobs, over $700 million in investment during the arrangement) participating in AEP Ohio's interruptible-load program, but the PUCO news page for the case 404'd and no fetched source gave the MW figure for its interruptible block. JSW Steel's Mingo Junction, OH expansion (real: $160 million bond-financed VTD/caster upgrade, AEP Ohio rate agreement, 120 MW curtailable under an interruptible program, $34.5 million in credits over 4 years) was found with hard numbers but is excluded because Mingo Junction is a scrap-fed EAF melt-shop mill, not a rolling/finishing-only plant, matching this load's own exclusion rule from the prior pass.",
+     "Cement plants: no PUC docket or SEC filing surfaced a cement-plant-specific electric service agreement or MW figure. National Cement Company of California's Lebec Net-Zero Project (DOE Industrial Demonstrations Program, up to $500 million matching funds, 950,000 t/yr CO2 target) is real and dated but is a carbon-capture/kiln-fuel-switching award, not a power purchase or generation deal, and carries no electricity MW figure - same pattern the prior pass found for Heidelberg Mitchell.",
+     "Lime plants: no plant-level power deal, PUC docket, or DOE Better Plants award with an MW or power-dollar figure was found for Graymont, Mississippi Lime Company, or Carmeuse. United States Lime & Minerals' FY2024 10-K discloses a new vertical kiln project (~$65 million estimated construction cost) but this is a kiln capex figure, not a power/electricity deal, so it was not written up.",
+     "Fertilizer plants: LSB Industries' El Dorado, AR ammonia plant (375,000 t/yr nameplate) includes an on-site cogeneration facility per company materials, but no MW capacity figure for it was found in any source. CVR Partners' Coffeyville, KS petroleum-coke-gasification ammonia/UAN complex (1,300 t/day ammonia unit, 3,100 t/day UAN unit, 89 MMscf/day gasifier) likewise has no published cogeneration MW figure. Both dropped for lacking a power number, consistent with the prior pass's CF Industries/Woodside-OCI absence.",
+     "Large integrated sawmills and wood-products plants: no DOE award or PUC docket for a named sawmill surfaced anything beyond the pulp-and-paper-sector Vicksburg Containerboard Mill carbon-capture pilot (not a sawmill) and general Interfor/Georgia-Pacific acquisition/capacity news with zero power figures.",
+     "Large grain and oilseed mills: the current 2024-2026 soybean-crush build-out (roughly 189 million bushels/year of new US capacity in the pipeline) is real and well covered in trade press - High Plains Processing near Mitchell, SD ($500 million, 35 million bu/yr, opened Oct 2025, joint venture of South Dakota Soybean Processors and BP Products North America) and Louis Dreyfus Company's Upper Sandusky, OH plant ($500 million, 1.5 Mt/yr crush capacity, AEP Ohio territory) both have real capex and production-capacity numbers but neither source disclosed an electric utility interconnection MW figure or substation cost, so neither qualifies as a power-deal case under this pass's numbers-or-nothing rule.",
+     "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: tried two named vertically-integrated food campuses (Lincoln Premium Poultry/Costco, Fremont, NE - processing plant plus hatchery plus feed mill; NatureFresh Farms, Delta, OH - greenhouse plus distribution/cold-storage). Neither surfaced a power/utility figure. This reinforces the prior pass's conclusion that this load is a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category with its own precedent."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-manufacturing.json",
+    "kind": "case",
+    "records": 6,
+    "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
+    "incomplete": false,
+    "absences": [
+     "Steel rolling and finishing plants: no signed PPA, CHP contract, or utility large-load agreement specific to a rolling/finishing-only mill (as opposed to integrated EAF steelmaking) was found with a dollar figure or dedicated MW block. sectors.json's own demand-response case study (16 MW peak, hot-rolling process) is snippet-only and not a contract. Nucor's Kingman, Arizona bar mill was originally rolling-only, but Nucor added an EAF melt shop there in 2022-2024, so its 2025 50 MW/200 MWh Ameresco battery deal cannot cleanly be attributed to a rolling-only load and was not written up. Nucor's and Steel Dynamics' large solar/wind VPPAs (250 MW and 308 MW) are offsite grid-scale renewable offtake deals, not plant-specific power supply contracts. Hyundai-POSCO's new Louisiana mill has a signed Entergy Louisiana electric service agreement, but it is an integrated EAF flat-products mill (melt shop plus rolling), explicitly excluded by this load's own definition.",
+     "Cement plants: Heidelberg Materials' Mitchell, Indiana plant DOE Industrial Demonstrations Program award (up to $500 million OCED cost share, Phase 1 started at $300,000) is a real, dated, dollar-figured award, but it funds carbon capture, not a power purchase or on-site generation deal, and no MW figure for plant electricity demand or a power supply contract was found in DOE or company materials. Not written as a case because it carries no capacity or price number tied to power.",
+     "Lime plants: two search angles (lime kiln waste-heat power generation, lime plant CHP/PPA) surfaced no plant-level power deal with a dollar figure or MW block anywhere. The sector's own demand band (1-3 MW) is the smallest in Manufacturing and appears to be below the threshold at which US/European lime producers sign dedicated power contracts.",
+     "Fertilizer plants: CF Industries' $4 billion Blue Point ammonia complex (Ascension Parish, Louisiana, with Mitsui and JERA) confirms Entergy Louisiana as the site's power supplier, but no MW figure, capex for the power supply itself, or contract term was found in company or trade coverage. Woodside/OCI's $2.35 billion Beaumont, Texas clean-ammonia complex (1.1 Mtpa Phase 1, hydrogen supplied 'over the fence' by Linde) likewise discloses production capacity and project cost but no electricity MW or power-contract figure in any fetched source. Both dropped as candidate cases for lacking a numbers-bearing power figure specific to electricity.",
+     "Large integrated sawmills and wood-products plants: no per-mill power purchase agreement, CHP contract or utility large-load deal was found. Trade press (Forest Business Network, Random Lengths) and USDA Forest Service materials report only aggregate industry energy use, matching the same absence sectors.json already recorded for this load.",
+     "Chemical plants: searched for a named US chemical plant on-site CHP PPA or utility large-load agreement (Dow, LyondellBasell, BASF Freeport); two angles surfaced only general CHP suitability statements (already captured qualitatively in sectors.json's context block) with no plant-specific contract, MW figure or price beyond the Dow/X-energy SMR case written up below.",
+     "Semiconductor fabs: Samsung's Taylor, Texas fab is served by Oncor and county officials cite reliability commitments, but no verified MW figure or contract term for the Oncor-Samsung arrangement was found in a fetched primary or trade source (a search-summary figure of '30 MW initial, 60 MW LOI' could not be confirmed by fetching a page and is dropped per the snippet-only rule); Micron's Boise, Idaho fab expansion (announced 2027 startup) has no new large-load agreement found distinct from a 1990s/2010-era 60-100 MW legacy IPUC contract, which predates the current fab buildout and was judged too stale to cite as evidence of what a modern fab pays. TSMC's Phase 1 north Phoenix fab needs 'approximately 200 megawatts' per a fetched trade-press source, and APS is relocating multiple transmission lines to serve it, but no formal signed electric-service-agreement instrument, capex for the power infrastructure, or contract date was found (Linde's associated $600 million investment is for on-site gas supply, not power) - too thin against the numbers-or-nothing bar next to the fully documented Intel/AEP Ohio case."
     ]
    }
   ],
@@ -297,7 +362,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "potential-to-emit-trap",
@@ -346,7 +411,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     },
     {
      "id": "dod-ota-contractor-owned-contractor-operated-base-power",
@@ -400,7 +465,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "gov-boo-ppa-single-host-installation",
@@ -453,7 +518,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "municipal-carveout-p3",
@@ -503,7 +568,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "njbpu-tcder-microgrid-qo16100967",
@@ -566,7 +631,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "self-service-single-owner",
@@ -617,7 +682,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "resiliency-as-a-service-microgrid-subscription",
@@ -669,7 +734,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "puct-tbpp-59024-backup-power-package",
@@ -724,7 +789,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "third-party-btm-ppa",
@@ -773,7 +838,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "row-crossing-and-contiguity",
@@ -822,7 +887,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "dod-utilities-privatization-conveyance",
@@ -876,7 +941,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "air-district-emergency-generator-permit-cap",
@@ -927,7 +992,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "utility-owned-behind-the-meter-backup-tariff",
@@ -980,7 +1045,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "utility-procured-onsite-generation-special-contract",
@@ -1032,7 +1097,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "host-owned-reactor-for-process-heat-and-steam",
@@ -1084,7 +1149,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "cms-health-care-microgrid-categorical-waiver",
@@ -1129,7 +1194,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "cost-type-government-owned-prototype",
@@ -1173,7 +1238,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "rice-neshap-emergency-engine-hour-cap",
@@ -1216,7 +1281,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "sgip-self-generation-incentive-eligibility",
@@ -1256,7 +1321,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "federal-espc-eaas-task-order",
@@ -1295,7 +1360,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "true-lease-not-ppa",
@@ -1331,7 +1396,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "utility-owned-rate-based",
@@ -1367,7 +1432,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "third-party-sale-authorization-state-law",
@@ -1406,7 +1471,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "tariffed-on-bill-lease-of-customer-sited-backup",
@@ -1445,7 +1510,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "texas-backup-power-package-program",
@@ -1484,7 +1549,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     },
     {
      "id": "master-metering-waiver",
@@ -1521,7 +1586,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-selling-structure.json"
+     "_from": "deep-2026-08-24/mech-selling-structure.json"
     },
     {
      "id": "uptime-institute-tier-engine-generator-rating",
@@ -1559,7 +1624,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-diesel.json"
+     "_from": "deep-2026-08-24/mech-diesel.json"
     }
    ]
   },
@@ -1628,7 +1693,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "all-source-rfp-guarantee-stack",
@@ -1681,7 +1746,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "cms-hcms-categorical-waiver",
@@ -1741,7 +1806,7 @@
        "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "elcc-capacity-accreditation-of-the-pair",
@@ -1795,7 +1860,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "microgrid-energy-services-agreement-p3",
@@ -1849,7 +1914,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "ratepayer-funded-microgrid-grant",
@@ -1903,7 +1968,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "single-owner-merchant-arbitrage-pair",
@@ -1957,7 +2022,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "itc-charging-restriction",
@@ -2011,7 +2076,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "bess-code-patchwork",
@@ -2060,7 +2125,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     },
     {
      "id": "generator-hybridisation-ramp-and-spinning-reserve",
@@ -2112,7 +2177,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "grid-services-contract-black-start-inertia",
@@ -2165,7 +2230,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "intentional-islanding-interconnection-gate",
@@ -2218,7 +2283,7 @@
        "note": "Quote replaced 2026-08-25: the previously cited '50-bed acute care facility' wording does not appear on this page. The replacement is verbatim from the cached copy and supports the same point."
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "non-wires-alternative-rate-based-pair",
@@ -2272,7 +2337,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "single-hybrid-ppa",
@@ -2325,7 +2390,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     },
     {
      "id": "storage-tolling-agreement",
@@ -2377,7 +2442,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-batteries.json"
+     "_from": "deep-2026-08-24/mech-batteries.json"
     }
    ]
   },
@@ -2443,7 +2508,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "aep-ohio-schedule-dct-large-load-tariff",
@@ -2507,7 +2572,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "doe-ardp-cooperative-agreement-cost-share",
@@ -2568,7 +2633,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "im-indiana-tariff-ip-large-load-46097",
@@ -2632,7 +2697,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "njbpu-dco-energy-onsite-generation-qo20030191",
@@ -2693,7 +2758,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "rate-regulated-utility-ownership-small-reactor",
@@ -2754,7 +2819,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "tech-neutral-tax-credits-45y-48e-new-nuclear",
@@ -2815,7 +2880,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "co-located-load-btmg",
@@ -2868,7 +2933,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "curtailable-large-load-fast-path",
@@ -2921,7 +2986,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "ercot-large-load-and-sb6-net-metering",
@@ -2975,7 +3040,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "ercot-connect-and-manage-small-generation",
@@ -3029,7 +3094,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "energy-only-and-provisional-service",
@@ -3083,7 +3148,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "blue-sky-revenue-gap",
@@ -3132,7 +3197,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     },
     {
      "id": "pjm-replacement-generation-cir-transfer",
@@ -3185,7 +3250,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "ferc-lgip-cluster-queue",
@@ -3239,7 +3304,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "comed-bronzeville-icc-17-0331",
@@ -3293,7 +3358,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-dockets.json"
+     "_from": "deep-2026-08-24/mech-dockets.json"
     },
     {
      "id": "never-interconnect-islanded",
@@ -3346,7 +3411,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "distribution-level-state-interconnection",
@@ -3400,7 +3465,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "sgip-fast-track",
@@ -3454,7 +3519,7 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "sgip-study-process",
@@ -3508,7 +3573,7 @@
        "note": "The host returns no article text to a non-browser client, so the quote is search-corroborated rather than read in a fetched page."
       }
      ],
-     "_from": "mech-interconnection.json"
+     "_from": "deep-2026-08-24/mech-interconnection.json"
     },
     {
      "id": "surplus-interconnection-uptake",
@@ -3559,7 +3624,7 @@
        "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
       }
      ],
-     "_from": "mech-ferc-census.json"
+     "_from": "deep-2026-08-24/mech-ferc-census.json"
     },
     {
      "id": "co-location-docket-concentration",
@@ -3604,7 +3669,7 @@
        "note": "eLibrary serves a JavaScript shell to non-browser clients, so this page cannot be fetched as text. The quoted string is the filing description returned by eLibrary's own search API, reproducible with: python3 tools/ferc_census.py \"Surplus Interconnection Service Agreement\""
       }
      ],
-     "_from": "mech-ferc-census.json"
+     "_from": "deep-2026-08-24/mech-ferc-census.json"
     },
     {
      "id": "joint-action-subscription-target-price",
@@ -3655,7 +3720,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "reservation-fee-rofr-mfn-offtake",
@@ -3700,7 +3765,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "standby-charges",
@@ -3742,7 +3807,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     },
     {
      "id": "interconnection-cost-blowup",
@@ -3779,7 +3844,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     },
     {
      "id": "departing-load-economics",
@@ -3815,7 +3880,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-economics-permitting.json"
+     "_from": "deep-2026-08-24/mech-economics-permitting.json"
     }
    ]
   },
@@ -3904,7 +3969,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "price-anderson-financial-protection-tiers",
@@ -3964,7 +4029,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "doe-authorization-ota-test-reactor",
@@ -4017,7 +4082,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     },
     {
      "id": "national-lab-testbed-access",
@@ -4071,7 +4136,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "mech-nuclear-structures.json"
+     "_from": "deep-2026-08-24/mech-nuclear-structures.json"
     }
    ]
   }
