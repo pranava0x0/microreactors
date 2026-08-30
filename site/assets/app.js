@@ -426,7 +426,52 @@
 
   render($("reading"), esc(D.costs.reading).replace(/\*\*(.+?)\*\*/g, "<strong style=\"color:var(--text-primary)\">$1</strong>"));
 
+  /* Unit economics: what one unit costs to build, what the twentieth costs,
+     and whether reactor type changes the answer. Capital cost per kW was
+     missing from this site entirely until 2026-08-29 — it carried levelised
+     energy cost only, which is the number a buyer argues about but not the
+     number they sign for. */
+  (function () {
+    var C = D.costs;
+    if (!C.capex) { return; }
+    var money = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
+    var band = function (lo, hi, unit) {
+      return lo === hi ? money(lo) + unit : money(lo) + "\u2013" + money(hi) + unit;
+    };
+    render($("capex-q"), esc(C.capex.question));
+    render($("capex-note"), esc(C.capex.note));
+    render($("capex"), '<div class="unitrows">' + C.capex.rows.map(function (r) {
+      return '<div class="unitrow"><span class="unitname">' + esc(r.scenario) + "</span>" +
+        '<span class="unitval">' + esc(band(r.low_kwe, r.high_kwe, "/kWe")) + "</span>" +
+        '<span class="unitbasis">' + esc(r.basis) + " " + cite(r.sources) + "</span></div>";
+    }).join("") + "</div>");
+    render($("capex-reading"), esc(C.capex.reading));
+
+    var L = C.learning_curve;
+    render($("lc-q"), esc(L.question));
+    render($("lc-worked"), "<code>" + esc(L.formula) + "</code><br>" + esc(L.worked));
+    render($("lc-classes"), '<div class="unitrows">' + L.classes.map(function (c) {
+      return '<div class="unitrow"><span class="unitname">' + esc(c.klass) + "</span>" +
+        '<span class="unitval">&times;' + esc(c.multiplier.toFixed(2)) + "</span>" +
+        '<span class="unitbasis">' + esc(c.detail) + "</span></div>";
+    }).join("") + "</div>");
+    render($("lc-floor"), esc(L.floor) + " " + esc(L.rates) + " " +
+      esc(L.definitions_warning) + " " + cite(L.sources));
+
+    var A = C.archetypes;
+    render($("arch-q"), esc(A.question));
+    render($("arch-note"), esc(A.note));
+    render($("archetypes"), '<div class="unitrows">' + A.rows.map(function (r) {
+      return '<div class="unitrow"><span class="unitname">' + esc(r.archetype) + "</span>" +
+        '<span class="unitval">' + esc(money(r.foak_mwh) + "/MWh \u2192 " + money(r.noak_mwh) + "/MWh") +
+        "</span>" + '<span class="unitbasis">' + esc(r.analogue) + " " + cite(A.sources) +
+        "</span></div>";
+    }).join("") + "</div>");
+    render($("arch-finding"), esc(A.finding) + " " + esc(A.convergence) + " " + cite(A.sources));
+  })();
+
   makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
+                           { id: "unit-economics", label: "Unit economics" },
                            { id: "tax-credit", label: "Tax credit" },
                            { id: "price-to-beat", label: "Price to beat" }]);
 

@@ -492,3 +492,19 @@ details.sector:not([open]) > :not(summary){display:none}
   letter-spacing:var(--track-label);font-size:var(--size-caption)}
 .voicemeans{margin:var(--space-2) 0 0 0;color:var(--text-secondary);font-size:var(--size-caption);
   line-height:1.55}
+
+/* Unit economics — capacity cost, the learning multipliers, and cost by
+   reactor type. One row shape for all three tables: name, figure, basis. */
+.unitrows{border-top:1px solid var(--border-subtle);margin:var(--space-4) 0}
+.unitrow{padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);
+  display:flex;flex-direction:column;gap:var(--space-1);min-width:0}
+@media(min-width:720px){
+  .unitrow{display:grid;grid-template-columns:minmax(0,14rem) auto minmax(0,1fr);
+    gap:var(--space-4);align-items:baseline}
+}
+.unitname{color:var(--text-primary);font-weight:var(--weight-medium);min-width:0;
+  overflow-wrap:anywhere}
+.unitval{font-family:var(--font-mono);color:var(--antares-red);white-space:nowrap;
+  font-weight:var(--weight-medium)}
+.unitbasis{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
+  line-height:1.55;overflow-wrap:anywhere}
