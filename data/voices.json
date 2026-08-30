@@ -5,8 +5,7 @@
     "why_it_exists": "The rest of this site is figures. This page is the argument behind them. The buyer and the sellers disagree with the critics about almost everything except one point, which is that the first units are expensive and somebody other than a normal customer has to pay for them.",
     "note_on_dates": "The Cheeky Pint interview predates the August 2026 Janus award — DeWahl describes Janus as a competition still to be run. It is quoted here because it is the clearest public statement of how Antares sequences its markets, not as current news.",
     "note": "Hand-curated quotes gathered before the 2026-08-29 research pass. Kept separately so tools/merge_voices.py builds data/voices.json from (this file + the pass) and stays idempotent - an earlier version read its own output and reported drift the moment it had written it.",
-    "pending": "Not yet merged, still being written: wave2-csuite.json. Re-run tools/merge_voices.py when complete.",
-    "roster_note": "105 named executives across 16 companies, each with a source. Of 118 citations here, 89 were checked against the page they cite and 29 rest on search results without a direct page read - those carry a dagger. Spans that could not be found in the page they claimed were demoted or dropped."
+    "roster_note": "130 named executives across 20 companies, each with a source. Of 143 citations here, 101 were checked against the page they cite and 42 rest on search results without a direct page read - those carry a dagger. Spans that could not be found in the page they claimed were demoted or dropped."
   },
   "groups": [
     {
@@ -84,6 +83,25 @@
               "label": "The Motley Fool — BWXT Q2 2026 Earnings Call Transcript (call held Aug 3, 2026)",
               "url": "https://www.fool.com/earnings/call-transcripts/2026/08/10/bwxt-bwxt-q2-2026-earnings-call-transcript/",
               "quote": "the CapEx associated with standing up that facility and populating with equipment is a few hundred million dollars, up to $500 million",
+              "status": "fetched"
+            }
+          ]
+        },
+        {
+          "id": "blueenergy-jurewicz-blue-way-costs",
+          "speaker": "Jake Jurewicz",
+          "role": "Chief Executive Officer and Co-Founder, Blue Energy",
+          "org": "Blue Energy",
+          "date": "2026-08-13",
+          "venue": "Company newsroom (press release with GE Vernova Hitachi)",
+          "topic": "What it costs",
+          "quote": "We are shifting from the old way of building large reactor nuclear power to instead do it the 'Blue Way' that slashes costs and time to power and finally makes nuclear a financeable, repeatable product.",
+          "what_it_means": "Blue Energy's CEO states the company's entire value proposition as a direct contrast to conventional large-reactor construction economics -- cost and schedule reduction through shipyard prefabrication -- though he stops short of naming a $/kW or $/MWh figure.",
+          "sources": [
+            {
+              "label": "GE Vernova — \"Blue Energy, GE Vernova Hitachi Sign Agreement to Launch Next Phase of Texas Gas-Plus-Nuclear Project\" (Aug 13, 2026)",
+              "url": "https://www.gevernova.com/news/press-releases/blue-energy-ge-vernova-hitachi-launch-next-phase-gas-plus-nuclear-project",
+              "quote": "We are shifting from the old way of building large reactor nuclear power to instead do it the 'Blue Way'",
               "status": "fetched"
             }
           ]
@@ -943,6 +961,25 @@
           ]
         },
         {
+          "id": "radiant-starrett-equinix-preorder",
+          "speaker": "Mike Starrett",
+          "role": "Chief Revenue Officer (at the time), Radiant Industries",
+          "org": "Radiant Industries",
+          "date": "2025-08-14",
+          "venue": "Company newsroom (Newswire.com wire release)",
+          "topic": "Orders and backlog",
+          "quote": "As the energy demands of digital infrastructure continue to rise, our customers are looking for power that is not only reliable, but also rapidly",
+          "what_it_means": "Confirms a named data-center operator (Equinix) placed a preorder with deposits for 20 Kaleidos microreactors (1 MW each, 5-year no-refuel cycle) -- a concrete commercial commitment from a hyperscale-adjacent customer, not just an LOI, and the clearest 'digital infrastructure' customer signal found for Radiant in this pass.",
+          "sources": [
+            {
+              "label": "Newswire.com — \"Radiant Announces Equinix Preorder & Deposits for 20 Kaleidos Microreactors\" (Aug 14, 2025)",
+              "url": "https://www.newswire.com/news/radiant-announces-equinix-preorder-deposits-for-20-kaleidos-22625143",
+              "quote": "This agreement with Equinix demonstrates the critical need to deliver dependable power anywhere it's needed, within days",
+              "status": "fetched"
+            }
+          ]
+        },
+        {
           "id": "radiant-shivanandan-army-savvy-customer",
           "speaker": "Tori Shivanandan",
           "role": "President & COO",
@@ -963,6 +1000,25 @@
               "label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
               "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
               "quote": "The numbers tell the story",
+              "status": "fetched"
+            }
+          ]
+        },
+        {
+          "id": "radiant-starrett-janus-army-design",
+          "speaker": "Mike Starrett",
+          "role": "Chief Commercial Officer (Chief Revenue Officer at hire), Radiant Industries",
+          "org": "Radiant Industries",
+          "date": "2026-08-26",
+          "venue": "Trade-press wire coverage of the U.S. Army's ~$2.2B Janus microreactor contract awards",
+          "topic": "Orders and backlog",
+          "quote": "The Army was very thoughtful in designing the Janus Program to capitalize on the complementary strengths of the government and private sector.",
+          "what_it_means": "Radiant's commercial chief frames the Army's roughly $750M Janus award as a deliberately structured public-private split rather than a grant, echoing his separate framing that military volume is meant to bring down unit costs for later commercial buyers.",
+          "sources": [
+            {
+              "label": "reflector.com (wire pickup) — \"Radiant Wins $750M Contract from U.S. Army to Deliver Energy Independence to U.S. Military Bases\" (Aug 26, 2026)",
+              "url": "http://www.reflector.com/news/national/radiant-wins-750m-contract-from-u-s-army-to-deliver-energy-independence-to-u-s/article_57fb0f54-c588-51b5-8000-adc89c4abf2f.html",
+              "quote": "The Army was very thoughtful in designing the Janus Program to capitalize on the complementary strengths of the government and private sector.",
               "status": "fetched"
             }
           ]
@@ -1339,6 +1395,25 @@
           ]
         },
         {
+          "id": "nano-cuce-haleu-transport",
+          "speaker": "Tom Cuce",
+          "role": "President, Advanced Fuel Transportation Inc.",
+          "org": "NANO Nuclear Energy",
+          "date": "2024-09-17",
+          "venue": "Company newsroom (GlobeNewswire wire release)",
+          "topic": "Fuel and supply chain",
+          "quote": "I am confident that their expertise will be crucial in our efforts to equip the United States with modern capabilities to transport various forms of HALEU fuels, such as TRISO pellets and salt fuel.",
+          "what_it_means": "The head of NANO's fuel-logistics subsidiary names TRISO and molten-salt fuel transport specifically -- the two fuel forms X-energy/BWXT/Kairos-style and TerraPower-style reactors respectively need moved from fabricator to site -- as the capability gap AFT's GNS partnership is meant to close.",
+          "sources": [
+            {
+              "label": "Yahoo Finance (GlobeNewswire wire) — \"President of NANO Nuclear Energy Fuel Transportation Subsidiary Comments on Company's Developing HALEU Transportation Capabilities\" (Sep 17, 2024)",
+              "url": "https://finance.yahoo.com/news/president-nano-nuclear-energy-fuel-123000216.html",
+              "quote": "I am confident that their expertise will be crucial in our efforts to equip the United States with modern capabilities",
+              "status": "fetched"
+            }
+          ]
+        },
+        {
           "id": "nano-walker-graphite-producers",
           "speaker": "James Walker",
           "role": "Chief Executive Officer, NANO Nuclear Energy",
@@ -1429,6 +1504,25 @@
               "label": "World Nuclear News -- \"DOE delivers HALEU feedstock for advanced reactor fuel\" (Jan 8, 2026)",
               "url": "https://world-nuclear-news.org/articles/doe-delivers-haleu-feedstock-for-advanced-reactor-fuel",
               "quote": "Receipt of this shipment of HALEU feedstock is a transformative moment, firmly entrenching Standard Nuclear’s position at the forefront of the advanced nuclear fuel supply",
+              "status": "fetched"
+            }
+          ]
+        },
+        {
+          "id": "xenergy-walker-supply-chain-scale",
+          "speaker": "Jesse B. Walker",
+          "role": "Vice President, Chief Supply Chain Officer, X-energy",
+          "org": "X-energy",
+          "date": "2025-05-21",
+          "venue": "X-energy company newsroom (appointment announcement)",
+          "topic": "Fuel and supply chain",
+          "quote": "Strengthening the company's global supply chain strategy presents an incredibly exciting opportunity to support the next generation of nuclear technologies.",
+          "what_it_means": "X-energy's newly hired supply chain chief frames his own mandate as global sourcing strategy, not just procurement execution -- consistent with the company's parallel moves to lock in long-lead components (graphite, TRISO fuel) via named supplier agreements.",
+          "sources": [
+            {
+              "label": "X-energy — \"X-energy Adds Jesse B. Walker to Leadership Team as Chief Supply Chain Officer\"",
+              "url": "https://x-energy.com/news/jesse-b-walker-chief-supply-chain-officer/",
+              "quote": "Strengthening the company's global supply chain strategy presents an incredibly exciting opportunity to support the next generation of nuclear technologies.",
               "status": "fetched"
             }
           ]
@@ -2104,6 +2198,25 @@
       "name": "International",
       "note": "Markets outside the United States, and what changes there.",
       "voices": [
+        {
+          "id": "holtec-singh-hyundai-alliance",
+          "speaker": "Dr. Kris Singh",
+          "role": "President and Chief Executive Officer, Holtec International",
+          "org": "Holtec International",
+          "date": "2025-02-26",
+          "venue": "World Nuclear News",
+          "topic": "International",
+          "quote": "Hyundai E&C has the most distinguished credentials as a constructor of nuclear power plants",
+          "what_it_means": "Holtec's CEO names its South Korean construction partner directly as the reason he believes Holtec's 'Mission 2030' fleet target (10 GW of SMR-300s) is achievable -- an explicit statement that Holtec is importing international (Korean) heavy-construction capability rather than relying on a purely domestic supply chain.",
+          "sources": [
+            {
+              "label": "World Nuclear News — \"Holtec and Hyundai E&C target 10 GW SMR fleet after Palisades\" (Feb 26, 2025)",
+              "url": "https://www.world-nuclear-news.org/articles/holtec-and-hyundai-ec-target-10gw-fleet-of-smrs-in-us",
+              "quote": "Hyundai E&C has the most distinguished credentials as a constructor of nuclear power plants",
+              "status": "fetched"
+            }
+          ]
+        },
         {
           "id": "lastenergy-jenner-wales-manufacturability",
           "speaker": "Michael Jenner",
@@ -2783,6 +2896,82 @@
       ]
     },
     {
+      "id": "blueenergy-fong",
+      "company": "Blue Energy",
+      "name": "CJ Fong",
+      "title": "VP of Regulatory",
+      "background": "Named regulatory lead on Blue Energy's own leadership page. The company is listed among the NRC's advanced-reactor pre-application companies and has submitted at least one NRC topical report as part of a phased licensing strategy supporting its stated 48-month gas-to-nuclear deployment plan.",
+      "why_they_matter": "A dedicated VP of Regulatory at a company that has already reached a formal NRC licensing milestone pre-construction -- exactly the regulatory-affairs seat this pass was asked to prioritize.",
+      "sources": [
+        {
+          "label": "Blue Energy — About page (company leadership listing)",
+          "url": "https://www.blueenergy.co/about",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "blueenergy-jurewicz",
+      "company": "Blue Energy",
+      "name": "Jake Jurewicz",
+      "title": "Chief Executive Officer and Co-Founder",
+      "background": "Co-founded Blue Energy in 2023 with Matt Slotkin, out of MIT's Nuclear Science and Engineering Department. Grew the company from a $45 million Series A (Oct 2024) to a $380 million raise as Blue Energy Global Inc. (Apr 2026) plus a Constellation Energy strategic investment (Jul 2026), building a shipyard-manufactured, reactor-agnostic modular nuclear power plant design (first project: a 2.5 GW gas-plus-nuclear plant in Victoria, Texas, with GE Vernova Hitachi, using up to five BWRX-300 units).",
+      "why_they_matter": "Leads a company explicitly positioning itself against 'the old way of building large reactor nuclear power' with a shipyard-prefabrication model -- the most explicit cost/schedule thesis of any company added in this pass, and one Constellation Energy has now backed directly with capital.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Blue Energy Receives Strategic Investment from Constellation...\" (Jul 16, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/blue-energy-receives-strategic-investment-from-constellation-to-accelerate-commercialization-of-novel-shipyard-manufacturing-and-project-financing-model-for-new-nuclear-302827725.html",
+          "quote": "Together, we're demonstrating that the future of nuclear energy isn't a decade away and doesn't take a leap of faith",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "blueenergy-slotkin",
+      "company": "Blue Energy",
+      "name": "Matt Slotkin",
+      "title": "Co-Founder",
+      "background": "Co-founded Blue Energy in 2023 with Jake Jurewicz out of MIT's Nuclear Science and Engineering Department. Some secondary press coverage (not independently fetched) describes him as Chief Operating Officer, but Blue Energy's own About page lists him only as \"Co-founder\" with no operating title.",
+      "why_they_matter": "Technical co-founder alongside CEO Jurewicz at one of the newer, better-capitalized entrants (Blue Energy raised $380M in April 2026 plus a Constellation strategic investment in July 2026).",
+      "sources": [
+        {
+          "label": "Blue Energy — About page (company leadership listing)",
+          "url": "https://www.blueenergy.co/about",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "blueenergy-frenkel",
+      "company": "Blue Energy",
+      "name": "Steve Frenkel",
+      "title": "VP of Commercial",
+      "background": "Named commercial lead on Blue Energy's own leadership page, distinct from CEO Jurewicz and from CCO Tom O'Neill.",
+      "why_they_matter": "Blue Energy's dedicated commercial officer as the company negotiates offtake for its first project, a 2.5 GW gas-plus-nuclear plant sized in part for hyperscale data-center demand.",
+      "sources": [
+        {
+          "label": "Blue Energy — About page (company leadership listing)",
+          "url": "https://www.blueenergy.co/about",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "blueenergy-oneill",
+      "company": "Blue Energy",
+      "name": "Tom O'Neill",
+      "title": "Chief Commercial Officer & Corporate Counsel",
+      "background": "Per multiple secondary reports (not independently fetched), previously General Counsel and Vice President of Licensing at Exelon, one of the largest U.S. nuclear plant operators -- bringing direct NRC licensing experience into Blue Energy's combined commercial/legal function.",
+      "why_they_matter": "Blue Energy's licensing strategy and commercial (offtake/financing) strategy sit under one person rather than two separate C-suite seats, unusual among companies in this pass -- and directly relevant as Blue Energy has already logged an NRC pre-application licensing milestone.",
+      "sources": [
+        {
+          "label": "Blue Energy — About page (company leadership listing)",
+          "url": "https://www.blueenergy.co/about",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "deepfission-gordon",
       "company": "Deep Fission",
       "name": "Jon Gordon",
@@ -2911,6 +3100,23 @@
       ]
     },
     {
+      "id": "gaems-gordon",
+      "company": "General Atomics Electromagnetic Systems",
+      "name": "Alec Gordon",
+      "title": "Vice President and Chief Operating Officer",
+      "since": "2024-02",
+      "background": "Joined GA-EMS in September 2017 as Director of Aftermarket Sales and Services, then Managing Director of GA-EMS Product Lines; held the COO role on an interim basis from May 2023 before being named permanent VP & COO on Feb 29, 2024. Holds a mechanical engineering degree from Carleton University and a master's degree in Architecture-Based Enterprise Systems Engineering from UC San Diego.",
+      "why_they_matter": "GA-EMS's chief operating officer as the unit executes its Janus microreactor award alongside Christina Back's nuclear-technologies group -- the operations counterpart to Scott Forney (President) and Back (VP, Nuclear Technologies and Materials) already in this corpus.",
+      "sources": [
+        {
+          "label": "General Atomics — \"General Atomics Electromagnetic Systems Names Alec Gordon Chief Operating Officer\" (Feb 29, 2024)",
+          "url": "https://www.ga.com/ga-electromagnetic-systems-names-alec-gordon-chief-operating-officer",
+          "quote": "Alec has been in an interim COO role since May of 2023, and has demonstrated outstanding leadership and management capabilities",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "ga-ems-back",
       "company": "General Atomics Electromagnetic Systems",
       "name": "Christina Back, Ph.D.",
@@ -2938,6 +3144,38 @@
           "label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)",
           "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program",
           "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "holtec-singh",
+      "company": "Holtec International",
+      "name": "Dr. Kris Singh",
+      "title": "President and Chief Executive Officer, Executive Chairman",
+      "background": "Long-serving CEO of Holtec International (his own company's materials style him \"CEO and Executive Chairman\"); as of a Feb 2025 trade-press interview remained Holtec's chief public voice on the SMR-300 program, its Hyundai E&C construction alliance, and its 'Mission 2030' target to complete the first SMR-300 units at the Palisades, Michigan site.",
+      "why_they_matter": "Holtec's founder-CEO is the person publicly committing the company to build, own and operate its own first SMR-300 plant with its 'own credit and own at-risk funds' -- a direct claim about who bears financing risk for a reactor class one tier above true microreactors but built on similar factory-replication, passive-safety logic.",
+      "sources": [
+        {
+          "label": "World Nuclear News — \"Holtec and Hyundai E&C target 10 GW SMR fleet after Palisades\" (Feb 26, 2025)",
+          "url": "https://www.world-nuclear-news.org/articles/holtec-and-hyundai-ec-target-10gw-fleet-of-smrs-in-us",
+          "quote": "Hyundai E&C has the most distinguished credentials as a constructor of nuclear power plants",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "holtec-springman",
+      "company": "Holtec International",
+      "name": "Dr. Rick Springman",
+      "title": "President, Holtec International (company materials elsewhere also style him President of Global Clean Energy Opportunities and SVP of International Programs -- see absences)",
+      "background": "With Holtec since 2009 in senior roles; joined the company's Executive Committee in 2019 and currently serves as Vice Chairman. Per his own corporate bio page, leads global nuclear business and growth strategy, the SMR-300 delivery program, capital planning and investor engagement, reporting to CEO and Executive Chairman Kris Singh. Holds undergraduate and doctoral degrees in Mechanical Engineering and Applied Mechanics from the University of Pennsylvania and serves on the Nuclear Energy Institute's International Executive Task Force.",
+      "why_they_matter": "Effectively Holtec's international/commercial-development chief -- cross-border SMR-300 deployment efforts (e.g. the Cottam, UK bid with EDF) run through his 'Global Clean Energy Opportunities' remit, making him the closest Holtec analog to the dedicated commercial/BD officers this pass was asked to find at other companies.",
+      "sources": [
+        {
+          "label": "Holtec International — Dr. Rick Springman corporate leadership bio",
+          "url": "https://holtecinternational.com/company/leadership/corporate-leadership/dr-rick-springman/",
+          "quote": "Dr. Rick Springman is President of Holtec International, where he leads the company's global nuclear business and growth strategy",
           "status": "fetched"
         }
       ]
@@ -3330,6 +3568,101 @@
       ]
     },
     {
+      "id": "nano-cuce",
+      "company": "NANO Nuclear Energy",
+      "name": "Tom Cuce",
+      "title": "President, Advanced Fuel Transportation Inc. (AFT, a NANO Nuclear subsidiary)",
+      "background": "Former President of Global Transportation at UPS, where he also held Vice President of Package Operations and Southern California District Manager roles, sat on UPS's corporate safety council, and served on its Executive Business Planning Unit overseeing a $16 billion capital budget.",
+      "why_they_matter": "Runs NANO Nuclear's dedicated HALEU-transportation subsidiary, which holds the exclusive license to a DOE-funded, national-lab-developed high-capacity HALEU transport basket -- a supply-chain chokepoint (getting enriched fuel from fabricator to reactor site) that most microreactor vendors do not control in-house.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (GlobeNewswire wire) — \"President of NANO Nuclear Energy Fuel Transportation Subsidiary Comments on Company's Developing HALEU Transportation Capabilities\" (Sep 17, 2024)",
+          "url": "https://finance.yahoo.com/news/president-nano-nuclear-energy-fuel-123000216.html",
+          "quote": "GNS is a highly respected company with a longstanding presence in the nuclear industry, and I am confident that their expertise will be crucial",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "natura-douglass-robison",
+      "company": "Natura Resources",
+      "name": "Douglass Robison",
+      "title": "Founder, Executive Chairman and Chairman of the Board",
+      "background": "Founded Natura Resources and served as its CEO before handing the role to Jordan Robison in July 2026, remaining executive chairman and board chair.",
+      "why_they_matter": "As executive chairman he remains the company's public voice on strategy even after stepping back from day-to-day CEO duties, and personally announced four executive hires (legal, nuclear, finance) in a single stretch (Oct 2025-Feb 2026) that built out Natura's C-suite ahead of the CEO transition.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Natura Resources Accelerates Path to Advanced Nuclear Reactor Deployment with Strategic Executive Appointments\" (Feb 9, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-accelerates-path-to-advanced-nuclear-reactor-deployment-with-strategic-executive-appointments-302682705.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "natura-mcwhirter",
+      "company": "Natura Resources",
+      "name": "Jill McWhirter",
+      "title": "Executive Vice President and Chief Legal Officer",
+      "since": "2025-10",
+      "background": "25+ years of legal and nuclear-energy expertise; former partner at King & Spalding LLP in Houston and Atlanta, where she co-led the firm's Nuclear Working Group; earlier in her career was a nuclear engineer at Westinghouse Electric Corporation. Has represented Natura directly, including its contract awarding detailed design engineering work to Zachry Nuclear Engineering.",
+      "why_they_matter": "Leads regulatory, compliance and governance strategy for the first company to win NRC construction-permit approval for a non-light-water university research reactor -- a licensing precedent other microreactor developers are watching.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Natura Resources Accelerates Path to Advanced Nuclear Reactor Deployment with Strategic Executive Appointments\" (Feb 9, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-accelerates-path-to-advanced-nuclear-reactor-deployment-with-strategic-executive-appointments-302682705.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "natura-jordan-robison",
+      "company": "Natura Resources",
+      "name": "Jordan Robison, P.E.",
+      "title": "Chief Executive Officer",
+      "since": "2026-07",
+      "background": "Appointed CEO effective July 15, 2026, succeeding founder Douglass Robison, who remains executive chairman. Previously served as Natura's vice president of engineering and program management, then chief operating officer; in those roles oversaw completion and submission of the MSR-1 construction-permit application to the NRC, directed MSR-1/MSR-100 design and licensing work, and helped secure strategic partnerships with Zachry, Teledyne Brown, Materion and 3M plus $120 million in private funding and $120 million from the State of Texas.",
+      "why_they_matter": "A promoted-from-within engineer, not an outside operator, now runs Natura as it moves the first non-light-water NRC construction permit for a US research reactor toward the deployment phase.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Natura Resources Names Jordan Robison Chief Executive Officer, Advancing the Company Toward Commercial Deployment\" (Jul 15, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-names-jordan-robison-chief-executive-officer-advancing-the-company-toward-commercial-deployment-302826552.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "natura-herndon",
+      "company": "Natura Resources",
+      "name": "Rogers Herndon",
+      "title": "Chief Financial Officer",
+      "since": "2026-02",
+      "background": "30+ years in the energy sector; former Interim CFO at HydroStor and GridStor; previously Managing Director at Alvarez & Marsal; earlier held senior roles at Reliant Energy, PSEG, Bank of America, Enron and Dynegy.",
+      "why_they_matter": "Brings restructuring/turnaround-adjacent finance experience (Alvarez & Marsal, Enron) to a pre-revenue reactor developer that has raised $120M in private funding plus $120M from the State of Texas and is now moving into capital-intensive deployment.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Natura Resources Accelerates Path to Advanced Nuclear Reactor Deployment with Strategic Executive Appointments\" (Feb 9, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-accelerates-path-to-advanced-nuclear-reactor-deployment-with-strategic-executive-appointments-302682705.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "natura-jessup",
+      "company": "Natura Resources",
+      "name": "William \"Bill\" Jessup",
+      "title": "Chief Nuclear Officer",
+      "since": "2025-12",
+      "background": "Former Director of Nuclear Technology at Shepherd Power; two separate tenures at the U.S. Nuclear Regulatory Commission, most recently as Chief of the Advanced Reactor Licensing Branch; a licensed Senior Reactor Operator at Duke Energy's Brunswick Nuclear Plant.",
+      "why_they_matter": "A former NRC advanced-reactor licensing branch chief now runs safety, operations and regulatory engagement for Natura -- direct regulator-side experience with the exact licensing pathway (advanced/non-LWR construction permits) Natura is using.",
+      "sources": [
+        {
+          "label": "PR Newswire — \"Natura Resources Accelerates Path to Advanced Nuclear Reactor Deployment with Strategic Executive Appointments\" (Feb 9, 2026)",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-accelerates-path-to-advanced-nuclear-reactor-deployment-with-strategic-executive-appointments-302682705.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "oklo-renner",
       "company": "Oklo",
       "name": "Alexandra Renner",
@@ -3542,6 +3875,23 @@
       ]
     },
     {
+      "id": "radiant-starrett",
+      "company": "Radiant Industries",
+      "name": "Mike Starrett",
+      "title": "Chief Commercial Officer",
+      "since": "2025-05",
+      "background": "Joined Radiant in May 2025 as the company's first Chief Revenue Officer, leading its federal business development team; by an August 2026 trade-press mention he was being referred to as Chief Commercial Officer -- title recorded here as reported in each fetched source, since no single source documents a formal title change. Holds a Ph.D. Prior role (per company announcement, not independently fetched) was Chief Commercial Officer for Ocean Winds North America, an offshore wind developer.",
+      "why_they_matter": "Radiant's top commercial executive as the company executes its roughly $750M Army Janus microreactor contract and works to convert military-first deployments into commercial (data center, industrial) customers.",
+      "sources": [
+        {
+          "label": "reflector.com (wire pickup) — \"Radiant Wins $750M Contract from U.S. Army to Deliver Energy Independence to U.S. Military Bases\" (Aug 26, 2026)",
+          "url": "http://www.reflector.com/news/national/radiant-wins-750m-contract-from-u-s-army-to-deliver-energy-independence-to-u-s/article_57fb0f54-c588-51b5-8000-adc89c4abf2f.html",
+          "quote": "The Army was very thoughtful in designing the Janus Program to capitalize on the complementary strengths of the government and private sector.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "radiant-baranwal",
       "company": "Radiant Industries",
       "name": "Rita Baranwal",
@@ -3673,6 +4023,23 @@
       ]
     },
     {
+      "id": "standardnuclear-cohen",
+      "company": "Standard Nuclear",
+      "name": "Seth Cohen",
+      "title": "Board Member (Director)",
+      "since": "2026-08",
+      "background": "Appointed to Standard Nuclear's board effective August 12, 2026. Former Chief Counsel for Nuclear Policy at the U.S. Department of Energy, where he coordinated with the White House, NRC and NASA on advanced-nuclear and space power-system deployment and originated the administration's nuclear fuel-cycle lifecycle innovation campus initiative; left federal government in June 2026. Earlier clerked for Judge Kenneth Kiyul Lee (9th Circuit) and Judge Elizabeth Lee Branch (11th Circuit), then practiced Supreme Court and appellate litigation at Kirkland & Ellis LLP.",
+      "why_they_matter": "A DOE nuclear-policy chief counsel joins Standard Nuclear's board within two months of leaving government -- federal fuel-cycle policy expertise landing on the board of the company that inherited USNC's TRISO fuel assets out of the 2024-25 bankruptcy.",
+      "sources": [
+        {
+          "label": "ExchangeMonitor — \"Standard Nuclear adds Cohen to board of directors\" (Aug 17, 2026)",
+          "url": "https://www.exchangemonitor.com/standard-nuclear-adds-cohen-to-board-of-directors/",
+          "quote": "Cohen brings a rare combination of legal, regulatory and federal policy experience across the nuclear industry, a vantage point that matters",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "standard-nuclear-ghasemian",
       "company": "Standard Nuclear",
       "name": "Shahram Ghasemian",
@@ -3739,6 +4106,23 @@
       ]
     },
     {
+      "id": "terrapower-williams",
+      "company": "TerraPower",
+      "name": "Eric Williams",
+      "title": "Executive Vice President and Chief Operating Officer",
+      "since": "2025-05",
+      "background": "22-year engineering career including 15 years developing nuclear power plant designs; spent four years at B&W mPower developing a small modular reactor and led Integrated Systems Test facility development; earlier career work included severe accident analysis and current-fleet modernization. Promoted to COO from Senior Vice President and Design Authority for Natrium technology. Holds a B.S. in mechanical engineering from the University of Florida, an MBA from Lynchburg College, and is a licensed Professional Engineer.",
+      "why_they_matter": "TerraPower's first COO, promoted from the engineer who was Natrium's own design authority rather than hired from outside — signals the company putting a technical insider in charge of execution as Natrium moves from construction into commissioning.",
+      "sources": [
+        {
+          "label": "TerraPower — \"TerraPower Announces Expansion of Executive Leadership Team\"",
+          "url": "https://www.terrapower.com/terrapower-announces-expansion-of-executive-leadership-team",
+          "quote": "Eric's deep experience, proven leadership, and commitment to TerraPower's mission uniquely position him for this role",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "terrapower-trayers",
       "company": "TerraPower",
       "name": "Michael Trayers",
@@ -3767,6 +4151,120 @@
           "url": "https://www.terrapower.com/about/",
           "quote": "Young leads a multi-billion-dollar advanced nuclear project, the Natrium Demonstration Project within the Department of Energy’s Advanced Reactor Demonstration Program, while also playing a key",
           "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-hellman",
+      "company": "TerraPower",
+      "name": "Steven Hellman",
+      "title": "Executive Vice President and Chief Financial Officer",
+      "since": "2025-05",
+      "background": "35-year career spanning investment banking, business and law, including 25+ years as an investment banker at Credit Suisse and UBS, most recently Managing Director and Co-Head of UBS's Energy Transition investment banking group, where he advised TerraPower on financing strategy from 2021-2025. Earlier in his career he was a business/finance attorney at Latham & Watkins and EVP at UniSite, Inc. Holds a B.A. in Soviet Studies from UC Berkeley and a J.D. from UC Berkeley School of Law.",
+      "why_they_matter": "Succeeded longtime CFO Marcia Burkey at the moment TerraPower needs to close Natrium project financing and structure commercial partnerships beyond its DOE-backed demonstration plant.",
+      "sources": [
+        {
+          "label": "TerraPower — \"TerraPower Announces Expansion of Executive Leadership Team\"",
+          "url": "https://www.terrapower.com/terrapower-announces-expansion-of-executive-leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-thrasher",
+      "company": "Terrestrial Energy",
+      "name": "Brian Thrasher",
+      "title": "Chief Financial Officer",
+      "since": "2025-05",
+      "background": "25+ years of financial leadership across the transportation, manufacturing and retail industries; held executive management and officer/director positions at multi-billion-dollar public and private companies including Hilco Transport, Hanesbrands, Alliance Laundry Systems and Simmons Bedding Company (several owned by Thomas H. Lee Partners and Ontario Teachers' Pension Plan). Holds a BBA from Acadia University and a MAcc from the University of Alabama; is a CPA licensed in North Carolina.",
+      "why_they_matter": "Terrestrial Energy's first CFO as it becomes a Nasdaq-listed public company (IMSR), giving the reactor program a finance chief accountable to public markets rather than only private investors.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (GlobeNewswire wire) — \"Terrestrial Energy Announces Appointment of Brian Thrasher as Chief Financial Officer and Brian Romanzo as General Counsel\" (May 29, 2025)",
+          "url": "https://finance.yahoo.com/news/terrestrial-energy-announces-appointment-brian-113000525.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-okeefe",
+      "company": "Terrestrial Energy",
+      "name": "David O'Keefe",
+      "title": "Vice President of Business Development & Project Management",
+      "since": "2025-11",
+      "background": "25 years of business-development and finance experience; held prior positions at Centrus Energy (a HALEU/enrichment supplier) and Pacific Gas & Electric. Holds CFA and CTP certifications. Multiple trade reports (not independently fetched) describe him as overseeing commercial delivery and DOE relationships for the RELLIS Campus (Texas A&M) IMSR project specifically.",
+      "why_they_matter": "Named business-development lead for Terrestrial Energy's most concrete near-term U.S. site (RELLIS/Texas A&M), the counterpart a customer or the DOE would actually negotiate delivery terms with.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (GlobeNewswire wire) — \"Terrestrial Energy Further Strengthens Executive Leadership...\" (Nov 13, 2025)",
+          "url": "https://finance.yahoo.com/news/terrestrial-energy-further-strengthens-executive-130000858.html",
+          "quote": "Jim and David bring a wealth of valuable expertise in government relations and project management that will be critical to our ongoing efforts",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-howe",
+      "company": "Terrestrial Energy",
+      "name": "Jim Howe",
+      "title": "Vice President of Government Relations",
+      "since": "2025-11",
+      "background": "Retired U.S. Coast Guard Captain with two decades of Washington leadership; previously served as Congressional Affairs lead for the Department of Homeland Security and U.S. Coast Guard. Held prior positions at ARC Clean Technology, Oklo, Centrus Energy, and the United Coalition for Advanced Nuclear Power -- giving him direct prior experience at both a competitor microreactor developer (Oklo) and a HALEU supplier (Centrus).",
+      "why_they_matter": "Terrestrial Energy's dedicated federal-relations hire, brought on to carry IMSR's case in Washington at the same time the company was adding a VP of Business Development to chase commercial deployment sites -- the regulatory-affairs and commercial hires the task brief asks about, made together.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (GlobeNewswire wire) — \"Terrestrial Energy Further Strengthens Executive Leadership...\" (Nov 13, 2025)",
+          "url": "https://finance.yahoo.com/news/terrestrial-energy-further-strengthens-executive-130000858.html",
+          "quote": "Jim and David bring a wealth of valuable expertise in government relations and project management that will be critical to our ongoing efforts",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-irish",
+      "company": "Terrestrial Energy",
+      "name": "Simon Irish",
+      "title": "Chief Executive Officer, Director and Co-Founder",
+      "background": "Co-founded Terrestrial Energy in 2012 and has served as CEO since the company's founding; a corporate-governance filing separately lists Oct 20, 2025 as his CEO start date for the newly public Terrestrial Energy Inc. entity, reflecting the company's 2025-26 transition to a Nasdaq-listed structure (ticker IMSR) rather than a change of leadership. More than 20 years of finance and investment-management experience, including nearly 8 years at Man Global Strategies (the strategic-investment division of Man Group Plc), where he headed MGS in North America; earlier a derivatives structurer and trader at Credit Suisse Financial Products. Holds an MA in Natural Sciences from Cambridge University and an MSc in Finance from the London Business School.",
+      "why_they_matter": "Founder-CEO representing the Integral Molten Salt Reactor (IMSR) through its 2025-26 transition to a Nasdaq-listed public company and its push for the RELLIS Campus (Texas A&M) commercial deployment.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (GlobeNewswire wire) — \"Terrestrial Energy Announces Appointment of Brian Thrasher as Chief Financial Officer and Brian Romanzo as General Counsel\" (May 29, 2025)",
+          "url": "https://finance.yahoo.com/news/terrestrial-energy-announces-appointment-brian-113000525.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-millsap",
+      "company": "Terrestrial Energy",
+      "name": "Steven (Steve) Millsap",
+      "title": "General Counsel, Secretary and Chief Compliance Officer",
+      "since": "2025-07",
+      "background": "Per the company's June 2026 DEF 14A proxy statement (search-indexed, not independently fetched -- SEC EDGAR blocked direct retrieval), has more than 27 years of legal experience including over 24 years as in-house counsel at private and public companies. His employment is set to end effective September 12, 2026, per the company's own announcement, with no successor named as of this pass.",
+      "why_they_matter": "Terrestrial Energy's chief legal and compliance officer through its 2025-26 Nasdaq listing -- but his announced Sept 12, 2026 departure with no named successor leaves the newly public company's top legal seat vacant at a sensitive moment.",
+      "sources": [
+        {
+          "label": "The Globe and Mail (TipRanks wire) — \"Terrestrial Energy Announces Upcoming Departure of Chief Counsel\"",
+          "url": "https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/3351440/terrestrial-energy-announces-upcoming-departure-of-chief-counsel/",
+          "quote": "the employment of Steven Millsap, who serves as General Counsel, Secretary and Chief Compliance Officer, will end effective September 12, 2026",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-kessler",
+      "company": "Valar Atomics",
+      "name": "Boris Kessler",
+      "title": "General Counsel",
+      "background": "Licensed California attorney (State Bar of California) with a J.D. from Fordham University School of Law. Company materials describe his background as spanning corporate law, M&A, securities and complex transactions, including at public companies -- this description was not independently fetched from a company press release and is sourced to a search-indexed LinkedIn announcement, marked snippet-only below.",
+      "why_they_matter": "Valar's first named General Counsel, filling a legal seat the company was still advertising as an open 'Legal Counsel' requisition in job postings found during this pass -- one of the general-counsel gaps the task specifically asked to fill.",
+      "sources": [
+        {
+          "label": "LinkedIn (via search index, not independently fetched) — Isaiah Taylor post announcing Boris Kessler as General Counsel",
+          "url": "https://www.linkedin.com/in/boris-kessler-01b64b10/",
+          "quote": "Boris Kessler, our General Counsel, brings deep experience across corporate law, M&A, securities, and complex transactions",
+          "status": "snippet-only"
         }
       ]
     },
@@ -3986,6 +4484,23 @@
           "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
           "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
           "quote": "Mr. Sell has served as Chief Executive Officer of the Company since January 2019 and as a member of the Board since July 2021.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-walker",
+      "company": "X-energy",
+      "name": "Jesse B. Walker",
+      "title": "Vice President, Chief Supply Chain Officer",
+      "since": "2025-05",
+      "background": "21-year career at Northrop Grumman, including Vice President of Global Supply Chain and Corporate Director of Supplier Management, with senior supply chain and operations leadership roles in the Tactical Space Systems and Navigation and Targeting divisions. U.S. Air Force veteran (active duty and civil service). Holds an MBA with Honors from Webster University and a B.A. in Economics from the University of Illinois at Urbana-Champaign.",
+      "why_they_matter": "X-energy's first named chief supply chain officer, hired as the company signs multi-year long-lead-component agreements (e.g. the Jan 2026 SGL Carbon graphite deal) to move Xe-100/TRISO-X from pilot to fleet-scale sourcing.",
+      "sources": [
+        {
+          "label": "X-energy — \"X-energy Adds Jesse B. Walker to Leadership Team as Chief Supply Chain Officer\"",
+          "url": "https://x-energy.com/news/jesse-b-walker-chief-supply-chain-officer/",
+          "quote": "Jesse's exceptional background in global supply chain strategy and program management will be a critical asset",
           "status": "fetched"
         }
       ]

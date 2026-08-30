@@ -25,6 +25,7 @@
       <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Applications</button>
       <button class="tab" role="tab" id="tab-market" aria-controls="market" data-panel="market">Market design</button>
       <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Policy</button>
+      <button class="tab" role="tab" id="tab-news" aria-controls="news" data-panel="news">News</button>
       <button class="tab" role="tab" id="tab-sources" aria-controls="sources" data-panel="sources">Sources</button>
     </div>
   </div>
@@ -184,6 +185,19 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Policy sections"></div>
     <div id="pathways"></div>
+  </div>
+</section>
+
+<section id="news" role="tabpanel" aria-labelledby="tab-news" tabindex="0" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <h2>What happened</h2>
+      <p class="prose" id="news-intro"></p>
+      <p class="prose note" id="news-binding"></p>
+    </div>
+    <div class="newsfilter" id="news-filter"></div>
+    <div id="news"></div>
+    <p class="prose note" id="news-refresh"></p>
   </div>
 </section>
 

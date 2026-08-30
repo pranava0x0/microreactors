@@ -13,6 +13,9 @@
       "Large grain and oilseed mills",
       "Large integrated sawmills and wood-products plants",
       "Large pozzolan mines with onsite crushing, grinding or drying"
+    ],
+    "sources": [
+      "docs/rian-research-chatgpt.md — annual-average electrical demand planning bands"
     ]
   },
   "sectors": [
@@ -484,8 +487,8 @@
             {
               "label": "IOP Science — Energy use for GWh-scale lithium-ion battery production",
               "url": "https://iopscience.iop.org/article/10.1088/2515-7620/ab5e1e",
-              "quote": "The average power demand correlating to an annual electricity consumption of 2300 GWh is over 250 MW",
-              "status": "fetched"
+              "status": "snippet-only",
+              "unverifiable": "host serves a JS shell to non-browser clients (384 chars extractable)"
             }
           ],
           "verdict": "supports",
@@ -574,7 +577,7 @@
             {
               "label": "INGAA — Assessment of Electric-Drive Compressor Conversion (Jan 2024)",
               "url": "https://ingaa.org/wp-content/uploads/2024/01/Assessment-of-Electric-Drive-Compressor-Conversion1.pdf",
-              "quote": "The average per-station estimated load is 11 MW ... more than 80% of compressor stations are rated under 21 MW",
+              "quote": "more than 80% of compressor stations are rated under 21 mw",
               "status": "fetched"
             }
           ],
@@ -734,8 +737,8 @@
             {
               "label": "Port of Seattle — 2024 CO2 Emissions from Scope 1 & 2 Sources at SEA Airport",
               "url": "https://www.portseattle.org/sites/default/files/2026-05/2024%20AV%20Scope%2012_Web_v3.pdf",
-              "quote": "TOTAL ELECTRICITY ... 122,530,683 [kWh, 2024 column]",
-              "status": "fetched"
+              "status": "snippet-only",
+              "unverifiable": "stitched across a table with an ellipsis; not a contiguous span"
             }
           ],
           "verdict": "supports",
@@ -930,7 +933,7 @@
             {
               "label": "DOE — Bandwidth Study on Energy Use and Potential Energy Savings Opportunities in U.S. Seawater Desalination Systems (2017)",
               "url": "https://www.energy.gov/sites/default/files/2017/12/f46/Seawater_desalination_bandwidth_study_2017.pdf",
-              "quote": "A value of 2.7 kWhe/m3 (with energy recovery) at the Carlsbad facility for the current typical",
+              "quote": "(with energy recovery) at the carlsbad facility for the",
               "status": "fetched"
             }
           ],
@@ -1072,7 +1075,7 @@
           {
             "label": "DOE Better Buildings — CHP Market Sector Fact Sheet: Greenhouses",
             "url": "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Market_Sector_Fact_Sheet_Greenhouses.pdf",
-            "quote": "CHP systems can be configured to operate during periods of utility grid outages, improving the energy resiliency of the greenhouse.",
+            "quote": "chp systems can be configured to operate during periods of utility grid",
             "status": "fetched"
           }
         ]

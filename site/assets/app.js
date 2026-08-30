@@ -83,7 +83,7 @@
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  var PANELS = ["pipeline", "sites", "economics", "vendors", "why", "demand", "market", "policy", "sources"];
+  var PANELS = ["pipeline", "sites", "economics", "vendors", "why", "demand", "market", "policy", "news", "sources"];
   /* Sub-navigation, registered by makeSubnav() below. Four panels were long
      enough to bury their own sections at 1280px before this split: policy ran
      30,900px and the source register 67,500px, so field coverage and the gap
@@ -931,6 +931,64 @@
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
     }));
+  }
+
+  /* ---------- news ---------- */
+  /* Newest first, grouped by month, with the binding/announced split on every
+     row. A selection and a signed contract look identical in a headline, which
+     is the whole reason this site exists. */
+  if (D.news && (D.news.items || []).length) {
+    var N = D.news;
+    render($("news-intro"), esc(N._meta.what_this_is));
+    render($("news-binding"), esc(N._meta.binding_note));
+    render($("news-refresh"), esc(N._meta.refresh));
+    var months = [], byMonth = {};
+    N.items.forEach(function (it) {
+      var m = (it.date || "").slice(0, 7);
+      if (!byMonth[m]) { byMonth[m] = []; months.push(m); }
+      byMonth[m].push(it);
+    });
+    var MON = ["January","February","March","April","May","June","July","August",
+               "September","October","November","December"];
+    var pretty = function (m) {
+      var p = m.split("-");
+      return p.length === 2 ? MON[parseInt(p[1], 10) - 1] + " " + p[0] : m;
+    };
+    render($("news-filter"),
+      '<button class="newschip on" data-cat="">All ' + N.items.length + "</button>" +
+      N.categories.map(function (c) {
+        return '<button class="newschip" data-cat="' + esc(c.id) + '">' +
+          esc(c.id) + " " + c.count + "</button>";
+      }).join(""));
+    render($("news"), months.map(function (m) {
+      return '<div class="newsmonth"><h3>' + esc(pretty(m)) + "</h3>" +
+        byMonth[m].map(function (it) {
+          return '<div class="newsitem" data-cat="' + esc(it.category || "") + '">' +
+            '<div class="nhdr"><span class="ndate">' + esc(it.date) + "</span>" +
+            '<span class="ncat">' + esc(it.category || "") + "</span>" +
+            '<span class="nbind ' + (it.binding ? "yes" : "no") + '">' +
+            (it.binding ? "executed" : "announced") + "</span></div>" +
+            "<h4>" + esc(it.headline) + "</h4>" +
+            '<p class="prose">' + esc(it.what_happened) + " " + cite(it.sources) + "</p>" +
+            '<p class="nwhy">' + esc(it.why_it_matters) + "</p>" +
+            (it.binding_note ? '<p class="nbindnote">' + esc(it.binding_note) + "</p>" : "") +
+            "</div>";
+        }).join("") + "</div>";
+    }).join(""));
+    $("news-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      var cat = b.dataset.cat;
+      Array.prototype.forEach.call($("news-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+      });
+      Array.prototype.forEach.call($("news").querySelectorAll(".newsitem"), function (it) {
+        it.hidden = !!cat && it.dataset.cat !== cat;
+      });
+      Array.prototype.forEach.call($("news").querySelectorAll(".newsmonth"), function (mo) {
+        mo.hidden = !mo.querySelector(".newsitem:not([hidden])");
+      });
+    });
   }
 
   /* ---------- evidence: source register ---------- */

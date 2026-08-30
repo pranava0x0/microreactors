@@ -544,3 +544,31 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
 .argbasis{font-family:var(--font-mono);font-size:var(--size-caption);
   text-transform:uppercase;letter-spacing:var(--track-label);color:var(--text-tertiary);
   white-space:nowrap}
+
+/* News — dated events, newest first, with the instrument named on every row. */
+.newsfilter{display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-5) 0}
+.newschip{background:none;border:1px solid var(--border-subtle);color:var(--text-tertiary);
+  font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);padding:var(--space-2) var(--space-3);cursor:pointer;
+  min-height:44px}
+.newschip.on{border-color:var(--antares-red);color:var(--antares-red)}
+.newsmonth{margin-bottom:var(--space-8)}
+.newsmonth h3{font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--text-tertiary);
+  border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
+  margin:0 0 var(--space-4) 0}
+.newsitem{padding:var(--space-4) 0;border-bottom:1px solid var(--border-subtle);min-width:0}
+.nhdr{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:baseline;
+  margin-bottom:var(--space-2)}
+.ndate,.ncat{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+.ncat{text-transform:uppercase;letter-spacing:var(--track-label)}
+.nbind{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label)}
+.nbind.yes{color:var(--antares-red)}
+.nbind.no{color:var(--text-tertiary)}
+.newsitem h4{margin:0 0 var(--space-2) 0;font-size:var(--size-body-lg);color:var(--text-primary);
+  line-height:var(--lh-heading)}
+.newsitem .prose{margin:0 0 var(--space-2) 0}
+.nwhy,.nbindnote{margin:0 0 var(--space-1) 0;color:var(--text-secondary);
+  font-size:var(--size-caption);line-height:1.55}
+.nbindnote{color:var(--text-tertiary)}
