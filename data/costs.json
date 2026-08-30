@@ -4,7 +4,7 @@
     "warning": "No microreactor has sold power commercially, so no figure in this table is a price anyone has paid. The ranges are wide because sources disagree about what the first units cost to build. The displaced-alternative bands were re-sourced to primary documents on 2026-08-25.",
     "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do.",
     "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low.",
-    "cost_pass": "2026-08-29: added capital cost per kW, the unit-1-to-unit-20 learning curve, and a per-reactor-type comparison, all from Idaho National Laboratory's microreactor technoeconomic reports and the University of Michigan optimisation. Before this pass the site carried levelised energy costs only and no capital cost at all."
+    "cost_pass": "2026-08-29: added capital cost per kW, the unit-1-to-unit-20 learning curve, and a per-reactor-type comparison, all from Idaho National Laboratory's microreactor technoeconomic reports and the University of Michigan optimization. Before this pass the site carried levelized energy costs only and no capital cost at all."
   },
   "microreactor_lcoe": [
     {
@@ -176,7 +176,7 @@
         "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
         "url": "https://pce.akenergyauthority.org/Documents/FY24%20Base%20Rate%20Change%20Final%20L2300184.pdf"
       },
-      "delta_note": "Revised 2026-08-25 from $300-800/MWh. The earlier band came from secondary summaries of the PCE programme; the regulator's own order is both wider and higher at the top."
+      "delta_note": "Revised 2026-08-25 from $300-800/MWh. The earlier band came from secondary summaries of the PCE program; the regulator's own order is both wider and higher at the top."
     },
     {
       "alternative": "Diesel breakeven threshold",
@@ -262,10 +262,10 @@
         ]
       },
       {
-        "scenario": "Optimised design, modelled",
+        "scenario": "Optimized design, modeled",
         "low_kwe": 2515,
         "high_kwe": 3970,
-        "basis": "The capital costs fed into the University of Michigan optimisation that produces the $48-$78/MWh band above. These are inputs the model was allowed to choose from, not observed costs, and they sit below even INL's mass-produced figure.",
+        "basis": "The capital costs fed into the University of Michigan optimization that produces the $48-$78/MWh band above. These are inputs the model was allowed to choose from, not observed costs, and they sit below even INL's mass-produced figure.",
         "sources": [
           {
             "label": "Abdussami, Khaleb, Gao & Verma (Univ. of Michigan) — Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv:2506.13361)",
@@ -297,10 +297,10 @@
       {
         "klass": "Does not fall at all",
         "multiplier": 1.0,
-        "detail": "Land, permits, plant studies, the initial coolant, mining, converting and enriching the first core, recruiting and training operators, technicians and security, refuelling, and spent fuel management."
+        "detail": "Land, permits, plant studies, the initial coolant, mining, converting and enriching the first core, recruiting and training operators, technicians and security, refueling, and spent fuel management."
       }
     ],
-    "floor": "The third row is the one that decides whether this technology works. Uranium, and the people who run and guard the plant, cost the same on the 20th unit as on the first. INL models 6 to 10 full-time staff at $162,000 to $188,000 each. That is the floor the curve flattens onto, and it is why the levelised cost stops falling well above zero.",
+    "floor": "The third row is the one that decides whether this technology works. Uranium, and the people who run and guard the plant, cost the same on the 20th unit as on the first. INL models 6 to 10 full-time staff at $162,000 to $188,000 each. That is the floor the curve flattens onto, and it is why the levelized cost stops falling well above zero.",
     "rates": "Where INL does apply a rate, it varies by component: 8% for work at the site, 18% for the reactor's primary structure, 23% for plant equipment and instrumentation, 24% for the reactivity control system, and 40% for anything made of beryllium.",
     "definitions_warning": "The two INL reports do not mean the same thing by \"Nth-of-a-kind\". The 2024 report computes learning over 20 units. The 2025 report assumes cost stops falling after 100. Numbers from the two are not interchangeable.",
     "sources": [
@@ -357,7 +357,7 @@
         "analogue": "The closest published archetype to the heat-pipe designs, including Antares' R1 and Westinghouse's eVinci."
       }
     ],
-    "finding": "The heat-pipe archetype is by far the most expensive in INL's model, at $980/MWh for a first unit against $330 for the liquid-metal design. Most of that gap is size, not technology: the heat-pipe case is modelled at 7 MWt against 20 MWt, and INL's own sensitivity says halving a reactor's output raises its levelised cost by about half. The rest is fuel — INL cites work putting heat-pipe fuel cost at two to three times other microreactor types, and its major equipment at about twice. The modelled unit also refuels every 3 years, where Antares states 6 or more for the R1.",
+    "finding": "The heat-pipe archetype is by far the most expensive in INL's model, at $980/MWh for a first unit against $330 for the liquid-metal design. Most of that gap is size, not technology: the heat-pipe case is modeled at 7 MWt against 20 MWt, and INL's own sensitivity says halving a reactor's output raises its levelized cost by about half. The rest is fuel — INL cites work putting heat-pipe fuel cost at two to three times other microreactor types, and its major equipment at about twice. The modeled unit also refuels every 3 years, where Antares states 6 or more for the R1.",
     "convergence": "Type matters far more for the first unit than the twentieth. The liquid-metal design is 25% cheaper than the gas-cooled one as a first unit, but only 6% cheaper once both are mass-produced.",
     "sources": [
       {
