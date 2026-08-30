@@ -1,3 +1,930 @@
-{"_meta": {"captured": "2026-08-29", "agent": "xenergy-kairos-voices", "companies": ["X-energy", "Kairos Power"], "window": "2024-08 to 2026-08", "angles_run": [], "absences": [], "incomplete": true},
- "leaders": [],
- "quotes": []}
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "xenergy-kairos-voices",
+    "companies": [
+      "X-energy",
+      "Kairos Power"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "X-energy S-1/A (SEC EDGAR CIK 0002088896) management/bio section",
+      "X-energy S-1/A risk factors and business section (HALEU, TRISO-X, Amazon related-party terms)",
+      "X-energy S-1/A related-party transactions (Amazon convertible note/warrant)",
+      "x-energy.com/leadership full team page",
+      "X-energy Q2 2026 earnings call transcript (Aug 20, 2026)",
+      "X-energy newsroom: Amazon investment PR, Centrica UK PR, TRISO-X vertical construction PR, executive-team-expansion PR",
+      "kairospower.com/company leadership roster",
+      "Kairos Power newsroom: Google MPDA PR, Hermes 2 NRC construction permit PR, TVA/Google collaboration PR, ETU 2.0 reactor vessel PR",
+      "ANS Nuclear Newswire feature on Kairos Oak Ridge construction methods (Jun 2026)",
+      "WebSearch for Kairos VP-level bios (Craig Gerardi, Peter Hastings) and X-energy Westinghouse/DOE-background staff"
+    ],
+    "absences": [
+      "No specific $/kW or $/MWh price figure found stated by name by any Kairos Power leader in the window; Kairos is private and does not disclose unit economics publicly. Only qualitative cost statements (e.g. Laufer on ETU2 'lower costs for the commercial fleet') were found.",
+      "No specific $/kW or $/MWh figure found stated by name by an X-energy leader either (S-1 and earnings call discuss capex/revenue/TAM in aggregate, not a per-unit price); Dow's Seadrift pricing/structure for process heat is described only in aggregate deal-structure terms (ARDP 50/50 cost share) in the S-1, never as a specific $/lb-steam or $/MWh figure by any named speaker.",
+      "Could not independently verify (via a company-controlled or trade-press source, i.e. not a data-aggregator site) a current X-energy executive whose background is specifically at DOE (as an employee, not just via the ARDP program relationship) or at Westinghouse. A University of Michigan bio page names a 'Jeff Harper, VP Strategy and Business Development' with a Westinghouse Advanced Reactors Program background, but he does not appear on x-energy.com/leadership as of this pass, so he was excluded rather than guessed at.",
+      "Could not find deep (2-3 sentence, prior-employer-level) background for four Kairos Power senior staff (Kerry McIntosh, Tom Miller, Esther Klisura, Jaclyn Rodriguez) beyond their name and title on kairospower.com/company; the only additional detail (Esther Klisura ex-Calpine senior counsel; Kerry McIntosh holds a PhD from University of Newcastle) came from data-aggregator sites (ZoomInfo/LinkedIn search snippets), not a 'good source' per the contract, so it was omitted rather than cited as fetched fact.",
+      "No earnings-call or press quote found where an X-energy or Kairos leader explicitly states where the company will NOT compete (the S-1's 'we do not construct, own, or operate power plants' business-model disclaimer is corporate prose, unattributed to a named speaker, so it was not usable as a quote)."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "xenergy-sell",
+      "company": "X-energy",
+      "name": "J. Clay Sell",
+      "title": "Chief Executive Officer and Director",
+      "since": "2019-01",
+      "background": "CEO since January 2019 and board member since July 2021. From 2008-2018 he was president of Hunt Energy Horizons, LLC, the renewable-energy subsidiary of Hunt Consolidated, Inc. Earlier he served 14 years in the U.S. government, including as Deputy Secretary of Energy under George W. Bush (2005-2008); holds a J.D. from the University of Texas and a B.B.A. from Texas Tech.",
+      "why_they_matter": "A former Deputy Secretary of Energy running the company signals deep familiarity with DOE grant mechanics (the ARDP cost-share) and Washington relationships that materially matter to a subsidized first-of-a-kind reactor developer.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Sell has served as Chief Executive Officer of the Company since January 2019 and as a member of the Board since July 2021.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-ghaffarian",
+      "company": "X-energy",
+      "name": "Kamal (Kam) Ghaffarian",
+      "title": "Founder and Executive Chairman",
+      "background": "Founded Stinger Ghaffarian Technologies in 1994 (later acquired by KBR, Inc.); previously held technical and management roles at Lockheed Martin, Ford Aerospace and Loral. He is also co-founder and chairman of Intuitive Machines (NASDAQ: LUNR), Axiom Space and Quantum Space. Holds two B.S. degrees, an M.S. from George Washington University and two Ph.Ds.",
+      "why_they_matter": "A serial founder of government-contracting and space-infrastructure companies who backs X-energy financially and strategically, and personally led its funding narrative in the Amazon-anchored 2024 raise.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Dr. Ghaffarian started his entrepreneurial career in 1994 by founding Stinger Ghaffarian Technologies, Inc. (acquired by KBR, Inc.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-gross",
+      "company": "X-energy",
+      "name": "Daniel Gross",
+      "title": "Chief Financial Officer",
+      "since": "2025-12",
+      "background": "CFO since December 2025; was Amazon's board designee at X-energy from October 2024 to December 2025 while serving as Amazon's Director of Corporate Development focused on the Climate Pledge Fund (Aug 2021-Dec 2025). Earlier: Chief Investment Officer at Climate Real Impact Solutions, Managing Director at Oaktree Capital Management, Partner at Hudson Clean Energy, VP at Goldman Sachs. Holds an MBA, a master's in environmental management, and a Yale bachelor's degree.",
+      "why_they_matter": "X-energy's own CFO came directly off Amazon's board seat and out of Amazon's venture-investing arm — an unusually direct pipeline between its largest customer/investor and its finance function.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Gross has served as Chief Financial Officer of the Company since December 2025 and was an Amazon designee on the Board from October 2024",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-popovic",
+      "company": "X-energy",
+      "name": "Dragan Popovic",
+      "title": "Executive Vice President and Chief of Global Operations (X-energy Canada, Inc.)",
+      "background": "Previously Senior Vice President of SMR Project Execution at Ontario Power Generation (Feb 2002-Oct 2025), where he guided the first small modular reactor project in a G7 country through site licensing, construction approval and final investment decision. Also held leadership roles at OPG's Pickering and Darlington stations, including the Darlington refurbishment. Holds an electrical engineering degree from Conestoga College.",
+      "why_they_matter": "Brings direct execution experience from the only G7 country to reach FID on an SMR (OPG's Darlington New Nuclear Project / BWRX-300), directly relevant to X-energy's own path to FID with Dow.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Popovic previously was at Ontario Power Generation (“OPG”), where he served as Senior Vice President of SMR Project Execution from February 2002 to October",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-miller",
+      "company": "X-energy",
+      "name": "Steven (Steve) Miller",
+      "title": "Executive Vice President, Chief Legal and Administration Officer",
+      "since": "2020-11",
+      "background": "Joined X-energy as its first general counsel in November 2020. Previously senior counsel in the energy practice at Hogan Lovells LLP (2014-2020) and, from 2002-2014, Senior Vice President and General Counsel of Constellation Energy's power generation and development businesses, where he helped create international nuclear joint ventures UniStar Nuclear Energy and Constellation Energy Nuclear Group. Served in the U.S. Navy, reaching Lieutenant Commander; holds a J.D. from American University.",
+      "why_they_matter": "His Constellation nuclear-joint-venture background is a direct precedent for structuring X-energy's own multi-party industrial and utility deals (Dow, Energy Northwest, Centrica).",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "From 2002 to 2014, he served as Senior Vice President and General Counsel of Constellation Energy’s power generation and development",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-bhatia",
+      "company": "X-energy",
+      "name": "Dinkar S. Bhatia",
+      "title": "Executive Vice President and Chief Commercial Officer",
+      "since": "2025-06",
+      "background": "X-energy's first-ever Chief Commercial Officer, appointed June 2025. Nearly 30 years in energy; most recently Partner and Co-Head of North American Power at Hartree Partners (Jul 2016-Jun 2025). Earlier roles in commodity strategy at Goldman Sachs, commercial strategy at Constellation Energy, and power-generation portfolio development at PG&E. Holds a bachelor's degree from Drew University.",
+      "why_they_matter": "Directly matches the task's flag for a 'commercial' title — X-energy created this role for the first time in 2025 specifically to run commercial strategy and global project development as the company approached its IPO.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Bhatia will serve as Executive Vice President and Chief Commercial Officer of the Company. Mr. Bhatia has served in this role since June 2025,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-duling",
+      "company": "X-energy",
+      "name": "Joel Duling",
+      "title": "President, TRISO-X",
+      "since": "2022-08",
+      "background": "Leads X-energy's fuel-fabrication subsidiary since August 2022. More than 35 years in nuclear operations and manufacturing; was Associate Laboratory Director for Operational Systems at Pacific Northwest National Laboratory (2018-2022) and, before that, spent nearly two decades at BWX Technologies, including as President of its Nuclear Operations Group (over $1.6 billion in annual revenue) and President of Nuclear Fuel Services in Erwin, Tennessee. Holds a B.S. from Northern Michigan University, a nuclear-energy graduate certificate from Idaho State, and an MBA from Auburn.",
+      "why_they_matter": "His BWXT Nuclear Fuel Services background is the closest real-world precedent for operating a licensed, commercial-scale U.S. nuclear fuel fabrication line — exactly what TX-1 must become.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Duling previously held various leadership roles at BWX Technologies, Inc. for nearly two decades, including serving as President of its Nuclear Operations Group, where",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-garcia",
+      "company": "X-energy",
+      "name": "Laura Garcia",
+      "title": "Senior Vice President, Chief Accounting Officer",
+      "since": "2023-11",
+      "background": "Joined X-energy as VP, Corporate Controller in December 2022; CAO since November 2023, SVP since July 2025. Over 20 years in accounting/financial operations of public companies; previously Assistant Controller at Battalion Oil (formerly Halcón Resources), with earlier roles at Petrohawk Energy and Occidental Petroleum, and public accounting at Andersen LLP and KPMG. B.A. from Southwestern University; CPA (Texas).",
+      "why_they_matter": "Her public-company accounting background across multiple oil-and-gas issuers was directly relevant to bringing X-energy through S-1 registration and its April 2026 Nasdaq listing.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Ms. Garcia joined X-energy as Vice President, Corporate Controller in December 2022 and has served as Chief Accounting Officer since November 2023 and as Senior",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-reinke",
+      "company": "X-energy",
+      "name": "Benjamin Reinke",
+      "title": "Senior Vice President, Global Business Development and Deputy Chief Commercial Officer",
+      "since": "2025-07",
+      "background": "Promoted July 2025 from within X-energy to SVP Global Business Development, simultaneously taking on the Deputy Chief Commercial Officer role under new CCO Dinkar Bhatia.",
+      "why_they_matter": "A second 'commercial' title inside the same July 2025 reorganization shows X-energy building out a full commercial organization, not just hiring a single CCO figurehead, ahead of its IPO.",
+      "sources": [
+        {
+          "label": "X-energy — Expands Executive Team press release",
+          "url": "https://x-energy.com/news/x-energy-expands-executive-team-with-addition-of-new-commercial-and-human-capital-leadership/",
+          "quote": "Benjamin Reinke has been promoted to Senior Vice President,Global Business Development and will assume the role of Deputy Chief Commercial Officer.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-miers",
+      "company": "X-energy",
+      "name": "Sean Miers",
+      "title": "Vice President, Project Engineering",
+      "background": "Spent nearly seven years at GE Hitachi Nuclear Energy, most recently as General Manager, Engineering (2021-2026), leading the engineering organization supporting GEH's advanced reactor development before joining X-energy.",
+      "why_they_matter": "Confirms the GE Hitachi lineage the company points to in its own team description — direct competitor-to-X-energy engineering leadership experience now inside the company.",
+      "sources": [
+        {
+          "label": "X-energy — Leadership team page",
+          "url": "https://x-energy.com/leadership/",
+          "quote": "Sean Miers – Vice President, Project Engineering",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-taylor",
+      "company": "X-energy",
+      "name": "Robert Taylor",
+      "title": "Vice President, Regulatory Affairs and Licensing",
+      "background": "Before joining X-energy, served as Deputy Office Director for New Reactors at the U.S. Nuclear Regulatory Commission, leading a team overseeing nationally significant nuclear projects, including preparation for review of next-generation advanced reactors and SMR licensing.",
+      "why_they_matter": "A former NRC Deputy Office Director for New Reactors now runs X-energy's own licensing strategy — direct regulator-side experience with the exact review process X-energy depends on for the Dow Construction Permit Application.",
+      "sources": [
+        {
+          "label": "X-energy — Leadership team page",
+          "url": "https://x-energy.com/leadership/",
+          "quote": "Robert Taylor – Vice President, Regulatory Affairs and Licensing",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-cable",
+      "company": "X-energy",
+      "name": "Graham Cable",
+      "title": "Vice President, Strategic Marketing & Customer Relationship Management",
+      "background": "Listed on X-energy's leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "The only X-energy title carrying the word 'Customer' explicitly — direct evidence the company staffs a dedicated customer-relationship function alongside its Chief Commercial Officer.",
+      "sources": [
+        {
+          "label": "X-energy — Leadership team page",
+          "url": "https://x-energy.com/leadership/",
+          "quote": "Graham Cable – Vice President, Strategic Marketing & Customer Relationship Management",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-scheinman",
+      "company": "X-energy",
+      "name": "Rachel Lappin Scheinman",
+      "title": "Chief Human Capital Officer",
+      "since": "2025-07",
+      "background": "Appointed July 2025. More than a decade leading organizational strategy at high-growth, investor-backed companies; most recently a senior HR leader at Altria Group following its $3 billion acquisition of NJOY, where she had been Chief Human Resources Officer.",
+      "why_they_matter": "Hired the same month as the first Chief Commercial Officer — both appointments were explicitly framed by CEO Sell as building the scaffolding for X-energy's 'commercial enterprise' ahead of the IPO.",
+      "sources": [
+        {
+          "label": "X-energy — Expands Executive Team press release",
+          "url": "https://x-energy.com/news/x-energy-expands-executive-team-with-addition-of-new-commercial-and-human-capital-leadership/",
+          "quote": "She most recently served as a senior HR leader at Altria Group following its $3 billion acquisition of NJOY where she served as Chief Human",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-wallace",
+      "company": "X-energy",
+      "name": "Michael J. Wallace",
+      "title": "Director",
+      "since": "2021-12",
+      "background": "On the board since December 2021. Served as the senior-most nuclear industry executive at both Exelon (then ComEd) and Constellation Energy, where he was President and Vice Chairman. Also served on the board of Emirates Nuclear Energy Corporation (2013-2025) and as a Senior Advisor to the North American Electric Reliability Council since 2017. Holds a B.S. in Electrical Engineering from Marquette and an MBA from the University of Chicago.",
+      "why_they_matter": "One of the most senior nuclear utility executives in U.S. history sits on X-energy's board — direct link to the company's description of a team drawn from Exelon/Constellation-caliber nuclear leadership.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "Mr. Wallace served as the senior-most nuclear industry executive at both Exelon (then known as ComEd) and Constellation Energy, where he also served as President",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-ginther",
+      "company": "X-energy",
+      "name": "Christopher F. Ginther",
+      "title": "Director",
+      "since": "2023-01",
+      "background": "On the board since January 2023. Served as EVP, Enterprise Strategy, New Nuclear, Business Development and Commercial Management at Ontario Power Generation (Jul 2012-May 2024). Earlier VP and General Counsel at Bell Canada Enterprises and SVP/General Counsel at Ontario Lottery and Gaming Corporation. Holds a B.A. from the University of Western Ontario and an LL.B/LL.M from Osgoode Hall Law School.",
+      "why_they_matter": "A second OPG alumnus on X-energy's leadership (alongside COO Popovic) whose OPG role was explicitly commercial/business-development, reinforcing the OPG-to-X-energy talent pipeline the company describes.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Form S-1/A (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926045175/tm2527015-19_s1a.htm",
+          "quote": "He also served as Executive Vice President Enterprise Strategy, New Nuclear, Business Development and Commercial Management at OPG, a globally recognized leader in the development",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-laufer",
+      "company": "Kairos Power",
+      "name": "Mike Laufer",
+      "title": "Chief Executive Officer, Co-Founder",
+      "background": "Co-founded Kairos Power in 2016 and has led it as CEO since. Frequently the company's lead spokesperson on the Google master agreement, Hermes/Hermes 2 licensing, and the TVA power purchase agreement.",
+      "why_they_matter": "As CEO and co-founder he is the consistent voice behind every major Kairos commercial and regulatory milestone in this window, from the Google deal through Hermes 2 groundbreaking.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Mike Laufer – Chief Executive Officer, Co-Founder",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-blandford",
+      "company": "Kairos Power",
+      "name": "Edward Blandford",
+      "title": "Chief Technology Officer, Co-Founder",
+      "background": "Co-founded Kairos Power in 2016; responsible for technology development, experimental testing, modeling/simulation and fuels and materials activities. Publicly leads discussion of Kairos's manufacturing methods, including electron-beam welding and precast-concrete construction at the Oak Ridge campus.",
+      "why_they_matter": "The technical co-founder who speaks specifically to Kairos's vertical-integration manufacturing bet — the mechanism by which the company says it will bring reactor costs down.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Edward Blandford – Chief Technology Officer, Co-Founder",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-olson",
+      "company": "Kairos Power",
+      "name": "Jeffrey (Jeff) Olson",
+      "title": "Vice President, Commercial & Corporate Development",
+      "background": "Held the title 'Vice President, Business Development & Finance' at the time of the October 2024 Google deal announcement; now listed as VP, Commercial & Corporate Development on Kairos's own leadership page, indicating a title change/expansion over the window.",
+      "why_they_matter": "Directly matches the task's flag for a 'commercial' title, and his title's evolution from 'Business Development & Finance' to 'Commercial & Corporate Development' tracks Kairos's shift toward running a multi-plant commercial order book after the Google deal.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Jeffrey Olson – Vice President, Commercial & Corporate Development",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Kairos Power — Google partnership press release",
+          "url": "https://kairospower.com/external_updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation/",
+          "quote": "Jeff Olson, Kairos Power Vice President, Business Development & Finance.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-gerardi",
+      "company": "Kairos Power",
+      "name": "Craig Gerardi",
+      "title": "Vice President, Manufacturing",
+      "background": "Leads manufacturing at Kairos Power's Albuquerque, NM Manufacturing Development Campus. As of January 2025 said the company had been pursuing vertical integration of vessel manufacturing for 'a little over three years,' i.e. since roughly 2021-2022.",
+      "why_they_matter": "Runs the specific function — in-house reactor-vessel fabrication — that Kairos says is central to controlling cost, quality and schedule for its commercial fleet.",
+      "sources": [
+        {
+          "label": "Kairos Power — ETU 2.0 reactor vessel press release",
+          "url": "https://www.kairospower.com/updates/kairos-power-completes-fabrication-and-installation-of-first-internally-produced-reactor-vessel-for-engineering-test-unit",
+          "quote": "Craig Gerardi, Kairos Power Vice President of Manufacturing",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-hastings",
+      "company": "Kairos Power",
+      "name": "Peter Hastings",
+      "title": "Vice President, Regulatory Affairs & Quality",
+      "background": "Kairos's public voice on NRC licensing milestones; spoke for the company on the record when the NRC approved Hermes 2's construction permits in November 2024.",
+      "why_they_matter": "Regulatory affairs is existential for Kairos given its two-step NRC licensing strategy (Hermes then Hermes 2); Hastings is the named executive responsible for that track record.",
+      "sources": [
+        {
+          "label": "Kairos Power — Hermes 2 construction permit press release",
+          "url": "https://www.kairospower.com/updates/nuclear-regulatory-commission-approves-construction-permits-for-hermes-2-demonstration-plant",
+          "quote": "Peter Hastings, Vice President of Regulatory Affairs & Quality",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-hackett",
+      "company": "Kairos Power",
+      "name": "Micah Hackett",
+      "title": "Vice President, Fuels & Materials",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Leads fuels and materials for a reactor design (KP-FHR) that, unlike X-energy's TRISO-based design, uses TRISO-coated pebble fuel in a molten-salt coolant — a distinct materials-qualification challenge from any light-water design.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Micah Hackett – Vice President, Fuels & Materials",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-kruizenga",
+      "company": "Kairos Power",
+      "name": "Alan Kruizenga",
+      "title": "Vice President, Salt",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "A VP role dedicated solely to the molten-fluoride-salt coolant — underscores how central salt chemistry/handling is to KP-FHR's technical risk profile, distinct from every other reactor vendor in this pass.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Alan Kruizenga – Vice President, Salt",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-mcguire",
+      "company": "Kairos Power",
+      "name": "Mike McGuire",
+      "title": "Vice President, Operations and Site Delivery",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Owns site delivery across Kairos's three-state footprint (California, New Mexico, Tennessee) as Hermes and Hermes 2 move from construction into operations.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Mike McGuire – Vice President, Operations and Site Delivery",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-singaraju",
+      "company": "Kairos Power",
+      "name": "Ravi Singaraju",
+      "title": "Vice President, Engineering Design & Integration",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Owns the systems-integration function that must reconcile Kairos's iterative-hardware learning (ETU/Hermes/Hermes 2) into a single commercial KP-FHR design.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Ravi Singaraju – Vice President, Engineering Design & Integration",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-schenk",
+      "company": "Kairos Power",
+      "name": "Linda Schenk",
+      "title": "Vice President, Financial Operations",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Runs financial operations for a company funding a multi-billion-dollar reactor buildout through private capital plus a DOE ARDP milestone-payment structure rather than public markets.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Linda Schenk – Vice President, Financial Operations",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-mcintosh",
+      "company": "Kairos Power",
+      "name": "Kerry McIntosh",
+      "title": "Chief of Staff",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Chief of Staff to CEO Laufer as the company scales past 500 employees.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Kerry McIntosh – Chief of Staff",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-tmiller",
+      "company": "Kairos Power",
+      "name": "Tom Miller",
+      "title": "Chief of Staff, Technology Development",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "A second, technology-development-specific Chief of Staff role (alongside Kerry McIntosh's company-wide one) signals the scale of Kairos's iterative-hardware R&D program.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Tom Miller – Chief of Staff, Technology Development",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-klisura",
+      "company": "Kairos Power",
+      "name": "Esther Klisura",
+      "title": "Senior Director, Head of Legal",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Kairos's top in-house legal role at a moment when the company is negotiating multi-decade PPAs (TVA) and a master agreement with Google.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Esther Klisura – Senior Director, Head of Legal",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-rodriguez",
+      "company": "Kairos Power",
+      "name": "Jaclyn Rodriguez",
+      "title": "Senior Director, Talent & Organizational Development",
+      "background": "Listed on Kairos's own leadership page; exact prior employer not independently verified in this pass beyond the company's own title.",
+      "why_they_matter": "Owns talent strategy as Kairos scales past 500 employees across California, New Mexico and Tennessee sites simultaneously.",
+      "sources": [
+        {
+          "label": "https://kairospower.com/company",
+          "url": "https://kairospower.com/company",
+          "quote": "Jaclyn Rodriguez – Senior Director, Talent & Organizational Development",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "kairos-gardner",
+      "company": "Kairos Power",
+      "name": "Darrell Gardner",
+      "title": "Senior Licensing Director",
+      "background": "Not listed among the 13 names on Kairos's own /company leadership page, but named and quoted on the record in Kairos's official November 2024 press release on the Hermes 2 construction permit.",
+      "why_they_matter": "A second named licensing voice (beyond VP Peter Hastings) the company puts forward specifically to praise the speed of its NRC review process — a recurring Kairos talking point.",
+      "sources": [
+        {
+          "label": "Kairos Power — Hermes 2 construction permit press release",
+          "url": "https://www.kairospower.com/updates/nuclear-regulatory-commission-approves-construction-permits-for-hermes-2-demonstration-plant",
+          "quote": "Darrell Gardner, Senior Licensing Director",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "xe-sell-amazon-marketplace",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2024-10-16",
+      "venue": "X-energy — Amazon Invests in X-energy press release",
+      "topic": "orders",
+      "quote": "Amazon and X-energy are poised to define the future of advanced nuclear energy in the commercial marketplace. To fully realize the opportunities available through artificial intelligence, we must bring clean, safe, and reliable electrons onto the grid with proven technologies that can scale and grow with demand.",
+      "what_it_means": "CEO framing of the ~$500M Series C-1 raise anchored by Amazon, tying the deal explicitly to AI power demand rather than general decarbonization.",
+      "sources": [
+        {
+          "label": "X-energy — Amazon Invests in X-energy press release",
+          "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+          "quote": "Amazon and X-energy are poised to define the future of advanced nuclear energy in the commercial marketplace.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-ghaffarian-investments",
+      "company": "X-energy",
+      "speaker": "Kamal Ghaffarian",
+      "role": "Founder and Executive Chairman, X-energy",
+      "date": "2024-10-16",
+      "venue": "X-energy — Amazon Invests in X-energy press release",
+      "topic": "orders",
+      "quote": "The investments from Amazon, our Series C-1 funders, and valued partners like Dow and the U.S. Department of Energy underscore X-energy's leadership in commercializing SMR technology and delivering the clean, safe, affordable, and reliable power our world needs now.",
+      "what_it_means": "Founder/Chairman explicitly names DOE alongside private investors and Dow as co-equal backers, reflecting how load-bearing the ARDP cost-share is to X-energy's capital structure.",
+      "sources": [
+        {
+          "label": "X-energy — Amazon Invests in X-energy press release",
+          "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+          "quote": "The investments from Amazon, our Series C-1 funders, and valued partners like Dow and the U.S. Department of Energy underscore X-energy’s leadership in commercializing SMR",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-duling-tx1-construction",
+      "company": "X-energy",
+      "speaker": "Joel Duling",
+      "role": "President, TRISO-X",
+      "date": "2025-11-17",
+      "venue": "X-energy — Begins Vertical Construction for TX-1 press release",
+      "topic": "units-manufacturing",
+      "quote": "The start of vertical construction marks another significant milestone in bringing our bold vision for the future of nuclear energy to life. As TX-1 takes shape, it will stand as a symbol of our team's relentless dedication and determination to bring this transformative project forward in just a few years, not decades.",
+      "what_it_means": "Marks the shift from site work to above-ground construction on TX-1, which the same press release says will produce 5 MTU (~700,000 TRISO pebbles) per year -- enough fuel for 11 Xe-100 reactors.",
+      "sources": [
+        {
+          "label": "X-energy — Begins Vertical Construction for TX-1 press release",
+          "url": "https://x-energy.com/news/x-energy-begins-vertical-construction-for-first-in-the-nation-advanced-nuclear-fuel-fabrication-facility/",
+          "quote": "The start of vertical construction marks another significant milestone in bringing our bold vision for the future of nuclear energy to life.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-bhatia-commercial",
+      "company": "X-energy",
+      "speaker": "Dinkar S. Bhatia",
+      "role": "Executive Vice President, Chief Commercial Officer, X-energy",
+      "date": "2025-07-07",
+      "venue": "X-energy — Expands Executive Team press release",
+      "topic": "customers",
+      "quote": "X-energy has the technology, business model, and partnerships to drive advanced nuclear forward from concept to large-scale implementation. I am thrilled to be joining the Company in this exciting moment and leveraging my experience to translate this innovative technology into an economically deployable, world-leading energy solution.",
+      "what_it_means": "First-ever X-energy Chief Commercial Officer, on his own mandate: turning the Xe-100/TRISO-X technology into a standardized, sellable commercial product line rather than one-off projects.",
+      "sources": [
+        {
+          "label": "X-energy — Expands Executive Team press release",
+          "url": "https://x-energy.com/news/x-energy-expands-executive-team-with-addition-of-new-commercial-and-human-capital-leadership/",
+          "quote": "X-energy has the technology, business model, and partnerships to drive advanced nuclear forward from concept to large-scale implementation.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-sell-tam",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "costs",
+      "quote": "it's estimated that the market just for SMRs could be 158 gigawatts by 2050. That's a $2.3 trillion revenue potential.",
+      "what_it_means": "CEO's own market-sizing number on X-energy's first quarterly earnings call as a public company (Q2 2026), framing the addressable market rather than X-energy's own backlog.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "it's estimated that the market just for SMRs could be 158 gigawatts by 2050. That's a $2.3 trillion revenue potential.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-sell-ardp-billion",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "costs",
+      "quote": "Yesterday, the Department of Energy formally notified X-Energy that our ARDP cooperative agreement will receive up to an additional $1 billion.",
+      "what_it_means": "On top of the original ~$1.1B ARDP award from 2021, taking total potential DOE cost-share to about $2.1 billion under the 50/50 ARDP structure -- disclosed live on the Q2 2026 call, one day after DOE's notification.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "Yesterday, the Department of Energy formally notified X-Energy that our ARDP cooperative agreement will receive up to an additional $1 billion.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-sell-haleu-dow",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "supply-chain",
+      "quote": "For our first core loads at Dow, we've secured existing material, about 7.6 metric tons from the Department of Energy.",
+      "what_it_means": "Names the exact HALEU quantity (7.6 MTU) X-energy has already secured from DOE for the Seadrift first core -- direct evidence of how X-energy is de-risking the HALEU-availability problem the S-1 flags as a top risk factor.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "For our first core loads at Dow, we've secured existing material, about 7.6 metric tons from the Department of Energy.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-sell-tx2-capacity",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "units-manufacturing",
+      "quote": "And once completed, this campus is expected to establish one of the world's largest commercial scale advanced nuclear fuel fabrication sites with the capacity to produce enough TRISO-X fuel to support approximately 55 of X-Energy's Xe-100 reactors.",
+      "what_it_means": "First public figure tying the combined TX-1 + TX-2 Oak Ridge campus (TX-2 said in the same call to run at 4x TX-1's capacity) to a specific reactor-fleet-support number: 55 Xe-100s.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "This facility is anticipated to produce 4x the capacity of TX-1.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-gross-q2-revenue",
+      "company": "X-energy",
+      "speaker": "Daniel Gross",
+      "role": "Chief Financial Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "costs",
+      "quote": "In Q2 of 2026, total revenues and grant income were $54.6 million. That's $50.1 million of services revenue, which is primarily the Xe-100 design work under the Advanced Reactor Demonstration Program, plus $4.5 million of grant income, which is primarily tied to the Dow demonstration reactor.",
+      "what_it_means": "First revenue breakdown X-energy has given as a public company; nearly all of it is ARDP-linked services/design revenue for the Dow project, not yet product or fuel-fabrication revenue.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "In Q2 of 2026, total revenues and grant income were $54.6 million.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-gross-liquidity",
+      "company": "X-energy",
+      "speaker": "Daniel Gross",
+      "role": "Chief Financial Officer, X-energy",
+      "date": "2026-08-20",
+      "venue": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+      "topic": "costs",
+      "quote": "We ended June with $1.9 billion in cash and investments, that's $1.1 billion of cash and cash equivalents, $490 million of short-term investments and $265 million of long-term investments.",
+      "what_it_means": "Post-IPO balance sheet snapshot roughly two months after the April 2026 Nasdaq listing; CFO frames this as roughly double the liquidity of three months earlier because of ~$1.1B of net IPO proceeds.",
+      "sources": [
+        {
+          "label": "X-Energy, Inc. — Q2 2026 Earnings Call Transcript (The Motley Fool)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/20/x-energy-xe-q2-2026-earnings-call-transcript/",
+          "quote": "We ended June with $1.9 billion in cash and investments, that's $1.1 billion of cash and cash equivalents, $490 million of short-term investments and $265",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "xe-sell-centrica-uk",
+      "company": "X-energy",
+      "speaker": "J. Clay Sell",
+      "role": "Chief Executive Officer, X-energy",
+      "date": "2025-09-14",
+      "venue": "X-energy — Centrica Joint Development Agreement press release",
+      "topic": "international",
+      "quote": "Our partnership with Centrica represents a commitment to bring X-energy's industry-leading advanced nuclear technology to the U.K. at scale. Together, we aim to build a fleet that has the ability to reliably deliver clean power, strengthen energy security, and grow the trans-Atlantic economy for decades to come.",
+      "what_it_means": "Announces X-energy's first international expansion (a planned up-to-6 GW U.K. fleet with Hartlepool as preferred first site) -- a distinct customer/geography from the three existing U.S.-anchored deals (Dow, Amazon/Energy Northwest).",
+      "sources": [
+        {
+          "label": "X-energy — Centrica Joint Development Agreement press release",
+          "url": "https://x-energy.com/news/centrica-and-x-energy-sign-joint-development-agreement-to-deploy-uks-first-advanced-modular-reactors/",
+          "quote": "Our partnership with Centrica represents a commitment to bring X-energy’s industry-leading advanced nuclear technology to the U.K. at scale.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-laufer-google-learning-curve",
+      "company": "Kairos Power",
+      "speaker": "Mike Laufer",
+      "role": "Chief Executive Officer and Co-Founder, Kairos Power",
+      "date": "2024-10-14",
+      "venue": "Kairos Power — Google Partnership press release",
+      "topic": "orders",
+      "quote": "Our partnership with Google will enable Kairos Power to quickly advance down the learning curve as we drive toward cost and schedule certainty for our commercial product",
+      "what_it_means": "CEO's framing of the Google Master Plant Development Agreement (500 MW by 2035, first plant 2030) as primarily a learning-curve/cost-certainty mechanism, not just an offtake sale.",
+      "sources": [
+        {
+          "label": "Kairos Power — Google Partnership press release",
+          "url": "https://kairospower.com/external_updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation/",
+          "quote": "Our partnership with Google will enable Kairos Power to quickly advance down the learning curve as we drive toward cost and schedule certainty for our",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-olson-demand-signal",
+      "company": "Kairos Power",
+      "speaker": "Jeff Olson",
+      "role": "Vice President, Business Development & Finance, Kairos Power",
+      "date": "2024-10-14",
+      "venue": "Kairos Power — Google Partnership press release",
+      "topic": "customers",
+      "quote": "This early commitment from Google provides a strong customer demand signal, which reinforces Kairos Power's continued investment in our iterative development approach and commercial production scale-up.",
+      "what_it_means": "The commercial lead frames Google's multi-plant commitment as validation that justifies further capital investment in Kairos's iterative hardware program -- i.e. the order itself funds the R&D.",
+      "sources": [
+        {
+          "label": "Kairos Power — Google Partnership press release",
+          "url": "https://kairospower.com/external_updates/google-and-kairos-power-partner-to-deploy-500-mw-of-clean-electricity-generation/",
+          "quote": "This early commitment from Google provides a strong customer demand signal, which reinforces Kairos Power’s continued investment in our iterative development approach and commercial production",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-laufer-hermes2-permit",
+      "company": "Kairos Power",
+      "speaker": "Mike Laufer",
+      "role": "Chief Executive Officer and Co-Founder, Kairos Power",
+      "date": "2024-11-20",
+      "venue": "Kairos Power — Hermes 2 Construction Permit press release",
+      "topic": "regulatory",
+      "quote": "We are proud to lead the industry in advanced reactor licensing and look forward to continued collaboration with the NRC as we chart a path forward with future applications.",
+      "what_it_means": "Hermes 2 became the first electricity-producing Gen IV plant approved for construction in the U.S.; NRC review took just over a year, built on the original Hermes construction-permit application.",
+      "sources": [
+        {
+          "label": "Kairos Power — Hermes 2 Construction Permit press release",
+          "url": "https://www.kairospower.com/updates/nuclear-regulatory-commission-approves-construction-permits-for-hermes-2-demonstration-plant",
+          "quote": "We are proud to lead the industry in advanced reactor licensing and look forward to continued collaboration with the NRC as we chart a path",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-hastings-licensing-basis",
+      "company": "Kairos Power",
+      "speaker": "Peter Hastings",
+      "role": "Vice President of Regulatory Affairs & Quality, Kairos Power",
+      "date": "2024-11-20",
+      "venue": "Kairos Power — Hermes 2 Construction Permit press release",
+      "topic": "regulatory",
+      "quote": "The licensing basis established with both the Hermes and Hermes 2 construction permits will carry forward to future license applications, ensuring the safety of Kairos Power's deployments while supporting continued innovation and efficiency in the review process.",
+      "what_it_means": "States explicitly that Hermes and Hermes 2's licensing basis is meant to be reused for future (commercial-fleet) license applications -- the regulatory analog of the company's hardware-iteration strategy.",
+      "sources": [
+        {
+          "label": "Kairos Power — Hermes 2 Construction Permit press release",
+          "url": "https://www.kairospower.com/updates/nuclear-regulatory-commission-approves-construction-permits-for-hermes-2-demonstration-plant",
+          "quote": "The licensing basis established with both the Hermes and Hermes 2 construction permits will carry forward to future license applications, ensuring the safety of Kairos",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-laufer-tva-collab",
+      "company": "Kairos Power",
+      "speaker": "Mike Laufer",
+      "role": "Chief Executive Officer and Co-Founder, Kairos Power",
+      "date": "2025-08-18",
+      "venue": "Kairos Power — Google/TVA Collaboration press release",
+      "topic": "orders",
+      "quote": "The re-envisioned Hermes 2 gets us closer to the commercial fleet sooner and could only be made possible by close collaboration with TVA and Google, and a supportive local community.",
+      "what_it_means": "TVA's PPA (up to 50 MW, upgraded from Hermes 2's original 28 MWe design) is the first U.S. utility PPA for Gen IV reactor electricity, and is explicitly the first deployment under the wider Google 500 MW agreement.",
+      "sources": [
+        {
+          "label": "Kairos Power — Google/TVA Collaboration press release",
+          "url": "https://www.kairospower.com/updates/google-kairos-power-tva-collaborate-to-meet-americas-growing-energy-needs",
+          "quote": "The re-envisioned Hermes 2 gets us closer to the commercial fleet sooner and could only be made possible by close collaboration with TVA and Google,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-blandford-electron-beam",
+      "company": "Kairos Power",
+      "speaker": "Edward Blandford",
+      "role": "Cofounder and Chief Technology Officer, Kairos Power",
+      "date": "2026-06-12",
+      "venue": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+      "topic": "units-manufacturing",
+      "quote": "If you're worried about how metal is going to distort, if you put a lot of heat into it, it's going to want to distort more, especially if it's been rolled in a configuration that it doesn't want to be in",
+      "what_it_means": "Explains why Kairos partnered with Cambridge Vacuum Engineering and the University of Sheffield's AMRC to introduce electron-beam welding on the ETU 3 reactor vessel -- it uses no filler metal and reduces the heat-affected zone versus arc welding.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+          "url": "https://www.ans.org/news/article-8048/breaking-ground-on-a-new-approach-to-construction/",
+          "quote": "If you’re worried about how metal is going to distort, if you put a lot of heat into it, it’s going to want to distort",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-blandford-precast-hermes2",
+      "company": "Kairos Power",
+      "speaker": "Edward Blandford",
+      "role": "Cofounder and Chief Technology Officer, Kairos Power",
+      "date": "2026-06-12",
+      "venue": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+      "topic": "units-manufacturing",
+      "quote": "Kairos has invested a fair amount in better understanding and incorporating precast concrete construction in the Hermes 2 design",
+      "what_it_means": "Precast/prefabricated concrete (including 3D-printed sinusoidal-joint wall panels tested at Oak Ridge) is Kairos's route to what Blandford calls 'rapid erection' of safety-related building structures.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+          "url": "https://www.ans.org/news/article-8048/breaking-ground-on-a-new-approach-to-construction/",
+          "quote": "Kairos has invested a fair amount in better understanding and incorporating precast concrete construction in the Hermes 2 design",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-laufer-groundbreak",
+      "company": "Kairos Power",
+      "speaker": "Mike Laufer",
+      "role": "Chief Executive Officer and Co-Founder, Kairos Power",
+      "date": "2026-04",
+      "venue": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+      "topic": "units-manufacturing",
+      "quote": "It's not just about the [Hermes 2] brownfield that we're going to start excavation on, but it's everything else that has made this possible and will allow us to go faster moving forward",
+      "what_it_means": "Said to attendees at the April 2026 Hermes 2 groundbreaking celebration (reported in ANS's June 12 article); Laufer frames the value as cumulative process/supply-chain learning, not just the physical construction start.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire — \"Breaking ground on a new approach to construction\"",
+          "url": "https://www.ans.org/news/article-8048/breaking-ground-on-a-new-approach-to-construction/",
+          "quote": "It’s not just about the [Hermes 2] brownfield that we’re going to start excavation on, but it’s everything else that has made this possible and",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-gerardi-vertical-integration",
+      "company": "Kairos Power",
+      "speaker": "Craig Gerardi",
+      "role": "Vice President of Manufacturing, Kairos Power",
+      "date": "2025-01-30",
+      "venue": "Kairos Power — ETU 2.0 Reactor Vessel press release",
+      "topic": "units-manufacturing",
+      "quote": "A little over three years ago, we identified the opportunity to vertically integrate vessel manufacturing to achieve Kairos Power's quality, cost, and schedule goals. It is incredibly gratifying to see so many internal teams work together on this complex project to design, manufacture, and deliver a completed reactor vessel.",
+      "what_it_means": "Marks Kairos's first internally-fabricated reactor vessel (ETU 2.0, built at its Albuquerque Manufacturing Development Campus), the concrete milestone behind the company's vertical-integration strategy.",
+      "sources": [
+        {
+          "label": "Kairos Power — ETU 2.0 Reactor Vessel press release",
+          "url": "https://www.kairospower.com/updates/kairos-power-completes-fabrication-and-installation-of-first-internally-produced-reactor-vessel-for-engineering-test-unit",
+          "quote": "A little over three years ago, we identified the opportunity to vertically integrate vessel manufacturing to achieve Kairos Power’s quality, cost, and schedule goals.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kp-laufer-etu-lower-costs",
+      "company": "Kairos Power",
+      "speaker": "Mike Laufer",
+      "role": "Kairos Power co-founder and CEO",
+      "date": "2025-01-30",
+      "venue": "Kairos Power — ETU 2.0 Reactor Vessel press release",
+      "topic": "costs",
+      "quote": "We are systematically building the capabilities and know-how to self-produce major reactor components over multiple iterations – an investment that will ultimately lower costs for the commercial fleet.",
+      "what_it_means": "Same press release states Kairos's goal is for 80% of ETU 2.0 costs to come from raw materials or off-the-shelf parts rather than outsourced fabrication -- the mechanism behind Laufer's cost claim here.",
+      "sources": [
+        {
+          "label": "Kairos Power — ETU 2.0 Reactor Vessel press release",
+          "url": "https://www.kairospower.com/updates/kairos-power-completes-fabrication-and-installation-of-first-internally-produced-reactor-vessel-for-engineering-test-unit",
+          "quote": "We are systematically building the capabilities and know-how to self-produce major reactor components over multiple iterations",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,582 @@
-{"_meta": {"captured": "2026-08-29", "agent": "antares-radiant-voices", "companies": ["Antares Nuclear", "Radiant Industries"], "window": "2024-08 to 2026-08", "angles_run": ["antares leadership page fetch"], "absences": [], "incomplete": true},
- "leaders": [],
- "quotes": []}
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "antares-radiant-voices",
+    "companies": [
+      "Antares Nuclear",
+      "Radiant Industries"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "Antares leadership page fetch",
+      "Radiant org chart (theorg.com) fetch",
+      "Series C / funding press releases (Antares $470M, Radiant Series D $300M+)",
+      "Rian Bahran CNO hire announcement",
+      "Rita Baranwal CNO hire announcement",
+      "Mike Starrett CRO/CCO hire",
+      "Fort Benning / Fort Bragg Janus $2.2B Army award coverage",
+      "Standard Nuclear TRISO FSA (Antares), Urenco HALEU deal (Antares)",
+      "Radiant R-50 Oak Ridge TN factory announcement",
+      "Radiant Equinix commercial preorder (20 units)",
+      "Cheeky Pint transcript full re-mine for quotes beyond the 6 already in data/voices.json",
+      "Payload Space and Tectonic Defense podcast pages checked for transcripts",
+      "Heatmap News long-form pieces on both companies",
+      "World Nuclear News, ANS Nuclear Newswire, POWER Magazine coverage"
+    ],
+    "absences": [
+      "No verbatim $/kW or $/MWh price figure found from any Antares or Radiant executive in the window. Closest adjacent figures are third-party/analyst: Lazard's ~$214/MWh generic SMR estimate (TechCrunch) and competitor Last Energy's $130-200/MWh (Contrary Research) -- neither is Antares or Radiant pricing, so both were dropped rather than misattributed.",
+      "Payload Space podcast 'Strategic Nuclear Energy, with Jordan Bramble' (Valley of Depth feed) has no published transcript on payloadspace.com or pod.payloadspace.com -- only chapter timestamps and show notes. Skipped per contract (no transcript = no verbatim source).",
+      "Tectonic Defense podcast 'The Reactor Renaissance, with Jordan Bramble' has no published transcript on tectonicdefense.com -- only chapter timestamps. Skipped.",
+      "YouTube videos for both podcast episodes (uIEsJiYxaEo, 4kf-3UeC7e4) returned no fetchable transcript text via WebFetch.",
+      "Radiant's own newsroom (radiantnuclear.com/news/*, /blog/*) returned HTTP 403 to WebFetch on every attempt, confirming the task brief. Worked around via World Nuclear News, ANS Nuclear Newswire, POWER Magazine, Heatmap News, reflector.com wire pickup, and Yahoo Finance/BusinessWire mirrors instead.",
+      "SEC EDGAR filing (Standard Nuclear Inc 8-K, radiant_fuelxsalexagreement.htm) returned HTTP 403 to WebFetch -- could not confirm whether 'Radiant' in that filename refers to Radiant Industries or is coincidental; not used.",
+      "businesswire.com direct fetches (Antares Series C, Rian Bahran hire) timed out repeatedly (60s) -- substituted Yahoo Finance/govconwire mirrors of the same releases, which did load.",
+      "Could not verify Julia DeWahl's exact current title with certainty: Cheeky Pint transcript (Nov 2025, fetched) and mothersfornuclear.org (fetched) both call her only 'co-founder'; a LinkedIn post from Antares' own company account and theorg.com/craft.co aggregators (search snippets only, not independently fetched) call her 'Co-Founder & President'. Recorded as 'Co-Founder' with the discrepancy noted in her background field rather than asserting the unverified title.",
+      "No background/bio found for 9 of the 13 names on the Antares leadership page (Will Madsen, Reuven Fridmar, Tom Mancinelli, Alec Todryk, Christian Kalin, Doug Crawford, Scott Walsh, Jason Andrus, Matt Griffin) -- the leadership page itself lists only names and titles with no bios, and searches did not surface verifiable career details for these individuals. Titles only, omitted from leaders array rather than guessed.",
+      "Could not find a verbatim quote from Bob Urberger (Radiant co-founder/CTO) or Rita Baranwal (Radiant CNO) anywhere in the window despite both being real, sourced leaders -- included in leaders array with background only, no quotes attributed to them.",
+      "Mike Starrett's 'Operating on military installations first gives us the reliability track record to unlock commercial deployments' quote could only be sourced via a WebSearch synthesis; the underlying article (Federal News Network) returned HTTP 403 on direct fetch and Radiant's own site 403s. Marked snippet-only rather than fetched.",
+      "2026-08-29 verification: two records attributing a quote to POWER's Janus Five article were dropped - the surname appears nowhere in that article, live or cached. Five further source quotes were demoted to snippet-only because the subject was on the page but the span had been reconstructed rather than copied verbatim."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "antares-bramble",
+      "company": "Antares Nuclear",
+      "name": "Jordan Bramble",
+      "title": "CEO & Co-Founder",
+      "background": "Holds degrees in systems engineering, physics, and statistics from George Mason University and Georgetown University. Worked as a systems engineer (including at Northrop Grumman) and in federal policy at the White House Office of Management and Budget (2017-2019), then co-founded and served as CTO of restaurant-hall startup Local Kitchens (2020-2023). Co-founded Antares in 2023 with Julia DeWahl.",
+      "why_they_matter": "Primary public voice on funding, military contracts, and Antares' stated pivot from proving criticality to selling electricity commercially.",
+      "sources": [
+        {
+          "label": "Milken Institute — Jordan Bramble speaker bio",
+          "url": "https://milkeninstitute.org/events/global-conference-2026/speakers/jordan-bramble",
+          "quote": "Systems Engineering, Physics, and Statistics from George Mason University and Georgetown University",
+          "status": "fetched"
+        },
+        {
+          "label": "GovConWire — Antares Series C financing coverage",
+          "url": "https://www.govconwire.com/articles/antares-series-c-financing-microreactor-defense",
+          "quote": "one-to-one with the taxpayer in bringing this technology to commercial scale",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-dewahl",
+      "company": "Antares Nuclear",
+      "name": "Julia DeWahl",
+      "title": "Co-Founder",
+      "background": "Studied history at Dartmouth College. Was an angel investor in nuclear companies from 2018 and a nuclear advocate focused on California nuclear policy before co-founding Antares with Jordan Bramble in 2023, where she focuses on supply chain and operations. Her exact current title is disputed across sources: podcast and advocacy-org bios call her only 'co-founder', while some company LinkedIn posts and aggregator sites (theOrg, Craft.co) list 'President' -- not independently confirmed here.",
+      "why_they_matter": "Antares' public voice on supply-chain vulnerabilities (graphite, enrichment, Russian uranium dependency) and where the commercial (non-defense) market opens up, distinct from Bramble's funding/defense focus.",
+      "sources": [
+        {
+          "label": "Mothers for Nuclear — Julia DeWahl profile",
+          "url": "https://www.mothersfornuclear.org/our-stories/julia-dewahl",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Cheeky Pint — Julia DeWahl of Antares on building nuclear reactors for the US military (transcript)",
+          "url": "https://cheekypint.transistor.fm/20/transcript",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-bahran",
+      "company": "Antares Nuclear",
+      "name": "Rian Bahran",
+      "title": "Chief Nuclear Officer",
+      "since": "2026-07",
+      "background": "Holds a Ph.D. in Nuclear Science and Engineering and a dual B.S. in Nuclear Engineering and Engineering Physics, both from Rensselaer Polytechnic Institute. Spent over a decade at Los Alamos National Laboratory, then served as a senior advisor to the Under Secretary of Defense for Policy, an assistant director at the White House Office of Science and Technology Policy, and most recently as DOE's Deputy Assistant Secretary for Nuclear Reactors. Career member of the Senior Executive Service and recipient of the Secretary of Defense Medal for Exceptional Public Service.",
+      "why_they_matter": "A sitting federal advanced-reactor policy official moving directly into a commercial CNO role days after Antares' $470M Series C signals regulatory-world confidence and gives Antares a direct line into DOE reactor policy.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (BusinessWire) — Dr. Rian Bahran Joins Antares as Chief Nuclear Officer",
+          "url": "https://finance.yahoo.com/energy/articles/dr-rian-bahran-joins-antares-160000571.html",
+          "quote": "There is no team I would rather run it with, one that puts its head down and delivers",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-massie",
+      "company": "Antares Nuclear",
+      "name": "Mark Massie",
+      "title": "Chief Engineer",
+      "background": "Holds an S.B. in Nuclear Engineering from the University of Tennessee and an S.M. in Nuclear Engineering from MIT. Co-founded and served as CTO of Transatomic Power, an MIT-spinout molten-salt-reactor startup that ceased operations in 2018, and earlier worked on fuel-composition modeling at TerraPower and sodium-fast-reactor code at Oak Ridge National Laboratory. Named to Forbes' '30 Under 30' in energy.",
+      "why_they_matter": "Brings prior reactor-startup founder experience -- including the lived experience of a well-funded advanced-reactor startup that failed to reach market -- to Antares' hardware engineering.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Topio Networks — Mark Massie, Co-founder and Chief Technology Officer, Transatomic Power",
+          "url": "https://www.topionetworks.com/people/mark-massie-58dabace14f3cfb2ef000002",
+          "quote": "Co-founder and Chief Technology Officer, Transatomic Power",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-satvat",
+      "company": "Antares Nuclear",
+      "name": "Nader Satvat",
+      "title": "Head of Nuclear Engineering",
+      "background": "Holds a Ph.D. in Nuclear Engineering from Purdue University. Was Director of Nuclear Design and Methods at Kairos Power from August 2018 until joining Antares, and earlier held postdoctoral and visiting-faculty positions at the University of Utah and Purdue researching neutron transport and reactor safety analysis.",
+      "why_they_matter": "A direct hire from Kairos Power -- a leading molten-salt-reactor competitor -- into a core physics-design role.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        },
+        {
+          "label": "LinkedIn — Nader Satvat, Head of Nuclear Engineering @ Antares",
+          "url": "https://www.linkedin.com/in/nader-satvat-1a984413",
+          "quote": "Head of Nuclear Engineering @ Antares",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "radiant-bernauer",
+      "company": "Radiant Industries",
+      "name": "Doug Bernauer",
+      "title": "Founder & CEO",
+      "background": "Holds an electrical engineering degree from Case Western Reserve University. Spent roughly 12 years at SpaceX (2007-2019) as an R&D/avionics engineer, leading avionics development for the Grasshopper reusable-rocket prototype and contributing to Falcon 9, Hyperloop, and Boring Company work. Founded Radiant with Bob Urberger in 2020.",
+      "why_they_matter": "Company's primary public voice on manufacturing timeline and factory economics; consistently frames Kaleidos as a diesel-generator replacement rather than a grid-scale play.",
+      "sources": [
+        {
+          "label": "Forbes — This Former SpaceX Engineer Just Raised $40 Million To Build Portable Nuclear Reactors",
+          "url": "https://www.forbes.com/sites/alexknapp/2023/04/24/this-former-spacex-engineer-just-raised-40-million-to-build-portable-nuclear-reactors/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Contrary Research — Radiant Business Breakdown & Founding Story",
+          "url": "https://research.contrary.com/company/radiant",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "radiant-urberger",
+      "company": "Radiant Industries",
+      "name": "Bob Urberger",
+      "title": "Co-Founder & CTO",
+      "background": "A SpaceX engineer who worked with Doug Bernauer on the Grasshopper reusable-rocket program before co-founding Radiant with him in 2020.",
+      "why_they_matter": "Technical co-founder leading reactor engineering; rarely quoted publicly compared to Bernauer, Shivanandan, or Starrett.",
+      "sources": [
+        {
+          "label": "Radiant on X — message from CTO and co-founder Bob Urberger",
+          "url": "https://x.com/RadiantNuclear/status/1624151641888026624",
+          "quote": "our CTO and co-founder, Bob Urberger",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "radiant-shivanandan",
+      "company": "Radiant Industries",
+      "name": "Tori Shivanandan",
+      "title": "President & COO",
+      "since": "2026-05",
+      "background": "Holds a B.A.Sc. from Carnegie Mellon University, where she captained the women's basketball team. Spent eight years at McMaster-Carr rising to lead teams of hundreds across 24/7 operations, and consulted at Happy Returns around PayPal's $350 million acquisition of that company, before joining Radiant. Named President in addition to her existing COO role in May 2026.",
+      "why_they_matter": "Operations/supply-chain executive and Radiant's most frequent public spokesperson on factory siting, manufacturing scale-up, and customer/deal announcements.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Radiant to locate microreactor factory in Tennessee",
+          "url": "https://www.world-nuclear-news.org/articles/radiant-to-locate-microreactor-factory-in-tennessee",
+          "quote": "Tori Shivanandan, Chief Operating Officer",
+          "status": "fetched"
+        },
+        {
+          "label": "Radiant on X — Tori Shivanandan named President at Radiant",
+          "url": "https://x.com/RadiantNuclear/status/2053922169688875161",
+          "quote": "Tori Shivanandan has been named President at Radiant",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "radiant-baranwal",
+      "company": "Radiant Industries",
+      "name": "Rita Baranwal",
+      "title": "Chief Nuclear Officer",
+      "since": "2025-06",
+      "background": "Holds a B.S. in materials science and engineering from MIT and an M.S./Ph.D. in the same field from the University of Michigan. Held materials-engineering and leadership roles at Bechtel Bettis and Westinghouse (rising to Senior Vice President of the AP300 SMR program), directed Idaho National Laboratory's GAIN initiative starting in 2016, and served as the U.S. Department of Energy's Senate-confirmed Assistant Secretary for Nuclear Energy from July 2019 to January 2021 before joining Radiant as its first Chief Nuclear Officer on June 3, 2025.",
+      "why_they_matter": "The most senior former U.S. nuclear regulator/policy official in either company's leadership -- a strong regulatory-credibility signal for licensing Kaleidos.",
+      "sources": [
+        {
+          "label": "Wikipedia — Rita Baranwal",
+          "url": "https://en.wikipedia.org/wiki/Rita_Baranwal",
+          "quote": "Assistant Secretary of Energy for Nuclear Energy",
+          "status": "fetched"
+        },
+        {
+          "label": "ExchangeMonitor — Radiant appoints Rita Baranwal as its chief nuclear officer",
+          "url": "https://www.exchangemonitor.com/radiant-appoints-rita-baranwal-as-its-chief-nuclear-officer/",
+          "quote": "Radiant has appointed former Department of Energy Assistant Secretary for Nuclear Energy Rita Baranwal as its first-ever chief nuclear officer on June 3",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "antares-bramble-mark0-critical",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-06-04",
+      "venue": "LinkedIn post, quoted in POWER Magazine",
+      "topic": "units-manufacturing",
+      "quote": "Now that Mark-0 is critical, the real work is just beginning.",
+      "what_it_means": "Bramble frames the Mark-0 criticality milestone (achieved June 4, 2026 at INL) as the start, not the end, of the harder commercialization work -- deliberately lowering the temperature on a major technical win.",
+      "sources": [
+        {
+          "label": "POWER Magazine — Antares Mark-0 Becomes First Advanced Nuclear Reactor to Achieve Criticality Under DOE Pilot Program",
+          "url": "https://www.powermag.com/antares-mark-0-becomes-first-advanced-nuclear-reactor-to-achieve-criticality-under-doe-pilot-program/",
+          "quote": "Now that Mark-0 is critical, the real work is just beginning",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-sell-electricity",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-06-04",
+      "venue": "LinkedIn post, quoted in POWER Magazine",
+      "topic": "customers",
+      "quote": "I want to reiterate how this fits into our larger roadmap to mature our technology to its commercial potential. This should be obvious, but the goal of a reactor is to sell electricity to customers.",
+      "what_it_means": "A blunt reminder, from the CEO himself right after a criticality milestone, that Antares measures success by electricity sales to customers rather than by technical firsts alone.",
+      "sources": [
+        {
+          "label": "POWER Magazine — Antares Mark-0 Becomes First Advanced Nuclear Reactor to Achieve Criticality Under DOE Pilot Program",
+          "url": "https://www.powermag.com/antares-mark-0-becomes-first-advanced-nuclear-reactor-to-achieve-criticality-under-doe-pilot-program/",
+          "quote": "the goal of a reactor is to sell electricity to customers",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-commitments",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-06-04",
+      "venue": "Statement, quoted in POWER Magazine",
+      "topic": "orders",
+      "quote": "Hitting our commitments is everything to us. Nuclear in America has been defined for too long by delays, by companies that said they would and then didn't. We said criticality in 2026, electricity production in 2027, and power to the warfighter in 2028. Today is the first of those commitments delivered on the schedule we set.",
+      "what_it_means": "Bramble explicitly stakes Antares' credibility on hitting a three-year public schedule (criticality 2026, electricity 2027, warfighter power 2028), contrasting it with an industry reputation for missed deadlines.",
+      "sources": [
+        {
+          "label": "POWER Magazine — Antares Mark-0 Becomes First Advanced Nuclear Reactor to Achieve Criticality Under DOE Pilot Program",
+          "url": "https://www.powermag.com/antares-mark-0-becomes-first-advanced-nuclear-reactor-to-achieve-criticality-under-doe-pilot-program/",
+          "quote": "We said criticality in 2026, electricity production in 2027, and power to the warfighter in 2028",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-bwxt-triso",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-06",
+      "venue": "Press release, quoted in POWER Magazine",
+      "topic": "supply-chain",
+      "quote": "BWXT's TRISO fuel supported our path to criticality. Building on a proven fuel specification developed through Project Pele let our team focus on what we had to prove ourselves: our control system and reactor physics. We're grateful for a partnership that continues as we move from neutrons to electrons.",
+      "what_it_means": "Credits BWXT and the Army's Project Pele program by name for de-risking Antares' fuel supply, letting Antares concentrate engineering effort on control systems and reactor physics rather than fuel qualification.",
+      "sources": [
+        {
+          "label": "POWER Magazine — Antares Mark-0 Becomes First Advanced Nuclear Reactor to Achieve Criticality Under DOE Pilot Program",
+          "url": "https://www.powermag.com/antares-mark-0-becomes-first-advanced-nuclear-reactor-to-achieve-criticality-under-doe-pilot-program/",
+          "quote": "BWXT's TRISO fuel supported our path to criticality",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-urenco-haleu",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-05-22",
+      "venue": "World Nuclear News",
+      "topic": "supply-chain",
+      "quote": "This partnership ensures that when we scale beyond material allocated by the federal government, we will have commercial supply ready to meet our needs.",
+      "what_it_means": "Antares is planning past its initial DOE/government HALEU allocation, locking in Urenco's UK enrichment capacity (operational 2031) as its bridge to commercial-scale fuel supply.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Antares signs long-term HALEU supply deal with Urenco",
+          "url": "https://www.world-nuclear-news.org/articles/antares-signs-long-term-haleu-supply-deal-with-urenco",
+          "quote": "when we scale beyond material allocated by the federal government",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-standard-nuclear",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-08-27",
+      "venue": "BusinessWire release, quoted in Yahoo Finance",
+      "topic": "supply-chain",
+      "quote": "We are focused on delivering dependable, high-performance power to meet our customers' most demanding energy needs. Standard Nuclear is an ideal partner, bringing the industrial scale and critical fuel supply security necessary to support our long-term growth.",
+      "what_it_means": "Names Standard Nuclear as a second TRISO supplier (up to 8 MTU through 2035, alongside BWXT and future Urenco HALEU), explicitly tying fuel security to Antares' 'long-term growth' framing.",
+      "sources": [
+        {
+          "label": "Yahoo Finance (BusinessWire) — Antares Nuclear Announces Multi-Year TRISO Fuel Supply Agreement with Standard Nuclear",
+          "url": "https://finance.yahoo.com/energy/articles/antares-nuclear-announces-multi-triso-130000374.html",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-janus-army",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-08-27",
+      "venue": "POWER Magazine",
+      "topic": "orders",
+      "quote": "We're grateful and proud to partner with the U.S. Army and the Defense Innovation Unit on the Janus Program. Energy scarcity is constraining America's most critical defense systems. Through Janus, Antares will deliver clean, firm, resilient power for the warfighter.",
+      "what_it_means": "Confirms Antares' Janus award is for Fort Bragg specifically, framed as solving 'energy scarcity' constraining defense systems -- part of a combined book Antares put at roughly $1 billion across Janus, ANPI, and Space Force work.",
+      "sources": [
+        {
+          "label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Energy scarcity is constraining America's most critical defense systems",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bramble-cost-not-north-star",
+      "company": "Antares Nuclear",
+      "speaker": "Jordan Bramble",
+      "role": "CEO & Co-Founder",
+      "date": "2026-02-05",
+      "venue": "Heatmap News",
+      "topic": "costs",
+      "quote": "It's a market where cost matters, but cost is not the north star.",
+      "what_it_means": "On TRISO fuel being roughly double the cost of traditional reactor fuel, Bramble says Antares' military/space customers value TRISO's safety and reliability enough that fuel-cycle cost is a secondary consideration, not the deciding factor.",
+      "sources": [
+        {
+          "label": "Heatmap News — The Super Safe, Super Expensive Nuclear Fuel That's Making a Comeback",
+          "url": "https://heatmap.news/energy/antares-bwxt-triso",
+          "quote": "cost matters, but cost is not the north star",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-dewahl-graphite-japan",
+      "company": "Antares Nuclear",
+      "speaker": "Julia DeWahl",
+      "role": "Co-Founder",
+      "date": "2025-11-25",
+      "venue": "Cheeky Pint podcast (Transistor.fm), episode 20",
+      "topic": "supply-chain",
+      "quote": "The graphite that I brought here is actually from a Japanese company. No one's even processing that stuff in the US.",
+      "what_it_means": "A specific, physical example (a graphite sample she brought to the interview) of a reactor-grade material with no domestic processing capacity -- illustrating the supply-chain gap beyond the more commonly discussed HALEU/TRISO fuel question.",
+      "sources": [
+        {
+          "label": "Cheeky Pint — Julia DeWahl of Antares on building nuclear reactors for the US military (transcript)",
+          "url": "https://cheekypint.transistor.fm/20/transcript",
+          "quote": "The graphite that I brought here is actually from a Japanese company",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-dewahl-russian-uranium",
+      "company": "Antares Nuclear",
+      "speaker": "Julia DeWahl",
+      "role": "Co-Founder",
+      "date": "2025-11-25",
+      "venue": "Cheeky Pint podcast (Transistor.fm), episode 20",
+      "topic": "supply-chain",
+      "quote": "we're still buying almost 50% of our uranium from Russia and ex-Soviet states",
+      "what_it_means": "DeWahl states a specific, striking dependency figure for the U.S. nuclear fuel supply chain broadly (not Antares-specific sourcing), used to argue for building domestic enrichment capacity.",
+      "sources": [
+        {
+          "label": "Cheeky Pint — Julia DeWahl of Antares on building nuclear reactors for the US military (transcript)",
+          "url": "https://cheekypint.transistor.fm/20/transcript",
+          "quote": "we're still buying almost 50% of our uranium from Russia and ex-Soviet states",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-dewahl-general-matter",
+      "company": "Antares Nuclear",
+      "speaker": "Julia DeWahl",
+      "role": "Co-Founder",
+      "date": "2025-11-25",
+      "venue": "Cheeky Pint podcast (Transistor.fm), episode 20",
+      "topic": "supply-chain",
+      "quote": "there's a little bit of Silicon Valley DNA entering the space with General Matter, which is Scott Nolan's company out of Founders Fund. So he's getting into the enrichment space.",
+      "what_it_means": "Names General Matter (Scott Nolan's Founders Fund-backed enrichment startup) as a specific, venture-backed entrant trying to close the domestic enrichment gap she describes elsewhere in the same interview.",
+      "sources": [
+        {
+          "label": "Cheeky Pint — Julia DeWahl of Antares on building nuclear reactors for the US military (transcript)",
+          "url": "https://cheekypint.transistor.fm/20/transcript",
+          "quote": "General Matter, which is Scott Nolan's company out of Founders Fund",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-dewahl-mining-perfect-market",
+      "company": "Antares Nuclear",
+      "speaker": "Julia DeWahl",
+      "role": "Co-Founder",
+      "date": "2025-11-25",
+      "venue": "Cheeky Pint podcast (Transistor.fm), episode 20",
+      "topic": "customers",
+      "quote": "Mining, for example, too. Anything that's just off grid, hard to power today, really hard to get fuel into. It's the perfect market.",
+      "what_it_means": "Beyond oil & gas, DeWahl names off-grid mining as a second commercial (non-defense) beachhead, defined by the same trait that makes military bases attractive: expensive, logistically hard fuel delivery.",
+      "sources": [
+        {
+          "label": "Cheeky Pint — Julia DeWahl of Antares on building nuclear reactors for the US military (transcript)",
+          "url": "https://cheekypint.transistor.fm/20/transcript",
+          "quote": "Anything that's just off grid, hard to power today, really hard to get fuel into",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-bernauer-factory-2028",
+      "company": "Radiant Industries",
+      "speaker": "Doug Bernauer",
+      "role": "Founder & CEO",
+      "date": "2025-10-15",
+      "venue": "World Nuclear News / ANS Nuclear Newswire",
+      "topic": "units-manufacturing",
+      "quote": "By 2028, we'll be rolling out the first factory-built nuclear generator, and within a few years we'll be producing over a dozen per year.",
+      "what_it_means": "Bernauer's own near-term framing (a dozen per year) is more conservative than the R-50 factory's eventual 50-reactors-per-year design target -- '2028' is the first unit, ramping over 'a few years' after.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Radiant to locate microreactor factory in Tennessee",
+          "url": "https://www.world-nuclear-news.org/articles/radiant-to-locate-microreactor-factory-in-tennessee",
+          "quote": "within a few years we'll be producing over a dozen per year",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS Nuclear Newswire — Radiant to build first microreactor at Tenn. Manhattan Project site",
+          "url": "https://www.ans.org/news/article-7457/radiant-to-build-first-microreactor-at-tenn-manhattan-project-site/",
+          "quote": "By 2028, we'll be rolling out the first factory-built nuclear generator",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-shivanandan-oak-ridge",
+      "company": "Radiant Industries",
+      "speaker": "Tori Shivanandan",
+      "role": "Chief Operating Officer",
+      "date": "2025-10-15",
+      "venue": "World Nuclear News",
+      "topic": "units-manufacturing",
+      "quote": "We chose Oak Ridge, Tennessee, because of their strong workforce, the community's rich nuclear heritage and the public's second-to-none nuclear IQ.",
+      "what_it_means": "States the factory-siting rationale directly: workforce and community nuclear literacy, not just incentives -- Oak Ridge is a Manhattan Project site and the state Nuclear Energy Fund had put in $70 million.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Radiant to locate microreactor factory in Tennessee",
+          "url": "https://www.world-nuclear-news.org/articles/radiant-to-locate-microreactor-factory-in-tennessee",
+          "quote": "the public's second-to-none nuclear IQ",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-shivanandan-army-savvy-customer",
+      "company": "Radiant Industries",
+      "speaker": "Tori Shivanandan",
+      "role": "President & COO",
+      "date": "2026-08-26",
+      "venue": "Radiant press release, via reflector.com / POWER Magazine",
+      "topic": "orders",
+      "quote": "The U.S. Army is a savvy customer. They have the world's top nuclear experts and know what to look for in a partner. The numbers tell the story. This award shows confidence in Radiant's product and ability to manufacture, deploy, and safely operate nuclear microreactors for the American military.",
+      "what_it_means": "On the $750M Janus award (15 Kaleidos units at Fort Benning by 2030), Shivanandan leans on the Army's own technical vetting as third-party validation of Radiant's manufacturing and operating readiness.",
+      "sources": [
+        {
+          "label": "reflector.com — Radiant Wins $750M Contract from U.S. Army to Deliver Energy Independence to U.S. Military Bases",
+          "url": "http://www.reflector.com/news/national/radiant-wins-750m-contract-from-u-s-army-to-deliver-energy-independence-to-u-s/article_57fb0f54-c588-51b5-8000-adc89c4abf2f.html",
+          "quote": "The U.S. Army is a savvy customer",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "The numbers tell the story",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-shivanandan-diesel-refill",
+      "company": "Radiant Industries",
+      "speaker": "Tori Shivanandan",
+      "role": "Chief Operating Officer",
+      "date": "2025-06-12",
+      "venue": "Heatmap News",
+      "topic": "costs",
+      "quote": "A diesel generator that operates at 1 megawatt you have to refill with diesel about every three to five days",
+      "what_it_means": "Sets up Kaleidos' 5-year refueling interval against the logistics burden it targets: a comparably sized diesel generator needs refueling every 3-5 days.",
+      "sources": [
+        {
+          "label": "Heatmap News — Radiant Nuclear Is Aiming to Build Microreactors ASAP",
+          "url": "https://heatmap.news/climate-tech/radiant-nuclear-microreactors-trump",
+          "quote": "you have to refill with diesel about every three to five days",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-shivanandan-alaska-diesel-price",
+      "company": "Radiant Industries",
+      "speaker": "Tori Shivanandan",
+      "role": "Chief Operating Officer",
+      "date": "2025-06-12",
+      "venue": "Heatmap News",
+      "topic": "costs",
+      "quote": "A customer who's on the North Slope of Alaska, they might pay $11 or $12 a gallon for diesel",
+      "what_it_means": "The only specific dollar price figure found from either company's leadership in this window -- used as the benchmark Radiant says Kaleidos needs to beat in its highest-cost-diesel target markets, not as a Kaleidos price itself.",
+      "sources": [
+        {
+          "label": "Heatmap News — Radiant Nuclear Is Aiming to Build Microreactors ASAP",
+          "url": "https://heatmap.news/climate-tech/radiant-nuclear-microreactors-trump",
+          "quote": "they might pay $11 or $12 a gallon for diesel",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-starrett-military-first-commercial",
+      "company": "Radiant Industries",
+      "speaker": "Mike Starrett",
+      "role": "Chief Commercial Officer",
+      "date": "2026-08",
+      "venue": "Federal News Network",
+      "topic": "customers",
+      "quote": "Operating on military installations first gives us the reliability track record to unlock commercial deployments.",
+      "what_it_means": "UNCONFIRMED SPEAKER. A sibling record attributing a quote to this person cited a POWER article containing neither the sentence nor the surname, so the attribution is not trusted. States Radiant's go-to-market sequencing explicitly: military deployments are a deliberate reliability-proving step before commercial sales, not a separate business line.",
+      "sources": [
+        {
+          "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
+          "url": "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/",
+          "quote": "gives us the reliability track record to unlock commercial deployments",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ]
+}

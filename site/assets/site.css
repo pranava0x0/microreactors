@@ -508,3 +508,18 @@ details.sector:not([open]) > :not(summary){display:none}
   font-weight:var(--weight-medium)}
 .unitbasis{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
   line-height:1.55;overflow-wrap:anywhere}
+
+/* Voice groups collapse: 120 quotes is a wall open, and the summary carries the
+   count so a group is never opened just to find out how big it is. */
+details.voicegroup > summary{cursor:pointer;list-style:none;display:flex;
+  align-items:baseline;gap:var(--space-3);padding:var(--space-3) 0;
+  border-bottom:1px solid var(--border-subtle)}
+details.voicegroup > summary::-webkit-details-marker{display:none}
+.vgname{font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red)}
+.vgcount{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}
+details.voicegroup:not([open]) > :not(summary){display:none}
+details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
+.unitval2{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
+  overflow-wrap:anywhere}
+.voicedate{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}

@@ -929,21 +929,48 @@
   if (D.voices && D.voices.groups) {
     render($("voices-head"), esc("In their words"));
     render($("voices-intro"), esc(D.voices._meta.what_this_is));
-    render($("voices"), D.voices.groups.map(function (g) {
-      return '<div class="voicegroup"><h4>' + esc(g.name) + "</h4>" +
+    var voiceRow = function (q) {
+      return '<figure class="voice">' +
+        "<blockquote>" + esc(q.quote) + "</blockquote>" +
+        '<figcaption><span class="voicewho">' + esc(q.speaker) + "</span>" +
+          '<span class="voicerole">' + esc(q.role) +
+          (q.org && q.org !== "-" ? ", " + esc(q.org) : "") + "</span>" +
+          (q.date ? '<span class="voicedate">' + esc(q.date) + "</span>" : "") +
+          cite(q.sources) + "</figcaption>" +
+        '<p class="voicemeans">' + esc(q.what_it_means) + "</p>" +
+        "</figure>";
+    };
+    /* Collapsed by default: at 120 quotes an open list is a wall. The summary
+       carries the count and the note, so a reader never opens a group just to
+       find out what is in it. */
+    render($("voices"), D.voices.groups.map(function (g, i) {
+      return "<details class=\"voicegroup\"" + (i === 0 ? " open" : "") + ">" +
+        "<summary><span class=\"vgname\">" + esc(g.name) + "</span>" +
+        '<span class="vgcount">' + g.voices.length + "</span></summary>" +
         '<p class="prose note">' + esc(g.note) + "</p>" +
-        g.voices.map(function (q) {
-          return '<figure class="voice">' +
-            "<blockquote>" + esc(q.quote) + "</blockquote>" +
-            '<figcaption><span class="voicewho">' + esc(q.speaker) + "</span>" +
-              '<span class="voicerole">' + esc(q.role) +
-              (q.org && q.org !== "-" ? ", " + esc(q.org) : "") + "</span>" +
-              '<span class="voicetopic">' + esc(q.topic) + "</span>" +
-              cite(q.sources) + "</figcaption>" +
-            '<p class="voicemeans">' + esc(q.what_it_means) + "</p>" +
-            "</figure>";
-        }).join("") + "</div>";
+        g.voices.map(voiceRow).join("") + "</details>";
     }).join(""));
+
+    /* The roster. Who these people are, so a quote has a person behind it. */
+    if (D.voices.leaders && D.voices.leaders.length) {
+      var byCo = {};
+      D.voices.leaders.forEach(function (l) {
+        (byCo[l.company] = byCo[l.company] || []).push(l);
+      });
+      render($("roster-head"), esc("Who runs these companies"));
+      render($("roster-intro"), esc(D.voices._meta.roster_note));
+      render($("roster"), Object.keys(byCo).sort().map(function (co) {
+        return "<details class=\"voicegroup\"><summary><span class=\"vgname\">" + esc(co) +
+          '</span><span class="vgcount">' + byCo[co].length + "</span></summary>" +
+          '<div class="unitrows">' + byCo[co].map(function (l) {
+            return '<div class="unitrow"><span class="unitname">' + esc(l.name) + "</span>" +
+              '<span class="unitval2">' + esc(l.title) + "</span>" +
+              '<span class="unitbasis">' + esc(l.background) +
+              (l.why_they_matter ? " " + esc(l.why_they_matter) : "") + " " +
+              cite(l.sources) + "</span></div>";
+          }).join("") + "</div></details>";
+      }).join(""));
+    }
   }
 
   makeSubnav("sources", [{ id: "register", label: "Source register" },

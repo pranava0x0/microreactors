@@ -36,6 +36,13 @@ class ResearchPass(unittest.TestCase):
             r = run("tools/research_pass.py", "validate", str(pass_dir.relative_to(ROOT)))
             self.assertEqual(r.returncode, 0, pass_dir.name + "\n" + r.stdout + r.stderr)
 
+    def test_voices_matches_its_pass(self):
+        """data/voices.json is derived from the 2026-08-29 pass plus the curated
+        base. Nothing runs merge_voices.py automatically, so without this an edit
+        to a research file that never reaches data/ ships as silent drift."""
+        r = run("tools/merge_voices.py", "data/research/2026-08-29-voices", "--check")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
     def test_derived_datasets_match_the_pass(self):
         """data/instruments.json and data/benchmarks.json are generated. Editing a
         research file without re-running the merge would silently leave the site

@@ -243,3 +243,32 @@
   Oklo (~$145M for 50 MWe; $64-73/MWh claimed), Last Energy (~$100M per 20 MWe unit) and the DOE
   clean-firm band Oklo publishes ($63-119/MWh across three technologies). If a Costs comparison of
   vendor-stated prices is ever built, it has three rows and none of them is a Janus company.
+
+## From the 2026-08-29 leadership and voices pass
+
+- **high** · `site/data.js` is now 1.35 MB, up from 1.15 MB, because voices.json added 124 quotes
+  and a 105-person roster with prose on every row. The lazy-loading item filed on 2026-08-25 is now
+  the largest single lever on page weight and should move ahead of the cosmetic items. Voices is the
+  natural first payload to split: it lives on one sub-tab of one panel, so nothing else needs it.
+  If lazy-loading, cache the in-flight promise rather than a boolean.
+- **med** · 28 sources in the pass are UNREACHABLE to `tools/verify_pass_quotes.py` — mostly hosts
+  that 403 non-browser clients. Their quotes are unverified, not wrong. Browser-capture them the way
+  the DAF FAQ item describes, or accept them as permanently snippet-only and say so on the page.
+- **med** · Only 17 of 124 quotes carry a hard number. That is a finding about the sector, not a gap
+  in the research: three independent agents confirmed no executive at Antares, Radiant, X-energy or
+  Kairos has stated a $/kW or $/MWh figure publicly in two years. Worth stating explicitly on the
+  Costs tab, because it explains why every cost band on this site comes from a laboratory or an
+  academic model rather than a vendor.
+- **med** · Deep Fission's SEC filings contradict its CEO's public statements: a 2 GW Endeavour
+  relationship called a "confirmed" first order on an April 2025 podcast is a non-binding term sheet
+  in the FY2025 10-K, and its public $50-70/MWh cost claims appear in no filing. Both records are in
+  `data/research/2026-08-29-voices/new-entrants.json`. This is the clearest worked example on the
+  site of why an announcement is not an instrument, and belongs on the Tracker's framing.
+- **low** · Three companies (Aalo, Deep Fission, Last Energy) deliberately chose sub-5% LEU over
+  HALEU/TRISO, citing supply-chain risk. Standard Nuclear's HALEU route has two chokepoints, not
+  one: a DOE allocation to the reactor developer, then a separate shipment to the fabricator.
+  TerraPower runs four parallel fuel tracks after losing its only source in 2022. Together that is a
+  supply-chain story the Policy tab does not tell yet.
+- **low** · `tools/leadership_roster.py` reads 15 of 23 company pages; Radiant, Oklo and X-energy
+  403 every automated client. Its name extraction over-collects by design and needs human triage —
+  the authoritative roster is the research pass, which cites a source per person.

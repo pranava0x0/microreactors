@@ -1,11 +1,507 @@
-{"_meta": {"captured": "2026-08-29", "agent": "incumbents-voices", "companies": ["BWXT", "Westinghouse", "General Atomics Electromagnetic Systems"], "window": "2024-08 to 2026-08", "angles_run": ["BWXT leadership press release", "GA-EMS Janus press release", "Westinghouse Jon Ball appointment release", "Westinghouse Army Janus + Malmstrom AFB releases"], "absences": [], "incomplete": true},
- "leaders": [
-  {"id": "bwxt-geveden", "company": "BWXT", "name": "Rex D. Geveden", "title": "President and Chief Executive Officer", "since": "2017-01", "background": "Joined BWXT in 2015 as chief operating officer before advancing to CEO in 2017. Previously spent eight years at Teledyne Technologies rising to executive vice president, and 17 years at NASA including service as the agency's chief operating officer overseeing a $16 billion portfolio. Holds bachelor's and master's degrees in physics from Murray State University.", "why_they_matter": "As CEO he is the person BWXT puts in front of analysts every quarter to talk backlog, capex and the BANR/Janus microreactor program, making his earnings-call remarks the most load-bearing public numbers in the sector.", "sources": [{"label": "BWXT (investor site) — Rex Geveden management biography", "url": "https://investors.bwxt.com/management/rex-geveden", "quote": "Rex D. Geveden is president and chief executive officer of BWXT, a $3.2B nuclear technology and manufacturing company headquartered in Lynchburg, Virginia.", "status": "fetched"}]},
-  {"id": "bwxt-kelly", "company": "BWXT", "name": "Katherine (Kate) Haggerty Kelly", "title": "President, BWXT Advanced Technologies", "since": "2025-06", "background": "Joined BWXT in 2012 as a systems design engineer on a small modular reactor program; became advanced nuclear systems program manager, then director for space and emerging programs at Advanced Technologies from 2022 until her June 2025 promotion. Holds a bachelor's degree in chemical engineering from the University of Notre Dame and is a recipient of the Women in Aerospace Initiative-Inspiration-Impact Award.", "why_they_matter": "She now runs the BWXT subsidiary (Advanced Technologies, LLC) that actually builds BANR and Project Pele, succeeding Joseph Miller who grew that unit's program content 10x and landed two federally funded prototype microreactor awards.", "sources": [{"label": "BWXT — \"BWXT Announces Leadership Changes\" (June 16, 2025)", "url": "https://www.bwxt.com/bwxt-announces-leadership-changes/", "quote": "Katherine (Kate) Haggerty Kelly succeeds Miller as president of BWXT Advanced Technologies.", "status": "fetched"}]},
-  {"id": "bwxt-miller", "company": "BWXT", "name": "Joseph K. Miller", "title": "President, Government Operations (formerly President, BWXT Advanced Technologies, 2021-2025)", "since": "2025-06", "background": "Joined BWXT in 2011 as an engineer, became program manager for advanced nuclear applications in 2017 and general manager of Advanced Technologies in 2020 before being named president of Advanced Technologies in 2021. Began his career in the U.S. Navy aboard the USS Norfolk; holds a master's in radiation health physics from Oregon State and a bachelor's in nuclear engineering from Thomas Edison State College.", "why_they_matter": "He led BWXT Advanced Technologies through the buildout that produced BANR and the two first-of-a-kind federally funded microreactor prototype contracts, the track record BWXT cites as evidence its microreactor unit can execute.", "sources": [{"label": "BWXT — \"BWXT Announces Leadership Changes\" (June 16, 2025)", "url": "https://www.bwxt.com/bwxt-announces-leadership-changes/", "quote": "Under Miller's leadership, Advanced Technologies achieved 10x growth in program content and successfully contracted two federally funded first-of-a-kind prototype programs for advanced nuclear microreactors.", "status": "fetched"}]},
-  {"id": "westinghouse-ball", "company": "Westinghouse", "name": "Jon Ball", "title": "President, eVinci Microreactor", "since": "2023-06", "background": "Previously held a series of executive leadership roles at GE Hitachi Nuclear Energy, including Executive Vice President of Market Development and Executive Vice President of Advanced Nuclear, where he led small modular reactor commercialization and a sodium-cooled fast reactor partnership. Began his career at Westinghouse's Hanford site as a project manager; holds a bachelor's degree in chemistry from Pacific Lutheran University and a doctoral degree in chemistry from Penn State.", "why_they_matter": "He runs Westinghouse's standalone eVinci accelerator business, the commercial and Janus-facing counterpart to Rademacher's government-contracting role.", "sources": [{"label": "Westinghouse Electric Company — \"Westinghouse Announces New President of eVinci Microreactor Business\" (June 5, 2023)", "url": "https://info.westinghousenuclear.com/news/westinghouse-announces-new-president-of-evinci-microreactor-business", "quote": "Westinghouse Electric Company has announced the appointment of Jon Ball as President, eVinci™ Microreactor, effective June 5, 2023.", "status": "fetched"}]},
-  {"id": "westinghouse-rademacher", "company": "Westinghouse", "name": "Rich Rademacher", "title": "President, Westinghouse Government Services", "background": "Previously served as Vice President and Chief Corporate Development Officer at BWX Technologies, Inc. before moving to Westinghouse. Georgetown University graduate.", "why_they_matter": "He is Westinghouse's public voice on eVinci's defense wins, having delivered the on-record quotes for both the Army Janus selection and the Air Force Malmstrom AFB award.", "sources": [{"label": "Westinghouse Electric Company — \"Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project\"", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project", "quote": "Reliable energy is fundamental to mission assurance, operational readiness and national security.", "status": "fetched"}]},
-  {"id": "ga-ems-forney", "company": "General Atomics Electromagnetic Systems", "name": "Scott Forney", "title": "President, GA-EMS", "background": "Leads General Atomics Electromagnetic Systems overall, the division housing GA-TES nuclear work alongside GA-EMS's power, space and defense-systems businesses.", "why_they_matter": "As GA-EMS president he is the company's public spokesperson for the Janus award, positioning GA-TES on the firm's 70-year reactor-design and 68-reactors-deployed track record.", "sources": [{"label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)", "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program", "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies", "status": "fetched"}]},
-  {"id": "ga-ems-back", "company": "General Atomics Electromagnetic Systems", "name": "Christina Back, Ph.D.", "title": "Vice President, GA-EMS Nuclear Technologies and Materials", "background": "Leads GA-EMS's Nuclear Technologies and Materials group, which carries the GA-TES microreactor and General Atomics' legacy uranium-zirconium hydride (UZrH) fuel and TRIGA reactor work.", "why_they_matter": "She is the technical (not just corporate-communications) voice for GA-TES, the person GA-EMS puts forward to explain the reactor's passive-safety design choices to regulators and press.", "sources": [{"label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)", "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program", "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design.", "status": "fetched"}]}
- ],
- "quotes": []}
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "incumbents-voices",
+    "companies": [
+      "BWXT",
+      "Westinghouse",
+      "General Atomics Electromagnetic Systems"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "BWXT leadership press release (Geveden/McCoy/Miller/Kelly, June 2025)",
+      "BWXT investor bio page (Geveden)",
+      "BWXT earnings calls: Q2 2025 (Aug 4 2025), Q3 2025 (Nov 3 2025), Q4 2025 (Feb 23 2026), Q2 2026 (Aug 3 2026) - full transcripts, searched for BANR/microreactor/TRISO/Janus",
+      "BWXT Wyoming TRISO facility news (Cowboy State Daily, May 2026) incl. VP Erik Nygaard",
+      "BWXT BANR/Fort Campbell/Janus selection press coverage (Aug 26-27 2026)",
+      "POWER Magazine 'The Janus Five' deep-dive (Aug 2026) - covered BWXT, Westinghouse, GA-EMS Janus specifics in one fetch",
+      "GA-EMS Janus/Fort Hood press release (ga.com, Aug 26 2026) incl. Forney and Back quotes",
+      "GA-EMS leadership search (Forney, Back, Gordon - excluded non-nuclear COO)",
+      "Westinghouse Jon Ball appointment release (June 2023) and title cross-check",
+      "Westinghouse Penn State FRONTIER / NRC letter of intent release (March 2025)",
+      "Westinghouse Army Janus / Fort Drum release + Malmstrom AFB ANPI release",
+      "Westinghouse eVinci NRC pre-application docket 99902079 search",
+      "SRC (Saskatchewan Research Council) eVinci cancellation search and fetch - task brief's 'Space Reactor Company' appears to be a mistaken expansion of the SRC acronym; no such company exists",
+      "Westinghouse official leadership page cross-check for Ball/Rademacher"
+    ],
+    "absences": [
+      "Could not confirm via a primary source whether Jon Ball still holds President, eVinci Technologies as of Aug 2026. Last primary-source confirmation is March 4, 2025 (Penn State FRONTIER release). A secondary LinkedIn search snippet suggested 'no company (self-employed)' but this could not be verified by fetching LinkedIn directly, and no press release announcing his departure or a successor was found. Kept him on the roster with his last-confirmed title and this caveat rather than guess.",
+      "No Westinghouse-side statement (executive quote or press release) was found addressing the fall 2025 SRC eVinci contract cancellation or explaining the pivot to space/defense/government applications. The only public confirmation located is SRC's own FAQ page; the exact cancellation date within fall 2025 (Sept/Oct/Nov) is not stated anywhere found.",
+      "Could not find a fetchable BWXT SEC filing (10-K/8-K) directly - SEC EDGAR returned 403 Forbidden on WebFetch. Relied on earnings-call transcripts (which quote and paraphrase the same content under securities-law disclosure obligations) and press releases instead.",
+      "GA-EMS is a privately held General Atomics business unit with no earnings calls or SEC filings. Beyond the Aug 26, 2026 Janus press release (Forney, Back quotes, re-carried by POWER Magazine), no additional named-executive interviews, conference talks, or trade-press Q&As were found for GA-TES specifically.",
+      "Did not locate a specific fetchable NRC document quoting Westinghouse on docket 99902079 by name with a quotable passage - confirmed the docket exists and covers eVinci pre-application activity via NRC.gov search results only (not fetched as a quote source).",
+      "BWXT's undisclosed Fort Campbell utility partner and GA-EMS's undisclosed Fort Hood fuel supplier/utility partner remain unnamed in every source checked.",
+      "Did not locate BWXT Q3 2024, Q4 2024, Q1 2025, or Q1 2026 earnings-call transcripts with fetchable full text (Insider Monkey pages returned only site chrome, no transcript body); the four quarters that were fetched (Q2 2025, Q3 2025, Q4 2025, Q2 2026) span the window and consistently cover the same BANR/TRISO/Janus themes.",
+      "No BWXT, Westinghouse, or GA-EMS source disclosed a specific Janus contract dollar value; POWER Magazine's Aug 2026 reporting explicitly confirms non-disclosure for all three (in contrast to Radiant's disclosed up-to-$750M and Antares' ~$1B aggregate figures, both out of scope here)."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "bwxt-geveden",
+      "company": "BWXT",
+      "name": "Rex D. Geveden",
+      "title": "President and Chief Executive Officer",
+      "since": "2017-01",
+      "background": "Joined BWXT in 2015 as chief operating officer before advancing to CEO in 2017. Previously spent eight years at Teledyne Technologies rising to executive vice president, and 17 years at NASA including service as the agency's chief operating officer overseeing a $16 billion portfolio. Holds bachelor's and master's degrees in physics from Murray State University.",
+      "why_they_matter": "As CEO he is the person BWXT puts in front of analysts every quarter to talk backlog, capex and the BANR/Janus microreactor program, making his earnings-call remarks the most load-bearing public numbers in the sector.",
+      "sources": [
+        {
+          "label": "BWXT (investor site) — Rex Geveden management biography",
+          "url": "https://investors.bwxt.com/management/rex-geveden",
+          "quote": "Rex D. Geveden is president and chief executive officer of BWXT, a $3.2B nuclear technology and manufacturing company headquartered in Lynchburg, Virginia.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-kelly",
+      "company": "BWXT",
+      "name": "Katherine (Kate) Haggerty Kelly",
+      "title": "President, BWXT Advanced Technologies",
+      "since": "2025-06",
+      "background": "Joined BWXT in 2012 as a systems design engineer on a small modular reactor program; became advanced nuclear systems program manager, then director for space and emerging programs at Advanced Technologies from 2022 until her June 2025 promotion. Holds a bachelor's degree in chemical engineering from the University of Notre Dame and is a recipient of the Women in Aerospace Initiative-Inspiration-Impact Award.",
+      "why_they_matter": "She now runs the BWXT subsidiary (Advanced Technologies, LLC) that actually builds BANR and Project Pele, succeeding Joseph Miller who grew that unit's program content 10x and landed two federally funded prototype microreactor awards.",
+      "sources": [
+        {
+          "label": "BWXT — \"BWXT Announces Leadership Changes\" (June 16, 2025)",
+          "url": "https://www.bwxt.com/bwxt-announces-leadership-changes/",
+          "quote": "Katherine (Kate) Haggerty Kelly succeeds Miller as president of BWXT Advanced Technologies.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-miller",
+      "company": "BWXT",
+      "name": "Joseph K. Miller",
+      "title": "President, Government Operations (formerly President, BWXT Advanced Technologies, 2021-2025)",
+      "since": "2025-06",
+      "background": "Joined BWXT in 2011 as an engineer, became program manager for advanced nuclear applications in 2017 and general manager of Advanced Technologies in 2020 before being named president of Advanced Technologies in 2021. Began his career in the U.S. Navy aboard the USS Norfolk; holds a master's in radiation health physics from Oregon State and a bachelor's in nuclear engineering from Thomas Edison State College.",
+      "why_they_matter": "He led BWXT Advanced Technologies through the buildout that produced BANR and the two first-of-a-kind federally funded microreactor prototype contracts, and remains BWXT's primary on-record spokesperson for BANR technical and commercial detail even after moving to Government Operations.",
+      "sources": [
+        {
+          "label": "BWXT — \"BWXT Announces Leadership Changes\" (June 16, 2025)",
+          "url": "https://www.bwxt.com/bwxt-announces-leadership-changes/",
+          "quote": "Under Miller's leadership, Advanced Technologies achieved 10x growth in program content and successfully contracted two federally funded first-of-a-kind prototype programs for advanced nuclear microreactors.",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Joe Miller, president of Government Operations, told POWER",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-ball",
+      "company": "Westinghouse",
+      "name": "Jon Ball",
+      "title": "President, eVinci Technologies (title as of March 2025; see absences)",
+      "since": "2023-06",
+      "background": "Previously held a series of executive leadership roles at GE Hitachi Nuclear Energy, including Executive Vice President of Market Development and Executive Vice President of Advanced Nuclear, where he led small modular reactor commercialization and a sodium-cooled fast reactor partnership. Began his career at Westinghouse's Hanford site as a project manager; holds a bachelor's degree in chemistry from Pacific Lutheran University and a doctoral degree in chemistry from Penn State.",
+      "why_they_matter": "He ran Westinghouse's standalone eVinci accelerator business, the commercial and Janus-facing counterpart to Rademacher's government-contracting role, through at least the March 2025 Penn State FRONTIER announcement.",
+      "sources": [
+        {
+          "label": "Westinghouse Electric Company — \"Westinghouse Announces New President of eVinci Microreactor Business\" (June 5, 2023)",
+          "url": "https://info.westinghousenuclear.com/news/westinghouse-announces-new-president-of-evinci-microreactor-business",
+          "quote": "Westinghouse Electric Company has announced the appointment of Jon Ball as President, eVinci™ Microreactor, effective June 5, 2023.",
+          "status": "fetched"
+        },
+        {
+          "label": "Westinghouse — \"Penn State Submits Letter of Intent to NRC...\" (March 4, 2025)",
+          "url": "https://info.westinghousenuclear.com/news/penn-state-submits-letter-of-intent-to-nrc-to-pursue-application-for-new-nuclear-research-facility",
+          "quote": "said Jon Ball, President of eVinci Technologies at Westinghouse",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-nygaard",
+      "company": "BWXT",
+      "name": "Erik Nygaard",
+      "title": "Vice President of Commercial Microreactor Products, BWXT",
+      "background": "Leads BWXT's commercial microreactor products line, which includes the Wyoming TRISO fuel facility buildout and BANR commercialization. Speaks for BWXT on Wyoming site economics and workforce planning alongside Wyoming Energy Authority officials.",
+      "why_they_matter": "He is BWXT's named executive specifically titled for commercial microreactor products (distinct from Geveden's corporate CEO role and Miller/Kelly's Advanced Technologies/Government Operations roles), making him the most precise match for a dedicated 'microreactor business' leader at BWXT.",
+      "sources": [
+        {
+          "label": "Cowboy State Daily — \"BWXT Has First Customer, Partner For Its $500 Million Nuclear Fuel Plant In Gillette\" (May 6, 2026)",
+          "url": "https://cowboystatedaily.com/2026/05/06/bwxt-has-first-customer-for-its-500-million-nuclear-fuel-plant-in-gillette/",
+          "quote": "BWXT Vice President of Commercial Microreactor Products Erik Nygaard's announcement about Kairos",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-rademacher",
+      "company": "Westinghouse",
+      "name": "Rich Rademacher",
+      "title": "President, Westinghouse Government Services",
+      "background": "Previously served as Vice President and Chief Corporate Development Officer at BWX Technologies, Inc. before moving to Westinghouse. Georgetown University graduate.",
+      "why_they_matter": "He is Westinghouse's public voice on eVinci's defense wins, having delivered the on-record quotes for both the Army Janus selection and the Air Force Malmstrom AFB award.",
+      "sources": [
+        {
+          "label": "Westinghouse Electric Company — \"Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project\"",
+          "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "ga-ems-forney",
+      "company": "General Atomics Electromagnetic Systems",
+      "name": "Scott Forney",
+      "title": "President, GA-EMS",
+      "background": "Leads General Atomics Electromagnetic Systems overall, the division housing GA-TES nuclear work alongside GA-EMS's power, space and defense-systems businesses.",
+      "why_they_matter": "As GA-EMS president he is the company's public spokesperson for the Janus award, positioning GA-TES on the firm's 70-year reactor-design and 68-reactors-deployed track record.",
+      "sources": [
+        {
+          "label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)",
+          "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program",
+          "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ga-ems-back",
+      "company": "General Atomics Electromagnetic Systems",
+      "name": "Christina Back, Ph.D.",
+      "title": "Vice President, GA-EMS Nuclear Technologies and Materials",
+      "background": "Leads GA-EMS's Nuclear Technologies and Materials group, which carries the GA-TES microreactor and General Atomics' legacy uranium-zirconium hydride (UZrH) fuel and TRIGA reactor work.",
+      "why_they_matter": "She is the technical (not just corporate-communications) voice for GA-TES, the person GA-EMS puts forward to explain the reactor's passive-safety design choices to regulators and press.",
+      "sources": [
+        {
+          "label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)",
+          "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program",
+          "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "bwxt-geveden-triso-only-scale",
+      "company": "BWXT",
+      "speaker": "Rex D. Geveden",
+      "role": "President and CEO, BWXT",
+      "date": "2025-08-04",
+      "venue": "BWXT Q2 2025 earnings call",
+      "topic": "supply-chain",
+      "quote": "We're literally the only company that can produce TRISO at any scale.",
+      "what_it_means": "Direct CEO confirmation, in response to an analyst question about commercial fuel demand, that BWXT sees itself with no scaled TRISO competitor as of mid-2025 — the basis for the task's premise that rivals depend on third-party TRISO.",
+      "sources": [
+        {
+          "label": "The Motley Fool — BWXT Q2 2025 Earnings Call Transcript (call held Aug 4, 2025)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/05/04/bwxt-bwxt-q2-2025-earnings-call-transcript/",
+          "quote": "We're literally the only company that can produce TRISO at any scale.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-geveden-wyoming-capex",
+      "company": "BWXT",
+      "speaker": "Rex D. Geveden",
+      "role": "President and CEO, BWXT",
+      "date": "2026-08-03",
+      "venue": "BWXT Q2 2026 earnings call",
+      "topic": "costs",
+      "quote": "it's been the commitment, the CapEx associated with standing up that facility and populating with equipment is a few hundred million dollars, up to $500 million.",
+      "what_it_means": "Answering an analyst question about what would trigger a final investment decision on the Wyoming TRISO plant, Geveden puts a hard number on the capex — a few hundred million up to $500 million — and notes BWXT would share the cost with a partner (Kairos) and the Wyoming Energy Authority's $100 million grant.",
+      "sources": [
+        {
+          "label": "The Motley Fool — BWXT Q2 2026 Earnings Call Transcript (call held Aug 3, 2026)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/10/bwxt-bwxt-q2-2026-earnings-call-transcript/",
+          "quote": "the CapEx associated with standing up that facility and populating with equipment is a few hundred million dollars, up to $500 million",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-fitzgerald-janus-timing",
+      "company": "BWXT",
+      "speaker": "Michael Fitzgerald",
+      "role": "Senior Vice President and CFO, BWXT",
+      "date": "2026-08-03",
+      "venue": "BWXT Q2 2026 earnings call",
+      "topic": "orders",
+      "quote": "one of the probably key milestones that we're looking for is the Janus decision. That will -- is expected to continue to progress through this year. We're expecting an award this year.",
+      "what_it_means": "The CFO — not a marketing spokesperson — names the Janus award decision as the key gating milestone for BWXT's Wyoming TRISO capital decision, and states an expectation the award lands within calendar 2026 (which it did, Aug 26, 2026).",
+      "sources": [
+        {
+          "label": "The Motley Fool — BWXT Q2 2026 Earnings Call Transcript (call held Aug 3, 2026)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/10/bwxt-bwxt-q2-2026-earnings-call-transcript/",
+          "quote": "one of the probably key milestones that we're looking for is the Janus decision",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-geveden-antares-janus-triso",
+      "company": "BWXT",
+      "speaker": "Rex D. Geveden",
+      "role": "President and CEO, BWXT",
+      "date": "2026-08-03",
+      "venue": "BWXT Q2 2026 earnings call",
+      "topic": "supply-chain",
+      "quote": "As advanced reactor deployments accelerate, including through the potential Janus Program, we continue to evaluate a commercial TRISO investment in Wyoming through our collaboration with Kairos.",
+      "what_it_means": "Prepared remarks explicitly link the (at-the-time still undecided) Janus award to the Wyoming commercial TRISO investment decision — Janus demand is a direct input to whether BWXT builds the larger facility.",
+      "sources": [
+        {
+          "label": "The Motley Fool — BWXT Q2 2026 Earnings Call Transcript (call held Aug 3, 2026)",
+          "url": "https://www.fool.com/earnings/call-transcripts/2026/08/10/bwxt-bwxt-q2-2026-earnings-call-transcript/",
+          "quote": "we continue to evaluate a commercial TRISO investment in Wyoming through our collaboration with Kairos",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-geveden-banr-janus-mission",
+      "company": "BWXT",
+      "speaker": "Rex D. Geveden",
+      "role": "President and CEO, BWXT",
+      "date": "2026-08-26",
+      "venue": "BWXT press statement on Janus/Fort Campbell selection",
+      "topic": "orders",
+      "quote": "Our long-standing strengths in reactor engineering innovation, TRISO fuel development, and advanced nuclear manufacturing are the foundation of our BANR technology. As we commence work on the Janus program, we are delivering the nation's most credible and reliable path to deployable nuclear power. BANR is purpose-built for mission success.",
+      "what_it_means": "BWXT's official reaction to winning Fort Campbell under Janus, emphasizing self-supplied TRISO fuel as the core of its competitive pitch versus the other four Janus vendors.",
+      "sources": [
+        {
+          "label": "Defence Industry Europe — \"U.S. Army selects BWXT's 20-megawatt nuclear reactor for Fort Campbell...\" (Aug 26-27, 2026)",
+          "url": "https://defence-industry.eu/u-s-army-selects-bwxts-20-megawatt-nuclear-reactor-for-fort-campbell-moving-janus-program-toward-on-base-power-deployment/",
+          "quote": "Our long-standing strengths in reactor engineering innovation, TRISO fuel development and advanced nuclear manufacturing are the foundation of our BANR technology",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "BANR is purpose-built for mission success",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-miller-triso-25m-wyoming",
+      "company": "BWXT",
+      "speaker": "Joseph K. Miller",
+      "role": "President, Government Operations, BWXT (formerly President, BWXT Advanced Technologies)",
+      "date": "2026-08",
+      "venue": "POWER Magazine interview, \"The Janus Five\"",
+      "topic": "supply-chain",
+      "quote": "The company has also authorized more than $25 million to more than double Lynchburg output as a near-term bridge, and it is negotiating a several-hundred-million-dollar commercial TRISO facility in Wyoming's Trona Patch that would add roughly tenfold operational output relative to Lynchburg's current capacity",
+      "what_it_means": "This is POWER's reported paraphrase of Miller's on-record comments (not a pull-quote in his own words), but it is the most specific public figure found for the task's flagged $25M+ Lynchburg TRISO authorization: a near-term bridge investment ahead of the much larger, still-under-negotiation Wyoming facility (roughly 10x Lynchburg's current output).",
+      "sources": [
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "authorized more than $25 million to more than double Lynchburg output as a near-term bridge",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-miller-utility-partner",
+      "company": "BWXT",
+      "speaker": "Joseph K. Miller",
+      "role": "President, Government Operations, BWXT",
+      "date": "2026-08",
+      "venue": "POWER Magazine interview, \"The Janus Five\"",
+      "topic": "orders",
+      "quote": "one of the aggressive type utilities out there that are taking new nuclear extremely seriously",
+      "what_it_means": "BWXT confirmed an undisclosed utility partner is part of the Fort Campbell BANR team but declined to name it — a real but unquantifiable customer signal, consistent with the task's expectation that Janus-linked orders are frequently undisclosed.",
+      "sources": [
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "one of the aggressive type utilities out there that are taking new nuclear extremely seriously",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "bwxt-nygaard-licensed-facility-asset",
+      "company": "BWXT",
+      "speaker": "Erik Nygaard",
+      "role": "Vice President of Commercial Microreactor Products, BWXT",
+      "date": "2026-05-06",
+      "venue": "Cowboy State Daily (Next Frontier Energy Summit, Laramie)",
+      "topic": "supply-chain",
+      "quote": "Once you have a licensed nuclear facility, it's a very powerful asset to try to build a business around.",
+      "what_it_means": "BWXT's commercial-microreactor VP frames the Lynchburg/Wyoming TRISO licenses themselves as the durable competitive moat, not just a single contract — explaining why BWXT signed Kairos as a second TRISO customer for the Gillette plant rather than keeping the output to itself.",
+      "sources": [
+        {
+          "label": "Cowboy State Daily — \"BWXT Has First Customer, Partner For Its $500 Million Nuclear Fuel Plant In Gillette\" (May 6, 2026)",
+          "url": "https://cowboystatedaily.com/2026/05/06/bwxt-has-first-customer-for-its-500-million-nuclear-fuel-plant-in-gillette/",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-rademacher-janus-fortdrum",
+      "company": "Westinghouse",
+      "speaker": "Rich Rademacher",
+      "role": "President, Westinghouse Government Services",
+      "date": "2026-08-26",
+      "venue": "Westinghouse press statement on Janus/Fort Drum selection",
+      "topic": "orders",
+      "quote": "Reliable energy is fundamental to mission assurance, operational readiness and national security. The selection of the eVinci microreactor for the Janus Project highlights the important role advanced nuclear technology can play in providing resilient, long-duration power to the warfighter.",
+      "what_it_means": "Westinghouse's on-record reaction to the Fort Drum award; POWER Magazine's reporting on the same announcement confirms Westinghouse would not disclose reactor output, schedule, or contract value for Fort Drum, unlike its own public 5 MWe/15 MWth reference-design numbers.",
+      "sources": [
+        {
+          "label": "Westinghouse Electric Company — \"Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project\"",
+          "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project",
+          "quote": "Reliable energy is fundamental to mission assurance, operational readiness and national security",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine — \"The Janus Five\" (Aug 2026) — confirms Fort Drum value/output not disclosed",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Westinghouse confirmed the selection to POWER, though it did not disclose reactor output, schedule, or contract value",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-rademacher-malmstrom-anpi",
+      "company": "Westinghouse",
+      "speaker": "Rich Rademacher",
+      "role": "President, Westinghouse Government Services",
+      "date": "2026-04-24",
+      "venue": "Westinghouse press statement, Malmstrom Air Force Base ANPI proposal",
+      "topic": "orders",
+      "quote": "Westinghouse's eVinci microreactor is perfectly suited to ensure our Armed Forces have the reliable and resilient energy they need for mission-critical operations globally.",
+      "what_it_means": "A second defense-market win (actually a proposal at this stage, per the source's own wording) ahead of Janus, under the Air Force's separate ANPI program — shows eVinci's government pipeline is broader than just the Army, with a stated reference design of 5 MWe continuous for 8+ years.",
+      "sources": [
+        {
+          "label": "Defence Industry Europe — \"Westinghouse eVinci microreactor selected for Malmstrom Air Force Base...\" (Apr 24, 2026)",
+          "url": "https://defence-industry.eu/westinghouse-evinci-microreactor-selected-for-malmstrom-air-force-base-under-u-s-air-force-nuclear-energy-program/",
+          "quote": "Westinghouse's eVinci microreactor is perfectly suited to ensure our Armed Forces have the reliable and resilient energy they need for mission-critical operations globally",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-ball-pennstate-frontier",
+      "company": "Westinghouse",
+      "speaker": "Jon Ball",
+      "role": "President, eVinci Technologies, Westinghouse",
+      "date": "2025-03-04",
+      "venue": "Westinghouse press release, Penn State FRONTIER letter of intent",
+      "topic": "regulatory",
+      "quote": "Penn State's new University Park research facility will further solidify Pennsylvania as one of the world's leading nuclear innovation hubs. We look forward to bringing our advanced eVinci technology to the FRONTIER program to find new ways of harnessing nuclear energy while providing students and researchers with unprecedented opportunities.",
+      "what_it_means": "Marks Penn State's Feb 28, 2025 letter of intent to the NRC as the first step toward an eVinci research-reactor construction permit under FRONTIER — the non-defense, non-Janus commercial/research track for eVinci that predates the later pivot toward defense and space.",
+      "sources": [
+        {
+          "label": "Westinghouse Electric Company — \"Penn State Submits Letter of Intent to NRC...\" (March 4, 2025)",
+          "url": "https://info.westinghousenuclear.com/news/penn-state-submits-letter-of-intent-to-nrc-to-pursue-application-for-new-nuclear-research-facility",
+          "quote": "Penn State's new University Park research facility will further solidify Pennsylvania as one of the world's leading nuclear innovation hubs",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-src-cancellation",
+      "company": "Westinghouse",
+      "speaker": "Saskatchewan Research Council (SRC)",
+      "role": "Institutional FAQ statement, not an individual — the entity whose eVinci contract was cancelled",
+      "date": "2025",
+      "venue": "SRC \"FAQs About Nuclear\" web page",
+      "topic": "customers",
+      "quote": "In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus of their eVinci® microreactor program toward space, defence and government applications, moving away from commercial markets.",
+      "what_it_means": "SRC (Saskatchewan Research Council) was eVinci's first announced customer (Nov 2023, CA$80M in provincial funding, target 2029) — Westinghouse cancelled that contract in fall 2025 as it re-pointed eVinci at defense, space and government work instead of open commercial markets. No Westinghouse-side statement on the cancellation was found; this is the only public confirmation located, and it comes from SRC, not Westinghouse. NOTE: the task brief referred to this as the cancellation of a 'Space Reactor Company' contract — no such entity was found; all evidence points to this being the correct match (SRC = Saskatchewan Research Council), and the brief's naming appears to be a mistaken expansion of the acronym.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — \"FAQs About Nuclear\" (project status page)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-evinci-ncerc-criticality",
+      "company": "Westinghouse",
+      "speaker": "Westinghouse Electric Company",
+      "role": "Corporate statement to POWER Magazine (no individual named)",
+      "date": "2026-08-24",
+      "venue": "POWER Magazine, \"The Janus Five\"",
+      "topic": "units-manufacturing",
+      "quote": "achieved zero-power criticality at the National Criticality Experiments Research Center, a National Nuclear Security Administration facility at the Nevada National Security Site, on Aug. 24 at 10:39 a.m. PT",
+      "what_it_means": "Reported by POWER (not a direct pull-quote) but with an unusually precise timestamp: eVinci hit a zero-power criticality testing milestone with Los Alamos and INL just two days before the Janus Fort Drum award was announced — a manufacturing/testing proof point timed right before the commercial win.",
+      "sources": [
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "achieved zero-power criticality at the National Criticality Experiments Research Center",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ga-ems-forney-heritage-janus",
+      "company": "General Atomics Electromagnetic Systems",
+      "speaker": "Scott Forney",
+      "role": "President, GA-EMS",
+      "date": "2026-08-26",
+      "venue": "General Atomics press release, Janus/Fort Hood selection",
+      "topic": "orders",
+      "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies that provide safe, dependable and independent power for military installations. Our experience designing and deploying 68 reactors worldwide and supporting reactor technologies throughout their lifecycles positions us to deliver assured energy solutions that enhance operational resilience and strengthen mission readiness.",
+      "what_it_means": "GA-EMS's official reaction to the Fort Hood Janus win, leaning on TRIGA-reactor pedigree (68 reactors deployed worldwide) rather than a specific dollar figure — GA-EMS, like the other two, did not disclose the Fort Hood contract's value.",
+      "sources": [
+        {
+          "label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)",
+          "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program",
+          "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER Magazine — \"The Janus Five\" (Aug 2026) — confirms Fort Hood value not disclosed",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "The agreement's value was not disclosed",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ga-ems-back-passive-safety",
+      "company": "General Atomics Electromagnetic Systems",
+      "speaker": "Christina Back, Ph.D.",
+      "role": "Vice President, GA-EMS Nuclear Technologies and Materials",
+      "date": "2026-08-26",
+      "venue": "General Atomics press release, Janus/Fort Hood selection",
+      "topic": "regulatory",
+      "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design. Self-protecting UZrH fuel and pump-free natural-circulation cooling reduce reliance on active systems and operator intervention, while provide flexibility to meet evolving defense energy requirements.",
+      "what_it_means": "GA-TES is the one Janus design that is not TRISO-fueled — it uses uranium-zirconium hydride (UZrH) fuel drawn from General Atomics' TRIGA research-reactor line, so Back's framing (passive/pump-free, no large cooling-water infrastructure) is GA-EMS's core technical differentiation from the other four TRISO-fueled Janus vendors, including BWXT.",
+      "sources": [
+        {
+          "label": "General Atomics — \"General Atomics Microreactor Selected for US Army Janus Program\" (Aug 26, 2026)",
+          "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program",
+          "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ga-ems-triga-heritage",
+      "company": "General Atomics Electromagnetic Systems",
+      "speaker": "General Atomics Electromagnetic Systems",
+      "role": "Corporate statement to POWER Magazine (no individual named)",
+      "date": "2026-08",
+      "venue": "POWER Magazine, \"The Janus Five\"",
+      "topic": "supply-chain",
+      "quote": "General Atomics says 66 TRIGA facilities have been built across 24 countries during a program spanning more than 70 years.",
+      "what_it_means": "A distinct figure from the 68-reactors-worldwide line in GA-EMS's own press release (POWER notes the two numbers are not the same count) — GA-EMS did not disclose a fuel supplier or utility partner for Fort Hood, unlike BWXT's self-supply claim or Radiant's named Standard Nuclear fuel-fabrication agreement.",
+      "sources": [
+        {
+          "label": "POWER Magazine — \"The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028\" (Aug 2026)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "66 TRIGA facilities have been built across 24 countries during a program spanning more than 70 years",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

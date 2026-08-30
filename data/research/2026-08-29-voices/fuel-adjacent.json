@@ -1,8 +1,697 @@
-{"_meta": {"captured": "2026-08-29", "agent": "fuel-adjacent-voices",
-           "companies": ["Standard Nuclear", "Zeno Power", "NANO Nuclear Energy", "TerraPower"],
-           "window": "2024-08 to 2026-08",
-           "angles_run": ["in progress"],
-           "absences": [],
-           "incomplete": true},
- "leaders": [],
- "quotes": []}
+{
+  "_meta": {
+    "captured": "2026-08-29",
+    "agent": "fuel-adjacent-voices",
+    "companies": [
+      "Standard Nuclear",
+      "Zeno Power",
+      "NANO Nuclear Energy",
+      "TerraPower"
+    ],
+    "window": "2024-08 to 2026-08",
+    "angles_run": [
+      "Standard Nuclear IR exec team + board pages (raw HTML, re-fetched and byte-verified)",
+      "Standard Nuclear 424B4 prospectus (SEC EDGAR, full text -- capacity, backlog, pipeline, Framatome JV, Oklo MOU)",
+      "Standard Nuclear Q1 fiscal filing feed (data.sec.gov submissions JSON) to locate the 424B4/10-Q/8-K set",
+      "Standard Nuclear Q2 2026 earnings call coverage (Daily Political/MarketBeat)",
+      "Antares-Standard Nuclear TRISO fuel supply agreement press release (BusinessWire via Yahoo Finance)",
+      "TerraPower-Meta 8-plant Natrium agreement press release (terrapower.com)",
+      "ANS Nuclear Newswire on Standard Nuclear's SN-TN/SN-ID facilities and on NANO Nuclear's Cronos MMR",
+      "World Nuclear News on Standard Nuclear's first DOE HALEU shipment",
+      "POWER Magazine's Kemmerer 1 construction timeline retrospective (TerraPower HALEU diversification: Centrus/Framatome/GNF-A/ASP Isotopes)",
+      "Zeno Power team page (raw HTML) + Firefly Aerospace/Blue Ghost and Forbes Series B coverage",
+      "NANO Nuclear leadership + board pages (raw HTML), StockTitan 8-K summary on the Heidet CTO termination, Q1 FY2026 earnings call transcript (Motley Fool/Globe and Mail)",
+      "TerraPower About/Our People page (raw HTML, re-fetched and byte-verified)",
+      "Attempted verbatim-quote audit: every quote in this file was checked as an exact substring against its own re-fetched raw source text; WebFetch-derived paraphrases that failed this check were re-sourced from raw HTML or dropped"
+    ],
+    "absences": [
+      "Zeno Power CTO/co-founder Jake Matthews (named in the task brief) does not appear anywhere on zenopower.com/our-team as of this pass -- searched twice, confirmed absent from both leadership and advisory-board sections. Not included as a current leader; his prior CTO status could not be confirmed as still current, and no departure announcement was found either. Flagged rather than guessed.",
+      "No verbatim, attributed TRISO price ($/kg or $/MTU) or capacity fee could be found from any Standard Nuclear executive -- the S-1/424B4 gives aggregate dollar figures (backlog, pipeline, SAM/TAM) and per-facility MTU/year throughput, but never a specific per-unit or per-kg fuel price in an executive's own words.",
+      "Standard Nuclear's own HALEU sourcing is structurally ambiguous across sources: the 424B4 describes 'customer-provided feedstock' as the default model, while ANS Nuclear Newswire and World Nuclear News both state Standard Nuclear is 'among the companies receiving HALEU from the DOE' directly (the Jan 2026 shipment was DOE-allotted to customer Radiant, then physically delivered to Standard Nuclear for processing). Both facts are reported as true in this file; no single source reconciles them into one clean sentence.",
+      "GeekWire, Forbes (initial attempt), and Axios blocked automated fetches (HTTP 403) on first try for several Zeno Power and TerraPower articles; GeekWire's 'Inside the kitchen where Zeno Power tests radioisotope recipes' and the Axios hyperscaler-nuclear piece on Chris Levesque were never successfully read and contain no quotes here as a result (Forbes was eventually reached on a retry with --compressed and is used).",
+      "Nuclear Barbarians' 'TRISO Serious ft. Kurt Terrani' (Aug 2025) and Atomic Insights' 'Atomic Show #333' (June 2025) are the two known long-form audio interviews with Kurt Terrani in this window; neither publishes a fetchable transcript (Substack serves a JS shell to non-browser clients; Atomic Insights' page is show notes only, no transcript).",
+      "A Chris Levesque quote on Natrium's HALEU dependency ('Natrium will run on HALEU for the life of the plant,' POWER Magazine) was found and verified verbatim but dated November 2021 -- before the 2024-08 window start -- and was dropped rather than misdated.",
+      "A verbatim, timestamped SVI Radio interview with Chris Levesque (March 30, 2026) contains genuine in-window schedule commentary, but the page's transcript UI embeds a '(m:ss)' timestamp marker roughly every 10-15 words, so no clean multi-clause quote could be extracted without stripping non-verbal markup; dropped rather than published a quote requiring that transformation.",
+      "No quote from Zeno Power co-founder/COO Jonathan Segal was found anywhere in the window; he appears only in leadership listings and a 2025 alumni-newsletter coffee-chat recap with no direct quotations."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "standard-nuclear-hendrix",
+      "company": "Standard Nuclear",
+      "name": "Thomas Hendrix",
+      "title": "Founder & Executive Chairman",
+      "since": "2026-06",
+      "background": "Founded Standard Nuclear and has chaired its board since incorporation in July 2024; appointed Executive Chairman in June 2026. Managing Partner of venture capital firm Decisive Point Group since 2018; began his career at Blackstone. Former Green Beret with multiple combat deployments, nearly 10 years as a U.S. Army Infantry and Special Forces officer. MBA from Columbia Business School, Master of Studies in Law from George Washington University Law School, BS from West Point.",
+      "why_they_matter": "Controls the company post-IPO: he beneficially owns approximately 60.8% of voting power (up to 68.1% if all Class B shares under the Equity Exchange Agreement are issued), making Standard Nuclear a NYSE controlled company where Hendrix can unilaterally control board composition and major corporate decisions.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Executive Team page",
+          "url": "https://ir.standardnuclear.com/company-information/executive-team",
+          "quote": "Thomas Hendrix is the Founder of Standard Nuclear and has served as chairman of our board of directors since our incorporation in July 2024. Mr.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-terrani",
+      "company": "Standard Nuclear",
+      "name": "Kurt Terrani",
+      "title": "President and CEO",
+      "since": "2025-01",
+      "background": "Executive Vice President at Ultra Safe Nuclear Corporation from February 2021 to January 2025, including interim CEO from July 2024 to January 2025, leading the division responsible for nuclear fuel and core structural materials. Spent over a decade at Oak Ridge National Laboratory, most recently as Senior Staff Scientist, and was previously National Technical Director for the U.S. DOE Office of Nuclear Energy. PhD in nuclear engineering from UC Berkeley (2010); BS in Materials Science and Engineering from Arizona State University (2006).",
+      "why_they_matter": "The technical face of the only independent, industrial-scale TRISO fuel manufacturer in the U.S.; his public statements on capacity, backlog and DOE licensing are the sector's primary window into whether the fuel supply chain underpinning Antares, Radiant and other microreactor developers can actually scale.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Executive Team page",
+          "url": "https://ir.standardnuclear.com/company-information/executive-team",
+          "quote": "Kurt Terrani has served as our Chief Executive Officer and as a member of our board of directors since January 2025.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-harrill",
+      "company": "Standard Nuclear",
+      "name": "Kevin Harrill",
+      "title": "Chief Financial Officer",
+      "since": "2026-03",
+      "background": "Served at Centrus Energy Corp. (NYSE American: LEU) from November 2021 to August 2025, most recently as Senior Vice President, CFO and Treasurer (Aug 2023-Aug 2025), and before that as Chief Accounting Officer. Previously VP and Chief Accounting Officer at Blackboard Inc. (2015-2021). BS in Business Administration (Finance/Accounting) from Georgetown McDonough School of Business; MA in National Security Studies from Georgetown; CPA.",
+      "why_they_matter": "Came directly from Centrus Energy, the only other U.S.-listed company in the enriched-uranium supply chain, giving him first-hand experience of nuclear fuel customer-concentration and long-lead-time contracting dynamics now playing out at Standard Nuclear.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Executive Team page",
+          "url": "https://ir.standardnuclear.com/company-information/executive-team",
+          "quote": "Kevin Harrill has served as our Chief Financial Officer since March 2026.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-marrocco",
+      "company": "Standard Nuclear",
+      "name": "Keeley Marrocco",
+      "title": "Chief Operating Officer",
+      "since": "2025-01",
+      "background": "Led energy investing at venture capital firm Decisive Point Group from August 2021 to January 2025. Financial analyst at Kraft Heinz (June 2019-August 2021) in Revenue Management and FP&A roles. Graduated Harvard University in 2019 with a degree in Government. Also served on Standard Nuclear's board of directors from January 2025 to June 2026.",
+      "why_they_matter": "One of the earliest operational hires (Jan 2025), coming from the same venture firm (Decisive Point) as Founder Thomas Hendrix, underscoring how tightly Decisive Point's team is embedded in day-to-day operations.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Executive Team page",
+          "url": "https://ir.standardnuclear.com/company-information/executive-team",
+          "quote": "Keeley Marrocco has served as our Chief Operating Officer since January 2025.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-ghasemian",
+      "company": "Standard Nuclear",
+      "name": "Shahram Ghasemian",
+      "title": "Chief Legal and Compliance Officer and Corporate Secretary",
+      "since": "2026-05",
+      "background": "Multiple roles at Centrus Energy Corp., most recently as a consultant (Nov 2025-May 2026) and before that SVP, General Counsel, Chief Compliance Officer and Corporate Secretary (Aug 2023-June 2025). Chief Legal Officer and Corporate Secretary of NuScale Power (June-Oct 2025). Federal government roles including NRC, DOE and Capitol Hill since 2006; nearly a decade at USEC Inc., including Chief Counsel at the Paducah Gaseous Diffusion Plant (1999-2001).",
+      "why_they_matter": "His resume spans the three organizations that define the U.S. enrichment and advanced-fuel regulatory landscape (USEC, Centrus, NRC/DOE), plus the SMR side (NuScale) immediately before joining Standard Nuclear.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Executive Team page",
+          "url": "https://ir.standardnuclear.com/company-information/executive-team",
+          "quote": "Shahram Ghasemian has served as our Chief Legal and Compliance Officer and Corporate Secretary since May 2026.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-moul",
+      "company": "Standard Nuclear",
+      "name": "Donald Moul",
+      "title": "Director",
+      "since": "2026-07",
+      "background": "President and Chief Executive Officer of the Tennessee Valley Authority, \"the nation's largest public power provider,\" from April 2025 to July 2026; before that Executive Vice President and Chief Operating Officer of TVA (June 2021-April 2025); Chief Nuclear Officer roles at NextEra Energy (2019-2021); 15+ years at FirstEnergy Corporation. BS in Nuclear Engineering from Penn State; MBA from University of Notre Dame.",
+      "why_they_matter": "Joined the board in July 2026, immediately after leaving TVA's top job -- a sitting-until-recently major utility CEO gives a fuel supplier utility-side credibility, especially since its facilities sit in TVA's home territory of Oak Ridge, Tennessee.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Board of Directors page",
+          "url": "https://ir.standardnuclear.com/governance/board-of-directors",
+          "quote": "Mr. Moul served as President and Chief Executive Officer of the Tennessee Valley Authority (“TVA”), the nation’s largest public power provider, from April 2025 to",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-miller",
+      "company": "Standard Nuclear",
+      "name": "General (Ret.) Austin Scott Miller",
+      "title": "Director",
+      "since": "2026-06",
+      "background": "Nearly 40 years in the U.S. Army, retiring in 2021 as a four-star general after commanding NATO's Resolute Support Mission and U.S. Forces-Afghanistan, and commanding Joint Special Operations Command. Independent director of The Scotts Miracle-Gro Company; Senior Fellow at the Combating Terrorism Center at West Point since 2022.",
+      "why_they_matter": "Joined the board on June 29, 2026, just weeks before the IPO, reinforcing Standard Nuclear's defense-customer positioning (Antares, DIU) with a former four-star general.",
+      "sources": [
+        {
+          "label": "Standard Nuclear IR — Board of Directors page",
+          "url": "https://ir.standardnuclear.com/governance/board-of-directors",
+          "quote": "General (Ret.) Austin Scott Miller joined our board of directors on June 29, 2026",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-bernstein",
+      "company": "Zeno Power",
+      "name": "Tyler Bernstein",
+      "title": "Co-Founder & CEO",
+      "background": "Co-founded Zeno Power with Jonathan Segal; a Vanderbilt University engineering alumnus. Forbes 30 Under 30 honoree.",
+      "why_they_matter": "Public face of the leading independent radioisotope power systems company, competing for the same defense, remote and space customer base as several microreactor developers but on a different technology track.",
+      "sources": [
+        {
+          "label": "Zeno Power — Our Team page",
+          "url": "https://www.zenopower.com/our-team",
+          "quote": "Tyler Bernstein",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-segal",
+      "company": "Zeno Power",
+      "name": "Jonathan Segal",
+      "title": "Co-Founder & COO",
+      "background": "Co-founded Zeno Power with Tyler Bernstein; Vanderbilt University engineering alumnus.",
+      "why_they_matter": "Runs day-to-day operations for a company scaling radioisotope power system production for defense and space customers in parallel with microreactor developers.",
+      "sources": [
+        {
+          "label": "Zeno Power — Our Team page",
+          "url": "https://www.zenopower.com/our-team",
+          "quote": "Jonathan Segal",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-boles",
+      "company": "Zeno Power",
+      "name": "Lindsey Boles",
+      "title": "Chief Product Officer",
+      "background": "Listed on Zeno Power's current leadership team page.",
+      "why_they_matter": "Owns product strategy for Zeno's radioisotope power systems as the company moves toward its first satellite launch.",
+      "sources": [
+        {
+          "label": "Zeno Power — Our Team page",
+          "url": "https://www.zenopower.com/our-team",
+          "quote": "Lindsey Boles",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-h-desai",
+      "company": "Zeno Power",
+      "name": "Harsh S. Desai",
+      "title": "Chief Commercialization Officer",
+      "background": "Listed on Zeno Power's current leadership team page.",
+      "why_they_matter": "Leads commercialization for a company selling into overlapping defense, remote-power and space markets as microreactor developers.",
+      "sources": [
+        {
+          "label": "Zeno Power — Our Team page",
+          "url": "https://www.zenopower.com/our-team",
+          "quote": "Harsh S. Desai",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-s-desai",
+      "company": "Zeno Power",
+      "name": "Sachin Desai",
+      "title": "Chief Regulatory and Legal Officer",
+      "background": "Listed on Zeno Power's current leadership team page.",
+      "why_they_matter": "Handles regulatory strategy for a radioisotope power systems company navigating NRC and DOE approvals in parallel with the microreactor sector.",
+      "sources": [
+        {
+          "label": "Zeno Power — Our Team page",
+          "url": "https://www.zenopower.com/our-team",
+          "quote": "Sachin Desai",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-yu",
+      "company": "NANO Nuclear Energy",
+      "name": "Jay Jiang Yu",
+      "title": "Founder, Executive Chairman and President",
+      "background": "Serial advanced nuclear entrepreneur with 20 years in capital markets; previously an analyst in Corporate & Investment Banking at Deutsche Bank. Led NANO Nuclear to a $3B+ market cap and more than $600 million in capital raised. Named one of \"The Outstanding 50 Asian Americans in Business\" (2021). BA in Psychology from City College of New York; studied at Columbia University.",
+      "why_they_matter": "Founder-chairman of one of the only publicly traded, SEC-reporting pure-play microreactor companies, making NANO's filings and earnings calls a rare public window into sector economics.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — Board Members page",
+          "url": "https://nanonuclearenergy.com/board-members/",
+          "quote": "Mr. Yu is a serial and leading U.S. advanced nuclear technology entrepreneur with 20 years of capital markets experience.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-walker",
+      "company": "NANO Nuclear Energy",
+      "name": "James Walker",
+      "title": "CEO & Board Member (also Interim Head of Reactor Development since 2026-06)",
+      "since": "2022",
+      "background": "Nuclear physicist and engineer (BEng, MSc, CEng, CPhys, PEng) with experience in reactor core manufacturing and submarine nuclear fuel reclamation for the U.K. Ministry of Defence. Chartered Physicist (Institute of Physics) and Chartered Engineer (IMechE).",
+      "why_they_matter": "Took on the Interim Head of Reactor Development role himself after the board terminated CTO Florent Heidet on June 22, 2026, meaning NANO's CEO is now also its top in-house technical authority on reactor design with no CTO in place.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — Board Members page",
+          "url": "https://nanonuclearenergy.com/board-members/",
+          "quote": "Mr. Walker is a Nuclear Physicist and Nuclear Engineer, with experience in reactor core manufacturing facilities, primary and secondary reactor systems, and nuclear fuel reclamation",
+          "status": "fetched"
+        },
+        {
+          "label": "StockTitan — NANO Nuclear Energy 8-K filing summary on Heidet termination",
+          "url": "https://www.stocktitan.net/sec-filings/NNE/8-k-nano-nuclear-energy-inc-reports-material-event-d957f7c724c9.html",
+          "quote": "the Board appointed James Walker, the Company’s Chief Executive Officer, to serve as the Company’s Interim Head of Reactor Development",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-heidet",
+      "company": "NANO Nuclear Energy",
+      "name": "Florent Heidet, Ph.D.",
+      "title": "Former Chief Technology Officer and Head of Reactor Development (terminated 2026-06-22)",
+      "background": "World-renowned expert on advanced nuclear reactor technologies with two decades of nuclear engineering experience before being appointed NANO's CTO and Head of Reactor Development.",
+      "why_they_matter": "His abrupt, unexplained termination — approved unanimously by the board, with no reason disclosed in the 8-K — is a genuine red flag on technical leadership stability at a company whose reactor design has not yet reached commercial deployment.",
+      "sources": [
+        {
+          "label": "StockTitan — NANO Nuclear Energy 8-K filing summary on Heidet termination",
+          "url": "https://www.stocktitan.net/sec-filings/NNE/8-k-nano-nuclear-energy-inc-reports-material-event-d957f7c724c9.html",
+          "quote": "Nano Nuclear Energy Inc. removed its Chief Technology Officer and Head of Reactor Development, Dr. Florent Heidet, with the termination effective on June 22, 2026",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-garcha",
+      "company": "NANO Nuclear Energy",
+      "name": "Jaisun Garcha",
+      "title": "Chief Financial Officer",
+      "background": "20 years in financial management and corporate governance at public and private companies; has taken several companies public via IPOs and RTOs and led equity financings exceeding $100 million. MBA from Laurentian University; BS from University of British Columbia; MBA, CPA, CGA.",
+      "why_they_matter": "Formalized a three-year employment agreement with NANO under Canadian employment law alongside CEO James Walker on January 31, 2026, signaling the board is locking in its finance leadership as the company scales.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — Company Leadership page",
+          "url": "https://nanonuclearenergy.com/company-leadership/",
+          "quote": "Jaisun Garcha has 20 years of experience in financial management, corporate governance, and risk management in both public and private companies, including high-growth and start-up",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-barry",
+      "company": "NANO Nuclear Energy",
+      "name": "Matthew (James) Barry",
+      "title": "Chief Operating Officer (joined 2025-06 as Director of Investor Relations)",
+      "background": "Started at Deloitte auditing public and private clients; equity research analyst at H.C. Wainwright and Cowen covering roughly 40 companies; Manager of Investor Relations at Veeco Instruments (NASDAQ). CPA (2017) and CFA (2024); BBA in Accounting and MS in Taxation from Hofstra University.",
+      "why_they_matter": "Promoted from Director of Investor Relations (hired June 2025) to Chief Operating Officer within about eight months, an unusually fast rise that put an IR/finance background, not an operations background, in charge of NANO's COO function.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — Company Leadership page",
+          "url": "https://nanonuclearenergy.com/company-leadership/",
+          "quote": "Matt has over 10 years of experience in accounting, equity research and investor relations at both public and private companies.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-levesque",
+      "company": "TerraPower",
+      "name": "Chris Levesque",
+      "title": "President and CEO",
+      "background": "30+ years of nuclear industry experience including U.S. Nuclear Navy service. BS in mechanical engineering from Rensselaer Polytechnic Institute; MS in mechanical engineering and a Naval Engineer degree from MIT.",
+      "why_they_matter": "The sector's most senior voice on what a first-of-a-kind advanced reactor (Natrium) actually costs and how long it takes to build, since Natrium is under active construction in Kemmerer, Wyoming.",
+      "sources": [
+        {
+          "label": "TerraPower — About / Our People page",
+          "url": "https://www.terrapower.com/about/",
+          "quote": "Chris Levesque is president and chief executive officer of TerraPower and serves as a member of the TerraPower board.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-young",
+      "company": "TerraPower",
+      "name": "Pat Young",
+      "title": "Senior Vice President and Natrium Project Director",
+      "background": "Three years abroad in Canada and the UK; VP of Engineering in Canada developing the CANDU Monark reactor and GE Hitachi SMRX-300 deployment; led engineering at the Springfield Fuel Facility (UK); 13 years leading nuclear fuel manufacturing and reactor deployment, including as Engineering Director at the Columbia Fuel Fabrication Facility and Executive Director for site engineering on Westinghouse AP1000 construction. BS mechanical engineering from Cal Poly; MS mechanical engineering from Oregon State; PE licenses in WA, ID, PA, GA, SC, FL.",
+      "why_they_matter": "Runs the multi-billion-dollar Advanced Reactor Demonstration Program project day-to-day, with a background spanning both fuel fabrication and large-reactor construction — the two disciplines Natrium's schedule depends on.",
+      "sources": [
+        {
+          "label": "TerraPower — About / Our People page",
+          "url": "https://www.terrapower.com/about/",
+          "quote": "Young leads a multi-billion-dollar advanced nuclear project, the Natrium Demonstration Project within the Department of Energy’s Advanced Reactor Demonstration Program, while also playing a key",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-trayers",
+      "company": "TerraPower",
+      "name": "Michael Trayers",
+      "title": "Vice President, Fuel Supply and Development",
+      "background": "20+ years nuclear industry experience with light water reactor technology; provided strategic oversight of manufacturing and supply chain following the Ukraine conflict's impact on nuclear fuel delivery; worked on transitioning U.S. PWR reactors to 24-month operational cycles using advanced fuel technologies and on first U.S. PWR lead test assemblies exceeding 5% enrichment. BS mechanical engineering from University of Pittsburgh.",
+      "why_they_matter": "TerraPower's named fuel-supply-chain executive, directly relevant to how the company talks about HALEU sourcing for Natrium given his post-Ukraine-war experience managing enriched uranium supply disruption.",
+      "sources": [
+        {
+          "label": "TerraPower — About / Our People page",
+          "url": "https://www.terrapower.com/about/",
+          "quote": "Following the outbreak of conflict in Ukraine, he provided strategic oversight of manufacturing and supply chain execution to expedite the reliable delivery of nuclear fuel",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-terry",
+      "company": "TerraPower",
+      "name": "Bob Terry",
+      "title": "Vice President, Commercial Supply Chain",
+      "background": "Supply chain and project management on nuclear projects globally with Westinghouse, ABB Combustion Engineering and Framatome. Project Director of Korean Nuclear Projects delivering 14 new-build units for Korea Electric's standard plant program; Global Director of Sourcing & Supplier Management for the Westinghouse AP1000 program (10 years, 8 units in the U.S. and China); Program Director for Westinghouse Accident Tolerant Fuel development with DOE. BS nuclear engineering from SUNY Maritime College.",
+      "why_they_matter": "His resume spans exactly the large-reactor commercial supply chain track record (AP1000, Korean new-build) that TerraPower cites as evidence Natrium's cost and schedule commitments are grounded in real construction experience, not just paper design.",
+      "sources": [
+        {
+          "label": "TerraPower — About / Our People page",
+          "url": "https://www.terrapower.com/about/",
+          "quote": "Global Director of Sourcing & Supplier Management for Westinghouse’s AP1000 for 10 years, and led teams responsible for sourcing, supplier project management and delivery of",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "id": "stdn-terrani-antares-fsa",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "President and CEO, Standard Nuclear",
+      "date": "2026-08-27",
+      "venue": "Antares Nuclear press release (BusinessWire, via Yahoo Finance)",
+      "topic": "orders",
+      "quote": "We are working to scale our TRISO production capacity across identical facilities and continue to adhere to our customers' needs. Now, as our customers move from demonstration toward commercial deployment, we are building the supply chain that advanced reactors need to meet their commercial needs and our nation's energy and national security.",
+      "what_it_means": "This is the press-release quote confirming the binding fuel supply agreement under which Standard Nuclear will deliver up to eight MTUs of TRISO fuel to Antares through 2035 (one firm metric ton plus customer options for seven more) -- the deal that makes Standard Nuclear the single fuel supplier both Antares and Radiant depend on.",
+      "sources": [
+        {
+          "label": "Antares Nuclear -- \"Antares Nuclear Announces Multi-Year TRISO Fuel Supply Agreement with Standard Nuclear\" (BusinessWire, via Yahoo Finance)",
+          "url": "https://finance.yahoo.com/energy/articles/antares-nuclear-announces-multi-triso-130000374.html",
+          "quote": "We are working to scale our TRISO production capacity across identical facilities and continue to adhere to our customers' needs.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-modular-framework",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "President and CEO, Standard Nuclear",
+      "date": "2026-07",
+      "venue": "ANS Nuclear Newswire",
+      "topic": "units-manufacturing",
+      "quote": "ability to deploy additional production lines rests on the maturity of our modular manufacturing framework, allowing replication of safe and proven systems that allows us to scale quickly.",
+      "what_it_means": "This is the company's stated mechanism for going from 0.5 MTU/year (its one operating line today) to a targeted 40 MTU/year: replicate identical, already-licensed modular lines rather than redesign, which is also why it can quote firm capacity numbers years out.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire -- \"Standard Nuclear plans TRISO production at two new facilities in 2026\" (July 24, 2026)",
+          "url": "https://www.ans.org/news/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/",
+          "quote": "ability to deploy additional production lines rests on the maturity of our modular manufacturing framework, allowing replication of safe and proven systems that allows us",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-doe-licensing",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "President and CEO, Standard Nuclear",
+      "date": "2026-07",
+      "venue": "ANS Nuclear Newswire",
+      "topic": "regulatory",
+      "quote": "helped streamline our progress through DOE’s rigorous nuclear facility licensing process.",
+      "what_it_means": "Credits Idaho National Laboratory support, alongside the company's modular framework, for moving its SN-TN and SN-ID facilities through DOE's Fuel Line Pilot Program approval -- both facilities had their preliminary documented safety analyses approved by this point.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire -- \"Standard Nuclear plans TRISO production at two new facilities in 2026\" (July 24, 2026)",
+          "url": "https://www.ans.org/news/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/",
+          "quote": "helped streamline our progress through DOE’s rigorous nuclear facility licensing process.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-first-core-load",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "President and CEO, Standard Nuclear",
+      "date": "2026-08-27",
+      "venue": "Standard Nuclear Q2 2026 earnings call (first as a public company)",
+      "topic": "units-manufacturing",
+      "quote": "This quarter, we shipped our first commercial fuel core load,",
+      "what_it_means": "Marks the shift from sample/development shipments to a full reactor core load of commercially produced TRISO fuel -- the batch that went to Radiant for its Kaleidos demonstration unit at Idaho National Laboratory's DOME facility.",
+      "sources": [
+        {
+          "label": "Daily Political (MarketBeat network) -- \"Standard Nuclear Q2 Earnings Call Highlights\" (Aug 27, 2026)",
+          "url": "https://www.dailypolitical.com/2026/08/27/standard-nuclear-q2-earnings-call-highlights.html",
+          "quote": "This quarter, we shipped our first commercial fuel core load,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-demand-every-measure",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "President and CEO, Standard Nuclear",
+      "date": "2026-08-27",
+      "venue": "Standard Nuclear Q2 2026 earnings call (first as a public company)",
+      "topic": "customers",
+      "quote": "We signed contracts on the back of it, and the demand behind those contracts moved toward us on every measure we track.",
+      "what_it_means": "Backs up the number: total contract backlog rose from $91.3 million (March 31, 2026) to $241.5 million (June 30, 2026), then to $576.9 million after the August Antares fuel supply agreement was signed.",
+      "sources": [
+        {
+          "label": "Daily Political (MarketBeat network) -- \"Standard Nuclear Q2 Earnings Call Highlights\" (Aug 27, 2026)",
+          "url": "https://www.dailypolitical.com/2026/08/27/standard-nuclear-q2-earnings-call-highlights.html",
+          "quote": "We signed contracts on the back of it, and the demand behind those contracts moved toward us on every measure we track.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-first-authorised-doe",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "Chief Executive Officer, Standard Nuclear",
+      "date": "2026-01-08",
+      "venue": "World Nuclear News",
+      "topic": "supply-chain",
+      "quote": "We are proud to be the first company authorised by the DOE to take this step toward full-scale TRISO fuel production, which is essential for bringing US-made, reliable, and advanced nuclear power to the nation.",
+      "what_it_means": "Confirms the structural detail on HALEU flow: DOE allots the HALEU feedstock to the reactor developer (here, Radiant), and Standard Nuclear is the one authorized to physically receive and process it into fuel -- meaning HALEU availability for a microreactor developer runs through both a DOE allocation decision and a qualified fabricator's authorization.",
+      "sources": [
+        {
+          "label": "World Nuclear News -- \"DOE delivers HALEU feedstock for advanced reactor fuel\" (Jan 8, 2026)",
+          "url": "https://world-nuclear-news.org/articles/doe-delivers-haleu-feedstock-for-advanced-reactor-fuel",
+          "quote": "We are proud to be the first company authorised by the DOE to take this step toward full-scale TRISO fuel production, which is essential for",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "stdn-terrani-transformative-moment",
+      "company": "Standard Nuclear",
+      "speaker": "Kurt Terrani",
+      "role": "Chief Executive Officer, Standard Nuclear",
+      "date": "2026-01-08",
+      "venue": "World Nuclear News",
+      "topic": "supply-chain",
+      "quote": "Receipt of this shipment of HALEU feedstock is a transformative moment, firmly entrenching Standard Nuclear’s position at the forefront of the advanced nuclear fuel supply chain,",
+      "what_it_means": "The shipment was sized to produce a full core load for Radiant's first reactor startup -- the first time HALEU had both been authorized by DOE and physically delivered to an independent (non-utility, non-national-lab) TRISO fabricator.",
+      "sources": [
+        {
+          "label": "World Nuclear News -- \"DOE delivers HALEU feedstock for advanced reactor fuel\" (Jan 8, 2026)",
+          "url": "https://world-nuclear-news.org/articles/doe-delivers-haleu-feedstock-for-advanced-reactor-fuel",
+          "quote": "Receipt of this shipment of HALEU feedstock is a transformative moment, firmly entrenching Standard Nuclear’s position at the forefront of the advanced nuclear fuel supply",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-walker-haleu-margin",
+      "company": "NANO Nuclear Energy",
+      "speaker": "James Walker",
+      "role": "Chief Executive Officer, NANO Nuclear Energy",
+      "date": "2026-02-17",
+      "venue": "NANO Nuclear (NNE) Q1 fiscal 2026 earnings call",
+      "topic": "regulatory",
+      "quote": "the operating parameters that we use for our reactors are enormous. So for instance, if we are operating at, 600 degrees centigrade, the melting temperature is 1,800. And when you have got that kind of margin, then the safety case that you submit to the NRC for a higher fuel higher enriched fuel is fairly straightforward.",
+      "what_it_means": "NANO's fuel strategy is LEU today (better supply availability) with a reactor design deliberately licensed to accommodate a future switch to HALEU without a new safety case, given the wide margin between its 600C operating temperature and the fuel's roughly 1,800C melting point.",
+      "sources": [
+        {
+          "label": "The Globe and Mail (Motley Fool transcript) -- \"Nano Nuclear (NNE) Q1 2026 Earnings Call Transcript\"",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/NNE/pressreleases/269335/nano-nuclear-nne-q1-2026-earnings-call-transcript/",
+          "quote": "the safety case that you submit to the NRC for a higher fuel higher enriched fuel is fairly straightforward",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-walker-graphite-producers",
+      "company": "NANO Nuclear Energy",
+      "speaker": "James Walker",
+      "role": "Chief Executive Officer, NANO Nuclear Energy",
+      "date": "2026-02-17",
+      "venue": "NANO Nuclear (NNE) Q1 fiscal 2026 earnings call",
+      "topic": "supply-chain",
+      "quote": "there is only, as far as I know, three nuclear-grade graphite producers in the world. I think two are in China and one is in Japan.",
+      "what_it_means": "A second, less-discussed supply-chain chokepoint alongside HALEU: Walker says it could take \"more than ten years\" to bring a new nuclear-grade graphite line online (mine to certified product), so NANO's near-term plan is to buy or co-invest in production lines with the existing three producers rather than wait for a domestic source.",
+      "sources": [
+        {
+          "label": "The Globe and Mail (Motley Fool transcript) -- \"Nano Nuclear (NNE) Q1 2026 Earnings Call Transcript\"",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/NNE/pressreleases/269335/nano-nuclear-nne-q1-2026-earnings-call-transcript/",
+          "quote": "there is only, as far as I know, three nuclear-grade graphite producers in the world. I think two are in China and one is in",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-walker-enrichment-bottleneck",
+      "company": "NANO Nuclear Energy",
+      "speaker": "James Walker",
+      "role": "Chief Executive Officer, NANO Nuclear Energy",
+      "date": "2026-02-17",
+      "venue": "NANO Nuclear (NNE) Q1 fiscal 2026 earnings call",
+      "topic": "supply-chain",
+      "quote": "we need to be working with companies like Euronco that are enriching now. They can enrich your LEU, which is the fuel that we need for our reactor. But even then, if you look at enrichment, you look at all the build back of enrichment, all that actually creates the next bottleneck, which is the u uranium hexafluoride.",
+      "what_it_means": "\"Euronco\" is the earnings-call transcription service's rendering of Urenco, the enrichment company; Walker's point -- that even once you line up an enricher, the upstream uranium hexafluoride (UF6) conversion step becomes the next bottleneck -- names a constraint one step further back in the chain than HALEU/LEU enrichment itself. NANO also disclosed a related-party enrichment venture, LISS Technologies, using ex-Cameco 1990s-era centrifuge technology, as a longer-term (post-mass-manufacturing-timeline) fix.",
+      "sources": [
+        {
+          "label": "The Globe and Mail (Motley Fool transcript) -- \"Nano Nuclear (NNE) Q1 2026 Earnings Call Transcript\"",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/NNE/pressreleases/269335/nano-nuclear-nne-q1-2026-earnings-call-transcript/",
+          "quote": "we need to be working with companies like Euronco that are enriching now. They can enrich your LEU, which is the fuel that we need",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-garcha-q1-loss",
+      "company": "NANO Nuclear Energy",
+      "speaker": "Jaisun Garcha",
+      "role": "Chief Financial Officer, NANO Nuclear Energy",
+      "date": "2026-02-17",
+      "venue": "NANO Nuclear (NNE) Q1 fiscal 2026 earnings call",
+      "topic": "costs",
+      "quote": "Q1 loss from operations was $11,600,000. The higher year-over-year loss resulted from an approximate $8,000,000 increase in operating expenses.",
+      "what_it_means": "NANO is a pre-revenue reactor developer (unlike fuel-supplier Standard Nuclear, which already books product revenue); its quarterly loss is the cost of licensing, site work and technical staff ahead of any Cronos MMR construction permit.",
+      "sources": [
+        {
+          "label": "The Globe and Mail (Motley Fool transcript) -- \"Nano Nuclear (NNE) Q1 2026 Earnings Call Transcript\"",
+          "url": "https://www.theglobeandmail.com/investing/markets/stocks/NNE/pressreleases/269335/nano-nuclear-nne-q1-2026-earnings-call-transcript/",
+          "quote": "Q1 loss from operations was $11,600,000.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-levesque-asp-isotopes",
+      "company": "TerraPower",
+      "speaker": "Chris Levesque",
+      "role": "President and CEO, TerraPower",
+      "date": "2024-10-30",
+      "venue": "POWER Magazine (Kemmerer construction timeline retrospective)",
+      "topic": "international",
+      "quote": "another example of our commitment and investments to commercialize HALEU production domestically and in allied countries.",
+      "what_it_means": "TerraPower now has four separate HALEU/fuel tracks running in parallel -- Centrus (enrichment, Piketon, Ohio), Framatome (metallization, Richland, Washington), GNF-A (fabrication, Wilmington, NC), and ASP Isotopes (enrichment at Pelindaba, South Africa, TerraPower-financed, 10-year offtake from 2028) -- direct evidence of the diversification lesson TerraPower drew after its 2022 Natrium schedule delay was attributed to losing its only prior HALEU source when Russia invaded Ukraine.",
+      "sources": [
+        {
+          "label": "POWER Magazine -- \"TerraPower's Kemmerer 1 Enters Construction: Timeline of the Natrium Project's Road to First Power\" (April 23, 2026)",
+          "url": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/",
+          "quote": "another example of our commitment and investments to commercialize HALEU production domestically and in allied countries.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-levesque-navier-stokes",
+      "company": "TerraPower",
+      "speaker": "Chris Levesque",
+      "role": "President and CEO, TerraPower",
+      "date": "2026-02",
+      "venue": "POWER Magazine special report (\"Sprint to Execution\")",
+      "topic": "costs",
+      "quote": "talking about Navier–Stokes equations to asking, ‘How many tons of concrete do we need to pour per day?'",
+      "what_it_means": "Levesque's own description of the cultural shift from engineering-phase TerraPower to construction-phase TerraPower -- early discipline, standardized work packages and long-lead procurement are what the company says let it maintain the credibility of its 2030-2031 commercial operation target for Kemmerer Unit 1.",
+      "sources": [
+        {
+          "label": "POWER Magazine -- \"TerraPower's Kemmerer 1 Enters Construction: Timeline of the Natrium Project's Road to First Power\" (April 23, 2026)",
+          "url": "https://www.powermag.com/terrapowers-kemmerer-1-enters-construction-timeline-of-the-natrium-projects-road-to-first-power/",
+          "quote": "talking about Navier–Stokes equations to asking, ‘How many tons of concrete do we need to pour per day?'",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-bernstein-china-moon-rps",
+      "company": "Zeno Power",
+      "speaker": "Tyler Bernstein",
+      "role": "Co-Founder and CEO, Zeno Power",
+      "date": "2025-05-23",
+      "venue": "Forbes",
+      "topic": "international",
+      "quote": "China is currently operating on the moon with a radioisotope power system, whereas the U.S. lander is using solar-powered batteries,",
+      "what_it_means": "Bernstein frames Zeno's NASA/Intuitive Machines/Blue Origin lunar work explicitly as catching up to a Chinese capability gap, not just a technology demonstration -- said around the company's $50 million Series B (bringing total funding to $70 million), with a stated goal of full-scale system demonstrations in 2026 and first commercial deliveries in 2027.",
+      "sources": [
+        {
+          "label": "Forbes -- \"This Under-30 Startup Raised $50 Million To Power US In The Space Race\" (May 23, 2025)",
+          "url": "https://www.forbes.com/sites/zoyahasan/2025/05/23/this-under-30-startup-raised-50-million-to-power-us-in-the-space-race/",
+          "quote": "China is currently operating on the moon with a radioisotope power system, whereas the U.S. lander is using solar-powered batteries",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "zeno-bernstein-production-capacity",
+      "company": "Zeno Power",
+      "speaker": "Tyler Bernstein",
+      "role": "CEO and Co-Founder, Zeno Power",
+      "date": "2026-08-19",
+      "venue": "Zeno Power press release",
+      "topic": "units-manufacturing",
+      "quote": "As demand for long-duration lunar infrastructure grows, we are building the production capacity to support future commercial and government missions.",
+      "what_it_means": "Announced alongside a commercial payload agreement with Firefly Aerospace to fly a Zeno radioisotope heater unit on a Blue Ghost lunar mission (no earlier than 2028) -- Zeno explicitly ties a single space demonstration to a broader production-capacity buildout claim, its version of the same demonstration-to-commercial-scale narrative Standard Nuclear and Antares use for terrestrial TRISO fuel.",
+      "sources": [
+        {
+          "label": "Zeno Power -- \"Firefly Aerospace Onboards Zeno Power on Blue Ghost Mission to Demonstrate Radioisotope Technologies to Survive the Lunar Night\" (Aug 19, 2026)",
+          "url": "https://www.zenopower.com/announcements/firefly-aerospace-onboards-zeno-power-on-blue-ghost-mission-to-demonstrate-radioisotope-technologies-to-survive-the-lunar-night",
+          "quote": "As demand for long-duration lunar infrastructure grows, we are building the production capacity to support future commercial and government missions.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrapower-levesque-meta-deal",
+      "company": "TerraPower",
+      "speaker": "Chris Levesque",
+      "role": "President and CEO, TerraPower",
+      "date": "2026-01-09",
+      "venue": "TerraPower press release",
+      "topic": "customers",
+      "quote": "To successfully address growing energy demand, we must deploy gigawatts of advanced nuclear energy in the 2030s. This agreement with Meta is designed to support the rapid deployment of our Natrium technology that provides the reliable, flexible, and carbon-free power our country needs,",
+      "what_it_means": "The Meta agreement covers up to eight Natrium plants (up to 2.8 GW baseload, boostable to 4 GW using Natrium's molten-salt storage) -- the largest single commercial commitment in the Natrium program's history, and the clearest sign yet that hyperscaler data-center demand, not the original ARDP demonstration mandate, is now driving TerraPower's order book.",
+      "sources": [
+        {
+          "label": "TerraPower -- \"TerraPower and Meta Enter Agreement for 8 Natrium Advanced Nuclear Plants\" (Jan 9, 2026)",
+          "url": "https://www.terrapower.com/terrapower-announces-deal-with-meta",
+          "quote": "To successfully address growing energy demand, we must deploy gigawatts of advanced nuclear energy in the 2030s.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

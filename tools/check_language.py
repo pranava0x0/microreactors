@@ -111,6 +111,9 @@ ALLOW = {
     "waste-heat utilisation": ("CPUC's own term of art in P.U. Code 216.6(a); "
                                "rewriting it would misquote the eligibility rule"),
     "Electrical Efficiency E/F_HHV": "verbatim SGIP handbook formula",
+    "Endeavour": ("legal entity name as filed - Deep Fission's Form 10-K names "
+                  "'Endeavour Energy, LLC'; the -our spelling is the counterparty's "
+                  "own, not our register drifting"),
 }
 
 
