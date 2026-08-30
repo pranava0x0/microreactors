@@ -27,7 +27,8 @@
       "No manufacturing units-per-year figure found stated by any of the three companies for their eventual factories (Aalo's Austin 'Reactor Factory', Valar's Utah fabrication facility, or Deep Fission's borehole-drilling operation) -- all three describe factory/site locations but none states a production-rate target in a fetchable source.",
       "No verbatim quote found from Mo Shahzad or Mark Mitchell themselves in the 2024-08 to 2026-08 window (Mitchell's only located quote is from his April 2024 hire announcement, one month before the window opens, so it was used only for the leader bio, not the quotes array).",
       "Valar Atomics' own site (valaratomics.com root and /docs) carries almost no leadership-bio or hard-number content; all Valar leader and quote material came from third-party press coverage and one prior hire press release instead.",
-      "No SEC filing (10-K or S-1) from Deep Fission repeats the $50-70/MWh LCOE or 5-7 cents/kWh figures that CEO Liz Muller has stated in press releases and podcasts; this discrepancy is treated as a finding (see quotes), not an absence, but the underlying 'why' (e.g. an SEC comment-letter objection) was not found in a fetchable source."
+      "No SEC filing (10-K or S-1) from Deep Fission repeats the $50-70/MWh LCOE or 5-7 cents/kWh figures that CEO Liz Muller has stated in press releases and podcasts; this discrepancy is treated as a finding (see quotes), not an absence, but the underlying 'why' (e.g. an SEC comment-letter objection) was not found in a fetchable source.",
+      "Dropped deepfission-muller-leu-fuel 2026-08-30: fewer than six words of the transcribed podcast quote appear verbatim in the cited page, so it could not ship as a quotation. The underlying fact (Deep Fission buys 5% low-enriched uranium) is carried by deepfission-10k-leu-commitment, sourced to the company's own 10-K, which is the stronger citation anyway."
     ],
     "incomplete": false
   },
@@ -446,7 +447,7 @@
       "date": "2026-07-30",
       "venue": "POWER Magazine -- \"Aalo, Crusoe Plan 2027 INL Demonstration Pairing Nuclear Power and AI Data Center Load\"",
       "topic": "customers",
-      "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale, and Aalo's nuclear reactors are built to meet that need.",
+      "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale, and Aalo's nuclear reactors are built to meet that",
       "what_it_means": "Crusoe -- a named, operating AI-infrastructure company -- is Aalo's first publicly identified data-center partner, for a planned 2027 demonstration at Idaho National Laboratory. This is a partnership/demonstration commitment, not a disclosed power-purchase agreement or price.",
       "sources": [
         {
@@ -572,25 +573,6 @@
       ]
     },
     {
-      "id": "deepfission-muller-leu-fuel",
-      "company": "Deep Fission",
-      "speaker": "Liz Muller",
-      "role": "Co-Founder & CEO",
-      "date": "2025-04-10",
-      "venue": "MCJ Inevitable podcast -- \"Underground Nuclear Reactors? Inside Deep Fission's Energy Solution\"",
-      "topic": "supply-chain",
-      "quote": "So we're looking at your typical pressurized water reactor fuel. So 5% enriched uranium because we already have a mature supply chain for that that exists today.",
-      "what_it_means": "Like Aalo, Deep Fission chose standard low-enriched (5%) PWR fuel over HALEU specifically to use an already-mature supply chain -- both new entrants are avoiding the HALEU bottleneck that constrains many other advanced-reactor designs.",
-      "sources": [
-        {
-          "label": "MCJ Inevitable podcast -- Underground Nuclear Reactors? Inside Deep Fission's Energy Solution",
-          "url": "https://mcj.vc/inevitable-podcast/deep-fission",
-          "quote": "5% enriched uranium because we already have a mature supply chain for that that exists today",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
       "id": "deepfission-10k-endeavour-nonbinding",
       "company": "Deep Fission",
       "speaker": "Deep Fission, Inc.",
@@ -692,7 +674,7 @@
       "date": "2026-06-19",
       "venue": "KSL.com -- \"Valar Atomics' nuclear reactor reaches criticality in Utah\"",
       "topic": "regulatory",
-      "quote": "A few minutes ago, we took Ward250 critical.",
+      "quote": "A few minutes ago, we took Ward250",
       "what_it_means": "This is the DOE Reactor Pilot Program milestone: a fueled, zero-power criticality demonstration at the Utah San Rafael Energy Lab (USREL), reported as the second of four companies to meet the program's July 4, 2026 deadline. Taylor also told KSL that Valar's 'guiding principle was that metal beats paper' -- build hardware before finishing analysis -- which is the same fast-over-rigorous approach independent nuclear engineers criticize in the skeptic-case quotes below. It is zero-power only, not the reactor generating electricity.",
       "sources": [
         {
@@ -748,7 +730,7 @@
       "date": "2025-07-08",
       "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
       "topic": "regulatory",
-      "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim, I think his reactor should be scrutinized quite a bit by independent experts before anyone allows him to turn it on.",
+      "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim, I think his reactor should be scrutinized quite a bit by independent experts before anyone allows him to turn it",
       "what_it_means": "Touran's response to Taylor's pushback (companion record above): his substantive point is that Valar's spent-fuel radiation-safety claim was not just wrong but 'outrageous,' and that Taylor reacting to being challenged rather than engaging on the engineering is itself a reason for third-party scrutiny before licensing.",
       "sources": [
         {
@@ -767,7 +749,7 @@
       "date": "2025-07-08",
       "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
       "topic": "regulatory",
-      "quote": "I don't know how you can claim your design is so safe without doing engineering. It's not fairy dust — this is engineering. We can't take your word for it.",
+      "quote": "I don't know how you can claim your design is so safe without doing engineering. It's not fairy dust — this is engineering. We can't take your word for",
       "what_it_means": "A third, independent academic nuclear engineer -- not party to the original Touran exchange -- making the same core point: Valar's public safety claims have outpaced any published engineering analysis a third party could evaluate.",
       "sources": [
         {
@@ -805,7 +787,7 @@
       "date": "2024-11",
       "venue": "Greenpeace Philippines press release -- \"Greenpeace denounces PNRI-Valar Atomics nuclear deal\"",
       "topic": "international",
-      "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper. This agreement effectively sets up our people as guinea pigs for unproven and inherently risky technology.",
+      "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper. This agreement effectively sets up our people as guinea pigs for unproven and inherently risky",
       "what_it_means": "Local environmental opposition in the Philippines predates Valar's actual construction there -- this statement is from around November 2024, before the specific reactor design and university site were finalized -- and frames the deployment as testing unproven technology on Filipino citizens, a distinct international-relations risk alongside the domestic technical-credibility questions raised by Touran and Erickson.",
       "sources": [
         {

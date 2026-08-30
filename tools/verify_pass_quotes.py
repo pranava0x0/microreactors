@@ -4,6 +4,14 @@
   python3 tools/verify_pass_quotes.py data/research/2026-08-29-voices
   python3 tools/verify_pass_quotes.py <dir> --only antares-radiant.json
 
+It verifies the DISPLAYED quote - the text a reader sees in quotation marks on
+the site - not merely the short evidence span beside it. Those are different
+strings, and an earlier version checked only the second: of 107 records, just 16
+displayed exactly what had been verified, 75 wrapped it in unchecked text, and 10
+were disjoint from it entirely. The gate reported "0 fabricated" over 15% of what
+the page renders. A source span that verifies proves the source is real; it does
+not make the sentence built around it verbatim.
+
 check_voices_pass.py validates SHAPE: required keys, id collisions, word caps.
 It cannot tell whether a quote marked `status: "fetched"` was ever on the page,
 and on 2026-08-29 an agent attributed a quote to a POWER article that contains
@@ -97,24 +105,51 @@ def main() -> int:
         files = [f for f in files if f.name in want]
 
     cache: Dict[str, Tuple[str, str]] = {}
-    tally = {"VERIFIED": 0, "SLOPPY": 0, "FABRICATED": 0, "UNREACHABLE": 0,
-             "SNIPPET": 0, "NOQUOTE": 0}
+    tally = {"VERIFIED": 0, "SLOPPY": 0, "FABRICATED": 0, "DISPLAYED": 0,
+             "UNREACHABLE": 0, "SNIPPET": 0, "NOQUOTE": 0}
     sloppy: List[str] = []
     fabricated: List[str] = []
+    displayed: List[str] = []
+    noquote: List[str] = []
 
     for f in files:
         d = json.loads(f.read_text())
         recs = [("leader", r) for r in d.get("leaders", [])] + \
                [("quote", r) for r in d.get("quotes", [])]
         for kind, rec in recs:
+            where = f"{f.name}:{kind}:{rec.get('id', '?')}"
+            # The record's OWN quote is what the site renders, so it is the string
+            # that has to be verbatim. Checked against every fetched source: one
+            # of them must contain it whole.
+            if kind == "quote" and rec.get("quote"):
+                fetched = [s for s in rec.get("sources", [])
+                           if s.get("status") == "fetched" and s.get("url")]
+                hit = reachable = False
+                for s in fetched:
+                    if s["url"] not in cache:
+                        cache[s["url"]] = page_text(s["url"])
+                    text, err = cache[s["url"]]
+                    if err:
+                        continue
+                    reachable = True
+                    if norm(rec["quote"]) in norm(text):
+                        hit = True
+                        break
+                if fetched and reachable and not hit:
+                    tally["DISPLAYED"] += 1
+                    displayed.append(
+                        f"{where}\n      displayed: {rec['quote'][:110]}\n"
+                        f"      not found whole in any fetched source it cites")
             for s in rec.get("sources", []):
                 url, q = s.get("url", ""), s.get("quote", "")
-                where = f"{f.name}:{kind}:{rec.get('id', '?')}"
                 if s.get("status") == "snippet-only":
                     tally["SNIPPET"] += 1
                     continue
                 if not q:
+                    # A "fetched" claim with no span is an unfalsifiable citation:
+                    # it asserts the page was read and leaves nothing to check.
                     tally["NOQUOTE"] += 1
+                    noquote.append(f"{where}  ({url[:80]})")
                     continue
                 if url not in cache:
                     cache[url] = page_text(url)
@@ -144,16 +179,22 @@ def main() -> int:
     print(f"checked {len(files)} file(s), {len(cache)} distinct URL(s) fetched\n")
     for m in fabricated:
         print(f"  FABRICATED  {m}")
+    for m in displayed:
+        print(f"  DISPLAYED   {m}")
     for m in sloppy:
         print(f"  SLOPPY      {m}")
+    for m in noquote:
+        print(f"  NOQUOTE     {m}  (fetched, but nothing to check)")
     if fabricated or sloppy:
         print()
     print("  ".join(f"{k.lower()} {v}" for k, v in tally.items()))
     print(f"\n{len(fabricated)} invented attribution(s), "
-          f"{len(sloppy)} span(s) not copied verbatim")
-    if sloppy and not fabricated:
+          f"{len(displayed)} displayed quote(s) not verbatim in their source, "
+          f"{len(sloppy)} span(s) not copied verbatim, "
+          f"{len(noquote)} fetched source(s) with nothing to check")
+    if (sloppy or noquote) and not (fabricated or displayed):
         print("run: python3 tools/repair_pass_quotes.py <pass-dir>")
-    return 1 if (fabricated or sloppy) else 0
+    return 1 if (fabricated or sloppy or displayed or noquote) else 0
 
 
 if __name__ == "__main__":

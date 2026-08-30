@@ -98,11 +98,17 @@ def build(pass_dir: pathlib.Path) -> Dict[str, Any]:
     leaders = sorted(p["leaders"], key=lambda l: (l.get("company", ""), l.get("name", "")))
     meta = dict(existing["_meta"])
     meta["captured"] = "2026-08-29"
+    # State the verification mix rather than claiming it is uniform. Sources marked
+    # snippet-only were corroborated by search and never page-read, and the roster
+    # note sits above rows carrying both kinds.
+    src = [s for l in leaders for s in l.get("sources", [])]
+    snip = sum(1 for s in src if s.get("status") == "snippet-only")
     meta["roster_note"] = (
         f"{len(leaders)} named executives across {len({l.get('company') for l in leaders})} "
-        "companies, each with a source. Gathered by a research pass whose every citation was "
-        "checked against the page it cites; spans that could not be found there were demoted "
-        "to search-corroborated or dropped.")
+        f"companies, each with a source. Of {len(src)} citations here, {len(src) - snip} were "
+        f"checked against the page they cite and {snip} rest on search results without a direct "
+        "page read - those carry a dagger. Spans that could not be found in the page they claimed "
+        "were demoted or dropped.")
     return {"_meta": meta, "groups": groups, "leaders": leaders}
 
 

@@ -5,7 +5,7 @@
     "why_it_exists": "The rest of this site is figures. This page is the argument behind them. The buyer and the sellers disagree with the critics about almost everything except one point, which is that the first units are expensive and somebody other than a normal customer has to pay for them.",
     "note_on_dates": "The Cheeky Pint interview predates the August 2026 Janus award — DeWahl describes Janus as a competition still to be run. It is quoted here because it is the clearest public statement of how Antares sequences its markets, not as current news.",
     "note": "Hand-curated quotes gathered before the 2026-08-29 research pass. Kept separately so tools/merge_voices.py builds data/voices.json from (this file + the pass) and stays idempotent - an earlier version read its own output and reported drift the moment it had written it.",
-    "roster_note": "105 named executives across 16 companies, each with a source. Gathered by a research pass whose every citation was checked against the page it cites; spans that could not be found there were demoted to search-corroborated or dropped."
+    "roster_note": "105 named executives across 16 companies, each with a source. Of 118 citations here, 89 were checked against the page they cite and 29 rest on search results without a direct page read - those carry a dagger. Spans that could not be found in the page they claimed were demoted or dropped."
   },
   "groups": [
     {
@@ -57,7 +57,7 @@
           "date": "2026-02-05",
           "venue": "Heatmap News",
           "topic": "What it costs",
-          "quote": "It's a market where cost matters, but cost is not the north star.",
+          "quote": "It's a market where cost matters, but cost is not the north",
           "what_it_means": "On TRISO fuel being roughly double the cost of traditional reactor fuel, Bramble says Antares' military/space customers value TRISO's safety and reliability enough that fuel-cycle cost is a secondary consideration, not the deciding factor.",
           "sources": [
             {
@@ -403,7 +403,7 @@
           "date": "2026-07-30",
           "venue": "POWER Magazine -- \"Aalo, Crusoe Plan 2027 INL Demonstration Pairing Nuclear Power and AI Data Center Load\"",
           "topic": "Who is buying",
-          "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale, and Aalo's nuclear reactors are built to meet that need.",
+          "quote": "The next generation of AI infrastructure demands power that is reliable, abundant, clean and at scale, and Aalo's nuclear reactors are built to meet that",
           "what_it_means": "Crusoe -- a named, operating AI-infrastructure company -- is Aalo's first publicly identified data-center partner, for a planned 2027 demonstration at Idaho National Laboratory. This is a partnership/demonstration commitment, not a disclosed power-purchase agreement or price.",
           "sources": [
             {
@@ -690,7 +690,7 @@
           "date": "2026-06-04",
           "venue": "Statement, quoted in POWER Magazine",
           "topic": "Orders and backlog",
-          "quote": "Hitting our commitments is everything to us. Nuclear in America has been defined for too long by delays, by companies that said they would and then didn't. We said criticality in 2026, electricity production in 2027, and power to the warfighter in 2028. Today is the first of those commitments delivered on the schedule we set.",
+          "quote": "Hitting our commitments is everything to us. Nuclear in America has been defined for too long by delays, by companies that said they would and then",
           "what_it_means": "Bramble explicitly stakes Antares' credibility on hitting a three-year public schedule (criticality 2026, electricity 2027, warfighter power 2028), contrasting it with an industry reputation for missed deadlines.",
           "sources": [
             {
@@ -709,7 +709,7 @@
           "date": "2026-08-27",
           "venue": "POWER Magazine",
           "topic": "Orders and backlog",
-          "quote": "We're grateful and proud to partner with the U.S. Army and the Defense Innovation Unit on the Janus Program. Energy scarcity is constraining America's most critical defense systems. Through Janus, Antares will deliver clean, firm, resilient power for the warfighter.",
+          "quote": "We're grateful and proud to partner with the U.S. Army and the Defense Innovation Unit on the Janus Program. Energy scarcity is constraining America's most critical defense",
           "what_it_means": "Confirms Antares' Janus award is for Fort Bragg specifically, framed as solving 'energy scarcity' constraining defense systems -- part of a combined book Antares put at roughly $1 billion across Janus, ANPI, and Space Force work.",
           "sources": [
             {
@@ -766,7 +766,7 @@
           "date": "2026-08-26",
           "venue": "BWXT press statement on Janus/Fort Campbell selection",
           "topic": "Orders and backlog",
-          "quote": "Our long-standing strengths in reactor engineering innovation, TRISO fuel development, and advanced nuclear manufacturing are the foundation of our BANR technology. As we commence work on the Janus program, we are delivering the nation's most credible and reliable path to deployable nuclear power. BANR is purpose-built for mission success.",
+          "quote": "Our long-standing strengths in reactor engineering innovation, TRISO fuel development, and advanced nuclear manufacturing are the foundation of our BANR",
           "what_it_means": "BWXT's official reaction to winning Fort Campbell under Janus, emphasizing self-supplied TRISO fuel as the core of its competitive pitch versus the other four Janus vendors.",
           "sources": [
             {
@@ -829,7 +829,7 @@
           "date": "2026-08-26",
           "venue": "General Atomics press release, Janus/Fort Hood selection",
           "topic": "Orders and backlog",
-          "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies that provide safe, dependable and independent power for military installations. Our experience designing and deploying 68 reactors worldwide and supporting reactor technologies throughout their lifecycles positions us to deliver assured energy solutions that enhance operational resilience and strengthen mission readiness.",
+          "quote": "General Atomics draws on more than 70 years of nuclear innovation and reactor expertise to deliver microreactor technologies that provide safe, dependable and independent power for military installations. Our experience designing and deploying 68 reactors worldwide and supporting reactor technologies throughout their lifecycles positions us to deliver assured energy solutions that enhance operational resilience and strengthen mission",
           "what_it_means": "GA-EMS's official reaction to the Fort Hood Janus win, leaning on TRIGA-reactor pedigree (68 reactors deployed worldwide) rather than a specific dollar figure — GA-EMS, like the other two, did not disclose the Fort Hood contract's value.",
           "sources": [
             {
@@ -949,7 +949,7 @@
           "date": "2026-08-26",
           "venue": "Radiant press release, via reflector.com / POWER Magazine",
           "topic": "Orders and backlog",
-          "quote": "The U.S. Army is a savvy customer. They have the world's top nuclear experts and know what to look for in a partner. The numbers tell the story. This award shows confidence in Radiant's product and ability to manufacture, deploy, and safely operate nuclear microreactors for the American military.",
+          "quote": "The U.S. Army is a savvy customer. They have the world's top nuclear experts and know what to look for in a",
           "what_it_means": "On the $750M Janus award (15 Kaleidos units at Fort Benning by 2030), Shivanandan leans on the Army's own technical vetting as third-party validation of Radiant's manufacturing and operating readiness.",
           "sources": [
             {
@@ -1012,7 +1012,7 @@
           "date": "2026-08-26",
           "venue": "Westinghouse press statement on Janus/Fort Drum selection",
           "topic": "Orders and backlog",
-          "quote": "Reliable energy is fundamental to mission assurance, operational readiness and national security. The selection of the eVinci microreactor for the Janus Project highlights the important role advanced nuclear technology can play in providing resilient, long-duration power to the warfighter.",
+          "quote": "Reliable energy is fundamental to mission assurance, operational readiness and national",
           "what_it_means": "Westinghouse's on-record reaction to the Fort Drum award; POWER Magazine's reporting on the same announcement confirms Westinghouse would not disclose reactor output, schedule, or contract value for Fort Drum, unlike its own public 5 MWe/15 MWth reference-design numbers.",
           "sources": [
             {
@@ -1158,7 +1158,7 @@
           "date": "2025-11-25",
           "venue": "Cheeky Pint podcast (Transistor.fm), episode 20",
           "topic": "Fuel and supply chain",
-          "quote": "there's a little bit of Silicon Valley DNA entering the space with General Matter, which is Scott Nolan's company out of Founders Fund. So he's getting into the enrichment space.",
+          "quote": "there's a little bit of Silicon Valley DNA entering the space with General Matter, which is Scott Nolan's company out of Founders Fund. So he's getting into the enrichment",
           "what_it_means": "Names General Matter (Scott Nolan's Founders Fund-backed enrichment startup) as a specific, venture-backed entrant trying to close the domestic enrichment gap she describes elsewhere in the same interview.",
           "sources": [
             {
@@ -1196,7 +1196,7 @@
           "date": "2026-06",
           "venue": "Press release, quoted in POWER Magazine",
           "topic": "Fuel and supply chain",
-          "quote": "BWXT's TRISO fuel supported our path to criticality. Building on a proven fuel specification developed through Project Pele let our team focus on what we had to prove ourselves: our control system and reactor physics. We're grateful for a partnership that continues as we move from neutrons to electrons.",
+          "quote": "BWXT's TRISO fuel supported our path to",
           "what_it_means": "Credits BWXT and the Army's Project Pele program by name for de-risking Antares' fuel supply, letting Antares concentrate engineering effort on control systems and reactor physics rather than fuel qualification.",
           "sources": [
             {
@@ -1296,25 +1296,6 @@
               "label": "The Motley Fool — BWXT Q2 2026 Earnings Call Transcript (call held Aug 3, 2026)",
               "url": "https://www.fool.com/earnings/call-transcripts/2026/08/10/bwxt-bwxt-q2-2026-earnings-call-transcript/",
               "quote": "we continue to evaluate a commercial TRISO investment in Wyoming through our collaboration with Kairos",
-              "status": "fetched"
-            }
-          ]
-        },
-        {
-          "id": "deepfission-muller-leu-fuel",
-          "speaker": "Liz Muller",
-          "role": "Co-Founder & CEO",
-          "org": "Deep Fission",
-          "date": "2025-04-10",
-          "venue": "MCJ Inevitable podcast -- \"Underground Nuclear Reactors? Inside Deep Fission's Energy Solution\"",
-          "topic": "Fuel and supply chain",
-          "quote": "So we're looking at your typical pressurized water reactor fuel. So 5% enriched uranium because we already have a mature supply chain for that that exists today.",
-          "what_it_means": "Like Aalo, Deep Fission chose standard low-enriched (5%) PWR fuel over HALEU specifically to use an already-mature supply chain -- both new entrants are avoiding the HALEU bottleneck that constrains many other advanced-reactor designs.",
-          "sources": [
-            {
-              "label": "MCJ Inevitable podcast -- Underground Nuclear Reactors? Inside Deep Fission's Energy Solution",
-              "url": "https://mcj.vc/inevitable-podcast/deep-fission",
-              "quote": "5% enriched uranium because we already have a mature supply chain for that that exists today",
               "status": "fetched"
             }
           ]
@@ -1523,7 +1504,7 @@
           "date": "2026-06-04",
           "venue": "LinkedIn post, quoted in POWER Magazine",
           "topic": "Manufacturing and units",
-          "quote": "Now that Mark-0 is critical, the real work is just beginning.",
+          "quote": "Now that Mark-0 is critical, the real work is just",
           "what_it_means": "Bramble frames the Mark-0 criticality milestone (achieved June 4, 2026 at INL) as the start, not the end, of the harder commercialization work -- deliberately lowering the temperature on a major technical win.",
           "sources": [
             {
@@ -1858,7 +1839,7 @@
           "date": "2026-08-26",
           "venue": "General Atomics press release, Janus/Fort Hood selection",
           "topic": "Licensing and regulation",
-          "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design. Self-protecting UZrH fuel and pump-free natural-circulation cooling reduce reliance on active systems and operator intervention, while provide flexibility to meet evolving defense energy requirements.",
+          "quote": "Passive safety and operational simplicity are fundamental to our Tactical Energy System design. Self-protecting UZrH fuel and pump-free natural-circulation cooling reduce reliance on active systems and operator intervention, while provide flexibility to meet evolving defense energy",
           "what_it_means": "GA-TES is the one Janus design that is not TRISO-fueled — it uses uranium-zirconium hydride (UZrH) fuel drawn from General Atomics' TRIGA research-reactor line, so Back's framing (passive/pump-free, no large cooling-water infrastructure) is GA-EMS's core technical differentiation from the other four TRISO-fueled Janus vendors, including BWXT.",
           "sources": [
             {
@@ -2010,7 +1991,7 @@
           "date": "2025-07-08",
           "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
           "topic": "Licensing and regulation",
-          "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim, I think his reactor should be scrutinized quite a bit by independent experts before anyone allows him to turn it on.",
+          "quote": "Given his hypersensitive and toxic reaction to my simple critique of his outrageous radiation claim, I think his reactor should be scrutinized quite a bit by independent experts before anyone allows him to turn it",
           "what_it_means": "Touran's response to Taylor's pushback (companion record above): his substantive point is that Valar's spent-fuel radiation-safety claim was not just wrong but 'outrageous,' and that Taylor reacting to being challenged rather than engaging on the engineering is itself a reason for third-party scrutiny before licensing.",
           "sources": [
             {
@@ -2029,7 +2010,7 @@
           "date": "2025-07-08",
           "venue": "Utah Investigative Journalism Project -- \"Who is Valar Atomics?\"",
           "topic": "Licensing and regulation",
-          "quote": "I don't know how you can claim your design is so safe without doing engineering. It's not fairy dust — this is engineering. We can't take your word for it.",
+          "quote": "I don't know how you can claim your design is so safe without doing engineering. It's not fairy dust — this is engineering. We can't take your word for",
           "what_it_means": "A third, independent academic nuclear engineer -- not party to the original Touran exchange -- making the same core point: Valar's public safety claims have outpaced any published engineering analysis a third party could evaluate.",
           "sources": [
             {
@@ -2085,7 +2066,7 @@
           "date": "2026-06-19",
           "venue": "KSL.com -- \"Valar Atomics' nuclear reactor reaches criticality in Utah\"",
           "topic": "Licensing and regulation",
-          "quote": "A few minutes ago, we took Ward250 critical.",
+          "quote": "A few minutes ago, we took Ward250",
           "what_it_means": "This is the DOE Reactor Pilot Program milestone: a fueled, zero-power criticality demonstration at the Utah San Rafael Energy Lab (USREL), reported as the second of four companies to meet the program's July 4, 2026 deadline. Taylor also told KSL that Valar's 'guiding principle was that metal beats paper' -- build hardware before finishing analysis -- which is the same fast-over-rigorous approach independent nuclear engineers criticize in the skeptic-case quotes below. It is zero-power only, not the reactor generating electricity.",
           "sources": [
             {
@@ -2104,7 +2085,7 @@
           "date": "2025-03-04",
           "venue": "Westinghouse press release, Penn State FRONTIER letter of intent",
           "topic": "Licensing and regulation",
-          "quote": "Penn State's new University Park research facility will further solidify Pennsylvania as one of the world's leading nuclear innovation hubs. We look forward to bringing our advanced eVinci technology to the FRONTIER program to find new ways of harnessing nuclear energy while providing students and researchers with unprecedented opportunities.",
+          "quote": "Penn State's new University Park research facility will further solidify Pennsylvania as one of the world's leading nuclear innovation",
           "what_it_means": "Marks Penn State's Feb 28, 2025 letter of intent to the NRC as the first step toward an eVinci research-reactor construction permit under FRONTIER — the non-defense, non-Janus commercial/research track for eVinci that predates the later pivot toward defense and space.",
           "sources": [
             {
@@ -2168,7 +2149,7 @@
           "date": "2024-11",
           "venue": "Greenpeace Philippines press release -- \"Greenpeace denounces PNRI-Valar Atomics nuclear deal\"",
           "topic": "International",
-          "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper. This agreement effectively sets up our people as guinea pigs for unproven and inherently risky technology.",
+          "quote": "The micro reactors Valar Atomics proposed remain untested and exist solely on paper. This agreement effectively sets up our people as guinea pigs for unproven and inherently risky",
           "what_it_means": "Local environmental opposition in the Philippines predates Valar's actual construction there -- this statement is from around November 2024, before the specific reactor design and university site were finalized -- and frames the deployment as testing unproven technology on Filipino citizens, a distinct international-relations risk alongside the domestic technical-credibility questions raised by Touran and Erickson.",
           "sources": [
             {

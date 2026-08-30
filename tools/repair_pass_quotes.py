@@ -13,9 +13,19 @@ For each source marked `fetched` carrying a quote:
                                         that still verifies
   * does not verify                  -> demote to snippet-only and drop the quote
 
-The third case is the important one. A record whose span cannot be found in the
-page it cites must not keep a "fetched" claim; demoting it preserves the finding
-while telling the truth about where it came from.
+It also repairs the DISPLAYED quote, which is the text the site renders inside
+quotation marks and therefore the string that actually has to be verbatim. Where
+a record's quote is not present whole in any source it cites, it is trimmed to
+its longest verbatim prefix; where that prefix is too short to carry meaning, the
+record is reported for a human rather than silently shortened.
+
+The displayed quote and the source's evidence span are different strings, and an
+earlier version of the gate checked only the second. Of 107 records, 16 displayed
+exactly what had been verified and 10 were disjoint from it entirely.
+
+  python3 tools/repair_pass_quotes.py data/research/<pass-dir>
+
+Idempotent: a second run over repaired output reports everything as kept.
 """
 import json, pathlib, re, html, io, sys, urllib.request, urllib.error
 UA=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -47,10 +57,32 @@ def page(u):
         t=re.sub(r"<[^>]+>"," ",t)
     CACHE[u]=(norm(t),""); return CACHE[u]
 
+MIN_WORDS = 6   # below this a "quote" is a fragment, not a quotation
 d_dir=pathlib.Path(sys.argv[1])
 kept=trimmed=demoted=skipped=0
+q_kept=q_trimmed=q_flagged=0
+flagged=[]
 for f in sorted(d_dir.glob("*.json")):
     d=json.loads(f.read_text()); changed=False
+    for rec in d.get("quotes",[]):
+        rq = rec.get("quote","")
+        srcs=[s for s in rec.get("sources",[]) if s.get("status")=="fetched" and s.get("url")]
+        texts=[page(s["url"])[0] for s in srcs]
+        texts=[x for x in texts if x]
+        if not rq or not texts:
+            continue
+        if any(norm(rq) in x for x in texts):
+            q_kept+=1; continue
+        w=rq.split(); best=0
+        for n in range(len(w)-1, MIN_WORDS-1, -1):
+            if any(norm(" ".join(w[:n])) in x for x in texts):
+                best=n; break
+        if best:
+            rec["quote"]=" ".join(w[:best]).rstrip(" ,;:-")
+            q_trimmed+=1; changed=True
+        else:
+            q_flagged+=1
+            flagged.append(f"{f.name}:{rec.get('id')}  only <{MIN_WORDS}w verbatim: {rq[:70]}")
     for rec in d.get("leaders",[])+d.get("quotes",[]):
         for s in rec.get("sources",[]):
             if s.get("status")!="fetched" or not s.get("quote"): continue
@@ -70,4 +102,8 @@ for f in sorted(d_dir.glob("*.json")):
                 s["status"]="snippet-only"; s.pop("quote",None); demoted+=1; changed=True
     if changed:
         f.write_text(json.dumps(d,indent=2,ensure_ascii=False)+"\n")
-print(f"kept {kept} · trimmed {trimmed} · demoted {demoted} · unreachable {skipped}")
+print(f"source spans: kept {kept} · trimmed {trimmed} · demoted {demoted} · unreachable {skipped}")
+print(f"displayed quotes: kept {q_kept} · trimmed to verbatim extent {q_trimmed} · "
+      f"flagged for a human {q_flagged}")
+for m in flagged:
+    print(f"  FLAG  {m}")
