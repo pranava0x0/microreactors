@@ -28,8 +28,16 @@ rate; separating them showed six were bad transcription of real facts and
 exactly one was an invented attribution. Those need different responses, and
 collapsing them would have libelled five sound records or excused one bad one.
 
-Only FABRICATED fails the build. SLOPPY is reported and must be fixed, but it
-does not mean the research was invented.
+Both FABRICATED and SLOPPY fail the build. The split is a diagnostic, not a
+severity: a reconstructed span is still not a quote, and a gate that accepts one
+because the page happens to name the speaker is not a quote gate. An earlier
+version exited 0 on SLOPPY, which meant "Name - Title" invented punctuation could
+pass review as verbatim. UNREACHABLE and SNIPPET do not fail: the first is the
+host's fault and the second was declared honestly.
+
+tools/repair_pass_quotes.py fixes SLOPPY automatically by trimming to a subspan
+that verifies, or demoting to snippet-only when none does, so failing on it costs
+one command rather than an argument.
 
 Exit 1 if any MISSING. Stdlib only.
 """
@@ -143,7 +151,9 @@ def main() -> int:
     print("  ".join(f"{k.lower()} {v}" for k, v in tally.items()))
     print(f"\n{len(fabricated)} invented attribution(s), "
           f"{len(sloppy)} span(s) not copied verbatim")
-    return 1 if fabricated else 0
+    if sloppy and not fabricated:
+        print("run: python3 tools/repair_pass_quotes.py <pass-dir>")
+    return 1 if (fabricated or sloppy) else 0
 
 
 if __name__ == "__main__":

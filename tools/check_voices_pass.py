@@ -14,8 +14,11 @@ What it checks, and why each one is here:
   * a source `quote` is <=25 words and a record `quote` <=60 (the contract's caps)
   * NO paraphrase markers inside a verbatim quote ("said that", "[sic]", "...")
   * duplicate ids across files - ten agents pick the same obvious slug
-  * impossible citations: the claim's date precedes nothing, but a claim dated
-    AFTER a source whose URL carries an older year is flagged for a human
+  * impossible citations: a source published BEFORE the thing it is cited for
+    cannot support it. Where a URL carries a year in its path, a quote dated in
+    a later year is flagged. This was documented here for a week before it was
+    implemented, which is its own lesson: a docstring asserting an invariant
+    does not enforce one.
   * a quote record that carries no number AND no named counterparty is weak:
     reported, not failed, so the human decides
 """
@@ -33,6 +36,12 @@ TOPICS = {"customers", "costs", "supply-chain", "units-manufacturing", "orders",
           "regulatory", "international"}
 PARAPHRASE = re.compile(r"\[sic\]|\bsaid that\b|\.\.\.|…|\[\s*\w+\s*\]")
 NUMBER = re.compile(r"\$\s?[\d,]|\b\d[\d,.]*\s?(?:%|MW|MWe|MWt|MWh|GW|kW|kWe|ton|tonne|units?|years?)\b|\b\d{2,}\b")
+# A year inside a URL PATH, e.g. /2025/report or /news/2024-03-01/. Anchored on
+# slashes and hyphens so it cannot match inside a contract number like
+# N69450-16-C-1901 - a sibling lint in this repo fired on exactly that, and the
+# first fix for it silently stopped matching real dates.
+URL_YEAR = re.compile(r"/(19|20)\d{2}(?=[/\-]|$)")
+CLAIM_YEAR = re.compile(r"^((?:19|20)\d{2})")
 BARE_HOST = re.compile(r"^https?://[^/]+/?$")
 
 
@@ -113,6 +122,21 @@ def check(pass_dir: pathlib.Path) -> List[str]:
             if not NUMBER.search(q) and rec.get("topic") in {"costs", "orders", "units-manufacturing"}:
                 warns.append(f"{where}: topic={rec['topic']} but the quote carries no number")
             sources_ok(rec, where)
+
+            # Impossible citation: a source whose URL is stamped with a year
+            # EARLIER than the year the quote is dated cannot be where the quote
+            # came from. Only the newest year in the URL counts - paths often
+            # carry an archive year and an article year.
+            m = CLAIM_YEAR.match(str(rec.get("date", "")))
+            if m:
+                claim_year = int(m.group(1))
+                for s in rec.get("sources", []):
+                    years = [int(a + b) for a, b in
+                             [(y.group(1), y.group(0)[-2:]) for y in
+                              URL_YEAR.finditer(s.get("url", ""))]]
+                    if years and max(years) < claim_year:
+                        errs.append(f"{where}: quote dated {claim_year} cites a source "
+                                    f"stamped {max(years)} ({s.get('url', '')[:70]})")
 
     print(f"checked {len(files)} file(s): {n_lead} leaders, {n_quote} quotes, {n_src} sources")
     if incomplete:
