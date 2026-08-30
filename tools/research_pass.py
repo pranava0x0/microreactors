@@ -41,6 +41,10 @@ CASE_SECTORS = {
     "Compute", "Manufacturing", "Agriculture & Food",
 }
 SOURCE_STATUS = {"fetched", "snippet-only"}
+# Derived, not hand-typed, so a renamed or reworded load in data/sectors.json
+# can't drift silently out of sync with what this validator will accept.
+LOAD_LABELS = {l["label"] for s in json.loads((ROOT / "data" / "sectors.json").read_text())["sectors"]
+               for l in s["loads"]}
 
 MECH_REQUIRED = ["id", "group", "family", "name", "what_it_is", "nuclear_fit", "sources"]
 CASE_REQUIRED = ["id", "sector", "name", "summary", "microreactor_read", "sources"]
@@ -144,6 +148,17 @@ def check_record(rec, kind, path, errors, seen_ids) -> None:
         if not any(rec.get(k) for k in CASE_NUMERIC_ANY):
             fail(errors, path, rec_id,
                  "carries no number and no filing — needs one of " + ", ".join(CASE_NUMERIC_ANY))
+        load = rec.get("load")
+        if load is not None:
+            if not isinstance(load, list) or not all(isinstance(x, str) for x in load):
+                fail(errors, path, rec_id, f"load {load!r} must be a list of strings")
+            else:
+                for label in load:
+                    if label not in LOAD_LABELS:
+                        fail(errors, path, rec_id,
+                             f"load {label!r} does not match any data/sectors.json load label "
+                             "verbatim — the site's cross-link matches by exact string, so a "
+                             "typo here silently produces no link")
 
 
 def load_pass(pass_dir: pathlib.Path):

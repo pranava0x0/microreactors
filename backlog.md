@@ -195,3 +195,15 @@
   not literal duplication in the payload — but it does mean any lazy-loading split has to keep
   Policy, Costs and Applications reading one copy.
 
+## Cross-links (2026-08-28, from Codex review on PR #6)
+
+- **low** · The Applications tab's "N priced examples →" link (and the pre-existing "Why a small
+  reactor, case by case" edgeGroups links it's modeled on) all route to the generic
+  `#economics/price-to-beat` tab rather than to the specific matching case(s) — a reader has to
+  scroll/search the sector's accordion for the example the link promised. True per-case deep
+  linking needs the Price-to-beat renderer to expose stable per-case anchors (`id` on each
+  `<details class="prec">`, keyed by the case's own `id`) and the hash router to support a
+  secondary in-page anchor on top of the panel/sub route it already parses — neither exists today
+  for any tab. Scoped out of the PR that added the Applications-side link (routing/anchor
+  plumbing, not data or citations); worth doing once, fixing both link sources at once.
+

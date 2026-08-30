@@ -683,6 +683,12 @@
   var loadCaseIndex = {};
   ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (bsec) {
     bsec.records.forEach(function (c) {
+      // Same "priced" test as tools/build_data.py's benchmarks_priced stat — a
+      // case with only a capacity figure or a filing is real evidence, but
+      // calling it "priced" without a price, capex or displaced-cost number
+      // overclaims. Six of the ten Compute/"AI and very large cloud data
+      // centers" cases are MOUs and fleet agreements with none of the three.
+      if (!(c.price || c.capex || c.displaced)) { return; }
       (c.load || []).forEach(function (label) {
         (loadCaseIndex[label] = loadCaseIndex[label] || []).push(c);
       });
