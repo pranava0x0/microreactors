@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "captured": "2026-08-28",
+    "agent": "agri-food",
+    "scope": "Agriculture & Food sector - controlled-environment ag and food-processing power deals, the price a 1-20 MW reactor has to beat.",
+    "angles_run": [
+      "USDA REAP (Rural Energy for America Program) award-level data for ag processing/grain drying",
+      "Vertical farming / CEA operator utility contracts and power-cost bankruptcy disclosures (AppHarvest, Plenty, Bowery, Kalera)",
+      "Meatpacking/poultry/dairy plant cogeneration or energy-purchase agreements (Blue Earth Inc / JBS / Pilgrim's Pride SEC filings)",
+      "Land-based RAS aquaculture power demand and utility interconnection/upgrade filings (Nordic Aquafarms, Atlantic Sapphire)",
+      "Remote seafood-processing plant power costs and diesel-displacement projects (Alaska)",
+      "Grain elevator / oilseed mill electrification and utility large-load interconnection announcements",
+      "Greenhouse campus utility interconnection upgrades (Windset Farms / BC Hydro)"
+    ],
+    "absences": [
+      "No signed power/energy deal with a published $/kWh or $/MWh price was found anywhere in this sector - every priced case below discloses capacity, capex, or a discount mechanism, never a bare rate.",
+      "Large grain and oilseed mills: no grain elevator, flour mill, or oilseed crush plant utility interconnection or large-load agreement with a published MW figure was found after five+ search angles (cooperative utility disputes, new substations, oilseed crush capacity expansions, Cargill/ADM/Bunge, CHS/Ardent Mills/Consolidated Grain & Barge). USDA REAP grant data is genuinely award-level but caps at $1 million for a renewable-energy grant ($500,000 for efficiency) and $25 million for a loan guarantee program-wide - real grain-related awards found were all grain-dryer efficiency projects in the $75k-$400k range, saving ~150,000-420,000 kWh/yr, nowhere near 1-20 MW baseload procurement. No qualifying case record for this load; dropped.",
+      "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: no single named campus with a published power deal or capacity figure was found; this load appears to be a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category.",
+      "Kalera, Local Bounti, and other CEA operators' state utility contracts (e.g. Georgia Power) were searched for by name; none surfaced a company-specific large-load agreement with published numbers.",
+      "Windset Farms' 2024 upgrade to BC Hydro's 69 kV transmission line (from 25 kV distribution) is real and dated but BC Hydro's own writeup gives no MW or capex figure ('we've got the megawatts we need' is the only quote) - dropped for lack of a number after 2 searches.",
+      "No AI/vertical-farming or aquaculture nuclear PPA of any kind (large or SMR) was found in this sector, unlike Compute or Manufacturing.",
+      "Cargill/ADM/Bunge soybean-crush-plant interconnection agreements: searched by name, no MW or dollar figure surfaced."
+    ]
+  },
+  "cases": [
+    {
+      "id": "jbs-brooks-alberta-cogen",
+      "sector": "Agriculture & Food",
+      "load": ["Very large meat, dairy and frozen-food plants"],
+      "name": "JBS Food Canada beef plant, Brooks, Alberta - Blue Earth Inc. cogeneration energy plant",
+      "country": "CA",
+      "region": "Brooks, Alberta",
+      "parties": {"host": "JBS Food Canada (subsidiary of JBS USA Holdings)", "provider": "Blue Earth, Inc.", "utility": "local Alberta utility (excess power sold to Alberta Power Pool)"},
+      "instrument": "ESA (energy services agreement)",
+      "signed": "2014-08",
+      "term_years": 10,
+      "capex": "$29 million",
+      "displaced": "grid electricity purchased from the local utility, at a guaranteed discount to the host's prior utility rate",
+      "summary": "On August 28, 2014, independent power producer Blue Earth, Inc. signed an energy purchase agreement and land lease with JBS in Brooks, Alberta to design, build, finance, own and operate a $29 million cogeneration energy plant on land leased from the host, targeting commercial operation in 2015. Electricity and thermal power were sold to JBS under a 10-year take-or-pay PPA with a 10-year extension option, priced at a guaranteed discount to what JBS was already paying its local utility; excess electricity was sold into the Alberta Power Pool. No MW capacity figure for the plant was disclosed in Blue Earth's SEC filings.",
+      "microreactor_read": "A 1-20 MW reactor selling into meat processing has to beat a 'guaranteed discount off the grid rate' structure, not a fixed $/kWh - the buyer's own utility bill is the benchmark, and a third-party IPP already proved willing to finance, own and operate on-site generation for exactly this kind of host under a 10-year PPA.",
+      "sources": [
+        {"label": "SEC EDGAR - Blue Earth, Inc. Form S-3/A (FY2015)", "url": "https://www.sec.gov/Archives/edgar/data/0001422109/000139390515000276/bblu_s3a.htm", "quote": "design, build, finance, own and operate a $29 million cogeneration energy facility which the Company expects to commence operations in 2015", "status": "fetched"},
+        {"label": "SEC EDGAR - Blue Earth, Inc. Form 10-K (FY2014)", "url": "https://www.sec.gov/Archives/edgar/data/1422109/000139390515000109/bblu_10k.htm", "quote": "selling thermal and electric power to the customer under ten year power purchase agreements with provisions for ten year extensions", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "pilgrims-pride-sumter-chp",
+      "sector": "Agriculture & Food",
+      "load": ["Very large meat, dairy and frozen-food plants"],
+      "name": "Pilgrim's Pride poultry plant, Sumter, South Carolina - Sumter Heat & Power (Blue Earth Inc.) CHP plant",
+      "country": "US",
+      "region": "Sumter, South Carolina",
+      "parties": {"host": "Pilgrim's Pride Corporation (subsidiary of JBS Holdings Inc.)", "provider": "Sumter Heat & Power, LLC (Blue Earth, Inc. subsidiary)", "utility": "Duke Energy"},
+      "instrument": "ESA (energy services agreement)",
+      "signed": "2014-12",
+      "term_years": 10,
+      "displaced": "methane previously flared to the environment from Pilgrim's Pride's on-site digester, now converted to electricity, hot water and boiler gas",
+      "summary": "Effective December 1, 2014, Blue Earth's subsidiary Sumter Heat & Power, LLC signed an energy purchase agreement and land lease with Pilgrim's Pride to engineer, build, finance, own and operate a combined-heat-and-power plant fueled by methane from the host's digester (previously flared). Pilgrim's Pride purchased thermal energy (hot water, boiler gas) from the plant under a 10-year PPA with a 10-year extension option; all electricity generated was sold to Duke Energy under a separate power purchase agreement. The plant was energized March 30, 2015, Blue Earth's first operating energy plant. Neither MW capacity nor a standalone capex figure for this specific site was disclosed - the SEC filing gives only a combined ~$32 million total cost across Blue Earth's first several energy plants.",
+      "microreactor_read": "This deal shows a large poultry processor will host third-party-financed, third-party-owned distributed generation on a 10-year PPA rather than buy or build its own plant - the same ownership structure a microreactor developer would need to offer, but the host's payoff here (converting a waste flare into revenue plus a discounted thermal supply) is a bar a reactor supplying grid-equivalent power alone cannot match on its own.",
+      "sources": [
+        {"label": "SEC EDGAR - Blue Earth, Inc. Form 10-K (FY2014)", "url": "https://www.sec.gov/Archives/edgar/data/1422109/000139390515000109/bblu_10k.htm", "quote": "All electrical energy generated by the co-generation facility will be sold to Duke Energy under a power purchase agreement", "status": "fetched"},
+        {"label": "SEC EDGAR - Blue Earth, Inc. Form S-3/A (FY2015)", "url": "https://www.sec.gov/Archives/edgar/data/0001422109/000139390515000276/bblu_s3a.htm", "quote": "entered into an energy purchase agreement and land lease to engineer, design, build, finance, construct, own and operate a co-generation energy plant", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "nordic-aquafarms-belfast-cmp-section80",
+      "sector": "Agriculture & Food",
+      "load": ["Large land-based aquaculture operations"],
+      "name": "Nordic Aquafarms Belfast RAS salmon farm - CMP Section 80 transmission upgrade",
+      "country": "US",
+      "region": "Belfast, Maine",
+      "parties": {"host": "Nordic Aquafarms", "provider": "n/a", "utility": "Central Maine Power (Avangrid)"},
+      "instrument": "utility tariff",
+      "signed": "2022-06",
+      "capacity": "25-26 MW at full capacity (Nordic Aquafarms' expected draw)",
+      "capex": "$63.6 million (CMP Section 80 transmission line rebuild, cost pooled across the six ISO-New England states; Maine ratepayers' share ~9%)",
+      "summary": "On June 15, 2022 the Maine Public Utilities Commission approved a $63.6 million Central Maine Power rebuild of the 115 kV, 23-mile 'Section 80' transmission line, needed in part to serve Nordic Aquafarms' planned $500 million land-based recirculating-aquaculture salmon farm in Belfast, which was expected to draw 25 to 26 MW at full capacity - squarely inside the 1-20 MW reactor band's upper reach. Regulators and CMP maintained the rebuild was independently justified by documented overloads on the aging line, but acknowledged the aquaculture project's load created urgency; over 300 residents objected to it as a ratepayer subsidy for a private company. Nordic Aquafarms abandoned the Belfast project entirely in January 2025 after losing a multi-year legal fight over an eminent-domain land seizure - the cancellation was driven by litigation, not by the cost or availability of power.",
+      "microreactor_read": "A single land-based RAS salmon farm pulling 25-26 MW is real, disclosed evidence that aquaculture at this scale sits at or above the top of the microreactor band - but the fact a whole regional utility had to rebuild a transmission line to serve one host, and the project still died for reasons unrelated to power, shows the harder sale for a reactor here may not be price but survivability risk: aquaculture megaprojects have a documented history of collapsing on permitting/legal grounds before the power ever gets used.",
+      "sources": [
+        {"label": "Portland Press Herald - Maine approves $63 million CMP power line upgrade over residents' objections", "url": "https://www.pressherald.com/2022/06/15/maine-approves-63-million-cmp-power-line-upgrade-over-residents-objections/", "quote": "Nordic Aquafarms, which expects to draw 25 to 26 megawatts at full capacity", "status": "fetched"},
+        {"label": "The Fish Site - Nordic Aquafarms abandons Maine aquaculture project amid legal challenges", "url": "https://thefishsite.com/articles/nordic-aquafarms-abandons-maine-aquaculture-project-amid-legal-challenges", "quote": "Nordic Aquafarms has announced its decision to cease pursuing its ambitious land-based salmon farming project in Belfast, Maine", "status": "snippet-only"}
+      ]
+    },
+    {
+      "id": "unisea-dutch-harbor-waste-heat-to-power",
+      "sector": "Agriculture & Food",
+      "load": ["Remote seafood-processing plants connected to a year-round community grid"],
+      "name": "UniSea seafood plant, Unalaska/Dutch Harbor, Alaska - ICE Thermal Harvesting waste-heat-to-power system",
+      "country": "US",
+      "region": "Unalaska, Alaska",
+      "parties": {"host": "UniSea, Inc.", "provider": "ICE Thermal Harvesting, LLC", "utility": "City of Unalaska (municipal electric utility)"},
+      "instrument": "EaaS",
+      "signed": "2025-09",
+      "capacity": "300 kW",
+      "displaced": "diesel generation - approximately 3,500 gallons per week of diesel projected to be displaced during the processing season",
+      "summary": "On September 4, 2025, ICE Thermal Harvesting and UniSea launched what the companies described as the Alaska seafood industry's first waste-heat-to-power system at UniSea's Dutch Harbor/Unalaska processing plant, a 300 kW unit that captures waste heat from UniSea's existing diesel generators and converts it to electricity rather than adding new generation. In its first three weeks of operation the system produced 67 MWh and displaced roughly 5,000 gallons of diesel; UniSea projected ongoing savings of about 3,500 gallons of diesel per week during the processing season. Financial terms (capex, contract price, term) were not disclosed in the announcement.",
+      "microreactor_read": "300 kW is far below the 1-20 MW reactor floor, but it is the clearest real, dated, priced-in-diesel-gallons evidence that remote seafood plants on an isolated community grid actively invest in on-site generation to cut diesel burn - the same value proposition a microreactor would sell, just at roughly 1/10th to 1/60th the scale of this one plant's demonstrated appetite for displacing diesel.",
+      "sources": [
+        {"label": "PR Newswire - ICE Thermal Harvesting and UniSea Launch Alaska Seafood Industry's First Waste Heat to Power System", "url": "https://www.prnewswire.com/news-releases/ice-thermal-harvesting-and-unisea-launch-alaska-seafood-industrys-first-waste-heat-to-power-system-302546873.html", "quote": "the system will generate 300kW and replace ~3500 gallons of diesel usage each week during the processing seasons", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "houwelings-tomatoes-camarillo-chp",
+      "sector": "Agriculture & Food",
+      "load": ["Large lighted greenhouse campuses"],
+      "name": "Houweling's Tomatoes greenhouse campus, Camarillo, California - 13 MW CHP system",
+      "country": "US",
+      "region": "Camarillo, California",
+      "parties": {"host": "Houweling's Tomatoes (owner-operator)", "provider": "Houweling's Tomatoes (self-owned)", "utility": "Southern California Edison (grid interconnection and PPA counterparty)"},
+      "instrument": "PPA",
+      "signed": "2013",
+      "capacity": "13 MW (three 4.3 MW GE Jenbacher JMS 624 engines) against a facility peak load of 12.5 MW; daytime demand as low as 1.5 MW, night-time grow-light demand up to 11 MW",
+      "capex": "$18.5 million total project cost, offset by an $880,000 California Self-Generation Incentive Program (SGIP) rebate",
+      "price": "annual energy savings of $4.3 million, a 4-year simple payback",
+      "displaced": "grid electricity and separately purchased CO2 for greenhouse fertilization, both previously bought from Southern California Edison and industrial gas suppliers",
+      "summary": "Houweling's Tomatoes, a 128-acre, six-greenhouse tomato and cucumber campus in Camarillo, CA, installed three 4.3 MW GE Jenbacher gas engines (13 MW total) as the first project under California's CHP feed-in tariff. The company self-owns the plant; the first two units were commissioned in 2011 but could not export power until the interconnection agreement and PPA with the local utility were finally signed in fall 2013 alongside the third unit. Waste heat feeds three 1-million-gallon hot water tanks for greenhouse heating and captured CO2 fertilizes the crop. DOE's CHP Technical Assistance Partnership records the $18.5 million total cost (net of an $880,000 SGIP rebate), $4.3 million in annual energy savings, and a 4-year payback; total CHP system efficiency is 88%.",
+      "microreactor_read": "This is the single best-documented Agriculture & Food power deal found in this pass: a real greenhouse operator self-financed 13 MW of on-site generation at $18.5M capex (~$1,420/kW) against $4.3M/yr savings, a 4-year payback - the exact economics a reactor developer would need to beat, and proof the demand swing (1.5 MW day to 11 MW night) inside one campus is real and large enough to matter at 1-20 MW scale.",
+      "sources": [
+        {"label": "DOE CHP Technical Assistance Partnership (ORNL) - Houweling's Tomatoes project profile", "url": "https://chptap.ornl.gov/profile/101/houweling-tomatoes.pdf", "quote": "TOTAL PROJECT COST: $18.5 million REBATES: $880,000 (from California's SGIP Program) ANNUAL ENERGY SAVINGS: $4.3 million PAYBACK: 4 years", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "atlantic-sapphire-miami-fpl-solartogether",
+      "sector": "Agriculture & Food",
+      "load": ["Large land-based aquaculture operations"],
+      "name": "Atlantic Sapphire Bluehouse RAS salmon facility, Miami, Florida - FPL SolarTogether subscription",
+      "country": "US",
+      "region": "Homestead/Miami, Florida",
+      "parties": {"host": "Atlantic Sapphire", "provider": "n/a", "utility": "Florida Power & Light (FPL)"},
+      "instrument": "utility tariff",
+      "signed": "2024-05",
+      "displaced": "grid electricity from FPL's standard fuel mix, for 45% of the facility's total energy consumption",
+      "summary": "On May 30, 2024, Atlantic Sapphire, operator of the world's largest land-based recirculating-aquaculture salmon facility in Homestead/Miami, announced it joined FPL's SolarTogether community-solar subscription program to offset 45% of its total energy consumption with solar, paying a fixed monthly subscription and receiving escalating bill credits rather than installing its own generation or signing a bespoke PPA. No MW capacity, subscription cost, or contract term was disclosed for Atlantic Sapphire's specific enrollment.",
+      "microreactor_read": "The largest single land-based RAS operator in the US chose a no-upfront-cost utility subscription program over any form of dedicated on-site generation or PPA - a sign that even a heavy, continuous aquaculture load defaults to whatever off-the-shelf green-power product its utility already sells, which is a much lower bar (and a much lower price signal) for a reactor to compete against than a bespoke negotiated deal.",
+      "sources": [
+        {"label": "PR Newswire - Atlantic Sapphire Further Reduces Carbon Footprint by Joining Esteemed FPL SolarTogether Program", "url": "https://www.prnewswire.com/news-releases/atlantic-sapphire-further-reduces-carbon-footprint-by-joining-esteemed-fpl-solartogether-program-302159374.html", "quote": "in an effort to decrease its electric carbon footprint by offsetting 45% of its total energy consumption with solar", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "lineage-logistics-colton-solar",
+      "sector": "Agriculture & Food",
+      "load": ["Very large meat, dairy and frozen-food plants"],
+      "name": "Lineage Logistics cold-storage warehouse, Colton (Agua Mansa), California - rooftop solar + linear generators",
+      "country": "US",
+      "region": "Colton, California",
+      "parties": {"host": "Lineage Logistics", "provider": "PowerFlex", "utility": "n/a (behind-the-meter, 100% on-site generation)"},
+      "instrument": "colocation power agreement",
+      "capacity": "3.3 MW rooftop solar plus 460 kW of linear generators",
+      "displaced": "100% of the site's grid electricity purchases, per PowerFlex/Lineage's own claim for the facility",
+      "summary": "PowerFlex built a 3.3 MW rooftop solar array paired with 460 kW of natural-gas-fired linear generators at Lineage Logistics' cold-storage warehouse in Colton (Agua Mansa), California, which the companies describe as the first pairing of solar with linear generators at this scale and say lets the facility produce 100% of its energy consumption on site (an estimated 5.4 million kWh/year from the combined system). No capex, contract structure (PPA vs. lease vs. owned), term, or signed date was disclosed in PowerFlex's case study; Lineage has since expanded to 146 MW of on-site solar across its global portfolio.",
+      "microreactor_read": "Refrigerated food warehousing is a 24/7, weather-independent load that a single 3.3-4 MW behind-the-meter system can cover almost entirely with solar plus small gas generation - the segment doesn't obviously need firm baseload at 1-20 MW scale unless a single campus is far larger than this site, and any reactor pitch here has to beat a solar-plus-peaker combination already proven to hit 100% self-supply.",
+      "sources": [
+        {"label": "PowerFlex - Lineage Logistics Solar Energy Case Study (Colton)", "url": "https://www.powerflex.com/customers/lineage-logistics-colton", "quote": "PowerFlex installed a 3.3-MW rooftop solar array", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "plenty-compton-grid-cost-closure",
+      "sector": "Agriculture & Food",
+      "load": ["Large indoor-growing facilities"],
+      "name": "Plenty Unlimited flagship indoor lettuce farm, Compton, California - closed citing grid electricity prices",
+      "country": "US",
+      "region": "Compton, California",
+      "parties": {"host": "Plenty Unlimited Inc.", "provider": "n/a (standard grid tariff)", "utility": "California utility (grid-tied, not separately named in the source)"},
+      "instrument": "utility tariff",
+      "signed": "2024-12",
+      "capacity": "facility rated to grow 4.5 million pounds of lettuce annually (production capacity, not disclosed in MW)",
+      "displaced": "n/a - this is the negative case: ordinary grid electricity purchases were the cost that could not be displaced or controlled, and the facility closed rather than finding a cheaper power source",
+      "summary": "Plenty Unlimited's Compton, California indoor lettuce farm - its first commercial facility, opened in 2023 with capacity to grow 4.5 million pounds of lettuce annually - closed in December 2024, less than 18 months after opening. The company said a combination of higher California business costs, including rising energy prices, 'made operating here challenging,' and it pivoted toward strawberry production in Virginia instead. No PPA, on-site generation, or dedicated power deal was reported for the Compton site at any point in its operation; it ran on ordinary grid-tied utility service. Plenty filed for Chapter 11 bankruptcy in March 2025 and emerged from restructuring in May 2025.",
+      "microreactor_read": "This is the sector's clearest negative case: a well-capitalized (~$1 billion raised) indoor-growing operator ran on standard grid tariff rather than any dedicated power deal, and grid electricity cost alone was cited as a driver of a flagship facility's closure within 18 months - meaning a reactor's pitch to this segment is not 'beat our PPA price,' it's 'beat the retail utility tariff that already killed one operator,' a much lower and more volatile bar, but also one where the customer's survival itself is the open question, not just its energy sourcing.",
+      "sources": [
+        {"label": "Agriculture Dive - Plenty closes indoor lettuce farm to focus on strawberry production", "url": "https://www.agriculturedive.com/news/agtech-plenty-indoor-farm-closure-sound-agriculture-growers-edge/736186/", "quote": "higher business costs in California, including rising energy prices, \"made operating here challenging.\"", "status": "fetched"}
+      ]
+    }
+  ]
+}

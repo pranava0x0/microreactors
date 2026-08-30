@@ -1,11 +1,14 @@
 {
  "_meta": {
-  "captured": "2026-08-24",
-  "pass": "data/research/deep-2026-08-24",
+  "captured": "2026-08-28",
+  "pass": [
+   "data/research/deep-2026-08-24",
+   "data/research/2026-08-28-apps"
+  ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
    {
-    "file": "apps-federal-awards.json",
+    "file": "deep-2026-08-24/apps-federal-awards.json",
     "kind": "case",
     "records": 26,
     "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
@@ -25,7 +28,7 @@
     ]
    },
    {
-    "file": "apps-medical-civic.json",
+    "file": "deep-2026-08-24/apps-medical-civic.json",
     "kind": "case",
     "records": 12,
     "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
@@ -47,7 +50,7 @@
     ]
    },
    {
-    "file": "apps-mining.json",
+    "file": "deep-2026-08-24/apps-mining.json",
     "kind": "case",
     "records": 13,
     "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
@@ -65,7 +68,7 @@
     ]
    },
    {
-    "file": "apps-remote-marine.json",
+    "file": "deep-2026-08-24/apps-remote-marine.json",
     "kind": "case",
     "records": 11,
     "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
@@ -85,7 +88,7 @@
     ]
    },
    {
-    "file": "mech-batteries.json",
+    "file": "deep-2026-08-24/mech-batteries.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
@@ -104,7 +107,7 @@
     ]
    },
    {
-    "file": "mech-diesel.json",
+    "file": "deep-2026-08-24/mech-diesel.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
@@ -124,7 +127,7 @@
     ]
    },
    {
-    "file": "mech-dockets.json",
+    "file": "deep-2026-08-24/mech-dockets.json",
     "kind": "mechanism",
     "records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
@@ -143,7 +146,7 @@
     ]
    },
    {
-    "file": "mech-economics-permitting.json",
+    "file": "deep-2026-08-24/mech-economics-permitting.json",
     "kind": "mechanism",
     "records": 6,
     "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
@@ -155,7 +158,7 @@
     ]
    },
    {
-    "file": "mech-ferc-census.json",
+    "file": "deep-2026-08-24/mech-ferc-census.json",
     "kind": "mechanism",
     "records": 2,
     "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
@@ -169,7 +172,7 @@
     ]
    },
    {
-    "file": "mech-interconnection.json",
+    "file": "deep-2026-08-24/mech-interconnection.json",
     "kind": "mechanism",
     "records": 12,
     "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
@@ -188,7 +191,7 @@
     ]
    },
    {
-    "file": "mech-nuclear-structures.json",
+    "file": "deep-2026-08-24/mech-nuclear-structures.json",
     "kind": "mechanism",
     "records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
@@ -212,7 +215,7 @@
     ]
    },
    {
-    "file": "mech-selling-structure.json",
+    "file": "deep-2026-08-24/mech-selling-structure.json",
     "kind": "mechanism",
     "records": 7,
     "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
@@ -222,6 +225,68 @@
      "No dollar figures: this series is a legal guide and does not price any of the structures it describes. Costs must come from the case records.",
      "No state has yet been found that names nuclear specifically in a microgrid or third-party-sale statute; the structures below are technology-neutral by default, which is a finding rather than a gap",
      "The Coventry PURA docket (20-03-17) and the ComEd ICC petition (2018) are cited via LBNL rather than read in the original — a follow-up pass should pull both from the state dockets"
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-agri-food.json",
+    "kind": "case",
+    "records": 8,
+    "scope": "Agriculture & Food sector - controlled-environment ag and food-processing power deals, the price a 1-20 MW reactor has to beat.",
+    "incomplete": false,
+    "absences": [
+     "No signed power/energy deal with a published $/kWh or $/MWh price was found anywhere in this sector - every priced case below discloses capacity, capex, or a discount mechanism, never a bare rate.",
+     "Large grain and oilseed mills: no grain elevator, flour mill, or oilseed crush plant utility interconnection or large-load agreement with a published MW figure was found after five+ search angles (cooperative utility disputes, new substations, oilseed crush capacity expansions, Cargill/ADM/Bunge, CHS/Ardent Mills/Consolidated Grain & Barge). USDA REAP grant data is genuinely award-level but caps at $1 million for a renewable-energy grant ($500,000 for efficiency) and $25 million for a loan guarantee program-wide - real grain-related awards found were all grain-dryer efficiency projects in the $75k-$400k range, saving ~150,000-420,000 kWh/yr, nowhere near 1-20 MW baseload procurement. No qualifying case record for this load; dropped.",
+     "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: no single named campus with a published power deal or capacity figure was found; this load appears to be a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category.",
+     "Kalera, Local Bounti, and other CEA operators' state utility contracts (e.g. Georgia Power) were searched for by name; none surfaced a company-specific large-load agreement with published numbers.",
+     "Windset Farms' 2024 upgrade to BC Hydro's 69 kV transmission line (from 25 kV distribution) is real and dated but BC Hydro's own writeup gives no MW or capex figure ('we've got the megawatts we need' is the only quote) - dropped for lack of a number after 2 searches.",
+     "No AI/vertical-farming or aquaculture nuclear PPA of any kind (large or SMR) was found in this sector, unlike Compute or Manufacturing.",
+     "Cargill/ADM/Bunge soybean-crush-plant interconnection agreements: searched by name, no MW or dollar figure surfaced."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-compute.json",
+    "kind": "case",
+    "records": 12,
+    "scope": "Compute sector - data-center/AI power deals: signed hyperscaler nuclear PPAs re-verified against source, plus the non-nuclear incumbent price (utility large-load tariffs, on-site gas backup, colocation power pricing) a 1-20 MW reactor has to beat at data-center scale.",
+    "incomplete": false,
+    "absences": [
+     "No published $/MWh or $/kWh figure was found for any of the six hyperscaler nuclear PPAs (Microsoft, Meta, Google, Amazon x3) -- all six disclose capacity, term and dates but withhold price, consistent with the pattern noted in the deep-2026-08-24 mining pass.",
+     "Digital Realty and Equinix investor materials did not yield a clean, citable $/kW colocation price figure on the angles searched; used CBRE's independent North America Data Center Trends H2 2025 report instead, which is the industry-standard third-party benchmark and does disclose exact figures.",
+     "Diesel/gas generator on-site backup capex (as opposed to the xAI Memphis capacity/permit figures, which are real but lack a dollar cost) was searched for at hyperscale campuses (Meta, Microsoft, OpenAI/Stargate sites) and not found published; no record written for that angle specifically.",
+     "No utility interconnection-queue cost or multi-year delay figure specific to a named data-center project (as opposed to system-wide PJM queue statistics) was found with a dollar figure attached; PJM's own release states queue backlog volumes (170,000 MW processed since 2023, 30,000 MW remaining in the transition queue) but no cost-to-the-customer figure, so that angle is represented only via the capacity-auction price record.",
+     "No priced case was found specifically naming 'Supercomputing centers' as a load (DOE/national-lab supercomputer power costs are typically appropriated, not market-priced) or 'Dedicated baseload and outage-protection blocks within larger data-center campuses' as a distinct priced instrument -- both loads are covered only indirectly, via the tariff and colocation-pricing records that apply to the campuses hosting such blocks."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-gapfill.json",
+    "kind": "case",
+    "records": 2,
+    "scope": "Second-pass angles on the 9 Manufacturing/Agriculture & Food loads that apps-manufacturing.json and apps-agri-food.json (2026-08-28) could not close: fresh named-facility searches, PUC dockets, and DOE award pages not tried in the prior pass.",
+    "incomplete": false,
+    "absences": [
+     "Steel rolling and finishing plants: still no priced power deal for a genuinely rolling/finishing-only mill after this pass. California Steel Industries (Fontana, CA - purchased-slab rolling only) appears only as a named party in an SCE General Order 96-B service-agreement index with no MW or dollar figure attached. AM/NS Calvert (Calvert, AL - finishing only, no melt shop) yielded no power-specific figure in any fetched source. ArcelorMittal Calvert's new $1.2 billion, 150,000 t/yr non-grain-oriented electrical steel facility (announced Feb 2025) has real capex ($1.2B) and a real federal award ($280.5 million IRS Section 48C investment tax credit, confirmed via multiple fetched sources) but zero published electricity/MW figure for the plant, so it was not written up as a case - this is an industrial investment record, not a power deal. PRO-TEC Coating Company (Leipsic, OH - JV finishing-only automotive coated-steel mill) has a PUCO-approved rate agreement (case 19-124-EL-AEC, ~427 jobs, over $700 million in investment during the arrangement) participating in AEP Ohio's interruptible-load program, but the PUCO news page for the case 404'd and no fetched source gave the MW figure for its interruptible block. JSW Steel's Mingo Junction, OH expansion (real: $160 million bond-financed VTD/caster upgrade, AEP Ohio rate agreement, 120 MW curtailable under an interruptible program, $34.5 million in credits over 4 years) was found with hard numbers but is excluded because Mingo Junction is a scrap-fed EAF melt-shop mill, not a rolling/finishing-only plant, matching this load's own exclusion rule from the prior pass.",
+     "Cement plants: no PUC docket or SEC filing surfaced a cement-plant-specific electric service agreement or MW figure. National Cement Company of California's Lebec Net-Zero Project (DOE Industrial Demonstrations Program, up to $500 million matching funds, 950,000 t/yr CO2 target) is real and dated but is a carbon-capture/kiln-fuel-switching award, not a power purchase or generation deal, and carries no electricity MW figure - same pattern the prior pass found for Heidelberg Mitchell.",
+     "Lime plants: no plant-level power deal, PUC docket, or DOE Better Plants award with an MW or power-dollar figure was found for Graymont, Mississippi Lime Company, or Carmeuse. United States Lime & Minerals' FY2024 10-K discloses a new vertical kiln project (~$65 million estimated construction cost) but this is a kiln capex figure, not a power/electricity deal, so it was not written up.",
+     "Fertilizer plants: LSB Industries' El Dorado, AR ammonia plant (375,000 t/yr nameplate) includes an on-site cogeneration facility per company materials, but no MW capacity figure for it was found in any source. CVR Partners' Coffeyville, KS petroleum-coke-gasification ammonia/UAN complex (1,300 t/day ammonia unit, 3,100 t/day UAN unit, 89 MMscf/day gasifier) likewise has no published cogeneration MW figure. Both dropped for lacking a power number, consistent with the prior pass's CF Industries/Woodside-OCI absence.",
+     "Large integrated sawmills and wood-products plants: no DOE award or PUC docket for a named sawmill surfaced anything beyond the pulp-and-paper-sector Vicksburg Containerboard Mill carbon-capture pilot (not a sawmill) and general Interfor/Georgia-Pacific acquisition/capacity news with zero power figures.",
+     "Large grain and oilseed mills: the current 2024-2026 soybean-crush build-out (roughly 189 million bushels/year of new US capacity in the pipeline) is real and well covered in trade press - High Plains Processing near Mitchell, SD ($500 million, 35 million bu/yr, opened Oct 2025, joint venture of South Dakota Soybean Processors and BP Products North America) and Louis Dreyfus Company's Upper Sandusky, OH plant ($500 million, 1.5 Mt/yr crush capacity, AEP Ohio territory) both have real capex and production-capacity numbers but neither source disclosed an electric utility interconnection MW figure or substation cost, so neither qualifies as a power-deal case under this pass's numbers-or-nothing rule.",
+     "Integrated agricultural campuses combining growing, processing, refrigeration and water pumping: tried two named vertically-integrated food campuses (Lincoln Premium Poultry/Costco, Fremont, NE - processing plant plus hatchery plus feed mill; NatureFresh Farms, Delta, OH - greenhouse plus distribution/cold-storage). Neither surfaced a power/utility figure. This reinforces the prior pass's conclusion that this load is a sector-sizing construct in data/sectors.json rather than a distinct real-world deal category with its own precedent."
+    ]
+   },
+   {
+    "file": "2026-08-28-apps/apps-manufacturing.json",
+    "kind": "case",
+    "records": 7,
+    "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
+    "incomplete": false,
+    "absences": [
+     "Steel rolling and finishing plants: no signed PPA, CHP contract, or utility large-load agreement specific to a rolling/finishing-only mill (as opposed to integrated EAF steelmaking) was found with a dollar figure or dedicated MW block. sectors.json's own demand-response case study (16 MW peak, hot-rolling process) is snippet-only and not a contract. Nucor's Kingman, Arizona bar mill was originally rolling-only, but Nucor added an EAF melt shop there in 2022-2024, so its 2025 50 MW/200 MWh Ameresco battery deal cannot cleanly be attributed to a rolling-only load and was not written up. Nucor's and Steel Dynamics' large solar/wind VPPAs (250 MW and 308 MW) are offsite grid-scale renewable offtake deals, not plant-specific power supply contracts. Hyundai-POSCO's new Louisiana mill has a signed Entergy Louisiana electric service agreement, but it is an integrated EAF flat-products mill (melt shop plus rolling), explicitly excluded by this load's own definition.",
+     "Cement plants: Heidelberg Materials' Mitchell, Indiana plant DOE Industrial Demonstrations Program award (up to $500 million OCED cost share, Phase 1 started at $300,000) is a real, dated, dollar-figured award, but it funds carbon capture, not a power purchase or on-site generation deal, and no MW figure for plant electricity demand or a power supply contract was found in DOE or company materials. Not written as a case because it carries no capacity or price number tied to power.",
+     "Lime plants: two search angles (lime kiln waste-heat power generation, lime plant CHP/PPA) surfaced no plant-level power deal with a dollar figure or MW block anywhere. The sector's own demand band (1-3 MW) is the smallest in Manufacturing and appears to be below the threshold at which US/European lime producers sign dedicated power contracts.",
+     "Fertilizer plants: CF Industries' $4 billion Blue Point ammonia complex (Ascension Parish, Louisiana, with Mitsui and JERA) confirms Entergy Louisiana as the site's power supplier, but no MW figure, capex for the power supply itself, or contract term was found in company or trade coverage. Woodside/OCI's $2.35 billion Beaumont, Texas clean-ammonia complex (1.1 Mtpa Phase 1, hydrogen supplied 'over the fence' by Linde) likewise discloses production capacity and project cost but no electricity MW or power-contract figure in any fetched source. Both dropped as candidate cases for lacking a numbers-bearing power figure specific to electricity.",
+     "Large integrated sawmills and wood-products plants: no per-mill power purchase agreement, CHP contract or utility large-load deal was found. Trade press (Forest Business Network, Random Lengths) and USDA Forest Service materials report only aggregate industry energy use, matching the same absence sectors.json already recorded for this load.",
+     "Chemical plants: searched for a named US chemical plant on-site CHP PPA or utility large-load agreement (Dow, LyondellBasell, BASF Freeport); two angles surfaced only general CHP suitability statements (already captured qualitatively in sectors.json's context block) with no plant-specific contract, MW figure or price beyond the Dow/X-energy SMR case written up below.",
+     "Semiconductor fabs: Samsung's Taylor, Texas fab is served by Oncor and county officials cite reliability commitments, but no verified MW figure or contract term for the Oncor-Samsung arrangement was found in a fetched primary or trade source (a search-summary figure of '30 MW initial, 60 MW LOI' could not be confirmed by fetching a page and is dropped per the snippet-only rule); Micron's Boise, Idaho fab expansion (announced 2027 startup) has no new large-load agreement found distinct from a 1990s/2010-era 60-100 MW legacy IPUC contract, which predates the current fab buildout and was judged too stale to cite as evidence of what a modern fab pays. TSMC's Phase 1 north Phoenix fab needs 'approximately 200 megawatts' per a fetched trade-press source, and APS is relocating multiple transmission lines to serve it, but no formal signed electric-service-agreement instrument, capex for the power infrastructure, or contract date was found (Linde's associated $600 million investment is for on-site gas supply, not power) - too thin against the numbers-or-nothing bar next to the fully documented Intel/AEP Ohio case."
     ]
    }
   ],
@@ -274,7 +339,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "parris-island-espc-microgrid",
@@ -319,7 +387,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "guantanamo-bay-lng-espc",
@@ -364,7 +435,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "alaska-pce-fy2024-base-rate-order",
@@ -407,7 +481,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Regional grids serving several communities"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "tanana-chiefs-alaskan-tribal-energy-sovereignty-era",
@@ -450,7 +527,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Regional grids serving several communities"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "kokhanok-era-microgrid-2024",
@@ -493,7 +573,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "kokhanok-paradigm-shift-era-microgrid",
@@ -536,7 +619,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "aberdeen-proving-ground-microgrid-backup-power",
@@ -574,7 +660,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "camp-buehring-resilient-power-microgrid",
@@ -611,7 +700,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "fort-stewart-10mw-generation-plant-microgrid",
@@ -648,7 +740,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "avec-new-stuyahok-ekwok-era-solar-storage",
@@ -686,7 +781,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Regional grids serving several communities"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "qulliq-nunavut-interim-rates-2025",
@@ -728,7 +826,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Regional grids serving several communities"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "eielson-afb-oklo-microreactor-noita",
@@ -771,7 +872,10 @@
       }
      ],
      "nuclear": true,
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "project-pele-bwxt-2022",
@@ -806,7 +910,10 @@
       }
      ],
      "nuclear": true,
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Individual remote grids with sufficient year-round demand"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     }
    ]
   },
@@ -863,7 +970,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "kghm-nuscale-voygr-6-poland-copper",
@@ -912,7 +1022,10 @@
       }
      ],
      "nuclear": true,
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "smr-for-mining-canada-nrcan-20mwe-cost-band",
@@ -957,7 +1070,7 @@
       }
      ],
      "nuclear": true,
-     "_from": "apps-mining.json"
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "degrussa-solar-battery-juwi-neoen-sandfire",
@@ -1001,7 +1114,10 @@
        "status": "snippet-only"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "kivalliq-hydro-fibre-link-agnico-nukik",
@@ -1050,7 +1166,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "agnew-gold-mine-hybrid-microgrid-edl",
@@ -1094,7 +1213,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "fekola-solar-battery-b2gold-owner-built",
@@ -1137,7 +1259,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "kathleen-valley-lithium-zenith-95mw-ppa",
@@ -1186,7 +1311,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote lithium and rare-earth mines with onsite processing"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "copper-mountain-trolley-assist-12mw-load",
@@ -1221,7 +1349,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "diavik-wind-farm-and-solar-rio-tinto",
@@ -1256,7 +1387,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "essakane-solar-eren-iamgold-15-year-ppa",
@@ -1292,7 +1426,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "syama-gold-mine-aggreko-16-year-psa",
@@ -1328,7 +1465,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
      "id": "red-dog-mine-solar-teck-nana-tugliq",
@@ -1362,7 +1502,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-mining.json"
+     "load": [
+      "Remote copper and other large mines"
+     ],
+     "_from": "deep-2026-08-24/apps-mining.json"
     }
    ]
   },
@@ -1410,7 +1553,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "carb-at-berth-shore-power-capex",
@@ -1453,7 +1599,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "port-of-seattle-cruise-shore-power",
@@ -1496,7 +1645,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "marad-rrf-layberth-mobile-shore-power-generator",
@@ -1533,7 +1685,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "nbvc-point-mugu-shore-power-replacement",
@@ -1570,7 +1725,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-hadlock-emergency-diesel-generators",
@@ -1607,7 +1765,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-of-los-angeles-epa-clean-ports",
@@ -1645,7 +1806,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-authority-ny-nj-epa-clean-ports",
@@ -1682,7 +1846,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-of-long-beach-microgrid-2022",
@@ -1712,7 +1879,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "akademik-lomonosov-delivered-cost",
@@ -1746,7 +1916,7 @@
       }
      ],
      "nuclear": true,
-     "_from": "apps-remote-marine.json"
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "epa-clean-ports-2024-selections",
@@ -1774,7 +1944,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     },
     {
      "id": "marad-pidp-fy2024-awards",
@@ -1801,7 +1974,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-remote-marine.json"
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-remote-marine.json"
     }
    ]
   },
@@ -1856,7 +2032,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "cayuga-medical-center-fema-generators",
@@ -1894,7 +2073,10 @@
        "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "erie-county-medical-center-fema-generators",
@@ -1932,7 +2114,10 @@
        "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "salisbury-vamc-campus-generator",
@@ -1969,7 +2154,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "san-juan-va-generator-farm-hurricane-hardening",
@@ -2006,7 +2194,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "loma-linda-faculty-medical-clinics-ppa",
@@ -2042,7 +2233,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major medical campuses"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "nextnrg-sunnyside-topanga-microgrid-ppas",
@@ -2078,7 +2272,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "kaiser-ontario-medical-center-microgrid",
@@ -2107,7 +2301,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "baystate-health-springfield-chp",
@@ -2141,7 +2338,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major medical campuses"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "teco-texas-medical-center-central-plant",
@@ -2175,7 +2375,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major medical campuses"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "kaiser-richmond-medical-center-microgrid",
@@ -2203,7 +2406,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Large individual hospitals"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     }
    ]
   },
@@ -2259,7 +2465,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major universities"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "prasa-toa-alta-fema-generators",
@@ -2296,7 +2505,11 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Regional drinking-water treatment and pumping systems",
+      "Major city wastewater plants"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "waterone-johnson-county-fema-generators",
@@ -2334,7 +2547,10 @@
        "note": "Quote narrowed 2026-08-25 to a single verbatim field: the original joined two JSON fields with an ellipsis, which no payload contains."
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Regional drinking-water treatment and pumping systems"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "barnstable-school-microgrid-grip",
@@ -2371,7 +2587,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "beaufort-parris-island-utility-privatization-water",
@@ -2409,7 +2625,11 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "load": [
+      "Regional drinking-water treatment and pumping systems",
+      "Major city wastewater plants"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "camden-us-courthouse-standby-generator",
@@ -2446,7 +2666,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "ramey-arc-microgrid-puerto-rico",
@@ -2483,7 +2703,7 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-federal-awards.json"
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "dc-water-blue-plains-biogas-chp",
@@ -2525,7 +2745,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major city wastewater plants"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "montgomery-county-md-pshq-mccf-microgrids",
@@ -2561,7 +2784,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Large prison complexes"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "jfk-new-terminal-one-microgrid",
@@ -2590,7 +2816,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major passenger airports"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "pittsburgh-international-airport-microgrid",
@@ -2625,7 +2854,10 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "load": [
+      "Major passenger airports"
+     ],
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
     },
     {
      "id": "sterling-mmld-battery-police-dispatch",
@@ -2659,7 +2891,1129 @@
        "status": "fetched"
       }
      ],
-     "_from": "apps-medical-civic.json"
+     "_from": "deep-2026-08-24/apps-medical-civic.json"
+    }
+   ]
+  },
+  {
+   "sector": "Compute",
+   "records": [
+    {
+     "id": "microsoft-constellation-crane-clean-energy-center",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "Crane Clean Energy Center (Three Mile Island Unit 1 restart)",
+     "country": "US",
+     "region": "Londonderry Township, Pennsylvania",
+     "parties": {
+      "host": "Microsoft",
+      "provider": "Constellation Energy"
+     },
+     "instrument": "PPA",
+     "signed": "2024-09",
+     "term_years": 20,
+     "capacity": "835 MW (single restarted PWR unit)",
+     "capex": "About $1.6 billion to restart the unit (about $1,916/kW); U.S. DOE closed a $1 billion loan toward that cost on 2025-11-18",
+     "filings": [
+      {
+       "forum": "U.S. Department of Energy — Loan Programs Office",
+       "type": "Loan closing",
+       "id": "Crane Clean Energy Center restart loan",
+       "date": "2025-11-18",
+       "url": "https://www.utilitydive.com/news/doe-loan-constellation-crane-nuclear-restart/805923/"
+      }
+     ],
+     "nuclear": true,
+     "summary": "Microsoft signed a 20-year PPA for the full 835 MW output of the shut-down Three Mile Island Unit 1, which Constellation is restarting and rebranding the Crane Clean Energy Center. Restart cost is about $1.6 billion (~$1,916/kW); as of November 2025 the U.S. DOE had closed a $1 billion federal loan covering most of that cost, and the article puts restart 'possibly as soon as 2027,' while Constellation's own site (checked 2026-08-28) still states 2028 — the target date has moved around in public statements and is not settled.",
+     "microreactor_read": "Microsoft already cleared board sign-off, legal review of a novel 20-year nuclear PPA structure, and public disclosure risk for this exact counterparty class. A 1-20 MW resilience purchase at a Microsoft campus rides on that precedent rather than requiring new organizational appetite. But the number that actually has to be beaten here is $1,916/kW restart capex on an asset that already had turbines, cooling and switchyard in place — a greenfield microreactor's installed $/kW has a much higher bar to clear than this deal implies.",
+     "sources": [
+      {
+       "label": "Constellation Energy — Constellation to Launch Crane Clean Energy Center",
+       "url": "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html",
+       "quote": "approximately 835 megawatts of carbon-free energy to the grid",
+       "status": "fetched"
+      },
+      {
+       "label": "Utility Dive — DOE loans Constellation $1B to restart Three Mile Island nuclear unit",
+       "url": "https://www.utilitydive.com/news/doe-loan-constellation-crane-nuclear-restart/805923/",
+       "quote": "expects to spend about $1.6 billion — about $1,916 per kilowatt — to restart the unit",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "pjm-2027-2028-capacity-auction-data-center-driven-price",
+     "sector": "Compute",
+     "name": "PJM 2027/2028 Base Residual Auction capacity clearing price",
+     "country": "US",
+     "region": "PJM Interconnection footprint (13 states + DC)",
+     "parties": {
+      "utility": "PJM Interconnection"
+     },
+     "signed": "2025-12",
+     "price": "$333.44/MW-day (UCAP) -- the FERC-approved price cap -- for the entire PJM footprint",
+     "filings": [
+      {
+       "forum": "PJM Interconnection",
+       "type": "News release / auction results",
+       "id": "2027/2028 Base Residual Auction",
+       "date": "2025-12-17",
+       "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf"
+      }
+     ],
+     "summary": "PJM's December 2025 capacity auction for the 2027/2028 delivery year cleared 134,479 MW at $333.44/MW-day (UCAP), the FERC-approved price cap, up 1.3% from the prior auction and now the second consecutive auction to clear at the cap. PJM's own release states the forecast peak load driving this auction is roughly 5,250 MW higher than the prior year's forecast, and 'nearly 5,100 MW of that increase is attributable to data center demand' -- i.e. data centers are explicitly named as the reason the market cleared at the regulatory ceiling, with total cleared capacity now 6,623 MW short of PJM's own reliability target.",
+     "microreactor_read": "$333.44/MW-day annualizes to about $121,700/MW-year just for capacity -- before any energy charge -- and PJM says data centers are the reason it is pinned at the regulatory cap two auctions running. This is the cleanest available proxy for what firm, dispatchable capacity is worth to the grid a hyperscale data center sits on; a microreactor's capacity value (it counts as firm, non-curtailable UCAP) has a real market price to be benchmarked against, not just an assumed one.",
+     "sources": [
+      {
+       "label": "PJM Interconnection — PJM Auction Procures 134,479 MW of Generation Resources",
+       "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf",
+       "quote": "The price came in at the FERC-approved cap, $333.44/MW-day (UCAP) for the entire PJM footprint",
+       "status": "fetched"
+      },
+      {
+       "label": "PJM Interconnection — PJM Auction Procures 134,479 MW of Generation Resources",
+       "url": "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf",
+       "quote": "Nearly 5,100 MW of that increase is attributable to data center demand",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "xai-colossus-memphis-gas-turbine-backup",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "xAI Colossus on-site gas turbine self-generation, Memphis",
+     "country": "US",
+     "region": "South Memphis, Tennessee",
+     "parties": {
+      "host": "xAI"
+     },
+     "signed": "2025-07",
+     "capacity": "15 Solar Turbines SMT-130 gas turbines permitted, generating up to 247 MW; prior unpermitted build-out reached roughly 421 MW across ~35 turbines",
+     "filings": [
+      {
+       "forum": "Shelby County Health Department",
+       "type": "Air permit (Title V)",
+       "id": "xAI Colossus turbine permit",
+       "date": "2025-07-02",
+       "url": "https://techcrunch.com/2025/07/03/xai-gets-permits-for-15-natural-gas-generators-at-memphis-data-center"
+      }
+     ],
+     "displaced": "Grid interconnection / utility-supplied power at a site MLGW could not serve fast enough for xAI's build timeline",
+     "summary": "xAI ran up to roughly 421 MW of unpermitted gas turbines behind its Memphis Colossus site while awaiting grid capacity, prompting an SELC/NAACP legal challenge over Clean Air Act permitting. In July 2025 the Shelby County Health Department permitted 15 of those turbines (Solar Turbines SMT-130 units) to run permanently, rated at up to 247 MW combined, through 2027, with emissions caps including 13.71 tons/yr of hazardous air pollutants. This is on-site self-generation substituting for a utility connection, not a purchased-power contract.",
+     "microreactor_read": "This is the real incumbent for speed-to-power: a hyperscaler chose unpermitted gas turbines over waiting for a utility interconnection, and even the permitted fallback (247 MW of gas) came online faster than any nuclear licensing path could. A microreactor's pitch here is not price -- it is avoiding the permitting/community-opposition exposure that gas turbines created (1,700+ public comments, multiple lawsuits), not necessarily a lower $/MWh.",
+     "sources": [
+      {
+       "label": "TechCrunch — xAI is facing a lawsuit for operating over 400 MW of gas turbines without permits",
+       "url": "https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits",
+       "quote": "At one point, xAI had enough turbines to generate 421 megawatts",
+       "status": "fetched"
+      },
+      {
+       "label": "TechCrunch — xAI gets permits for 15 natural gas generators at Memphis data center",
+       "url": "https://techcrunch.com/2025/07/03/xai-gets-permits-for-15-natural-gas-generators-at-memphis-data-center",
+       "quote": "xAI can operate 15 Solar SMT-130 generators with certain emissions controls, which can generate up to 247 megawatts",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "georgia-power-large-load-tariff-100mw",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers",
+      "Regional data centers"
+     ],
+     "name": "Georgia Power large-load / data-center service-agreement rule",
+     "country": "US",
+     "region": "Georgia",
+     "parties": {
+      "host": "Georgia Power large-load customers (data centers)",
+      "utility": "Georgia Power"
+     },
+     "instrument": "utility tariff",
+     "signed": "2025-01",
+     "term_years": 15,
+     "capacity": "Applies to any new customer with expected peak demand of 100 MW or greater",
+     "filings": [
+      {
+       "forum": "Georgia Public Service Commission",
+       "type": "Tariff/rate order",
+       "id": "Data center large-load service rule",
+       "date": "2025-01-23",
+       "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power"
+      }
+     ],
+     "summary": "The Georgia PSC unanimously approved a rule, effective February 2025, letting Georgia Power impose minimum billing requirements and recover upstream generation/transmission/distribution costs from any new customer with 100 MW or greater expected peak demand -- squarely data centers. Standard contract length for these large-load customers stretches from 5 years to 15 years, and standard tariffs like PLL-18 are no longer available to new large-load customers signing after February 1, 2025. The article states the per-kWh rate itself did not change; the rule instead adds take-or-pay-style minimum billing and cost-recovery terms.",
+     "microreactor_read": "This is a regulator, not a vendor, defining the contract shape a data-center power buyer in Georgia must now accept: 15-year minimum term with minimum billing regardless of actual load. A microreactor PPA pitched into this market competes against a grid connection that already carries a 15-year committed-revenue floor -- the reactor's own term and take-or-pay terms need to be at least as firm to look comparable to a utility underwriting the load.",
+     "sources": [
+      {
+       "label": "GovTech — Georgia Approves New Rule to Charge Data Centers for Power",
+       "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power",
+       "quote": "give Georgia Power latitude to include minimum billing requirements and other terms into its service agreements with customers that use more than 100 megawatts of electricity",
+       "status": "fetched"
+      },
+      {
+       "label": "GovTech — Georgia Approves New Rule to Charge Data Centers for Power",
+       "url": "https://www.govtech.com/products/georgia-approves-new-rule-to-charge-data-centers-for-power",
+       "quote": "stretch out contract lengths for these facilities from five years to 15 years",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "ercot-sb6-large-load-interconnection-rules",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers",
+      "Regional data centers"
+     ],
+     "name": "Texas Senate Bill 6 large-load interconnection and curtailment rules",
+     "country": "US",
+     "region": "Texas (ERCOT)",
+     "parties": {
+      "host": "ERCOT large-load customers (data centers)",
+      "utility": "ERCOT / Texas PUCT"
+     },
+     "instrument": "utility tariff",
+     "signed": "2025-06",
+     "capacity": "Applies to new or expanded large loads of 75 MW or greater at a single site",
+     "filings": [
+      {
+       "forum": "Texas Legislature / PUCT",
+       "type": "Statute (Senate Bill 6, 89th Legislature)",
+       "id": "SB6",
+       "date": "2025-06-20",
+       "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/"
+      }
+     ],
+     "summary": "Signed June 20, 2025, Texas SB6 directs the PUCT to adopt large-load interconnection standards for new or expanded single-site loads of 75 MW or more in ERCOT, with a flat minimum study fee of at least $100,000 for initial transmission screening. New large loads interconnecting after December 31, 2025 must be capable of curtailment during firm load-shed events and must install remote-disconnect equipment; sites with on-site backup generation must disclose those facilities to the interconnecting utility and ERCOT, which can direct them to deploy backup power or curtail load during grid emergencies.",
+     "microreactor_read": "SB6 formalizes that a large Texas data-center load is now a grid-management liability that must accept curtailment risk or run its own backup -- which raises the value of firm, non-curtailable on-site generation like a microreactor relative to a straight grid connection. The $100,000 minimum study fee and mandatory backup-disclosure regime are new fixed costs of the grid-only path that a microreactor pitch can price directly against.",
+     "sources": [
+      {
+       "label": "McGuireWoods — Texas Senate Bill 6 Significantly Expands Regulatory Oversight Over Large Loads in ERCOT",
+       "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/",
+       "quote": "Apply to large loads 75 MW and above, unless the PUCT establishes a lower threshold",
+       "status": "fetched"
+      },
+      {
+       "label": "McGuireWoods — Texas Senate Bill 6 Significantly Expands Regulatory Oversight Over Large Loads in ERCOT",
+       "url": "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/",
+       "quote": "Establish a flat study fee of at least $100,000 for initial transmission screening studies",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "amazon-x-energy-series-c1-investment",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "Amazon Climate Pledge Fund anchor investment in X-energy",
+     "country": "US",
+     "region": "United States (national deployment target; TRISO-X fuel plant in Oak Ridge, TN)",
+     "parties": {
+      "host": "Amazon",
+      "provider": "X-energy"
+     },
+     "signed": "2024-10",
+     "capacity": "Target of more than 5 GW of new Xe-100 SMR projects online across the US by 2039",
+     "capex": "Approximately $500 million Series C-1 financing round, anchored by Amazon's Climate Pledge Fund alongside Ken Griffin, Ares Management, NGP and the University of Michigan",
+     "nuclear": true,
+     "summary": "Amazon anchored a roughly $500 million Series C-1 equity round in X-energy, funding completion of the Xe-100 reactor design/licensing and the first phase of X-energy's TRISO-X fuel fabrication plant in Oak Ridge, Tennessee. Amazon and X-energy set a joint deployment goal of more than 5 GW of Xe-100 projects online across the US by 2039 -- what X-energy calls the largest commercial SMR deployment target to date. This is a corporate/vendor investment, not a site-specific PPA; the Energy Northwest project below is the first named site under this umbrella.",
+     "microreactor_read": "Amazon bought into the supply chain and vendor balance sheet, not a specific megawatt-hour price -- a reminder that hyperscaler nuclear commitments at this scale often precede any priced offtake. A microreactor vendor pitching Amazon should expect the same two-step: an equity/pre-order relationship first, a site-specific priced PPA later, on a multi-year lag.",
+     "sources": [
+      {
+       "label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power",
+       "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+       "quote": "bring more than 5 gigawatts online in the United States by 2039, the largest commercial deployment target of SMRs to date",
+       "status": "fetched"
+      },
+      {
+       "label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power",
+       "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+       "quote": "approximately $500 million",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "cbre-wholesale-colocation-pricing-h2-2025",
+     "sector": "Compute",
+     "load": [
+      "Shared data centers",
+      "Company-owned data centers"
+     ],
+     "name": "CBRE North America wholesale colocation asking-rate benchmark, H2 2025",
+     "country": "US",
+     "region": "Primary North American wholesale colocation markets",
+     "parties": {
+      "provider": "Wholesale colocation operators (market-wide, e.g. Equinix, Digital Realty, QTS)"
+     },
+     "signed": "2025",
+     "price": "$196.25 per kW/month average asking rate for 250-500 kW requirements in primary markets (+6.6% YoY); pricing for 3-10 MW requirements up 12.5% YoY",
+     "summary": "CBRE's H2 2025 North America Data Center Trends report puts the average asking rate for a 250-500 kW wholesale colocation requirement in primary markets at a record $196.25/kW-month, up 6.6% year over year, with large-block (3-10 MW) pricing up an even steeper 12.5% year over year as AI and hyperscale demand outpaces available supply.",
+     "microreactor_read": "$196.25/kW-month works out to roughly $2,355/kW-year, or about $269/MWh if the space is drawing power continuously -- a genuine market-clearing price for firm, delivered data-center power today, and the number a colocation-sited microreactor deal has to beat on an all-in basis (power plus space plus interconnection) rather than on electricity cost alone. The 12.5% YoY jump for large multi-MW blocks is the more relevant comparison for a multi-MW reactor deployment than the smaller-cabinet figure.",
+     "sources": [
+      {
+       "label": "CBRE — North America Data Center Trends H2 2025",
+       "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+       "quote": "The average asking rate for a 250-to-500-kW requirement in primary wholesale colocation markets rose by 6.6% year-over-year to a record $196.25 per kW/month",
+       "status": "fetched"
+      },
+      {
+       "label": "CBRE — North America Data Center Trends H2 2025",
+       "url": "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025",
+       "quote": "Pricing for 3-to-10-MW requirements jumped by 12.5% year-over-year",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "amazon-energy-northwest-xe100-washington",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers",
+      "Regional data centers"
+     ],
+     "name": "Energy Northwest four-unit Xe-100 project (Amazon Carbon Free Development and Funding Agreement)",
+     "country": "US",
+     "region": "Richland, Washington (central Washington)",
+     "parties": {
+      "host": "Amazon",
+      "provider": "X-energy",
+      "utility": "Energy Northwest (public power consortium)"
+     },
+     "instrument": "PPA",
+     "signed": "2024-10",
+     "capacity": "Four Xe-100 units, initial 320 MWe, with an option to expand to 12 units / 960 MW total",
+     "displaced": "New capacity for early-2030s regional grid demand; no incumbent generation directly displaced",
+     "nuclear": true,
+     "summary": "Amazon signed a Carbon Free Development and Funding Agreement with Energy Northwest, a consortium of Washington state public utilities, to build four X-energy Xe-100 reactors generating roughly 320 MWe, with an option to scale to 12 units and 960 MW. Amazon is funding early development work directly. Target online date is the early 2030s.",
+     "microreactor_read": "This is the closest of the six hyperscaler nuclear deals to a microreactor-shaped transaction: a named utility consortium as intermediary, a phased build-out (start at 320 MW, option to scale), and Amazon funding early development rather than only offtake. The modular Xe-100 unit (~80 MWe each) is still well above the 1-20 MW class, but the phased-option structure is the template a smaller reactor vendor should copy.",
+     "sources": [
+      {
+       "label": "X-energy — Amazon Invests in X-energy to Support Advanced Small Modular Nuclear Reactors and Expand Carbon-Free Power",
+       "url": "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+       "quote": "with the option to increase that project to 12 units and 960 MW",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "amazon-dominion-north-anna-smr-mou",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "Dominion Energy / Amazon North Anna SMR feasibility MOU",
+     "country": "US",
+     "region": "Louisa County, Virginia (North Anna Power Station)",
+     "parties": {
+      "host": "Amazon",
+      "provider": "Dominion Energy Virginia"
+     },
+     "signed": "2024-10",
+     "capacity": "At least 300 MW of new capacity targeted",
+     "nuclear": true,
+     "summary": "Amazon and Dominion Energy Virginia signed a Memorandum of Understanding to jointly explore developing a small modular reactor near Dominion's existing North Anna nuclear station, targeting at least 300 MW of new capacity for the Virginia grid. This followed a July 2024 Dominion RFP to SMR vendors; Dominion's own release stresses the MOU and RFP are exploratory, not a commitment to build. No vendor, price or firm online date had been set as of the announcement.",
+     "microreactor_read": "This is the weakest instrument of the three Amazon nuclear announcements -- an MOU to jointly explore, not a signed PPA with capacity, price or a chosen vendor. For a microreactor pitch it demonstrates Amazon will put its name on early-stage nuclear exploration with a utility partner before economics are settled, but it should not be cited as a priced deal.",
+     "sources": [
+      {
+       "label": "Dominion Energy — Dominion Energy and Amazon to explore advancement of Small Modular Reactor (SMR) nuclear development in Virginia",
+       "url": "https://news.dominionenergy.com/press-releases/press-releases/2024/Dominion-Energy-and-Amazon-to-explore-advancement-of-Small-Modular-Reactor-SMR-nuclear-development-in-Virginia-10-16-2024/default.aspx",
+       "quote": "Memorandum of Understanding (MOU)",
+       "status": "fetched"
+      },
+      {
+       "label": "Amazon — Amazon and nuclear power: Investing in advanced nuclear technologies to combat climate change",
+       "url": "https://www.aboutamazon.com/news/sustainability/amazon-nuclear-small-modular-reactor-net-carbon-zero",
+       "quote": "bring at least 300 megawatts of power to the Virginia region",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "dominion-virginia-gs5-data-center-rate-class",
+     "sector": "Compute",
+     "load": [
+      "Regional data centers",
+      "AI and very large cloud data centers"
+     ],
+     "name": "Dominion Energy Virginia GS-5 large-load / data-center rate class",
+     "country": "US",
+     "region": "Virginia",
+     "parties": {
+      "host": "Dominion Virginia large-load customers (data centers)",
+      "utility": "Dominion Energy Virginia"
+     },
+     "instrument": "utility tariff",
+     "signed": "2027",
+     "term_years": 14,
+     "capacity": "Applies to customers with demand of 25 MW or greater and a 75 percent load factor",
+     "summary": "Virginia's SCC approved a new GS-5 rate class for Dominion's largest electricity users, chiefly data centers over 25 MW. Starting January 2027, new large-load customers sign 14-year contracts and must pay a minimum of 85 percent of contracted distribution/transmission demand charges and 60 percent of generation demand charges regardless of actual usage -- i.e., customers are liable for those minimums 'regardless of whether they actually end up building the data centers or using all the power they estimate they will need.'",
+     "microreactor_read": "The 85%/60% minimum-demand floors set the real backstop cost of grid power for a Virginia data center: even an under-built or delayed project pays most of its contracted demand charge. A microreactor operator's pitch to a Data Center Alley customer has to beat not the advertised tariff rate but this take-or-pay floor, since it defines the buyer's true downside if grid power is the only source.",
+     "sources": [
+      {
+       "label": "American Action Forum — Virginia's New Data Center Electricity Rate Class",
+       "url": "https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/",
+       "quote": "pay a minimum of 85 percent of contracted distribution and transmission demand, and 60 percent of generation demand",
+       "status": "fetched"
+      },
+      {
+       "label": "American Action Forum — Virginia's New Data Center Electricity Rate Class",
+       "url": "https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/",
+       "quote": "the new rate class of large-scale customers to sign a 14-year contract",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "google-kairos-power-fleet-agreement",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "Google-Kairos Power multi-SMR fleet agreement",
+     "country": "US",
+     "region": "United States (site-unspecified fleet agreement; Kairos demo unit in Oak Ridge, TN)",
+     "parties": {
+      "host": "Google",
+      "provider": "Kairos Power"
+     },
+     "instrument": "PPA",
+     "signed": "2024-10",
+     "capacity": "First unit online by 2030, ramping to up to 500 MW by 2035",
+     "nuclear": true,
+     "summary": "Google signed what it calls the first corporate agreement to buy nuclear power from multiple small modular reactors built by one developer, Kairos Power. The plan brings Kairos's first SMR online by 2030 and ramps to up to 500 MW of new 24/7 carbon-free capacity across U.S. grids by 2035. Kairos's design is a molten-fluoride-salt-cooled reactor, still pre-commercial as of this deal.",
+     "microreactor_read": "Unlike the two Constellation deals above, this is a purchase of not-yet-built, not-yet-licensed reactor capacity from a first-of-a-kind vendor — closer in risk profile to a microreactor purchase than either restart or existing-plant PPA. Google accepted first-unit-by-2030 timeline risk from an unproven vendor, which is the precedent a microreactor seller should cite directly: hyperscalers will sign multi-unit fleet PPAs against a vendor roadmap, not just against operating iron.",
+     "sources": [
+      {
+       "label": "Google — Google and Kairos Power sign agreement to advance new nuclear energy technology",
+       "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/",
+       "quote": "the world's first corporate agreement to purchase nuclear energy from multiple small modular reactors",
+       "status": "fetched"
+      },
+      {
+       "label": "Google — Google and Kairos Power sign agreement to advance new nuclear energy technology",
+       "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/",
+       "quote": "bring Kairos Power's first SMR online quickly and safely by 2030, followed by additional reactor deployments through 2035",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    },
+    {
+     "id": "meta-constellation-clinton-clean-energy-center",
+     "sector": "Compute",
+     "load": [
+      "AI and very large cloud data centers"
+     ],
+     "name": "Clinton Clean Energy Center full-output PPA",
+     "country": "US",
+     "region": "Clinton, Illinois",
+     "parties": {
+      "host": "Meta",
+      "provider": "Constellation Energy"
+     },
+     "instrument": "PPA",
+     "signed": "2025-06",
+     "term_years": 20,
+     "capacity": "1,121 MW (single reactor), plus a 30 MW expansion via plant uprates",
+     "nuclear": true,
+     "summary": "Meta signed a 20-year PPA for the entire output of Constellation's Clinton Clean Energy Center, a single 1,121 MW reactor, with deliveries beginning June 2027; the agreement also funds a 30 MW uprate. The deal supports relicensing the plant for another two decades. Meta had issued a 1-4 GW advanced-nuclear RFP in December 2024, six months before signing this specific PPA.",
+     "microreactor_read": "Same precedent-clearing logic as Microsoft: Meta's sustainability and legal teams already own a signed nuclear PPA playbook, so a smaller resilience-scale purchase is procedurally easier, not procedurally novel. The harder fact for a microreactor pitch is that this deal buys into an already-licensed, already-operating 1,121 MW unit with sunk site infrastructure — Meta is paying to keep an existing plant running, not funding new nuclear construction, which is a materially cheaper transaction than a new 1-20 MW build.",
+     "sources": [
+      {
+       "label": "Constellation Energy — Constellation, Meta Sign 20-Year Deal for Clean, Reliable Nuclear Energy in Illinois",
+       "url": "https://www.constellationenergy.com/news/2025/constellation-meta-sign-20-year-deal-for-clean-reliable-nuclear-energy-in-illinois.html",
+       "quote": "Beginning in June of 2027, the agreement supports the relicensing and continued operations of Constellation's high-performing Clinton nuclear facility for another two decades",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-compute.json"
+    }
+   ]
+  },
+  {
+   "sector": "Manufacturing",
+   "records": [
+    {
+     "id": "aces-delta-green-hydrogen-electrolyzer-utah",
+     "sector": "Manufacturing",
+     "load": [
+      "Hydrogen and low-carbon fuel plants"
+     ],
+     "name": "ACES Delta Green Hydrogen Electrolyzer Hub",
+     "country": "US",
+     "region": "Delta, Utah",
+     "parties": {
+      "host": "ACES Delta, LLC (Mitsubishi Power / Chevron New Energies joint venture)",
+      "provider": "Haddington Ventures Equity Syndication Program",
+      "utility": "Intermountain Power Agency"
+     },
+     "instrument": "grant-funded",
+     "signed": "2022-04",
+     "capacity": "220 MW of electrolyzers, up to 100 metric tonnes/day of green hydrogen",
+     "capex": "up to $504.4 million DOE Loan Programs Office debt financing plus $650 million equity financing",
+     "displaced": "Natural gas at the co-located Intermountain Power Agency IPP Renewed 840 MW combined-cycle plant, which is designed to blend in hydrogen (30% by 2025, up to 100% by 2045)",
+     "filings": [
+      {
+       "forum": "US DOE Loan Programs Office",
+       "type": "Conditional loan guarantee commitment",
+       "id": "Advanced Clean Energy Storage I, LLC",
+       "date": "2022-04-26",
+       "url": "https://aces-delta.com/media/advanced-clean-energy-storage-project-receives-500-million-conditional-commitment-from-u-s-department-of-energy/"
+      }
+     ],
+     "summary": "DOE's Loan Programs Office committed up to $504.4 million in debt financing to ACES Delta, a 220 MW electrolyzer facility in Delta, Utah that converts curtailed/off-peak renewable power into green hydrogen, stored in underground salt caverns and burned at Intermountain Power Agency's adjacent 840 MW hydrogen-capable combined-cycle plant. Haddington Ventures separately syndicated $650 million of equity. By early 2026 all 40 of the site's 5.5 MW electrolyzer units were installed and commissioning; Chevron acquired a majority equity stake in 2023.",
+     "microreactor_read": "This is the load shape a microreactor could serve directly: a fixed, round-the-clock electrolyzer block (individual units here are 5.5 MW, well within a single reactor's output) that currently runs on curtailed renewable power rather than firm generation, meaning its actual capacity factor depends on grid surplus timing. A reactor selling firm, dispatchable power to a green-hydrogen block would have to beat the effective cost of that curtailed/off-peak renewable electricity, which is cheap precisely because it is otherwise wasted - a much harder bar than beating retail grid power.",
+     "sources": [
+      {
+       "label": "ACES Delta - Advanced Clean Energy Storage Project Receives $500 Million Conditional Commitment From U.S. Department Of Energy",
+       "url": "https://aces-delta.com/media/advanced-clean-energy-storage-project-receives-500-million-conditional-commitment-from-u-s-department-of-energy/",
+       "quote": "convert renewable energy through 220 MW of electrolyzers to produce up to 100 metric tonnes per day of green hydrogen",
+       "status": "fetched"
+      },
+      {
+       "label": "Decarbonfuse - ACES Delta Hits 220MW Milestone in Utah",
+       "url": "https://decarbonfuse.com/posts/aces-delta-hits-220mw-milestone-in-utah",
+       "quote": "The 220-MW hydrogen conversion facility and associated salt cavern storage are mechanically complete, with performance testing scheduled in the coming weeks.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "blueoval-sk-glendale-kentucky-utilities-special-contract",
+     "sector": "Manufacturing",
+     "load": [
+      "Battery-cell plants"
+     ],
+     "name": "BlueOval SK Glendale Megasite - Kentucky Utilities Special Electric Service Contract",
+     "country": "US",
+     "region": "Glendale, Kentucky",
+     "parties": {
+      "host": "BlueOval SK, LLC (Ford Motor Company / SK On joint venture)",
+      "utility": "Kentucky Utilities Company"
+     },
+     "instrument": "utility tariff",
+     "signed": "2023-02",
+     "term_years": 20,
+     "capacity": "140 MW firm power in year one, rising to 260 MW firm power for the remaining term; a separate objective of up to 300 MW of solar generation",
+     "price": "$0.02456/kWh energy charge plus a $49.28/day basic service charge, plus a per-kVA maximum-load demand charge redacted from the public filing",
+     "capex": "approximately $5.8 billion (BlueOval SK's total investment at the Glendale Megasite, not the power-supply infrastructure alone)",
+     "filings": [
+      {
+       "forum": "Kentucky Public Service Commission",
+       "type": "Special Contract for Electric Service",
+       "id": "Case No. 2023-00123",
+       "date": "2023-02-24",
+       "url": "https://psc.ky.gov/pscecf/2023-00123/mike.hornung@lge-ku.com/04142023102139/07_-_KU-BOSK_Special_Contract_-_Contract_FINAL_-_REDACTED.pdf"
+      }
+     ],
+     "summary": "Kentucky Utilities and BlueOval SK executed a 20-year special electric service contract for two new EV battery-cell plants at the Glendale Megasite, with firm contract demand of 140 MW in year one stepping up to 260 MW for the rest of the term at monthly load factors exceeding 95%. The filed rate schedule discloses a base energy charge of $0.02456/kWh, a $49.28/day basic service charge, and a separate per-kVA demand charge that Kentucky redacted as confidential; BlueOval SK also carries a contractual objective (not yet a signed deal) to obtain up to 300 MW of solar generation from Kentucky Utilities. Ford and SK On dissolved the BlueOval SK joint venture in December 2025, with a Ford subsidiary taking full ownership of both Kentucky plants.",
+     "microreactor_read": "This is the rare record in this pass with a published base energy price ($0.02456/kWh) rather than a withheld figure, though it excludes the redacted demand charge that likely dominates the real delivered cost at a >95%-load-factor facility - so it understates, not overstates, what a reactor has to beat. The >95% monthly load factor specified in the contract is also notable: this is about as close to pure baseload as an industrial customer gets, which is the load shape a microreactor is best suited to serve, at a scale (140-260 MW) that would take 7-13 stacked 20 MW units to match.",
+     "sources": [
+      {
+       "label": "Kentucky Public Service Commission - Special Contract for Electric Service between Kentucky Utilities Company and BlueOval SK, LLC (Case No. 2023-00123)",
+       "url": "https://psc.ky.gov/pscecf/2023-00123/mike.hornung@lge-ku.com/04142023102139/07_-_KU-BOSK_Special_Contract_-_Contract_FINAL_-_REDACTED.pdf",
+       "quote": "shall be 140 MW during the first year of the Term of this Contract and shall be 260 MW for each year thereafter",
+       "status": "fetched"
+      },
+      {
+       "label": "Utility Dive - SK On pivots to stationary energy storage after Ford joint venture ends",
+       "url": "https://www.utilitydive.com/news/ford-skon-dissolving-blueoval-sk-ev-battery-joint-venture/808012/",
+       "quote": "A Ford subsidiary will take full ownership of the two battery plants in Kentucky, and SK On will assume full ownership and operate the battery plant in Tennessee.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "dow-x-energy-seadrift-xe-100-smr",
+     "sector": "Manufacturing",
+     "load": [
+      "Chemical plants"
+     ],
+     "name": "Dow Seadrift - X-energy Xe-100 Advanced Reactor Project",
+     "country": "US",
+     "region": "Seadrift, Texas (Gulf Coast, Calhoun County)",
+     "parties": {
+      "host": "Dow (Seadrift manufacturing site)",
+      "provider": "X-energy"
+     },
+     "instrument": "design-build",
+     "signed": "2023-03",
+     "capacity": "4 x 80 MWe Xe-100 units, 320 MWe total (200 MWth of high-pressure, high-temperature steam per unit)",
+     "capex": "up to $50 million joint development agreement for engineering work, up to half DOE-cost-shared under the Advanced Reactor Demonstration Program",
+     "displaced": "On-site natural gas-fired power and steam generation at Dow's second-largest Texas plastics/chemicals facility",
+     "nuclear": true,
+     "filings": [
+      {
+       "forum": "US Nuclear Regulatory Commission",
+       "type": "Construction permit application (docketed)",
+       "id": "Dow/X-energy Seadrift advanced reactor project",
+       "date": "2025-04",
+       "url": "https://www.energy.gov/ne/articles/nrc-dockets-construction-permit-application-dow-advanced-reactor-project"
+      }
+     ],
+     "summary": "Dow and X-energy signed a joint development agreement in March 2023 to build the first grid-scale advanced nuclear plant serving a US industrial site: four 80 MWe Xe-100 high-temperature gas reactors (320 MWe combined) at Dow's Seadrift, Texas chemicals and plastics complex, providing both electricity and process steam. The companies submitted an NRC construction permit application in 2025 and Fluor later signed on as EPC contractor; construction was targeted to begin in 2026 for completion by decade's end. This is the clearest signed, dated precedent anywhere in the Manufacturing sector for a reactor sized for one plant's combined power-and-steam load rather than for grid export.",
+     "microreactor_read": "This is the direct model for microreactor deployment in Manufacturing: individual 80 MWe units, each roughly 4-16x a single 1-20 MW microreactor, purpose-built to supply both electricity and steam to one chemical plant, with the plant host as the offtaker rather than a utility. It also sets the real bar for cost and schedule risk a smaller reactor vendor has to beat: even with a committed industrial anchor tenant and DOE cost-sharing, this project needed a construction permit application and multi-year NRC review before a shovel could go in the ground, so a true 1-20 MW unit's licensing-timeline advantage (if any) is the argument it has to make against this bigger, already-underway precedent.",
+     "sources": [
+      {
+       "label": "World Nuclear News - Dow's Seadrift site selected for X-energy SMR project",
+       "url": "https://www.world-nuclear-news.org/Articles/Dow-s-Seadrift-site-selected-for-X-energy-SMR-proj",
+       "quote": "Each Xe-100 high-temperature gas reactor is engineered to operate as a single 80 MW electric unit, optimised as a four-unit plant delivering 320 MWe",
+       "status": "fetched"
+      },
+      {
+       "label": "World Nuclear News - Dow's Seadrift site selected for X-energy SMR project",
+       "url": "https://www.world-nuclear-news.org/Articles/Dow-s-Seadrift-site-selected-for-X-energy-SMR-proj",
+       "quote": "The two companies' joint development agreement, unveiled in March, provides for up to USD50 million in engineering work",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "ascend-elements-apex1-hopkinsville-tva",
+     "sector": "Manufacturing",
+     "load": [
+      "Battery-material plants",
+      "Battery-recycling plants"
+     ],
+     "name": "Ascend Elements Apex 1 - Tennessee Valley Authority Power Supply",
+     "country": "US",
+     "region": "Hopkinsville, Kentucky",
+     "parties": {
+      "host": "Ascend Elements",
+      "utility": "Tennessee Valley Authority"
+     },
+     "instrument": "utility tariff",
+     "capacity": "starting at 24 MW, potentially increasing to 50 MW",
+     "capex": "approximately $1 billion total facility investment (site-wide, not power infrastructure alone)",
+     "filings": [
+      {
+       "forum": "US Department of Energy",
+       "type": "Battery Materials Processing and Battery Manufacturing and Recycling Grant selection",
+       "id": "Apex 1: Integrated Sustainable Battery Precursor, Materials Separation and Processing",
+       "date": "2022-10-19",
+       "url": "https://atlaspolicy.com/wp-content/uploads/2025/05/Ascend-Elements-in-Hopkinsville-Case-Study.pdf"
+      }
+     ],
+     "summary": "Ascend Elements' Apex 1 facility in Hopkinsville, Kentucky - a combined battery-recycling and precursor cathode active material (pCAM) manufacturing plant, and the only planned US facility with a committed investment of at least $1 billion able to produce pCAM at scale - will draw power from the Tennessee Valley Authority starting at 24 MW and potentially rising to 50 MW, with Ascend hoping to source it through TVA's Renewable Solutions program. DOE originally awarded Apex 1 $480 million across two IIJA battery grants (announced October 2022); Ascend and DOE mutually cancelled the $164 million cathode-focused half of that award in February 2025 due to weak CAM market conditions, while a separate $316 million pCAM-focused award proceeded. Construction, paused since November 2024 amid a $138 million unpaid-bills lawsuit from its construction joint venture, was expected to restart in Q3 2025 with completion targeted for Q4 2026.",
+     "microreactor_read": "24-50 MW for a single materials-and-recycling plant is a realistic single-reactor or small-multi-unit scale, and TVA's own decision to route this load toward a renewable program signals the utility itself is shopping for a firm clean-power product to sell into exactly this kind of industrial account - a slot a microreactor could fill. But the project's own history (paused construction, a cancelled federal grant tranche, a nine-figure contractor lawsuit) is the more important lesson: an early-stage battery-materials plant is financially fragile enough that a reactor developer sizing a unit to one such tenant's committed ramp is taking on the tenant's project risk, not just its power demand.",
+     "sources": [
+      {
+       "label": "Atlas Public Policy - Ascend Elements Builds Out the Domestic Battery Supply Chain (Hopkinsville, Kentucky case study)",
+       "url": "https://atlaspolicy.com/wp-content/uploads/2025/05/Ascend-Elements-in-Hopkinsville-Case-Study.pdf",
+       "quote": "when operational, Apex 1 will be powered using electricity through the Tennessee Valley Authority (TVA), starting at 24 megawatts (MW) of energy and potentially increasing to 50 MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Canary Media - Facing headwinds, Ascend shifts plans for battery recycling in Kentucky",
+       "url": "https://www.canarymedia.com/articles/batteries/facing-headwinds-ascend-shifts-plans-for-battery-recycling-in-kentucky",
+       "quote": "spokesperson Thomas Frey told Canary Media on Tuesday",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "corner-brook-pulp-paper-nl-hydro-ppa",
+     "sector": "Manufacturing",
+     "load": [
+      "Pulp and paper mills"
+     ],
+     "name": "Corner Brook Pulp and Paper Mill - Newfoundland and Labrador Hydro Power Purchase Agreement",
+     "country": "CA",
+     "region": "Corner Brook, Newfoundland and Labrador",
+     "parties": {
+      "host": "Kruger Inc. (Corner Brook Pulp and Paper)",
+      "utility": "Newfoundland and Labrador Hydro"
+     },
+     "instrument": "PPA",
+     "signed": "2026-07",
+     "term_years": 1,
+     "capacity": "up to 280,000 MWh/year of excess power sold from the mill's biomass cogeneration and hydroelectric assets",
+     "price": "$187 per MWh",
+     "filings": [
+      {
+       "forum": "Government of Newfoundland and Labrador",
+       "type": "News release - agreement extension",
+       "id": "Newfoundland and Labrador Hydro Extends Power Purchase Agreement with Corner Brook Pulp and Paper",
+       "date": "2026-07-07",
+       "url": "https://www.gov.nl.ca/releases/2026/fin/0707n03/"
+      }
+     ],
+     "summary": "Corner Brook Pulp and Paper, a Kruger-owned mill with two hydroelectric plants and a biomass cogeneration plant, sells its surplus power to the provincial utility NL Hydro under an interim power purchase agreement. NL Hydro buys up to 280,000 MWh per year at a fixed rate of $187/MWh; the agreement has been structured as a series of short-term (roughly one-year) extensions rather than a single long-term contract, most recently extended to run July 2026-June 2027. The mill is a net power seller into the grid rather than a buyer, using its excess self-generation capacity beyond its own paper-making load.",
+     "microreactor_read": "This case runs the opposite direction from most in this file: the mill already self-generates surplus firm power (biomass + hydro) and sells it to the grid at $187/MWh, a real, published price for firm industrial-adjacent power in a remote Canadian grid - useful less as a load a reactor would serve and more as a price benchmark a reactor selling firm baseload into a similar remote pulp-mill-anchored grid would have to beat or match. The mill's own pattern - self-generation big enough to be a net exporter - is also evidence that pulp and paper hosts already think of on-site generation as a normal part of their business, which lowers the sales barrier for a microreactor pitching the same self-generation logic.",
+     "sources": [
+      {
+       "label": "Government of Newfoundland and Labrador - Newfoundland and Labrador Hydro Extends Power Purchase Agreement with Corner Brook Pulp and Paper",
+       "url": "https://www.gov.nl.ca/releases/2026/fin/0707n03/",
+       "quote": "extended its interim power purchase agreement with Corner Brook Pulp and Paper Limited for one year, which began on July 1, 2026, and ends on June 30, 2027",
+       "status": "fetched"
+      },
+      {
+       "label": "Pulp and Paper Canada - NL Hydro extends power purchase agreement with Corner Brook Pulp and Paper",
+       "url": "https://www.pulpandpapercanada.com/nl-hydro-extends-power-purchase-agreement-with-corner-brook-pulp-and-paper/",
+       "quote": "NL Hydro will buy up to 280,000 MWh of power, at a rate of $187 per MWh",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "intel-ohio-aep-green-chapel-substation",
+     "sector": "Manufacturing",
+     "load": [
+      "Semiconductor fabs"
+     ],
+     "name": "Intel Ohio \"Silicon Heartland\" Fab - AEP Ohio Dedicated Substation Agreement",
+     "country": "US",
+     "region": "New Albany / Licking County, Ohio",
+     "parties": {
+      "host": "Intel Corporation",
+      "utility": "AEP Ohio"
+     },
+     "instrument": "utility tariff",
+     "signed": "2024-09",
+     "term_years": 20,
+     "capacity": "up to 500 MW dedicated electric load via a new substation",
+     "capex": "$95.1 million (AEP Ohio-funded substation construction)",
+     "filings": [
+      {
+       "forum": "Public Utilities Commission of Ohio",
+       "type": "Electric Service Agreement approval order",
+       "id": "24-734-EL-AEC",
+       "date": "2024-09-06",
+       "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html"
+      }
+     ],
+     "summary": "PUCO approved a 20-year electric service arrangement under which AEP Ohio spends $95.1 million to build a dedicated substation delivering up to 500 MW to Intel's planned Ohio fab, in exchange for Intel's commitment to invest $20 billion over the agreement term. The substation (later reported as Green Chapel Station) was built and largely completed, but Intel pushed the fab's start of chip production to 2031, leaving the substation idle for years after AEP Ohio had already spent the capital. In June 2025 Intel and AEP submitted a request to PUCO to amend the original agreement.",
+     "microreactor_read": "500 MW is 25-100x the size of a single microreactor and this is the incumbent utility-anchor-tenant model, not a distributed-generation one - but the contract shape (a 20-year term tied to a committed capacity payment, with the seller bearing upfront capital risk against the buyer's investment promise) is exactly the structure a microreactor vendor would need at any scale, and the substation's multi-year idle period after Intel's delay is a direct warning: a reactor sized to one industrial tenant's committed ramp carries the same stranded-asset risk if that tenant's own project timeline slips.",
+     "sources": [
+      {
+       "label": "WOSU Public Media - Electric build up for Intel will cost $95 million, all of AEP Ohio's customers could be on the hook",
+       "url": "https://www.wosu.org/politics-government/2024-08-02/electric-build-up-for-intel-will-cost-95-million-all-of-aep-ohios-customers-could-be-on-the-hook",
+       "quote": "The plants will need up to 500 megawatts of electricity, the equivalent of power needed for 500,000 homes.",
+       "status": "fetched"
+      },
+      {
+       "label": "Newswatchman - PUCO authorizes AEP Ohio, Intel arrangement",
+       "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html",
+       "quote": "Intel will be required to demonstrate ongoing commitment to invest $20 billion over the term of the 20-year agreement.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "intel-ohio-aep-substation-2024",
+     "sector": "Manufacturing",
+     "load": [
+      "Semiconductor fabs"
+     ],
+     "name": "Intel Ohio One (New Albany/Licking County) — AEP Ohio dedicated-substation rate agreement",
+     "country": "US",
+     "region": "New Albany / Licking County, Ohio",
+     "parties": {
+      "host": "Intel",
+      "provider": "AEP Ohio",
+      "utility": "AEP Ohio"
+     },
+     "instrument": "utility tariff",
+     "signed": "2024-09",
+     "term_years": 20,
+     "capacity": "50 MW dedicated new substation (part of a full-site draw of up to 500 MW)",
+     "capex": "$95.1 million AEP Ohio substation investment; Intel commits to $20 billion of capital investment over the 20-year term as the condition that keeps the deal in force",
+     "filings": [
+      {
+       "forum": "State PUC",
+       "type": "unique arrangement / rate agreement approval",
+       "id": "PUCO Case No. 24-734-EL-AEC",
+       "date": "2024-09-04",
+       "url": "https://www.newswatchman.com/news/puco-authorizes-aep-ohio-intel-arrangement/article_8a09d7bc-6c75-11ef-82e1-e71705683293.html"
+      }
+     ],
+     "summary": "PUCO authorized a rate agreement (unique arrangement) between AEP Ohio and Intel for Intel's two-fab semiconductor campus in Licking County. AEP Ohio invests an estimated $95.1 million to build a new 50 MW-capacity substation dedicated to the site, with Intel responsible for only $740,000 of special circuit-breaker costs directly. The full site's ultimate draw is up to 500 MW. Intel must keep investing toward a cumulative $20 billion in the plant over the 20-year agreement term or it owes AEP the $95.1 million (later cited as ~$94 million) infrastructure cost back.",
+     "microreactor_read": "This is exactly the AEP-owned grid path a microreactor vendor would have to beat or complement at the 50 MW substation scale: AEP recovers its $95.1M/50MW ($1.9M/MW) infrastructure cost through Intel's rates over 20 years, contingent on Intel's own $20B capex commitment staying on track. A microreactor pitch into a fab has to compete with utility infrastructure that is effectively free at the point of use to Intel (Intel pays only $740k directly) and backed by a 20-year regulated rate agreement — the bar is not the price of power itself so much as matching that near-zero marginal capital exposure and multi-decade certainty.",
+     "sources": [
+      {
+       "label": "WOSU — Electric build-up for Intel will cost $95 million, all of AEP Ohio's customers could be on the hook",
+       "url": "https://www.wosu.org/politics-government/2024-08-02/electric-build-up-for-intel-will-cost-95-million-all-of-aep-ohios-customers-could-be-on-the-hook",
+       "quote": "up to 500 megawatts of electricity, the equivalent of power needed for 500,000 homes",
+       "status": "fetched"
+      },
+      {
+       "label": "Spectrum News 1 — AEP Ohio, Intel rate agreement authorized by PUCO",
+       "url": "https://spectrumnews1.com/oh/columbus/news/2024/09/04/aep-ohio--intel-rate-agreement-authorized-by-puco",
+       "quote": "AEP Ohio will invest an estimated $95.1 million into constructing a new electric substation facility with up to 50 megawatts of electric load to serve Intel",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-gapfill.json"
+    },
+    {
+     "id": "taiheiyo-cement-saitama-kawasaki-waste-heat-recovery",
+     "sector": "Manufacturing",
+     "load": [
+      "Cement plants"
+     ],
+     "name": "Taiheiyo Cement Saitama Plant - Kawasaki Waste Heat Recovery Power Generation System",
+     "country": "JP",
+     "region": "Saitama, Japan",
+     "parties": {
+      "host": "Taiheiyo Cement Corp.",
+      "provider": "Kawasaki Heavy Industries"
+     },
+     "instrument": "design-build",
+     "signed": "2020-01",
+     "capacity": "approximately 8 MW (7,850 kW rated output)",
+     "displaced": "Purchased grid electricity, by recovering waste heat from the calcining stage of cement production that would otherwise be vented",
+     "filings": [
+      {
+       "forum": "Kawasaki Heavy Industries corporate newsroom",
+       "type": "Order and delivery announcements",
+       "id": "Cement Plant Waste Heat Recovery Power Generation System - Saitama Plant",
+       "date": "2022-10-31",
+       "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812"
+      }
+     ],
+     "summary": "Kawasaki Heavy Industries received an order from Taiheiyo Cement in January 2020 to supply a new-model waste heat recovery power generation system for its Saitama cement plant, and delivered the roughly 8 MW (7,850 kW rated) system in October 2022, with operations scheduled to start in September of that year. The system captures waste heat from the calcining stage of cement production - heat that would otherwise be exhausted - and converts it to onsite electricity, reducing the plant's purchased grid power. No capex or per-kWh price was published in Kawasaki's own announcements.",
+     "microreactor_read": "8 MW sits inside this project's own cement-plant demand band (7-25 MW) and is the kind of nameplate a single microreactor could displace or complement directly, but the offer here is capital equipment sold once (a generation system), not a term power-supply contract - a microreactor vendor selling into cement would be competing against a plant's own capex-funded waste-heat recovery investment, which needs no ongoing fuel purchase and has no counterparty risk once installed, a materially different sale than an offtake agreement.",
+     "sources": [
+      {
+       "label": "Kawasaki Heavy Industries - Kawasaki Delivers a New Waste Heat Recovery Power Generation System to Taiheiyo Cement",
+       "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812",
+       "quote": "The new system generates approximately 8 MW (7,850 kW rated output).",
+       "status": "fetched"
+      },
+      {
+       "label": "Kawasaki Heavy Industries - Kawasaki Delivers a New Waste Heat Recovery Power Generation System to Taiheiyo Cement",
+       "url": "https://global.kawasaki.com/en/corp/newsroom/news/detail/?f=20221031_0812",
+       "quote": "Kawasaki Receives Order from Taiheiyo Cement for New-model Cement Plant Waste Heat Recovery Power Generation System",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-manufacturing.json"
+    },
+    {
+     "id": "eastman-kingsport-chp",
+     "sector": "Manufacturing",
+     "load": [
+      "Chemical plants"
+     ],
+     "name": "Eastman Chemical Tennessee Operations — self-owned 200 MW coal/gas CHP system",
+     "country": "US",
+     "region": "Kingsport, Tennessee",
+     "parties": {
+      "host": "Eastman Chemical Company",
+      "provider": "Eastman Chemical Company (self-owned, self-operated)"
+     },
+     "instrument": "BOO",
+     "signed": "1930",
+     "capacity": "200 MW maximum electric generating capacity (17 boilers, 19 steam turbines); averages 155 MW supplied to the facility, covering over 90% of site electric and thermal demand",
+     "capex": "not published; DOE profile reports an estimated $45 million/year in savings versus buying power and steam separately",
+     "displaced": "grid electricity purchases and separate steam generation; all electricity generated is consumed on-site",
+     "summary": "Eastman's Kingsport, Tennessee chemical complex (40 million sq ft, one of the largest chemical manufacturing sites in North America) has run a wholly Eastman-owned coal- and natural-gas-fired combined heat and power system since 1930, most recently expanded in 1993. The 200 MW system (individual turbines 6-18 MW each) supplies an average of 155 MW plus 3.6 million lb/hr of steam, meeting over 90% of the site's combined electric and thermal load, with 99.9%+ availability. DOE's Southeast CHP Technical Assistance Partnership profile credits the system with roughly $45 million/year in savings versus buying grid power and steam separately.",
+     "microreactor_read": "This is the real incumbent for a chemical-plant microreactor pitch: a fully self-owned, multi-decade-depreciated 200 MW CHP fleet running at 99.9%+ availability and saving its owner about $45M/year versus buying power and steam apart. A 1-20 MW reactor cannot displace this kind of asset outright, but the site's individual turbine blocks (6-18 MW each) show the granularity at which a reactor-scale thermal/electric block could plausibly slot in as a repowering or capacity-addition option when an aging boiler or turbine is retired, not as a wholesale replacement.",
+     "sources": [
+      {
+       "label": "U.S. DOE Southeast CHP Technical Assistance Partnership — Eastman's 200 MW CHP (Kingsport, TN) Project Profile",
+       "url": "https://chptap.ornl.gov/profile/67/eastman-Project_Profile.pdf",
+       "quote": "the CHP system has a 200 MW maximum electric generating capacity, and supplies an average of 155 MW to the facility",
+       "status": "fetched"
+      },
+      {
+       "label": "U.S. DOE Southeast CHP Technical Assistance Partnership — Eastman's 200 MW CHP (Kingsport, TN) Project Profile",
+       "url": "https://chptap.ornl.gov/profile/67/eastman-Project_Profile.pdf",
+       "quote": "ESTIMATED YEARLY SAVINGS: $45 Million",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-gapfill.json"
+    }
+   ]
+  },
+  {
+   "sector": "Agriculture & Food",
+   "records": [
+    {
+     "id": "houwelings-tomatoes-camarillo-chp",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Large lighted greenhouse campuses"
+     ],
+     "name": "Houweling's Tomatoes greenhouse campus, Camarillo, California - 13 MW CHP system",
+     "country": "US",
+     "region": "Camarillo, California",
+     "parties": {
+      "host": "Houweling's Tomatoes (owner-operator)",
+      "provider": "Houweling's Tomatoes (self-owned)",
+      "utility": "Southern California Edison (grid interconnection and PPA counterparty)"
+     },
+     "instrument": "PPA",
+     "signed": "2013",
+     "capacity": "13 MW (three 4.3 MW GE Jenbacher JMS 624 engines) against a facility peak load of 12.5 MW; daytime demand as low as 1.5 MW, night-time grow-light demand up to 11 MW",
+     "capex": "$18.5 million total project cost, offset by an $880,000 California Self-Generation Incentive Program (SGIP) rebate",
+     "price": "annual energy savings of $4.3 million, a 4-year simple payback",
+     "displaced": "grid electricity and separately purchased CO2 for greenhouse fertilization, both previously bought from Southern California Edison and industrial gas suppliers",
+     "summary": "Houweling's Tomatoes, a 128-acre, six-greenhouse tomato and cucumber campus in Camarillo, CA, installed three 4.3 MW GE Jenbacher gas engines (13 MW total) as the first project under California's CHP feed-in tariff. The company self-owns the plant; the first two units were commissioned in 2011 but could not export power until the interconnection agreement and PPA with the local utility were finally signed in fall 2013 alongside the third unit. Waste heat feeds three 1-million-gallon hot water tanks for greenhouse heating and captured CO2 fertilizes the crop. DOE's CHP Technical Assistance Partnership records the $18.5 million total cost (net of an $880,000 SGIP rebate), $4.3 million in annual energy savings, and a 4-year payback; total CHP system efficiency is 88%.",
+     "microreactor_read": "This is the single best-documented Agriculture & Food power deal found in this pass: a real greenhouse operator self-financed 13 MW of on-site generation at $18.5M capex (~$1,420/kW) against $4.3M/yr savings, a 4-year payback - the exact economics a reactor developer would need to beat, and proof the demand swing (1.5 MW day to 11 MW night) inside one campus is real and large enough to matter at 1-20 MW scale.",
+     "sources": [
+      {
+       "label": "DOE CHP Technical Assistance Partnership (ORNL) - Houweling's Tomatoes project profile",
+       "url": "https://chptap.ornl.gov/profile/101/houweling-tomatoes.pdf",
+       "quote": "TOTAL PROJECT COST: $18.5 million REBATES: $880,000 (from California's SGIP Program) ANNUAL ENERGY SAVINGS: $4.3 million PAYBACK: 4 years",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "jbs-brooks-alberta-cogen",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Very large meat, dairy and frozen-food plants"
+     ],
+     "name": "JBS Food Canada beef plant, Brooks, Alberta - Blue Earth Inc. cogeneration energy plant",
+     "country": "CA",
+     "region": "Brooks, Alberta",
+     "parties": {
+      "host": "JBS Food Canada (subsidiary of JBS USA Holdings)",
+      "provider": "Blue Earth, Inc.",
+      "utility": "local Alberta utility (excess power sold to Alberta Power Pool)"
+     },
+     "instrument": "ESA (energy services agreement)",
+     "signed": "2014-08",
+     "term_years": 10,
+     "capex": "$29 million",
+     "displaced": "grid electricity purchased from the local utility, at a guaranteed discount to the host's prior utility rate",
+     "summary": "On August 28, 2014, independent power producer Blue Earth, Inc. signed an energy purchase agreement and land lease with JBS in Brooks, Alberta to design, build, finance, own and operate a $29 million cogeneration energy plant on land leased from the host, targeting commercial operation in 2015. Electricity and thermal power were sold to JBS under a 10-year take-or-pay PPA with a 10-year extension option, priced at a guaranteed discount to what JBS was already paying its local utility; excess electricity was sold into the Alberta Power Pool. No MW capacity figure for the plant was disclosed in Blue Earth's SEC filings.",
+     "microreactor_read": "A 1-20 MW reactor selling into meat processing has to beat a 'guaranteed discount off the grid rate' structure, not a fixed $/kWh - the buyer's own utility bill is the benchmark, and a third-party IPP already proved willing to finance, own and operate on-site generation for exactly this kind of host under a 10-year PPA.",
+     "sources": [
+      {
+       "label": "SEC EDGAR - Blue Earth, Inc. Form S-3/A (FY2015)",
+       "url": "https://www.sec.gov/Archives/edgar/data/0001422109/000139390515000276/bblu_s3a.htm",
+       "quote": "design, build, finance, own and operate a $29 million cogeneration energy facility which the Company expects to commence operations in 2015",
+       "status": "fetched"
+      },
+      {
+       "label": "SEC EDGAR - Blue Earth, Inc. Form 10-K (FY2014)",
+       "url": "https://www.sec.gov/Archives/edgar/data/1422109/000139390515000109/bblu_10k.htm",
+       "quote": "selling thermal and electric power to the customer under ten year power purchase agreements with provisions for ten year extensions",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "pilgrims-pride-sumter-chp",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Very large meat, dairy and frozen-food plants"
+     ],
+     "name": "Pilgrim's Pride poultry plant, Sumter, South Carolina - Sumter Heat & Power (Blue Earth Inc.) CHP plant",
+     "country": "US",
+     "region": "Sumter, South Carolina",
+     "parties": {
+      "host": "Pilgrim's Pride Corporation (subsidiary of JBS Holdings Inc.)",
+      "provider": "Sumter Heat & Power, LLC (Blue Earth, Inc. subsidiary)",
+      "utility": "Duke Energy"
+     },
+     "instrument": "ESA (energy services agreement)",
+     "signed": "2014-12",
+     "term_years": 10,
+     "displaced": "methane previously flared to the environment from Pilgrim's Pride's on-site digester, now converted to electricity, hot water and boiler gas",
+     "summary": "Effective December 1, 2014, Blue Earth's subsidiary Sumter Heat & Power, LLC signed an energy purchase agreement and land lease with Pilgrim's Pride to engineer, build, finance, own and operate a combined-heat-and-power plant fueled by methane from the host's digester (previously flared). Pilgrim's Pride purchased thermal energy (hot water, boiler gas) from the plant under a 10-year PPA with a 10-year extension option; all electricity generated was sold to Duke Energy under a separate power purchase agreement. The plant was energized March 30, 2015, Blue Earth's first operating energy plant. Neither MW capacity nor a standalone capex figure for this specific site was disclosed - the SEC filing gives only a combined ~$32 million total cost across Blue Earth's first several energy plants.",
+     "microreactor_read": "This deal shows a large poultry processor will host third-party-financed, third-party-owned distributed generation on a 10-year PPA rather than buy or build its own plant - the same ownership structure a microreactor developer would need to offer, but the host's payoff here (converting a waste flare into revenue plus a discounted thermal supply) is a bar a reactor supplying grid-equivalent power alone cannot match on its own.",
+     "sources": [
+      {
+       "label": "SEC EDGAR - Blue Earth, Inc. Form 10-K (FY2014)",
+       "url": "https://www.sec.gov/Archives/edgar/data/1422109/000139390515000109/bblu_10k.htm",
+       "quote": "All electrical energy generated by the co-generation facility will be sold to Duke Energy under a power purchase agreement",
+       "status": "fetched"
+      },
+      {
+       "label": "SEC EDGAR - Blue Earth, Inc. Form S-3/A (FY2015)",
+       "url": "https://www.sec.gov/Archives/edgar/data/0001422109/000139390515000276/bblu_s3a.htm",
+       "quote": "entered into an energy purchase agreement and land lease to engineer, design, build, finance, construct, own and operate a co-generation energy plant",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "atlantic-sapphire-miami-fpl-solartogether",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Large land-based aquaculture operations"
+     ],
+     "name": "Atlantic Sapphire Bluehouse RAS salmon facility, Miami, Florida - FPL SolarTogether subscription",
+     "country": "US",
+     "region": "Homestead/Miami, Florida",
+     "parties": {
+      "host": "Atlantic Sapphire",
+      "provider": "n/a",
+      "utility": "Florida Power & Light (FPL)"
+     },
+     "instrument": "utility tariff",
+     "signed": "2024-05",
+     "displaced": "grid electricity from FPL's standard fuel mix, for 45% of the facility's total energy consumption",
+     "summary": "On May 30, 2024, Atlantic Sapphire, operator of the world's largest land-based recirculating-aquaculture salmon facility in Homestead/Miami, announced it joined FPL's SolarTogether community-solar subscription program to offset 45% of its total energy consumption with solar, paying a fixed monthly subscription and receiving escalating bill credits rather than installing its own generation or signing a bespoke PPA. No MW capacity, subscription cost, or contract term was disclosed for Atlantic Sapphire's specific enrollment.",
+     "microreactor_read": "The largest single land-based RAS operator in the US chose a no-upfront-cost utility subscription program over any form of dedicated on-site generation or PPA - a sign that even a heavy, continuous aquaculture load defaults to whatever off-the-shelf green-power product its utility already sells, which is a much lower bar (and a much lower price signal) for a reactor to compete against than a bespoke negotiated deal.",
+     "sources": [
+      {
+       "label": "PR Newswire - Atlantic Sapphire Further Reduces Carbon Footprint by Joining Esteemed FPL SolarTogether Program",
+       "url": "https://www.prnewswire.com/news-releases/atlantic-sapphire-further-reduces-carbon-footprint-by-joining-esteemed-fpl-solartogether-program-302159374.html",
+       "quote": "in an effort to decrease its electric carbon footprint by offsetting 45% of its total energy consumption with solar",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "lineage-logistics-colton-solar",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Very large meat, dairy and frozen-food plants"
+     ],
+     "name": "Lineage Logistics cold-storage warehouse, Colton (Agua Mansa), California - rooftop solar + linear generators",
+     "country": "US",
+     "region": "Colton, California",
+     "parties": {
+      "host": "Lineage Logistics",
+      "provider": "PowerFlex",
+      "utility": "n/a (behind-the-meter, 100% on-site generation)"
+     },
+     "instrument": "colocation power agreement",
+     "capacity": "3.3 MW rooftop solar plus 460 kW of linear generators",
+     "displaced": "100% of the site's grid electricity purchases, per PowerFlex/Lineage's own claim for the facility",
+     "summary": "PowerFlex built a 3.3 MW rooftop solar array paired with 460 kW of natural-gas-fired linear generators at Lineage Logistics' cold-storage warehouse in Colton (Agua Mansa), California, which the companies describe as the first pairing of solar with linear generators at this scale and say lets the facility produce 100% of its energy consumption on site (an estimated 5.4 million kWh/year from the combined system). No capex, contract structure (PPA vs. lease vs. owned), term, or signed date was disclosed in PowerFlex's case study; Lineage has since expanded to 146 MW of on-site solar across its global portfolio.",
+     "microreactor_read": "Refrigerated food warehousing is a 24/7, weather-independent load that a single 3.3-4 MW behind-the-meter system can cover almost entirely with solar plus small gas generation - the segment doesn't obviously need firm baseload at 1-20 MW scale unless a single campus is far larger than this site, and any reactor pitch here has to beat a solar-plus-peaker combination already proven to hit 100% self-supply.",
+     "sources": [
+      {
+       "label": "PowerFlex - Lineage Logistics Solar Energy Case Study (Colton)",
+       "url": "https://www.powerflex.com/customers/lineage-logistics-colton",
+       "quote": "PowerFlex installed a 3.3-MW rooftop solar array",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "nordic-aquafarms-belfast-cmp-section80",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Large land-based aquaculture operations"
+     ],
+     "name": "Nordic Aquafarms Belfast RAS salmon farm - CMP Section 80 transmission upgrade",
+     "country": "US",
+     "region": "Belfast, Maine",
+     "parties": {
+      "host": "Nordic Aquafarms",
+      "provider": "n/a",
+      "utility": "Central Maine Power (Avangrid)"
+     },
+     "instrument": "utility tariff",
+     "signed": "2022-06",
+     "capacity": "25-26 MW at full capacity (Nordic Aquafarms' expected draw)",
+     "capex": "$63.6 million (CMP Section 80 transmission line rebuild, cost pooled across the six ISO-New England states; Maine ratepayers' share ~9%)",
+     "summary": "On June 15, 2022 the Maine Public Utilities Commission approved a $63.6 million Central Maine Power rebuild of the 115 kV, 23-mile 'Section 80' transmission line, needed in part to serve Nordic Aquafarms' planned $500 million land-based recirculating-aquaculture salmon farm in Belfast, which was expected to draw 25 to 26 MW at full capacity - squarely inside the 1-20 MW reactor band's upper reach. Regulators and CMP maintained the rebuild was independently justified by documented overloads on the aging line, but acknowledged the aquaculture project's load created urgency; over 300 residents objected to it as a ratepayer subsidy for a private company. Nordic Aquafarms abandoned the Belfast project entirely in January 2025 after losing a multi-year legal fight over an eminent-domain land seizure - the cancellation was driven by litigation, not by the cost or availability of power.",
+     "microreactor_read": "A single land-based RAS salmon farm pulling 25-26 MW is real, disclosed evidence that aquaculture at this scale sits at or above the top of the microreactor band - but the fact a whole regional utility had to rebuild a transmission line to serve one host, and the project still died for reasons unrelated to power, shows the harder sale for a reactor here may not be price but survivability risk: aquaculture megaprojects have a documented history of collapsing on permitting/legal grounds before the power ever gets used.",
+     "sources": [
+      {
+       "label": "Portland Press Herald - Maine approves $63 million CMP power line upgrade over residents' objections",
+       "url": "https://www.pressherald.com/2022/06/15/maine-approves-63-million-cmp-power-line-upgrade-over-residents-objections/",
+       "quote": "Nordic Aquafarms, which expects to draw 25 to 26 megawatts at full capacity",
+       "status": "fetched"
+      },
+      {
+       "label": "The Fish Site - Nordic Aquafarms abandons Maine aquaculture project amid legal challenges",
+       "url": "https://thefishsite.com/articles/nordic-aquafarms-abandons-maine-aquaculture-project-amid-legal-challenges",
+       "quote": "Nordic Aquafarms has announced its decision to cease pursuing its ambitious land-based salmon farming project in Belfast, Maine",
+       "status": "snippet-only"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "plenty-compton-grid-cost-closure",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Large indoor-growing facilities"
+     ],
+     "name": "Plenty Unlimited flagship indoor lettuce farm, Compton, California - closed citing grid electricity prices",
+     "country": "US",
+     "region": "Compton, California",
+     "parties": {
+      "host": "Plenty Unlimited Inc.",
+      "provider": "n/a (standard grid tariff)",
+      "utility": "California utility (grid-tied, not separately named in the source)"
+     },
+     "instrument": "utility tariff",
+     "signed": "2024-12",
+     "capacity": "facility rated to grow 4.5 million pounds of lettuce annually (production capacity, not disclosed in MW)",
+     "displaced": "n/a - this is the negative case: ordinary grid electricity purchases were the cost that could not be displaced or controlled, and the facility closed rather than finding a cheaper power source",
+     "summary": "Plenty Unlimited's Compton, California indoor lettuce farm - its first commercial facility, opened in 2023 with capacity to grow 4.5 million pounds of lettuce annually - closed in December 2024, less than 18 months after opening. The company said a combination of higher California business costs, including rising energy prices, 'made operating here challenging,' and it pivoted toward strawberry production in Virginia instead. No PPA, on-site generation, or dedicated power deal was reported for the Compton site at any point in its operation; it ran on ordinary grid-tied utility service. Plenty filed for Chapter 11 bankruptcy in March 2025 and emerged from restructuring in May 2025.",
+     "microreactor_read": "This is the sector's clearest negative case: a well-capitalized (~$1 billion raised) indoor-growing operator ran on standard grid tariff rather than any dedicated power deal, and grid electricity cost alone was cited as a driver of a flagship facility's closure within 18 months - meaning a reactor's pitch to this segment is not 'beat our PPA price,' it's 'beat the retail utility tariff that already killed one operator,' a much lower and more volatile bar, but also one where the customer's survival itself is the open question, not just its energy sourcing.",
+     "sources": [
+      {
+       "label": "Agriculture Dive - Plenty closes indoor lettuce farm to focus on strawberry production",
+       "url": "https://www.agriculturedive.com/news/agtech-plenty-indoor-farm-closure-sound-agriculture-growers-edge/736186/",
+       "quote": "higher business costs in California, including rising energy prices, \"made operating here challenging.\"",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
+    },
+    {
+     "id": "unisea-dutch-harbor-waste-heat-to-power",
+     "sector": "Agriculture & Food",
+     "load": [
+      "Remote seafood-processing plants connected to a year-round community grid"
+     ],
+     "name": "UniSea seafood plant, Unalaska/Dutch Harbor, Alaska - ICE Thermal Harvesting waste-heat-to-power system",
+     "country": "US",
+     "region": "Unalaska, Alaska",
+     "parties": {
+      "host": "UniSea, Inc.",
+      "provider": "ICE Thermal Harvesting, LLC",
+      "utility": "City of Unalaska (municipal electric utility)"
+     },
+     "instrument": "EaaS",
+     "signed": "2025-09",
+     "capacity": "300 kW",
+     "displaced": "diesel generation - approximately 3,500 gallons per week of diesel projected to be displaced during the processing season",
+     "summary": "On September 4, 2025, ICE Thermal Harvesting and UniSea launched what the companies described as the Alaska seafood industry's first waste-heat-to-power system at UniSea's Dutch Harbor/Unalaska processing plant, a 300 kW unit that captures waste heat from UniSea's existing diesel generators and converts it to electricity rather than adding new generation. In its first three weeks of operation the system produced 67 MWh and displaced roughly 5,000 gallons of diesel; UniSea projected ongoing savings of about 3,500 gallons of diesel per week during the processing season. Financial terms (capex, contract price, term) were not disclosed in the announcement.",
+     "microreactor_read": "300 kW is far below the 1-20 MW reactor floor, but it is the clearest real, dated, priced-in-diesel-gallons evidence that remote seafood plants on an isolated community grid actively invest in on-site generation to cut diesel burn - the same value proposition a microreactor would sell, just at roughly 1/10th to 1/60th the scale of this one plant's demonstrated appetite for displacing diesel.",
+     "sources": [
+      {
+       "label": "PR Newswire - ICE Thermal Harvesting and UniSea Launch Alaska Seafood Industry's First Waste Heat to Power System",
+       "url": "https://www.prnewswire.com/news-releases/ice-thermal-harvesting-and-unisea-launch-alaska-seafood-industrys-first-waste-heat-to-power-system-302546873.html",
+       "quote": "the system will generate 300kW and replace ~3500 gallons of diesel usage each week during the processing seasons",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-08-28-apps/apps-agri-food.json"
     }
    ]
   }
