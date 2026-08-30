@@ -523,3 +523,24 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
 .unitval2{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
   overflow-wrap:anywhere}
 .voicedate{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}
+
+/* Why microreactors — a numbered argument list. The number is the point: these
+   are twelve claims, not a wall, and the counters carry a cross instead. */
+.argrow{display:flex;gap:var(--space-4);padding:var(--space-6) 0;
+  border-bottom:1px solid var(--border-subtle);min-width:0}
+.argnum{font-family:var(--font-mono);font-size:var(--size-heading-3);
+  color:var(--antares-red);flex-shrink:0;width:2.2rem;line-height:1.1}
+.argrow.counter .argnum{color:var(--text-tertiary)}
+.argbody{min-width:0;flex:1}
+.argbody h3{margin:0 0 var(--space-2) 0;font-size:var(--size-heading-3);
+  color:var(--text-primary);line-height:var(--lh-heading)}
+.argclaim{margin:0 0 var(--space-3) 0;color:var(--text-secondary);
+  font-size:var(--size-body-lg);line-height:1.5}
+.argbody .prose{margin:0 0 var(--space-4) 0}
+
+/* Pointer left where the Top options grid used to sit. */
+.topcross{padding:var(--space-6) 0;border-bottom:1px solid var(--border-subtle)}
+.topcross a{color:var(--antares-red);text-decoration:underline;text-underline-offset:2px}
+.argbasis{font-family:var(--font-mono);font-size:var(--size-caption);
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--text-tertiary);
+  white-space:nowrap}

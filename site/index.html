@@ -21,6 +21,7 @@
       <button class="tab" role="tab" id="tab-sites" aria-controls="sites" data-panel="sites">Sites</button>
       <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Costs</button>
       <button class="tab" role="tab" id="tab-vendors" aria-controls="vendors" data-panel="vendors">Vendors</button>
+      <button class="tab" role="tab" id="tab-why" aria-controls="why" data-panel="why">Why microreactors</button>
       <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Applications</button>
       <button class="tab" role="tab" id="tab-market" aria-controls="market" data-panel="market">Market design</button>
       <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Policy</button>
@@ -119,6 +120,33 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Vendors sections"></div>
     <div id="vendorcards"></div>
+  </div>
+</section>
+
+<section id="why" role="tabpanel" aria-labelledby="tab-why" tabindex="0" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <h2>Why a microreactor</h2>
+      <p class="prose" id="why-intro"></p>
+      <p class="prose note" id="why-method"></p>
+    </div>
+    <div class="subtabs" role="tablist" aria-label="Why sections"></div>
+    <div data-sub="arguments" id="why-arguments" role="tabpanel" tabindex="0">
+      <p class="prose" id="why-honest"></p>
+      <div id="arguments"></div>
+      <p class="prose note" id="why-coverage"></p>
+    </div>
+    <div data-sub="against" id="why-against" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3>Where the argument fails</h3></div>
+      <p class="prose">Six of these come from the notes themselves. A case that only collects its
+        wins is not an argument, it is a brochure.</p>
+      <div id="counters"></div>
+    </div>
+    <div data-sub="loads" id="why-loads" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3>The loads it is sized for</h3></div>
+      <p class="prose">Six places where the band matches a real incumbent, with what it displaces.</p>
+      <div id="whyloads"></div>
+    </div>
   </div>
 </section>
 

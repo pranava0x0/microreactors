@@ -219,3 +219,25 @@ class Register(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ArgumentsDataset(unittest.TestCase):
+    """data/arguments.json clusters the microreactor-specific notes. Its summary
+    prose quotes its own counts, which is the shape that goes stale silently -
+    an earlier draft said "six of the nine" after the count had become twelve."""
+
+    def setUp(self):
+        self.d = json.loads((ROOT / "data" / "arguments.json").read_text())
+
+    def test_honest_note_counts_match_the_arguments(self):
+        import collections
+        n = collections.Counter(a["basis"] for a in self.d["arguments"])
+        note = self.d["_meta"]["honest_note"]
+        self.assertIn(f"{n['rule']} of the {len(self.d['arguments'])} arguments", note)
+        self.assertIn(f"{n['physical']} rest on a physical property", note)
+
+    def test_every_argument_has_a_basis_and_notes(self):
+        for a in self.d["arguments"]:
+            self.assertIn(a["basis"], ("rule", "physical", "commercial"), a["id"])
+            self.assertTrue(a["notes"], a["id"])
+            self.assertEqual(a["note_count"], len(a["notes"]), a["id"])

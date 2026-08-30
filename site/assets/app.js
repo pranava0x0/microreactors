@@ -83,7 +83,7 @@
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  var PANELS = ["pipeline", "sites", "economics", "vendors", "demand", "market", "policy", "sources"];
+  var PANELS = ["pipeline", "sites", "economics", "vendors", "why", "demand", "market", "policy", "sources"];
   /* Sub-navigation, registered by makeSubnav() below. Four panels were long
      enough to bury their own sections at 1280px before this split: policy ran
      30,900px and the source register 67,500px, so field coverage and the gap
@@ -709,6 +709,46 @@
         }).join("") + "</div></details>";
     }).join("") + "</div></div>";
 
+  /* Why microreactors. The 74 instrument notes each answer one question about one
+     rule; clustered, they are twelve arguments and seven places the argument
+     fails. The counters are not a disclaimer section - six of them come out of
+     the notes themselves, and a case that only collects its wins is a brochure. */
+  if (D.arguments) {
+    var A = D.arguments;
+    render($("why-intro"), esc(A._meta.what_this_is));
+    render($("why-method"), esc(A._meta.method));
+    render($("why-honest"), esc(A._meta.honest_note));
+    render($("why-coverage"), esc(A._meta.coverage));
+    var noteList = function (rows) {
+      return '<div class="body">' + rows.map(function (r) {
+        return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
+          '<span class="cat">' + esc(r.group) + "</span></div>";
+      }).join("") + "</div>";
+    };
+    render($("arguments"), A.arguments.map(function (a, i) {
+      return '<div class="argrow"><div class="argnum">' + (i + 1) + "</div>" +
+        '<div class="argbody"><h3>' + esc(a.name) + "</h3>" +
+        '<p class="argclaim">' + esc(a.claim) +
+        ' <span class="argbasis">' + esc(a.basis) + "</span></p>" +
+        '<p class="prose">' + esc(a.detail) + "</p>" +
+        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
+        '<span class="cat">' + a.note_count + "</span></summary>" +
+        noteList(a.notes) + "</details></div></div>";
+    }).join(""));
+    render($("counters"), A.counters.map(function (c) {
+      return '<div class="argrow counter"><div class="argnum">\u00d7</div>' +
+        '<div class="argbody"><h3>' + esc(c.name) + "</h3>" +
+        '<p class="prose">' + esc(c.detail) + "</p>" +
+        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
+        '<span class="cat">' + c.notes.length + "</span></summary>" +
+        noteList(c.notes) + "</details></div></div>";
+    }).join(""));
+    render($("whyloads"), topGridHTML);
+    makeSubnav("why", [{ id: "arguments", label: "The arguments" },
+                       { id: "against", label: "Where it fails" },
+                       { id: "loads", label: "The loads" }]);
+  }
+
   var secItems = [
     { id: "top", label: "Top options" },
     { id: "all", label: "All sectors" }
@@ -753,7 +793,7 @@
 
   render($("sectors"),
     '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
-      topGridHTML + edgeHTML + "</div>" +
+      '<div class="topcross"><p class="prose">The six load shapes these sectors resolve to, and the case for the size, moved to <a href="#why">Why microreactors</a> - they are one argument and were being told in two places. This tab answers what a unit would power; that one answers why it is this size.</p></div>' + "</div>" +
     '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
     D.sectors.sectors.map(function (sec) {
       return '<details class="sector"><summary>' +

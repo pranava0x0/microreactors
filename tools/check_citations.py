@@ -156,6 +156,26 @@ def check() -> List[Tuple[str, str]]:
                 need(dict(p, sources=p_sources),
                      f"instruments:{g['group']}:{r['name'][:40]}:precedent:{p.get('name', '')[:30]}")
 
+    # arguments.json carries no sources of its own by design: every number in it
+    # restates a note that IS cited, in instruments.json. So the check that matters
+    # is not "has a source" but "does the note it points at still exist" - a
+    # dangling reference here is a claim whose evidence has silently gone.
+    args_p = DATA / "arguments.json"
+    if args_p.exists():
+        args = json.loads(args_p.read_text())
+        inst_names = {r["name"] for g in inst["groups"] for r in g["records"]}
+        bench_names = {r["name"] for s in bench["sectors"] for r in s["records"]}
+        for block in ("arguments", "counters"):
+            for a in args.get(block, []):
+                for n in a.get("notes", []):
+                    pool = inst_names if n.get("src") == "instruments" else bench_names
+                    if n.get("name") not in pool:
+                        violations.append((f"arguments:{a['id']}",
+                                           f"cites a note that no longer exists: {n.get('name','')[:50]}"))
+                need({"claim": a.get("claim", ""), "detail": a.get("detail", ""),
+                      "sources": [{"label": "x", "url": "x"}] if a.get("notes") else []},
+                     f"arguments:{a['id']}", "" if a.get("notes") else "arguments.json:unsourced")
+
     voices_p = DATA / "voices.json"
     if voices_p.exists():
         voices = json.loads(voices_p.read_text())
