@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-23",
+    "captured": "2026-08-29",
     "purpose": "Candidate deployment SITES per Applications-tab category (US + abroad), with the regulatory/utility filing trail for each. Complements opportunities.json: that file tracks buyer instruments; this file tracks named physical sites and their filings. Rows that correspond to a tracker row carry tracker_id and add site-level facts only.",
     "method": "Depth-first: deep rows were built by reading primary documents (docket searches via tools/adams_search.py + tools/ferc_elibrary.py, pages cached via tools/fetch_source.py and indexed in data/research/source_index.json with URL + access date + SHA-256). Scan rows come from click-through on the Applications tab's citations plus web search, each with at least one source. No row is written without a source.",
     "depth_values": [
@@ -50,7 +50,8 @@
         "Installation power"
       ]
     },
-    "extra_categories_note": "Deployment categories the Applications taxonomy (sectors.json) deliberately does not carry — that page maps civilian load types, while defense procurement is its own buyer frame (as in opportunities.json's tracks). Declared here with their allowed bands so a Sites UI can group these rows and so a row with an undeclared category fails the tests instead of being silently skipped."
+    "extra_categories_note": "Deployment categories the Applications taxonomy (sectors.json) deliberately does not carry — that page maps civilian load types, while defense procurement is its own buyer frame (as in opportunities.json's tracks). Declared here with their allowed bands so a Sites UI can group these rows and so a row with an undeclared category fails the tests instead of being silently skipped.",
+    "janus_note": "Added 2026-08-29: the five Army Janus installations announced 2026-08-26. They are recorded as scan depth, not deep — the announcement and trade coverage are the only public record. Unlike every other site here, a Janus reactor generates no NRC docket and no state utility filing, because the Army licenses it. Absence of a paper trail for these five is a feature of the contracting route, not a research gap."
   },
   "sites": [
     {
@@ -545,6 +546,181 @@
       ],
       "gaps": [
         "Conversion of the LOI to a binding PPA not confirmed as of 2026-08-23"
+      ]
+    },
+    {
+      "id": "janus-bragg",
+      "name": "Fort Bragg — Antares R1 three-pack (Janus)",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fort Bragg, NC",
+      "status": "intent-to-award",
+      "depth": "scan",
+      "owner": "U.S. Army / XVIII Airborne Corps",
+      "vendor": "Antares (R1)",
+      "power": "3 units, 100 kWe-1 MWe each",
+      "summary": "Antares will own, build and operate a three-unit R1 deployment at Fort Bragg, home of the XVIII Airborne Corps, targeting 2028. Antares declined to disclose the contract value. Announced 2026-08-26 under the Army's Janus programme: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorised by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+      "filings": [],
+      "utility_context": "Janus reactors sit behind the installation fence and are regulated by the Army, so no state utility commission docket or interconnection filing has been located for any of the five sites.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "These are Army licensed; they are not NRC licensed",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
+        }
+      ],
+      "gaps": [
+        "No contract value disclosed except Radiant's $750M ceiling",
+        "No Army Reactor Regulatory Office authorisation document located",
+        "No site-specific environmental review located"
+      ]
+    },
+    {
+      "id": "janus-benning",
+      "name": "Fort Benning — Radiant Kaleidos (Janus)",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fort Benning, GA",
+      "status": "intent-to-award",
+      "depth": "scan",
+      "owner": "U.S. Army",
+      "vendor": "Radiant (Kaleidos)",
+      "power": "15 units planned, 1 MWe each",
+      "summary": "The largest of the five awards: up to $750M for 15 Kaleidos units by 2030, starting with three at Fort Benning and first power targeted in 2028. Announced 2026-08-26 under the Army's Janus programme: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorised by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+      "filings": [],
+      "utility_context": "Janus reactors sit behind the installation fence and are regulated by the Army, so no state utility commission docket or interconnection filing has been located for any of the five sites.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "These are Army licensed; they are not NRC licensed",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
+        }
+      ],
+      "gaps": [
+        "No contract value disclosed except Radiant's $750M ceiling",
+        "No Army Reactor Regulatory Office authorisation document located",
+        "No site-specific environmental review located"
+      ]
+    },
+    {
+      "id": "janus-campbell",
+      "name": "Fort Campbell — BWXT BANR (Janus)",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fort Campbell, KY",
+      "status": "intent-to-award",
+      "depth": "scan",
+      "owner": "U.S. Army",
+      "vendor": "BWXT Advanced Technologies (BANR)",
+      "power": "1 unit, 20 MWe (75 MWt)",
+      "summary": "The largest single reactor in the programme. Groundbreaking is targeted for late 2028 with operation in the early 2030s. BWXT makes its own TRISO fuel and has authorised more than $25M to double capacity at Lynchburg. Contract value undisclosed. Announced 2026-08-26 under the Army's Janus programme: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorised by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+      "filings": [],
+      "utility_context": "Janus reactors sit behind the installation fence and are regulated by the Army, so no state utility commission docket or interconnection filing has been located for any of the five sites.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "These are Army licensed; they are not NRC licensed",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
+        }
+      ],
+      "gaps": [
+        "No contract value disclosed except Radiant's $750M ceiling",
+        "No Army Reactor Regulatory Office authorisation document located",
+        "No site-specific environmental review located"
+      ]
+    },
+    {
+      "id": "janus-hood",
+      "name": "Fort Hood — General Atomics GA-TES (Janus)",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fort Hood, TX",
+      "status": "intent-to-award",
+      "depth": "scan",
+      "owner": "U.S. Army",
+      "vendor": "General Atomics Electromagnetic Systems (GA-TES)",
+      "power": "~5 MWe baseline, scalable to ~20 MWe",
+      "summary": "General Atomics is in a development phase for its Tactical Energy System. Neither contract value nor timeline was disclosed. Announced 2026-08-26 under the Army's Janus programme: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorised by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+      "filings": [],
+      "utility_context": "Janus reactors sit behind the installation fence and are regulated by the Army, so no state utility commission docket or interconnection filing has been located for any of the five sites.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "These are Army licensed; they are not NRC licensed",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
+        }
+      ],
+      "gaps": [
+        "No contract value disclosed except Radiant's $750M ceiling",
+        "No Army Reactor Regulatory Office authorisation document located",
+        "No site-specific environmental review located"
+      ]
+    },
+    {
+      "id": "janus-drum",
+      "name": "Fort Drum — Westinghouse eVinci (Janus)",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fort Drum, NY",
+      "status": "intent-to-award",
+      "depth": "scan",
+      "owner": "U.S. Army",
+      "vendor": "Westinghouse Government Services (eVinci)",
+      "power": "Not disclosed",
+      "summary": "Westinghouse Government Services was selected for Fort Drum. Neither the contract value, the unit count nor the timeline was disclosed. Announced 2026-08-26 under the Army's Janus programme: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorised by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+      "filings": [],
+      "utility_context": "Janus reactors sit behind the installation fence and are regulated by the Army, so no state utility commission docket or interconnection filing has been located for any of the five sites.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "These are Army licensed; they are not NRC licensed",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
+        }
+      ],
+      "gaps": [
+        "No contract value disclosed except Radiant's $750M ceiling",
+        "No Army Reactor Regulatory Office authorisation document located",
+        "No site-specific environmental review located"
       ]
     }
   ]

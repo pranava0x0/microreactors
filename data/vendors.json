@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "captured": "2026-08-23",
-    "note": "Three vendors = the exact Air Force ANPI slate (Antares, Radiant, Westinghouse). Selecting the third vendor was not a judgment call: DoD already paired these three against three named bases in April 2026."
+    "captured": "2026-08-29",
+    "note": "Three vendors = the exact Air Force ANPI slate (Antares, Radiant, Westinghouse). Selecting the third vendor was not a judgment call: DoD already paired these three against three named bases in April 2026. Updated 2026-08-29 with the Army's Janus awards (2026-08-26). Janus added two buyers this slate does not cover — BWXT at Fort Campbell and General Atomics at Fort Hood — so these three are no longer the whole field; they are the three that appear in both the Air Force and Army programmes."
   },
   "vendors": [
     {
@@ -18,7 +18,7 @@
       "anpi_site": "Joint Base San Antonio, TX",
       "first_delivery_target": "2028 or earlier",
       "grid_required": false,
-      "notes": "Antares plants require no connection to the commercial power grid or specialised infrastructure to deploy. Selection driven by JBSA's utility infrastructure, land availability and critical mission requirements. Under the DOE Reactor Pilot Program, Antares' Mark-0 test reactor reached zero-power fuelled criticality at Idaho National Laboratory on 2026-06-04 — one of the first three pilot reactors to meet the executive order's July 4 deadline.",
+      "notes": "Antares plants require no connection to the commercial power grid or specialised infrastructure to deploy. Selection driven by JBSA's utility infrastructure, land availability and critical mission requirements. Under the DOE Reactor Pilot Program, Antares' Mark-0 test reactor reached zero-power fuelled criticality at Idaho National Laboratory on 2026-06-04 — one of the first three pilot reactors to meet the executive order's July 4 deadline. Under the Army's Janus programme, announced 2026-08-26, Antares will own, build and operate a three-unit R1 deployment at Fort Bragg. It did not disclose that contract's value, but states its combined book across Janus, the Air Force ANPI award at Joint Base San Antonio and Space Force work is on the order of $1 billion. Janus reactors are licensed by the Army, not the Nuclear Regulatory Commission.",
       "sources": [
         {
           "label": "ANS — Reactor Pilot Program status at the July 4 deadline (Mark-0 criticality)",
@@ -35,12 +35,19 @@
         {
           "label": "ENR — JBSA weighs nuclear for grid independence",
           "url": "https://www.enr.com/articles/62882-san-antonio-military-base-weighs-nuclear-option-for-grid-independence"
+        },
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "will own, build, and operate a three-unit R1 microreactor deployment at Fort Bragg",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
         }
       ],
       "gaps": [
-        "No disclosed funding total",
         "No published land-area or exclusion-zone footprint",
-        "No utility filing located for the JBSA interconnection"
+        "No utility filing located for the JBSA interconnection",
+        "Janus contract value not disclosed; the $1bn figure is a combined book across three programmes, self-reported"
       ],
       "first_delivery_year": 2028,
       "milestones": [
@@ -78,6 +85,52 @@
           "source": {
             "label": "World Nuclear News — USAF selections",
             "url": "https://world-nuclear-news.org/articles/us-air-force-announces-selections-for-microreactor-deployments"
+          }
+        },
+        {
+          "date": "2026-06-04",
+          "status": "done",
+          "label": "Mark-0 reached criticality at Idaho National Laboratory — the first privately built non-light-water reactor to go critical in the US in over 40 years",
+          "source": {
+            "label": "The Defense Post — Antares to Fast-Track US Military Base Nuclear Microreactors With $470M Injection",
+            "url": "https://thedefensepost.com/2026/08/03/us-nuclear-microreactors-base/",
+            "quote": "we won the race to criticality, and now we've shifted to the race to commercialization",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        },
+        {
+          "date": "2026-07-28",
+          "status": "done",
+          "label": "Dr. Rian Bahran joined as Chief Nuclear Officer from the Department of Energy, where he was Deputy Assistant Secretary for Nuclear Reactors",
+          "source": {
+            "label": "Businesswire — Dr. Rian Bahran Joins Antares as Chief Nuclear Officer (2026-07-28)",
+            "url": "https://www.businesswire.com/news/home/20260728822415/en/Dr.-Rian-Bahran-Joins-Antares-as-Chief-Nuclear-Officer",
+            "status": "snippet-only"
+          }
+        },
+        {
+          "date": "2026-08-03",
+          "status": "done",
+          "label": "Closed a $470M Series C — $370M equity and $100M debt — to build the Mark-1 platform and field units from 2028",
+          "source": {
+            "label": "The Defense Post — Antares to Fast-Track US Military Base Nuclear Microreactors With $470M Injection",
+            "url": "https://thedefensepost.com/2026/08/03/us-nuclear-microreactors-base/",
+            "quote": "we won the race to criticality, and now we've shifted to the race to commercialization",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "status": "done",
+          "label": "Selected for the Army's Janus programme at Fort Bragg, NC, to own, build and operate three R1 units. Antares declined to disclose the contract value.",
+          "source": {
+            "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+            "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+            "quote": "will own, build, and operate a three-unit R1 microreactor deployment at Fort Bragg",
+            "status": "fetched",
+            "verified": "2026-08-29 quote confirmed in cached copy"
           }
         }
       ]
@@ -122,6 +175,13 @@
         {
           "label": "smrintel — Kaleidos spec sheet",
           "url": "https://smrintel.com/reactors/radiant-kaleidos/"
+        },
+        {
+          "label": "POWER — U.S. Army Mobilizes $2.2B Janus Program to Deploy More Than 20 Commercial Microreactors",
+          "url": "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+          "quote": "One thing you definitely cannot do is divide the dollars by the number of reactors",
+          "status": "fetched",
+          "verified": "2026-08-29 quote confirmed in cached copy"
         }
       ],
       "gaps": [
@@ -174,8 +234,20 @@
             "label": "World Nuclear News — Kaleidos to Idaho",
             "url": "https://world-nuclear-news.org/articles/kaleidos-microreactor-begins-journey-to-idaho"
           }
+        },
+        {
+          "date": "2026-08-26",
+          "status": "done",
+          "label": "Won the largest Janus award — up to $750M to deploy 15 Kaleidos units by 2030, starting with three at Fort Benning, GA",
+          "source": {
+            "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+            "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+            "quote": "The U.S. Army is a savvy customer",
+            "status": "snippet-only"
+          }
         }
-      ]
+      ],
+      "notes": "Radiant took the largest of the five Janus awards on 2026-08-26: up to $750M for 15 Kaleidos units by 2030, beginning with three at Fort Benning. The Army cautions that dividing an award by its unit count does not yield a unit price, because the award pays for development and the first-of-a-kind units."
     },
     {
       "id": "evinci",
@@ -192,7 +264,7 @@
       "anpi_site": "Malmstrom Air Force Base, MT",
       "test_reactor": "Scaled 3 MWt heat-pipe nuclear test reactor at INL DOME, testing from 2026",
       "commercial": "First-customer SRC pilot (CA$80M, target 2029) cancelled by Westinghouse in fall 2025 — eVinci refocused on space, defence and government applications. Penn State FRONTIER: NRC notice of intent filed 2025-02-17 for a construction permit for a 15 MWt eVinci-based research reactor at University Park, PA.",
-      "notes": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refuelling.",
+      "notes": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refuelling. Westinghouse Government Services was selected for the Army's Janus programme at Fort Drum, NY on 2026-08-26. Neither the contract value nor the unit count was disclosed.",
       "sources": [
         {
           "label": "POWER — Westinghouse/Radiant selected for first fuelled DOME tests",
@@ -227,11 +299,17 @@
           "quote": "intent to submit a Construction Permit (CP) licensing application for a research reactor",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/35aba5f2c9cde917.pdf)"
+        },
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "status": "snippet-only"
         }
       ],
       "gaps": [
         "Vendor states it has moved away from commercial markets (fall 2025); the Penn State research reactor is the remaining announced civilian site",
-        "Malmstrom timeline not separately published beyond the ANPI 2030 goal"
+        "Malmstrom timeline not separately published beyond the ANPI 2030 goal",
+        "Janus contract value and unit count both undisclosed"
       ],
       "first_delivery_year": 2030,
       "milestones": [
@@ -284,6 +362,17 @@
           "source": {
             "label": "Neutron Bytes — three microreactors for base power",
             "url": "https://neutronbytes.com/2026/04/24/air-force-selects-three-microreactors-for-base-power/"
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "status": "done",
+          "label": "Selected for Janus at Fort Drum, NY, through Westinghouse Government Services",
+          "source": {
+            "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+            "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+            "quote": "Reliable energy is fundamental to mission assurance",
+            "status": "snippet-only"
           }
         }
       ]

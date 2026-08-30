@@ -877,9 +877,34 @@
       esc(n.where) + "</p></div>";
   }).join(""));
 
+  /* In their words. Grouped by whose interest the speaker has: the companies
+     selling, the government buying, and the analysts arguing it does not add
+     up. A quote whose page could not be fetched keeps the dagger every other
+     snippet-only citation on this site carries. */
+  if (D.voices && D.voices.groups) {
+    render($("voices-head"), esc("In their words"));
+    render($("voices-intro"), esc(D.voices._meta.what_this_is));
+    render($("voices"), D.voices.groups.map(function (g) {
+      return '<div class="voicegroup"><h4>' + esc(g.name) + "</h4>" +
+        '<p class="prose note">' + esc(g.note) + "</p>" +
+        g.voices.map(function (q) {
+          return '<figure class="voice">' +
+            "<blockquote>" + esc(q.quote) + "</blockquote>" +
+            '<figcaption><span class="voicewho">' + esc(q.speaker) + "</span>" +
+              '<span class="voicerole">' + esc(q.role) +
+              (q.org && q.org !== "-" ? ", " + esc(q.org) : "") + "</span>" +
+              '<span class="voicetopic">' + esc(q.topic) + "</span>" +
+              cite(q.sources) + "</figcaption>" +
+            '<p class="voicemeans">' + esc(q.what_it_means) + "</p>" +
+            "</figure>";
+        }).join("") + "</div>";
+    }).join(""));
+  }
+
   makeSubnav("sources", [{ id: "register", label: "Source register" },
                          { id: "coverage", label: "Field coverage" },
                          { id: "gaps", label: "What is missing" },
+                         { id: "voices", label: "In their words" },
                          { id: "about", label: "About" }]);
 
   /* boot: land on the panel the hash names, or the first. scroll:true beats
