@@ -42,9 +42,8 @@ def build(pass_dir: pathlib.Path) -> dict:
     meta = {
         "captured": "2026-08-30",
         "what_this_is":
-            "Dated events in the microreactor market, newest first. Each one says what the "
-            "instrument actually is, because the difference between a selection and a signed "
-            "contract is the difference between a press release and a business.",
+            "Dated events in the microreactor market, newest first. Each row says which "
+            "instrument the event rests on.",
         "binding_note":
             f"{binding} of {len(uniq)} items rest on something executed - a signed contract, a "
             f"filed application, an achieved milestone. The other {len(uniq) - binding} are "

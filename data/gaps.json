@@ -275,6 +275,12 @@
    "why_search_failed": "Only Westinghouse publishes a footprint figure (2 acres), and that is a design claim rather than an allocated parcel."
   },
   {
+   "target": "Operating staff and O&M cost",
+   "why": "No row carries an operator headcount, a staffing plan or an O&M figure.",
+   "where": "NRC staffing-exemption requests and 10 CFR 50.54(m) relief filings in ADAMS; DOE DOME experiment operating plans; vendor licensing-topical reports on autonomous and remotely monitored operation.",
+   "why_search_failed": "Not searched for in any pass to date. The case for a 1-20 MW unit rests on it not needing a 24/7 licensed crew, so an unstaffed cost line is a hole in the economics, not a missing detail."
+  },
+  {
    "target": "Shell / enclosure detail",
    "why": "12/16 rows have none.",
    "where": "Vendor technical datasheets; NRC pre-application meeting slides; DOE DOME experiment safety documentation.",
