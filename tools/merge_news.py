@@ -15,6 +15,7 @@ import argparse
 import collections
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -22,12 +23,15 @@ OUT = ROOT / "data" / "news.json"
 
 
 def build(pass_dir: pathlib.Path) -> dict:
-    items, skipped = [], []
+    items, skipped, captures = [], [], []
     for f in sorted(pass_dir.glob("*.json")):
         d = json.loads(f.read_text())
         if d.get("_meta", {}).get("incomplete"):
             skipped.append(f.name)
             continue
+        captured = d.get("_meta", {}).get("captured", "")
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", captured):
+            captures.append(captured)
         items.extend(d.get("items", []))
     seen, uniq = set(), []
     for it in sorted(items, key=lambda x: (x.get("date", ""), x.get("id", "")), reverse=True):
@@ -40,7 +44,7 @@ def build(pass_dir: pathlib.Path) -> dict:
     cats = collections.Counter(i.get("category") for i in uniq)
     dates = [i["date"] for i in uniq if i.get("date")]
     meta = {
-        "captured": "2026-08-30",
+        "captured": max(captures) if captures else "",
         "what_this_is":
             "Dated events in the microreactor market, newest first. Each row says which "
             "instrument the event rests on.",

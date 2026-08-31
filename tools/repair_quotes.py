@@ -61,20 +61,7 @@ def cached_text(row: dict) -> str:
     repair is true by construction rather than by luck.
     """
     p = CACHE / row["cache"]
-    if not p.exists():
-        return ""
-    raw = p.read_bytes()
-    if raw[:4] == b"%PDF":
-        try:
-            from pypdf import PdfReader
-            import io as _io
-            return _vq.norm(" ".join(pg.extract_text() or ""
-                                     for pg in PdfReader(_io.BytesIO(raw)).pages))
-        except Exception:
-            return ""
-    text = raw.decode("utf-8", errors="replace")
-    text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S | re.I)
-    return _vq.norm(re.sub(r"<[^>]+>", " ", text))
+    return _vq.cached_text(p) if p.exists() else ""
 
 
 def longest_present_run(quote: str, text: str) -> str:
@@ -90,6 +77,35 @@ def longest_present_run(quote: str, text: str) -> str:
                 best = cand
                 break
     return best
+
+
+def original_span(normalized_run: str, raw_text: str) -> str:
+    """Return the matching source span without changing its case or punctuation.
+
+    Matching is deliberately done on the verifier's normal form. Writing is not:
+    a repaired citation should retain the exact typography that came from the
+    cached source, rather than lower-cased, ASCII-normalized helper text.
+    """
+    target = norm(normalized_run)
+    if not target:
+        return ""
+    words = list(re.finditer(r"\S+", raw_text))
+    want = len(target.split())
+    for i in range(len(words)):
+        # Normalization can join or split punctuation around a word, so give the
+        # literal window one word either side of the normalized count.
+        for j in range(i + max(1, want - 1), min(len(words), i + want + 2) + 1):
+            candidate = raw_text[words[i].start():words[j - 1].end()]
+            if norm(candidate) == target:
+                return candidate
+    return ""
+
+
+def sources_for(record: dict) -> list:
+    """Read either citation shape without changing the canonical record."""
+    if record.get("sources"):
+        return record["sources"]
+    return [record["source"]] if record.get("source") else []
 
 
 def main() -> int:
@@ -138,14 +154,11 @@ def main() -> int:
                     for v in n:
                         _collect(v)
             _collect(doc)
-            for r in recs:
-                if r.get("source") and not r.get("sources"):
-                    r["sources"] = [r["source"]]
         else:
             recs = doc.get("mechanisms") or doc.get("cases") or []
         changed = False
         for rec in recs:
-            for s in rec.get("sources") or []:
+            for s in sources_for(rec):
                 if not isinstance(s, dict):
                     continue
                 row = index.get(s.get("url", ""))
@@ -154,10 +167,11 @@ def main() -> int:
                     continue
                 if s["url"] not in texts:
                     texts[s["url"]] = cached_text(row)
-                text = texts[s["url"]]
-                if not text:
+                raw_text = texts[s["url"]]
+                if not raw_text:
                     uncached += 1
                     continue
+                text = norm(raw_text)
                 q = norm(s.get("quote", ""))
                 # A source with no quote is not a failure: plenty of citations here
                 # are a link and a label, and only a quoted span makes a lock.
@@ -169,12 +183,18 @@ def main() -> int:
                 run = longest_present_run(q, text)
                 n, total = len(run.split()), len(q.split())
                 if n >= MIN_WORDS and total and n / total >= MIN_RATIO:
+                    literal = original_span(run, raw_text)
+                    if not literal:
+                        manual += 1
+                        print(f"MANUAL {path.name} [cannot recover literal source span] "
+                              f"{s['url'][:70]}")
+                        continue
                     rid = rec.get("id") or rec.get("name") or rec.get("scenario") or "?"
                     print(f"REPAIR {path.name} [{str(rid)[:40]}] {n}/{total} words")
                     print(f"   was: {q[:100]}")
-                    print(f"   now: {run[:100]}")
+                    print(f"   now: {literal[:100]}")
                     if a.apply:
-                        s["quote"] = run
+                        s["quote"] = literal
                         changed = True
                     repaired += 1
                 else:
