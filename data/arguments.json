@@ -1,0 +1,552 @@
+{
+  "_meta": {
+    "captured": "2026-08-30",
+    "what_this_is": "A microreactor is a reactor of 1-20 MW: small enough to be factory-built and delivered to a site, and sized for one customer's load rather than a grid. This is the case for buying one at that size, and the places where the case does not hold.",
+    "method": "Each argument links to source notes and a counterargument. Read this as a guide to where small size can change a project, not as a claim that it always helps.",
+    "honest_note": "Small size can matter in different ways: it may fit a site, shorten a permitting or interconnection path, simplify delivery, or match one customer's load. The arguments below explain where those advantages apply and where they do not.",
+    "coverage": "Costs and tax credits are covered on Costs. Demand, existing prices, and site examples are covered on Applications."
+  },
+  "arguments": [
+    {
+      "id": "thresholds",
+      "name": "Being small is written into the rules",
+      "claim": "A dozen rules put a hard number on size, and the number is usually inside the 1-20 MW band. This is the only argument here where being small is legally load-bearing rather than commercially convenient.",
+      "detail": "ERCOT is the sharpest: a unit at 9.9 MW runs the Small Generation process at a stated 8-12 months; the identical unit at 10.1 MW runs Large Generation at 18-30 months. Ten to twenty-two months of schedule decided by 0.2 MW. New York's distribution rules cut at 5 MW, not 20 — below it a reactor is a state-jurisdictional device processed for a $750 fee on a 60-business-day study; above it, a different legal object. Connecticut's microgrid statute caps at 65 MW, which excludes a full-size reactor outright.",
+      "note_count": 8,
+      "notes": [
+        {
+          "name": "ERCOT connect-and-manage and the Small Generation process (<10 MW)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Distribution-level interconnection under state DER rules (NY SIR, California Rule 21)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Small Generator Interconnection Procedures - Study Process (2-20 MW)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Connecticut Microgrid Grant and Loan Program (Public Act 12-148 Sec. 7) — the per-site civic-resilience cost dataset",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Curtailment-enabled large-load interconnection (trading firmness for speed)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "ERCOT Large Load Interconnection Process and the SB6 net-metering review",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Texas Backup Power Package Program (16 TAC 25.513, PUCT Project No. 59024)",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Texas Backup Power Package (TBPP) Program — state money that buys the replacement outright, with a technology list",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "one-property",
+      "name": "Sized to one property's load, so no electricity is sold",
+      "claim": "At 1-20 MW a single campus, mine or terminal absorbs the entire output. Nothing is sold, so utility law never engages.",
+      "detail": "The installation is the market. A 300 MW unit at the same base would have to sell about 90% of its output to the grid, which means an interconnection agreement, a transmission study and a utility counterparty. The small unit needs none of those, which is why a microreactor deal can be a pure bilateral PPA and a large-reactor deal cannot. Where a state caps third-party sale at 100-150% of the host's own consumption, 1-20 MW is the only scale that can satisfy the cap without wasting most of the output.",
+      "note_count": 10,
+      "notes": [
+        {
+          "name": "Government build-own-operate plus a long-term PPA to a single installation",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Own it yourself and never sell an electron",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "State third-party-sale authorization — whether a developer may legally sell metered power to a host at all",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Co-located load / behind-the-meter generation at a generating facility",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "No market to sell into on a blue-sky day",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "EPA RICE NESHAP emergency-engine hour cap (40 CFR 63.6640(f)) — the rule that keeps diesel a sunk cost, not an asset",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Where the property line runs decides which law applies",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "New Jersey 'on-site generation facility' carve-out from public-utility status (NJBPU Docket No. QO20030191, DCO Energy declaratory ruling)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "AEP Ohio Schedule DCT (Data Center Tariff), P.U.C.O. No. 22 Sheet 223 — large-load minimum-demand tariff",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "The co-location wave is one proceeding, not a wave of deals",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "fleet",
+      "name": "A fleet gives N+1 without a second site",
+      "claim": "Redundancy comes from unit count rather than from building a spare plant. One standard already requires it.",
+      "detail": "Uptime Institute Tier III/IV asks for concurrent maintainability — the generating system has to stay fault-tolerant while carrying load. That is impossible with one large reactor and arithmetically straightforward with several small ones. This is the clearest case in the dataset where a published standard, not the economics, prefers small and modular. Islanded sites make the same point without any standard: four 5 MW modules for a 15 MW load is a redundancy plan; one 20 MW module is not.",
+      "note_count": 4,
+      "notes": [
+        {
+          "name": "Uptime Institute Tier III/IV engine-generator rating rule — the private standard that requires the diesel fleet to exist and to be unlimited-runtime",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Deliberately never interconnecting (fully islanded on-site generation)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "The bill you keep paying after you make your own power",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "The interconnection cost that lands after the agreement is signed",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ],
+      "basis": "physical"
+    },
+    {
+      "id": "product",
+      "name": "It is a product with a price",
+      "claim": "The purchasing behaviour changes, and so does the paper.",
+      "detail": "The Army's programme buys 'commercially available dual use microreactor technology' from a pool of vendors with milestone payments — a supply-chain posture, not a project posture. Equinix's offtake is written over megawatt-hours in a fleet, across sites named later, which only works with factory-built units. A 300 MW reactor is one site, one licence and one in-service date, so its equivalent contract is a single-site PPA with a fixed completion date rather than a portfolio option. If a state bars the PPA, a product with a price can be re-papered as a lease or a sale far more cheaply than a bespoke plant can.",
+      "note_count": 6,
+      "notes": [
+        {
+          "name": "DoD Other Transaction Authority for commercially owned and operated reactors on an installation",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Utility procures the on-site generation fleet and recovers it from the single large customer under a special contract",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Reservation fee plus right of first refusal and most-favored-nation pricing, ahead of any PPA",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Third-party behind-the-meter PPA",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Resiliency-as-a-Service (RaaS): third-party-owned backup microgrid sold as a monthly subscription",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "California Self-Generation Incentive Program (SGIP) — a ratepayer-funded capital subsidy with a closed technology list, an efficiency gate, and an explicit ban on backup-only assets",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ],
+      "basis": "commercial"
+    },
+    {
+      "id": "relocatable",
+      "name": "It can be taken away again",
+      "claim": "Removability turns a stranded-asset risk into a fleet-management decision — and disqualifies the unit from at least one incentive programme.",
+      "detail": "A 50-year contract on a base that may be realigned is a stranded-asset risk for any fixed plant. A unit that can be removed and redeployed makes that a scheduling problem instead. The same property lets a developer site capacity inside a non-attainment basin and move it when the load moves, which a permitted diesel fleet with site-specific offsets cannot do. The cost is real: California's SGIP handbook says a system is eligible only if permanently installed 'both physically and contractually', and names wheels, carrying handles, a dolly or a trailer as disqualifiers. Factory-built and take-it-back is the exact fact pattern that clause rejects.",
+      "note_count": 5,
+      "notes": [
+        {
+          "name": "DoD utilities privatization under 10 U.S.C. 2688 — conveying the base's utility system to a private owner on a 50-year contract",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Lease the machine instead of selling the power",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Local air-district permit hour caps — the layer below EPA that decides whether new diesel can be built at all",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Cost-type prime contract for a government-owned transportable reactor",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "California Self-Generation Incentive Program — 2025 Handbook eligibility gates (CPUC SGIP)",
+          "group": "batteries",
+          "src": "instruments"
+        }
+      ],
+      "basis": "physical"
+    },
+    {
+      "id": "liability",
+      "name": "Price-Anderson costs about a hundredth as much",
+      "claim": "The sharpest quantitative gap in the file, and it is set by formula rather than by negotiation.",
+      "detail": "A 300 MWe unit carries $500,000,000 of primary financial protection and accepts a contingent retrospective assessment of $158,026,000. A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and the deferred premium does not apply because the retrospective plan starts at 100,000 electrical kilowatts.",
+      "note_count": 1,
+      "notes": [
+        {
+          "name": "Price-Anderson financial protection: a mandatory contract term, priced by reactor size in the regulation itself",
+          "group": "licensing",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "first-article",
+      "name": "The route to a first unit is cheaper",
+      "claim": "Small enough to build on venture capital instead of project finance, and small enough to use the federal test beds.",
+      "detail": "DOE's DOME facility has a 20 MWth cap, so it is a microreactor facility by construction and a 300 MW design cannot use it at all. That asymmetry is the largest schedule advantage the class has: a fuelled, operating first article inside a shared federal containment, against a full construction permit and operating licence on a bespoke site. Every project selected under the reactor pilot programme is small enough to be funded from a balance sheet with no offtake and no federal cost share.",
+      "note_count": 2,
+      "notes": [
+        {
+          "name": "National-laboratory test bed access as a staged, cost-shared entry into operation",
+          "group": "licensing",
+          "src": "instruments"
+        },
+        {
+          "name": "DOE-authorized test reactor under an Other Transaction Agreement, with no federal money and no NRC license",
+          "group": "licensing",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "fuel",
+      "name": "No fuel convoy",
+      "claim": "The refuelling interval is measured in years, which removes an entire logistics tail.",
+      "detail": "Where a state programme requires 48 hours of operation without refuelling, a diesel or gas package needs an on-site fuel farm sized for it and a reactor wins outright by orders of magnitude. At a remote federal site the displaced baseline is not grid power but delivered diesel, and the convoy, the fuel farm and the fuel-quality maintenance are all operating costs an energy-savings contract is allowed to count.",
+      "note_count": 3,
+      "notes": [
+        {
+          "name": "Texas Backup Power Package (TBPP) Program — state money that buys the replacement outright, with a technology list",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Federal Energy Savings Performance Contract (ESPC) task order — how a federal site buys resilience with zero appropriated capex",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "DoD utilities privatization under 10 U.S.C. 2688 — conveying the base's utility system to a private owner on a 50-year contract",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ],
+      "basis": "physical"
+    },
+    {
+      "id": "load-fit",
+      "name": "It matches loads that exist",
+      "claim": "The band is not arbitrary. It is where the critical-facility load actually sits.",
+      "detail": "A large hospital's whole campus is single-digit megawatts, and the certified article in the Kaiser precedent is a 1 MW fuel cell with a 9 MWh battery — a microreactor is a drop-in at that order of magnitude where a 300 MW unit has no customer of that shape. New Jersey's funded microgrid designs cluster between 1.7 and 4.4 MW with a median near 2.5 MW. Bronzeville's footprint is 7 MW. Montgomery County's two microgrids together average about 1.25 MW.",
+      "note_count": 7,
+      "notes": [
+        {
+          "name": "CMS categorical waiver QSO-23-11-LSC — the document that lets something other than a generator legally be a hospital's emergency power source",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "New Jersey Town Center DER Microgrid Program, Phases I and II (NJBPU Docket No. QO16100967)",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Utility-owned community microgrid via CPCN + rate base (ICC Docket 17-0331, ComEd Bronzeville)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Microgrid energy services agreement / P3 — third party owns the pair, host pays only for output",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Non-wires alternative — the utility owns the pair and rate-bases it against a deferred cable",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Let the utility own it and rate-base it",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Municipal ownership under a state carve-out",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ],
+      "basis": "physical"
+    },
+    {
+      "id": "battery",
+      "name": "It needs a battery to be legally usable, and the pair beats either alone",
+      "claim": "A reactor cannot meet the code that governs emergency power. A battery can, and cannot do the rest.",
+      "detail": "NFPA 110 Type 10 requires the emergency source to pick up load within ten seconds. A reactor cannot cold-start in ten seconds and should not be asked to. A battery sized for minutes covers the transfer; the reactor then carries the multi-day outage that hospital-scale batteries cannot — Richmond's 1 MWh gives three hours, Ontario's 9 MWh gives ten. The pair covers both ends of the duration curve that neither covers alone, and it collapses the sizing problem: without a reactor the battery must be sized to the worst-case outage, with one it need only be sized to the transfer. A reactor also cannot pass a storage ramp-rate test in an all-source RFP; a battery on the same point of delivery can, and the combined facility is what gets certified.",
+      "note_count": 9,
+      "notes": [
+        {
+          "name": "CMS categorical waiver for Health Care Microgrid Systems (QSO-23-11-LSC)",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Intentional islanding — the microgrid interconnect device certification gate",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "All-source RFP guarantee stack — what a utility makes the pair contractually promise",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Grid-services contract — black start, synthetic inertia and fast frequency response bought as named products",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Generator hybridisation — a small battery bolted onto a thermal unit to sell its start time",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "ELCC capacity accreditation — what the pair is allowed to count as",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "The fire marshal, not the utility, decides whether the battery gets built",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Single-owner merchant pair — one entity owns generator and storage and optimizes dispatch against price",
+          "group": "batteries",
+          "src": "instruments"
+        },
+        {
+          "name": "Storage tolling agreement (capacity payment, buyer dispatches)",
+          "group": "batteries",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "inherit",
+      "name": "It fits inside an interconnection somebody else already paid for",
+      "claim": "Surplus headroom at a retiring plant is usually too small to interest a large developer. That is the size a microreactor fills.",
+      "detail": "A retiring 300 MW coal unit's point of interconnection is a target for a large developer. The 5-15 MW of unused headroom at a small industrial cogeneration site, a retired peaker or a partly derated plant is not. MISO surplus projects have come online in about a year on average since 2024, so a factory-built unit is schedule-compatible with that route for the first time. The honest caveat is that not one of the 71 surplus-interconnection filings involves a reactor of any size, so this is an argument rather than a precedent.",
+      "note_count": 4,
+      "notes": [
+        {
+          "name": "Surplus Interconnection Service (inheriting an existing point of interconnection)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Surplus interconnection has stopped being theoretical",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Energy-only (ERIS), reduced-capacity and provisional interconnection service",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Standard FERC large-generator queue (Order 2023 cluster study -> LGIA)",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    },
+    {
+      "id": "utility-owns",
+      "name": "The utility can own it, which turns the loser into the counterparty",
+      "claim": "Every behind-the-meter structure makes the utility the party losing load. At this size it does not have to be.",
+      "detail": "A 1-20 MW unit is small enough to be rate-based against a cluster of critical customers on one feeder rather than a single host — the Bronzeville community-microgrid shape, and the only sales motion in this family a large reactor cannot also serve. It is also small enough to be approved as a pilot rather than a rate case: the same machine that is a rounding error on a utility's capital plan is a bet-the-company project for a single industrial host. Aggregation argues the same way, since a fleet across many hosts gives a utility diversity that one large machine does not.",
+      "note_count": 4,
+      "notes": [
+        {
+          "name": "Regulated utility owns the customer's backup generator and bills it as a tariffed service (Entergy 'Power Through')",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Tariffed on-bill lease of a customer-sited backup asset, paid for by aggregating it into a virtual power plant",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "You are departing load, and the utility bills accordingly",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Let the utility own it and rate-base it",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ],
+      "basis": "rule"
+    }
+  ],
+  "counters": [
+    {
+      "id": "decommissioning",
+      "name": "Decommissioning funding is size-blind, and it is the worst term in the deal",
+      "detail": "The NRC's formula tells you to substitute P = 1200 MWt for any smaller pressurised-water reactor, so a 20 MWt unit certifies the identical amount as a 1200 MWt one. On plausible microreactor capital costs that certified fund is of the same order as the plant itself. This is a financing problem no 300 MW unit has. Part 57 is the regulator's answer and it is aimed squarely at this scale, but it is proposed, so every deal signed today is priced against the Part 50 obligations.",
+      "notes": [
+        {
+          "name": "The obligations a reactor deal must fund - decommissioning, operators, security, fuel - that a gas or solar deal never mentions",
+          "group": "licensing",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "fast-track",
+      "name": "The threshold claim is false as usually stated",
+      "detail": "'A small reactor sits under the interconnection thresholds' is wrong in the form it is normally said. Under 20 MW gets you California's Study Process, not Fast Track. Only a sub-2 MW synchronous unit, or a certified inverter-coupled one, clears the Fast Track door at all.",
+      "notes": [
+        {
+          "name": "SGIP Fast Track Process (screens instead of studies)",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "licensee-overhead",
+      "name": "One small host cannot carry the licensee overhead",
+      "detail": "Dow can stand up a subsidiary, a nuclear organisation and a Part 50 application because it is spreading that overhead across 800 MWt of steam load. A single 15 MWt host cannot, which pushes the microreactor back into a third-party-owned structure where the vendor holds the licence and sells heat — and no signed, priced precedent for that structure exists.",
+      "notes": [
+        {
+          "name": "Host-owned reactor selling itself steam: the industrial offtaker becomes the NRC licensee",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "cost-share",
+      "name": "Federal cost-share rules disadvantage the class twice",
+      "detail": "A 50% floor written as a percentage is scale-neutral, which hurts here. A $2-4bn demonstration can absorb a nine-figure federal award; half of a $50-150M microreactor is a rounding error to DOE and does not justify the administrative load. And the developer must fund its half before invoicing, which means raising the entire unit cost in venture equity first.",
+      "notes": [
+        {
+          "name": "DOE cost-shared cooperative agreement: the government buys down half the first-of-a-kind capex and owns none of it",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "no-price",
+      "name": "There is no price benchmark, and the structure is why",
+      "detail": "A subscription model assembles many small buyers into one large plant, and that committee produces a published price. At 1-20 MW there is nothing to subscribe: one host takes the whole output, so there is no vote and no disclosure. That is precisely why this sector has no price benchmark while the 300 MW-class sector has exactly one.",
+      "notes": [
+        {
+          "name": "Municipal joint-action subscription against a published target power price",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "invisible",
+      "name": "Too small to appear in the records that would price it",
+      "detail": "A microreactor is below the threshold at which most commissions open a certificate proceeding, so it escapes prudence review — and never generates the public cost record that would let the next buyer price one. PJM's fast lane for new capacity has a 250 MW floor and takes ten requests a year, so a small reactor cannot use it. One large-load tariff sets its threshold at 70 MW, where a 1-20 MW unit is simply invisible.",
+      "notes": [
+        {
+          "name": "Rate-regulated utility ownership: the reactor goes in the rate base, not into a PPA",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Replacement Generation Interconnection Process (inheriting a retiring unit's Capacity Interconnection Rights)",
+          "group": "interconnection",
+          "src": "instruments"
+        },
+        {
+          "name": "Indiana Michigan Power Tariff I.P. large-load terms (IURC Cause No. 46097) — the second-state comparison to AEP Ohio",
+          "group": "interconnection",
+          "src": "instruments"
+        }
+      ]
+    },
+    {
+      "id": "not-ours",
+      "name": "Some of the best arguments are borrowed from being nuclear",
+      "detail": "The notes are explicit about this where it applies. A reactor's exemption from emergency-engine hour caps is an advantage of being nuclear at any size; what a small unit adds is only that the exemption becomes reachable for a site too small to fund a Title V compliance programme — the same relief, available to a hospital rather than only to a refinery. Elsewhere a note concludes flatly that nothing about being small changes the analysis. An argument that claims every advantage for the size is weaker than one that says which are borrowed.",
+      "notes": [
+        {
+          "name": "A diesel is permitted as if it never switches off",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "The master-metering waiver nobody budgets for",
+          "group": "diesel",
+          "src": "instruments"
+        },
+        {
+          "name": "Third-party behind-the-meter PPA",
+          "group": "diesel",
+          "src": "instruments"
+        }
+      ]
+    }
+  ]
+}

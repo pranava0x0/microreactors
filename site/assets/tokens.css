@@ -58,7 +58,13 @@
   --scrim-top:linear-gradient(to bottom,rgba(12,10,9,.72) 0%,rgba(12,10,9,0) 100%);
   --scrim-flat:rgba(12,10,9,.45);
 
-  /* — Type — one family, four weights — */
+  /* — Type — one family, four weights —
+     Archivo is used when the reader already has it; the site no longer fetches
+     it. The Google Fonts <link> was three render-blocking round trips to two
+     third-party hosts before first paint (and a request log entry for every
+     reader), which is a poor trade for a grotesque the fallback stack already
+     approximates. To put the webfont back, self-host the two woff2 subsets in
+     site/assets/ and add an @font-face here - not the <link>. */
   --font-core:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
   --weight-regular:400;

@@ -18,7 +18,17 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
-         "instruments", "deployment_sites", "voices", "gaps"]
+         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps"]
+
+# Datasets pulled out of the main bundle and fetched when their sub-tab opens.
+# The test is that no panel needs one to draw its first screen. `benchmarks` used
+# to stay eager because Costs and Applications both read it; Applications only
+# ever wanted a per-load count, which `load_cases` above now precomputes, so the
+# whole 302 KB payload is Costs' "Price to beat" sub-tab alone. `sources_index`
+# is derived rather than a file in FILES, which the split handles fine - it pops
+# any top-level key. Everything here still ships in site/data-<name>.js and is
+# still counted in the citation register, which is built before the split.
+LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
@@ -27,7 +37,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # benchmarks render on the Costs tab and instruments on the Policy tab, so each sits
 # beside the dataset it shares a tab with.
 CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mechanisms",
-              "policy", "instruments", "deployment_sites", "voices", "gaps"]
+              "policy", "instruments", "deployment_sites", "voices", "arguments", "news", "gaps"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -88,6 +98,15 @@ def captured_date(bundle: Dict[str, Any]) -> str:
     return max(dates)
 
 
+def priced(record: Dict[str, Any]) -> bool:
+    """A benchmark case counts as priced when it carries a number you could
+    compare a reactor against. A capacity figure or a filing is real evidence,
+    but calling a row "priced" without a price, capex or displaced-cost number
+    overclaims. One definition, read by the headline stat and by the load index
+    below, because two copies of this test drifted apart once already."""
+    return bool(record.get("price") or record.get("capex") or record.get("displaced"))
+
+
 def main() -> int:
     bundle: Dict[str, Any] = {}
     for name in FILES:
@@ -104,6 +123,17 @@ def main() -> int:
     cov = {c["field"]: c for c in bundle["gaps"]["field_coverage"]}
     reg = sources_index(bundle)
     loads = [l for s in bundle["sectors"]["sectors"] for l in s["loads"]]
+    # How many priced cases back each load label. The Applications tab only ever
+    # rendered this count and a link to the Costs tab, so shipping it here lets the
+    # 302 KB benchmarks payload leave the eager bundle entirely.
+    load_cases: Dict[str, int] = {}
+    for bsec in bundle["benchmarks"]["sectors"]:
+        for r in bsec["records"]:
+            if not priced(r):
+                continue
+            for label in r.get("load", []):
+                load_cases[label] = load_cases.get(label, 0) + 1
+    bundle["load_cases"] = load_cases
     bundle["sources_index"] = reg
     bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
     bundle["summary"] = {
@@ -119,8 +149,7 @@ def main() -> int:
         "instruments": sum(len(g["records"]) for g in bundle["instruments"]["groups"]),
         "benchmarks": sum(len(s_["records"]) for s_ in bundle["benchmarks"]["sectors"]),
         "benchmarks_priced": sum(1 for s_ in bundle["benchmarks"]["sectors"]
-                                 for r in s_["records"]
-                                 if r.get("price") or r.get("capex") or r.get("displaced")),
+                                 for r in s_["records"] if priced(r)),
         "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                 for r in s_["records"] if r.get("filings")),
         # Most benchmark rows are the non-nuclear incumbent a reactor would displace,
@@ -128,8 +157,9 @@ def main() -> int:
         # page must not claim the set is uniformly non-nuclear, so count both.
         "benchmarks_nuclear": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                   for r in s_["records"] if r.get("nuclear")),
-        "land_pct": cov["land_acres"]["pct"],
-        "filing_pct": cov["utility_filing"]["pct"],
+        # A count, not a percentage: on n=16 a "12%" reads as a rate and hides that
+        # the numerator is 2. land_pct was emitted here for months and never read.
+        "filing_rows": cov["utility_filing"]["have"],
         # Deployment-facing stats: how far the market has actually moved.
         "milestones_2026": sum(1 for v in vendors for m in v.get("milestones", [])
                                if m.get("status") == "done" and str(m.get("date", "")).startswith("2026")),
@@ -142,11 +172,26 @@ def main() -> int:
     }
 
     SITE.mkdir(exist_ok=True)
-    js = "/* generated by tools/build_data.py — do not edit */\nwindow.MR=" + \
+    # Split AFTER the register and summary are computed, so the citation numbering
+    # and every derived figure still see the whole corpus. A lazy payload that
+    # changed the source numbers would renumber every chip on the site.
+    head = "/* generated by tools/build_data.py — do not edit */\n"
+    lazy_bytes = 0
+    for name in LAZY:
+        payload = bundle.pop(name)
+        chunk = (head + "window.MR." + name + "=" +
+                 json.dumps(payload, separators=(",", ":"), ensure_ascii=False) +
+                 ";window.dispatchEvent(new CustomEvent('mr:" + name + "'));\n")
+        (SITE / f"data-{name}.js").write_text(chunk)
+        lazy_bytes += len(chunk)
+        print(f"site/data-{name}.js  {len(chunk):,} bytes  (fetched when its tab opens)")
+    bundle["lazy"] = LAZY
+    js = head + "window.MR=" + \
          json.dumps(bundle, separators=(",", ":"), ensure_ascii=False) + ";\n"
     (SITE / "data.js").write_text(js)
     s = bundle["summary"]
-    print(f"site/data.js  {len(js):,} bytes")
+    print(f"site/data.js  {len(js):,} bytes  (+{lazy_bytes:,} lazy = "
+          f"{len(js) + lazy_bytes:,} total)")
     print(f"  {s['opportunities']} opportunities ({s['cited_rows']} cited)  "
           f"{s['vendors']} vendors  {s['sector_count']} sectors / {s['load_types']} load types "
           f"({s['cited_loads']} cited)")

@@ -83,13 +83,18 @@
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  var PANELS = ["pipeline", "sites", "economics", "vendors", "demand", "market", "policy", "sources"];
+  /* Reading order, not build order: deals and sites -> why this machine -> for what
+     load -> at what price -> from whom -> rules and deal design -> what just happened ->
+     show the work. index.html's tab
+     buttons and <section> order must match this list; a test asserts all three. */
+  var PANELS = ["home", "pipeline", "why", "demand", "economics", "vendors", "policy", "news", "sources"];
   /* Sub-navigation, registered by makeSubnav() below. Four panels were long
      enough to bury their own sections at 1280px before this split: policy ran
      30,900px and the source register 67,500px, so field coverage and the gap
      register sat ~90 screens below the fold. Routes are "panel/sub", so a
      sub-section is still linkable. */
   var SUBS = {};
+  var deferredRoute = "";
   /* Routes that used to exist. The Sources tab shipped as "Evidence" until
      2026-08-23, so #evidence is live in anything already linked or bookmarked;
      without this it falls through to the unknown-route branch and strands the
@@ -101,11 +106,52 @@
   var tablist = $("tabs");
   var tabEls = Array.prototype.slice.call(tablist.querySelectorAll(".tab"));
 
+  /* Lazy datasets. instruments (421 KB) and voices (232 KB) are 46% of the
+     bundle and each is read by exactly one panel, so they ship as separate
+     files and load when that panel first opens.
+
+     The cache holds the in-flight PROMISE, not a boolean set after the fetch
+     resolves. A boolean is not idempotent under concurrency: two callers in the
+     same tick both read it as false before either settles, and the payload
+     downloads twice. Every caller here gets the same promise. */
+  var LAZY = {};
+  function loadLazy(name) {
+    if (!(D.lazy || []).length || (D.lazy || []).indexOf(name) === -1) {
+      return Promise.resolve(D[name]);          // not split; already present
+    }
+    if (D[name]) { return Promise.resolve(D[name]); }
+    if (!LAZY[name]) {
+      LAZY[name] = new Promise(function (resolve, reject) {
+        var s = document.createElement("script");
+        s.src = "data-" + name + ".js";
+        s.onload = function () { resolve(D[name]); };
+        // Fail loud: a swallowed error here leaves a panel permanently empty
+        // with no explanation, which reads as a rendering bug for weeks.
+        s.onerror = function () { reject(new Error("could not load data-" + name + ".js")); };
+        document.head.appendChild(s);
+      });
+    }
+    return LAZY[name];
+  }
+  function lazyPanel(name, el, render) {
+    var host = $(el);
+    if (host && !host.innerHTML) { host.innerHTML = '<p class="prose note">Loading\u2026</p>'; }
+    return loadLazy(name).then(render).catch(function (err) {
+      if (host) {
+        host.innerHTML = '<p class="prose">This section could not load its data. ' +
+          esc(String(err.message || err)) + "</p>";
+      }
+      throw err;
+    });
+  }
+
   function activate(route, opts) {
     opts = opts || {};
     var parts = String(route || "").split("/");
     var id = parts[0], sub = parts[1] || "";
     if (ALIASES[id]) id = ALIASES[id];
+    if (id === "sites") { id = "pipeline"; sub = "sites"; }
+    if (id === "market") { id = "policy"; sub = "market-design"; }
     if (PANELS.indexOf(id) === -1) { id = PANELS[0]; sub = ""; }
     PANELS.forEach(function (p) {
       var panel = $(p);
@@ -120,6 +166,20 @@
       t.tabIndex = on ? 0 : -1;
       if (on && opts.focus) t.focus();
     });
+    // Panels whose data ships separately render on first open. loadLazy caches the
+    // in-flight promise, so a fast double-activate fetches once.
+    if (id === "policy" && !policyRendered && sub) {
+      deferredRoute = id + "/" + sub;
+    }
+    if (id === "policy" && !policyRendered) {
+      lazyPanel("instruments", "pathways", renderPolicy);
+    }
+    if (id === "home" && !homeRendered) {
+      lazyPanel("news", "home-highlights", renderHome);
+    }
+    if (id === "news" && !newsRendered) {
+      lazyPanel("news", "newslist", renderNews);
+    }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
     var here = id + (subRes ? "/" + subRes : "");
     if (location.hash.slice(1) !== here) {
@@ -178,6 +238,16 @@
         b.setAttribute("aria-selected", String(on));
         b.tabIndex = on ? 0 : -1;
       });
+      /* An item may name a payload it cannot draw without. Fetch on first reveal,
+         never at boot: makeSubnav ends by calling show(ids[0]) while every panel
+         but the landing one is still hidden, and firing there would defeat the
+         split. loadLazy caches the in-flight promise, so a double-click fetches
+         once and two sub-tabs naming the same payload share one request. */
+      var it = items[ids.indexOf(id)];
+      if (it && it.lazy && !it.lazy.done && !panel.hidden) {
+        it.lazy.done = true;
+        lazyPanel(it.lazy.name, it.lazy.el, it.lazy.render);
+      }
       return isDefault ? "" : id;
     }
     host.addEventListener("click", function (e) {
@@ -206,7 +276,6 @@
 
   /* ---------- hero stats ---------- */
   var s = D.summary;
-  $("built").textContent = s.built;
   /* Deployment stats, not site stats: each number is a market event, not a
      count of what this site happens to curate. */
   var stats = [
@@ -215,7 +284,7 @@
     { n: s.reactors_critical_2026, k: "test reactors critical in 2026", accent: true },
     { n: s.units_largest_preorder, k: "units in the largest preorder" },
     { n: s.first_delivery_year, k: "first delivery target" },
-    { n: s.filing_pct + "%", k: "have a utility filing", accent: true }
+    { n: s.filing_rows + "/" + s.opportunities, k: "have a utility filing", accent: true }
   ];
   render($("stats"), stats.map(function (x) {
     return '<div class="stat"><span class="n' + (x.accent ? " accent" : "") + '">' +
@@ -243,6 +312,12 @@
       ? '<div class="gapnote"><strong>Known gaps</strong><ul>' +
         o.gaps.map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("") + "</ul></div>"
       : "";
+    /* One row here can be several rows elsewhere - Janus is one line in this
+       table and five installations on the Sites tab - and nothing said so. */
+    var seeAlso = o.see_also
+      ? '<p class="seealso"><a href="' + esc(o.see_also.href) + '">' +
+        esc(o.see_also.label) + " \u2192</a></p>"
+      : "";
     return '<article class="row" data-t="' + esc(o.track) + '">' +
       '<div class="rowtop" role="button" tabindex="0" aria-expanded="false">' +
         '<div><div class="rowname">' + esc(o.name) + "</div>" +
@@ -255,14 +330,14 @@
         fields.map(function (f) {
           return '<div class="field"><span class="k">' + esc(f[0]) + "</span>" + val(f[1]) + "</div>";
         }).join("") +
-      "</div>" + gaps + srcList(o.sources) + "</div></article>";
+      "</div>" + seeAlso + gaps + srcList(o.sources) + "</div></article>";
   }
 
-  var pipeItems = [{ id: "all", label: "All (" + opps.length + ")" }].concat(
+  var pipeItems = [{ id: "all", label: "All deals (" + opps.length + ")" }].concat(
     tracks.map(function (t) {
       return { id: t.id, label: t.label + " (" + (s.tracks[t.id] || 0) + ")" };
     })
-  );
+  ).concat([{ id: "sites", label: "Sites (" + D.deployment_sites.sites.length + ")" }]);
 
   render($("pipelinetracks"),
     '<div data-sub="all" id="pipeline-all" role="tabpanel" tabindex="0">' +
@@ -292,6 +367,12 @@
   /* ---------- candidate deployment sites ---------- */
   if (D.deployment_sites && D.deployment_sites.sites) {
     var sites = D.deployment_sites.sites;
+    render($("pipeline-sites"),
+      '<div class="subhead"><h3>Sites</h3></div>' +
+      '<p class="prose">Named sites, their utility and regulator context, and the public filing trail. A row says when a docket search found nothing.</p>' +
+      '<div class="sites-summary" id="sites-summary"></div>' +
+      '<div class="sitefilters" id="site-filters"></div>' +
+      '<div id="sites-content"></div>');
     render($("sites-summary"), [
       { n: String(sites.length), k: "candidate sites tracked" },
       { n: "5", k: "load categories covered" },
@@ -310,7 +391,12 @@
         gapsHTML = '<div class="sitegaps"><strong>Evidence gaps:</strong> ' +
           s.gaps.map(function (g) { return esc(g); }).join(" &middot; ") + "</div>";
       }
-      return '<div class="sitecard" id="site-' + esc(s.id) + '">' +
+      /* Collapsed for the same reason the news rows are: sixteen cards rendered
+         open ran to 24 screens on a phone, against 7 for the sixteen tracker rows
+         next door. The summary keeps the name, the status, the research depth and
+         the country, which is everything you triage on. */
+      return '<details class="sitecard" id="site-' + esc(s.id) + '">' +
+        "<summary>" +
         '<div class="shdr">' +
           "<h3>" + esc(s.name) + "</h3>" +
           '<div class="smeta">' +
@@ -319,6 +405,8 @@
             '<span class="sitetag">' + esc(s.country) + (s.region ? " &middot; " + esc(s.region) : "") + "</span>" +
           "</div>" +
         "</div>" +
+        "</summary>" +
+        '<div class="sbody">' +
         '<div class="sitedetails">' +
           '<div class="drow"><span class="dlbl">Category:</span><span>' + esc(s.category) + (s.band ? " &middot; " + esc(s.band) : "") + "</span></div>" +
           '<div class="drow"><span class="dlbl">Owner/Host:</span><span>' + esc(s.owner || "") + "</span></div>" +
@@ -328,7 +416,7 @@
         '<div class="sitesummary">' + esc(s.summary) + " " + cite(s.sources) + "</div>" +
         filingsHTML +
         gapsHTML +
-        "</div>";
+        "</div></details>";
     };
 
     var univSites = sites.filter(function (s) {
@@ -355,27 +443,38 @@
         : "") +
       "</div>";
 
-    var siteItems = [
+    var siteKinds = [
       { id: "all", label: "All (" + sites.length + ")" },
       { id: "universities-labs", label: "Universities & Labs (" + univSites.length + ")" },
       { id: "defense-remote", label: "Defense & Remote (" + defSites.length + ")" },
       { id: "commercial-grid", label: "Commercial & Grid (" + commSites.length + ")" },
       { id: "findings-absences", label: "Findings & Absences" }
     ];
-
-    render($("sites-content"),
-      '<div data-sub="all" id="sites-all" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + sites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="universities-labs" id="sites-universities-labs" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + univSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="defense-remote" id="sites-defense-remote" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + defSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="commercial-grid" id="sites-commercial-grid" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + commSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="findings-absences" id="sites-findings-absences" role="tabpanel" tabindex="0">' +
-        negHTML + "</div>"
-    );
-    makeSubnav("sites", siteItems);
+    render($("site-filters"), siteKinds.map(function (k, i) {
+      return '<button class="newschip' + (i === 0 ? " on" : "") + '" data-site-filter="' +
+        esc(k.id) + '" aria-pressed="' + (i === 0 ? "true" : "false") + '">' + esc(k.label) + "</button>";
+    }).join(""));
+    render($("sites-content"), '<div class="sitesgrid" id="sites-grid">' +
+      sites.map(function (s) {
+        var kinds = ["all"];
+        if (univSites.indexOf(s) !== -1) kinds.push("universities-labs");
+        if (defSites.indexOf(s) !== -1) kinds.push("defense-remote");
+        if (commSites.indexOf(s) !== -1) kinds.push("commercial-grid");
+        return '<div data-site-kinds="' + kinds.join(" ") + '">' + renderSiteCard(s) + "</div>";
+      }).join("") + '</div><div id="site-negative-findings" hidden>' + negHTML + "</div>");
+    $("site-filters").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-site-filter]");
+      if (!b) return;
+      var kind = b.dataset.siteFilter;
+      Array.prototype.forEach.call($("site-filters").querySelectorAll("[data-site-filter]"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      Array.prototype.forEach.call($("sites-grid").children, function (row) {
+        row.hidden = kind === "findings-absences" || row.dataset.siteKinds.split(" ").indexOf(kind) === -1;
+      });
+      $("site-negative-findings").hidden = kind !== "findings-absences";
+    });
   }
 
   /* ---------- economics ---------- */
@@ -388,19 +487,21 @@
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt",
                                         srcs: srcsOf(a) });
   });
-  // Axis ceiling derived from the bands themselves, rounded up to a clean step.
-  // A hard-coded ceiling silently renders any band above it wider than the
-  // chart: raising rural Alaska to $1,950/MWh against a literal 850 produced a
-  // 1,945px bar inside a 1,280px page.
+  // A rural-Alaska rate at $1,950/MWh is a real but exceptional diesel case.
+  // Plotting it on the same linear axis makes every other band unreadable, so
+  // render exceptional cases as cited callouts rather than pretending the
+  // shorter bars are meaningfully comparable by eye.
+  var chartBands = bands.filter(function (b) { return b.hi <= 800; });
+  var outlierBands = bands.filter(function (b) { return b.hi > 800; });
   var MAX = (function () {
-    var top = bands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
+    var top = chartBands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
     return Math.max(850, Math.ceil(top / 250) * 250);
   }());
   // Round for display: the underlying study reports cents, but a chart label
   // implying two-decimal precision on a forward-looking cost estimate is false
   // precision. Full values stay in data/costs.json.
   var money = function (n) { return "$" + Math.round(n); };
-  render($("chart"), bands.map(function (b) {
+  render($("chart"), chartBands.map(function (b) {
     var lo = Math.max(0, b.lo), hi = Math.max(lo + 4, b.hi);
     var left = (lo / MAX) * 100, width = ((hi - lo) / MAX) * 100;
     var txt = Math.round(b.lo) === Math.round(b.hi)
@@ -417,6 +518,13 @@
     '<div class="axis"><span>$0</span><span>$' + Math.round(MAX / 2) + "</span><span>$" +
     MAX + "/MWh</span></div>");
 
+  render($("cost-outliers"), outlierBands.map(function (b) {
+    return '<div class="costoutlier"><span class="k">Exceptional diesel case</span>' +
+      '<span class="nm">' + esc(b.lab) + cite(b.srcs) + '</span>' +
+      '<span class="val">' + esc(money(b.lo) + "–" + money(b.hi) + "/MWh") + '</span>' +
+      '<span class="note">Shown outside the chart so one extreme rate does not flatten the rest of the comparison.</span></div>';
+  }).join(""));
+
   render($("altnotes"), D.costs.displaced_alternatives.filter(function (a) {
     return a.low_mwh == null;
   }).map(function (a) {
@@ -425,6 +533,20 @@
   }).join(""));
 
   render($("reading"), esc(D.costs.reading).replace(/\*\*(.+?)\*\*/g, "<strong style=\"color:var(--text-primary)\">$1</strong>"));
+
+  /* An LCOE is only comparable to another LCOE that assumed the same things, and
+     these did not. Stated here rather than buried in each band's basis line,
+     because the discrepancy is between the bands, not inside any one of them. */
+  if (D.costs.assumptions) {
+    var AS = D.costs.assumptions;
+    $("assume-q").textContent = AS.question;
+    render($("assume-note"), esc(AS.note));
+    render($("assume"), AS.rows.map(function (r) {
+      return '<div class="unitrow"><span class="unitname">' + esc(r.parameter) + "</span>" +
+        '<span class="unitval2">' + esc(r.value) + "</span>" +
+        '<span class="unitbasis">' + esc(r.note) + " " + cite(r.sources) + "</span></div>";
+    }).join(""));
+  }
 
   /* Unit economics: what one unit costs to build, what the twentieth costs,
      and whether reactor type changes the answer. Capital cost per kW was
@@ -470,14 +592,12 @@
     render($("arch-finding"), esc(A.finding) + " " + esc(A.convergence) + " " + cite(A.sources));
   })();
 
-  makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
-                           { id: "unit-economics", label: "Unit economics" },
-                           { id: "tax-credit", label: "Tax credit" },
-                           { id: "price-to-beat", label: "Price to beat" }]);
-
-  /* ---------- price to beat: signed deals, with the number attached ---------- */
-  var B = D.benchmarks;
-  if (B && B.sectors) {
+  /* ---------- price to beat: signed deals, with the number attached ----------
+     The 89 benchmark rows are the biggest payload on the site and only this
+     sub-tab reads them, so they ship separately and arrive when it opens. */
+  function renderBenchmarks() {
+    var B = D.benchmarks;
+    if (!(B && B.sectors)) { return; }
     render($("benchsummary"),
       esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power " +
       "actually costs at places like these, from signed contracts, government awards and rate " +
@@ -512,6 +632,12 @@
         }).join("") + "</div></div>";
     }).join(""));
   }
+
+  makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
+                           { id: "unit-economics", label: "Unit economics" },
+                           { id: "tax-credit", label: "Tax credit" },
+                           { id: "price-to-beat", label: "Customer cost",
+                             lazy: { name: "benchmarks", el: "benchmarks", render: renderBenchmarks } }]);
 
   var inc = D.costs.incentives;
   if (inc) {
@@ -551,7 +677,7 @@
       }).join("") + tl + gaps + srcList(v.sources, "vsrcs") + "</div>";
   }
 
-  var vItems = [{ id: "all", label: "All vendors" }].concat(
+  var vItems = [{ id: "all", label: "All companies (" + D.vendors.vendors.length + ")" }].concat(
     D.vendors.vendors.map(function (v) {
       return { id: slug(v.name), label: v.name };
     })
@@ -658,59 +784,53 @@
       "</div>";
   }).join("") + "</div>";
 
-  /* Every microreactor-specific note on the site, gathered in one place. Each
-     record on the Policy and Costs tabs ends with what a 1-20 MW unit changes
-     that a large reactor does not; read together they are the argument for the
-     size, which is otherwise scattered across two tabs and nine sub-tabs. */
-  var edgeGroups = [];
-  var policyName = {}, policySlug = {};
-  ((D.policy && D.policy.groups) || []).forEach(function (g) {
-    policyName[g.id] = g.name;
-    policySlug[g.id] = slug(g.name);
-  });
-  ((D.instruments && D.instruments.groups) || []).forEach(function (g) {
-    var rows = g.records.filter(function (r) { return r.microreactor_edge; });
-    if (!rows.length) { return; }
-    edgeGroups.push({
-      label: policyName[g.group] || g.group,
-      href: "#policy/" + (policySlug[g.group] || slug(g.group)),
-      linkText: "the rules behind these",
-      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_edge }; })
-    });
-  });
-  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (sec) {
-    var rows = sec.records.filter(function (r) { return r.microreactor_read; });
-    if (!rows.length) { return; }
-    edgeGroups.push({
-      label: sec.sector,
-      href: "#economics/price-to-beat",
-      linkText: "the deals behind these",
-      rows: rows.map(function (r) { return { name: r.name, note: r.microreactor_read }; })
-    });
-  });
-  var edgeCount = edgeGroups.reduce(function (n, g) { return n + g.rows.length; }, 0);
-
-  var edgeHTML = !edgeCount ? "" :
-    '<div class="edgeband"><div class="subhead"><h3>Why a small reactor, case by case</h3></div>' +
-    '<p class="prose">' + edgeCount + " notes from across the site, each on what a 1\u201320 MW " +
-    "unit changes that a bigger one does not. They sit on the Policy and Costs tabs one at a " +
-    "time; together they are the case for the size.</p>" +
-    '<div class="precgrid">' + edgeGroups.map(function (g) {
-      // One disclosure per group, closed like the sector accordions on this same
-      // tab. Open, all nine run to about 47,000px at 375px wide — the length that
-      // forced the sub-tab split in the first place.
-      return '<details class="prec"><summary><span class="nm">' + esc(g.label) + "</span>" +
-        '<span class="cat">' + g.rows.length + " notes</span></summary>" +
-        '<div class="body"><p class="egolink"><a href="' + esc(g.href) + '">' +
-        esc(g.linkText) + "</a></p>" +
-        g.rows.map(function (r) {
-          return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
-            "<p>" + esc(r.note) + "</p></div>";
-        }).join("") + "</div></details>";
-    }).join("") + "</div></div>";
+  /* Why microreactors. The 74 instrument notes each answer one question about one
+     rule; clustered, they are the arguments and the counters. Every count on this
+     tab is derived: the markup used to hard-code "six" counters against seven in
+     the data, and read as correct for as long as nobody counted. */
+  if (D.arguments) {
+    var A = D.arguments;
+    render($("why-intro"), esc(A._meta.what_this_is));
+    render($("why-method"), esc(A._meta.method));
+    render($("why-honest"), esc(A._meta.honest_note));
+    render($("why-coverage"), esc(A._meta.coverage));
+    var noteList = function (rows) {
+      return '<div class="body">' + rows.map(function (r) {
+        return '<div class="edgerow"><span class="en">' + esc(r.name) + "</span>" +
+          '<span class="cat">' + esc(r.group) + "</span></div>";
+      }).join("") + "</div>";
+    };
+    render($("arguments"), A.arguments.map(function (a, i) {
+      return '<div class="argrow"><div class="argnum">' + (i + 1) + "</div>" +
+        '<div class="argbody"><h3>' + esc(a.name) + "</h3>" +
+        '<p class="argclaim">' + esc(a.claim) +
+        ' <span class="argbasis">' + esc(a.basis) + "</span></p>" +
+        '<p class="prose">' + esc(a.detail) + "</p>" +
+        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
+        '<span class="cat">' + a.note_count + "</span></summary>" +
+        noteList(a.notes) + "</details></div></div>";
+    }).join(""));
+    render($("counters"), A.counters.map(function (c) {
+      return '<div class="argrow counter"><div class="argnum">\u00d7</div>' +
+        '<div class="argbody"><h3>' + esc(c.name) + "</h3>" +
+        '<p class="prose">' + esc(c.detail) + "</p>" +
+        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
+        '<span class="cat">' + c.notes.length + "</span></summary>" +
+        noteList(c.notes) + "</details></div></div>";
+    }).join(""));
+    var fromNotes = A.counters.filter(function (c) { return (c.notes || []).length; }).length;
+    render($("why-against-intro"),
+      fromNotes + " of the " + A.counters.length + " below come out of the notes themselves, " +
+      "not from a critic.");
+    render($("why-loads-intro"),
+      topOptions.length + " places where the band matches a real incumbent, with what it displaces.");
+    render($("whyloads"), topGridHTML);
+    makeSubnav("why", [{ id: "arguments", label: "The arguments" },
+                       { id: "against", label: "Where it fails" },
+                       { id: "loads", label: "The loads" }]);
+  }
 
   var secItems = [
-    { id: "top", label: "Top options" },
     { id: "all", label: "All sectors" }
   ].concat(
     D.sectors.sectors.map(function (sec) {
@@ -718,32 +838,19 @@
     })
   );
 
-  /* Load -> priced real-world case(s), built once from D.benchmarks.sectors[].
-     records[].load (case records opt into a load label; most sectors and most
-     older-pass cases carry no `load` tag at all, so this is additive — it
-     never hides a load that already had nothing). Read by loadRow() below,
-     which renders both the "All sectors" and per-sector views: one function so
-     a future edit to a load row cannot fix one copy and silently leave the
-     other stale (see 2026-08-24 CLAUDE.md note on duplicated render paths). */
-  var loadCaseIndex = {};
-  ((D.benchmarks && D.benchmarks.sectors) || []).forEach(function (bsec) {
-    bsec.records.forEach(function (c) {
-      // Same "priced" test as tools/build_data.py's benchmarks_priced stat — a
-      // case with only a capacity figure or a filing is real evidence, but
-      // calling it "priced" without a price, capex or displaced-cost number
-      // overclaims. Six of the ten Compute/"AI and very large cloud data
-      // centers" cases are MOUs and fleet agreements with none of the three.
-      if (!(c.price || c.capex || c.displaced)) { return; }
-      (c.load || []).forEach(function (label) {
-        (loadCaseIndex[label] = loadCaseIndex[label] || []).push(c);
-      });
-    });
-  });
+  /* Load -> how many priced real-world cases back it. Counted in
+     tools/build_data.py, which owns the one definition of "priced", so this tab
+     needs no benchmarks payload: it renders the count and a link to the Costs
+     tab, never the cases. Read by loadRow() below, which draws both the "All
+     sectors" and per-sector views: one function so a future edit to a load row
+     cannot fix one copy and silently leave the other stale (see 2026-08-24
+     CLAUDE.md note on duplicated render paths). */
+  var loadCases = D.load_cases || {};
   function loadRow(l) {
-    var cases = loadCaseIndex[l.label] || [];
-    var priced = !cases.length ? "" :
-      '<span class="priced"><a href="#economics/price-to-beat">' + cases.length +
-      (cases.length === 1 ? " priced example" : " priced examples") + " →</a></span>";
+    var n = loadCases[l.label] || 0;
+    var priced = !n ? "" :
+      '<span class="priced"><a href="#economics/price-to-beat">' + n +
+      (n === 1 ? " priced example" : " priced examples") + " →</a></span>";
     return '<div class="load"><span>' + esc(l.label) +
       (l.note ? '<span class="note">' + esc(l.note) + "</span>" : "") +
       (l.delta_note ? '<span class="delta">' + esc(l.delta_note) + "</span>" : "") +
@@ -752,8 +859,6 @@
   }
 
   render($("sectors"),
-    '<div data-sub="top" id="demand-top" role="tabpanel" tabindex="0">' +
-      topGridHTML + edgeHTML + "</div>" +
     '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
     D.sectors.sectors.map(function (sec) {
       return '<details class="sector"><summary>' +
@@ -783,9 +888,9 @@
   /* ---------- market design ---------- */
   var M = D.mechanisms;
   if (M && M.proposal) {
-    render($("market-intro"), esc(M.intro) +
+    render($("policy-market-intro"), esc(M.intro) +
       ' <span class="proposaltag">this site\'s proposal</span>');
-    render($("mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
+    render($("policy-mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
       return '<div class="mechcard"><h4>' + esc(c.title) + "</h4>" +
         (c.paras || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
         (c.steps && c.steps.length
@@ -794,9 +899,8 @@
         "</div>";
     }).join("") + "</div>");
     var mgroups = M.precedent_groups || [];
-    render($("precedents"), mgroups.map(function (g) {
-      return '<div class="precgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
-        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every one of these ' +
+    render($("policy-precedents"), mgroups.map(function (g) {
+      return '<div class="precgroup"><div class="subhead"><h3>' + esc(g.name) + '</h3></div><p class="prose">Every one of these ' +
         "really happened. Each row covers how it worked and who came out ahead, the buyers " +
         "who moved early or the ones who waited.</p>" +
         '<div class="precgrid">' +
@@ -811,13 +915,18 @@
             srcList(p.sources) + "</div></details>";
         }).join("") + "</div></div>";
     }).join(""));
-    makeSubnav("market", [{ id: "proposal", label: "The proposal" }].concat(
-      mgroups.map(function (g) { return { id: slug(g.name), label: g.name }; })));
   }
 
   /* ---------- policy pathways ---------- */
+  /* Deferred: the instrument bands on this tab read the 421 KB instruments
+     payload, which now ships separately. Rendering the pathway cards first and
+     filling the bands in later would show a half-built tab, so the whole panel
+     waits on one promise instead. */
   var P = D.policy;
-  if (P) {
+  var policyRendered = false;
+  function renderPolicy() {
+    if (policyRendered || !P) { return; }
+    policyRendered = true;
     /* Instruments, keyed by the policy group they belong to. The Policy tab answers
        two questions per group: what the rule says (the pathway cards above) and how a
        deal actually gets signed under it (these). */
@@ -887,24 +996,152 @@
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
-    }));
+    }).concat([{ id: "market-design", label: "Deal design" }]));
+    if (deferredRoute) {
+      var readyRoute = deferredRoute;
+      deferredRoute = "";
+      activate(readyRoute, { scroll: false });
+    }
+  }
+
+  /* ---------- home and news ---------- */
+  var homeRendered = false;
+  function renderHome() {
+    if (homeRendered || !(D.news && D.news.items)) { return; }
+    homeRendered = true;
+    var ids = ["army-janus-award-2026-08-26", "valar-ward250-criticality-2026-06-18",
+               "valar-nvidia-datacenter-2026-06-22"];
+    var stories = ids.map(function (id) {
+      return D.news.items.filter(function (it) { return it.id === id; })[0];
+    }).filter(Boolean);
+    render($("home-highlights"), stories.map(function (it) {
+      return '<article class="homehighlight"><div class="nhdr"><span class="ndate">' +
+        esc(it.date) + '</span><span class="ncat">' + esc(it.category || "") + '</span></div>' +
+        '<h4>' + esc(it.headline) + '</h4><p>' + esc(it.what_happened) + ' ' + cite(it.sources) +
+        '</p><a href="#news">Read the news record →</a></article>';
+    }).join(""));
+  }
+  /* Newest first, grouped by month, with the binding/announced split on every
+     row. A selection and a signed contract look identical in a headline, which
+     is the whole reason this site exists. Deferred: news is its own tab and
+     nothing else reads it. */
+  var newsRendered = false;
+  function renderNews() {
+    if (newsRendered || !(D.news && (D.news.items || []).length)) { return; }
+    newsRendered = true;
+    var N = D.news;
+    render($("news-intro"), esc(N._meta.what_this_is));
+    render($("news-binding"), esc(N._meta.binding_note));
+    render($("news-refresh"), esc(N._meta.refresh));
+    var months = [], byMonth = {};
+    N.items.forEach(function (it) {
+      var m = (it.date || "").slice(0, 7);
+      if (!byMonth[m]) { byMonth[m] = []; months.push(m); }
+      byMonth[m].push(it);
+    });
+    var MON = ["January","February","March","April","May","June","July","August",
+               "September","October","November","December"];
+    var pretty = function (m) {
+      var p = m.split("-");
+      return p.length === 2 ? MON[parseInt(p[1], 10) - 1] + " " + p[0] : m;
+    };
+    render($("news-filter"),
+      '<button class="newschip on" data-cat="">All ' + N.items.length + "</button>" +
+      N.categories.map(function (c) {
+        return '<button class="newschip" data-cat="' + esc(c.id) + '">' +
+          esc(c.id) + " " + c.count + "</button>";
+      }).join(""));
+    /* Collapsed, like the Policy rows. Rendered flat, 42 items ran to 33 screens on
+       a phone while Policy fitted 74 into 12 by collapsing. The summary carries the
+       date, the category, whether the instrument binds, and the headline, so nothing
+       here has to be opened to be triaged. */
+    render($("newslist"), months.map(function (m) {
+      return '<div class="newsmonth"><h3>' + esc(pretty(m)) + "</h3>" +
+        byMonth[m].map(function (it) {
+          return '<details class="newsitem" data-cat="' + esc(it.category || "") + '">' +
+            "<summary>" +
+            '<span class="nhdr"><span class="ndate">' + esc(it.date) + "</span>" +
+            '<span class="ncat">' + esc(it.category || "") + "</span>" +
+            '<span class="nbind ' + (it.binding ? "yes" : "no") + '">' +
+            (it.binding ? "executed" : "announced") + "</span></span>" +
+            "<h4>" + esc(it.headline) + "</h4>" +
+            "</summary>" +
+            '<div class="nbody">' +
+            '<p class="prose">' + esc(it.what_happened) + " " + cite(it.sources) + "</p>" +
+            '<p class="nwhy">' + esc(it.why_it_matters) + "</p>" +
+            (it.binding_note ? '<p class="nbindnote">' + esc(it.binding_note) + "</p>" : "") +
+            "</div></details>";
+        }).join("") + "</div>";
+    }).join(""));
+    $("news-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      var cat = b.dataset.cat;
+      Array.prototype.forEach.call($("news-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+      });
+      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsitem"), function (it) {
+        it.hidden = !!cat && it.dataset.cat !== cat;
+      });
+      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsmonth"), function (mo) {
+        mo.hidden = !mo.querySelector(".newsitem:not([hidden])");
+      });
+    });
   }
 
   /* ---------- evidence: source register ---------- */
-  var reg = D.sources_index || [];
   render($("evsummary"),
     esc(s.source_count) + " sources. Each gets one number, used everywhere on the site, so [12] " +
     "always means the same thing. They back " + esc(s.cited_rows) + " of " + esc(s.opportunities) +
     " tracker rows and " + esc(s.cited_loads) + " of " + esc(s.load_types) + " load profiles. " +
     "A † means we could not open the page directly and checked it through search instead.");
+  /* Every row stays in the DOM whether or not it matches: a citation chip links to
+     #src-N, and a filter that removed rows would break the deep link the chips exist
+     for. The match string is built once here rather than re-derived per keystroke. */
+  function renderRegister() {
+  var reg = D.sources_index || [];
   render($("register"), '<div class="reg">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
-    return '<div class="rrow" id="src-' + r.n + '"><span class="rn">' + r.n + "</span>" +
+    var q = (r.n + " " + r.label + " " + r.host + " " + r.uses.join(" ")).toLowerCase();
+    return '<div class="rrow" id="src-' + r.n + '" data-q="' + esc(q) + '"><span class="rn">' + r.n + "</span>" +
       '<span><a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer"' +
       (r.snippet ? ' title="search-corroborated; page not directly fetched"' : "") + ">" +
-      esc(r.label) + (r.snippet ? "†" : "") + '</a><span class="uses">cited by: ' + esc(uses) + '</span></span>' +
+      esc(r.label) + (r.snippet ? "†" : "") + '</a><span class="uses" title="' +
+      esc(r.uses.join(" · ")) + '">cited by: ' + esc(uses) + '</span></span>' +
       '<span class="host">' + esc(r.host) + "</span></div>";
   }).join("") + "</div>");
+
+  /* 544 rows is 98 screens on a phone. The filter is the entry point; scrolling is
+     the fallback. */
+  (function () {
+    var box = $("regq"), count = $("regcount");
+    if (!box) { return; }
+    var rows = null;
+    var say = function (n) {
+      count.textContent = n === reg.length ? reg.length + " sources"
+        : n + " of " + reg.length + " sources";
+    };
+    say(reg.length);
+    box.addEventListener("input", function () {
+      if (!rows) { rows = $("register").querySelectorAll(".rrow"); }
+      var q = box.value.trim().toLowerCase(), shown = 0;
+      Array.prototype.forEach.call(rows, function (row) {
+        var on = !q || row.dataset.q.indexOf(q) !== -1;
+        row.hidden = !on;
+        if (on) { shown++; }
+      });
+      say(shown);
+    });
+    /* A chip lands on #src-N; if a filter is up, that row may be hidden. */
+    window.addEventListener("hashchange", function () {
+      if (/^#src-\d+$/.test(location.hash) && box.value) {
+        box.value = ""; box.dispatchEvent(new Event("input"));
+        var t = document.getElementById(location.hash.slice(1));
+        if (t) { t.scrollIntoView(); }
+      }
+    });
+  })();
+  }
 
   /* ---------- coverage ---------- */
   render($("coverage"), D.gaps.field_coverage.map(function (c) {
@@ -926,7 +1163,14 @@
      selling, the government buying, and the analysts arguing it does not add
      up. A quote whose page could not be fetched keeps the dagger every other
      snippet-only citation on this site carries. */
-  if (D.voices && D.voices.groups) {
+  /* Rendered when the Sources panel first opens, because voices ships as a
+     separate 232 KB payload. renderVoices is idempotent; loadLazy hands every
+     caller the same promise, so opening the tab twice fetches once. */
+  var voicesRendered = false;
+  function renderVoices() {
+    if (voicesRendered || !(D.voices && D.voices.groups)) { return; }
+    voicesRendered = true;
+
     render($("voices-head"), esc("In their words"));
     render($("voices-intro"), esc(D.voices._meta.what_this_is));
     var voiceRow = function (q) {
@@ -971,12 +1215,14 @@
           }).join("") + "</div></details>";
       }).join(""));
     }
-  }
+    }
 
-  makeSubnav("sources", [{ id: "register", label: "Source register" },
+  makeSubnav("sources", [{ id: "register", label: "Source register",
+                           lazy: { name: "sources_index", el: "register", render: renderRegister } },
                          { id: "coverage", label: "Field coverage" },
                          { id: "gaps", label: "What is missing" },
-                         { id: "voices", label: "In their words" },
+                         { id: "voices", label: "In their words",
+                           lazy: { name: "voices", el: "voices", render: renderVoices } },
                          { id: "about", label: "About" }]);
 
   /* boot: land on the panel the hash names, or the first. scroll:true beats

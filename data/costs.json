@@ -375,5 +375,55 @@
         "verified": "2026-08-29 quote confirmed in cached copy"
       }
     ]
+  },
+  "assumptions": {
+    "question": "What are these bands assuming?",
+    "note": "An LCOE is a quotient. Under the line are a plant life and a capacity factor, discounted at a rate each study picks for itself. The studies above picked differently, so the bands are not strictly comparable with one another, and none of them is a price anyone has paid.",
+    "rows": [
+      {
+        "parameter": "Discount rate",
+        "value": "5% real, 2% inflation — in one study of the four",
+        "note": "Only the U-Michigan optimization states a discount rate. The NEI and INL build-ups do not publish one in the material cited here, so the cost of capital behind their bands is unknown, and a reader cannot re-derive them.",
+        "sources": [
+          {
+            "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361)",
+            "url": "https://arxiv.org/pdf/2506.13361",
+            "quote": "Real discount rate 5%"
+          }
+        ]
+      },
+      {
+        "parameter": "Plant life",
+        "value": "20 years against 40",
+        "note": "U-Michigan assumes a 20-year reactor and project lifetime; the NEI reference plant assumes 40 years with a 10-year core. Doubling the life spreads the same capital over twice the output.",
+        "sources": [
+          {
+            "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361)",
+            "url": "https://arxiv.org/pdf/2506.13361",
+            "quote": "Reactor lifetime 20 years"
+          },
+          {
+            "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+            "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+          }
+        ]
+      },
+      {
+        "parameter": "Capacity factor",
+        "value": "93% against 95%",
+        "note": "Close enough not to move the answer, and both are assumptions rather than operating history: no microreactor has run long enough to have one.",
+        "sources": [
+          {
+            "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361)",
+            "url": "https://arxiv.org/pdf/2506.13361",
+            "quote": "Capacity factor (CF) 93%"
+          },
+          {
+            "label": "NEI — Cost Competitiveness of Micro-Reactors for Remote Markets (2019)",
+            "url": "https://www.nei.org/resources/reports-briefs/cost-competitiveness-micro-reactors-remote-markets"
+          }
+        ]
+      }
+    ]
   }
 }

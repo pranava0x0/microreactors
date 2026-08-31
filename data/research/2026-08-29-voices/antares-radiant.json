@@ -32,7 +32,7 @@
       "SEC EDGAR filing (Standard Nuclear Inc 8-K, radiant_fuelxsalexagreement.htm) returned HTTP 403 to WebFetch -- could not confirm whether 'Radiant' in that filename refers to Radiant Industries or is coincidental; not used.",
       "businesswire.com direct fetches (Antares Series C, Rian Bahran hire) timed out repeatedly (60s) -- substituted Yahoo Finance/govconwire mirrors of the same releases, which did load.",
       "Could not verify Julia DeWahl's exact current title with certainty: Cheeky Pint transcript (Nov 2025, fetched) and mothersfornuclear.org (fetched) both call her only 'co-founder'; a LinkedIn post from Antares' own company account and theorg.com/craft.co aggregators (search snippets only, not independently fetched) call her 'Co-Founder & President'. Recorded as 'Co-Founder' with the discrepancy noted in her background field rather than asserting the unverified title.",
-      "No background/bio found for 9 of the 13 names on the Antares leadership page (Will Madsen, Reuven Fridmar, Tom Mancinelli, Alec Todryk, Christian Kalin, Doug Crawford, Scott Walsh, Jason Andrus, Matt Griffin) -- the leadership page itself lists only names and titles with no bios, and searches did not surface verifiable career details for these individuals. Titles only, omitted from leaders array rather than guessed.",
+      "The Antares leadership page gives names and titles, but no biographies, for Will Madsen, Reuven Fridmar, Tom Mancinelli, Alec Todryk, Christian Kalin, Doug Crawford, Scott Walsh, Jason Andrus and Matt Griffin. Their title-only profiles retain that source without inferring career detail.",
       "Could not find a verbatim quote from Bob Urberger (Radiant co-founder/CTO) or Rita Baranwal (Radiant CNO) anywhere in the window despite both being real, sourced leaders -- included in leaders array with background only, no quotes attributed to them.",
       "Mike Starrett's 'Operating on military installations first gives us the reliability track record to unlock commercial deployments' quote could only be sourced via a WebSearch synthesis; the underlying article (Federal News Network) returned HTTP 403 on direct fetch and Radiant's own site 403s. Marked snippet-only rather than fetched.",
       "2026-08-29 verification: two records attributing a quote to POWER's Janus Five article were dropped - the surname appears nowhere in that article, live or cached. Five further source quotes were demoted to snippet-only because the subject was on the page but the span had been reconstructed rather than copied verbatim."
@@ -140,6 +140,87 @@
           "status": "snippet-only"
         }
       ]
+    },
+    {
+      "id": "antares-madsen",
+      "company": "Antares Nuclear",
+      "name": "Will Madsen",
+      "title": "Head of Mission Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Mission engineering connects the reactor program to customer operating requirements and site constraints.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-mancinelli",
+      "company": "Antares Nuclear",
+      "name": "Tom Mancinelli",
+      "title": "Head of Strategy & Policy",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Strategy and policy work is central to converting federal demonstration activity into a durable market path.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-todryk",
+      "company": "Antares Nuclear",
+      "name": "Alec Todryk",
+      "title": "Head of Finance",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Finance owns the cost and capital assumptions behind an owner-operator offer.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-kalin",
+      "company": "Antares Nuclear",
+      "name": "Christian Kalin",
+      "title": "Head of Operations",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Operations is the function that must make contractor-owned, contractor-operated deployments workable in the field.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-fridmar",
+      "company": "Antares Nuclear",
+      "name": "Reuven Fridmar",
+      "title": "Head of Talent",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "A deployable fleet depends on qualified operators, engineers and manufacturing staff, not reactor hardware alone.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-crawford",
+      "company": "Antares Nuclear",
+      "name": "Doug Crawford",
+      "title": "Head of Manufacturing & Test Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Manufacturing and test engineering determine whether a prototype can become repeatable delivered equipment.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-walsh",
+      "company": "Antares Nuclear",
+      "name": "Scott Walsh",
+      "title": "Head of Reactor Hardware Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Reactor-hardware engineering carries the physical design into fabrication, integration and test.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-andrus",
+      "company": "Antares Nuclear",
+      "name": "Jason Andrus",
+      "title": "Head of Nuclear Ops & Regulatory",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Nuclear operations and regulatory execution are the bridge from a built reactor to a legally operable one.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
+    },
+    {
+      "id": "antares-griffin",
+      "company": "Antares Nuclear",
+      "name": "Matt Griffin",
+      "title": "Head of Nuclear Affairs",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Nuclear affairs is the public-policy and stakeholder function around deployment.",
+      "sources": [{"label": "Antares leadership team page", "url": "https://antaresindustries.com/leadership-team", "status": "snippet-only"}]
     },
     {
       "id": "radiant-bernauer",

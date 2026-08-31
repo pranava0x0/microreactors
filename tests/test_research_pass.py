@@ -104,6 +104,34 @@ class ResearchPass(unittest.TestCase):
             self.assertEqual(meta.get("generated_by"), "tools/merge_research.py", rel)
             self.assertTrue(meta.get("pass"), f"{rel} does not name its research pass")
 
+    def test_news_capture_date_comes_from_complete_pass_files(self):
+        """A static date made a refreshed pass look stale until somebody edited code."""
+        import tempfile
+        sys.path.insert(0, str(ROOT / "tools"))
+        import merge_news
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            (folder / "old.json").write_text(json.dumps({
+                "_meta": {"captured": "2026-08-18"}, "items": []}))
+            (folder / "new.json").write_text(json.dumps({
+                "_meta": {"captured": "2026-08-31"}, "items": []}))
+            (folder / "partial.json").write_text(json.dumps({
+                "_meta": {"captured": "2099-01-01", "incomplete": True}, "items": []}))
+            self.assertEqual(merge_news.build(folder)["_meta"]["captured"], "2026-08-31")
+
+    def test_quote_repair_keeps_literal_source_text(self):
+        """Normal form is for matching only; a written quote remains source text."""
+        sys.path.insert(0, str(ROOT / "tools"))
+        import repair_quotes
+        raw = "The Site’s stated target is 10 MW—firm power for remote loads."
+        normal = repair_quotes.norm(raw)
+        run = repair_quotes.longest_present_run(normal, normal)
+        self.assertEqual(repair_quotes.original_span(run, raw), raw)
+        source = {"url": "https://example.test", "quote": raw}
+        record = {"source": source}
+        self.assertEqual(repair_quotes.sources_for(record), [source])
+        self.assertNotIn("sources", record)
+
 
 if __name__ == "__main__":
     unittest.main()

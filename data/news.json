@@ -1,0 +1,1148 @@
+{
+  "_meta": {
+    "captured": "2026-08-30",
+    "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
+    "binding_note": "34 of 42 items rest on something executed - a signed contract, a filed application, an achieved milestone. The other 8 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-08-27",
+    "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
+  },
+  "categories": [
+    {
+      "id": "fuel",
+      "count": 8
+    },
+    {
+      "id": "award",
+      "count": 7
+    },
+    {
+      "id": "criticality",
+      "count": 6
+    },
+    {
+      "id": "regulatory",
+      "count": 6
+    },
+    {
+      "id": "financing",
+      "count": 4
+    },
+    {
+      "id": "construction",
+      "count": 3
+    },
+    {
+      "id": "contract",
+      "count": 3
+    },
+    {
+      "id": "policy",
+      "count": 2
+    },
+    {
+      "id": "setback",
+      "count": 2
+    },
+    {
+      "id": "personnel",
+      "count": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "antares-standard-nuclear-triso-2026-08-27",
+      "date": "2026-08-27",
+      "headline": "Antares signs Standard Nuclear TRISO deal, options more through 2035",
+      "companies": [
+        "Antares Nuclear"
+      ],
+      "category": "fuel",
+      "what_happened": "Antares announced a binding agreement under which Standard Nuclear will supply 1 metric ton of TRISO fuel, with Antares holding an option for up to seven additional metric tons through 2035. Antares had previously said it expected to source TRISO from both Standard Nuclear and BWXT, but has not disclosed a binding agreement with BWXT. The company has not said how much of the Standard Nuclear fuel will support Janus, ANPI, or its Space Force work.",
+      "why_it_matters": "Coming one day after the Janus awards and one week after Radiant's own Standard Nuclear deal, this shows fuel fabrication capacity is becoming a real point of competition between microreactor vendors, not just a shared industry dependency.",
+      "binding": true,
+      "binding_note": "The initial 1 metric ton supply is a binding agreement; the additional seven metric tons are an option, not a commitment.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Standard Nuclear will supply 1 metric ton of TRISO fuel, while Antares holds an option for up to seven additional metric tons through 2035",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-westinghouse-fort-drum-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "Westinghouse to bring eVinci to Fort Drum after Schumer push",
+      "companies": [
+        "Westinghouse"
+      ],
+      "category": "award",
+      "what_happened": "The Army selected Westinghouse Government Services to deploy its eVinci heat-pipe microreactor at Fort Drum, New York, home of the 10th Mountain Division; Westinghouse did not disclose output, schedule or contract value. POWER reported the selection followed a mid-August letter from Sen. Chuck Schumer (D-N.Y.) to Army Secretary Dan Driscoll urging that Fort Drum be prioritized. Westinghouse is also the ANPI selectee at Malmstrom Air Force Base, Montana.",
+      "why_it_matters": "This is a rare documented case of a named senator lobbying directly for a specific base's inclusion in a reactor siting decision, and it landed — worth watching whether other undisclosed sites got the same treatment without a public paper trail.",
+      "binding": true,
+      "binding_note": "A signed Janus OTA agreement, not a mere selection, though none of output, schedule or value has been disclosed for this specific pairing.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "a mid-August letter from Sen. Chuck Schumer (D-N.Y.) to Secretary of the Army Dan Driscoll urging that the installation be prioritized.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-radiant-fort-benning-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "Radiant wins largest Janus award, up to $750M for 15 units",
+      "companies": [
+        "Radiant Nuclear"
+      ],
+      "category": "award",
+      "what_happened": "Radiant secured the largest of the five Janus awards, up to $750 million to develop and deploy 15 Kaleidos microreactors across Army installations by 2030, starting with a three-unit deployment at Fort Benning targeted for 2028. Radiant called it one of the largest contracts ever issued through the Defense Innovation Unit. The award adds to Radiant's existing Air Force ANPI selection at Buckley Space Force Base and its commercial Equinix agreement for 20 Kaleidos units.",
+      "why_it_matters": "A single award now covers three quarters of the Janus program's disclosed dollar figure and 15 of its 20-plus planned units, meaning the program's near-term commercial track record will be dominated by one vendor and one reactor design.",
+      "binding": true,
+      "binding_note": "Radiant itself described this as a binding Janus agreement, the only one of the five vendors to publish its own award ceiling.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Radiant Industries secured a binding Janus agreement worth up to $750 million to develop and deploy 15 Kaleidos microreactors across U.S. military installations by 2030",
+          "status": "fetched"
+        },
+        {
+          "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
+          "url": "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/",
+          "quote": "Operating on military installations first gives us the reliability track record to unlock commercial deployments,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-general-atomics-fort-hood-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "General Atomics to advance GA-TES microreactor at Fort Hood",
+      "companies": [
+        "General Atomics"
+      ],
+      "category": "award",
+      "what_happened": "General Atomics Electromagnetic Systems will advance its GA-TES microreactor at Fort Hood, Texas through development, testing and site-planning milestones; the award's value was not disclosed. GA-TES is the only Janus reactor that does not use TRISO fuel — it runs on uranium-zirconium hydride drawing on General Atomics' TRIGA research-reactor heritage, is liquid-metal-cooled with natural circulation, and has a baseline output of about 5 MWe scalable to roughly 20 MWe. GA-EMS did not name a fuel supplier or utility partner for the site.",
+      "why_it_matters": "GA-TES is the least mature of the five Janus designs by disclosed detail, and it is also the only one using a fuel form other than TRISO, so its supply chain and licensing path diverge from the rest of the program's four TRISO-based vendors.",
+      "binding": true,
+      "binding_note": "A signed Janus OTA agreement covering development and testing milestones, not yet a deployment commitment; the company is explicitly in a development phase.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "The design uses uranium-zirconium hydride (UZrH) fuel and draws on General Atomics’ TRIGA research-reactor heritage",
+          "status": "fetched"
+        },
+        {
+          "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
+          "url": "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/",
+          "quote": "Our experience designing and deploying 68 reactors worldwide and supporting reactor technologies throughout their lifecycles",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-bwxt-fort-campbell-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "BWXT to deploy 20 MWe BANR reactor at Fort Campbell",
+      "companies": [
+        "BWXT"
+      ],
+      "category": "award",
+      "what_happened": "BWXT Advanced Technologies will deploy a 20 MWe (75 MWth) configuration of its BANR high-temperature gas reactor at Fort Campbell, Kentucky, the largest single reactor in the Janus program. BWXT did not disclose the contract's value but confirmed a phased structure, with groundbreaking targeted for late 2028 and operation in the early 2030s. The design scales up BWXT's 1.5 MWe Project Pele microreactor, which delivered a full TRISO fuel core to the Department of Defense in late 2025.",
+      "why_it_matters": "BWXT is the only Janus vendor that fabricates its own TRISO fuel, at its NRC-licensed Lynchburg, Virginia plant, which also supplies fuel to Antares and Radiant — making it a supplier to its own Janus competitors as well as a reactor vendor in its own right.",
+      "binding": true,
+      "binding_note": "A signed Janus OTA agreement; the specific dollar value was not disclosed.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "BWXT is targeting groundbreaking in late 2028 and reactor operation in the early 2030s.",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "BWXT, notably, is the only Janus vendor that self-supplies its TRISO fuel.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-award-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "Army awards up to $2.2bn across five bases for microreactors",
+      "companies": [
+        "Antares Nuclear",
+        "Radiant Nuclear",
+        "BWXT",
+        "General Atomics",
+        "Westinghouse"
+      ],
+      "category": "award",
+      "what_happened": "The Army signed milestone-based Other Transaction Authority agreements worth up to $2.2 billion combined, running FY2027-FY2031, with five companies to build and operate microreactors: Antares at Fort Bragg, Radiant at Fort Benning, BWXT at Fort Campbell, General Atomics at Fort Hood, and Westinghouse Government Services at Fort Drum. Only Radiant disclosed its own award value, up to $750 million for 15 Kaleidos units; the Army declined to break out the other four. The five installations were narrowed down from a longer list of nine candidate sites that the Army and the Defense Innovation Unit identified in November 2025.",
+      "why_it_matters": "This is the largest concentrated public bet on the microreactor class to date, and the Army's own program lead was candid that nobody knows what these reactors will actually cost and that some of the five vendors will likely fail before 2028 — the government is explicitly underwriting first-of-a-kind construction risk rather than waiting for a market price to form.",
+      "binding": true,
+      "binding_note": "Each vendor holds a signed, executed OTA agreement, not a preliminary selection — funds release against technical milestones for prototype construction and a first year of operation, after which the Army plans to shift to a power purchase agreement. Per-vendor dollar figures beyond Radiant's remain undisclosed.",
+      "sources": [
+        {
+          "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
+          "url": "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/",
+          "quote": "The reality is, nobody knows what these microreactors are going to cost,",
+          "status": "fetched"
+        },
+        {
+          "label": "Breaking Defense — Army taps 5 vendors to move forward with nuclear microreactor prototypes",
+          "url": "https://breakingdefense.com/2026/08/army-taps-5-vendors-to-build-nuclear-microreactors-with-2-2b-pot/",
+          "quote": "We are expecting that the majority of the money coming into these reactor programs will be private capital, not government.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-antares-fort-bragg-2026-08-26",
+      "date": "2026-08-26",
+      "headline": "Antares to build three R1 microreactors at Fort Bragg",
+      "companies": [
+        "Antares Nuclear"
+      ],
+      "category": "award",
+      "what_happened": "The Army selected Antares Nuclear to own, build and operate a three-unit R1 deployment at Fort Bragg, home of the XVIII Airborne Corps, under Janus. Antares declined to disclose the contract's value but said its combined book across Janus, the Air Force ANPI award at Joint Base San Antonio, and Space Force work is now on the order of $1 billion. The R1 units, 100 kWe-1 MWe sodium heat-pipe reactors fueled by TRISO, build on the company's Mark-0 test reactor, which reached criticality at Idaho National Laboratory on June 4, 2026.",
+      "why_it_matters": "Antares is now a three-program vendor (Janus, ANPI, Space Force) without a single disclosed contract value for any of them, so the $1 billion figure is entirely self-reported — a case study in how thin the public paper trail is even for a company winning federal reactor work.",
+      "binding": true,
+      "binding_note": "A signed Janus OTA agreement, not a mere selection; the dollar value of this specific award is undisclosed, only the combined cross-program total.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Antares Nuclear, founded in 2023 and based in Torrance, California, will own, build, and operate a three-unit R1 microreactor deployment at Fort Bragg",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "launch-pad-round2-2026-08-25",
+      "date": "2026-08-25",
+      "headline": "DOE names eight newcomers in second Launch Pad selection round",
+      "companies": [
+        "Atlas Atomics",
+        "Forge Atomics",
+        "Hexium",
+        "Lightbridge",
+        "Nusano",
+        "Raven-Flint Nuclear",
+        "Scaled Atomics",
+        "Sublime Atomics"
+      ],
+      "category": "policy",
+      "what_happened": "The National Reactor Innovation Center at Idaho National Laboratory selected 13 projects across 12 companies for the second round of the Nuclear Energy Launch Pad program on August 25, 2026. Eight of the twelve are newcomers not previously part of the Reactor Pilot Program or Launch Pad: Atlas Atomics, Forge Atomics, Hexium, Lightbridge, Nusano, Raven-Flint Nuclear, Scaled Atomics, and Sublime Atomics. The other four selectees — Antares Nuclear, Deployable Energy, Oklo, and Valar Atomics — were already among the five companies that had achieved DOE-authorized criticality that summer; Aalo Atomics, the fifth, was not part of this round.",
+      "why_it_matters": "Doubling the roster of DOE-track reactor companies just seven weeks after the July 4 deadline shows the government treating its pilot program as a success story to scale up rather than a one-time push, putting eight new companies on the same accelerated path that took the first group from groundbreaking to criticality in months.",
+      "binding": false,
+      "binding_note": "A program selection granting access to DOE technical, regulatory and testing support — the first step toward signing an OTA, per the program's own four-step process — not itself a construction or purchase commitment.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — Second round of Launch Pad selections includes eight newcomers",
+          "url": "https://www.ans.org/news/2026-08-25/article-8338/second-round-of-launch-pad-selections-includes-eight-newcomers/",
+          "quote": "Atlas Atomics, Forge Atomics, Hexium, Lightbridge, Nusano, Raven-Flint Nuclear, Scaled Atomics, and Sublime Atomics",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — Second round of Launch Pad selections includes eight newcomers",
+          "url": "https://www.ans.org/news/2026-08-25/article-8338/second-round-of-launch-pad-selections-includes-eight-newcomers/",
+          "quote": "These selections show a strong and growing interest from developers ready to move their technologies forward",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "gao-haleu-demand-skepticism-2026-08-25",
+      "date": "2026-08-25",
+      "headline": "GAO flags uncertain HALEU demand for defense microreactors",
+      "companies": [],
+      "category": "fuel",
+      "what_happened": "The Government Accountability Office published a report to Congress on August 25, 2026, \"Nuclear Fuel: Actions Needed to Enhance Cost Reporting and Economic Analysis for Federal Uranium Supply Efforts,\" reviewing NNSA and DOE enriched-uranium planning. Among its unclassified findings, GAO identified a potential future demand stream for unobligated HALEU for microreactors under development for Department of Defense use, but said commercial and defense HALEU demand estimates remain highly uncertain because it is unclear how many of the more than 15 advanced reactor designs now in NRC licensing will actually be proven, ordered, and deployed. GAO issued five recommendations, including that DOE analyze whether its funding to expand LEU and HALEU enrichment capacity is actually inducing the production growth it is meant to induce.",
+      "why_it_matters": "This is a government watchdog, not a critic or a competitor, saying out loud what every fuel-supply deal in this dataset implicitly assumes: nobody yet knows how much HALEU the microreactor industry will actually need, because nobody yet knows how many of these companies' reactors will actually get built.",
+      "binding": true,
+      "binding_note": "A published GAO report to Congress, an actual government finding, though its recommendations are advisory and not self-executing.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — GAO report analyzes nuclear fuel efforts in national security and commercial sectors",
+          "url": "https://www.ans.org/news/2026-08-25/article-8336/gao-report-analyzes-nuclear-fuel-efforts-in-national-security-and-commercial-sectors/",
+          "quote": "a potential future demand stream for unobligated HALEU to be used as fuel for microreactors under development for use",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — GAO report analyzes nuclear fuel efforts in national security and commercial sectors",
+          "url": "https://www.ans.org/news/2026-08-25/article-8336/gao-report-analyzes-nuclear-fuel-efforts-in-national-security-and-commercial-sectors/",
+          "quote": "expressed skepticism about lofty HALEU demand estimates and noted uncertainty about how many of these reactor designs would succeed and ultimately be deployed",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-evinci-criticality-2026-08-24",
+      "date": "2026-08-24",
+      "headline": "Westinghouse eVinci reaches zero-power criticality in Nevada",
+      "companies": [
+        "Westinghouse"
+      ],
+      "category": "criticality",
+      "what_happened": "Westinghouse's eVinci microreactor design achieved zero-power criticality at the National Criticality Experiments Research Center, a National Nuclear Security Administration facility at the Nevada National Security Site, at 10:39 a.m. Pacific on August 24, 2026, two days before the Janus announcement named Westinghouse for Fort Drum. The test was completed in partnership with Los Alamos National Laboratory and Idaho National Laboratory.",
+      "why_it_matters": "This is a genuine technical milestone, not a business announcement, and its timing two days ahead of a $2.2 billion Army award is a reminder that a company's demonstrated hardware progress and its federal contract wins are moving on separate, only loosely coordinated tracks.",
+      "binding": true,
+      "binding_note": "An achieved physical milestone (criticality), independently confirmed, not a company claim or a forward-looking target.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "the design achieved zero-power criticality at the National Criticality Experiments Research Center, a National Nuclear Security Administration facility at the Nevada National Security Site",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-standard-nuclear-triso-2026-08-20",
+      "date": "2026-08-20",
+      "headline": "Radiant locks in Standard Nuclear TRISO fabrication through 2031",
+      "companies": [
+        "Radiant Nuclear"
+      ],
+      "category": "fuel",
+      "what_happened": "Radiant and Standard Nuclear announced a binding, multi-metric-ton TRISO fuel fabrication agreement extending through 2031. DOE-allocated HALEU will supply the enriched uranium; Standard Nuclear fabricates it into reactor-ready TRISO particle fuel for Kaleidos units under both the Janus and ANPI programs. Radiant said the agreement covers a distinct risk from HALEU access itself — the specialized fabrication capacity needed to turn allocated material into qualified fuel.",
+      "why_it_matters": "Fuel fabrication capacity, not enrichment, is the supply-chain bottleneck this deal targets directly — a vendor can hold a HALEU allocation and still have nowhere to turn it into qualified fuel, and this agreement is Radiant buying its way out of that specific risk through the early 2030s.",
+      "binding": true,
+      "binding_note": "Described by Radiant as a binding, multi-metric-ton agreement with a fixed end date, not an MOU or exploratory arrangement.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "Standard Nuclear will fabricate that material into TRISO particle fuel under a binding, multi-metric-ton agreement announced Aug. 20 and extending through 2031",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-groves-criticality-2026-08-06",
+      "date": "2026-08-06",
+      "headline": "Oklo's isotope test reactor becomes fifth to reach criticality",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "criticality",
+      "what_happened": "Oklo's Groves Isotope Test Reactor, a 15 MWt pool-type reactor in Lockhart, Texas built through the company's Oklo Isotopes subsidiary, achieved criticality on the night of August 5-6, 2026 — the fifth DOE-authorized advanced reactor to do so in 2026, more than a month after the July 4 deadline had already been met by four other companies. DOE said Oklo built Groves from a greenfield site on private land, completing civil construction, procurement and fuel loading in under a year. The reactor is intended to inform a future commercial isotope-production variant for medical and industrial use, not electricity generation.",
+      "why_it_matters": "This is the clearest evidence that the July 4 deadline was a floor, not a ceiling — the DOE-authorized pathway kept producing criticality milestones for months afterward, and this one is also the program's first isotope-production, rather than power, reactor.",
+      "binding": true,
+      "binding_note": "An achieved, DOE-authorized physical milestone.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer",
+          "status": "fetched"
+        },
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Reaching criticality in less than a year is an incredible milestone for our team",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "a 15-MWt pool-type, water-cooled, nonpressurized isotope production reactor that uses low-enriched uranium fuel",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-series-b-2026-08-03",
+      "date": "2026-08-03",
+      "headline": "Valar Atomics raises $1B Series B, valuation triples to $6B",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "financing",
+      "what_happened": "Valar Atomics closed a $1 billion Series B led by Sequoia Capital, valuing the three-year-old company at $6 billion, roughly triple its valuation from months earlier. The equity round was accompanied by a separate $200 million credit facility from Erebor Bank, J.P. Morgan, Crescent Cove and Hercules Capital. The raise followed a June 2026 demonstration in which Valar's Ward 250 reactor generated electricity that powered an Nvidia AI chip, and Sequoia partner Shaun Maguire is joining Valar's board.",
+      "why_it_matters": "This is the largest single financing event in the microreactor class within the window, and it came from a company that had achieved criticality only seven weeks earlier — investors are pricing a demonstrated reactor and a demonstrated chip-powering stunt well ahead of any NRC license or commercial customer contract.",
+      "binding": true,
+      "binding_note": "A closed financing round, not a term sheet or an announced target.",
+      "sources": [
+        {
+          "label": "Tech Times — Valar Atomics Raises $1B to Build Factory Nuclear After Powering Nvidia's AI Chip",
+          "url": "https://www.techtimes.com/articles/322886/20260803/valar-atomics-raises-1b-build-factory-nuclear-after-powering-nvidias-ai-chip.htm",
+          "quote": "Nuclear startup Valar Atomics announced Monday it closed a $1 billion Series B led by Sequoia Capital",
+          "status": "fetched"
+        },
+        {
+          "label": "Tech Times — Valar Atomics Raises $1B to Build Factory Nuclear After Powering Nvidia's AI Chip",
+          "url": "https://www.techtimes.com/articles/322886/20260803/valar-atomics-raises-1b-build-factory-nuclear-after-powering-nvidias-ai-chip.htm",
+          "quote": "The $1 billion in equity — accompanied by a $200 million credit facility from Erebor Bank, J.P. Morgan, Crescent Cove, and Hercules Capital",
+          "status": "fetched"
+        },
+        {
+          "label": "Canary Media — Microreactor startup Valar Atomics raises $1B",
+          "url": "https://www.canarymedia.com/articles/nuclear/microreactor-startup-valar-atomics-raises-1b",
+          "quote": "Valar will transition from demonstrating the operability of an integrated reactor system to producing fleets of them en masse",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bahran-cno-2026-07-28",
+      "date": "2026-07-28",
+      "headline": "DOE's top reactor official leaves to become Antares' CNO",
+      "companies": [
+        "Antares Nuclear"
+      ],
+      "category": "personnel",
+      "what_happened": "Dr. Rian Bahran, who as DOE's Deputy Assistant Secretary for Nuclear Reactors oversaw the federal government's entire advanced-reactor research, demonstration and deployment portfolio, joined Antares as Chief Nuclear Officer on July 28, 2026, the day after the company closed its $470 million Series C. A career member of the Senior Executive Service who began his career at Los Alamos, Bahran will lead nuclear operations, licensing and government affairs at Antares.",
+      "why_it_matters": "This is a direct DOE-to-vendor move by the official who ran the very federal reactor programs Antares depends on, arriving the week after both a criticality milestone and a major funding round — a concrete example of the revolving door between the agency setting the DOE Reactor Pilot Program's rules and the companies racing to clear its bar.",
+      "binding": true,
+      "binding_note": "A completed hire with a named start context, not a rumor.",
+      "sources": [
+        {
+          "label": "Norfolk Daily News (AP wire) — Dr. Rian Bahran Joins Antares as Chief Nuclear Officer",
+          "url": "https://norfolkdailynews.com/online_features/press_releases/dr-rian-bahran-joins-antares-as-chief-nuclear-officer/article_589d81a7-38f8-554d-8379-3bc9b1f64e59.html",
+          "quote": "Rian has spent his career at every layer of this problem: the experiment, the policy, and the program,",
+          "status": "fetched"
+        },
+        {
+          "label": "Norfolk Daily News (AP wire) — Dr. Rian Bahran Joins Antares as Chief Nuclear Officer",
+          "url": "https://norfolkdailynews.com/online_features/press_releases/dr-rian-bahran-joins-antares-as-chief-nuclear-officer/article_589d81a7-38f8-554d-8379-3bc9b1f64e59.html",
+          "quote": "Antares was first to criticality, and now comes the harder race to commercialization,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-series-c-2026-07-27",
+      "date": "2026-07-27",
+      "headline": "Antares raises $470M Series C after Mark-0 criticality",
+      "companies": [
+        "Antares Nuclear"
+      ],
+      "category": "financing",
+      "what_happened": "Antares closed a $470 million Series C, $370 million in equity plus $100 million in debt, co-led by Paradigm and Caffeinated Capital with participation from Point72 Ventures, Shine Capital and Industrious Ventures. The round closed seven weeks after Antares' Mark-0 test reactor reached criticality at Idaho National Laboratory. Proceeds are earmarked for the Mark-1 electricity-producing prototype targeted for 2027 and initial R1 deliveries to military customers beginning in 2028.",
+      "why_it_matters": "This is the clearest example in the sector of a technical milestone directly translating into capital: Antares priced its largest round to date within two months of an actual criticality test, not on a roadmap promise.",
+      "binding": true,
+      "binding_note": "A closed financing round, not a term sheet or an announced target.",
+      "sources": [
+        {
+          "label": "TechCrunch — Antares raises $470M to build nuclear reactors for the US military",
+          "url": "https://techcrunch.com/2026/07/27/antares-raises-470m-to-build-nuclear-reactors-for-the-u-s-military/",
+          "quote": "The Series C round included $370 million in equity and $100 million in debt.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-nasa-haleu-third-round-2026-07-23",
+      "date": "2026-07-23",
+      "headline": "DOE allocates HALEU to Radiant and NASA in third round",
+      "companies": [
+        "Radiant Nuclear"
+      ],
+      "category": "fuel",
+      "what_happened": "The DOE announced conditional HALEU commitments to NASA and Radiant Industries around July 23, 2026, its third round of HALEU Availability Program allocations following an April 2025 first round (TRISO-X, Kairos Power, Radiant, Westinghouse, TerraPower) and an August 2025 second round (Antares, Standard Nuclear, Natura Resources). NASA's allocation backs its SR-1 Freedom nuclear propulsion rocket, targeted to launch to Mars in December 2028; Radiant's is its second HALEU allocation and is meant to fuel its Buckley Space Force Base microreactor. Radiant separately told ANS it had applied to the NRC in February 2026 for a license to possess special nuclear material at its proposed Oak Ridge fuel-handling facility.",
+      "why_it_matters": "Radiant is now the only company that has received a HALEU allocation twice, once under the general program and once specifically tied to a named military site, showing the DOE is willing to stack allocations behind a company that is furthest along rather than spreading conditional commitments evenly across the field.",
+      "binding": false,
+      "binding_note": "A conditional commitment to allocate fuel, not a delivered supply — the DOE's own program name describes these as conditional.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — NASA and Radiant selected to receive HALEU",
+          "url": "https://www.ans.org/news/article-8246/nasa-and-radiant-selected-to-receive-haleu/",
+          "quote": "This second HALEU allocation moves us a step closer to turning Buckley’s national security requirement for resilient power into an operational reality,",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — NASA and Radiant selected to receive HALEU",
+          "url": "https://www.ans.org/news/article-8246/nasa-and-radiant-selected-to-receive-haleu/",
+          "quote": "Radiant submitted an application to the Nuclear Regulatory Commission in February for a license to possess special nuclear material",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "natura-nsda-approval-2026-07-21",
+      "date": "2026-07-21",
+      "headline": "DOE approves safety design agreement for Natura's reactor",
+      "companies": [
+        "Natura Resources"
+      ],
+      "category": "regulatory",
+      "what_happened": "The DOE approved a Nuclear Safety Design Agreement for Natura Resources' 1 MWt LF-MSR demonstration reactor at Abilene Christian University, reported July 22, 2026. The NSDA covers design requirements, safety analysis approach, regulatory engagement and key safety decisions, and is an early step in the DOE Reactor Pilot Program's authorization pathway, distinct from the parallel NRC licensing process that has been underway for Natura's separate commercial reactor designs since January 2024. Natura's project is one of 11 advanced reactor projects across 10 companies selected for the Reactor Pilot Program.",
+      "why_it_matters": "Natura is running two regulatory tracks at once for essentially the same reactor family — DOE authorization for the ACU demonstration unit and NRC licensing for future commercial units — which is the same dual-track pattern Oklo uses, and it means DOE progress here does not by itself say anything about how the commercial version will fare at the NRC.",
+      "binding": true,
+      "binding_note": "A DOE regulatory approval actually granted, not merely applied for.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Molten salt reactor gets US safety design approval",
+          "url": "https://world-nuclear-news.org/articles/molten-salt-reactor-gets-us-safety-design-approval",
+          "quote": "The NSDA is a critical step in moving from design to deployment,",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Molten salt reactor gets US safety design approval",
+          "url": "https://world-nuclear-news.org/articles/molten-salt-reactor-gets-us-safety-design-approval",
+          "quote": "Natura's 1 MWt molten salt research reactor, the LF-MSR, is one of 11 advanced reactor projects selected last year by the Department of Energy",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-ipo-downsized-2026-07-15",
+      "date": "2026-07-15",
+      "headline": "Standard Nuclear prices a downsized IPO, cutting terms",
+      "companies": [
+        "Standard Nuclear"
+      ],
+      "category": "financing",
+      "what_happened": "Standard Nuclear, the TRISO fuel fabricator central to Radiant's and Antares' supply agreements in this dataset, priced its IPO on July 15, 2026 at $15 per share for 10 million Class A shares, raising $150 million and beginning trading on the NYSE as STDN on July 16. The company had originally filed to offer 18.3 million shares in a $18-21 range; it cut both the share count and the price before pricing. Standard Nuclear said it had a contract backlog of up to $245 million and remains the only company operating a dedicated, privately funded, industrial-scale TRISO production line in the US, built on assets acquired from Ultra Safe Nuclear's 2024 bankruptcy auction.",
+      "why_it_matters": "This is the fuel-fabrication chokepoint of the whole microreactor supply chain going public, and investors priced it well below where the company first asked — a useful counterweight to Antares' and Valar's oversubscribed venture rounds the same summer, showing public-market appetite for nuclear-adjacent names is not uniformly hot.",
+      "binding": true,
+      "binding_note": "A completed, priced IPO, not a filing or an announced intent to go public.",
+      "sources": [
+        {
+          "label": "Renaissance Capital — Small modular reactor fuel developer Standard Nuclear prices previously downsized IPO at $15",
+          "url": "https://www.renaissancecapital.com/IPO-Center/News/120497/Small-modular-reactor-fuel-developer-Standard-Nuclear-prices-previously-dow",
+          "quote": "raised $150 million by offering 10 million shares at $15",
+          "status": "fetched"
+        },
+        {
+          "label": "Renaissance Capital — Small modular reactor fuel developer Standard Nuclear prices previously downsized IPO at $15",
+          "url": "https://www.renaissancecapital.com/IPO-Center/News/120497/Small-modular-reactor-fuel-developer-Standard-Nuclear-prices-previously-dow",
+          "quote": "The company originally filed to offer the 18.3 million shares at a range of $18 to $21, before it cut the number of shares offered",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deep-fission-canister-delivery-2026-07-08",
+      "date": "2026-07-08",
+      "headline": "Deep Fission delivers prototype reactor canister to Kansas site",
+      "companies": [
+        "Deep Fission"
+      ],
+      "category": "construction",
+      "what_happened": "Deep Fission delivered its factory-built prototype reactor canister to its Parsons, Kansas pilot site on July 8, 2026, after the canister completed fabrication and hydrostatic testing. The delivery supports a proof-of-concept well program using commercial-grade, non-nuclear components to validate the borehole installation process before any nuclear fuel is loaded. Deep Fission broke ground at the Great Plains Industrial Park site in December 2025 and is still advancing non-nuclear borehole permitting with the Kansas Department of Health and Environment.",
+      "why_it_matters": "Deep Fission's entire pitch is that placing a reactor a mile underground in a borehole can reuse oil-and-gas drilling supply chains to cut costs — this is the first physical hardware proof of that specific claim, months before any nuclear material is involved.",
+      "binding": true,
+      "binding_note": "An actual, completed hardware delivery and test milestone, not a design claim.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Deep Fission receives prototype reactor canister",
+          "url": "https://www.world-nuclear-news.org/articles/deep-fission-receives-prototype-reactor-canister",
+          "quote": "The arrival of our prototype reactor canister at the Kansas site is a clear step forward in moving from design to deployed infrastructure,",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Deep Fission receives prototype reactor canister",
+          "url": "https://www.world-nuclear-news.org/articles/deep-fission-receives-prototype-reactor-canister",
+          "quote": "the factory-built prototype canister completed fabrication, hydrostatic testing, and delivery to Kansas",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-atomics-criticality-2026-07-04",
+      "date": "2026-07-04",
+      "headline": "Aalo Atomics hits criticality at 12:20 a.m. on deadline day",
+      "companies": [
+        "Aalo Atomics"
+      ],
+      "category": "criticality",
+      "what_happened": "Aalo Atomics' Aalo-X Critical Test Reactor, nicknamed Project First Light, reached zero-power fueled criticality at 12:20 a.m. Mountain time on July 4, 2026 at Idaho National Laboratory — the fourth company to hit the milestone and the last to do so before the Executive Order 14301 deadline expired that same day. DOE said the reactor went from groundbreaking to a sustained chain reaction in under eight months. Energy Secretary Chris Wright said the department had been asked to deliver three reactors by America's 250th anniversary and delivered four.",
+      "why_it_matters": "Landing at 12:20 a.m. on the deadline date itself is about as close as a federal target can be cut, and it means the administration's three-reactor goal was exceeded by exactly one company with hours to spare, not weeks.",
+      "binding": true,
+      "binding_note": "An achieved, DOE-authorized physical milestone.",
+      "sources": [
+        {
+          "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4",
+          "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+          "quote": "Aalo told POWER the Critical Test Reactor reached criticality at 12:20 a.m. MT on July 4, allowing DOE to exceed the target",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4",
+          "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+          "quote": "President Trump asked for three advanced reactors to be authorized and achieve criticality by the 250th anniversary of our great country",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deployable-energy-unity-criticality-2026-06-30",
+      "date": "2026-06-30",
+      "headline": "Deployable Energy reactor goes critical about 150 days after start",
+      "companies": [
+        "Deployable Energy"
+      ],
+      "category": "criticality",
+      "what_happened": "Deployable Energy's 1 MWe Unity microreactor, a high-temperature gas-cooled design, reached zero-power fueled criticality at Idaho National Laboratory on June 30, 2026, about 150 days after the company began the project; it announced the milestone July 1 under the DOE's Nuclear Energy Launch Pad program. Deployable Energy had only recently emerged from stealth, and little about its broader plans is public beyond stated work with partners in Utah and Texas on data centers, research facilities and remote resource extraction.",
+      "why_it_matters": "Going from project start to criticality in roughly five months, faster than any other company in the program, is the strongest evidence that the DOE's compressed authorization pathway can compress timelines for a genuinely new entrant, not only for companies with years of prior reactor work.",
+      "binding": true,
+      "binding_note": "An achieved, DOE-authorized physical milestone.",
+      "sources": [
+        {
+          "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4",
+          "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+          "quote": "Deployable Energy’s Unity reactor reached zero-power criticality at INL on June 30 through DOE’s Nuclear Energy Launch Pad initiative",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "only about 150 days after it began the project—the company announced that it had achieved zero-power fueled criticality at INL",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "centrus-900m-contract-signed-2026-06-30",
+      "date": "2026-06-30",
+      "headline": "Centrus signs $900M contract to expand Ohio HALEU plant",
+      "companies": [
+        "Centrus Energy"
+      ],
+      "category": "fuel",
+      "what_happened": "Centrus Energy's subsidiary American Centrifuge Operating signed a $900 million fixed-price contract with the DOE on June 30, 2026, formalizing the task order it won in the January 5 competitive award and moving its Piketon, Ohio HALEU cascade from a government-funded demonstration to commercial-scale production. ACO must deploy commercial-scale enrichment capacity and deliver 1 metric ton of HALEU UF6 enriched to 19.75% U-235 by March 2032; the DOE holds options for an additional 10 metric tons that could bring total contract value to $1.07 billion. Centrus will own the newly built enrichment capacity once its obligations are complete.",
+      "why_it_matters": "This is the single largest disclosed dollar commitment in this dataset to expanding the physical enrichment capacity that turns natural uranium into HALEU, as distinct from the many downstream deals to fabricate HALEU into TRISO fuel once it exists — and its 2032 delivery deadline is a reminder of how far out the enrichment build-out runs relative to the reactor vendors' 2028 deployment targets.",
+      "binding": true,
+      "binding_note": "A signed, fixed-price federal contract, not an award announcement alone.",
+      "sources": [
+        {
+          "label": "POWER — Centrus Signs $900M DOE Contract, Pivots Sole U.S. HALEU Cascade to Commercial Operation",
+          "url": "https://www.powermag.com/centrus-signs-900m-doe-contract-pivots-sole-u-s-haleu-cascade-to-commercial-operation/",
+          "quote": "American Centrifuge Operating LLC (ACO) signed the $1 billion fixed-price contract on June 30 to formalize the competitively awarded task order it received in January",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — Centrus Signs $900M DOE Contract, Pivots Sole U.S. HALEU Cascade to Commercial Operation",
+          "url": "https://www.powermag.com/centrus-signs-900m-doe-contract-pivots-sole-u-s-haleu-cascade-to-commercial-operation/",
+          "quote": "Today’s announcement marks another milestone in our expansion, as we pivot from a technology demonstration contract to the new, larger contract aimed at commercial scale",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-nvidia-datacenter-2026-06-22",
+      "date": "2026-06-22",
+      "headline": "Valar powers an Nvidia chip, announces 30 MW Utah data center",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "contract",
+      "what_happened": "On June 22, 2026, Valar Atomics announced it had achieved a 10 kWt power ascension with its Ward 250 reactor, converted that output to electricity, and connected it to an Nvidia Spark chip. The demonstration was paired with a broader announcement that Valar and Nvidia are partnering to develop a 30 MW data center in Utah.",
+      "why_it_matters": "This is a rare case of a company actually closing the loop from reactor to a named chip rather than describing a future data-center customer in the abstract, though the 30 MW data center itself remains a partnership announcement, not a signed offtake agreement.",
+      "binding": false,
+      "binding_note": "The power-ascension test is a real achieved milestone, but the 30 MW data center is described only as a partnership at this stage, with no PPA or construction commitment disclosed.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "Valar successfully converted this power to electricity and connected that output to an Nvidia Spark chip",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-ward250-criticality-2026-06-18",
+      "date": "2026-06-18",
+      "headline": "Valar Atomics reactor reaches criticality at Utah test site",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "criticality",
+      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS described the criticality test as 100 kWt; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
+      "why_it_matters": "A second company crossing the line within two weeks of the first showed the July 4 target was an achievable bar for multiple independent designs and teams, not a stretch goal for a single frontrunner.",
+      "binding": true,
+      "binding_note": "An achieved, DOE-authorized physical milestone.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "It reached this milestone on June 18 with its 100-kWt Ward 250 helium-cooled, TRISO-fueled, high-temperature gas reactor at Utah San Rafael Energy Lab",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Department of Energy — CX-271015: Valar Ward250 Research Reactor",
+          "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
+          "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "ag-coalition-opposes-part57-2026-06-16",
+      "date": "2026-06-16",
+      "headline": "State AGs call NRC's microreactor fast-track rule illegal",
+      "companies": [],
+      "category": "setback",
+      "what_happened": "California Attorney General Rob Bonta led a coalition of state attorneys general in a June 16, 2026 comment letter to the NRC opposing the proposed Part 57 microreactor licensing rule, arguing it violates the National Environmental Policy Act and the Administrative Procedure Act by skirting environmental review for a class of reactors the coalition called largely untested and experimental. The letter came at the close of Part 57's public comment period, which the NRC had opened May 1, 2026 under Executive Order 14300's direction to revise NRC regulations. The states asked the NRC to conduct a full NEPA review of the foreseeable environmental impacts of fleets of microreactors before finalizing any rule.",
+      "why_it_matters": "This is the direct legal counterweight to every regulatory item in this dataset praising Part 57's speed — a coalition of state attorneys general is on record calling the same rule illegal, which means Part 57 is very likely to face litigation if and when it is finalized, adding real legal risk to every vendor counting on its 6-12 month licensing timeline.",
+      "binding": true,
+      "binding_note": "An actual filed comment letter taking a legal position, not a rumor of opposition — though it is advocacy against a not-yet-final rule, not a lawsuit or a court ruling.",
+      "sources": [
+        {
+          "label": "California DOJ — Attorney General Bonta Opposes Trump Administration's Attempt to Expedite Microreactors at the Expense of Safety and the Environment",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-expedite",
+          "quote": "Formulating such a broad suite of licensing regulations on untested and experimental technologies is dangerous and puts public health and the environment at risk,",
+          "status": "fetched"
+        },
+        {
+          "label": "California DOJ — Attorney General Bonta Opposes Trump Administration's Attempt to Expedite Microreactors at the Expense of Safety and the Environment",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-expedite",
+          "quote": "the illegal rulemaking violates the National Environmental Policy Act (NEPA) and the Administrative Procedure Act (APA), as it reduces safety and environmental protections",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-aurora-inl-pdsa-2026-06-11",
+      "date": "2026-06-11",
+      "headline": "Oklo secures DOE safety approval for its Aurora-INL reactor",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "regulatory",
+      "what_happened": "Oklo announced on June 11, 2026 that it had secured preliminary documented safety analysis (PDSA) approval from the DOE for Aurora-INL, its planned first deployment of the 75 MWe Aurora Powerhouse liquid-metal-cooled fast reactor. Oklo broke ground on Aurora-INL in September 2025 and has not published a criticality or completion timeline for the project. Oklo is the only company with two separate Reactor Pilot Program projects — Aurora-INL and a plutonium-fueled fast test reactor called Pluto — plus a third, isotope-focused project run through its Oklo Isotopes subsidiary.",
+      "why_it_matters": "A PDSA is one authorization step short of the documented safety analysis needed to operate, making this real progress on Oklo's actual commercial reactor design, distinct from the isotope test reactor that generated its criticality headlines two months later.",
+      "binding": true,
+      "binding_note": "A DOE regulatory approval actually granted (PDSA), not merely applied for.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "On June 11, 2026, the company announced that it had secured its PDSA approval from the DOE",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "natura-qni-haleu-2026-06-11",
+      "date": "2026-06-11",
+      "headline": "Natura Resources signs HALEU supply agreement with Quadrant Nuclear",
+      "companies": [
+        "Natura Resources"
+      ],
+      "category": "fuel",
+      "what_happened": "Natura Resources announced a formal agreement on June 11, 2026 to receive HALEU fuel from Quadrant Nuclear Industries (QNI), a startup building a downblending and reprocessing facility at Idaho National Laboratory designed to produce up to 18 metric tons of HALEU annually. The companies said the deal establishes a framework toward a long-term offtake arrangement, not a completed one. Natura's liquid-fueled molten salt reactor design can draw HALEU from a wider range of source materials than solid-fuel designs, including reprocessed highly enriched uranium.",
+      "why_it_matters": "This is a second named buyer for a HALEU source that does not yet exist commercially — QNI's Idaho reprocessing facility is still in development — showing microreactor vendors pre-committing to fuel supply that is itself unproven at scale.",
+      "binding": false,
+      "binding_note": "Described by both companies as a step toward a future long-term offtake framework, not a completed supply contract with committed volumes or a price.",
+      "sources": [
+        {
+          "label": "PR Newswire — Natura Resources Announces Agreement with Quadrant Nuclear Industries for HALEU Fuel Supply",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-announces-agreement-with-quadrant-nuclear-industries-for-haleu-fuel-supply-302798239.html",
+          "quote": "We're pleased to formalize our agreement with QNI as part of our broader fuel strategy,",
+          "status": "fetched"
+        },
+        {
+          "label": "PR Newswire — Natura Resources Announces Agreement with Quadrant Nuclear Industries for HALEU Fuel Supply",
+          "url": "https://www.prnewswire.com/news-releases/natura-resources-announces-agreement-with-quadrant-nuclear-industries-for-haleu-fuel-supply-302798239.html",
+          "quote": "Developing a secure, U.S.-based source of HALEU is essential to unlocking the next generation of nuclear energy,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-mark0-criticality-2026-06-04",
+      "date": "2026-06-04",
+      "headline": "Antares Mark-0 becomes first Reactor Pilot Program reactor to go critical",
+      "companies": [
+        "Antares Nuclear"
+      ],
+      "category": "criticality",
+      "what_happened": "Antares' Mark-0 test reactor achieved zero-power fueled criticality at Idaho National Laboratory on June 4, 2026, becoming the first company in the DOE's Reactor Pilot Program to hit the milestone. Mark-0 is a forerunner to the company's flagship R1 sodium heat-pipe, TRISO-fueled microreactor and is configured for criticality testing only, without power conversion or heat removal systems. The milestone came exactly one month before the July 4, 2026 deadline set by Executive Order 14301 for at least three RPP reactors to reach criticality.",
+      "why_it_matters": "This was the opening move in what became a five-company race to and past the July 4 deadline, and Antares' head start put it ahead of four other companies that would also cross the line before summer's end.",
+      "binding": true,
+      "binding_note": "An achieved, DOE-authorized physical milestone, not a target or a company claim.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — The deadline arrives: Checking in on the Reactor Pilot Program",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "Antares, of Torrance, Calif., became the first company involved in the RPP to achieve zero-power fueled criticality",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "last-energy-pwr5-pdsa-2026-05-29",
+      "date": "2026-05-29",
+      "headline": "Last Energy clears DOE safety review for its PWR-5 pilot",
+      "companies": [
+        "Last Energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "The DOE approved Last Energy's preliminary documented safety analysis (PDSA) for its PWR-5 pilot reactor at the Texas A&M RELLIS campus, reported May 29, 2026. PWR-5 is a scaled-down demonstration version of Last Energy's commercial 20 MWe PWR-20 design. The company had already begun construction at RELLIS and said it had completed the pilot building and installed reactor components; it has since submitted its final documented safety analysis and expected an initial criticality test in summer 2026 pending DOE authorization.",
+      "why_it_matters": "PWR-5 is explicitly a bridge reactor built to de-risk the PWR-20 commercial design, so DOE clearing its safety case is a proxy signal for how the agency will treat Last Energy's actual 30-unit Haskell County plant later.",
+      "binding": true,
+      "binding_note": "A DOE regulatory approval actually granted (PDSA), not merely applied for.",
+      "sources": [
+        {
+          "label": "NucNet — US DOE Approves PDSA For Last Energy Pilot Nuclear Reactor At Texas University",
+          "url": "https://www.nucnet.org/news/us-doe-approves-pdsa-for-last-energy-pilot-nuclear-reactor-at-texas-university-5-5-2026",
+          "quote": "the US Department of Energy (DOE) has approved the company’s preliminary documented safety analysis (PDSA) for its PWR-5 pilot reactor at Texas A&M-Rellis university.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-part57-proposed-2026-04-24",
+      "date": "2026-04-24",
+      "headline": "NRC proposes Part 57 fast lane for microreactor licensing",
+      "companies": [],
+      "category": "regulatory",
+      "what_happened": "The NRC announced a proposed rule, 10 CFR Part 57, on April 24, 2026, creating a streamlined licensing pathway specifically for microreactors and other reactors with comparable risk profiles, with a Federal Register notice tentatively scheduled for May 6. The agency and industry estimate the framework could save $3.76 billion to $11.84 billion sector-wide, largely by reducing exemption requests, and could shrink construction-permit and operating-license timelines to six months to a year. Part 57 allows fleet approval of identical reactor designs, alternative design standards for novel reactors, streamlined environmental review, and limited construction before a permit is issued; it follows the earlier-2026 creation of a dedicated NRC Office of Advanced Reactors under Jeremy S. Bowen.",
+      "why_it_matters": "This is the regulatory answer to the exact problem every microreactor vendor in this dataset has: a design that doesn't fit light-water-reactor rules and a business model built on building the same unit dozens of times, which the traditional one-off licensing process was never built to price or schedule.",
+      "binding": false,
+      "binding_note": "A proposed rule out for comment, not yet final or in effect.",
+      "sources": [
+        {
+          "label": "POWER — NRC Unveils Part 57: A Streamlined Path for High-Volume Microreactor Licensing",
+          "url": "https://www.powermag.com/nrc-unveils-part-57-a-streamlined-path-for-high-volume-microreactor-licensing/",
+          "quote": "Part 57 is designed to deploy microreactors with safety, scale, and speed,",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — NRC Unveils Part 57: A Streamlined Path for High-Volume Microreactor Licensing",
+          "url": "https://www.powermag.com/nrc-unveils-part-57-a-streamlined-path-for-high-volume-microreactor-licensing/",
+          "quote": "Regulatory uncertainty is capital risk,",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — NRC Unveils Part 57: A Streamlined Path for High-Volume Microreactor Licensing",
+          "url": "https://www.powermag.com/nrc-unveils-part-57-a-streamlined-path-for-high-volume-microreactor-licensing/",
+          "quote": "The NRC and industry estimate it will save between $3.76 billion and $11.84 billion, depending on discount rate",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-hermes1-delay-2026-04-22",
+      "date": "2026-04-22",
+      "headline": "NRC grants Kairos a 28-month delay on Hermes 1 reactor",
+      "companies": [
+        "Kairos Power"
+      ],
+      "category": "setback",
+      "what_happened": "The NRC approved Kairos Power's request to extend the construction completion deadline for its Hermes 1 demonstration reactor in Oak Ridge, Tennessee by 28 months, from December 31, 2026 to April 30, 2029, reported April 22, 2026. Kairos had submitted the extension request on March 24, citing development delays inherent to first-of-a-kind design and construction; the company said it now expects to actually finish construction in 2028. Hermes 1 was the first non-water-cooled reactor approved for construction in the US in more than 50 years when its permit was granted in December 2023.",
+      "why_it_matters": "Hermes 1 is not one of the DOE Reactor Pilot Program's fast-track projects — it went through ordinary NRC construction licensing, which is exactly the slower, traditional pathway the RPP and Part 57 are designed to avoid, and even it slipped 28 months. It is a useful baseline for how long first-of-a-kind advanced-reactor construction actually takes when the DOE shortcuts are not in play.",
+      "binding": true,
+      "binding_note": "An NRC-approved amendment to an existing construction permit, an actual regulatory action, not a company announcement.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Regulator extends Hermes 1 reactor construction deadline",
+          "url": "https://world-nuclear-news.org/articles/regulator-extends-hermes-1-reactor-construction-deadline",
+          "quote": "is the result of development delays associated with the first-of-a-kind nature of the Hermes Test Reactor facility design and construction",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Regulator extends Hermes 1 reactor construction deadline",
+          "url": "https://world-nuclear-news.org/articles/regulator-extends-hermes-1-reactor-construction-deadline",
+          "quote": "Kairos Power's request that the completion date specified in the construction permit for its Hermes 1 demonstration reactor be extended by 28 months",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "af-anpi-vendor-pairings-2026-04-22",
+      "date": "2026-04-22",
+      "headline": "Air Force pairs three vendors to three ANPI bases",
+      "companies": [
+        "Antares Nuclear",
+        "Radiant Nuclear",
+        "Westinghouse"
+      ],
+      "category": "award",
+      "what_happened": "The Department of the Air Force formally paired three vendors to three installations under its Advanced Nuclear Power for Installations (ANPI) program: Radiant Industries with Buckley Space Force Base, Colorado; Westinghouse Government Services with Malmstrom Air Force Base, Montana; and Antares Nuclear with Joint Base San Antonio (JBSA), Texas. Buckley and Malmstrom had been identified as candidate sites on April 8 following on-site analysis by Air Force experts and Pacific Northwest National Laboratory; JBSA was added to the program on April 22 alongside the formal vendor pairings for all three. Local coverage noted the JBSA selection came as the base was losing key Army command missions to Fort Bragg, North Carolina.",
+      "why_it_matters": "ANPI put Antares and Westinghouse's eVinci and Radiant's Kaleidos in front of the Air Force four months before the same three companies, plus BWXT and General Atomics, won the Army's much larger Janus awards — ANPI functioned as a qualifying round for Janus, and Fort Bragg ended up on both sides of the ledger, gaining a reactor while absorbing JBSA's departing missions.",
+      "binding": false,
+      "binding_note": "A vendor-to-base pairing selection, not a signed construction contract. DAF frames the reactors as eventually contractor-owned and contractor-operated, but no award value or construction contract has been disclosed for any of the three pairings.",
+      "sources": [
+        {
+          "label": "San Antonio Report — Air Force selects Joint Base San Antonio for nuclear microreactor program",
+          "url": "https://sanantonioreport.org/air-force-joint-base-san-antonio-nuclear-micro-reactor/",
+          "quote": "The future of air and space dominance is powered by resilient energy",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — Air Force ANPI Picks Put Radiant, Antares, Westinghouse on Track for First On-Base Microreactors by 2028",
+          "url": "https://www.powermag.com/air-force-anpi-picks-put-radiant-antares-westinghouse-on-track-for-first-on%E2%80%91base-microreactors-by-2028/",
+          "quote": "Buckley and Malmstrom were identified on April 8 following extensive on-site analysis by DAF experts and Pacific Northwest National Laboratory",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — Air Force ANPI Picks Put Radiant, Antares, Westinghouse on Track for First On-Base Microreactors by 2028",
+          "url": "https://www.powermag.com/air-force-anpi-picks-put-radiant-antares-westinghouse-on-track-for-first-on%E2%80%91base-microreactors-by-2028/",
+          "quote": "energy resilience is imperative to sustaining operations",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-hermes2-groundbreaking-2026-04-17",
+      "date": "2026-04-17",
+      "headline": "Kairos breaks ground on Hermes 2, its first commercial-scale reactor",
+      "companies": [
+        "Kairos Power"
+      ],
+      "category": "construction",
+      "what_happened": "Kairos Power broke ground on its Hermes 2 Demonstration Plant in Oak Ridge, Tennessee on April 17, 2026, its first commercial-scale reactor and the first power-producing Generation IV design to receive an NRC construction permit. Hermes 2 is Kairos' first deployment under its fleet development agreement with Google and will supply up to 50 MW of electricity to the Tennessee Valley Authority grid to help power Google data centers in Tennessee and Alabama. It builds directly on the adjacent Hermes 1 non-power test reactor, whose own construction deadline was extended by 28 months the same month.",
+      "why_it_matters": "Kairos' KP-FHR design at 50 MWe sits just above the microreactor band, but its Google-backed, TVA-connected fleet model is the clearest commercial analog for what several true microreactor vendors in this dataset are trying to build: a standardized reactor, sold repeatedly to power AI data-center demand, moving from a non-power test unit to a grid-connected demonstration in the same industrial park.",
+      "binding": true,
+      "binding_note": "An actual construction start on a permitted reactor, not a target date.",
+      "sources": [
+        {
+          "label": "NucNet — Kairos Power Breaks Ground On Hermes 2 Demonstration Plant In Tennessee",
+          "url": "https://www.nucnet.org/news/kairos-power-breaks-ground-on-hermes-2-demonstration-plant-in-tennessee-4-3-2026",
+          "quote": "the first power-producing Generation IV reactor to receive a construction permit from the US Nuclear Regulatory Commission",
+          "status": "fetched"
+        },
+        {
+          "label": "NucNet — Kairos Power Breaks Ground On Hermes 2 Demonstration Plant In Tennessee",
+          "url": "https://www.nucnet.org/news/kairos-power-breaks-ground-on-hermes-2-demonstration-plant-in-tennessee-4-3-2026",
+          "quote": "the plant will supply up to 50 MW of clean electricity to the grid of federally owned utility Tennessee Valley Authority",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "taneo-fund-opens-2026-04-01",
+      "date": "2026-04-01",
+      "headline": "Texas opens $350M nuclear fund, but few projects qualify yet",
+      "companies": [
+        "Natura Resources"
+      ],
+      "category": "policy",
+      "what_happened": "The Texas Advanced Nuclear Energy Office opened applications on April 1, 2026 for $350 million from the Texas Advanced Nuclear Development Fund, created by 2025's H.B. 14, through two reimbursement programs for construction and supply-chain projects. To qualify, an applicant must already have, or reasonably expect to have, a docketed NRC construction permit or license application by December 1, 2026. TANEO director Jarred Shaffer said only two projects in the state currently clear that bar, and both are utility-scale designs (Dow/X-energy's Xe-100 and Fermi America's AP1000s at the Pantex site), not microreactors. Abilene Christian University's Natura Resources molten salt research reactor holds a docketed NRC permit but is excluded from the construction program because it already received $120 million from other state funding.",
+      "why_it_matters": "A fund explicitly framed around advanced nuclear and supply-chain manufacturing currently has zero eligible microreactor projects, and the one Texas microreactor project with an actual NRC docket is locked out by a rule against double-dipping state money — the headline dollar figure and the near-term reality for microreactor vendors are two different stories.",
+      "binding": false,
+      "binding_note": "A funding program now accepting applications, not a grant yet awarded to any named company; recipients were expected to be selected in July 2026.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — Texas opens $350M in nuclear funding",
+          "url": "https://www.ans.org/news/2026-04-09/article-7920/texas-opens-350m-in-nuclear-funding/",
+          "quote": "We’ve only got two eligible projects in the state that check that docketed box.",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — Texas opens $350M in nuclear funding",
+          "url": "https://www.ans.org/news/2026-04-09/article-7920/texas-opens-350m-in-nuclear-funding/",
+          "quote": "because the project has already received $120 million in other state funding sources, it is not eligible for further funding",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-part53-final-rule-2026-03-26",
+      "date": "2026-03-26",
+      "headline": "NRC finalizes Part 53, its first new reactor rule in decades",
+      "companies": [],
+      "category": "regulatory",
+      "what_happened": "The NRC voted to finalize 10 CFR Part 53, \"Risk-Informed, Technology-Inclusive Regulatory Framework for Advanced Reactors,\" on March 26, 2026, with an effective date of April 29, 2026. It is the first new US reactor licensing framework in more than 30 years and arrives over a year ahead of the end-of-2027 deadline set by the 2019 Nuclear Energy Innovation and Modernization Act. Part 53 is optional and does not replace the existing Part 50/52 pathways; it adds technology-inclusive safety standards, risk-based design flexibility, and graded security requirements alongside them.",
+      "why_it_matters": "Part 53 is the general-purpose advanced-reactor framework; the NRC's own chairman said on the same call that a separate microreactor-specific rule was still coming, which arrived five weeks later as Part 57 — Part 53 is the foundation the microreactor-specific fast lane was built on top of.",
+      "binding": true,
+      "binding_note": "A finalized, effective federal rule, not a proposal.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — NRC unveils Part 53 final rule",
+          "url": "https://www.ans.org/news/article-7881/nrc-unveils-part-53-final-rule/",
+          "quote": "This is really a historic milestone,",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — NRC unveils Part 53 final rule",
+          "url": "https://www.ans.org/news/article-7881/nrc-unveils-part-53-final-rule/",
+          "quote": "This final rule is a major NRC action that provides a clear risk-informed, technology-inclusive licensing framework to enable new nuclear to safely move faster",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "cambridge-atomworks-mottmac-2026-03-17",
+      "date": "2026-03-17",
+      "headline": "UK's Cambridge Atomworks signs Mott MacDonald deal for Odin",
+      "companies": [
+        "Cambridge Atomworks"
+      ],
+      "category": "contract",
+      "what_happened": "Cambridge Atomworks, a UK microreactor developer founded in 2023, signed a memorandum of understanding with engineering consultancy Mott MacDonald on March 17, 2026 to support development of its Odin microreactor, a low-pressure, molten-salt-cooled, solid-fuel design meant to run off-grid without external cooling connections. Mott MacDonald will provide technical support in nuclear engineering, safety and licensing, project delivery, systems integration and digital engineering. Cambridge Atomworks originally developed Odin as an outsourced consultancy for US-based NANO Nuclear before buying back the underlying intellectual property under a letter of intent signed in September 2025; it targets an operational prototype by 2030.",
+      "why_it_matters": "This is the clearest UK-based entrant in the microreactor field in this dataset, and its origin story — designed on contract for an American company, then bought back — is a reminder that microreactor IP has already crossed the Atlantic once before this MoU, not just in the direction usually assumed.",
+      "binding": false,
+      "binding_note": "A memorandum of understanding for technical support, not a funding, construction or purchase commitment.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Cambridge Atomworks, Mott MacDonald sign microreactor MoU",
+          "url": "https://world-nuclear-news.org/articles/cambridge-atomworks-microreactor-mou-with-mott-macdonald",
+          "quote": "The signing of this MoU with a top British engineering consultancy will allow us to accelerate the development of our British-designed Odin nuclear microreactor",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Cambridge Atomworks, Mott MacDonald sign microreactor MoU",
+          "url": "https://world-nuclear-news.org/articles/cambridge-atomworks-microreactor-mou-with-mott-macdonald",
+          "quote": "The International Atomic Energy Agency defines microreactors as being typically up to 10 MWe capacity",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-gnf-fuel-2026-03-03",
+      "date": "2026-03-03",
+      "headline": "Aalo Atomics locks in fuel rods from Global Nuclear Fuel",
+      "companies": [
+        "Aalo Atomics"
+      ],
+      "category": "fuel",
+      "what_happened": "Aalo Atomics signed a fuel fabrication contract with Global Nuclear Fuel (GNF), a GE Vernova-Hitachi alliance, announced March 3, 2026. GNF is fabricating uranium dioxide fuel rods from low-enriched uranium into assemblies for the Aalo-X test reactor; that same month Aalo said Urenco USA had finished enriching the feedstock and delivered it to GNF. Aalo separately contracted Baker Hughes for a 10 MWe steam turbine generator set for the same reactor.",
+      "why_it_matters": "This is the fuel supply chain that made Aalo's July 4 criticality possible four months later, a concrete, dated example of how far in advance a fuel order has to be placed for a reactor to hit a specific criticality date.",
+      "binding": true,
+      "binding_note": "A signed fabrication contract, not a letter of intent.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Aalo secures fuel and turbine for experimental reactor",
+          "url": "https://www.world-nuclear-news.org/articles/aalo-secures-fuel-and-turbine-for-experimental-reactor",
+          "quote": "with GNF's help, we believe that we can power up data centres in months, not decades, and grow our factory output to exceed gigawatt-levels",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-c17-airlift-2026-02-15",
+      "date": "2026-02-15",
+      "headline": "Air Force airlifts Valar's reactor components to Utah",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "construction",
+      "what_happened": "Three U.S. Air Force C-17s carried components of Valar Atomics' Ward 250 test reactor from March Air Reserve Base, California to Hill Air Force Base near Layton, Utah on Sunday, February 15, 2026, for onward delivery to the San Rafael Energy Lab. The event was attended by DOE Secretary Chris Wright, Utah Governor Spencer Cox, Under Secretary of Defense for Acquisition and Sustainment Michael Duffey, and Sen. John Curtis. Officials said the reactor was expected to be switched on by July 4, a target Valar met, reaching criticality on June 18.",
+      "why_it_matters": "This is the physical, load-bearing proof behind every microreactor vendor's claim about factory-built, transportable reactors: a real reactor's components moving by military cargo plane, four months before the machine actually went critical, with three federal officials and the state's governor showing up to watch it land.",
+      "binding": true,
+      "binding_note": "An actual, completed physical transport, not a rendering or a plan.",
+      "sources": [
+        {
+          "label": "The Salt Lake Tribune — U.S. military flies nuclear reactor to Utah. Here's what to know.",
+          "url": "https://www.sltrib.com/news/politics/2026/02/16/us-military-flies-nuclear-reactor/",
+          "quote": "one of the three USAF C-17s that transported components of a small nuclear reactor to Hill Air Force Base near Layton",
+          "status": "fetched"
+        },
+        {
+          "label": "The Salt Lake Tribune — U.S. military flies nuclear reactor to Utah. Here's what to know.",
+          "url": "https://www.sltrib.com/news/politics/2026/02/16/us-military-flies-nuclear-reactor/",
+          "quote": "will deploy at its new home at the San Rafael Energy Lab, where officials expect it to be switched on by July 4",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deep-fission-80m-2026-02-10",
+      "date": "2026-02-10",
+      "headline": "Deep Fission raises $80M for underground borehole reactors",
+      "companies": [
+        "Deep Fission"
+      ],
+      "category": "financing",
+      "what_happened": "Deep Fission raised $80 million in new financing announced February 10, 2026, selling more than five million restricted shares at $15 per share through agents Seaport Global Securities and The Benchmark Company. Returning investors Ed Eisler of EE Holdings and Mark Tompkins of Montrose Capital, who backed the company's 2025 rounds, participated again. Deep Fission also announced a new strategic relationship with Blue Owl Capital's Real Assets platform to deploy reactor projects for Blue Owl's digital infrastructure portfolio.",
+      "why_it_matters": "Deep Fission's pitch is deploying pressurized water reactors one mile underground in boreholes using oil-and-gas drilling supply chains, and this round is the first sign of a real-estate/infrastructure capital allocator (Blue Owl) treating that pitch as bankable rather than experimental.",
+      "binding": true,
+      "binding_note": "A closed financing round with a fixed share price, not a term sheet.",
+      "sources": [
+        {
+          "label": "VentureBurn — Deep Fission Raises $80 Million To Scale Underground Nuclear Reactor Technology",
+          "url": "https://ventureburn.com/deep-fission-raises-80-million/",
+          "quote": "The company sold more than five million restricted shares at a fixed price of $15 per share.",
+          "status": "fetched"
+        },
+        {
+          "label": "VentureBurn — Deep Fission Raises $80 Million To Scale Underground Nuclear Reactor Technology",
+          "url": "https://ventureburn.com/deep-fission-raises-80-million/",
+          "quote": "Deep Fission also announced a new strategic relationship with Blue Owl Capital’s Real Assets platform",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "meta-oklo-pike-county-2026-01-09",
+      "date": "2026-01-09",
+      "headline": "Meta prepays Oklo to fund a 1.2 GW Ohio reactor campus",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "contract",
+      "what_happened": "As part of a January 9, 2026 suite of nuclear deals covering up to 6.6 GW (also including Vistra and TerraPower), Meta agreed to a funding arrangement with Oklo to advance an up to 1.2 GW Aurora powerhouse campus on more than 200 acres in Pike County, Ohio, intended to help power Meta's Prometheus AI data-center cluster. Oklo described the deal as a mechanism for Meta to prepay for power and fund project certainty, to be used to secure nuclear fuel and advance Phase 1 site work; pre-construction and site characterization were slated to begin in 2026, with first power targeted as early as 2030 and the full 1.2 GW build-out by 2034. Each Aurora powerhouse unit is rated at 75 MWe, well above the 1-20 MWe microreactor band this dataset otherwise tracks.",
+      "why_it_matters": "This is prepayment, not a conventional power purchase agreement — Meta is funding project development risk directly rather than promising to buy power once it exists, which is a different and more direct form of customer risk-sharing than the PPA structure most other named deals in this dataset use.",
+      "binding": true,
+      "binding_note": "Described as a finalized agreement with a specific funding mechanism, not an LOI or MOU, though actual power delivery remains conditional on Oklo hitting site, licensing and construction milestones years out.",
+      "sources": [
+        {
+          "label": "POWER — Meta Locks In Up to 6.6 GW of Nuclear Power Through Deals with Vistra, Oklo, and TerraPower",
+          "url": "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+          "quote": "provides a mechanism for Meta to prepay for power and provide funding to advance project certainty for Oklo’s Aurora powerhouse deployment",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — Meta Locks In Up to 6.6 GW of Nuclear Power Through Deals with Vistra, Oklo, and TerraPower",
+          "url": "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+          "quote": "We have finalized the purchase of over 200 acres in Pike County and are excited to announce this agreement in support of a multi-year effort",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terrestrial-energy-doe-ota-2026-01",
+      "date": "2026-01-06",
+      "headline": "Terrestrial Energy signs DOE agreement for Project Tetra reactor",
+      "companies": [
+        "Terrestrial Energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "Terrestrial Energy signed an Other Transaction Agreement with the DOE in January 2026 to pursue DOE authorization for its 390 MWe Integral Molten Salt Reactor design, which the company calls Project Tetra. The OTA is part of the same DOE Reactor Pilot Program family of agreements that smaller microreactor vendors in this dataset used to reach criticality; Terrestrial's design is an order of magnitude larger than the 1-20 MWe microreactor class. In June 2026 the company signed ground lease and research agreements with Texas A&M University for a 77-acre site on its RELLIS campus to host the project.",
+      "why_it_matters": "Terrestrial Energy's inclusion shows the DOE's fast-track authorization pathway is not exclusively a microreactor program — it is being used by at least one utility-scale advanced reactor developer too, which matters for reading headline RPP or Launch Pad participant counts: not every company on the list is building a truck-portable unit.",
+      "binding": true,
+      "binding_note": "A signed OTA with the DOE, an executed agreement, though it authorizes a development and authorization process rather than construction itself.",
+      "sources": [
+        {
+          "label": "POWER — DOE Backs Terrestrial Energy Molten Salt Reactor Project",
+          "url": "https://www.powermag.com/doe-backs-terrestrial-energy-molten-salt-reactor-project/",
+          "quote": "Terrestrial Energy on January 6 said it has executed an Other Transaction Authority, or OTA, deal with the DOE for Project TETRA",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — DOE Backs Terrestrial Energy Molten Salt Reactor Project",
+          "url": "https://www.powermag.com/doe-backs-terrestrial-energy-molten-salt-reactor-project/",
+          "quote": "This OTA is a partnership with the U.S. Department of Energy to accelerate development, licensing, and operation of IMSR plants servicing critical energy needs,",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "doe-27b-enrichment-awards-2026-01-05",
+      "date": "2026-01-05",
+      "headline": "DOE awards $2.7B in enrichment task orders to three firms",
+      "companies": [],
+      "category": "fuel",
+      "what_happened": "The DOE announced on January 5, 2026 that it had awarded competitive task orders worth $900 million each to three companies under its $2.7 billion domestic uranium enrichment program: American Centrifuge Operating (a Centrus Energy subsidiary) and General Matter, both to develop domestic HALEU enrichment capacity, and Orano Federal Services, to build domestic LEU enrichment capacity. The DOE separately awarded Global Laser Enrichment $28 million to continue advancing next-generation enrichment technology. The awards follow an October 2024 DOE announcement that four companies could bid for this contracting structure.",
+      "why_it_matters": "This is the enrichment-capacity end of the supply chain that every microreactor vendor's TRISO fuel deals in this dataset ultimately depend on — HALEU has to be enriched before Standard Nuclear, BWXT or GNF can fabricate it into fuel, and this is the government paying to build that enrichment capacity from close to scratch.",
+      "binding": true,
+      "binding_note": "A competitively awarded task order, an actual federal contract action, not a funding announcement or a target.",
+      "sources": [
+        {
+          "label": "ANS/Nuclear Newswire — DOE awards $2.7B for HALEU and LEU enrichment",
+          "url": "https://www.ans.org/news/article-7652/doe-awards-27b-for-haleu-and-leu-enrichment/",
+          "quote": "three enrichment services companies have been awarded task orders worth $900 million each",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — DOE awards $2.7B for HALEU and LEU enrichment",
+          "url": "https://www.ans.org/news/article-7652/doe-awards-27b-for-haleu-and-leu-enrichment/",
+          "quote": "American Centrifuge Operating (a Centrus Energy subsidiary) and General Matter, both of which will develop domestic HALEU enrichment capacity",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

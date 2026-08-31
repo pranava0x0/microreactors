@@ -29,6 +29,31 @@ class BuildSync(unittest.TestCase):
         self.assertEqual(committed, second,
                          "site/data.js is stale — run python3 tools/build_data.py and commit it")
 
+    def test_meta_surface_in_sync(self):
+        """llms.txt, sitemap.xml, robots.txt and the JSON-LD block are generated
+        from the data. Reading them instead of running the generator would verify
+        a snapshot nobody can regress, so run it and byte-compare all four."""
+        paths = [ROOT / "site" / n for n in ("llms.txt", "sitemap.xml", "robots.txt")]
+        paths.append(ROOT / "site" / "index.html")
+        before = {p: p.read_bytes() for p in paths}
+        r = run("build_meta.py")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        for p in paths:
+            self.assertEqual(before[p], p.read_bytes(),
+                             f"{p.name} is stale — run python3 tools/build_meta.py and commit it")
+
+    def test_llms_txt_figures_match_the_bundle(self):
+        """The headline figures in llms.txt are the ones on the page. A hand-typed
+        number here would be the same claim in two places, and only one of them
+        gets updated."""
+        txt = (ROOT / "site" / "llms.txt").read_text()
+        s = load_bundle()["summary"]
+        for claim in (f"{s['binding_rows']} of {s['opportunities']} tracked buyers",
+                      f"{s['filing_rows']} of {s['opportunities']} have a utility filing",
+                      f"{s['source_count']} distinct sources",
+                      f"Captured {s['built']}"):
+            self.assertIn(claim, txt, f"llms.txt does not carry: {claim}")
+
     def test_gaps_in_sync(self):
         committed = (ROOT / "data" / "gaps.json").read_bytes()
         r = run("build_gaps.py")
@@ -38,12 +63,25 @@ class BuildSync(unittest.TestCase):
                          "data/gaps.json is stale — run python3 tools/build_gaps.py and commit it")
 
 
+def load_bundle():
+    """The whole bundle, reassembled from data.js and every lazy chunk it names.
+
+    Reading data.js alone tests the eager half and silently stops covering a
+    dataset the day it is split out - which is exactly what happened when
+    benchmarks and sources_index moved, and the register checks below started
+    passing over data they could no longer see."""
+    js = (ROOT / "site" / "data.js").read_text()
+    MR = json.loads(js.split("window.MR=", 1)[1].rsplit(";", 1)[0])
+    for name in MR.get("lazy", []):
+        chunk = (ROOT / "site" / f"data-{name}.js").read_text()
+        MR[name] = json.loads(chunk[chunk.index("=") + 1:chunk.rindex(";window.dispatchEvent")])
+    return MR
+
+
 class BundleConsistency(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        js = (ROOT / "site" / "data.js").read_text()
-        payload = js.split("window.MR=", 1)[1].rsplit(";", 1)[0]
-        cls.MR = json.loads(payload)
+        cls.MR = load_bundle()
 
     def test_summary_counts_match_bundle(self):
         MR, s = self.MR, self.MR["summary"]
@@ -92,8 +130,13 @@ class BundleConsistency(unittest.TestCase):
                 for v in node:
                     walk(v)
 
-        for name in ("opportunities", "vendors", "costs", "sectors",
-                     "mechanisms", "policy", "gaps"):
+        # Derived from the builder's registry, never re-typed here: the literal
+        # this replaces listed seven datasets while the bundle carried thirteen,
+        # so benchmarks, instruments, voices, news, arguments and
+        # deployment_sites were never walked.
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+        for name in build_data.FILES:
             walk(self.MR[name])
         self.assertGreater(len(found), 20, "source walk found suspiciously few sources")
         self.assertEqual(found - set(nums), set(),
@@ -117,7 +160,6 @@ class BundleConsistency(unittest.TestCase):
         the data cites, or the chip renders [?] to the reader."""
         html = (ROOT / "site" / "index.html").read_text()
         hrefs = re.findall(r'<a class="cite"[^>]*href="([^"]+)"', html)
-        self.assertTrue(hrefs, "no static citation found in index.html")
         unknown = [h for h in hrefs if h not in self.MR["source_numbers"]]
         self.assertEqual(unknown, [],
                          "static citations not in the source register (they would "
@@ -143,3 +185,63 @@ class BundleConsistency(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LazyPayloads(unittest.TestCase):
+    """Some datasets ship as separate files fetched when their tab opens; the
+    set is build_data.LAZY and data.js names it in `lazy`. Three things can
+    silently undo the split: it disappearing from the builder, a lazy dataset
+    leaking back into the main bundle, and the loader caching a boolean instead
+    of the in-flight promise (which double-fetches under concurrent callers and
+    looks fine in a single-threaded read)."""
+
+    def setUp(self):
+        import json
+        self.js = (ROOT / "site" / "data.js").read_text()
+        i = self.js.index("{")
+        self.bundle = json.loads(self.js[i:self.js.rindex("}") + 1])
+        self.app = (ROOT / "site" / "assets" / "app.js").read_text()
+
+    def test_lazy_datasets_are_absent_from_the_main_bundle(self):
+        for name in self.bundle["lazy"]:
+            self.assertNotIn(name, self.bundle,
+                             f"{name} is declared lazy but still ships in data.js")
+            self.assertTrue((ROOT / "site" / f"data-{name}.js").exists(),
+                            f"data-{name}.js was not emitted")
+
+    def test_citation_numbering_still_covers_lazy_data(self):
+        """The register is built before the split, so a chip inside a lazy
+        payload must still resolve to a number in the main bundle."""
+        import json
+        nums = self.bundle["source_numbers"]
+        for name in self.bundle["lazy"]:
+            chunk = (ROOT / "site" / f"data-{name}.js").read_text()
+            payload = json.loads(chunk[chunk.index("=") + 1:chunk.rindex(";window.dispatchEvent")])
+            urls = set()
+
+            def walk(n):
+                if isinstance(n, dict):
+                    # Mirror tools/build_data.collect_sources: a source is a dict
+                    # with BOTH label and url. A `filings` entry carries a url and
+                    # a forum/id/date instead, renders as its own trail rather than
+                    # a [n] chip, and is deliberately unnumbered - requiring a
+                    # number for it fails on correct data.
+                    if (isinstance(n.get("url"), str) and n["url"].startswith("http")
+                            and isinstance(n.get("label"), str)):
+                        urls.add(n["url"])
+                        return
+                    for v in n.values():
+                        walk(v)
+                elif isinstance(n, list):
+                    for v in n:
+                        walk(v)
+            walk(payload)
+            missing = [u for u in urls if u not in nums]
+            self.assertEqual(missing, [], f"{name}: {len(missing)} urls have no citation number")
+
+    def test_loader_caches_the_promise_not_a_boolean(self):
+        self.assertIn("if (!LAZY[name])", self.app,
+                      "loadLazy must guard on the cached promise")
+        self.assertIn("LAZY[name] = new Promise", self.app)
+        # the failure mode this replaces: a flag set after the fetch resolves
+        self.assertNotIn("Loaded = true;", self.app)

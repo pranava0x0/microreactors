@@ -124,14 +124,14 @@
       "name": "Army Janus Program — nine candidate installations",
       "owner": "U.S. Department of the Army",
       "location": "Fort Benning GA; Fort Bragg NC; Fort Campbell KY/TN; Fort Drum NY; Fort Hood TX; Fort Wainwright AK; Holston Army Ammunition Plant TN; Joint Base Lewis-McChord WA; Redstone Arsenal AL",
-      "vendor": "Not yet assigned; DIU is still matching vendors and designs to sites",
+      "vendor": "Antares (Fort Bragg), Radiant (Benning), BWXT (Campbell), General Atomics (Hood), Westinghouse (Drum); four of the nine sites are still unassigned",
       "power_mw": "Not specified per site",
-      "timeline": "Army-regulated reactor operational at a domestic installation by 2028-09-30; sites announced November 2025",
+      "timeline": "Sites announced November 2025; five vendors named 2026-08-26; Army-regulated reactor operational at a domestic installation by 2028-09-30",
       "instrument": "Army program + DIU solicitation",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "Sites identified, vendors not selected",
+      "status": "Five of nine sites matched to vendors, up to $2.2bn across FY2027-FY2031; agreements are fixed-price milestone-based Other Transaction Authority awards and none has been recorded as executed",
       "sources": [
         {
           "label": "army.mil — Janus next steps",
@@ -144,13 +144,25 @@
         {
           "label": "World Nuclear News",
           "url": "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites"
+        },
+        {
+          "label": "POWER — The Janus Five: 20+ commercial microreactors, starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+        },
+        {
+          "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
+          "url": "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/"
         }
       ],
       "gaps": [
         "Per-site load requirement not published",
         "Fort Wainwright (Fairbanks, AK) is the highest-value row in this table for a microreactor, because it is the one site whose displaced alternative is coal or oil at Alaskan prices, but no site-specific MW figure was found"
       ],
-      "binding": false
+      "binding": false,
+      "see_also": {
+        "label": "The five named installations, one row each",
+        "href": "#sites/defense-remote"
+      }
     },
     {
       "id": "dome",
