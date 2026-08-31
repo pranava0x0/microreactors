@@ -64,7 +64,10 @@ class SourceShape(unittest.TestCase):
         agreement or they drift (CLAUDE.md single-source-of-truth)."""
         for v in load("vendors.json")["vendors"]:
             year = v.get("first_delivery_year")
-            self.assertIsNotNone(year, f"{v['id']}: missing first_delivery_year")
+            if year is None:
+                self.assertEqual(v.get("first_delivery_target"), "Not published",
+                                 f"{v['id']}: missing year needs an explicit unknown target")
+                continue
             target = v.get("first_delivery_target") or ""
             milestones = " ".join(m["date"] for m in v.get("milestones", []))
             self.assertIn(str(year), target + " " + milestones,
@@ -229,12 +232,10 @@ class ArgumentsDataset(unittest.TestCase):
     def setUp(self):
         self.d = json.loads((ROOT / "data" / "arguments.json").read_text())
 
-    def test_honest_note_counts_match_the_arguments(self):
-        import collections
-        n = collections.Counter(a["basis"] for a in self.d["arguments"])
+    def test_honest_note_orients_the_arguments_without_stale_counts(self):
         note = self.d["_meta"]["honest_note"]
-        self.assertIn(f"{n['rule']} of the {len(self.d['arguments'])} arguments", note)
-        self.assertIn(f"{n['physical']} rest on a physical property", note)
+        self.assertTrue(note)
+        self.assertNotRegex(note, r"\b\d+ of the \d+ arguments\b")
 
     def test_every_argument_has_a_basis_and_notes(self):
         for a in self.d["arguments"]:

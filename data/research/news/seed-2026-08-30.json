@@ -318,7 +318,7 @@
         "Valar Atomics"
       ],
       "category": "criticality",
-      "what_happened": "Valar Atomics' 100 kWt Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
+      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS described the criticality test as 100 kWt; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
       "why_it_matters": "A second company crossing the line within two weeks of the first showed the July 4 target was an achievable bar for multiple independent designs and teams, not a stretch goal for a single frontrunner.",
       "binding": true,
       "binding_note": "An achieved, DOE-authorized physical milestone.",
@@ -328,6 +328,12 @@
           "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
           "quote": "It reached this milestone on June 18 with its 100-kWt Ward 250 helium-cooled, TRISO-fueled, high-temperature gas reactor at Utah San Rafael Energy Lab",
           "status": "fetched"
+        },
+        {
+          "label": "U.S. Department of Energy — CX-271015: Valar Ward250 Research Reactor",
+          "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
+          "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
+          "status": "snippet-only"
         }
       ]
     },

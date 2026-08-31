@@ -9,7 +9,7 @@
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Microreactor Opportunity Map">
-<meta property="og:title" content="Where microreactors get sold">
+<meta property="og:title" content="Microreactor deals">
 <meta property="og:description" content="Who is buying 1-20 MW reactors, how far each buyer has actually got, and what the power would have to cost to win the deal.">
 <meta property="og:url" content="https://pranava0x0.github.io/microreactors/">
 <meta name="twitter:card" content="summary">
@@ -30,14 +30,13 @@
   "name": "Pranava Raparla"
  },
  "keywords": [
-  "Tracker",
+  "Home",
+  "Deals",
   "Why microreactors",
   "Applications",
   "Costs",
   "Vendors",
-  "Sites",
-  "Policy",
-  "Market design",
+  "Rules &amp; deal design",
   "News",
   "Sources"
  ],
@@ -55,7 +54,7 @@
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 544
+   "value": 557
   },
   {
    "@type": "PropertyValue",
@@ -147,14 +146,13 @@
   <div class="wrap navrow">
     <span class="wordmark">Microreactor <b>Opportunity Map</b></span>
     <div class="tabs" role="tablist" aria-label="Sections" id="tabs">
-      <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Tracker</button>
+      <button class="tab" role="tab" id="tab-home" aria-controls="home" data-panel="home">Home</button>
+      <button class="tab" role="tab" id="tab-pipeline" aria-controls="pipeline" data-panel="pipeline">Deals</button>
       <button class="tab" role="tab" id="tab-why" aria-controls="why" data-panel="why">Why microreactors</button>
       <button class="tab" role="tab" id="tab-demand" aria-controls="demand" data-panel="demand">Applications</button>
       <button class="tab" role="tab" id="tab-economics" aria-controls="economics" data-panel="economics">Costs</button>
       <button class="tab" role="tab" id="tab-vendors" aria-controls="vendors" data-panel="vendors">Vendors</button>
-      <button class="tab" role="tab" id="tab-sites" aria-controls="sites" data-panel="sites">Sites</button>
-      <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Policy</button>
-      <button class="tab" role="tab" id="tab-market" aria-controls="market" data-panel="market">Market design</button>
+      <button class="tab" role="tab" id="tab-policy" aria-controls="policy" data-panel="policy">Rules &amp; deal design</button>
       <button class="tab" role="tab" id="tab-news" aria-controls="news" data-panel="news">News</button>
       <button class="tab" role="tab" id="tab-sources" aria-controls="sources" data-panel="sources">Sources</button>
     </div>
@@ -163,17 +161,32 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Business development · captured <span id="built"></span></p>
-    <h1>Where microreactors get sold</h1>
-    <p class="lede">Who is buying 1–20 MW reactors, how far each buyer has actually got,
-      and what the power would have to cost to win the deal.</p>
+    <h1>Microreactor opportunity map</h1>
+    <p class="lede">A cited guide to the early market: who is buying, where projects are proposed, what power costs, and what still has to be true before a sale can close.</p>
     <div class="stats" id="stats"></div>
   </div>
 </header>
 
 <main>
 
-<section id="pipeline" role="tabpanel" aria-labelledby="tab-pipeline" tabindex="0">
+<section id="home" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
+  <div class="wrap">
+    <div class="homegrid">
+      <div>
+        <h2>Start here</h2>
+        <p class="prose">This is not a reactor catalog. It tracks the commercial work around small reactors: buyers, sites, contracts, costs, rules, and the missing terms that decide whether an announcement becomes a project.</p>
+      </div>
+      <div class="homepaths">
+        <a href="#pipeline">See deals and sites <span>→</span></a>
+        <a href="#economics">Compare costs <span>→</span></a>
+        <a href="#policy">See rules and deal design <span>→</span></a>
+      </div>
+    </div>
+    <div class="subhead"><h3>What matters now</h3></div>
+    <div class="homehighlights" id="home-highlights"></div>
+  </div>
+</section>
+<section id="pipeline" role="tabpanel" aria-labelledby="tab-pipeline" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
       <h2>Who is buying now</h2>
@@ -181,6 +194,10 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Tracker sections"></div>
     <div id="pipelinetracks"></div>
+    <div data-sub="sites" id="pipeline-sites" role="tabpanel" tabindex="0">
+      <div id="sites-summary"></div><div id="site-filters"></div>
+      <div id="sites-content"><div id="sites-grid"></div><div id="site-negative-findings"></div></div>
+    </div>
   </div>
 </section>
 <section id="why" role="tabpanel" aria-labelledby="tab-why" tabindex="0" hidden>
@@ -227,7 +244,9 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Costs sections"></div>
     <div data-sub="bands" id="economics-bands" role="tabpanel" tabindex="0">
+      <p class="prose costread">Use this chart to rule markets out, not to set a price. First-unit estimates overlap expensive diesel; they do not compete with ordinary grid power. The Alaska case is shown separately because it is an unusually high-cost diesel system, not a general tariff.</p>
       <div class="chart" id="chart"></div>
+      <div id="cost-outliers"></div>
       <div class="legend">
         <span><i style="background:var(--antares-red)"></i>Microreactor LCOE estimate</span>
         <span><i style="background:var(--stone-600)"></i>Displaced alternative</span>
@@ -266,50 +285,27 @@
 <section id="vendors" role="tabpanel" aria-labelledby="tab-vendors" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>Antares, Radiant and Westinghouse</h2>
-      <p class="prose">In April 2026 the Air Force and the Defense Innovation Unit matched
-        these three companies to three bases.<a class="cite"
-        href="https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"
-        target="_blank" rel="noopener noreferrer"
-        title="ANS — Air Force selects three microreactor developers for ANPI">[?]</a>
-        Each card tracks how far along that vendor is.</p>
+      <h2>Companies to watch</h2>
+      <p class="prose">The roster includes the five Janus awardees, Valar, and other companies with a public reactor milestone or named project. It is a research list, not a ranking.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Vendors sections"></div>
     <div id="vendorcards"></div>
   </div>
 </section>
-<section id="sites" role="tabpanel" aria-labelledby="tab-sites" tabindex="0" hidden>
-  <div class="wrap">
-    <div class="sechead">
-      <h2>Where reactors might actually go</h2>
-      <p class="prose">Real places with a microreactor attached, and what each one has filed with regulators. Where a docket search turned up nothing at all, the row says so.</p>
-      <div class="sites-summary" id="sites-summary"></div>
-    </div>
-    <div class="subtabs" role="tablist" aria-label="Sites sections"></div>
-    <div id="sites-content"></div>
-  </div>
-</section>
 <section id="policy" role="tabpanel" aria-labelledby="tab-policy" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
-      <h2>Rules that open or block a sale</h2>
-      <p class="prose">Rules that decide whether a microreactor can replace diesel backup, pair with batteries, or connect to the grid faster. Rows marked <span class="ideatag">idea</span> are our own proposals, not law.</p>
+      <h2>Rules and deal design</h2>
+      <p class="prose">Rules decide what a project may do. Deal design decides who takes first-unit cost and schedule risk. Rows marked <span class="ideatag">idea</span> are proposals, not law.</p>
     </div>
-    <div class="subtabs" role="tablist" aria-label="Policy sections"></div>
+    <div class="subtabs" role="tablist" aria-label="Rules and deal-design sections"></div>
     <div id="pathways"></div>
-  </div>
-</section>
-<section id="market" role="tabpanel" aria-labelledby="tab-market" tabindex="0" hidden>
-  <div class="wrap">
-    <div class="sechead">
-      <h2>A shared orderbook and an overrun pool</h2>
+    <div data-sub="market-design" id="policy-market-design" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3>Shared orderbook and overrun pool</h3></div>
+      <p class="prose" id="policy-market-intro"></p>
+      <div id="policy-mechanism"></div>
+      <div id="policy-precedents"></div>
     </div>
-    <div class="subtabs" role="tablist" aria-label="Market design sections"></div>
-    <div data-sub="proposal" id="market-proposal" role="tabpanel" tabindex="0">
-      <p class="prose" id="market-intro"></p>
-      <div id="mechanism"></div>
-    </div>
-    <div id="precedents"></div>
   </div>
 </section>
 <section id="news" role="tabpanel" aria-labelledby="tab-news" tabindex="0" hidden>

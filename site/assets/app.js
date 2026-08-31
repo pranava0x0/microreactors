@@ -83,17 +83,18 @@
   function srcsOf(x) { return x.sources || (x.source ? [x.source] : []); }
 
   /* ---------- tabs ---------- */
-  /* Reading order, not build order: is anyone buying -> why this machine -> for what
-     load -> at what price -> from whom -> where -> under what rules -> what would
-     unblock the first orders -> what just happened -> show the work. index.html's tab
+  /* Reading order, not build order: deals and sites -> why this machine -> for what
+     load -> at what price -> from whom -> rules and deal design -> what just happened ->
+     show the work. index.html's tab
      buttons and <section> order must match this list; a test asserts all three. */
-  var PANELS = ["pipeline", "why", "demand", "economics", "vendors", "sites", "policy", "market", "news", "sources"];
+  var PANELS = ["home", "pipeline", "why", "demand", "economics", "vendors", "policy", "news", "sources"];
   /* Sub-navigation, registered by makeSubnav() below. Four panels were long
      enough to bury their own sections at 1280px before this split: policy ran
      30,900px and the source register 67,500px, so field coverage and the gap
      register sat ~90 screens below the fold. Routes are "panel/sub", so a
      sub-section is still linkable. */
   var SUBS = {};
+  var deferredRoute = "";
   /* Routes that used to exist. The Sources tab shipped as "Evidence" until
      2026-08-23, so #evidence is live in anything already linked or bookmarked;
      without this it falls through to the unknown-route branch and strands the
@@ -149,6 +150,8 @@
     var parts = String(route || "").split("/");
     var id = parts[0], sub = parts[1] || "";
     if (ALIASES[id]) id = ALIASES[id];
+    if (id === "sites") { id = "pipeline"; sub = "sites"; }
+    if (id === "market") { id = "policy"; sub = "market-design"; }
     if (PANELS.indexOf(id) === -1) { id = PANELS[0]; sub = ""; }
     PANELS.forEach(function (p) {
       var panel = $(p);
@@ -165,8 +168,14 @@
     });
     // Panels whose data ships separately render on first open. loadLazy caches the
     // in-flight promise, so a fast double-activate fetches once.
+    if (id === "policy" && !policyRendered && sub) {
+      deferredRoute = id + "/" + sub;
+    }
     if (id === "policy" && !policyRendered) {
       lazyPanel("instruments", "pathways", renderPolicy);
+    }
+    if (id === "home" && !homeRendered) {
+      lazyPanel("news", "home-highlights", renderHome);
     }
     if (id === "news" && !newsRendered) {
       lazyPanel("news", "newslist", renderNews);
@@ -267,7 +276,6 @@
 
   /* ---------- hero stats ---------- */
   var s = D.summary;
-  $("built").textContent = s.built;
   /* Deployment stats, not site stats: each number is a market event, not a
      count of what this site happens to curate. */
   var stats = [
@@ -325,11 +333,11 @@
       "</div>" + seeAlso + gaps + srcList(o.sources) + "</div></article>";
   }
 
-  var pipeItems = [{ id: "all", label: "All (" + opps.length + ")" }].concat(
+  var pipeItems = [{ id: "all", label: "All deals (" + opps.length + ")" }].concat(
     tracks.map(function (t) {
       return { id: t.id, label: t.label + " (" + (s.tracks[t.id] || 0) + ")" };
     })
-  );
+  ).concat([{ id: "sites", label: "Sites (" + D.deployment_sites.sites.length + ")" }]);
 
   render($("pipelinetracks"),
     '<div data-sub="all" id="pipeline-all" role="tabpanel" tabindex="0">' +
@@ -359,6 +367,12 @@
   /* ---------- candidate deployment sites ---------- */
   if (D.deployment_sites && D.deployment_sites.sites) {
     var sites = D.deployment_sites.sites;
+    render($("pipeline-sites"),
+      '<div class="subhead"><h3>Sites</h3></div>' +
+      '<p class="prose">Named sites, their utility and regulator context, and the public filing trail. A row says when a docket search found nothing.</p>' +
+      '<div class="sites-summary" id="sites-summary"></div>' +
+      '<div class="sitefilters" id="site-filters"></div>' +
+      '<div id="sites-content"></div>');
     render($("sites-summary"), [
       { n: String(sites.length), k: "candidate sites tracked" },
       { n: "5", k: "load categories covered" },
@@ -429,27 +443,38 @@
         : "") +
       "</div>";
 
-    var siteItems = [
+    var siteKinds = [
       { id: "all", label: "All (" + sites.length + ")" },
       { id: "universities-labs", label: "Universities & Labs (" + univSites.length + ")" },
       { id: "defense-remote", label: "Defense & Remote (" + defSites.length + ")" },
       { id: "commercial-grid", label: "Commercial & Grid (" + commSites.length + ")" },
       { id: "findings-absences", label: "Findings & Absences" }
     ];
-
-    render($("sites-content"),
-      '<div data-sub="all" id="sites-all" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + sites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="universities-labs" id="sites-universities-labs" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + univSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="defense-remote" id="sites-defense-remote" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + defSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="commercial-grid" id="sites-commercial-grid" role="tabpanel" tabindex="0">' +
-        '<div class="sitesgrid">' + commSites.map(renderSiteCard).join("") + "</div></div>" +
-      '<div data-sub="findings-absences" id="sites-findings-absences" role="tabpanel" tabindex="0">' +
-        negHTML + "</div>"
-    );
-    makeSubnav("sites", siteItems);
+    render($("site-filters"), siteKinds.map(function (k, i) {
+      return '<button class="newschip' + (i === 0 ? " on" : "") + '" data-site-filter="' +
+        esc(k.id) + '" aria-pressed="' + (i === 0 ? "true" : "false") + '">' + esc(k.label) + "</button>";
+    }).join(""));
+    render($("sites-content"), '<div class="sitesgrid" id="sites-grid">' +
+      sites.map(function (s) {
+        var kinds = ["all"];
+        if (univSites.indexOf(s) !== -1) kinds.push("universities-labs");
+        if (defSites.indexOf(s) !== -1) kinds.push("defense-remote");
+        if (commSites.indexOf(s) !== -1) kinds.push("commercial-grid");
+        return '<div data-site-kinds="' + kinds.join(" ") + '">' + renderSiteCard(s) + "</div>";
+      }).join("") + '</div><div id="site-negative-findings" hidden>' + negHTML + "</div>");
+    $("site-filters").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-site-filter]");
+      if (!b) return;
+      var kind = b.dataset.siteFilter;
+      Array.prototype.forEach.call($("site-filters").querySelectorAll("[data-site-filter]"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      Array.prototype.forEach.call($("sites-grid").children, function (row) {
+        row.hidden = kind === "findings-absences" || row.dataset.siteKinds.split(" ").indexOf(kind) === -1;
+      });
+      $("site-negative-findings").hidden = kind !== "findings-absences";
+    });
   }
 
   /* ---------- economics ---------- */
@@ -462,19 +487,21 @@
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt",
                                         srcs: srcsOf(a) });
   });
-  // Axis ceiling derived from the bands themselves, rounded up to a clean step.
-  // A hard-coded ceiling silently renders any band above it wider than the
-  // chart: raising rural Alaska to $1,950/MWh against a literal 850 produced a
-  // 1,945px bar inside a 1,280px page.
+  // A rural-Alaska rate at $1,950/MWh is a real but exceptional diesel case.
+  // Plotting it on the same linear axis makes every other band unreadable, so
+  // render exceptional cases as cited callouts rather than pretending the
+  // shorter bars are meaningfully comparable by eye.
+  var chartBands = bands.filter(function (b) { return b.hi <= 800; });
+  var outlierBands = bands.filter(function (b) { return b.hi > 800; });
   var MAX = (function () {
-    var top = bands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
+    var top = chartBands.reduce(function (m, b) { return Math.max(m, b.hi || 0); }, 0);
     return Math.max(850, Math.ceil(top / 250) * 250);
   }());
   // Round for display: the underlying study reports cents, but a chart label
   // implying two-decimal precision on a forward-looking cost estimate is false
   // precision. Full values stay in data/costs.json.
   var money = function (n) { return "$" + Math.round(n); };
-  render($("chart"), bands.map(function (b) {
+  render($("chart"), chartBands.map(function (b) {
     var lo = Math.max(0, b.lo), hi = Math.max(lo + 4, b.hi);
     var left = (lo / MAX) * 100, width = ((hi - lo) / MAX) * 100;
     var txt = Math.round(b.lo) === Math.round(b.hi)
@@ -490,6 +517,13 @@
   }).join("") +
     '<div class="axis"><span>$0</span><span>$' + Math.round(MAX / 2) + "</span><span>$" +
     MAX + "/MWh</span></div>");
+
+  render($("cost-outliers"), outlierBands.map(function (b) {
+    return '<div class="costoutlier"><span class="k">Exceptional diesel case</span>' +
+      '<span class="nm">' + esc(b.lab) + cite(b.srcs) + '</span>' +
+      '<span class="val">' + esc(money(b.lo) + "–" + money(b.hi) + "/MWh") + '</span>' +
+      '<span class="note">Shown outside the chart so one extreme rate does not flatten the rest of the comparison.</span></div>';
+  }).join(""));
 
   render($("altnotes"), D.costs.displaced_alternatives.filter(function (a) {
     return a.low_mwh == null;
@@ -602,7 +636,7 @@
   makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
                            { id: "unit-economics", label: "Unit economics" },
                            { id: "tax-credit", label: "Tax credit" },
-                           { id: "price-to-beat", label: "Price to beat",
+                           { id: "price-to-beat", label: "Customer cost",
                              lazy: { name: "benchmarks", el: "benchmarks", render: renderBenchmarks } }]);
 
   var inc = D.costs.incentives;
@@ -643,7 +677,7 @@
       }).join("") + tl + gaps + srcList(v.sources, "vsrcs") + "</div>";
   }
 
-  var vItems = [{ id: "all", label: "All vendors" }].concat(
+  var vItems = [{ id: "all", label: "All companies (" + D.vendors.vendors.length + ")" }].concat(
     D.vendors.vendors.map(function (v) {
       return { id: slug(v.name), label: v.name };
     })
@@ -854,9 +888,9 @@
   /* ---------- market design ---------- */
   var M = D.mechanisms;
   if (M && M.proposal) {
-    render($("market-intro"), esc(M.intro) +
+    render($("policy-market-intro"), esc(M.intro) +
       ' <span class="proposaltag">this site\'s proposal</span>');
-    render($("mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
+    render($("policy-mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
       return '<div class="mechcard"><h4>' + esc(c.title) + "</h4>" +
         (c.paras || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
         (c.steps && c.steps.length
@@ -865,9 +899,8 @@
         "</div>";
     }).join("") + "</div>");
     var mgroups = M.precedent_groups || [];
-    render($("precedents"), mgroups.map(function (g) {
-      return '<div class="precgroup" data-sub="' + esc(slug(g.name)) + '" id="market-' +
-        esc(slug(g.name)) + '" role="tabpanel" tabindex="0"><p class="prose">Every one of these ' +
+    render($("policy-precedents"), mgroups.map(function (g) {
+      return '<div class="precgroup"><div class="subhead"><h3>' + esc(g.name) + '</h3></div><p class="prose">Every one of these ' +
         "really happened. Each row covers how it worked and who came out ahead, the buyers " +
         "who moved early or the ones who waited.</p>" +
         '<div class="precgrid">' +
@@ -882,8 +915,6 @@
             srcList(p.sources) + "</div></details>";
         }).join("") + "</div></div>";
     }).join(""));
-    makeSubnav("market", [{ id: "proposal", label: "The proposal" }].concat(
-      mgroups.map(function (g) { return { id: slug(g.name), label: g.name }; })));
   }
 
   /* ---------- policy pathways ---------- */
@@ -965,10 +996,31 @@
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
-    }));
+    }).concat([{ id: "market-design", label: "Deal design" }]));
+    if (deferredRoute) {
+      var readyRoute = deferredRoute;
+      deferredRoute = "";
+      activate(readyRoute, { scroll: false });
+    }
   }
 
-  /* ---------- news ---------- */
+  /* ---------- home and news ---------- */
+  var homeRendered = false;
+  function renderHome() {
+    if (homeRendered || !(D.news && D.news.items)) { return; }
+    homeRendered = true;
+    var ids = ["army-janus-award-2026-08-26", "valar-ward250-criticality-2026-06-18",
+               "valar-nvidia-datacenter-2026-06-22"];
+    var stories = ids.map(function (id) {
+      return D.news.items.filter(function (it) { return it.id === id; })[0];
+    }).filter(Boolean);
+    render($("home-highlights"), stories.map(function (it) {
+      return '<article class="homehighlight"><div class="nhdr"><span class="ndate">' +
+        esc(it.date) + '</span><span class="ncat">' + esc(it.category || "") + '</span></div>' +
+        '<h4>' + esc(it.headline) + '</h4><p>' + esc(it.what_happened) + ' ' + cite(it.sources) +
+        '</p><a href="#news">Read the news record →</a></article>';
+    }).join(""));
+  }
   /* Newest first, grouped by month, with the binding/announced split on every
      row. A selection and a signed contract look identical in a headline, which
      is the whole reason this site exists. Deferred: news is its own tab and

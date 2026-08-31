@@ -27,6 +27,13 @@ body{overflow-x:hidden}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
+@media(max-width:767px){
+  .navrow{display:block}
+  .wordmark{display:block;margin:0 0 var(--space-1)}
+  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;
+    -webkit-overflow-scrolling:touch}
+  .tab{flex:0 0 auto}
+}
 
 /* ---------- type helpers ---------- */
 .eyebrow{font-size:var(--size-label);letter-spacing:var(--track-label);text-transform:uppercase;
@@ -91,6 +98,19 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .subtab:hover{color:var(--text-primary)}
 .subtab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--text-primary)}
 @media(pointer:coarse){.subtab{min-height:44px}}
+
+/* Costs: keep a genuine $1,950/MWh Alaska rate visible without letting it
+   compress every normal comparison into an indistinguishable strip. */
+.costread{margin-bottom:var(--space-6)}
+.costoutlier{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);align-items:baseline;
+  margin:var(--space-5) 0;padding:var(--space-4);border:1px solid var(--border-subtle);
+  background:var(--surface-sunken);font-size:var(--size-body-sm)}
+.costoutlier .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--antares-red)}
+.costoutlier .nm{color:var(--text-primary);font-weight:var(--weight-medium)}
+.costoutlier .val{font-family:var(--font-mono);color:var(--text-primary);white-space:nowrap}
+.costoutlier .note{grid-column:2/-1;color:var(--text-tertiary);font-size:var(--size-caption)}
+@media(max-width:640px){.costoutlier{grid-template-columns:1fr auto}.costoutlier .k{grid-column:1/-1}.costoutlier .note{grid-column:1/-1}}
 
 /* ---------- track filter ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
@@ -251,6 +271,17 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
 @media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
 .sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+.homegrid{display:grid;gap:var(--space-8);padding:var(--space-10) 0 var(--space-8);border-bottom:1px solid var(--border-subtle)}
+.homegrid h2{font-size:var(--size-heading-2);margin:0 0 var(--space-4)}
+.homepaths{display:grid;align-content:start;border-top:1px solid var(--border-subtle)}
+.homepaths a{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--border-subtle);font-weight:var(--weight-semibold);color:var(--text-primary)}
+.homepaths a span{color:var(--antares-red)}
+.homehighlights{display:grid;gap:var(--space-5);margin:var(--space-5) 0 var(--space-12)}
+.homehighlight{border:1px solid var(--border-subtle);padding:var(--space-5);background:var(--surface-page)}
+.homehighlight h4{font-size:var(--size-heading-4);margin:var(--space-3) 0}
+.homehighlight p{margin:0 0 var(--space-4);color:var(--text-secondary)}
+.homehighlight a{font-size:var(--size-caption);font-weight:var(--weight-semibold)}
+@media(min-width:768px){.homegrid{grid-template-columns:minmax(0,1.4fr) minmax(18rem,.8fr);align-items:start}.homehighlights{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);
   min-width:0;overflow-wrap:break-word;word-break:break-word}
 .sitecard > summary{list-style:none;cursor:pointer;padding:var(--space-5) var(--space-6);

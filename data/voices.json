@@ -5,7 +5,7 @@
     "why_it_exists": "The rest of this site is figures. This page is the argument behind them. The buyer and the sellers disagree with the critics about almost everything except one point, which is that the first units are expensive and somebody other than a normal customer has to pay for them.",
     "note_on_dates": "The Cheeky Pint interview predates the August 2026 Janus award — DeWahl describes Janus as a competition still to be run. It is quoted here because it is the clearest public statement of how Antares sequences its markets, not as current news.",
     "note": "Hand-curated quotes gathered before the 2026-08-29 research pass. Kept separately so tools/merge_voices.py builds data/voices.json from (this file + the pass) and stays idempotent - an earlier version read its own output and reported drift the moment it had written it.",
-    "roster_note": "130 named executives across 20 companies, each with a source. Of 143 citations here, 101 were checked against the page they cite and 42 rest on search results without a direct page read - those carry a dagger. Spans that could not be found in the page they claimed were demoted or dropped."
+    "roster_note": "145 named executives across 23 companies, each with a source. Of 159 citations here, 101 were checked against the page they cite and 58 rest on search results without a direct page read - those carry a dagger. Spans that could not be found in the page they claimed were demoted or dropped."
   },
   "groups": [
     {
@@ -1825,6 +1825,31 @@
           ]
         },
         {
+          "id": "valar-taylor-ward250-rating-clarification",
+          "speaker": "Isaiah Taylor",
+          "role": "Founder & CEO",
+          "org": "Valar Atomics",
+          "date": "2026-06",
+          "venue": "Isaiah Taylor LinkedIn post",
+          "topic": "Manufacturing and units",
+          "quote": "Ward 250 is a 100kWt reactor, not 15MW",
+          "what_it_means": "Taylor publicly distinguishes the 100 kWt criticality-test rating from larger figures used in discussion of future HTGR scale. DOE's April NEPA record separately describes the proposed Ward250 research facility as 250 kWt; the sources do not explain that difference, so the News record preserves both rather than choosing a rating.",
+          "sources": [
+            {
+              "label": "Isaiah Taylor LinkedIn — Ward 250 rating clarification",
+              "url": "https://www.linkedin.com/posts/isaiahptaylor_i-want-to-clarify-something-because-ive-activity-7476050760196235264-VyvQ",
+              "quote": "Ward 250 is a 100kWt reactor, not 15MW",
+              "status": "snippet-only"
+            },
+            {
+              "label": "U.S. Department of Energy — CX-271015: Valar Ward250 Research Reactor",
+              "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
+              "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
+              "status": "snippet-only"
+            }
+          ]
+        },
+        {
           "id": "westinghouse-evinci-ncerc-criticality",
           "speaker": "Westinghouse Electric Company",
           "role": "Corporate statement to POWER Magazine (no individual named)",
@@ -2113,6 +2138,25 @@
               "url": "https://www.utahinvestigative.org/who-is-valar-atomics/",
               "quote": "I don't know how you can claim your design is so safe without doing engineering",
               "status": "fetched"
+            }
+          ]
+        },
+        {
+          "id": "valar-mitchell-nova-next-step",
+          "speaker": "Mark Mitchell",
+          "role": "Chief Nuclear Officer",
+          "org": "Valar Atomics",
+          "date": "2025-11",
+          "venue": "Mark Mitchell LinkedIn post",
+          "topic": "Licensing and regulation",
+          "quote": "The NOVA core is a key step in Valar Atomics' mission to deliver nuclear heating at the Ward250 reactor",
+          "what_it_means": "Mitchell describes the Los Alamos NOVA experiment as a precursor to Ward250 operations. It is a development statement, not evidence of a customer deployment, commercial contract or operating-power milestone.",
+          "sources": [
+            {
+              "label": "Mark Mitchell LinkedIn — Project NOVA and Ward250",
+              "url": "https://www.linkedin.com/posts/mark-mitchell-51a4881_a-lot-of-questions-about-what-we-actually-activity-7396943492620480513-ZGm8",
+              "quote": "The NOVA core is a key step in Valar Atomics' mission to deliver nuclear heating at the Ward250 reactor",
+              "status": "snippet-only"
             }
           ]
         },
@@ -2722,6 +2766,66 @@
       ]
     },
     {
+      "id": "antares-todryk",
+      "company": "Antares Nuclear",
+      "name": "Alec Todryk",
+      "title": "Head of Finance",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Finance owns the cost and capital assumptions behind an owner-operator offer.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-kalin",
+      "company": "Antares Nuclear",
+      "name": "Christian Kalin",
+      "title": "Head of Operations",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Operations is the function that must make contractor-owned, contractor-operated deployments workable in the field.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-crawford",
+      "company": "Antares Nuclear",
+      "name": "Doug Crawford",
+      "title": "Head of Manufacturing & Test Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Manufacturing and test engineering determine whether a prototype can become repeatable delivered equipment.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-andrus",
+      "company": "Antares Nuclear",
+      "name": "Jason Andrus",
+      "title": "Head of Nuclear Ops & Regulatory",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Nuclear operations and regulatory execution are the bridge from a built reactor to a legally operable one.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "antares-bramble",
       "company": "Antares Nuclear",
       "name": "Jordan Bramble",
@@ -2785,6 +2889,21 @@
       ]
     },
     {
+      "id": "antares-griffin",
+      "company": "Antares Nuclear",
+      "name": "Matt Griffin",
+      "title": "Head of Nuclear Affairs",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Nuclear affairs is the public-policy and stakeholder function around deployment.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "antares-satvat",
       "company": "Antares Nuclear",
       "name": "Nader Satvat",
@@ -2806,6 +2925,21 @@
       ]
     },
     {
+      "id": "antares-fridmar",
+      "company": "Antares Nuclear",
+      "name": "Reuven Fridmar",
+      "title": "Head of Talent",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "A deployable fleet depends on qualified operators, engineers and manufacturing staff, not reactor hardware alone.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "antares-bahran",
       "company": "Antares Nuclear",
       "name": "Rian Bahran",
@@ -2819,6 +2953,51 @@
           "url": "https://finance.yahoo.com/energy/articles/dr-rian-bahran-joins-antares-160000571.html",
           "quote": "There is no team I would rather run it with, one that puts its head down and delivers",
           "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-walsh",
+      "company": "Antares Nuclear",
+      "name": "Scott Walsh",
+      "title": "Head of Reactor Hardware Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Reactor-hardware engineering carries the physical design into fabrication, integration and test.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-mancinelli",
+      "company": "Antares Nuclear",
+      "name": "Tom Mancinelli",
+      "title": "Head of Strategy & Policy",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Strategy and policy work is central to converting federal demonstration activity into a durable market path.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "antares-madsen",
+      "company": "Antares Nuclear",
+      "name": "Will Madsen",
+      "title": "Head of Mission Engineering",
+      "background": "Listed by Antares with this title; no company biography was published with the roster entry.",
+      "why_they_matter": "Mission engineering connects the reactor program to customer operating requirements and site constraints.",
+      "sources": [
+        {
+          "label": "Antares leadership team page",
+          "url": "https://antaresindustries.com/leadership-team",
+          "status": "snippet-only"
         }
       ]
     },
@@ -3135,7 +3314,7 @@
     {
       "id": "ga-ems-forney",
       "company": "General Atomics Electromagnetic Systems",
-      "name": "Scott Forney",
+      "name": "R. Scott Forney III",
       "title": "President, GA-EMS",
       "background": "Leads General Atomics Electromagnetic Systems overall, the division housing GA-TES nuclear work alongside GA-EMS's power, space and defense-systems businesses.",
       "why_they_matter": "As GA-EMS president he is the company's public spokesperson for the Janus award, positioning GA-TES on the firm's 70-year reactor-design and 68-reactors-deployed track record.",
@@ -4253,6 +4432,36 @@
       ]
     },
     {
+      "id": "janus-craft",
+      "company": "U.S. Army / Janus Program",
+      "name": "Jason Craft",
+      "title": "Janus Program Manager",
+      "background": "Identified with this title in the Army's Aug. 2026 Janus announcement.",
+      "why_they_matter": "The program manager is the public Army point of accountability for the first contracted Janus deployment sequence.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors",
+          "url": "https://www.army.mil/article-amp/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "war-michael",
+      "company": "U.S. War Department",
+      "name": "Emil Michael",
+      "title": "Chief Technology Officer, War Department",
+      "background": "Identified with this title in the Army's Aug. 2026 Janus announcement.",
+      "why_they_matter": "The CTO's public support places Janus within the department's wider deployment and technology agenda.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors",
+          "url": "https://www.army.mil/article-amp/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
       "id": "valar-kessler",
       "company": "Valar Atomics",
       "name": "Boris Kessler",
@@ -4361,12 +4570,77 @@
       "company": "Westinghouse",
       "name": "Rich Rademacher",
       "title": "President, Westinghouse Government Services",
-      "background": "Previously served as Vice President and Chief Corporate Development Officer at BWX Technologies, Inc. before moving to Westinghouse. Georgetown University graduate.",
+      "background": "Previously served as Vice President and Chief Corporate Development Officer at BWX Technologies, Inc. before moving to Westinghouse. Georgetown University graduate. A trade-association directory still lists him as Vice President of Business Development; the current Westinghouse release calls him President, Westinghouse Government Services, which is the title used here.",
       "why_they_matter": "He is Westinghouse's public voice on eVinci's defense wins, having delivered the on-record quotes for both the Army Janus selection and the Air Force Malmstrom AFB award.",
       "sources": [
         {
           "label": "Westinghouse Electric Company — \"Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project\"",
           "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project",
+          "status": "snippet-only"
+        },
+        {
+          "label": "ETeba — Westinghouse Government Services directory",
+          "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "wgs-nuccio",
+      "company": "Westinghouse Government Services",
+      "name": "Jim Nuccio",
+      "title": "Director, Business Development",
+      "background": "Listed in the Westinghouse Government Services directory.",
+      "why_they_matter": "Business-development contact for the government-services organization supporting Westinghouse's defense-facing work.",
+      "sources": [
+        {
+          "label": "ETeba — Westinghouse Government Services directory",
+          "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "wgs-longsworth",
+      "company": "Westinghouse Government Services",
+      "name": "Paul Longsworth",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [
+        {
+          "label": "ETeba — Westinghouse Government Services directory",
+          "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "wgs-lewis",
+      "company": "Westinghouse Government Services",
+      "name": "Wayne Lewis",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [
+        {
+          "label": "ETeba — Westinghouse Government Services directory",
+          "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "wgs-ferguson",
+      "company": "Westinghouse Government Services",
+      "name": "William Ferguson",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [
+        {
+          "label": "ETeba — Westinghouse Government Services directory",
+          "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607",
           "status": "snippet-only"
         }
       ]

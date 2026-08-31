@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "captured": "2026-08-31",
+    "agent": "manual-roster-curation",
+    "companies": [
+      "Westinghouse Government Services",
+      "U.S. Army / Janus Program",
+      "U.S. War Department"
+    ],
+    "window": "2026-08",
+    "angles_run": [
+      "Official U.S. Army Janus announcement",
+      "Westinghouse Government Services directory"
+    ],
+    "absences": [
+      "The Westinghouse Government Services directory names William Ferguson, Wayne Lewis and Paul Longsworth as contacts, but does not state their current titles. They are retained as directory contacts rather than labelled executives.",
+      "The Army release supplies the Janus and War Department titles, but no biographies for Jason Craft or Emil Michael. No career detail is inferred."
+    ],
+    "incomplete": false
+  },
+  "leaders": [
+    {
+      "id": "wgs-nuccio",
+      "company": "Westinghouse Government Services",
+      "name": "Jim Nuccio",
+      "title": "Director, Business Development",
+      "background": "Listed in the Westinghouse Government Services directory.",
+      "why_they_matter": "Business-development contact for the government-services organization supporting Westinghouse's defense-facing work.",
+      "sources": [{"label": "ETeba — Westinghouse Government Services directory", "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607", "status": "snippet-only"}]
+    },
+    {
+      "id": "wgs-ferguson",
+      "company": "Westinghouse Government Services",
+      "name": "William Ferguson",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [{"label": "ETeba — Westinghouse Government Services directory", "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607", "status": "snippet-only"}]
+    },
+    {
+      "id": "wgs-lewis",
+      "company": "Westinghouse Government Services",
+      "name": "Wayne Lewis",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [{"label": "ETeba — Westinghouse Government Services directory", "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607", "status": "snippet-only"}]
+    },
+    {
+      "id": "wgs-longsworth",
+      "company": "Westinghouse Government Services",
+      "name": "Paul Longsworth",
+      "title": "Directory contact (title not stated)",
+      "background": "Listed as a Westinghouse Government Services contact; the directory provides no current business title.",
+      "why_they_matter": "Included to preserve the published government-services contact roster without overstating an unverified role.",
+      "sources": [{"label": "ETeba — Westinghouse Government Services directory", "url": "https://portal.eteba.org/directory/Details/westinghouse-government-services-2662607", "status": "snippet-only"}]
+    },
+    {
+      "id": "janus-craft",
+      "company": "U.S. Army / Janus Program",
+      "name": "Jason Craft",
+      "title": "Janus Program Manager",
+      "background": "Identified with this title in the Army's Aug. 2026 Janus announcement.",
+      "why_they_matter": "The program manager is the public Army point of accountability for the first contracted Janus deployment sequence.",
+      "sources": [{"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors", "url": "https://www.army.mil/article-amp/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "status": "snippet-only"}]
+    },
+    {
+      "id": "war-michael",
+      "company": "U.S. War Department",
+      "name": "Emil Michael",
+      "title": "Chief Technology Officer, War Department",
+      "background": "Identified with this title in the Army's Aug. 2026 Janus announcement.",
+      "why_they_matter": "The CTO's public support places Janus within the department's wider deployment and technology agenda.",
+      "sources": [{"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors", "url": "https://www.army.mil/article-amp/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "status": "snippet-only"}]
+    }
+  ],
+  "quotes": []
+}

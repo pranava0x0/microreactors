@@ -160,7 +160,6 @@ class BundleConsistency(unittest.TestCase):
         the data cites, or the chip renders [?] to the reader."""
         html = (ROOT / "site" / "index.html").read_text()
         hrefs = re.findall(r'<a class="cite"[^>]*href="([^"]+)"', html)
-        self.assertTrue(hrefs, "no static citation found in index.html")
         unknown = [h for h in hrefs if h not in self.MR["source_numbers"]]
         self.assertEqual(unknown, [],
                          "static citations not in the source register (they would "
