@@ -106,14 +106,17 @@ class Layout(unittest.TestCase):
                       return {
                         scrollW: doc.scrollWidth, clientW: doc.clientWidth,
                         lastTabIn: lastTab.right <= tabsBox.right + 0.5,
+                        tabOverflow: tabs.scrollWidth > tabs.clientWidth + 1,
                         visible, wide, sub,
                         tabH: document.querySelector('.tab').getBoundingClientRect().height
                       };
                     }""", panel)
                     if m["scrollW"] > m["clientW"] + 1:
                         problems.append(f"{width}px {panel}: horizontal scroll {m['scrollW']}>{m['clientW']}")
-                    if not m["lastTabIn"]:
+                    if width >= 768 and not m["lastTabIn"]:
                         problems.append(f"{width}px {panel}: last tab clipped")
+                    if width < 768 and not m["tabOverflow"]:
+                        problems.append(f"{width}px {panel}: primary navigation should scroll")
                     if m["visible"] != [panel]:
                         problems.append(f"{width}px {panel}: visible={m['visible']}")
                     if m["wide"]:
@@ -173,6 +176,63 @@ class Routing(unittest.TestCase):
         self.assertEqual(got["visible"], ["sources"], "#evidence did not land on Sources")
         self.assertTrue(got["hash"].startswith("#sources"),
                         f"legacy hash not rewritten to canonical: {got['hash']}")
+
+    def test_merged_tab_hashes_land_on_their_new_sections(self):
+        """Sites and Market design became sub-sections. Preserve direct links."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            results = []
+            for old_hash in ("sites", "market"):
+                page.goto(base + "#" + old_hash, wait_until="networkidle")
+                page.wait_for_timeout(80)
+                results.append(page.evaluate("""() => ({
+                  visible: [...document.querySelectorAll('section[role=tabpanel]')]
+                    .filter(p => !p.hidden).map(p => p.id), hash: location.hash
+                })"""))
+            browser.close()
+        self.assertEqual(results[0]["visible"], ["pipeline"])
+        self.assertEqual(results[0]["hash"], "#pipeline/sites")
+        self.assertEqual(results[1]["visible"], ["policy"])
+        self.assertEqual(results[1]["hash"], "#policy/market-design")
+
+
+@unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+class HomePage(unittest.TestCase):
+    def test_home_has_three_news_highlights_and_working_paths(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            page.goto(base + "#home", wait_until="networkidle")
+            page.wait_for_timeout(100)
+            count = page.locator("#home-highlights .homehighlight").count()
+            page.locator('.homepaths a[href="#economics"]').click()
+            page.wait_for_timeout(50)
+            visible = page.evaluate("""() => [...document.querySelectorAll('section[role=tabpanel]')]
+              .filter(p => !p.hidden).map(p => p.id)""")
+            browser.close()
+        self.assertEqual(count, 3)
+        self.assertEqual(visible, ["economics"])
+
+    def test_site_filters_expose_the_selected_state(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            page.goto(base + "#pipeline/sites", wait_until="networkidle")
+            page.wait_for_timeout(80)
+            page.locator('[data-site-filter="defense-remote"]').click()
+            state = page.locator('[data-site-filter="defense-remote"]').get_attribute("aria-pressed")
+            browser.close()
+        self.assertEqual(state, "true")
 
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")

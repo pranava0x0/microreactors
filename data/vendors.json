@@ -376,6 +376,77 @@
           }
         }
       ]
+    },
+    {
+      "id": "bwxt-banr",
+      "name": "BWXT Advanced Technologies",
+      "reactor": "BANR",
+      "coolant": "Helium-cooled high-temperature gas reactor",
+      "fuel": "TRISO",
+      "mwe_high": 20,
+      "mwe_label": "20 MWe (75 MWth)",
+      "first_delivery_target": "Operation targeted for the early 2030s",
+      "first_delivery_year": 2030,
+      "notes": "Janus awardee for Fort Campbell, Kentucky. The award is phased; value is not public.",
+      "sources": [{"label": "POWER — The Janus Five", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "status": "fetched"}],
+      "gaps": ["No public contract value", "No public utility agreement or power price"],
+      "milestones": [{"date": "2026-08-26", "status": "done", "label": "Selected for Janus at Fort Campbell", "source": {"label": "POWER — The Janus Five", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "status": "fetched"}}, {"date": "2030", "status": "target", "label": "Operation targeted in the early 2030s", "source": {"label": "POWER — The Janus Five", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "status": "fetched"}}]
+    },
+    {
+      "id": "general-atomics-ga-tes",
+      "name": "General Atomics",
+      "reactor": "GA-TES",
+      "coolant": "Liquid metal, natural circulation",
+      "fuel": "Uranium-zirconium hydride",
+      "mwe_low": 5,
+      "mwe_high": 20,
+      "mwe_label": "About 5 MWe, scalable to about 20 MWe",
+      "first_delivery_target": "Not published",
+      "first_delivery_year": null,
+      "notes": "Janus awardee for Fort Hood, Texas. GA-EMS disclosed development, testing, and site-planning milestones, not a delivery date or contract value.",
+      "sources": [{"label": "POWER — The Janus Five", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "status": "fetched"}],
+      "gaps": ["No published delivery target", "No named fuel supplier, utility partner, or contract value"],
+      "milestones": [{"date": "2026-08-26", "status": "done", "label": "Selected for Janus at Fort Hood", "source": {"label": "POWER — The Janus Five", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "status": "fetched"}}]
+    },
+    {
+      "id": "valar-ward250",
+      "name": "Valar Atomics",
+      "reactor": "Ward 250",
+      "coolant": "Helium-cooled high-temperature gas reactor",
+      "fuel": "TRISO",
+      "mwe_label": "Research reactor; public sources describe 100 kWt criticality and a 250 kWt proposed facility",
+      "first_delivery_target": "Not published",
+      "first_delivery_year": null,
+      "notes": "Ward 250 reached zero-power criticality in Utah. Valar later announced a 30 MW Utah data-center project with Nvidia; no public power contract, price, or delivery date was found.",
+      "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}, {"label": "DOE NEPA — Ward250 research reactor", "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor", "status": "snippet-only"}],
+      "gaps": ["Public sources do not resolve the 100 kWt and 250 kWt descriptions", "No public commercial power agreement"],
+      "milestones": [{"date": "2026-06-18", "status": "done", "label": "Ward 250 reached zero-power criticality in Utah", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
+    },
+    {
+      "id": "aalo-x",
+      "name": "Aalo Atomics",
+      "reactor": "Aalo-X Critical Test Reactor",
+      "mwe_label": "Research reactor; output not stated in the cited record",
+      "first_delivery_target": "Not published",
+      "first_delivery_year": null,
+      "notes": "Aalo-X reached zero-power fueled criticality at Idaho National Laboratory. This is a test milestone, not a commercial delivery or power-sale record.",
+      "sources": [{"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}],
+      "gaps": ["No public commercial delivery date", "No public power purchase agreement"],
+      "milestones": [{"date": "2026-07-04", "status": "done", "label": "Aalo-X reached zero-power fueled criticality at INL", "source": {"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}}]
+    },
+    {
+      "id": "oklo-aurora",
+      "name": "Oklo",
+      "reactor": "Aurora Powerhouse",
+      "coolant": "Liquid-metal-cooled fast reactor",
+      "mwe_high": 75,
+      "mwe_label": "75 MWe planned first deployment",
+      "first_delivery_target": "Not published",
+      "first_delivery_year": null,
+      "notes": "Oklo secured DOE preliminary documented safety analysis approval for Aurora-INL. It is included as a larger advanced-reactor comparator, not as a 1–20 MW microreactor.",
+      "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}],
+      "gaps": ["No published criticality or completion date for Aurora-INL"],
+      "milestones": [{"date": "2026-06-11", "status": "done", "label": "DOE preliminary safety approval announced for Aurora-INL", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
     }
   ]
 }

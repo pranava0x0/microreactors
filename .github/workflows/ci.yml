@@ -31,4 +31,5 @@ jobs:
         run: |
           python3 tools/build_gaps.py
           python3 tools/build_data.py
+          python3 tools/build_meta.py
           git diff --exit-code

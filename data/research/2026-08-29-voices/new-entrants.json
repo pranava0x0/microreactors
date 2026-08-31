@@ -25,8 +25,7 @@
     "absences": [
       "No verbatim, independently fetchable primary-source quote found for Valar's often-cited 'safe enough to hold by hand' / CAT-scan spent-fuel radiation claim itself -- only search-summary paraphrases exist for the original claim, so it is omitted per the no-synthesis-from-summaries rule. Only Taylor's own combative reply to the ensuing criticism, and the critics' replies, could be verbatim-verified and are included.",
       "No manufacturing units-per-year figure found stated by any of the three companies for their eventual factories (Aalo's Austin 'Reactor Factory', Valar's Utah fabrication facility, or Deep Fission's borehole-drilling operation) -- all three describe factory/site locations but none states a production-rate target in a fetchable source.",
-      "No verbatim quote found from Mo Shahzad or Mark Mitchell themselves in the 2024-08 to 2026-08 window (Mitchell's only located quote is from his April 2024 hire announcement, one month before the window opens, so it was used only for the leader bio, not the quotes array).",
-      "Valar Atomics' own site (valaratomics.com root and /docs) carries almost no leadership-bio or hard-number content; all Valar leader and quote material came from third-party press coverage and one prior hire press release instead.",
+      "No verbatim, independently fetched statement was found from Mo Shahzad in the 2024-08 to 2026-08 window. The two added Valar leader statements are LinkedIn search-index excerpts and remain snippet-only.",
       "No SEC filing (10-K or S-1) from Deep Fission repeats the $50-70/MWh LCOE or 5-7 cents/kWh figures that CEO Liz Muller has stated in press releases and podcasts; this discrepancy is treated as a finding (see quotes), not an absence, but the underlying 'why' (e.g. an SEC comment-letter objection) was not found in a fetchable source.",
       "Dropped deepfission-muller-leu-fuel 2026-08-30: fewer than six words of the transcribed podcast quote appear verbatim in the cited page, so it could not ship as a quotation. The underlying fact (Deep Fission buys 5% low-enriched uranium) is carried by deepfission-10k-leu-commitment, sourced to the company's own 10-K, which is the stronger citation anyway."
     ],
@@ -682,6 +681,50 @@
           "url": "https://www.ksl.com/article/news/business/valar-atomics-nuclear-reactor-reaches-criticality-in-utah/51513785",
           "quote": "A few minutes ago, we took Ward250 critical",
           "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-taylor-ward250-rating-clarification",
+      "company": "Valar Atomics",
+      "speaker": "Isaiah Taylor",
+      "role": "Founder & CEO",
+      "date": "2026-06",
+      "venue": "Isaiah Taylor LinkedIn post",
+      "topic": "units-manufacturing",
+      "quote": "Ward 250 is a 100kWt reactor, not 15MW",
+      "what_it_means": "Taylor publicly distinguishes the 100 kWt criticality-test rating from larger figures used in discussion of future HTGR scale. DOE's April NEPA record separately describes the proposed Ward250 research facility as 250 kWt; the sources do not explain that difference, so the News record preserves both rather than choosing a rating.",
+      "sources": [
+        {
+          "label": "Isaiah Taylor LinkedIn — Ward 250 rating clarification",
+          "url": "https://www.linkedin.com/posts/isaiahptaylor_i-want-to-clarify-something-because-ive-activity-7476050760196235264-VyvQ",
+          "quote": "Ward 250 is a 100kWt reactor, not 15MW",
+          "status": "snippet-only"
+        },
+        {
+          "label": "U.S. Department of Energy — CX-271015: Valar Ward250 Research Reactor",
+          "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
+          "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "valar-mitchell-nova-next-step",
+      "company": "Valar Atomics",
+      "speaker": "Mark Mitchell",
+      "role": "Chief Nuclear Officer",
+      "date": "2025-11",
+      "venue": "Mark Mitchell LinkedIn post",
+      "topic": "regulatory",
+      "quote": "The NOVA core is a key step in Valar Atomics' mission to deliver nuclear heating at the Ward250 reactor",
+      "what_it_means": "Mitchell describes the Los Alamos NOVA experiment as a precursor to Ward250 operations. It is a development statement, not evidence of a customer deployment, commercial contract or operating-power milestone.",
+      "sources": [
+        {
+          "label": "Mark Mitchell LinkedIn — Project NOVA and Ward250",
+          "url": "https://www.linkedin.com/posts/mark-mitchell-51a4881_a-lot-of-questions-about-what-we-actually-activity-7396943492620480513-ZGm8",
+          "quote": "The NOVA core is a key step in Valar Atomics' mission to deliver nuclear heating at the Ward250 reactor",
+          "status": "snippet-only"
         }
       ]
     },

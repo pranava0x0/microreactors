@@ -83,5 +83,120 @@ class ScriptOrder(unittest.TestCase):
         self.assertGreater(a, d, "data.js must load before app.js")
 
 
+class MarkupIds(unittest.TestCase):
+    """A duplicate id is invalid HTML and silently breaks getElementById.
+
+    A render div was given id="news" inside <section id="news">, so the lazy
+    loader's placeholder wrote into the SECTION and wiped the whole panel. It
+    rendered zero rows with no console error and looked like a data problem.
+    """
+
+    def test_no_duplicate_ids(self):
+        import collections
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        ids = re.findall(r'id="([^"]+)"', html)
+        dupes = [i for i, n in collections.Counter(ids).items() if n > 1]
+        self.assertEqual(dupes, [], f"duplicate id(s) in index.html: {dupes}")
+
+    def test_every_lazy_panel_target_exists_and_is_not_its_panel(self):
+        """The placeholder must land in a child of the panel, never the panel itself.
+
+        Two call shapes reach lazyPanel: a direct call guarded by
+        `if (id === "<panel>")` in activate(), and a `lazy: {name, el, render}`
+        descriptor on a makeSubnav item, where the panel is makeSubnav's first
+        argument. Both are checked, and both counts are reconciled against the
+        raw number of call sites so a pattern that drifts fails loudly instead
+        of passing over everything it stopped matching.
+        """
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        app = (ROOT / "site" / "assets" / "app.js").read_text()
+
+        guarded = re.findall(
+            r'if \(id === "(\w+)"[^)]*\)\s*\{\s*lazyPanel\("\w+",\s*"([\w-]+)"', app)
+        # 1 definition + 1 generic invocation inside makeSubnav are not call sites
+        # that name a panel; every other one must have matched above.
+        direct = len(re.findall(r'\blazyPanel\(', app)) - 2
+        self.assertEqual(len(guarded), direct,
+                         f"matched {len(guarded)} guarded lazyPanel calls but app.js has "
+                         f"{direct} direct call sites - the pattern has gone stale")
+
+        # Segment the file at each makeSubnav( rather than bracket-matching its
+        # argument list: one call closes with `].concat(` instead of `]);`, and a
+        # non-greedy `\[(.*?)\]\);` swallowed the next call whole, attributing the
+        # Sources descriptors to the Market panel. Wrong panel, still unequal to
+        # its target, so the assertion below passed on a deliberately broken file.
+        calls = [(m.group(1), m.start()) for m in re.finditer(r'makeSubnav\("(\w+)"', app)]
+        bounds = [st for _, st in calls] + [len(app)]
+        subnav = []
+        for i, (panel, _) in enumerate(calls):
+            seg = app[bounds[i]:bounds[i + 1]]
+            for el in re.findall(r'lazy:\s*\{[^}]*?el:\s*"([\w-]+)"', seg):
+                subnav.append((panel, el))
+        self.assertEqual(len(subnav), app.count("lazy: {"),
+                         f"matched {len(subnav)} subnav lazy descriptors but app.js has "
+                         f"{app.count('lazy: {')} - the pattern has gone stale")
+
+        pairs = guarded + subnav
+        self.assertTrue(pairs, "no lazy panel wiring found at all")
+        for panel, target in pairs:
+            self.assertIn(f'id="{panel}"', html, f"panel #{panel} not in markup")
+            self.assertIn(f'id="{target}"', html, f"lazy target #{target} not in markup")
+            self.assertNotEqual(panel, target,
+                                f"the lazy placeholder is written into #{target}, which is also "
+                                f"the id of the panel it lives in - it would erase the panel")
+
+
+class ElementRefs(unittest.TestCase):
+    """Every id app.js writes into must exist in the markup.
+
+    render() calls replaceChildren on whatever $() returns, so one missing id
+    throws at module scope and every render after it never runs - the page then
+    loses whole panels with a single console error that names the wrong line.
+    Hit while moving a paragraph between sections: the sub-tabs for five panels
+    silently stopped being built."""
+
+    def test_every_element_app_js_writes_to_exists(self):
+        import re
+        app = (ROOT / "site" / "assets" / "app.js").read_text()
+        ids = set(re.findall(r'id="([\w-]+)"', (ROOT / "site" / "index.html").read_text()))
+        refs = sorted(set(re.findall(r'\$\("([\w-]+)"\)', app)))
+        self.assertGreater(len(refs), 20, "no $() references found - the pattern has gone stale")
+        # PANELS are looked up with the same helper and are section ids
+        missing = [r for r in refs if r not in ids]
+        self.assertEqual(missing, [], f"app.js writes to ids that are not in index.html: {missing}")
+
+
+class PanelOrder(unittest.TestCase):
+    """The tab strip, the <section> order and app.js's PANELS are one decision in
+    three places. A tab reordered in the markup alone leaves the keyboard order
+    and the no-JS reading order disagreeing with what is on screen."""
+
+    def _panels(self):
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        app = (ROOT / "site" / "assets" / "app.js").read_text()
+        tabs = re.findall(r'<button class="tab"[^>]*data-panel="([\w-]+)"', html)
+        secs = re.findall(r'^<section id="([\w-]+)"', html, re.M)
+        panels = re.search(r'var PANELS = \[(.*?)\];', app).group(1)
+        return tabs, secs, re.findall(r'"([\w-]+)"', panels)
+
+    def test_tabs_sections_and_panels_agree(self):
+        tabs, secs, panels = self._panels()
+        self.assertTrue(tabs, "no tab buttons found")
+        self.assertEqual(tabs, panels, "tab buttons and PANELS are in different orders")
+        self.assertEqual(secs, panels, "<section> order and PANELS are in different orders")
+
+    def test_only_the_landing_panel_starts_visible(self):
+        import re
+        html = (ROOT / "site" / "index.html").read_text()
+        _, _, panels = self._panels()
+        for m in re.finditer(r'^<section id="([\w-]+)"([^>]*)>', html, re.M):
+            wants_hidden = m.group(1) != panels[0]
+            self.assertEqual(" hidden" in m.group(2), wants_hidden,
+                             f"#{m.group(1)}: hidden attribute disagrees with PANELS[0]")
+
+
 if __name__ == "__main__":
     unittest.main()

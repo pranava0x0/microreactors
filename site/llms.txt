@@ -1,0 +1,54 @@
+# Microreactor Opportunity Map
+
+> A cited map of the microreactor business-development opportunity space: pipeline, economics, vendors, demand, market mechanisms, policy pathways, and an honest evidence-gap register.
+
+Captured 2026-08-30. Every figure below is derived from the JSON in `data/`, and every claim carrying a number cites a source; 557 distinct sources are registered, each with one stable number reused everywhere it is cited.
+
+## How far the market has moved
+
+- 9 of 16 tracked buyers hold a binding instrument (a signed contract, a filed application or an executed award); the rest are selections, letters of intent and memoranda.
+- 2 of 16 have a utility filing on record.
+- 17 vendor milestones were hit in 2026 and 3 test reactors reached criticality.
+- The largest single preorder is 20 units; the earliest stated delivery target is 2028.
+- No microreactor has sold power, so every cost figure on the site is an estimate with its basis stated. 89 real-world benchmark rows carry what power actually costs today, 82 of them with a price, capex or displaced-cost number.
+- 74 policy and market instruments are written up, 8 demand sectors with 55 load profiles (47 cited).
+
+## Sections
+
+- [Home](https://pranava0x0.github.io/microreactors/#home): Start here. This is not a reactor catalog. It tracks the commercial work around small reactors: buyers, sites, contracts, costs, rules, and the missing terms that decide whether an announcement becomes a project.
+- [Deals](https://pranava0x0.github.io/microreactors/#pipeline): Who is buying now. Only one group has a named reactor at a named site with a signed deal. Open any row for the details.
+- [Why microreactors](https://pranava0x0.github.io/microreactors/#why): Why a microreactor. A microreactor is a reactor of 1-20 MW: small enough to be factory-built and delivered to a site, and sized for one customer's load rather than a grid. This is the case for buying one at that size, and the places where the case does not hold.
+- [Applications](https://pranava0x0.github.io/microreactors/#demand): What a 1–20 MW reactor could power. Rough yearly power needs, for early planning. Sizing a real project takes a year of hourly data first. Each sector starts with how that industry gets its power today.
+- [Costs](https://pranava0x0.github.io/microreactors/#economics): What the power costs. No microreactor has sold power yet, so every number here is an estimate. The bands are wide because sources disagree about what the first units will cost to build.
+- [Vendors](https://pranava0x0.github.io/microreactors/#vendors): Companies to watch. The roster includes the five Janus awardees, Valar, and other companies with a public reactor milestone or named project. It is a research list, not a ranking.
+- [Rules &amp; deal design](https://pranava0x0.github.io/microreactors/#policy): Rules and deal design. Rules decide what a project may do. Deal design decides who takes first-unit cost and schedule risk. Rows marked idea are proposals, not law.
+- [News](https://pranava0x0.github.io/microreactors/#news): What happened. Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.
+- [Sources](https://pranava0x0.github.io/microreactors/#sources): Sources and gaps. Every source used on this site, and how complete each part of the data is. Three fields stay thin because search engines do not index regulators' docket systems.
+
+## Data
+
+The site is static and its data is committed as JSON. Each file carries a `_meta` block naming what it is and when it was captured.
+
+- [arguments.json](https://github.com/pranava0x0/microreactors/blob/main/data/arguments.json)
+- [benchmarks.json](https://github.com/pranava0x0/microreactors/blob/main/data/benchmarks.json)
+- [costs.json](https://github.com/pranava0x0/microreactors/blob/main/data/costs.json)
+- [deployment_sites.json](https://github.com/pranava0x0/microreactors/blob/main/data/deployment_sites.json)
+- [gaps.json](https://github.com/pranava0x0/microreactors/blob/main/data/gaps.json)
+- [instruments.json](https://github.com/pranava0x0/microreactors/blob/main/data/instruments.json)
+- [mechanisms.json](https://github.com/pranava0x0/microreactors/blob/main/data/mechanisms.json)
+- [news.json](https://github.com/pranava0x0/microreactors/blob/main/data/news.json)
+- [opportunities.json](https://github.com/pranava0x0/microreactors/blob/main/data/opportunities.json)
+- [policy.json](https://github.com/pranava0x0/microreactors/blob/main/data/policy.json)
+- [sectors.json](https://github.com/pranava0x0/microreactors/blob/main/data/sectors.json)
+- [vendors.json](https://github.com/pranava0x0/microreactors/blob/main/data/vendors.json)
+- [voices.json](https://github.com/pranava0x0/microreactors/blob/main/data/voices.json)
+- [voices_curated.json](https://github.com/pranava0x0/microreactors/blob/main/data/voices_curated.json)
+
+## What is missing
+
+The site publishes its own gaps rather than implying coverage it does not have.
+
+- **Utility filings** — 14/16 rows have none. Web search does not index docket systems. This needs direct docket queries, not more searching.
+- **Land area / site footprint** — 15/16 rows have none. Only Westinghouse publishes a footprint figure (2 acres), and that is a design claim rather than an allocated parcel.
+- **Operating staff and O&M cost** — No row carries an operator headcount, a staffing plan or an O&M figure. Not searched for in any pass to date. The case for a 1-20 MW unit rests on it not needing a 24/7 licensed crew, so an unstaffed cost line is a hole in the economics, not a missing detail.
+- **Shell / enclosure detail** — 12/16 rows have none. Press coverage reports mass and transportability but not containment or enclosure design.

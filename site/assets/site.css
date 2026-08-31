@@ -27,6 +27,13 @@ body{overflow-x:hidden}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
+@media(max-width:767px){
+  .navrow{display:block}
+  .wordmark{display:block;margin:0 0 var(--space-1)}
+  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;
+    -webkit-overflow-scrolling:touch}
+  .tab{flex:0 0 auto}
+}
 
 /* ---------- type helpers ---------- */
 .eyebrow{font-size:var(--size-label);letter-spacing:var(--track-label);text-transform:uppercase;
@@ -91,6 +98,19 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .subtab:hover{color:var(--text-primary)}
 .subtab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--text-primary)}
 @media(pointer:coarse){.subtab{min-height:44px}}
+
+/* Costs: keep a genuine $1,950/MWh Alaska rate visible without letting it
+   compress every normal comparison into an indistinguishable strip. */
+.costread{margin-bottom:var(--space-6)}
+.costoutlier{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-3);align-items:baseline;
+  margin:var(--space-5) 0;padding:var(--space-4);border:1px solid var(--border-subtle);
+  background:var(--surface-sunken);font-size:var(--size-body-sm)}
+.costoutlier .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--antares-red)}
+.costoutlier .nm{color:var(--text-primary);font-weight:var(--weight-medium)}
+.costoutlier .val{font-family:var(--font-mono);color:var(--text-primary);white-space:nowrap}
+.costoutlier .note{grid-column:2/-1;color:var(--text-tertiary);font-size:var(--size-caption)}
+@media(max-width:640px){.costoutlier{grid-template-columns:1fr auto}.costoutlier .k{grid-column:1/-1}.costoutlier .note{grid-column:1/-1}}
 
 /* ---------- track filter ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
@@ -251,10 +271,28 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
 @media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
 .sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
-.sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);
+.homegrid{display:grid;gap:var(--space-8);padding:var(--space-10) 0 var(--space-8);border-bottom:1px solid var(--border-subtle)}
+.homegrid h2{font-size:var(--size-heading-2);margin:0 0 var(--space-4)}
+.homepaths{display:grid;align-content:start;border-top:1px solid var(--border-subtle)}
+.homepaths a{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--border-subtle);font-weight:var(--weight-semibold);color:var(--text-primary)}
+.homepaths a span{color:var(--antares-red)}
+.homehighlights{display:grid;gap:var(--space-5);margin:var(--space-5) 0 var(--space-12)}
+.homehighlight{border:1px solid var(--border-subtle);padding:var(--space-5);background:var(--surface-page)}
+.homehighlight h4{font-size:var(--size-heading-4);margin:var(--space-3) 0}
+.homehighlight p{margin:0 0 var(--space-4);color:var(--text-secondary)}
+.homehighlight a{font-size:var(--size-caption);font-weight:var(--weight-semibold)}
+@media(min-width:768px){.homegrid{grid-template-columns:minmax(0,1.4fr) minmax(18rem,.8fr);align-items:start}.homehighlights{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);
   min-width:0;overflow-wrap:break-word;word-break:break-word}
+.sitecard > summary{list-style:none;cursor:pointer;padding:var(--space-5) var(--space-6);
+  display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);align-items:start;min-height:44px}
+.sitecard > summary::-webkit-details-marker{display:none}
+.sitecard > summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  line-height:var(--lh-heading);transition:transform .12s ease}
+.sitecard[open] > summary::before{transform:rotate(90deg)}
+.sitecard > .sbody{padding:0 var(--space-6) var(--space-6);min-width:0}
 .sitecard .shdr{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);
-  margin-bottom:var(--space-3);flex-wrap:wrap}
+  flex-wrap:wrap;min-width:0}
 .sitecard h3{font-size:var(--size-heading-3);color:var(--text-primary);margin:0;font-weight:var(--weight-semibold)}
 .sitecard .smeta{display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap}
 .sitetag{font-family:var(--font-mono);font-size:var(--size-caption);padding:1px var(--space-2);
@@ -263,7 +301,7 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .sitetag.status-permitted,.sitetag.status-operating{color:var(--stance-positive);border-color:var(--stance-positive-40)}
 .sitetag.status-application,.sitetag.status-pre-application,.sitetag.status-intent-to-award{color:var(--antares-red);border-color:var(--antares-red-40)}
 .sitetag.status-tabled,.sitetag.status-paused,.sitetag.status-cancelled{color:var(--text-tertiary);border-color:var(--border-subtle)}
-.sitedetails{display:grid;grid-template-columns:1fr;gap:var(--space-2);margin:var(--space-4) 0;
+.sitedetails{display:grid;grid-template-columns:1fr;gap:var(--space-2);margin:0 0 var(--space-4) 0;
   font-size:var(--size-body-sm);color:var(--text-secondary);padding:var(--space-3) 0;
   border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);min-width:0}
 @media(min-width:768px){.sitedetails{grid-template-columns:repeat(2,1fr)}}
@@ -378,6 +416,17 @@ details.prec .body .k{color:var(--text-tertiary)}
 .pw p{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin:0}
 .trackblurb{margin-bottom:var(--space-6)}
 /* ---------- evidence: source register ---------- */
+.regsearch{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;
+  margin:var(--space-5) 0;max-width:960px}
+.regsearch input{flex:1 1 18rem;min-width:0;min-height:44px;background:var(--surface-page);
+  border:1px solid var(--border-subtle);color:var(--text-primary);padding:0 var(--space-3);
+  font-family:inherit;font-size:var(--size-body-sm)}
+.regsearch input:focus{outline:none;border-color:var(--antares-red)}
+.regsearch input::placeholder{color:var(--text-tertiary)}
+.regcount{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);
+  text-transform:uppercase;letter-spacing:var(--track-label);white-space:nowrap}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .reg{border-top:1px solid var(--border-subtle);max-width:960px}
 .reg .rrow{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);align-items:baseline;
   padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle);font-size:var(--size-body-sm)}
@@ -395,7 +444,13 @@ details.prec .body .k{color:var(--text-tertiary)}
   .reg .rrow{grid-template-columns:auto 1fr}
   .reg .host{grid-column:2;white-space:normal;word-break:break-all}
 }
-.reg .uses{display:block;font-size:var(--size-caption);color:var(--text-tertiary);margin-top:2px}
+/* One line, ellipsised. "cited by" is orientation, not the row's content, and
+   letting it wrap to three lines was most of why 544 rows ran to 98 screens on a
+   phone. The full list stays in the title attribute and in the filter's index. */
+.reg .uses{display:block;font-size:var(--size-caption);color:var(--text-tertiary);margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reg .rrow > span:nth-child(2){min-width:0}
+.reg .rrow a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ---------- coverage ---------- */
 .cov{display:grid;grid-template-columns:minmax(120px,180px) 1fr auto;gap:var(--space-4);
@@ -523,3 +578,66 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
 .unitval2{color:var(--text-secondary);font-size:var(--size-caption);min-width:0;
   overflow-wrap:anywhere}
 .voicedate{font-family:var(--font-mono);color:var(--text-tertiary);font-size:var(--size-caption)}
+
+/* Why microreactors — a numbered argument list. The number is the point: these
+   are twelve claims, not a wall, and the counters carry a cross instead. */
+.argrow{display:flex;gap:var(--space-4);padding:var(--space-6) 0;
+  border-bottom:1px solid var(--border-subtle);min-width:0}
+.argnum{font-family:var(--font-mono);font-size:var(--size-heading-3);
+  color:var(--antares-red);flex-shrink:0;width:2.2rem;line-height:1.1}
+.argrow.counter .argnum{color:var(--text-tertiary)}
+.argbody{min-width:0;flex:1}
+.argbody h3{margin:0 0 var(--space-2) 0;font-size:var(--size-heading-3);
+  color:var(--text-primary);line-height:var(--lh-heading)}
+.argclaim{margin:0 0 var(--space-3) 0;color:var(--text-secondary);
+  font-size:var(--size-body-lg);line-height:1.5}
+.argbody .prose{margin:0 0 var(--space-4) 0}
+
+/* Pointer left where the Top options grid used to sit. */
+.topcross{padding:var(--space-6) 0;border-bottom:1px solid var(--border-subtle)}
+.topcross a{color:var(--antares-red);text-decoration:underline;text-underline-offset:2px}
+.argbasis{font-family:var(--font-mono);font-size:var(--size-caption);
+  text-transform:uppercase;letter-spacing:var(--track-label);color:var(--text-tertiary);
+  white-space:nowrap}
+
+/* News — dated events, newest first, with the instrument named on every row. */
+.newsfilter{display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-5) 0}
+.newschip{background:none;border:1px solid var(--border-subtle);color:var(--text-tertiary);
+  font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);padding:var(--space-2) var(--space-3);cursor:pointer;
+  min-height:44px}
+.newschip.on{border-color:var(--antares-red);color:var(--antares-red)}
+.newsmonth{margin-bottom:var(--space-8)}
+.newsmonth h3{font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--text-tertiary);
+  border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
+  margin:0 0 var(--space-4) 0}
+.newsitem{border-bottom:1px solid var(--border-subtle);min-width:0}
+.newsitem > summary{list-style:none;cursor:pointer;padding:var(--space-4) 0 var(--space-4) var(--space-5);
+  position:relative;min-height:44px}
+.newsitem > summary::-webkit-details-marker{display:none}
+.newsitem > summary::before{content:"\25B8";position:absolute;left:0;top:var(--space-4);
+  color:var(--antares-red);font-size:var(--size-body-sm);transition:transform .12s ease}
+.newsitem[open] > summary::before{transform:rotate(90deg)}
+.newsitem > .nbody{padding:0 0 var(--space-4) var(--space-5)}
+.nhdr{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:baseline;
+  margin-bottom:var(--space-2)}
+.ndate,.ncat{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+.ncat{text-transform:uppercase;letter-spacing:var(--track-label)}
+.nbind{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label)}
+.nbind.yes{color:var(--antares-red)}
+.nbind.no{color:var(--text-tertiary)}
+.newsitem h4{margin:0 0 var(--space-2) 0;font-size:var(--size-body-lg);color:var(--text-primary);
+  line-height:var(--lh-heading)}
+.newsitem .prose{margin:0 0 var(--space-2) 0}
+.nwhy,.nbindnote{margin:0 0 var(--space-1) 0;color:var(--text-secondary);
+  font-size:var(--size-caption);line-height:1.55}
+.nbindnote{color:var(--text-tertiary)}
+
+.seealso{margin:var(--space-4) 0 0 0;font-size:var(--size-body-sm)}
+.seealso a{color:var(--antares-red);text-decoration:underline;text-underline-offset:3px}
+
+/* A closed <details> reserves no height. The UA default handles the simple case,
+   but a child that sets its own display (.sitedetails is a grid) can escape it. */
+details:not([open]) > :not(summary){display:none}
