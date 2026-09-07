@@ -115,6 +115,9 @@
      same tick both read it as false before either settles, and the payload
      downloads twice. Every caller here gets the same promise. */
   var LAZY = {};
+  /* Same deployment stamp build_meta.py puts on data.js and app.js, so a chunk
+     can never pair with a page from another deployment. */
+  var VER = D.summary && D.summary.built ? "?v=" + D.summary.built : "";
   function loadLazy(name) {
     if (!(D.lazy || []).length || (D.lazy || []).indexOf(name) === -1) {
       return Promise.resolve(D[name]);          // not split; already present
@@ -123,7 +126,7 @@
     if (!LAZY[name]) {
       LAZY[name] = new Promise(function (resolve, reject) {
         var s = document.createElement("script");
-        s.src = "data-" + name + ".js";
+        s.src = "data-" + name + ".js" + VER;
         s.onload = function () { resolve(D[name]); };
         // Fail loud: a swallowed error here leaves a panel permanently empty
         // with no explanation, which reads as a rendering bug for weeks.
@@ -349,7 +352,9 @@
         '<div class="rows">' + trackOpps.map(rowHTML).join("") + "</div></div>";
     }).join("")
   );
-  makeSubnav("pipeline", pipeItems);
+  makeSubnav("pipeline", pipeItems.concat([
+    { id: "prospects", label: "Prospects" + (s.prospects != null ? " (" + s.prospects + ")" : ""),
+      lazy: { name: "strategy", el: "prospects", render: renderProspects } }]));
 
   function toggle(top) {
     var row = top.parentNode, open = row.classList.toggle("open");
@@ -633,11 +638,188 @@
     }).join(""));
   }
 
+  /* ---------- what wins the deal, and who could buy next ----------
+     Both read data-strategy.js, which ships separately because two panels draw
+     on it and neither needs it for a first screen. loadLazy hands both sub-tabs
+     the same promise, so opening Costs then Deals fetches it once. Every figure
+     here restates a cited row; the derived tables print their formula. */
+  var winRendered = false;
+  function renderPriceToWin() {
+    var T = D.strategy;
+    if (winRendered || !(T && T.ladder)) { return; }
+    winRendered = true;
+    var usd = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
+    var kwe = function (lo, hi) {
+      return lo === hi ? usd(lo) + "/kWe" : usd(lo) + "–" + usd(hi) + "/kWe";
+    };
+    var mwh = function (lo, hi) {
+      if (lo == null) { return "no published estimate"; }
+      return lo === hi ? usd(lo) + "/MWh" : usd(lo) + "–" + usd(hi) + "/MWh";
+    };
+    var rungOf = function (id) {
+      return T.ladder.rungs.filter(function (x) { return x.id === id; })[0];
+    };
+    var drows = function (facts) {
+      return '<div class="sitedetails">' + facts.filter(function (f) { return f[1]; }).map(function (f) {
+        return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" + esc(f[1]) + "</span></div>";
+      }).join("") + "</div>";
+    };
+    var table = function (head, body) {
+      return '<div class="tablewrap"><table class="wintable"><thead><tr>' +
+        head.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+        body.map(function (cells) {
+          return "<tr>" + cells.map(function (c, i) {
+            return (i ? "<td>" : '<td class="lbl">') + esc(c) + "</td>";
+          }).join("") + "</tr>";
+        }).join("") + "</tbody></table></div>";
+    };
+    var Lr = T.ladder;
+    render($("win-q"), esc(Lr.question));
+    render($("win-note"), esc(Lr.note) + " " + esc(T._meta.derived_note));
+    render($("win-ladder"), '<div class="unitrows">' + Lr.rungs.map(function (r) {
+      return '<div class="unitrow"><span class="unitname">' + esc(r.name) +
+        '<br><span class="argbasis">' + esc(mwh(r.lcoe_low_mwh, r.lcoe_high_mwh)) + "</span></span>" +
+        '<span class="unitval">' + esc(kwe(r.capex_low_kwe, r.capex_high_kwe)) +
+        (r.all_in_min_kwe ? '<br><span class="argbasis">over ' + esc(usd(r.all_in_min_kwe)) + "/kWe all-in</span>" : "") + "</span>" +
+        '<span class="unitbasis">' + esc(r.scenario) + ". " + (r.capex_basis ? esc(r.capex_basis) + " " : "") +
+        (r.all_in_note ? esc(r.all_in_note) + " " : "") + esc(r.lcoe_note) +
+        " <strong>Opens:</strong> " + esc(r.opens_note) + " " + cite(r.sources) + "</span></div>";
+    }).join("") + "</div>");
+
+    var U = Lr.units;
+    render($("win-units-q"), esc(U.question));
+    render($("win-units"), '<p class="prose">' + esc(U.note) + " <code>" + esc(U.formula) + "</code> " +
+      cite(U.sources) + "</p>" +
+      table(["Rung"].concat(U.sizes_mwe.map(function (m) { return m + " MWe"; })),
+            U.rows.map(function (row) {
+              var r = rungOf(row.rung);
+              return [r ? r.name : row.rung].concat(U.sizes_mwe.map(function (m) {
+                var v = row.usd_millions[String(m)];
+                var cell = v[0] === v[1] ? "$" + v[0] + "M" : "$" + v[0] + "–" + v[1] + "M";
+                if (row.all_in_min_usd_millions) { cell += "; over $" + row.all_in_min_usd_millions[String(m)] + "M all-in"; }
+                return cell;
+              }));
+            })));
+
+    var Cv = Lr.conversion;
+    render($("win-conv-q"), esc(Cv.question));
+    render($("win-conv"), '<p class="prose">' + esc(Cv.note) + " <code>" + esc(Cv.formula) + "</code> " +
+      cite(Cv.sources) + "</p>" + '<div class="unitrows">' + Cv.rows.map(function (r) {
+        return '<div class="unitrow"><span class="unitname">' + esc(r.life_years + "-year life") + "</span>" +
+          '<span class="unitval">' + esc("$" + r.usd_per_mwh_per_1000_kwe + "/MWh per $1,000/kWe") + "</span>" +
+          '<span class="unitbasis">' + esc("Capital recovery factor " + r.crf + " at " +
+            Math.round(r.real_rate * 100) + "% real, " + Math.round(r.cf * 100) + "% capacity factor.") +
+          "</span></div>";
+      }).join("") + "</div>");
+
+    var F = T.floor;
+    render($("win-floor-q"), esc(F.question));
+    render($("win-floor-note"), esc(F.note) + " <code>" + esc(F.formula) + "</code>");
+    render($("win-floor"),
+      table(["Fixed cost per reactor", "A year"].concat(F.sizes_mwe.map(function (m) { return m + " MWe"; })),
+            F.rows.map(function (row) {
+              var inp = F.inputs.filter(function (x) { return x.id === row.input; })[0];
+              return [inp ? inp.name : row.input, usd(row.usd_per_year)].concat(
+                F.sizes_mwe.map(function (m) { return "$" + row.per_mwh[String(m)] + "/MWh"; }));
+            })) +
+      '<div class="unitrows">' + F.inputs.map(function (inp) {
+        return '<div class="unitrow"><span class="unitname">' + esc(inp.name) + "</span>" +
+          '<span class="unitval">' + esc(usd(inp.usd_per_year) + "/yr") + "</span>" +
+          '<span class="unitbasis">' + esc(inp.basis) + " " + cite(inp.sources) + "</span></div>";
+      }).join("") + "</div>" +
+      '<p class="prose">' + esc(F.reading) + " " + cite(F.sources) + "</p>");
+
+    render($("win-seg-q"), "Buyer by buyer");
+    render($("win-segments"), '<div class="precgrid">' + T.segments.map(function (sg) {
+      var rung = rungOf(sg.clears);
+      return '<details class="prec"><summary><span class="nm">' + esc(sg.name) + "</span>" +
+        '<span class="cat">' + esc(rung ? "clears at " + rung.name : sg.clears) + "</span></summary>" +
+        '<div class="body"><p><span class="k">Verdict · </span>' + esc(sg.verdict) + "</p>" +
+        drows([["Incumbent", sg.incumbent], ["Price form", sg.price_form], ["Term", sg.term],
+               ["Clears at", rung ? rung.name + ", " + kwe(rung.capex_low_kwe, rung.capex_high_kwe) : sg.clears],
+               ["Blocker", sg.blocker], ["First deal", sg.first_deal]]) +
+        findingsHTML(sg.findings) +
+        '<p class="seealso"><a href="#economics/price-to-beat">' + esc(sg.benchmark_ids.length) +
+        " priced cases on the Customer cost sub-tab →</a></p>" +
+        srcList(sg.sources) + "</div></details>";
+    }).join("") + "</div>");
+  }
+
+  /* A finding is a research-pass answer to the row's open question, copied in by
+     tools/merge_answers.py. An absent one says what was searched, so a blank never
+     reads as "nobody looked". Figures print verbatim beside the finding. */
+  function findingsHTML(findings) {
+    if (!findings || !findings.length) { return ""; }
+    return findings.map(function (f) {
+      var figs = f.figures ? Object.keys(f.figures).map(function (k) {
+        return esc(k.replace(/_/g, " ")) + ": " + esc(f.figures[k]);
+      }).join("; ") : "";
+      if (f.status === "absent") {
+        return '<p class="finding"><span class="k">Searched ' + esc(f.date) + ", not found · </span>" +
+          esc(f.finding) + (f.searched ? ' <span class="note">(angles: ' +
+          esc(f.searched.join("; ")) + ")</span>" : "") + "</p>";
+      }
+      return '<p class="finding"><span class="k">Finding ' + esc(f.date) + " · " + esc(f.status) +
+        " · </span>" + esc(f.finding) + (figs ? ' <span class="note">' + figs + "</span>" : "") +
+        " " + cite(f.sources) + "</p>";
+    }).join("");
+  }
+
+  var prospectsRendered = false;
+  function renderProspects() {
+    var T = D.strategy;
+    if (prospectsRendered || !(T && T.prospects)) { return; }
+    prospectsRendered = true;
+    var advs = T._meta.advantage_types, advLabel = {}, advGloss = {};
+    advs.forEach(function (a) { advLabel[a.id] = a.label; advGloss[a.id] = a.gloss; });
+    var HREF = { benchmark: "#economics/price-to-beat", site: "#pipeline/sites", opportunity: "#pipeline",
+                 instrument: "#policy", news: "#news" };
+    render($("prospects-intro"), esc(T._meta.what_this_is) + " " + esc(T._meta.method));
+    render($("prospects-filter"),
+      '<button class="newschip on" data-adv="">All ' + T.prospects.length + "</button>" +
+      advs.map(function (a) {
+        var n = T.prospects.filter(function (p) { return p.advantage === a.id; }).length;
+        return '<button class="newschip" data-adv="' + esc(a.id) + '" title="' + esc(a.gloss) + '">' +
+          esc(a.label) + " " + n + "</button>";
+      }).join(""));
+    render($("prospects"), '<div class="precgrid">' + T.prospects.map(function (p) {
+      var facts = [["Load", p.load], ["Documented", p.documented], ["Why 1–20 MW fits", p.fit],
+                   ["Sale shape", p.sale_shape], ["First question", p.next_question]];
+      var refs = (p.refs || []).map(function (r) {
+        var k = Object.keys(r)[0];
+        return '<a href="' + esc(HREF[k] || "#") + '">' + esc(k) + " · " + esc(r[k]) + "</a>";
+      });
+      return '<details class="prec prospect" data-adv="' + esc(p.advantage) + '"><summary>' +
+        '<span class="nm">' + esc(p.name) + '</span><span class="cat">' + esc(p.status) + " · " +
+        esc(p.sector) + "</span></summary>" +
+        '<div class="body"><p><span class="k">' + esc(advLabel[p.advantage] || p.advantage) + " · </span>" +
+        esc(advGloss[p.advantage] || "") + " " + esc(p.region) + ".</p>" +
+        '<div class="sitedetails">' + facts.map(function (f) {
+          return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" + esc(f[1]) + "</span></div>";
+        }).join("") + "</div>" + findingsHTML(p.findings) +
+        (refs.length ? '<p class="seealso">' + refs.join(" · ") + "</p>" : "") +
+        srcList(p.sources) + "</div></details>";
+    }).join("") + "</div>");
+    $("prospects-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      Array.prototype.forEach.call($("prospects-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+      });
+      var adv = b.dataset.adv;
+      Array.prototype.forEach.call($("prospects").querySelectorAll("details.prospect"), function (d) {
+        d.hidden = !!adv && d.dataset.adv !== adv;
+      });
+    });
+  }
+
   makeSubnav("economics", [{ id: "bands", label: "Cost bands" },
                            { id: "unit-economics", label: "Unit economics" },
                            { id: "tax-credit", label: "Tax credit" },
                            { id: "price-to-beat", label: "Customer cost",
-                             lazy: { name: "benchmarks", el: "benchmarks", render: renderBenchmarks } }]);
+                             lazy: { name: "benchmarks", el: "benchmarks", render: renderBenchmarks } },
+                           { id: "win", label: "What wins",
+                             lazy: { name: "strategy", el: "win-ladder", render: renderPriceToWin } }]);
 
   var inc = D.costs.incentives;
   if (inc) {

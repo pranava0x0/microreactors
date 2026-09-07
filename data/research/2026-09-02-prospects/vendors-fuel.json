@@ -1,0 +1,247 @@
+{
+ "_meta": {
+  "captured": "2026-09-02",
+  "agent": "vendors-fuel",
+  "scope": "Four open questions: SRC's post-Westinghouse vendor evaluation and CA$80M funding status (issue #11); Global First Power ownership after the USNC bankruptcy and CNSC application status (issue #12); TRISO fabrication price and DOE HALEU allocation vs vendor unit counts (issue #15); Oklo and Last Energy published unit prices and the DOE clean-firm band (issue #16).",
+  "angles_run": [
+   "\"Saskatchewan Research Council\" microreactor vendor evaluation 2026",
+   "SRC microreactor Saskatchewan 2026 \"$80 million\" Westinghouse cancelled replacement",
+   "Saskatchewan Research Council nuclear microreactor news 2026",
+   "Saskatchewan 2026-27 budget estimates Saskatchewan Research Council nuclear microreactor",
+   "SRC Saskatchewan microreactor RFI vendor 2026",
+   "\"Saskatchewan Research Council\" microreactor vendor 2026 -Westinghouse -eVinci",
+   "Mike Crabtree SRC microreactor \"$80 million\" fund status 2026",
+   "\"Global First Power\" Chalk River 2026 status CNSC",
+   "\"Ultra Safe Nuclear\" bankruptcy sale \"Global First Power\" Standard Nuclear assets",
+   "USNC Chapter 11 asset purchase agreement buyer Global First Power Chalk River",
+   "Standard Nuclear TRISO fuel price per kilogram contract Radiant Antares 2026",
+   "DOE TRISO fuel fabrication contract award cost per kilogram 2026",
+   "DOE HALEU Availability Program round three allocation recipients kilograms 2026",
+   "DOE HALEU allocation round one round two recipients kilograms list",
+   "GAO report 2026 HALEU microreactor demand nobody knows how much needed",
+   "Oklo Aurora first powerhouse cost \"$145 million\" investor presentation",
+   "Oklo levelized cost per MWh clean firm power gas carbon capture advanced nuclear DOE slide",
+   "Oklo shareholder letter presentation \"$63\" \"$99\" OR \"$66\" \"$109\" OR \"$69\" \"$119\"",
+   "DOE Pathways to Commercial Liftoff advanced nuclear $63 $99 gas carbon capture $66 $109",
+   "Oklo investor presentation clean firm cost comparison DOE chart 2024 2025",
+   "\"Last Energy\" PWR-20 \"$100 million\" per unit price",
+   "\"Last Energy\" \"2.4 billion\" 24 units UK Wales",
+   "Last Energy PWR-5 unit price 2026",
+   "Last Energy press release \"24 units\" OR \"2.4 billion\" UK site:lastenergy.com",
+   "Last Energy 24 reactors UK £2.4 billion OR $2.4 billion 2026 sold contracted"
+  ],
+  "absences": [
+   "No source (fetched or snippet) names a successor vendor SRC is evaluating after the Westinghouse eVinci cancellation; the only on-record description is Mike Crabtree's unnamed 'slightly larger and slightly smaller' microreactors, given to the Saskatchewan legislature's Economy Committee on 2026-04-15.",
+   "No source addresses whether the CA$80M appropriated to SRC in 2023 remains earmarked, was reallocated, or lapsed after the cancellation; the 2026-04-15 committee hearing that discussed the cancellation did not raise funding status.",
+   "No public source (DOE, GAO, or any company filing) discloses a per-recipient kilogram or MTU figure for any HALEU allocation round, so no vendor's allocation can be checked against its planned unit count.",
+   "Standard Nuclear's prospectus and 10-Q do not break out TRISO pricing by customer (Radiant vs Antares), only an aggregate 'assumed' per-MTU range.",
+   "The DOE clean-firm comparison band ($63-99 / $66-109 / $69-119 per MWh) attributed by Utility Dive to Oklo's Q2 2024 shareholder presentation does not appear anywhere in the text or accessibility captions of that SEC-filed document (Exhibit 99.1, 8-K filed 2024-08-13); only the reporter's own reading was confirmed.",
+   "No source discloses a PWR-5 price; Last Energy's own FAQ page states no PWR-20 or PWR-5 price and no UK contract value.",
+   "The Data Center Dynamics article headlined 'Last Energy claims to have sold 24 nuclear reactors in the UK for £2.4 billion' (Feb 2026) returned HTTP 403 and could not be fetched, so its pound-denominated framing could not be checked directly against Last Energy's own words; every other source found gives the comparable figure in US dollars."
+  ],
+  "quote_repairs": "2026-09-02: five quotes re-copied to the verbatim span the cached page carries (a paraphrased lead-in, a hyphenated line break, a typo on the page, and an encoding artefact in a transcript); the facts were unchanged."
+ },
+ "answers": [
+  {
+   "id": "last-energy-pwr20-uk-pricing",
+   "for": "remote-mines",
+   "question": "the primary source for Last Energy's per-unit PWR-20 price (about $100M) and its 24-unit UK figure (2.4 billion pounds), and any PWR-5 price.",
+   "status": "partial",
+   "finding": "PowerMag's March 2023 coverage of Last Energy's Poland/UK agreements (34 units total: 10 in Poland, 24 in the UK, across three UK site partners) states 'project costs are below $100 million' per PWR-20 unit -- the closest confirmation found of the widely cited ~$100M figure, though it is trade-press reporting, not an exact number published by Last Energy itself. For the 24 UK units, the same article states the deal represents '$2.4 billion' of inward investment in the UK -- in US dollars, not British pounds. The commonly repeated '24 units, GBP 2.4 billion' framing could not be verified in pounds: the article that reports it that way (Data Center Dynamics, February 2026) returned a 403 error and could not be fetched, and every other source checked gives the $2.4bn inward-investment figure in dollars. A separate, much larger figure covers the same UK pipeline: lifetime electricity-sales revenue under the PPAs, reported as 'the power purchase agreement representing over £15.4 billion ($18.9 billion) in electricity sales' -- a decades-long revenue total, not a contract or capital-cost value, and not the $2.4bn figure. Last Energy's own FAQ page (fetched) states no PWR-20 price, no PWR-5 price, and no UK contract value at all; no source checked discloses any PWR-5 price.",
+   "figures": {
+    "pwr20_cost_powermag": "below $100 million per unit (PowerMag, 2023-03)",
+    "uk_24unit_inward_investment": "$2.4 billion (US dollars, per PowerMag; not confirmed in GBP)",
+    "uk_pipeline_lifetime_ppa_revenue": "over £15.4 billion ($18.9 billion) in electricity sales",
+    "pwr5_price": "not disclosed in any source checked"
+   },
+   "searched": [
+    "\"Last Energy\" PWR-20 \"$100 million\" per unit price",
+    "\"Last Energy\" \"2.4 billion\" 24 units UK Wales",
+    "Last Energy PWR-5 unit price 2026",
+    "Last Energy press release \"24 units\" OR \"2.4 billion\" UK site:lastenergy.com",
+    "Last Energy 24 reactors UK £2.4 billion OR $2.4 billion 2026 sold contracted"
+   ],
+   "sources": [
+    {
+     "label": "POWER Magazine — Last Energy Secures PPAs for 34 SMR Nuclear Power Plants in Poland and the UK",
+     "url": "https://www.powermag.com/last-energy-secures-ppas-for-34-smr-nuclear-power-plants-in-poland-and-the-uk/",
+     "quote": "keeps project costs below $100 million",
+     "status": "fetched"
+    },
+    {
+     "label": "No2NuclearPower — Last Energy (UK 24-unit deal summary)",
+     "url": "https://www.no2nuclearpower.org.uk/news/last-energy-24-3-23/",
+     "quote": "the power purchase agreement representing over £15.4 billion ($18.9 billion) in electricity sales",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "oklo-unit-price-clean-firm-band",
+   "for": "data-centers",
+   "question": "the primary source for Oklo's stated first-unit cost and its expected $/MWh, and the slide behind the DOE clean-firm band ($63-99 gas with carbon capture, $66-109 advanced nuclear, $69-119 renewables plus storage) that a reporter attributed to an Oklo shareholder presentation. State whether only the reporter's reading exists.",
+   "status": "partial",
+   "finding": "Utility Dive attributes all three figures to Oklo's Q2 2024 disclosures: the $145 million first-powerhouse cost to CFO R. Craig Bealmear speaking on Oklo's Q2 2024 earnings call, and both the $40-90/MWh expected levelized cost and the DOE clean-firm band (gas with carbon capture $63-99/MWh, advanced nuclear $66-109/MWh, renewables plus storage $69-119/MWh) to 'its shareholder presentation.' That presentation is identifiable and public: Oklo filed its Q2 2024 Shareholder Letter as Exhibit 99.1 to an August 13, 2024 Form 8-K, a 26-slide deck. Reading the full text of all 26 slides (including the hidden screen-reader captions describing each slide's graphic content) and grep'ing the raw filing for '$63', '$66', '$69', '$99', '$109', '$119', 'MWh', 'carbon capture' and 'clean firm' turns up zero matches anywhere in the filing. The closest slide (12 of 26) is captioned 'Strategically cost-competitive and highly repeatable' and lists reactor sizes (15 MW, 50 MW, 100+ MW) but carries no cost or $/MWh figures. So for the $40-90/MWh figure and the DOE clean-firm band specifically, only the reporter's own reading could be verified; the primary slide Utility Dive describes was not found in Oklo's SEC-filed presentation. The $145 million figure rests on a spoken quote attributed to a named executive on an earnings call, which is a more solid (if still secondhand) attribution.",
+   "figures": {
+    "oklo_first_powerhouse_cost": "$145 million (attributed to CFO R. Craig Bealmear, Q2 2024 earnings call)",
+    "oklo_expected_lcoe": "$40/MWh to $90/MWh (Utility Dive's characterization; not found in the filed presentation)",
+    "doe_gas_ccs_band": "$63 to $99 per MWh",
+    "doe_advanced_nuclear_band": "$66 to $109 per MWh",
+    "doe_renewables_storage_band": "$69 to $119 per MWh",
+    "shareholder_letter_filing_date": "2024-08-13 (Oklo Form 8-K, Q2 2024 results; no later Oklo filing was found repeating these figures)"
+   },
+   "searched": [
+    "Oklo Aurora first powerhouse cost \"$145 million\" investor presentation",
+    "Oklo levelized cost per MWh clean firm power gas carbon capture advanced nuclear DOE slide",
+    "Oklo shareholder letter presentation \"$63\" \"$99\" OR \"$66\" \"$109\" OR \"$69\" \"$119\"",
+    "DOE Pathways to Commercial Liftoff advanced nuclear $63 $99 gas carbon capture $66 $109",
+    "Oklo investor presentation clean firm cost comparison DOE chart 2024 2025"
+   ],
+   "sources": [
+    {
+     "label": "Utility Dive — Oklo's microreactor project pipeline jumps 93% ahead of 2027 planned deployment",
+     "url": "https://www.utilitydive.com/news/oklo-advanced-nuclear-microreactor-project-pipeline-nrc/724343/",
+     "quote": "the presentation showed the following DOE-estimated per-MWh cost ranges for competing clean, firm generation technologies",
+     "status": "fetched"
+    },
+    {
+     "label": "Oklo Inc. — Q2 2024 Shareholder Letter, Exhibit 99.1 to Form 8-K (SEC EDGAR, filed 2024-08-13)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465924088946/tm2421217d1_ex99-1.htm",
+     "quote": "Strategically cost-competitive and highly repeatable",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "fuel-triso-price",
+   "for": "fuel-chokepoints",
+   "question": "What does a ton of fabricated TRISO cost, and which vendor's allocation covers its unit count?",
+   "status": "answered",
+   "finding": "Standard Nuclear's July 2026 IPO prospectus (424B4) discloses the first public TRISO price range: 'our current customer order book reflects assumed TRISO pricing of approximately $50.0 - 80.0 million per MTU' (metric ton of uranium). This is explicitly an assumption used to value the order book, not a per-contract negotiated price, and the prospectus does not break it out between the Radiant multi-ton deal and the Antares one-ton deal. The prospectus also discloses a funded backlog of $65 million against a total contract backlog of $245 million and a $986 million qualified pipeline under negotiation. Standard Nuclear's 10-Q for the quarter ended June 30, 2026 (filed August 27, 2026) does not update or itemize this pricing; it confirms only that Standard Nuclear's fuel-related assets were purchased 'through a Section 363 auction process under the U.S. Bankruptcy Code' from USNC, with no new price disclosure.",
+   "figures": {
+    "triso_assumed_price": "$50.0 - 80.0 million per MTU",
+    "funded_backlog": "$65 million",
+    "total_contract_backlog": "$245 million",
+    "qualified_pipeline": "$986 million"
+   },
+   "searched": [
+    "Standard Nuclear TRISO fuel price per kilogram contract Radiant Antares 2026",
+    "DOE TRISO fuel fabrication contract award cost per kilogram 2026",
+    "Standard Nuclear S-1 TRISO price per kilogram revenue contract Radiant",
+    "BWXT 10-K TRISO fuel Lynchburg contract value microreactor 2026"
+   ],
+   "sources": [
+    {
+     "label": "Standard Nuclear, Inc. — Form 424B4 prospectus (SEC EDGAR, filed 2026-07-16)",
+     "url": "https://www.sec.gov/Archives/edgar/data/2086716/000121390026078747/ea0276071-13.htm",
+     "quote": "our current customer order book reflects assumed TRISO pricing of approximately $50.0 - 80.0 million per MTU",
+     "status": "fetched"
+    },
+    {
+     "label": "Standard Nuclear, Inc. — Form 10-Q for quarter ended 2026-06-30 (SEC EDGAR, filed 2026-08-27)",
+     "url": "https://www.sec.gov/Archives/edgar/data/2086716/000162828026059189/nucl-20260630.htm",
+     "quote": "from which the Company purchased specific nuclear fuel-related assets through a Section 363 auction process under the U.S. Bankruptcy Code",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "fuel-haleu-allocation",
+   "for": "fuel-chokepoints",
+   "question": "What does a ton of fabricated TRISO cost, and which vendor's allocation covers its unit count?",
+   "status": "partial",
+   "finding": "DOE's HALEU Availability Program publishes only an aggregate delivery schedule, never a per-recipient breakdown. Its HALEU Allocation Process document commits DOE to 'seek to make available 21 metric tons (\"MT\") of HALEU' on a schedule of '3 MT by September 30, 2024, 8 MT by December 31, 2025, and 10 MT by June 30, 2026.' DOE's first round of conditional commitments (five of the 15 companies that applied: TRISO-X, Kairos Power, Radiant, Westinghouse and TerraPower) disclosed no kilogram figures, and neither did the third round, announced July 23, 2026, which added NASA and a second allocation to Radiant Industries. GAO's August 2026 report on federal uranium supply (GAO-26-107385) explains why no vendor-to-unit-count mapping exists: it found HALEU 'demands for commercial reactors remain highly uncertain' and separately flagged 'a potential future demand stream for unobligated HALEU to be used as fuel for microreactors under development' for the Department of Defense as still unquantified. No fetched source ties any recipient's kilogram allocation to its planned reactor unit count.",
+   "figures": {
+    "haleu_total_schedule": "21 metric tons (3 MT by 2024-09-30, 8 MT by 2025-12-31, 10 MT by 2026-06-30)",
+    "round1_recipients": "5 of 15 applicant companies (TRISO-X, Kairos Power, Radiant, Westinghouse, TerraPower)",
+    "round3_date": "2026-07-23 (NASA and a second Radiant Industries allocation)"
+   },
+   "searched": [
+    "DOE HALEU Availability Program round three allocation recipients kilograms 2026",
+    "DOE HALEU allocation round one round two recipients kilograms list",
+    "GAO report 2026 HALEU microreactor demand nobody knows how much needed",
+    "Centrus HALEU $900 million contract delivery schedule kilograms Piketon 2028"
+   ],
+   "sources": [
+    {
+     "label": "U.S. Department of Energy — HALEU Allocation Process",
+     "url": "https://www.energy.gov/documents/haleu-allocation-process-08282025",
+     "quote": "3 MT by September 30, 2024, 8 MT by December 31, 2025, and 10 MT by June 30, 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS Nuclear Newswire — GAO report analyzes nuclear fuel efforts in national security and commercial sectors",
+     "url": "https://www.ans.org/news/2026-08-25/article-8336/gao-report-analyzes-nuclear-fuel-efforts-in-national-security-and-commercial-sectors/",
+     "quote": "a potential future demand stream for unobligated HALEU to be used as fuel for microreactors under development",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "chalk-river-gfp-ownership",
+   "for": "chalk-river-gfp",
+   "question": "Who owns the Global First Power venture after the bankruptcy sale, and will the CNSC application be transferred or withdrawn?",
+   "status": "answered",
+   "finding": "NANO Nuclear Energy Inc. (via its subsidiary Kronos MMR Inc.) now owns Global First Power Limited (GFPL). NANO's press release states it acquired GFPL from USNC on October 22, 2025, with 'the principal consideration paid' being NANO's assumption of 'an approximately $640,000 liability owed by GFPL to the CNSC,' and that NANO 'now directly owns the regulatory licensing application' to build a KRONOS MMR demonstration at Chalk River, continuing from GFPL's completed Vendor Design Review and submitted first part of the licence-to-prepare-site (LTPS) application. This is a separate transaction from Standard Nuclear's $28M stalking-horse purchase of USNC's fuel-related assets in the same Chapter 11 case. However, CNSC's own project page, last modified 2026-01-15 (three months after the GFPL deal closed), still states only that 'CNSC staff have paused all work related to the environmental assessment and the application review for the licence to prepare site as of August 2024' and attributes the pause to USNC's bankruptcy — it makes no mention of NANO Nuclear, Kronos MMR, or any transfer. So ownership has changed and NANO says it is continuing the project, but the CNSC docket itself has not yet been updated to reflect a transfer, reinstatement, or withdrawal.",
+   "figures": {
+    "gfpl_acquisition_date": "2025-10-22",
+    "gfpl_consideration": "approximately $640,000 (assumption of GFPL's liability to CNSC)",
+    "cnsc_pause_start": "August 2024",
+    "cnsc_page_last_modified": "2026-01-15"
+   },
+   "searched": [
+    "\"Global First Power\" Chalk River 2026 status CNSC",
+    "\"Ultra Safe Nuclear\" bankruptcy sale \"Global First Power\" Standard Nuclear assets",
+    "USNC Chapter 11 asset purchase agreement buyer Global First Power Chalk River"
+   ],
+   "sources": [
+    {
+     "label": "NANO Nuclear Energy — press release, NANO Nuclear Finalizes Acquisition of Global First Power from USNC",
+     "url": "https://nanonuclearenergy.com/nano-nuclear-finalizes-acquisition-of-global-first-power-from-usnc-strengthening-its-position-as-a-north-american-leader-in-nuclear-microreactor-development/",
+     "quote": "The principal consideration paid by NANO Nuclear for the GFPL acquisition was NANO Nuclear's assumption of an approximately $640,000 liability",
+     "status": "fetched"
+    },
+    {
+     "label": "CNSC — Global First Power Micro Modular Reactor Project (regulatory review status)",
+     "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/",
+     "quote": "CNSC staff have paused all work related to the environmental assessment and the application review for the licence to prepare site as of August 2024",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "src-saskatchewan-vendor-status",
+   "for": "src-saskatchewan",
+   "question": "Which vendors is SRC evaluating now, and is the CA$80M still appropriated?",
+   "status": "partial",
+   "finding": "No public source names a successor vendor. At an April 15, 2026 Saskatchewan legislature Economy Committee hearing, SRC's Mike Crabtree told MLAs that over the years working on eVinci, SRC had also identified other microreactors 'both slightly larger and slightly smaller' for different market niches in Canada and Saskatchewan, without naming any of them. Minister Kaeding told the same hearing that Westinghouse redirected eVinci to aerospace and defence work after its own large-reactor contract announcement with Cameco in the US. Neither this hearing nor SRC's own FAQ page (last confirmed updated after the fall 2025 cancellation) states whether the CA$80M appropriated to SRC in 2023 remains earmarked, was reallocated, or lapsed.",
+   "figures": {
+    "src_2023_appropriation": "CA$80 million",
+    "hearing_date": "2026-04-15"
+   },
+   "searched": [
+    "\"Saskatchewan Research Council\" microreactor vendor evaluation 2026",
+    "SRC microreactor Saskatchewan 2026 \"$80 million\" Westinghouse cancelled replacement",
+    "Saskatchewan Research Council nuclear microreactor news 2026",
+    "Saskatchewan 2026-27 budget estimates Saskatchewan Research Council nuclear microreactor",
+    "SRC Saskatchewan microreactor RFI vendor 2026",
+    "\"Saskatchewan Research Council\" microreactor vendor 2026 -Westinghouse -eVinci",
+    "Mike Crabtree SRC microreactor \"$80 million\" fund status 2026"
+   ],
+   "sources": [
+    {
+     "label": "Saskatchewan Legislative Assembly — Standing Committee on the Economy, Debates, April 15, 2026",
+     "url": "https://docs.legassembly.sk.ca/legdocs/Committees/ECO/Debates/30L/20260415Debates-ECO-HTML.htm",
+     "quote": "both slightly larger and slightly smaller",
+     "status": "fetched"
+    },
+    {
+     "label": "Saskatchewan Research Council — FAQs About Nuclear",
+     "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+     "quote": "SRC is looking at other microreactor technologies of various scale and sizes and their potential applications for the unique needs of Saskatchewan",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

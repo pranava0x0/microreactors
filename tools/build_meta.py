@@ -156,6 +156,13 @@ def main() -> int:
     if MARK_OPEN not in html:
         print("index.html has no generated:meta markers", file=sys.stderr)
         return 1
+    # One deployment stamp on every asset the page loads, so a returning browser
+    # holding a cached app.js or data.js from an earlier deployment cannot pair it
+    # with this HTML: the old app did not know the new routes and the new app
+    # cannot find a payload the old bundle never listed. The lazy chunks carry
+    # the same stamp from app.js (VER), read off the bundle's own built date.
+    html = re.sub(r'((?:href|src)=")(assets/tokens\.css|assets/site\.css|data\.js|assets/app\.js)(?:\?v=[^"]*)?"',
+                  lambda m: f'{m.group(1)}{m.group(2)}?v={s["built"]}"', html)
     html = re.sub(re.escape(MARK_OPEN) + r".*?" + re.escape(MARK_CLOSE), lambda _: block,
                   html, flags=re.S)
     (SITE / "index.html").write_text(html)

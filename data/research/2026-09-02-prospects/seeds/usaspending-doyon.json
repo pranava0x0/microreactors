@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "source": "USAspending.gov /api/v2/search/spending_by_award/",
+    "queried": "2026-09-07",
+    "time_period": [
+      "2008-01-01",
+      "2026-12-31"
+    ],
+    "caveat": "'obligated' is money on contract to date, not the ceiling if all option years are exercised, which is reported as 'potential' and is null unless --detail was passed AND the API publishes it at this level. Any result marked capped:true is a floor. On multi-phase cooperative agreements the obligation can instead be the full federal ceiling — check the awarding agency's own announcement for a phase release before quoting it."
+  },
+  "queries": [
+    {
+      "keyword": "Doyon Utilities",
+      "award_group": "contracts",
+      "capped": false,
+      "page_total_obligated": 1661259396.8799999,
+      "awards": [
+        {
+          "award_id": "SP060007C8263",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Defense Logistics Agency",
+          "start": "2007-09-28",
+          "end": "2058-08-14",
+          "obligated": 905264994.0,
+          "outlayed": 598767.57,
+          "potential": null,
+          "state": "AK",
+          "type": "DEFINITIVE CONTRACT",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-",
+          "description": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-"
+        },
+        {
+          "award_id": "SP060007C8262",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Defense Logistics Agency",
+          "start": "2007-09-28",
+          "end": "2058-08-14",
+          "obligated": 543139662.0,
+          "outlayed": 28609478.52,
+          "potential": null,
+          "state": "AK",
+          "type": "DEFINITIVE CONTRACT",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_SP060007C8262_9700_-NONE-_-NONE-",
+          "description": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATION",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8262_9700_-NONE-_-NONE-"
+        },
+        {
+          "award_id": "SP060007C8261",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Defense Logistics Agency",
+          "start": "2007-09-28",
+          "end": "2058-08-14",
+          "obligated": 212665748.37,
+          "outlayed": 1091843.22,
+          "potential": null,
+          "state": "AK",
+          "type": "DEFINITIVE CONTRACT",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-",
+          "description": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-"
+        },
+        {
+          "award_id": "0001",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Department of the Army",
+          "start": "2008-09-29",
+          "end": "2010-10-31",
+          "obligated": 91905.63,
+          "outlayed": null,
+          "potential": null,
+          "state": "AK",
+          "type": "DO",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_0001_9700_W912CZ08D0013_9700",
+          "description": "TASK ORDER",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_0001_9700_W912CZ08D0013_9700"
+        },
+        {
+          "award_id": "0002",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Department of the Army",
+          "start": "2008-09-29",
+          "end": "2010-10-31",
+          "obligated": 58363.87,
+          "outlayed": null,
+          "potential": null,
+          "state": "AK",
+          "type": "DELIVERY ORDER",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_0002_9700_W912CZ08D0013_9700",
+          "description": "TASK ORDER",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_0002_9700_W912CZ08D0013_9700"
+        },
+        {
+          "award_id": "0003",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Department of the Army",
+          "start": "2009-02-17",
+          "end": "2009-05-18",
+          "obligated": 29823.01,
+          "outlayed": null,
+          "potential": null,
+          "state": "AK",
+          "type": "DELIVERY ORDER",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_0003_9700_W912CZ08D0013_9700",
+          "description": "REPAIR ELECTRICAL DEFICIENCIES",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_0003_9700_W912CZ08D0013_9700"
+        },
+        {
+          "award_id": "W912CZ08P0391",
+          "recipient": "DOYON UTILITIES, LLC",
+          "agency": "Department of Defense",
+          "sub_agency": "Department of the Army",
+          "start": "2008-09-19",
+          "end": "2008-09-30",
+          "obligated": 8900.0,
+          "outlayed": null,
+          "potential": null,
+          "state": "AK",
+          "type": "PO",
+          "group": "contracts",
+          "generated_id": "CONT_AWD_W912CZ08P0391_9700_-NONE-_-NONE-",
+          "description": "INSTALL/UNINSTALL  ELECTRICAL SERVICE",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912CZ08P0391_9700_-NONE-_-NONE-"
+        }
+      ]
+    }
+  ]
+}
