@@ -296,3 +296,4 @@ one-line here is the pointer.
   sub-tab today, not the record); needs per-record anchors on the Customer cost and Sites lists.
 - **low** · An interactive version of the $/kWe-to-$/MWh conversion (rate, life, capacity factor as
   inputs) once a second reader asks for one; the static table covers the two published cases.
+- **medium** · Re-run the seven seed topics that DuckDuckGo blocked on 2026-09-02 (`python3 tools/web_search.py --plan data/research/2026-09-02-prospects/plan.json --out data/research/2026-09-02-prospects/seeds --only red-dog nunavut-kivalliq src-saskatchewan chalk-river-gfp fuel-triso-haleu vendor-unit-prices offgrid-ipps --pause 8`) so the digest on disk matches what the agents were given. The block came after about ten queries at a 2.5 s pause and outlasted twenty minutes; Bing's keyless RSS was tried as a fallback and answers with generic pages for the first word of the query, so it was removed rather than left to seed junk.

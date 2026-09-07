@@ -48,6 +48,17 @@ LOAD_LABELS = {l["label"] for s in json.loads((ROOT / "data" / "sectors.json").r
 
 MECH_REQUIRED = ["id", "group", "family", "name", "what_it_is", "nuclear_fit", "sources"]
 CASE_REQUIRED = ["id", "sector", "name", "summary", "microreactor_read", "sources"]
+# Type C, added 2026-09-02: an answer to a named open question on a strategy.json
+# prospect or segment. It is not a case (no deal to price) and not a mechanism
+# (no instrument); it is a finding, an absence, or a partial, and it must say which.
+ANSWER_REQUIRED = ["id", "for", "question", "finding", "status"]
+ANSWER_STATUS = {"answered", "partial", "absent"}
+_strategy_p = ROOT / "data" / "strategy.json"
+ANSWER_TARGETS = set()
+if _strategy_p.exists():
+    _st = json.loads(_strategy_p.read_text())
+    ANSWER_TARGETS = ({p["id"] for p in _st.get("prospects", [])}
+                      | {s["id"] for s in _st.get("segments", [])})
 # A case record with none of these carries no number, and is not a record.
 CASE_NUMERIC_ANY = ["price", "capex", "displaced", "capacity", "term_years", "filings"]
 
@@ -113,6 +124,34 @@ def check_impossible_citation(rec, sources, path, rec_id, errors) -> None:
              f"— a source cannot document a later event")
 
 
+def check_answer(rec, path, errors, seen_ids) -> None:
+    rec_id = str(rec.get("id", "<no id>"))
+    for k in ANSWER_REQUIRED:
+        v = rec.get(k)
+        if v is None or (isinstance(v, str) and (not v.strip() or PLACEHOLDER.match(v))):
+            fail(errors, path, rec_id, f"missing or placeholder field {k!r}")
+    if rec_id in seen_ids:
+        fail(errors, path, rec_id, f"duplicate id, also in {seen_ids[rec_id]}")
+    else:
+        seen_ids[rec_id] = path.name
+    if rec.get("status") not in ANSWER_STATUS:
+        fail(errors, path, rec_id, f"status {rec.get('status')!r} not in {sorted(ANSWER_STATUS)}")
+    if ANSWER_TARGETS and rec.get("for") not in ANSWER_TARGETS:
+        fail(errors, path, rec_id, f"for {rec.get('for')!r} is not a strategy.json prospect or segment id")
+    sources = rec.get("sources") or []
+    if rec.get("status") == "absent":
+        if not rec.get("searched"):
+            fail(errors, path, rec_id, "absent answer must list the angles searched")
+    else:
+        if not sources:
+            fail(errors, path, rec_id, "an answered or partial finding needs at least one source")
+        if not any(s.get("status") == "fetched" for s in sources):
+            fail(errors, path, rec_id, "a finding needs at least one FETCHED source; a snippet is a lead")
+    if sources:  # an absent answer legitimately has none; an empty list is not a shape error here
+        check_sources(sources, path, rec_id, errors)
+        check_impossible_citation(rec, sources, path, rec_id, errors)
+
+
 def check_record(rec, kind, path, errors, seen_ids) -> None:
     rec_id = str(rec.get("id", "<no id>"))
     required = MECH_REQUIRED if kind == "mechanism" else CASE_REQUIRED
@@ -161,19 +200,27 @@ def check_record(rec, kind, path, errors, seen_ids) -> None:
                              "typo here silently produces no link")
 
 
+KINDS = {"mechanism": "mechanisms", "case": "cases", "answer": "answers"}
+
+
 def load_pass(pass_dir: pathlib.Path):
-    """Yield (path, kind, records) for every agent JSON in the pass."""
+    """Yield (path, kind, doc) for every agent JSON in the pass; a file that
+    carries more than one record type yields once per type. Seed files written
+    by tools/web_search.py live in a subdirectory, so the top-level glob skips them."""
     for path in sorted(pass_dir.glob("*.json")):
+        if path.name == "plan.json":
+            continue
         try:
             doc = json.loads(path.read_text())
         except json.JSONDecodeError as e:
             yield path, "unparseable", e
             continue
-        if "mechanisms" in doc:
-            yield path, "mechanism", doc
-        elif "cases" in doc:
-            yield path, "case", doc
-        else:
+        found = False
+        for kind, key in KINDS.items():
+            if key in doc:
+                found = True
+                yield path, kind, doc
+        if not found:
             yield path, "unknown", doc
 
 
@@ -187,15 +234,18 @@ def cmd_validate(pass_dir: pathlib.Path) -> int:
             errors.append(f"{path.name}: invalid JSON — {doc}")
             continue
         if kind == "unknown":
-            errors.append(f"{path.name}: has neither 'mechanisms' nor 'cases'")
+            errors.append(f"{path.name}: has none of 'mechanisms', 'cases' or 'answers'")
             continue
         meta = doc.get("_meta") or {}
         if not meta.get("absences"):
             errors.append(f"{path.name}: _meta.absences is empty — "
                           "a report of only successes hides its coverage gaps")
-        for rec in doc["mechanisms" if kind == "mechanism" else "cases"]:
+        for rec in doc[KINDS[kind]]:
             records += 1
-            check_record(rec, kind, path, errors, seen_ids)
+            if kind == "answer":
+                check_answer(rec, path, errors, seen_ids)
+            else:
+                check_record(rec, kind, path, errors, seen_ids)
 
     if not files:
         print(f"no agent JSON found in {pass_dir}", file=sys.stderr)
@@ -212,11 +262,11 @@ def cmd_report(pass_dir: pathlib.Path) -> int:
         if kind in ("unparseable", "unknown"):
             print(f"{path.name}: {kind}")
             continue
-        recs = doc["mechanisms" if kind == "mechanism" else "cases"]
+        recs = doc[KINDS[kind]]
         total += len(recs)
         buckets: dict = {}
         for r in recs:
-            buckets.setdefault(r.get("group") or r.get("sector") or "?", []).append(r)
+            buckets.setdefault(r.get("group") or r.get("sector") or r.get("status") or "?", []).append(r)
         fetched = sum(1 for r in recs for s in (r.get("sources") or [])
                       if s.get("status") == "fetched")
         snippet = sum(1 for r in recs for s in (r.get("sources") or [])

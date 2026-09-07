@@ -33,6 +33,7 @@ import pathlib
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from typing import Dict, Iterable, List
@@ -112,8 +113,11 @@ def parse_feed(name: str, url: str) -> List[dict]:
     return out
 
 
-def parse_edgar(since: str) -> List[dict]:
-    url = ('https://efts.sec.gov/LATEST/search-index?q=%22microreactor%22'
+def parse_edgar(since: str, term: str = "microreactor") -> List[dict]:
+    """Full-text search of filings for one term. The default is the site's own
+    subject; --query widens it to a fuel, a company or a program name, because a
+    figure stated in a filing outranks the same figure in a press release."""
+    url = ('https://efts.sec.gov/LATEST/search-index?q=%22' + urllib.parse.quote(term) + '%22'
            f'&dateRange=custom&startdt={since}&enddt=2099-12-31')
     try:
         d = json.loads(get(url, ua=SEC_UA))
@@ -130,8 +134,9 @@ def parse_edgar(since: str) -> List[dict]:
             "source": "SEC EDGAR full-text",
             "title": f"{names[0]} — {s.get('root_form', s.get('form_type', 'filing'))}",
             "url": (f"https://www.sec.gov/Archives/edgar/data/{cik.lstrip('0')}/{adsh}/"
-                    if cik and adsh else "https://efts.sec.gov/LATEST/search-index?q=microreactor"),
+                    if cik and adsh else "https://efts.sec.gov/LATEST/search-index?q=" + urllib.parse.quote(term)),
             "date_raw": s.get("file_date", ""),
+            "term": term,
         })
     return out
 
@@ -176,6 +181,9 @@ def main() -> int:
     ap.add_argument("--since", default="")
     ap.add_argument("--json", default="")
     ap.add_argument("--check-feeds", action="store_true")
+    ap.add_argument("--query", action="append", default=[], metavar="TERM",
+                    help="EDGAR full-text term instead of \"microreactor\"; repeatable. "
+                         "Feeds are skipped, since a feed cannot be searched by term.")
     a = ap.parse_args()
 
     if a.check_feeds:
@@ -191,9 +199,14 @@ def main() -> int:
     since = a.since or newest_known()
     seen = known_urls()
     rows: List[dict] = []
-    for n, u in FEEDS.items():
-        rows.extend(parse_feed(n, u))
-    rows.extend(parse_edgar(since))
+    if a.query:
+        # A term search is a filings search: feeds carry no query surface.
+        for term in a.query:
+            rows.extend(parse_edgar(since, term))
+    else:
+        for n, u in FEEDS.items():
+            rows.extend(parse_feed(n, u))
+        rows.extend(parse_edgar(since))
 
     cands = []
     for r in rows:
@@ -207,7 +220,8 @@ def main() -> int:
         cands.append({"date": d, "source": r["source"], "title": r["title"], "url": r["url"]})
     cands.sort(key=lambda c: (c["date"] or "0000", c["source"]), reverse=True)
 
-    print(f"scanned {len(FEEDS)} feed(s) + SEC EDGAR · {len(rows)} raw item(s) · "
+    print((f"scanned SEC EDGAR for {a.query}" if a.query else f"scanned {len(FEEDS)} feed(s) + SEC EDGAR")
+          + f" · {len(rows)} raw item(s) · "
           f"since {since} · {len(seen)} url(s) already in data/news.json")
     print(f"{len(cands)} candidate(s) not yet written up\n")
     for c in cands[:60]:
