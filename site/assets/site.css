@@ -653,3 +653,6 @@ details:not([open]) > :not(summary){display:none}
   letter-spacing:var(--track-label);color:var(--text-tertiary);font-weight:var(--weight-medium)}
 .wintable td{font-family:var(--font-mono);color:var(--antares-red)}
 .wintable td.lbl{font-family:var(--font-core);color:var(--text-primary);white-space:normal;min-width:12rem}
+.finding{margin-top:var(--space-3);padding:var(--space-3) var(--space-4);border-left:2px solid var(--antares-red);
+  background:var(--surface-raised);font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
+.finding .note{color:var(--text-tertiary);font-family:var(--font-mono);font-size:var(--size-caption)}

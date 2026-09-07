@@ -238,6 +238,14 @@ def check() -> List[Tuple[str, str]]:
                 if bid not in pools["benchmark"]:
                     violations.append((f"strategy:segment:{sg['id']}",
                                        f"names a benchmark that does not exist: {bid}"))
+        for p in st["prospects"] + st["segments"]:
+            for f in p.get("findings", []):
+                where = f"strategy:finding:{p['id']}:{f.get('id', '?')}"
+                if f.get("status") == "absent":
+                    if not f.get("searched"):
+                        violations.append((where, "absent finding lists no angles searched"))
+                else:
+                    must(f, where)
         for p in st["prospects"]:
             must(p, f"strategy:prospect:{p['id']}")
             for ref in p.get("refs", []):

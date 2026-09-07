@@ -731,10 +731,31 @@
         drows([["Incumbent", sg.incumbent], ["Price form", sg.price_form], ["Term", sg.term],
                ["Clears at", rung ? rung.name + ", " + kwe(rung.capex_low_kwe, rung.capex_high_kwe) : sg.clears],
                ["Blocker", sg.blocker], ["First deal", sg.first_deal]]) +
+        findingsHTML(sg.findings) +
         '<p class="seealso"><a href="#economics/price-to-beat">' + esc(sg.benchmark_ids.length) +
         " priced cases on the Customer cost sub-tab →</a></p>" +
         srcList(sg.sources) + "</div></details>";
     }).join("") + "</div>");
+  }
+
+  /* A finding is a research-pass answer to the row's open question, copied in by
+     tools/merge_answers.py. An absent one says what was searched, so a blank never
+     reads as "nobody looked". Figures print verbatim beside the finding. */
+  function findingsHTML(findings) {
+    if (!findings || !findings.length) { return ""; }
+    return findings.map(function (f) {
+      var figs = f.figures ? Object.keys(f.figures).map(function (k) {
+        return esc(k.replace(/_/g, " ")) + ": " + esc(f.figures[k]);
+      }).join("; ") : "";
+      if (f.status === "absent") {
+        return '<p class="finding"><span class="k">Searched ' + esc(f.date) + ", not found · </span>" +
+          esc(f.finding) + (f.searched ? ' <span class="note">(angles: ' +
+          esc(f.searched.join("; ")) + ")</span>" : "") + "</p>";
+      }
+      return '<p class="finding"><span class="k">Finding ' + esc(f.date) + " · " + esc(f.status) +
+        " · </span>" + esc(f.finding) + (figs ? ' <span class="note">' + figs + "</span>" : "") +
+        " " + cite(f.sources) + "</p>";
+    }).join("");
   }
 
   var prospectsRendered = false;
@@ -768,7 +789,7 @@
         esc(advGloss[p.advantage] || "") + " " + esc(p.region) + ".</p>" +
         '<div class="sitedetails">' + facts.map(function (f) {
           return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" + esc(f[1]) + "</span></div>";
-        }).join("") + "</div>" +
+        }).join("") + "</div>" + findingsHTML(p.findings) +
         (refs.length ? '<p class="seealso">' + refs.join(" · ") + "</p>" : "") +
         srcList(p.sources) + "</div></details>";
     }).join("") + "</div>");
