@@ -641,3 +641,15 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
 /* A closed <details> reserves no height. The UA default handles the simple case,
    but a child that sets its own display (.sitedetails is a grid) can escape it. */
 details:not([open]) > :not(summary){display:none}
+
+/* What wins the deal (Costs) and Prospects (Deals): the per-unit and staffing
+   tables scroll inside their own box so the page never scrolls sideways; the
+   rest reuses unit rows, precedent disclosures and the news filter chips. */
+.tablewrap{overflow-x:auto;margin:var(--space-4) 0}
+.wintable{border-collapse:collapse;width:100%;font-size:var(--size-body-sm)}
+.wintable th,.wintable td{text-align:left;padding:var(--space-2) var(--space-3);
+  border-bottom:1px solid var(--border-subtle);white-space:nowrap;vertical-align:top}
+.wintable th{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--text-tertiary);font-weight:var(--weight-medium)}
+.wintable td{font-family:var(--font-mono);color:var(--antares-red)}
+.wintable td.lbl{font-family:var(--font-core);color:var(--text-primary);white-space:normal;min-width:12rem}

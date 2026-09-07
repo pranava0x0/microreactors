@@ -196,6 +196,56 @@ def check() -> List[Tuple[str, str]]:
         for nf in sites["_meta"].get("negative_findings", []):
             need(nf, f"deployment_sites:negative:{nf['finding'][:40]}")
 
+    # strategy.json restates rows from the files above and cross-references them
+    # by id. Every rung, segment, prospect and derived-table input must carry a
+    # source outright (numbers or not: a "clears at" verdict is a claim), and a
+    # reference to a benchmark, site, tracker row, instrument or news item that
+    # no longer exists is a claim whose evidence has silently gone.
+    strat_p = DATA / "strategy.json"
+    if strat_p.exists():
+        st = json.loads(strat_p.read_text())
+        pools = {
+            "benchmark": {r["id"] for s_ in bench["sectors"] for r in s_["records"]},
+            "opportunity": {o["id"] for o in opps["opportunities"]},
+            "instrument": {r["id"] for g in inst["groups"] for r in g["records"]},
+            "site": ({s_["id"] for s_ in json.loads(sites_p.read_text())["sites"]}
+                     if sites_p.exists() else set()),
+            "news": {n["id"] for n in json.loads((DATA / "news.json").read_text())["items"]},
+        }
+
+        def must(rec: Dict[str, Any], where: str) -> None:
+            if not has_source(rec):
+                violations.append((where, "no source"))
+            need(rec, where)
+
+        lad = st["ladder"]
+        for r in lad["rungs"]:
+            must(r, f"strategy:rung:{r['id']}")
+        must(lad["units"], "strategy:units")
+        must(lad["conversion"], "strategy:conversion")
+        need({"question": lad.get("question", ""), "note": lad.get("note", ""),
+              "sources": [s_ for r in lad["rungs"] for s_ in r.get("sources", [])]},
+             "strategy:ladder:summary-prose")
+        fl = st["floor"]
+        for inp in fl["inputs"]:
+            must(inp, f"strategy:floor:{inp['id']}")
+        must({"note": fl.get("note", ""), "reading": fl.get("reading", ""),
+              "formula": fl.get("formula", ""), "sources": fl.get("sources", [])},
+             "strategy:floor:summary-prose")
+        for sg in st["segments"]:
+            must(sg, f"strategy:segment:{sg['id']}")
+            for bid in sg.get("benchmark_ids", []):
+                if bid not in pools["benchmark"]:
+                    violations.append((f"strategy:segment:{sg['id']}",
+                                       f"names a benchmark that does not exist: {bid}"))
+        for p in st["prospects"]:
+            must(p, f"strategy:prospect:{p['id']}")
+            for ref in p.get("refs", []):
+                for kind, rid in ref.items():
+                    if kind not in pools or rid not in pools[kind]:
+                        violations.append((f"strategy:prospect:{p['id']}",
+                                           f"references a {kind} that does not exist: {rid}"))
+
     return violations
 
 

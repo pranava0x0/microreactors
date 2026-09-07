@@ -23,7 +23,7 @@
  "name": "Microreactor Opportunity Map",
  "description": "A cited map of the microreactor business-development opportunity space: pipeline, economics, vendors, demand, market mechanisms, policy pathways, and an honest evidence-gap register.",
  "url": "https://pranava0x0.github.io/microreactors/",
- "dateModified": "2026-08-30",
+ "dateModified": "2026-09-02",
  "isAccessibleForFree": true,
  "creator": {
   "@type": "Person",
@@ -121,6 +121,11 @@
   {
    "@type": "DataDownload",
    "encodingFormat": "application/json",
+   "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/strategy.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
    "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/vendors.json"
   },
   {
@@ -179,6 +184,8 @@
       <div class="homepaths">
         <a href="#pipeline">See deals and sites <span>→</span></a>
         <a href="#economics">Compare costs <span>→</span></a>
+        <a href="#economics/win">See what a unit has to cost to win <span>→</span></a>
+        <a href="#pipeline/prospects">See who could buy next <span>→</span></a>
         <a href="#policy">See rules and deal design <span>→</span></a>
       </div>
     </div>
@@ -197,6 +204,11 @@
     <div data-sub="sites" id="pipeline-sites" role="tabpanel" tabindex="0">
       <div id="sites-summary"></div><div id="site-filters"></div>
       <div id="sites-content"><div id="sites-grid"></div><div id="site-negative-findings"></div></div>
+    </div>
+    <div data-sub="prospects" id="pipeline-prospects" role="tabpanel" tabindex="0">
+      <p class="prose" id="prospects-intro"></p>
+      <div class="newsfilter" id="prospects-filter"></div>
+      <div id="prospects"></div>
     </div>
   </div>
 </section>
@@ -279,6 +291,20 @@
       <div class="subhead"><h3>What people pay today</h3></div>
       <p class="prose" id="benchsummary"></p>
       <div id="benchmarks"></div>
+    </div>
+    <div data-sub="win" id="economics-win" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3 id="win-q"></h3></div>
+      <p class="prose" id="win-note"></p>
+      <div id="win-ladder"></div>
+      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="win-units-q"></h3></div>
+      <div id="win-units"></div>
+      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="win-conv-q"></h3></div>
+      <div id="win-conv"></div>
+      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="win-floor-q"></h3></div>
+      <p class="prose" id="win-floor-note"></p>
+      <div id="win-floor"></div>
+      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="win-seg-q"></h3></div>
+      <div id="win-segments"></div>
     </div>
   </div>
 </section>

@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
-         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps"]
+         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -28,7 +28,10 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # is derived rather than a file in FILES, which the split handles fine - it pops
 # any top-level key. Everything here still ships in site/data-<name>.js and is
 # still counted in the citation register, which is built before the split.
-LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index"]
+# strategy is read by two sub-tabs on two panels (Costs "What wins", Deals
+# "Prospects"); neither needs it for a first screen, and loadLazy hands both the
+# same promise, so it ships once and arrives when either opens.
+LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy"]
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
@@ -37,7 +40,10 @@ LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index"]
 # benchmarks render on the Costs tab and instruments on the Policy tab, so each sits
 # beside the dataset it shares a tab with.
 CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mechanisms",
-              "policy", "instruments", "deployment_sites", "voices", "arguments", "news", "gaps"]
+              "policy", "instruments", "deployment_sites", "voices", "arguments", "news", "gaps",
+              # last on purpose: strategy restates rows the files above already cite, so
+              # walking it last keeps every existing chip number where it was.
+              "strategy"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -168,6 +174,10 @@ def main() -> int:
         "units_largest_preorder": max((o.get("units_committed", 0) for o in opps), default=0),
         "first_delivery_year": min(v["first_delivery_year"] for v in vendors
                                    if v.get("first_delivery_year")),
+        # Deals "Prospects (N)" and the Costs segment count draw these from the
+        # eager bundle, since the strategy payload itself arrives lazily.
+        "prospects": len(bundle["strategy"]["prospects"]),
+        "segments": len(bundle["strategy"]["segments"]),
         "built": captured_date(bundle),
     }
 
