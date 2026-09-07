@@ -656,3 +656,4 @@ details:not([open]) > :not(summary){display:none}
 .finding{margin-top:var(--space-3);padding:var(--space-3) var(--space-4);border-left:2px solid var(--antares-red);
   background:var(--surface-raised);font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
 .finding .note{color:var(--text-tertiary);font-family:var(--font-mono);font-size:var(--size-caption)}
+.subhead.gap{margin-top:var(--space-10)}

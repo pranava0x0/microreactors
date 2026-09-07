@@ -217,7 +217,11 @@ def main() -> int:
             continue
         if r["source"] != "SEC EDGAR full-text" and not TERMS.search(r["title"]):
             continue
-        cands.append({"date": d, "source": r["source"], "title": r["title"], "url": r["url"]})
+        seen.add(r["url"])  # one candidate per filing, however many terms it matched
+        cand = {"date": d, "source": r["source"], "title": r["title"], "url": r["url"]}
+        if r.get("term"):
+            cand["term"] = r["term"]  # which --query produced it, so a hit stays attributable
+        cands.append(cand)
     cands.sort(key=lambda c: (c["date"] or "0000", c["source"]), reverse=True)
 
     print((f"scanned SEC EDGAR for {a.query}" if a.query else f"scanned {len(FEEDS)} feed(s) + SEC EDGAR")
@@ -225,7 +229,8 @@ def main() -> int:
           f"since {since} · {len(seen)} url(s) already in data/news.json")
     print(f"{len(cands)} candidate(s) not yet written up\n")
     for c in cands[:60]:
-        print(f"  {c['date'] or '(undated)':<12} {c['source']:<22} {c['title'][:70]}")
+        print(f"  {c['date'] or '(undated)':<12} {c['source']:<22} {c['title'][:70]}"
+              + (f"  [{c['term']}]" if c.get("term") else ""))
         print(f"               {c['url'][:110]}")
     if len(cands) > 60:
         print(f"\n  ... and {len(cands) - 60} more (use --json for the full list)")

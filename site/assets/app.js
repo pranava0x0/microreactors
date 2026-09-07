@@ -115,6 +115,9 @@
      same tick both read it as false before either settles, and the payload
      downloads twice. Every caller here gets the same promise. */
   var LAZY = {};
+  /* Same deployment stamp build_meta.py puts on data.js and app.js, so a chunk
+     can never pair with a page from another deployment. */
+  var VER = D.summary && D.summary.built ? "?v=" + D.summary.built : "";
   function loadLazy(name) {
     if (!(D.lazy || []).length || (D.lazy || []).indexOf(name) === -1) {
       return Promise.resolve(D[name]);          // not split; already present
@@ -123,7 +126,7 @@
     if (!LAZY[name]) {
       LAZY[name] = new Promise(function (resolve, reject) {
         var s = document.createElement("script");
-        s.src = "data-" + name + ".js";
+        s.src = "data-" + name + ".js" + VER;
         s.onload = function () { resolve(D[name]); };
         // Fail loud: a swallowed error here leaves a panel permanently empty
         // with no explanation, which reads as a rendering bug for weeks.
@@ -350,7 +353,7 @@
     }).join("")
   );
   makeSubnav("pipeline", pipeItems.concat([
-    { id: "prospects", label: "Prospects (" + s.prospects + ")",
+    { id: "prospects", label: "Prospects" + (s.prospects != null ? " (" + s.prospects + ")" : ""),
       lazy: { name: "strategy", el: "prospects", render: renderProspects } }]));
 
   function toggle(top) {
@@ -676,8 +679,10 @@
     render($("win-ladder"), '<div class="unitrows">' + Lr.rungs.map(function (r) {
       return '<div class="unitrow"><span class="unitname">' + esc(r.name) +
         '<br><span class="argbasis">' + esc(mwh(r.lcoe_low_mwh, r.lcoe_high_mwh)) + "</span></span>" +
-        '<span class="unitval">' + esc(kwe(r.capex_low_kwe, r.capex_high_kwe)) + "</span>" +
-        '<span class="unitbasis">' + esc(r.scenario) + ". " + esc(r.lcoe_note) +
+        '<span class="unitval">' + esc(kwe(r.capex_low_kwe, r.capex_high_kwe)) +
+        (r.all_in_min_kwe ? '<br><span class="argbasis">over ' + esc(usd(r.all_in_min_kwe)) + "/kWe all-in</span>" : "") + "</span>" +
+        '<span class="unitbasis">' + esc(r.scenario) + ". " + (r.capex_basis ? esc(r.capex_basis) + " " : "") +
+        (r.all_in_note ? esc(r.all_in_note) + " " : "") + esc(r.lcoe_note) +
         " <strong>Opens:</strong> " + esc(r.opens_note) + " " + cite(r.sources) + "</span></div>";
     }).join("") + "</div>");
 
@@ -690,7 +695,9 @@
               var r = rungOf(row.rung);
               return [r ? r.name : row.rung].concat(U.sizes_mwe.map(function (m) {
                 var v = row.usd_millions[String(m)];
-                return v[0] === v[1] ? "$" + v[0] + "M" : "$" + v[0] + "–" + v[1] + "M";
+                var cell = v[0] === v[1] ? "$" + v[0] + "M" : "$" + v[0] + "–" + v[1] + "M";
+                if (row.all_in_min_usd_millions) { cell += "; over $" + row.all_in_min_usd_millions[String(m)] + "M all-in"; }
+                return cell;
               }));
             })));
 

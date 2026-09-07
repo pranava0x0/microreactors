@@ -139,13 +139,18 @@ def check_answer(rec, path, errors, seen_ids) -> None:
     if ANSWER_TARGETS and rec.get("for") not in ANSWER_TARGETS:
         fail(errors, path, rec_id, f"for {rec.get('for')!r} is not a strategy.json prospect or segment id")
     sources = rec.get("sources") or []
+    if not isinstance(sources, list):
+        fail(errors, path, rec_id, "sources must be a list")
+        sources = []
     if rec.get("status") == "absent":
         if not rec.get("searched"):
             fail(errors, path, rec_id, "absent answer must list the angles searched")
     else:
         if not sources:
             fail(errors, path, rec_id, "an answered or partial finding needs at least one source")
-        if not any(s.get("status") == "fetched" for s in sources):
+        # Shape first, then status: a non-object entry is reported by check_sources
+        # below instead of raising here and taking the whole run down with it.
+        elif not any(isinstance(s, dict) and s.get("status") == "fetched" for s in sources):
             fail(errors, path, rec_id, "a finding needs at least one FETCHED source; a snippet is a lead")
     if sources:  # an absent answer legitimately has none; an empty list is not a shape error here
         check_sources(sources, path, rec_id, errors)

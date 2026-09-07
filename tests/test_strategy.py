@@ -191,6 +191,30 @@ class TestStrategy(unittest.TestCase):
             self.assertAlmostEqual(r["crf"], round(c, 4), places=4)
             self.assertAlmostEqual(r["usd_per_mwh_per_1000_kwe"], round(1000 * c / (8.76 * r["cf"]), 1), places=1)
 
+    def test_all_in_floor_is_a_floor_above_the_overnight_range(self):
+        """INL states the first unit's all-in cost as exceeding $22,000/kWe. It is
+        carried as a separate floor, never as the top of the overnight range: a
+        range whose ceiling is really a floor understates the buyer-facing price."""
+        U = self.doc["ladder"]["units"]
+        for r in self.rungs:
+            if "all_in_min_kwe" in r:
+                self.assertGreater(r["all_in_min_kwe"], r["capex_high_kwe"], r["id"])
+                self.assertTrue(r.get("all_in_note"), f"{r['id']}: all-in floor without a note")
+                row = next(x for x in U["rows"] if x["rung"] == r["id"])
+                for m in U["sizes_mwe"]:
+                    self.assertAlmostEqual(row["all_in_min_usd_millions"][str(m)],
+                                           round(r["all_in_min_kwe"] * m / 1000, 1), places=1)
+        first = next(r for r in self.rungs if r["id"] == "first-unit")
+        self.assertIn("all_in_min_kwe", first, "the first-unit rung must carry INL's all-in floor")
+
+    def test_floor_has_a_lone_site_case(self):
+        """The fleet allocation (a guard shared across two reactors) cannot price a
+        single reactor at an isolated site; that case must be its own row and cost
+        more per reactor than the shared one."""
+        by_id = {i["id"]: i for i in self.doc["floor"]["inputs"]}
+        self.assertIn("lone-site-guards", by_id)
+        self.assertGreater(by_id["lone-site-guards"]["usd_per_year"], by_id["guard-and-monitor"]["usd_per_year"])
+
     def test_rungs_descend_in_capital_cost(self):
         highs = [r["capex_high_kwe"] for r in self.rungs]
         self.assertEqual(highs, sorted(highs, reverse=True), "rungs must run from the first unit down")

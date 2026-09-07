@@ -30,7 +30,7 @@ is on the Customer cost sub-tab.
 
 | Rung | $/kWe | $/MWh | Opens |
 |---|---|---|---|
-| First unit (INL bottom-up) | 14,500–22,000 | 325 (NEI FOAK 140–410) | Rural Alaska and Nunavut at $410–1,950/MWh; island bases where the gas alternative is $18,440/kW plus shipped fuel; the top half of the remote-mine band |
+| First unit (INL bottom-up) | 14,500–19,800 overnight; over 22,000 all-in with interest (a floor) | 325 (NEI FOAK 140–410) | Rural Alaska and Nunavut at $410–1,950/MWh; island bases where the gas alternative is $18,440/kW plus shipped fuel; the top half of the remote-mine band |
 | Mass-produced (INL, 10 units a year) | 6,000 | 120–150 (NEI NOAK 90–330) | The whole $250–600/MWh remote-diesel band; healthcare behind the meter at $150/MWh; firm on-site generation at bases priced at $5,433/kW |
 | Optimized design (U-Michigan inputs) | 2,515–3,970 | 48–78 with PTC, 63–103 without | Grid-adjacent buyers, given a schedule or resilience reason to pay above the grid |
 | Below every estimate | 1,420–2,800 (gas CHP) | n/a | Nothing. Greenhouses, university concessions, a battery plant at $24.56/MWh plus demand charge |
@@ -39,13 +39,14 @@ Per unit (derived: $/kWe × MWe × 1,000):
 
 | | 1 MWe | 2.5 MWe | 6 MWe | 20 MWe |
 |---|---|---|---|---|
-| First unit | $14.5–22M | $36–55M | $87–132M | $290–440M |
+| First unit (overnight) | $14.5–19.8M | $36–50M | $87–119M | $290–396M |
+| First unit, all-in floor (over) | $22M | $55M | $132M | $440M |
 | Mass-produced | $6M | $15M | $36M | $120M |
 | Optimized | $2.5–4M | $6.3–9.9M | $15–24M | $50–79M |
 
 Rule of thumb (derived, 5% real over 20 years, 95% capacity factor): every $1,000/kWe adds
-about $10/MWh; over 40 years about $7. So the gap between the first unit and the
-mass-produced unit, about $8,500/kWe, is about $80/MWh of price, which is the difference
+about $10/MWh; over 40 years about $7. So the overnight gap between the first unit and the
+mass-produced unit, $8,500–13,800/kWe, is $80–130/MWh of price, which is the difference
 between winning the top half of the remote-diesel band and winning all of it.
 
 ## 3. The floor that never falls, and why the 1 MWe class is a fleet product
@@ -55,13 +56,14 @@ reactor grows. Spread over output at 95% capacity factor (derived):
 
 | Fixed cost per reactor | $/yr | 1 MWe | 2.5 MWe | 6 MWe | 20 MWe |
 |---|---|---|---|---|---|
-| Guard (1 per 2 reactors) + remote monitor (1 per 20) | 490,000 | $59 | $24 | $10 | $3 |
+| Guard (1 per 2 reactors) + remote monitor (1 per 20), fleet allocation | 490,000 | $59 | $24 | $10 | $3 |
+| One reactor alone: whole guard rota + monitor | 937,125 | $113 | $45 | $19 | $6 |
 | INL O&M staff line, first unit | 3,915,898 | $471 | $188 | $78 | $24 |
 | Same line, mass-produced (−62%) | 1,488,041 | $179 | $72 | $30 | $9 |
 
-At 1 MWe the first-unit staff line alone exceeds the entire remote-diesel band. Even the
-leanest case (a shared guard and a remote monitor, operators arriving only for a shutdown)
-is $59/MWh, a fifth of the band's floor. This is the reverse economy of scale in its
+At 1 MWe the first-unit staff line alone exceeds the entire remote-diesel band. The lean
+case depends on sharing: a shared guard and a remote monitor is $59/MWh at 1 MWe, and a
+reactor alone at an isolated site, carrying the whole guard rota, is $113/MWh. This is the reverse economy of scale in its
 sharpest form, and it is why every 1 MWe deal on the tracker is a fleet: 15 units at Fort
 Benning, 3 at Fort Bragg, 20 for Equinix. The 1 MWe product is sold by the site, not by
 the unit, and the price depends on how many units share the guards, the monitors and the

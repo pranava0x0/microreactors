@@ -42,6 +42,8 @@ class Answers(unittest.TestCase):
             "finding with no sources": lambda r: r.update({"sources": []}),
             "absent without searched": lambda r: r.update({"status": "absent", "searched": [], "sources": []}),
             "placeholder finding": lambda r: r.update({"finding": "TBD"}),
+            "source entry that is not an object": lambda r: r.update({"sources": ["not-an-object"]}),
+            "sources that are not a list": lambda r: r.update({"sources": {"url": "x"}}),
         }
         for name, mutate in cases.items():
             doc = copy.deepcopy(GOOD)

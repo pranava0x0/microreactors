@@ -3,7 +3,7 @@
   "captured": "2026-09-02",
   "what_this_is": "What a unit has to cost to win each kind of buyer, and which counterparties have a structural reason to buy. Every number restates a cited row on the Costs or Deals tabs; rows marked derived are arithmetic on those inputs with the formula printed.",
   "method": "Built 2026-09-02 from the site's own benchmarks, cost bands, tracker and site records, with the fixed-staffing inputs read from Idaho National Laboratory's cached cost reports. No new sources were fetched; the open questions each row ends with are the next research pass. Findings from the 2026-09-02 pass (data/research/2026-09-02-prospects) are copied in by tools/merge_answers.py; the hand-written rows above them were updated by hand after reading each finding.",
-  "derived_note": "Derived figures are conversions of cited inputs at stated assumptions, not estimates of what any reactor will cost. Change the assumption and the number moves; the formula is printed so a reader can.",
+  "derived_note": "Derived figures are conversions of cited inputs at stated assumptions, not estimates of what any reactor will cost. Change the assumption and the number moves; the formula is printed so a reader can. Where a study states a figure as a floor (INL's all-in first-unit cost), it is shown as a floor and never as the top of a range.",
   "advantage_types": [
    {
     "id": "nuclear-interest",
@@ -63,14 +63,14 @@
  },
  "ladder": {
   "question": "What does a unit have to cost to win each buyer?",
-  "note": "Four rungs, each a published cost scenario with the buyers it opens. The published capital-cost estimates disagree by about five times, so a price quoted without its rung says nothing.",
+  "note": "Four rungs, each a published cost scenario with the buyers it opens. The published capital-cost estimates disagree by about five times, so a price quoted without its rung says nothing. Ranges are like for like: overnight cost against overnight cost, with any all-in floor that includes interest shown separately as a floor.",
   "rungs": [
    {
     "id": "first-unit",
     "name": "First unit",
-    "scenario": "One well-executed first unit, costed bottom-up by Idaho National Laboratory",
+    "scenario": "One well-executed first unit, costed bottom-up by Idaho National Laboratory (overnight cost; the all-in floor with interest is separate)",
     "capex_low_kwe": 14500,
-    "capex_high_kwe": 22000,
+    "capex_high_kwe": 19800,
     "lcoe_low_mwh": 325,
     "lcoe_high_mwh": 325,
     "lcoe_note": "INL's first-unit point estimate. NEI's first-of-a-kind band for the same class runs $140–410/MWh.",
@@ -93,7 +93,10 @@
       "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
       "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
      }
-    ]
+    ],
+    "capex_basis": "Overnight construction cost of the first unit: $14,500/kWe before the first core is bought, $19,800/kWe with it. Like for like, both overnight.",
+    "all_in_min_kwe": 22000,
+    "all_in_note": "Total capital investment, with interest during construction, is stated by INL as exceeding $22,000/kWe. A floor, not a ceiling, so it is printed as one."
    },
    {
     "id": "mass-produced",
@@ -184,7 +187,7 @@
   ],
   "units": {
    "question": "What is that per unit?",
-   "formula": "unit cost = $/kWe × MWe × 1,000",
+   "formula": "unit cost = $/kWe × MWe × 1,000; all-in floor = all-in $/kWe × MWe × 1,000",
    "note": "Derived from the rungs above at the unit sizes in the field: the 1 MWe class (Antares, Radiant), the 2.5 MWe heat-pipe archetype, INL's 6 MWe reference and the 20 MWe top of the band (BWXT). The Army has warned that dividing a Janus award by its unit count does not give a unit price, because the award also pays for development; these are the study figures, not award arithmetic.",
    "sizes_mwe": [
     1,
@@ -198,20 +201,26 @@
      "usd_millions": {
       "1": [
        14.5,
-       22.0
+       19.8
       ],
       "2.5": [
        36.2,
-       55.0
+       49.5
       ],
       "6": [
        87.0,
-       132.0
+       118.8
       ],
       "20": [
        290.0,
-       440.0
+       396.0
       ]
+     },
+     "all_in_min_usd_millions": {
+      "1": 22.0,
+      "2.5": 55.0,
+      "6": 132.0,
+      "20": 440.0
      }
     },
     {
@@ -322,7 +331,7 @@
  },
  "floor": {
   "question": "What never gets cheaper, and what does it cost per megawatt-hour?",
-  "note": "Staff, security and monitoring cost the same on the twentieth unit as on the first, and they are charged per reactor. Spread over a 1 MWe unit's output they are a large share of the price; over a 20 MWe unit they are small. INL's reference reactor is 6 MWe, so its staffing numbers are printed here at four unit sizes.",
+  "note": "Staff, security and monitoring cost the same on the twentieth unit as on the first, and they are charged per reactor. Spread over a 1 MWe unit's output they are a large share of the price; over a 20 MWe unit they are small. INL's reference reactor is 6 MWe, so its staffing numbers are printed here at four unit sizes, and in two forms: the fleet allocation INL uses (a guard shared across two reactors, a monitor across twenty) and the same rota carried by one reactor alone.",
   "formula": "$/MWh = fixed cost per reactor per year ÷ (MWe × 8,760 × capacity factor), at a 95% capacity factor",
   "cf": 0.95,
   "sizes_mwe": [
@@ -347,6 +356,24 @@
       "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
       "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
       "quote": "it is assumed that one person can monitor 20 reactors"
+     }
+    ]
+   },
+   {
+    "id": "lone-site-guards",
+    "name": "One reactor alone, whole guard rota plus remote monitor",
+    "usd_per_year": 937125,
+    "basis": "The same INL assumptions with no second reactor to share the guard: five full-time security staff at $178,500 each for one reactor, about $892,500 a year, plus the remote monitor's share, about $44,600. This is the floor for a single unit at an isolated site; the row above is the fleet allocation.",
+    "sources": [
+     {
+      "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+      "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+      "quote": "securing the reactor 24/7 will require 5 FTEs"
+     },
+     {
+      "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+      "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+      "quote": "Using $178,500/FTE"
      }
     ]
    },
@@ -389,6 +416,16 @@
     }
    },
    {
+    "input": "lone-site-guards",
+    "usd_per_year": 937125,
+    "per_mwh": {
+     "1": 112.6,
+     "2.5": 45.0,
+     "6": 18.8,
+     "20": 5.6
+    }
+   },
+   {
     "input": "inl-staff-first-unit",
     "usd_per_year": 3915898,
     "per_mwh": {
@@ -409,7 +446,7 @@
     }
    }
   ],
-  "reading": "At 1 MWe, INL's first-unit staff line alone is about $470/MWh, above the whole remote-diesel band, and the mass-produced version is still about $180/MWh. Even the leanest case, a shared guard and a remote monitor, is about $59/MWh at 1 MWe against $3 at 20 MWe. So a single 1 MWe unit at a lone site only clears rural-Alaska prices. The 1 MWe class is a fleet product: fifteen units at Fort Benning, three at Fort Bragg and twenty in the Equinix preorder all share guards, monitors and refuelling crews across one site or one owner, and that sharing is what the price depends on.",
+  "reading": "At 1 MWe, INL's first-unit staff line alone is about $470/MWh, above the whole remote-diesel band, and the mass-produced version is still about $180/MWh. The lean case depends on sharing: a guard shared across two reactors and a monitor across twenty is about $59/MWh at 1 MWe, and a reactor alone at an isolated site, carrying the whole guard rota itself, is about $113/MWh against $6 at 20 MWe. So a single 1 MWe unit at a lone site only clears rural-Alaska prices. The 1 MWe class is a fleet product: fifteen units at Fort Benning, three at Fort Bragg and twenty in the Equinix preorder all share guards, monitors and refuelling crews across one site or one owner, and that sharing is what the price depends on.",
   "sources": [
    {
     "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
@@ -656,7 +693,7 @@
    "price_form": "Design-build awards and ESPC task orders, increasingly signed by the privatised utility that owns the base's wires rather than by the Army.",
    "term": "3 years for a design-build; 25 for an ESPC.",
    "clears": "mass-produced",
-   "verdict": "On capital alone a reactor has to land near $5,400/kW; the mass-produced unit is close and the first unit is three to four times over. The argument is the fuel and O&M line the design-build price does not include.",
+   "verdict": "On capital alone a reactor has to land near $5,400/kW; the mass-produced unit is close and the first unit's overnight cost is about three times over, before interest. The argument is the fuel and O&M line the design-build price does not include.",
    "blocker": "The Army's own program says its reactors will not supply all of a base's power; they run alongside the grid as resilience, so the comparison is a microgrid block, the toughest $/kW in the file.",
    "first_deal": "The Janus conversion itself: the Army expects to move to a power purchase agreement after the first year of operation, which makes the privatised utility and DLA Energy the counterparties to prepare for.",
    "benchmark_ids": [

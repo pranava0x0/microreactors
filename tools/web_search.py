@@ -82,6 +82,8 @@ def parse(body: str, endpoint: str = ENDPOINT) -> List[Dict[str, str]]:
         href = m.group(1)
         if "uddg=" in href:
             href = urllib.parse.unquote(href.split("uddg=")[1].split("&")[0])
+        if not href.startswith(("http://", "https://")):
+            continue  # a relative or internal link has no host, and would slip past DENY_HOSTS
         host = urllib.parse.urlparse(href).netloc.replace("www.", "")
         if host in DENY_HOSTS:
             continue

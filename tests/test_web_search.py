@@ -40,6 +40,13 @@ class Parsers(unittest.TestCase):
         self.assertEqual(ws.parse(HTML_PAGE, ws.LITE), [])
         self.assertEqual(ws.parse(LITE_PAGE), [])
 
+    def test_relative_or_internal_links_dropped(self):
+        """A DuckDuckGo-internal or relative href has no host, so it would slip
+        past DENY_HOSTS and land in a seed file as a malformed record."""
+        page = HTML_PAGE.replace("//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.cvea.org%2Fpress%2Frelease.html&amp;rut=1",
+                                 "/l/?rut=1")
+        self.assertEqual(ws.parse(page), [])
+
     def test_denied_host_dropped(self):
         page = HTML_PAGE.replace("www.cvea.org", "www.pinterest.com")
         self.assertEqual(ws.parse(page), [])
