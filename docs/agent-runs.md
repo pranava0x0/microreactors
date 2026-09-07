@@ -142,3 +142,50 @@ the original deep-2026-08-24 pass (two agents, one wave, both writing the same K
 grant). Net for the wave: 31 candidate records in, 29 shipped, 2 real bugs required a human-grade
 second read to find. Cheaper route in hindsight: none — this is exactly what the second review
 round is for, and the fixes cost three replies and two small edits, not a re-research.
+
+## 2026-09-02 — prospects pass: two Sonnet agents on the open questions, seeded by scripts
+
+**Why it ran.** The commercial-strategy layer (Costs › What wins, Deals › Prospects) ended each
+of 25 prospect rows with a first diligence question; ten of them were filed as GitHub issues
+#9–#18. Nine are genuinely open web research (a regulator's rate case, a co-op's board release,
+a bankruptcy sale, a prospectus), so a fan-out was the right tool. Two agents, not more, per
+AGENTS.md; issue #17 (off-grid power contractors' portfolio sites) was left for a second wave.
+
+**Seed before spawn, by script.** `tools/web_search.py` (new: a plan of 36 queries across 9
+topics through DuckDuckGo's keyless endpoints into per-topic JSON and one digest),
+`tools/news_watch.py --query` (new flag: SEC EDGAR full-text for TRISO, HALEU, Doyon Utilities,
+Global First Power, Last Energy, Micro Modular Reactor → 376 filings, 119 after an issuer
+filter) and `tools/usaspending.py` (Doyon's three Alaska contracts, $905M/$543M/$213M
+obligated, 2007–2058). The web search got two topics in (Doyon 16 candidates, CVEA 7) before
+DuckDuckGo rate-limited every later query for over twenty minutes; the seven empty topics were
+handed to the agents as their own pre-planned query lists instead. Bing's keyless RSS was tried
+as a fallback and dropped: it answers a scripted query with generic pages for its first word.
+The gate came first: `research_pass.py` gained a Type C `answer` record (status answered /
+partial / absent; a fetched source unless absent; a `for` that must be a strategy.json id) with
+a negative test per rule, so agent output could fail before it reached the dataset.
+
+**Cost and result.** north (#9, #10, #13, #14): 292K tokens, 72 tool uses, 14 min, 5 answers
+(2 answered, 3 partial). vendors-fuel (#11, #12, #15, #16): 263K tokens, 82 tool uses, 15 min,
+6 answers (2 answered, 4 partial). 0 absent, 0 cases, 0 validator errors, all 22 sources
+fetched. Worth it: four of the eleven findings change a row's status or a segment's price
+line (CVEA tabled on economics with the door open and four vendors already vetted; Global
+First Power now owned by NANO Nuclear with the CNSC page still "paused"; the first public
+TRISO price, $50–80M per metric ton of uranium, in Standard Nuclear's prospectus; 19 of
+Nunavut's 25 plants over 1 MW), and three are documented absences that stop the next pass
+re-searching them (no delivered fuel price at Fort Wainwright, Red Dog or Meliadine anywhere
+public; no per-recipient HALEU quantities; the DOE clean-firm band is not in Oklo's filed deck).
+
+**Integration.** A new generator, `tools/merge_answers.py`, copies the answers onto the rows
+as `findings` (drift-tested), so a finding on the site always traces to a validated pass
+record; the hand-written rows were then updated by hand. Caching the 22 sources with
+`fetch_source.py`: three SEC documents 403 to the script's default user agent and had to be
+fetched with curl and the SEC contact UA then indexed with `--from-file`; army.mil and
+nsenergybusiness stay uncacheable (declared unverifiable, not failed). The quote gate then
+found 5 near-misses in 22 quotes — a paraphrased lead-in, a hyphenated line break in a PDF, a
+typo on the page ("owned" for "owed"), an encoding artefact in a Hansard transcript — each
+re-copied to the verbatim span; the facts were unchanged. Five of twenty-two is the same rate
+the 2026-08-29 voices pass saw, and it is why the gate runs on cached bytes and not on trust.
+
+**One improvement.** Fetch and cache the primary documents the agents are going to need
+(SEC filings, regulator PDFs) in the main session *before* spawning, since agents cannot write
+the shared cache; and run the seed search at `--pause 8` in two halves rather than one burst.

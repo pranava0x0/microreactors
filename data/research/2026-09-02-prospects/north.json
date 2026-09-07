@@ -1,0 +1,195 @@
+{
+ "_meta": {
+  "captured": "2026-09-02",
+  "agent": "north",
+  "scope": "Deals > Prospects sub-tab: 4 GitHub issues (#9, #10, #13, #14), 5 answer records on doyon-utilities, cvea, red-dog, qulliq-nunavut, agnico-kivalliq",
+  "angles_run": [
+   "RCA tariff filing notices and docket pages for Doyon Utilities (TA15-726 Fort Wainwright electric)",
+   "Doyon Utilities own tariffs page for published $/kWh rate sheets",
+   "News coverage of Doyon Utilities rate-case disputes and claimed losses",
+   "Army Janus program base/vendor announcement after 2026-08-26",
+   "10 U.S.C. 2688 utility privatization rate-base and new-generation precedent",
+   "CVEA press release and Ruralite PDF on the MMR project tabling",
+   "CVEA/USNC post-2023 and post-bankruptcy statements",
+   "Red Dog mine Teck diesel cost, gallons, and sustainability reporting",
+   "NANA Regional Corporation statements on nuclear, microreactors, or generation ownership",
+   "Red Dog mine life extension and solar project ownership structure",
+   "QEC per-community installed capacity",
+   "QEC Corporate Plan alternative-energy section and Canada SMR Action Plan listing",
+   "Kivalliq Hydro-Fibre Link funding, ownership, and Nukik MOUs with QEC and Agnico Eagle",
+   "Agnico Eagle Meliadine mine diesel generation capacity and fuel cost"
+  ],
+  "absences": [
+   "No RCA filing, tariff sheet, or company document publishes a $/MWh or $/MMBtu delivered cost of coal or oil generation at Fort Wainwright",
+   "No Teck filing or report discloses a $/gallon or $/MWh diesel cost at Red Dog; Teck declined to give one on the record",
+   "No Agnico Eagle filing or report discloses a $/litre or $/MWh diesel contract price at Meliadine or elsewhere in the Kivalliq region",
+   "smractionplan.ca (Canada's SMR Action Plan site, listing QEC as a participant) could not be fetched due to a repeated TLS certificate error, so QEC's SMR Action Plan participation is reported only as an unverified lead"
+  ],
+  "quote_repairs": "2026-09-02: five quotes re-copied to the verbatim span the cached page carries (a paraphrased lead-in, a hyphenated line break, a typo on the page, and an encoding artefact in a transcript); the facts were unchanged."
+ },
+ "answers": [
+  {
+   "id": "doyon-fort-wainwright-cost-and-rate-base",
+   "for": "doyon-utilities",
+   "question": "What is Doyon's delivered cost of coal and oil per MWh at Fort Wainwright, and does the privatisation contract allow new generation to be added to the rate base?",
+   "status": "partial",
+   "finding": "No RCA filing or company document found publishes a $/MWh or $/MMBtu delivered cost for Fort Wainwright's coal and oil generation; Doyon's own tariffs page lists only a Fort Wainwright wastewater tariff, and current RCA rate-case notices disclose aggregate revenue requirements, not per-unit rates. The contract does operate as cost-of-service rate-base regulation: in a 2011-2012 dispute Doyon said it was losing $1.1 million a month at Fort Wainwright, Fort Greely and Fort Richardson combined, after claiming $79 million of plant additions in its rate base that the government called inaccurate, which shows the rate base does absorb new capital additions (Doyon separately added a 2 MW oil-fired generator at Fort Wainwright's coal plant in 2009) but that specific additions are contested case by case rather than automatically approved. Separately, Fort Wainwright was excluded from the Army's Janus program: the August 26, 2026 selection named five vendor-installation pairs (Fort Bragg, Fort Campbell, Fort Hood, Fort Benning, Fort Drum), and Fort Wainwright was not one of them, so it remains an unmatched Janus candidate as of this research.",
+   "figures": {
+    "doyon_claimed_monthly_loss": "$1.1 million a month (Fort Wainwright, Fort Greely, Fort Richardson combined, ~2012 dispute)",
+    "doyon_disputed_plant_additions": "$79 million of plant additions claimed in rate base, not completed by end of 2011",
+    "fwa_2009_generation_addition": "2 MW oil-fired Caterpillar generator added at Fort Wainwright's coal plant",
+    "janus_bases_selected_2026-08-26": "5 vendor-installation pairs selected; Fort Wainwright not included"
+   },
+   "searched": [
+    "RCA tariff filing notices and docket viewer for Doyon Utilities Fort Wainwright",
+    "Doyon Utilities cost-of-power / fuel adjustment clause and published tariff rate",
+    "Fort Wainwright coal plant electricity cost per kWh / per MWh",
+    "10 U.S.C. 2688 utility privatization rate base new generation Doyon",
+    "Fort Wainwright Janus microreactor Army matched vendor 2026"
+   ],
+   "sources": [
+    {
+     "label": "Fairbanks Daily News-Miner — Doyon Utilities claims it loses $1.1 million a month on military contracts",
+     "url": "https://www.newsminer.com/doyon-utilities-claims-it-loses-million-a-month-on-military/article_45365207-daaf-5663-be7f-b4ad7d9cc7ed.html",
+     "quote": "losing $1.1 million a month to provide services under 50-year contracts at Fort Wainwright, Fort Greely and Fort Richardson",
+     "status": "fetched"
+    },
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "the Janus Program has selected five nuclear energy vendors, and five initial locations.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "cvea-tabling-reasons",
+   "for": "cvea",
+   "question": "Why did the board table it: cost, vendor risk or something else in the cached release? And is the cooperative open to re-running the study with a different vendor?",
+   "status": "answered",
+   "finding": "CVEA's own account (the August 9, 2023 release, reprinted in Ruralite's September 2023 issue) says the board tabled the project on economics, not vendor risk: after the fall-2022 feasibility study, CVEA's internal economic analysis found the project technically feasible but concluded there was too much economic risk for the members to own and operate it themselves, so CVEA instead pursued a power purchase agreement with USNC as owner-operator. USNC then determined in July 2023 that a PPA meeting CVEA's needs would require additional year-round heat and/or power customers to be economically feasible, and without that PPA CVEA said it could no longer pursue the project. The release explicitly leaves the door open, stating the co-op will continue to monitor the technology and may reassess if economic conditions improve, and outgoing CEO Travis Million said the MMR technology may not be the solution today but could still be in the future. The same document shows CVEA was already vendor-agnostic before choosing USNC: it names Westinghouse, Oklo, NuScale and Radiant Technologies as other MMR manufacturers it was in conversations with, and picked USNC because the projected unit size best matched CVEA's system, not out of exclusivity. No CVEA statement since USNC's October 2024 Chapter 11 filing was found reacting to it or naming a prospective replacement vendor.",
+   "figures": {
+    "cvea_tabling_date": "August 9, 2023",
+    "cvea_feasibility_study_unit_size": "10-megawatt electric (projected)",
+    "other_vendors_cvea_was_in_talks_with": "Westinghouse, Oklo, NuScale, Radiant Technologies (besides USNC)"
+   },
+   "searched": [
+    "CVEA press release on tabling the MMR project (cvea.org)",
+    "CVEA Ruralite September 2023 PDF full text",
+    "Copper Valley Electric nuclear reactor 2025/2026 update or vendor statement",
+    "Copper Valley Electric reaction to USNC Chapter 11 bankruptcy"
+   ],
+   "sources": [
+    {
+     "label": "CVEA — Micro-Modular Nuclear Reactor Project Tabled Indefinitely by CVEA (press release)",
+     "url": "https://www.cvea.org/press/release/2023/08/09/micro-modular-nuclear-reactor-project-tabled-indefinitely-by-cvea.html",
+     "quote": "while the project was technically feasible, there was too much economic risk for the members to own and operate the project",
+     "status": "fetched"
+    },
+    {
+     "label": "CVEA / Ruralite (September 2023) — Micro-Modular Nuclear Reactor Project Tabled Indefinitely",
+     "url": "https://www.cvea.org/assets/documents/pdfs/ruralite-articles/2023/september.pdf",
+     "quote": "The co-op will continue to monitor this technology",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "red-dog-teck-diesel-and-nana-stake",
+   "for": "red-dog",
+   "question": "What does Teck pay per delivered gallon and per MWh today, and would NANA, as landowner, take an ownership stake in a relocatable unit?",
+   "status": "partial",
+   "finding": "Neither figure is publicly disclosed: no $/gallon or $/MWh cost for Red Dog's diesel generation appears in any Teck filing, sustainability report or news account found, and a Teck spokesperson explicitly declined to give a cost estimate when reporters asked about the mine's planned solar project (reported March 2026). What is confirmed is scale and structure: Red Dog burns roughly 40,000 gallons of diesel each day, and the mine's plan to displace some of that diesel is a solar-plus-battery project that Tugliq Energy, a Canadian company, would build and operate, selling the power back to Teck under a negotiated power purchase agreement, on a 30-acre site partly on land owned by NANA. That build-own-operate-and-sell-power structure is the closest existing precedent for how a reactor deal at Red Dog would likely be structured. NANA's own 'Future of Red Dog Mine' page, which focuses entirely on permitting the Aktigiruq/Anarraaq extension before the current Aqqaluk ore deposit is exhausted, makes no mention of energy generation, ownership stakes in power assets, or nuclear technology, and no public NANA statement on taking an ownership position in generation of any kind was found anywhere.",
+   "figures": {
+    "red_dog_daily_diesel_burn": "roughly 40,000 gallons each day",
+    "red_dog_solar_deal_structure": "Tugliq Energy builds and operates the solar-plus-battery project; Teck buys the power under a negotiated PPA"
+   },
+   "searched": [
+    "\"Red Dog\" mine Teck power plant diesel gallons cost per kWh",
+    "\"Red Dog\" mine diesel generation Teck Alaska sustainability report fuel cost 2024",
+    "NANA Regional Corporation nuclear OR microreactor energy Kotzebue statement",
+    "\"Red Dog\" mine life extension 2031/2032 Aktigiruq Anarraaq Teck",
+    "Red Dog mine Teck diesel \"per gallon\" OR \"cost of power\" fuel price"
+   ],
+   "sources": [
+    {
+     "label": "Anchorage Daily News — One of Alaska's flagship mines soon could draw energy from the sun",
+     "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+     "quote": "roughly 40,000 gallons each day",
+     "status": "fetched"
+    },
+    {
+     "label": "NANA Regional Corporation — The Future of Red Dog Mine",
+     "url": "https://www.nana.com/business/red-dog-mine-future/",
+     "quote": "Our current ore source, the Aqqaluk deposit, is expected to be exhausted by then.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "qulliq-community-capacity-and-nuclear-position",
+   "for": "qulliq-nunavut",
+   "question": "Which Nunavut communities draw more than 1 MW year-round, and has the territory taken a position on nuclear under its own energy strategy?",
+   "status": "answered",
+   "finding": "QEC's installed-capacity data, as tabulated by community on Wikipedia's list of Nunavut generating stations (the per-community figures are not fetched from a QEC page here), shows 19 of Nunavut's 25 diesel plants exceed 1 MW of installed capacity: Iqaluit leads at 13.6 MW, followed by Rankin Inlet (3.55 MW) and Cambridge Bay (3.11 MW), down to Sanikiluaq at 1.2 MW; only six communities (Chesterfield Inlet, Grise Fiord, Kimmirut, Kugaaruk, Naujaat, Whale Cove) sit below 1 MW. QEC's fleet totals approximately 76,000 kilowatts of installed diesel capacity across all 25 communities. On the nuclear question, QEC's own 2023-2026 Corporate Plan devotes a full section to alternative energy that discusses solar PV, battery storage, geothermal and district heating at length and does not mention nuclear power, small modular reactors, or microreactors anywhere; its stated constraint is that its small customer base and the cost of its generation projects limit its financial ability to pursue new energy studies on its own, so it depends on federal partnership funding rather than any in-house generation-technology roadmap. A separate web listing suggests QEC is formally named as a participant in Canada's SMR Action Plan in a research-only, wait-and-see capacity, but the source page could not be fetched (repeated certificate errors), so that specific claim is reported here only as an unverified lead, not a finding.",
+   "figures": {
+    "qec_communities_over_1mw": "19 of 25",
+    "iqaluit_capacity": "13.6 MW",
+    "rankin_inlet_capacity": "3.55 MW",
+    "cambridge_bay_capacity": "3.11 MW",
+    "qec_total_installed_capacity": "approximately 76,000 kilowatts (25 diesel plants)"
+   },
+   "searched": [
+    "Qulliq Energy Corporation power plant capacity by community MW Iqaluit Rankin Inlet Baker Lake",
+    "QEC Corporate Plan 2023-2026 alternative energy section for nuclear/SMR mentions",
+    "Government of Nunavut nuclear small modular reactor position energy strategy",
+    "Canada SMR Action Plan Qulliq Energy Corporation participation (fetch failed, certificate error)"
+   ],
+   "sources": [
+    {
+     "label": "Wikipedia — List of generating stations in Nunavut",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_Nunavut",
+     "quote": "List of all power plants using diesel generators in Nunavut.",
+     "status": "fetched"
+    },
+    {
+     "label": "Qulliq Energy Corporation — Corporate Plan 2023-2026",
+     "url": "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf",
+     "quote": "the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "nukik-agnico-generation-and-diesel-price",
+   "for": "agnico-kivalliq",
+   "question": "Is Nukik open to a generation asset in place of or alongside the line, and what is Agnico's diesel contract price?",
+   "status": "partial",
+   "finding": "Nukik's own framework leaves room for a generation asset, not just the transmission line: its memorandum of understanding with Qulliq Energy Corporation commits both parties to a Kivalliq Regional Energy Plan that explicitly weighs local renewable energy generation alongside the potential role of transmission in the region, evaluated by an independent planner in the best interest of electricity users -- language that treats on-site generation and the transmission line as parallel options rather than ranking the line first. No Nukik statement was found that names nuclear specifically among those generation options. On cost, Agnico's Meliadine mine, the Kivalliq region's largest diesel load, runs a 31.3 MW diesel-fuelled generation facility built from six 5.2 MW units, but no source found discloses Agnico's $/litre or $/MWh diesel contract price at Meliadine or elsewhere in the Kivalliq region; it does not appear in Agnico's own press materials on the Kivalliq Hydro-Fibre Link or in trade coverage of the project.",
+   "figures": {
+    "nukik_qec_energy_plan_scope": "local renewable energy generation, and the potential role of transmission in the region (weighed together)",
+    "meliadine_diesel_capacity": "31.3 MW diesel-fuelled generation facility (six 5.2 MW units)"
+   },
+   "searched": [
+    "\"Kivalliq Hydro-Fibre Link\" 2026 funding schedule Canada Infrastructure Bank Nukik",
+    "\"Nukik\" corporation Agnico Eagle 2026 statement generation",
+    "Agnico Eagle Meliadine mine diesel power cost $/MWh OR per kWh fuel contract Kivalliq",
+    "Agnico Eagle backs project to slash diesel use in Nunavut mining (fetched, no cost data)"
+   ],
+   "sources": [
+    {
+     "label": "Nukik Corporation — Nukik Corporation and Qulliq Energy Corporation sign memorandum of understanding to advance a clean energy future for Kivalliq region",
+     "url": "https://nukik.ca/nukik-corporation-and-qulliq-energy-corporation-sign-memorandum-of-understanding-to-advance-a-clean-energy-future-for-kivalliq-region/",
+     "quote": "local renewable energy generation, and the potential role of transmission in the region",
+     "status": "fetched"
+    },
+    {
+     "label": "NS Energy Business — Meliadine Gold Mine, Kivalliq, Nunavut Territory, Canada",
+     "url": "https://www.nsenergybusiness.com/projects/meliadine-gold-mine-canada/",
+     "quote": "Electrical power is supplied by a 31.3MW diesel-fuelled generation facility, which is equipped with six 5.2MW units.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

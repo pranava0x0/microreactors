@@ -3,7 +3,7 @@
     "captured": "2026-08-29",
     "warning": "No microreactor has sold power commercially, so no figure in this table is a price anyone has paid. The ranges are wide because sources disagree about what the first units cost to build. The displaced-alternative bands were re-sourced to primary documents on 2026-08-25.",
     "review": "Reviewed 2026-08-21 against an energy/project-finance reading (three corrections: overstated diesel comparison, false capex sensitivity, missing PTC scope). Citation audit, same day: two capex-scenario rows were removed entirely — their $5,000/kW and $2,500/kW inputs and $80–90 / $35 per MWh outputs appear nowhere in the paper they cited (its capital-cost distribution is $2,500–4,000/kW, treated as nth-of-a-kind). They are replaced by the NEI 2019 FOAK/NOAK bands, which are real published figures. The Alaska row was re-sourced for the same reason: the cited paper never mentions Alaska; the band now comes from sources that do.",
-    "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low.",
+    "captured_note": "Two displaced-alternative bands were corrected on 2026-08-25 against primary documents found in the deep research pass (data/research/deep-2026-08-24): remote industrial self-generation and rural Alaska. Both previously rested on secondary or vendor sources and both had ceilings that were too low. 2026-09-02: the staffing sentence under the learning curve attributed a '6 to 10 staff at $162,000-$188,000' figure to INL; neither INL report carries it. INL's own rate is $178,500 per FTE; the 3-10 staff and $120,000-225,000 ranges are the Michigan optimization's input distributions, and its solution is ten at $162,424. Re-attributed and quote-locked.",
     "cost_pass": "2026-08-29: added capital cost per kW, the unit-1-to-unit-20 learning curve, and a per-reactor-type comparison, all from Idaho National Laboratory's microreactor technoeconomic reports and the University of Michigan optimization. Before this pass the site carried levelized energy costs only and no capital cost at all."
   },
   "microreactor_lcoe": [
@@ -300,7 +300,7 @@
         "detail": "Land, permits, plant studies, the initial coolant, mining, converting and enriching the first core, recruiting and training operators, technicians and security, refueling, and spent fuel management."
       }
     ],
-    "floor": "The third row is the one that decides whether this technology works. Uranium, and the people who run and guard the plant, cost the same on the 20th unit as on the first. INL models 6 to 10 full-time staff at $162,000 to $188,000 each. That is the floor the curve flattens onto, and it is why the levelized cost stops falling well above zero.",
+    "floor": "The third row is the one that decides whether this technology works. Uranium, and the people who run and guard the plant, cost the same on the 20th unit as on the first. INL prices each of them at $178,500 a year. The Michigan optimization draws 3 to 10 staff at $120,000 to $225,000 each and lands on ten at about $162,000. That is the floor the curve flattens onto, and it is why the levelized cost stops falling well above zero.",
     "rates": "Where INL does apply a rate, it varies by component: 8% for work at the site, 18% for the reactor's primary structure, 23% for plant equipment and instrumentation, 24% for the reactivity control system, and 40% for anything made of beryllium.",
     "definitions_warning": "The two INL reports do not mean the same thing by \"Nth-of-a-kind\". The 2024 report computes learning over 20 units. The 2025 report assumes cost stops falling after 100. Numbers from the two are not interchangeable.",
     "sources": [
@@ -331,6 +331,20 @@
         "quote": "depending on factors such as rated power capacity, the number of units deployed, and specific cost assumptions",
         "status": "fetched",
         "verified": "2026-08-29 quote confirmed in cached copy"
+      },
+      {
+        "label": "Idaho National Laboratory — Technoeconomic Evaluation of Microreactor Using Detailed Bottom-up Estimate (INL/RPT-24-80433)",
+        "url": "https://gain.inl.gov/content/uploads/4/2025/03/2024-Document-INL-RPT-24-80433.pdf",
+        "quote": "Using $178,500/FTE",
+        "status": "fetched",
+        "verified": "2026-09-02 quote confirmed in cached copy"
+      },
+      {
+        "label": "Abdussami, Khaleb, Gao & Verma (Univ. of Michigan) — Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv:2506.13361)",
+        "url": "https://arxiv.org/pdf/2506.13361",
+        "quote": "ten FTEs at $162,424.20/year",
+        "status": "fetched",
+        "verified": "2026-09-02 quote confirmed in cached copy"
       }
     ]
   },

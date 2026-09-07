@@ -272,3 +272,28 @@
 - **low** · `tools/leadership_roster.py` reads 15 of 23 company pages; Radiant, Oklo and X-energy
   403 every automated client. Its name extraction over-collects by design and needs human triage —
   the authoritative roster is the research pass, which cites a source per person.
+
+## From the 2026-09-02 commercial-strategy pass (Costs › What wins, Deals › Prospects)
+
+Each of these is a GitHub issue with the method and the closing condition written out; the
+one-line here is the pointer.
+
+- **high** · Doyon Utilities at Fort Wainwright: delivered coal/oil cost per MWh and whether the
+  2688 contract admits new generation (#9). The only Janus candidate priced at Alaskan fuel rates.
+- **high** · CVEA: extract the tabling reasons from the cached release and search the RCA record (#10).
+- **high** · SRC: successor vendor evaluation and whether the CA$80M survives (#11).
+- **medium** · Global First Power / Chalk River: post-bankruptcy owner and CNSC application status (#12).
+- **high** · Red Dog: delivered diesel $/MWh and NANA's position on a relocatable unit (#13).
+- **medium** · Nunavut: which communities draw over 1 MW; the territory's position on nuclear (#14).
+- **high** · Fuel: what a tonne of fabricated TRISO costs; HALEU allocation vs unit count per vendor (#15).
+- **medium** · Add the published vendor unit prices (Oklo, Last Energy, NRCan) as their own ladder
+  rung, and source the DOE clean-firm band or keep it out (#16).
+- **medium** · Off-grid power contractors as the channel: portfolio sites with 15 years of term and a
+  20 MW firm residual (#17).
+- **low** · Derive `Register.BANNED`'s file tuple from `build_data.FILES`; fix the 7 hits in
+  `instruments.json` and `voices.json` first (#18).
+- **low** · Render `strategy.json`'s cross-references as deep links to the row (the chips link to the
+  sub-tab today, not the record); needs per-record anchors on the Customer cost and Sites lists.
+- **low** · An interactive version of the $/kWe-to-$/MWh conversion (rate, life, capacity factor as
+  inputs) once a second reader asks for one; the static table covers the two published cases.
+- **medium** · Re-run the seven seed topics that DuckDuckGo blocked on 2026-09-02 (`python3 tools/web_search.py --plan data/research/2026-09-02-prospects/plan.json --out data/research/2026-09-02-prospects/seeds --only red-dog nunavut-kivalliq src-saskatchewan chalk-river-gfp fuel-triso-haleu vendor-unit-prices offgrid-ipps --pause 8`) so the digest on disk matches what the agents were given. The block came after about ten queries at a 2.5 s pause; a rerun an hour later at an 8 s pause with a 45 s cooldown per blocked query still returned zero for every topic, so the block is per-address and lasts at least an hour. Run the plan from a different network or a day later, in two halves, or seed the next pass from the agents' own WebSearch as this one did. Bing's keyless RSS was tried as a fallback and answers with generic pages for the first word of the query, so it was removed rather than left to seed junk.

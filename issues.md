@@ -216,3 +216,7 @@ Root cause: **link rot at the publisher**, not a code or data bug. The AEP Ohio 
 re-issued under a new dated filename each cycle, and the CNSC page moved after the Chalk River MMR
 project was paused. Status: Open. Each needs a replacement URL or an archived copy; the Chalk River
 one may simply have no live equivalent now that the project is off.
+
+## 2026-09-02 — commercial-strategy pass
+
+- **2026-09-02 · Costs / learning curve · data bug · Fixed.** `costs.json` `learning_curve.floor` read "INL models 6 to 10 full-time staff at $162,000 to $188,000 each." A grep of both cached INL reports finds no such figures: INL uses a single $178,500 per FTE rate (security 5 FTEs shared one guard per two reactors, remote monitoring one person per 20 reactors). The 3-10 staff and $120,000-225,000 ranges are the University of Michigan paper's uniform input distributions (Table 2, nominal 5 staff at $150,000), and its optimized solution is ten FTEs at $162,424. The $188,000 figure appears in no cached source. Root cause: a paraphrase from the 2026-08-29 cost pass that merged two papers' assumptions under one attribution; the block's sources were the right documents, so the citation-coverage gate could not see it. Fix: sentence re-attributed and two quote-locks added (`Using $178,500/FTE`; `ten FTEs at $162,424.20/year`), verified against the cache. The same wrong sentence is in the (uncommitted) pitch documents; flagged in the pitch improvement plan.

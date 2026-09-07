@@ -23,7 +23,7 @@
  "name": "Microreactor Opportunity Map",
  "description": "A cited map of the microreactor business-development opportunity space: pipeline, economics, vendors, demand, market mechanisms, policy pathways, and an honest evidence-gap register.",
  "url": "https://pranava0x0.github.io/microreactors/",
- "dateModified": "2026-08-30",
+ "dateModified": "2026-09-02",
  "isAccessibleForFree": true,
  "creator": {
   "@type": "Person",
@@ -54,7 +54,7 @@
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 557
+   "value": 575
   },
   {
    "@type": "PropertyValue",
@@ -121,6 +121,11 @@
   {
    "@type": "DataDownload",
    "encodingFormat": "application/json",
+   "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/strategy.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
    "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/vendors.json"
   },
   {
@@ -137,8 +142,8 @@
 }
 </script>
 <!-- /generated:meta -->
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/tokens.css?v=2026-09-02">
+<link rel="stylesheet" href="assets/site.css?v=2026-09-02">
 </head>
 <body>
 
@@ -179,6 +184,8 @@
       <div class="homepaths">
         <a href="#pipeline">See deals and sites <span>→</span></a>
         <a href="#economics">Compare costs <span>→</span></a>
+        <a href="#economics/win">See what a unit has to cost to win <span>→</span></a>
+        <a href="#pipeline/prospects">See who could buy next <span>→</span></a>
         <a href="#policy">See rules and deal design <span>→</span></a>
       </div>
     </div>
@@ -197,6 +204,11 @@
     <div data-sub="sites" id="pipeline-sites" role="tabpanel" tabindex="0">
       <div id="sites-summary"></div><div id="site-filters"></div>
       <div id="sites-content"><div id="sites-grid"></div><div id="site-negative-findings"></div></div>
+    </div>
+    <div data-sub="prospects" id="pipeline-prospects" role="tabpanel" tabindex="0">
+      <p class="prose" id="prospects-intro"></p>
+      <div class="newsfilter" id="prospects-filter"></div>
+      <div id="prospects"></div>
     </div>
   </div>
 </section>
@@ -253,7 +265,7 @@
       </div>
       <div id="altnotes"></div>
       <p class="prose" id="reading" style="margin-top:var(--space-8)"></p>
-      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="assume-q"></h3></div>
+      <div class="subhead gap"><h3 id="assume-q"></h3></div>
       <p class="prose" id="assume-note"></p>
       <div class="unitrows" id="assume"></div>
     </div>
@@ -266,11 +278,11 @@
       <p class="prose" id="capex-note"></p>
       <div id="capex"></div>
       <p class="prose" id="capex-reading"></p>
-      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="lc-q"></h3></div>
+      <div class="subhead gap"><h3 id="lc-q"></h3></div>
       <p class="prose" id="lc-worked"></p>
       <div id="lc-classes"></div>
       <p class="prose" id="lc-floor"></p>
-      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="arch-q"></h3></div>
+      <div class="subhead gap"><h3 id="arch-q"></h3></div>
       <p class="prose" id="arch-note"></p>
       <div id="archetypes"></div>
       <p class="prose" id="arch-finding"></p>
@@ -279,6 +291,20 @@
       <div class="subhead"><h3>What people pay today</h3></div>
       <p class="prose" id="benchsummary"></p>
       <div id="benchmarks"></div>
+    </div>
+    <div data-sub="win" id="economics-win" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3 id="win-q"></h3></div>
+      <p class="prose" id="win-note"></p>
+      <div id="win-ladder"></div>
+      <div class="subhead gap"><h3 id="win-units-q"></h3></div>
+      <div id="win-units"></div>
+      <div class="subhead gap"><h3 id="win-conv-q"></h3></div>
+      <div id="win-conv"></div>
+      <div class="subhead gap"><h3 id="win-floor-q"></h3></div>
+      <p class="prose" id="win-floor-note"></p>
+      <div id="win-floor"></div>
+      <div class="subhead gap"><h3 id="win-seg-q"></h3></div>
+      <div id="win-segments"></div>
     </div>
   </div>
 </section>
@@ -347,7 +373,7 @@
       <div class="subhead"><h3 id="voices-head"></h3></div>
       <p class="prose" id="voices-intro"></p>
       <div id="voices"></div>
-      <div class="subhead" style="margin-top:var(--space-10)"><h3 id="roster-head"></h3></div>
+      <div class="subhead gap"><h3 id="roster-head"></h3></div>
       <p class="prose" id="roster-intro"></p>
       <div id="roster"></div>
     </div>
@@ -372,7 +398,7 @@
   </div>
 </footer>
 
-<script src="data.js"></script>
-<script src="assets/app.js"></script>
+<script src="data.js?v=2026-09-02"></script>
+<script src="assets/app.js?v=2026-09-02"></script>
 </body>
 </html>

@@ -78,7 +78,7 @@ class CssGuards(unittest.TestCase):
 
 class ScriptOrder(unittest.TestCase):
     def test_data_loads_before_app(self):
-        d, a = HTML.find('src="data.js"'), HTML.find('src="assets/app.js"')
+        d, a = HTML.find('src="data.js'), HTML.find('src="assets/app.js')
         self.assertGreater(d, -1)
         self.assertGreater(a, d, "data.js must load before app.js")
 

@@ -192,7 +192,7 @@ class Register(unittest.TestCase):
 
     def test_no_ai_register_in_authored_prose(self):
         for name in ("costs.json", "sectors.json", "mechanisms.json",
-                     "policy.json", "opportunities.json", "vendors.json"):
+                     "policy.json", "opportunities.json", "vendors.json", "strategy.json"):
             strings = self.prose_of(load(name))
             self.assertTrue(strings, f"{name}: prose extraction found nothing")
             text = " \n".join(strings).lower()
