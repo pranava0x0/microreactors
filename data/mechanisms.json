@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "captured": "2026-08-21",
-    "note": "The proposal block is this site's own synthesis and is labeled as such on the page; it cites no source because it is not claiming one. Every factual claim inside it is carried by a precedent row below, each verified against a fetched or snippet-corroborated source (per-source status recorded). Research trail: data/research/orderbook-mechanisms.json."
+    "captured": "2026-09-09",
+    "note": "The proposal block is this site's own synthesis and is labeled as such on the page; it cites no source because it is not claiming one. Every factual claim inside it is carried by a precedent row below, each verified against a fetched or snippet-corroborated source (per-source status recorded). Research trail: data/research/orderbook-mechanisms.json. 2026-09-09: clarified the EFI Foundation FOAK-unit figure as a total capital cost per SMR unit (not per kW or per MWh)."
   },
   "intro": "The first microreactor orders are the expensive ones, so nobody wants to go first. DOE's liftoff analysis says a factory needs 30 to 50 committed units of a single design — about 500 MW — and no single buyer is anywhere near that on their own. A shared orderbook lets buyers pool their orders so none of them carries first-unit risk alone, and an overrun pool settles in advance who pays if a build goes over budget. The three cards below are our own proposal.",
   "proposal": {
@@ -53,7 +53,7 @@
           "name": "EFI Foundation Cost Stabilization Facility",
           "category": "published blueprint",
           "mechanism": "Working paper (Oct 2023; model term sheet Jan 2025) for an SMR orderbook of at least 3 projects (illustrated at 10 units): sponsors hold pro-rata interests in every unit through an SPV; sponsors fund the baseline budget and a pooled contingency in full; only when both are exhausted does a DOE backstop loan trigger automatically, illustrated at an 80% federal / 20% sponsor split of the overrun tail.",
-          "outcome": "Proposal only. Illustrative numbers: a 10-unit, $20B orderbook with a $5B (25%) contingency facility; FOAK unit at $2.45B declining to $1.79B by unit 10.",
+          "outcome": "Proposal only. Illustrative numbers: a 10-unit, $20B orderbook with a $5B (25%) contingency facility; total capital cost per SMR unit (not per kW or per MWh) declines from $2.45B for the FOAK unit to $1.79B for unit 10.",
           "early_vs_late": "Deliberately flat: \"all the participants experience the same average cost based upon the total cost of all the units in the orderbook\". The design goal is erasing the first-mover disadvantage so nobody benefits from delaying.",
           "relevance": "Closest thing to a working blueprint for a shared microreactor orderbook plus risk pool. It pools through an SPV, tiers the contingency, adds an automatic backstop, and gives a reasoned rejection of price differences by order position.",
           "sources": [
