@@ -287,7 +287,7 @@
      figure that meant nothing on its own - the criticality and binding-deal
      tiles below already surface the two kinds of milestone worth a headline. */
   var stats = [
-    { n: s.binding_rows + "/" + s.opportunities, k: "have an executed agreement", accent: true, href: "#pipeline" },
+    { n: s.binding_rows + "/" + s.opportunities, k: "hold a binding commitment", accent: true, href: "#pipeline" },
     { n: s.reactors_critical_2026, k: "DOE test reactors critical in 2026", accent: true, href: "#pipeline/us-gov" },
     { n: s.units_largest_preorder, k: "units in the largest preorder", href: "#pipeline" },
     { n: s.first_delivery_year, k: "first delivery target", href: "#vendors" },
@@ -330,8 +330,13 @@
         '<div><div class="rowname">' + esc(o.name) + "</div>" +
           '<div class="rowmeta"><span class="owner">' + esc(o.owner) + "</span>" +
           "<span>" + esc(o.sector) + "</span><span>" + esc(o.power_mw || "—") + "</span>" +
+          /* opportunities.binding is a broader test than news.binding - it
+             counts a named-site selection or a notice of intent, not only a
+             signed contract (see _meta.binding_note) - so it must not borrow
+             the News tab's "executed/announced" words, which promise more
+             than this field does. */
           '<span class="nbind ' + (o.binding ? "yes" : "no") + '">' +
-          (o.binding ? "executed" : "announced") + "</span></div></div>" +
+          (o.binding ? "binding" : "not binding") + "</span></div></div>" +
         '<span class="pill' + (o.track === "us-gov" ? " gov" : "") + '">' +
           esc(trackLabel(o.track)) + "</span>" +
       "</div>" +
@@ -842,10 +847,18 @@
   // hand-typed here - the 2026-09-09 homepage stat bug (a hand-set "3 critical"
   // that drifted to 5 once Aalo and Oklo went critical) is exactly what a second
   // hand-typed copy of the same fact would repeat.
+  //
+  // Requires a "unit" field, not just a "critical" substring: Oklo's card is
+  // headlined "Aurora Powerhouse", but the vendor's only completed criticality
+  // milestone is its unrelated Groves Isotope Test Reactor - a badge reading
+  // "Reached criticality" on that card would misreport Aurora as critical, which
+  // the vendor's own gaps note explicitly says has no criticality date. Naming
+  // the actual unit (only set on real criticality milestones) keeps the badge
+  // honest regardless of whether the critical unit is the card's flagship design.
   function criticalityMilestone(v) {
     var ms = v.milestones || [];
     for (var i = 0; i < ms.length; i++) {
-      if (ms[i].status === "done" && /critical/i.test(ms[i].label || "")) return ms[i];
+      if (ms[i].status === "done" && ms[i].unit) return ms[i];
     }
     return null;
   }
@@ -860,7 +873,7 @@
     ].filter(function (x) { return x[1]; });
     var crit = criticalityMilestone(v);
     var badges = (v.janus_site ? '<span class="vbadge janus">Janus awardee</span>' : "") +
-      (crit ? '<span class="vbadge critical">Reached criticality — ' + esc(crit.date) + "</span>" : "");
+      (crit ? '<span class="vbadge critical">' + esc(crit.unit) + " critical — " + esc(crit.date) + "</span>" : "");
     var gaps = (v.gaps || []).length
       ? '<div class="gapnote"><strong>Known gaps</strong><ul>' +
         v.gaps.map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("") + "</ul></div>"
@@ -1233,7 +1246,8 @@
       '</p><a class="more" href="#news">Read the news record →</a></article>');
     render($("home-topstories"), top.map(function (it) {
       return '<article class="storycard">' + newsHdr(it) + "<h4>" + esc(it.headline) + "</h4><p>" +
-        esc(it.what_happened) + "</p></article>";
+        esc(it.what_happened) + " " + cite(it.sources) +
+        '</p><a class="more" href="#news">Read the news record →</a></article>';
     }).join(""));
     render($("home-latestlist"), latest.map(function (it) {
       return '<li><span class="ndate">' + esc(it.date) + '</span> <span class="ncat">' +

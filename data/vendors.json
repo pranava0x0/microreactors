@@ -64,6 +64,7 @@
         {
           "date": "2026-06-04",
           "status": "done",
+          "unit": "Mark-0",
           "label": "Mark-0 test reactor critical at INL (DOE Reactor Pilot Program)",
           "source": {
             "label": "ANS — Reactor Pilot Program status",
@@ -91,6 +92,7 @@
         {
           "date": "2026-06-04",
           "status": "done",
+          "unit": "Mark-0",
           "label": "Mark-0 reached criticality at Idaho National Laboratory — the first privately built non-light-water reactor to go critical in the US in over 40 years",
           "source": {
             "label": "The Defense Post — Antares to Fast-Track US Military Base Nuclear Microreactors With $470M Injection",
@@ -425,7 +427,7 @@
       "notes": "Ward 250 reached zero-power criticality in Utah. Valar later announced a 30 MW Utah data-center project with Nvidia; no public power contract, price, or delivery date was found.",
       "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}, {"label": "DOE NEPA — Ward250 research reactor", "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor", "status": "snippet-only"}],
       "gaps": ["Public sources do not resolve the 100 kWt and 250 kWt descriptions", "No public commercial power agreement"],
-      "milestones": [{"date": "2026-06-18", "status": "done", "label": "Ward 250 reached zero-power criticality in Utah", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
+      "milestones": [{"date": "2026-06-18", "status": "done", "unit": "Ward 250", "label": "Ward 250 reached zero-power criticality in Utah", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
     },
     {
       "id": "aalo-x",
@@ -437,7 +439,7 @@
       "notes": "Aalo-X reached zero-power fueled criticality at Idaho National Laboratory. This is a test milestone, not a commercial delivery or power-sale record.",
       "sources": [{"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}],
       "gaps": ["No public commercial delivery date", "No public power purchase agreement"],
-      "milestones": [{"date": "2026-07-04", "status": "done", "label": "Aalo-X reached zero-power fueled criticality at INL", "source": {"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}}]
+      "milestones": [{"date": "2026-07-04", "status": "done", "unit": "Aalo-X", "label": "Aalo-X reached zero-power fueled criticality at INL", "source": {"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}}]
     },
     {
       "id": "oklo-aurora",
@@ -451,7 +453,7 @@
       "notes": "Oklo secured DOE preliminary documented safety analysis approval for Aurora-INL. It is included as a larger advanced-reactor comparator, not as a 1–20 MW microreactor.",
       "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}],
       "gaps": ["No published criticality or completion date for Aurora-INL"],
-      "milestones": [{"date": "2026-06-11", "status": "done", "label": "DOE preliminary safety approval announced for Aurora-INL", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}, {"date": "2026-08-05", "status": "done", "label": "Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so", "source": {"label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality", "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality", "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer, further solidifying America's nuclear comeback.", "status": "fetched"}}]
+      "milestones": [{"date": "2026-06-11", "status": "done", "label": "DOE preliminary safety approval announced for Aurora-INL", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}, {"date": "2026-08-05", "status": "done", "unit": "Groves Isotope Test Reactor", "label": "Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so", "source": {"label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality", "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality", "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer, further solidifying America's nuclear comeback.", "status": "fetched"}}]
     }
   ]
 }

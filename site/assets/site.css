@@ -216,9 +216,14 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .vcard .r{color:var(--antares-red);font-size:var(--size-body-sm);letter-spacing:var(--track-label);
   text-transform:uppercase;margin-bottom:var(--space-3);display:block}
 .vbadges{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-6)}
+/* No white-space:nowrap: the critical badge names its unit ("Groves Isotope
+   Test Reactor critical — 2026-08-05"), which is too long to force onto one
+   line at mobile widths without overflowing the card (found by the layout
+   width gate at 375px/768px). flex-wrap on the container handles wrapping
+   multiple badges onto new rows; each badge's own text wraps normally. */
 .vbadge{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   padding:var(--space-1) var(--space-3);border:1px solid var(--border-default);
-  border-radius:var(--radius-control);color:var(--text-secondary);white-space:nowrap}
+  border-radius:var(--radius-control);color:var(--text-secondary);max-width:100%}
 .vbadge.janus{border-color:var(--border-strong);color:var(--text-primary)}
 .vbadge.critical{border-color:var(--antares-red-40);color:var(--antares-red)}
 .vspec{display:grid;grid-template-columns:118px 1fr;gap:var(--space-4);padding:var(--space-3) 0;
@@ -308,7 +313,8 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .leadstory h3{font-size:var(--size-heading-2);line-height:var(--lh-heading);
   margin:var(--space-3) 0;color:var(--text-primary)}
 .leadstory p{color:var(--text-secondary);margin:0 0 var(--space-4)}
-.leadstory a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);color:var(--antares-red)}
+.leadstory a.more,.storycard a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);
+  color:var(--antares-red);display:inline-block;margin-top:var(--space-3)}
 
 .topstories{display:grid;gap:var(--space-6)}
 @media(min-width:640px){.topstories{grid-template-columns:repeat(3,minmax(0,1fr))}}
