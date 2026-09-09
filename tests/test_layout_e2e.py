@@ -202,7 +202,10 @@ class Routing(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class HomePage(unittest.TestCase):
-    def test_home_has_three_news_highlights_and_working_paths(self):
+    def test_home_front_page_has_lead_and_top_stories_and_working_paths(self):
+        """The newspaper front page: one lead story, three "more top stories"
+        cards, and a non-empty "also recent" rail, all derived from D.news.items
+        rather than a hand-typed id list (see renderHome() in app.js)."""
         with serve_site() as base, sync_playwright() as pw:
             try:
                 browser = pw.chromium.launch()
@@ -211,13 +214,17 @@ class HomePage(unittest.TestCase):
             page = browser.new_page()
             page.goto(base + "#home", wait_until="networkidle")
             page.wait_for_timeout(100)
-            count = page.locator("#home-highlights .homehighlight").count()
+            lead_count = page.locator("#home-lead .leadstory").count()
+            story_count = page.locator("#home-topstories .storycard").count()
+            latest_count = page.locator("#home-latestlist li:not(.more)").count()
             page.locator('.homepaths a[href="#economics"]').click()
             page.wait_for_timeout(50)
             visible = page.evaluate("""() => [...document.querySelectorAll('section[role=tabpanel]')]
               .filter(p => !p.hidden).map(p => p.id)""")
             browser.close()
-        self.assertEqual(count, 3)
+        self.assertEqual(lead_count, 1)
+        self.assertEqual(story_count, 3)
+        self.assertGreater(latest_count, 0)
         self.assertEqual(visible, ["economics"])
 
     def test_site_filters_expose_the_selected_state(self):

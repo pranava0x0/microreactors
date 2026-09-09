@@ -1,0 +1,241 @@
+{
+  "_meta": {
+    "captured": "2026-09-09",
+    "scope": "Scouting pass on real, concrete examples of AI/ML in (a) reactor operations (autonomous control, remote operation, predictive maintenance, digital twins) or (b) NRC licensing/regulatory work, specifically as it relates to microreactors and advanced reactors rather than large LWRs in the abstract. Pure research capture — nothing added to data/policy.json, data/vendors.json, or site/.",
+    "method": "Web search + fetch verification. Every source below was fetched directly except where noted 'snippet-only' (host blocked WebFetch or returned only a search-engine summary).",
+    "angles_run": [
+      "1. Autonomous/remote reactor operation: named AI/ML system behind vendor claims (Westinghouse eVinci, X-energy, Oklo, Aalo, Radiant) + INL research",
+      "2. NRC use of AI in licensing review: named pilot or tool",
+      "3. DOE/national lab programs tied specifically to microreactor/advanced-reactor deployment",
+      "4. Predictive maintenance / anomaly detection at operating plants, as an analogy",
+      "5. Separating real named systems/papers/deployments from unverifiable vendor marketing language"
+    ],
+    "top_line": "The honest split is closer to 60/40 than 95/5: there IS a cluster of real, named, published or funded programs (INL's NAMAC research line dating to 2020, a 2026 INL/Purdue reinforcement-learning demo, a $60M DOE Genesis Mission award called Project Prometheus, Microsoft's Generative AI for Permitting deployed at Aalo with quantified results, and a mature Constellation/Southern Nuclear predictive-maintenance deployment with an IAEA award) — but every one of these is either (i) a research reactor or generic advanced-reactor testbed, not a licensed microreactor in commercial operation, (ii) scoped to design/engineering/permitting rather than actual reactor operation, or (iii) a large-LWR predictive-maintenance analogy. No vendor has a named AI/ML system actually controlling a licensed, operating microreactor today. Several vendors' 'autonomous operation' language (Radiant's fleet-wide machine learning, Oklo's AI-powered diagnostic command centers) traces back to unverifiable forward-looking marketing copy with no named system or deployment behind it. Westinghouse's eVinci NRC approval is real and specific, but the approved system is explicitly NOT AI — it is a hardware logic platform — which undercuts the 'AI enables our autonomous operation' framing used around it.",
+    "absences": [
+      "No GAO report specifically on NRC's use of AI in licensing was found (GAO-23-105997 covers advanced-reactor licensing preparedness generally but predates the 2025-2026 AI pilots and does not discuss AI tools).",
+      "No Congressional Research Service (CRS) report on NRC AI use was found in search.",
+      "No evidence that NRC's internal generative AI tool (referred to as 'SimplifAI' in the Nextgov piece) or its Microsoft Copilot Chat use has been applied to an actual microreactor or advanced-reactor license application by name — the one named pilot (an enrichment facility application) is not a reactor licensing case, and NRC officials described time savings only in general terms ('one type of licensing') without naming the application.",
+      "No evidence found that any of Westinghouse eVinci, X-energy Xe-100, Oklo Aurora, Aalo, or Radiant currently operates a licensed reactor under real-time AI/ML control — all are pre-operational or research/testbed stage as of Sept 2026.",
+      "No public technical paper or named system was found describing Radiant's claimed fleet-wide machine-learning operations platform beyond a 2023 CEO blog aspiration; no SimEngine (Radiant's actual named tool) capability description covers fleet operations rather than design.",
+      "Blue Wave AI Labs' ThermalLimits.ai / predictive-maintenance work has no found connection to any microreactor vendor or design — it is BWR-specific and was not extended to advanced/microreactor programs in any source found."
+    ]
+  },
+  "findings": [
+    {
+      "id": "inl-purdue-pur1-reinforcement-learning-control",
+      "name": "INL/Purdue/UIUC reinforcement-learning autonomous control demo on the PUR-1 research reactor",
+      "category": "autonomous_operation",
+      "what_it_is": "On 2026-07-14, INL, Purdue University and the University of Illinois Urbana-Champaign publicly demonstrated remote, real-time autonomous adjustment of an auxiliary control rod on Purdue's PUR-1 low-power research reactor. A reinforcement-learning model, running in software that simulates the reactor's physics, calculated control-rod movements; instructions were delivered through INL's named data/control platform 'DeepLynx' via a Microsoft Azure cloud link between INL (Idaho), PUR-1 (Indiana) and Azure (Virginia). The reactor's own hardwired safety systems retained final control throughout.",
+      "outcome": "Real, named, dated demonstration with named institutions and a named platform (DeepLynx) — not a simulation-only paper. It is explicitly framed by INL researcher Chris Ritter as foundational to future autonomous reactor operation and DOE's Genesis Mission goal of 'nuclear energy that is faster, safer, cheaper.' It is NOT itself a microreactor — PUR-1 is a conventional low-power university research reactor — and no source found ties this specific demo to a named microreactor vendor or design.",
+      "relevance": "Directly answers angle 1's ask for 'a specific named program or system' behind INL's autonomous-reactor-control research. This is the most concrete real system found: a named platform (DeepLynx) plus a named ML technique (reinforcement learning) plus a dated, verifiable demonstration — a rung above vendor marketing language, but still a research-reactor proof of concept, not a microreactor deployment.",
+      "sources": [
+        {
+          "label": "EurekAlert (INL news release) — Researchers achieve remote, autonomous power control of a research reactor in real time",
+          "url": "https://www.eurekalert.org/news-releases/1135956",
+          "quote": "Researching autonomous operations is essential to the future of nuclear energy; it's a key compo[nent of making future nuclear power plants safer]",
+          "status": "fetched"
+        },
+        {
+          "label": "Tech Xplore — Researchers achieve remote, autonomous power control of a research reactor in real time",
+          "url": "https://techxplore.com/news/2026-07-remote-autonomous-power-reactor-real.html",
+          "quote": "the system analyzes, predicts and adjusts, but the reactor's own safety controls always have the final say",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "inl-namac-magnet-microreactor-digital-twin",
+      "name": "INL NAMAC research line + MAGNET microreactor digital twin",
+      "category": "doe_lab_program",
+      "what_it_is": "A published, peer-reviewed research program: 'Development and Assessment of a Nearly Autonomous Management and Control (NAMAC) System for Advanced Reactors' (arXiv 2008.12888, submitted 2020-08-29; also published in Annals of Nuclear Energy and as an ARPA-E final report). NAMAC is a three-layer AI-guided control-recommendation system (knowledge base, digital-twin layer, operational layer) demonstrated on a simulator of the Experimental Breeder Reactor II during a loss-of-flow accident. INL separately (2022-07-14) ran the first digital twin of a simulated microreactor specifically, using the MAGNET (Microreactor Agile Non-nuclear Experimental Testbed) rig, applying machine learning to predict heat-pipe temperature trends.",
+      "outcome": "Real, named, published (peer-reviewed arXiv/journal paper) research system built with ARPA-E funding, explicitly targeting advanced reactors; the MAGNET follow-on is explicitly microreactor-specific. Neither is deployed on a licensed operating reactor — both are simulator/testbed demonstrations.",
+      "relevance": "This is the clearest answer to the task's prompt for 'a published technical paper' behind autonomous-reactor-control claims. It predates the 2026 AI hype wave by six years, which matters for credibility — it is real prior research, not a marketing reaction to the AI boom.",
+      "sources": [
+        {
+          "label": "arXiv 2008.12888 — Development and Assessment of a Nearly Autonomous Management and Control System for Advanced Reactors",
+          "url": "https://arxiv.org/abs/2008.12888",
+          "quote": "This paper develops a Nearly Autonomous Management and Control (NAMAC) system for advanced reactors...to demonstrate the capability of the NAMAC system, a case study is designed, where a baseline NAMAC is implemented for operating a simulator of the Experimental Breeder Reactor II during a single loss of flow accident.",
+          "status": "fetched"
+        },
+        {
+          "label": "DOE Office of Nuclear Energy — Idaho National Laboratory Demonstrates First Digital Twin of a Simulated Microreactor",
+          "url": "https://www.energy.gov/ne/articles/idaho-national-laboratory-demonstrates-first-digital-twin-simulated-microreactor",
+          "quote": "Autonomous control is a significant cost-savings and safety feature that will enable new microreactors to come online more readily and quickly meet regulatory standards.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "westinghouse-evinci-als-v2-not-ai",
+      "name": "Westinghouse eVinci Advanced Logic System v2 — NRC-approved I&C platform, but explicitly not AI",
+      "category": "autonomous_operation",
+      "what_it_is": "On 2024-12-09 the NRC issued a Final Safety Evaluation Report approving two topical reports for Westinghouse's eVinci Advanced Logic System Version 2 (ALS v2) instrumentation-and-control platform — the first and only NRC-approved I&C system for a microreactor. Westinghouse frames this as 'opening a path to autonomous operation.' Critically, ALS v2 is a hardware-logic platform: it 'controls safety-critical systems using hardware instead of software or a computer chip' — it is not a machine-learning or generative-AI system.",
+      "outcome": "Real and NRC-verified regulatory milestone, but it is not an AI system. The 'autonomous operation' claim rests on a non-AI hardware logic platform reducing required operator input, not on any named AI/ML technology.",
+      "relevance": "Important nuance for the site's skeptical framing: Westinghouse eVinci is the single most concrete 'NRC-approved path to autonomous operation' claim among the tracked microreactor vendors, but conflating it with 'AI' would be a citation error — the approved technology is explicitly stated to be hardware-based, not AI-based.",
+      "sources": [
+        {
+          "label": "World Nuclear News — US regulators approve eVinci microreactor I&C platform",
+          "url": "https://www.world-nuclear-news.org/articles/us-regulators-approve-evinci-microreactor-ic-platform",
+          "quote": "The groundbreaking approvals make the eVinci microreactor the first and only microreactor with an NRC-approved I&C system.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-part57-autonomous-provisions",
+      "name": "NRC proposed Part 57 rule — explicit legal provisions for remote and autonomous reactor operation",
+      "category": "autonomous_operation",
+      "what_it_is": "NRC's proposed Part 57 microreactor licensing framework, published in the Federal Register 2026-05-01 (comment period through 2026-06-15), expressly contemplates 'modernized operational models, including remote monitoring, remote operation and autonomous operation,' potentially allowing a single licensed operator to oversee a fleet of reactors rather than one unit.",
+      "outcome": "This is a real, dated regulatory proposal — not itself an AI system, but the legal permission structure that would let a future AI/ML-based autonomous control system (like eVinci's or a NAMAC successor) actually be licensed for commercial use. Already tracked in this site's data/policy.json under Part 57 generally; flagged here only for its autonomous-operation-specific language.",
+      "relevance": "Establishes that 'autonomous operation' for microreactors is currently a regulatory possibility being opened up, not yet a licensed reality — useful context for grading vendor claims about autonomous operation as forward-looking rather than current.",
+      "sources": [
+        {
+          "label": "Pillsbury Winthrop Shaw Pittman — NRC Proposes Part 57 Framework for Microreactor Licensing",
+          "url": "https://www.pillsburylaw.com/en/news-and-insights/nrc-part-57-microreactor.html",
+          "quote": "The proposed rule expressly contemplates modernized operational models, including remote monitoring, remote operation and autonomous operation. These provisions could allow a single licensed operator to oversee multiple reactors across a fleet.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-genai-copilot-licensing-review",
+      "name": "NRC's own internal generative-AI pilots for licensing review (enrichment facility application + Copilot Chat)",
+      "category": "nrc_licensing",
+      "what_it_is": "NRC's own ADVANCE Act licensing-efficiencies page confirms the agency 'is piloting the use of the agency's internal-use generative AI tool to gain efficiencies in reviewing a new enrichment facility application, and the staff is leveraging the agency's Microsoft Copilot Chat tool to assist with licensing reviews, such as researching precedents and comparing documents.' Separately, NRC Chief Data Officer/Deputy Chief AI Officer Basia Sall told Nextgov (2026-06-25) that AI had helped compress 'one type of licensing' from a planned 4 years down to a 9-month first round against an 18-month target.",
+      "outcome": "Real, NRC-confirmed, current pilots — this is the clearest direct evidence for angle 2. However, the one named application (an enrichment facility) is not a reactor license, and the compressed-timeline example was not tied by name to any specific application or facility type in the source.",
+      "relevance": "Directly answers 'is there a real, named NRC pilot or tool using AI/ML to accelerate review' — yes, on NRC's own site, though the concrete named example (enrichment facility) is adjacent to, not squarely inside, microreactor/advanced-reactor licensing.",
+      "sources": [
+        {
+          "label": "NRC.gov — Licensing Efficiencies (ADVANCE Act)",
+          "url": "https://www.nrc.gov/about-nrc/governing-laws/advance-act/licensing-efficiencies",
+          "quote": "the NRC is piloting the use of the agency's internal-use generative AI tool to gain efficiencies in reviewing a new enrichment facility application, and the staff is leveraging the agency's Microsoft Copilot Chat tool to assist with licensing reviews, such as researching precedents and comparing documents",
+          "status": "fetched"
+        },
+        {
+          "label": "Nextgov/FCW — AI has helped to slash nuclear licensing review times, NRC official says",
+          "url": "https://www.nextgov.com/artificial-intelligence/2026/06/ai-has-helped-slash-nuclear-licensing-review-times-nrc-official-says/414446/",
+          "quote": "For example, one type of licensing would take four years. We said we're going to get it down to 18 months. We just finished that first round of that licensing in nine months.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "doe-inl-argonne-microsoft-everstar-gordian-licensing-doc",
+      "name": "DOE/INL/Argonne/Microsoft/Everstar pilot: Gordian AI converts a safety-analysis document into an NRC-format license application",
+      "category": "nrc_licensing",
+      "what_it_is": "Announced by DOE 2026-03-26: a pilot using Everstar's 'Gordian' AI solution (built on Microsoft Azure) converted a Preliminary Documented Safety Analysis for a generic high-temperature gas reactor (an advanced-reactor design tested at DOE's National Reactor Innovation Center) into a 208-page document in the format of sections of an NRC license application. The AI-generated draft took one day versus the 4-6 weeks a team normally needs. A NRIC study is cited estimating up to 50% reduction in combined document-development and regulatory-review time; a follow-on pilot using real applicant safety-analysis documents in a secure environment is described as a future phase, not yet run.",
+      "outcome": "Real, named tool (Gordian), named partners, dated, with a quantified and verifiable time claim (1 day vs 4-6 weeks) — but tested only on a generic/simulated HTGR design at a DOE facility, not a real vendor's actual license application, and the projected 50% NRC-review-time reduction is a NRIC study estimate, not yet an observed outcome.",
+      "relevance": "The single most concrete, named example of AI directly targeting the NRC licensing-document pipeline for an advanced reactor (HTGR-class, same technology family as X-energy's Xe-100). This is real progress, clearly still pre-production.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Department of Energy Unleashes AI to Reduce Reactor Licensing Timelines",
+          "url": "https://www.energy.gov/ne/articles/department-energy-unleashes-ai-reduce-reactor-licensing-timelines",
+          "quote": "The final 208-page document took one day to generate. Typically, the process takes a team of people between four and six weeks to complete the same task.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aalo-microsoft-genai-permitting",
+      "name": "Aalo Atomics + Microsoft 'Generative AI for Energy Permitting Solution Accelerator' — deployed, with quantified results",
+      "category": "nrc_licensing",
+      "what_it_is": "Aalo Atomics (microreactor vendor this site already tracks) partnered with Microsoft on 'Generative AI for Permitting,' an Azure-based tool that drafts foundational permit-application documents (2,000-3,000 pages in seconds), flags regulatory gaps, links requirements to specific regulations, and continuously updates documents as engineering changes occur. Microsoft's own customer-story page (published 2026-03-24) reports Aalo achieved a 92% reduction in permitting timeline (4 years to 4 months), an estimated $80 million/year in anticipated savings on licensing-engineer costs, 85% reduction in human workload via agentic workflows, and 50x faster environmental-report generation.",
+      "outcome": "Real, named, deployed tool with a named vendor customer (Aalo) and quantified, dated results published by Microsoft itself — the strongest 'this is not just marketing' example found for a specific microreactor company. Caveat: the results are self-reported by Microsoft/Aalo (a vendor case study, not an independent audit), and it is not confirmed whether 'permitting' here means NRC construction-permit/license-application work specifically or a broader mix of state/local/environmental permitting — Microsoft's own page describes it generically as 'nuclear permit applications' without confirming it is NRC-specific.",
+      "relevance": "Directly answers the task's core question for the vendor-claims angle: unlike Radiant's or Oklo's operational-autonomy language, this Aalo/Microsoft claim has a named product, a named customer, and quantified, dated, publicly reported outcomes — though it accelerates permitting/paperwork, not reactor operation itself.",
+      "sources": [
+        {
+          "label": "Microsoft Customer Stories — Aalo Atomics sees 92% cut in permit time with Azure, saving $80M yearly",
+          "url": "https://www.microsoft.com/en/customers/story/26266-aalo-atomics-azure",
+          "quote": "I put in a limited set of data points, click a button, and Generative AI for Permitting generates a report that would've taken literally years before. — Christine Riegler, Head of Project Development, Aalo Atomics",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "project-prometheus-xenergy-inl-nvidia-aws",
+      "name": "Project Prometheus — $60M DOE Genesis Mission award (INL, Nvidia, AWS) targeting AI across advanced-reactor design through 'semi-autonomous operation'",
+      "category": "doe_lab_program",
+      "what_it_is": "A three-year, first-of-a-kind DOE Genesis Mission initiative, led by Idaho National Laboratory, Nvidia and AWS, awarded $60 million; X-energy joined as a Tier 1 partner among 32 total organizations, contributing $10 million of its own capital plus proprietary Xe-100/TRISO-X reactor and fuel data. Stated goal: integrate AI into 'reactor design, licensing, manufacturing, construction, and semi-autonomous operation workflows, as well as fuel fabrication' specifically for advanced small modular reactors — not large conventional reactors.",
+      "outcome": "Real, named, funded ($60M DOE + industry cost-share), dated program explicitly scoped to advanced/SMR-class reactors including a microreactor-adjacent design (Xe-100). 'Semi-autonomous operation' is listed as a target workflow, not yet a demonstrated capability — the program is three years out from any operational result.",
+      "relevance": "Directly answers angle 3: a specific, named DOE/national-lab program tied to advanced-reactor deployment (not generic large-LWR research), still in its funding/kickoff phase as of Sept 2026.",
+      "sources": [
+        {
+          "label": "X-energy — X-energy Joins Project Prometheus for AI-Accelerated Advanced Nuclear Deployment",
+          "url": "https://x-energy.com/news/x-energy-joins-project-prometheus-for-ai-accelerated-advanced-nuclear-deployment/",
+          "quote": "This three-year, first-of-a-kind initiative was today awarded $60 million under the DOE's Genesis Mission.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-inl-prometheus-design-engineering",
+      "name": "Oklo + INL Prometheus AI partnership — scoped to reactor design/engineering, explicitly not reactor operation",
+      "category": "doe_lab_program",
+      "what_it_is": "Announced 2026-05-12: Oklo and INL will use INL's Prometheus AI platform integrated with Oklo's own multiphysics design-and-analysis infrastructure to accelerate advanced-reactor and fuel-system design work — AI-enabled engineering workflows, modeling, simulation and technical documentation, with an AI agent that can 'interact with Oklo's existing multiphysics workflows, execute and monitor design pipelines, process results, and generate compliant documentation, all while keeping a human operator in the loop.'",
+      "outcome": "Real, named partnership and platform, but explicitly scoped to design-time engineering and documentation, not to reactor operation or control. Useful negative finding: Oklo's most concrete, verifiable AI partnership is NOT the 'autonomous operation' capability implied by its own separate marketing language (see oklo-aurora-autonomous-marketing-claims below).",
+      "relevance": "Sharpens the vendor-claims picture: Oklo does have a real, named AI system (Prometheus-integrated multiphysics agent), but it accelerates engineering design, not the 'AI-powered diagnostic command centers' operational-autonomy story that circulates in secondary coverage.",
+      "sources": [
+        {
+          "label": "Oklo Inc. Newsroom — Oklo and Idaho National Laboratory to Employ AI-Enabled Reactor Design for Advanced Nuclear Systems",
+          "url": "https://oklo.com/newsroom/news-details/2026/Oklo-and-Idaho-National-Laboratory-to-Employ-AI-Enabled-Reactor-Design-for-Advanced-Nuclear-Systems/default.aspx",
+          "quote": "enabling an agent to interact with Oklo's existing multiphysics workflows, execute and monitor design pipelines, process results, and generate compliant documentation, all while keeping a human operator in the loop",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "blue-wave-constellation-southern-thermallimits",
+      "name": "Blue Wave AI Labs / Constellation / Southern Nuclear — deployed ML predictive-maintenance tools, IAEA-awarded, at large operating BWRs",
+      "category": "predictive_maintenance",
+      "what_it_is": "Blue Wave AI Labs, with $6M in DOE funding and support from Argonne and Brookhaven National Laboratories (158,000 core-hours from Nuclear Science User Facilities), deployed machine-learning tools at Constellation's Peach Bottom Atomic Power Station and Limerick Generating Station to improve in-core sensor calibration and avoid unplanned power derates. A related tool, ThermalLimits.ai — part of Blue Wave's 'Nuclear-Grade AI' framework using physics-informed ML and deep neural networks — won the IAEA's 2025 Global ISOP Innovation Award for AI (announced 2025-09-18), jointly credited to Blue Wave, Constellation, and Southern Company subsidiary Southern Nuclear, for online thermal-limit forecasting in BWRs with under 0.75% average bias.",
+      "outcome": "Real, deployed, funded, independently recognized (IAEA award) predictive-maintenance AI in commercial nuclear operations — the most mature, unambiguous 'real deployment' found in this entire research pass. It is entirely large-LWR/BWR-scale, with no found connection to any microreactor design or vendor.",
+      "relevance": "Directly answers angle 4: yes, this is citable and real, but it is a large-plant analogy, not a microreactor example — worth noting in this site's tracker as context for 'AI-assisted predictive maintenance is mature in nuclear generally,' not as evidence of microreactor-specific AI deployment.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — New AI Tools Could Save Constellation Reactor Fleet Millions",
+          "url": "https://www.energy.gov/ne/articles/new-ai-tools-could-save-constellation-reactor-fleet-millions",
+          "quote": "Widespread adoption of these new tools will benefit nuclear reliability and cost-effectiveness. — Jason Murphy, VP for Nuclear Fuels at Constellation",
+          "status": "fetched"
+        },
+        {
+          "label": "Blue Wave AI Labs — IAEA Honors Blue Wave AI Labs, Constellation, and Southern Nuclear With 2025 Global Innovation Award for Pioneering AI in Nuclear Power",
+          "url": "https://bluewaveailabs.com/iaea-honors-blue-wave-ai-labs-constellation-and-southern-nuclear-with-2025-global-innovation-award-for-pioneering-ai-in-nuclear-power/",
+          "quote": "Nuclear-Grade AI applications leverage physics-informed machine learning and deep neural networks trained on historical fuel cycle data, core simulator outputs, and real-time instrumentation feedback.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-fleet-ml-marketing-claim",
+      "name": "Radiant Kaleidos 'fleet operated autonomously by machine learning' — 2023 CEO blog aspiration, no named system or deployment since",
+      "category": "marketing_claim_unverified",
+      "what_it_is": "Radiant CEO Doug Bernauer wrote in a January 2023 company blog post that Kaleidos reactors would eventually 'stream data from hundreds of reactors deployed all over the world, use machine learning to identify potential issues, and perform preventative maintenance when necessary,' operated autonomously as a fleet by Radiant's software platform. Radiant's only named software tool found in any source is 'SimEngine,' described as a digital-twin tool for reactor design, not fleet operations. No published technical paper, named production system, or verified deployment of fleet-wide ML operations was found in any source as of Sept 2026 — Radiant has not yet fueled a reactor.",
+      "outcome": "Unverifiable marketing/aspirational language. Real in the sense that it is a genuine, attributable quote from the company's own CEO — but it describes a 2023 vision for a company that as of 2026 has not yet tested nuclear fuel, with no named ML system, paper, or pilot behind the specific 'fleet machine learning' claim.",
+      "relevance": "A clean example for the site's citation-discipline ethos: distinguishes a real, sourced quote (which should be citable as 'Radiant's stated vision') from a substantiated technical claim (which this is not) — the fleet-ML claim should not be presented as a deployed capability.",
+      "sources": [
+        {
+          "label": "Contrary Research — Radiant Business Breakdown & Founding Story (quoting Radiant CEO Doug Bernauer, Jan. 2023 blog post)",
+          "url": "https://research.contrary.com/company/radiant",
+          "quote": "Stream data from hundreds of reactors deployed all over the world, use machine learning to identify potential issues, and perform preventative maintenance when necessary.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-aurora-autonomous-marketing-claims",
+      "name": "Oklo Aurora 'AI-powered diagnostic command centers' and autonomous-robot inspection — third-party promotional language, no named system",
+      "category": "marketing_claim_unverified",
+      "what_it_is": "A third-party profile (URCA Foundation, published 2025-09-03, not an Oklo primary source) describes Oklo's Aurora as 'walk-away safe' (self-stabilizing via negative reactivity feedback — a real passive-safety design principle, not an AI claim) and states that 'AI-powered diagnostic tools and centralized command centers allow a handful of highly trained operators to oversee multiple geographically distributed Aurora units,' plus autonomous four-legged/mobile robots (e.g., Boston Dynamics' Spot) for containment-building inspection. No specific AI software product, published technical paper, or verified operational deployment is named anywhere in this or related sourcing — Aurora is not yet approved to operate.",
+      "outcome": "Unverifiable marketing/promotional language, sourced to a third-party blog rather than Oklo directly, describing pre-operational design intent. The passive 'walk-away safe' physical design is real and separately verifiable (it is reactor physics, not AI); the 'AI-powered diagnostic command center' framing has no named system behind it in any source found.",
+      "relevance": "A second clean marketing-vs-real example: shows how a real, physics-based safety claim (walk-away-safe) gets rhetorically bundled with an unsubstantiated AI claim (diagnostic command centers) in secondary coverage — the site should not conflate the two if it ever covers Oklo's autonomy claims.",
+      "sources": [
+        {
+          "label": "URCA Foundation — Oklo: Pioneering the Future of Clean Energy with AI, Robotics, and Advanced Nuclear Technology",
+          "url": "https://urca.foundation/oklo-pioneering-the-future-of-clean-energy-with-ai-robotics-and-advanced-nuclear-technology/",
+          "quote": "AI-powered diagnostic tools and centralized command centers allow a handful of highly trained operators to oversee multiple geographically distributed Aurora units, reducing staffing needs and human risk.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

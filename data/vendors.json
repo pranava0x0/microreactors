@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-29",
+    "captured": "2026-09-09",
     "note": "Three vendors = the exact Air Force ANPI slate (Antares, Radiant, Westinghouse). Selecting the third vendor was not a judgment call: DoD already paired these three against three named bases in April 2026. Updated 2026-08-29 with the Army's Janus awards (2026-08-26). Janus added two buyers this slate does not cover — BWXT at Fort Campbell and General Atomics at Fort Hood — so these three are no longer the whole field; they are the three that appear in both the Air Force and Army programs."
   },
   "vendors": [
@@ -16,6 +16,7 @@
       "refuel_years": 6,
       "transport": "Truck-delivered, factory-produced",
       "anpi_site": "Joint Base San Antonio, TX",
+      "janus_site": "Fort Bragg, NC (3x R1, owned/built/operated by Antares)",
       "first_delivery_target": "2028 or earlier",
       "grid_required": false,
       "notes": "Antares plants require no connection to the commercial power grid or specialized infrastructure to deploy. Selection driven by JBSA's utility infrastructure, land availability and critical mission requirements. Under the DOE Reactor Pilot Program, Antares' Mark-0 test reactor reached zero-power fuelled criticality at Idaho National Laboratory on 2026-06-04 — one of the first three pilot reactors to meet the executive order's July 4 deadline. Under the Army's Janus program, announced 2026-08-26, Antares will own, build and operate a three-unit R1 deployment at Fort Bragg. It did not disclose that contract's value, but states its combined book across Janus, the Air Force ANPI award at Joint Base San Antonio and Space Force work is on the order of $1 billion. Janus reactors are licensed by the Army, not the Nuclear Regulatory Commission.",
@@ -63,6 +64,7 @@
         {
           "date": "2026-06-04",
           "status": "done",
+          "unit": "Mark-0",
           "label": "Mark-0 test reactor critical at INL (DOE Reactor Pilot Program)",
           "source": {
             "label": "ANS — Reactor Pilot Program status",
@@ -90,6 +92,7 @@
         {
           "date": "2026-06-04",
           "status": "done",
+          "unit": "Mark-0",
           "label": "Mark-0 reached criticality at Idaho National Laboratory — the first privately built non-light-water reactor to go critical in the US in over 40 years",
           "source": {
             "label": "The Defense Post — Antares to Fast-Track US Military Base Nuclear Microreactors With $470M Injection",
@@ -150,6 +153,7 @@
       "mass_tonnes": 70,
       "transport": "Fits a single shipping container",
       "anpi_site": "Buckley Space Force Base, CO",
+      "janus_site": "Fort Benning, GA (largest Janus award, up to $750M for 15 Kaleidos units by 2030, starting with 3 units)",
       "first_delivery_target": "2028 (DIU/Dept of the Air Force FOAK)",
       "status": "First new reactor design to be tested in DOE's DOME test bed. First TRISO fuel tranche received 2026-07-01; five-phase campaign (criticality → heat/power → full power → 150 h unattended continuous operation) targeting completion Q3 2026.",
       "funding_usd": 300000000,
@@ -262,6 +266,7 @@
       "land_acres": 2,
       "transport": "Transportable, factory-built",
       "anpi_site": "Malmstrom Air Force Base, MT",
+      "janus_site": "Fort Drum, NY (via Westinghouse Government Services)",
       "test_reactor": "Scaled 3 MWt heat-pipe nuclear test reactor at INL DOME, testing from 2026",
       "commercial": "First-customer SRC pilot (CA$80M, target 2029) cancelled by Westinghouse in fall 2025 — eVinci refocused on space, defense and government applications. Penn State FRONTIER: NRC notice of intent filed 2025-02-17 for a construction permit for a 15 MWt eVinci-based research reactor at University Park, PA.",
       "notes": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refueling. Westinghouse Government Services was selected for the Army's Janus program at Fort Drum, NY on 2026-08-26. Neither the contract value nor the unit count was disclosed.",
@@ -385,6 +390,7 @@
       "fuel": "TRISO",
       "mwe_high": 20,
       "mwe_label": "20 MWe (75 MWth)",
+      "janus_site": "Fort Campbell, KY",
       "first_delivery_target": "Operation targeted for the early 2030s",
       "first_delivery_year": 2030,
       "notes": "Janus awardee for Fort Campbell, Kentucky. The award is phased; value is not public.",
@@ -401,6 +407,7 @@
       "mwe_low": 5,
       "mwe_high": 20,
       "mwe_label": "About 5 MWe, scalable to about 20 MWe",
+      "janus_site": "Fort Hood, TX",
       "first_delivery_target": "Not published",
       "first_delivery_year": null,
       "notes": "Janus awardee for Fort Hood, Texas. GA-EMS disclosed development, testing, and site-planning milestones, not a delivery date or contract value.",
@@ -420,7 +427,7 @@
       "notes": "Ward 250 reached zero-power criticality in Utah. Valar later announced a 30 MW Utah data-center project with Nvidia; no public power contract, price, or delivery date was found.",
       "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}, {"label": "DOE NEPA — Ward250 research reactor", "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor", "status": "snippet-only"}],
       "gaps": ["Public sources do not resolve the 100 kWt and 250 kWt descriptions", "No public commercial power agreement"],
-      "milestones": [{"date": "2026-06-18", "status": "done", "label": "Ward 250 reached zero-power criticality in Utah", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
+      "milestones": [{"date": "2026-06-18", "status": "done", "unit": "Ward 250", "label": "Ward 250 reached zero-power criticality in Utah", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
     },
     {
       "id": "aalo-x",
@@ -432,7 +439,7 @@
       "notes": "Aalo-X reached zero-power fueled criticality at Idaho National Laboratory. This is a test milestone, not a commercial delivery or power-sale record.",
       "sources": [{"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}],
       "gaps": ["No public commercial delivery date", "No public power purchase agreement"],
-      "milestones": [{"date": "2026-07-04", "status": "done", "label": "Aalo-X reached zero-power fueled criticality at INL", "source": {"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}}]
+      "milestones": [{"date": "2026-07-04", "status": "done", "unit": "Aalo-X", "label": "Aalo-X reached zero-power fueled criticality at INL", "source": {"label": "POWER — Aalo test reactor reaches criticality", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "status": "fetched"}}]
     },
     {
       "id": "oklo-aurora",
@@ -446,7 +453,7 @@
       "notes": "Oklo secured DOE preliminary documented safety analysis approval for Aurora-INL. It is included as a larger advanced-reactor comparator, not as a 1–20 MW microreactor.",
       "sources": [{"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}],
       "gaps": ["No published criticality or completion date for Aurora-INL"],
-      "milestones": [{"date": "2026-06-11", "status": "done", "label": "DOE preliminary safety approval announced for Aurora-INL", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}]
+      "milestones": [{"date": "2026-06-11", "status": "done", "label": "DOE preliminary safety approval announced for Aurora-INL", "source": {"label": "ANS — Reactor Pilot Program status", "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/", "status": "fetched"}}, {"date": "2026-08-05", "status": "done", "unit": "Groves Isotope Test Reactor", "label": "Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so", "source": {"label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality", "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality", "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer, further solidifying America's nuclear comeback.", "status": "fetched"}}]
     }
   ]
 }

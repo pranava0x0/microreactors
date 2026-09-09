@@ -21,20 +21,31 @@ def main():
     opps = load("opportunities.json")["opportunities"]
     vendors = load("vendors.json")["vendors"]
 
+    # A value of "N/A; <reason>" is neither a filled-in field nor a research
+    # gap - it is the row explicitly stating the field does not apply (e.g. a
+    # DOE-authorized test reactor has no NRC/utility filing to find). Counting
+    # it as "have" claimed a filing existed where the row itself says none
+    # does; counting it as "missing" would send research after something that
+    # cannot be found. It gets its own bucket instead.
     field_miss = {f: [] for f in REQUIRED}
+    field_na = {f: [] for f in REQUIRED}
     for o in opps:
         for f in REQUIRED:
             v = o.get(f)
             if v in (None, "", "Not specified", "Not published"):
                 field_miss[f].append(o["id"])
+            elif isinstance(v, str) and v.strip().upper().startswith("N/A"):
+                field_na[f].append(o["id"])
 
     coverage = [
         {
             "field": f,
-            "have": len(opps) - len(ids),
+            "have": len(opps) - len(ids) - len(field_na[f]),
+            "not_applicable": len(field_na[f]),
             "total": len(opps),
-            "pct": round(100 * (len(opps) - len(ids)) / len(opps)),
+            "pct": round(100 * (len(opps) - len(ids) - len(field_na[f])) / len(opps)),
             "missing_ids": ids,
+            "not_applicable_ids": field_na[f],
         }
         for f, ids in sorted(field_miss.items(), key=lambda kv: len(kv[1]), reverse=True)
     ]

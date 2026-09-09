@@ -3,6 +3,37 @@
 Living audit trail. Each bug: date, area, description, root cause (code bug vs data bug
 vs test bug), status.
 
+- **2026-09-09 · data · DOE Reactor Pilot Program criticality count stale, 3 vs actual 5 — Fixed.**
+  `opportunities.json`'s `reactors_critical_2026` field (feeding the homepage hero stat)
+  was hand-set to 3 and never updated after Aalo (2026-07-04) and Oklo's Groves Isotope
+  Test Reactor (2026-08-05) also reached criticality — both confirmed against DOE's own
+  primary source ("Groves is the fifth DOE-authorized advanced reactor to achieve
+  criticality this summer"). Root cause: **data bug**, a hand-typed number with no
+  refresh trigger, the same class as the 2026-08-23 canada-src entry below. Oklo's
+  criticality was also entirely missing from its vendor milestones. Fix: count corrected
+  to 5, timeline/status text updated, Oklo milestone added, both cited to DOE's article.
+  Caught by the user asking "didn't we have more companies go critical???" — the site's
+  own data disagreed with itself once checked against a primary source.
+- **2026-09-09 · data · "2/16 have a utility filing" counted two explicit N/A rows as having one — Fixed.**
+  `tools/build_gaps.py`'s field-coverage counter treated any non-null `utility_filing`
+  value as "have," so the two rows reading `"N/A; DOE-authorized test reactors"` /
+  `"N/A; authorized by DOE, not licensed by NRC"` (i.e. explicitly stating no filing
+  applies) counted toward the "have" total. The true count is 0/16 — no tracked
+  opportunity carries an actual citable utility/PUC filing. Root cause: **test/tooling
+  bug**, the "checker doesn't model the real object" class — "field is present" was
+  conflated with "field states a fact was found." Fix: `build_gaps.py` now buckets
+  N/A-prefixed values into their own `not_applicable` count, separate from `have` and
+  from the missing/gap list.
+- **2026-09-09 · design · homepage "17 vendor milestones hit in 2026" stat was
+  incoherent — Removed.** The figure summed unrelated event types (a criticality event,
+  a hire, a funding close, a base selection) into one number with no shared unit of
+  meaning. Root cause: **design bug**, not a data error — the underlying count was
+  computed correctly, it just measured nothing coherent. Fix: tile removed; the
+  criticality and binding-deal tiles already surface the two milestone types worth a
+  headline number. All 5 remaining hero stats now link to the tab where the number is
+  broken out (Deals, Deals→US Government, Vendors, Sources→Gaps), and every pipeline row
+  now shows a visible executed/announced badge so "9/16 hold an executed agreement" is
+  no longer citing an invisible field.
 - **2026-08-23 · data · canada-src row a year stale — Fixed.** The tracker carried SRC as
   "Funded / binding, pilot by 2029" while SRC's own FAQ states Westinghouse cancelled the
   contract in fall 2025, pivoting eVinci to space/defence/government. Root cause: **data

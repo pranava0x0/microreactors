@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-23",
+    "captured": "2026-09-09",
     "method": "Web search only. No agent fan-out. Every row carries at least one source URL; rows without one were not written.",
     "field_coverage_warning": "Sector, owner, timeline and power are well covered. LAND AREA, SHELL/ENCLOSURE and UTILITY FILINGS are sparse across the whole set — see data/gaps.json. Web search does not reach docket systems; those three fields need a targeted pass against FERC eLibrary, state PUC dockets and NRC ADAMS.",
     "binding_note": "binding=true marks rows holding a signed, funded or awarded instrument (selection with a named site, purchase agreement with deposits, FID, operating infrastructure); consortia, MOUs, unfunded programs and channel agreements are false. Set 2026-08-21.",
@@ -205,12 +205,12 @@
       "location": "DOE and DOE-approved sites; first units at INL and in Utah",
       "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
       "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe",
-      "timeline": "Selected 2025-08-12; three reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01)",
+      "timeline": "Selected 2025-08-12; four reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01, Aalo-X 2026-07-04 at 12:20am, hours before the deadline expired), then Oklo's Groves Isotope Test Reactor afterward on 2026-08-05 — five critical as of this research",
       "instrument": "EO 14301 pilot program under DOE's own authorization authority, with no NRC license",
       "land_acres": null,
       "shell": null,
       "utility_filing": "N/A; DOE-authorized test reactors",
-      "status": "Three critical, others in safety review",
+      "status": "Five critical, others in safety review",
       "sources": [
         {
           "label": "ANS — Reactor Pilot Program at the July 4 deadline",
@@ -219,6 +219,12 @@
         {
           "label": "Holland & Knight — the May 2025 nuclear executive orders",
           "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders"
+        },
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer, further solidifying America's nuclear comeback.",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -226,7 +232,7 @@
         "Per-project power ratings not all published"
       ],
       "binding": true,
-      "reactors_critical_2026": 3
+      "reactors_critical_2026": 5
     },
     {
       "id": "eielson",
