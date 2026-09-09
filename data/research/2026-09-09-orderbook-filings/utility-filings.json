@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "captured": "2026-09-09",
+    "agent": "orderbook-filings",
+    "scope": "Extension pass on top of data/research/deep-2026-08-24/mech-dockets.json and data/research/orderbook-mechanisms.json: chase primary-source FILINGS (PUC dockets, FERC filings, state bill text, utility tariffs, NRC dockets) bearing on a shared order book or a construction-cost-overrun/insurance risk pool for microreactors or SMRs. Web search + WebFetch only; tools/ferc_elibrary.py and tools/ferc_census.py were NOT run (shared-index concurrent-writer constraint).",
+    "angles_run": [
+      "ARC Act of 2026 (S.3814, Risch/Gallego) — full bill text fetched from govinfo.gov PDF (congress.gov blocks WebFetch with 403); status/cosponsors/committee action via web search since congress.gov action pages also 403",
+      "Virginia SCC Dominion Rider SMR (Case No. PUR-2024-00205, North Anna) — docket identification + secondary-source verbatim quotes (SCC's own PDFs are scanned/non-text; WebFetch could not OCR them)",
+      "NRC proposed 10 CFR Part 57 microreactor licensing rule (Docket NRC-2025-0379) — Federal Register text plus law-firm client alerts, checked specifically for Price-Anderson/financial-protection language",
+      "TVA Clinch River SMR multi-party IPD agreement (Bechtel/Sargent & Lundy/GE Hitachi) — press materials, checked for a filed multi-buyer cost-sharing structure",
+      "Wyoming PSC (Rocky Mountain Power / TerraPower Kemmerer), Utah PSC (UAMPS/CFPP successor), Georgia PSC, Tennessee, Indiana IURC — searched for a multi-project cost-sharing or risk-pooling docket resembling CVOW or an SPV/consortium structure",
+      "FERC — searched for a joint-ownership agreement, multi-utility reactor commitment, or surplus-interconnection/co-located-load filing structuring a multi-buyer reactor deal; checked the Susquehanna/Talen/Amazon co-located-load precedent (ER24-2172) for relevance",
+      "Connecticut 2026 General Assembly session (HB 05340 and related LCO amendments) and NJ TCDER — searched for an amendment extending PA 12-148 or the TCDER program to fund generation capex for a pooled multi-buyer reactor program",
+      "State-level ARC Act analogues — searched for a state bill proposing its own nuclear cost-overrun backstop modeled on S.3814"
+    ],
+    "absences": [
+      "CORRECTION to data/research/orderbook-mechanisms.json's ARC Act entry — the claim that the bill 'explicitly requires three or more qualifying projects' is not supported by the bill text. The full text of S.3814 as introduced (fetched from govinfo.gov, BILLS-119s3814is.pdf) defines 'qualifying project' entirely in the singular (Sec. 2(b)(12)) with no cross-project count requirement anywhere in the bill — no section aggregates or gates the Accelerating Reliable Capacity Program Account on a minimum number of simultaneous projects. The 'three or more' figure appears only in press paraphrase (ANS Nuclear Newswire, E&E News) describing the $3.6B pool's practical capacity to cover multiple projects, not a statutory minimum. Likewise, the American Public Power Association's own comparison of the two ARC Act versions confirms the 2024 draft's $2.5B minimum project-cost floor was dropped in the 2026 version and does not mention any project-count requirement in either version. Treat any restatement of a 'three or more projects' trigger for the ARC Act as unsourced until someone locates it in bill text this research did not find.",
+        "Wyoming PSC — no docket found addressing a multi-project cost-sharing or risk-pooling structure for TerraPower's Kemmerer Unit 1. Searches surfaced only Rocky Mountain Power's ordinary base rate case (a ~$70.5M / 8.8% general rate review filed 2026-05-12) with no connection to Kemmerer's construction risk. Kemmerer is being built by TerraPower as an independent, DOE-cost-shared project (ARDP), not rate-based through Rocky Mountain Power, so a PSC docket may simply not be the right instrument here — this is a negative finding after a real search, not a confirmed absence of any Wyoming regulatory nexus.",
+      "Utah PSC / UAMPS successor — no docket found proposing a new multi-project cost-sharing or risk-pooling structure to replace the terminated NuScale Carbon Free Power Project (UAMPS formally ended CFPP with NuScale in Nov 2023, already covered in orderbook-mechanisms.json). No 2025-2026 Utah PSC filing describing a successor SMR/microreactor consortium was located.",
+      "Georgia PSC, Tennessee (state-level), and Indiana IURC — not chased beyond a light pass after the Wyoming/Utah/Virginia searches returned no multi-project pooling structures; not attempted after quota given the six-thread scope of this pass. Flagging as unresearched rather than as a confirmed absence.",
+      "TVA Clinch River — TVA is a federal power authority, not rate-regulated by a state PUC, so no PUC docket exists or should be expected for its SMR cost-sharing terms. The 'multi-party agreement' TVA has announced with Bechtel, Sargent & Lundy and GE Hitachi (Integrated Project Delivery model, target budget/schedule, described in a joint 2025 press release) is EPC/owner-contractor risk alignment on a SINGLE project, not a multi-BUYER orderbook or risk pool of the kind this research was chasing. It was not fetched as a primary filed document because none appears to exist yet (the agreement was described as still being negotiated in the press materials); status recorded as snippet-only below. This is a genuine near-miss, not a match.",
+      "FERC — no filing was found in which a multi-utility or multi-buyer commitment to a standardized reactor design is structured through a joint ownership agreement, a surplus-interconnection filing, or a co-located-load docket. The one nuclear-adjacent co-located-load precedent found, FERC's rejection of the amended Susquehanna Interconnection Service Agreement (Talen Energy / PPL Electric / PJM, Docket ER24-2172, order issued 2024-11-01, 2-1 vote), concerns allocating existing large-reactor output to a single co-located Amazon data center (300 MW to 480 MW) — a single-plant, single-buyer behind-the-meter capacity dispute, not a multi-buyer reactor commitment. It also predates this research wave's Feb-2026-onward window and is not new relative to the DOE Liftoff/general co-located-load literature the project has already absorbed. No FERC filing on multi-utility joint ownership of an SMR/microreactor was located.",
+      "Connecticut — the only 2026 General Assembly bill touching the relevant program area, HB 05340 ('An Act Concerning Renewable Power Generation'), addresses RRES/NRES/SCEF successor programs, solar leasing consumer protections, portable solar devices, and agrivoltaics. It does not touch the Microgrid Grant and Loan Program (PA 12-148 Sec. 7) at all, let alone extend it to generation capex or to nuclear. No CT or NJ 2026 legislative filing extending an existing microgrid/DER grant program to fund generation capex for a pooled multi-buyer reactor program was found.",
+      "No state has introduced its own version of the ARC Act's federal cost-overrun-backstop concept as of this research date. Searches for a state-level nuclear cost-overrun backstop bill modeled on S.3814 returned only coverage of the federal bill itself.",
+      "Virginia SCC — the Rider SMR docket (Case No. PUR-2024-00205) itself could not be fetched as primary text: the SCC's own docket-search PDFs returned by search are scanned/CCITT-encoded images, not extractable text, and WebFetch cannot OCR them locally (no PDF-rendering toolchain available in this environment). The docket number, filing date, dollar figures and statutory citation below are corroborated by two independently fetched secondary sources (a VPM news article and a ReisingerGooch law-firm regulatory-update page) that both quote the filing; neither is the Commission's own order or Dominion's petition text verbatim. Flagged as fetched-secondary rather than fetched-primary.",
+      "NRC Part 57 (Docket NRC-2025-0379) financial-protection/Price-Anderson language — the Federal Register notice itself, fetched directly from govinfo.gov, did not surface Price-Anderson/financial-protection language in the portion WebFetch returned; multiple law-firm client alerts (Pillsbury, Orrick) independently quote a passage describing 'adjusted financial protection' — the Commission may tailor required coverage to a microreactor's risk profile. This research could not independently confirm the exact codified text in the Federal Register document itself (NRC's own ADAMS PDF, ML26113A208, is scanned/non-text and could not be rendered). Treat the financial-protection claim as corroborated by two independent law-firm summaries but not yet verified against the primary regulatory text word-for-word."
+    ]
+  },
+  "findings": [
+    {
+      "id": "arc-act-2026-s3814-full-text",
+      "name": "ARC Act of 2026 (S.3814, Risch/Gallego) — full bill text and status as of 2026-09-09",
+      "category": "federal legislation — cost-overrun backstop",
+      "what_it_is": "S.3814, introduced 2026-02-10 by Sen. Risch (for himself and Sen. Gallego), read twice and referred to the Senate Committee on Energy and Natural Resources. It creates an 'Accelerating Reliable Capacity Program Account' inside DOE's Loan Programs Office, authorized at $3,600,000,000 (authorization only, not yet appropriated). The mechanism operates PER PROJECT, not across a pooled orderbook: a 'qualifying project' is an advanced nuclear energy project that (a) is reasonably expected to be built on time and on budget as determined by the Secretary, (b) is reasonably capital-intensive and grid-connected, and (c) has a DOE Title XVII loan guarantee (secs. 1703/1706) through the Federal Financing Bank equal to at least twice the funds obligated under this section, plus a raft of project-delivery-plan, Class 2 cost estimate, schedule, and labor-risk-analysis submission requirements. The borrower is liable for ALL overruns until cumulative project expenses exceed 120% of the 'point base estimate' of the Class 2 cost estimate. Only above that 120% threshold does the Director of the Loan Programs Office begin making payments from the Account to the Federal Financing Bank, applied to loan principal — capped per project at the lesser of 30% of the point base estimate or $1,200,000,000, with quarterly increases capped at 50% of that quarter's total project expenses. Sec. 2(e) separately raises the maximum DOE loan guarantee itself from the normal statutory ceiling to up to 200% of the point base estimate. Sec. 3 amends the 'double benefit' denial provision in the 2022 CHIPS/IRA-era statute (Public Law 117-169 Sec. 50141(d)(3)) to exempt projects partnering with a federal power marketing administration, TVA, a DoD-managed military installation, GSA energy procurement, National Laboratories, or fuel procured under the Nuclear Fuel Security Act of 2023.",
+      "outcome": "As of 2026-09-09, the bill remains at the introduced/committee-referral stage: read twice and referred to the Committee on Energy and Natural Resources on 2026-02-10, with no markup, hearing, or floor vote found in any source searched. It has one cosponsor beyond original sponsor Risch (Gallego, who is a co-original-sponsor rather than a later add-on). Relative to a 2024 predecessor version, the American Public Power Association's own comparison confirms two changes: the 2024 version's $2.5 billion minimum qualifying-project-cost floor was DROPPED in the 2026 version (so smaller projects, plausibly including a microreactor cluster, could in principle qualify if 'reasonably capital-intensive'), and a public-power tax-normalization opt-out present in 2024 was removed in 2026.",
+      "relevance": "This corrects and sharpens the ARC Act entry in orderbook-mechanisms.json in three ways. First, there is no 'three or more projects' gate in the actual bill text — see the _meta correction above; each project is separately underwritten and separately capped, so the bill does not operationalize a pooled/aggregated orderbook the way EFI's CSF or DOE's Liftoff report envision, despite press coverage describing it in orderbook-adjacent terms. Second, the borrower-liable-to-120%-then-backstop-to-150%-of-point-estimate structure (120% + 30% = 150% ceiling) is a concrete, filed analog to the EFI CSF's tiered-waterfall and CVOW's banded cost-sharing schedules already in the corpus, but implemented as a single-project federal-to-borrower waterfall rather than a multi-sponsor pooled one. Third, dropping the $2.5B project-cost floor is the one change that could make the ARC Act relevant to a microreactor-scale (sub-$2.5B) project for the first time, though 'reasonably capital-intensive' is left to Secretarial discretion and no microreactor-specific guidance has been issued.",
+      "sources": [
+        {
+          "label": "S.3814, 119th Congress, 2d Session — Accelerating Reliable Capacity Act of 2026, as introduced 2026-02-10 (govinfo.gov, BILLS-119s3814is.pdf)",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3814is/pdf/BILLS-119s3814is.pdf",
+          "quote": "the borrower on the guaranteed loan shall be responsible for all overruns until the cumulative expenses of the qualifying project exceed 120 percent of the point base estimate of the Class 2 estimate",
+          "status": "fetched"
+        },
+        {
+          "label": "S.3814 — maximum payment amount and enhanced guarantee ceiling",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3814is/pdf/BILLS-119s3814is.pdf",
+          "quote": "The maximum payment amount under this subparagraph for any 1 qualifying project may not exceed the lesser of— (I) 30 percent of the point base estimate; and (II) $1,200,000,000.",
+          "status": "fetched"
+        },
+        {
+          "label": "American Public Power Association — comparison of ARC Act 2024 vs. 2026 versions and public-power impacts",
+          "url": "https://www.publicpower.org/periodical/article/legislation-tied-new-nuclear-power-includes-language-impacts-public-power",
+          "quote": "Under the ARC Act of 2024, funding would have only been available for projects costing $2.5 billion or more",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS Nuclear Newswire — Gallego and Risch submit ARC Act 2.0 in the Senate (2026-02-11)",
+          "url": "https://www.ans.org/news/2026-02-11/article-7750/gallego-and-risch-submit-arc-act-20-in-the-senate/",
+          "quote": "authorize up to $3.6 billion to help offset cost overruns at three or more next-generation nuclear reactor projects",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "virginia-scc-dominion-rider-smr-pur-2024-00205",
+      "name": "Dominion Energy Virginia 'Rider SMR' — North Anna SMR development-cost recovery (Va. SCC Case No. PUR-2024-00205)",
+      "category": "state PUC docket — single-utility SMR development cost recovery (not a multi-buyer pool)",
+      "what_it_is": "Dominion Energy Virginia filed a petition on 2024-11-01 for a new rate adjustment clause, 'Rider SMR,' under 2024 Virginia legislation codified at Va. Code Sec. 56-585.1:14, which lets Dominion recover 'SMR project development costs' from ratepayers for evaluating a small modular reactor at the existing North Anna Power Station site (Louisa County). The filing covers 'Phase I' — feasibility and site/technology evaluation only, not construction — for the period 2024-07-01 through 2026-08-31, seeking to recover approximately $17.2 million for the 2025-09-01 through 2026-08-31 rate year, an increase of about $0.29/month for a residential customer using 1,000 kWh. The enabling statute caps SMR development cost recovery at no more than $1.40/month for a typical residential customer.",
+      "outcome": "Rider SMR is a live, statute-created rate rider mechanism (evidentiary hearing reported for 2025-05-27); it is a single-utility, ratepayer-funded development-cost recovery structure, not a multi-project or multi-buyer pooling arrangement. It has no analog to a shared orderbook or an overrun-sharing waterfall — it simply lets one utility charge its own ratepayers for pre-construction SMR feasibility work, capped by statute at a fixed dollar ceiling per residential customer regardless of how many SMR projects or partners are eventually involved.",
+      "relevance": "This is the most concrete state PUC precedent found for 'how does a state actually let a utility recover money for SMR development before a construction decision,' and it answers the research question in the negative for the orderbook/risk-pool angle: Virginia's approach is a conventional single-utility rate rider with a legislated dollar cap, not a CVOW-style tiered overrun schedule or an SPV/consortium ownership structure. It is useful as a contrast case to CVOW (already in the corpus) — Virginia chose to cap SMR pre-construction cost recovery by a flat per-customer dollar ceiling rather than by a percentage-of-project-cost tiered schedule, which is a different design tool than anything else in this research set.",
+      "sources": [
+        {
+          "label": "VPM News — 'Dominion requests bill hikes to cover offshore wind, early SMR costs' (2024-11-20)",
+          "url": "https://www.vpm.org/news/2024-11-20/dominion-bill-increase-offshore-wind-early-smr-nuclear",
+          "quote": "The company is asking state regulators for the first time to charge customers for SMR development — 29 cents a month for a typical residential customer.",
+          "status": "fetched"
+        },
+        {
+          "label": "ReisingerGooch — Virginia Energy Regulatory Updates (December 2024), Case No. PUR-2024-00205 summary",
+          "url": "https://reisingergooch.com/virginia-energy-regulatory-updates-december-2024/",
+          "quote": "allows Dominion to petition the Commission for approval of a rate adjustment clause to recover 'SMR project development costs.'",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-part-57-microreactor-financial-protection",
+      "name": "NRC proposed 10 CFR Part 57 microreactor licensing rule — risk-tailored financial protection / Price-Anderson coverage (Docket NRC-2025-0379)",
+      "category": "federal rulemaking — construction/operational-risk insurance for advanced reactors",
+      "what_it_is": "On 2026-05-01 the NRC published a proposed rule in the Federal Register (2026-08550, Docket NRC-2025-0379) to create a new licensing framework, 10 CFR Part 57, for microreactors and 'other reactors with comparable risk profiles,' implementing Sec. 208 of the ADVANCE Act. The framework bundles several fleet-deployment flexibilities — joint applications covering one construction permit plus multiple operating licenses for identical designs across sites, manufacturing licenses for factory fabrication/fueling/testing, generic licensing-basis reuse for fleet deployment, remote/autonomous operation allowances, graded siting and possible NEPA categorical exclusions, and alternatives to Appendix B quality-assurance requirements. Comments closed 2026-06-15; New York State (NYSERDA) is confirmed to have filed comments (PDF located but not text-extractable in this environment). Multiple independent law-firm client alerts (Pillsbury, Orrick) describe a financial-protection/indemnification provision under the label 'Adjusted financial protection': the Commission may tailor the level of required financial protection and indemnification coverage — the mechanism Price-Anderson uses — based on a facility's risk profile, rather than applying the standard $500M primary-layer requirement uniformly.",
+      "outcome": "Proposed rule only, not yet finalized as of this research date; comment period closed 2026-06-15 with no final rule located.",
+      "relevance": "This is the most directly on-point NRC finding for the research question's insurance/risk-pool angle: it is the first NRC proceeding located that explicitly contemplates SCALING Price-Anderson-style financial-protection requirements DOWN for microreactors specifically, rather than treating a 1-20 MW unit identically to a full-size LWR for insurance purposes. If finalized as described, it would lower the fixed insurance-cost floor per microreactor unit — directly relevant to a shared risk pool's economics, since a lower per-unit statutory minimum shrinks the tail a pool (or NEIL-style mutual) needs to cover. This claim could not be independently verified against the primary Federal Register/NRC text word-for-word in this session (both the Federal Register HTML and the NRC's own ADAMS PDF resisted extraction) — see absences.",
+      "sources": [
+        {
+          "label": "Federal Register — Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles, 91 FR [2026-08550], published 2026-05-01",
+          "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+          "quote": "Docket Number: NRC-2025-0379; comments due June 15, 2026",
+          "status": "fetched"
+        },
+        {
+          "label": "Orrick — 'NRC Proposes New Framework to Enable High-Volume Microreactor Deployment' (2026-05)",
+          "url": "https://www.orrick.com/en/Insights/2026/05/NRC-Proposes-New-Framework-to-Enable-High-Volume-Microreactor-Deployment",
+          "quote": "Adjusted financial protection. While microreactors remain subject to the NRC's financial protection requirements, the Commission may tailor the level of required coverage based on the facility's risk profile.",
+          "status": "fetched"
+        },
+        {
+          "label": "Pillsbury Law — 'NRC Proposes Part 57 Framework for Microreactor Licensing'",
+          "url": "https://www.pillsburylaw.com/en/news-and-insights/nrc-part-57-microreactor.html",
+          "quote": "The NRC may reduce required levels of financial protection and indemnification based on the facility's risk profile",
+          "status": "fetched"
+        },
+        {
+          "label": "NYSERDA — Comments on NRC Part 57 microreactor rulemaking (filed 2026-06-15)",
+          "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Advanced-Nuclear/NYS-comments-Part-57-microreactor-rulemaking.pdf",
+          "quote": "",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "tva-clinch-river-multi-party-ipd",
+      "name": "TVA Clinch River SMR — announced (not yet filed) multi-party Integrated Project Delivery agreement",
+      "category": "federal utility EPC risk-sharing — not a PUC-regulated or multi-buyer structure",
+      "what_it_is": "TVA, Bechtel, Sargent & Lundy, and GE Hitachi announced they will jointly develop the Clinch River SMR's (BWRX-300, target ~300 MW, total build cost estimated up to ~$5.4B) cost estimate and schedule during a 1-2 year validation phase, using an Integrated Project Delivery (IPD) model, with a 'future multi-party agreement' contemplated to formalize incentives and risk/reward arrangements once validation is complete. TVA separately applied for and, per DOE's Dec. 2025 Tier 1 awards (already covered in orderbook-mechanisms.json), received a share of the $800M Gen III+ Tier 1 award to offset costs.",
+      "outcome": "As of this research, the multi-party agreement is announced intent, not a filed or executed document — no primary text was located because TVA states the agreement will follow validation-phase completion. TVA is a federal corporation exempt from state PUC rate regulation, so no state docket exists or should be expected to govern its terms.",
+      "relevance": "Confirms the IPD (owner + EPC + designer shared-incentive) risk-sharing structure already documented in orderbook-mechanisms.json's design_notes is being operationalized on a real, named project, but it is contractor/owner risk alignment on ONE project, not demand aggregation across multiple BUYERS or a multi-utility consortium — it does not advance the shared-orderbook thread. Worth tracking for a future pass once the actual multi-party agreement is signed and, if TVA seeks any state-level counterparties (distributor contracts, PPAs), those might surface a genuine multi-buyer structure that does not yet exist.",
+      "sources": [
+        {
+          "label": "Sargent & Lundy — 'TVA, Bechtel, Sargent & Lundy and GE Hitachi Plan Initial Construction and Design for Potential Clinch River SMR'",
+          "url": "https://www.sargentlundy.com/news/tva-sargent-lundy-bechtel-and-ge-hitachi-plan-initial-construction-and-design-for-potential-clinch-river-smr/",
+          "quote": "a future multi-party agreement is contemplated under which incentives and arrangements will be negotiated to help ensure those estimates are achieved",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "ferc-susquehanna-colocated-load-negative-finding",
+      "name": "FERC's Susquehanna/Talen/Amazon co-located-load rejection (ER24-2172) — the closest FERC-nuclear intersection found, and why it does not answer the research question",
+      "category": "FERC filing — single-plant behind-the-meter load allocation, not a multi-buyer reactor commitment",
+      "what_it_is": "FERC voted 2-1 on 2024-11-01 to reject an amended Interconnection Service Agreement (PJM / PPL Electric Utilities / Talen Energy) that would have increased the behind-the-meter load Talen's existing Susquehanna nuclear plant could serve to a co-located Amazon Web Services data center from 300 MW to 480 MW, holding that PJM had not justified deviating from its pro forma ISA under Order No. 2003 (no showing of reliability necessity, novel legal issues, or unique operational factors).",
+      "outcome": "Rejected 2024-11-01; Talen sought rehearing, which FERC deferred (order dated 2024-12-23). This predates the Feb-2026-onward window this research pass focused on and is not a new finding relative to the DOE Liftoff/co-located-load literature already in the project's corpus (see AGENTS.md's FERC census discussion).",
+      "relevance": "Recorded here specifically to close out the FERC thread honestly: this is the only nuclear-adjacent FERC co-located-load or surplus-interconnection case located in this research pass, and it is a single-EXISTING-plant, single-buyer capacity dispute, not a filing that structures a multi-utility or multi-buyer commitment to a standardized reactor design. No FERC docket resembling a shared orderbook or joint-ownership vehicle for SMRs/microreactors was found.",
+      "sources": [
+        {
+          "label": "Utility Dive — 'FERC rejects interconnection pact for Talen-Amazon data center deal at nuclear plant'",
+          "url": "https://www.utilitydive.com/news/ferc-interconnection-isa-talen-amazon-data-center-susquehanna-exelon/731841/",
+          "quote": "FERC issued an order rejecting the amended Susquehanna Interconnection Service Agreement",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,17 @@
 
 ## High Priority
 
+- **high** · Integrate four 2026-09-09 research-capture files into live site data (currently
+  research-only under `data/research/2026-09-09-orderbook-filings/`, not read by
+  `tools/build_data.py`): `utility-filings.json` (ARC Act text correction — no "three or
+  more projects" gate exists in the bill; NRC Part 57 risk-tailored Price-Anderson
+  coverage; Virginia's Rider SMR) and `more-mechanisms.json` (Army Janus Program as a
+  deliberate demand-diversification, not demand-pooling, strategy; NEIL's real
+  risk-scaling lever) both extend `data/mechanisms.json`'s order-book/insurance-pool
+  cards. `ptc-45y-48e-update.json` corrects/extends `data/costs.json`'s incentives
+  section with IRS Notice 2026-15's FEOC "material assistance" test, which bears
+  directly on the site's own tracked TRISO deals (Standard Nuclear, BWXT). `ai-in-nuclear.json`
+  is a new finding with no existing home — needs its own section or a Vendors-tab note.
 - **high** · Docket pass, remaining state & regional forums (2026-08-23: NRC ADAMS + FERC eLibrary DONE —
   tools/adams_search.py + tools/ferc_elibrary.py, findings in data/deployment_sites.json;
   FERC has zero microreactor description hits ever, Malmstrom's only filing is a 1994
