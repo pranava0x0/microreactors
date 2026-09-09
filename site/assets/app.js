@@ -178,7 +178,7 @@
       lazyPanel("instruments", "pathways", renderPolicy);
     }
     if (id === "home" && !homeRendered) {
-      lazyPanel("news", "home-highlights", renderHome);
+      lazyPanel("news", "home-lead", renderHome);
     }
     if (id === "news" && !newsRendered) {
       lazyPanel("news", "newslist", renderNews);
@@ -280,18 +280,22 @@
   /* ---------- hero stats ---------- */
   var s = D.summary;
   /* Deployment stats, not site stats: each number is a market event, not a
-     count of what this site happens to curate. */
+     count of what this site happens to curate. Every tile links to the tab
+     where that number is broken out row-by-row, so the number is never the
+     end of the story. "Vendor milestones hit" was dropped: it summed
+     unrelated event types (a criticality, a hire, a funding close) into one
+     figure that meant nothing on its own - the criticality and binding-deal
+     tiles below already surface the two kinds of milestone worth a headline. */
   var stats = [
-    { n: s.milestones_2026, k: "vendor milestones hit in 2026" },
-    { n: s.binding_rows + "/" + s.opportunities, k: "hold a binding instrument", accent: true },
-    { n: s.reactors_critical_2026, k: "test reactors critical in 2026", accent: true },
-    { n: s.units_largest_preorder, k: "units in the largest preorder" },
-    { n: s.first_delivery_year, k: "first delivery target" },
-    { n: s.filing_rows + "/" + s.opportunities, k: "have a utility filing", accent: true }
+    { n: s.binding_rows + "/" + s.opportunities, k: "have an executed agreement", accent: true, href: "#pipeline" },
+    { n: s.reactors_critical_2026, k: "DOE test reactors critical in 2026", accent: true, href: "#pipeline/us-gov" },
+    { n: s.units_largest_preorder, k: "units in the largest preorder", href: "#pipeline" },
+    { n: s.first_delivery_year, k: "first delivery target", href: "#vendors" },
+    { n: s.filing_rows + "/" + s.opportunities, k: "have a citable utility filing", accent: true, href: "#sources/gaps" }
   ];
   render($("stats"), stats.map(function (x) {
-    return '<div class="stat"><span class="n' + (x.accent ? " accent" : "") + '">' +
-      esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
+    return '<a class="stat" href="' + esc(x.href) + '"><span class="n' + (x.accent ? " accent" : "") + '">' +
+      esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></a>";
   }).join(""));
 
   /* ---------- pipeline ---------- */
@@ -325,7 +329,9 @@
       '<div class="rowtop" role="button" tabindex="0" aria-expanded="false">' +
         '<div><div class="rowname">' + esc(o.name) + "</div>" +
           '<div class="rowmeta"><span class="owner">' + esc(o.owner) + "</span>" +
-          "<span>" + esc(o.sector) + "</span><span>" + esc(o.power_mw || "—") + "</span></div></div>" +
+          "<span>" + esc(o.sector) + "</span><span>" + esc(o.power_mw || "—") + "</span>" +
+          '<span class="nbind ' + (o.binding ? "yes" : "no") + '">' +
+          (o.binding ? "executed" : "announced") + "</span></div></div>" +
         '<span class="pill' + (o.track === "us-gov" ? " gov" : "") + '">' +
           esc(trackLabel(o.track)) + "</span>" +
       "</div>" +
@@ -832,14 +838,29 @@
   }
 
   /* ---------- vendors ---------- */
+  // Criticality is derived from the milestone the vendor actually logged, never
+  // hand-typed here - the 2026-09-09 homepage stat bug (a hand-set "3 critical"
+  // that drifted to 5 once Aalo and Oklo went critical) is exactly what a second
+  // hand-typed copy of the same fact would repeat.
+  function criticalityMilestone(v) {
+    var ms = v.milestones || [];
+    for (var i = 0; i < ms.length; i++) {
+      if (ms[i].status === "done" && /critical/i.test(ms[i].label || "")) return ms[i];
+    }
+    return null;
+  }
   function vendorCardHTML(v) {
     var specs = [
       ["Output", v.mwe_label], ["Coolant", v.coolant], ["Fuel", v.fuel],
       ["Refuelling", v.refuel_years ? "every " + v.refuel_years + " yr" : null],
-      ["ANPI site", v.anpi_site], ["Footprint", v.land_acres ? v.land_acres + " acres" : null],
+      ["ANPI site", v.anpi_site], ["Janus site", v.janus_site],
+      ["Footprint", v.land_acres ? v.land_acres + " acres" : null],
       ["Mass", v.mass_tonnes ? v.mass_tonnes + " t" : null],
       ["Target", v.first_delivery_target]
     ].filter(function (x) { return x[1]; });
+    var crit = criticalityMilestone(v);
+    var badges = (v.janus_site ? '<span class="vbadge janus">Janus awardee</span>' : "") +
+      (crit ? '<span class="vbadge critical">Reached criticality — ' + esc(crit.date) + "</span>" : "");
     var gaps = (v.gaps || []).length
       ? '<div class="gapnote"><strong>Known gaps</strong><ul>' +
         v.gaps.map(function (g) { return "<li>" + esc(g) + "</li>"; }).join("") + "</ul></div>"
@@ -853,6 +874,7 @@
         }).join("") + "</div>"
       : "";
     return '<div class="vcard"><h3>' + esc(v.name) + '</h3><span class="r">' + esc(v.reactor) + "</span>" +
+      (badges ? '<div class="vbadges">' + badges + "</div>" : "") +
       specs.map(function (x) {
         return '<div class="vspec"><span class="k">' + esc(x[0]) + '</span><span class="v">' +
           esc(x[1]) + "</span></div>";
@@ -1187,21 +1209,36 @@
   }
 
   /* ---------- home and news ---------- */
+  // Front page: newest-first slices of D.news.items, never a hand-typed id
+  // list — the previous version pinned three story ids and went stale the
+  // moment those stopped being the newest news (CLAUDE.md: derive, don't
+  // hand-type, anything that mirrors a registry).
   var homeRendered = false;
+  function newsHdr(it) {
+    return '<div class="nhdr"><span class="ndate">' + esc(it.date) + '</span>' +
+      '<span class="ncat">' + esc(it.category || "") + '</span>' +
+      '<span class="nbind ' + (it.binding ? "yes" : "no") + '">' +
+      (it.binding ? "executed" : "announced") + "</span></div>";
+  }
   function renderHome() {
     if (homeRendered || !(D.news && D.news.items)) { return; }
     homeRendered = true;
-    var ids = ["army-janus-award-2026-08-26", "valar-ward250-criticality-2026-06-18",
-               "valar-nvidia-datacenter-2026-06-22"];
-    var stories = ids.map(function (id) {
-      return D.news.items.filter(function (it) { return it.id === id; })[0];
-    }).filter(Boolean);
-    render($("home-highlights"), stories.map(function (it) {
-      return '<article class="homehighlight"><div class="nhdr"><span class="ndate">' +
-        esc(it.date) + '</span><span class="ncat">' + esc(it.category || "") + '</span></div>' +
-        '<h4>' + esc(it.headline) + '</h4><p>' + esc(it.what_happened) + ' ' + cite(it.sources) +
-        '</p><a href="#news">Read the news record →</a></article>';
+    var items = D.news.items; // already newest-first (tools/build_data.py)
+    var lead = items[0];
+    var top = items.slice(1, 4);
+    var latest = items.slice(4, 10);
+    if (!lead) { return; }
+    render($("home-lead"), '<article class="leadstory">' + newsHdr(lead) +
+      "<h3>" + esc(lead.headline) + "</h3><p>" + esc(lead.what_happened) + " " + cite(lead.sources) +
+      '</p><a class="more" href="#news">Read the news record →</a></article>');
+    render($("home-topstories"), top.map(function (it) {
+      return '<article class="storycard">' + newsHdr(it) + "<h4>" + esc(it.headline) + "</h4><p>" +
+        esc(it.what_happened) + "</p></article>";
     }).join(""));
+    render($("home-latestlist"), latest.map(function (it) {
+      return '<li><span class="ndate">' + esc(it.date) + '</span> <span class="ncat">' +
+        esc(it.category || "") + '</span><a href="#news">' + esc(it.headline) + "</a></li>";
+    }).join("") + '<li class="more"><a href="#news">All ' + items.length + " news records →</a></li>");
   }
   /* Newest first, grouped by month, with the binding/announced split on every
      row. A selection and a signed contract look identical in a headline, which
