@@ -7,6 +7,7 @@
   {
    "field": "land_acres",
    "have": 1,
+   "not_applicable": 0,
    "total": 16,
    "pct": 6,
    "missing_ids": [
@@ -25,13 +26,15 @@
     "canada-src",
     "romania-nuscale",
     "jp-kr-moc"
-   ]
+   ],
+   "not_applicable_ids": []
   },
   {
    "field": "utility_filing",
-   "have": 2,
+   "have": 0,
+   "not_applicable": 2,
    "total": 16,
-   "pct": 12,
+   "pct": 0,
    "missing_ids": [
     "anpi-jbsa",
     "anpi-buckley",
@@ -47,11 +50,16 @@
     "canada-src",
     "romania-nuscale",
     "jp-kr-moc"
+   ],
+   "not_applicable_ids": [
+    "dome",
+    "doe-pilot"
    ]
   },
   {
    "field": "shell",
    "have": 4,
+   "not_applicable": 0,
    "total": 16,
    "pct": 25,
    "missing_ids": [
@@ -67,39 +75,50 @@
     "canada-src",
     "romania-nuscale",
     "jp-kr-moc"
-   ]
+   ],
+   "not_applicable_ids": []
   },
   {
    "field": "timeline",
    "have": 15,
+   "not_applicable": 0,
    "total": 16,
    "pct": 94,
    "missing_ids": [
     "equinix-radiant"
-   ]
+   ],
+   "not_applicable_ids": []
   },
   {
    "field": "power_mw",
-   "have": 15,
+   "have": 14,
+   "not_applicable": 1,
    "total": 16,
-   "pct": 94,
+   "pct": 88,
    "missing_ids": [
     "nano-supermicro"
+   ],
+   "not_applicable_ids": [
+    "jp-kr-moc"
    ]
   },
   {
    "field": "sector",
    "have": 16,
+   "not_applicable": 0,
    "total": 16,
    "pct": 100,
-   "missing_ids": []
+   "missing_ids": [],
+   "not_applicable_ids": []
   },
   {
    "field": "owner",
    "have": 16,
+   "not_applicable": 0,
    "total": 16,
    "pct": 100,
-   "missing_ids": []
+   "missing_ids": [],
+   "not_applicable_ids": []
   }
  ],
  "row_gaps": [
