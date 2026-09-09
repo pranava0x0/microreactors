@@ -287,7 +287,7 @@
      figure that meant nothing on its own - the criticality and binding-deal
      tiles below already surface the two kinds of milestone worth a headline. */
   var stats = [
-    { n: s.binding_rows + "/" + s.opportunities, k: "hold a binding commitment", accent: true, href: "#pipeline" },
+    { n: s.binding_rows + "/" + s.opportunities, k: "are marked binding", accent: true, href: "#pipeline" },
     { n: s.reactors_critical_2026, k: "DOE test reactors critical in 2026", accent: true, href: "#pipeline/us-gov" },
     { n: s.units_largest_preorder, k: "units in the largest preorder", href: "#pipeline" },
     { n: s.first_delivery_year, k: "first delivery target", href: "#vendors" },
@@ -1251,7 +1251,8 @@
     }).join(""));
     render($("home-latestlist"), latest.map(function (it) {
       return '<li><span class="ndate">' + esc(it.date) + '</span> <span class="ncat">' +
-        esc(it.category || "") + '</span><a href="#news">' + esc(it.headline) + "</a></li>";
+        esc(it.category || "") + '</span><a href="#news">' + esc(it.headline) + "</a>" +
+        cite(it.sources) + "</li>";
     }).join("") + '<li class="more"><a href="#news">All ' + items.length + " news records →</a></li>");
   }
   /* Newest first, grouped by month, with the binding/announced split on every
