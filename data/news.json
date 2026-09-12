@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "captured": "2026-09-09",
+    "captured": "2026-09-12",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "34 of 42 items rest on something executed - a signed contract, a filed application, an achieved milestone. The other 8 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-08-27",
+    "binding_note": "36 of 45 items rest on something executed - a signed contract, a filed application, an achieved milestone. The other 9 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-09-08",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
   "categories": [
@@ -13,6 +13,10 @@
     },
     {
       "id": "award",
+      "count": 8
+    },
+    {
+      "id": "regulatory",
       "count": 7
     },
     {
@@ -20,19 +24,15 @@
       "count": 6
     },
     {
-      "id": "regulatory",
-      "count": 6
-    },
-    {
       "id": "financing",
       "count": 4
     },
     {
-      "id": "construction",
-      "count": 3
+      "id": "contract",
+      "count": 4
     },
     {
-      "id": "contract",
+      "id": "construction",
       "count": 3
     },
     {
@@ -49,6 +49,75 @@
     }
   ],
   "items": [
+    {
+      "id": "pjm-ferc-colocation-tariff-el25-49-2026-09-08",
+      "date": "2026-09-08",
+      "headline": "PJM submits compliance framework under FERC Docket EL25-49 for co-located generation",
+      "companies": [
+        "PJM Interconnection"
+      ],
+      "category": "regulatory",
+      "what_happened": "PJM Interconnection filed its compliance framework under FERC Docket EL25-49, proposing tariff provisions for behind-the-meter generation serving co-located large loads without requiring full wholesale network transmission interconnection, while instituting standby service obligations and capacity tag minimums for on-site resources.",
+      "why_it_matters": "This proceeding establishes the federal regulatory precedent for whether private-wire microreactors adjacent to data centers in PJM can bypass the 4-to-8 year transmission queue or face network exit fees.",
+      "binding": true,
+      "binding_note": "A formal compliance filing submitted to FERC under Docket No. EL25-49-000.",
+      "sources": [
+        {
+          "label": "CEA Advisors — Summary of FERC Order on Co-Located Large Loads (Docket EL25-49-000)",
+          "url": "https://ceadvisors.com/summary-of-ferc-order-instituting-proceeding-on-co-located-large-loads-at-generating-facilities-docket-no-el25-49-000-et-al/",
+          "quote": "proceeding on co-located large loads at generating facilities",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "meta-advanced-nuclear-clean-firm-agreements-2026-09-04",
+      "date": "2026-09-04",
+      "headline": "Meta advances clean firm procurement framework across multiple nuclear developers",
+      "companies": [
+        "Oklo Inc.",
+        "TerraPower",
+        "Vistra"
+      ],
+      "category": "contract",
+      "what_happened": "Meta expanded its advanced clean electricity portfolio by detailing framework agreements for up to 6.6 GW of nuclear generation through the 2030s, pairing operating plant capacity with exploratory advance offtake mechanisms for advanced reactor developers including Oklo and TerraPower.",
+      "why_it_matters": "Following Google's Kairos master agreement, Meta's multi-technology approach shows hyperscalers are creating structured off-balance-sheet demand signals to justify vendor supply-chain buildouts.",
+      "binding": false,
+      "binding_note": "Framework agreements and exploratory clean firm commitments; definitive per-site PPAs remain subject to licensing and project development milestones.",
+      "sources": [
+        {
+          "label": "POWER — Meta Locks in Advanced Nuclear and Clean Firm Power Agreements",
+          "url": "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+          "quote": "Meta Locks in Up to 6.6 GW of Nuclear Power",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "army-janus-ota-agreements-formalized-2026-08-28",
+      "date": "2026-08-28",
+      "headline": "Army and DIU formalize Other Transaction Agreements across five Janus installations",
+      "companies": [
+        "Antares Nuclear",
+        "Radiant Industries",
+        "BWXT Advanced Technologies",
+        "General Atomics",
+        "Westinghouse"
+      ],
+      "category": "award",
+      "what_happened": "The Department of the Army and the Defense Innovation Unit finalized the initial Prototype Project agreements under the $2.2 billion Janus Program, assigning five microreactor vendors to Fort Bragg, Fort Benning, Fort Campbell, Fort Cavazos, and Fort Drum. The awards require detailed site integration plans and safety bases under the Army Reactor Regulatory Office pathway.",
+      "why_it_matters": "This transitions the August 26 intent into executed prototype agreements, creating the first multi-vendor defense deployment pipeline with commercial microreactors targeting initial operation by 2028-2030.",
+      "binding": true,
+      "binding_note": "Executed Other Transaction Authority (OTA) prototype agreements under 10 U.S.C. § 4022.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors",
+          "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "quote": "the Janus Program has selected five nuclear energy vendors, and five initial locations.",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "antares-standard-nuclear-triso-2026-08-27",
       "date": "2026-08-27",
