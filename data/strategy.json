@@ -46,6 +46,33 @@
     "gloss": "Fuel fabrication and enrichment: a partner that can hold up every vendor's schedule."
    }
   ],
+  "deal_structures": [
+   {
+    "id": "private-wire-btm-ppa",
+    "label": "Private-Wire / Behind-the-Meter Take-or-Pay PPA",
+    "gloss": "Developer builds, owns and operates reactor behind host's meter; host commits to take 100% capacity factor at fixed $/MWh with zero grid export, bypassing RTO transmission queues and exit fees."
+   },
+   {
+    "id": "eaas-boo-concession",
+    "label": "Energy-as-a-Service (EaaS) / Build-Own-Operate Concession",
+    "gloss": "Third-party financed SPV provides power and thermal energy under 20-30 year concession (e.g. DoD 10 U.S.C. 2922a authority); host pays no upfront capex and purchases firm service."
+   },
+   {
+    "id": "dual-commodity-hpa-ppa",
+    "label": "Dual-Commodity Heat & Power Agreement (HPA + PPA)",
+    "gloss": "Offtake contract pricing high-temperature process steam ($/klb or $/MMBtu) alongside electricity ($/MWh) for chemical, industrial or district heating hosts."
+   },
+   {
+    "id": "capacity-performance-reservation",
+    "label": "Availability-Guaranteed Capacity Reservation Agreement",
+    "gloss": "Monthly fixed capacity reservation payment ($/kW-month) plus variable dispatch fee ($/MWh), guaranteeing 24/7 standby power for critical civic or compute nodes."
+   },
+   {
+    "id": "offgrid-mine-contractor-boot",
+    "label": "Off-Grid Mining Power Contractor Concession (BOOT)",
+    "gloss": "Specialized off-grid power contractor (e.g. Zenith, Aggreko, TUGLIQ) integrates microreactor into mine hybrid microgrid under availability-guaranteed PPA, displacing diesel."
+   }
+  ],
   "status_values": [
    "signed",
    "selected",
