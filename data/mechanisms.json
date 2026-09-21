@@ -467,6 +467,28 @@
               "status": "fetched"
             }
           ]
+        },
+        {
+          "name": "Price-Anderson sub-100 MWe tier structure and retrospective pool exemption",
+          "category": "statutory liability tiering",
+          "mechanism": "10 CFR 140.12 sets required public liability financial protection for reactors above 10 MWt but below 100 MWe at $185 per thermal kilowatt times a population factor of 1.0 to 2.0, bounded by a $4.5M floor and a $74M ceiling. Specifically, the $158M per-reactor retrospective deferred premium pool under 10 CFR 140.11(a)(4) attaches only to reactors rated 100,000 electrical kilowatts or more.",
+          "outcome": "A 20 MWt NRC-licensed reactor at population factor 1.0 binds at the $4.5M floor (or $7.4M at 2.0). For two or more reactors at one location, 10 CFR 140.12(c) sets the site total at the highest single-unit amount. The $158.026M retrospective assessment applies only to reactors rated 100 MWe or more; the Part 57 proposal says NRC could set a lower financial-protection amount on a technical finding.",
+          "early_vs_late": "Set by regulatory formula based on thermal size and local population density; independent of order vintage.",
+          "relevance": "For NRC licensees, the sub-100 MWe tier avoids each licensee's separate contingent assessment for accidents at other covered reactors. Army-regulated Janus prototypes and DOE-authorized pilot reactors sit outside this NRC tier and instead use their federal authorization and indemnification routes.",
+          "sources": [
+            {
+              "label": "10 CFR 140.12, Amount of financial protection required for other reactors (CFR 2024 edition, govinfo)",
+              "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-12.pdf",
+              "quote": "be less than $4,500,000 or more than $74,000,000",
+              "status": "fetched"
+            },
+            {
+              "label": "10 CFR 140.11(a)(4), deferred premium cap (CFR 2024 edition, govinfo)",
+              "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
+              "quote": "no more than $158,026,000 with respect to any nuclear incident",
+              "status": "fetched"
+            }
+          ]
         }
       ]
     }

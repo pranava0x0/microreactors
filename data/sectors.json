@@ -23,6 +23,23 @@
       "sector": "Compute",
       "loads": [
         {
+          "label": "Subsea compute pods",
+          "band": "0.24–0.24 MW",
+          "note": "Microsoft ended Project Natick in 2024; this is a retired demonstration, not an active Western customer class",
+          "band_full": "0.24 MW per demonstrated pod",
+          "sources": [
+            {
+              "label": "Microsoft Research — Project Natick facts and figures",
+              "url": "https://www.microsoft.com/en-us/research/project/natick/facts-and-figures/",
+              "quote": "Electrical power consumption 240 kW.",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "partial",
+          "published": "Microsoft's retired Northern Isles test pod drew 240 kW for 864 servers and was designed for up to five years without maintenance. Microsoft ended Project Natick in 2024; no nuclear-powered subsea data center has been announced.",
+          "delta_note": "This is evidence for the load, not evidence of a microreactor customer. Any reactor match remains a siting hypothesis."
+        },
+        {
           "label": "Regional data centers",
           "band": "1–10 MW",
           "note": "",
@@ -318,6 +335,29 @@
     {
       "sector": "Manufacturing",
       "loads": [
+        {
+          "label": "Megaton-scale direct-air-capture hubs",
+          "band": "270–280 MW",
+          "note": "best served by several units or a larger reactor; outside a single 1–20 MW microreactor block",
+          "band_full": "270–280 MW total power requirement per 1 MtCO2/year hub; much of a solid-sorbent plant's duty is low-temperature heat",
+          "sources": [
+            {
+              "label": "National Petroleum Council — Strategy for Technology Innovation to Meet Climate Goals",
+              "url": "https://www.energy.gov/sites/default/files/2023-01/STAS_v2_2022-12-16.pdf",
+              "quote": "Power requirement for 1MTA DAC is estimated at 270-280 MW.",
+              "status": "fetched"
+            },
+            {
+              "label": "U.S. Department of Energy — Regional Direct Air Capture Hubs",
+              "url": "https://www.energy.gov/oced/DACHubs",
+              "quote": "capturing at least 1 million metric tons of CO2 annually",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "contradicts",
+          "published": "The National Petroleum Council estimates 270–280 MW of total power for a 1-million-ton-per-year direct-air-capture facility. Much of a solid-sorbent plant's duty is low-temperature regeneration heat, so reactor fit must be compared on thermal output, not treated as 270–280 MWe.",
+          "delta_note": "The earlier 5–20 MW framing was too small for a megaton hub. One microreactor could serve a pilot train or auxiliary block; a full hub would need several thermal-output units or a larger reactor."
+        },
         {
           "label": "Steel rolling and finishing plants, excluding full steelmaking mills",
           "band": "5–20 MW",
@@ -680,6 +720,23 @@
     {
       "sector": "Transportation",
       "loads": [
+        {
+          "label": "Spaceport cryogenic-propellant storage and liquefaction",
+          "band": "6.2–7.9 MW",
+          "note": "NASA KSC cases imply 8.1–10.3 MW total average when other hydrogen-system loads are included",
+          "band_full": "6.2–7.9 MW average liquefaction duty; 8.1–10.3 MW total average in NASA's two KSC cases",
+          "sources": [
+            {
+              "label": "NASA Technical Reports Server — Project H: A Complete Spaceport Hydrogen Solution",
+              "url": "https://ntrs.nasa.gov/api/citations/20110008624/downloads/20110008624.pdf",
+              "quote": "Hydrogen system has demonstrated liquefaction, zero boil off",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "partial",
+          "published": "NASA's KSC cases report 54,054–68,969 MWh/year for liquefaction, or 6.2–7.9 MW average; total hydrogen-system energy is 71,256–90,311 MWh/year, or 8.1–10.3 MW average.",
+          "delta_note": "These are annual averages derived from NASA's table, not peak loads. Site sizing still depends on throughput, storage volume and launch cadence."
+        },
         {
           "label": "Large Amazon, Walmart and similar fulfillment and distribution centers",
           "band": "1–3 MW",

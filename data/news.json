@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "captured": "2026-09-09",
+    "captured": "2026-09-21",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "34 of 42 items rest on something executed - a signed contract, a filed application, an achieved milestone. The other 8 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-08-27",
+    "binding_note": "38 of 47 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 9 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-09-17",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
   "categories": [
     {
       "id": "fuel",
-      "count": 8
+      "count": 10
     },
     {
       "id": "award",
       "count": 7
     },
     {
-      "id": "criticality",
-      "count": 6
+      "id": "regulatory",
+      "count": 8
     },
     {
-      "id": "regulatory",
+      "id": "criticality",
       "count": 6
     },
     {
@@ -28,11 +28,11 @@
       "count": 4
     },
     {
-      "id": "construction",
-      "count": 3
+      "id": "contract",
+      "count": 4
     },
     {
-      "id": "contract",
+      "id": "construction",
       "count": 3
     },
     {
@@ -49,6 +49,114 @@
     }
   ],
   "items": [
+    {
+      "id": "antares-centrus-haleu-contract-2026-09-17",
+      "date": "2026-09-17",
+      "headline": "Antares signs definitive Centrus HALEU supply contract",
+      "companies": [
+        "Antares Nuclear",
+        "Centrus Energy"
+      ],
+      "category": "fuel",
+      "what_happened": "Antares and Centrus signed a definitive multi-year contract for U.S.-origin HALEU, with deliveries due before 2030. Antares will make prepayments that support Centrus's enrichment-capacity expansion. Volumes, price and the split across Antares's defense and space programs were not disclosed.",
+      "why_it_matters": "Antares now has separate binding commitments for enriched uranium from Centrus and fabricated TRISO fuel from Standard Nuclear. Those contracts cover different steps in the fuel chain and should not be counted as duplicate reactor orders.",
+      "binding": true,
+      "binding_note": "Definitive multi-year supply contract with prepayments; delivery before 2030 depends on Centrus completing the HALEU capacity expansion now being built with DOE support; volume and price are undisclosed.",
+      "sources": [
+        {
+          "label": "Centrus — Centrus and Antares Sign Multi-Year HALEU Supply Contract",
+          "url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-antares-sign-multi-year-haleu-supply-contract",
+          "quote": "signed a definitive multi-year contract for Centrus to supply Antares with High-Assay Low-Enriched Uranium",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "xenergy-centrica-gda-accepted-2026-09-15",
+      "date": "2026-09-15",
+      "headline": "UK regulators accept Xe-100 into Generic Design Assessment",
+      "companies": [
+        "X-energy",
+        "Centrica"
+      ],
+      "category": "regulatory",
+      "what_happened": "UK regulators accepted the Xe-100 into Generic Design Assessment one year after X-energy and Centrica announced their partnership. The companies say they intend to develop up to 6 GW, but have not announced a final investment decision, site-specific license or power-purchase agreement.",
+      "why_it_matters": "The regulatory review advances a large potential fleet, while the commercial commitment remains at partnership stage. Entry into design review should not be counted as contracted generation.",
+      "binding": true,
+      "binding_note": "Formal entry into a regulatory review. The 6 GW deployment plan remains an intention under the partnership, not a committed order.",
+      "sources": [
+        {
+          "label": "X-energy — Centrica, X-energy Advance Nuclear Plans as UK Regulators Begin Design Review for Xe-100",
+          "url": "https://investors.x-energy.com/news-releases/news-release-details/centrica-x-energy-advance-nuclear-plans-uk-regulators-begin",
+          "quote": "has been accepted into the United Kingdom's Generic Design Assessment",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "radiant-centrus-haleu-contract-2026-09-08",
+      "date": "2026-09-08",
+      "headline": "Radiant signs definitive multi-year Centrus HALEU contract",
+      "companies": [
+        "Radiant Nuclear",
+        "Centrus Energy"
+      ],
+      "category": "fuel",
+      "what_happened": "Radiant signed a definitive multi-year contract for Centrus to begin supplying U.S.-origin HALEU before 2030. The agreement includes prepayments supporting Centrus's enrichment buildout. Neither company disclosed volume, price or how many Kaleidos cores the contract covers.",
+      "why_it_matters": "Radiant has now contracted separately for enriched uranium from Centrus and fabricated TRISO fuel from Standard Nuclear. The agreements reduce two different supply-chain risks but do not add reactor customers beyond Equinix and the Army.",
+      "binding": true,
+      "binding_note": "Definitive multi-year supply contract with prepayments; delivery before 2030 depends on Centrus completing the HALEU capacity expansion now being built with DOE support; volume and price are undisclosed.",
+      "sources": [
+        {
+          "label": "Centrus — Centrus and Radiant Announce Long-Term Partnership for Domestic HALEU",
+          "url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-radiant-announce-long-term-partnership-domestic",
+          "quote": "definitive multi-year contract to supply high-assay, low-enriched uranium",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "pjm-ferc-colocation-compliance-er26-1479-2026-08-17",
+      "date": "2026-08-17",
+      "headline": "PJM files further co-location compliance tariff in FERC Docket ER26-1479",
+      "companies": [
+        "PJM Interconnection"
+      ],
+      "category": "regulatory",
+      "what_happened": "PJM submitted its further compliance filing in ER26-1479-002 after FERC's June 18 order in the EL25-49 co-located-load proceeding. The filing is the tariff response; the September 8 document previously recorded here was a customer protest, not a PJM filing.",
+      "why_it_matters": "The proceeding will govern how co-located large loads and generation interact with PJM transmission service. It is relevant to private-wire reactor proposals, but this row does not infer queue timing, standby charges or capacity-tag terms without quoting the tariff filing.",
+      "binding": true,
+      "binding_note": "Formal PJM further-compliance filing in ER26-1479-002, accession 20260817-5195; filed in response to FERC's binding June 18 order in EL25-49.",
+      "sources": [
+        {
+          "label": "FERC eLibrary — PJM further compliance filing, ER26-1479-002 (accession 20260817-5195)",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260817-5195",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "nano-enveniam-mou-2026-09-04",
+      "date": "2026-09-04",
+      "headline": "NANO and Enveniam sign non-binding deployment and fuel-cycle MOU",
+      "companies": [
+        "NANO Nuclear Energy",
+        "Enveniam"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear and project integrator Enveniam signed a non-binding memorandum to explore fuel transportation, conversion, licensing, manufacturing and possible power solutions for data centers and remote communities. It names no customer, site, capacity, price or delivery date.",
+      "why_it_matters": "The document broadens NANO's partner network but does not create an order book. It is useful evidence of intended workstreams, not evidence that a reactor has been purchased or financed.",
+      "binding": false,
+      "binding_note": "Non-binding memorandum of understanding; no definitive project or purchase commitment.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — NANO Nuclear Energy and Enveniam Sign Memorandum of Understanding",
+          "url": "https://nanonuclearenergy.gcs-web.com/news-releases/news-release-details/nano-nuclear-energy-and-enveniam-sign-memorandum-understanding",
+          "quote": "signed a non-binding Memorandum of Understanding",
+          "status": "snippet-only"
+        }
+      ]
+    },
     {
       "id": "antares-standard-nuclear-triso-2026-08-27",
       "date": "2026-08-27",
@@ -303,7 +411,7 @@
         "Westinghouse"
       ],
       "category": "criticality",
-      "what_happened": "Westinghouse's eVinci microreactor design achieved zero-power criticality at the National Criticality Experiments Research Center, a National Nuclear Security Administration facility at the Nevada National Security Site, at 10:39 a.m. Pacific on August 24, 2026, two days before the Janus announcement named Westinghouse for Fort Drum. The test was completed in partnership with Los Alamos National Laboratory and Idaho National Laboratory.",
+      "what_happened": "Westinghouse's eVinci microreactor design achieved zero-power criticality at the National Criticality Experiments Research Center, an NNSA facility at the Nevada National Security Site, on August 24. Follow-on testing on September 3 reached criticality at 663°C and a peak core temperature of 1,011°C. Los Alamos and Idaho National Laboratory conducted the work under the DOE/NRC criticality-safety collaboration; this was not DOE's Reactor Pilot Program.",
       "why_it_matters": "This is a genuine technical milestone, not a business announcement, and its timing two days ahead of a $2.2 billion Army award is a reminder that a company's demonstrated hardware progress and its federal contract wins are moving on separate, only loosely coordinated tracks.",
       "binding": true,
       "binding_note": "An achieved physical milestone (criticality), independently confirmed, not a company claim or a forward-looking target.",
@@ -312,6 +420,12 @@
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
           "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
           "quote": "the design achieved zero-power criticality at the National Criticality Experiments Research Center, a National Nuclear Security Administration facility at the Nevada National Security Site",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Department of Energy — Westinghouse eVinci Microreactor Achieves Criticality Milestone",
+          "url": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone",
+          "quote": "the eVinci test reached criticality at 663 degrees Celsius",
           "status": "fetched"
         }
       ]
