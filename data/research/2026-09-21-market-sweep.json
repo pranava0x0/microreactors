@@ -16,7 +16,7 @@
     {
       "id": "westinghouse-evinci-criticality",
       "class": "achieved technical milestone",
-      "date": "2026-09-16",
+      "date": "2026-09-03",
       "destination": ["data/news.json", "data/vendors.json"],
       "source": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone"
     },
@@ -45,34 +45,34 @@
   "application_examples": [
     {
       "id": "subsea-compute",
-      "result": "promoted with measured 240 kW demonstration load; commercial campus figures remain contextual",
+      "result": "retained only as a partial, retired demonstration: Microsoft ended Project Natick in 2024; 240 kW is the sole supported band",
       "source": "https://www.microsoft.com/en-us/research/project/natick/facts-and-figures/"
     },
     {
       "id": "direct-air-capture",
-      "result": "promoted as a correction: DOE's 270-280 MW estimate makes a megaton hub a fleet or larger-reactor load, not one microreactor",
+      "result": "promoted as a correction: the National Petroleum Council's 270-280 MW total-power estimate is heat-dominant and makes a megaton hub a multi-unit or larger-reactor thermal load",
       "source": "https://www.energy.gov/sites/default/files/2023-01/STAS_v2_2022-12-16.pdf"
     },
     {
       "id": "spaceport-cryogenics",
-      "result": "promoted without an MW band; NASA supports continuous liquefaction and zero-boil-off duty but not the prior 5-30 MW estimate",
+      "result": "promoted with NASA table-derived annual averages: 6.2-7.9 MW liquefaction and 8.1-10.3 MW total hydrogen-system load",
       "source": "https://ntrs.nasa.gov/api/citations/20110008624/downloads/20110008624.pdf"
     },
     {
       "id": "arctic-radar",
-      "result": "promoted without an MW band; Canada supports the remote-site and bulk-fuel case but not the prior demand or availability estimate",
+      "result": "excluded: Canada supports the remote-site and bulk-fuel case but publishes no site-level demand; the cited inventory describes the legacy North Warning System, not the A-OTHR replacement",
       "source": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/proactive-disclosure/nddn-main-estimates-2-may-2023/domestic-continental-defence.html"
     },
     {
       "id": "cellulosic-biorefinery",
-      "result": "promoted with DOE's 21 MW gross cogeneration example and process-steam duty",
+      "result": "excluded: Hugoton never operated commercially and its biomass boiler self-fueled from lignin, so 21 MW is generation nameplate rather than purchased demand",
       "source": "https://www.energy.gov/edf/abengoa-bioenergy"
     }
   ],
   "vendor_coverage": [
     {"vendor": "Antares Nuclear", "new_since_prior_capture": true, "result": "definitive Centrus HALEU contract"},
     {"vendor": "Radiant Nuclear", "new_since_prior_capture": true, "result": "definitive Centrus HALEU contract"},
-    {"vendor": "Westinghouse eVinci", "new_since_prior_capture": true, "result": "DOE-confirmed criticality; no new customer contract value"},
+    {"vendor": "Westinghouse eVinci", "new_since_prior_capture": true, "result": "DOE-confirmed September 3 heated-core follow-on to the August 24 zero-power criticality; no new customer contract value"},
     {"vendor": "BWXT BANR", "new_since_prior_capture": false, "result": "no new microreactor-specific contract beyond Janus found"},
     {"vendor": "General Atomics GA-TES", "new_since_prior_capture": false, "result": "company Janus release confirms milestone-based OTA; value and delivery date remain undisclosed"},
     {"vendor": "Valar Atomics", "new_since_prior_capture": false, "result": "Utah land agreement surfaced, but no primary document with commercial power terms was found; not promoted"},

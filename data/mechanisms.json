@@ -472,9 +472,9 @@
           "name": "Price-Anderson sub-100 MWe tier structure and retrospective pool exemption",
           "category": "statutory liability tiering",
           "mechanism": "10 CFR 140.12 sets required public liability financial protection for reactors above 10 MWt but below 100 MWe at $185 per thermal kilowatt times a population factor of 1.0 to 2.0, bounded by a $4.5M floor and a $74M ceiling. Specifically, the $158M per-reactor retrospective deferred premium pool under 10 CFR 140.11(a)(4) attaches only to reactors rated 100,000 electrical kilowatts or more.",
-          "outcome": "A 20 MWt microreactor at population factor 1.0 binds at the $4.5M floor (or $7.4M at 2.0), compared to $500M primary plus $158M retrospective liability for a 100+ MWe unit; sub-100 MWe licensees are exempt from retrospective assessments for other operators' accidents.",
+          "outcome": "A 20 MWt NRC-licensed reactor at population factor 1.0 binds at the $4.5M floor (or $7.4M at 2.0). For two or more reactors at one location, 10 CFR 140.12(c) sets the site total at the highest single-unit amount. The $158.026M retrospective assessment applies only to reactors rated 100 MWe or more; the Part 57 proposal says NRC could set a lower financial-protection amount on a technical finding.",
           "early_vs_late": "Set by regulatory formula based on thermal size and local population density; independent of order vintage.",
-          "relevance": "The single largest structural risk difference between microreactors and utility-scale SMRs: microreactors avoid the several contingent liability of the industry retrospective pool, reducing contingent balance-sheet exposure by over 95%.",
+          "relevance": "For NRC licensees, the sub-100 MWe tier avoids each licensee's separate contingent assessment for accidents at other covered reactors. Army-regulated Janus prototypes and DOE-authorized pilot reactors sit outside this NRC tier and instead use their federal authorization and indemnification routes.",
           "sources": [
             {
               "label": "10 CFR 140.12, Amount of financial protection required for other reactors (CFR 2024 edition, govinfo)",
@@ -486,50 +486,6 @@
               "label": "10 CFR 140.11(a)(4), deferred premium cap (CFR 2024 edition, govinfo)",
               "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol2/pdf/CFR-2024-title10-vol2-sec140-11.pdf",
               "quote": "no more than $158,026,000 with respect to any nuclear incident",
-              "status": "fetched"
-            }
-          ]
-        },
-        {
-          "name": "Technology performance and availability warranty insurance",
-          "category": "commercial risk transfer",
-          "mechanism": "Specialized insurance underwriting backstops technology efficacy and availability guarantees (>90% capacity factor) for first-of-a-kind and early-commercial clean firm generation. The policy pays debt service if the asset fails to achieve stated output or heat rate due to design deficiencies or unforeseen outages.",
-          "outcome": "Transfers technology risk off the reactor vendor and offtaker balance sheets onto investment-grade reinsurance capacity, enabling non-recourse project financing for unproven archetypes.",
-          "early_vs_late": "Priced per deployment batch; early FOAK units pay higher risk-adjusted premiums until operating hours validate availability metrics.",
-          "relevance": "Closes the bankability gap for private-wire PPAs: offtakers and commercial lenders require guaranteed capacity factors before committing long-term cash flows.",
-          "sources": [
-            {
-              "label": "New Energy Risk — Performance Warranty Insurance Solutions",
-              "url": "https://newenergyrisk.com/solutions/",
-              "quote": "protects against the risk of technology underperformance",
-              "status": "snippet-only"
-            },
-            {
-              "label": "Munich Re — Green Tech Solutions and Performance Warranty",
-              "url": "https://www.munichre.com/en/solutions/for-industry-clients/green-tech-solutions.html",
-              "quote": "Performance warranty cover for clean technology",
-              "status": "snippet-only"
-            }
-          ]
-        },
-        {
-          "name": "Fleet decommissioning surety trust pool",
-          "category": "regulatory assurance pool",
-          "mechanism": "Under 10 CFR 50.75(c)(1), a small PWR is penalized by the instruction to substitute P = 1200 MWt, forcing a 20 MWt unit to certify the same $85.56M (1986 dollars, ~$200M+ today) as a 1200 MWt plant. A fleet captive or mutual surety trust pools decommissioning liability across multiple modular units, replacing cash escrows with pooled surety bonds or letters of credit.",
-          "outcome": "Proposed in NRC Part 57 (Docket NRC-2025-0379) to scale decommissioning obligations to actual plant inventory and radionuclide risk rather than a rigid 1200 MWt table floor.",
-          "early_vs_late": "Pooled across operating units; contributions scale with operating life and unit count.",
-          "relevance": "Removes an upfront capital roadblock where mandatory regulatory decommissioning funds for a single microreactor would otherwise approach the capital cost of the unit itself.",
-          "sources": [
-            {
-              "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
-              "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title10-vol1/pdf/CFR-2024-title10-vol1-sec50-75.pdf",
-              "quote": "funds will be available for the decommissioning process",
-              "status": "fetched"
-            },
-            {
-              "label": "Federal Register — Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed Part 57)",
-              "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
-              "quote": "Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
               "status": "fetched"
             }
           ]
