@@ -23,6 +23,23 @@
       "sector": "Compute",
       "loads": [
         {
+          "label": "Subsea compute pods",
+          "band": "0.24–24 MW",
+          "note": "sealed modules use seawater cooling; the reactor pairing is a prospective application, not a signed deployment",
+          "band_full": "0.24 MW per demonstrated pod; 24 MW at commercial campus scale",
+          "sources": [
+            {
+              "label": "Microsoft Research — Project Natick facts and figures",
+              "url": "https://www.microsoft.com/en-us/research/project/natick/facts-and-figures/",
+              "quote": "Electrical power consumption 240 kW.",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "supports",
+          "published": "Microsoft's Northern Isles test pod drew 240 kW for 864 servers and was designed for up to five years without maintenance. Commercial projects now report multi-megawatt campuses, but no nuclear-powered subsea data center has been announced.",
+          "delta_note": "This is evidence for the load, not evidence of a microreactor customer. Any reactor match remains a siting hypothesis."
+        },
+        {
           "label": "Regional data centers",
           "band": "1–10 MW",
           "note": "",
@@ -318,6 +335,29 @@
     {
       "sector": "Manufacturing",
       "loads": [
+        {
+          "label": "Megaton-scale direct-air-capture hubs",
+          "band": "270–280 MW",
+          "note": "best served by several units or a larger reactor; outside a single 1–20 MW microreactor block",
+          "band_full": "270–280 MW electrical requirement per 1 MtCO2/year hub",
+          "sources": [
+            {
+              "label": "U.S. Department of Energy — Strategy for Technology Innovation to Meet Climate Goals",
+              "url": "https://www.energy.gov/sites/default/files/2023-01/STAS_v2_2022-12-16.pdf",
+              "quote": "Power requirement for 1MTA DAC is estimated at 270-280 MW.",
+              "status": "fetched"
+            },
+            {
+              "label": "U.S. Department of Energy — Regional Direct Air Capture Hubs",
+              "url": "https://www.energy.gov/oced/DACHubs",
+              "quote": "capturing at least 1 million metric tons of CO2 annually",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "contradicts",
+          "published": "DOE estimates 270–280 MW of power for a 1-million-ton-per-year direct-air-capture facility. That is a fleet or SMR-scale load, not a standalone microreactor application.",
+          "delta_note": "The earlier 5–20 MW framing was too small for a megaton hub. A microreactor could serve a pilot train or auxiliary block, not the full published hub load."
+        },
         {
           "label": "Steel rolling and finishing plants, excluding full steelmaking mills",
           "band": "5–20 MW",
@@ -681,6 +721,23 @@
       "sector": "Transportation",
       "loads": [
         {
+          "label": "Spaceport cryogenic-propellant storage and liquefaction",
+          "band": "5–30 MW",
+          "note": "NASA verifies the continuous refrigeration need but does not publish a whole-spaceport MW band",
+          "band_full": "No defensible facility-wide MW band found; continuous active refrigeration is required",
+          "sources": [
+            {
+              "label": "NASA Technical Reports Server — Project H: A Complete Spaceport Hydrogen Solution",
+              "url": "https://ntrs.nasa.gov/api/citations/20110008624/downloads/20110008624.pdf",
+              "quote": "Hydrogen system has demonstrated liquefaction, zero boil off",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "partial",
+          "published": "NASA has demonstrated liquefaction and zero-boil-off systems for spaceport hydrogen. The duty is continuous and resilience-sensitive, but the source does not support the earlier 5–30 MW site estimate.",
+          "delta_note": "Kept as an application example with no invented band. Site sizing needs propellant throughput, storage volume and launch cadence."
+        },
+        {
           "label": "Large Amazon, Walmart and similar fulfillment and distribution centers",
           "band": "1–3 MW",
           "note": "normally; 2–10 MW with heavy automation or fleet charging",
@@ -794,6 +851,23 @@
     {
       "sector": "Civic Infrastructure",
       "loads": [
+        {
+          "label": "Arctic defense-radar outposts",
+          "band": "1–5 MW",
+          "note": "remote radar chain with bulk fuel storage and unattended sites; reactor fit remains prospective",
+          "band_full": "No authoritative site-level MW demand found",
+          "sources": [
+            {
+              "label": "Government of Canada — Domestic and Continental Defence",
+              "url": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/proactive-disclosure/nddn-main-estimates-2-may-2023/domestic-continental-defence.html",
+              "quote": "10 operational Long Range Radars (LRR), 36 unattended Short Range Radar (SRR) sites and five Logistics Support Sites",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "partial",
+          "published": "Canada describes 10 long-range radars, 36 unattended short-range sites, five logistics sites and more than 300 bulk-fuel tanks. That supports the remote-fuel-resilience case, but not a 1–5 MW demand estimate.",
+          "delta_note": "The earlier power band and five-nines availability claim lacked primary support and were dropped."
+        },
         {
           "label": "Large individual hospitals",
           "band": "2–8 MW",
@@ -963,6 +1037,23 @@
     {
       "sector": "Agriculture & Food",
       "loads": [
+        {
+          "label": "Cellulosic biorefineries needing electricity and process steam",
+          "band": "20–21 MW",
+          "note": "named DOE-backed facility; useful combined-heat-and-power load, but above one small microreactor",
+          "band_full": "21 MW gross electricity plus extracted process steam at the Hugoton facility",
+          "sources": [
+            {
+              "label": "U.S. Department of Energy — Abengoa Bioenergy",
+              "url": "https://www.energy.gov/edf/abengoa-bioenergy",
+              "quote": "generate up to 21 MW of electricity that powers the cellulosic ethanol plant",
+              "status": "fetched"
+            }
+          ],
+          "verdict": "supports",
+          "published": "DOE's Hugoton example used up to 21 MW of cogeneration to supply the biorefinery, with steam extraction meeting the plant's process-steam demand.",
+          "delta_note": "A 5–20 MW reactor block could cover part of the duty; the published facility used 21 MW gross."
+        },
         {
           "label": "Large lighted greenhouse campuses",
           "band": "1–8 MW",

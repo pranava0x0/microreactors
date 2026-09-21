@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "captured": "2026-09-21",
+    "scope": "Fresh application, news, contract and agreement sweep across the eight vendors in data/vendors.json plus adjacent advanced-reactor developers.",
+    "method": "Targeted web searches followed by reads of the cited primary source. Existing records were checked before promotion.",
+    "rule": "Definitive contracts, regulatory actions, achieved milestones and non-binding memoranda remain separate classes. An agreement is not treated as a reactor order unless the source names a purchase or committed capacity."
+  },
+  "promoted": [
+    {
+      "id": "antares-centrus-haleu-contract",
+      "class": "definitive fuel contract",
+      "date": "2026-09-17",
+      "destination": ["data/news.json", "data/vendors.json"],
+      "source": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-antares-sign-multi-year-haleu-supply-contract"
+    },
+    {
+      "id": "westinghouse-evinci-criticality",
+      "class": "achieved technical milestone",
+      "date": "2026-09-16",
+      "destination": ["data/news.json", "data/vendors.json"],
+      "source": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone"
+    },
+    {
+      "id": "xenergy-centrica-gda",
+      "class": "formal regulatory step under an existing partnership",
+      "date": "2026-09-15",
+      "destination": ["data/news.json"],
+      "source": "https://investors.x-energy.com/news-releases/news-release-details/centrica-x-energy-advance-nuclear-plans-uk-regulators-begin"
+    },
+    {
+      "id": "radiant-centrus-haleu-contract",
+      "class": "definitive fuel contract",
+      "date": "2026-09-08",
+      "destination": ["data/news.json", "data/vendors.json"],
+      "source": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-radiant-announce-long-term-partnership-domestic"
+    },
+    {
+      "id": "nano-enveniam-mou",
+      "class": "non-binding memorandum",
+      "date": "2026-09-04",
+      "destination": ["data/news.json"],
+      "source": "https://nanonuclearenergy.gcs-web.com/news-releases/news-release-details/nano-nuclear-energy-and-enveniam-sign-memorandum-understanding"
+    }
+  ],
+  "application_examples": [
+    {
+      "id": "subsea-compute",
+      "result": "promoted with measured 240 kW demonstration load; commercial campus figures remain contextual",
+      "source": "https://www.microsoft.com/en-us/research/project/natick/facts-and-figures/"
+    },
+    {
+      "id": "direct-air-capture",
+      "result": "promoted as a correction: DOE's 270-280 MW estimate makes a megaton hub a fleet or larger-reactor load, not one microreactor",
+      "source": "https://www.energy.gov/sites/default/files/2023-01/STAS_v2_2022-12-16.pdf"
+    },
+    {
+      "id": "spaceport-cryogenics",
+      "result": "promoted without an MW band; NASA supports continuous liquefaction and zero-boil-off duty but not the prior 5-30 MW estimate",
+      "source": "https://ntrs.nasa.gov/api/citations/20110008624/downloads/20110008624.pdf"
+    },
+    {
+      "id": "arctic-radar",
+      "result": "promoted without an MW band; Canada supports the remote-site and bulk-fuel case but not the prior demand or availability estimate",
+      "source": "https://www.canada.ca/en/department-national-defence/corporate/reports-publications/proactive-disclosure/nddn-main-estimates-2-may-2023/domestic-continental-defence.html"
+    },
+    {
+      "id": "cellulosic-biorefinery",
+      "result": "promoted with DOE's 21 MW gross cogeneration example and process-steam duty",
+      "source": "https://www.energy.gov/edf/abengoa-bioenergy"
+    }
+  ],
+  "vendor_coverage": [
+    {"vendor": "Antares Nuclear", "new_since_prior_capture": true, "result": "definitive Centrus HALEU contract"},
+    {"vendor": "Radiant Nuclear", "new_since_prior_capture": true, "result": "definitive Centrus HALEU contract"},
+    {"vendor": "Westinghouse eVinci", "new_since_prior_capture": true, "result": "DOE-confirmed criticality; no new customer contract value"},
+    {"vendor": "BWXT BANR", "new_since_prior_capture": false, "result": "no new microreactor-specific contract beyond Janus found"},
+    {"vendor": "General Atomics GA-TES", "new_since_prior_capture": false, "result": "company Janus release confirms milestone-based OTA; value and delivery date remain undisclosed"},
+    {"vendor": "Valar Atomics", "new_since_prior_capture": false, "result": "Utah land agreement surfaced, but no primary document with commercial power terms was found; not promoted"},
+    {"vendor": "Aalo Atomics", "new_since_prior_capture": false, "result": "no post-July customer contract found; Crusoe partnership already predates this sweep"},
+    {"vendor": "Oklo Aurora", "new_since_prior_capture": false, "result": "no new reactor or fuel contract after the existing Meta prepayment and Centrus LOI found"}
+  ],
+  "adjacent_coverage": [
+    {"developer": "X-energy", "result": "UK GDA acceptance promoted; up-to-6-GW plan remains an intention, not an order"},
+    {"developer": "NANO Nuclear Energy", "result": "Enveniam MOU promoted as non-binding; no customer, site, capacity, price or delivery date"}
+  ],
+  "excluded": [
+    "A search result described a future-dated September 30 NASA award to Antares. The capture date is September 21, so it was excluded.",
+    "Secondary reports of a Valar Utah land agreement were not promoted without the underlying executed document and commercial terms.",
+    "General announcements, financing and media appearances were excluded unless they changed a contract, application, regulatory or operating state."
+  ]
+}
