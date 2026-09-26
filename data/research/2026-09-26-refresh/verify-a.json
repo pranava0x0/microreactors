@@ -274,6 +274,39 @@
    "sources": [
     {"label": "Department of Energy — Demonstration of Microreactor Experiments (DOME)", "url": "https://www.energy.gov/ne/demonstration-microreactor-experiments-dome", "quote": "Preparations are under way for DOME's inaugural experiment using nuclear fuel: a year-long testing programme for Radiant Energy's Kaleidos Demonstration Unit is scheduled to begin this Spring", "status": "fetched"}
    ]
+  },
+  {
+   "id": "check-radiant-2",
+   "target": "radiant",
+   "file": "vendors",
+   "claim": "2026 Q3: DOME campaign complete: criticality through 150 h unattended run, status target",
+   "verdict": "confirmed",
+   "evidence": "As of Radiant's last public update (shipment of the unit to INL, 2026-08-13) it had not yet been confirmed critical or begun the five-phase sequence; however the Q3 2026 window runs through 2026-09-30, four days after today, so this target has not yet elapsed and cannot be scored met or missed.",
+   "sources": [
+    {"label": "Interesting Engineering — US: Radiant sends portable nuclear reactor on a 1,000-mile road trip to prove readiness (2026)", "url": "https://interestingengineering.com/energy/kaleidos-nuclear-reactor-begins-road-trip", "quote": "Radiant embarked on a five-phase reactor development testing program", "status": "snippet-only"}
+   ]
+  },
+  {
+   "id": "check-radiant-3",
+   "target": "radiant",
+   "file": "vendors",
+   "claim": "2026-08-26: Won the largest Janus award — up to $750M to deploy 15 Kaleidos units by 2030, starting with three at Fort Benning, GA, status done",
+   "verdict": "confirmed",
+   "evidence": "Radiant's own release explicitly claims an already-executed, binding agreement (unlike its four Janus peers): the Army in partnership with DIU 'has executed a binding agreement totaling up to $750 million dollars' for 15 Kaleidos units starting with three at Fort Benning.",
+   "sources": [
+    {"label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028 (2026)", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "quote": "Radiant Industries secured a binding Janus agreement worth up to $750 million", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-radiant-4",
+   "target": "radiant",
+   "file": "vendors",
+   "claim": "2026-09-08: Signed a definitive multi-year HALEU supply contract with Centrus; prepayments disclosed, volume and price undisclosed, status done",
+   "verdict": "confirmed",
+   "evidence": "Centrus's own SEC exhibit for this release carries a PRNewswire dateline of 'BETHESDA, Md., Sept. 8, 2026', matching the shipped date exactly, even though the release's own headline/filing metadata elsewhere shows Sept. 9 — both point to the same signing, and 09-08 is directly supported by the primary release's own dateline.",
+   "sources": [
+    {"label": "Centrus Energy Corp. — SEC Form 8-K Exhibit 99.1: Centrus and Radiant Announce Long-Term Partnership for Domestic HALEU (2026)", "url": "https://www.sec.gov/Archives/edgar/data/0001065059/000162828026061036/ex991-centrusandradianta.htm", "quote": "BETHESDA, Md., Sept. 8, 2026 /PRNewswire/", "status": "fetched"}
+   ]
   }
  ]
 }
