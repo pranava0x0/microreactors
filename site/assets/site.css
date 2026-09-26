@@ -516,9 +516,9 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
   color:var(--antares-red);border-radius:var(--radius-control);white-space:nowrap}
 /* ---------- precedents & market subpanels ---------- */
 .precgroup{margin-bottom:var(--space-8)}
-.precgrouphead{font-size:var(--size-body);font-weight:var(--weight-semibold);margin:var(--space-6) 0 var(--space-3);
-  color:var(--text-secondary)}
-.precgrouphead .cnt{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+.precgrouphead{font-size:var(--size-body);font-weight:var(--weight-semibold);color:var(--text-secondary)}
+details.precgroup{border-bottom:1px solid var(--border-subtle);padding:var(--space-2) 0}
+details.precgroup[open] > .precgrid{margin:var(--space-3) 0 var(--space-4)}
 details.prec .body p.copyline{border-left:2px solid var(--antares-red);padding-left:var(--space-3);color:var(--text-primary)}
 .precgroup .prose{margin-bottom:var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 .precgrid{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
@@ -552,6 +552,16 @@ details.prec .body .k{color:var(--text-tertiary)}
 .pw .st{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);white-space:nowrap}
 .pw p{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin:0}
+/* Rules are disclosures since 2026-09-26: name, status and the lead sentence in
+   the summary, the rest of the mechanism and its sources on tap. */
+details.pw > summary{list-style:none;cursor:pointer;display:grid;gap:var(--space-2);touch-action:manipulation}
+details.pw > summary::-webkit-details-marker{display:none}
+details.pw > summary .nm::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-caption);
+  display:inline-block;margin-right:var(--space-2);transition:transform var(--dur-fast) var(--ease-standard)}
+details.pw[open] > summary .nm::before{transform:rotate(90deg)}
+details.pw > summary:hover .nm{color:var(--antares-red)}
+details.pw .pwlead{color:var(--text-primary)}
+details.pw > p{margin-top:var(--space-2)}
 .trackblurb{margin-bottom:var(--space-6)}
 /* ---------- evidence: source register ---------- */
 .regsearch{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;
@@ -623,6 +633,16 @@ footer a{color:var(--text-secondary);text-decoration:underline;text-underline-of
    same closed-state behaviour, no new disclosure CSS. Only the inner beats and
    the sector headings are new. */
 .instband{margin-top:var(--space-10);border-top:1px solid var(--border-subtle);padding-top:var(--space-6)}
+details.instband > summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:var(--space-3);
+  min-height:44px;touch-action:manipulation}
+details.instband > summary::-webkit-details-marker{display:none}
+details.instband > summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  transition:transform var(--dur-fast) var(--ease-standard)}
+details.instband[open] > summary::before{transform:rotate(90deg)}
+details.instband > summary h3{margin:0;font-size:var(--size-heading-3)}
+details.instband > summary:hover h3{color:var(--antares-red)}
+details.instband > summary .cnt{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+details.instband > .prose{margin-top:var(--space-4)}
 .instband .prose{margin-bottom:var(--space-5);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 details.prec .body .beat{margin-top:var(--space-4)}
 details.prec .body .beat > .k{display:block;color:var(--text-tertiary);
@@ -663,7 +683,11 @@ details.benchsector > .precgrid{padding:0 var(--space-4) var(--space-4)}
    `details` so it can never match a non-details element carrying the same class. */
 details.prec:not([open]) > :not(summary),
 details.sector:not([open]) > :not(summary),
-details.benchsector:not([open]) > :not(summary){display:none}
+details.benchsector:not([open]) > :not(summary),
+details.pw:not([open]) > :not(summary),
+details.instband:not([open]) > :not(summary),
+details.newsmonth:not([open]) > :not(summary),
+details.precgroup:not([open]) > :not(summary){display:none}
 
 /* "Why a small reactor, case by case" — every microreactor-specific note on the
    site, gathered onto the Top options sub-tab. One disclosure per group, reusing
@@ -764,11 +788,29 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
   letter-spacing:var(--track-label);padding:var(--space-2) var(--space-3);cursor:pointer;
   min-height:44px}
 .newschip.on{border-color:var(--antares-red);color:var(--antares-red)}
-.newsmonth{margin-bottom:var(--space-8)}
+/* Phones: filter chips scroll in one row instead of wrapping into six (News had
+   eleven chips filling the first screen). */
+@media(max-width:639px){
+  .newsfilter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin-right:calc(-1 * var(--gutter-page));padding-right:var(--gutter-page)}
+  .newsfilter::-webkit-scrollbar{display:none}
+  .newsfilter .newschip{flex:0 0 auto}
+}
+.newsmonth{margin-bottom:var(--space-6)}
+details.newsmonth > summary,details.precgroup > summary{list-style:none;cursor:pointer;display:flex;
+  align-items:baseline;gap:var(--space-3);min-height:44px;touch-action:manipulation}
+details.newsmonth > summary::-webkit-details-marker,details.precgroup > summary::-webkit-details-marker{display:none}
+details.newsmonth > summary::before,details.precgroup > summary::before{content:"\25B8";color:var(--antares-red);
+  font-size:var(--size-caption);transition:transform var(--dur-fast) var(--ease-standard)}
+details.newsmonth[open] > summary::before,details.precgroup[open] > summary::before{transform:rotate(90deg)}
+details.newsmonth > summary .cnt,details.precgroup > summary .cnt{font-family:var(--font-mono);
+  font-size:var(--size-caption);color:var(--text-tertiary)}
+details.precgroup > summary:hover h4,details.newsmonth > summary:hover h3{color:var(--antares-red)}
+details.precgroup > summary h4{margin:0}
 .newsmonth h3{font-size:var(--size-caption);text-transform:uppercase;
-  letter-spacing:var(--track-label);color:var(--text-tertiary);
-  border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
-  margin:0 0 var(--space-4) 0}
+  letter-spacing:var(--track-label);color:var(--text-tertiary);margin:0}
+details.newsmonth > summary{border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
+  margin-bottom:var(--space-2)}
 .newsitem{border-bottom:1px solid var(--border-subtle);min-width:0}
 .newsitem > summary{list-style:none;cursor:pointer;padding:var(--space-4) 0 var(--space-4) var(--space-5);
   position:relative;min-height:44px}

@@ -1212,8 +1212,11 @@
       }).join(""));
     render($("policy-precedents"),
       mgroups.map(function (g) {
-        return '<div class="precgroup"><h4 class="precgrouphead">' + esc(g.name) + ' <span class="cnt">' +
-          g.items.length + "</span></h4>" +
+        /* Each group is a disclosure, closed until opened or until a filter
+           chip picks something inside it: 48 open rows were thirteen phone
+           screens. */
+        return '<details class="precgroup"><summary><h4 class="precgrouphead">' + esc(g.name) + "</h4>" +
+          '<span class="cnt">' + g.items.length + "</span></summary>" +
           '<div class="precgrid">' +
           g.items.map(function (p) {
             return '<details class="prec" data-type="' + esc(p.type || "") + '"><summary><span class="nm">' +
@@ -1229,7 +1232,7 @@
               (p.relevance ? '<p class="copyline"><span class="k">What an orderbook could copy \u00b7 </span>' +
                 esc(p.relevance) + "</p>" : "") +
               srcList(p.sources) + "</div></details>";
-          }).join("") + "</div></div>";
+          }).join("") + "</div></details>";
       }).join(""));
     $("prec-filter").addEventListener("click", function (e) {
       var b = e.target.closest(".newschip");
@@ -1244,6 +1247,8 @@
       });
       Array.prototype.forEach.call($("policy-precedents").querySelectorAll(".precgroup"), function (g) {
         g.hidden = !g.querySelector("details.prec:not([hidden])");
+        // A chosen kind opens every group holding one; "All" closes them again.
+        g.open = !!t && !g.hidden;
       });
     });
   }
@@ -1269,7 +1274,8 @@
     var instrumentBand = function (groupId) {
       var recs = INST[groupId];
       if (!recs || !recs.length) { return ""; }
-      return '<div class="instband"><div class="subhead"><h3>How the deal gets signed</h3></div>' +
+      return '<details class="instband"><summary><h3>How the deal gets signed</h3>' +
+        '<span class="cnt">' + recs.length + " instruments</span></summary>" +
         '<p class="prose">' + recs.length + " ways a deal like this gets done. Each one shows " +
         "who signs, who has already done it without a reactor, and what changes once a " +
         "reactor is involved.</p>" +
@@ -1309,7 +1315,7 @@
                 "</ul></div>"
               : "") +
             srcList(m.sources) + "</div></details>";
-        }).join("") + "</div></div>";
+        }).join("") + "</div></details>";
     };
 
     render($("pathways"), P.groups.map(function (g) {
@@ -1320,9 +1326,15 @@
           var tag = pw.kind === "idea" ? ' <span class="ideatag">idea</span>' : "";
           var srcs = (pw.sources || []).length ? cite(pw.sources)
             : (pw.kind === "idea" ? "" : '<span class="nosrc">no source yet</span>');
-          return '<div class="pw"><div class="top"><span class="nm">' + esc(pw.name) + "</span>" +
+          /* Name, status and the first sentence stay visible; the rest of the
+             mechanism and its sources open on tap. Rendered in full, the diesel
+             group's ten rules ran to twelve phone screens (UAT 2026-09-26). */
+          var lead = firstSentenceOf(pw.mechanism);
+          var rest = String(pw.mechanism || "").slice(lead.length).trim();
+          return '<details class="pw"><summary><div class="top"><span class="nm">' + esc(pw.name) + "</span>" +
             '<span class="st">' + esc(pw.status) + "</span>" + tag + "</div>" +
-            "<p>" + esc(pw.mechanism) + " " + srcs + "</p></div>";
+            '<p class="pwlead">' + esc(lead) + "</p></summary>" +
+            "<p>" + (rest ? esc(rest) + " " : "") + srcs + "</p></details>";
         }).join("") + "</div>" + instrumentBand(g.id) + "</div>";
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
@@ -1397,6 +1409,8 @@
     if (!el) { return; }
     var all = $("news-filter").querySelector('.newschip[data-cat=""]');
     if (el.hidden && all) { all.click(); }
+    var month = el.closest("details.newsmonth");
+    if (month) { month.open = true; }
     el.open = true;
     el.scrollIntoView({ block: "start" });
   }
@@ -1446,8 +1460,11 @@
        a phone while Policy fitted 74 into 12 by collapsing. The summary carries the
        date, the category, whether the instrument binds, and the headline, so nothing
        here has to be opened to be triaged. */
-    render($("newslist"), months.map(function (m) {
-      return '<div class="newsmonth"><h3>' + esc(pretty(m)) + "</h3>" +
+    /* Months are disclosures: the newest two open, older ones one tap away with
+       their count in view. 47 rows ran to nine phone screens. */
+    render($("newslist"), months.map(function (m, mi) {
+      return '<details class="newsmonth"' + (mi < 2 ? " open" : "") + '><summary><h3>' + esc(pretty(m)) +
+        '</h3><span class="cnt">' + byMonth[m].length + "</span></summary>" +
         byMonth[m].map(function (it) {
           return '<details class="newsitem" id="n-' + esc(it.id) + '" data-cat="' + esc(it.category || "") + '">' +
             "<summary>" +
@@ -1462,7 +1479,7 @@
             '<p class="nwhy">' + esc(it.why_it_matters) + "</p>" +
             (it.binding_note ? '<p class="nbindnote">' + esc(it.binding_note) + "</p>" : "") +
             "</div></details>";
-        }).join("") + "</div>";
+        }).join("") + "</details>";
     }).join(""));
     $("news-filter").addEventListener("click", function (e) {
       var b = e.target.closest(".newschip");
@@ -1474,8 +1491,10 @@
       Array.prototype.forEach.call($("newslist").querySelectorAll(".newsitem"), function (it) {
         it.hidden = !!cat && it.dataset.cat !== cat;
       });
-      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsmonth"), function (mo) {
+      Array.prototype.forEach.call($("newslist").querySelectorAll(".newsmonth"), function (mo, mi) {
         mo.hidden = !mo.querySelector(".newsitem:not([hidden])");
+        // A category filter opens every month that has a match; "All" restores the default.
+        mo.open = cat ? !mo.hidden : mi < 2;
       });
     });
   }

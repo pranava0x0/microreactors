@@ -413,6 +413,67 @@
      "status": "snippet-only"
     }
    ]
+  },
+  {
+   "id": "australia-remote-power-market",
+   "region": "Australia: Western Australia and Northern Territory off-grid and remote power",
+   "country": "AU",
+   "jurisdiction": "Australian state (Western Australia) and territory (Northern Territory)",
+   "power_system": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids supplying about 100,000 residents and 10,000 businesses, and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'ReGen' program; its Midwest Centralised Solar Project is adding solar-plus-battery to six towns (Cue, Meekatharra, Sandstone, Wiluna, Yalgoo and Norseman). In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy; its ARENA-funded Solar Energy Transformation Program (SETuP) added 10 MW of solar microgrids across 25 communities, saving an estimated 94 million litres of diesel over the program's 25-year life. Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
+   "price": "WA off-grid mine diesel generation has historically cost upwards of $0.50/kWh, with recent hybrid-displaced costs reported around $0.25-0.35/kWh; Horizon Power's ReGen rollout is backed by an A$27 million (about US$17.9 million) state-government commitment and is displacing diesel volumes such as 35,000 litres/year at Cockatoo Springs and 15,000 litres/year at Chile Creek",
+   "loads": [
+    {
+     "name": "Indigenous Essential Services remote NT grids",
+     "mw": "about 80 MW installed across 51 diesel power stations",
+     "note": "72 remote communities plus 66 outstations; diesel, partially solar-offset by the 10 MW SETuP program"
+    },
+    {
+     "name": "Agnew Gold Mine (Gold Fields/EDL)",
+     "mw": "18 MW wind + 4 MW solar + 13 MW/4 MWh battery + 16 MW gas",
+     "note": "off-grid hybrid microgrid, forecast up to 60% renewable"
+    }
+   ],
+   "nuclear_position": "Covered at the national level by this pass's australia-nuclear-legal-position record: nuclear generation is banned under Commonwealth law and under Western Australian and Northern Territory law alike. Neither Horizon Power nor Power and Water/Indigenous Essential Services has taken a public position on nuclear power for their remote systems.",
+   "microreactor_activity": "Industry advocacy rather than utility action: the Australian Nuclear Association's 2025 conference included a paper, 'The Case for Microreactors in Australia' (Irwin, ANA2025), and the advocacy group Nuclear for Australia argued in 2026 that remote mines, communities and data centres are candidate markets, citing the 2026-06-04 criticality of Antares Nuclear's Mark-0 microreactor (100 kW-1 MW) at Idaho National Laboratory as a milestone that 'highlights emerging opportunities for Australia.' No Horizon Power, Power and Water/IES, or WA/NT government microreactor study, RFI or MOU was found.",
+   "blockers": [
+    "Nuclear power is banned under both Commonwealth law and Western Australian/Northern Territory law (see australia-nuclear-legal-position)",
+    "Horizon Power and Indigenous Essential Services are both already mid-rollout on solar-plus-battery and standalone power system programs (ReGen, SETuP, Midwest Centralised Solar) that are the funded, near-term alternative to diesel",
+    "Off-grid mine power is dominated by large, well-capitalised hybrid renewable-plus-gas microgrids (Agnew, Tropicana, Kathleen Valley) built by independent power producers on 10-15 year terms, which a reactor would have to displace or out-price",
+    "All identified microreactor interest in Australia is advocacy-stage (conference papers, industry commentary), with no utility, mine operator or government study found"
+   ],
+   "microreactor_read": "WA and the NT have exactly the diesel-cost profile (historically $0.50+/kWh, still $0.25-0.35/kWh even after hybridisation) and the off-grid scale (100+ mines, dozens of remote-community microgrids) that a 1-20 MW reactor should target, but a state and federal nuclear ban forecloses the market entirely for now, and the utilities and mine operators who would buy have already committed capital to solar-battery-gas hybrids -- microreactor advocacy here is still at the conference-paper stage, not a funded study.",
+   "sources": [
+    {
+     "label": "pv magazine Australia — Horizon rolls out renewable energy solutions for remote communities (2025-12-09)",
+     "url": "https://www.pv-magazine-australia.com/2025/12/09/horizon-rolls-out-renewable-energy-solutions-for-remote-communities/",
+     "quote": "$27 million (USD 17.9 million)",
+     "status": "fetched"
+    },
+    {
+     "label": "ARENA — Agnew Renewable Energy Microgrid project page",
+     "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/",
+     "quote": "forecast to deliver up to 60% renewable energy to the Agnew mine",
+     "status": "fetched"
+    },
+    {
+     "label": "Mining Technology — Going off-grid: the state of on-site power at Australian mines",
+     "url": "https://www.mining-technology.com/features/off-grid-on-site-power-australian-mines/",
+     "quote": "more than 100 mines (out of a total of 350)",
+     "status": "fetched"
+    },
+    {
+     "label": "Nuclear for Australia — US Microreactor Milestone Creates New Nuclear Opportunity for Australia (2026)",
+     "url": "https://www.nuclearforaustralia.com/u_s_microreactor_milestone_highlights_emerging_opportunities_for_australia",
+     "quote": "between 100 kW and 1 MW of electricity",
+     "status": "fetched"
+    },
+    {
+     "label": "Power and Water Corporation — Remote power sources",
+     "url": "https://www.powerwater.com.au/about/what-we-do/remote-operations/remote-power-sources",
+     "quote": "72 remote communities and 66 outstations ... 51 diesel-fired power stations ... about 80 megawatts",
+     "status": "snippet-only"
+    }
+   ]
   }
  ],
  "cases": [
@@ -444,6 +505,39 @@
      "label": "Utility Dive — Tesla, SolarCity ready diesel-reducing microgrid in American Samoa",
      "url": "https://www.utilitydive.com/news/tesla-solarcity-ready-diesel-reducing-microgrid-in-american-samoa/431053/",
      "quote": "The system it installed will offset the use of almost 110,000 gallons of diesel per year",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "agnew-gold-mine-edl-hybrid-microgrid",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "Agnew Gold Mine hybrid wind-solar-battery-gas microgrid",
+   "country": "AU",
+   "region": "Agnew, Northern Goldfields, Western Australia",
+   "parties": {
+    "host": "Gold Fields (Agnew Gold Mining Company Pty Ltd)",
+    "provider": "EDL (owner-operator)"
+   },
+   "instrument": "BOO",
+   "signed": "2019-06",
+   "term_years": 10,
+   "capacity": "18 MW wind (5 turbines) + 4 MW solar (10,000 panels) + 13 MW/4 MWh battery + 16 MW gas",
+   "capex": "A$111.6 million total, including an A$13.5 million ARENA grant",
+   "displaced": "diesel generation at the mine; the hybrid system is forecast to deliver up to 60% renewable energy to Agnew",
+   "summary": "EDL was contracted in June 2019 to design, build, own and operate a hybrid renewable microgrid for Gold Fields' Agnew Gold Mine in Western Australia's northern Goldfields, under a 10-year power supply agreement. The completed system -- five wind turbines (18 MW), a 4 MW solar farm, a 13 MW/4 MWh battery and a 16 MW gas power station -- reached commercial operation in May 2020 at a total project cost of A$111.6 million, including an A$13.5 million ARENA grant, and is forecast to deliver up to 60% renewable energy to the mine as Australia's first mine-site wind installation.",
+   "microreactor_read": "Agnew shows an independent power producer will finance, own and operate a roughly A$112 million hybrid plant against a single mine's 10-year offtake -- a microreactor pitching the same off-grid-mine market has to beat this hybrid's blended cost, not raw diesel, since diesel's share of Agnew's supply is already a residual balancing role behind wind, solar and storage.",
+   "sources": [
+    {
+     "label": "ARENA — Agnew Renewable Energy Microgrid project page",
+     "url": "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/",
+     "quote": "five wind turbines delivering an 18 MW wind farm, a 10,000 panel 4 MW solar farm and a 13 MW / 4 MWh Battery Energy Storage System",
+     "status": "fetched"
+    },
+    {
+     "label": "EDL — Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
+     "url": "https://edlenergy.com/project/agnew/",
+     "quote": "10-year agreement",
      "status": "fetched"
     }
    ]
