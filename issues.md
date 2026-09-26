@@ -326,3 +326,14 @@ one may simply have no live equivalent now that the project is off.
   2025 ONR review covers the Llynfi site, not the DP World Thames Freeport project.
 - **2026-09-26 · data · Antares Series C dated to a recap article — Fixed.** Announced 2026-07-27
   (TechCrunch, BusinessWire); the row said 2026-08-03, the date of a later recap.
+- **2026-09-26 · data · Site and prospect claims corrected by the verification pass — Fixed.** 44 checks
+  (all 16 sites, all 25 prospects): 37 confirmed. Penn State's letter of intent was *submitted*
+  2025-02-28 (the letter is dated 2025-02-17, which a 2026-08-23 fix had used for "told the NRC on");
+  UIUC's application notice of receipt was published 2026-04-21 and it was docketed 2026-05-18, not
+  "announced 2026-04-15"; Chalk River's vendor is NANO Nuclear since its 2025-10-22 purchase of
+  Global First Power; Wales' consenting route is a Significant (not Strategic) Infrastructure
+  Project; Doyon's obligations are $906M, not $895M. One verdict was itself wrong: the agent called
+  CVEA's vendor list unsupported after reading only the press release, but CVEA's September 2023
+  Ruralite article names Westinghouse, Oklo, NuScale and Radiant; the site now attributes the list
+  to that article and cites it. Root cause of the originals: **data bugs** (dates read off the wrong
+  document, a corporate change applied to one record and not its sibling).

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-29",
+    "captured": "2026-09-26",
     "purpose": "Candidate deployment SITES per Applications-tab category (US + abroad), with the regulatory/utility filing trail for each. Complements opportunities.json: that file tracks buyer instruments; this file tracks named physical sites and their filings. Rows that correspond to a tracker row carry tracker_id and add site-level facts only.",
     "method": "Depth-first: deep rows were built by reading primary documents (docket searches via tools/adams_search.py + tools/ferc_elibrary.py, pages cached via tools/fetch_source.py and indexed in data/research/source_index.json with URL + access date + SHA-256). Scan rows come from click-through on the Applications tab's citations plus web search, each with at least one source. No row is written without a source.",
     "depth_values": [
@@ -66,14 +66,15 @@
       "owner": "The Pennsylvania State University",
       "vendor": "Westinghouse (eVinci)",
       "power": "15 MWt",
-      "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-17 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
+      "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-28 (in a letter dated 2025-02-17) it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
       "filings": [
         {
           "forum": "NRC ADAMS",
           "type": "Notice of intent to submit a CP application (research reactor)",
           "id": "ML25059A029",
-          "date": "2025-02-17",
-          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf"
+          "date": "2025-02-28",
+          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf",
+          "note": "letter dated 2025-02-17, submitted 2025-02-28 (ML25059A029)"
         },
         {
           "forum": "NRC ADAMS",
@@ -92,6 +93,12 @@
           "quote": "The RR will be designed, constructed, licensed and operated at a thermal power level of 15 MWt",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/35aba5f2c9cde917.pdf)"
+        },
+        {
+          "label": "Penn State Engineering — FRONTIER letter of intent to the NRC (2025)",
+          "url": "https://news.engr.psu.edu/2025/frontier-westinghouse-nrc-evinci-microreactor.aspx",
+          "quote": "Penn State submitted a letter of intent to the NRC on Feb. 28",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -209,7 +216,7 @@
       "status": "paused",
       "depth": "deep",
       "owner": "Global First Power (OPG + USNC joint venture)",
-      "vendor": "USNC (MMR)",
+      "vendor": "NANO Nuclear (acquired Global First Power from USNC on 2025-10-22); formerly USNC (MMR)",
       "power": "up to 45 MWt process heat",
       "summary": "The richest foreign filing trail in the microreactor class and the first SMR licence application in Canada (announced 2019-04-02): a licence to prepare site under NSCA s.24(2) plus a CNSC-led environmental assessment under CEAA 2012, for an MMR delivering up to 45 MWt of process heat via molten salt at Canada's national laboratory campus, ~200 km northwest of Ottawa. CNSC staff paused all EA and licence-review work in 2024; parent USNC filed Chapter 11 in October 2024. CNSC's project page now reads 'Current Status: Paused' and its review-status page is archived.",
       "filings": [
@@ -248,6 +255,12 @@
           "quote": "announced their submission of the application",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/52f1d4a9784380b4.html)"
+        },
+        {
+          "label": "NANO Nuclear — finalizes acquisition of Global First Power from USNC (2025-10-22)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-finalizes-acquisition-of-global-first-power-from-usnc-strengthening-its-position-as-a-north-american-leader-in-nuclear-microreactor-development/",
+          "quote": "an approximately $640,000 liability owned by GFPL to the CNSC",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -350,7 +363,7 @@
       "owner": "University of Illinois Urbana-Champaign (NPRE)",
       "vendor": "NANO Nuclear (Kronos MMR; formerly USNC MMR — project continued after USNC's 2024 bankruptcy)",
       "power": "45 MWt (research reactor)",
-      "summary": "The longest-running university microreactor program to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC announced receipt of the construction permit application on 2026-04-15. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
+      "summary": "The longest-running university microreactor program to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC published notice of receipt of the construction permit application on 2026-04-21 and docketed it on 2026-05-18. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
       "filings": [
         {
           "forum": "NRC ADAMS / Federal Register",
@@ -394,6 +407,12 @@
           "url": "https://www.federalregister.gov/documents/2026/05/26/2026-10419/university-of-illinois-urbana-champaign-construction-permit-application",
           "quote": "The application was docketed on May 18, 2026",
           "status": "snippet-only"
+        },
+        {
+          "label": "Federal Register — U. of I. Urbana-Champaign Construction Permit Application, notice of receipt (2026-04-21)",
+          "url": "https://www.federalregister.gov/documents/2026/04/21/2026-07677/university-of-illinois-urbana-champaign-construction-permit-application",
+          "quote": "construction permit application is dated March 27, 2026",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -508,7 +527,7 @@
       "owner": "Last Energy UK (site control announced 2024-10)",
       "vendor": "Last Energy (PWR-20)",
       "power": "4 × 20 MWe (or 83 MWt heat per unit)",
-      "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Strategic Infrastructure Project application in July 2026, and targets a site license decision by December 2027.",
+      "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Significant Infrastructure Project (SIP) application in July 2026, and targets a site license decision by December 2027.",
       "filings": [
         {
           "forum": "ONR/Natural Resources Wales",
