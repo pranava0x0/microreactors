@@ -208,6 +208,7 @@ Sonnet agents only, two at a time, every file written incrementally.
 | islands | 12 island, territory and AUKUS/allied jurisdictions | 322K | 181 | 31 min | 12 regions, 3 cases (2 new), 0 validator errors; 11 of ~55 quotes were ellipsis joins or paraphrases and one misattributed a system peak to a cannery | yes, with a quote-repair pass in the main session |
 | filings | commission e-filing systems are not indexed by search | 422K | 186 | 36 min | 14 dockets (0 name a 1-20 MW reactor), 6 facility records; rate-limited mid-run, switched to curl against EIA-860M | partly: dockets shipped; the six facility records report on-site generation, not load, and were not used |
 | news | 16 leads needing a fetched primary page each | 237K | 82 | 19 min | 14 items, 0 validator errors; 1 duplicate of an existing record dropped | yes: 13 items shipped |
+| verify A | 40 shipped claims (tracker rows, vendor milestones, Janus labels) each needing the counterparty's newest statement | 295K | 138 | 28 min | 33 confirmed, 7 wrong: five Janus news items said "signed" against the Army's "down-selected for negotiation", a UK row carried the Welsh site's review, and a funding round was dated to a recap article | yes: every wrong verdict became a correction, and the Janus tracker/news split is now consistent |
 
 **Improvements.** (1) Ellipsis-joined quotes kept arriving despite the contract saying not to; the
 validator should reject a quote containing "..." or "…". (2) Ask for loads, not "capacity": a
