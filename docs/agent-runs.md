@@ -204,6 +204,16 @@ Sonnet agents only, two at a time, every file written incrementally.
 | agent | why an agent | tokens | tools | time | result | worth it |
 |---|---|---|---|---|---|---|
 | pooling | 24 cross-sector precedents need ~70 fetches; no local archive covered non-nuclear pooling | 270K | 103 | 25 min | 24 records, 0 validator errors, all 12 mechanism types, 6 failure cases; 3 of ~35 quotes needed narrowing to the page text | yes: every row shipped, and seven design elements now in the orderbook proposal |
+| north | 12 jurisdictions across Alaska, Canada, Greenland, the Nordics and polar stations; no enumeration existed | n/a (never returned a final message; its file was complete on disk) | n/a | ~40 min | 12 regions, 3 cases (all 3 duplicated existing benchmarks), 5 prospect answers | yes: the regions and answers shipped; the file-on-disk rule is why nothing was lost |
+| islands | 12 island, territory and AUKUS/allied jurisdictions | 322K | 181 | 31 min | 12 regions, 3 cases (2 new), 0 validator errors; 11 of ~55 quotes were ellipsis joins or paraphrases and one misattributed a system peak to a cannery | yes, with a quote-repair pass in the main session |
+| filings | commission e-filing systems are not indexed by search | 422K | 186 | 36 min | 14 dockets (0 name a 1-20 MW reactor), 6 facility records; rate-limited mid-run, switched to curl against EIA-860M | partly: dockets shipped; the six facility records report on-site generation, not load, and were not used |
+| news | 16 leads needing a fetched primary page each | 237K | 82 | 19 min | 14 items, 0 validator errors; 1 duplicate of an existing record dropped | yes: 13 items shipped |
+
+**Improvements.** (1) Ellipsis-joined quotes kept arriving despite the contract saying not to; the
+validator should reject a quote containing "..." or "…". (2) Ask for loads, not "capacity": a
+facility's on-site generation is not its demand, and the filings agent reported the former for five
+of six loads. (3) Tell agents which existing benchmark ids exist, so they do not re-find Red Dog,
+Kivalliq and Agnew.
 
 **One improvement.** The agent cited the same URL twice as two "sources" on 11 of 24 rows
 (Wikipedia and one trade page doing double duty). Harmless after `cite()` dedupes, but the

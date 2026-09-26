@@ -307,6 +307,39 @@
    "sources": [
     {"label": "Centrus Energy Corp. — SEC Form 8-K Exhibit 99.1: Centrus and Radiant Announce Long-Term Partnership for Domestic HALEU (2026)", "url": "https://www.sec.gov/Archives/edgar/data/0001065059/000162828026061036/ex991-centrusandradianta.htm", "quote": "BETHESDA, Md., Sept. 8, 2026 /PRNewswire/", "status": "fetched"}
    ]
+  },
+  {
+   "id": "check-evinci-1",
+   "target": "evinci",
+   "file": "vendors",
+   "claim": "2026-08-24: eVinci test assembly reached zero-power criticality at NCERC, status done",
+   "verdict": "confirmed",
+   "evidence": "Westinghouse's own release confirms the test 'was completed in partnership with Los Alamos and Idaho National Laboratories at the National Criticality Experiments Research Center (NCERC)...on August 24, 2026 at 10:39 a.m. PT', matching the claim exactly.",
+   "sources": [
+    {"label": "Westinghouse — Westinghouse eVinci Microreactor Achieves Zero-Power Criticality (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-achieves-zero-power-criticality", "quote": "was completed in partnership with Los Alamos and Idaho National Laboratories at the National Criticality Experiments Research Center (NCERC)...on August 24, 2026 at 10:39 a.m. PT", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-evinci-2",
+   "target": "evinci",
+   "file": "vendors",
+   "claim": "2026-09-03: Heated-core test reached criticality at 663°C and a 1,011°C peak at NCERC, status done",
+   "verdict": "confirmed",
+   "evidence": "DOE's own release states plainly: 'On September 3, 2026, the eVinci test reached criticality at 663 degrees Celsius', with a peak core temperature of 1,011°C described as 'a record-high temperature for a reactivity measurement at NCERC' — matching the claim's date and both figures.",
+   "sources": [
+    {"label": "Department of Energy — Westinghouse eVinci Microreactor Achieves Criticality Milestone (2026)", "url": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone", "quote": "On September 3, 2026, the eVinci test reached criticality at 663 degrees Celsius", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-evinci-3",
+   "target": "evinci",
+   "file": "vendors",
+   "claim": "2026-08-26: Selected for Janus at Fort Drum, NY, through Westinghouse Government Services, status done",
+   "verdict": "confirmed",
+   "evidence": "This vendor-row wording ('Selected') is accurate and, unlike the corresponding news_janus item (see check-army-janus-westinghouse-fort-drum-2026-08-26), does not overstate the OTA as signed: Westinghouse's own release says only that eVinci 'has been selected by the U.S. Department of the Army for the next phase of the Janus Program.'",
+   "sources": [
+    {"label": "Westinghouse — Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project", "quote": "the eVinci™ microreactor has been selected by the U.S. Department of the Army for the next phase of the Janus Program", "status": "fetched"}
+   ]
   }
  ]
 }
