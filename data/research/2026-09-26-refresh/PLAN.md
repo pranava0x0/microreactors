@@ -111,3 +111,17 @@ Still to do, in order:
    "tariff not fetched" regions (Railbelt, Yukon, NWT, Nunavik, Labrador, Svalbard, Scotland, Greenland).
 5. Merge north answers (#9, #13, #14) into strategy.json via merge_answers.py; update Home glance with regions.
 6. Final UAT (uat_audit.py), docs (README tabs, agent-runs), push, PR, inline review, Codex round, merge.
+
+## State after the resume (2026-09-26, later) — PR #22 open, all review rounds answered
+
+Done since the stop: steps 1-6 above; PR #22 opened, both review rounds (mine and Codex's)
+answered and fixed; verification B and the issues pass merged; every answer's numbers checked
+against its pages (fixes in issues.md). Checklist items 1-11 are done except the merge.
+
+Running now: **verification C** (`prompts/verify-c.md`, two Sonnet agents). Inputs
+`prompts/verify-c-claims-A.json` / `-B.json` (44 records whose prose carries a number the offline
+check could not find in any cached cited page); outputs `verify-c-A.json` / `verify-c-B.json`,
+written incrementally. If interrupted: relaunch with the same prompt; each agent resumes from
+its own file. Then apply `wrong`/`unsupported` corrections to the source pass files, re-run the
+integrate scripts (`integrate_regions.py`, `integrate_dockets.py`, `integrate_pooling.py`),
+`merge_news.py`, `merge_research.py`, the gates, and merge PR #22.
