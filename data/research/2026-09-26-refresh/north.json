@@ -28,7 +28,8 @@
    "No Nunavik-specific (as opposed to province-wide Quebec) nuclear policy statement found; Hydro-Quebec's own Nunavik page carries no capacity or nuclear figures",
    "Gahcho Kue mine's diesel capacity/consumption figures were not found in 2 searches (Ekati and Diavik were)",
    "A CBC piece on the Quaqtaq/Puvirnituq Nunavik wind project (worth ~60% of the two villages' needs, 96 million litres saved) could not be fetched (CBC access denied on 2 attempts, no mirror found) and is used only as a snippet-only lead, not a finding"
-  ]
+  ],
+  "revised": "2026-09-26, main session: numbers in every answer were checked against the pages; sources that block scripted fetches (SEC, canada.ca, GlobeNewswire, src.sk.ca, North of 60 Mining News) were read in a browser. Nunavut: 'reaffirmed' re-copied as 'reaffirms', the 'significant milestone' line is the release's, not the CEO's, and the TSR and MISO claims now cite Nukik's 2025-11-27 release. Red Dog: the 2026 budget is described as the article states it."
  },
  "regions": [
   {
@@ -673,7 +674,7 @@
    "for": "red-dog",
    "question": "Would NANA extend the land-and-PPA structure it gave TUGLIQ's solar project to a relocatable reactor, and what does 40,000 gallons a day come to per MWh at Teck's delivered price?",
    "status": "partial",
-   "finding": "Neither original figure is newly disclosed: Teck has still not published a $/gallon or $/MWh diesel cost for Red Dog, and no NANA statement on an ownership stake or PPA-style structure for a reactor was found, both consistent with the 2026-09-02 pass. What is new this pass: Teck reported on 2026-07-23 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, 6-12 miles north of the current mill) is progressing, with a connecting road 'substantially completed' and C$200-250 million budgeted for 2026 engineering, environmental baseline work and drilling. Aktigiruq alone hosts 42.2 million metric tons of indicated resource averaging 15.8% zinc, described as 'one of the world's largest undeveloped zinc resources.' This matters commercially because the mine's previously assumed 2031-2032 closure -- which any reactor's payback period depends on outliving -- may now be a conservative floor rather than a hard end date, though Teck has not itself given a revised closure year. The 8.8 MW Tugliq solar PPA remains under price negotiation as of March 2026 reporting and stays the operative precedent for how a reactor deal would likely be structured (third-party build-own-operate, selling power back under contract).",
+   "finding": "Neither original figure is newly disclosed: Teck has still not published a $/gallon or $/MWh diesel cost for Red Dog, and no NANA statement on an ownership stake or PPA-style structure for a reactor was found, both consistent with the 2026-09-02 pass. What is new this pass: Teck reported in July 2026 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, 6-12 miles north of the current mill) is progressing, with a connecting road 'substantially completed' and C$200-250 million budgeted for the extension project in 2026. Aktigiruq alone hosts 42.2 million metric tons of indicated resource averaging 15.8% zinc, described as 'one of the world's largest undeveloped zinc resources.' This matters commercially because the mine's previously assumed 2031-2032 closure -- which any reactor's payback period depends on outliving -- may now be a conservative floor rather than a hard end date, though Teck has not itself given a revised closure year. The 8.8 MW Tugliq solar PPA remains under price negotiation as of March 2026 reporting and stays the operative precedent for how a reactor deal would likely be structured (third-party build-own-operate, selling power back under contract).",
    "figures": {
     "red_dog_2026_mine_life_extension_budget": "C$200 million to C$250 million budgeted for 2026",
     "aktigiruq_indicated_resource": "42.2 million metric tons averaging 15.8% zinc",
@@ -706,7 +707,7 @@
    "for": "qulliq-nunavut",
    "question": "What is the Kivalliq Hydro-Fibre Link's current construction schedule and federal funding status (an updated angle for this pass; the qulliq-nunavut prospect's original next_question, on community capacity over 1 MW and QEC's SMR Action Plan listing, was already answered in the 2026-09-02 pass)?",
    "status": "answered",
-   "finding": "The most recent dedicated federal funding announcement (2024-03-21) added $2.8 million from Canada's Northern REACHE Program to the Kivalliq Hydro-Fibre Link's development phase, on top of $11.6 million already provided for planning/feasibility, with construction 'expected to begin by 2028' -- no more recent official date was found. Developer Nukik Corporation has since reported two concrete technical milestones: filing a Transmission Service Request with Manitoba Hydro (by December 2025 trade-press reporting) and becoming the first Arctic electricity developer in North America certified by the Midcontinent Independent System Operator (MISO). On 2026-07-07 the governments of Nunavut and Manitoba signed an MOU 'reaffirmed Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project,' which Nukik's CEO called 'another significant milestone' without giving a revised construction or financial-close date.",
+   "finding": "The most recent dedicated federal funding announcement (2024-03-21) added $2.8 million from Canada's Northern REACHE Program to the Kivalliq Hydro-Fibre Link's development phase, on top of $11.6 million already provided for planning/feasibility, with construction 'expected to begin by 2028' -- no more recent official date was found. Developer Nukik Corporation has since reported two concrete technical milestones: filing a Transmission Service Request with Manitoba Hydro (announced 2025-11-27) and becoming the first Arctic electricity developer in North America certified by the Midcontinent Independent System Operator (MISO). On 2026-07-07 the governments of Nunavut and Manitoba signed an MOU that 'reaffirms Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project,' which Nukik's release called 'another significant milestone' without giving a revised construction or financial-close date.",
    "figures": {
     "kivalliq_link_capacity": "150 megawatt, 1,200 kilometre transmission line with fibre-optic cabling",
     "federal_funding_2024": "$2.8 million (March 2024) plus $11.6 million provided earlier for planning/feasibility",
@@ -728,6 +729,12 @@
      "label": "GlobeNewswire (Nukik Corporation release) — Nukik Corporation Welcomes the MOU Signing Between the Governments of Nunavut and Manitoba (2026-07-08)",
      "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html",
      "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project",
+     "status": "fetched"
+    },
+    {
+     "label": "Nukik Corporation - Nukik reaches key milestones with Manitoba Hydro and Qulliq Energy Corporation (2025)",
+     "url": "https://nukik.ca/nukik-corporation-reaches-key-milestones-with-manitoba-hydro-and-qulliq-energy-corporation-to-advance-the-kivalliq-hydro-fibre-link/",
+     "quote": "Nukik has filed a Transmission Service Request (TSR) with Manitoba Hydro",
      "status": "fetched"
     }
    ]

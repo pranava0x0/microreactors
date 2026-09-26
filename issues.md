@@ -371,3 +371,15 @@ one may simply have no live equivalent now that the project is off.
   signing or from first power (3Q20): 9 to 10 years remain either way, under the 10-year flag test.
   Root cause: **data bug** (agent figures from search summaries placed in an extra field the quote
   gate never reads, because `sites` rows carried no sources).
+- **2026-09-26 · data · Prospect answers checked number by number — Fixed.** Every number in the
+  nine answers from this pass was searched for in its cited pages. Pages that block scripted
+  fetches (SEC, canada.ca, GlobeNewswire, src.sk.ca, North of 60 Mining News) were read in a
+  browser; their figures match (Oklo's $24.0 million, 4,750 kg and 15-75 MWe; Standard Nuclear's
+  50 kgU; SRC's $21.5 million; the Gunnar licence to 2031-05-31; Red Dog's C$200-250 million and
+  42.2 Mt at 15.8% zinc; the Kivalliq $2.8 million, $11.6 million and "by 2028"). Fixed: the Nunavut
+  answer quoted "reaffirmed" where the release says "reaffirms", credited the release's own "another
+  significant milestone" to Nukik's CEO, and cited the Manitoba Hydro TSR and MISO certification to
+  unnamed trade press (now Nukik's 2025-11-27 release, cached); Red Dog's 2026 budget carried a
+  breakdown the article does not give; the Oklo answer omitted that the same 2023 deck gives
+  "<$60 million" as estimated construction costs. Root cause: **data bugs** (paraphrase inside
+  quotation marks, and an agent's summary of a search result presented as a sourced fact).
