@@ -23,16 +23,39 @@ body{overflow-x:hidden}
   font-size:13px;font-weight:var(--weight-medium);letter-spacing:var(--track-nav);text-transform:uppercase;
   font-family:var(--font-core);transition:var(--transition-control);white-space:nowrap;
   touch-action:manipulation}
-@media(min-width:768px){.tab{font-size:15px;padding:var(--space-2) var(--space-4)}}
+@media(min-width:768px){.tab{font-size:14px;padding:var(--space-2) var(--space-3)}}
+/* Nine tabs on one row from 1280px: at 15px with 16px padding the strip needed
+   ~1,240px and parked Sources alone on a second row, 129px of chrome on a
+   800px-tall laptop screen (UAT 2026-09-26). */
+@media(min-width:1280px){.tab{letter-spacing:.07em;padding:var(--space-2) 10px}
+  .tabs{flex-wrap:nowrap}}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
 @media(max-width:767px){
   .navrow{display:block}
   .wordmark{display:block;margin:0 0 var(--space-1)}
-  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;
+}
+/* Below 1280px the nine tabs do not fit one row, so the strip scrolls instead of
+   wrapping (wrapping cost 143px of sticky chrome at 768px). */
+@media(max-width:1279px){
+  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
     -webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar{display:none}
   .tab{flex:0 0 auto}
+  /* The strip scrolls; a fade on whichever edge hides more tabs says so.
+     app.js toggles .more-left / .more-right from the strip's scroll position. */
+  .navrow{position:relative}
+  .navrow::before,.navrow::after{content:"";position:absolute;bottom:0;width:36px;height:44px;
+    pointer-events:none;opacity:0;transition:opacity var(--dur-fast) var(--ease-standard)}
+  /* Inset by the page gutter so the fade sits on the strip's clipped edge. */
+  .navrow::before{left:var(--gutter-page);background:linear-gradient(to left,transparent,var(--surface-page))}
+  .navrow::after{right:var(--gutter-page);background:linear-gradient(to right,transparent,var(--surface-page))}
+  .navrow.more-left::before,.navrow.more-right::after{opacity:1}
+}
+@media(min-width:900px) and (max-width:1279px){
+  .navrow::before{left:var(--gutter-page-lg)}
+  .navrow::after{right:var(--gutter-page-lg)}
 }
 
 /* ---------- type helpers ---------- */
@@ -61,6 +84,9 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
   color:var(--text-tertiary);text-decoration:none;margin-left:var(--space-1);
   vertical-align:super;line-height:1}
 .cite:hover{color:var(--antares-red);opacity:1}
+/* WCAG 2.2 target size (24px) on touch without changing the desktop look: the
+   chips were 12x14px and sat edge to edge. */
+@media(pointer:coarse){.cite{padding:6px 3px;margin-left:0;min-width:24px;text-align:center}}
 .nosrc{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--antares-red);
   margin-left:var(--space-1);vertical-align:super;line-height:1;white-space:nowrap}
 
@@ -134,11 +160,14 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .rowtop{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);align-items:start;cursor:pointer;
   position:relative}
 .rowtop:hover .rowname{color:var(--antares-red)}
-.rowtop .pill{margin-right:var(--space-6)}
-.rowtop::after{content:"\25BE";color:var(--antares-red);font-size:var(--size-caption);
-  position:absolute;right:0;top:var(--space-1);
-  transition:transform var(--dur-fast) var(--ease-standard)}
-.row.open .rowtop::after{transform:rotate(180deg)}
+
+.rowtop:hover{background:linear-gradient(to right,transparent,var(--surface-raised))}
+.rowmore{margin-left:auto;font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red);border:1px solid var(--antares-red-40);
+  padding:2px var(--space-2);white-space:nowrap}
+.rowmore::after{content:" \25BE";display:inline-block;transition:transform var(--dur-fast) var(--ease-standard)}
+.row.open .rowmore::after{transform:rotate(180deg)}
+.rowtop:hover .rowmore{background:var(--antares-red);color:var(--text-on-accent)}
 .rowname{font-size:var(--size-heading-3);font-weight:var(--weight-semibold);
   letter-spacing:var(--track-heading);transition:var(--transition-control)}
 .rowmeta{display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-2);
@@ -546,10 +575,28 @@ details.prec .body .beat p{margin-top:0}
 details.prec .body ul.blockers{margin:0;padding-left:var(--space-5);
   font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
 details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
-.benchsector{margin-bottom:var(--space-10)}
-.benchsector h4{font-size:var(--size-heading-3);margin:0 0 var(--space-4)}
-.benchsector h4 .cnt{font-family:var(--font-mono);font-size:var(--size-caption);
-  color:var(--text-tertiary);margin-left:var(--space-2)}
+/* Customer cost: one collapsed section per sector (2026-09-26). */
+details.benchsector{border:1px solid var(--border-subtle);margin-bottom:var(--space-3)}
+details.benchsector > summary{list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:auto 1fr auto;gap:var(--space-3);align-items:baseline;
+  padding:var(--space-4) var(--space-5);min-height:44px;touch-action:manipulation}
+details.benchsector > summary::-webkit-details-marker{display:none}
+details.benchsector > summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  transition:transform var(--dur-fast) var(--ease-standard)}
+details.benchsector[open] > summary::before{transform:rotate(90deg)}
+details.benchsector > summary:hover h4{color:var(--antares-red)}
+details.benchsector h4{font-size:var(--size-heading-3);margin:0}
+details.benchsector .cnt{font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);white-space:nowrap}
+details.benchsector > .precgrid{padding:0 var(--space-4) var(--space-4)}
+@media(max-width:640px){details.benchsector > summary{grid-template-columns:auto 1fr}
+  details.benchsector .cnt{grid-column:2;white-space:normal}}
+/* Source register: first page only until the reader searches or asks for all. */
+.reg.paged .rrow:nth-child(n+31){display:none}
+.showall{appearance:none;background:transparent;border:1px solid var(--border-default);color:var(--text-primary);
+  font-family:var(--font-core);font-size:var(--size-body-sm);font-weight:var(--weight-semibold);
+  padding:var(--space-3) var(--space-5);margin-top:var(--space-6);cursor:pointer;min-height:44px}
+.showall:hover{border-color:var(--antares-red);color:var(--antares-red)}
 
 /* Closed-state rule for every styled disclosure on the site. Without it the
    collapsed body still takes its full height — 25 closed instrument rows left a
@@ -557,7 +604,8 @@ details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
    enough once a details is author-styled, so state it explicitly. Scoped to
    `details` so it can never match a non-details element carrying the same class. */
 details.prec:not([open]) > :not(summary),
-details.sector:not([open]) > :not(summary){display:none}
+details.sector:not([open]) > :not(summary),
+details.benchsector:not([open]) > :not(summary){display:none}
 
 /* "Why a small reactor, case by case" — every microreactor-specific note on the
    site, gathered onto the Top options sub-tab. One disclosure per group, reusing

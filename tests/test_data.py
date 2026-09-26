@@ -28,7 +28,10 @@ def srcs_of(rec):
 # Homepages that are knowingly weak citations are not allowed to hide: either
 # the row's gaps note names the weakness, or the URL must carry a real path.
 URL_RE = re.compile(r"^https://[^\s]+$")
-BAND_RE = re.compile(r"^\d+(\.\d+)?–\d+(\.\d+)?\+? MW$")
+# A band is a range ("5–20 MW") or, where the source gives one figure, a single
+# value ("0.24 MW"). A range whose ends are equal ("0.24–0.24 MW") is a single
+# value misprinted and is rejected below.
+BAND_RE = re.compile(r"^\d+(\.\d+)?(–\d+(\.\d+)?)?\+? MW$")
 
 
 class SourceShape(unittest.TestCase):
@@ -131,6 +134,9 @@ class DemandBands(unittest.TestCase):
         self.assertGreater(len(loads), 40)
         for l in loads:
             self.assertRegex(l["band"], BAND_RE, f"load {l['label']!r} band {l['band']!r}")
+            ends = re.findall(r"\d+(?:\.\d+)?", l["band"])
+            if len(ends) == 2:
+                self.assertNotEqual(ends[0], ends[1], f"load {l['label']!r}: degenerate range {l['band']!r}")
 
     def test_every_load_cited_or_registered_uncited(self):
         """A load either carries a source or its label sits in _meta.uncited —

@@ -65,3 +65,27 @@ python3 tools/research_pass.py validate data/research/2026-09-26-refresh
 V=<scratch venv>/bin/python; $V tools/verify_quotes.py --cache
 $V -m unittest discover -s tests
 ```
+
+## UAT findings (before), 2026-09-26 — `uat_audit.py` in the scratch dir
+
+- Perf: FCP ~80 ms local; first load 571 KB raw (data.js 342 KB + data-news.js 90 KB + app.js 80 KB + CSS 54 KB); no console errors; no horizontal overflow at 375/768/1280.
+- Nav wraps to 2 rows at 768 and 1280 (129-143 px tall); on mobile the tab strip scrolls with no hint of more tabs.
+- Mobile home: hero is 922 px on an 812 px screen; nothing but the masthead above the fold.
+- Longest views (mobile screens): Source register 74, Customer cost 25, Vendors/all 14, Why/arguments 12, Policy/diesel 12, Policy/interconnection 10, News 9, Deals/all 8.
+- Applications "All sectors" = 8 bare collapsed headers: no summary of loads, today's power, or price.
+- Duplicate chips ("[10][10]") in Home "Also recent"; chips stack vertically there.
+- Citation chips are ~12x14 px on touch.
+- Hand-typed data in app.js: Why > "The loads" `topOptions` (six cards with $ ranges and citations that do not support them, e.g. spaceport "5-30 MW" cited to an Antares ANPI release, mining transmission "$100M, 5-10 years" cited to a CVEA page); Applications stat "$250-$850/MWh" hard-coded; Sites summary "5" load categories and "0" FERC hits hard-coded.
+- "0.24-0.24 MW" renders a degenerate range.
+- Tracker Janus row says NOT BINDING while the 2026-08-26 Janus award news items are binding: reconcile.
+
+## UI plan
+
+1. Nav: one row at >=1024 (tighter tab padding/tracking); mobile strip gets an edge fade and scrolls the active tab into view.
+2. Home = site overview: compact masthead + stat strip; "Top headlines" (precomputed in build_data, so the 90 KB news payload leaves the first load); "The site at a glance": one card per tab, question -> derived answer -> link.
+3. Applications: new default "Overview" = buyer segments on one price ladder (incumbent $/MWh band vs first-unit / mass-produced / optimized rungs), with who wins when, blocker, first deal, evidence counts (precomputed from strategy.json); sectors keep their sub-tabs; new "Regions" sub-tab from the regions research.
+4. Why > The loads: drop the hand-typed `topOptions`; point to the Applications overview.
+5. Rules & deal design: pooled-buying precedents by mechanism (new research) inside Deal design; new "Utility filings" sub-tab from the dockets research.
+6. Shorter long lists: source register paged (first 30 + filter + show all); Customer cost grouped per sector in collapsed sections with the price range in the summary; deal rows get a visible "Details" affordance.
+7. Chips: dedupe per cite(); 24 px minimum hit area on coarse pointers.
+8. Derive the hard-coded Sites and Applications stats.

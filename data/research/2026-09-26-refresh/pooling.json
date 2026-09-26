@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "captured": "2026-09-26",
+    "agent": "pooling",
+    "scope": "Type D precedents: pooled buying, buyers' clubs, AMCs, assurance contracts, shared ownership, mutual/parametric insurance, overrun cover, subscription payment — outside nuclear (2026-09-26-refresh wave 1 'pooling' partition)",
+    "angles_run": [
+      "Kickstarter all-or-nothing / Pebble smartwatch (assurance-contract)",
+      "Tesla Model 3 refundable $1,000 reservations (prepayment)"
+    ],
+    "absences": [
+      "placeholder — updated at end of pass"
+    ]
+  },
+  "precedents": [
+    {
+      "id": "kickstarter-pebble-assurance-contract",
+      "mechanism": "assurance-contract",
+      "sector": "consumer electronics",
+      "name": "Kickstarter all-or-nothing crowdfunding (Pebble smartwatch)",
+      "year": "2012",
+      "parties": "Individual backers pledged card-on-file funds; Pebble Technology Corp was the supplier; Kickstarter Inc. administered the fixed-goal, fixed-deadline pledge mechanism and released funds only if the goal was met.",
+      "size": "goal $100,000; raised $1 million in the first 28 hours; over $3 million within a month; closed having raised over $10 million",
+      "how_it_works": "Backers pledge a card-on-file amount against a fixed dollar goal and a fixed deadline; if the goal isn't reached, no backer is charged and the project gets nothing, which is the textbook 'assurance contract' solution to a threshold public-goods problem. Pebble cleared its $100,000 threshold within about two hours and kept collecting pledges for the rest of the campaign window, so Kickstarter released the full amount to Pebble as one lump sum rather than per-unit escrow. Backers got a unit once production shipped instead of cash back, so the guarantee each backer bought was that their money would never be spent unless enough other buyers joined.",
+      "outcome": "Pebble asked for $100,000, raised $1 million in the first 28 hours, passed $3 million within a month, and closed having raised over $10 million — proof the threshold mechanism can recruit far more buyers than the seller expected.",
+      "failure_mode": "The volume the assurance contract attracted outstripped Pebble's ability to execute: the company folded within about four years, and when Fitbit acquired its software/IP in December 2016, unfulfilled orders for the Pebble 2 and Pebble Core were cancelled outright and refunded rather than shipped.",
+      "microreactor_read": "Copy the hard threshold itself: no vendor is paid and no site work is committed unless a stated number of reactor orders (or dollars) clears a public bar by a public deadline — but pair it with a delivery-capacity cap so a rush of orders can't outrun the vendor the way it outran Pebble.",
+      "sources": [
+        {"label": "TechCrunch — Pebble Smart Watch Raises Over $3M On Kickstarter After Asking For Only $100K (2012)", "url": "https://techcrunch.com/2012/04/17/pebble-smart-watch-raises-over-3m-on-kickstarter-after-asking-for-only-100k", "quote": "Pebble raised $1 million in its first 28 hours", "status": "fetched"},
+        {"label": "BGR — Pebble Is Kickstarter's Worst Failure (2016)", "url": "https://www.bgr.com/business/pebble-kickstarter-fitbit-acquisition-pebble-core/", "quote": "those devices are being cancelled and refunds will be issued", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "tesla-model3-refundable-reservations-prepayment",
+      "mechanism": "prepayment",
+      "sector": "consumer goods (automotive)",
+      "name": "Tesla Model 3 refundable $1,000 reservations",
+      "year": "2016",
+      "parties": "Prospective buyers worldwide paid Tesla Motors directly; Tesla held the deposits and used the running reservation count as a public demand signal and production-priority queue; no dealer or bank intermediary.",
+      "size": "$1,000 refundable deposit per reservation; over 115,000 reservations within 24 hours; 232,000 within two days; over 325,000 within one week, representing potential sales over US$14 billion",
+      "how_it_works": "Buyers pay a small, fully refundable deposit to reserve a production slot rather than the car itself; the deposit buys queue position, not a locked price or delivery date, and can be pulled back in full at any time before the car is built. Tesla used the running reservation count as a live, public demand signal to justify production investment before a single Model 3 existed. Because deposits were refundable, Tesla carried the volume risk (whether reservation-holders would actually convert to buyers at delivery) while depositors carried none of the price or delivery-date risk.",
+      "outcome": "Tesla said it had over 115,000 reservations in the first 24 hours, 232,000 within two days, and over 325,000 within one week of the March 31, 2016 unveiling, worth over $14 billion in potential sales; Tesla kept the refundable structure for about two years before shifting new US/Canada reservations to a non-refundable $2,500 deposit.",
+      "microreactor_read": "A fully refundable deposit turns 'who wants one' into a hard, public, dollar-denominated number a vendor can take to its own capital providers before committing to build capacity — publish a live refundable-deposit count the same way, without implying any delivery date until volume is proven.",
+      "sources": [
+        {"label": "Wikipedia — Tesla Model 3, reservations (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Tesla_Model_3", "quote": "One week after the unveiling, Tesla said it had over 325,000 reservations", "status": "fetched"},
+        {"label": "CleanTechnica — Specifics Of Tesla Model 3 Reservations Revealed (2016)", "url": "https://cleantechnica.com/2016/03/29/specifics-of-tesla-model-3-reservations-revealed/", "quote": "the reservation fee, which is $1,000 in the United States, is fully refundable", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "bordeaux-en-primeur-wine-futures-prepayment",
+      "mechanism": "prepayment",
+      "sector": "luxury goods (wine)",
+      "name": "Bordeaux en primeur wine futures",
+      "year": "2011 vintage campaign (priced spring 2012)",
+      "parties": "Individual and trade wine buyers worldwide prepay Bordeaux chateaux, via negociants who allocate the futures; each buyer prepays individually into the same campaign with no pooled fund and no refund guarantee.",
+      "size": "2011 futures for Palmer, La Mission Haut-Brion and Cos d'Estournel were still priced 15%, 10% and 8% respectively above their own chateaux's 2008 retail levels",
+      "how_it_works": "Chateaux sell each vintage as a 'future' about 18-24 months before the wine is bottled and delivered, at an opening price the chateau itself sets; buyers prepay in full for an allocation on the bet that the eventual retail price will be higher than the futures price. The chateau captures early cash flow and shifts price risk for an unfinished, unbottled product onto the buyer; there is no collective threshold, no pooled refund fund, and no protection if the retail price two years later turns out lower than what was prepaid.",
+      "outcome": "For the widely panned 2011 vintage, several chateaux still priced their futures 8-15% above the same chateau's already-bottled 2008 vintage sitting on retail shelves, so buyers who prepaid gained nothing versus simply waiting; Chateau Latour announced the 2011 vintage would be its last en primeur offering and left the futures system entirely afterward.",
+      "failure_mode": "The prepayment carried full price risk with no refund path: buyers who locked in 2011 futures priced above prevailing retail levels for older vintages had no recourse, and the mismatch was severe enough that one of Bordeaux's five first growths quit the futures system rather than keep selling into it.",
+      "microreactor_read": "A prepayment-for-early-access model only works if the future price is credibly lower than the eventual market price; if the vendor prices the offtake at or above what a buyer could get later by waiting, participation collapses the way it did for Bordeaux after 2011 — reactor offtake prepayments need a visible, binding discount against the fallback price, not just priority.",
+      "sources": [
+        {"label": "Wine Spectator — Bordeaux 2011 Futures Fizzle (2012)", "url": "https://www.winespectator.com/articles/bordeaux-2011-futures-fizzle-47033", "quote": "many 2011s were still costlier than older vintages currently on retail shelves", "status": "fetched"},
+        {"label": "Wine Spectator — Chateau Latour Abandons Futures System (2012)", "url": "https://www.winespectator.com/articles/chateau-latour-abandons-futures-system-46662", "quote": "The 2011 vintage will be the last en primeur offering", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "apple-gtat-sapphire-prepayment-bankruptcy",
+      "mechanism": "prepayment",
+      "sector": "consumer electronics (advanced materials)",
+      "name": "Apple's $578 million prepayment to GT Advanced Technologies for sapphire",
+      "year": "2013-2014",
+      "parties": "Apple Inc. prepaid GT Advanced Technologies (GTAT) directly under a multi-year supply agreement; GTAT built and operated the Mesa, Arizona sapphire furnace plant; a single-buyer prepayment, not a pooled vehicle.",
+      "size": "$578 million multi-year prepayment agreed November 2013, paid in four installments to fund the Arizona plant; $439 million was still outstanding when GTAT filed Chapter 11 in October 2014",
+      "how_it_works": "Apple prepaid GTAT in four installments to fund the capital cost of a dedicated sapphire-furnace factory before a single usable panel had shipped, in exchange for exclusivity and a multi-year supply commitment, with the final $139 million installment released only if GTAT hit unspecified 'operational targets.' GTAT was contracted to repay the prepayment over five years starting in 2015 out of production proceeds, making Apple the plant's financier as well as its customer. Because the money was a repayable prepayment rather than equity or a grant, GTAT alone carried the production-yield risk; Apple's exposure was to GTAT's solvency, not to sapphire prices.",
+      "outcome": "GTAT filed for Chapter 11 bankruptcy on October 6, 2014, after it missed the operational targets tied to Apple's final installment and sapphire was left out of the iPhone 6 line entirely; the settlement freed GTAT from its Apple exclusivity and repaid Apple the $439 million outstanding balance, interest-free, from the proceeds of selling off the furnaces — Apple recovered its cash, but the sapphire-manufacturing venture the prepayment funded was liquidated.",
+      "failure_mode": "The prepayment concentrated volume and technology risk in one undiversified supplier: when GTAT couldn't hit the yield and cost targets implied by the contract, the whole facility failed at once, taking the prepayment's intended purpose down with it — a single-supplier prepayment has no diversification against exactly the execution risk it was meant to buy down.",
+      "microreactor_read": "A prepayment to a single first-of-a-kind vendor is a bet on that vendor's execution, not just on demand; spreading a cost-overrun or construction-prepayment pool across more than one vendor or site protects the buyer from the GTAT failure mode, where one factory's yield miss voided the whole arrangement.",
+      "sources": [
+        {"label": "TechCrunch — GT Advanced Technologies To End Sapphire Business And Settle Debt With Apple (2014)", "url": "https://techcrunch.com/2014/10/23/gt-advanced-technologies-to-end-sapphire-business-and-settle-debt-with-apple/", "quote": "Apple repaid the $439 million outstanding prepayment that it apparently won't see any tangible benefit from, without any interest", "status": "fetched"},
+        {"label": "The Motley Fool — Understanding GT Advanced Technology, Inc.'s Bankruptcy (2014)", "url": "https://www.fool.com/investing/general/2014/10/06/understanding-gt-advanced-technology-incs-bankrupt.aspx", "quote": "GTAT will receive approximately $578 million (the 'Prepayment Amount'), in four separate installments, as payment in advance for the purchase of sapphire goods", "status": "fetched"}
+      ]
+    }
+  ]
+}

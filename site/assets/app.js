@@ -45,7 +45,14 @@
   });
   function cite(sources) {
     if (!sources || !sources.length) return '<span class="nosrc">no source yet</span>';
-    return sources.map(function (s) {
+    // One chip per URL: a record citing the same page twice (two quotes from one
+    // release) printed "[10][10]" on the front page.
+    var seen = {};
+    return sources.filter(function (s) {
+      if (seen[s.url]) return false;
+      seen[s.url] = true;
+      return true;
+    }).map(function (s) {
       var snip = s.status === "snippet-only";
       return '<a class="cite" href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer" ' +
         'title="' + esc(s.label) + (snip ? " \u00b7 search-corroborated; page not directly fetched" : "") +
@@ -190,7 +197,27 @@
       else history.replaceState(null, "", "#" + here);
     }
     if (opts.scroll) window.scrollTo(0, 0);
+    revealActiveTab();
   }
+
+  /* On a phone the tab strip scrolls sideways. Say so with a fade on whichever
+     edge hides tabs, and bring the active tab into view after every switch:
+     landing on #sources used to leave its tab 500px off-screen to the right. */
+  var navrow = tablist.parentNode;
+  function markNavEdges() {
+    var max = tablist.scrollWidth - tablist.clientWidth;
+    navrow.classList.toggle("more-left", tablist.scrollLeft > 4);
+    navrow.classList.toggle("more-right", max > 4 && tablist.scrollLeft < max - 4);
+  }
+  function revealActiveTab() {
+    var on = tablist.querySelector('[aria-selected="true"]');
+    if (!on || tablist.scrollWidth <= tablist.clientWidth) { markNavEdges(); return; }
+    var box = tablist.getBoundingClientRect(), r = on.getBoundingClientRect();
+    tablist.scrollLeft += (r.left + r.width / 2) - (box.left + box.width / 2);
+    markNavEdges();
+  }
+  tablist.addEventListener("scroll", markNavEdges, { passive: true });
+  window.addEventListener("resize", markNavEdges);
 
   tablist.addEventListener("click", function (e) {
     var t = e.target.closest(".tab");
@@ -336,7 +363,8 @@
              the News tab's "executed/announced" words, which promise more
              than this field does. */
           '<span class="nbind ' + (o.binding ? "yes" : "no") + '">' +
-          (o.binding ? "binding" : "not binding") + "</span></div></div>" +
+          (o.binding ? "binding" : "not binding") + "</span>" +
+          '<span class="rowmore" aria-hidden="true">Details</span></div></div>' +
         '<span class="pill' + (o.track === "us-gov" ? " gov" : "") + '">' +
           esc(trackLabel(o.track)) + "</span>" +
       "</div>" +
@@ -389,11 +417,15 @@
       '<div class="sites-summary" id="sites-summary"></div>' +
       '<div class="sitefilters" id="site-filters"></div>' +
       '<div id="sites-content"></div>');
+    // Every tile counted from the rows. "5 load categories" and "0 FERC hits" were
+    // typed here and would have gone stale the day a sixth category landed.
+    var siteCats = {};
+    sites.forEach(function (x) { siteCats[x.category] = true; });
     render($("sites-summary"), [
       { n: String(sites.length), k: "candidate sites tracked" },
-      { n: "5", k: "load categories covered" },
+      { n: String(Object.keys(siteCats).length), k: "load categories covered" },
       { n: String(sites.filter(function (s) { return s.filings && s.filings.length; }).length), k: "sites with active filings", accent: true },
-      { n: "0", k: "FERC microreactor hits", accent: true }
+      { n: String((D.deployment_sites._meta.negative_findings || []).length), k: "confirmed negative docket searches", accent: true }
     ].map(function (x) {
       return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
         esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
@@ -622,9 +654,14 @@
       "for their published cost. " + esc(s.benchmarks_priced) + " give a price or a cost, and " +
       esc(s.benchmarks_filed) + " include the paperwork.");
 
+    /* One collapsed section per sector, its summary carrying the counts: 89 rows
+       rendered flat ran to 25 screens on a phone even with each row collapsed. */
     render($("benchmarks"), B.sectors.map(function (sec) {
-      return '<div class="benchsector"><h4>' + esc(sec.sector) +
-        ' <span class="cnt">' + sec.records.length + "</span></h4>" +
+      var nPriced = sec.records.filter(function (c) { return c.price || c.capex || c.displaced; }).length;
+      var nFiled = sec.records.filter(function (c) { return (c.filings || []).length; }).length;
+      return '<details class="benchsector"><summary><h4>' + esc(sec.sector) + "</h4>" +
+        '<span class="cnt">' + sec.records.length + " cases · " + nPriced + " priced" +
+        (nFiled ? " · " + nFiled + " with filings" : "") + "</span></summary>" +
         '<div class="precgrid">' + sec.records.map(function (c) {
           var facts = [
             ["Signed", c.signed], ["Term", c.term_years ? c.term_years + " years" : ""],
@@ -645,7 +682,7 @@
               ? '<p><span class="k">What a reactor would have to beat \u00b7 </span>' + esc(c.microreactor_read) + "</p>"
               : "") +
             filingList(c.filings) + srcList(c.sources) + "</div></details>";
-        }).join("") + "</div></div>";
+        }).join("") + "</div></details>";
     }).join(""));
   }
 
@@ -1334,7 +1371,8 @@
      for. The match string is built once here rather than re-derived per keystroke. */
   function renderRegister() {
   var reg = D.sources_index || [];
-  render($("register"), '<div class="reg">' + reg.map(function (r) {
+  var PAGE = 30;
+  render($("register"), '<div class="reg paged">' + reg.map(function (r) {
     var uses = r.uses.slice(0, 3).join(" · ") + (r.uses.length > 3 ? " · +" + (r.uses.length - 3) + " more" : "");
     var q = (r.n + " " + r.label + " " + r.host + " " + r.uses.join(" ")).toLowerCase();
     return '<div class="rrow" id="src-' + r.n + '" data-q="' + esc(q) + '"><span class="rn">' + r.n + "</span>" +
@@ -1344,6 +1382,10 @@
       esc(r.uses.join(" · ")) + '">cited by: ' + esc(uses) + '</span></span>' +
       '<span class="host">' + esc(r.host) + "</span></div>";
   }).join("") + "</div>");
+  if (reg.length > PAGE) {
+    $("regall").textContent = "Show all " + reg.length + " sources";
+    $("regall").hidden = false;
+  }
 
   /* 544 rows is 98 screens on a phone. The filter is the entry point; scrolling is
      the fallback. */
@@ -1355,10 +1397,21 @@
       count.textContent = n === reg.length ? reg.length + " sources"
         : n + " of " + reg.length + " sources";
     };
+    /* 588 rows ran to 74 screens on a phone. The first page shows the first 30
+       sources in reading order; typing searches every row, and "Show all" or a
+       #src-N deep link lifts the page limit. */
+    var list = $("register").querySelector(".reg"), more = $("regall");
+    var unpage = function () {
+      list.classList.remove("paged");
+      more.hidden = true;
+    };
+    more.addEventListener("click", unpage);
+    if (/^#src-\d+$/.test(location.hash)) { unpage(); }
     say(reg.length);
     box.addEventListener("input", function () {
       if (!rows) { rows = $("register").querySelectorAll(".rrow"); }
       var q = box.value.trim().toLowerCase(), shown = 0;
+      if (q) { unpage(); }
       Array.prototype.forEach.call(rows, function (row) {
         var on = !q || row.dataset.q.indexOf(q) !== -1;
         row.hidden = !on;
@@ -1368,6 +1421,7 @@
     });
     /* A chip lands on #src-N; if a filter is up, that row may be hidden. */
     window.addEventListener("hashchange", function () {
+      if (/^#src-\d+$/.test(location.hash)) { unpage(); }
       if (/^#src-\d+$/.test(location.hash) && box.value) {
         box.value = ""; box.dispatchEvent(new Event("input"));
         var t = document.getElementById(location.hash.slice(1));
