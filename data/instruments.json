@@ -1,9 +1,10 @@
 {
  "_meta": {
-  "captured": "2026-08-29",
+  "captured": "2026-09-26",
   "pass": [
    "data/research/deep-2026-08-24",
-   "data/research/2026-08-28-apps"
+   "data/research/2026-08-28-apps",
+   "data/research/2026-09-26-cases"
   ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
@@ -287,6 +288,16 @@
      "Large integrated sawmills and wood-products plants: no per-mill power purchase agreement, CHP contract or utility large-load deal was found. Trade press (Forest Business Network, Random Lengths) and USDA Forest Service materials report only aggregate industry energy use, matching the same absence sectors.json already recorded for this load.",
      "Chemical plants: searched for a named US chemical plant on-site CHP PPA or utility large-load agreement (Dow, LyondellBasell, BASF Freeport); two angles surfaced only general CHP suitability statements (already captured qualitatively in sectors.json's context block) with no plant-specific contract, MW figure or price beyond the Dow/X-energy SMR case written up below.",
      "Semiconductor fabs: Samsung's Taylor, Texas fab is served by Oncor and county officials cite reliability commitments, but no verified MW figure or contract term for the Oncor-Samsung arrangement was found in a fetched primary or trade source (a search-summary figure of '30 MW initial, 60 MW LOI' could not be confirmed by fetching a page and is dropped per the snippet-only rule); Micron's Boise, Idaho fab expansion (announced 2027 startup) has no new large-load agreement found distinct from a 1990s/2010-era 60-100 MW legacy IPUC contract, which predates the current fab buildout and was judged too stale to cite as evidence of what a modern fab pays. TSMC's Phase 1 north Phoenix fab needs 'approximately 200 megawatts' per a fetched trade-press source, and APS is relocating multiple transmission lines to serve it, but no formal signed electric-service-agreement instrument, capex for the power infrastructure, or contract date was found (Linde's associated $600 million investment is for on-site gas supply, not power) - too thin against the numbers-or-nothing bar next to the fully documented Intel/AEP Ohio case."
+    ]
+   },
+   {
+    "file": "2026-09-26-cases/cases.json",
+    "kind": "case",
+    "records": 3,
+    "scope": "The Type B cases from the 2026-09-26 regional passes that are new to data/benchmarks.json.",
+    "incomplete": false,
+    "absences": [
+     "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
     ]
    }
   ],

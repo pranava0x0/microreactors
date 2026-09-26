@@ -20,6 +20,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PASS_DIRS = (
     ROOT / "data" / "research" / "deep-2026-08-24",
     ROOT / "data" / "research" / "2026-08-28-apps",
+    ROOT / "data" / "research" / "2026-09-26-cases",
 )
 DERIVED = ("data/instruments.json", "data/benchmarks.json")
 

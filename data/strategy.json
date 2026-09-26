@@ -926,6 +926,33 @@
    "next_question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
    "findings": [
     {
+     "id": "doyon-fort-wainwright-2024-tariff-filing",
+     "date": "2026-09-26",
+     "pass": "data/research/2026-09-26-refresh",
+     "status": "partial",
+     "question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
+     "finding": "No $/MWh figure can be built: the filing found gives a monthly revenue requirement, not a per-unit rate, and no Fort Wainwright electricity-sales (MWh) total was found to divide it by. The most recent RCA filing located (not found in the 2026-09-02 pass, which reported none) is a 2024 revenue-requirement study on a 2023 test year: an RCA public notice shows Doyon requesting, effective 2024-08-15, a 7.04% electric-rate increase at Fort Wainwright to a revenue requirement of $759,391 per month, alongside heat ($3,161,990/month, +5.49%) and water ($1,078,099/month, +24.95%); comments were due 2024-07-22. This is a real, dated regulatory figure that upgrades the prior pass's finding of none, but it is 2 years old, not a 2026 filing, and no more recent Doyon electric tariff notice was found in 2 searches. No new information was found on whether DLA Energy would accept a reactor as a rate-base plant addition under the 10 U.S.C. 2688 contract; this sub-question remains unanswered.",
+     "figures": {
+      "fwa_electric_revenue_requirement_2024": "$759,391 per month (7.04% increase over prior rate)",
+      "fwa_heat_revenue_requirement_2024": "$3,161,990 per month (5.49% increase)",
+      "fwa_water_revenue_requirement_2024": "$1,078,099 per month (24.95% increase)",
+      "filing_effective_date": "2024-08-15",
+      "filing_test_year": "2023"
+     },
+     "searched": [
+      "Regulatory Commission of Alaska Doyon Utilities Fort Wainwright revenue requirement docket 2026",
+      "Doyon Utilities tariffs page rate schedule"
+     ],
+     "sources": [
+      {
+       "label": "Regulatory Commission of Alaska — Notice of Utility Tariff Filings (Doyon Utilities, Fort Greely/Richardson/Wainwright)",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971",
+       "quote": "FWA - Electric $709,476 $759,391 7.04%",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
      "id": "doyon-fort-wainwright-cost-and-rate-base",
      "date": "2026-09-02",
      "pass": "data/research/2026-09-02-prospects",
@@ -1042,6 +1069,27 @@
    "status": "orphaned",
    "next_question": "Which year-round heat or power customer in Valdez would make an owner-operator PPA pencil, and would the board re-open the study with one of the four vendors it already vetted?",
    "findings": [
+    {
+     "id": "cvea-2026-status-unchanged",
+     "date": "2026-09-26",
+     "pass": "data/research/2026-09-26-refresh",
+     "status": "partial",
+     "question": "Which year-round heat or power customer in Valdez would make an owner-operator PPA pencil, and would the board re-open the study with one of the four vendors it already vetted (checked for any 2026 change)?",
+     "finding": "No Valdez heat/power customer or vendor-reopening was found, and if anything CVEA's own current messaging is more final than the 2023 tabling language. CVEA's live legislative-updates page (content current through a June 2026 Washington, D.C. trip) describes the CEO providing 'updates on important projects, including the CVEA/Alyeska Intertie and the close of the micro-modular nuclear reactor project review for CVEA's service territory.' The same page's most recent entries (June 2026 and February 2026 conferences) list the CVEA/Alyeska Intertie, the Solomon Gulch Dam Raise and the Tiekel Hydro Project as CVEA's active generation priorities; none mentions nuclear power, a Valdez heat customer, or any of the four previously-vetted vendors (Westinghouse, Oklo, NuScale, Radiant). No 2026 statement reopening or reconsidering the MMR study was found in 2 searches plus a direct check of CVEA's own site.",
+     "searched": [
+      "Copper Valley Electric Association nuclear reactor 2026 update",
+      "Copper River Record proposed nuclear project update",
+      "CVEA legislative efforts current projects (cvea.org, direct check)"
+     ],
+     "sources": [
+      {
+       "label": "Copper Valley Electric Association — Legislative Efforts (current through June 2026)",
+       "url": "https://www.cvea.org/news/legislative-efforts.html",
+       "quote": "the close of the micro-modular nuclear reactor project review for CVEA's service territory",
+       "status": "fetched"
+      }
+     ]
+    },
     {
      "id": "cvea-tabling-reasons",
      "date": "2026-09-02",
@@ -1249,6 +1297,40 @@
    "next_question": "Would NANA extend the land-and-PPA structure it gave TUGLIQ's solar project to a relocatable reactor, and what does 40,000 gallons a day come to per MWh at Teck's delivered price?",
    "findings": [
     {
+     "id": "red-dog-mine-life-extension-2026",
+     "date": "2026-09-26",
+     "pass": "data/research/2026-09-26-refresh",
+     "status": "partial",
+     "question": "Would NANA extend the land-and-PPA structure it gave TUGLIQ's solar project to a relocatable reactor, and what does 40,000 gallons a day come to per MWh at Teck's delivered price?",
+     "finding": "Neither original figure is newly disclosed: Teck has still not published a $/gallon or $/MWh diesel cost for Red Dog, and no NANA statement on an ownership stake or PPA-style structure for a reactor was found, both consistent with the 2026-09-02 pass. What is new this pass: Teck reported on 2026-07-23 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, 6-12 miles north of the current mill) is progressing, with a connecting road 'substantially completed' and C$200-250 million budgeted for 2026 engineering, environmental baseline work and drilling. Aktigiruq alone hosts 42.2 million metric tons of indicated resource averaging 15.8% zinc, described as 'one of the world's largest undeveloped zinc resources.' This matters commercially because the mine's previously assumed 2031-2032 closure -- which any reactor's payback period depends on outliving -- may now be a conservative floor rather than a hard end date, though Teck has not itself given a revised closure year. The 8.8 MW Tugliq solar PPA remains under price negotiation as of March 2026 reporting and stays the operative precedent for how a reactor deal would likely be structured (third-party build-own-operate, selling power back under contract).",
+     "figures": {
+      "red_dog_2026_mine_life_extension_budget": "C$200 million to C$250 million budgeted for 2026",
+      "aktigiruq_indicated_resource": "42.2 million metric tons averaging 15.8% zinc",
+      "aqqaluk_pit_remaining_life": "enough ore to feed the mill until around 2031",
+      "daily_diesel_burn": "roughly 40,000 gallons each day",
+      "existing_mine_load": "approximately 25 megawatts of power"
+     },
+     "searched": [
+      "Red Dog mine Teck diesel cost per MWh 2026 NANA nuclear microreactor",
+      "Red Dog mine Teck solar project construction update September 2026",
+      "Red Dog mine life extension Anarraaq Aktigiruq 2026"
+     ],
+     "sources": [
+      {
+       "label": "North of 60 Mining News — Red Dog 2.0 is beginning to take shape (2026-07-23)",
+       "url": "https://www.miningnewsnorth.com/story/2026/07/24/news-nuggets/red-dog-20-is-beginning-to-take-shape/9788.html",
+       "quote": "one of the world's largest undeveloped zinc resources",
+       "status": "fetched"
+      },
+      {
+       "label": "Anchorage Daily News — One of Alaska's flagship mines soon could draw energy from the sun (2026-03-22)",
+       "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+       "quote": "roughly 40,000 gallons each day",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
      "id": "red-dog-teck-diesel-and-nana-stake",
      "date": "2026-09-02",
      "pass": "data/research/2026-09-02-prospects",
@@ -1442,6 +1524,38 @@
        "status": "fetched"
       }
      ]
+    },
+    {
+     "id": "qulliq-kivalliq-link-schedule-2026",
+     "date": "2026-09-26",
+     "pass": "data/research/2026-09-26-refresh",
+     "status": "answered",
+     "question": "What is the Kivalliq Hydro-Fibre Link's current construction schedule and federal funding status (an updated angle for this pass; the qulliq-nunavut prospect's original next_question, on community capacity over 1 MW and QEC's SMR Action Plan listing, was already answered in the 2026-09-02 pass)?",
+     "finding": "The most recent dedicated federal funding announcement (2024-03-21) added $2.8 million from Canada's Northern REACHE Program to the Kivalliq Hydro-Fibre Link's development phase, on top of $11.6 million already provided for planning/feasibility, with construction 'expected to begin by 2028' -- no more recent official date was found. Developer Nukik Corporation has since reported two concrete technical milestones: filing a Transmission Service Request with Manitoba Hydro (by December 2025 trade-press reporting) and becoming the first Arctic electricity developer in North America certified by the Midcontinent Independent System Operator (MISO). On 2026-07-07 the governments of Nunavut and Manitoba signed an MOU 'reaffirmed Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project,' which Nukik's CEO called 'another significant milestone' without giving a revised construction or financial-close date.",
+     "figures": {
+      "kivalliq_link_capacity": "150 megawatt, 1,200 kilometre transmission line with fibre-optic cabling",
+      "federal_funding_2024": "$2.8 million (March 2024) plus $11.6 million provided earlier for planning/feasibility",
+      "construction_target": "expected to begin by 2028",
+      "manitoba_capacity_commitment_2026": "50 megawatts of firm electric capacity (MOU signed 2026-07-07)"
+     },
+     "searched": [
+      "Kivalliq Hydro-Fibre Link 2026 funding schedule federal Canada Infrastructure Bank",
+      "Nukik Corporation Kivalliq Hydro-Fibre Link 2026 update financial close construction"
+     ],
+     "sources": [
+      {
+       "label": "Government of Canada (Crown-Indigenous Relations and Northern Affairs Canada) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)",
+       "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html",
+       "quote": "Construction is expected to begin by 2028.",
+       "status": "fetched"
+      },
+      {
+       "label": "GlobeNewswire (Nukik Corporation release) — Nukik Corporation Welcomes the MOU Signing Between the Governments of Nunavut and Manitoba (2026-07-08)",
+       "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html",
+       "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project",
+       "status": "fetched"
+      }
+     ]
     }
    ],
    "refs": [
@@ -1476,6 +1590,32 @@
    "sale_shape": "Tribal-utility-owned unit at a hub village with public capital, inside the PCE settlement.",
    "status": "evidence-only",
    "next_question": "Does any village in the eight, or a hub they connect to, draw over 1 MW, and is the tribal entity chartered to own generation?",
+   "findings": [
+    {
+     "id": "tanana-chiefs-huslia-ea-2026",
+     "date": "2026-09-26",
+     "pass": "data/research/2026-09-26-refresh",
+     "status": "partial",
+     "question": "Does any village in the eight, or a hub they connect to, draw over 1 MW, and is the tribal entity chartered to own generation?",
+     "finding": "No village-level MW figure or generation-ownership charter detail was found this pass, so the core question remains open. What is new: DOE published Environmental Assessment DOE/EA-2314 (dated April 2026) covering 'high-penetration solar photovoltaic (PV) arrays and battery energy storage systems (BESS) as part of the existing microgrid in Huslia, Alaska' -- the first named village-level build-out under the previously reported $32.6 million Tanana Chiefs Conference Alaska Tribal Energy Sovereignty award (established in the 2026-09-02 pass, not re-verified here). The EA confirms the project is advancing toward construction at Huslia specifically, but its own webpage does not state Huslia's MW capacity, generation ownership, or whether any hub village exceeds 1 MW.",
+     "figures": {
+      "huslia_ea_designation": "DOE/EA-2314, dated April 2026",
+      "tanana_chiefs_award_2026-09-02_pass": "$32.6 million ($26.1 million federal)"
+     },
+     "searched": [
+      "Tanana Chiefs Conference village microgrid nuclear 2026",
+      "DOE EA-2314 Tanana Chiefs Conference Huslia environmental assessment"
+     ],
+     "sources": [
+      {
+       "label": "US Department of Energy — DOE/EA-2314: Environmental Assessment (April 2026)",
+       "url": "https://www.energy.gov/nepa/articles/doeea-2314-environmental-assessment-april-2026",
+       "quote": "high-penetration solar photovoltaic (PV) arrays and battery energy storage systems (BESS) as part of the existing microgrid in Huslia, Alaska",
+       "status": "fetched"
+      }
+     ]
+    }
+   ],
    "refs": [
     {
      "benchmark": "tanana-chiefs-alaskan-tribal-energy-sovereignty-era"

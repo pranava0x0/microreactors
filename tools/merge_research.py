@@ -22,8 +22,8 @@ an earlier pass had already contributed.
 
 Usage:
   python3 tools/merge_research.py data/research/deep-2026-08-24
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps --check
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases --check
 
 Stdlib only, like every tool in this repo.
 """

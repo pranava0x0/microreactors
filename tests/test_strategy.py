@@ -249,7 +249,8 @@ class TestStrategy(unittest.TestCase):
         folders below. A hand edit to a finding, or an edited answer that was
         never re-merged, is drift and fails here."""
         import subprocess
-        passes = [ROOT / "data" / "research" / "2026-09-02-prospects"]
+        passes = [ROOT / "data" / "research" / "2026-09-02-prospects",
+                  ROOT / "data" / "research" / "2026-09-26-refresh"]
         for p in passes:
             self.assertTrue(p.is_dir(), p)
         r = subprocess.run([sys.executable, str(ROOT / "tools" / "merge_answers.py"),
