@@ -319,16 +319,34 @@ details.segcard summary .cat{text-transform:none;letter-spacing:0;font-family:va
 .sectortable th[scope=row] a:hover{color:var(--antares-red)}
 .sectortable .num{font-family:var(--font-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
 .sectortable .today{color:var(--text-secondary);min-width:18rem}
+.vendortable .vtreactor{display:block;font-weight:var(--weight-regular);color:var(--text-tertiary);
+  font-size:var(--size-caption);margin-top:2px}
+.vendortable td{color:var(--text-secondary)}
+.vendortable .vbadge{display:inline-block;margin:0 var(--space-1) var(--space-1) 0}
+/* Six columns do not fit a tablet: stack each company below 900px. */
+@media(max-width:899px){
+  .vendortable,.vendortable tbody{display:block;width:100%}
+  .vendortable thead{display:none}
+  .vendortable th[scope=row] a{white-space:normal}
+  .vendortable tr{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-1);
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
+  .vendortable th,.vendortable td{border:none;padding:0}
+  .vendortable td:nth-of-type(1)::before{content:"Output \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(2)::before{content:"Fuel \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(4)::before{content:"Next \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(5)::before{content:"Delivery \00b7  ";color:var(--text-tertiary)}
+}
 /* Phones: each sector becomes a block instead of a five-column row. */
 @media(max-width:639px){
-  .sectortable thead{display:none}
-  .sectortable tr{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:var(--space-1) var(--space-3);
+  .sectortable.apps thead{display:none}
+  .sectortable.apps tr{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:var(--space-1) var(--space-3);
     border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
-  .sectortable th,.sectortable td{border:none;padding:0}
-  .sectortable th[scope=row]{grid-column:1/-1}
-  .sectortable td.num:nth-of-type(1)::after{content:" loads"}
-  .sectortable td.num:nth-of-type(3)::after{content:" inside 1\2013 20 MW"}
-  .sectortable .today{grid-column:1/-1;min-width:0}
+  .sectortable.apps th,.sectortable.apps td{border:none;padding:0}
+  .sectortable.apps th[scope=row]{grid-column:1/-1}
+  .sectortable.apps td.num:nth-of-type(1)::after{content:" loads"}
+  .sectortable.apps td.num:nth-of-type(3)::after{content:" inside 1\2013 20 MW"}
+
+  .sectortable.apps .today{grid-column:1/-1;min-width:0}
 }
 
 /* ---------- candidate deployment sites ---------- */

@@ -25,6 +25,12 @@
   }
   // Defined before any renderer runs: several render at module scope during boot.
   var usd = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
+  /* A sentence ends at . ! or ? after a lowercase letter, digit or closing
+     bracket, before a capital: "U.S. data centers" is not two sentences. */
+  var firstSentenceOf = function (t) {
+    var m = String(t || "").match(/^.*?[a-z0-9)\]'"%][.!?](?=\s+[A-Z"'(]|\s*$)/);
+    return (m ? m[0] : String(t || "")).trim();
+  };
   var NONE = '<span class="v none">not found</span>';
   var val = function (v) { return v ? '<span class="v">' + esc(v) + "</span>" : NONE; };
 
@@ -321,7 +327,7 @@
      tiles below already surface the two kinds of milestone worth a headline. */
   var stats = [
     { n: s.binding_rows + "/" + s.opportunities, k: "are marked binding", accent: true, href: "#pipeline" },
-    { n: s.reactors_critical_2026, k: "DOE test reactors critical in 2026", accent: true, href: "#pipeline/us-gov" },
+    { n: s.reactors_critical_2026, k: "DOE pilot-program reactors critical in 2026", accent: true, href: "#pipeline/us-gov" },
     { n: s.units_largest_preorder, k: "units in the largest preorder", href: "#pipeline" },
     { n: s.first_delivery_year, k: "first delivery target", href: "#vendors" },
     { n: s.filing_rows + "/" + s.opportunities, k: "have a citable utility filing", accent: true, href: "#sources/gaps" }
@@ -905,6 +911,18 @@
     }
     return null;
   }
+  /* Roadmaps read in date order whatever order the file holds them in. A bare
+     year ("2028") sorts to the end of that year; "2026 Q3" to the quarter's start. */
+  function milestoneKey(d) {
+    var m = String(d || "").match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?(?:\s*Q([1-4]))?/);
+    if (!m) { return 99999999; }
+    var month = m[2] ? +m[2] : (m[4] ? (+m[4] - 1) * 3 + 1 : 12);
+    var day = m[3] ? +m[3] : (m[2] || m[4] ? 1 : 31);
+    return +m[1] * 10000 + month * 100 + day;
+  }
+  function byDate(ms) {
+    return ms.slice().sort(function (a, b) { return milestoneKey(a.date) - milestoneKey(b.date); });
+  }
   function vendorCardHTML(v) {
     var specs = [
       ["Output", v.mwe_label], ["Coolant", v.coolant], ["Fuel", v.fuel],
@@ -923,7 +941,7 @@
       : "";
     var tl = (v.milestones || []).length
       ? '<div class="vtlhead">Roadmap to power</div><div class="vtl">' +
-        v.milestones.map(function (m) {
+        byDate(v.milestones).map(function (m) {
           return '<div class="ms ' + (m.status === "done" ? "done" : "tgt") + '">' +
             '<span class="d">' + esc(m.date) + '</span><span class="dot" aria-hidden="true"></span>' +
             '<span class="l">' + esc(m.label) + cite(m.source ? [m.source] : []) + "</span></div>";
@@ -943,9 +961,31 @@
     })
   );
 
+  /* All companies: one comparison table, each name opening its full card. Eight
+     full cards in a row ran to fourteen phone screens (UAT 2026-09-26); the
+     cards themselves live on each company's own sub-tab. */
+  var vendorRows = D.vendors.vendors.map(function (v) {
+    var crit = criticalityMilestone(v);
+    var next = byDate(v.milestones || []).filter(function (m) { return m.status !== "done"; })[0];
+    var state = crit ? esc(crit.unit) + " critical " + esc(crit.date)
+      : ((v.milestones || []).some(function (m) { return m.status === "done"; }) ? "no criticality yet" : "not yet built");
+    return "<tr>" +
+      '<th scope="row"><a href="#vendors/' + esc(slug(v.name)) + '">' + esc(v.name) + "</a>" +
+        '<span class="vtreactor">' + esc(v.reactor) + "</span></th>" +
+      "<td>" + esc(v.mwe_label || "\u2014") + "</td>" +
+      "<td>" + esc(v.fuel || "\u2014") + "</td>" +
+      "<td>" + (crit ? '<span class="vbadge critical">' + state + "</span>" : esc(state)) +
+        (v.janus_site ? ' <span class="vbadge janus">Janus: ' + esc(v.janus_site.split(" (")[0]) + "</span>" : "") + "</td>" +
+      "<td>" + (next ? esc(next.date) + " \u00b7 " + esc(next.label) : "\u2014") + "</td>" +
+      "<td>" + esc(v.first_delivery_target || "\u2014") + "</td></tr>";
+  }).join("");
   render($("vendorcards"),
-    '<div class="vgrid" data-sub="all" id="vendors-all" role="tabpanel" tabindex="0">' +
-    D.vendors.vendors.map(vendorCardHTML).join("") + "</div>" +
+    '<div data-sub="all" id="vendors-all" role="tabpanel" tabindex="0">' +
+    '<div class="tablewrap"><table class="sectortable vendortable"><thead><tr>' +
+    '<th scope="col">Company</th><th scope="col">Output</th><th scope="col">Fuel</th>' +
+    '<th scope="col">Where it stands</th><th scope="col">Next milestone</th>' +
+    '<th scope="col">Delivery target</th></tr></thead><tbody>' + vendorRows +
+    "</tbody></table></div></div>" +
     D.vendors.vendors.map(function (v) {
       var vId = slug(v.name);
       return '<div class="vsolo" data-sub="' + esc(vId) + '" id="vendors-' + esc(vId) +
@@ -993,17 +1033,21 @@
         '<div class="argbody"><h3>' + esc(a.name) + "</h3>" +
         '<p class="argclaim">' + esc(a.claim) +
         ' <span class="argbasis">' + esc(a.basis) + "</span></p>" +
-        '<p class="prose">' + esc(a.detail) + "</p>" +
-        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
-        '<span class="cat">' + a.note_count + "</span></summary>" +
+        /* The claim is the answer and stays in view; the argued detail and its
+           notes sit one tap away. Rendered open, twelve arguments ran to twelve
+           phone screens (UAT 2026-09-26). */
+        '<details class="prec"><summary><span class="nm">Why, and the notes behind it</span>' +
+        '<span class="cat">' + a.note_count + " notes</span></summary>" +
+        '<div class="body"><p class="prose">' + esc(a.detail) + "</p></div>" +
         noteList(a.notes) + "</details></div></div>";
     }).join(""));
     render($("counters"), A.counters.map(function (c) {
       return '<div class="argrow counter"><div class="argnum">\u00d7</div>' +
         '<div class="argbody"><h3>' + esc(c.name) + "</h3>" +
-        '<p class="prose">' + esc(c.detail) + "</p>" +
-        '<details class="prec"><summary><span class="nm">The notes behind it</span>' +
-        '<span class="cat">' + c.notes.length + "</span></summary>" +
+        '<p class="prose">' + esc(firstSentenceOf(c.detail)) + "</p>" +
+        '<details class="prec"><summary><span class="nm">The full case, and the notes behind it</span>' +
+        '<span class="cat">' + c.notes.length + " notes</span></summary>" +
+        '<div class="body"><p class="prose">' + esc(c.detail) + "</p></div>" +
         noteList(c.notes) + "</details></div></div>";
     }).join(""));
     var fromNotes = A.counters.filter(function (c) { return (c.notes || []).length; }).length;
@@ -1051,12 +1095,7 @@
     var lo = parseFloat(m[0]), hi = m.length > 1 ? parseFloat(m[1]) : lo;
     return isNaN(lo) ? null : [lo, hi];
   };
-  /* A sentence ends at . ! or ? after a lowercase letter, digit or closing
-     bracket, before a capital: "U.S. data centers" is not two sentences. */
-  var firstSentence = function (t) {
-    var m = String(t || "").match(/^.*?[a-z0-9)\]'"%][.!?](?=\s+[A-Z"'(]|\s*$)/);
-    return (m ? m[0] : String(t || "")).trim();
-  };
+  var firstSentence = firstSentenceOf;
   var TIER = { "first-unit": "A first unit already wins",
                "mass-produced": "Wins once units are mass-produced",
                "optimized": "Wins only with the optimized design" };
@@ -1111,7 +1150,7 @@
       "deal worth chasing.</p>" +
       '<div class="ladder">' + ladderHTML + "</div>" +
       '<div class="subhead gap"><h3>Sector by sector</h3></div>' +
-      '<div class="tablewrap"><table class="sectortable"><thead><tr><th scope="col">Sector</th>' +
+      '<div class="tablewrap"><table class="sectortable apps"><thead><tr><th scope="col">Sector</th>' +
       '<th scope="col" class="num">Loads</th><th scope="col" class="num">Range</th>' +
       '<th scope="col" class="num">Inside 1\u201320 MW</th><th scope="col">How it is powered today</th>' +
       "</tr></thead><tbody>" + sectorRows + "</tbody></table></div>" +
@@ -1341,8 +1380,8 @@
       { href: "#demand", tab: "Applications", q: "Where a unit wins first", a: apps },
       { href: "#economics", tab: "Costs", q: "What the power costs", a: costs },
       { href: "#vendors", tab: "Vendors", q: "Who builds them",
-        a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " test reactors reached " +
-           "criticality in 2026, and the earliest delivery target is " + s.first_delivery_year + "." },
+        a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " reactors in DOE's pilot " +
+           "program reached criticality in 2026, and the earliest delivery target is " + s.first_delivery_year + "." },
       { href: "#policy", tab: "Rules & deal design", q: "What unlocks a sale",
         a: s.pathways + " rule changes and " + s.instruments + " ways a deal gets signed, with a " +
            "shared-orderbook proposal checked against " + s.precedents + " precedents." },

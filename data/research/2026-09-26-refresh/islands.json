@@ -254,6 +254,199 @@
      "status": "snippet-only"
     }
    ]
+  },
+  {
+   "id": "hawaii",
+   "region": "Hawaii",
+   "country": "US",
+   "jurisdiction": "US state",
+   "power_system": "Hawaiian Electric (HECO, plus its Hawai'i Electric Light and Maui Electric subsidiaries) and the member-owned Kaua'i Island Utility Cooperative (KIUC) run separate, non-interconnected island grids. HECO's companies still burn mostly oil: fuel-mix filings put Hawai'i Electric Light (Hawai'i Island) at roughly 35% HSFO / 65% diesel and Maui Electric (serving Maui, Molokai and Lanai) at roughly 24% HSFO / 76% diesel, and HECO said in March 2026 it had raised renewables to 37% of generation across its islands, targeting 40% by 2030. KIUC reports about 60% of its Kaua'i generation from renewables.",
+   "price": "39.62 cents/kWh statewide average, March 2025 -- 'well over double the national average'; KIUC's Kaua'i rate ran 33-39 cents/kWh (2025). A 2026 oil-price spike (crude near $90/barrel in July 2026 versus $65-70/barrel a year earlier) drove June-2025-to-June-2026 bill increases of 27% on Maui, 30% on Oahu and 55% on Lanai.",
+   "loads": [
+    {
+     "name": "Molokai and Lanai (Maui Electric-served neighbor islands)",
+     "mw": "part of Maui Electric's roughly 24% HSFO / 76% diesel system",
+     "note": "small, diesel-heavy island grids; Lanai's bill rose 55% June 2025-June 2026 on oil prices"
+    }
+   ],
+   "nuclear_position": "Hawaii's state constitution, Article XI Section 8 (added by a 1978 amendment), provides that 'No nuclear fission power plant shall be constructed or radioactive material disposed of in the State without the prior approval by a two-thirds vote in each house of the legislature.' Rep. Elijah Pierick's HB1741 (2024) proposed repealing that provision but 'did not receive a hearing.' In February 2025 the legislature instead advanced Senate Bill 1588 (Energy and Intergovernmental Affairs Committee 5-0, Ways and Means 13-0) as Senate Concurrent Resolution 136, creating a nuclear energy task force.",
+   "microreactor_activity": "The SCR136 working group's report to the legislature, 'Advanced Nuclear Power Technologies in Hawai'i' (Hawaii State Energy Office, December 2025), examined both 1-20 MW microreactors and 20-300 MW SMRs and 'ultimately recommended against any advanced nuclear development in the state,' on the grounds that the technologies 'are neither commercially viable nor technically proven' and that Hawaii 'currently lacks the facilities, workforce expertise, regulatory framework, and emergency-response capabilities to handle, process, and store radioactive waste.' It recommended the state 'continue to monitor global advancements and revisit this assessment periodically.' A separate August 2026 Hawaii media piece was found referencing public debate over a proposed Radiant 'Kaleidos' microreactor in the state, but this pass could not fetch that article (connection error) to confirm site, proposer or MW.",
+   "blockers": [
+    "State constitution requires a two-thirds vote in each legislative house before any nuclear fission plant can be built or waste disposed of in the state",
+    "The state's own December 2025 SCR136 working-group report recommended against any advanced nuclear development, citing commercial/technical immaturity and the state's lack of radioactive-waste infrastructure",
+    "Neither HECO/its subsidiaries nor KIUC has taken a public position in favor of a specific reactor project"
+   ],
+   "microreactor_read": "Hawaii pays close to the highest delivered-fuel electricity price in the US, spiking further on 2026 oil prices, and neighbor-island grids like Lanai and Molokai are small and diesel-heavy -- exactly the profile a microreactor pitch wants -- but the state's own December 2025 study reviewed the 1-20 MW class specifically and recommended against development on top of a constitutional two-thirds-vote requirement, making this a policy-gated market until that report's premises change.",
+   "sources": [
+    {
+     "label": "American Nuclear Society Nuclear Newswire — Hawaii report recommends against nuclear development (2026-01-26)",
+     "url": "https://www.ans.org/news/2026-01-26/article-7698/hawaii-report-recommends-against-nuclear-development/",
+     "quote": "are neither commercially viable nor technically proven",
+     "status": "fetched"
+    },
+    {
+     "label": "The Garden Island — Nuclear power exploration legislation gains steam (2025-02-19)",
+     "url": "https://www.thegardenisland.com/2025/02/19/hawaii-news/nuclear-power-exploration-legislation-gains-steam/",
+     "quote": "proposed to repeal a section of Hawaii's Constitution that requires two-thirds votes in both the House and Senate",
+     "status": "fetched"
+    },
+    {
+     "label": "Kauai Now — Hawai'i pays 64% above national average for electricity (2025-03-06)",
+     "url": "https://kauainownews.com/2025/03/06/hawai%CA%BBi-pays-64-above-national-average-for-electricity/",
+     "quote": "rates on Kaua'i range between 33 and 39 cents",
+     "status": "fetched"
+    },
+    {
+     "label": "Honolulu Civil Beat — High Oil Prices Hammer HECO Customers. Here's Why (2026-07)",
+     "url": "https://www.civilbeat.org/2026/07/high-oil-prices-hammer-heco-customers-heres-why/",
+     "quote": "27% on Maui, 30% on Oahu and 55% on Lanai",
+     "status": "fetched"
+    },
+    {
+     "label": "Hawaiian Electric — HELCO Energy Cost Recovery Clause filing (2025-02)",
+     "url": "https://www.hawaiianelectric.com/documents/billing_and_payment/rates/energy_cost_adjustment_filings/hawaii/2025/helco_ecrc_2025_02.pdf",
+     "quote": "Hawaii Electric Light: 35% HSFO and 65% Diesel; Maui Electric: 24% HSFO and 76% Diesel",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "freely-associated-states-pacific",
+   "region": "Palau, Federated States of Micronesia and Marshall Islands",
+   "country": "PW/FM/MH",
+   "jurisdiction": "Compact of Free Association states (freely associated with the US)",
+   "power_system": "All three run small, diesel-dominated grids with no interconnection to any other network. Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators), for roughly 28 MW installed capacity against a 15 MW peak load and a generation mix around 97.5% diesel / 2.5% solar. The Marshall Islands' Marshalls Energy Company (MEC) supplies Majuro (plus Jaluit and Wotje); its Majuro system, the country's largest, had a 2023 recorded maximum demand of about 9.8 MW (9.0 MW daily average), generated about 99.6% from diesel and 0.4% from grid-connected PV.",
+   "price": "US$0.28/kWh residential in Palau (rising to $0.41/kWh commercial/government on an inverted block tariff) and about US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting; a separate estimate put Marshall Islands residential price at about US$0.36/kWh",
+   "loads": [
+    {
+     "name": "Majuro (Marshalls Energy Company system)",
+     "mw": "about 9.8 MW maximum demand, 9.0 MW daily average (2023)",
+     "note": "diesel; the Marshall Islands' largest single grid"
+    }
+   ],
+   "nuclear_position": "No civil nuclear power position, statute or study was found for Palau, FSM or the Marshall Islands in this pass; all three are eligible to join, but have not signed, the South Pacific Nuclear Free Zone Treaty. The Marshall Islands carries a distinct, unrelated legacy of '67 atmospheric nuclear test explosions conducted between 1946 and 1958' at Bikini and Enewetak atolls, addressed by a US-RMI compensation MOU (fiscal year 2024) providing '$50 million annually,' '$200 million over 20 years for joint health care programs' and a '$700 million' repurposed trust fund, plus a UN nuclear-weapons-impact study launched in November 2024 -- a weapons-testing history that any civil microreactor outreach must approach with care and keep clearly separate from.",
+   "microreactor_activity": "none found for civil power generation in any of the three states, searched directly and via Pacific-region energy literature; the only nuclear-related activity found for any of them concerns weapons-testing legacy and compensation, not power generation",
+   "blockers": [
+    "No feasibility study, MOU or utility statement on civil nuclear power found in any of the three states",
+    "Every grid found is small even for the bottom of the 1-20 MW range -- Majuro's system, the largest identified, peaks under 10 MW",
+    "The Marshall Islands' weapons-testing legacy makes any nuclear-power conversation politically sensitive and requires framing kept distinct from compensation and testing-impact issues"
+    ],
+   "microreactor_read": "Palau and the FSM pay among the highest delivered-diesel prices found in this whole pass, but no state has studied nuclear power, every identified grid is small even for the bottom of the 1-20 MW range, and the Marshall Islands' weapons-testing history means outreach there needs deliberately careful, separate framing rather than a standard utility pitch.",
+   "sources": [
+    {
+     "label": "POWER Magazine — Marooned: How Island Power Systems Keep the Lights On",
+     "url": "https://www.powermag.com/marooned-how-island-power-systems-keep-the-lights-on/",
+     "quote": "Pacific island nations pay between $0.28/kWh (Palau) and $0.48/kWh (the Federated States of Micronesia)",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia — Malakal Power Plant",
+     "url": "https://en.wikipedia.org/wiki/Malakal_Power_Plant",
+     "quote": "23.7 MW ... 8 installed diesel generators",
+     "status": "fetched"
+    },
+    {
+     "label": "Arms Control Association — U.S., Marshall Islands Sign Deal on Nuclear Testing Impacts (2023-03)",
+     "url": "https://www.armscontrol.org/act/2023-03/news/us-marshall-islands-sign-deal-nuclear-testing-impacts",
+     "quote": "67 atmospheric nuclear test explosions conducted between 1946 and 1958",
+     "status": "fetched"
+    },
+    {
+     "label": "Radio Free Asia — Pacific push sees UN launch first nuclear war impact study in 35 years (2024-11-04)",
+     "url": "https://www.rfa.org/english/pacific/2024/11/04/un-nuclear-impact-marshall-islands-french-polynesia/",
+     "quote": "UN launch first nuclear war impact study in 35 years",
+     "status": "snippet-only"
+    },
+    {
+     "label": "Devex / PRDR Sustainable Energy for All — Palau Public Utilities Corporation (PPUC) profile",
+     "url": "https://prdrse4all.spc.int/content/palau-public-utilities-corporation-ppuc",
+     "quote": "installed generation capacity of 28.05 megawatts (MW) and peak load of 15 MW",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "australia-nuclear-legal-position",
+   "region": "Australia (federal and state nuclear law)",
+   "country": "AU",
+   "jurisdiction": "Australian Commonwealth (federal) plus five states",
+   "power_system": "Australia's National Electricity Market has no civil nuclear generation; the country's only reactor is ANSTO's OPAL research reactor at Lucas Heights, not a power plant. The opposition Coalition's 2024-2025 election platform proposed a taxpayer-funded fleet of seven nuclear power stations costing about A$331 billion (reported as roughly US$211 billion), with the first plant targeted for 2035-37.",
+   "nuclear_position": "Nuclear power generation is banned by two Commonwealth statutes: the Australian Radiation Protection and Nuclear Safety Act 1998 and the Environment Protection and Biodiversity Conservation Act 1999, which could be lifted federally only by deleting the phrase \"a nuclear power plant\" from sections 37J, 140A, 146M and 305(2)(d) of the EPBC Act (and the equivalent ARPANS Act section). Because onshore generation is a state matter, New South Wales, Queensland, Victoria, South Australia and Western Australia each maintain their own separate nuclear bans that would also need repeal; Queensland's law separately requires a public referendum before Commonwealth-backed nuclear construction there. The Coalition took its 7-reactor plan to the May 2025 federal election and lost; energy analyst Tony Wood said within hours that 'the plan they took to the election is dead,' though the Coalition/Nationals remain split between abandoning nuclear and simply removing the ban without a taxpayer-funded build. A 23 September 2026 Coalition policy announcement still listed lifting the federal nuclear prohibition among an eight-point 'within 30 days of getting into government' package, which the reporting itself notes 'there is no chance for the Coalition to win support without either Labor or the Greens changing positions on nuclear energy' in the Senate.",
+   "microreactor_activity": "No microreactor-specific (1-20 MW) study, MOU or legislative carve-out was found; all Australian nuclear-power debate located in this pass concerns the Coalition's large, roughly gigawatt-class reactor fleet, not microreactors. The clearest AUKUS-driven civil-adjacent development is regulatory and workforce buildout: the Australian Naval Nuclear Power Safety Regulator (ANNPSR), a new statutory agency launched 2025-11-01 'commencing with over 70 trained staff' to oversee naval nuclear propulsion, with ARPANSA stating that it and ANNPSR 'will work together to support consistent nuclear and radiological protection across Australia's military and civilian activities.' This is a nuclear-regulatory workforce and capability build-out with potential civil spillover, not a civil licensing pathway.",
+   "blockers": [
+    "Nuclear power generation is banned by name in both the ARPANS Act and the EPBC Act at the federal level",
+    "Onshore generation is constitutionally a state matter, so five states with their own nuclear bans (NSW, Queensland, Victoria, South Australia, Western Australia) would each need separate repeal even after any federal change",
+    "Queensland's law separately requires a public referendum before Commonwealth-backed nuclear construction there",
+    "The Coalition lost the May 2025 election on a platform that included a large nuclear-fleet plan, and lacks the Senate numbers to repeal the federal ban even from opposition",
+    "All political, legal and regulatory attention found is on large (roughly 1 GW-class) power reactors or naval propulsion, not the 1-20 MW microreactor class this record covers"
+   ],
+   "microreactor_read": "Every part of Australia's nuclear debate -- the federal ban, the five state bans, the Coalition's costed fleet plan, and the new AUKUS naval regulator -- is built around large power reactors or naval propulsion, not the 1-20 MW class; a microreactor seller has no legal pathway federally or in any state today, and the nearest asset this creates is a slowly growing, civilian-adjacent nuclear regulatory workforce (ANNPSR/ARPANSA) rather than any change in the law itself.",
+   "sources": [
+    {
+     "label": "Clayton Utz — A nuclear powered Australia? (2025-03)",
+     "url": "https://www.claytonutz.com/insights/2025/march/a-nuclear-powered-australia",
+     "quote": "\"a nuclear power plant\" from sections 37J, 140A, 146M and 305(2)(d) of the EPBC Act",
+     "status": "fetched"
+    },
+    {
+     "label": "ABC News — The election result makes the nuclear fight even tougher for the Coalition (2025-05-08)",
+     "url": "https://www.abc.net.au/news/2025-05-08/nuclear-climate-election-campaign-coalition-nationals/105261046",
+     "quote": "the plan they took to the election is dead",
+     "status": "fetched"
+    },
+    {
+     "label": "ABC News — Coalition vows to 'take a chainsaw' to climate laws and offshore wind (2026-09-23)",
+     "url": "https://www.abc.net.au/news/2026-09-23/coalition-energy-plan-scrap-renewables-climate-laws/107184376",
+     "quote": "there is no chance for the Coalition to win support without either Labor or the Greens changing positions on nuclear energy",
+     "status": "fetched"
+    },
+    {
+     "label": "Naval News — AUKUS: Launch of the Australian Naval Nuclear Power Safety Regulator (2025-11-02)",
+     "url": "https://www.navalnews.com/event-news/indo-pacific-2025/2025/11/aukus-launch-of-the-australian-naval-nuclear-power-safety-regulator/",
+     "quote": "the two Regulators will work together to support consistent nuclear and radiological protection across Australia's military and civilian activities",
+     "status": "fetched"
+    },
+    {
+     "label": "Bloomberg — Australia's Opposition Reveals $211 Billion Nuclear Plan (2024-12-13)",
+     "url": "https://www.bloomberg.com/news/articles/2024-12-13/australia-s-opposition-reveals-211-billion-nuclear-power-plan",
+     "quote": "Australia's Opposition Reveals $211 Billion Nuclear Plan",
+     "status": "snippet-only"
+    }
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "id": "tau-american-samoa-solarcity-tesla-microgrid",
+   "sector": "Remote outposts & microgrids",
+   "name": "Ta'u Island solar-plus-storage microgrid",
+   "country": "US",
+   "region": "Ta'u, American Samoa",
+   "parties": {
+    "host": "American Samoa Power Authority (ASPA)",
+    "provider": "SolarCity (acquired by Tesla during construction)"
+   },
+   "instrument": "grant-funded",
+   "signed": "2016",
+   "capacity": "1.41 MW solar (5,328 panels) + 6 MWh battery storage (60 Tesla Powerpacks)",
+   "capex": "US$8 million total, including a US$927,500 Department of the Interior grant for the batteries and a US$70,715 EPA Diesel Emissions Reduction Act grant, balance from ASPA",
+   "displaced": "100% of the island's prior diesel generation -- 'almost 110,000 gallons of diesel per year'",
+   "summary": "Ta'u, a small American Samoa island previously running entirely on shipped diesel, was converted in November 2016 to a solar-plus-battery microgrid able to run the whole island on solar with three days of storage autonomy. The US$8 million project was funded jointly by the US Department of the Interior and ASPA, with a separate EPA Diesel Emissions Reduction Act grant, and built by SolarCity, which Tesla acquired during construction. It stands as the clearest precedent for a fully off-grid US-territory microgrid conversion at small-island scale.",
+   "microreactor_read": "A reactor pitching Ta'u-scale island grids has to beat a fully depreciated $8M solar-plus-storage build that already eliminated 100% of diesel burn on a comparable off-grid island -- the incumbent to displace is not diesel here, it is this exact microgrid model, at a capex per islander that a 1-20 MW reactor is unlikely to match at this population scale.",
+   "sources": [
+    {
+     "label": "National Geographic — Ta'u, American Samoa, Changed From Diesel to Solar Power With Tesla's SolarCity",
+     "url": "https://www.nationalgeographic.com/science/article/tau-american-samoa-solar-power-microgrid-tesla-solarcity",
+     "quote": "The $8 million project was funded by the U.S. Department of Interior and the American Samoa Power Authority (ASPA).",
+     "status": "fetched"
+    },
+    {
+     "label": "Utility Dive — Tesla, SolarCity ready diesel-reducing microgrid in American Samoa",
+     "url": "https://www.utilitydive.com/news/tesla-solarcity-ready-diesel-reducing-microgrid-in-american-samoa/431053/",
+     "quote": "The system it installed will offset the use of almost 110,000 gallons of diesel per year",
+     "status": "fetched"
+    }
+   ]
   }
  ]
 }
