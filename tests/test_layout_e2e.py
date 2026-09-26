@@ -168,6 +168,37 @@ class Layout(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class Routing(unittest.TestCase):
+    def test_register_search_restores_the_first_page(self):
+        """The source register shows its first 30 rows until the reader searches
+        or asks for all. Clearing a search used to leave all ~700 rows open and
+        hide the Show all button (UAT 2026-09-26)."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            page.goto(base + "#sources", wait_until="networkidle")
+            page.wait_for_timeout(200)
+            count = "[...document.querySelectorAll('.rrow')].filter(r => r.offsetParent).length"
+            first = page.evaluate(count)
+            page.fill("#regq", "alaska")
+            page.wait_for_timeout(60)
+            searched = page.evaluate(count)
+            page.fill("#regq", "")
+            page.wait_for_timeout(60)
+            cleared = page.evaluate(count)
+            button_back = page.is_visible("#regall")
+            page.click("#regall")
+            page.wait_for_timeout(60)
+            everything = page.evaluate(count)
+            browser.close()
+        self.assertEqual(first, 30)
+        self.assertGreater(searched, 0)
+        self.assertEqual(cleared, 30, "clearing the search should restore the first page")
+        self.assertTrue(button_back, "Show all should return with the first page")
+        self.assertGreater(everything, 30)
+
     def test_deep_link_scrolls_its_tab_into_view(self):
         """On a phone the tab strip scrolls. Landing on #sources left its tab
         ~500px off-screen, so the page gave no sign of where the reader was."""

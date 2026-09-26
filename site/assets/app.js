@@ -1670,17 +1670,22 @@
        sources in reading order; typing searches every row, and "Show all" or a
        #src-N deep link lifts the page limit. */
     var list = $("register").querySelector(".reg"), more = $("regall");
-    var unpage = function () {
-      list.classList.remove("paged");
-      more.hidden = true;
+    /* The page limit lifts while a search is typed and comes back when the box
+       is cleared, unless the reader asked for everything ("Show all" or a
+       #src-N link). Clearing a search used to leave all 700 rows open. */
+    var showAll = false;
+    var setPaged = function (paged) {
+      list.classList.toggle("paged", paged);
+      more.hidden = !paged;
     };
+    var unpage = function () { showAll = true; setPaged(false); };
     more.addEventListener("click", unpage);
     if (/^#src-\d+$/.test(location.hash)) { unpage(); }
     say(reg.length);
     box.addEventListener("input", function () {
       if (!rows) { rows = $("register").querySelectorAll(".rrow"); }
       var q = box.value.trim().toLowerCase(), shown = 0;
-      if (q) { unpage(); }
+      setPaged(!q && !showAll);
       Array.prototype.forEach.call(rows, function (row) {
         var on = !q || row.dataset.q.indexOf(q) !== -1;
         row.hidden = !on;

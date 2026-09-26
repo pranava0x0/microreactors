@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "captured": "2026-09-26",
+    "agent": "news-refresh-2026-09-26",
+    "scope": "1-20 MW microreactor market news dated 2026-01-01 to 2026-09-26 (priority 2026-09-01 onward): developer financing/listings, HALEU/TRISO fuel, federal programs (DOE Reactor Pilot Program, Army Janus, Air Force ANPI, Navy, DOME), NRC/DOE regulatory steps, state and territorial law, remote/island/Arctic deployment moves, and setbacks; larger-SMR news only where it sets a fuel, rule or financing precedent for microreactor buyers",
+    "angles_run": [
+      "DoW/Navy microreactor at NWS Crane, Indiana (war.gov 4593065)",
+      "FERC/PJM Oklo interconnection complaint order",
+      "X-energy TRISO-X TX-1 fuel facility construction milestone",
+      "Bechtel/TerraPower Natrium EPC split (checked, excluded)",
+      "Samsung C&T / Kairos Power investment",
+      "Holtec Palisades SMR-300 early site work vs EIB first SMR loan vs US-Turkey SMR agreement (picked one)",
+      "NuCube Energy / Launch Two Acquisition Corp SPAC business combination and S-4",
+      "NANO Nuclear / Ameresco MOU",
+      "Deep Fission Gravity reactor DOE nuclear safety design agreement",
+      "Radiant Kaleidos fuel receipt, shipment, startup or criticality at INL DOME",
+      "Alaska DEC microreactor siting regulations and 2026 legislative action",
+      "Project Pele 2026 reactor shipment to INL",
+      "Yukon-Ontario SMR agreement",
+      "Ottawa/DND northern Arctic microreactor study and related federal funding",
+      "General sweep for unlisted September 2026 microreactor criticality/regulatory news"
+    ],
+    "absences": [
+      "Alaska DEC microreactor siting regulations (18 AAC 87): SB 177 was signed in 2022 and the implementing regulation took effect in 2023; two searches plus a blocked dec.alaska.gov fetch found no 2026 adoption, amendment or legislative action to report.",
+      "Project Pele: the assembled reactor unit's shipment to INL is described only in future/scheduled terms ('scheduled to be transported... in 2026') across DOE, BWXT and INL sources; no dated confirmation the unit has actually shipped or arrived as of 2026-09-26. Only the November 2025 TRISO fuel delivery (outside this window) is confirmed.",
+      "Radiant Kaleidos: zero-power criticality and later test-campaign phases at INL's DOME (targeted for Q3 2026) were not confirmed by any fetchable source as of capture date; reported here only through its August 12, 2026 shipment from El Segundo.",
+      "Bechtel's exit from TerraPower's Natrium project (Sept 21-23, 2026) and Holtec's Palisades NRC excavation exemption (Aug 28, 2026) / US-Turkey USTDA agreement (Sept 24, 2026) were verified but intentionally excluded: Bechtel/TerraPower is an EPC-contractor change on a 345 MWe reactor with no fuel/rule/financing-precedent read for 1-20 MW buyers, and the prompt allowed only one of the Holtec/EIB/Turkey trio (EIB's Steady Energy loan was picked as the clearest financing precedent)."
+    ]
+  },
+  "items": [
+    {
+      "id": "ferc-rejects-oklo-pjm-complaint-2026-09-24",
+      "date": "2026-09-24",
+      "headline": "FERC rejects Oklo's bid to rejoin PJM's interconnection queue",
+      "companies": ["Oklo", "PJM Interconnection"],
+      "category": "setback",
+      "what_happened": "FERC issued an order on September 24, 2026 under Docket EL26-101 denying Oklo's complaint that had sought to force PJM to reinstate a 750 MW hybrid project — 150 MW of advanced nuclear generation plus 300 MW of fuel cells and 300 MW of gas-fired generation, near Richmond, Virginia — into PJM's current interconnection study cycle. PJM had withdrawn the project in August after citing application defects it said Oklo never fixed.",
+      "why_it_matters": "The order confirms FERC will hold co-located nuclear-plus-generation projects to ordinary interconnection-queue discipline, adding at least 18 months of delay risk for any microreactor developer planning a hybrid or behind-the-meter deployment on PJM's grid.",
+      "binding": true,
+      "binding_note": "A final FERC order denying the complaint; Oklo can refile in PJM's next study cycle or use the Expedited Interconnection Track, open through December 31, 2027.",
+      "sources": [
+        {"label": "Utility Dive — FERC rejects Oklo complaint seeking to reinstate project to PJM's interconnection study cycle (2026)", "url": "https://www.utilitydive.com/news/ferc-rejects-oklo-complaint-pjm-interconnection/831357/", "quote": "failed to demonstrate PJM violated its tariff", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "trisox-tx1-vertical-construction-2026-09-24",
+      "date": "2026-09-24",
+      "headline": "TRISO-X finishes vertical construction on its Oak Ridge fuel plant",
+      "companies": ["X-energy", "TRISO-X"],
+      "category": "construction",
+      "what_happened": "TRISO-X, X-energy's fuel subsidiary, announced on September 24, 2026 that it completed vertical construction of the 214,000-square-foot TX-1 fuel fabrication facility in Oak Ridge, Tennessee, completing the building's primary structure and clearing the way for interior build-out and fuel-fabrication equipment installation.",
+      "why_it_matters": "TX-1 is sized to produce about 700,000 TRISO-X pebbles a year, enough for up to 11 Xe-100-class reactors, so its construction pace is a trackable leading indicator of when a second qualified TRISO fuel source becomes available to microreactor buyers.",
+      "binding": true,
+      "sources": [
+        {"label": "GlobeNewswire — TRISO-X Completes Vertical Construction of TX-1 Fuel Fabrication Facility (2026)", "url": "https://www.globenewswire.com/news-release/2026/09/24/3368186/0/en/triso-x-completes-vertical-construction-of-tx-1-fuel-fabrication-facility.html", "quote": "TX-1 is expected to produce approximately 700,000 TRISO-X fuel pebbles annually", "status": "fetched"}
+      ]
+    }
+  ]
+}

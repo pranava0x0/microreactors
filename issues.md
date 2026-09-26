@@ -309,3 +309,9 @@ one may simply have no live equivalent now that the project is off.
   synthesis, already marked snippet-only. Root cause: **data bug** (DATA.md: never cite a fact that
   exists only in a search summary). Both loads are in `_meta.uncited` until a facility-level source
   is found; the filings agent is looking.
+- **2026-09-26 · site · Clearing a register search left all ~700 rows open — Fixed.** Typing lifted
+  the 30-row page limit and hid Show all, and nothing restored either when the box was emptied.
+  Found by the interaction sweep (every filter chip, disclosure, deal row, search and deep link at
+  375 and 1280px). Root cause: **code bug** (one-way state). The limit now returns when the box is
+  cleared unless the reader chose Show all or arrived on a #src-N link;
+  `test_register_search_restores_the_first_page`.
