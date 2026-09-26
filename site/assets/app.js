@@ -1058,8 +1058,69 @@
                        { id: "against", label: "Where it fails" }]);
   }
 
+  /* Applications > Regions: remote and cold jurisdictions from the 2026-09-26
+     regional passes (data/regions.json, lazy). Each row says what the place pays,
+     what it draws, and where its law stands on civil nuclear power. */
+  var regionsRendered = false;
+  function renderRegions() {
+    var R = D.regions;
+    if (regionsRendered || !(R && R.regions)) { return; }
+    regionsRendered = true;
+    var tagOf = {}, groupOf = {};
+    (R._meta.position_tags || []).forEach(function (t) { tagOf[t.id] = t; });
+    (R._meta.groups || []).forEach(function (g) { groupOf[g.id] = g; });
+    var tagCount = {};
+    R.regions.forEach(function (r) { tagCount[r.position] = (tagCount[r.position] || 0) + 1; });
+    render($("regions-intro"), esc(R._meta.what_this_is) + " " +
+      (R._meta.position_tags || []).filter(function (t) { return tagCount[t.id]; }).map(function (t) {
+        return '<span class="postag ' + esc(t.id) + '" title="' + esc(t.gloss) + '">' + esc(t.label) +
+          " " + tagCount[t.id] + "</span>";
+      }).join(" "));
+    render($("regions-filter"), '<button class="newschip on" data-group="" aria-pressed="true">All ' +
+      R.regions.length + "</button>" + (R._meta.groups || []).map(function (g) {
+        var n = R.regions.filter(function (r) { return r.group === g.id; }).length;
+        return n ? '<button class="newschip" data-group="' + esc(g.id) + '" aria-pressed="false">' +
+          esc(g.label) + " " + n + "</button>" : "";
+      }).join(""));
+    render($("regions"), '<div class="precgrid">' + R.regions.map(function (r) {
+      var tag = tagOf[r.position] || { label: r.position, gloss: "" };
+      var loads = (r.loads || []).filter(function (l) { return l.name; });
+      return '<details class="prec region" data-group="' + esc(r.group) + '"><summary>' +
+        '<span class="nm">' + esc(r.region) + ' <span class="postag ' + esc(r.position) + '" title="' +
+        esc(tag.gloss) + '">' + esc(tag.label) + "</span></span>" +
+        '<span class="cat">' + esc(r.price_short || "price not published") + "</span></summary>" +
+        '<div class="body">' +
+        '<p class="copyline"><span class="k">For a 1\u201320 MW unit \u00b7 </span>' + esc(r.microreactor_read) + "</p>" +
+        '<p><span class="k">Power today \u00b7 </span>' + esc(r.power_system) + "</p>" +
+        (r.price ? '<p><span class="k">Price \u00b7 </span>' + esc(r.price) + "</p>" : "") +
+        (loads.length ? '<div class="sitedetails">' + loads.map(function (l) {
+          return '<div class="drow"><span class="dlbl">' + esc(l.name) + "</span><span>" + esc(l.mw || "") +
+            (l.note ? ' <span class="note">(' + esc(l.note) + ")</span>" : "") + "</span></div>";
+        }).join("") + "</div>" : "") +
+        '<p><span class="k">Law and policy \u00b7 </span>' + esc(r.nuclear_position) + "</p>" +
+        (r.microreactor_activity ? '<p><span class="k">Reactor activity \u00b7 </span>' + esc(r.microreactor_activity) + "</p>" : "") +
+        ((r.blockers || []).length ? '<div class="beat"><span class="k">Blockers</span><ul class="blockers">' +
+          r.blockers.map(function (b) { return "<li>" + esc(b) + "</li>"; }).join("") + "</ul></div>" : "") +
+        srcList(r.sources) + "</div></details>";
+    }).join("") + "</div>");
+    $("regions-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      Array.prototype.forEach.call($("regions-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      var g = b.dataset.group;
+      Array.prototype.forEach.call($("regions").querySelectorAll("details.region"), function (d) {
+        d.hidden = !!g && d.dataset.group !== g;
+      });
+    });
+  }
+
   var secItems = [
-    { id: "overview", label: "Overview" }
+    { id: "overview", label: "Overview" },
+    { id: "regions", label: "Regions" + (s.regions != null ? " (" + s.regions + ")" : ""),
+      lazy: { name: "regions", el: "regions", render: renderRegions } }
   ].concat(
     D.sectors.sectors.map(function (sec) {
       return { id: slug(sec.sector), label: sec.sector };

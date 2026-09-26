@@ -8,13 +8,47 @@
    "Puerto Rico: Nuclear Alternative Project feasibility study and DOE site-analysis award",
    "Puerto Rico: NEPR integrated resource plan and 2024-2026 nuclear legislation",
    "US Virgin Islands: WAPA fuel mix, generation capacity and residential rate",
-   "US Virgin Islands: nuclear statement or study from WAPA, VI Energy Office or legislature"
+   "US Virgin Islands: nuclear statement or study from WAPA, VI Energy Office or legislature",
+   "Guam: GPA generation mix, LEAC/base-rate filings and Ukudu plant economics",
+   "Guam: Nuclear Energy Prohibition Act (Bill 151-37), GPA-NuScale history and NDAA SMR pilot",
+   "CNMI: CUC/Saipan-Tinian-Rota rates and diesel capacity, incl. 2026 typhoon impact",
+   "CNMI: SJR 24-05 (Hofschneider) advanced-nuclear study resolution",
+   "American Samoa: ASPA generation mix, rates and StarKist cannery load",
+   "American Samoa: Ta'u SolarCity/Tesla microgrid cost and specs; nuclear study search",
+   "Hawaii: HECO/KIUC/neighbor-island fuel mix and 2025-2026 rate shocks",
+   "Hawaii: Article XI Sec.8 constitutional provision, HB1741, SB1588/SCR136 task force report",
+   "Palau/FSM/Marshall Islands: utility generation capacity and residential $/kWh",
+   "Palau/FSM/Marshall Islands: civil nuclear position and weapons-testing-legacy context",
+   "Australia: ARPANS Act / EPBC Act statutory nuclear prohibitions and repeal mechanics",
+   "Australia: Coalition nuclear plan fate post-May-2025 election and September 2026 policy update",
+   "Australia: AUKUS-driven ANNPSR/ARPANSA regulatory and workforce build-out (civil spillover)",
+   "Australia: Horizon Power (WA) and Power and Water/IES (NT) remote/off-grid generation and diesel costs",
+   "Australia: off-grid mine hybrid microgrids (Agnew, Tropicana, Kathleen Valley) and microreactor advocacy (ANA, Nuclear for Australia)",
+   "UK: Shetland/Orkney/Western Isles power systems, Viking windfarm and HVDC links",
+   "UK: Scottish Government nuclear stance; UK Advanced Nuclear Framework/Pipeline; Sept-2025 Atlantic Partnership",
+   "UK overseas territories: Falklands (Stanley/Sand Bay wind), St Helena and Tristan da Cunha power and nuclear interest",
+   "New Zealand: Chatham Islands diesel cost and new wind project",
+   "New Zealand: Nuclear Free Zone Act 1987 scope and any 2024-2026 SMR/microreactor discussion",
+   "Puerto Rico: priced solar-plus-storage or battery contracts approved by PREB/FOMB for PREPA"
   ],
   "absences": [
    "Puerto Rico: could not fetch PREPA's or LUMA's own generation-mix dashboard (site navigation only in fetch); generation-mix percentages are sourced to a third-party aggregator (lowcarbonpower.org) rather than PREPA/LUMA/PREB directly",
    "Puerto Rico: could not confirm the exact month of DOE's ~$1.6M Nuclear Alternative Project site-analysis award (sources place it in 2021 but conflict on month); reported as '2021' only",
    "US Virgin Islands: no nuclear-related statement, study, MOU or legislative bill found from WAPA, the VI Energy Office, or the territorial legislature; NRC's Virgin Islands info-finder page returned HTTP 403 on fetch, so its 'no operating reactors' statement is carried as snippet-only",
-   "US Virgin Islands: 2025-2026 fuel-mix percentage (propane vs. diesel) not found more recent than a March 2020 press figure (74% propane / 26% diesel)"
+   "US Virgin Islands: 2025-2026 fuel-mix percentage (propane vs. diesel) not found more recent than a March 2020 press figure (74% propane / 26% diesel)",
+   "Guam: could not confirm whether Bill 151-37 (Nuclear Energy Prohibition Act) was ever enacted into public law; as of Nov 2024-Feb 2025 reporting it remained a live proposal, and no later status update was found",
+   "Guam: the GPA-NuScale 2012 MOU claim could not be verified against a NuScale or GPA primary source in this pass (secondary reporting only)",
+   "CNMI: could not fetch nminewsservice.com or RNZ articles directly (HTTP 403) to confirm the typhoon's name and full Rota recovery timeline beyond a 42.5 MW Saipan figure",
+   "American Samoa: no nuclear power study, statement or legislative interest found from ASPA, the territorial government or the Fono, searched directly",
+   "Hawaii: could not fetch the SCR136 working-group PDF report directly (binary/compressed); its findings are carried via a fetched secondary account (ANS Nuclear Newswire) rather than the primary document text",
+   "Freely associated states: no civil nuclear statement, study or MOU found for Palau, FSM or the Marshall Islands; only weapons-testing-legacy material exists for the Marshall Islands",
+   "Australia: could not confirm ANNPSR's 2031-32 workforce target of ~125 staff against a fetched primary source (Defence Ministers release returned a timeout); carried from a search snippet only",
+   "Australia: no $/MWh figure specific to Horizon Power's or Indigenous Essential Services' diesel generation cost was found, only diesel-litre volumes and total program funding",
+   "UK: could not fetch a primary Scottish Government statement of its own anti-nuclear planning policy (Hansard and New Civil Engineer both returned HTTP 403); position is carried via secondary reporting (Energy Voice, snippet-only)",
+   "UK: could not independently confirm the Last Energy (Wales, NSL route) and MoltexFLEX (West Burton) microreactor licensing claims beyond one trade-press secondary source",
+   "UK overseas territories: no current ($/kWh) Falkland Islands residential electricity price found more recent than a 2020 Falkland-pound per-unit figure of unconfirmed unit basis",
+   "New Zealand: no MW capacity figure found for the Chatham Islands' new wind turbines or its diesel power station",
+   "General: EIA's own state/territory profile pages (eia.gov/state/... for Puerto Rico, Guam, American Samoa, USVI) consistently returned only site navigation/menu content to WebFetch rather than page text, across every territory tried in this pass, so EIA-sourced figures throughout this file are attributed to secondary aggregators or carried as snippet-only rather than as fetched EIA text"
   ]
  },
  "regions": [
@@ -474,6 +508,168 @@
      "status": "snippet-only"
     }
    ]
+  },
+  {
+   "id": "uk-scottish-islands-and-nuclear-framework",
+   "region": "UK: Scottish islands and the UK advanced nuclear/microreactor framework",
+   "country": "GB",
+   "jurisdiction": "UK nation (Scotland, devolved) plus UK central government",
+   "power_system": "Shetland's grid 'is not synchronised to the national grid on mainland Scotland' and runs on local generation: Lerwick Power Station is 'the principal source of electrical energy for Shetland,' supplemented by about 20 MW from the gas-fired Sullom Voe Terminal power station (as of 2015) and community renewables. The 103-turbine Viking windfarm became operational on 1 September 2024, adding about 443,000 kW (443 MW) of installed renewable capacity, and a 68 MW lithium grid battery is scheduled for 2026. SSEN Transmission's 600 MW HVDC Shetland link is under construction, and a further 1.8 GW HVDC Western Isles link has been proposed, both meant to connect these island grids to the GB mainland system.",
+   "nuclear_position": "Scotland's devolved government (SNP-led since 2007) runs what is widely described as a 'no new nuclear power strategy,' opposing new nuclear stations on environmental, safety and cost grounds; the Scottish Parliament voted 63-58 to support that policy, and Scottish ministers use devolved planning powers to block proposed nuclear sites even though nuclear licensing itself is reserved to the UK government. This is a live 2026 election issue: Scottish Labour leader Anas Sarwar has vowed to end the SNP's 'ideological and anti-science' planning opposition, and a UK Government study was reported in mid-2026 to have identified Scottish sites with technical potential for new nuclear. At UK level, a March-2026 Advanced Nuclear Framework and Advanced Nuclear Pipeline (run by the Department for Energy Security & Net Zero with Great British Energy-Nuclear) opened a route for privately led SMR/AMR/microreactor projects to seek 'in-principle government endorsement.' On 2025-09-15 the UK and US signed the Atlantic Partnership for Advanced Nuclear Energy, under which 'if a reactor has already passed rigorous safety checks in one country, this work can be used by the other to support its assessment,' cutting expected licensing time 'from about three or four years to around two years.'",
+   "microreactor_activity": "Urenco and Radiant Energy (a US microreactor developer) signed a fuel-related agreement worth about GBP4 million around the September 2025 UK-US nuclear deals; X-Energy/Centrica (Hartlepool, 12 planned advanced modular reactors, about 2,500 jobs) and Holtec/EDF/Tritax (Cottam, Nottinghamshire, SMRs at a former coal station) were named under the Advanced Nuclear Pipeline. Separate trade reporting describes Last Energy pursuing a Nuclear Site Licence route for microreactors in Wales and MoltexFLEX targeting West Burton, both without a full Generic Design Assessment. No project specifically sited in Shetland, Orkney or the Western Isles was found; the islands' own near-term generation plan is windfarm-plus-HVDC-interconnection (Viking, the Shetland and Western Isles HVDC links, battery storage), not nuclear.",
+   "blockers": [
+    "Scotland's devolved government has an active planning-level policy against new nuclear stations, enforced through consenting powers even though nuclear licensing is a reserved UK matter",
+    "The islands' funded near-term plan is renewables-plus-HVDC-interconnection (Viking windfarm, Shetland and Western Isles HVDC links, battery storage), not new generation of any other kind",
+    "No microreactor developer, study or MOU was found specifically targeting Shetland, Orkney or the Western Isles"
+   ],
+   "microreactor_read": "The UK now has two of the fastest private and government-endorsed routes to market for microreactors anywhere (the Advanced Nuclear Pipeline and the UK-US Atlantic Partnership's mutual safety-assessment recognition), but none of that machinery has yet pointed at Scotland's actual off-grid islands, which are instead already mid-build on a windfarm-plus-HVDC-cable answer to the same diesel-displacement problem -- and any Scottish site would still run into the devolved government's own planning-level opposition to nuclear.",
+   "sources": [
+    {
+     "label": "Wikipedia — Lerwick Power Station",
+     "url": "https://en.wikipedia.org/wiki/Lerwick_Power_Station",
+     "quote": "is not synchronised to the national grid on mainland Scotland",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — UK seeking pipeline of advanced nuclear projects",
+     "url": "https://www.world-nuclear-news.org/articles/uk-seeking-pipeline-of-advanced-nuclear-projects",
+     "quote": "X-Energy and Centrica at Hartlepool (12 advanced modular reactors, 2,500 jobs planned)",
+     "status": "fetched"
+    },
+    {
+     "label": "NucNet — UK And US Announce Major Partnership In New 'Golden Age' Of Nuclear Power Ahead Of Trump Visit (2025-09)",
+     "url": "https://www.nucnet.org/news/uk-and-us-announce-major-partnership-in-new-golden-age-of-nuclear-power-ahead-of-trump-visit-9-1-2025",
+     "quote": "if a reactor has already passed rigorous safety checks in one country, this work can be used by the other to support its assessment",
+     "status": "fetched"
+    },
+    {
+     "label": "Shetland Islands Council — Shetland statistics: energy",
+     "url": "https://www.shetland.gov.uk/shetland-statistics/energy",
+     "quote": "103 turbine Viking windfarm ... 68 MW lithium grid battery",
+     "status": "snippet-only"
+    },
+    {
+     "label": "Energy Voice — Labour and SNP clash over nuclear power for Scotland amid Holyrood campaign",
+     "url": "https://www.energyvoice.com/renewables-energy-transition/nuclear/595535/labour-and-snp-clash-over-nuclear-power-for-scotland-amid-holyrood-campaign/",
+     "quote": "ideological and anti-science",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "uk-overseas-territories-south-atlantic",
+   "region": "Falkland Islands, St Helena and Tristan da Cunha",
+   "country": "GB",
+   "jurisdiction": "UK overseas territory",
+   "power_system": "Stanley, the Falklands' capital, runs on diesel plus six 330 kW Enercon wind turbines (the last three commissioned February 2010); the turbines met a then-record '40% of the total electricity required by Stanley' in November 2010, with weekly diesel displacement as high as 30,290 litres. A Sand Bay Wind Farm Phase Three, approved December 2023, is expected to raise Stanley's 'annual renewable contribution to over 50%... including periods with 100% renewable energy provision until the mid-2040s.' St Helena's grid (Connect Saint Helena Ltd) is 'now averaging around 30% renewable contribution,' backed by the Half Tree Hollow Solar Farm and battery storage, against a stated goal of 'a minimum of 85% renewable energy generation.' Tristan da Cunha -- population about 250, the most remote inhabited island in this record -- runs a small diesel system rebuilt after a fire, supplemented since 2015-04-30 by a pilot 6.5 kW solar array ('26 solar panels ... each capable of generating 250 watts').",
+   "price": "St Helena electricity cost 'up to £0.42 per kWh' depending on consumption, 2014 (most recent figure found); a Falklands government order cut the 'price of electricity per unit for all consumers... from £23 to £18' effective 2020-05-01 (unit basis not confirmed as standard kWh in this pass)",
+   "loads": [
+    {
+     "name": "Stanley (Falkland Islands capital)",
+     "mw": "six 330 kW wind turbines (about 2 MW) plus diesel",
+     "note": "wind met a record 40% of Stanley's electricity in Nov 2010; Sand Bay Phase Three (approved Dec 2023) targets over 50% annual renewable"
+    },
+    {
+     "name": "Tristan da Cunha",
+     "mw": "6.5 kW pilot solar array (26 panels) plus diesel",
+     "note": "population about 250; far below microreactor scale"
+    }
+   ],
+   "nuclear_position": "No civil nuclear power study, statement or interest was found for the Falkland Islands, St Helena or Tristan da Cunha in this pass; each territory's own energy-strategy documents discuss only diesel, wind, solar and battery options. The Falklands government's energy strategy leaves the door open in general terms only: 'technology is evolving at pace, and options that are currently unfeasible may become feasible in future, whereas others may become obsolete or less attractive' -- a generic statement about energy technology, not a nuclear-specific one.",
+   "microreactor_activity": "none found for any of the three territories, searched directly; no MOU, feasibility study or vendor visit specific to nuclear power turned up for the Falklands, St Helena or Tristan da Cunha",
+   "blockers": [
+    "No feasibility study, MOU or government statement on nuclear power found for any of the three territories",
+    "All three already have funded renewables-plus-diesel roadmaps in progress (Falklands' Sand Bay wind phases, St Helena's 85% renewable target, Tristan's solar pilot)",
+    "Tristan da Cunha's population (about 250) and grid scale (kW, not MW) put it far below any plausible microreactor market; the Falklands (Stanley) and St Helena are the only two of the three with grids that could conceivably approach the 1-20 MW range"
+   ],
+   "microreactor_read": "All three pay a real diesel premium on small, remote grids, but each already has a funded renewables-plus-storage roadmap in progress and none shows any nuclear interest -- Stanley's own wind build-out is explicitly planned to reach 100% renewable for periods of the year by the mid-2040s, which is the incumbent a microreactor pitch would have to unseat rather than simply replace diesel.",
+   "sources": [
+    {
+     "label": "MercoPress — Falklands' wind power contribution new record: 40% of Stanley's consumption (2010-11-15)",
+     "url": "https://en.mercopress.com/2010/11/15/falklands-wind-power-contribution-new-record-40-of-stanley-s-consumption",
+     "quote": "40% of the total electricity required by Stanley",
+     "status": "fetched"
+    },
+    {
+     "label": "MercoPress — Falklands will proceed with Phase Three of Sand Bay Wind Farm (2023-12-06)",
+     "url": "https://en.mercopress.com/2023/12/06/falklands-will-proceed-with-phase-three-of-sand-bay-wind-farm",
+     "quote": "increase the annual renewable contribution to over 50% for Stanley, including periods with 100% renewable energy provision until the mid-2040s",
+     "status": "fetched"
+    },
+    {
+     "label": "St Helena Government — Renewable Energy",
+     "url": "https://www.sainthelena.gov.sh/renewable-energy/",
+     "quote": "now averaging around 30% renewable contribution to the generation of electricity",
+     "status": "fetched"
+    },
+    {
+     "label": "Tristan da Cunha Development and Public Works — Tristan da Cunha Renewable Energy Project",
+     "url": "https://www.tristandc.com/renewableenergy.php",
+     "quote": "26 solar panels, aligned to face the northern midday sun and each capable of generating 250 watts",
+     "status": "fetched"
+    },
+    {
+     "label": "Saint Helena Island Info — Renewable Energy",
+     "url": "https://sainthelenaisland.info/renewableenergy.htm",
+     "quote": "electricity cost up to £0.42 per kWh",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "nz-chatham-islands-and-nuclear-law",
+   "region": "New Zealand: Chatham Islands and national nuclear-free legislation",
+   "country": "NZ",
+   "jurisdiction": "New Zealand (Chatham Islands, a special local-government area)",
+   "power_system": "The Chatham Islands sit roughly 800 km east of Christchurch with no connection to New Zealand's national grid, so the main settlement has run overwhelmingly on diesel. A community wind-turbine project 'began operation in November' 2025 and is 'expected to reduce diesel use by up to 68%, and save more than $1 million a year,' with grid power for islanders 'expected to drop by 20%.'",
+   "price": "NZ$1.32/kWh from 2026-06-01 (a 32% rise), 'more than three times the mainland average of about 40 cents'; islanders had already been paying $1.02/kWh in 2020 versus about 25c on the mainland",
+   "loads": [
+    {
+     "name": "Chatham Islands (Waitangi main grid)",
+     "mw": "not stated in MW in this pass; diesel plus new wind turbines (operational November 2025)",
+     "note": "off-grid, no connection to the NZ national grid; price rose 32% to NZ$1.32/kWh from June 2026 despite the new wind capacity"
+    }
+   ],
+   "nuclear_position": "New Zealand's Nuclear Free Zone, Disarmament, and Arms Control Act 1987 is widely assumed to ban nuclear power outright, but per the World Nuclear Association, 'The New Zealand Nuclear Free Zone established under the Act does not ban land-based nuclear power plants' -- its actual prohibitions target nuclear weapons and nuclear-propelled vessels entering New Zealand's territorial sea, land and airspace, not civilian electricity generation. No national or Chatham Islands-specific law bans a civil reactor, but no government body has proposed one either.",
+   "microreactor_activity": "none found from any New Zealand government body, nationally or for the Chathams specifically. The only advocacy found was an August 2025 opinion piece calling nuclear 'the last swear word in New Zealand politics' and urging 'a feasibility study to work out the who, when, and where of SMRs' -- itself confirming no such study yet exists.",
+   "blockers": [
+    "No government feasibility study, RFI or MOU on nuclear power exists at the national or Chatham Islands level",
+    "Nuclear power remains politically described as 'the last swear word in New Zealand politics' even though it is not actually illegal for land-based generation",
+    "The Chathams' near-term answer to diesel cost is already underway and partly delivered: a community wind-turbine project operating since November 2025, targeting a 68% diesel-use cut"
+   ],
+   "microreactor_read": "The Chathams pay the highest, most volatile delivered-diesel price found in this whole record (NZ$1.32/kWh, up 32% in a year even after new wind capacity), and contrary to popular belief no New Zealand law actually bans a land-based reactor -- but the political taboo is doing the work the law does not, and the islands' own funded fix (new wind turbines, targeting a 68% diesel cut) is already delivering savings.",
+   "sources": [
+    {
+     "label": "NEWS WIRE — Chatham Islands power price rises 32 percent to $1.32 a kilowatt hour from June (2026-05)",
+     "url": "https://newswire.co.nz/2026/05/chatham-islands-power-price-rises-32-percent-to-1-32-a-kilowatt-hour-from-june-more-than-three-times-the-mainland-average/",
+     "quote": "more than three times the mainland average of about 40 cents",
+     "status": "fetched"
+    },
+    {
+     "label": "1News — Wind turbines bring hope of cheaper power to the Chatham Islands (2025-12-23)",
+     "url": "https://www.1news.co.nz/2025/12/23/wind-turbines-bring-hope-of-cheaper-power-to-the-chatham-islands/",
+     "quote": "expected to reduce diesel use by up to 68%, and save more than $1 million a year",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear Association — Nuclear Energy Prospects in New Zealand",
+     "url": "https://world-nuclear.org/information-library/country-profiles/countries-g-n/new-zealand",
+     "quote": "The New Zealand Nuclear Free Zone established under the Act does not ban land-based nuclear power plants",
+     "status": "fetched"
+    },
+    {
+     "label": "1News — Dissolving the nuclear taboo would benefit NZ hugely – but do we have the guts? (2025-08-19)",
+     "url": "https://www.1news.co.nz/2025/08/19/dissolving-the-nuclear-taboo-would-benefit-nz-hugely-but-do-we-have-the-guts/",
+     "quote": "a feasibility study to work out the who, when, and where of SMRs",
+     "status": "fetched"
+    },
+    {
+     "label": "RNZ — Chatham Islands braces for energy shock",
+     "url": "https://www.rnz.co.nz/news/national/589190/chatham-islands-braces-for-energy-shock",
+     "quote": "Power cost 129.5c/kWh -- among the highest in New Zealand",
+     "status": "snippet-only"
+    }
+   ]
   }
  ],
  "cases": [
@@ -538,6 +734,38 @@
      "label": "EDL — Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
      "url": "https://edlenergy.com/project/agnew/",
      "quote": "10-year agreement",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "prepa-asap-battery-storage-contracts",
+   "sector": "Remote outposts & microgrids",
+   "name": "PREPA Accelerated Storage Addition Program (ASAP) battery contracts",
+   "country": "US",
+   "region": "Puerto Rico (multiple municipalities)",
+   "parties": {
+    "host": "PREPA (Puerto Rico Electric Power Authority)",
+    "provider": "Solaner Puerto Rico One, Xzerta-Tec Solar I, Polaris Power US, Lajas Solar Project, CS-UR Juncos PV and Infinigen Yabucoa ASAP (six separate developers)"
+   },
+   "signed": "2025-05",
+   "capacity": "six battery storage projects totaling about 486 MW: Solaner Puerto Rico One (40 MW), Xzerta-Tec Solar I (120 MW), Polaris Power US (71.4 MW), Lajas Solar Project (80 MW), CS-UR Juncos PV (125 MW) and Infinigen Yabucoa ASAP (50 MW)",
+   "price": "storage capability payment of $16,000 per MW per month of tested storage capability with no escalation, rising to $20,600/MW/month if the developer's federal investment tax credit is not secured",
+   "filings": [
+    {
+     "forum": "Financial Oversight and Management Board for Puerto Rico",
+     "type": "contract-approval",
+     "date": "2025-05-08",
+     "url": "https://www.sanjuandailystar.com/post/fiscal-board-greenlights-solar-plus-storage-additions-sets-conditions-for-prepa-contracts"
+    }
+   ],
+   "summary": "In May 2025 Puerto Rico's Financial Oversight and Management Board approved a set of PREPA battery-storage contracts under the island's Accelerated Storage Addition Program (ASAP), covering six projects for about 486 MW of tested storage capability combined. The approved structure pays each developer 'a storage capability payment price of $16,000 per MW per month of tested storage capability with no escalation,' rising to $20,600/MW/month if the developer's federal investment tax credit is not secured, addressing tight 2025 generation margins on an island still short of dispatchable capacity years after Hurricane Maria.",
+   "microreactor_read": "PREPA's own board-approved yardstick for new dispatchable capacity is a pure capacity payment -- $16,000-20,600 per MW per month, with no separate energy price -- giving a direct, apples-to-apples number a microreactor bid would have to beat on the capacity side alone, before counting any energy it sells.",
+   "sources": [
+    {
+     "label": "San Juan Daily Star — Fiscal board greenlights solar-plus-storage additions, sets conditions for PREPA contracts (2025-05-12)",
+     "url": "https://www.sanjuandailystar.com/post/fiscal-board-greenlights-solar-plus-storage-additions-sets-conditions-for-prepa-contracts",
+     "quote": "$16,000 per MW per month of tested storage capability with no escalation",
      "status": "fetched"
     }
    ]

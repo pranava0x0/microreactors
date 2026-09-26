@@ -653,6 +653,17 @@ details.prec .body .beat p{margin-top:0}
 details.prec .body ul.blockers{margin:0;padding-left:var(--space-5);
   font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
 details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
+/* Applications > Regions: where each jurisdiction's law stands on civil nuclear
+   power. The label carries the meaning; the border is only a cue. */
+.postag{display:inline-block;font-family:var(--font-mono);font-size:var(--size-label-sm);letter-spacing:.06em;
+  text-transform:uppercase;border:1px solid var(--border-default);padding:1px var(--space-2);
+  color:var(--text-secondary);white-space:nowrap;vertical-align:middle;font-weight:var(--weight-regular)}
+.postag.enabling{border-color:var(--antares-red-40);color:var(--antares-red)}
+.postag.review{border-color:var(--border-strong);color:var(--text-primary)}
+.postag.restricted,.postag.banned{border-style:dashed;color:var(--text-tertiary)}
+#regions-intro .postag{margin:0 var(--space-1) var(--space-1) 0}
+details.region summary .nm .postag{margin-left:var(--space-2)}
+
 /* Customer cost: one collapsed section per sector (2026-09-26). */
 details.benchsector{border:1px solid var(--border-subtle);margin-bottom:var(--space-3)}
 details.benchsector > summary{list-style:none;cursor:pointer;display:grid;

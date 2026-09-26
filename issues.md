@@ -233,6 +233,8 @@ vs test bug), status.
 
 ## 2026-08-29 — link rot found by check_links (pre-existing, not introduced)
 
+> **Resolved 2026-09-26** (see the 2026-09-26 section below).
+
 Three registered URLs are dead as of 2026-08-29. All three predate this session's changes
 (confirmed present in `origin/main`'s `site/data.js`). `tools/check_links.py` exits 1 on them;
 the test suite only imports its `collect_urls()`, so CI stays green.
@@ -251,3 +253,59 @@ one may simply have no live equivalent now that the project is off.
 ## 2026-09-02 — commercial-strategy pass
 
 - **2026-09-02 · Costs / learning curve · data bug · Fixed.** `costs.json` `learning_curve.floor` read "INL models 6 to 10 full-time staff at $162,000 to $188,000 each." A grep of both cached INL reports finds no such figures: INL uses a single $178,500 per FTE rate (security 5 FTEs shared one guard per two reactors, remote monitoring one person per 20 reactors). The 3-10 staff and $120,000-225,000 ranges are the University of Michigan paper's uniform input distributions (Table 2, nominal 5 staff at $150,000), and its optimized solution is ten FTEs at $162,424. The $188,000 figure appears in no cached source. Root cause: a paraphrase from the 2026-08-29 cost pass that merged two papers' assumptions under one attribution; the block's sources were the right documents, so the citation-coverage gate could not see it. Fix: sentence re-attributed and two quote-locks added (`Using $178,500/FTE`; `ten FTEs at $162,424.20/year`), verified against the cache. The same wrong sentence is in the (uncommitted) pitch documents; flagged in the pitch improvement plan.
+
+## 2026-09-26 — full refresh (UAT, claim validation, research pass)
+
+- **2026-09-26 · home · The front page promoted an older story over three newer ones — Fixed.**
+  `renderHome()` sliced `D.news.items` assuming newest-first ("already sorted by build_data.py"),
+  but nothing sorted it and `data/news.json` had a 2026-08-17 item above 2026-09-04. Root cause:
+  **code bug plus a false comment**. `tools/build_data.py` now sorts news and ships the newest
+  eight as `headlines`; `test_home_is_a_directory_of_the_site_with_the_newest_headlines` asserts
+  date order.
+- **2026-09-26 · data · news.json had drifted from its research pass — Fixed.** PR #21 hand-edited
+  five items in and three items' fields, while the seed pass stayed marked `incomplete`, so no
+  tool could rebuild the file. Root cause: **process gap** (no drift test for news, unlike voices).
+  The curated items are now `data/research/news/curated-2026-09-21.json`; `test_news_matches_its_pass`.
+- **2026-09-26 · tooling · The quote gate reported 147 PDF quotes as mismatches — Fixed.** With no
+  PDF library installed `cached_text()` returned "", which reads as "the page lacks the quote".
+  Root cause: **tool bug** (an unreadable input reported as a failure). It now returns None and the
+  gate prints `UNCHECKED n PDF-backed quotes` instead. With PyMuPDF: 734 verified, 0 mismatches.
+- **2026-09-26 · site · Duplicate citation chips — Fixed.** A record citing one page twice printed
+  "[10][10]" on the front page. `cite()` now emits one chip per URL.
+- **2026-09-26 · site · Sourced facts typed into app.js — Retired.** Why > The loads rendered six
+  hand-typed cards whose citations did not support them (a 5-30 MW spaceport band cited to an
+  Antares base-selection release; mining transmission costs cited to a Valdez utility page).
+  Root cause: **data in the renderer**, outside every gate. Replaced by the derived Applications
+  overview; `test_app_js_carries_no_sourced_facts` keeps inline sources out of app.js.
+- **2026-09-26 · site · Hand-typed stats — Fixed.** Applications' "$250-$850/MWh displaced diesel
+  ceiling" and Sites' "5 load categories" / "0 FERC hits" were literals; all are counted now.
+- **2026-09-26 · data · Degenerate band "0.24-0.24 MW" — Fixed.** Now "0.24 MW"; the band test
+  accepts single values and rejects equal-ended ranges.
+- **2026-09-26 · data · eVinci's criticality was invisible on Vendors — Fixed.** The 2026-08-24
+  NCERC milestone lacked the `unit` field `criticalityMilestone()` requires, so the new vendor
+  table said "no criticality yet" beside a News item recording it. Antares also listed its Mark-0
+  criticality twice (deduped). Root cause: **data bug**.
+- **2026-09-26 · layout · Two-row nav and an off-screen active tab — Fixed.** Nine tabs wrapped to
+  two rows at 768 and 1280px (129-143px of sticky chrome); on phones #sources left its tab ~500px
+  off-screen. The strip now scrolls below 1280px with an edge fade and reveals the active tab.
+- **2026-09-26 · tooling · The language lint read six object keys of app.js — Fixed.** Copy built
+  around variables (every new Home and Applications string) was never scanned. It now tokenizes
+  every string literal, skipping regex literals and comments.
+- **2026-09-26 · gate · Banned-word sweep covered 7 of 15 data files (#18) — Fixed.** Derived from
+  `build_data.FILES`; three hits fixed or exempted (a blog headline in a venue field).
+- **2026-09-26 · data · Janus binding status disagrees between tracker and News — Open.** The tracker
+  row says not binding; the six 2026-08-26 News items say executed; the Army's release says the five
+  vendors were "down-selected ... for negotiation of Other Transactions Authority-based agreements".
+  Under verification in the 2026-09-26 pass.
+- **2026-09-26 · sources · Five dead citations — Fixed.** `tools/check_links.py`: 639 URLs, 535
+  live, 99 bot-blocked (page exists), 5 dead. The AEP Ohio tariff book moved to the September 2026
+  edition (both Schedule DCT quotes re-verified in it); the CNSC MMR review page and the reflector.com
+  Radiant release now cite Wayback snapshots whose cached copies contain the quotes; the CNSC GFP
+  admin-protocol filing row was dropped (removed after the project paused, never archived).
+- **2026-09-26 · data · Two Transportation loads were cited to a quote that is not on the page —
+  Fixed.** "Large Amazon, Walmart and similar fulfillment and distribution centers" and "Large rail,
+  truck and fleet-charging hubs" cited data.nrel.gov/submissions/162 for a sentence ("A 20-bus transit
+  depot ... could draw 3 MW") that the archived dataset page does not contain: a search-engine
+  synthesis, already marked snippet-only. Root cause: **data bug** (DATA.md: never cite a fact that
+  exists only in a search summary). Both loads are in `_meta.uncited` until a facility-level source
+  is found; the filings agent is looking.
