@@ -338,6 +338,12 @@
   }).join(""));
 
   /* ---------- pipeline ---------- */
+  // Counted, not typed: "Only one group has a named reactor at a named site with
+  // a signed deal" was true when written and went stale once the Air Force and
+  // Army named vendors for specific bases.
+  render($("pipeline-intro"), esc(s.binding_rows) + " of " + esc(s.opportunities) +
+    " tracked buyers hold a signed, funded or awarded instrument; the rest are programs, consortia " +
+    "or memoranda without one. Open any row for the details.");
   var tracks = D.opportunities.tracks;
   var opps = D.opportunities.opportunities;
 
