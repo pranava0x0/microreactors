@@ -844,7 +844,8 @@
           "<th scope=\"col\">Start \u00b7 term</th><th scope=\"col\">MW (firm thermal)</th>" +
           "<th scope=\"col\">Mine life</th></tr></thead><tbody>" + f.sites.map(function (x) {
             return "<tr" + (x.flag ? ' class="flagged"' : "") + '><th scope="row">' + esc(x.station) +
-              (x.flag ? ' <span class="vbadge critical">fits</span>' : "") + "</th>" +
+              (x.flag ? ' <span class="vbadge critical">fits</span>' : "") +
+              (x.sources && x.sources.length ? " " + cite(x.sources) : "") + "</th>" +
               "<td>" + esc(x.contractor) + " \u00b7 " + esc(x.miner) + "</td>" +
               "<td>" + esc(x.start) + " \u00b7 " + esc(x.term_years) + " yr</td>" +
               "<td>" + esc(x.capacity_mw) + " (" + esc(x.firm_thermal_mw) + ")</td>" +

@@ -360,3 +360,14 @@ one may simply have no live equivalent now that the project is off.
   added after the data** (the news type and its no-repeated-URL rule arrived in this pass). Fix
   when next touched: fold each item's same-page quotes into one source and mark the seed file
   superseded, so the validator skips it.
+- **2026-09-26 · data · The #17 station table carried figures no cited page contained — Fixed.**
+  Checked before closing #17: the mine-life column (23 years, 20+ and 35+ years, to 2033) was in none
+  of the six cited pages, Agnew's capacity read 60 MW where EDL's page states "Generating capacity:
+  47 MW", Syama's 70 MW added its battery to its generation, and the Export Finance Australia
+  guarantee was described as provided "for that PPA" when Australian Mining reports it was approved
+  for Liontown "to underpin the timely construction of the station". Each row now cites its own
+  documents (Liontown, Lynas, Resolute via Global Mining Review, MINING.COM for mine life), and the
+  table renders a chip per row. Syama's term note also records that its 16 years may run from
+  signing or from first power (3Q20): 9 to 10 years remain either way, under the 10-year flag test.
+  Root cause: **data bug** (agent figures from search summaries placed in an extra field the quote
+  gate never reads, because `sites` rows carried no sources).

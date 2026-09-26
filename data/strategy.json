@@ -1747,19 +1747,20 @@
      "pass": "data/research/2026-09-26-refresh",
      "status": "answered",
      "question": "Which contractor has a portfolio site with 15 years of contract left and a 20 MW firm residual, and would an export-credit agency guarantee a first unit?",
-     "finding": "Zenith Energy's own portfolio already has the shape the prospect asks for, and has already used the guarantee instrument. Kathleen Valley (Liontown Resources) has been operating since early 2024 under a 15-year PPA signed December 2022, with a 27 MW gas plus 5 MW diesel firm-thermal residual (32 MW total) and about 13 years of term left; Export Finance Australia already provided a A$25 million guarantee facility for that PPA. Zenith's July 2024 Mt Weld deal (Lynas Rare Earths) is a second qualifying site: a 15-year PPA whose term starts on commercial operation of the wind farm, scheduled for calendar 2026, with a 22 MW firm-thermal residual (17 MW gas, 5 MW diesel). Zenith's December 2025 KCGM deal with Northern Star Resources is larger still: a 25-year PPA including a Zenith-Northern Star joint venture supplying 120 MW of thermal generation, commissioning targeted for mid-2027. Aggreko's 16-year Syama contract (Resolute Mining, signed December 2019, 40 MW firm thermal) and EDL's 10-year Agnew contract (Gold Fields, 25 MW firm thermal) both clear the 15 MW firm-thermal bar but have roughly 9 and 3 years of term left respectively, short of the 10-year-remaining threshold. No TUGLIQ site in the same class was found.",
+     "finding": "Zenith Energy's own portfolio already has the shape the prospect asks for, and an export-credit guarantee has already backed one of its stations. Kathleen Valley (Liontown Resources) has operated since early 2024 under a 15-year PPA signed in December 2022, with 27 MW of gas and 5 MW of diesel as its firm-thermal residual (32 MW) and about 13 years of term left; Liontown secured approval for a A$25 million Export Finance Australia guarantee facility to underpin the station's construction. Zenith's July 2024 Mt Weld deal (Lynas Rare Earths) is a second qualifying site: a 15-year PPA that starts when the wind farm reaches commercial operation, scheduled for calendar 2026, with a 22 MW firm-thermal residual (17 MW gas, 5 MW diesel). Zenith's December 2025 KCGM deal with Northern Star Resources is larger still: a 25-year PPA including a Zenith-Northern Star joint venture supplying 120 MW of thermal generation, with commissioning expected to start in mid-2027. Aggreko's 16-year Syama contract (Resolute Mining, signed December 2019, 40 MW thermal) and EDL's 10-year Agnew agreement (Gold Fields, 25 MW of gas and diesel, operating since May 2020) clear the 15 MW firm-thermal bar but not the term test: Agnew's agreement runs to about 2030, and Syama's leaves 9 to 10 years depending on whether it runs from signing or from first power (targeted for 3Q20), inside a mine plan that ends in 2033. No TUGLIQ site in the same class was found.",
      "figures": {
       "kathleen_valley_firm_thermal": "27 MW gas + 5 MW diesel, 32 MW total",
       "kathleen_valley_term": "15 years",
-      "kathleen_valley_guarantee": "A$25 million (Export Finance Australia)",
+      "kathleen_valley_guarantee": "A$25 million guarantee facility from Export Finance Australia, approved for Liontown (December 2022)",
       "mt_weld_term": "15 years, commencing from commercial operation of the wind farm scheduled for calendar year 2026",
       "mt_weld_firm_thermal": "17 MW gas + 5 MW diesel, 22 MW total",
       "kcgm_term": "25-year PPA",
       "kcgm_firm_thermal": "120 MW of thermal generation",
       "kcgm_commissioning": "mid-2027",
-      "syama_term": "16 year contract",
+      "syama_term": "16 year contract, signed December 2019; first power targeted for 3Q20",
       "syama_firm_thermal": "40 MW thermal power plant",
-      "agnew_term": "10-year agreement",
+      "syama_mine_life": "12 year mine life to 2033 (March 2022 plan)",
+      "agnew_term": "10-year agreement; start of operation May 2020",
       "agnew_firm_thermal": "25MW gas/diesel engine power plant"
      },
      "sites": [
@@ -1771,8 +1772,28 @@
        "term_years": 15,
        "capacity_mw": 95,
        "firm_thermal_mw": 32,
-       "mine_life": "23 years per Liontown's FY2025 ore reserve estimate",
-       "flag": true
+       "mine_life": "23+ years expected (Liontown, June 2025 reserves)",
+       "flag": true,
+       "sources": [
+        {
+         "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
+         "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+         "quote": "which will see the construction of a 95MW hybrid power station at Kathleen Valley",
+         "status": "fetched"
+        },
+        {
+         "label": "Zenith Energy - Kathleen Valley project page",
+         "url": "https://zenithenergy.com.au/kathleen-valley-2/",
+         "quote": "Thermal: Gas – 27MW, Diesel 5MW, Total 32MW",
+         "status": "fetched"
+        },
+        {
+         "label": "Liontown Resources - Kathleen Valley project page (2025)",
+         "url": "https://www.liontown.com/project/kathleen-valley/",
+         "quote": "23+ years expected mine life",
+         "status": "fetched"
+        }
+       ]
       },
       {
        "station": "Mt Weld Hybrid Power Station",
@@ -1782,41 +1803,91 @@
        "term_years": 15,
        "capacity_mw": 65,
        "firm_thermal_mw": 22,
-       "mine_life": "20+ years at a 12,000 tpa NdPr production rate, 35+ years at the current 7,200 tpa rate, per Lynas' August 2024 resource update",
-       "flag": true
+       "mine_life": "over 20 years at 12,000 tpa NdPr; over 35 years at 7,200 tpa (Lynas, 2024)",
+       "flag": true,
+       "sources": [
+        {
+         "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
+         "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
+         "quote": "the total installed capacity of the Mt Weld Power Station will be approximately 65MW",
+         "status": "fetched"
+        },
+        {
+         "label": "Lynas Rare Earths - Mt Weld, Western Australia (2024 Ore Reserve update)",
+         "url": "https://lynasrareearths.com/mt-weld-western-australia-2/",
+         "quote": "a >20 year mine life at expanded production rates",
+         "status": "fetched"
+        }
+       ]
       },
       {
-       "station": "KCGM (Kalgoorlie \"Super Pit\") renewables and thermal project",
+       "station": "KCGM (Kalgoorlie Super Pit) renewables and thermal project",
        "contractor": "Zenith Energy",
        "miner": "Northern Star Resources",
        "start": 2027,
        "term_years": 25,
        "capacity_mw": 514,
        "firm_thermal_mw": 120,
-       "mine_life": "more than 20 years per Northern Star's reserve base; precise LOM year not confirmed in a fetched source",
-       "flag": true
+       "mine_life": "more than 20 years (Northern Star reserves, reported August 2024)",
+       "flag": true,
+       "sources": [
+        {
+         "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+         "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+         "quote": "138MW of solar PV generation, 256MW of wind capacity",
+         "status": "fetched"
+        },
+        {
+         "label": "MINING.COM - KCGM, from unloved asset to Northern Star's crown jewel (2024)",
+         "url": "https://www.mining.com/kcgm-from-unloved-asset-to-northern-stars-crown-jewel/",
+         "quote": "equating to a mine life of more than 20 years",
+         "status": "fetched"
+        }
+       ]
       },
       {
        "station": "Syama Gold Mine Hybrid Power Supply Agreement",
        "contractor": "Aggreko",
        "miner": "Resolute Mining",
-       "start": 2019,
+       "start": "2019 (signed)",
        "term_years": 16,
-       "capacity_mw": 70,
+       "capacity_mw": 60,
        "firm_thermal_mw": 40,
-       "mine_life": "underground life-of-mine to 2033 per a 2022 Resolute update",
-       "flag": false
+       "mine_life": "12 years to 2033 (Resolute plan, March 2022)",
+       "flag": false,
+       "sources": [
+        {
+         "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
+         "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+         "quote": "a 40 MW thermal power plant and a 10 MW battery storage system, with a further 20 MW of solar power planned in 2023",
+         "status": "fetched"
+        },
+        {
+         "label": "Global Mining Review - Resolute Mining provides life of mine production update (2022)",
+         "url": "https://www.globalminingreview.com/mining/07032022/resolute-mining-provides-life-of-mine-production-update/",
+         "quote": "over the current 12 year mine life to 2033",
+         "status": "fetched"
+        }
+       ]
       },
       {
        "station": "Agnew Gold Mine Hybrid Renewable Microgrid",
        "contractor": "EDL",
        "miner": "Gold Fields",
-       "start": 2019,
+       "start": 2020,
        "term_years": 10,
-       "capacity_mw": 60,
+       "capacity_mw": 47,
        "firm_thermal_mw": 25,
-       "mine_life": "not disclosed in a fetched source this pass",
-       "flag": false
+       "mine_life": "not disclosed in a fetched source",
+       "flag": false,
+       "sources": [
+        {
+         "label": "EDL - Agnew project page",
+         "url": "https://edlenergy.com/project/agnew/",
+         "quote": "Generating capacity: 47 MW",
+         "status": "fetched"
+        }
+       ]
       }
      ],
      "searched": [
@@ -1863,6 +1934,18 @@
        "label": "EDL - Agnew project page",
        "url": "https://edlenergy.com/project/agnew/",
        "quote": "off-grid 25MW gas/diesel engine power plant",
+       "status": "fetched"
+      },
+      {
+       "label": "Australian Mining - Liontown roars with Zenith power (2022)",
+       "url": "https://www.australianmining.com.au/liontown-roars-with-zenith-power/",
+       "quote": "Liontown has secured approval for a $25 million guarantee facility from Export Finance Australia, which will underpin the timely construction of the station",
+       "status": "fetched"
+      },
+      {
+       "label": "Global Mining Review - Resolute Mining provides life of mine production update (2022)",
+       "url": "https://www.globalminingreview.com/mining/07032022/resolute-mining-provides-life-of-mine-production-update/",
+       "quote": "over the current 12 year mine life to 2033",
        "status": "fetched"
       }
      ]
