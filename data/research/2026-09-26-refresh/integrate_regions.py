@@ -112,6 +112,10 @@ def main() -> None:
             regions.append(rec)
     assert not missing, f"no curation for {missing}"
     regions.sort(key=lambda x: (order.index(x["group"]), x["region"]))
+    # Counted from the records, never asserted: an earlier version said every
+    # source was fetched while 14 were snippet-only (Codex review, PR #22).
+    statuses = [s.get("status") for r in regions for s in r["sources"]]
+    fetched, snippet = statuses.count("fetched"), statuses.count("snippet-only")
     out = {
         "_meta": {
             "captured": "2026-09-26",
@@ -119,7 +123,9 @@ def main() -> None:
                              "1-20 MW reactor would compete: what each pays, what it draws, and where "
                              "its law stands on civil nuclear power."),
             "method": ("Two research passes (data/research/2026-09-26-refresh/north.json and "
-                       "islands.json), one record per jurisdiction, each source fetched; the group, "
+                       f"islands.json), one record per jurisdiction. {fetched} of {len(statuses)} "
+                       f"sources were fetched and read; {snippet} are search-corroborated only and "
+                       "carry status snippet-only, which the page marks with a dagger. The group, "
                        "the law-and-policy tag and the short price label are curated in that "
                        "folder's integrate_regions.py from each record's own text. Military bases "
                        "appear only as context."),

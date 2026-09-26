@@ -2,7 +2,7 @@
  "_meta": {
   "captured": "2026-09-26",
   "what_this_is": "24 remote and cold places, most running on diesel, where a 1-20 MW reactor would compete: what each pays, what it draws, and where its law stands on civil nuclear power.",
-  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, each source fetched; the group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
+  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction. 70 of 84 sources were fetched and read; 14 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
   "groups": [
    {
     "id": "alaska",
