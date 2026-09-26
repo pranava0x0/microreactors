@@ -23,7 +23,7 @@
  "name": "Microreactor Opportunity Map",
  "description": "A cited map of the microreactor business-development opportunity space: pipeline, economics, vendors, demand, market mechanisms, policy pathways, and an honest evidence-gap register.",
  "url": "https://pranava0x0.github.io/microreactors/",
- "dateModified": "2026-09-21",
+ "dateModified": "2026-09-26",
  "isAccessibleForFree": true,
  "creator": {
   "@type": "Person",
@@ -49,17 +49,17 @@
   {
    "@type": "PropertyValue",
    "name": "buyers holding a binding instrument",
-   "value": 9
+   "value": 10
   },
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 588
+   "value": 797
   },
   {
    "@type": "PropertyValue",
    "name": "priced real-world benchmarks",
-   "value": 82
+   "value": 84
   }
  ],
  "distribution": [
@@ -82,6 +82,11 @@
    "@type": "DataDownload",
    "encodingFormat": "application/json",
    "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/deployment_sites.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/dockets.json"
   },
   {
    "@type": "DataDownload",
@@ -116,6 +121,11 @@
   {
    "@type": "DataDownload",
    "encodingFormat": "application/json",
+   "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/regions.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
    "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/sectors.json"
   },
   {
@@ -142,8 +152,8 @@
 }
 </script>
 <!-- /generated:meta -->
-<link rel="stylesheet" href="assets/tokens.css?v=2026-09-21">
-<link rel="stylesheet" href="assets/site.css?v=2026-09-21">
+<link rel="stylesheet" href="assets/tokens.css?v=2026-09-26">
+<link rel="stylesheet" href="assets/site.css?v=2026-09-26">
 </head>
 <body>
 
@@ -177,29 +187,16 @@
 
 <section id="home" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
   <div class="wrap">
-    <div class="homegrid">
-      <div>
-        <h2>Start here</h2>
-        <p class="prose">This is not a reactor catalog. It tracks the commercial work around small reactors: buyers, sites, contracts, costs, rules, and the missing terms that decide whether an announcement becomes a project.</p>
-      </div>
-      <div class="homepaths">
-        <a href="#pipeline">See deals and sites <span>→</span></a>
-        <a href="#economics">Compare costs <span>→</span></a>
-        <a href="#economics/win">See what a unit has to cost to win <span>→</span></a>
-        <a href="#pipeline/prospects">See who could buy next <span>→</span></a>
-        <a href="#policy">See rules and deal design <span>→</span></a>
-      </div>
+    <div class="homeblock">
+      <div class="fronthead"><h2 id="glance-head">The site at a glance</h2></div>
+      <div class="glance" id="home-glance"></div>
     </div>
-    <div class="front" id="front">
-      <div class="frontmain">
-        <div class="fronthead"><h3>What happened</h3><a href="#news">All news →</a></div>
+    <div class="homeblock" id="front">
+      <div class="fronthead"><h2>Top headlines</h2><a href="#news">All news →</a></div>
+      <div class="frontcols">
         <div id="home-lead"></div>
-        <div class="topstories" id="home-topstories"></div>
+        <ol class="headlist" id="home-headlist"></ol>
       </div>
-      <aside class="frontaside" aria-label="More recent news">
-        <h3>Also recent</h3>
-        <ul class="latestlist" id="home-latestlist"></ul>
-      </aside>
     </div>
   </div>
 </section>
@@ -207,7 +204,7 @@
   <div class="wrap">
     <div class="sechead">
       <h2>Who is buying now</h2>
-      <p class="prose">Only one group has a named reactor at a named site with a signed deal. Open any row for the details.</p>
+      <p class="prose" id="pipeline-intro"></p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Tracker sections"></div>
     <div id="pipelinetracks"></div>
@@ -227,6 +224,7 @@
     <div class="sechead">
       <h2>Why a microreactor</h2>
       <p class="prose" id="why-intro"></p>
+      <p class="prose note">Which loads it fits, and what each buyer pays now: <a href="#demand">Applications</a>.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Why sections"></div>
     <div data-sub="arguments" id="why-arguments" role="tabpanel" tabindex="0">
@@ -240,22 +238,22 @@
       <p class="prose" id="why-against-intro"></p>
       <div id="counters"></div>
     </div>
-    <div data-sub="loads" id="why-loads" role="tabpanel" tabindex="0">
-      <div class="subhead"><h3>The loads it is sized for</h3></div>
-      <p class="prose" id="why-loads-intro"></p>
-      <div id="whyloads"></div>
-    </div>
   </div>
 </section>
 <section id="demand" role="tabpanel" aria-labelledby="tab-demand" tabindex="0" hidden>
   <div class="wrap">
     <div class="sechead">
       <h2>What a 1–20 MW reactor could power</h2>
-      <p class="prose">Rough yearly power needs, for early planning. Sizing a real project takes a year of hourly data first. Each sector starts with how that industry gets its power today.</p>
+      <p class="prose">Who could buy one and at what price it wins them, the remote places where it would replace diesel, and the loads in each sector. Load figures are rough yearly needs for early planning; sizing a real project takes a year of hourly data.</p>
       <div class="dsummary" id="dsummary"></div>
     </div>
     <div class="subtabs" role="tablist" aria-label="Applications sections"></div>
     <div id="sectors"></div>
+    <div data-sub="regions" id="demand-regions" role="tabpanel" tabindex="0">
+      <p class="prose" id="regions-intro"></p>
+      <div class="newsfilter" id="regions-filter" role="group" aria-label="Filter regions"></div>
+      <div id="regions"></div>
+    </div>
   </div>
 </section>
 <section id="economics" role="tabpanel" aria-labelledby="tab-economics" tabindex="0" hidden>
@@ -336,10 +334,19 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Rules and deal-design sections"></div>
     <div id="pathways"></div>
+    <div data-sub="utility-filings" id="policy-utility-filings" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3>What utilities have filed</h3></div>
+      <p class="prose" id="dockets-intro"></p>
+      <div class="newsfilter" id="dockets-filter" role="group" aria-label="Filter filings by kind"></div>
+      <div id="dockets"></div>
+    </div>
     <div data-sub="market-design" id="policy-market-design" role="tabpanel" tabindex="0">
       <div class="subhead"><h3>Shared orderbook and overrun pool</h3></div>
       <p class="prose" id="policy-market-intro"></p>
       <div id="policy-mechanism"></div>
+      <div class="subhead gap"><h3>Precedents</h3></div>
+      <p class="prose" id="prec-intro"></p>
+      <div class="newsfilter" id="prec-filter" role="group" aria-label="Filter precedents by kind of deal"></div>
       <div id="policy-precedents"></div>
     </div>
   </div>
@@ -372,6 +379,7 @@
         <span class="regcount" id="regcount" role="status" aria-live="polite"></span>
       </div>
       <div id="register"></div>
+      <button class="showall" type="button" id="regall" hidden>Show all sources</button>
     </div>
     <div data-sub="coverage" id="sources-coverage" role="tabpanel" tabindex="0">
       <div id="coverage"></div>
@@ -408,7 +416,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=2026-09-21"></script>
-<script src="assets/app.js?v=2026-09-21"></script>
+<script src="data.js?v=2026-09-26"></script>
+<script src="assets/app.js?v=2026-09-26"></script>
 </body>
 </html>

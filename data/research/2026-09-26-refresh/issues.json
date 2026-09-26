@@ -1,0 +1,532 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "issues-refresh",
+  "scope": "Close or narrow GitHub issues #17, #11, #15, #16 (answers on data/strategy.json prospects/segments) and fill 8 missing electricity tariffs in the site's Regions list (data/regions.json)",
+  "angles_run": [
+   "Zenith Energy off-grid mine hybrid power stations (Kathleen Valley, Mt Weld, KCGM)",
+   "Aggreko off-grid mine hybrid power stations (Syama)",
+   "EDL off-grid mine hybrid power stations (Agnew)",
+   "TUGLIQ mine power station contracts (Raglan, Red Dog)",
+   "mine-life / reserve-life figures for Kathleen Valley, Mt Weld, Syama, Agnew, KCGM",
+   "SRC successor vendor, RFI/RFP and staff status since the Westinghouse cancellation (Hansard 2026-04-15)",
+   "Saskatchewan's CA$80M microreactor appropriation status in the 2026-27 budget estimates and backgrounder",
+   "CNSC filings or licensing actions naming SRC since the eVinci cancellation",
+   "Janus Five / ANPI vendor list and each vendor's disclosed first-core fuel mass (BWXT, Radiant, Antares, Kairos, Westinghouse, Oklo, X-energy, General Atomics)",
+   "DOE HALEU allocation rounds and any new recipient/quantity disclosed since 2026-09-02",
+   "a primary document tying Oklo's ~$145 million first-powerhouse cost to a specific MWe rating",
+   "published per-unit prices for Last Energy or any other microreactor vendor since 2026-09-02",
+   "residential/small-commercial electricity tariffs for the 8 regions with no fetched price: Alaska Railbelt, Yukon, NWT, Nunavik, Labrador isolated systems, Svalbard, Scottish islands/UK cap, Greenland"
+  ],
+  "absences": [
+   "No TUGLIQ site matches the offgrid-ipps shape (a full generation PPA with a disclosed firm-thermal residual and fixed term): Raglan is a minority wind/storage addition to Glencore's own diesel plant, and Red Dog's PPA terms were still under negotiation as of March 2026 reporting.",
+   "Agnew's mine life was not found in any fetched source this pass (Gold Fields' own operations page returned a TLS certificate error; Mining Technology's project profile states reserves and production but no LOM figure).",
+   "The 2026-27 Saskatchewan Estimates volume (fetched directly) shows SRC's total appropriation but never names the microreactor or the $80M fund by line item, so whether that specific fund lapsed, was reallocated, or is folded into the vote's general capital transfers remains unconfirmed.",
+   "No CNSC filing or licensing docket specific to a replacement microreactor vendor was found for SRC; the only 2026 CNSC action naming SRC (the Gunnar site licence renewal) is unrelated.",
+   "No published first-core fuel mass (kg or MTU) was found for X-energy's Xe-100, General Atomics' GA-TES, or Westinghouse's eVinci beyond unconfirmed test-quantity mentions that could not be traced to a fetched primary source.",
+   "No DOE HALEU allocation round newer than the already-known 2026-07-23 round three (NASA and a second Radiant allocation) was found published since 2026-09-02.",
+   "No published per-unit price for Last Energy's PWR-20 or PWR-5, or for any other microreactor vendor, dated after 2026-09-02 was found.",
+   "No current (2026) Shetland- or Orkney-specific electricity tariff, or a current Northern-Scotland-specific Ofgem regional cap figure, could be confirmed in a fetched source; the UK-wide Ofgem price cap is reported per the task's own fallback instruction.",
+   "Chugach Electric's rate page gives an all-in total rate but does not itemize fuel vs. base energy charge in the fetched text; Golden Valley Electric's and Matanuska Electric's own rate schedules were not separately fetched this pass (Chugach was used as the representative Railbelt utility)."
+  ],
+  "revised": "2026-09-26, main session: the offgrid-ipps station table's mine-life figures and two capacities were in no cited page. Each row now cites its own documents: mine life from Liontown, Lynas, Resolute (via Global Mining Review) and MINING.COM; Agnew's capacity is EDL's stated 47 MW generating capacity (was 60); Syama's is its 40 MW thermal plus 20 MW solar (was 70, which added the battery). The Export Finance Australia guarantee was approved for Liontown to underpin construction, per Australian Mining, not provided for the PPA. 2026-09-26, main session: numbers in every answer were checked against the pages; sources that block scripted fetches (SEC, canada.ca, GlobeNewswire, src.sk.ca, North of 60 Mining News) were read in a browser. Oklo: the deck's '<$60 million' construction-cost line is added beside the $24.0 million unit-economics figure."
+ },
+ "answers": [
+  {
+   "id": "offgrid-ipps-contractor-sites",
+   "for": "offgrid-ipps",
+   "question": "Which contractor has a portfolio site with 15 years of contract left and a 20 MW firm residual, and would an export-credit agency guarantee a first unit?",
+   "status": "answered",
+   "finding": "Zenith Energy's own portfolio already has the shape the prospect asks for, and an export-credit guarantee has already backed one of its stations. Kathleen Valley (Liontown Resources) has operated since early 2024 under a 15-year PPA signed in December 2022, with 27 MW of gas and 5 MW of diesel as its firm-thermal residual (32 MW) and about 13 years of term left; Liontown secured approval for a A$25 million Export Finance Australia guarantee facility to underpin the station's construction. Zenith's July 2024 Mt Weld deal (Lynas Rare Earths) is a second qualifying site: a 15-year PPA that starts when the wind farm reaches commercial operation, scheduled for calendar 2026, with a 22 MW firm-thermal residual (17 MW gas, 5 MW diesel). Zenith's December 2025 KCGM deal with Northern Star Resources is larger still: a 25-year PPA including a Zenith-Northern Star joint venture supplying 120 MW of thermal generation, with commissioning expected to start in mid-2027. Aggreko's 16-year Syama contract (Resolute Mining, signed December 2019, 40 MW thermal) and EDL's 10-year Agnew agreement (Gold Fields, 25 MW of gas and diesel, operating since May 2020) clear the 15 MW firm-thermal bar but not the term test: Agnew's agreement runs to about 2030, and Syama's leaves 9 to 10 years depending on whether it runs from signing or from first power (targeted for 3Q20), inside a mine plan that ends in 2033. No TUGLIQ site in the same class was found.",
+   "figures": {
+    "kathleen_valley_firm_thermal": "27 MW gas + 5 MW diesel, 32 MW total",
+    "kathleen_valley_term": "15 years",
+    "kathleen_valley_guarantee": "A$25 million guarantee facility from Export Finance Australia, approved for Liontown (December 2022)",
+    "mt_weld_term": "15 years, commencing from commercial operation of the wind farm scheduled for calendar year 2026",
+    "mt_weld_firm_thermal": "17 MW gas + 5 MW diesel, 22 MW total",
+    "kcgm_term": "25-year PPA",
+    "kcgm_firm_thermal": "120 MW of thermal generation",
+    "kcgm_commissioning": "mid-2027",
+    "syama_term": "16 year contract, signed December 2019; first power targeted for 3Q20",
+    "syama_firm_thermal": "40 MW thermal power plant",
+    "syama_mine_life": "12 year mine life to 2033 (March 2022 plan)",
+    "agnew_term": "10-year agreement; start of operation May 2020",
+    "agnew_firm_thermal": "25MW gas/diesel engine power plant"
+   },
+   "sites": [
+    {
+     "station": "Kathleen Valley Lithium Project Hybrid Power Station",
+     "contractor": "Zenith Energy",
+     "miner": "Liontown Resources",
+     "start": 2024,
+     "term_years": 15,
+     "capacity_mw": 95,
+     "firm_thermal_mw": 32,
+     "mine_life": "23+ years expected (Liontown, June 2025 reserves)",
+     "flag": true,
+     "sources": [
+      {
+       "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
+       "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+       "quote": "which will see the construction of a 95MW hybrid power station at Kathleen Valley",
+       "status": "fetched"
+      },
+      {
+       "label": "Zenith Energy - Kathleen Valley project page",
+       "url": "https://zenithenergy.com.au/kathleen-valley-2/",
+       "quote": "Thermal: Gas – 27MW, Diesel 5MW, Total 32MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Liontown Resources - Kathleen Valley project page (2025)",
+       "url": "https://www.liontown.com/project/kathleen-valley/",
+       "quote": "23+ years expected mine life",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "station": "Mt Weld Hybrid Power Station",
+     "contractor": "Zenith Energy",
+     "miner": "Lynas Rare Earths",
+     "start": 2026,
+     "term_years": 15,
+     "capacity_mw": 65,
+     "firm_thermal_mw": 22,
+     "mine_life": "over 20 years at 12,000 tpa NdPr; over 35 years at 7,200 tpa (Lynas, 2024)",
+     "flag": true,
+     "sources": [
+      {
+       "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
+       "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
+       "quote": "the total installed capacity of the Mt Weld Power Station will be approximately 65MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Lynas Rare Earths - Mt Weld, Western Australia (2024 Ore Reserve update)",
+       "url": "https://lynasrareearths.com/mt-weld-western-australia-2/",
+       "quote": "a >20 year mine life at expanded production rates",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "station": "KCGM (Kalgoorlie Super Pit) renewables and thermal project",
+     "contractor": "Zenith Energy",
+     "miner": "Northern Star Resources",
+     "start": 2027,
+     "term_years": 25,
+     "capacity_mw": 514,
+     "firm_thermal_mw": 120,
+     "mine_life": "more than 20 years (Northern Star reserves, reported August 2024)",
+     "flag": true,
+     "sources": [
+      {
+       "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+       "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+       "quote": "138MW of solar PV generation, 256MW of wind capacity",
+       "status": "fetched"
+      },
+      {
+       "label": "MINING.COM - KCGM, from unloved asset to Northern Star's crown jewel (2024)",
+       "url": "https://www.mining.com/kcgm-from-unloved-asset-to-northern-stars-crown-jewel/",
+       "quote": "equating to a mine life of more than 20 years",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "station": "Syama Gold Mine Hybrid Power Supply Agreement",
+     "contractor": "Aggreko",
+     "miner": "Resolute Mining",
+     "start": "2019 (signed)",
+     "term_years": 16,
+     "capacity_mw": 60,
+     "firm_thermal_mw": 40,
+     "mine_life": "12 years to 2033 (Resolute plan, March 2022)",
+     "flag": false,
+     "sources": [
+      {
+       "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
+       "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+       "quote": "a 40 MW thermal power plant and a 10 MW battery storage system, with a further 20 MW of solar power planned in 2023",
+       "status": "fetched"
+      },
+      {
+       "label": "Global Mining Review - Resolute Mining provides life of mine production update (2022)",
+       "url": "https://www.globalminingreview.com/mining/07032022/resolute-mining-provides-life-of-mine-production-update/",
+       "quote": "over the current 12 year mine life to 2033",
+       "status": "fetched"
+      }
+     ]
+    },
+    {
+     "station": "Agnew Gold Mine Hybrid Renewable Microgrid",
+     "contractor": "EDL",
+     "miner": "Gold Fields",
+     "start": 2020,
+     "term_years": 10,
+     "capacity_mw": 47,
+     "firm_thermal_mw": 25,
+     "mine_life": "not disclosed in a fetched source",
+     "flag": false,
+     "sources": [
+      {
+       "label": "EDL - Agnew project page",
+       "url": "https://edlenergy.com/project/agnew/",
+       "quote": "Generating capacity: 47 MW",
+       "status": "fetched"
+      }
+     ]
+    }
+   ],
+   "searched": [
+    "Zenith Energy hybrid power station mine Western Australia portfolio projects list",
+    "Zenith Energy KCGM Kalgoorlie Consolidated Gold Mines gas diesel MW firm capacity 25-year PPA",
+    "TUGLIQ Energy mine power station contract term MW Nunavik",
+    "Liontown Resources Kathleen Valley lithium mine life years ore reserve",
+    "Resolute Mining Syama underground mine life years reserve",
+    "Gold Fields Agnew gold mine life years remaining",
+    "Lynas Mt Weld rare earth deposit resource life decades years"
+   ],
+   "sources": [
+    {
+     "label": "Zenith Energy - Liontown Resources signs Power Purchase Agreement with Zenith Energy",
+     "url": "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+     "quote": "15 years from construction completion",
+     "status": "fetched"
+    },
+    {
+     "label": "Zenith Energy - Kathleen Valley project page",
+     "url": "https://zenithenergy.com.au/kathleen-valley-2/",
+     "quote": "Thermal: Gas – 27MW, Diesel 5MW, Total 32MW",
+     "status": "fetched"
+    },
+    {
+     "label": "ESD News - Zenith to build hybrid renewables project at Mt Weld mine",
+     "url": "https://esdnews.com.au/zenith-to-build-hybrid-renewables-project-at-mt-weld-mine/",
+     "quote": "The term of the PPA is 15 years, commencing from commercial operation of the wind farm, which is scheduled to occur in calendar year 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+     "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+     "quote": "Zenith has entered a joint venture with Northern Star to supply 120MW of thermal generation along with a 132kV transmission network",
+     "status": "fetched"
+    },
+    {
+     "label": "Global Mining Review - Aggreko and Resolute sign hybrid power plant contract",
+     "url": "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+     "quote": "40 MW thermal power",
+     "status": "fetched"
+    },
+    {
+     "label": "EDL - Agnew project page",
+     "url": "https://edlenergy.com/project/agnew/",
+     "quote": "off-grid 25MW gas/diesel engine power plant",
+     "status": "fetched"
+    },
+    {
+     "label": "Australian Mining - Liontown roars with Zenith power (2022)",
+     "url": "https://www.australianmining.com.au/liontown-roars-with-zenith-power/",
+     "quote": "Liontown has secured approval for a $25 million guarantee facility from Export Finance Australia, which will underpin the timely construction of the station",
+     "status": "fetched"
+    },
+    {
+     "label": "Global Mining Review - Resolute Mining provides life of mine production update (2022)",
+     "url": "https://www.globalminingreview.com/mining/07032022/resolute-mining-provides-life-of-mine-production-update/",
+     "quote": "over the current 12 year mine life to 2033",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "src-saskatchewan-vendor-cnsc-budget-2026-09",
+   "for": "src-saskatchewan",
+   "question": "Which vendors is SRC evaluating now, and is the CA$80M still appropriated?",
+   "status": "partial",
+   "finding": "No public source names a successor vendor, extending the prior pass's finding. At the same April 15, 2026 Economy Committee hearing, SRC president Mike Crabtree added new detail not previously captured: about a dozen eVinci staff were reassigned ('we have taken the key folks and distributed them around other parts of SRC') and the project is effectively on pause while SRC continues to 'identify and progress' unnamed alternative microreactors; no RFI, RFP, or named vendor appears anywhere in the transcript. The 2026-27 Estimates volume itself (the actual budget document, not just news coverage of it) shows SRC's total appropriation dropping to $45.229 million for 2026-27 (Vote 35: $19.229 million operating plus $26.0 million capital transfers) from an $87.423 million FORECAST for 2025-26 (though 2025-26 had itself originally been ESTIMATED at only $19.423 million) -- a swing consistent with a large one-off capital item tapering off, but the Estimates volume's own line-item text is generic ('supports applied research and assists clients...') and never names the microreactor or the $80 million fund, so this cannot be read as direct confirmation either way. The only dated release found with a specific microreactor dollar figure -- 'an additional $21.5 million for SRC to pursue its commercial demonstration of a microreactor' -- is dated March 20, 2024 and belongs to the 2024-25 budget. No CNSC filing specific to the microreactor has been made since the cancellation: the only 2026 CNSC action naming SRC is a May 2026 licence renewal for SRC's unrelated Gunnar historic uranium mine and mill site, which the Commission's release states 'authorizes SRC to conduct ongoing remediation at the Gunnar site' and explicitly does not authorize any new activities.",
+   "figures": {
+    "staff_reassigned": "around a dozen people",
+    "src_2026_27_estimate": "$45.229 million total (Vote 35: $19.229M operating + $26.0M capital transfers)",
+    "src_2025_26_forecast": "$87.423 million (revised mid-year forecast; original 2025-26 estimate was $19.423 million)",
+    "src_2024_25_budget_addition": "$21.5 million (dated 2024-03-20, part of the 2024-25 budget, not 2026-27)",
+    "gunnar_licence_term": "5-year renewal, valid until 2031-05-31",
+    "hearing_date": "2026-04-15"
+   },
+   "searched": [
+    "Saskatchewan 2026-27 budget estimates \"Saskatchewan Research Council\" nuclear microreactor",
+    "CNSC \"Saskatchewan Research Council\" microreactor licence application 2026",
+    "Saskatchewan Research Council microreactor vendor RFI RFP 2026 replacement eVinci",
+    "\"Saskatchewan Research Council\" budget 2026-27 \"$21.5 million\" microreactor",
+    "Saskatchewan Research Council microreactor CNSC licence \"has not\" OR \"not yet\" 2026",
+    "Saskatchewan budget 2026-27 nuclear microreactor SRC Westinghouse eVinci fund status"
+   ],
+   "sources": [
+    {
+     "label": "Saskatchewan Legislative Assembly - Standing Committee on the Economy, Debates, April 15, 2026 (staff redeployment and pause)",
+     "url": "https://docs.legassembly.sk.ca/legdocs/Committees/ECO/Debates/30L/20260415Debates-ECO-HTML.htm",
+     "quote": "we have taken the key folks and distributed them around other parts of SRC",
+     "status": "fetched"
+    },
+    {
+     "label": "Saskatchewan Research Council - Province Invests into SRC to Continue Innovative Research and Technology Work",
+     "url": "https://www.src.sk.ca/news/province-invests-src-continue-innovative-research-and-technology-work",
+     "quote": "The budget also includes an additional $21.5 million for SRC to pursue its commercial demonstration of a microreactor in Saskatchewan",
+     "status": "fetched"
+    },
+    {
+     "label": "Canadian Nuclear Safety Commission - Commission renews Saskatchewan Research Council's nuclear substances and radiation devices licence for its Gunnar historic uranium mine and mill site",
+     "url": "https://www.canada.ca/en/nuclear-safety-commission/news/2026/05/commission-renews-saskatchewan-research-councils-nuclear-substances-and-radiation-devices-licence-for-its-gunnar-historic-uranium-mine-and-mill-site.html",
+     "quote": "authorizes SRC to conduct ongoing remediation at the Gunnar site",
+     "status": "fetched"
+    },
+    {
+     "label": "Government of Saskatchewan - 2026-27 Estimates (Vote 35, Saskatchewan Research Council)",
+     "url": "https://budget.saskatchewan.ca/f/f35e0zkmpjti2xix134z0h4bhmq9fw/2026-27-Estimates-WEB.pdf",
+     "quote": "Saskatchewan Research Council 45,229) 19,423)",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "fuel-chokepoints-vendor-fuel-mass-2026-09",
+   "for": "fuel-chokepoints",
+   "question": "How many metric tons of uranium does each vendor's first-core plan need at $50-80 million a ton, and what did Standard Nuclear price into the Radiant and Antares contracts?",
+   "status": "partial",
+   "finding": "Per-vendor first-core fuel mass is starting to surface in company disclosures, though most Janus/ANPI vendors still do not publish it. Oklo's July 2023 SEC-filed investor presentation states an 'Initial fuel load of 4,750 kg' (with 2,375 kg refueling loads every 10 years) for its base 15+ MWe Aurora design -- Oklo uses HALEU metal fuel, not TRISO, so Standard Nuclear's $50-80 million per MTU TRISO price does not directly apply to it. Among TRISO-fueled vendors: BWXT delivered a full first core for Project Pele as 40,000 TRISO fuel compacts (total kg or MTU not disclosed); Radiant's Kaleidos first core was completed with at least 50 kgU of Standard Nuclear TRISO fuel delivered in Q2 2026 plus an undisclosed additional 'balance of the reactor core' delivered after quarter-end, so the true first-core total is higher than 50 kgU; and Antares' Mark-0 test reactor is 'loaded to less than 120 kilograms total for the reactor's operational life' of HALEU TRISO fuel. Kairos Power's Hermes NRC environmental report states a required start-up fissile inventory of 'no greater than 25 kilograms (kg) 235U' -- a fissile-mass figure, not a total fuel or MTU mass, and this pass could not get that NRC PDF to render as text, so it is carried as snippet-only. No first-core mass was found for X-energy's Xe-100 (only a facility-level ratio: its TX-1 plant's 5 MTU/year capacity is described as enough to fuel 'up to 11 Xe-100 reactors'), General Atomics' GA-TES, or Westinghouse's eVinci beyond unconfirmed 40-45 kg test-quantity mentions that could not be tied to a fetched primary source this pass.",
+   "figures": {
+    "oklo_first_core_fuel": "4,750 kg initial fuel load (15+ MWe base Aurora design, metal fuel not TRISO)",
+    "oklo_refuel": "2,375 kg every 10 years over a 40-year design life",
+    "bwxt_pele_core": "40,000 TRISO fuel compacts (kg/MTU not disclosed)",
+    "radiant_kaleidos_core": "at least 50 kgU delivered Q2 2026 plus an undisclosed additional balance",
+    "antares_mark0_core": "less than 120 kilograms total for the reactor's operational life",
+    "kairos_hermes_startup_inventory": "no greater than 25 kilograms (kg) 235U (snippet-only)",
+    "xe100_facility_ratio": "5 MTU/year fuels up to 11 Xe-100 reactors"
+   },
+   "searched": [
+    "\"Janus Five\" microreactor vendors names BWXT X-energy Radiant Antares list",
+    "Army ANPI \"Advanced Nuclear Power for Installations\" vendors selected list 2026",
+    "DOE HALEU allocation round announcement September 2026",
+    "X-energy Xe-100 first core TRISO fuel mass kilograms OR MTU published",
+    "Kairos Power Hermes first core fuel TRISO kilograms mass",
+    "Oklo Aurora first core HALEU fuel mass kilograms published",
+    "Radiant Kaleidos microreactor first core fuel mass TRISO kg HALEU",
+    "Westinghouse eVinci HALEU fuel load kg first core",
+    "General Atomics microreactor HALEU fuel mass kg OR Antares Nuclear fuel kg first core",
+    "BWXT Project Pele microreactor fuel mass kg TRISO HALEU first core",
+    "DOE HALEU availability program allocation new recipient September 2026 metric tons",
+    "Centrus and Radiant HALEU partnership September 2026"
+   ],
+   "sources": [
+    {
+     "label": "Oklo Inc. - Investor Presentation July 2023 (SEC Form 425 Exhibit 99.2)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465923079837/tm2320952d1_ex99-2.htm",
+     "quote": "Initial fuel load of 4,750 kg",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS/Nuclear Newswire - Project Pele progress: BWXT delivers fuel to INL",
+     "url": "https://www.ans.org/news/article-7595/project-pele-progress-bwxt-delivers-fuel-to-inl/",
+     "quote": "the arrival of a full core of TRISO fuel at INL's Transient Reactor Test Facility",
+     "status": "fetched"
+    },
+    {
+     "label": "Standard Nuclear, Inc. - Q2 2026 earnings press release (SEC 8-K exhibit)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0002086716/000162828026059143/q2_2026xearningsxpr.htm",
+     "quote": "Delivered 50 kgU of TRISO fuel in the second quarter and the balance of the reactor core subsequent to quarter end",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER - Antares Mark-0 Becomes First Advanced Nuclear Reactor to Achieve Criticality Under DOE Pilot Program",
+     "url": "https://www.powermag.com/antares-mark-0-becomes-first-advanced-nuclear-reactor-to-achieve-criticality-under-doe-pilot-program/",
+     "quote": "loaded to less than 120 kilograms total for the reactor's operational life",
+     "status": "fetched"
+    },
+    {
+     "label": "NRC - Environmental Report Proposed Action, Kairos Power Hermes Reactor",
+     "url": "https://www.nrc.gov/docs/ML2204/ML22042A098.pdf",
+     "quote": "no greater than 25 kilograms (kg) 235U",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "data-centers-oklo-mwe-basis-2026-09",
+   "for": "data-centers",
+   "question": "the primary source for Oklo's stated first-unit cost and its expected $/MWh, and the slide behind the DOE clean-firm band ($63-99 gas with carbon capture, $66-109 advanced nuclear, $69-119 renewables plus storage) that a reporter attributed to an Oklo shareholder presentation. State whether only the reporter's reading exists.",
+   "status": "partial",
+   "finding": "The $145 million figure still has no primary document tying it to a specific MWe rating: Oklo's most recent Form 10-Q (period ended June 30, 2026) restates only that the Aurora powerhouse line is 'designed to produce between 15 and 75 megawatts of electricity (\"MWe\")' with no cost figure attached, and no DOE clean-firm slide was found in any 2026 filing either. But a different, earlier Oklo primary document does pair a cost to an MWe figure: Oklo's July 2023 investor presentation, furnished to the SEC as a Form 425 exhibit ahead of its SPAC merger, states an 'Initial plant construction cost of approximately $24.0 million (excluding initial fuel load)' for a '15+ MWe' Aurora whose 'Design is expected to be scalable to 50+ MWe'; the same deck's product slide gives '<$60 million' as estimated construction costs. That is the only fetched primary document this pass found anywhere in Oklo's public filings that ties a dollar figure to a named MWe capacity. No published per-unit price for Last Energy's PWR-20 or PWR-5, or for any other microreactor vendor, dated after 2026-09-02 was found; the closest large per-unit figure in the sector, Radiant's up to $750 million for 15 Janus units, is dated August 26, 2026 (before the cutoff) and is already carried in this dataset's news record.",
+   "figures": {
+    "oklo_2023_construction_cost": "approximately $24.0 million (excluding initial fuel load)",
+    "oklo_2023_mwe": "15+ MWe, Design expected to be scalable to 50+ MWe",
+    "oklo_10q_2026_mwe_range": "designed to produce between 15 and 75 megawatts of electricity (MWe)",
+    "radiant_janus_award_reference": "up to $750 million for 15 units, 2026-08-26 (already shipped, not new this pass)",
+    "oklo_2023_estimated_construction_costs": "<$60 million (product slide, same July 2023 deck)"
+   },
+   "searched": [
+    "Oklo \"$145 million\" powerhouse MWe basis 50 MW OR 15 MW investor presentation 2026",
+    "Oklo 10-Q OR 10-K 2026 Aurora powerhouse cost per unit MWe capacity",
+    "Last Energy PWR-20 price per unit 2026 OR microreactor vendor announces price per unit September 2026",
+    "Oklo investor presentation 2023 \"$24 million\" 15 MWe Aurora cost",
+    "Aalo Atomics OR Valar Atomics per-unit price microreactor 2026 announced $",
+    "microreactor vendor per-unit price announcement 2026-09 OR 2026-08 million per unit",
+    "\"per unit\" OR \"per reactor\" microreactor price million nuclear news"
+   ],
+   "sources": [
+    {
+     "label": "Oklo Inc. - Investor Presentation July 2023 (SEC Form 425 Exhibit 99.2)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465923079837/tm2320952d1_ex99-2.htm",
+     "quote": "Initial plant construction cost of approximately $24.0 million (excluding initial fuel load)",
+     "status": "fetched"
+    },
+    {
+     "label": "Oklo Inc. - Form 10-Q for the quarter ended 2026-06-30 (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026054571/oklo-20260630.htm",
+     "quote": "designed to produce between 15 and 75 megawatts of electricity (\"MWe\")",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "tariffs": [
+  {
+   "region_id": "alaska-railbelt-utilities",
+   "price": "24.4088 cents/kWh total residential rate (all-in, incl. fuel, purchased power and rider charges), Chugach Electric Association South District, effective 2026-07-01",
+   "price_short": "US$0.2441/kWh residential (Jul 2026)",
+   "sources": [
+    {
+     "label": "Chugach Electric Association - Rate Information, South District",
+     "url": "https://www.chugachelectric.com/member-services/billing-payments/rate-information-south-district",
+     "quote": "Below are the rates in effect as of July 1, 2026 for Chugach South District retail customers.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "yukon",
+   "price": "ATCO Electric Yukon Rate Schedule 1160 (Residential, Non-Government, Hydro area incl. Whitehorse): Customer Charge C$14.65/month plus Energy Charge 12.14 cents/kWh for the first 1,000 kWh (base rate, Board Order 2011-06), with Rider J at 100.23% of base rates (effective 2026-04-01, Board Order 2026-08) and Rider F fuel adjustment of 0.378 cents/kWh added to all consumption (effective 2026-05-01)",
+   "price_short": "C$0.1214/kWh +riders, ATCO Yukon (2026)",
+   "sources": [
+    {
+     "label": "ATCO Electric Yukon / Yukon Energy - Rate Schedules (Yukon Utilities Board), Rate Schedule 1160",
+     "url": "https://www.atcoelectricyukon.com/content/dam/web/electric-yukon/2026-rates/yecl-yec-rate-schedules-01-2026.pdf",
+     "quote": "RATE: Charges for service in any one billing month shall be the\nsum of the following:\n(a) Customer Charge $14.65\n(b) Energy Charge\nFor the first\n1,000 kW.h 12.14¢/kW.h",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "northwest-territories",
+   "price": "NTPC Thermal Zone residential rate: 36.50 cents/kWh for the first 1,000 kWh, then 88.96 cents/kWh for each additional kWh (84.68 cents/kWh for usage above 1,000 kWh between September and March), effective 2026-09-01",
+   "price_short": "C$0.3650-0.8896/kWh thermal zone (2026)",
+   "sources": [
+    {
+     "label": "Northwest Territories Power Corporation - Residential Electrical Rates",
+     "url": "https://www.ntpc.com/customer-service/residential-service/residential-electrical-rates",
+     "quote": "36.50 cents / kWh",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "nunavik-northern-quebec",
+   "price": "Hydro-Quebec Tarif D N (off-grid networks north of the 53rd parallel, including Nunavik villages): 7.065 cents/kWh for the first 40 kWh of energy per day and 50.469 cents/kWh for the remainder (both times a location multiplier), plus a 46.154 cents/day network access charge times the multiplier, effective 2026-04-01",
+   "price_short": "C$0.07065-0.505/kWh ×mult., DN (2026)",
+   "sources": [
+    {
+     "label": "Hydro-Quebec - Grille des tarifs d'electricite 2026 (Tarif D N, Reseaux autonomes au nord du 53e parallele)",
+     "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/grille-tarifaire.pdf",
+     "quote": "9.2 9.2 Tarif D N Frais d’accès au réseau, par jour × multiplicateur 46,154 ¢ 46,154 ¢ 0,0 %\nJusqu’à 40 k W h d’énergie par jour, par k W h × multiplicateur 6,905 ¢ 7,065 ¢ 2,3 %",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "labrador-northern-ontario",
+   "price": "Newfoundland and Labrador Hydro, Isolated Diesel Systems (first block, same as the Island Interconnected System and L'Anse au Loup): 15.587 cents/kWh, current published rate",
+   "price_short": "C$0.15587/kWh isolated diesel (2026)",
+   "sources": [
+    {
+     "label": "Newfoundland & Labrador Hydro - Current Rates",
+     "url": "https://nlhydro.com/electicity-rates/current-rates/",
+     "quote": "For customers on the Island Interconnected System, L'Anse au Loup, and Isolated Diesel Systems (first block), the current rate is 15.587 cents per kWh.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "svalbard-and-northern-nordics",
+   "price": "Norway's \"Svalbardpris\": household electricity in Longyearbyen capped at a maximum of 1.3 kr/kWh (plus 0.6 kr/kWh for district heating), per the revised 2026 national budget presented 2026-05-12",
+   "price_short": "1.3 kr/kWh, Svalbard cap (2026)",
+   "sources": [
+    {
+     "label": "High North News - Regjeringen vil styrke Svalbardbudsjettet med 72,3 millioner kroner",
+     "url": "https://www.highnorthnews.com/politikk/regjeringen-vil-styrke-svalbardbudsjettet-med-723-millioner-kroner/1111130",
+     "quote": "Ordningen vil innebære at strømprisen settes til maksimalt 1,3 kr per kWh og 0,6 kr per kWh for fjernvarme.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "uk-scottish-islands-and-nuclear-framework",
+   "price": "UK Ofgem energy price cap, Direct Debit electricity, Great Britain average incl. VAT: 26.11 pence/kWh, 1 July to 30 September 2026 (no Shetland- or Orkney-specific tariff found; Northern Scotland's own regional cap sub-rate runs slightly higher per secondary sources but no current fetched figure was found for it, so the GB-wide cap is reported per the fallback instruction)",
+   "price_short": "26.11p/kWh, UK price cap (Jul-Sep 2026)",
+   "sources": [
+    {
+     "label": "Ofgem - Changes to energy price cap between 1 July and 30 September 2026",
+     "url": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-july-and-30-september-2026",
+     "quote": "you will pay on average 26.11 pence per kilowatt hour (kWh)",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "region_id": "greenland",
+   "price": "Nukissiorfiit electricity price for ordinary customers (kundegruppe 1), uniform across every listed Greenland locality: 2.00 kr./kWh, per Prisblad nr. 39, effective 2026-01-01",
+   "price_short": "2.00 kr./kWh, Greenland (2026)",
+   "sources": [
+    {
+     "label": "Nukissiorfiit - Prisblad nr. 39, gaeldende fra 01.01.2026, Bilag A (Priser for el til kundegruppe 1)",
+     "url": "https://nukissiorfiit.gl/wp-content/uploads/2025/12/DK-Bilag-a-Prisblad-nr.-39-01.01.2026-.pdf",
+     "quote": "1.1.1 Priser for el til kundegruppe 1 (Almindelige kunder):\nLokalitet El tarif. pr. kWh\nLokalitet El tarif. pr. kWh\n010 NANORTALIK 2,00",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "id": "kcgm-kalgoorlie-zenith-25-year-ppa",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "KCGM (Kalgoorlie \"Super Pit\") Renewables and Thermal Power Project",
+   "country": "AU",
+   "region": "Kalgoorlie, Western Australia (Goldfields-Esperance)",
+   "parties": {
+    "host": "Northern Star Resources (KCGM operations)",
+    "provider": "Zenith Energy",
+    "utility": "None - off-grid"
+   },
+   "instrument": "PPA",
+   "signed": "2025-12",
+   "term_years": 25,
+   "capacity": "256 MW wind, 138 MW solar, 138 MW/300 MWh battery storage, plus a Zenith-Northern Star joint venture supplying 120 MW of thermal generation and a 132kV transmission network; commissioning targeted for mid-2027",
+   "summary": "Zenith Energy signed a 25-year PPA with Northern Star Resources, announced December 2025, to build what is described as Australia's largest renewable energy project for the mining sector at KCGM's Kalgoorlie operations: 256 MW of wind, 138 MW of solar and 138 MW/300 MWh of battery storage. Zenith and Northern Star also formed a joint venture to supply 120 MW of firm thermal generation as backup, plus a 132kV transmission network and substations, with commissioning targeted for mid-2027 subject to approvals.",
+   "microreactor_read": "The 120 MW firm-thermal joint-venture slice is six to eight 20 MWe-class units at a single site with 25 years of contracted term and a mine life Northern Star states as multiple decades — the longest-term, largest-residual off-grid mine opportunity found in this sector to date, and evidence Zenith will structure firm generation as its own joint venture rather than folding it into the renewables PPA.",
+   "sources": [
+    {
+     "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+     "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+     "quote": "Zenith Energy has signed a landmark 25-year power purchase agreement (PPA) with Northern Star Resources",
+     "status": "fetched"
+    },
+    {
+     "label": "Mining.com.au - Zenith Energy to power Northern Star's KCGM",
+     "url": "https://mining.com.au/zenith-energy-to-power-northern-stars-kcgm/",
+     "quote": "Zenith Energy has entered a joint venture with Northern Star to supply 120MW of thermal generation",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
