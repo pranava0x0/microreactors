@@ -1,0 +1,119 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "islands",
+  "scope": "US islands and territories, AUKUS partners' civilian remote power, and other remote allied jurisdictions as civilian buyers of 1-20 MW reactors; military bases as context only",
+  "angles_run": [
+   "Puerto Rico: PREPA/LUMA/Genera generation mix and residential tariff",
+   "Puerto Rico: Nuclear Alternative Project feasibility study and DOE site-analysis award",
+   "Puerto Rico: NEPR integrated resource plan and 2024-2026 nuclear legislation",
+   "US Virgin Islands: WAPA fuel mix, generation capacity and residential rate",
+   "US Virgin Islands: nuclear statement or study from WAPA, VI Energy Office or legislature"
+  ],
+  "absences": [
+   "Puerto Rico: could not fetch PREPA's or LUMA's own generation-mix dashboard (site navigation only in fetch); generation-mix percentages are sourced to a third-party aggregator (lowcarbonpower.org) rather than PREPA/LUMA/PREB directly",
+   "Puerto Rico: could not confirm the exact month of DOE's ~$1.6M Nuclear Alternative Project site-analysis award (sources place it in 2021 but conflict on month); reported as '2021' only",
+   "US Virgin Islands: no nuclear-related statement, study, MOU or legislative bill found from WAPA, the VI Energy Office, or the territorial legislature; NRC's Virgin Islands info-finder page returned HTTP 403 on fetch, so its 'no operating reactors' statement is carried as snippet-only",
+   "US Virgin Islands: 2025-2026 fuel-mix percentage (propane vs. diesel) not found more recent than a March 2020 press figure (74% propane / 26% diesel)"
+  ]
+ },
+ "regions": [
+  {
+   "id": "puerto-rico",
+   "region": "Puerto Rico",
+   "country": "US",
+   "jurisdiction": "US territory",
+   "power_system": "PREPA owns the grid but no longer runs it: LUMA Energy has held the transmission-and-distribution O&M contract since June 2021, and Genera PR (a New Fortress Energy subsidiary) has run PREPA's legacy thermal generation fleet under a public-private O&M agreement since 2023, tasked to 'manage, operate, maintain and eventually decommission some of all the Legacy Generation Assets, base-load generation plants and peaking plants.' In the 12 months to April 2026 fossil fuels supplied about 97% of generation: natural gas 47%, coal about 17%, plus fuel oil, against solar 1.4% and wind 1.1%.",
+   "price": "US$0.26/kWh residential, effective 2026-01-01 (a $0.012739/kWh cut from the prior quarter's fuel and purchased-power adjustment)",
+   "nuclear_position": "No legal ban on nuclear power. Puerto Rico's legislature passed a 2018 law directing a study of nuclear feasibility for the island. A Puerto Rico House bill on nuclear-energy research was reported under committee review in January 2025.",
+   "microreactor_activity": "The Nuclear Alternative Project (NAP), a Puerto Rico-based nonprofit founded in 2016, obtained DOE Office of Nuclear Energy sponsorship for a Preliminary Feasibility Study for SMRs and microreactors, carried out via Idaho National Laboratory (findings released May 2020), which concluded advanced reactors 'can meet Puerto Rico's unique energy needs by complementing renewable sources with zero-emission electricity resilient to extreme natural events.' In 2021 DOE awarded NAP about $1.6 million for a site-suitability phase, which named two candidate sites, one lying 'on the island's north coast near an industrial hub' and the other 'on its east coast at the former Roosevelt Roads Naval Station' (a decommissioned base, not an active military installation). NAP also reported a commissioned survey of over 3,000 residents finding 94% interested in continuing to explore nuclear energy. No reactor vendor, NRC license application or in-service date had been announced as of this pass.",
+   "blockers": [
+    "No reactor vendor selected and no NRC license application filed as of this pass",
+    "Generation is split between LUMA (transmission and distribution) and Genera (legacy thermal generation), so no single utility counterparty yet owns a nuclear procurement decision",
+    "2025-2026 regulatory attention is on emergency thermal procurement (Genera's request to acquire 700-850 MW of temporary generation) rather than nuclear"
+   ],
+   "microreactor_read": "The DOE-funded feasibility case is the most advanced of any US island jurisdiction, with two named candidate sites and a favorable resident survey, but nobody has converted it into an RFP, an NRC docket or a signed PPA counterparty since 2021 — the buyer-side vacuum, not the technical case, is what is missing.",
+   "sources": [
+    {
+     "label": "San Juan Daily Star — Regulator approves power rate reduction effective in January (2026)",
+     "url": "https://www.sanjuandailystar.com/post/regulator-approves-power-rate-reduction-effective-in-january",
+     "quote": "From Jan. 1 through March 31, the cost per kWh will be $0.26.",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Small reactors feasible in Puerto Rico, study concludes (2020)",
+     "url": "https://www.world-nuclear-news.org/Articles/Small-reactors-feasible-in-Puerto-Rico,-study-conc",
+     "quote": "Advanced nuclear reactors can meet Puerto Rico's unique energy needs by complementing renewable sources with zero-emission electricity resilient to extreme natural events",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Site analysis proposed for Puerto Rico (2021)",
+     "url": "https://world-nuclear-news.org/Articles/Site-analysis-in-progress-for-Puerto-Rico",
+     "quote": "One lies on the island's north coast near an industrial hub; the other on its east coast at the former Roosevelt Roads Naval Station.",
+     "status": "fetched"
+    },
+    {
+     "label": "Low-Carbon Power — Puerto Rico electricity generation mix (May 2025-Apr 2026)",
+     "url": "https://lowcarbonpower.org/region/Puerto_Rico",
+     "quote": "natural gas alone was responsible for almost half of the electricity supply, specifically 47%",
+     "status": "fetched"
+    },
+    {
+     "label": "Puerto Rico Public-Private Partnerships Authority — Thermal Generation Facilities (Genera PR)",
+     "url": "https://www.p3.pr.gov/existing-p3/thermal-generation-facilities",
+     "quote": "Manage, operate, maintain and eventually decommission some of all the Legacy Generation Assets, base-load generation plants and peaking plants.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "us-virgin-islands",
+   "region": "U.S. Virgin Islands",
+   "country": "US",
+   "jurisdiction": "US territory",
+   "power_system": "WAPA (Virgin Islands Water and Power Authority) runs two separate island grids on delivered fuel: St. Thomas/St. John and St. Croix, with 238 MW of installed capacity as of 2020 (138 MW St. Thomas district, 100 MW St. Croix), historically burning a propane/diesel mix (74% propane, 26% diesel in March 2020). WAPA's Phase II Wartsila project — four new dual-fuel engines able to run on LPG or light fuel oil, rated at 36 MW and able to 'power 55% of the St. Thomas/St. John district' — reached completion at a ribbon-cutting on 2025-01-17.",
+   "price": "US$0.42/kWh average residential price, 2025 (DOE); the fuel-cost LEAC component was set at 22.22 cents/kWh through 2026-06-30 under a 2025 WAPA-PSC settlement",
+   "loads": [
+    {
+     "name": "St. Thomas/St. John district (Randolph Harley Power Plant, Phase II Wartsila units)",
+     "mw": "36 MW new capacity (within a 138 MW St. Thomas-district total, 2020 figure)",
+     "note": "dual-fuel propane/light-fuel-oil; completed January 2025"
+    }
+   ],
+   "nuclear_position": "No operating reactors or fuel-cycle facilities are sited in the territory. No nuclear-related statement, study or bill was found from WAPA, the Virgin Islands Energy Office, or the territorial legislature in this search pass.",
+   "microreactor_activity": "none found — searched WAPA's own site, DOE's territory energy-office page and NRC's state finder; no microreactor MOU, feasibility study or vendor visit turned up",
+   "blockers": [
+    "No named nuclear feasibility study, MOU or vendor interest to build on, unlike Puerto Rico",
+    "WAPA's 2023-2025 capital program is already committed to new propane-capable thermal units (Wartsila Phase II)",
+    "Two disconnected island grids (St. Thomas/St. John and St. Croix) mean a single unit serves only part of the territory's ~238 MW system"
+   ],
+   "microreactor_read": "USVI pays a delivered-fuel retail price (42 cents/kWh) close to Puerto Rico's, but with zero feasibility work, MOUs or legislative interest on record, so a microreactor sale here starts years behind Puerto Rico rather than riding alongside it.",
+   "sources": [
+    {
+     "label": "U.S. Department of Energy Grid Deployment Office — U.S. Virgin Islands (2025)",
+     "url": "https://www.energy.gov/oe/us-virgin-islands",
+     "quote": "In 2025, the average electricity price for residential customers in the U.S. Virgin Islands was approximately $0.42/kWh.",
+     "status": "fetched"
+    },
+    {
+     "label": "V.I. Office of Disaster Recovery — WAPA Celebrates Ribbon-Cutting Ceremony for Phase II Wartsila Project (Jan. 17, 2025)",
+     "url": "https://www.usviodr.com/wapa-celebrates-with-ribbon-cutting-ceremony-for-phase-ii-wartsila-project/",
+     "quote": "power 55% of the St. Thomas/St. John district",
+     "status": "fetched"
+    },
+    {
+     "label": "St. Croix Source — New WAPA Generators Will Mean 100 Percent Propane, Zero Fuel Oil (2020)",
+     "url": "https://stcroixsource.com/2020/05/01/new-wapa-generators-will-mean-100-percent-propane-zero-fuel-oil/",
+     "quote": "the consumption ratio at WAPA power plants was 74 percent propane and 26 percent diesel fuel",
+     "status": "snippet-only"
+    },
+    {
+     "label": "NRC — Info Finder: Virgin Islands",
+     "url": "https://www.nrc.gov/info-finder/region-state/virgin-islands",
+     "quote": "no operating nuclear reactors or fuel cycle facilities are currently located in the U.S. Virgin Islands",
+     "status": "snippet-only"
+    }
+   ]
+  }
+ ]
+}

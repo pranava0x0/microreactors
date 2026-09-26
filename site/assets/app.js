@@ -1145,22 +1145,68 @@
         "</div>";
     }).join("") + "</div>");
     var mgroups = M.precedent_groups || [];
-    render($("policy-precedents"), mgroups.map(function (g) {
-      return '<div class="precgroup"><div class="subhead"><h3>' + esc(g.name) + '</h3></div><p class="prose">Every one of these ' +
-        "really happened. Each row covers how it worked and who came out ahead, the buyers " +
-        "who moved early or the ones who waited.</p>" +
-        '<div class="precgrid">' +
-        g.items.map(function (p) {
-          return '<details class="prec"><summary><span class="nm">' + esc(p.name) + "</span>" +
-            '<span class="cat">' + esc(p.category) + "</span></summary>" +
-            '<div class="body">' +
-            '<p><span class="k">Mechanism · </span>' + esc(p.mechanism) + "</p>" +
-            '<p><span class="k">Outcome · </span>' + esc(p.outcome) + "</p>" +
-            (p.early_vs_late ? '<p><span class="k">Early vs late orders · </span>' + esc(p.early_vs_late) + "</p>" : "") +
-            (p.relevance ? '<p><span class="k">Read-across · </span>' + esc(p.relevance) + "</p>" : "") +
-            srcList(p.sources) + "</div></details>";
-        }).join("") + "</div></div>";
-    }).join(""));
+    /* One filter across all four groups, by the kind of arrangement: an advance
+       market commitment in vaccines and one in carbon removal sit side by side
+       under the same chip. Labels fall back to the enum text, so a new type in
+       the data still renders. */
+    var TYPE_LABEL = {
+      "advance-market-commitment": "Advance commitments", "buyers-club": "Buyers' clubs",
+      "assurance-contract": "Threshold contracts", "joint-procurement": "Joint procurement",
+      "consortium-ownership": "Co-ownership", "fractional-ownership": "Fractional shares",
+      "capacity-subscription": "Subscriptions", "prepayment": "Prepayments",
+      "mutual-insurance-pool": "Mutual insurance", "parametric-pool": "Parametric pools",
+      "overrun-or-performance-cover": "Overrun cover", "government-backstop": "Public backstops"
+    };
+    var typeLabel = function (t) { return TYPE_LABEL[t] || String(t || "other").replace(/-/g, " "); };
+    var typeCount = {}, allPrec = 0;
+    mgroups.forEach(function (g) {
+      g.items.forEach(function (p) { typeCount[p.type] = (typeCount[p.type] || 0) + 1; allPrec++; });
+    });
+    var typeOrder = Object.keys(typeCount).sort(function (a, b) { return typeCount[b] - typeCount[a]; });
+    render($("prec-intro"), allPrec + " arrangements that really ran, in nuclear and far outside it. " +
+      "Filter by the kind of deal; each row says how it worked, how it turned out, and what a reactor " +
+      "orderbook could copy.");
+    render($("prec-filter"), '<button class="newschip on" data-type="" aria-pressed="true">All ' + allPrec +
+      "</button>" + typeOrder.map(function (t) {
+        return '<button class="newschip" data-type="' + esc(t) + '" aria-pressed="false">' +
+          esc(typeLabel(t)) + " " + typeCount[t] + "</button>";
+      }).join(""));
+    render($("policy-precedents"),
+      mgroups.map(function (g) {
+        return '<div class="precgroup"><h4 class="precgrouphead">' + esc(g.name) + ' <span class="cnt">' +
+          g.items.length + "</span></h4>" +
+          '<div class="precgrid">' +
+          g.items.map(function (p) {
+            return '<details class="prec" data-type="' + esc(p.type || "") + '"><summary><span class="nm">' +
+              esc(p.name) + "</span>" +
+              '<span class="cat">' + esc(typeLabel(p.type)) + (p.year ? " \u00b7 " + esc(p.year) : "") +
+              "</span></summary>" +
+              '<div class="body">' +
+              (p.category ? '<p><span class="k">Market \u00b7 </span>' + esc(p.category) + "</p>" : "") +
+              '<p><span class="k">How it worked \u00b7 </span>' + esc(p.mechanism) + "</p>" +
+              (p.size ? '<p><span class="k">Size \u00b7 </span>' + esc(p.size) + "</p>" : "") +
+              '<p><span class="k">Outcome \u00b7 </span>' + esc(p.outcome) + "</p>" +
+              (p.early_vs_late ? '<p><span class="k">Early vs late orders \u00b7 </span>' + esc(p.early_vs_late) + "</p>" : "") +
+              (p.relevance ? '<p class="copyline"><span class="k">What an orderbook could copy \u00b7 </span>' +
+                esc(p.relevance) + "</p>" : "") +
+              srcList(p.sources) + "</div></details>";
+          }).join("") + "</div></div>";
+      }).join(""));
+    $("prec-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      Array.prototype.forEach.call($("prec-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      var t = b.dataset.type;
+      Array.prototype.forEach.call($("policy-precedents").querySelectorAll("details.prec"), function (d) {
+        d.hidden = !!t && d.dataset.type !== t;
+      });
+      Array.prototype.forEach.call($("policy-precedents").querySelectorAll(".precgroup"), function (g) {
+        g.hidden = !g.querySelector("details.prec:not([hidden])");
+      });
+    });
   }
 
   /* ---------- policy pathways ---------- */

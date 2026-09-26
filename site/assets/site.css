@@ -484,7 +484,8 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
 /* ---------- market design ---------- */
 .mech{display:grid;gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);
   margin-top:var(--space-6)}
-@media(min-width:900px){.mech{grid-template-columns:repeat(3,1fr)}}
+/* Four proposal cards since 2026-09-26: two columns, so none sits alone on a row. */
+@media(min-width:900px){.mech{grid-template-columns:repeat(2,1fr)}}
 .mechcard{background:var(--surface-page);padding:var(--space-6)}
 .mechcard h4{color:var(--antares-red);font-size:var(--size-body);margin-bottom:var(--space-3);
   letter-spacing:var(--track-heading)}
@@ -496,7 +497,11 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
   text-transform:uppercase;padding:1px var(--space-2);border:1px solid var(--antares-red-40);
   color:var(--antares-red);border-radius:var(--radius-control);white-space:nowrap}
 /* ---------- precedents & market subpanels ---------- */
-.precgroup{margin-bottom:var(--space-10)}
+.precgroup{margin-bottom:var(--space-8)}
+.precgrouphead{font-size:var(--size-body);font-weight:var(--weight-semibold);margin:var(--space-6) 0 var(--space-3);
+  color:var(--text-secondary)}
+.precgrouphead .cnt{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+details.prec .body p.copyline{border-left:2px solid var(--antares-red);padding-left:var(--space-3);color:var(--text-primary)}
 .precgroup .prose{margin-bottom:var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 .precgrid{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
 details.prec{border:1px solid var(--border-subtle);background:var(--surface-page);margin-bottom:0}
