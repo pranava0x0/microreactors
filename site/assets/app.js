@@ -1526,7 +1526,8 @@
         a: s.pathways + " rule changes and " + s.instruments + " ways a deal gets signed, with a " +
            "shared-orderbook proposal checked against " + s.precedents + " precedents." +
            (s.dockets ? " " + s.dockets + " utility filings name advanced reactors; " +
-             (s.dockets_micro ? s.dockets_micro : "none") + " a 1\u201320 MW one." : "") },
+             (s.dockets_micro ? s.dockets_micro + (s.dockets_micro === 1 ? " names" : " name")
+               : "none names") + " a 1\u201320 MW reactor." : "") },
       { href: "#news", tab: "News", q: "What happened",
         a: s.news_items + " dated events since " + monthYear(s.news_first) + ". " + s.news_binding +
            " rest on something executed: a contract, a filing or a milestone." },
