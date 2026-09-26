@@ -119,6 +119,56 @@ class ResearchPass(unittest.TestCase):
                 "_meta": {"captured": "2099-01-01", "incomplete": True}, "items": []}))
             self.assertEqual(merge_news.build(folder)["_meta"]["captured"], "2026-08-31")
 
+    def test_extended_record_types_fire_both_ways(self):
+        """Types D-G (precedent, region, docket, check), added 2026-09-26. A gate
+        that has only ever seen passing input measures nothing, so each type gets
+        a record that must pass and one that must fail for its own rule."""
+        import tempfile
+        src = {"label": "Publisher — Document 2026", "url": "https://example.test/doc",
+               "quote": "a verbatim span", "status": "fetched"}
+        good = {
+            "precedents": [{"id": "p1", "mechanism": "advance-market-commitment",
+                            "sector": "carbon removal", "name": "Frontier", "year": "2022",
+                            "size": "$925M", "how_it_works": "x", "outcome": "x",
+                            "microreactor_read": "x", "sources": [src]}],
+            "regions": [{"id": "r1", "region": "Greenland", "power_system": "17 towns",
+                         "nuclear_position": "x", "microreactor_read": "x", "sources": [src]}],
+            "dockets": [{"id": "d1", "forum": "GA PSC", "utility": "Georgia Power",
+                         "type": "IRP", "date": "2025-01-31", "docket": "56002",
+                         "what_it_says": "x", "sources": [src]}],
+            "checks": [{"id": "c1", "target": "janus", "file": "opportunities",
+                        "claim": "x", "verdict": "confirmed", "evidence": "x",
+                        "sources": [src]},
+                       {"id": "c2", "target": "dome", "file": "opportunities",
+                        "claim": "x", "verdict": "unverifiable", "evidence": "x"}],
+        }
+        bad = {
+            # nuclear sector, and no number anywhere
+            "precedents": [dict(good["precedents"][0], id="p2", sector="nuclear fleet",
+                                size="large", outcome="it worked")],
+            # no number in price, power_system or loads
+            "regions": [dict(good["regions"][0], id="r2", power_system="diesel towns")],
+            # unknown type, and neither docket nor url
+            "dockets": [{k: v for k, v in dict(good["dockets"][0], id="d2", type="memo").items()
+                         if k != "docket"}],
+            # outdated with no correction
+            "checks": [dict(good["checks"][0], id="c3", verdict="outdated")],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            for name, doc in (("good", good), ("bad", bad)):
+                folder = pathlib.Path(tmp) / name
+                folder.mkdir()
+                for key, recs in doc.items():
+                    (folder / f"{key}.json").write_text(json.dumps(
+                        {"_meta": {"captured": "2026-09-26", "absences": ["x"]}, key: recs}))
+            ok = run("tools/research_pass.py", "validate", str(pathlib.Path(tmp) / "good"))
+            self.assertEqual(ok.returncode, 0, ok.stdout + ok.stderr)
+            ko = run("tools/research_pass.py", "validate", str(pathlib.Path(tmp) / "bad"))
+            self.assertEqual(ko.returncode, 1, ko.stdout)
+            for rule in ("non-nuclear", "no number in size", "no number in price",
+                         "type 'memo'", "neither a docket", "must carry a correction"):
+                self.assertIn(rule, ko.stdout)
+
     def test_quote_repair_keeps_literal_source_text(self):
         """Normal form is for matching only; a written quote remains source text."""
         sys.path.insert(0, str(ROOT / "tools"))
