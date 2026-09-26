@@ -1,0 +1,479 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "north",
+  "scope": "Type E regions (12: Alaska Railbelt, rural Alaska PCE, Alaska mines, Alaska legal framework, Greenland, Yukon, Northwest Territories, Nunavut, Nunavik, Labrador/northern Ontario, Svalbard/Nordic, polar stations) plus Type C answers on 5 named strategy.json prospects and 3 Type B cases, all civilian remote/cold-region buyers of 1-20 MW reactors",
+  "angles_run": [
+   "GVEA/Railbelt utility nuclear or SMR feasibility interest and INL tour coverage",
+   "AVEC/rural Alaska PCE rate schedules, COPA mechanics and diesel cost reporting",
+   "Alaska mines (Kensington, Greens Creek, Fort Knox, Pogo, Donlin, Graphite One) power source and MW load",
+   "Alaska SB 177 (2022), DEC 18 AAC 87 siting regulation status in 2025-2026, any 2026 bill, ACEP/Strategies 360 public-opinion survey",
+   "Greenland Nukissiorfiit power system and tariffs; Uranium Act 2021; Kvanefjeld licence refusal 2026; Denmark's 1985 ban and 2025-2026 SMR review",
+   "Yukon Energy winter diesel/LNG gap and the April 2026 Ontario-Yukon SMR partnership",
+   "Northwest Territories NTPC diesel fleet and the Diavik/Ekati diamond mines' power source",
+   "Nunavut Kivalliq Hydro-Fibre Link 2026 schedule/funding and the August 2026 federal Arctic nuclear look",
+   "Nunavik/Hydro-Quebec off-grid villages, Raglan mine/TUGLIQ wind, Quebec's Gentilly-2/nuclear position",
+   "Labrador (Nunatsiavut/NL Hydro) diesel communities and the Wataynikaneyap Power Ontario First Nations grid connection",
+   "Svalbard Longyearbyen post-coal transition; Steady Energy LDR-50 district heat; Norsk Kjernekraft municipal agreements",
+   "Polar research station power: McMurdo PM-3A historical precedent and Summit Station Greenland logistics",
+   "2026 updates on red-dog, qulliq-nunavut, doyon-utilities, tanana-chiefs and cvea prospects"
+  ],
+  "absences": [
+   "No 2026 Alaska legislative bill on nuclear energy found beyond 2022's SB 177; a search hit for 'SB 291' nuclear-facilities language is from the 26th Legislature (2009-2010), not 2025-2026, and is not used",
+   "No AVEC or other rural-Alaska utility publishes a single $/kWh or $/MWh 'delivered diesel cost' figure; published tariffs separate a base Energy Charge from a per-community fuel surcharge (COPA) that is not tabulated centrally",
+   "No DKK/kWh Nukissiorfiit tariff figure found; the utility's price pages 404'd and no cached tariff sheet was located in 2 searches",
+   "NTPC's own PDF (electrical_generation_in_the_nwt) and Yukon Energy's Chapter 1 2025-2030 PDF both failed to parse as text through the fetch tool; NWT figures instead sourced to Canada Energy Regulator's published profile",
+   "No $/gallon or $/MWh diesel cost for Red Dog beyond Teck's continued non-disclosure (consistent with the 2026-09-02 pass); NANA has made no public statement on an ownership stake in any generation asset, nuclear or otherwise",
+   "Summit Station's (Greenland) own fuel cost per gallon was not found; the one candidate primary document (GrIT economic analysis PDF) would not render as text through the fetch tool",
+   "No Nunavik-specific (as opposed to province-wide Quebec) nuclear policy statement found; Hydro-Quebec's own Nunavik page carries no capacity or nuclear figures",
+   "Gahcho Kue mine's diesel capacity/consumption figures were not found in 2 searches (Ekati and Diavik were)",
+   "A CBC piece on the Quaqtaq/Puvirnituq Nunavik wind project (worth ~60% of the two villages' needs, 96 million litres saved) could not be fetched (CBC access denied on 2 attempts, no mirror found) and is used only as a snippet-only lead, not a finding"
+  ]
+ },
+ "regions": [
+  {
+   "id": "alaska-railbelt-utilities",
+   "region": "Alaska Railbelt",
+   "country": "US",
+   "jurisdiction": "US state",
+   "power_system": "Six interconnected utilities (Golden Valley Electric Association/GVEA, Chugach Electric, Matanuska Electric, Homer Electric, Anchorage's municipal successor, and the City of Seward) share the Railbelt grid from Fairbanks to the Kenai Peninsula. GVEA generated more than 80% of its power from fossil fuels (coal, diesel and naphtha) as of May 2025 reporting. Its largest customer, the Fort Knox gold mine, draws about 16% of GVEA's total output; Northern Star's Pogo mine draws a grid load its own 2025 corporate report labels 'Pogo GRID 16 MW'.",
+   "price": "Governor Dunleavy's stated (unmet) Railbelt target is 10 cents/kWh; GVEA burns roughly 200,000 tons of Usibelli coal a year under a contract signed in August [2024]",
+   "loads": [
+    {"name": "Fort Knox mine (Kinross)", "mw": "16% of GVEA's total power output; $40 million/year", "note": "grid-connected via GVEA, not diesel; largest single customer on the Railbelt"},
+    {"name": "Pogo mine (Northern Star)", "mw": "16 MW", "note": "grid-connected; labeled 'Pogo GRID 16 MW' in Northern Star's own 2025 corporate report"}
+   ],
+   "nuclear_position": "No state ban. SB 177 (2022) and DEC's 18 AAC 87 siting regulation (effective 2023) already permit microreactor siting statewide, Railbelt included (see alaska-legal-framework). No Railbelt utility has itself taken a formal board position for or against a reactor.",
+   "microreactor_activity": "May 2026: the Alaska Center for Energy and Power organized a tour of Idaho National Laboratory for utility executives including staff from Golden Valley Electric Association, to view Radiant's Kaleidos microreactor test facility and Oklo's 75 MW Aurora construction site. ACEP's own account of the trip raises, as an open question rather than a utility commitment, whether Oklo's 5 MW Eielson microreactor could be followed by 'a larger 75 MW reactor at the same location supplying power to the GVEA's grid.' No RFI, site-permit application, or GVEA board vote on nuclear was found.",
+   "blockers": [
+    "No Railbelt utility has issued an RFI or committed capital to a reactor study",
+    "A Cook Inlet natural gas shortage and a federal freeze on GVEA's roughly $500 million renewables funding package (as of May 2025) are consuming utility bandwidth ahead of any nuclear decision",
+    "GVEA reversed a 2022 board vote to close a coal plant and instead signed a new Usibelli coal-supply contract"
+   ],
+   "microreactor_read": "The Railbelt's own energy establishment (ACEP) is already treating a reactor at Eielson-scale-and-up as a live conversation because Fort Knox and Pogo prove 16 MW+ industrial loads exist on this grid; the missing piece is a utility RFI or site permit, not the enabling law, which has existed since 2023.",
+   "sources": [
+    {"label": "Alaska Beacon — Could nuclear power Alaska's future? (2026)", "url": "https://alaskabeacon.com/2026/07/01/could-nuclear-power-alaskas-future/", "quote": "Oklo was a familiar name to many of the tour participants, particularly those from Golden Valley Electric Association.", "status": "fetched"},
+    {"label": "Anchorage Daily News / Northern Journal — A key player in moving Interior Alaska off fossil fuels? (2025)", "url": "https://www.adn.com/business-economy/energy/2025/05/03/a-key-player-in-moving-interior-alaska-off-fossil-fuels-multibillion-dollar-mining-corporations/", "quote": "The sprawling Fort Knox mine consumes $40 million worth of power every year", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "alaska-rural-pce-communities",
+   "region": "Rural Alaska (Power Cost Equalization communities)",
+   "country": "US",
+   "jurisdiction": "US state",
+   "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 58 communities off 46 separate diesel power plants, each an isolated microgrid with no interconnection between villages; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
+   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the statewide FY2026 PCE base rate (the subsidized floor the state pays down to) is reported at 20.38 cents/kWh",
+   "loads": [
+    {"name": "AVEC system-wide", "mw": "46 diesel power plants across 58 communities", "note": "off-grid; no interconnection between communities"}
+   ],
+   "nuclear_position": "No PCE-community utility has taken a position on nuclear power. State law (SB 177, 2022) and DEC's siting regulation (18 AAC 87, effective 2023) apply statewide and are not community-specific.",
+   "microreactor_activity": "None found at any individual PCE community. Searched AVEC's own news posts and RCA filing notices; found only diesel/COPA rate mechanics and PCE-funding advocacy testimony to the legislature, no reactor studies.",
+   "blockers": [
+    "Most individual PCE villages draw well under 1 MW, far below any current microreactor's minimum output",
+    "58 separate diesel microgrids mean a reactor would have to be sited at a hub community and would still leave most villages on diesel",
+    "AVEC posted an operating loss in 2025 by its own reporting, leaving no obvious capital sponsor for new generation"
+   ],
+   "microreactor_read": "Rural PCE villages carry the sector's best-regulated diesel price signal (a published base rate plus a disclosed fuel-surcharge mechanism) but the worst-matched load; a reactor needs a hub-and-aggregation buyer like the tribal utility in the tanana-chiefs prospect, not any single PCE village.",
+   "sources": [
+    {"label": "Alaska Village Electric Cooperative — Schedule of Proposed Rate Changes (2026-08-08)", "url": "https://avec.org/2026/08/08/schedule-of-proposed-rate-changes/", "quote": "Energy Charge (0-750 kWh) $0.3647/kWh", "status": "fetched"},
+    {"label": "Alaska Village Electric Cooperative — The Cost of Fuel & Need for Greater PCE Funding (2026-04-01)", "url": "https://avec.org/2026/04/01/the-cost-of-fuel-need-for-greater-pce-funding/", "quote": "AVEC submits a filing with the Regulatory Commission of Alaska (RCA) to update its Cost of Power Adjustment (COPA)", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "alaska-mines-power",
+   "region": "Alaska mines (non-military civilian loads)",
+   "country": "US",
+   "jurisdiction": "US state",
+   "power_system": "Alaska's large mines split between grid-tied and diesel-only. Kensington (Coeur Alaska, underground gold, Lynn Canal) runs entirely on-site diesel: 'annual fuel consumption expected to be around 3 million gallons at full production.' Greens Creek (Hecla, Admiralty Island) has purchased surplus hydropower from Alaska Electric Light & Power since 2006, and 'since 2009, hydropower has provided 77% of Greens Creek's energy needs,' though in 2025 low precipitation cut that back and '62% of the mine's electricity [was] purchased from the grid' (i.e. thermal-backed). Fort Knox and Pogo are grid-tied to the Railbelt (see alaska-railbelt-utilities). Donlin Gold (not yet built) would need a 220 MW dual-fuel plant and a 316-mile gas pipeline. Graphite One's Graphite Creek project forecasts a 12.5 MW draw, twice Nome's own load.",
+   "price": "Fort Knox: $40 million/year, ~16% of GVEA's output (see alaska-railbelt-utilities); no per-mine $/MWh diesel figure was found for Kensington, Greens Creek or Red Dog",
+   "loads": [
+    {"name": "Kensington mine (Coeur Alaska)", "mw": "~3 million gallons diesel/year at full production", "note": "off-grid, diesel-only"},
+    {"name": "Greens Creek mine (Hecla)", "mw": "77% hydropower since 2009 (62% grid-thermal in 2025 low-water year)", "note": "purchases surplus AEL&P hydropower; diesel backup only"},
+    {"name": "Donlin Gold (pre-construction)", "mw": "220 MW planned dual-fuel plant, 316-mile gas pipeline", "note": "not yet financed/built; would displace ~76 million gallons/year of diesel"},
+    {"name": "Graphite One / Graphite Creek", "mw": "12.5 MW forecast", "note": "pre-production (targeting 2030); diesel gensets are the 'leading proposal' but nuclear is under explicit consideration"},
+    {"name": "Red Dog mine (Teck/NANA)", "mw": "~25 MW, ~40,000 gallons diesel/day", "note": "see the red-dog answer record for 2026 updates"}
+   ],
+   "nuclear_position": "No mine-specific ban; SB 177 (2022) and DEC's 18 AAC 87 apply statewide. No mine has filed for a reactor siting permit.",
+   "microreactor_activity": "Graphite One's own SVP of Operations named nuclear power as an option for the Graphite Creek mine in April 2025 reporting: 'The nuclear is very favorable because it's got no carbon footprint, but they're not far enough along yet, and they've got to be socially acceptable.' This is the clearest on-record civilian-mine interest in nuclear power in Alaska outside Red Dog. No site study, RFI or vendor engagement was found beyond that statement.",
+   "blockers": [
+    "Graphite One: reactor vendors judged 'not far enough along yet' and a stated social-acceptability bar, by the company's own account",
+    "Kensington and Greens Creek already have a working power solution (diesel at full efficiency, or discounted hydropower) reducing urgency",
+    "Donlin remains unbuilt and unfinanced, so its 220 MW load is not yet a live near-term buyer"
+   ],
+   "microreactor_read": "Graphite One is the cleanest small-mine microreactor lead in Alaska after Red Dog: a company executive has already put nuclear on the list of options at a forecast 12.5 MW load, conditioned only on vendor maturity and social acceptability, not on cost or law.",
+   "sources": [
+    {"label": "Ground Truth Alaska — Kensington Gold Mine", "url": "https://groundtruthalaska.org/articles/KensingtonGoldMine/", "quote": "annual fuel consumption expected to be around 3 million gallons at full production", "status": "fetched"},
+    {"label": "Hecla Mining — Greens Creek, Alaska", "url": "https://www.hecla.com/operations/greens-creek-alaska", "quote": "Since 2009, hydropower has provided 77% of Greens Creek's energy needs.", "status": "fetched"},
+    {"label": "KNOM Radio Mission — Graphite One forecasts $43 billion in revenue from proposed Seward Peninsula mine (2025)", "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/", "quote": "The nuclear is very favorable because it's got no carbon footprint, but they're not far enough along yet", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "alaska-legal-framework",
+   "region": "Alaska (statewide legal/regulatory framework)",
+   "country": "US",
+   "jurisdiction": "US state",
+   "power_system": "Not a utility record; covers the state-level rules that apply to every Alaska record above. Alaska Statute 18.45 (as amended by SB 177, 2022, defining a microreactor as no more than 50 MW) and its implementing regulation 18 AAC 87 govern microreactor siting permits statewide.",
+   "nuclear_position": "SB 177, signed by Governor Dunleavy in 2022, defines a microreactor as an advanced reactor of no more than 50 MW and removes the prior requirement that the legislature designate land before DEC can issue a siting permit (legislative designation is still required only for sites in an unorganized borough). DEC's implementing regulation, 18 AAC 87 (Nuclear Facility Siting), took effect August 23, 2023, and DEC's own regulation tracker shows it 'up to date' with no amendment since, through 2025-2026: applicants need a DEC siting permit plus municipal/borough (or legislative, if unorganized) approval, while the NRC retains licensing, construction, operation, safety and security authority.",
+   "microreactor_activity": "An Alaska Center for Energy and Power (ACEP)/Strategies 360 public-opinion survey, presented to the Alaska House Resources Committee on April 24, 2026, found awareness of advanced/microreactors rose from 'about a quarter' of respondents in 2023 to 'about 40%' in 2026, and that giving survey respondents 'a brief, neutral description of microreactors... increased measured support by about 10 percentage points.' No new nuclear-specific bill was found introduced in the 2025-2026 (34th) Legislature beyond SB 177's continuing regulatory implementation.",
+   "blockers": [
+    "No 2026 legislative update found beyond SB 177 (2022) and its 2023 implementing regulation; the framework is settled but not further expanded",
+    "Public awareness of microreactors, while rising, was still only ~40% as of the April 2026 survey"
+   ],
+   "microreactor_read": "Alaska's enabling law is the most settled of any region in this file: a siting statute and an implementing regulation have both been in force, unchanged, since August 2023, and public support is measurably rising. The gate on any Alaska deployment is now a utility's own commercial decision, not state law.",
+   "sources": [
+    {"label": "Alaska Dept. of Environmental Conservation — 18 AAC 87 Nuclear Facility Siting (regulation tracker)", "url": "https://dec.alaska.gov/commish/regulations/18-aac-87", "quote": "DEC Last Change Effective Date August 23, 2023", "status": "fetched"},
+    {"label": "Citizen Portal (Alaska Legislature beat) — Awareness of advanced nuclear rises in Alaska; microreactor descriptions increase measured support (2026-04-24 hearing)", "url": "https://citizenportal.ai/articles/7879228/alaska/2026-legislature-alaska/awareness-of-advanced-nuclear-rises-in-alaska-microreactor-descriptions-increase-measured-support", "quote": "In 2023 only about a quarter of respondents had heard of these (advanced reactors); by our most recent survey that went up to about 40%", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "greenland",
+   "region": "Greenland",
+   "country": "GL",
+   "jurisdiction": "Danish autonomous territory",
+   "power_system": "Nukissiorfiit, Greenland's sole state-owned utility, supplies electricity, water and (in some places) heat to 'approximately 56,000 residents across 17 towns and 54 settlements' with 'no nationwide or regional electricity grid' -- every town and settlement is its own isolated system. Hydropower stations exist only at Nuuk, Sisimiut, Ilulissat and Tasiilaq; 'the power stations in all other towns and settlements are operated with diesel generators.' Nukissiorfiit reports about 72% of its energy from renewables (mostly hydro), targeting fossil-free supply by 2030.",
+   "price": "No DKK/kWh tariff sheet found (Nukissiorfiit's price pages 404'd); Nukissiorfiit states it subsidizes rates uniformly across Greenland to offset the gap between cheap hydro towns and small diesel-only settlements",
+   "loads": [
+    {"name": "Nukissiorfiit system-wide", "mw": "17 towns, 54 settlements, ~56,000 residents", "note": "no interconnecting grid; hydro at 4 towns only, diesel everywhere else"},
+    {"name": "Tanbreez rare earth project (Critical Metals Corp, 70% acquired)", "mw": "n/a (pre-production)", "note": "site sits 2 km from an existing hydro power line; targeting Q4 2028/Q1 2029 production"},
+    {"name": "Kvanefjeld/Kuannersuit rare earth-uranium deposit (Energy Transition Minerals)", "mw": "n/a (licence renewal rejected 2026-06-26)", "note": "uranium content ~300 ppm, exceeds the Uranium Act's 100 ppm threshold"}
+   ],
+   "nuclear_position": "Greenland's own Uranium Act (Greenland Parliament Act No. 20) 'came into force' on 2 December 2021 and bans 'prospecting, exploration, and exploitation of uranium' as well as any other mineral resource whose 'average uranium content' exceeds '100 ppm by weight.' On 26 June 2026 Greenland's government rejected Energy Transition Minerals' licence-renewal application for the Kvanefjeld/Kuannersuit deposit, stating 'further exploration in the area is not deemed likely to lead to the discovery of deposits that can be exploited in accordance with the Uranium Act.' Denmark, which controls defense and largely leaves mineral/energy policy to Greenland's home rule but retains the 1985 nationwide nuclear-power ban's legal legacy, announced in January 2026 that it is reviewing that 40-year ban: 'Denmark is considering building small modular nuclear reactors to meet its energy needs... which would bring an end to its 1985 ban on nuclear power,' after the Danish parliament 'agreed in early 2025 to begin examining new nuclear power technologies.' No specific Greenland carve-out or position within that Danish review was found.",
+   "microreactor_activity": "None found. The Danish SMR review is national and does not name Greenland; Nukissiorfiit has made no public statement on nuclear power.",
+   "blockers": [
+    "The Uranium Act bans uranium mining/byproducts above 100 ppm, and Greenland's government has just (2026) shown it will enforce that against a major rare-earth project (Kvanefjeld)",
+    "Denmark's own nuclear review is at an early, information-gathering stage with no timeline for a political decision",
+    "No town or settlement publishes a load anywhere near even the smallest current microreactor design; the entire population (~56,000) is spread across 71 separate systems"
+   ],
+   "microreactor_read": "Greenland is the least-prepared civilian buyer in this file: no enabling law, no utility study, and its parent state is only beginning to reconsider a 40-year nuclear ban. A reactor sale here depends on Denmark's still-open 2026 SMR review landing somewhere favorable, which has not yet happened.",
+   "sources": [
+    {"label": "Nukissiorfiit — Home (English)", "url": "https://nukissiorfiit.gl/en/", "quote": "Nukissiorfiit's supply obligation covers 17 towns and 54 settlements.", "status": "fetched"},
+    {"label": "Greenland Mineral Resources Authority (Naalakkersuisut) — The ban on uranium (2022)", "url": "https://govmin.gl/2022/04/the-ban-on-uranium/", "quote": "Greenland Parliament Act No. 20 of 1 December 2021 to ban uranium prospecting, exploration and exploitation, etc. (the Uranium Act) came into force", "status": "fetched"},
+    {"label": "MINING.COM (Reuters) — Greenland rejects Energy Transition Minerals' request for licence renewal (2026-06-26)", "url": "https://www.mining.com/web/greenland-rejects-energy-transition-minerals-request-for-licence-renewal/", "quote": "Further exploration in the area is not deemed likely to lead to the discovery of deposits that can be exploited in accordance with the Uranium Act", "status": "fetched"},
+    {"label": "The Local Denmark (AFP) — Denmark mulls end of 1985 nuclear power ban (2026-01-22)", "url": "https://www.thelocal.dk/20260122/denmark-mulls-end-of-1985-nuclear-power-ban", "quote": "Denmark is considering building small modular nuclear reactors to meet its energy needs", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "yukon",
+   "region": "Yukon",
+   "country": "CA",
+   "jurisdiction": "Canadian territory",
+   "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units. LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.",
+   "price": "No consumer $/kWh figure fetched this pass; see Yukon Energy's own rate filings with the Yukon Utilities Board for tariffs",
+   "loads": [
+    {"name": "Eagle Gold mine (Victoria Gold)", "mw": "grid-connected via a 45 km, 69kV powerline; diesel emergency backup only", "note": "not off-grid despite remote location"},
+    {"name": "Minto mine (Capstone Mining, now closed)", "mw": "grid-connected", "note": "grid connection over self-generation saved an estimated 53,000 tonnes/year of GHG emissions vs. diesel"}
+   ],
+   "nuclear_position": "No territorial ban. On April 22, 2026, the Government of Yukon signed a formal partnership agreement with the Government of Ontario 'to strengthen collaboration on energy development, with a focus on improving long-term reliability and exploring emerging technologies such as small modular reactors.'",
+   "microreactor_activity": "Under the April 2026 Yukon-Ontario agreement, 'Ontario Power Generation and Yukon Energy will collaborate on the necessary groundwork to deploy SMRs to Yukon's grid,' covering 'nuclear energy, SMRs and microreactors including technological readiness, regulatory frameworks, supply chains, economics and financing, nuclear waste management and public and Indigenous engagement.' Yukon's energy minister, Ted Laking, framed it as a direct response to winter reliability: 'Our electricity grid is under strain and will soon be unable to meet the needs of the territory... we require significant investment in new generation capacity we can rely on in our coldest and darkest months of the year.' This is an assessment/knowledge-sharing agreement, not a project commitment, contract or site selection.",
+   "blockers": [
+    "The agreement is explicitly exploratory ('help inform Yukon's assessment of whether SMRs could play a role'), with no project, site or vendor named",
+    "No Yukon-specific nuclear siting or licensing framework exists yet; the territory would rely on federal CNSC licensing and whatever regulatory groundwork the Ontario partnership produces",
+    "Yukon Energy's near-term capital is committed to the 15 MW South Whitehorse thermal centre and existing hydro assets"
+   ],
+   "microreactor_read": "Yukon is the only Canadian territory with a named, dated, government-to-government nuclear partnership (April 2026) driven explicitly by a winter capacity shortfall; it is an assessment stage, but it is further along the policy path than Nunavut or NWT.",
+   "sources": [
+    {"label": "Government of Yukon — Yukon and Ontario sign partnership agreement to explore energy solutions, including small modular reactors (2026-04-23, news release #26-111)", "url": "https://yukon.ca/en/news/yukon-and-ontario-sign-partnership-agreement-explore-energy-solutions-including-small-modular-reactors", "quote": "Ontario Power Generation and Yukon Energy will collaborate on the necessary groundwork to deploy SMRs to Yukon's grid", "status": "fetched"},
+    {"label": "NS Energy Business / Global Energy Monitor-style project page — Eagle Gold Mine, Mayo Mining District, Yukon", "url": "https://www.nsenergybusiness.com/projects/eagle-gold-mine/", "quote": "Power supply for the project will be provided by a 45km-long, 69kV powerline from the Yukon electrical grid.", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "northwest-territories",
+   "region": "Northwest Territories",
+   "country": "CA",
+   "jurisdiction": "Canadian territory",
+   "power_system": "The Northwest Territories 'does not have a territorial electricity grid'; eight communities around Great Slave Lake share two regional hydro grids, and of the remaining 25 communities, 23 rely on diesel-fired power plants. Canada's energy regulator puts NWT's 'estimated generating capacity' at 233 MW total, of which diesel plants 'accounted for 68%... in 2021.' The territorial utility, NTPC, operates diesel plants ranging from under 0.1 MW (Buffalo Junction) to 27.66 MW (a diesel combustion turbine at Yellowknife).",
+   "price": "No consumer $/kWh figure fetched this pass; NTPC/NWT Power Corporation rates are set by the territorial Public Utilities Board",
+   "loads": [
+    {"name": "Ekati diamond mine", "mw": "30.8 MW installed (seven 4.4 MW diesel generators)", "note": "off-grid"},
+    {"name": "Diavik diamond mine (Rio Tinto)", "mw": "55.4 MW wind-diesel hybrid facility", "note": "off-grid; last ore milestone was March 2026 and the mine is 'progressing through decommissioning and reclamation'"}
+   ],
+   "nuclear_position": "No territorial ban or enabling law found; the NWT was not identified in Canada's SMR Roadmap materials as having taken a specific policy position, unlike Yukon's April 2026 Ontario partnership.",
+   "microreactor_activity": "None found specific to the NWT government or NTPC. The territory appears only as photographed context ('A power plant in the Northwest Territories') in the federal Department of National Defence's August 2026 Arctic microreactor feasibility story (see the nunavut record), not as a named host.",
+   "blockers": [
+    "No territorial SMR policy, RFI or utility study was found, unlike Yukon",
+    "Diavik, the largest single diesel-hybrid load identified, ended ore production in March 2026 and is now in decommissioning, removing it as a live reactor prospect",
+    "23 of NWT's diesel communities are individually small (sub-3 MW in most cases per NTPC's own community list), similar to rural Alaska's PCE villages"
+   ],
+   "microreactor_read": "NWT's diamond mines (Ekati at 30.8 MW, Diavik at 55.4 MW) are exactly the scale a relocatable reactor targets, but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
+   "sources": [
+    {"label": "Canada Energy Regulator — Provincial and Territorial Energy Profiles: Northwest Territories", "url": "https://www.cer-rec.gc.ca/en/data-analysis/energy-markets/province-territory-energy-profiles/northwest-territories.html", "quote": "NWT has an estimated generating capacity of 233 megawatts (MW).", "status": "fetched"},
+    {"label": "Rio Tinto — Diavik, Canada (operations page)", "url": "https://www.riotinto.com/en/operations/canada/diavik", "quote": "Diavik Diamond Mine's last ore milestone took place in March 2026", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "nunavut",
+   "region": "Nunavut",
+   "country": "CA",
+   "jurisdiction": "Canadian territory",
+   "power_system": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (~76 MW total, 19 over 1 MW, Iqaluit largest at 13.6 MW -- established in the 2026-09-02 pass and not re-verified here). New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
+   "price": "Interim 2025 QEC rates of $555-1,130/MWh by class (established in the 2026-09-02 pass)",
+   "loads": [
+    {"name": "Kivalliq Hydro-Fibre Link (proposed)", "mw": "150 MW, 1,200 km transmission line", "note": "would take 5 communities (Arviat, Baker Lake, Chesterfield Inlet, Rankin Inlet, Whale Cove) and at least one gold mine off diesel; construction expected to begin by 2028"}
+   ],
+   "nuclear_position": "No territorial nuclear ban or enabling law found. QEC's own 2023-2026 Corporate Plan does not mention nuclear power (established in the 2026-09-02 pass). New: the federal Department of National Defence confirmed in August 2026 that it 'has launched a multi-year program to see whether a small nuclear reactor can be deployed in the Arctic,' funding the defence company Canadian Strategic Missions Corporation (CSMC) with $4.5 million in July 2026 'to advance Canadian-made energy solutions that will secure the North.'",
+   "microreactor_activity": "Kivalliq Hydro-Fibre Link schedule/funding, updated this pass: the Government of Canada's most recent dedicated funding announcement (March 2024) added $2.8 million to the project's development phase (on top of $11.6 million already provided for planning/feasibility), stating 'construction is expected to begin by 2028.' Since then, Nukik Corporation reports filing a Transmission Service Request with Manitoba Hydro (by December 2025) and becoming 'the first Arctic electricity developer in North America to be certified by the Midcontinent Independent System Operator (MISO)'; on July 7, 2026 the governments of Nunavut and Manitoba signed an MOU reaffirming 'Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project.' No newer construction-start or financial-close date than 2028 was found. Separately, on the federal nuclear-for-the-North question: CSMC's CEO Daniel Sax said the company is 'working on building... very small nuclear reactors deployable into the Arctic to replace the diesel generators that are up there,' with 'a demonstration of the nuclear reactor by 2028 and then... this technology into the field by 2030,' and 'it's still unclear where in the North it will go.' Canadian Nuclear Laboratories' Ryan Clarke separately noted the North is 'already in an energy deficit.'",
+   "blockers": [
+    "Kivalliq Hydro-Fibre Link construction is not expected to begin before 2028, and no financial close date was found",
+    "The federal microreactor-for-the-Arctic program is explicitly pre-siting: 'it's still unclear where in the North it will go,' with a 2028 demonstration and 2030 field target",
+    "Permafrost-melt risk from reactor waste heat and Arctic nuclear-waste storage were both raised as open questions by Canadian Nuclear Laboratories in the same August 2026 reporting"
+   ],
+   "microreactor_read": "Nunavut now has two parallel federal tracks -- a 150 MW transmission alternative (Kivalliq, construction not before 2028) and a dedicated federal microreactor program (demonstration by 2028, field deployment by 2030) -- neither of which has picked a site; QEC's own interim rates ($555-1,130/MWh) remain the strongest economic case in this entire file for a reactor to beat.",
+   "sources": [
+    {"label": "Government of Canada (Crown-Indigenous Relations and Northern Affairs) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html", "quote": "Construction is expected to begin by 2028.", "status": "fetched"},
+    {"label": "GlobeNewswire (Nukik Corporation release) — Nukik Corporation Welcomes the MOU Signing Between the Governments of Nunavut and Manitoba (2026-07-08)", "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html", "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project", "status": "fetched"},
+    {"label": "Radio Canada International / Eye on the Arctic (CBC News) — To help solve the North's 'energy deficit', Ottawa looks at nuclear options (2026-08-06)", "url": "https://www.rcinet.ca/eye-on-the-arctic/2026/08/06/to-help-solve-the-norths-energy-deficit-ottawa-looks-at-nuclear-options/", "quote": "We're working on building... very small nuclear reactors deployable into the Arctic to replace the diesel generators that are up there", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "nunavik-northern-quebec",
+   "region": "Nunavik (northern Quebec)",
+   "country": "CA",
+   "jurisdiction": "Canadian province (north)",
+   "power_system": "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home' -- off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
+   "price": "No published $/kWh figure fetched this pass for Nunavik village tariffs",
+   "loads": [
+    {"name": "Raglan mine (Glencore)", "mw": "20+ diesel generators, several thousand litres/hour", "note": "TUGLIQ Energy's 2 wind turbines (since 2014) save an estimated 4.4 million litres of diesel/year"},
+    {"name": "Quaqtaq and Puvirnituq (wind project)", "mw": "not disclosed", "note": "Hydro-Quebec states the project would meet roughly 60% of the two villages' needs and save 96 million litres of diesel over 25 years (snippet-only, source access blocked)"}
+   ],
+   "nuclear_position": "No Nunavik-specific nuclear policy found. At the provincial level, Hydro-Quebec's only nuclear plant, Gentilly-2, closed in 2012; press reporting (not independently fetched this pass) indicates the utility studied recommissioning it in 2023 and chose not to proceed. Quebec's Strategic Plan 2022-2026 frames its clean-electricity growth (100+ TWh needed for carbon neutrality by 2050) around hydro expansion, not nuclear -- consistent with no Nunavik nuclear activity being found.",
+   "microreactor_activity": "None found. All identified Nunavik decarbonization activity (Quaqtaq/Puvirnituq wind, Raglan's TUGLIQ turbines) is wind- or solar-based, run by Hydro-Quebec or TUGLIQ, with no reactor study identified.",
+   "blockers": [
+    "Quebec's provincial nuclear posture is now inactive by its own choice (Gentilly-2 recommissioning study abandoned on social-acceptability grounds)",
+    "Hydro-Quebec's Nunavik strategy is wind/solar/battery conversion of its 14 diesel villages, already funded and underway, reducing near-term appetite for a new technology",
+    "Raglan already has an operating wind-diesel hybrid (TUGLIQ, since 2014) that is the incumbent 'what a reactor has to beat' precedent"
+   ],
+   "microreactor_read": "Nunavik's off-grid diesel villages and Raglan mine are physically the right scale, but Quebec's provincial nuclear posture (an abandoned Gentilly-2 restart) and Hydro-Quebec's active wind/solar conversion program both point away from nuclear as the near-term answer here.",
+   "sources": [
+    {"label": "Hydro-Quebec — Energy efficiency in Nunavik", "url": "https://www.hydroquebec.com/energy-efficiency-nunavik/", "quote": "The power plant is located in your village. It uses diesel fuel to generate the electricity needed in your home.", "status": "fetched"},
+    {"label": "World Nuclear News — Hydro-Quebec mulls Gentilly 2 recommissioning", "url": "https://www.world-nuclear-news.org/Articles/Hydro-Quebec-mulls-Gentilly-2-recommissioning", "quote": "Hydro-Quebec mulls Gentilly 2 recommissioning", "status": "snippet-only"}
+   ]
+  },
+  {
+   "id": "labrador-northern-ontario",
+   "region": "Labrador and remote northern Ontario First Nations",
+   "country": "CA",
+   "jurisdiction": "Canadian province (north)",
+   "power_system": "Nunatsiavut's five communities (Nain, Hopedale, Postville, Makkovik, Rigolet) are each an isolated diesel microgrid operated by Newfoundland and Labrador Hydro, unconnected to the provincial grid and resupplied by ship in the ice-free season; Nain's own generating station is listed at 3.86 MW (diesel genset, commissioned 1974). In northwestern Ontario, the Wataynikaneyap ('Watay') Power transmission project -- majority-owned by 24 First Nations with Fortis Inc. -- built roughly 1,800 km of line at a Canada-government commitment of $1.6 billion to connect remote diesel communities to Ontario's grid; the first community (Pikangikum) was energized in December 2018, with the project since expanding toward the 24 partner communities.",
+   "price": "No published $/kWh figure fetched this pass for Nunatsiavut communities",
+   "loads": [
+    {"name": "Nain generating station (NL Hydro)", "mw": "3.86 MW", "note": "diesel genset, commissioned 1974"},
+    {"name": "Watay Power service territory", "mw": "~1,800 km of transmission line, $1.6 billion federal commitment", "note": "connects up to 24 First Nations formerly on diesel"}
+   ],
+   "nuclear_position": "No Nunatsiavut, NunatuKavut, Innu Nation or Watay-partner nuclear position found; Newfoundland and Labrador's provincial energy policy materials reviewed carry no nuclear content.",
+   "microreactor_activity": "None found. NL Hydro's own renewables page for isolated systems lists only solar installations (completed in all Nunatsiavut communities) and a preliminary wind/battery system-impact study for Nain -- no nuclear content.",
+   "blockers": [
+    "No community identified draws anywhere near a microreactor-scale load (Nain's 3.86 MW station is representative of the region's scale)",
+    "Watay Power's grid-extension model (diesel-to-transmission-interconnection) is the incumbent solution actively being built out, reducing the addressable off-grid population",
+    "No nuclear-specific policy, study or vendor engagement was found anywhere in this region"
+   ],
+   "microreactor_read": "Neither sub-region shows any reactor interest; Labrador's loads (sub-4 MW per community) are too small individually, and northern Ontario's diesel communities are being solved by grid extension (Watay), not generation, leaving no addressable microreactor buyer identified here.",
+   "sources": [
+    {"label": "Wikipedia — List of generating stations in Newfoundland and Labrador", "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_Newfoundland_and_Labrador", "quote": "Nain... 3.86... Diesel genset... Newfoundland and Labrador Hydro", "status": "fetched"},
+    {"label": "Wataynikaneyap Power — Wataynikaneyap Power LP and Government of Canada Formalize Support for Province's Largest First Nations-led Transmission Project", "url": "https://www.wataypower.ca/updates/wataynikaneyap-power-lp-and-government-of-canada-formalize-support-for-provinces-largest-first-nations-led-transmission-project", "quote": "Approximately 1,800 kilometres of transmission lines in Northwestern Ontario", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "svalbard-and-northern-nordics",
+   "region": "Svalbard and northern Norway/Finland/Sweden",
+   "country": "NO",
+   "jurisdiction": "Norwegian territory",
+   "power_system": "Longyearbyen (Svalbard) closed the world's northernmost coal power plant on 19 October 2023 and switched to a temporary diesel plant while it builds toward an all-renewable supply; the coal-to-diesel transition itself was budgeted at 'NOK 212 million,' with the associated Mine 7 coal mine closing by summer 2025. In mainland northern Norway, Norsk Kjernekraft has signed cooperation/study agreements covering at least nine municipalities nationwide, including the northern municipalities of Narvik and Vardo; Narvik's municipal development company Futurum has formed 'Narvik Kjernekraft AS' with Norsk Kjernekraft to investigate SMR-based power plants. In Finland, Steady Energy (a VTT spinout) is marketing its LDR-50 reactor, rated at 'maximum heating power 50 MW per reactor module' for district heating, desalination and industrial steam, with letters of intent from the cities of Kuopio, Helsinki, Jyvaskyla (Alva) and, most recently, Kerava (Keravan Energia).",
+   "price": "No $/kWh or $/MWh figure fetched this pass for Longyearbyen's post-coal diesel supply or any Nordic SMR-district-heat customer",
+   "loads": [
+    {"name": "Longyearbyen townsite (Svalbard)", "mw": "diesel interim supply since Oct 2023", "note": "coal plant closed 2023-10-19; renewable target 2030"},
+    {"name": "Narvik / Vardo (northern Norway)", "mw": "SMR feasibility study stage only", "note": "Norsk Kjernekraft municipal agreement, no MW or site chosen"},
+    {"name": "Kuopio/Helsinki/Jyvaskyla/Kerava district heat (Finland)", "mw": "50 MW thermal per LDR-50 module", "note": "letters of intent / pre-investment studies, not contracted"}
+   ],
+   "nuclear_position": "Norway has no nationwide nuclear-power ban and several municipalities (including the northern towns of Narvik and Vardo) have signed exploratory agreements with Norsk Kjernekraft. Finland permits nuclear power and already operates large reactors; Steady Energy's LDR-50 district-heat design is pursuing city-level letters of intent rather than a national policy change. Svalbard's own governance (the Norwegian state, via the Svalbard Treaty framework) has made no nuclear statement; its post-coal plan is diesel-then-renewables, not nuclear.",
+   "microreactor_activity": "Narvik: 'Narvik Kjernekraft AS' formed with Norsk Kjernekraft to begin 'planning a formal assessment phase' for possible SMR construction -- exploratory, no reactor size or in-service date set. Steady Energy: LDR-50 letters of intent signed with multiple Finnish cities, still at feasibility/permitting-scoping stage, with a company target of a first LDR-50 plant 'by 2030.' No microreactor activity found at Longyearbyen itself.",
+   "blockers": [
+    "Longyearbyen's own plan is renewables by 2030, not nuclear; no SMR proposal was found for Svalbard specifically",
+    "Narvik/Vardo agreements are pre-feasibility ('investigate, and possibly plan, build and operate') with no site, size or schedule set",
+    "Steady Energy's LDR-50 has signed customer interest but no LDR-50 unit has yet been built anywhere"
+   ],
+   "microreactor_read": "Northern Norway (Narvik, Vardo) and Finland's district-heat cities are the most advanced Nordic microreactor prospects in named-agreement terms, but all remain pre-feasibility; Svalbard itself, despite being the most extreme and best-known cold, remote, post-coal town in the region, has no reactor proposal at all.",
+   "sources": [
+    {"label": "High North News — All Ready for the Transition From Coal to Diesel in Longyearbyen", "url": "https://en.highnorthnews.com/politics/all-ready-for-the-transition-from-coal-to-diesel-in-longyearbyen/134303", "quote": "The transition to diesel is, according to Svalbard Energy, expected to cost NOK 212 million.", "status": "fetched"},
+    {"label": "Steady Energy — LDR-50 (solution page)", "url": "https://www.steadyenergy.com/ldr-50", "quote": "Maximum heating power 50 MW per reactor module", "status": "fetched"},
+    {"label": "NucNet — Narvik Kjernekraft AS formation with Norsk Kjernekraft (via search reporting)", "url": "https://www.nucnet.org/news/nuclear-company-submits-proposal-for-smr-station-in-north-of-country-6-1-2024", "quote": "Nuclear Company Submits Proposal For SMR Station In North Of Country", "status": "snippet-only"}
+   ]
+  },
+  {
+   "id": "polar-research-stations",
+   "region": "Polar research stations (Antarctica and Greenland ice sheet)",
+   "country": "AQ/GL",
+   "jurisdiction": "Antarctic Treaty System / Danish autonomous territory (research stations, not a national jurisdiction)",
+   "power_system": "The only civilian nuclear power precedent at either pole is the US Navy's PM-3A reactor at McMurdo Station, Antarctica: a 'pressurised-water reactor, with a capacity of 1.8 megawatts' by one account and '1,500 kilowatt' by another, which 'operated from March 1962 - September 1972' and displaced 'the need to deliver millions of gallons of fuel oil.' Today, US Antarctic and Greenland-ice-sheet stations (e.g. Summit Station, Greenland, run on behalf of the National Science Foundation at 3,200 m elevation) are diesel-generator powered, resupplied by aircraft (LC-130 airlift) given the absence of any road or port access.",
+   "price": "No $/gallon or $/MWh fuel-logistics figure was found for Summit Station specifically; Greenland's general retail diesel price was $2.42/gallon as of 16 April 2026 (national average, not station-specific)",
+   "loads": [
+    {"name": "McMurdo Station PM-3A (historical, 1962-1972)", "mw": "1.5 MW (1,500 kW)", "note": "shut down after a 1972 water leak; decommissioning completed 1979"},
+    {"name": "Summit Station, Greenland (NSF)", "mw": "diesel generator, capacity not published", "note": "3,200 m elevation; airlift-resupplied from Kangerlussuaq"}
+   ],
+   "nuclear_position": "No nuclear ban specific to research stations; the Antarctic Treaty System restricts nuclear explosions and radioactive waste disposal in Antarctica but has historically permitted power reactors (PM-3A operated under it). No current proposal to re-introduce nuclear power at any US, Greenland or Antarctic research station was found.",
+   "microreactor_activity": "None found for any current station. PM-3A remains a one-off historical case, shut down for cause (a water leak judged 'impractical to repair,' compounded by the cost of its required 25-person crew and 'concerns over possible chloride stress corrosion').",
+   "blockers": [
+    "PM-3A's own history is a cautionary precedent, not an endorsement: it was down more than a quarter of the time and required an expensive dedicated crew before being decommissioned",
+    "No current station operator (NSF, the US Antarctic Program) has an active nuclear proposal",
+    "Fuel-logistics cost data specific to any single station (e.g. Summit) is not published in a form this pass could locate or fetch"
+   ],
+   "microreactor_read": "The historical McMurdo PM-3A case is the only civilian precedent for polar reactor power anywhere in this file, and it argues both ways: it proved a reactor can displace millions of gallons of resupply fuel, but its 1972 shutdown for a maintenance failure and its need for a 25-person crew are exactly the reliability and staffing risks a modern remote microreactor pitch has to answer.",
+   "sources": [
+    {"label": "Atomic Insights — McMurdo Station: the New York of the Deep Freeze South", "url": "https://atomicinsights.com/mcmurdo-station-new-york-deep-freeze-south/", "quote": "the 1,500 kilowatt power station (nicknamed Nukey-Poo) was providing electricity and heat", "status": "fetched"},
+    {"label": "The Conversation — Remembering Antarctica's nuclear past with 'Nukey Poo'", "url": "https://theconversation.com/remembering-antarcticas-nuclear-past-with-nukey-poo-99934", "quote": "The 25-man team required to run the plant was expensive", "status": "fetched"}
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "id": "red-dog-tugliq-solar-ppa",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "Red Dog mine solar-battery PPA (Tugliq Energy / Teck)",
+   "country": "US",
+   "region": "Northwest Arctic Borough, Alaska",
+   "parties": {"host": "Teck Alaska Inc. (mine operator); NANA Regional Corporation (landowner)", "provider": "Tugliq Energy (independent power producer, Canada)"},
+   "instrument": "PPA",
+   "capacity": "8.8 MW solar farm (delivers ~2 MW in summer) supplementing a diesel powerhouse serving ~25 MW of mine load",
+   "displaced": "a share of Red Dog's roughly 40,000 gallons/day of imported diesel; Teck has not disclosed a project cost",
+   "summary": "Red Dog, Teck's zinc mine in Northwest Alaska on land partly owned by NANA Regional Corporation, is adding an 8.8 MW solar farm that Tugliq Energy, a Canadian independent power producer, will build and operate, selling power back to Teck under a PPA still being negotiated on price and terms. The mine draws about 25 MW and burns roughly 40,000 gallons of diesel a day; the solar addition is expected to supply about 2 MW during summer months, roughly 8% of demand. Separately, Teck reported in July 2026 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, one of the world's largest undeveloped zinc resources) is progressing, with a connecting road substantially complete and C$200-250 million budgeted for 2026 engineering and drilling -- work that could extend the mine well past the existing Aqqaluk pit's ~2031 exhaustion date.",
+   "microreactor_read": "Red Dog is already building the deal shape a reactor vendor would need -- third-party-owned generation behind the fence, selling power back under a PPA -- at a mine whose life may now extend well past 2031; a reactor pitch here has to beat an undisclosed solar PPA price on a diesel base of roughly 40,000 gallons/day.",
+   "sources": [
+    {"label": "Anchorage Daily News — One of Alaska's flagship mines soon could draw energy from the sun (2026-03-22)", "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/", "quote": "roughly 40,000 gallons each day", "status": "fetched"},
+    {"label": "North of 60 Mining News — Red Dog 2.0 is beginning to take shape (2026-07-23)", "url": "https://www.miningnewsnorth.com/story/2026/07/24/news-nuggets/red-dog-20-is-beginning-to-take-shape/9788.html", "quote": "one of the world's largest undeveloped zinc resources", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "graphite-one-graphite-creek-power-plan",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "Graphite One / Graphite Creek Project power plan",
+   "country": "US",
+   "region": "Seward Peninsula (Nome), Alaska",
+   "parties": {"host": "Graphite One Inc.", "provider": "not yet selected"},
+   "capacity": "12.5 MW forecast draw per 2025 reporting (an earlier feasibility study cited 4 MW rising to 6 MW); default plan is a trio of diesel generators",
+   "summary": "Graphite One's Graphite Creek graphite mine on Alaska's Seward Peninsula, targeting first production around 2030, is forecast to draw 12.5 MW of power -- 'over twice the amount of power the entire city of Nome draws' -- against an earlier feasibility-study estimate of 4 MW rising to 6 MW after five years. The company's leading proposal remains a trio of diesel generators (one on standby), but its own SVP of Operations named nuclear power as a genuine option in April 2025 reporting, alongside wind (strong resource, long lead time) and solar (good in summer only), citing zero carbon footprint against two conditions: vendor maturity and social acceptability. No vendor, RFP or financing decision has been made for any option.",
+   "microreactor_read": "Graphite One is the clearest pre-construction Alaska mine naming nuclear power as an option, at a forecast load (12.5 MW) inside the 1-20 MW band; a vendor has a multi-year window before 2030 production to prove a design mature and accepted enough to displace the company's default diesel-genset plan.",
+   "sources": [
+    {"label": "KNOM Radio Mission — Graphite One forecasts $43 billion in revenue from proposed Seward Peninsula mine (2025-04-30)", "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/", "quote": "the proposed mine would draw 12.5 mW of power", "status": "fetched"},
+    {"label": "Mining Technology — Graphite Creek Project, Alaska (project profile)", "url": "https://www.mining-technology.com/projects/graphite-creek-project-alaska/", "quote": "The mine operations are expected to require 4MW of power, which would increase to 6MW after five years.", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "kivalliq-hydro-fibre-link-transmission",
+   "sector": "Remote outposts & microgrids",
+   "name": "Kivalliq Hydro-Fibre Link (Nukik Corporation)",
+   "country": "CA",
+   "region": "Kivalliq region, Nunavut",
+   "parties": {"host": "Kivalliq Inuit Association / 5 Kivalliq communities", "provider": "Nukik Corporation (Inuit-owned developer); Manitoba Hydro (power source)", "utility": "Qulliq Energy Corporation"},
+   "instrument": "grant-funded",
+   "signed": "2026-07",
+   "capacity": "150 MW, 1,200 km transmission line plus fibre-optic cable, connecting Manitoba's grid to 5 Kivalliq communities and at least one gold mine",
+   "filings": [
+    {"forum": "Government of Canada (Crown-Indigenous Relations and Northern Affairs Canada)", "type": "grant announcement", "id": "Northern REACHE Program funding", "date": "2024-03-21", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html"}
+   ],
+   "summary": "The Kivalliq Hydro-Fibre Link is a proposed 1,200 km, 150 MW transmission and fibre line connecting Manitoba Hydro's grid to five Kivalliq, Nunavut communities (Arviat, Baker Lake, Chesterfield Inlet, Rankin Inlet, Whale Cove) and at least one gold mine, replacing diesel. As of this pass, the federal government has committed $2.8 million (2024, on top of $11.6 million for earlier planning) toward development-phase engineering and environmental work, with construction 'expected to begin by 2028'; developer Nukik Corporation has since filed a Transmission Service Request with Manitoba Hydro, become MISO-certified, and on 2026-07-07 secured a Nunavut-Manitoba government MOU committing Manitoba to supply 50 MW of firm capacity to the project.",
+   "microreactor_read": "This is the explicit non-nuclear alternative a reactor has to beat in Nunavut: a 150 MW grid-import project with a 2028 construction target and a firm 50 MW capacity commitment already signed, competing for the same diesel-displacement dollar as any Kivalliq microreactor pitch.",
+   "sources": [
+    {"label": "Government of Canada (CIRNAC) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html", "quote": "Construction is expected to begin by 2028.", "status": "fetched"},
+    {"label": "GlobeNewswire (Nukik Corporation) — Nukik Corporation Welcomes the MOU Signing Between the Governments of Nunavut and Manitoba (2026-07-08)", "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html", "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project", "status": "fetched"}
+   ]
+  }
+ ],
+ "answers": [
+  {
+   "id": "red-dog-mine-life-extension-2026",
+   "for": "red-dog",
+   "question": "Would NANA extend the land-and-PPA structure it gave TUGLIQ's solar project to a relocatable reactor, and what does 40,000 gallons a day come to per MWh at Teck's delivered price?",
+   "status": "partial",
+   "finding": "Neither original figure is newly disclosed: Teck has still not published a $/gallon or $/MWh diesel cost for Red Dog, and no NANA statement on an ownership stake or PPA-style structure for a reactor was found, both consistent with the 2026-09-02 pass. What is new this pass: Teck reported on 2026-07-23 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, 6-12 miles north of the current mill) is progressing, with a connecting road 'substantially completed' and C$200-250 million budgeted for 2026 engineering, environmental baseline work and drilling. Aktigiruq alone hosts 42.2 million metric tons of indicated resource averaging 15.8% zinc, described as 'one of the world's largest undeveloped zinc resources.' This matters commercially because the mine's previously assumed 2031-2032 closure -- which any reactor's payback period depends on outliving -- may now be a conservative floor rather than a hard end date, though Teck has not itself given a revised closure year. The 8.8 MW Tugliq solar PPA remains under price negotiation as of March 2026 reporting and stays the operative precedent for how a reactor deal would likely be structured (third-party build-own-operate, selling power back under contract).",
+   "figures": {
+    "red_dog_2026_mine_life_extension_budget": "C$200 million to C$250 million budgeted for 2026",
+    "aktigiruq_indicated_resource": "42.2 million metric tons averaging 15.8% zinc",
+    "aqqaluk_pit_remaining_life": "enough ore to feed the mill until around 2031",
+    "daily_diesel_burn": "roughly 40,000 gallons each day",
+    "existing_mine_load": "approximately 25 megawatts of power"
+   },
+   "searched": [
+    "Red Dog mine Teck diesel cost per MWh 2026 NANA nuclear microreactor",
+    "Red Dog mine Teck solar project construction update September 2026",
+    "Red Dog mine life extension Anarraaq Aktigiruq 2026"
+   ],
+   "sources": [
+    {"label": "North of 60 Mining News — Red Dog 2.0 is beginning to take shape (2026-07-23)", "url": "https://www.miningnewsnorth.com/story/2026/07/24/news-nuggets/red-dog-20-is-beginning-to-take-shape/9788.html", "quote": "one of the world's largest undeveloped zinc resources", "status": "fetched"},
+    {"label": "Anchorage Daily News — One of Alaska's flagship mines soon could draw energy from the sun (2026-03-22)", "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/", "quote": "roughly 40,000 gallons each day", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "qulliq-kivalliq-link-schedule-2026",
+   "for": "qulliq-nunavut",
+   "question": "What is the Kivalliq Hydro-Fibre Link's current construction schedule and federal funding status (an updated angle for this pass; the qulliq-nunavut prospect's original next_question, on community capacity over 1 MW and QEC's SMR Action Plan listing, was already answered in the 2026-09-02 pass)?",
+   "status": "answered",
+   "finding": "The most recent dedicated federal funding announcement (2024-03-21) added $2.8 million from Canada's Northern REACHE Program to the Kivalliq Hydro-Fibre Link's development phase, on top of $11.6 million already provided for planning/feasibility, with construction 'expected to begin by 2028' -- no more recent official date was found. Developer Nukik Corporation has since reported two concrete technical milestones: filing a Transmission Service Request with Manitoba Hydro (by December 2025 trade-press reporting) and becoming the first Arctic electricity developer in North America certified by the Midcontinent Independent System Operator (MISO). On 2026-07-07 the governments of Nunavut and Manitoba signed an MOU 'reaffirmed Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project,' which Nukik's CEO called 'another significant milestone' without giving a revised construction or financial-close date.",
+   "figures": {
+    "kivalliq_link_capacity": "150 megawatt, 1,200 kilometre transmission line with fibre-optic cabling",
+    "federal_funding_2024": "$2.8 million (March 2024) plus $11.6 million provided earlier for planning/feasibility",
+    "construction_target": "expected to begin by 2028",
+    "manitoba_capacity_commitment_2026": "50 megawatts of firm electric capacity (MOU signed 2026-07-07)"
+   },
+   "searched": [
+    "Kivalliq Hydro-Fibre Link 2026 funding schedule federal Canada Infrastructure Bank",
+    "Nukik Corporation Kivalliq Hydro-Fibre Link 2026 update financial close construction"
+   ],
+   "sources": [
+    {"label": "Government of Canada (Crown-Indigenous Relations and Northern Affairs Canada) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html", "quote": "Construction is expected to begin by 2028.", "status": "fetched"},
+    {"label": "GlobeNewswire (Nukik Corporation release) — Nukik Corporation Welcomes the MOU Signing Between the Governments of Nunavut and Manitoba (2026-07-08)", "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html", "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "doyon-fort-wainwright-2024-tariff-filing",
+   "for": "doyon-utilities",
+   "question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
+   "status": "partial",
+   "finding": "No $/MWh figure can be built: the filing found gives a monthly revenue requirement, not a per-unit rate, and no Fort Wainwright electricity-sales (MWh) total was found to divide it by. The most recent RCA filing located (not found in the 2026-09-02 pass, which reported none) is a 2024 revenue-requirement study on a 2023 test year: an RCA public notice shows Doyon requesting, effective 2024-08-15, a 7.04% electric-rate increase at Fort Wainwright to a revenue requirement of $759,391 per month, alongside heat ($3,161,990/month, +5.49%) and water ($1,078,099/month, +24.95%); comments were due 2024-07-22. This is a real, dated regulatory figure that upgrades the prior pass's finding of none, but it is 2 years old, not a 2026 filing, and no more recent Doyon electric tariff notice was found in 2 searches. No new information was found on whether DLA Energy would accept a reactor as a rate-base plant addition under the 10 U.S.C. 2688 contract; this sub-question remains unanswered.",
+   "figures": {
+    "fwa_electric_revenue_requirement_2024": "$759,391 per month (7.04% increase over prior rate)",
+    "fwa_heat_revenue_requirement_2024": "$3,161,990 per month (5.49% increase)",
+    "fwa_water_revenue_requirement_2024": "$1,078,099 per month (24.95% increase)",
+    "filing_effective_date": "2024-08-15",
+    "filing_test_year": "2023"
+   },
+   "searched": [
+    "Regulatory Commission of Alaska Doyon Utilities Fort Wainwright revenue requirement docket 2026",
+    "Doyon Utilities tariffs page rate schedule"
+   ],
+   "sources": [
+    {"label": "Regulatory Commission of Alaska — Notice of Utility Tariff Filings (Doyon Utilities, Fort Greely/Richardson/Wainwright)", "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971", "quote": "FWA - Electric $709,476 $759,391 7.04%", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "tanana-chiefs-huslia-ea-2026",
+   "for": "tanana-chiefs",
+   "question": "Does any village in the eight, or a hub they connect to, draw over 1 MW, and is the tribal entity chartered to own generation?",
+   "status": "partial",
+   "finding": "No village-level MW figure or generation-ownership charter detail was found this pass, so the core question remains open. What is new: DOE published Environmental Assessment DOE/EA-2314 (dated April 2026) covering 'high-penetration solar photovoltaic (PV) arrays and battery energy storage systems (BESS) as part of the existing microgrid in Huslia, Alaska' -- the first named village-level build-out under the previously reported $32.6 million Tanana Chiefs Conference Alaska Tribal Energy Sovereignty award (established in the 2026-09-02 pass, not re-verified here). The EA confirms the project is advancing toward construction at Huslia specifically, but its own webpage does not state Huslia's MW capacity, generation ownership, or whether any hub village exceeds 1 MW.",
+   "figures": {
+    "huslia_ea_designation": "DOE/EA-2314, dated April 2026",
+    "tanana_chiefs_award_2026-09-02_pass": "$32.6 million ($26.1 million federal)"
+   },
+   "searched": [
+    "Tanana Chiefs Conference village microgrid nuclear 2026",
+    "DOE EA-2314 Tanana Chiefs Conference Huslia environmental assessment"
+   ],
+   "sources": [
+    {"label": "US Department of Energy — DOE/EA-2314: Environmental Assessment (April 2026)", "url": "https://www.energy.gov/nepa/articles/doeea-2314-environmental-assessment-april-2026", "quote": "high-penetration solar photovoltaic (PV) arrays and battery energy storage systems (BESS) as part of the existing microgrid in Huslia, Alaska", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "cvea-2026-status-unchanged",
+   "for": "cvea",
+   "question": "Which year-round heat or power customer in Valdez would make an owner-operator PPA pencil, and would the board re-open the study with one of the four vendors it already vetted (checked for any 2026 change)?",
+   "status": "partial",
+   "finding": "No Valdez heat/power customer or vendor-reopening was found, and if anything CVEA's own current messaging is more final than the 2023 tabling language. CVEA's live legislative-updates page (content current through a June 2026 Washington, D.C. trip) describes the CEO providing 'updates on important projects, including the CVEA/Alyeska Intertie and the close of the micro-modular nuclear reactor project review for CVEA's service territory.' The same page's most recent entries (June 2026 and February 2026 conferences) list the CVEA/Alyeska Intertie, the Solomon Gulch Dam Raise and the Tiekel Hydro Project as CVEA's active generation priorities; none mentions nuclear power, a Valdez heat customer, or any of the four previously-vetted vendors (Westinghouse, Oklo, NuScale, Radiant). No 2026 statement reopening or reconsidering the MMR study was found in 2 searches plus a direct check of CVEA's own site.",
+   "searched": [
+    "Copper Valley Electric Association nuclear reactor 2026 update",
+    "Copper River Record proposed nuclear project update",
+    "CVEA legislative efforts current projects (cvea.org, direct check)"
+   ],
+   "sources": [
+    {"label": "Copper Valley Electric Association — Legislative Efforts (current through June 2026)", "url": "https://www.cvea.org/news/legislative-efforts.html", "quote": "the close of the micro-modular nuclear reactor project review for CVEA's service territory", "status": "fetched"}
+   ]
+  }
+ ]
+}

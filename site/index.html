@@ -177,29 +177,16 @@
 
 <section id="home" role="tabpanel" aria-labelledby="tab-home" tabindex="0">
   <div class="wrap">
-    <div class="homegrid">
-      <div>
-        <h2>Start here</h2>
-        <p class="prose">This is not a reactor catalog. It tracks the commercial work around small reactors: buyers, sites, contracts, costs, rules, and the missing terms that decide whether an announcement becomes a project.</p>
-      </div>
-      <div class="homepaths">
-        <a href="#pipeline">See deals and sites <span>→</span></a>
-        <a href="#economics">Compare costs <span>→</span></a>
-        <a href="#economics/win">See what a unit has to cost to win <span>→</span></a>
-        <a href="#pipeline/prospects">See who could buy next <span>→</span></a>
-        <a href="#policy">See rules and deal design <span>→</span></a>
-      </div>
+    <div class="homeblock">
+      <div class="fronthead"><h2 id="glance-head">The site at a glance</h2></div>
+      <div class="glance" id="home-glance"></div>
     </div>
-    <div class="front" id="front">
-      <div class="frontmain">
-        <div class="fronthead"><h3>What happened</h3><a href="#news">All news →</a></div>
+    <div class="homeblock" id="front">
+      <div class="fronthead"><h2>Top headlines</h2><a href="#news">All news →</a></div>
+      <div class="frontcols">
         <div id="home-lead"></div>
-        <div class="topstories" id="home-topstories"></div>
+        <ol class="headlist" id="home-headlist"></ol>
       </div>
-      <aside class="frontaside" aria-label="More recent news">
-        <h3>Also recent</h3>
-        <ul class="latestlist" id="home-latestlist"></ul>
-      </aside>
     </div>
   </div>
 </section>
@@ -227,6 +214,7 @@
     <div class="sechead">
       <h2>Why a microreactor</h2>
       <p class="prose" id="why-intro"></p>
+      <p class="prose note">Which loads it fits, and what each buyer pays now: <a href="#demand">Applications</a>.</p>
     </div>
     <div class="subtabs" role="tablist" aria-label="Why sections"></div>
     <div data-sub="arguments" id="why-arguments" role="tabpanel" tabindex="0">
@@ -239,11 +227,6 @@
       <div class="subhead"><h3>Where the argument fails</h3></div>
       <p class="prose" id="why-against-intro"></p>
       <div id="counters"></div>
-    </div>
-    <div data-sub="loads" id="why-loads" role="tabpanel" tabindex="0">
-      <div class="subhead"><h3>The loads it is sized for</h3></div>
-      <p class="prose" id="why-loads-intro"></p>
-      <div id="whyloads"></div>
     </div>
   </div>
 </section>

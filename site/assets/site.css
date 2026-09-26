@@ -297,71 +297,106 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .dstat .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);margin-top:var(--space-2);display:block}
 
-.topgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
-@media(min-width:768px){.topgrid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.topgrid{grid-template-columns:repeat(3,1fr)}}
-.topcard{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);
-  display:flex;flex-direction:column}
-.topcard .thdr{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-3)}
-.topcard h4{font-size:var(--size-heading-3);color:var(--text-primary);margin:0;font-weight:var(--weight-semibold)}
-.topcard .tband{color:var(--antares-red);font-family:var(--font-mono);font-size:var(--size-caption);white-space:nowrap;font-weight:var(--weight-medium)}
-.topcard .tinc{font-size:var(--size-caption);color:var(--text-tertiary);margin-bottom:var(--space-3);line-height:1.4}
-.topcard .tinc strong{color:var(--text-secondary);font-weight:var(--weight-medium)}
-.topcard .tdesc{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin-bottom:var(--space-4);flex-grow:1}
-.topcard .tedge{font-size:var(--size-caption);color:var(--text-tertiary);border-left:2px solid var(--antares-red-40);padding-left:var(--space-3);line-height:1.45;margin-top:auto}
-.topcard .tedge strong{color:var(--antares-red);font-weight:var(--weight-medium)}
+/* Applications > Overview: buyer types grouped by the cost rung that wins them,
+   then a sector table (2026-09-26; replaced eight bare accordions and the six
+   hand-typed "top options" cards). */
+.ladder{display:grid;gap:var(--space-8);margin-top:var(--space-6)}
+.tierhead{display:grid;grid-template-columns:auto auto 1fr;gap:var(--space-2) var(--space-4);
+  align-items:baseline;border-bottom:1px solid var(--border-default);padding-bottom:var(--space-3);
+  margin-bottom:var(--space-3)}
+.tiername{font-size:var(--size-heading-3);font-weight:var(--weight-semibold)}
+.tierprice{font-family:var(--font-mono);font-size:var(--size-body-sm);color:var(--antares-red);white-space:nowrap}
+.tiernote{font-size:var(--size-body-sm);color:var(--text-tertiary);justify-self:end;text-align:right}
+@media(max-width:767px){.tierhead{grid-template-columns:auto 1fr}.tiernote{grid-column:1/-1;justify-self:start;text-align:left}}
+details.segcard summary .cat{text-transform:none;letter-spacing:0;font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-secondary)}
+.sectortable{width:100%;border-collapse:collapse;font-size:var(--size-body-sm)}
+.sectortable th,.sectortable td{border-bottom:1px solid var(--border-subtle);padding:var(--space-3) var(--space-3) var(--space-3) 0;
+  text-align:left;vertical-align:top}
+.sectortable thead th{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);font-weight:var(--weight-medium)}
+.sectortable th[scope=row] a{color:var(--text-primary);font-weight:var(--weight-semibold);white-space:nowrap}
+.sectortable th[scope=row] a:hover{color:var(--antares-red)}
+.sectortable .num{font-family:var(--font-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sectortable .today{color:var(--text-secondary);min-width:18rem}
+/* Phones: each sector becomes a block instead of a five-column row. */
+@media(max-width:639px){
+  .sectortable thead{display:none}
+  .sectortable tr{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:var(--space-1) var(--space-3);
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
+  .sectortable th,.sectortable td{border:none;padding:0}
+  .sectortable th[scope=row]{grid-column:1/-1}
+  .sectortable td.num:nth-of-type(1)::after{content:" loads"}
+  .sectortable td.num:nth-of-type(3)::after{content:" inside 1\2013 20 MW"}
+  .sectortable .today{grid-column:1/-1;min-width:0}
+}
 
 /* ---------- candidate deployment sites ---------- */
 .sites-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
 @media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
 .sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
-.homegrid{display:grid;gap:var(--space-8);padding:var(--space-10) 0 var(--space-8);border-bottom:1px solid var(--border-subtle)}
-.homegrid h2{font-size:var(--size-heading-2);margin:0 0 var(--space-4)}
-.homepaths{display:grid;align-content:start;border-top:1px solid var(--border-subtle)}
-.homepaths a{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--border-subtle);font-weight:var(--weight-semibold);color:var(--text-primary)}
-.homepaths a span{color:var(--antares-red)}
-@media(min-width:768px){.homegrid{grid-template-columns:minmax(0,1.4fr) minmax(18rem,.8fr);align-items:start}}
-
-/* ---------- home front page (newspaper layout) ----------
-   Lead story + a 3-up "more top stories" grid in the main column, a compact
-   "also recent" rail alongside. All three pull the same D.news.items array
-   (already newest-first) by slice, never a hand-typed list of ids — see
-   renderHome() in app.js. */
-.front{display:grid;gap:var(--space-10);padding:var(--space-10) 0 var(--space-12)}
-@media(min-width:768px){.front{grid-template-columns:minmax(0,1.6fr) minmax(16rem,.8fr);align-items:start}}
-
+/* ---------- home: the site at a glance, then the newest headlines ----------
+   2026-09-26: the landing tab was a newspaper front page; it now opens on a
+   directory of the site (one card per tab, each with a derived figure) and
+   keeps the headlines below it. Every value is computed in renderHome(). */
+.homeblock{padding:var(--space-10) 0 var(--space-4)}
+.homeblock + .homeblock{padding-top:var(--space-8)}
 .fronthead{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);
   border-bottom:1px solid var(--border-default);padding-bottom:var(--space-3);margin-bottom:var(--space-6)}
-.fronthead h3{margin:0;font-size:var(--size-heading-3)}
+.fronthead h2{margin:0;font-size:var(--size-heading-3);letter-spacing:var(--track-heading)}
 .fronthead a{font-size:var(--size-caption);font-weight:var(--weight-semibold);color:var(--antares-red);
   white-space:nowrap}
-
+.glance{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border-subtle);
+  border:1px solid var(--border-subtle)}
+@media(min-width:640px){.glance{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.glance{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.glancecard{display:grid;grid-template-rows:auto auto 1fr;gap:var(--space-2);position:relative;
+  padding:var(--space-5) var(--space-10) var(--space-5) var(--space-6);background:var(--surface-page);color:inherit;
+  transition:background var(--dur-fast) var(--ease-standard)}
+.glancecard .go{position:absolute;top:var(--space-5);right:var(--space-5)}
+@media(max-width:639px){.glancecard{padding:var(--space-4) var(--space-10) var(--space-4) var(--space-5)}
+  .homeblock{padding-top:var(--space-8)}}
+.glancecard:hover{background:var(--surface-plate)}
+.glancecard:hover .gq,.glancecard:hover .go{color:var(--antares-red)}
+.gtab{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red)}
+.gq{font-size:var(--size-body-lg);font-weight:var(--weight-semibold);color:var(--text-primary);
+  line-height:var(--lh-heading);transition:var(--transition-control)}
+.ga{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
+.go{color:var(--text-tertiary);transition:var(--transition-control)}
+.frontcols{display:grid;gap:var(--space-8)}
+@media(min-width:900px){.frontcols{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}}
 .leadstory{border:1px solid var(--border-subtle);border-left:3px solid var(--antares-red);
-  padding:var(--space-6);margin-bottom:var(--space-8);background:var(--surface-page)}
+  padding:var(--space-6);background:var(--surface-page)}
 .leadstory h3{font-size:var(--size-heading-2);line-height:var(--lh-heading);
   margin:var(--space-3) 0;color:var(--text-primary)}
 .leadstory p{color:var(--text-secondary);margin:0 0 var(--space-4)}
-.leadstory a.more,.storycard a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);
+.leadstory a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);
   color:var(--antares-red);display:inline-block;margin-top:var(--space-3)}
-
-.topstories{display:grid;gap:var(--space-6)}
-@media(min-width:640px){.topstories{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.storycard{border-top:1px solid var(--border-default);padding-top:var(--space-4);min-width:0}
-.storycard h4{font-size:var(--size-body-lg);line-height:var(--lh-heading);
-  margin:var(--space-2) 0;color:var(--text-primary)}
-.storycard p{color:var(--text-secondary);font-size:var(--size-body-sm);margin:0}
-
-.frontaside h3{font-size:var(--size-caption);text-transform:uppercase;letter-spacing:var(--track-label);
-  color:var(--text-tertiary);border-bottom:1px solid var(--border-subtle);
-  padding-bottom:var(--space-3);margin:0}
-.latestlist{list-style:none;margin:0;padding:0}
-.latestlist li{border-bottom:1px solid var(--border-subtle);padding:var(--space-4) 0}
-.latestlist a{color:var(--text-primary);font-weight:var(--weight-medium);display:block;margin-top:var(--space-1)}
-.latestlist a:hover{color:var(--antares-red)}
-.latestlist li.more{padding-top:var(--space-4);border-bottom:none}
-.latestlist li.more a{color:var(--antares-red);font-weight:var(--weight-semibold);
-  font-size:var(--size-caption);margin-top:0}
+.headlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--border-subtle)}
+.headlist li{border-bottom:1px solid var(--border-subtle)}
+.headlist a{display:block;padding:var(--space-4) 0;color:var(--text-primary);min-height:44px}
+.headlist a:hover .hl{color:var(--antares-red)}
+.headlist .hl{display:block;font-weight:var(--weight-medium);margin-top:var(--space-1);
+  transition:var(--transition-control)}
+.headlist li.more{border-bottom:none}
+.headlist li.more a{color:var(--antares-red);font-size:var(--size-caption);font-weight:var(--weight-semibold)}
+/* A headline links to #news/<id>; keep the opened record clear of the sticky nav. */
+.newsitem{scroll-margin-top:120px}
+/* Phones: the numbers, not the pitch (DESIGN.md 7). The lede goes and the five
+   stats become one swipeable row instead of a three-row grid: the hero was
+   922px on an 812px screen. */
+@media(max-width:639px){
+  .hero{padding:var(--space-8) 0 var(--space-6)}
+  .hero .lede{display:none}
+  .hero h1{margin-bottom:0}
+  .stats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:var(--space-6);
+    scrollbar-width:none}
+  .stats::-webkit-scrollbar{display:none}
+  .stat{flex:0 0 42%;scroll-snap-align:start;padding:var(--space-4)}
+  .stat .n{font-size:var(--size-heading-2)}
+}
 .sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);
   min-width:0;overflow-wrap:break-word;word-break:break-word}
 .sitecard > summary{list-style:none;cursor:pointer;padding:var(--space-5) var(--space-6);

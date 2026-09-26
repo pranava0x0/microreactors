@@ -136,14 +136,80 @@ def unescape_js(raw: str) -> str:
     return out.replace('\\"', '"').replace("\\\\", "\\")
 
 
+# Any string literal in app.js that reads as prose: at least four words and no
+# markup, selector or attribute syntax. Catches copy wherever it sits, including
+# the pieces of a sentence assembled around a variable ("x of y tracked buyers
+# hold a binding instrument. "), which the older key-based pass never saw.
+_NOT_PROSE = re.compile(r"[<>=#{}]|\bclass\b|^\s*[.\[]|\bfunction\b|^[a-z-]+$")
+_REGEX_PRECEDERS = set("(,=:[!&|?{};+-*%~^<>")
+
+
+def js_string_literals(src):
+    """Yield the body of every quoted string literal in a JS source, skipping
+    comments and regex literals. A regex like /[&<>"']/g would otherwise open a
+    phantom string and pair the wrong quotes for the rest of the file."""
+    i, n, last = 0, len(src), ""
+    while i < n:
+        c = src[i]
+        if c in " \t\r\n":
+            i += 1
+            continue
+        if src.startswith("//", i):
+            i = src.find("\n", i)
+            i = n if i == -1 else i
+            continue
+        if src.startswith("/*", i):
+            i = src.find("*/", i + 2)
+            i = n if i == -1 else i + 2
+            continue
+        if c in "'\"`":
+            j, buf = i + 1, []
+            while j < n and src[j] != c:
+                if src[j] == "\\":
+                    buf.append(src[j:j + 2])
+                    j += 2
+                    continue
+                buf.append(src[j])
+                j += 1
+            yield "".join(buf)
+            i, last = j + 1, c
+            continue
+        if c == "/" and (last in _REGEX_PRECEDERS or last == "" or src[max(0, i - 6):i].endswith("return")):
+            j, in_class = i + 1, False
+            while j < n and src[j] != "\n":
+                if src[j] == "\\":
+                    j += 2
+                    continue
+                if src[j] == "[":
+                    in_class = True
+                elif src[j] == "]":
+                    in_class = False
+                elif src[j] == "/" and not in_class:
+                    break
+                j += 1
+            i, last = j + 1, "/"
+            continue
+        last = c
+        i += 1
+
+
 def app_js_strings():
-    """Display copy hard-coded in app.js: the object literals that carry card
-    prose. Only fields that reach the page, never selectors or class names."""
+    """Display copy hard-coded in app.js: card prose in object literals (keyed
+    fields) plus any other string literal that reads as a sentence fragment."""
     src = APP_JS.read_text()
-    out = []
-    for key in ("title", "incumbent", "why", "edge", "label", "k"):
+    out, seen = [], set()
+    for key in ("title", "incumbent", "why", "edge", "label", "k", "q", "a"):
         for m in re.finditer(rf'\b{key}:\s*"((?:[^"\\]|\\.){{{MIN_LEN},}})"', src):
-            out.append((key, unescape_js(m.group(1))))
+            t = unescape_js(m.group(1))
+            if t not in seen:
+                seen.add(t)
+                out.append((key, t))
+    for body in js_string_literals(src):
+        t = unescape_js(body)
+        if t in seen or _NOT_PROSE.search(t) or len(t.split()) < 4:
+            continue
+        seen.add(t)
+        out.append(("literal", t))
     return out
 
 

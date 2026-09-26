@@ -23,6 +23,8 @@
     el.replaceChildren();
     el.insertAdjacentHTML("afterbegin", html);
   }
+  // Defined before any renderer runs: several render at module scope during boot.
+  var usd = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
   var NONE = '<span class="v none">not found</span>';
   var val = function (v) { return v ? '<span class="v">' + esc(v) + "</span>" : NONE; };
 
@@ -162,6 +164,9 @@
     if (ALIASES[id]) id = ALIASES[id];
     if (id === "sites") { id = "pipeline"; sub = "sites"; }
     if (id === "market") { id = "policy"; sub = "market-design"; }
+    // Why > The loads (six hand-typed cards) was retired on 2026-09-26 in favour
+    // of the derived Applications overview; keep old links landing somewhere true.
+    if (id === "why" && sub === "loads") { id = "demand"; sub = ""; }
     if (PANELS.indexOf(id) === -1) { id = PANELS[0]; sub = ""; }
     PANELS.forEach(function (p) {
       var panel = $(p);
@@ -184,11 +189,12 @@
     if (id === "policy" && !policyRendered) {
       lazyPanel("instruments", "pathways", renderPolicy);
     }
-    if (id === "home" && !homeRendered) {
-      lazyPanel("news", "home-lead", renderHome);
-    }
+    /* "#news/<id>" opens that record: the front page's headlines link to the
+       story itself rather than to the top of a 47-row list. */
     if (id === "news" && !newsRendered) {
-      lazyPanel("news", "newslist", renderNews);
+      lazyPanel("news", "newslist", renderNews).then(function () { openNewsItem(sub); });
+    } else if (id === "news" && sub) {
+      setTimeout(function () { openNewsItem(sub); }, 0);
     }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
     var here = id + (subRes ? "/" + subRes : "");
@@ -952,91 +958,19 @@
   var totalLoads = [].concat.apply([], D.sectors.sectors.map(function (s) { return s.loads; }));
   var citedLoads = totalLoads.filter(function (l) { return l.sources && l.sources.length; });
 
+  var APPS = D.applications || { segments: [], rungs: [] };
+  var firstWins = APPS.segments.filter(function (x) { return x.clears === "first-unit"; }).length;
+  // All four tiles are counted. The fourth used to be a typed "$250–$850/MWh
+  // displaced diesel ceiling" that no row on this tab produced.
   render($("dsummary"), [
     { n: String(D.sectors.sectors.length), k: "civilian sectors" },
     { n: String(totalLoads.length), k: "facility load profiles" },
     { n: String(citedLoads.length), k: "cited with primary sources" },
-    { n: "$250–$850", k: "/MWh displaced diesel ceiling", accent: true }
+    { n: firstWins + " of " + APPS.segments.length, k: "buyer types already pay more than a first unit", accent: true }
   ].map(function (x) {
     return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
       esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
   }).join(""));
-
-  var topOptions = [
-    {
-      title: "Remote Outposts & Arctic Microgrids",
-      band: "1–5 MW",
-      incumbent: "Islanded diesel generation ($300–$850/MWh) and seasonal ice-road fuel logistics",
-      desc: "Isolated radar stations, military installations, and remote Arctic settlements require 24/7 firm power where fuel delivery is restricted to seasonal barges or ice roads. Microreactors provide multi-year continuous operation with black-start islanding capability.",
-      edge: "Satisfies statutory 99.9% energy availability mandates (10 U.S.C. 2920) while cutting volatile fuel haulage risks.",
-      sources: [
-        { label: "ANS — DAF ANPI selections", url: "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/" },
-        { label: "CVEA — Alaska MMR study", url: "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf" }
-      ]
-    },
-    {
-      title: "Off-Grid Mining & Mineral Processing",
-      band: "5–20 MW",
-      incumbent: "Onsite diesel/HFO generator banks ($200–$450/MWh)",
-      desc: "Remote copper, lithium, gold, and pozzolan operations operate continuous crushing, grinding, flotation mills, and employee camps. Building transmission lines across remote terrain often costs upwards of $100M with 5–10 year wait times.",
-      edge: "Steady 24/7 flat baseload profile maximizes reactor capacity factor with zero transmission queue delay.",
-      sources: [
-        { label: "CVEA — Alaska project report", url: "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html" }
-      ]
-    },
-    {
-      title: "Behind-the-Meter Edge & Regional Data Centers",
-      band: "5–20 MW",
-      incumbent: "5–7 year utility interconnection queues and EPA/CARB emergency diesel runtime caps",
-      desc: "Regional AI inference hubs and edge colocation facilities require 1–20 MW dedicated power blocks. Utility substation queues delay power delivery for years, while EPA RICE NESHAP rules cap non-emergency diesel dispatch at 100 hours per year.",
-      edge: "Dedicated onsite baseload bypasses transmission queues entirely without triggering Tier 4 emergency diesel reclassification.",
-      sources: [
-        { label: "JLL — Smaller data centers", url: "https://www.jll.com/en-us/insights/why-smaller-data-centers-are-taking-off" },
-        { label: "EPA — Emergency engine provisions", url: "https://www.epa.gov/stationary-engines/fact-sheet-specifics-about-provisions-related" },
-        { label: "Kirkland & Ellis — EPA guidance", url: "https://www.kirkland.com/publications/kirkland-alert/2025/05/new-epa-guidance-clarifies-when-data-centers-and-other-operators-may-utilize-emergency-backup" }
-      ]
-    },
-    {
-      title: "Medical Campuses & Critical Civic Infrastructure",
-      band: "2–10 MW",
-      incumbent: "Aging campus Combined Heat & Power (CHP) plants and code-mandated diesel banks",
-      desc: "Major hospitals and university campuses require simultaneous electricity and process steam for heating, sterilization, and climate control. CMS waiver QSO-23-11-LSC permits microgrids and non-generator sources to satisfy emergency power rules under 42 CFR 482.15.",
-      edge: "Delivers continuous power plus 100°C–200°C steam while replacing aging combustion boilers facing tightening air-quality caps.",
-      sources: [
-        { label: "CMS — QSO-23-11-LSC categorical waiver", url: "https://www.cms.gov/files/document/qso-23-11-lsc.pdf" },
-        { label: "DOE Better Buildings — CHP technology fact sheet", url: "https://betterbuildingssolutioncenter.energy.gov/sites/default/files/attachments/Overview_of_CHP_Technologies.pdf" }
-      ]
-    },
-    {
-      title: "Marine Terminals & Port Cold Ironing",
-      band: "5–20 MW",
-      incumbent: "Auxiliary shipboard diesel engines running in port non-attainment air basins",
-      desc: "Port authorities face strict mandates (such as CARB At-Berth rules) requiring berthed container and cruise vessels to shut down auxiliary diesel engines and plug into shore power (cold ironing). Simultaneous vessel berthing creates massive multi-megawatt load spikes.",
-      edge: "Provides dedicated port microgrid power without overloading local municipal utility substations.",
-      sources: [
-        { label: "CARB / CA Dept of Finance — At-Berth regulation impact assessment", url: "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf" }
-      ]
-    },
-    {
-      title: "Spaceport Propellant Liquefaction & Launch Pads",
-      band: "5–30 MW",
-      incumbent: "Bulk trucked cryogenic propellant haulage with high boil-off losses",
-      desc: "High-cadence commercial launch sites require continuous liquefaction and zero-boil-off refrigeration for liquid oxygen, liquid methane, and liquid hydrogen. Launch pads are frequently situated in remote coastal areas fed by long, vulnerable radial transmission lines.",
-      edge: "Onsite liquefaction eliminates thousands of hazardous propellant tanker truck runs and provides independent pad power.",
-      sources: [
-        { label: "Businesswire — Antares ANPI", url: "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative" }
-      ]
-    }
-  ];
-
-  var topGridHTML = '<div class="topgrid">' + topOptions.map(function (o) {
-    return '<div class="topcard">' +
-      '<div class="thdr"><h4>' + esc(o.title) + '</h4><span class="tband">' + esc(o.band) + "</span></div>" +
-      '<div class="tinc"><strong>Displaces:</strong> ' + esc(o.incumbent) + "</div>" +
-      '<div class="tdesc">' + esc(o.desc) + " " + cite(o.sources) + "</div>" +
-      '<div class="tedge"><strong>Why microreactors win:</strong> ' + esc(o.edge) + "</div>" +
-      "</div>";
-  }).join("") + "</div>";
 
   /* Why microreactors. The 74 instrument notes each answer one question about one
      rule; clustered, they are the arguments and the counters. Every count on this
@@ -1076,16 +1010,12 @@
     render($("why-against-intro"),
       fromNotes + " of the " + A.counters.length + " below come out of the notes themselves, " +
       "not from a critic.");
-    render($("why-loads-intro"),
-      topOptions.length + " places where the band matches a real incumbent, with what it displaces.");
-    render($("whyloads"), topGridHTML);
     makeSubnav("why", [{ id: "arguments", label: "The arguments" },
-                       { id: "against", label: "Where it fails" },
-                       { id: "loads", label: "The loads" }]);
+                       { id: "against", label: "Where it fails" }]);
   }
 
   var secItems = [
-    { id: "all", label: "All sectors" }
+    { id: "overview", label: "Overview" }
   ].concat(
     D.sectors.sectors.map(function (sec) {
       return { id: slug(sec.sector), label: sec.sector };
@@ -1112,18 +1042,80 @@
       '</span><span class="b">' + esc(l.band) + cite(l.sources) + "</span></div>";
   }
 
+  /* Applications > Overview. The application space in one screen: the eight
+     buyer types from strategy.json, grouped by the cost rung at which a 1-20 MW
+     unit wins them (build_data.py ships the slice), then one line per sector.
+     Replaces eight bare accordion headers that summarised nothing. */
+  var bandEnds = function (b) {
+    var m = String(b || "").match(/[\d.]+/g) || [];
+    var lo = parseFloat(m[0]), hi = m.length > 1 ? parseFloat(m[1]) : lo;
+    return isNaN(lo) ? null : [lo, hi];
+  };
+  /* A sentence ends at . ! or ? after a lowercase letter, digit or closing
+     bracket, before a capital: "U.S. data centers" is not two sentences. */
+  var firstSentence = function (t) {
+    var m = String(t || "").match(/^.*?[a-z0-9)\]'"%][.!?](?=\s+[A-Z"'(]|\s*$)/);
+    return (m ? m[0] : String(t || "")).trim();
+  };
+  var TIER = { "first-unit": "A first unit already wins",
+               "mass-produced": "Wins once units are mass-produced",
+               "optimized": "Wins only with the optimized design" };
+  var paysToday = function (sg) {
+    var lo = sg.incumbent_low_mwh, hi = sg.incumbent_high_mwh;
+    if (lo != null && hi != null) { return usd(lo) + "\u2013" + usd(hi) + "/MWh"; }
+    if (hi != null) { return "up to " + usd(hi) + "/MWh"; }
+    return "no published $/MWh";
+  };
+  function segmentCard(sg) {
+    var ev = [sg.benchmarks ? sg.benchmarks + " priced cases" : "",
+              sg.prospects ? sg.prospects + " named prospects" : ""].filter(Boolean).join(" \u00b7 ");
+    return '<details class="prec segcard"><summary><span class="nm">' + esc(sg.name) + "</span>" +
+      '<span class="cat">pays ' + esc(paysToday(sg)) + "</span></summary>" +
+      '<div class="body">' +
+      '<p><span class="k">Today \u00b7 </span>' + esc(sg.incumbent) + "</p>" +
+      '<p><span class="k">Verdict \u00b7 </span>' + esc(sg.verdict) + "</p>" +
+      '<p><span class="k">Blocker \u00b7 </span>' + esc(sg.blocker) + "</p>" +
+      '<p><span class="k">First deal to chase \u00b7 </span>' + esc(sg.first_deal) + "</p>" +
+      '<p class="seealso">' + (ev ? esc(ev) + " \u00b7 " : "") +
+      '<a href="#economics/price-to-beat">priced cases \u2192</a> \u00b7 ' +
+      '<a href="#pipeline/prospects">prospects \u2192</a> \u00b7 ' +
+      '<a href="#economics/win">cost ladder \u2192</a></p>' +
+      srcList(sg.sources) + "</div></details>";
+  }
+  var ladderHTML = APPS.rungs.filter(function (r) {
+    return APPS.segments.some(function (x) { return x.clears === r.id; });
+  }).map(function (r) {
+    var segs = APPS.segments.filter(function (x) { return x.clears === r.id; });
+    var price = r.lcoe_low_mwh == null ? "" : (r.lcoe_low_mwh === r.lcoe_high_mwh ? usd(r.lcoe_low_mwh)
+      : usd(r.lcoe_low_mwh) + "\u2013" + usd(r.lcoe_high_mwh)) + "/MWh";
+    return '<div class="tier"><div class="tierhead"><span class="tiername">' + esc(TIER[r.id] || r.name) +
+      "</span>" + '<span class="tierprice">' + esc(price) + "</span>" +
+      '<span class="tiernote">' + esc(firstSentence(r.opens_note)) + "</span></div>" +
+      '<div class="precgrid">' + segs.map(segmentCard).join("") + "</div></div>";
+  }).join("");
+  var sectorRows = D.sectors.sectors.map(function (sec) {
+    var ends = sec.loads.map(function (l) { return bandEnds(l.band); }).filter(Boolean);
+    var lo = Math.min.apply(null, ends.map(function (e) { return e[0]; }));
+    var hi = Math.max.apply(null, ends.map(function (e) { return e[1]; }));
+    var fits = ends.filter(function (e) { return e[0] <= 20 && e[1] >= 1; }).length;
+    return '<tr><th scope="row"><a href="#demand/' + esc(slug(sec.sector)) + '">' + esc(sec.sector) + "</a></th>" +
+      '<td class="num">' + sec.loads.length + "</td>" +
+      '<td class="num">' + esc((lo === hi ? lo : lo + "\u2013" + hi) + " MW") + "</td>" +
+      '<td class="num">' + fits + " of " + ends.length + "</td>" +
+      '<td class="today">' + esc(firstSentence(sec.context && sec.context.today)) + "</td></tr>";
+  }).join("");
   render($("sectors"),
-    '<div class="sall" data-sub="all" id="demand-all" role="tabpanel" tabindex="0">' +
-    D.sectors.sectors.map(function (sec) {
-      return '<details class="sector"><summary>' +
-        "<h3>" + esc(sec.sector) + "</h3>" +
-        "</summary>" +
-        (sec.context
-          ? '<div class="sectorctx">' + esc(sec.context.today) + cite(sec.context.sources) + "</div>"
-          : "") +
-        '<div class="loads">' +
-        sec.loads.map(loadRow).join("") + "</div></details>";
-    }).join("") + "</div>" +
+    '<div class="sall" data-sub="overview" id="demand-overview" role="tabpanel" tabindex="0">' +
+      '<p class="prose">' + esc(APPS.segments.length) + " kinds of buyer, grouped by the cost at which a " +
+      "1\u201320 MW unit wins them. Open a card for what the buyer pays now, the blocker, and the first " +
+      "deal worth chasing.</p>" +
+      '<div class="ladder">' + ladderHTML + "</div>" +
+      '<div class="subhead gap"><h3>Sector by sector</h3></div>' +
+      '<div class="tablewrap"><table class="sectortable"><thead><tr><th scope="col">Sector</th>' +
+      '<th scope="col" class="num">Loads</th><th scope="col" class="num">Range</th>' +
+      '<th scope="col" class="num">Inside 1\u201320 MW</th><th scope="col">How it is powered today</th>' +
+      "</tr></thead><tbody>" + sectorRows + "</tbody></table></div>" +
+    "</div>" +
     D.sectors.sectors.map(function (sec) {
       var sId = slug(sec.sector);
       return '<div class="ssector" data-sub="' + esc(sId) + '" id="demand-' + esc(sId) +
@@ -1259,38 +1251,86 @@
   }
 
   /* ---------- home and news ---------- */
-  // Front page: newest-first slices of D.news.items, never a hand-typed id
-  // list — the previous version pinned three story ids and went stale the
-  // moment those stopped being the newest news (CLAUDE.md: derive, don't
-  // hand-type, anything that mirrors a registry).
-  var homeRendered = false;
+  /* The front page is a directory of the site and the newest headlines. Every
+     figure is derived: tools/build_data.py counts the rows and ships the newest
+     headlines (sorted there, since the file is not kept in date order) in the
+     eager bundle, so the landing tab draws with no lazy payload and no number
+     typed into this file. */
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+                "September", "October", "November", "December"];
+  var monthYear = function (iso) {
+    var p = String(iso || "").split("-");
+    return p.length >= 2 ? MONTHS[parseInt(p[1], 10) - 1] + " " + p[0] : String(iso || "");
+  };
   function newsHdr(it) {
     return '<div class="nhdr"><span class="ndate">' + esc(it.date) + '</span>' +
       '<span class="ncat">' + esc(it.category || "") + '</span>' +
       '<span class="nbind ' + (it.binding ? "yes" : "no") + '">' +
       (it.binding ? "executed" : "announced") + "</span></div>";
   }
+  function glanceCards() {
+    var A = D.applications || { segments: [], rungs: [] };
+    var rung = function (id) { return A.rungs.filter(function (r) { return r.id === id; })[0]; };
+    var count = function (id) { return A.segments.filter(function (x) { return x.clears === id; }).length; };
+    var lcoe = function (r) {
+      return r.lcoe_low_mwh === r.lcoe_high_mwh ? usd(r.lcoe_low_mwh)
+        : usd(r.lcoe_low_mwh) + "\u2013" + usd(r.lcoe_high_mwh);
+    };
+    var first = rung("first-unit"), mass = rung("mass-produced"), opt = rung("optimized");
+    var apps = first && mass && opt
+      ? "At a first unit's " + lcoe(first) + "/MWh, " + count("first-unit") + " of " + A.segments.length +
+        " buyer types already pay more. " + count("mass-produced") + " open with mass production (" +
+        lcoe(mass) + "), and " + count("optimized") + " need the modeled optimized design (" + lcoe(opt) + ")."
+      : s.load_types + " facility load profiles across " + s.sector_count + " sectors.";
+    var costs = first && opt
+      ? "Estimates fall from " + lcoe(first) + "/MWh for a first unit to " + lcoe(opt) +
+        " for a modeled optimized design. " + s.benchmarks_priced + " priced cases show what buyers pay today."
+      : s.benchmarks_priced + " priced cases show what buyers pay today.";
+    return [
+      { href: "#pipeline", tab: "Deals", q: "Who is buying now",
+        a: s.binding_rows + " of " + s.opportunities + " tracked buyers hold a binding instrument. " +
+           s.sites + " named sites and " + s.prospects + " prospects to watch." },
+      { href: "#why", tab: "Why microreactors", q: "What the case rests on",
+        a: s.arguments + " arguments for a 1\u201320 MW unit, and " + s.counters + " places where they fail." },
+      { href: "#demand", tab: "Applications", q: "Where a unit wins first", a: apps },
+      { href: "#economics", tab: "Costs", q: "What the power costs", a: costs },
+      { href: "#vendors", tab: "Vendors", q: "Who builds them",
+        a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " test reactors reached " +
+           "criticality in 2026, and the earliest delivery target is " + s.first_delivery_year + "." },
+      { href: "#policy", tab: "Rules & deal design", q: "What unlocks a sale",
+        a: s.pathways + " rule changes and " + s.instruments + " ways a deal gets signed, with a " +
+           "shared-orderbook proposal checked against " + s.precedents + " precedents." },
+      { href: "#news", tab: "News", q: "What happened",
+        a: s.news_items + " dated events since " + monthYear(s.news_first) + ". " + s.news_binding +
+           " rest on something executed: a contract, a filing or a milestone." },
+      { href: "#sources", tab: "Sources", q: "Where each number comes from",
+        a: s.source_count + " sources, each numbered once and reused on every tab." }
+    ];
+  }
+  function openNewsItem(id) {
+    var el = id && $("n-" + id);
+    if (!el) { return; }
+    var all = $("news-filter").querySelector('.newschip[data-cat=""]');
+    if (el.hidden && all) { all.click(); }
+    el.open = true;
+    el.scrollIntoView({ block: "start" });
+  }
   function renderHome() {
-    if (homeRendered || !(D.news && D.news.items)) { return; }
-    homeRendered = true;
-    var items = D.news.items; // already newest-first (tools/build_data.py)
-    var lead = items[0];
-    var top = items.slice(1, 4);
-    var latest = items.slice(4, 10);
-    if (!lead) { return; }
+    render($("home-glance"), glanceCards().map(function (c) {
+      return '<a class="glancecard" href="' + esc(c.href) + '"><span class="gtab">' + esc(c.tab) +
+        '</span><span class="gq">' + esc(c.q) + '</span><span class="ga">' + esc(c.a) +
+        '</span><span class="go" aria-hidden="true">\u2192</span></a>';
+    }).join(""));
+    var H = D.headlines || [];
+    if (!H.length) { return; }
+    var lead = H[0];
     render($("home-lead"), '<article class="leadstory">' + newsHdr(lead) +
       "<h3>" + esc(lead.headline) + "</h3><p>" + esc(lead.what_happened) + " " + cite(lead.sources) +
-      '</p><a class="more" href="#news">Read the news record →</a></article>');
-    render($("home-topstories"), top.map(function (it) {
-      return '<article class="storycard">' + newsHdr(it) + "<h4>" + esc(it.headline) + "</h4><p>" +
-        esc(it.what_happened) + " " + cite(it.sources) +
-        '</p><a class="more" href="#news">Read the news record →</a></article>';
-    }).join(""));
-    render($("home-latestlist"), latest.map(function (it) {
-      return '<li><span class="ndate">' + esc(it.date) + '</span> <span class="ncat">' +
-        esc(it.category || "") + '</span><a href="#news">' + esc(it.headline) + "</a>" +
-        cite(it.sources) + "</li>";
-    }).join("") + '<li class="more"><a href="#news">All ' + items.length + " news records →</a></li>");
+      '</p><a class="more" href="#news/' + esc(lead.id) + '">Read the news record \u2192</a></article>');
+    render($("home-headlist"), H.slice(1, 6).map(function (it) {
+      return '<li><a href="#news/' + esc(it.id) + '">' + newsHdr(it) +
+        '<span class="hl">' + esc(it.headline) + "</span></a></li>";
+    }).join("") + '<li class="more"><a href="#news">All ' + s.news_items + " news records \u2192</a></li>");
   }
   /* Newest first, grouped by month, with the binding/announced split on every
      row. A selection and a signed contract look identical in a headline, which
@@ -1310,12 +1350,7 @@
       if (!byMonth[m]) { byMonth[m] = []; months.push(m); }
       byMonth[m].push(it);
     });
-    var MON = ["January","February","March","April","May","June","July","August",
-               "September","October","November","December"];
-    var pretty = function (m) {
-      var p = m.split("-");
-      return p.length === 2 ? MON[parseInt(p[1], 10) - 1] + " " + p[0] : m;
-    };
+    var pretty = monthYear;
     render($("news-filter"),
       '<button class="newschip on" data-cat="">All ' + N.items.length + "</button>" +
       N.categories.map(function (c) {
@@ -1329,7 +1364,7 @@
     render($("newslist"), months.map(function (m) {
       return '<div class="newsmonth"><h3>' + esc(pretty(m)) + "</h3>" +
         byMonth[m].map(function (it) {
-          return '<details class="newsitem" data-cat="' + esc(it.category || "") + '">' +
+          return '<details class="newsitem" id="n-' + esc(it.id) + '" data-cat="' + esc(it.category || "") + '">' +
             "<summary>" +
             '<span class="nhdr"><span class="ndate">' + esc(it.date) + "</span>" +
             '<span class="ncat">' + esc(it.category || "") + "</span>" +
@@ -1516,5 +1551,6 @@
   /* boot: land on the panel the hash names, or the first. scroll:true beats
      the browser's native jump-to-anchor, which otherwise strands a deep link
      mid-page because the section ids double as hash routes. */
+  renderHome();
   activate(location.hash.slice(1) || PANELS[0], { scroll: true });
 })();
