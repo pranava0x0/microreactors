@@ -127,6 +127,10 @@ def check_sources(sources, path, rec_id, errors) -> None:
         status = s.get("status")
         if status and status not in SOURCE_STATUS:
             fail(errors, path, rec_id, f"{where} status {status!r} not in {sorted(SOURCE_STATUS)}")
+        # Added 2026-09-26: agents joined passages with "..." in 11 of ~55 quotes in one
+        # pass, despite the contract. A fetched quote is one verbatim span.
+        if status == "fetched" and "..." in str(s.get("quote", "")):
+            fail(errors, path, rec_id, f"{where} quote joins passages with '...'; copy one verbatim span")
 
 
 def check_impossible_citation(rec, sources, path, rec_id, errors) -> None:

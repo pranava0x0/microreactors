@@ -1,0 +1,46 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "verify-b",
+  "scope": "Status-currency and attribution checks on deployment_sites (16) and prospects (25) claims in data/research/2026-09-26-refresh/prompts/verify-b-claims.json, verified against counterparties' newest dated statements.",
+  "angles_run": [
+   "Penn State FRONTIER letter-of-intent date vs NRC/Westinghouse/PSU primary statements",
+   "Eielson AFB Oklo NOITA current status and NEPA/EA progress",
+   "Chalk River MMR CNSC paused status and NANO Nuclear/GFP acquisition",
+   "Saskatchewan Research Council eVinci cancellation, 2026-04-15 legislature hearing",
+   "UIUC Kronos MMR construction permit application dates (submission, receipt, docketing)",
+   "Last Energy Llynfi Wales infrastructure-consent process naming and timeline"
+  ],
+  "absences": [
+   "Could not independently confirm the specific 2026 Aalo Atomics letter of intent for an ESP at RELLIS beyond the broader Texas A&M ESP pre-application record",
+   "Could not independently confirm Last Energy's PWR-20 Regulatory Engagement Plan Rev 1.0 ADAMS filing date of 2026-07-31 beyond confirming the docket and pre-application status"
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-psu-frontier-1",
+   "target": "psu-frontier",
+   "file": "deployment_sites",
+   "claim": "Penn State's FRONTIER Project told the NRC on 2025-02-17 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt",
+   "verdict": "wrong",
+   "evidence": "Both counterparties' own dated statements give a different date than shipped. Penn State Engineering: 'Penn State submitted a letter of intent to the NRC on Feb. 28' [2025]. Westinghouse's newsroom: 'Penn State submitted a letter of intent to the NRC on February 28, 2025.' The NRC ADAMS accession for the letter, ML25059A029, encodes Julian day 059 of 2025, which is also February 28. No source supports 2025-02-17.",
+   "correction": "Penn State's FRONTIER Project told the NRC on 2025-02-28 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt",
+   "sources": [
+    {"label": "Penn State Engineering — FRONTIER, Westinghouse, NRC, eVinci microreactor (2025)", "url": "https://news.engr.psu.edu/2025/frontier-westinghouse-nrc-evinci-microreactor.aspx", "quote": "Penn State submitted a letter of intent to the NRC on Feb. 28", "status": "fetched"},
+    {"label": "Westinghouse — Penn State Submits Letter of Intent to NRC (2025)", "url": "https://info.westinghousenuclear.com/news/penn-state-submits-letter-of-intent-to-nrc-to-pursue-application-for-new-nuclear-research-facility", "quote": "Penn State submitted a letter of intent to the NRC on February 28, 2025", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-eielson-pilot-1",
+   "target": "eielson-pilot",
+   "file": "deployment_sites",
+   "claim": "NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC are preparing the environmental analysis.",
+   "verdict": "confirmed",
+   "evidence": "Oklo's own June 11, 2025 release confirms the NOITA for an Aurora powerhouse under a long-term PPA. A Sept 20, 2026 public-radio report citing Air Force officials says the site work for a draft Environmental Assessment 'was completed in July' 2026, that the draft EA itself won't be public until late 2027, and that officials 'hope to get the microreactor built and operational in 2030' -- confirming no contract has been awarded yet and the environmental analysis is still the live step, exactly as shipped.",
+   "sources": [
+    {"label": "Oklo — Selected as Intended Awardee to Provide Power to Eielson AFB (2025-06-11)", "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx", "quote": "Notice of Intent to Award... to provide clean, reliable power through the deployment of an Aurora powerhouse", "status": "fetched"},
+    {"label": "KUAC — Air Force asks for public input on proposed Eielson microreactor site (2026-09-20)", "url": "https://fm.kuac.org/sustainability/2026-09-20/air-force-asks-for-public-input-on-proposed-eielson-microreactor-site", "quote": "gathering data on the site for a draft Environmental Assessment of the project", "status": "fetched"}
+   ]
+  }
+ ]
+}

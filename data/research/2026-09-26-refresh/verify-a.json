@@ -340,6 +340,96 @@
    "sources": [
     {"label": "Westinghouse — Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project", "quote": "the eVinci™ microreactor has been selected by the U.S. Department of the Army for the next phase of the Janus Program", "status": "fetched"}
    ]
+  },
+  {
+   "id": "check-valar-ward250-1",
+   "target": "valar-ward250",
+   "file": "vendors",
+   "claim": "2026-06-18: Ward 250 reached zero-power criticality in Utah, status done",
+   "verdict": "confirmed",
+   "evidence": "DOE's own release, published 2026-06-18, confirms both the date and the location: the experiment took place at the Utah San Rafael Energy Lab in Emery County, Utah — correctly attributed (not INL, unlike most other Pilot Program reactors).",
+   "sources": [
+    {"label": "Department of Energy — Department of Energy Celebrates Second Advanced Reactor Achieving Criticality (2026)", "url": "https://www.energy.gov/articles/department-energy-celebrates-second-advanced-reactor-achieving-criticality", "quote": "The experiment took place at the Utah San Rafael Energy Lab in Emery County, Utah", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-aalo-x-1",
+   "target": "aalo-x",
+   "file": "vendors",
+   "claim": "2026-07-04: Aalo-X reached zero-power fueled criticality at INL, status done",
+   "verdict": "confirmed",
+   "evidence": "POWER magazine confirms Aalo told the outlet 'the Critical Test Reactor reached criticality at 12:20 a.m. MT on July 4', at Idaho National Laboratory, matching the claim's date, unit and site.",
+   "sources": [
+    {"label": "POWER Magazine — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4 (2026)", "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/", "quote": "Aalo told POWER the Critical Test Reactor reached criticality at 12:20 a.m. MT on July 4", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-oklo-aurora-1",
+   "target": "oklo-aurora",
+   "file": "vendors",
+   "claim": "2026-06-11: DOE preliminary safety approval announced for Aurora-INL, status done",
+   "verdict": "confirmed",
+   "evidence": "WNN's release, dated 2026-06-11, confirms 'the US Department of Energy's approval of the Preliminary Documented Safety Analysis' for Aurora-INL, matching the claim's date and description exactly.",
+   "sources": [
+    {"label": "World Nuclear News — DOE approval milestone for Oklo reactor (2026)", "url": "https://www.world-nuclear-news.org/articles/doe-approval-milestone-for-oklo-reactor", "quote": "The US Department of Energy's approval of the Preliminary Documented Safety Analysis is a major step on the authorisation pathway for Oklo's Aurora powerhouse", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-oklo-aurora-2",
+   "target": "oklo-aurora",
+   "file": "vendors",
+   "claim": "2026-08-05: Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so, status done",
+   "verdict": "confirmed",
+   "evidence": "POWER magazine confirms both the location and the date in one sentence: the Groves reactor 'in Lockhart, Texas, has become the fifth reactor to achieve criticality under [RPP]...the first under the program to do so on private land', reaching criticality '9:19 p.m. ET Aug. 5.'",
+   "sources": [
+    {"label": "POWER Magazine — Oklo's Groves Becomes Fifth DOE Pilot Reactor to Reach Criticality, First on Private Land (2026)", "url": "https://www.powermag.com/oklos-groves-becomes-fifth-doe-pilot-reactor-to-reach-criticality-first-on-private-land/", "quote": "Groves Isotope Test Reactor in Lockhart, Texas, has become the fifth reactor to achieve criticality under the U.S. Department of Energy's Reactor Pilot Program", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-bwxt-banr-1",
+   "target": "bwxt-banr",
+   "file": "vendors",
+   "claim": "2026-08-26: Selected for Janus at Fort Campbell, status done",
+   "verdict": "confirmed",
+   "evidence": "This vendor-row wording ('Selected') is accurate: BWXT's own release headlines this as a 'selection to deploy' with 'a phased contracting approach' still to follow, correctly not claiming a signed contract (contrast the overstated news_janus item for this same vendor).",
+   "sources": [
+    {"label": "BWX Technologies — U.S. Army Chooses BWXT Advanced Nuclear Reactor (BANR) for Janus Program (2026)", "url": "https://www.bwxt.com/u-s-army-chooses-bwxt-advanced-nuclear-reactor-banr-for-janus-program/", "quote": "announced today its selection to deploy its BWXT Advanced Nuclear Reactor (BANR) technology in support of the Janus program", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-general-atomics-ga-tes-1",
+   "target": "general-atomics-ga-tes",
+   "file": "vendors",
+   "claim": "2026-08-26: Selected for Janus at Fort Hood, status done",
+   "verdict": "confirmed",
+   "evidence": "This vendor-row wording ('Selected') is accurate: GA-EMS's own release frames this as a 'selection' under which the company 'will execute its effort through an Other Transaction Authority-based agreement' in future — correctly not yet a signed agreement (contrast the overstated news_janus item for this same vendor).",
+   "sources": [
+    {"label": "General Atomics — General Atomics Microreactor Selected for US Army Janus Program (2026)", "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program", "quote": "will execute its effort through an Other Transaction Authority-based agreement and milestone-based funding tied to specific technical goals", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-westinghouse-fort-drum-2026-08-26-1",
+   "target": "army-janus-westinghouse-fort-drum-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: A signed Janus OTA agreement, not a mere selection, though none of output, schedule or value has been disclosed for this specific pairing.",
+   "verdict": "wrong",
+   "evidence": "Westinghouse's own 2026-08-26 release says only that eVinci 'has been selected by the U.S. Department of the Army for the next phase of the Janus Program' — selection language, not a signed-agreement claim. The Army's own same-day release describes all five pairings as 'down-selected...for negotiation', directly contradicting 'signed.' This is an internal inconsistency with the opportunities.json 'janus' tracker row, which correctly states none of the five OTAs has been recorded as executed.",
+   "correction": "Down-selected for OTA negotiation, not signed: Westinghouse's own release says 'selected...for the next phase,' matching the Army's 'down-selected for negotiation' framing.",
+   "sources": [
+    {"label": "Westinghouse — Westinghouse eVinci Microreactor Selected for U.S. Army Janus Project (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-selected-for-u.s.-army-janus-project", "quote": "the eVinci™ microreactor has been selected by the U.S. Department of the Army for the next phase of the Janus Program", "status": "fetched"},
+    {"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026)", "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "quote": "the Army down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-radiant-fort-benning-2026-08-26-1",
+   "target": "army-janus-radiant-fort-benning-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: Radiant itself described this as a binding Janus agreement, the only one of the five vendors to publish its own award ceiling.",
+   "verdict": "confirmed",
+   "evidence": "Radiant's own release is the outlier among the five: it states the Army 'has executed a binding agreement totaling up to $750 million dollars', unlike Antares/BWXT/GA/Westinghouse's own releases, which all use selection/award (not signed/binding) language for the same 2026-08-26 event.",
+   "sources": [
+    {"label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028 (2026)", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "quote": "Radiant Industries secured a binding Janus agreement worth up to $750 million", "status": "fetched"}
+   ]
   }
  ]
 }

@@ -159,7 +159,10 @@ class ResearchPass(unittest.TestCase):
             "precedents": [dict(good["precedents"][0], id="p2", sector="nuclear fleet",
                                 size="large", outcome="it worked")],
             # no number in price, power_system or loads
-            "regions": [dict(good["regions"][0], id="r2", power_system="diesel towns")],
+            "regions": [dict(good["regions"][0], id="r2", power_system="diesel towns"),
+                        # a fetched quote stitched from two passages
+                        dict(good["regions"][0], id="r3",
+                             sources=[dict(src, quote="first passage ... second passage")])],
             # unknown type, and neither docket nor url
             "dockets": [{k: v for k, v in dict(good["dockets"][0], id="d2", type="memo").items()
                          if k != "docket"}],
@@ -182,7 +185,8 @@ class ResearchPass(unittest.TestCase):
             self.assertEqual(ko.returncode, 1, ko.stdout)
             for rule in ("non-nuclear", "no number in size", "no number in price",
                          "type 'memo'", "neither a docket", "must carry a correction",
-                         "category 'rumour'", "is not YYYY-MM-DD", "the same url is listed twice"):
+                         "category 'rumour'", "is not YYYY-MM-DD", "the same url is listed twice",
+                         "joins passages"):
                 self.assertIn(rule, ko.stdout)
 
     def test_quote_repair_keeps_literal_source_text(self):

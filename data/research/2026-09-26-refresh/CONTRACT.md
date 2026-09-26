@@ -120,3 +120,7 @@ carry a number.
 `binding: true` ONLY for something executed: a signed contract, a filed application, an achieved
 milestone, a formal regulatory order or approval, or a closed financing. Selections, down-selections
 "for negotiation", MOUs, letters of intent and announcements are `false`.
+- **No "..." inside a fetched quote.** The validator rejects it (2026-09-26): 11 of ~55 region quotes
+  were two passages stitched together. Copy one unbroken span.
+- **A load is demand, not on-site generation.** A facility's rooftop solar or cogeneration capacity
+  does not tell you its load.
