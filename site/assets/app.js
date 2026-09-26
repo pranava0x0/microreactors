@@ -25,6 +25,9 @@
   }
   // Defined before any renderer runs: several render at module scope during boot.
   var usd = function (n) { return "$" + Number(n).toLocaleString("en-US"); };
+  // A data value used as a class name is cut to [a-z0-9-] first (SECURITY.md:
+  // attribute position needs an allowlist, not only escaping).
+  var cls = function (v) { return String(v == null ? "" : v).toLowerCase().replace(/[^a-z0-9-]/g, ""); };
   /* A sentence ends at . ! or ? after a lowercase letter, digit or closing
      bracket, before a capital: "U.S. data centers" is not two sentences. */
   var firstSentenceOf = function (t) {
@@ -203,7 +206,9 @@
       setTimeout(function () { openNewsItem(sub); }, 0);
     }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
-    var here = id + (subRes ? "/" + subRes : "");
+    // News has no sub-tabs, but #news/<id> names a record: keep it, so a link
+    // followed from a headline can be copied and shared as that record.
+    var here = id + (subRes ? "/" + subRes : (id === "news" && sub ? "/" + sub : ""));
     if (location.hash.slice(1) !== here) {
       if (opts.push) location.hash = here;
       else history.replaceState(null, "", "#" + here);
@@ -1059,7 +1064,9 @@
         '<p class="prose">' + esc(firstSentenceOf(c.detail)) + "</p>" +
         '<details class="prec"><summary><span class="nm">The full case, and the notes behind it</span>' +
         '<span class="cat">' + c.notes.length + " notes</span></summary>" +
-        '<div class="body"><p class="prose">' + esc(c.detail) + "</p></div>" +
+        (c.detail.slice(firstSentenceOf(c.detail).length).trim()
+          ? '<div class="body"><p class="prose">' + esc(c.detail.slice(firstSentenceOf(c.detail).length).trim()) + "</p></div>"
+          : "") +
         noteList(c.notes) + "</details></div></div>";
     }).join(""));
     var fromNotes = A.counters.filter(function (c) { return (c.notes || []).length; }).length;
@@ -1078,16 +1085,17 @@
     var R = D.regions;
     if (regionsRendered || !(R && R.regions)) { return; }
     regionsRendered = true;
-    var tagOf = {}, groupOf = {};
+    var tagOf = {};
     (R._meta.position_tags || []).forEach(function (t) { tagOf[t.id] = t; });
-    (R._meta.groups || []).forEach(function (g) { groupOf[g.id] = g; });
     var tagCount = {};
     R.regions.forEach(function (r) { tagCount[r.position] = (tagCount[r.position] || 0) + 1; });
-    render($("regions-intro"), esc(R._meta.what_this_is) + " " +
+    /* The legend is on the page, not in a title tooltip: a phone never shows one,
+       and "Restricted" (Hawaii's two-thirds vote) reads like "Banned" without it. */
+    render($("regions-intro"), esc(R._meta.what_this_is) + '<dl class="taglegend">' +
       (R._meta.position_tags || []).filter(function (t) { return tagCount[t.id]; }).map(function (t) {
-        return '<span class="postag ' + esc(t.id) + '" title="' + esc(t.gloss) + '">' + esc(t.label) +
-          " " + tagCount[t.id] + "</span>";
-      }).join(" "));
+        return '<div><dt><span class="postag ' + cls(t.id) + '">' + esc(t.label) + "</span> " +
+          tagCount[t.id] + "</dt><dd>" + esc(t.gloss) + "</dd></div>";
+      }).join("") + "</dl>");
     render($("regions-filter"), '<button class="newschip on" data-group="" aria-pressed="true">All ' +
       R.regions.length + "</button>" + (R._meta.groups || []).map(function (g) {
         var n = R.regions.filter(function (r) { return r.group === g.id; }).length;
@@ -1098,7 +1106,7 @@
       var tag = tagOf[r.position] || { label: r.position, gloss: "" };
       var loads = (r.loads || []).filter(function (l) { return l.name; });
       return '<details class="prec region" data-group="' + esc(r.group) + '"><summary>' +
-        '<span class="nm">' + esc(r.region) + ' <span class="postag ' + esc(r.position) + '" title="' +
+        '<span class="nm">' + esc(r.region) + ' <span class="postag ' + cls(r.position) + '" title="' +
         esc(tag.gloss) + '">' + esc(tag.label) + "</span></span>" +
         '<span class="cat">' + esc(r.price_short || "price not published") + "</span></summary>" +
         '<div class="body">' +
@@ -1278,9 +1286,9 @@
       g.items.forEach(function (p) { typeCount[p.type] = (typeCount[p.type] || 0) + 1; allPrec++; });
     });
     var typeOrder = Object.keys(typeCount).sort(function (a, b) { return typeCount[b] - typeCount[a]; });
-    render($("prec-intro"), allPrec + " arrangements that really ran, in nuclear and far outside it. " +
-      "Filter by the kind of deal; each row says how it worked, how it turned out, and what a reactor " +
-      "orderbook could copy.");
+    render($("prec-intro"), allPrec + " precedents, in nuclear and far outside it. Most ran; a few, like " +
+      "DOE's committed-orderbook framework and the ARC Act, are proposals still on paper. Filter by the " +
+      "kind of deal; each row says how it worked, how it turned out, and what a reactor orderbook could copy.");
     render($("prec-filter"), '<button class="newschip on" data-type="" aria-pressed="true">All ' + allPrec +
       "</button>" + typeOrder.map(function (t) {
         return '<button class="newschip" data-type="' + esc(t) + '" aria-pressed="false">' +

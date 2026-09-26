@@ -413,7 +413,8 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
   .hero .lede{display:none}
   .hero h1{margin-bottom:0}
   .stats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:var(--space-6);
-    scrollbar-width:none}
+    scrollbar-width:none;-webkit-mask-image:linear-gradient(to right,black calc(100% - 32px),transparent);
+    mask-image:linear-gradient(to right,black calc(100% - 32px),transparent)}
   .stats::-webkit-scrollbar{display:none}
   .stat{flex:0 0 42%;scroll-snap-align:start;padding:var(--space-4)}
   .stat .n{font-size:var(--size-heading-2)}
@@ -664,7 +665,10 @@ details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
 .postag.enabling{border-color:var(--antares-red-40);color:var(--antares-red)}
 .postag.review{border-color:var(--border-strong);color:var(--text-primary)}
 .postag.restricted,.postag.banned{border-style:dashed;color:var(--text-tertiary)}
-#regions-intro .postag{margin:0 var(--space-1) var(--space-1) 0}
+.taglegend{display:grid;gap:var(--space-2) var(--space-6);margin:var(--space-4) 0 0;font-size:var(--size-body-sm)}
+@media(min-width:768px){.taglegend{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.taglegend dt{display:inline;color:var(--text-primary);font-family:var(--font-mono);font-size:var(--size-caption)}
+.taglegend dd{display:inline;margin:0 0 0 var(--space-2);color:var(--text-tertiary)}
 details.region summary .nm .postag{margin-left:var(--space-2)}
 
 /* Customer cost: one collapsed section per sector (2026-09-26). */
@@ -806,7 +810,11 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
    eleven chips filling the first screen). */
 @media(max-width:639px){
   .newsfilter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
-    margin-right:calc(-1 * var(--gutter-page));padding-right:var(--gutter-page)}
+    margin-right:calc(-1 * var(--gutter-page));padding-right:48px;
+    /* A fade on the right edge says the row scrolls; the end padding lets the last
+       chip scroll clear of it. */
+    -webkit-mask-image:linear-gradient(to right,black calc(100% - 40px),transparent);
+    mask-image:linear-gradient(to right,black calc(100% - 40px),transparent)}
   .newsfilter::-webkit-scrollbar{display:none}
   .newsfilter .newschip{flex:0 0 auto}
 }
