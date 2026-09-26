@@ -53,7 +53,7 @@ CURATION = {
     "nunavik-northern-quebec": ("canada-north", "silent", "tariff not fetched"),
     "labrador-northern-ontario": ("canada-north", "silent", "tariff not fetched"),
     "svalbard-and-northern-nordics": ("arctic-europe", "study", "tariff not fetched"),
-    "polar-research-stations": ("arctic-europe", "silent", "diesel $2.42/gal (Greenland retail)"),
+    "polar-research-stations": ("arctic-europe", "silent", "no station fuel price published"),
     # islands.json
     "puerto-rico": ("us-islands", "study", "$0.26/kWh residential (2026)"),
     "us-virgin-islands": ("us-islands", "silent", "$0.42/kWh residential (2025)"),
@@ -63,7 +63,7 @@ CURATION = {
     "hawaii": ("us-islands", "restricted", "$0.396/kWh average (2025)"),
     "freely-associated-states-pacific": ("us-islands", "silent", "$0.28-0.48/kWh (Palau, FSM)"),
     "australia-nuclear-legal-position": ("australia", "banned", "federal and state law"),
-    "australia-remote-power-market": ("australia", "banned", "$0.25-0.50/kWh off-grid mines (WA)"),
+    "australia-remote-power-market": ("australia", "banned", "A$0.333/kWh residential (WA, 2026)"),
     "uk-scottish-islands-and-nuclear-framework": ("uk-allies", "restricted", "tariff not fetched"),
     "uk-overseas-territories-south-atlantic": ("uk-allies", "silent", "up to £0.42/kWh (St Helena, 2014)"),
     "nz-chatham-islands-and-nuclear-law": ("uk-allies", "silent", "NZ$1.32/kWh (2026)"),

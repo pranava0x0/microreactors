@@ -79,12 +79,12 @@
    "region": "Rural Alaska (Power Cost Equalization communities)",
    "country": "US",
    "jurisdiction": "US state",
-   "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 58 communities off 46 separate diesel power plants, each an isolated microgrid with no interconnection between villages; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
-   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the statewide FY2026 PCE base rate (the subsidized floor the state pays down to) is reported at 20.38 cents/kWh",
+   "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 59 locations across rural Alaska, each village an isolated microgrid with no interconnection to the next; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
+   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh",
    "loads": [
     {
      "name": "AVEC system-wide",
-     "mw": "46 diesel power plants across 58 communities",
+     "mw": "59 locations",
      "note": "off-grid; no interconnection between communities"
     }
    ],
@@ -108,6 +108,18 @@
      "url": "https://avec.org/2026/04/01/the-cost-of-fuel-need-for-greater-pce-funding/",
      "quote": "AVEC submits a filing with the Regulatory Commission of Alaska (RCA) to update its Cost of Power Adjustment (COPA)",
      "status": "fetched"
+    },
+    {
+     "label": "NAOGUA - Alaska Village Electric Cooperative, Inc. (2026)",
+     "url": "https://www.naogua.org/alaska-village-electric-cooperative-inc",
+     "quote": "is a non-profit electric utility serving residents in 59 locations throughout rural Alaska",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska - notice of proposed PCE base amount (2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=219490",
+     "quote": "The Commission proposes to adjust the base amount to 20.38",
+     "status": "fetched"
     }
    ]
   },
@@ -116,7 +128,7 @@
    "region": "Alaska mines (non-military civilian loads)",
    "country": "US",
    "jurisdiction": "US state",
-   "power_system": "Alaska's large mines split between grid-tied and diesel-only. Kensington (Coeur Alaska, underground gold, Lynn Canal) runs entirely on-site diesel: 'annual fuel consumption expected to be around 3 million gallons at full production.' Greens Creek (Hecla, Admiralty Island) has purchased surplus hydropower from Alaska Electric Light & Power since 2006, and 'since 2009, hydropower has provided 77% of Greens Creek's energy needs,' though in 2025 low precipitation cut that back and '62% of the mine's electricity [was] purchased from the grid' (i.e. thermal-backed). Fort Knox and Pogo are grid-tied to the Railbelt (see alaska-railbelt-utilities). Donlin Gold (not yet built) would need a 220 MW dual-fuel plant and a 316-mile gas pipeline. Graphite One's Graphite Creek project forecasts a 12.5 MW draw, twice Nome's own load.",
+   "power_system": "Alaska's large mines split between grid-tied and diesel-only. Kensington (Coeur Alaska, underground gold, Lynn Canal) runs entirely on-site diesel: 'annual fuel consumption expected to be around 3 million gallons at full production.' Greens Creek (Hecla, Admiralty Island) has purchased surplus hydropower from Alaska Electric Light & Power since 2006, and 'since 2009, hydropower has provided 77% of Greens Creek's energy needs,' though in 2025 low precipitation cut that back and '62% of the mine's electricity [was] purchased from the grid' (i.e. thermal-backed). Fort Knox and Pogo are grid-tied to the Railbelt (see alaska-railbelt-utilities). Donlin Gold (not yet built) would need its own dual-fuel power plant, fed by a 315-mile gas pipeline. Graphite One's Graphite Creek project forecasts a 12.5 MW draw, twice Nome's own load.",
    "price": "Fort Knox: $40 million/year, ~16% of GVEA's output (see alaska-railbelt-utilities); no per-mine $/MWh diesel figure was found for Kensington, Greens Creek or Red Dog",
    "loads": [
     {
@@ -131,7 +143,7 @@
     },
     {
      "name": "Donlin Gold (pre-construction)",
-     "mw": "220 MW planned dual-fuel plant, 316-mile gas pipeline",
+     "mw": "planned dual-fuel plant (MW not published), 315-mile gas pipeline",
      "note": "not yet financed/built; would displace ~76 million gallons/year of diesel"
     },
     {
@@ -171,6 +183,18 @@
      "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/",
      "quote": "The nuclear is very favorable because it's got no carbon footprint, but they're not far enough along yet",
      "status": "fetched"
+    },
+    {
+     "label": "Alaska DNR - Donlin Gold project (2026)",
+     "url": "https://dnr.alaska.gov/mlw/mining/large-mines/donlin/",
+     "quote": "a buried 14-inch diameter, 315-mile-long natural gas pipeline",
+     "status": "fetched"
+    },
+    {
+     "label": "Anchorage Daily News - One of Alaska's flagship mines soon could draw energy from the sun (2026)",
+     "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+     "quote": "roughly 40,000 gallons each day",
+     "status": "fetched"
     }
    ]
   },
@@ -199,6 +223,12 @@
      "url": "https://citizenportal.ai/articles/7879228/alaska/2026-legislature-alaska/awareness-of-advanced-nuclear-rises-in-alaska-microreactor-descriptions-increase-measured-support",
      "quote": "In 2023 only about a quarter of respondents had heard of these (advanced reactors); by our most recent survey that went up to about 40%",
      "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News - Alaska simplifies microreactor regulations (2022)",
+     "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+     "quote": "an advanced nuclear reactor capable of producing no more than 50 MW",
+     "status": "fetched"
     }
    ]
   },
@@ -216,7 +246,7 @@
      "note": "no interconnecting grid; hydro at 4 towns only, diesel everywhere else"
     },
     {
-     "name": "Tanbreez rare earth project (Critical Metals Corp, 70% acquired)",
+     "name": "Tanbreez rare earth project (Critical Metals Corp, 92.5% owned)",
      "mw": "n/a (pre-production)",
      "note": "site sits 2 km from an existing hydro power line; targeting Q4 2028/Q1 2029 production"
     },
@@ -257,6 +287,18 @@
      "label": "The Local Denmark (AFP) — Denmark mulls end of 1985 nuclear power ban (2026-01-22)",
      "url": "https://www.thelocal.dk/20260122/denmark-mulls-end-of-1985-nuclear-power-ban",
      "quote": "Denmark is considering building small modular nuclear reactors to meet its energy needs",
+     "status": "fetched"
+    },
+    {
+     "label": "Critical Metals Corp - Greenland government approves transfer of final 50.5% of Tanbreez (2026)",
+     "url": "https://www.criticalmetalscorp.com/greenland-government-approves-transfer-of-final-50-5-of-tanbreez-taking-critical-metals-corp-to-92-5-ownership/",
+     "quote": "bringing total CRML ownership to 92.5%",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - Nukissiorfiit",
+     "url": "https://en.wikipedia.org/wiki/Nukissiorfiit",
+     "quote": "approximately 56,000 residents across 17 towns and 54 settlements",
      "status": "fetched"
     }
    ]
@@ -313,7 +355,7 @@
    "loads": [
     {
      "name": "Ekati diamond mine",
-     "mw": "30.8 MW installed (seven 4.4 MW diesel generators)",
+     "mw": "installed capacity not found in a fetched source",
      "note": "off-grid"
     },
     {
@@ -329,7 +371,7 @@
     "Diavik, the largest single diesel-hybrid load identified, ended ore production in March 2026 and is now in decommissioning, removing it as a live reactor prospect",
     "23 of NWT's diesel communities are individually small (sub-3 MW in most cases per NTPC's own community list), similar to rural Alaska's PCE villages"
    ],
-   "microreactor_read": "NWT's diamond mines (Ekati at 30.8 MW, Diavik at 55.4 MW) are exactly the scale a relocatable reactor targets, but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
+   "microreactor_read": "NWT's diamond mines are the scale a relocatable reactor targets (Diavik's wind-diesel plant is 55.4 MW; Ekati's capacity was not found), but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
    "sources": [
     {
      "label": "Canada Energy Regulator — Provincial and Territorial Energy Profiles: Northwest Territories",
@@ -341,6 +383,18 @@
      "label": "Rio Tinto — Diavik, Canada (operations page)",
      "url": "https://www.riotinto.com/en/operations/canada/diavik",
      "quote": "Diavik Diamond Mine's last ore milestone took place in March 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - List of generating stations in the Northwest Territories",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_the_Northwest_Territories",
+     "quote": "27.66",
+     "status": "fetched"
+    },
+    {
+     "label": "SustainableBiz - Rio Tinto plans largest solar farm in Canada's North at Diavik (2023)",
+     "url": "https://sustainablebiz.ca/rio-tinto-plans-largest-solar-farm-canada-north-diavik-mine",
+     "quote": "Diavik already features a wind-diesel hybrid power facility with a capacity of 55.4 megawatts",
      "status": "fetched"
     }
    ]
@@ -531,7 +585,7 @@
    "country": "AQ/GL",
    "jurisdiction": "Antarctic Treaty System / Danish autonomous territory (research stations, not a national jurisdiction)",
    "power_system": "The only civilian nuclear power precedent at either pole is the US Navy's PM-3A reactor at McMurdo Station, Antarctica: a 'pressurised-water reactor, with a capacity of 1.8 megawatts' by one account and '1,500 kilowatt' by another, which 'operated from March 1962 - September 1972' and displaced 'the need to deliver millions of gallons of fuel oil.' Today, US Antarctic and Greenland-ice-sheet stations (e.g. Summit Station, Greenland, run on behalf of the National Science Foundation at 3,200 m elevation) are diesel-generator powered, resupplied by aircraft (LC-130 airlift) given the absence of any road or port access.",
-   "price": "No $/gallon or $/MWh fuel-logistics figure was found for Summit Station specifically; Greenland's general retail diesel price was $2.42/gallon as of 16 April 2026 (national average, not station-specific)",
+   "price": "No $/gallon or $/MWh fuel-logistics figure was found for Summit Station or McMurdo",
    "loads": [
     {
      "name": "McMurdo Station PM-3A (historical, 1962-1972)",
@@ -563,6 +617,18 @@
      "label": "The Conversation — Remembering Antarctica's nuclear past with 'Nukey Poo'",
      "url": "https://theconversation.com/remembering-antarcticas-nuclear-past-with-nukey-poo-99934",
      "quote": "The 25-man team required to run the plant was expensive",
+     "status": "fetched"
+    },
+    {
+     "label": "Engineering.com - 60 years ago there was a small modular reactor",
+     "url": "https://www.engineering.com/60-years-ago-there-was-a-small-modular-reactor/",
+     "quote": "Design output was 1,800 kW electrical operating at an 80 percent power factor",
+     "status": "fetched"
+    },
+    {
+     "label": "NSF - NSF invites professional news media to report from Summit Station, Greenland",
+     "url": "https://www.nsf.gov/news/news_summ.jsp?cntn_id=307191&org=OPP",
+     "quote": "Summit Station is located 10,530 feet (3200 meters) above sea level",
      "status": "fetched"
     }
    ]

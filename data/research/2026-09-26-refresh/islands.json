@@ -190,13 +190,13 @@
    "region": "Northern Mariana Islands (Saipan, Tinian, Rota)",
    "country": "US",
    "jurisdiction": "US territory",
-   "power_system": "The Commonwealth Utilities Corporation (CUC) runs diesel generation on Saipan, Tinian and Rota with 'near-total reliance on imported petroleum products for both electricity generation and transportation' and 'aging electricity infrastructure and vulnerability to natural disasters.' Saipan's plants (Power Plant 1 designed for 86 MW across eight units, Plant 2 at 10 MW, Plant 4 at 16 MW) were reported at 62.1 MW combined availability in March 2025; a 2026 typhoon cut that further, with a recovery update citing 42.5 MW restored on Saipan and Rota timelines still being set.",
+   "power_system": "The Commonwealth Utilities Corporation (CUC) runs diesel generation on Saipan, Tinian and Rota with 'near-total reliance on imported petroleum products for both electricity generation and transportation' and 'aging electricity infrastructure and vulnerability to natural disasters.' Saipan's plants are Power Plant 1 (designed for 86 MW across eight units), Plant 2 (10 MW) and Plant 4 (16 MW); how much of that is available now was not found in a page that could be fetched.",
    "price": "US$0.19-0.33/kWh residential range, 2025 (DOE); CUC's own comparison put CNMI at US$0.2749/kWh residential in November 2024, called the lowest among US-affiliated Pacific jurisdictions versus $0.4139/kWh in Guam, $0.4414/kWh on Hawaii Island and $0.3986/kWh in American Samoa at that date. A separate Fuel Adjustment Charge of $0.21119/kWh took effect 2025-03-01; CUC's base rate has been unchanged since April 2014.",
    "loads": [
     {
      "name": "Saipan (CUC Power Plants 1, 2 and 4)",
-     "mw": "42.5 MW available (2026 post-typhoon recovery update), versus 62.1 MW combined availability in March 2025",
-     "note": "diesel; typhoon-damaged and under repair as of this pass"
+     "mw": "86 MW (Plant 1), 10 MW (Plant 2) and 16 MW (Plant 4) design capacity",
+     "note": "diesel; current availability not found in a fetchable page"
     }
    ],
    "nuclear_position": "No CNMI nuclear ban found. Senator Jude Hofschneider pre-filed Senate Joint Resolution 24-05 supporting federal study, evaluation and possible future deployment of small modular reactors and microreactors on Saipan, Tinian or Rota, while the resolution itself concedes 'the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems.' A CNMI House member has separately opposed nuclear technology in the territory in the context of the Department of Defense's Project JANUS, a distinct military proposal, per local reporting not independently fetched in this pass.",
@@ -225,12 +225,6 @@
      "label": "RNZ — CNMI lawmaker wants nuclear power study amid energy security concerns",
      "url": "https://www.rnz.co.nz/news/pacific/597311/cnmi-lawmaker-wants-nuclear-power-study-amid-energy-security-concerns",
      "quote": "the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems",
-     "status": "snippet-only"
-    },
-    {
-     "label": "NMI News Service — Bavi Recovery Rundown Day 10: Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
-     "url": "https://www.nminewsservice.com/bavi-recovery-rundown-day-10/",
-     "quote": "Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
      "status": "snippet-only"
     }
    ]
@@ -453,13 +447,13 @@
    "region": "Australia: Western Australia and Northern Territory off-grid and remote power",
    "country": "AU",
    "jurisdiction": "Australian state (Western Australia) and territory (Northern Territory)",
-   "power_system": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids supplying about 100,000 residents and 10,000 businesses, and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'ReGen' program; its Midwest Centralised Solar Project is adding solar-plus-battery to six towns (Cue, Meekatharra, Sandstone, Wiluna, Yalgoo and Norseman). In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy; its ARENA-funded Solar Energy Transformation Program (SETuP) added 10 MW of solar microgrids across 25 communities, saving an estimated 94 million litres of diesel over the program's 25-year life. Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
-   "price": "WA off-grid mine diesel generation has historically cost upwards of $0.50/kWh, with recent hybrid-displaced costs reported around $0.25-0.35/kWh; Horizon Power's ReGen rollout is backed by an A$27 million (about US$17.9 million) state-government commitment and is displacing diesel volumes such as 35,000 litres/year at Cockatoo Springs and 15,000 litres/year at Chile Creek",
+   "power_system": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids across regional WA and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'ReGen' program; its Midwest Centralised Solar Project is adding solar-plus-battery to six towns (Cue, Meekatharra, Sandstone, Wiluna, Yalgoo and Norseman). In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy; its ARENA-funded Solar Energy Transformation Program (SETuP) brought solar to 26 remote off-grid communities, cutting diesel use by an estimated 94 million litres over the life of the panels. Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
+   "price": "Horizon Power's standard A2 residential rate is 33.2621 cents/kWh plus a $1.1924 daily supply charge (1 July 2026, GST included); no WA-specific $/kWh for off-grid mine diesel was found in a fetched source; Horizon Power's ReGen rollout is backed by an A$27 million (about US$17.9 million) state-government commitment and is displacing diesel volumes such as 35,000 litres/year at Cockatoo Springs and 15,000 litres/year at Chile Creek",
    "loads": [
     {
      "name": "Indigenous Essential Services remote NT grids",
      "mw": "about 80 MW installed across 51 diesel power stations",
-     "note": "72 remote communities plus 66 outstations; diesel, partially solar-offset by the 10 MW SETuP program"
+     "note": "72 remote communities plus 66 outstations; diesel, partially solar-offset by the SETuP program"
     },
     {
      "name": "Agnew Gold Mine (Gold Fields/EDL)",
@@ -475,7 +469,7 @@
     "Off-grid mine power is dominated by large, well-capitalised hybrid renewable-plus-gas microgrids (Agnew, Tropicana, Kathleen Valley) built by independent power producers on 10-15 year terms, which a reactor would have to displace or out-price",
     "All identified microreactor interest in Australia is advocacy-stage (conference papers, industry commentary), with no utility, mine operator or government study found"
    ],
-   "microreactor_read": "WA and the NT have exactly the diesel-cost profile (historically $0.50+/kWh, still $0.25-0.35/kWh even after hybridisation) and the off-grid scale (100+ mines, dozens of remote-community microgrids) that a 1-20 MW reactor should target, but a state and federal nuclear ban forecloses the market entirely for now, and the utilities and mine operators who would buy have already committed capital to solar-battery-gas hybrids -- microreactor advocacy here is still at the conference-paper stage, not a funded study.",
+   "microreactor_read": "WA and the NT have the diesel dependence and the off-grid scale (100+ mines, dozens of remote-community microgrids) that a 1-20 MW reactor should target, but a state and federal nuclear ban forecloses the market entirely for now, and the utilities and mine operators who would buy have already committed capital to solar-battery-gas hybrids -- microreactor advocacy here is still at the conference-paper stage, not a funded study.",
    "sources": [
     {
      "label": "pv magazine Australia — Horizon rolls out renewable energy solutions for remote communities (2025-12-09)",
@@ -504,8 +498,26 @@
     {
      "label": "Power and Water Corporation — Remote power sources",
      "url": "https://www.powerwater.com.au/about/what-we-do/remote-operations/remote-power-sources",
-     "quote": "72 remote communities and 66 outstations ... 51 diesel-fired power stations ... about 80 megawatts",
-     "status": "snippet-only"
+     "quote": "We own and operate 51 diesel-fired power stations with an installed capacity of about 80 megawatts (MW)",
+     "status": "fetched"
+    },
+    {
+     "label": "Horizon Power - A2 Residential Tariff (1 July 2026)",
+     "url": "https://www.horizonpower.com.au/for-home/home-electricity-solutions/a2-residential-tariff/",
+     "quote": "Electricity unit charge (cents/kWh) 33.2621",
+     "status": "fetched"
+    },
+    {
+     "label": "Horizon Power - Who we serve (2026)",
+     "url": "https://www.horizonpower.com.au/about-us/who-we-serve/",
+     "quote": "34 microgrids across regional WA, all outside of the South West Interconnected System (SWIS)",
+     "status": "fetched"
+    },
+    {
+     "label": "ARENA - NT Top End solar rollout enters next phase (2018)",
+     "url": "https://arena.gov.au/blog/solar-setup-next-phase/",
+     "quote": "will cut diesel use by 15 per cent, equivalent to 94 million litres over the life of the panels",
+     "status": "fetched"
     }
    ]
   },
@@ -734,6 +746,12 @@
      "label": "EDL — Agnew Solar & Wind Battery Hybrid Renewable Microgrid project page",
      "url": "https://edlenergy.com/project/agnew/",
      "quote": "10-year agreement",
+     "status": "fetched"
+    },
+    {
+     "label": "Mining Technology - Agnew gold mine: a vision for green power at mines? (2020)",
+     "url": "https://www.mining-technology.com/features/agnew-gold-mine-a-vision-for-green-power-at-mines/",
+     "quote": "The agreement constituted an A$112m (approximately $80.2m) investment",
      "status": "fetched"
     }
    ]

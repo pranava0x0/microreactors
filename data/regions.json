@@ -2,7 +2,7 @@
  "_meta": {
   "captured": "2026-09-26",
   "what_this_is": "24 remote and cold places, most running on diesel, where a 1-20 MW reactor would compete: what each pays, what it draws, and where its law stands on civil nuclear power.",
-  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 78 of 92 sources were fetched and read; 14 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
+  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 93 of 105 sources were fetched and read; 12 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
   "groups": [
    {
     "id": "alaska",
@@ -97,6 +97,12 @@
      "url": "https://citizenportal.ai/articles/7879228/alaska/2026-legislature-alaska/awareness-of-advanced-nuclear-rises-in-alaska-microreactor-descriptions-increase-measured-support",
      "quote": "In 2023 only about a quarter of respondents had heard of these (advanced reactors); by our most recent survey that went up to about 40%",
      "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News - Alaska simplifies microreactor regulations (2022)",
+     "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+     "quote": "an advanced nuclear reactor capable of producing no more than 50 MW",
+     "status": "fetched"
     }
    ]
   },
@@ -156,7 +162,7 @@
    "region": "Alaska mines (non-military civilian loads)",
    "country": "US",
    "jurisdiction": "US state",
-   "power_system": "Alaska's large mines split between grid-tied and diesel-only. Kensington (Coeur Alaska, underground gold, Lynn Canal) runs entirely on-site diesel: 'annual fuel consumption expected to be around 3 million gallons at full production.' Greens Creek (Hecla, Admiralty Island) has purchased surplus hydropower from Alaska Electric Light & Power since 2006, and 'since 2009, hydropower has provided 77% of Greens Creek's energy needs,' though in 2025 low precipitation cut that back and '62% of the mine's electricity [was] purchased from the grid' (i.e. thermal-backed). Fort Knox and Pogo are grid-tied to the Railbelt (see alaska-railbelt-utilities). Donlin Gold (not yet built) would need a 220 MW dual-fuel plant and a 316-mile gas pipeline. Graphite One's Graphite Creek project forecasts a 12.5 MW draw, twice Nome's own load.",
+   "power_system": "Alaska's large mines split between grid-tied and diesel-only. Kensington (Coeur Alaska, underground gold, Lynn Canal) runs entirely on-site diesel: 'annual fuel consumption expected to be around 3 million gallons at full production.' Greens Creek (Hecla, Admiralty Island) has purchased surplus hydropower from Alaska Electric Light & Power since 2006, and 'since 2009, hydropower has provided 77% of Greens Creek's energy needs,' though in 2025 low precipitation cut that back and '62% of the mine's electricity [was] purchased from the grid' (i.e. thermal-backed). Fort Knox and Pogo are grid-tied to the Railbelt (see alaska-railbelt-utilities). Donlin Gold (not yet built) would need its own dual-fuel power plant, fed by a 315-mile gas pipeline. Graphite One's Graphite Creek project forecasts a 12.5 MW draw, twice Nome's own load.",
    "price": "Fort Knox: $40 million/year, ~16% of GVEA's output (see alaska-railbelt-utilities); no per-mine $/MWh diesel figure was found for Kensington, Greens Creek or Red Dog",
    "nuclear_position": "No mine-specific ban; SB 177 (2022) and DEC's 18 AAC 87 apply statewide. No mine has filed for a reactor siting permit.",
    "microreactor_activity": "Graphite One's own SVP of Operations named nuclear power as an option for the Graphite Creek mine in April 2025 reporting: 'The nuclear is very favorable because it's got no carbon footprint, but they're not far enough along yet, and they've got to be socially acceptable.' This is the clearest on-record civilian-mine interest in nuclear power in Alaska outside Red Dog. No site study, RFI or vendor engagement was found beyond that statement.",
@@ -177,7 +183,7 @@
     },
     {
      "name": "Donlin Gold (pre-construction)",
-     "mw": "220 MW planned dual-fuel plant, 316-mile gas pipeline",
+     "mw": "planned dual-fuel plant (MW not published), 315-mile gas pipeline",
      "note": "not yet financed/built; would displace ~76 million gallons/year of diesel"
     },
     {
@@ -214,6 +220,18 @@
      "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/",
      "quote": "The nuclear is very favorable because it's got no carbon footprint, but they're not far enough along yet",
      "status": "fetched"
+    },
+    {
+     "label": "Alaska DNR - Donlin Gold project (2026)",
+     "url": "https://dnr.alaska.gov/mlw/mining/large-mines/donlin/",
+     "quote": "a buried 14-inch diameter, 315-mile-long natural gas pipeline",
+     "status": "fetched"
+    },
+    {
+     "label": "Anchorage Daily News - One of Alaska's flagship mines soon could draw energy from the sun (2026)",
+     "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+     "quote": "roughly 40,000 gallons each day",
+     "status": "fetched"
     }
    ]
   },
@@ -222,8 +240,8 @@
    "region": "Rural Alaska (Power Cost Equalization communities)",
    "country": "US",
    "jurisdiction": "US state",
-   "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 58 communities off 46 separate diesel power plants, each an isolated microgrid with no interconnection between villages; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
-   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the statewide FY2026 PCE base rate (the subsidized floor the state pays down to) is reported at 20.38 cents/kWh",
+   "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 59 locations across rural Alaska, each village an isolated microgrid with no interconnection to the next; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
+   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh",
    "nuclear_position": "No PCE-community utility has taken a position on nuclear power. State law (SB 177, 2022) and DEC's siting regulation (18 AAC 87, effective 2023) apply statewide and are not community-specific.",
    "microreactor_activity": "None found at any individual PCE community. Searched AVEC's own news posts and RCA filing notices; found only diesel/COPA rate mechanics and PCE-funding advocacy testimony to the legislature, no reactor studies.",
    "microreactor_read": "Rural PCE villages carry the sector's best-regulated diesel price signal (a published base rate plus a disclosed fuel-surcharge mechanism) but the worst-matched load; a reactor needs a hub-and-aggregation buyer like the tribal utility in the tanana-chiefs prospect, not any single PCE village.",
@@ -233,7 +251,7 @@
    "loads": [
     {
      "name": "AVEC system-wide",
-     "mw": "46 diesel power plants across 58 communities",
+     "mw": "59 locations",
      "note": "off-grid; no interconnection between communities"
     }
    ],
@@ -253,6 +271,18 @@
      "label": "Alaska Village Electric Cooperative — The Cost of Fuel & Need for Greater PCE Funding (2026-04-01)",
      "url": "https://avec.org/2026/04/01/the-cost-of-fuel-need-for-greater-pce-funding/",
      "quote": "AVEC submits a filing with the Regulatory Commission of Alaska (RCA) to update its Cost of Power Adjustment (COPA)",
+     "status": "fetched"
+    },
+    {
+     "label": "NAOGUA - Alaska Village Electric Cooperative, Inc. (2026)",
+     "url": "https://www.naogua.org/alaska-village-electric-cooperative-inc",
+     "quote": "is a non-profit electric utility serving residents in 59 locations throughout rural Alaska",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska - notice of proposed PCE base amount (2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=219490",
+     "quote": "The Commission proposes to adjust the base amount to 20.38",
      "status": "fetched"
     }
    ]
@@ -317,14 +347,14 @@
    "price": "NTPC Thermal Zone residential rate: 36.50 cents/kWh for the first 1,000 kWh, then 88.96 cents/kWh for each additional kWh (84.68 cents/kWh for usage above 1,000 kWh between September and March), effective 2026-09-01",
    "nuclear_position": "No territorial ban or enabling law found; the NWT was not identified in Canada's SMR Roadmap materials as having taken a specific policy position, unlike Yukon's April 2026 Ontario partnership.",
    "microreactor_activity": "None found specific to the NWT government or NTPC. The territory appears only as photographed context ('A power plant in the Northwest Territories') in the federal Department of National Defence's August 2026 Arctic microreactor feasibility story (see the nunavut record), not as a named host.",
-   "microreactor_read": "NWT's diamond mines (Ekati at 30.8 MW, Diavik at 55.4 MW) are exactly the scale a relocatable reactor targets, but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
+   "microreactor_read": "NWT's diamond mines are the scale a relocatable reactor targets (Diavik's wind-diesel plant is 55.4 MW; Ekati's capacity was not found), but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
    "group": "canada-north",
    "position": "silent",
    "price_short": "C$0.365-0.890/kWh thermal zone (NTPC, 2026)",
    "loads": [
     {
      "name": "Ekati diamond mine",
-     "mw": "30.8 MW installed (seven 4.4 MW diesel generators)",
+     "mw": "installed capacity not found in a fetched source",
      "note": "off-grid"
     },
     {
@@ -349,6 +379,18 @@
      "label": "Rio Tinto — Diavik, Canada (operations page)",
      "url": "https://www.riotinto.com/en/operations/canada/diavik",
      "quote": "Diavik Diamond Mine's last ore milestone took place in March 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - List of generating stations in the Northwest Territories",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_the_Northwest_Territories",
+     "quote": "27.66",
+     "status": "fetched"
+    },
+    {
+     "label": "SustainableBiz - Rio Tinto plans largest solar farm in Canada's North at Diavik (2023)",
+     "url": "https://sustainablebiz.ca/rio-tinto-plans-largest-solar-farm-canada-north-diavik-mine",
+     "quote": "Diavik already features a wind-diesel hybrid power facility with a capacity of 55.4 megawatts",
      "status": "fetched"
     },
     {
@@ -527,7 +569,7 @@
      "note": "no interconnecting grid; hydro at 4 towns only, diesel everywhere else"
     },
     {
-     "name": "Tanbreez rare earth project (Critical Metals Corp, 70% acquired)",
+     "name": "Tanbreez rare earth project (Critical Metals Corp, 92.5% owned)",
      "mw": "n/a (pre-production)",
      "note": "site sits 2 km from an existing hydro power line; targeting Q4 2028/Q1 2029 production"
     },
@@ -568,6 +610,18 @@
      "status": "fetched"
     },
     {
+     "label": "Critical Metals Corp - Greenland government approves transfer of final 50.5% of Tanbreez (2026)",
+     "url": "https://www.criticalmetalscorp.com/greenland-government-approves-transfer-of-final-50-5-of-tanbreez-taking-critical-metals-corp-to-92-5-ownership/",
+     "quote": "bringing total CRML ownership to 92.5%",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - Nukissiorfiit",
+     "url": "https://en.wikipedia.org/wiki/Nukissiorfiit",
+     "quote": "approximately 56,000 residents across 17 towns and 54 settlements",
+     "status": "fetched"
+    },
+    {
      "label": "Nukissiorfiit - Prisblad nr. 39, gaeldende fra 01.01.2026, Bilag A (Priser for el til kundegruppe 1)",
      "url": "https://nukissiorfiit.gl/wp-content/uploads/2025/12/DK-Bilag-a-Prisblad-nr.-39-01.01.2026-.pdf",
      "quote": "1.1.1 Priser for el til kundegruppe 1 (Almindelige kunder):\nLokalitet El tarif. pr. kWh\nLokalitet El tarif. pr. kWh\n010 NANORTALIK 2,00",
@@ -581,13 +635,13 @@
    "country": "AQ/GL",
    "jurisdiction": "Antarctic Treaty System / Danish autonomous territory (research stations, not a national jurisdiction)",
    "power_system": "The only civilian nuclear power precedent at either pole is the US Navy's PM-3A reactor at McMurdo Station, Antarctica: a 'pressurised-water reactor, with a capacity of 1.8 megawatts' by one account and '1,500 kilowatt' by another, which 'operated from March 1962 - September 1972' and displaced 'the need to deliver millions of gallons of fuel oil.' Today, US Antarctic and Greenland-ice-sheet stations (e.g. Summit Station, Greenland, run on behalf of the National Science Foundation at 3,200 m elevation) are diesel-generator powered, resupplied by aircraft (LC-130 airlift) given the absence of any road or port access.",
-   "price": "No $/gallon or $/MWh fuel-logistics figure was found for Summit Station specifically; Greenland's general retail diesel price was $2.42/gallon as of 16 April 2026 (national average, not station-specific)",
+   "price": "No $/gallon or $/MWh fuel-logistics figure was found for Summit Station or McMurdo",
    "nuclear_position": "No nuclear ban specific to research stations; the Antarctic Treaty System restricts nuclear explosions and radioactive waste disposal in Antarctica but has historically permitted power reactors (PM-3A operated under it). No current proposal to re-introduce nuclear power at any US, Greenland or Antarctic research station was found.",
    "microreactor_activity": "None found for any current station. PM-3A remains a one-off historical case, shut down for cause (a water leak judged 'impractical to repair,' compounded by the cost of its required 25-person crew and 'concerns over possible chloride stress corrosion').",
    "microreactor_read": "The historical McMurdo PM-3A case is the only civilian precedent for polar reactor power anywhere in this file, and it argues both ways: it proved a reactor can displace millions of gallons of resupply fuel, but its 1972 shutdown for a maintenance failure and its need for a 25-person crew are exactly the reliability and staffing risks a modern remote microreactor pitch has to answer.",
    "group": "arctic-europe",
    "position": "silent",
-   "price_short": "diesel $2.42/gal (Greenland retail)",
+   "price_short": "no station fuel price published",
    "loads": [
     {
      "name": "McMurdo Station PM-3A (historical, 1962-1972)",
@@ -616,6 +670,18 @@
      "label": "The Conversation — Remembering Antarctica's nuclear past with 'Nukey Poo'",
      "url": "https://theconversation.com/remembering-antarcticas-nuclear-past-with-nukey-poo-99934",
      "quote": "The 25-man team required to run the plant was expensive",
+     "status": "fetched"
+    },
+    {
+     "label": "Engineering.com - 60 years ago there was a small modular reactor",
+     "url": "https://www.engineering.com/60-years-ago-there-was-a-small-modular-reactor/",
+     "quote": "Design output was 1,800 kW electrical operating at an 80 percent power factor",
+     "status": "fetched"
+    },
+    {
+     "label": "NSF - NSF invites professional news media to report from Summit Station, Greenland",
+     "url": "https://www.nsf.gov/news/news_summ.jsp?cntn_id=307191&org=OPP",
+     "quote": "Summit Station is located 10,530 feet (3200 meters) above sea level",
      "status": "fetched"
     }
    ]
@@ -842,7 +908,7 @@
    "region": "Northern Mariana Islands (Saipan, Tinian, Rota)",
    "country": "US",
    "jurisdiction": "US territory",
-   "power_system": "The Commonwealth Utilities Corporation (CUC) runs diesel generation on Saipan, Tinian and Rota with 'near-total reliance on imported petroleum products for both electricity generation and transportation' and 'aging electricity infrastructure and vulnerability to natural disasters.' Saipan's plants (Power Plant 1 designed for 86 MW across eight units, Plant 2 at 10 MW, Plant 4 at 16 MW) were reported at 62.1 MW combined availability in March 2025; a 2026 typhoon cut that further, with a recovery update citing 42.5 MW restored on Saipan and Rota timelines still being set.",
+   "power_system": "The Commonwealth Utilities Corporation (CUC) runs diesel generation on Saipan, Tinian and Rota with 'near-total reliance on imported petroleum products for both electricity generation and transportation' and 'aging electricity infrastructure and vulnerability to natural disasters.' Saipan's plants are Power Plant 1 (designed for 86 MW across eight units), Plant 2 (10 MW) and Plant 4 (16 MW); how much of that is available now was not found in a page that could be fetched.",
    "price": "US$0.19-0.33/kWh residential range, 2025 (DOE); CUC's own comparison put CNMI at US$0.2749/kWh residential in November 2024, called the lowest among US-affiliated Pacific jurisdictions versus $0.4139/kWh in Guam, $0.4414/kWh on Hawaii Island and $0.3986/kWh in American Samoa at that date. A separate Fuel Adjustment Charge of $0.21119/kWh took effect 2025-03-01; CUC's base rate has been unchanged since April 2014.",
    "nuclear_position": "No CNMI nuclear ban found. Senator Jude Hofschneider pre-filed Senate Joint Resolution 24-05 supporting federal study, evaluation and possible future deployment of small modular reactors and microreactors on Saipan, Tinian or Rota, while the resolution itself concedes 'the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems.' A CNMI House member has separately opposed nuclear technology in the territory in the context of the Department of Defense's Project JANUS, a distinct military proposal, per local reporting not independently fetched in this pass.",
    "microreactor_activity": "SJR 24-05 is framed as civilian and federal-facing: it 'does not authorise construction of a nuclear facility' but 'calls for federal agencies to consider Saipan, Tinian and Rota for feasibility studies, pilot programmes or possible future deployment,' citing exposure to volatile imported-fuel prices and grid damage from a recent super typhoon. No funded federal study or agency response was found as of this pass.",
@@ -853,8 +919,8 @@
    "loads": [
     {
      "name": "Saipan (CUC Power Plants 1, 2 and 4)",
-     "mw": "42.5 MW available (2026 post-typhoon recovery update), versus 62.1 MW combined availability in March 2025",
-     "note": "diesel; typhoon-damaged and under repair as of this pass"
+     "mw": "86 MW (Plant 1), 10 MW (Plant 2) and 16 MW (Plant 4) design capacity",
+     "note": "diesel; current availability not found in a fetchable page"
     }
    ],
    "blockers": [
@@ -880,12 +946,6 @@
      "label": "RNZ — CNMI lawmaker wants nuclear power study amid energy security concerns",
      "url": "https://www.rnz.co.nz/news/pacific/597311/cnmi-lawmaker-wants-nuclear-power-study-amid-energy-security-concerns",
      "quote": "the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems",
-     "status": "snippet-only"
-    },
-    {
-     "label": "NMI News Service — Bavi Recovery Rundown Day 10: Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
-     "url": "https://www.nminewsservice.com/bavi-recovery-rundown-day-10/",
-     "quote": "Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
      "status": "snippet-only"
     }
    ]
@@ -1110,19 +1170,19 @@
    "region": "Australia: Western Australia and Northern Territory off-grid and remote power",
    "country": "AU",
    "jurisdiction": "Australian state (Western Australia) and territory (Northern Territory)",
-   "power_system": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids supplying about 100,000 residents and 10,000 businesses, and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'ReGen' program; its Midwest Centralised Solar Project is adding solar-plus-battery to six towns (Cue, Meekatharra, Sandstone, Wiluna, Yalgoo and Norseman). In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy; its ARENA-funded Solar Energy Transformation Program (SETuP) added 10 MW of solar microgrids across 25 communities, saving an estimated 94 million litres of diesel over the program's 25-year life. Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
-   "price": "WA off-grid mine diesel generation has historically cost upwards of $0.50/kWh, with recent hybrid-displaced costs reported around $0.25-0.35/kWh; Horizon Power's ReGen rollout is backed by an A$27 million (about US$17.9 million) state-government commitment and is displacing diesel volumes such as 35,000 litres/year at Cockatoo Springs and 15,000 litres/year at Chile Creek",
+   "power_system": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids across regional WA and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'ReGen' program; its Midwest Centralised Solar Project is adding solar-plus-battery to six towns (Cue, Meekatharra, Sandstone, Wiluna, Yalgoo and Norseman). In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy; its ARENA-funded Solar Energy Transformation Program (SETuP) brought solar to 26 remote off-grid communities, cutting diesel use by an estimated 94 million litres over the life of the panels. Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
+   "price": "Horizon Power's standard A2 residential rate is 33.2621 cents/kWh plus a $1.1924 daily supply charge (1 July 2026, GST included); no WA-specific $/kWh for off-grid mine diesel was found in a fetched source; Horizon Power's ReGen rollout is backed by an A$27 million (about US$17.9 million) state-government commitment and is displacing diesel volumes such as 35,000 litres/year at Cockatoo Springs and 15,000 litres/year at Chile Creek",
    "nuclear_position": "Covered at the national level by this pass's australia-nuclear-legal-position record: nuclear generation is banned under Commonwealth law and under Western Australian and Northern Territory law alike. Neither Horizon Power nor Power and Water/Indigenous Essential Services has taken a public position on nuclear power for their remote systems.",
    "microreactor_activity": "Industry advocacy rather than utility action: the Australian Nuclear Association's 2025 conference included a paper, 'The Case for Microreactors in Australia' (Irwin, ANA2025), and the advocacy group Nuclear for Australia argued in 2026 that remote mines, communities and data centres are candidate markets, citing the 2026-06-04 criticality of Antares Nuclear's Mark-0 microreactor (100 kW-1 MW) at Idaho National Laboratory as a milestone that 'highlights emerging opportunities for Australia.' No Horizon Power, Power and Water/IES, or WA/NT government microreactor study, RFI or MOU was found.",
-   "microreactor_read": "WA and the NT have exactly the diesel-cost profile (historically $0.50+/kWh, still $0.25-0.35/kWh even after hybridisation) and the off-grid scale (100+ mines, dozens of remote-community microgrids) that a 1-20 MW reactor should target, but a state and federal nuclear ban forecloses the market entirely for now, and the utilities and mine operators who would buy have already committed capital to solar-battery-gas hybrids, microreactor advocacy here is still at the conference-paper stage, not a funded study.",
+   "microreactor_read": "WA and the NT have the diesel dependence and the off-grid scale (100+ mines, dozens of remote-community microgrids) that a 1-20 MW reactor should target, but a state and federal nuclear ban forecloses the market entirely for now, and the utilities and mine operators who would buy have already committed capital to solar-battery-gas hybrids, microreactor advocacy here is still at the conference-paper stage, not a funded study.",
    "group": "australia",
    "position": "banned",
-   "price_short": "$0.25-0.50/kWh off-grid mines (WA)",
+   "price_short": "A$0.333/kWh residential (WA, 2026)",
    "loads": [
     {
      "name": "Indigenous Essential Services remote NT grids",
      "mw": "about 80 MW installed across 51 diesel power stations",
-     "note": "72 remote communities plus 66 outstations; diesel, partially solar-offset by the 10 MW SETuP program"
+     "note": "72 remote communities plus 66 outstations; diesel, partially solar-offset by the SETuP program"
     },
     {
      "name": "Agnew Gold Mine (Gold Fields/EDL)",
@@ -1164,8 +1224,26 @@
     {
      "label": "Power and Water Corporation — Remote power sources",
      "url": "https://www.powerwater.com.au/about/what-we-do/remote-operations/remote-power-sources",
-     "quote": "72 remote communities and 66 outstations ... 51 diesel-fired power stations ... about 80 megawatts",
-     "status": "snippet-only"
+     "quote": "We own and operate 51 diesel-fired power stations with an installed capacity of about 80 megawatts (MW)",
+     "status": "fetched"
+    },
+    {
+     "label": "Horizon Power - A2 Residential Tariff (1 July 2026)",
+     "url": "https://www.horizonpower.com.au/for-home/home-electricity-solutions/a2-residential-tariff/",
+     "quote": "Electricity unit charge (cents/kWh) 33.2621",
+     "status": "fetched"
+    },
+    {
+     "label": "Horizon Power - Who we serve (2026)",
+     "url": "https://www.horizonpower.com.au/about-us/who-we-serve/",
+     "quote": "34 microgrids across regional WA, all outside of the South West Interconnected System (SWIS)",
+     "status": "fetched"
+    },
+    {
+     "label": "ARENA - NT Top End solar rollout enters next phase (2018)",
+     "url": "https://arena.gov.au/blog/solar-setup-next-phase/",
+     "quote": "will cut diesel use by 15 per cent, equivalent to 94 million litres over the life of the panels",
+     "status": "fetched"
     }
    ]
   },
