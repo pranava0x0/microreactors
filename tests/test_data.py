@@ -183,7 +183,10 @@ class Register(unittest.TestCase):
         if isinstance(node, dict):
             out = []
             for k, v in node.items():
-                if k in ("sources", "source", "url", "label", "quote"):
+                # Same exemptions as tools/check_register.py, plus labels and a
+                # voice's venue: external titles ("Unlocking Hypergrowth: ..." is
+                # Aalo's blog headline), verbatim quotes and internal notes.
+                if k in ("sources", "source", "url", "label", "quote", "_meta", "venue"):
                     continue
                 out.extend(Register.prose_of(v))
             return out
@@ -197,13 +200,20 @@ class Register(unittest.TestCase):
         return []
 
     def test_no_ai_register_in_authored_prose(self):
-        for name in ("costs.json", "sectors.json", "mechanisms.json",
-                     "policy.json", "opportunities.json", "vendors.json", "strategy.json"):
+        """Every data file the site bundles, derived from the builder's registry
+        (issue #18): a hand-typed tuple of seven files had left benchmarks,
+        instruments, voices, news, deployment_sites, arguments and gaps unswept."""
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+        for name in (f"{n}.json" for n in build_data.FILES):
             strings = self.prose_of(load(name))
             self.assertTrue(strings, f"{name}: prose extraction found nothing")
             text = " \n".join(strings).lower()
             for word in self.BANNED:
-                self.assertNotIn(word, text, f"{name} contains banned register word {word!r}")
+                i = text.find(word)
+                # An excerpt, not the file: assertNotIn printed ~290 KB of prose.
+                self.assertEqual(i, -1, f"{name} contains banned register word {word!r}: "
+                                        f"...{text[max(0, i - 60):i + 60]}...")
 
     def test_no_ai_register_in_markup(self):
         """index.html was outside this lint until 2026-08-23, which is how a

@@ -1478,7 +1478,7 @@
      "group": "diesel",
      "family": "utility-tariff",
      "name": "Tariffed on-bill lease of a customer-sited backup asset, paid for by aggregating it into a virtual power plant",
-     "what_it_is": "The regulated utility leases a backup asset to the customer under a commission-approved tariff and bills it monthly on the electric bill. The customer gets seamless backup power; the utility gets dispatch rights over the asset during system peaks and aggregates thousands of them into a virtual power plant, and the peak-shaving value is what holds the lease price below the customer's cost of buying the same hardware. A parallel 'bring your own device' track pays a rebate to customers who buy their own asset and enrol it for shared dispatch. This is the cleanest example of the general principle that a backup asset only becomes affordable when someone is allowed to USE it between emergencies — the exact freedom the RICE NESHAP denies a diesel engine.",
+     "what_it_is": "The regulated utility leases a backup asset to the customer under a commission-approved tariff and bills it monthly on the electric bill. The customer gets backup power without running its own generator; the utility gets dispatch rights over the asset during system peaks and aggregates thousands of them into a virtual power plant, and the peak-shaving value is what holds the lease price below the customer's cost of buying the same hardware. A parallel 'bring your own device' track pays a rebate to customers who buy their own asset and enrol it for shared dispatch. This is the cleanest example of the general principle that a backup asset only becomes affordable when someone is allowed to USE it between emergencies — the exact freedom the RICE NESHAP denies a diesel engine.",
      "who_signs": "Regulated utility <-> retail customer, under a tariff approved by the state Public Utility Commission",
      "asset_owner": "utility (lease track) or host (BYOD track, with dispatch rights assigned to the utility)",
      "term": "10-year lease",
@@ -1757,7 +1757,7 @@
      "who_signs": "Health care facility (self-election) <-> CMS state survey agency at survey",
      "asset_owner": "host | third-party developer",
      "term": "Indefinite; effective immediately from 2023-03-31, re-verified at each survey; HCMS recommissioning required every 5 years",
-     "price_form": "not a payment instrument — it is the permission that unlocks one",
+     "price_form": "not a payment instrument; it is the permission a payment instrument needs",
      "precedents": [
       {
        "name": "Kaiser Permanente Ontario Medical Center microgrid",
