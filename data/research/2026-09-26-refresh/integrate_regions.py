@@ -18,9 +18,9 @@ GROUPS = [
     {"id": "alaska", "label": "Alaska"},
     {"id": "canada-north", "label": "Canada's north"},
     {"id": "arctic-europe", "label": "Greenland, the Nordics and polar stations"},
-    {"id": "us-islands", "label": "US islands and territories"},
+    {"id": "us-islands", "label": "US islands, territories and freely associated states"},
     {"id": "australia", "label": "Australia"},
-    {"id": "uk-allies", "label": "UK, its territories and other allies"},
+    {"id": "uk-allies", "label": "UK, its territories and New Zealand"},
 ]
 POSITION_TAGS = [
     {"id": "enabling", "label": "Enabling law",
@@ -31,6 +31,8 @@ POSITION_TAGS = [
      "gloss": "A standing ban or restriction on nuclear power is under formal review."},
     {"id": "silent", "label": "No stated position",
      "gloss": "No law, study or official statement on civil nuclear power was found."},
+    {"id": "proposed-ban", "label": "Ban proposed",
+     "gloss": "A bill to prohibit nuclear power has been introduced but not enacted."},
     {"id": "restricted", "label": "Restricted",
      "gloss": "A legal barrier short of an outright ban, such as a supermajority vote."},
     {"id": "banned", "label": "Banned",
@@ -52,6 +54,19 @@ CURATION = {
     "labrador-northern-ontario": ("canada-north", "silent", "tariff not fetched"),
     "svalbard-and-northern-nordics": ("arctic-europe", "study", "tariff not fetched"),
     "polar-research-stations": ("arctic-europe", "silent", "diesel $2.42/gal (Greenland retail)"),
+    # islands.json
+    "puerto-rico": ("us-islands", "study", "$0.26/kWh residential (2026)"),
+    "us-virgin-islands": ("us-islands", "silent", "$0.42/kWh residential (2025)"),
+    "guam": ("us-islands", "proposed-ban", "fuel charge $0.136/kWh (2025)"),
+    "cnmi-cuc": ("us-islands", "study", "$0.27/kWh residential (2024)"),
+    "american-samoa": ("us-islands", "silent", "$0.43/kWh average (2023)"),
+    "hawaii": ("us-islands", "restricted", "$0.396/kWh average (2025)"),
+    "freely-associated-states-pacific": ("us-islands", "silent", "$0.28-0.48/kWh (Palau, FSM)"),
+    "australia-nuclear-legal-position": ("australia", "banned", "federal and state law"),
+    "australia-remote-power-market": ("australia", "banned", "$0.25-0.50/kWh off-grid mines (WA)"),
+    "uk-scottish-islands-and-nuclear-framework": ("uk-allies", "restricted", "tariff not fetched"),
+    "uk-overseas-territories-south-atlantic": ("uk-allies", "silent", "up to £0.42/kWh (St Helena, 2014)"),
+    "nz-chatham-islands-and-nuclear-law": ("uk-allies", "silent", "NZ$1.32/kWh (2026)"),
 }
 
 # The agents wrote " -- " as a dash; house style has no dashes in prose.

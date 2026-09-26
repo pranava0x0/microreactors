@@ -391,7 +391,7 @@
     tracks.map(function (t) {
       return { id: t.id, label: t.label + " (" + (s.tracks[t.id] || 0) + ")" };
     })
-  ).concat([{ id: "sites", label: "Sites (" + D.deployment_sites.sites.length + ")" }]);
+  );
 
   render($("pipelinetracks"),
     '<div data-sub="all" id="pipeline-all" role="tabpanel" tabindex="0">' +
@@ -404,6 +404,8 @@
     }).join("")
   );
   makeSubnav("pipeline", pipeItems.concat([
+    { id: "sites", label: "Sites (" + s.sites + ")",
+      lazy: { name: "deployment_sites", el: "pipeline-sites", render: renderSites } },
     { id: "prospects", label: "Prospects" + (s.prospects != null ? " (" + s.prospects + ")" : ""),
       lazy: { name: "strategy", el: "prospects", render: renderProspects } }]));
 
@@ -420,8 +422,12 @@
     if (t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggle(t); }
   });
 
-  /* ---------- candidate deployment sites ---------- */
-  if (D.deployment_sites && D.deployment_sites.sites) {
+  /* ---------- candidate deployment sites ----------
+     Lazy since 2026-09-26: only this sub-tab reads the 40 KB payload. */
+  var sitesRendered = false;
+  function renderSites() {
+    if (sitesRendered || !(D.deployment_sites && D.deployment_sites.sites)) { return; }
+    sitesRendered = true;
     var sites = D.deployment_sites.sites;
     render($("pipeline-sites"),
       '<div class="subhead"><h3>Sites</h3></div>' +
@@ -1117,15 +1123,9 @@
     });
   }
 
-  var secItems = [
-    { id: "overview", label: "Overview" },
-    { id: "regions", label: "Regions" + (s.regions != null ? " (" + s.regions + ")" : ""),
-      lazy: { name: "regions", el: "regions", render: renderRegions } }
-  ].concat(
-    D.sectors.sectors.map(function (sec) {
-      return { id: slug(sec.sector), label: sec.sector };
-    })
-  );
+  var secItems = D.sectors.sectors.map(function (sec) {
+    return { id: slug(sec.sector), label: sec.sector };
+  });
 
   /* Load -> how many priced real-world cases back it. Counted in
      tools/build_data.py, which owns the one definition of "priced", so this tab
@@ -1229,11 +1229,20 @@
         sec.loads.map(loadRow).join("") + "</div></div></div>";
     }).join("")
   );
-  makeSubnav("demand", secItems);
+  makeSubnav("demand", [
+    { id: "overview", label: "Overview" },
+    { id: "regions", label: "Regions" + (s.regions != null ? " (" + s.regions + ")" : ""),
+      lazy: { name: "regions", el: "regions", render: renderRegions } }
+  ].concat(secItems));
 
-  /* ---------- market design ---------- */
-  var M = D.mechanisms;
-  if (M && M.proposal) {
+  /* ---------- market design ----------
+     Lazy since 2026-09-26: the 48 precedents made mechanisms the largest eager
+     payload (83 KB) for one sub-tab. */
+  var marketRendered = false;
+  function renderMarketDesign() {
+    var M = D.mechanisms;
+    if (marketRendered || !(M && M.proposal)) { return; }
+    marketRendered = true;
     render($("policy-market-intro"), esc(M.intro) +
       ' <span class="proposaltag">this site\'s proposal</span>');
     render($("policy-mechanism"), '<div class="mech">' + M.proposal.cards.map(function (c) {
@@ -1400,7 +1409,8 @@
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
-    }).concat([{ id: "market-design", label: "Deal design" }]));
+    }).concat([{ id: "market-design", label: "Deal design",
+                 lazy: { name: "mechanisms", el: "policy-precedents", render: renderMarketDesign } }]));
     if (deferredRoute) {
       var readyRoute = deferredRoute;
       deferredRoute = "";

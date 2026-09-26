@@ -18,7 +18,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
-         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy"]
+         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy",
+         "regions"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -31,7 +32,11 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # strategy is read by two sub-tabs on two panels (Costs "What wins", Deals
 # "Prospects"); neither needs it for a first screen, and loadLazy hands both the
 # same promise, so it ships once and arrives when either opens.
-LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy"]
+# regions (2026-09-26) is read only by Applications > Regions; mechanisms only by
+# Rules > Deal design and deployment_sites only by Deals > Sites (their counts
+# ride in `summary`).
+LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy", "regions",
+        "mechanisms", "deployment_sites"]
 
 # How many of the newest news items ship in the eager bundle for the front page.
 HEADLINES = 8
@@ -46,7 +51,9 @@ CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mec
               "policy", "instruments", "deployment_sites", "voices", "arguments", "news", "gaps",
               # last on purpose: strategy restates rows the files above already cite, so
               # walking it last keeps every existing chip number where it was.
-              "strategy"]
+              "strategy",
+              # files added later append here, for the same reason.
+              "regions"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -222,6 +229,7 @@ def main() -> int:
         "pathways": sum(len(g["pathways"]) for g in bundle["policy"]["groups"]),
         "precedents": sum(len(g["items"]) for g in bundle["mechanisms"]["precedent_groups"]),
         "sites": len(bundle["deployment_sites"]["sites"]),
+        "regions": len(bundle["regions"]["regions"]),
         "built": captured_date(bundle),
     }
 

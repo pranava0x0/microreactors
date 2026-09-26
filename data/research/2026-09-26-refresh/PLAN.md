@@ -89,3 +89,25 @@ $V -m unittest discover -s tests
 6. Shorter long lists: source register paged (first 30 + filter + show all); Customer cost grouped per sector in collapsed sections with the price range in the summary; deal rows get a visible "Details" affordance.
 7. Chips: dedupe per cite(); 24 px minimum hit area on coarse pointers.
 8. Derive the hard-coded Sites and Applications stats.
+
+## State at the usage-limit stop (2026-09-26, resume here)
+
+Done and committed on branch `research/2026-09-26-refresh` (not yet pushed, no PR yet):
+- Checklist items 2 (Home = site directory + sorted headlines), 4 (24 pooled-buying precedents,
+  7 design elements in the orderbook proposal), 5 (Applications overview), 6 (24 regions in
+  Applications > Regions), most of 8 (nav, long lists, disclosures; phone scroll lengths cut
+  3-15x), #18 closed, 5 dead links fixed, quote gate 798 verified / 0 mismatches.
+- Regions pass: north.json (12 regions, 3 cases, 5 answers), islands.json (12 regions, 3 cases),
+  integrated by integrate_regions.py. north's 3 cases and 5 answers are NOT yet merged anywhere.
+
+Still to do, in order:
+1. filings agent (running at the stop; writes filings.json incrementally): integrate dockets into
+   a Rules > "Utility filings" sub-tab and cases/loads into sectors.json/benchmarks.
+2. Launch news agent (prompts/news.md), then merge its items via data/research/news/ + merge_news.py.
+3. Launch verify agents (prompts/verify.md with CLAIMS_FILE verify-a-claims.json / verify-b-claims.json,
+   OUT_FILE verify-a.json / verify-b.json; SPECIFIC_QUESTIONS: Janus binding status vs the Army's
+   "down-selected ... for negotiation" release; Radiant DOME criticality by Q3 2026; eVinci status).
+4. Issues agent: #17 off-grid IPPs, #11 SRC, #15 per-vendor HALEU, #16 vendor prices, plus the 8
+   "tariff not fetched" regions (Railbelt, Yukon, NWT, Nunavik, Labrador, Svalbard, Scotland, Greenland).
+5. Merge north answers (#9, #13, #14) into strategy.json via merge_answers.py; update Home glance with regions.
+6. Final UAT (uat_audit.py), docs (README tabs, agent-runs), push, PR, inline review, Codex round, merge.

@@ -244,9 +244,9 @@
    "price": "43 cents/kWh average retail price, 2023 (about 3.5x the US average); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
    "loads": [
     {
-     "name": "StarKist tuna cannery (Atu'u)",
-     "mw": "27 MW yearly peak ('SK (Starkist Feeder)')",
-     "note": "largest single ASPA feeder load; territory's sole remaining tuna cannery"
+     "name": "ASPA Tutuila system",
+     "mw": "27 MW yearly peak",
+     "note": "system peak with about 35 MW of units on line; ASPA's bid documents name a StarKist feeder but publish no cannery load"
     },
     {
      "name": "Ta'u island microgrid",
@@ -261,7 +261,7 @@
     "ASPA's capital program is already committed to the Pavaiai solar (20 MW) and battery (4 MW/8 MWh) builds now under construction",
     "The StarKist cannery feeder (27 MW peak) is close to the top of the 1-20 MW range alone, on a small isolated grid with limited other load to spread fixed reactor costs across"
    ],
-   "microreactor_read": "ASPA's diesel bill (about 27 cents/kWh, $27-30M/year in fuel alone) is exactly the delivered-fuel cost a reactor should beat, and the StarKist cannery's 27 MW peak shows the territory can host a load at microreactor scale -- but ASPA has already committed its near-term capital to solar-plus-storage (Pavaiai, and previously Ta'u) rather than nuclear, and no study has opened that door.",
+   "microreactor_read": "ASPA's diesel bill (about 27 cents/kWh, $27-30M/year in fuel alone) is exactly the delivered-fuel cost a reactor should beat, and Tutuila's 27 MW yearly system peak is inside the 1-20 MW range several times over -- but ASPA has already committed its near-term capital to solar-plus-storage (Pavaiai, and previously Ta'u) rather than nuclear, and no study has opened that door.",
    "sources": [
     {
      "label": "Samoa News — ASPA rates to drop significantly when two energy projects completed",
@@ -278,8 +278,8 @@
     {
      "label": "American Samoa Power Authority — Emergency Bids Addendum 9 (feeder load schedule)",
      "url": "https://www.aspower.com/aspaweb/emergencybids/Addendum9.pdf",
-     "quote": "SK (Starkist Feeder) ... yearly peak of 27 mW",
-     "status": "snippet-only"
+     "quote": "with the yearly peak of 27 mW",
+     "status": "fetched"
     },
     {
      "label": "U.S. Energy Information Administration — American Samoa territory profile",
@@ -327,13 +327,13 @@
     {
      "label": "Kauai Now — Hawai'i pays 64% above national average for electricity (2025-03-06)",
      "url": "https://kauainownews.com/2025/03/06/hawai%CA%BBi-pays-64-above-national-average-for-electricity/",
-     "quote": "rates on Kaua'i range between 33 and 39 cents",
+     "quote": "rates on Kauaʻi range between 33 and 39 cents",
      "status": "fetched"
     },
     {
      "label": "Honolulu Civil Beat — High Oil Prices Hammer HECO Customers. Here's Why (2026-07)",
      "url": "https://www.civilbeat.org/2026/07/high-oil-prices-hammer-heco-customers-heres-why/",
-     "quote": "27% on Maui, 30% on Oahu and 55% on Lanai",
+     "quote": "the average monthly residential bill rose 27% from June 2025 to this year on Maui and 30% on Oʻahu",
      "status": "fetched"
     },
     {
@@ -364,7 +364,7 @@
     "No feasibility study, MOU or utility statement on civil nuclear power found in any of the three states",
     "Every grid found is small even for the bottom of the 1-20 MW range -- Majuro's system, the largest identified, peaks under 10 MW",
     "The Marshall Islands' weapons-testing legacy makes any nuclear-power conversation politically sensitive and requires framing kept distinct from compensation and testing-impact issues"
-    ],
+   ],
    "microreactor_read": "Palau and the FSM pay among the highest delivered-diesel prices found in this whole pass, but no state has studied nuclear power, every identified grid is small even for the bottom of the 1-20 MW range, and the Marshall Islands' weapons-testing history means outreach there needs deliberately careful, separate framing rather than a standard utility pitch.",
    "sources": [
     {
@@ -376,7 +376,7 @@
     {
      "label": "Wikipedia — Malakal Power Plant",
      "url": "https://en.wikipedia.org/wiki/Malakal_Power_Plant",
-     "quote": "23.7 MW ... 8 installed diesel generators",
+     "quote": "Nameplate capacity 23.7 MW",
      "status": "fetched"
     },
     {
@@ -437,7 +437,7 @@
     {
      "label": "Naval News — AUKUS: Launch of the Australian Naval Nuclear Power Safety Regulator (2025-11-02)",
      "url": "https://www.navalnews.com/event-news/indo-pacific-2025/2025/11/aukus-launch-of-the-australian-naval-nuclear-power-safety-regulator/",
-     "quote": "the two Regulators will work together to support consistent nuclear and radiological protection across Australia's military and civilian activities",
+     "quote": "the two Regulators will work together to support consistent nuclear and radiological safety across Australia’s military and civilian activities",
      "status": "fetched"
     },
     {
@@ -533,7 +533,7 @@
     {
      "label": "World Nuclear News — UK seeking pipeline of advanced nuclear projects",
      "url": "https://www.world-nuclear-news.org/articles/uk-seeking-pipeline-of-advanced-nuclear-projects",
-     "quote": "X-Energy and Centrica at Hartlepool (12 advanced modular reactors, 2,500 jobs planned)",
+     "quote": "plans for X-Energy and Centrica to build 12 advanced modular reactors in Hartlepool, supporting 2,500 jobs",
      "status": "fetched"
     },
     {
@@ -545,8 +545,8 @@
     {
      "label": "Shetland Islands Council — Shetland statistics: energy",
      "url": "https://www.shetland.gov.uk/shetland-statistics/energy",
-     "quote": "103 turbine Viking windfarm ... 68 MW lithium grid battery",
-     "status": "snippet-only"
+     "quote": "the 103 turbine Viking windfarm becoming operational",
+     "status": "fetched"
     },
     {
      "label": "Energy Voice — Labour and SNP clash over nuclear power for Scotland amid Holyrood campaign",
@@ -611,8 +611,8 @@
     {
      "label": "Saint Helena Island Info — Renewable Energy",
      "url": "https://sainthelenaisland.info/renewableenergy.htm",
-     "quote": "electricity cost up to £0.42 per kWh",
-     "status": "snippet-only"
+     "quote": "in 2014 it was up to £0.42p per KwH, depending on consumption",
+     "status": "fetched"
     }
    ]
   },
