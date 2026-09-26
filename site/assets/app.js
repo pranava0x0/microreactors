@@ -1506,6 +1506,7 @@
         " buyer types already pay more. " + count("mass-produced") + " open with mass production (" +
         lcoe(mass) + "), and " + count("optimized") + " need the modeled optimized design (" + lcoe(opt) + ")."
       : s.load_types + " facility load profiles across " + s.sector_count + " sectors.";
+    if (s.regions) { apps += " " + s.regions + " remote and cold regions profiled."; }
     var costs = first && opt
       ? "Estimates fall from " + lcoe(first) + "/MWh for a first unit to " + lcoe(opt) +
         " for a modeled optimized design. " + s.benchmarks_priced + " priced cases show what buyers pay today."
@@ -1523,7 +1524,9 @@
            "program reached criticality in 2026, and the earliest delivery target is " + s.first_delivery_year + "." },
       { href: "#policy", tab: "Rules & deal design", q: "What unlocks a sale",
         a: s.pathways + " rule changes and " + s.instruments + " ways a deal gets signed, with a " +
-           "shared-orderbook proposal checked against " + s.precedents + " precedents." },
+           "shared-orderbook proposal checked against " + s.precedents + " precedents." +
+           (s.dockets ? " " + s.dockets + " utility filings name advanced reactors; " +
+             (s.dockets_micro ? s.dockets_micro : "none") + " a 1\u201320 MW one." : "") },
       { href: "#news", tab: "News", q: "What happened",
         a: s.news_items + " dated events since " + monthYear(s.news_first) + ". " + s.news_binding +
            " rest on something executed: a contract, a filing or a milestone." },
