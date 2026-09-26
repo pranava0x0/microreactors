@@ -194,3 +194,17 @@ the 2026-08-29 voices pass saw, and it is why the gate runs on cached bytes and 
 **One improvement.** Fetch and cache the primary documents the agents are going to need
 (SEC filings, regulator PDFs) in the main session *before* spawning, since agents cannot write
 the shared cache; and run the seed search at `--pause 8` in two halves rather than one burst.
+
+## 2026-09-26 — full refresh: pooling, remote regions, islands, filings, news, verification
+
+Plan and contract: `data/research/2026-09-26-refresh/PLAN.md`, `CONTRACT.md` (types D-G added to
+`tools/research_pass.py` with known-good and known-bad fixtures before any agent launched).
+Sonnet agents only, two at a time, every file written incrementally.
+
+| agent | why an agent | tokens | tools | time | result | worth it |
+|---|---|---|---|---|---|---|
+| pooling | 24 cross-sector precedents need ~70 fetches; no local archive covered non-nuclear pooling | 270K | 103 | 25 min | 24 records, 0 validator errors, all 12 mechanism types, 6 failure cases; 3 of ~35 quotes needed narrowing to the page text | yes: every row shipped, and seven design elements now in the orderbook proposal |
+
+**One improvement.** The agent cited the same URL twice as two "sources" on 11 of 24 rows
+(Wikipedia and one trade page doing double duty). Harmless after `cite()` dedupes, but the
+contract should say "two sources means two documents".

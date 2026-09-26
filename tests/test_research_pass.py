@@ -56,6 +56,14 @@ class ResearchPass(unittest.TestCase):
         r = run("tools/merge_voices.py", "data/research/2026-08-29-voices", "--check")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
+    def test_news_matches_its_pass(self):
+        """data/news.json is built from data/research/news by merge_news.py.
+        It drifted once: PR #21 hand-edited eight items into the output, the seed
+        pass sat marked incomplete, and nothing noticed that the file was no
+        longer reproducible or even in date order."""
+        r = run("tools/merge_news.py", "data/research/news", "--check")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
     def test_derived_datasets_match_the_pass(self):
         """data/instruments.json and data/benchmarks.json are generated. Editing a
         research file without re-running the merge would silently leave the site
@@ -141,6 +149,9 @@ class ResearchPass(unittest.TestCase):
                         "sources": [src]},
                        {"id": "c2", "target": "dome", "file": "opportunities",
                         "claim": "x", "verdict": "unverifiable", "evidence": "x"}],
+            "items": [{"id": "n1", "date": "2026-09-09", "headline": "x", "category": "award",
+                       "what_happened": "x", "why_it_matters": "x", "binding": False,
+                       "sources": [src]}],
         }
         bad = {
             # nuclear sector, and no number anywhere
@@ -153,6 +164,9 @@ class ResearchPass(unittest.TestCase):
                          if k != "docket"}],
             # outdated with no correction
             "checks": [dict(good["checks"][0], id="c3", verdict="outdated")],
+            # unknown category, a non-ISO date, and the same url twice
+            "items": [dict(good["items"][0], id="n2", category="rumour", date="Sept 9",
+                           sources=[src, src])],
         }
         with tempfile.TemporaryDirectory() as tmp:
             for name, doc in (("good", good), ("bad", bad)):
@@ -166,7 +180,8 @@ class ResearchPass(unittest.TestCase):
             ko = run("tools/research_pass.py", "validate", str(pathlib.Path(tmp) / "bad"))
             self.assertEqual(ko.returncode, 1, ko.stdout)
             for rule in ("non-nuclear", "no number in size", "no number in price",
-                         "type 'memo'", "neither a docket", "must carry a correction"):
+                         "type 'memo'", "neither a docket", "must carry a correction",
+                         "category 'rumour'", "is not YYYY-MM-DD", "the same url is listed twice"):
                 self.assertIn(rule, ko.stdout)
 
     def test_quote_repair_keeps_literal_source_text(self):

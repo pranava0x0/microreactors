@@ -100,3 +100,23 @@ carry a number.
 6. **Do not run** `tools/fetch_source.py` or any tool that writes shared files. The main
    session caches sources after you return.
 7. `_meta` = `{"captured": "2026-09-26", "agent": "<slug>", "scope": "...", "angles_run": [...], "absences": [...]}`.
+
+## Added after wave 1
+- **Two sources means two documents.** Never list the same URL twice on one record; the pooling
+  agent did on 11 of 24 rows.
+
+## Type N — news `items` (the shape of data/news.json)
+```json
+{"id": "kebab-slug-YYYY-MM-DD", "date": "YYYY-MM-DD (the event's date, not the article's)",
+ "headline": "under 90 characters, plain, no colon-setup",
+ "companies": ["Antares", "Centrus"],
+ "category": "fuel | award | regulatory | criticality | financing | contract | construction | policy | setback | personnel",
+ "what_happened": "2-3 sentences: who did what, with the number and the instrument",
+ "why_it_matters": "1-2 sentences for a buyer of a 1-20 MW reactor; no hype",
+ "binding": true,
+ "binding_note": "optional: why this is or is not executed",
+ "sources": [ ...universal source objects, at least one fetched... ]}
+```
+`binding: true` ONLY for something executed: a signed contract, a filed application, an achieved
+milestone, a formal regulatory order or approval, or a closed financing. Selections, down-selections
+"for negotiation", MOUs, letters of intent and announcements are `false`.

@@ -85,6 +85,11 @@ DOCKET_STATUS = {"filed", "approved", "rejected", "pending", "withdrawn", "enact
 # G check: a verdict on one claim already shipped in data/*.json.
 CHECK_REQUIRED = ["id", "target", "file", "claim", "verdict", "evidence"]
 CHECK_VERDICTS = {"confirmed", "outdated", "wrong", "unsupported", "unverifiable"}
+# N news: a dated event in the shape of data/news.json items.
+NEWS_REQUIRED = ["id", "date", "headline", "category", "what_happened", "why_it_matters", "sources"]
+NEWS_CATEGORIES = {"fuel", "award", "regulatory", "criticality", "financing", "contract",
+                   "construction", "policy", "setback", "personnel"}
+ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 HAS_DIGIT = re.compile(r"\d")
 
 PLACEHOLDER = re.compile(r"^\s*(tbd|todo|n/?a|unknown|none|\.\.\.|-+)\s*$", re.I)
@@ -242,7 +247,7 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
     status-tagged sources, a number somewhere), plus each type's own enum."""
     rec_id = str(rec.get("id", "<no id>"))
     required = {"precedent": PRECEDENT_REQUIRED, "region": REGION_REQUIRED,
-                "docket": DOCKET_REQUIRED, "check": CHECK_REQUIRED}[kind]
+                "docket": DOCKET_REQUIRED, "check": CHECK_REQUIRED, "news": NEWS_REQUIRED}[kind]
     _missing(rec, required, path, rec_id, errors)
     if rec_id in seen_ids:
         fail(errors, path, rec_id, f"duplicate id, also in {seen_ids[rec_id]}")
@@ -260,6 +265,19 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
             fail(errors, path, rec_id, "an outdated or wrong verdict must carry a correction")
         return
     check_sources(sources, path, rec_id, errors)
+    if kind == "news":
+        if rec.get("category") not in NEWS_CATEGORIES:
+            fail(errors, path, rec_id, f"category {rec.get('category')!r} not in {sorted(NEWS_CATEGORIES)}")
+        if not isinstance(rec.get("binding"), bool):
+            fail(errors, path, rec_id, "binding must be true or false")
+        if not ISO_DATE.match(str(rec.get("date", ""))):
+            fail(errors, path, rec_id, f"date {rec.get('date')!r} is not YYYY-MM-DD")
+        if not any(s.get("status") == "fetched" for s in sources if isinstance(s, dict)):
+            fail(errors, path, rec_id, "a news item needs at least one fetched source")
+        urls = [s.get("url") for s in sources if isinstance(s, dict)]
+        if len(urls) != len(set(urls)):
+            fail(errors, path, rec_id, "the same url is listed twice")
+        return
     if kind == "precedent":
         if rec.get("mechanism") not in PRECEDENT_MECHANISMS:
             fail(errors, path, rec_id,
@@ -286,8 +304,8 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
 
 KINDS = {"mechanism": "mechanisms", "case": "cases", "answer": "answers",
          "precedent": "precedents", "region": "regions", "docket": "dockets",
-         "check": "checks"}
-EXTENDED = {"precedent", "region", "docket", "check"}
+         "check": "checks", "news": "items"}
+EXTENDED = {"precedent", "region", "docket", "check", "news"}
 
 
 def load_pass(pass_dir: pathlib.Path):

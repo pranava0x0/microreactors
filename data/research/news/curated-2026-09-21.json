@@ -1,53 +1,12 @@
 {
   "_meta": {
     "captured": "2026-09-21",
-    "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "38 of 47 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 9 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-09-17",
-    "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
+    "agent": "curated",
+    "what_this_is": "Every item on the site as of 2026-09-21: the 2026-08-30 seed pass plus the items and corrections added by hand in PR #21. From here on, data/news.json is built from this folder by tools/merge_news.py.",
+    "absences": [
+      "n/a: a curated snapshot, not a search"
+    ]
   },
-  "categories": [
-    {
-      "id": "fuel",
-      "count": 10
-    },
-    {
-      "id": "regulatory",
-      "count": 8
-    },
-    {
-      "id": "award",
-      "count": 7
-    },
-    {
-      "id": "criticality",
-      "count": 6
-    },
-    {
-      "id": "contract",
-      "count": 4
-    },
-    {
-      "id": "financing",
-      "count": 4
-    },
-    {
-      "id": "construction",
-      "count": 3
-    },
-    {
-      "id": "policy",
-      "count": 2
-    },
-    {
-      "id": "setback",
-      "count": 2
-    },
-    {
-      "id": "personnel",
-      "count": 1
-    }
-  ],
   "items": [
     {
       "id": "antares-centrus-haleu-contract-2026-09-17",
@@ -111,6 +70,26 @@
           "label": "Centrus — Centrus and Radiant Announce Long-Term Partnership for Domestic HALEU",
           "url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-radiant-announce-long-term-partnership-domestic",
           "quote": "definitive multi-year contract to supply high-assay, low-enriched uranium",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "pjm-ferc-colocation-compliance-er26-1479-2026-08-17",
+      "date": "2026-08-17",
+      "headline": "PJM files further co-location compliance tariff in FERC Docket ER26-1479",
+      "companies": [
+        "PJM Interconnection"
+      ],
+      "category": "regulatory",
+      "what_happened": "PJM submitted its further compliance filing in ER26-1479-002 after FERC's June 18 order in the EL25-49 co-located-load proceeding. The filing is the tariff response; the September 8 document previously recorded here was a customer protest, not a PJM filing.",
+      "why_it_matters": "The proceeding will govern how co-located large loads and generation interact with PJM transmission service. It is relevant to private-wire reactor proposals, but this row does not infer queue timing, standby charges or capacity-tag terms without quoting the tariff filing.",
+      "binding": true,
+      "binding_note": "Formal PJM further-compliance filing in ER26-1479-002, accession 20260817-5195; filed in response to FERC's binding June 18 order in EL25-49.",
+      "sources": [
+        {
+          "label": "FERC eLibrary — PJM further compliance filing, ER26-1479-002 (accession 20260817-5195)",
+          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260817-5195",
           "status": "snippet-only"
         }
       ]
@@ -428,26 +407,6 @@
           "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
           "quote": "Standard Nuclear will fabricate that material into TRISO particle fuel under a binding, multi-metric-ton agreement announced Aug. 20 and extending through 2031",
           "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "pjm-ferc-colocation-compliance-er26-1479-2026-08-17",
-      "date": "2026-08-17",
-      "headline": "PJM files further co-location compliance tariff in FERC Docket ER26-1479",
-      "companies": [
-        "PJM Interconnection"
-      ],
-      "category": "regulatory",
-      "what_happened": "PJM submitted its further compliance filing in ER26-1479-002 after FERC's June 18 order in the EL25-49 co-located-load proceeding. The filing is the tariff response; the September 8 document previously recorded here was a customer protest, not a PJM filing.",
-      "why_it_matters": "The proceeding will govern how co-located large loads and generation interact with PJM transmission service. It is relevant to private-wire reactor proposals, but this row does not infer queue timing, standby charges or capacity-tag terms without quoting the tariff filing.",
-      "binding": true,
-      "binding_note": "Formal PJM further-compliance filing in ER26-1479-002, accession 20260817-5195; filed in response to FERC's binding June 18 order in EL25-49.",
-      "sources": [
-        {
-          "label": "FERC eLibrary — PJM further compliance filing, ER26-1479-002 (accession 20260817-5195)",
-          "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260817-5195",
-          "status": "snippet-only"
         }
       ]
     },

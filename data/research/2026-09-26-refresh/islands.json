@@ -114,6 +114,146 @@
      "status": "snippet-only"
     }
    ]
+  },
+  {
+   "id": "guam",
+   "region": "Guam",
+   "country": "US",
+   "jurisdiction": "US territory",
+   "power_system": "Guam Power Authority (GPA) is the sole civilian utility; its oil-fired fleet has been joined by the new Ukudu power plant, which a Consolidated Commission on Utilities member said in November 2024 'can make power at 5 (cents) per kWh plus fuel at 11 cents to 13 cents per kWh' -- roughly 16-18 cents/kWh all-in, cheaper than the legacy oil-fired units it supplements.",
+   "price": "LEAC (fuel cost adjustment) proposed to fall from $0.208802/kWh to $0.188781/kWh effective 2025-08-01, then to $0.135840/kWh effective 2025-09-01 as Ukudu came online; the residential base rate was separately proposed to rise about 2.2-2.8 cents/kWh in the same filing",
+   "nuclear_position": "GPA operates no licensed reactor. A 2023 territorial bill, the 'Nuclear Energy Prohibition Act' (Bill 151-37, introduced by Sen. Sabina Flores Perez, Speaker Therese Terlaje and Sen. Chris Barnett), would add a new Guam Code chapter under which 'no nuclear fission power plant, small modular reactors or nuclear microreactors shall be constructed, imported or used, and no radioactive material shall be disposed of on Guam'; no enactment into public law was confirmed in this pass, and as of Nov 2024-Feb 2025 reporting it remained a live proposal under committee discussion. Guam's own Public Utilities Commission chairman argued against it, saying 'the Legislature should not prohibit fair and open considerations of all technologies.'",
+   "microreactor_activity": "Secondary reporting describes a 2012 GPA dialogue with NuScale Power on small modular reactors, not independently confirmed against a NuScale or GPA primary source in this pass. In November 2024 a Consolidated Commission on Utilities member cited small (1-3 MW) nuclear plant power costs of 47 cents/kWh against Ukudu's 16-18 cents/kWh all-in, concluding 'someday, nuclear can make sense. But not in the near future.'",
+   "blockers": [
+    "A pending territorial bill would prohibit constructing, importing or using any nuclear fission plant, SMR or microreactor on Guam; final legislative status unconfirmed in this pass",
+    "GPA's own utility commissioner puts small-reactor power cost (47 cents/kWh) at roughly 3x the new Ukudu gas/diesel plant's all-in cost (16-18 cents/kWh)",
+    "Separate 2026-2027 NDAA activity concerns a Department of Defense SMR pilot for Indo-Pacific Command -- a defense track distinct from, and politically entangled with, GPA's civilian system"
+   ],
+   "microreactor_read": "GPA's newest conventional plant already prices near 16-18 cents/kWh and the territory's own utility regulator cites 47 cents/kWh for small nuclear, so civilian Guam is not a near-term buyer until unit cost falls well below an already-improving oil-fired benchmark, and a pending territorial ban would have to be resolved first.",
+   "sources": [
+    {
+     "label": "Pacific Island Times — Bill would ban nuclear energy on Guam (2023)",
+     "url": "https://www.pacificislandtimes.com/post/bill-would-ban-nuclear-energy-on-guam",
+     "quote": "No nuclear fission power plant, small modular reactors or nuclear microreactors shall be constructed, imported or used, and no radioactive material shall be disposed of on Guam",
+     "status": "fetched"
+    },
+    {
+     "label": "Post Guam — Sanchez: Nuclear power could make sense for Guam someday, but not anytime soon (2024-11-23, updated 2025-02-11)",
+     "url": "https://www.postguam.com/news/local/sanchez-nuclear-power-could-make-sense-for-guam-someday-but-not-anytime-soon/article_17f26662-a6ea-11ef-ae97-6b086eba03a3.html",
+     "quote": "Ukudu can make power at 5 (cents) per kWh plus fuel at 11 cents to 13 cents per kWh",
+     "status": "fetched"
+    },
+    {
+     "label": "KANDIT News Group — Guam Power Rates Likely to Go Down Again, and Sooner Than Planned (2025)",
+     "url": "https://kanditnews.com/guam-power-rates-likely-to-go-down-again-and-sooner-than-planned/",
+     "quote": "proposed LEAC rate reduction to $0.135840/kWh effective September 1, 2025",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "cnmi-cuc",
+   "region": "Northern Mariana Islands (Saipan, Tinian, Rota)",
+   "country": "US",
+   "jurisdiction": "US territory",
+   "power_system": "The Commonwealth Utilities Corporation (CUC) runs diesel generation on Saipan, Tinian and Rota with 'near-total reliance on imported petroleum products for both electricity generation and transportation' and 'aging electricity infrastructure and vulnerability to natural disasters.' Saipan's plants (Power Plant 1 designed for 86 MW across eight units, Plant 2 at 10 MW, Plant 4 at 16 MW) were reported at 62.1 MW combined availability in March 2025; a 2026 typhoon cut that further, with a recovery update citing 42.5 MW restored on Saipan and Rota timelines still being set.",
+   "price": "US$0.19-0.33/kWh residential range, 2025 (DOE); CUC's own comparison put CNMI at US$0.2749/kWh residential in November 2024, called the lowest among US-affiliated Pacific jurisdictions versus $0.4139/kWh in Guam, $0.4414/kWh on Hawaii Island and $0.3986/kWh in American Samoa at that date. A separate Fuel Adjustment Charge of $0.21119/kWh took effect 2025-03-01; CUC's base rate has been unchanged since April 2014.",
+   "loads": [
+    {
+     "name": "Saipan (CUC Power Plants 1, 2 and 4)",
+     "mw": "42.5 MW available (2026 post-typhoon recovery update), versus 62.1 MW combined availability in March 2025",
+     "note": "diesel; typhoon-damaged and under repair as of this pass"
+    }
+   ],
+   "nuclear_position": "No CNMI nuclear ban found. Senator Jude Hofschneider pre-filed Senate Joint Resolution 24-05 supporting federal study, evaluation and possible future deployment of small modular reactors and microreactors on Saipan, Tinian or Rota, while the resolution itself concedes 'the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems.' A CNMI House member has separately opposed nuclear technology in the territory in the context of the Department of Defense's Project JANUS, a distinct military proposal, per local reporting not independently fetched in this pass.",
+   "microreactor_activity": "SJR 24-05 is framed as civilian and federal-facing: it 'does not authorise construction of a nuclear facility' but 'calls for federal agencies to consider Saipan, Tinian and Rota for feasibility studies, pilot programmes or possible future deployment,' citing exposure to volatile imported-fuel prices and grid damage from a recent super typhoon. No funded federal study or agency response was found as of this pass.",
+   "blockers": [
+    "SJR 24-05 was pre-filed/introduced but had not, as of this pass, produced a funded federal study or agency commitment",
+    "The resolution's own text states CNMI lacks the financial capacity to fund installation, operation or long-term maintenance of any such system",
+    "Civilian nuclear interest (SJR 24-05) sits alongside a separate, opposed military reactor proposal (Project JANUS), risking public conflation of the two",
+    "2026 typhoon damage has CUC focused on restoring diesel capacity on Saipan and Rota rather than evaluating new generation types"
+   ],
+   "microreactor_read": "A sitting CNMI senator has already put Saipan, Tinian and Rota on record asking the federal government to study microreactors -- an unusually direct civilian ask among the territories -- but the same resolution admits CNMI cannot pay for one itself, so any deal has to be federally funded or vendor-financed, not locally procured, and has to be kept visibly separate from the contested military reactor proposal next to it.",
+   "sources": [
+    {
+     "label": "U.S. Department of Energy Grid Deployment Office — Commonwealth of the Northern Mariana Islands (CNMI) (2025)",
+     "url": "https://www.energy.gov/oe/commonwealth-northern-mariana-islands-cnmi",
+     "quote": "Electricity costs for residential customers in the CNMI in 2025 ranged from $0.19 to $0.33 U.S. dollars per kilowatt-hour (kWh).",
+     "status": "fetched"
+    },
+    {
+     "label": "Marianas Variety — CUC: NMI power rates lowest in US Pacific region (2024-11-28)",
+     "url": "https://www.mvariety.com/news/local/cuc-nmi-power-rates-lowest-in-us-pacific-region/article_aac108fc-accd-11ef-844a-939e3ec3ca67.html/",
+     "quote": "$27.49 residential and $32.42 commercial",
+     "status": "fetched"
+    },
+    {
+     "label": "RNZ — CNMI lawmaker wants nuclear power study amid energy security concerns",
+     "url": "https://www.rnz.co.nz/news/pacific/597311/cnmi-lawmaker-wants-nuclear-power-study-amid-energy-security-concerns",
+     "quote": "the CNMI does not have the financial capacity to independently fund the installation, operation, or long-term maintenance of such systems",
+     "status": "snippet-only"
+    },
+    {
+     "label": "NMI News Service — Bavi Recovery Rundown Day 10: Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
+     "url": "https://www.nminewsservice.com/bavi-recovery-rundown-day-10/",
+     "quote": "Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "american-samoa",
+   "region": "American Samoa",
+   "country": "US",
+   "jurisdiction": "US territory",
+   "power_system": "American Samoa Power Authority (ASPA) generates almost entirely on imported diesel -- diesel-dependent generation is about 97% of output, with solar about 11% of installed utility-scale capacity but only about 3% of generation (2023) -- and 'spends about $27 million to $30 million on diesel every year.' Construction began in 2024 on the first phase of a 20-megawatt Pavaiai solar PV project, and a 4-megawatt/8-megawatt-hour battery system was commissioned in early 2025.",
+   "price": "43 cents/kWh average retail price, 2023 (about 3.5x the US average); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
+   "loads": [
+    {
+     "name": "StarKist tuna cannery (Atu'u)",
+     "mw": "27 MW yearly peak ('SK (Starkist Feeder)')",
+     "note": "largest single ASPA feeder load; territory's sole remaining tuna cannery"
+    },
+    {
+     "name": "Ta'u island microgrid",
+     "mw": "1.41 MW solar + 6 MWh battery (60 Tesla Powerpacks)",
+     "note": "off-grid; converted from 100% diesel to about 100% solar, completed November 2016"
+    }
+   ],
+   "nuclear_position": "No nuclear ban or enabling law found; no statement located from ASPA, the territorial government or the Fono on nuclear power or microreactors in this search pass.",
+   "microreactor_activity": "none found -- searched ASPA's own site and general microreactor literature for any American-Samoa-specific MOU, feasibility study or vendor visit. Any future outreach should be handled with care given the wider Pacific region's history with nuclear-weapons-test fallout, even though American Samoa itself was not a test site.",
+   "blockers": [
+    "No nuclear feasibility study, MOU or legislative interest found to build on",
+    "ASPA's capital program is already committed to the Pavaiai solar (20 MW) and battery (4 MW/8 MWh) builds now under construction",
+    "The StarKist cannery feeder (27 MW peak) is close to the top of the 1-20 MW range alone, on a small isolated grid with limited other load to spread fixed reactor costs across"
+   ],
+   "microreactor_read": "ASPA's diesel bill (about 27 cents/kWh, $27-30M/year in fuel alone) is exactly the delivered-fuel cost a reactor should beat, and the StarKist cannery's 27 MW peak shows the territory can host a load at microreactor scale -- but ASPA has already committed its near-term capital to solar-plus-storage (Pavaiai, and previously Ta'u) rather than nuclear, and no study has opened that door.",
+   "sources": [
+    {
+     "label": "Samoa News — ASPA rates to drop significantly when two energy projects completed",
+     "url": "https://www.samoanews.com/local-news/aspa-rates-drop-significantly-when-two-energy-projects-completed",
+     "quote": "ASPA's cost for electric generation today is about 27-cents per kilowatt hour",
+     "status": "fetched"
+    },
+    {
+     "label": "National Geographic — Ta'u, American Samoa, Changed From Diesel to Solar Power With Tesla's SolarCity",
+     "url": "https://www.nationalgeographic.com/science/article/tau-american-samoa-solar-power-microgrid-tesla-solarcity",
+     "quote": "The $8 million project was funded by the U.S. Department of Interior and the American Samoa Power Authority (ASPA).",
+     "status": "fetched"
+    },
+    {
+     "label": "American Samoa Power Authority — Emergency Bids Addendum 9 (feeder load schedule)",
+     "url": "https://www.aspower.com/aspaweb/emergencybids/Addendum9.pdf",
+     "quote": "SK (Starkist Feeder) ... yearly peak of 27 mW",
+     "status": "snippet-only"
+    },
+    {
+     "label": "U.S. Energy Information Administration — American Samoa territory profile",
+     "url": "https://www.eia.gov/state/?sid=AQ",
+     "quote": "diesel-dependent generation still comprises 97% of ASPA's output",
+     "status": "snippet-only"
+    }
+   ]
   }
  ]
 }
