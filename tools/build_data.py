@@ -19,7 +19,7 @@ DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
          "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy",
-         "regions"]
+         "regions", "dockets"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -36,7 +36,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # Rules > Deal design and deployment_sites only by Deals > Sites (their counts
 # ride in `summary`).
 LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy", "regions",
-        "mechanisms", "deployment_sites"]
+        "mechanisms", "deployment_sites", "dockets"]
 
 # How many of the newest news items ship in the eager bundle for the front page.
 HEADLINES = 8
@@ -53,7 +53,7 @@ CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mec
               # walking it last keeps every existing chip number where it was.
               "strategy",
               # files added later append here, for the same reason.
-              "regions"]
+              "regions", "dockets"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -230,6 +230,8 @@ def main() -> int:
         "precedents": sum(len(g["items"]) for g in bundle["mechanisms"]["precedent_groups"]),
         "sites": len(bundle["deployment_sites"]["sites"]),
         "regions": len(bundle["regions"]["regions"]),
+        "dockets": len(bundle["dockets"]["dockets"]),
+        "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
         "built": captured_date(bundle),
     }
 

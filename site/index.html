@@ -54,7 +54,7 @@
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 706
+   "value": 722
   },
   {
    "@type": "PropertyValue",
@@ -82,6 +82,11 @@
    "@type": "DataDownload",
    "encodingFormat": "application/json",
    "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/deployment_sites.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://github.com/pranava0x0/microreactors/blob/main/data/dockets.json"
   },
   {
    "@type": "DataDownload",
@@ -329,6 +334,12 @@
     </div>
     <div class="subtabs" role="tablist" aria-label="Rules and deal-design sections"></div>
     <div id="pathways"></div>
+    <div data-sub="utility-filings" id="policy-utility-filings" role="tabpanel" tabindex="0">
+      <div class="subhead"><h3>What utilities have filed</h3></div>
+      <p class="prose" id="dockets-intro"></p>
+      <div class="newsfilter" id="dockets-filter" role="group" aria-label="Filter filings by kind"></div>
+      <div id="dockets"></div>
+    </div>
     <div data-sub="market-design" id="policy-market-design" role="tabpanel" tabindex="0">
       <div class="subhead"><h3>Shared orderbook and overrun pool</h3></div>
       <p class="prose" id="policy-market-intro"></p>

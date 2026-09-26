@@ -1323,6 +1323,60 @@
     });
   }
 
+  /* ---------- utility filings ----------
+     Plans, dockets and statutes that name advanced reactors (data/dockets.json,
+     lazy). How many name a 1-20 MW reactor is in the intro because it is the
+     finding: so far, none. */
+  var docketsRendered = false;
+  function renderDockets() {
+    var K = D.dockets;
+    if (docketsRendered || !(K && K.dockets)) { return; }
+    docketsRendered = true;
+    var TYPE = { IRP: "Resource plans", legislation: "State laws", study: "Studies and inquiries",
+                 RFP: "Requests for proposals", rider: "Cost-recovery riders", CPCN: "Certificates",
+                 tariff: "Tariffs", "rate-case": "Rate cases", "contract-approval": "Contract approvals",
+                 other: "Other" };
+    var counts = {};
+    K.dockets.forEach(function (d) { counts[d.type] = (counts[d.type] || 0) + 1; });
+    render($("dockets-intro"), esc(K._meta.what_this_is));
+    render($("dockets-filter"), '<button class="newschip on" data-type="" aria-pressed="true">All ' +
+      K.dockets.length + "</button>" + Object.keys(counts).sort(function (a, b) {
+        return counts[b] - counts[a];
+      }).map(function (t) {
+        return '<button class="newschip" data-type="' + esc(t) + '" aria-pressed="false">' +
+          esc(TYPE[t] || t) + " " + counts[t] + "</button>";
+      }).join(""));
+    render($("dockets"), '<div class="precgrid">' + K.dockets.map(function (d) {
+      var facts = [["Forum", d.forum], ["Docket", d.docket], ["Filed or decided", d.date],
+                   ["Status", d.status], ["Reactor size named", d.size_class]];
+      return '<details class="prec docket" data-type="' + esc(d.type) + '"><summary>' +
+        '<span class="nm">' + esc(d.utility) + (d.state ? " \u00b7 " + esc(d.state) : "") + "</span>" +
+        '<span class="cat">' + esc(TYPE[d.type] || d.type) + " \u00b7 " + esc(d.date) + "</span></summary>" +
+        '<div class="body"><p>' + esc(d.what_it_says) + "</p>" +
+        '<div class="sitedetails">' + facts.filter(function (f) { return f[1]; }).map(function (f) {
+          var v = f[0] === "Docket" && d.url
+            ? '<a href="' + esc(d.url) + '" target="_blank" rel="noopener noreferrer">' + esc(f[1]) + "</a>"
+            : esc(f[1]);
+          return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" + v + "</span></div>";
+        }).join("") + "</div>" +
+        (d.microreactor_read ? '<p class="copyline"><span class="k">For a 1\u201320 MW unit \u00b7 </span>' +
+          esc(d.microreactor_read) + "</p>" : "") +
+        srcList(d.sources) + "</div></details>";
+    }).join("") + "</div>");
+    $("dockets-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      Array.prototype.forEach.call($("dockets-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      var t = b.dataset.type;
+      Array.prototype.forEach.call($("dockets").querySelectorAll("details.docket"), function (dd) {
+        dd.hidden = !!t && dd.dataset.type !== t;
+      });
+    });
+  }
+
   /* ---------- policy pathways ---------- */
   /* Deferred: the instrument bands on this tab read the 421 KB instruments
      payload, which now ships separately. Rendering the pathway cards first and
@@ -1409,7 +1463,9 @@
     }).join(""));
     makeSubnav("policy", P.groups.map(function (g) {
       return { id: slug(g.name), label: g.name };
-    }).concat([{ id: "market-design", label: "Deal design",
+    }).concat([{ id: "utility-filings", label: "Utility filings" + (s.dockets != null ? " (" + s.dockets + ")" : ""),
+                 lazy: { name: "dockets", el: "dockets", render: renderDockets } },
+               { id: "market-design", label: "Deal design",
                  lazy: { name: "mechanisms", el: "policy-precedents", render: renderMarketDesign } }]));
     if (deferredRoute) {
       var readyRoute = deferredRoute;
