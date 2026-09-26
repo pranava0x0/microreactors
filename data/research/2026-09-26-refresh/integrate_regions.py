@@ -69,6 +69,20 @@ CURATION = {
     "nz-chatham-islands-and-nuclear-law": ("uk-allies", "silent", "NZ$1.32/kWh (2026)"),
 }
 
+# Tariffs found later by the issues pass (issues.json `tariffs`) for the regions
+# the regional agents could not price. The long price text and its source come
+# from that file; the short label is written here for the list row.
+TARIFF_SHORT = {
+    "alaska-railbelt-utilities": "$0.244/kWh residential (Chugach, 2026)",
+    "yukon": "C$0.121/kWh base plus riders (ATCO, 2026)",
+    "northwest-territories": "C$0.365-0.890/kWh thermal zone (NTPC, 2026)",
+    "nunavik-northern-quebec": "C$0.07-0.51/kWh by block (Hydro-Quebec, 2026)",
+    "labrador-northern-ontario": "C$0.156/kWh first block (NL Hydro, 2026)",
+    "svalbard-and-northern-nordics": "capped at NOK 1.30/kWh (Svalbard, 2026)",
+    "uk-scottish-islands-and-nuclear-framework": "26.11p/kWh UK price cap (Jul-Sep 2026)",
+    "greenland": "DKK 2.00/kWh in every town (2026)",
+}
+
 # The agents wrote " -- " as a dash; house style has no dashes in prose.
 DASHES = [(" -- ", ", "), (" — ", ", ")]
 
@@ -111,6 +125,16 @@ def main() -> None:
                        sources=dedupe(r.get("sources")))
             regions.append(rec)
     assert not missing, f"no curation for {missing}"
+    tariffs_p = HERE / "issues.json"
+    if tariffs_p.exists():
+        by_id = {r["id"]: r for r in regions}
+        for t in json.loads(tariffs_p.read_text()).get("tariffs", []):
+            r = by_id[t["region_id"]]
+            r["price"] = clean(t["price"])
+            r["price_short"] = TARIFF_SHORT[t["region_id"]]
+            for src in t.get("sources", []):
+                if src["url"] not in {x["url"] for x in r["sources"]}:
+                    r["sources"].append(src)
     regions.sort(key=lambda x: (order.index(x["group"]), x["region"]))
     # Counted from the records, never asserted: an earlier version said every
     # source was fetched while 14 were snippet-only (Codex review, PR #22).
@@ -123,7 +147,8 @@ def main() -> None:
                              "1-20 MW reactor would compete: what each pays, what it draws, and where "
                              "its law stands on civil nuclear power."),
             "method": ("Two research passes (data/research/2026-09-26-refresh/north.json and "
-                       f"islands.json), one record per jurisdiction. {fetched} of {len(statuses)} "
+                       "islands.json), one record per jurisdiction, with eight tariffs added from "
+                       f"that folder's issues.json. {fetched} of {len(statuses)} "
                        f"sources were fetched and read; {snippet} are search-corroborated only and "
                        "carry status snippet-only, which the page marks with a dagger. The group, "
                        "the law-and-policy tag and the short price label are curated in that "

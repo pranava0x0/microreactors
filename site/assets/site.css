@@ -325,6 +325,20 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
 .vendortable .vtreactor{display:block;font-weight:var(--weight-regular);color:var(--text-tertiary);
   font-size:var(--size-caption);margin-top:2px}
 .vendortable td{color:var(--text-secondary)}
+/* A finding's station table (issue #17): compact, flagged rows marked with a badge. */
+.findingsites{font-size:var(--size-caption);margin:0 0 var(--space-4)}
+.findingsites th[scope=row]{font-weight:var(--weight-semibold);color:var(--text-primary)}
+.findingsites td{color:var(--text-secondary)}
+@media(max-width:639px){
+  .findingsites,.findingsites tbody{display:block;width:100%}
+  .findingsites thead{display:none}
+  .findingsites tr{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-2) 0}
+  .findingsites th,.findingsites td{border:none;padding:0}
+  .findingsites td:nth-of-type(2)::before{content:"Start \00b7  term: ";color:var(--text-tertiary)}
+  .findingsites td:nth-of-type(3)::before{content:"MW (firm thermal): ";color:var(--text-tertiary)}
+  .findingsites td:nth-of-type(4)::before{content:"Mine life: ";color:var(--text-tertiary)}
+}
 .vendortable .vbadge{display:inline-block;margin:0 var(--space-1) var(--space-1) 0}
 /* Six columns do not fit a tablet: stack each company below 900px. */
 @media(max-width:899px){

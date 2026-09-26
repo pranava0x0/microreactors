@@ -293,8 +293,8 @@
    {
     "file": "2026-09-26-cases/cases.json",
     "kind": "case",
-    "records": 3,
-    "scope": "The Type B cases from the 2026-09-26 regional passes that are new to data/benchmarks.json.",
+    "records": 4,
+    "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
     "incomplete": false,
     "absences": [
      "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
@@ -1576,6 +1576,39 @@
        "label": "Mining Technology — Graphite Creek Project, Alaska (project profile)",
        "url": "https://www.mining-technology.com/projects/graphite-creek-project-alaska/",
        "quote": "The mine operations are expected to require 4MW of power, which would increase to 6MW after five years.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-09-26-cases/cases.json"
+    },
+    {
+     "id": "kcgm-kalgoorlie-zenith-25-year-ppa",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "KCGM (Kalgoorlie \"Super Pit\") Renewables and Thermal Power Project",
+     "country": "AU",
+     "region": "Kalgoorlie, Western Australia (Goldfields-Esperance)",
+     "parties": {
+      "host": "Northern Star Resources (KCGM operations)",
+      "provider": "Zenith Energy",
+      "utility": "None - off-grid"
+     },
+     "instrument": "PPA",
+     "signed": "2025-12",
+     "term_years": 25,
+     "capacity": "256 MW wind, 138 MW solar, 138 MW/300 MWh battery storage, plus a Zenith-Northern Star joint venture supplying 120 MW of thermal generation and a 132kV transmission network; commissioning targeted for mid-2027",
+     "summary": "Zenith Energy signed a 25-year PPA with Northern Star Resources, announced December 2025, to build what is described as Australia's largest renewable energy project for the mining sector at KCGM's Kalgoorlie operations: 256 MW of wind, 138 MW of solar and 138 MW/300 MWh of battery storage. Zenith and Northern Star also formed a joint venture to supply 120 MW of firm thermal generation as backup, plus a 132kV transmission network and substations, with commissioning targeted for mid-2027 subject to approvals.",
+     "microreactor_read": "The 120 MW firm-thermal joint-venture slice is six to eight 20 MWe-class units at a single site with 25 years of contracted term and a mine life Northern Star states as multiple decades — the longest-term, largest-residual off-grid mine opportunity found in this sector to date, and evidence Zenith will structure firm generation as its own joint venture rather than folding it into the renewables PPA.",
+     "sources": [
+      {
+       "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+       "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+       "quote": "Zenith Energy has signed a landmark 25-year power purchase agreement (PPA) with Northern Star Resources",
+       "status": "fetched"
+      },
+      {
+       "label": "Mining.com.au - Zenith Energy to power Northern Star's KCGM",
+       "url": "https://mining.com.au/zenith-energy-to-power-northern-stars-kcgm/",
+       "quote": "Zenith Energy has entered a joint venture with Northern Star to supply 120MW of thermal generation",
        "status": "fetched"
       }
      ],

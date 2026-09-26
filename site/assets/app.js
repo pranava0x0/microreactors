@@ -836,9 +836,24 @@
           esc(f.finding) + (f.searched ? ' <span class="note">(angles: ' +
           esc(f.searched.join("; ")) + ")</span>" : "") + "</p>";
       }
+      // A finding may carry a station table (issue #17): drawn as a small table so
+      // the flagged rows can be compared, not read out of a paragraph.
+      var sites = (f.sites || []).length
+        ? '<div class="tablewrap"><table class="sectortable findingsites"><thead><tr>' +
+          "<th scope=\"col\">Station</th><th scope=\"col\">Contractor \u00b7 miner</th>" +
+          "<th scope=\"col\">Start \u00b7 term</th><th scope=\"col\">MW (firm thermal)</th>" +
+          "<th scope=\"col\">Mine life</th></tr></thead><tbody>" + f.sites.map(function (x) {
+            return "<tr" + (x.flag ? ' class="flagged"' : "") + '><th scope="row">' + esc(x.station) +
+              (x.flag ? ' <span class="vbadge critical">fits</span>' : "") + "</th>" +
+              "<td>" + esc(x.contractor) + " \u00b7 " + esc(x.miner) + "</td>" +
+              "<td>" + esc(x.start) + " \u00b7 " + esc(x.term_years) + " yr</td>" +
+              "<td>" + esc(x.capacity_mw) + " (" + esc(x.firm_thermal_mw) + ")</td>" +
+              "<td>" + esc(x.mine_life) + "</td></tr>";
+          }).join("") + "</tbody></table></div>"
+        : "";
       return '<p class="finding"><span class="k">Finding ' + esc(f.date) + " · " + esc(f.status) +
-        " · </span>" + esc(f.finding) + (figs ? ' <span class="note">' + figs + "</span>" : "") +
-        " " + cite(f.sources) + "</p>";
+        " · </span>" + esc(f.finding) + (figs && !sites ? ' <span class="note">' + figs + "</span>" : "") +
+        " " + cite(f.sources) + "</p>" + sites;
     }).join("");
   }
 

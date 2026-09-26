@@ -293,8 +293,8 @@
    {
     "file": "2026-09-26-cases/cases.json",
     "kind": "case",
-    "records": 3,
-    "scope": "The Type B cases from the 2026-09-26 regional passes that are new to data/benchmarks.json.",
+    "records": 4,
+    "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
     "incomplete": false,
     "absences": [
      "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."

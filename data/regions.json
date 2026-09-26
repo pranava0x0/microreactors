@@ -2,7 +2,7 @@
  "_meta": {
   "captured": "2026-09-26",
   "what_this_is": "24 remote and cold places, most running on diesel, where a 1-20 MW reactor would compete: what each pays, what it draws, and where its law stands on civil nuclear power.",
-  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction. 70 of 84 sources were fetched and read; 14 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
+  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 78 of 92 sources were fetched and read; 14 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
   "groups": [
    {
     "id": "alaska",
@@ -106,13 +106,13 @@
    "country": "US",
    "jurisdiction": "US state",
    "power_system": "Six interconnected utilities (Golden Valley Electric Association/GVEA, Chugach Electric, Matanuska Electric, Homer Electric, Anchorage's municipal successor, and the City of Seward) share the Railbelt grid from Fairbanks to the Kenai Peninsula. GVEA generated more than 80% of its power from fossil fuels (coal, diesel and naphtha) as of May 2025 reporting. Its largest customer, the Fort Knox gold mine, draws about 16% of GVEA's total output; Northern Star's Pogo mine draws a grid load its own 2025 corporate report labels 'Pogo GRID 16 MW'.",
-   "price": "Governor Dunleavy's stated (unmet) Railbelt target is 10 cents/kWh; GVEA burns roughly 200,000 tons of Usibelli coal a year under a contract signed in August [2024]",
+   "price": "24.4088 cents/kWh total residential rate (all-in, incl. fuel, purchased power and rider charges), Chugach Electric Association South District, effective 2026-07-01",
    "nuclear_position": "No state ban. SB 177 (2022) and DEC's 18 AAC 87 siting regulation (effective 2023) already permit microreactor siting statewide, Railbelt included (see alaska-legal-framework). No Railbelt utility has itself taken a formal board position for or against a reactor.",
    "microreactor_activity": "May 2026: the Alaska Center for Energy and Power organized a tour of Idaho National Laboratory for utility executives including staff from Golden Valley Electric Association, to view Radiant's Kaleidos microreactor test facility and Oklo's 75 MW Aurora construction site. ACEP's own account of the trip raises, as an open question rather than a utility commitment, whether Oklo's 5 MW Eielson microreactor could be followed by 'a larger 75 MW reactor at the same location supplying power to the GVEA's grid.' No RFI, site-permit application, or GVEA board vote on nuclear was found.",
    "microreactor_read": "The Railbelt's own energy establishment (ACEP) is already treating a reactor at Eielson-scale-and-up as a live conversation because Fort Knox and Pogo prove 16 MW+ industrial loads exist on this grid; the missing piece is a utility RFI or site permit, not the enabling law, which has existed since 2023.",
    "group": "alaska",
    "position": "enabling",
-   "price_short": "tariff not fetched",
+   "price_short": "$0.244/kWh residential (Chugach, 2026)",
    "loads": [
     {
      "name": "Fort Knox mine (Kinross)",
@@ -141,6 +141,12 @@
      "label": "Anchorage Daily News / Northern Journal — A key player in moving Interior Alaska off fossil fuels? (2025)",
      "url": "https://www.adn.com/business-economy/energy/2025/05/03/a-key-player-in-moving-interior-alaska-off-fossil-fuels-multibillion-dollar-mining-corporations/",
      "quote": "The sprawling Fort Knox mine consumes $40 million worth of power every year",
+     "status": "fetched"
+    },
+    {
+     "label": "Chugach Electric Association - Rate Information, South District",
+     "url": "https://www.chugachelectric.com/member-services/billing-payments/rate-information-south-district",
+     "quote": "Below are the rates in effect as of July 1, 2026 for Chugach South District retail customers.",
      "status": "fetched"
     }
    ]
@@ -257,13 +263,13 @@
    "country": "CA",
    "jurisdiction": "Canadian province (north)",
    "power_system": "Nunatsiavut's five communities (Nain, Hopedale, Postville, Makkovik, Rigolet) are each an isolated diesel microgrid operated by Newfoundland and Labrador Hydro, unconnected to the provincial grid and resupplied by ship in the ice-free season; Nain's own generating station is listed at 3.86 MW (diesel genset, commissioned 1974). In northwestern Ontario, the Wataynikaneyap ('Watay') Power transmission project, majority-owned by 24 First Nations with Fortis Inc., built roughly 1,800 km of line at a Canada-government commitment of $1.6 billion to connect remote diesel communities to Ontario's grid; the first community (Pikangikum) was energized in December 2018, with the project since expanding toward the 24 partner communities.",
-   "price": "No published $/kWh figure fetched this pass for Nunatsiavut communities",
+   "price": "Newfoundland and Labrador Hydro, Isolated Diesel Systems (first block, same as the Island Interconnected System and L'Anse au Loup): 15.587 cents/kWh, current published rate",
    "nuclear_position": "No Nunatsiavut, NunatuKavut, Innu Nation or Watay-partner nuclear position found; Newfoundland and Labrador's provincial energy policy materials reviewed carry no nuclear content.",
    "microreactor_activity": "None found. NL Hydro's own renewables page for isolated systems lists only solar installations (completed in all Nunatsiavut communities) and a preliminary wind/battery system-impact study for Nain, no nuclear content.",
    "microreactor_read": "Neither sub-region shows any reactor interest; Labrador's loads (sub-4 MW per community) are too small individually, and northern Ontario's diesel communities are being solved by grid extension (Watay), not generation, leaving no addressable microreactor buyer identified here.",
    "group": "canada-north",
    "position": "silent",
-   "price_short": "tariff not fetched",
+   "price_short": "C$0.156/kWh first block (NL Hydro, 2026)",
    "loads": [
     {
      "name": "Nain generating station (NL Hydro)",
@@ -293,6 +299,12 @@
      "url": "https://www.wataypower.ca/updates/wataynikaneyap-power-lp-and-government-of-canada-formalize-support-for-provinces-largest-first-nations-led-transmission-project",
      "quote": "Approximately 1,800 kilometres of transmission lines in Northwestern Ontario",
      "status": "fetched"
+    },
+    {
+     "label": "Newfoundland & Labrador Hydro - Current Rates",
+     "url": "https://nlhydro.com/electicity-rates/current-rates/",
+     "quote": "For customers on the Island Interconnected System, L'Anse au Loup, and Isolated Diesel Systems (first block), the current rate is 15.587 cents per kWh.",
+     "status": "fetched"
     }
    ]
   },
@@ -302,13 +314,13 @@
    "country": "CA",
    "jurisdiction": "Canadian territory",
    "power_system": "The Northwest Territories 'does not have a territorial electricity grid'; eight communities around Great Slave Lake share two regional hydro grids, and of the remaining 25 communities, 23 rely on diesel-fired power plants. Canada's energy regulator puts NWT's 'estimated generating capacity' at 233 MW total, of which diesel plants 'accounted for 68%... in 2021.' The territorial utility, NTPC, operates diesel plants ranging from under 0.1 MW (Buffalo Junction) to 27.66 MW (a diesel combustion turbine at Yellowknife).",
-   "price": "No consumer $/kWh figure fetched this pass; NTPC/NWT Power Corporation rates are set by the territorial Public Utilities Board",
+   "price": "NTPC Thermal Zone residential rate: 36.50 cents/kWh for the first 1,000 kWh, then 88.96 cents/kWh for each additional kWh (84.68 cents/kWh for usage above 1,000 kWh between September and March), effective 2026-09-01",
    "nuclear_position": "No territorial ban or enabling law found; the NWT was not identified in Canada's SMR Roadmap materials as having taken a specific policy position, unlike Yukon's April 2026 Ontario partnership.",
    "microreactor_activity": "None found specific to the NWT government or NTPC. The territory appears only as photographed context ('A power plant in the Northwest Territories') in the federal Department of National Defence's August 2026 Arctic microreactor feasibility story (see the nunavut record), not as a named host.",
    "microreactor_read": "NWT's diamond mines (Ekati at 30.8 MW, Diavik at 55.4 MW) are exactly the scale a relocatable reactor targets, but Diavik just ended mining (March 2026) and Ekati's remaining mine life was not established this pass; NWT lags Yukon in any government-level nuclear engagement.",
    "group": "canada-north",
    "position": "silent",
-   "price_short": "tariff not fetched",
+   "price_short": "C$0.365-0.890/kWh thermal zone (NTPC, 2026)",
    "loads": [
     {
      "name": "Ekati diamond mine",
@@ -338,6 +350,12 @@
      "url": "https://www.riotinto.com/en/operations/canada/diavik",
      "quote": "Diavik Diamond Mine's last ore milestone took place in March 2026",
      "status": "fetched"
+    },
+    {
+     "label": "Northwest Territories Power Corporation - Residential Electrical Rates",
+     "url": "https://www.ntpc.com/customer-service/residential-service/residential-electrical-rates",
+     "quote": "36.50 cents / kWh",
+     "status": "fetched"
     }
    ]
   },
@@ -347,13 +365,13 @@
    "country": "CA",
    "jurisdiction": "Canadian province (north)",
    "power_system": "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home', off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
-   "price": "No published $/kWh figure fetched this pass for Nunavik village tariffs",
+   "price": "Hydro-Quebec Tarif D N (off-grid networks north of the 53rd parallel, including Nunavik villages): 7.065 cents/kWh for the first 40 kWh of energy per day and 50.469 cents/kWh for the remainder (both times a location multiplier), plus a 46.154 cents/day network access charge times the multiplier, effective 2026-04-01",
    "nuclear_position": "No Nunavik-specific nuclear policy found. At the provincial level, Hydro-Quebec's only nuclear plant, Gentilly-2, closed in 2012; press reporting (not independently fetched this pass) indicates the utility studied recommissioning it in 2023 and chose not to proceed. Quebec's Strategic Plan 2022-2026 frames its clean-electricity growth (100+ TWh needed for carbon neutrality by 2050) around hydro expansion, not nuclear, consistent with no Nunavik nuclear activity being found.",
    "microreactor_activity": "None found. All identified Nunavik decarbonization activity (Quaqtaq/Puvirnituq wind, Raglan's TUGLIQ turbines) is wind- or solar-based, run by Hydro-Quebec or TUGLIQ, with no reactor study identified.",
    "microreactor_read": "Nunavik's off-grid diesel villages and Raglan mine are physically the right scale, but Quebec's provincial nuclear posture (an abandoned Gentilly-2 restart) and Hydro-Quebec's active wind/solar conversion program both point away from nuclear as the near-term answer here.",
    "group": "canada-north",
    "position": "silent",
-   "price_short": "tariff not fetched",
+   "price_short": "C$0.07-0.51/kWh by block (Hydro-Quebec, 2026)",
    "loads": [
     {
      "name": "Raglan mine (Glencore)",
@@ -382,6 +400,12 @@
      "label": "World Nuclear News — Hydro-Quebec mulls Gentilly 2 recommissioning",
      "url": "https://www.world-nuclear-news.org/Articles/Hydro-Quebec-mulls-Gentilly-2-recommissioning",
      "quote": "Hydro-Québec mulls Gentilly 2 recommissioning",
+     "status": "fetched"
+    },
+    {
+     "label": "Hydro-Quebec - Grille des tarifs d'electricite 2026 (Tarif D N, Reseaux autonomes au nord du 53e parallele)",
+     "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/grille-tarifaire.pdf",
+     "quote": "9.2 9.2 Tarif D N Frais d’accès au réseau, par jour × multiplicateur 46,154 ¢ 46,154 ¢ 0,0 %\nJusqu’à 40 k W h d’énergie par jour, par k W h × multiplicateur 6,905 ¢ 7,065 ¢ 2,3 %",
      "status": "fetched"
     }
    ]
@@ -438,13 +462,13 @@
    "country": "CA",
    "jurisdiction": "Canadian territory",
    "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units. LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.",
-   "price": "No consumer $/kWh figure fetched this pass; see Yukon Energy's own rate filings with the Yukon Utilities Board for tariffs",
+   "price": "ATCO Electric Yukon Rate Schedule 1160 (Residential, Non-Government, Hydro area incl. Whitehorse): Customer Charge C$14.65/month plus Energy Charge 12.14 cents/kWh for the first 1,000 kWh (base rate, Board Order 2011-06), with Rider J at 100.23% of base rates (effective 2026-04-01, Board Order 2026-08) and Rider F fuel adjustment of 0.378 cents/kWh added to all consumption (effective 2026-05-01)",
    "nuclear_position": "No territorial ban. On April 22, 2026, the Government of Yukon signed a formal partnership agreement with the Government of Ontario 'to strengthen collaboration on energy development, with a focus on improving long-term reliability and exploring emerging technologies such as small modular reactors.'",
    "microreactor_activity": "Under the April 2026 Yukon-Ontario agreement, 'Ontario Power Generation and Yukon Energy will collaborate on the necessary groundwork to deploy SMRs to Yukon's grid,' covering 'nuclear energy, SMRs and microreactors including technological readiness, regulatory frameworks, supply chains, economics and financing, nuclear waste management and public and Indigenous engagement.' Yukon's energy minister, Ted Laking, framed it as a direct response to winter reliability: 'Our electricity grid is under strain and will soon be unable to meet the needs of the territory... we require significant investment in new generation capacity we can rely on in our coldest and darkest months of the year.' This is an assessment/knowledge-sharing agreement, not a project commitment, contract or site selection.",
    "microreactor_read": "Yukon is the only Canadian territory with a named, dated, government-to-government nuclear partnership (April 2026) driven explicitly by a winter capacity shortfall; it is an assessment stage, but it is further along the policy path than Nunavut or NWT.",
    "group": "canada-north",
    "position": "study",
-   "price_short": "tariff not fetched",
+   "price_short": "C$0.121/kWh base plus riders (ATCO, 2026)",
    "loads": [
     {
      "name": "Eagle Gold mine (Victoria Gold)",
@@ -474,6 +498,12 @@
      "url": "https://www.nsenergybusiness.com/projects/eagle-gold-mine/",
      "quote": "Power supply for the project will be provided by a 45km-long, 69kV powerline from the Yukon electrical grid.",
      "status": "fetched"
+    },
+    {
+     "label": "ATCO Electric Yukon / Yukon Energy - Rate Schedules (Yukon Utilities Board), Rate Schedule 1160",
+     "url": "https://www.atcoelectricyukon.com/content/dam/web/electric-yukon/2026-rates/yecl-yec-rate-schedules-01-2026.pdf",
+     "quote": "RATE: Charges for service in any one billing month shall be the\nsum of the following:\n(a) Customer Charge $14.65\n(b) Energy Charge\nFor the first\n1,000 kW.h 12.14¢/kW.h",
+     "status": "fetched"
     }
    ]
   },
@@ -483,13 +513,13 @@
    "country": "GL",
    "jurisdiction": "Danish autonomous territory",
    "power_system": "Nukissiorfiit, Greenland's sole state-owned utility, supplies electricity, water and (in some places) heat to 'approximately 56,000 residents across 17 towns and 54 settlements' with 'no nationwide or regional electricity grid', every town and settlement is its own isolated system. Hydropower stations exist only at Nuuk, Sisimiut, Ilulissat and Tasiilaq; 'the power stations in all other towns and settlements are operated with diesel generators.' Nukissiorfiit reports about 72% of its energy from renewables (mostly hydro), targeting fossil-free supply by 2030.",
-   "price": "No DKK/kWh tariff sheet found (Nukissiorfiit's price pages 404'd); Nukissiorfiit states it subsidizes rates uniformly across Greenland to offset the gap between cheap hydro towns and small diesel-only settlements",
+   "price": "Nukissiorfiit electricity price for ordinary customers (kundegruppe 1), uniform across every listed Greenland locality: 2.00 kr./kWh, per Prisblad nr. 39, effective 2026-01-01",
    "nuclear_position": "Greenland's own Uranium Act (Greenland Parliament Act No. 20) 'came into force' on 2 December 2021 and bans 'prospecting, exploration, and exploitation of uranium' as well as any other mineral resource whose 'average uranium content' exceeds '100 ppm by weight.' On 26 June 2026 Greenland's government rejected Energy Transition Minerals' licence-renewal application for the Kvanefjeld/Kuannersuit deposit, stating 'further exploration in the area is not deemed likely to lead to the discovery of deposits that can be exploited in accordance with the Uranium Act.' Denmark, which controls defense and largely leaves mineral/energy policy to Greenland's home rule but retains the 1985 nationwide nuclear-power ban's legal legacy, announced in January 2026 that it is reviewing that 40-year ban: 'Denmark is considering building small modular nuclear reactors to meet its energy needs... which would bring an end to its 1985 ban on nuclear power,' after the Danish parliament 'agreed in early 2025 to begin examining new nuclear power technologies.' No specific Greenland carve-out or position within that Danish review was found.",
    "microreactor_activity": "None found. The Danish SMR review is national and does not name Greenland; Nukissiorfiit has made no public statement on nuclear power.",
    "microreactor_read": "Greenland is the least-prepared civilian buyer in this file: no enabling law, no utility study, and its parent state is only beginning to reconsider a 40-year nuclear ban. A reactor sale here depends on Denmark's still-open 2026 SMR review landing somewhere favorable, which has not yet happened.",
    "group": "arctic-europe",
    "position": "review",
-   "price_short": "tariff not published",
+   "price_short": "DKK 2.00/kWh in every town (2026)",
    "loads": [
     {
      "name": "Nukissiorfiit system-wide",
@@ -535,6 +565,12 @@
      "label": "The Local Denmark (AFP) — Denmark mulls end of 1985 nuclear power ban (2026-01-22)",
      "url": "https://www.thelocal.dk/20260122/denmark-mulls-end-of-1985-nuclear-power-ban",
      "quote": "Denmark is considering building small modular nuclear reactors to meet its energy needs",
+     "status": "fetched"
+    },
+    {
+     "label": "Nukissiorfiit - Prisblad nr. 39, gaeldende fra 01.01.2026, Bilag A (Priser for el til kundegruppe 1)",
+     "url": "https://nukissiorfiit.gl/wp-content/uploads/2025/12/DK-Bilag-a-Prisblad-nr.-39-01.01.2026-.pdf",
+     "quote": "1.1.1 Priser for el til kundegruppe 1 (Almindelige kunder):\nLokalitet El tarif. pr. kWh\nLokalitet El tarif. pr. kWh\n010 NANORTALIK 2,00",
      "status": "fetched"
     }
    ]
@@ -590,13 +626,13 @@
    "country": "NO",
    "jurisdiction": "Norwegian territory",
    "power_system": "Longyearbyen (Svalbard) closed the world's northernmost coal power plant on 19 October 2023 and switched to a temporary diesel plant while it builds toward an all-renewable supply; the coal-to-diesel transition itself was budgeted at 'NOK 212 million,' with the associated Mine 7 coal mine closing by summer 2025. In mainland northern Norway, Norsk Kjernekraft has signed cooperation/study agreements covering at least nine municipalities nationwide, including the northern municipalities of Narvik and Vardo; Narvik's municipal development company Futurum has formed 'Narvik Kjernekraft AS' with Norsk Kjernekraft to investigate SMR-based power plants. In Finland, Steady Energy (a VTT spinout) is marketing its LDR-50 reactor, rated at 'maximum heating power 50 MW per reactor module' for district heating, desalination and industrial steam, with letters of intent from the cities of Kuopio, Helsinki, Jyvaskyla (Alva) and, most recently, Kerava (Keravan Energia).",
-   "price": "No $/kWh or $/MWh figure fetched this pass for Longyearbyen's post-coal diesel supply or any Nordic SMR-district-heat customer",
+   "price": "Norway's \"Svalbardpris\": household electricity in Longyearbyen capped at a maximum of 1.3 kr/kWh (plus 0.6 kr/kWh for district heating), per the revised 2026 national budget presented 2026-05-12",
    "nuclear_position": "Norway has no nationwide nuclear-power ban and several municipalities (including the northern towns of Narvik and Vardo) have signed exploratory agreements with Norsk Kjernekraft. Finland permits nuclear power and already operates large reactors; Steady Energy's LDR-50 district-heat design is pursuing city-level letters of intent rather than a national policy change. Svalbard's own governance (the Norwegian state, via the Svalbard Treaty framework) has made no nuclear statement; its post-coal plan is diesel-then-renewables, not nuclear.",
    "microreactor_activity": "Narvik: 'Narvik Kjernekraft AS' formed with Norsk Kjernekraft to begin 'planning a formal assessment phase' for possible SMR construction, exploratory, no reactor size or in-service date set. Steady Energy: LDR-50 letters of intent signed with multiple Finnish cities, still at feasibility/permitting-scoping stage, with a company target of a first LDR-50 plant 'by 2030.' No microreactor activity found at Longyearbyen itself.",
    "microreactor_read": "Northern Norway (Narvik, Vardo) and Finland's district-heat cities are the most advanced Nordic microreactor prospects in named-agreement terms, but all remain pre-feasibility; Svalbard itself, despite being the most extreme and best-known cold, remote, post-coal town in the region, has no reactor proposal at all.",
    "group": "arctic-europe",
    "position": "study",
-   "price_short": "tariff not fetched",
+   "price_short": "capped at NOK 1.30/kWh (Svalbard, 2026)",
    "loads": [
     {
      "name": "Longyearbyen townsite (Svalbard)",
@@ -637,6 +673,12 @@
      "url": "https://www.nucnet.org/news/nuclear-company-submits-proposal-for-smr-station-in-north-of-country-6-1-2024",
      "quote": "Nuclear Company Submits Proposal For SMR Station In North Of Country",
      "status": "snippet-only"
+    },
+    {
+     "label": "High North News - Regjeringen vil styrke Svalbardbudsjettet med 72,3 millioner kroner",
+     "url": "https://www.highnorthnews.com/politikk/regjeringen-vil-styrke-svalbardbudsjettet-med-723-millioner-kroner/1111130",
+     "quote": "Ordningen vil innebære at strømprisen settes til maksimalt 1,3 kr per kWh og 0,6 kr per kWh for fjernvarme.",
+     "status": "fetched"
     }
    ]
   },
@@ -1259,7 +1301,7 @@
    "microreactor_read": "The UK now has two of the fastest private and government-endorsed routes to market for microreactors anywhere (the Advanced Nuclear Pipeline and the UK-US Atlantic Partnership's mutual safety-assessment recognition), but none of that machinery has yet pointed at Scotland's actual off-grid islands, which are instead already mid-build on a windfarm-plus-HVDC-cable answer to the same diesel-displacement problem, and any Scottish site would still run into the devolved government's own planning-level opposition to nuclear.",
    "group": "uk-allies",
    "position": "restricted",
-   "price_short": "tariff not fetched",
+   "price_short": "26.11p/kWh UK price cap (Jul-Sep 2026)",
    "loads": [],
    "blockers": [
     "Scotland's devolved government has an active planning-level policy against new nuclear stations, enforced through consenting powers even though nuclear licensing is a reserved UK matter",
@@ -1296,8 +1338,15 @@
      "url": "https://www.energyvoice.com/renewables-energy-transition/nuclear/595535/labour-and-snp-clash-over-nuclear-power-for-scotland-amid-holyrood-campaign/",
      "quote": "ideological and anti-science",
      "status": "snippet-only"
+    },
+    {
+     "label": "Ofgem - Changes to energy price cap between 1 July and 30 September 2026",
+     "url": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-july-and-30-september-2026",
+     "quote": "you will pay on average 26.11 pence per kilowatt hour (kWh)",
+     "status": "fetched"
     }
-   ]
+   ],
+   "price": "UK Ofgem energy price cap, Direct Debit electricity, Great Britain average incl. VAT: 26.11 pence/kWh, 1 July to 30 September 2026 (no Shetland- or Orkney-specific tariff found; Northern Scotland's own regional cap sub-rate runs slightly higher per secondary sources but no current fetched figure was found for it, so the GB-wide cap is reported per the fallback instruction)"
   }
  ]
 }
