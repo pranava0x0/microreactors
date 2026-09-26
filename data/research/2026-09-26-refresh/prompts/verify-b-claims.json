@@ -1,0 +1,501 @@
+{
+ "deployment_sites": [
+  {
+   "id": "psu-frontier",
+   "name": "Penn State FRONTIER — eVinci-based research reactor",
+   "status": "pre-application",
+   "vendor": "Westinghouse (eVinci)",
+   "power": "15 MWt",
+   "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-17 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
+   "source_urls": [
+    "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf"
+   ]
+  },
+  {
+   "id": "cvea-valdez",
+   "name": "Copper Valley Electric Association MMR (Valdez / Glennallen)",
+   "status": "tabled",
+   "vendor": "USNC (MMR) — vendor entered Chapter 11 in 2024",
+   "power": "2 × 15 MWt studied",
+   "summary": "The completed pre-feasibility study (USNC doc 027263, 2023-06-09) found an MMR 'a match for CVEA's needs': replacing the Valdez cogeneration unit, with CVEA ownership beating vendor ownership on economics, year-round heat sales pivotal, and IRA credits worth 30–50% of capital (energy-community + domestic-content bonuses, direct pay available). It evaluated a Mountain Site at ~Mile 3 Dayville Road, Valdez — a bedrock bench at the toe of Sugarloaf Mountain ~600 feet below the Trans-Alaska Pipeline, zoned Public Use / Heavy Industrial — as lowest tsunami risk and suitable for construction, plus a Glennallen site with no nearby heat off-taker. CVEA nonetheless tabled the project indefinitely on 2023-08-09. The paired state-policy artifact is Alaska SB 177 (signed 2022-05-24), which removed the legislative-designation requirement for reactor siting in AS 18.45.",
+   "source_urls": [
+    "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf",
+    "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html"
+   ]
+  },
+  {
+   "id": "eielson-pilot",
+   "name": "Eielson AFB — DAF microreactor pilot site",
+   "status": "intent-to-award",
+   "vendor": "Oklo (Aurora)",
+   "power": "5 MWe (2023 selection figure); DAF describes the class as 1–50 MW",
+   "summary": "The DAF's preferred site for the first commercial microreactor on a DoD installation. NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC are preparing the environmental analysis. Site logic: the base runs a 72-year-old coal-fired heat-and-power plant and buys electricity from Golden Valley Electric Association — the pilot is backup power and grid-independence for an Arctic F-35 base, taking electricity and heat under a long-term PPA.",
+   "source_urls": [
+    "https://alaskapublic.org/news/2023-09-07/contractor-selected-to-build-nuclear-power-plant-at-eielson-air-force-base",
+    "https://www.eielson.af.mil/News/Display/Article/4213214/microreactor-pilot-reaches-major-project-milestone/"
+   ]
+  },
+  {
+   "id": "chalk-river-mmr",
+   "name": "Global First Power MMR at Chalk River Laboratories",
+   "status": "paused",
+   "vendor": "USNC (MMR)",
+   "power": "up to 45 MWt process heat",
+   "summary": "The richest foreign filing trail in the microreactor class and the first SMR licence application in Canada (announced 2019-04-02): a licence to prepare site under NSCA s.24(2) plus a CNSC-led environmental assessment under CEAA 2012, for an MMR delivering up to 45 MWt of process heat via molten salt at Canada's national laboratory campus, ~200 km northwest of Ottawa. CNSC staff paused all EA and licence-review work in 2024; parent USNC filed Chapter 11 in October 2024. CNSC's project page now reads 'Current Status: Paused' and its review-status page is archived.",
+   "source_urls": [
+    "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/",
+    "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/other-reactor-facilities/regulatory-review-status-micro-modular-reactor/",
+    "https://www.world-nuclear-news.org/Articles/First-Canadian-SMR-licence-application-submitted"
+   ]
+  },
+  {
+   "id": "src-evinci",
+   "name": "Saskatchewan Research Council eVinci site (cancelled)",
+   "status": "cancelled",
+   "vendor": "Westinghouse (eVinci) — withdrew",
+   "power": "up to 5 MWe planned",
+   "summary": "Was the first announced eVinci customer site (2023-11-27 announcement; CA$80M government funding; SRC as licensed operator; target 2029). Westinghouse cancelled the contract in fall 2025, refocusing eVinci on space, defense and government applications. SRC says it continues evaluating other microreactor technologies for northern and remote Saskatchewan. No CNSC site-specific licence application was reached before cancellation.",
+   "source_urls": [
+    "https://www.src.sk.ca/src-nuclear/additional-information",
+    "https://info.westinghousenuclear.com/news/first-canadian-evinci-microreactor-targeted-for-saskatchewan"
+   ]
+  },
+  {
+   "id": "tamus-rellis",
+   "name": "Texas A&M RELLIS Energy Proving Ground",
+   "status": "pre-application",
+   "vendor": "Aalo Atomics, Kairos Power, Natura Resources, Terrestrial Energy (site agreements; Aalo is the microreactor-class entrant)",
+   "power": "site projected for >1 GW combined across vendors; Aalo unit is the 1–20 MW-class entrant",
+   "summary": "A university system offering land to reactor developers on its 2,400-acre RELLIS campus, with its own NRC early-site-permit track: notice of intent 2024-11-07, NRC project number 99902136 assigned 2024-11-08. Four vendors signed site agreements (announced 2025-02-04). In 2026 Aalo filed its own letter of intent to pursue an ESP for an Aalo reactor at RELLIS — the microreactor-class filing on this site.",
+   "source_urls": [
+    "https://www.world-nuclear-news.org/articles/four-smr-developers-aim-to-build-reactors-at-texas-am-university-site"
+   ]
+  },
+  {
+   "id": "uiuc-kronos",
+   "name": "UIUC Kronos MMR research reactor",
+   "status": "application",
+   "vendor": "NANO Nuclear (Kronos MMR; formerly USNC MMR — project continued after USNC's 2024 bankruptcy)",
+   "power": "45 MWt (research reactor)",
+   "summary": "The longest-running university microreactor program to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC announced receipt of the construction permit application on 2026-04-15. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
+   "source_urls": [
+    "https://npre.illinois.edu/about/illinois-microreactor-project",
+    "https://www.federalregister.gov/documents/2026/05/26/2026-10419/university-of-illinois-urbana-champaign-construction-permit-application"
+   ]
+  },
+  {
+   "id": "acu-msrr",
+   "name": "ACU NEXT Lab Molten Salt Research Reactor",
+   "status": "permitted",
+   "vendor": "Natura Resources (MSR-1)",
+   "power": "1 MWt (research reactor)",
+   "summary": "The furthest-advanced university deployment in the class: the NRC issued the construction permit for the Molten Salt Research Reactor on 2024-09-16 — the trail runs from CP application (2022-08-15) through docketing (2023-01-24) and environmental assessment (2024-01) to issuance, all on docket 05000610. The same vendor's follow-on commercial track is one of the four RELLIS entrants.",
+   "source_urls": [
+    "https://www.nrc.gov/docs/ML2427/ML24276A165.pdf"
+   ]
+  },
+  {
+   "id": "lastenergy-haskell",
+   "name": "Last Energy Haskell County plant (data-center supply)",
+   "status": "pre-application",
+   "vendor": "Last Energy (PWR-20)",
+   "power": "30 × 20 MWe = 600 MWe planned (each unit in the 1–20 MW band)",
+   "summary": "A 200-acre site secured for thirty PWR-20 microreactors (announced 2025-02) to serve Texas data-center load — the largest announced US microreactor site by unit count. The company said it filed for an ERCOT grid connection and would prepare an NRC early site permit; by 2026-07-31 its PWR-20 Regulatory Engagement Plan Rev 1.0 was in ADAMS.",
+   "source_urls": [
+    "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant"
+   ]
+  },
+  {
+   "id": "lastenergy-llynfi",
+   "name": "Last Energy Llynfi (former coal plant site, Wales)",
+   "status": "pre-application",
+   "vendor": "Last Energy (PWR-20)",
+   "power": "4 × 20 MWe (or 83 MWt heat per unit)",
+   "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Strategic Infrastructure Project application in July 2026, and targets a site license decision by December 2027.",
+   "source_urls": [
+    "https://www.world-nuclear-news.org/articles/regulatory-progress-for-last-energys-uk-project"
+   ]
+  },
+  {
+   "id": "oklo-diamondback-permian",
+   "name": "Diamondback Energy Permian operations (Oklo LOI)",
+   "status": "concept",
+   "vendor": "Oklo (Aurora)",
+   "power": "50 MWe across powerhouses (units in/near the band)",
+   "summary": "The named oil-and-gas datapoint: a nonbinding letter of intent (April 2024) for Oklo to license, build, own and operate Aurora powerhouses supplying 50 MW to Diamondback's Permian operations under a 20-year PPA structure with a 20-year extension option. No site parcel or filing yet — it marks the sector's first named counterparty.",
+   "source_urls": [
+    "https://www.world-nuclear-news.org/Articles/US-companies-sign-up-with-Oklo-for-microreactor-po"
+   ]
+  },
+  {
+   "id": "janus-bragg",
+   "name": "Fort Bragg — Antares R1 three-pack (Janus)",
+   "status": "intent-to-award",
+   "vendor": "Antares (R1)",
+   "power": "3 units, 100 kWe-1 MWe each",
+   "summary": "Antares will own, build and operate a three-unit R1 deployment at Fort Bragg, home of the XVIII Airborne Corps, targeting 2028. Antares declined to disclose the contract value. Announced 2026-08-26 under the Army's Janus program: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorized by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+    "https://www.sandhillsutility.com/utility-privatization/",
+    "https://www.deq.nc.gov/state-energy-office/2025-nc-energy-security-plan-final/open"
+   ]
+  },
+  {
+   "id": "janus-benning",
+   "name": "Fort Benning — Radiant Kaleidos (Janus)",
+   "status": "intent-to-award",
+   "vendor": "Radiant (Kaleidos)",
+   "power": "15 units planned, 1 MWe each",
+   "summary": "The largest of the five awards: up to $750M for 15 Kaleidos units by 2030, starting with three at Fort Benning and first power targeted in 2028. Announced 2026-08-26 under the Army's Janus program: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorized by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+    "https://www.georgiapower.com/about/company/facts-and-figures.html?cid=web_aem_phase-1",
+    "https://psc.ga.gov/utilities/electric/?lang=us"
+   ]
+  },
+  {
+   "id": "janus-campbell",
+   "name": "Fort Campbell — BWXT BANR (Janus)",
+   "status": "intent-to-award",
+   "vendor": "BWXT Advanced Technologies (BANR)",
+   "power": "1 unit, 20 MWe (75 MWt)",
+   "summary": "The largest single reactor in the program. Groundbreaking is targeted for late 2028 with operation in the early 2030s. BWXT makes its own TRISO fuel and has authorized more than $25M to double capacity at Lynchburg. Contract value undisclosed. Announced 2026-08-26 under the Army's Janus program: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorized by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+    "https://www.dla.mil/About-DLA/News/Energy/Article/1696141/fort-campbell-privatizes-electrical-distribution-system/"
+   ]
+  },
+  {
+   "id": "janus-hood",
+   "name": "Fort Hood — General Atomics GA-TES (Janus)",
+   "status": "intent-to-award",
+   "vendor": "General Atomics Electromagnetic Systems (GA-TES)",
+   "power": "~5 MWe baseline, scalable to ~20 MWe",
+   "summary": "General Atomics is in a development phase for its Tactical Energy System. Neither contract value nor timeline was disclosed. Announced 2026-08-26 under the Army's Janus program: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorized by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+    "https://www.oncor.com/content/dam/oncorwww/documents/investorrelations/financial-news/2025%20EEI%20Investor%20Presentation.pdf",
+    "https://www.oncor.com/content/dam/oncorwww/documents/about-us/transmission-system/current-trasmission-line-projects/porterville-to-shifting-sands-138kv-/Porterville%20-%20Shifting%20Sands%20meeting%20handout.pdf"
+   ]
+  },
+  {
+   "id": "janus-drum",
+   "name": "Fort Drum — Westinghouse eVinci (Janus)",
+   "status": "intent-to-award",
+   "vendor": "Westinghouse Government Services (eVinci)",
+   "power": "Not disclosed",
+   "summary": "Westinghouse Government Services was selected for Fort Drum. Neither the contract value, the unit count nor the timeline was disclosed. Announced 2026-08-26 under the Army's Janus program: up to $2.2bn across five installations and more than 20 reactors, running FY2027-FY2031 through fixed-price, milestone-based Other Transaction Authority agreements administered by the Defense Innovation Unit. The vendor owns, builds and operates the plant. These reactors are authorized by the Army Reactor Regulatory Office, not the Nuclear Regulatory Commission. After the Defense Innovation Unit funds construction and the first year of operation, the Army expects to move to a power purchase agreement. The reactors are tied into the installation grid and are not intended to carry the whole load. The Army expects most of the capital to be private.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/u-s-army-mobilizes-2-2b-janus-program-to-deploy-more-than-20-commercial-microreactors/",
+    "https://www.army.mil/article-amp/134767/fort_drum_project_to_provide_100_percent_of_the_installations_energy_requirements"
+   ]
+  }
+ ],
+ "prospects": [
+  {
+   "id": "doyon-utilities",
+   "name": "Doyon Utilities (Fort Wainwright and Fort Greely, Alaska)",
+   "status": "evidence-only",
+   "documented": "An Alaska Native corporation joint venture holds a 51-year utility privatisation worth up to $3.08B, with $895M obligated since 2007, roughly $60M a year, and its generation is coal and oil delivered by rail and barge. Fort Wainwright is one of the nine Janus candidate installations and the only one whose displaced fuel is priced at Alaskan rates; it has not been matched to a vendor. Fort Wainwright was not among the five installations matched to vendors on 2026-08-26. A 2011-2012 rate dispute shows the contract runs as cost-of-service regulation: Doyon claimed $79M of plant additions in its rate base and said it was losing $1.1M a month across three installations, and the additions were contested case by case.",
+   "load": "Electric, heat, water and wastewater systems at Alaska Army installations; capacity not stated in the award record",
+   "source_urls": [
+    "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
+    "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy",
+    "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title10-section2688&num=0&edition=prelim",
+    "https://www.newsminer.com/doyon-utilities-claims-it-loses-million-a-month-on-military/article_45365207-daaf-5663-be7f-b4ad7d9cc7ed.html",
+    "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors"
+   ]
+  },
+  {
+   "id": "eielson-daf",
+   "name": "Department of the Air Force at Eielson (with Golden Valley Electric Association)",
+   "status": "letter-of-intent",
+   "documented": "A Notice of Intent to Award to Oklo for a 30-year firm-fixed-price power purchase agreement, contracted through DLA Energy, with the award to follow NRC licensing. No price has been published; the Air Force says it will settle the rate in negotiation.",
+   "load": "Up to 5 MWe plus steam heat beside a 23 MW coal-fired plant that is 72 years old",
+   "source_urls": [
+    "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+    "https://alaskapublic.org/news/2023-09-07/contractor-selected-to-build-nuclear-power-plant-at-eielson-air-force-base"
+   ]
+  },
+  {
+   "id": "cvea",
+   "name": "Copper Valley Electric Association (Valdez and Glennallen)",
+   "status": "orphaned",
+   "documented": "A completed pre-feasibility study found a micro modular reactor a match for the cooperative's needs, with cooperative ownership beating vendor ownership, year-round heat sales pivotal and federal tax credits worth 30–50% of capital. The board tabled the project indefinitely in August 2023, and the vendor, USNC, entered Chapter 11 in 2024. Alaska's SB 177 removed the legislative siting requirement in 2022. The board's own release says it tabled the project on economics: too much risk for the members to own and operate it, and the vendor could not make an owner-operator PPA pencil without additional year-round heat or power customers. The release leaves the door open, and names Westinghouse, Oklo, NuScale and Radiant as vendors the cooperative had already talked to.",
+   "load": "An islanded cooperative serving about 3,800 members; two 15 MWt units studied to replace the Valdez cogeneration unit",
+   "source_urls": [
+    "https://www.cvea.org/assets/documents/pdfs/mmr/CVEA_Alaska_FS-RELEASEv01.pdf",
+    "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html",
+    "https://www.cvea.org/press/release/2023/08/09/micro-modular-nuclear-reactor-project-tabled-indefinitely-by-cvea.html"
+   ]
+  },
+  {
+   "id": "src-saskatchewan",
+   "name": "Saskatchewan Research Council",
+   "status": "orphaned",
+   "documented": "The first announced eVinci customer, with CA$80M of provincial funding and SRC as the licensed operator, lost its vendor when Westinghouse cancelled the contract in fall 2025 and moved eVinci to space, defence and government work. SRC says it is evaluating other microreactor technologies. At a 2026-04-15 legislature committee hearing SRC's president said it had identified other microreactors, slightly larger and slightly smaller than eVinci, without naming them; neither the hearing nor SRC's page says whether the CA$80M remains appropriated.",
+   "load": "Up to 5 MWe planned as a Crown-research-council-operated demonstration for northern and remote Saskatchewan",
+   "source_urls": [
+    "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/",
+    "https://www.src.sk.ca/src-nuclear/additional-information",
+    "https://docs.legassembly.sk.ca/legdocs/Committees/ECO/Debates/30L/20260415Debates-ECO-HTML.htm"
+   ]
+  },
+  {
+   "id": "chalk-river-gfp",
+   "name": "Global First Power at Chalk River, now owned by NANO Nuclear (Kronos MMR)",
+   "status": "selected",
+   "documented": "The first SMR licence application in Canada, filed in 2019 with a licence to prepare site and a federal environmental assessment, was paused by the regulator in 2024 when the parent vendor filed for bankruptcy. Ontario Power Generation is a co-venturer and the regulator's page still reads paused. NANO Nuclear acquired Global First Power from USNC on 2025-10-22, for the assumption of about $640,000 owed to the CNSC, and says it now owns the licence application; the CNSC's own page, last modified 2026-01-15, still reads paused and names no new owner.",
+   "load": "Up to 45 MWt of process heat via molten salt at Canada's national laboratory campus",
+   "source_urls": [
+    "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/",
+    "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/other-reactor-facilities/regulatory-review-status-micro-modular-reactor/",
+    "https://nanonuclearenergy.com/nano-nuclear-finalizes-acquisition-of-global-first-power-from-usnc-strengthening-its-position-as-a-north-american-leader-in-nuclear-microreactor-development/"
+   ]
+  },
+  {
+   "id": "red-dog",
+   "name": "Teck and NANA Regional Corporation, Red Dog mine",
+   "status": "evidence-only",
+   "documented": "The sharpest microreactor-shaped load in North America: one 20 MWe unit would replace the whole 24.5 MW diesel station. The landowner is an Alaska Native corporation, the power contractor is TUGLIQ, and the mine's closure is planned around 2032. Teck declined on the record to give a cost when asked about the solar project; the mine burns roughly 40,000 gallons of diesel a day, and the solar project's structure is TUGLIQ building and operating on land partly owned by NANA and selling the power to Teck under a negotiated PPA.",
+   "load": "About 25 MW, off-grid and diesel-only, burning roughly 14.6 million gallons a year; an 8.8 MW solar farm is expected to deliver about 2 MW in summer",
+   "source_urls": [
+    "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+    "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/"
+   ]
+  },
+  {
+   "id": "agnico-kivalliq",
+   "name": "Agnico Eagle and Nukik Corporation, Kivalliq region",
+   "status": "evidence-only",
+   "documented": "The competing supply is a C$3.2B, 1,200 km transmission line from Manitoba, revised up from C$1.2B, that does not arrive until 2032. The line is Inuit-owned through Nukik and also serves five communities on Qulliq's territory-wide diesel fleet at $555–1,130/MWh. Nukik's memorandum with Qulliq commits both to a regional energy plan that weighs local generation alongside the line, evaluated by an independent planner. Meliadine runs a 31.3 MW diesel plant of six 5.2 MW units; no diesel price is published.",
+   "load": "The Meadowbank complex and Meliadine mine burn about 33.5 million litres of diesel a year, three-quarters of the 44.5 million litres the proposed line would displace",
+   "source_urls": [
+    "https://nunatsiaq.com/stories/article/kivalliq-hydro-fibre-link-estimated-cost-rises-to-3-2b/",
+    "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application",
+    "https://nukik.ca/nukik-corporation-and-qulliq-energy-corporation-sign-memorandum-of-understanding-to-advance-a-clean-energy-future-for-kivalliq-region/"
+   ]
+  },
+  {
+   "id": "glencore-raglan",
+   "name": "Glencore, Raglan mine (with TUGLIQ Energy)",
+   "status": "evidence-only",
+   "documented": "The Government of Canada completion report for the Raglan pilot is where the $250–600/MWh industrial self-generation band comes from. The miner let a third party own the turbines and took federal money to de-risk the first unit. The same report says northern operators distrust new generation because a microgrid collapse at minus 40 stops mine ventilation.",
+   "load": "An Arctic nickel mine burning about 60 million litres of diesel a year; two 3 MW wind turbines with flywheel, battery and hydrogen storage",
+   "source_urls": [
+    "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+    "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid"
+   ]
+  },
+  {
+   "id": "qulliq-nunavut",
+   "name": "Qulliq Energy Corporation and the Government of Nunavut",
+   "status": "evidence-only",
+   "documented": "A territorial Crown utility that publishes the number a developer needs: a regulated retail rate two to four times any published microreactor estimate, on a fleet that is entirely diesel. Nineteen of the territory's 25 diesel plants exceed 1 MW of installed capacity, Iqaluit at 13.6 MW, on a fleet of about 76 MW. QEC's 2023-2026 corporate plan discusses solar, storage, geothermal and district heat and does not mention nuclear.",
+   "load": "Territory-wide diesel generation; interim 2025 rates of $555–1,130/MWh by class",
+   "source_urls": [
+    "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application",
+    "https://www.qec.nu.ca/qecs-general-rate-application",
+    "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf"
+   ]
+  },
+  {
+   "id": "tanana-chiefs",
+   "name": "Tanana Chiefs Conference and the Alaska Village Electric Cooperative",
+   "status": "evidence-only",
+   "documented": "A $32.6M DOE award, $26.1M federal, is retrofitting solar and storage into eight villages that run on diesel for 100% of their electricity, targeting a 40% cut. It creates an eight-village tribal power entity. A separate $5.0M award at Kokhanok buys about $5,000/kW of non-diesel capacity for a 170-person village.",
+   "load": "Eight village microgrids, each far below 1 MW, aggregated under a tribal energy-sovereignty award",
+   "source_urls": [
+    "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000069_089/",
+    "https://api.usaspending.gov/api/v2/awards/ASST_NON_DECD0000120_089/"
+   ]
+  },
+  {
+   "id": "offgrid-ipps",
+   "name": "Off-grid mine power contractors (Zenith Energy, Aggreko, EDL, TUGLIQ)",
+   "status": "evidence-only",
+   "documented": "The contractors that own and run mine power hold the sites, the interconnections and the 10–16 year contracts: Zenith at Kathleen Valley (15 years, 27 MW gas plus 5 MW diesel residual), Aggreko at Syama (16 years, a 40% cost cut), EDL at Agnew (A$111.6M for about 35 MW), TUGLIQ at Raglan and Red Dog. One counterparty's risk was bridged by an A$25M export-credit guarantee.",
+   "load": "Hybrid stations of 35–95 MW where 20–40 MW of gas or diesel remains under a 60% renewable design",
+   "source_urls": [
+    "https://zenithenergy.com.au/liontown-resources-signs-power-purchase-agreement-ppa-with-zenith-energy-for-the-largest-off-grid-renewable-energy-hybrid-power-station-in-australia/",
+    "https://www.globalminingreview.com/exploration-development/17122019/aggreko-and-resolute-sign-hybrid-power-plant-contract/",
+    "https://arena.gov.au/projects/agnew-renewable-energy-microgrid/"
+   ]
+  },
+  {
+   "id": "diamondback",
+   "name": "Diamondback Energy, Permian Basin",
+   "status": "letter-of-intent",
+   "documented": "A nonbinding letter of intent from April 2024 for Oklo to license, build, own and operate reactors supplying Diamondback's Permian operations. No site parcel, filing or binding conversion has been located.",
+   "load": "50 MW across powerhouses for oilfield operations, under a 20-year PPA structure with a 20-year extension",
+   "source_urls": [
+    "https://www.world-nuclear-news.org/Articles/US-companies-sign-up-with-Oklo-for-microreactor-po"
+   ]
+  },
+  {
+   "id": "ianc",
+   "name": "Industrial Advanced Nuclear Consortium members",
+   "status": "consortium",
+   "documented": "ExxonMobil, Shell, Chevron, ConocoPhillips, Rio Tinto, Freeport-McMoRan and Nucor formed a demand-aggregation consortium in September 2025 with a stated goal of making nuclear a viable industrial option by 2030. No member has issued a microreactor request for proposals, and one mining survey puts fewer than 10% of miners actively considering small reactors.",
+   "load": "Remote well pads, offshore platforms, refinery and LNG heat, mining; technology-neutral across SMRs and microreactors",
+   "source_urls": [
+    "https://www.opengroup.org/IANC",
+    "https://www.businesswire.com/news/home/20250902229163/en/The-Open-Group-Launches-the-Industrial-Advanced-Nuclear-Consortium"
+   ]
+  },
+  {
+   "id": "equinix",
+   "name": "Equinix",
+   "status": "signed",
+   "documented": "The only signed microreactor purchase agreement in the commercial track, written as a fleet across sites named later. Colocation's asking rate of $196.25 per kW a month, about $269/MWh drawn continuously, is the all-in price a reactor block inside an Equinix campus competes with.",
+   "load": "20 Kaleidos units of 1 MWe, committed with deposits; sites, schedule and unit price unpublished",
+   "source_urls": [
+    "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+    "https://www.cbre.com/insights/books/north-america-data-center-trends-h2-2025"
+   ]
+  },
+  {
+   "id": "hyperscalers",
+   "name": "Microsoft, Meta, Google, Amazon and Switch",
+   "status": "signed",
+   "documented": "All five have signed nuclear instruments at scale: a 20-year restart PPA, a full-output PPA, a fleet agreement against an unlicensed vendor's roadmap, a phased four-unit development deal, a 12 GW non-binding master agreement and a prepayment that funds development directly. Each legal and sustainability team already owns a nuclear PPA playbook.",
+   "load": "Campuses of 50–500 MW and up, with a 1–20 MW dedicated block as the microreactor-shaped purchase",
+   "source_urls": [
+    "https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html",
+    "https://www.constellationenergy.com/news/2025/constellation-meta-sign-20-year-deal-for-clean-reliable-nuclear-energy-in-illinois.html",
+    "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/",
+    "https://x-energy.com/news/amazon-invests-in-x-energy-to-support-advanced-small-modular-nuclear-reactors-and-expand-carbon-free-power/",
+    "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+    "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+    "https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2025-releases/20251217-pjm-auction-procures-134479-mw-of-generation-resources.pdf"
+   ]
+  },
+  {
+   "id": "speed-constrained-ai",
+   "name": "Speed-constrained AI builders (xAI in Memphis, Valar and Nvidia in Utah, Aalo at RELLIS)",
+   "status": "evidence-only",
+   "documented": "xAI installed unpermitted gas turbines rather than wait for a utility connection, drawing over 1,700 public comments and lawsuits. Valar announced a 30 MW Utah data center with Nvidia after its test reactor reached criticality, with no contract, price or delivery date. Aalo filed for an early site permit at Texas A&M's RELLIS campus, which offers land to reactor developers.",
+   "load": "Hundreds of megawatts at xAI; a 30 MW announced data center in Utah; a reactor and a data center built together on a 2,400-acre university campus",
+   "source_urls": [
+    "https://techcrunch.com/2025/06/18/xai-is-facing-a-lawsuit-for-operating-over-400-mw-of-gas-turbines-without-permits",
+    "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+    "https://www.world-nuclear-news.org/articles/four-smr-developers-aim-to-build-reactors-at-texas-am-university-site"
+   ]
+  },
+  {
+   "id": "ercot-large-loads",
+   "name": "Texas large loads under Senate Bill 6 (and Last Energy's Haskell County site)",
+   "status": "policy-gated",
+   "documented": "SB6 makes a large Texas load a grid-management liability with a $100,000 minimum study fee and mandatory backup disclosure. ERCOT's small-generation process handles a unit under 10 MW in 8–12 months against 18–30 for large generation. Last Energy has secured land for thirty units and filed for an ERCOT connection, with no named offtaker.",
+   "load": "New loads of 75 MW and up must accept curtailment or run their own backup; a 200-acre site holds thirty planned 20 MWe units for data-center supply",
+   "source_urls": [
+    "https://www.mcguirewoods.com/client-resources/alerts/2025/7/texas-senate-bill-6-significantly-expands-regulatory-oversight-over-large-loads-in-ercot/",
+    "https://www.world-nuclear-news.org/articles/last-energy-plans-texan-microreactor-plant",
+    "https://www.ercot.com/files/docs/2024/10/30/0940-AM-ERCOT-Interconnection-Process-Generation-Entity-Winter-Weather-Preparedness-Fernandes.pdf"
+   ]
+  },
+  {
+   "id": "clean-ports",
+   "name": "Port of Los Angeles and the Port Authority of New York and New Jersey",
+   "status": "evidence-only",
+   "documented": "Over $1.4B of federal and matching Clean Ports money at two ports converts diesel machinery into electrical load by 2028 and funds no supply. The whole gap falls on two urban distribution utilities. Ports already accept $7.0M per container berth and $14.7M per cruise berth for shore-power connections.",
+   "load": "Battery-electric cargo equipment, chargers, shore power and 143 MWh of batteries at Los Angeles alone: a multi-tens-of-megawatt peak set by ship calls",
+   "source_urls": [
+    "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+    "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/",
+    "https://dof.ca.gov/media/docs/forecasting/economics/major-regulations/major-regulations-table/SRIA_with_Appendices-Proposed_Control_Measure_for_Ocean-Going_Vessels_At_Berth-080119.pdf",
+    "https://www.portseattle.org/blog/past-present-and-future-shore-power"
+   ]
+  },
+  {
+   "id": "dp-world",
+   "name": "DP World, Thames Freeport",
+   "status": "signed",
+   "documented": "The one commercial port operator anywhere with a named microreactor deal, under UK regulatory review since a preliminary design review in July 2025. It is a competitor's deployment, and proof that a port will sign.",
+   "load": "One 20 MWe unit for a freeport, target online 2030",
+   "source_urls": [
+    "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"
+   ]
+  },
+  {
+   "id": "healthcare-resilience",
+   "name": "Healthcare hosts and their resilience developers (Loma Linda, NextNRG, Kaiser Permanente)",
+   "status": "evidence-only",
+   "documented": "Healthcare hosts are signing 28–30 year behind-the-meter contracts at 15 to 25 cents/kWh with no host capital. The largest hospital renewable microgrid in the country buys ten hours of ride-through. CMS's categorical waiver lets something other than a generator be an emergency source, while the ten-second start rule keeps a battery or engine in front.",
+   "load": "Clinics and hospitals averaging 1.7 MW to single-digit megawatts, with a 6–10 hour battery as the current resilience product",
+   "source_urls": [
+    "https://www.microgridknowledge.com/microgrids/critical-services/news/55312608/university-healthcare-clinic-powers-up-microgrid-with-on-site-solar-and-tesla-battery-in-california",
+    "https://www.microgridknowledge.com/commercial-microgrids/news/55303895/two-california",
+    "https://www.prnewswire.com/news-releases/kaiser-permanente-debuts-largest-hospital-based-renewable-microgrid-in-us-302431273.html",
+    "https://www.bracheichler.com/insights/cms-issues-categorical-waiver-for-microgrid-systems-as-alternate-power-sources-in-health-care-facilities-2/"
+   ]
+  },
+  {
+   "id": "water-utilities",
+   "name": "Water utilities with a FEMA benefit-cost record (WaterOne, PRASA)",
+   "status": "evidence-only",
+   "documented": "FEMA scored WaterOne's $6.5M generator project at a 38.09 benefit-cost ratio with $261M of net benefits, and pays the whole $16.5M of PRASA's generators in Toa Alta against $150.8M of modeled benefits. The generator's fuel has to keep arriving during the storm that took the grid down.",
+   "load": "Regional water treatment and pumping systems of 1–10 MW that must run through a grid outage",
+   "source_urls": [
+    "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27LPDM-PJ-07-KS-2022-001%27",
+    "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceProjects?$filter=projectIdentifier%20eq%20%27DR-4339-0019-R%27"
+   ]
+  },
+  {
+   "id": "university-hosts",
+   "name": "Universities with a licensing track (Penn State, Texas A&M, Illinois, Abilene Christian)",
+   "status": "selected",
+   "documented": "Four universities hold real filings: Abilene Christian has a construction permit issued in 2024, Illinois has a construction permit application for a 45 MWt unit, Penn State filed intent for a 15 MWt eVinci-based reactor, and Texas A&M holds an early-site-permit track on a 2,400-acre campus with four vendor site agreements.",
+   "load": "Research reactors of 1–45 MWt on campus, with district heat and steam integration as the use case",
+   "source_urls": [
+    "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf",
+    "https://www.world-nuclear-news.org/articles/four-smr-developers-aim-to-build-reactors-at-texas-am-university-site",
+    "https://npre.illinois.edu/about/illinois-microreactor-project",
+    "https://www.nrc.gov/docs/ML2427/ML24276A165.pdf"
+   ]
+  },
+  {
+   "id": "privatized-base-utilities",
+   "name": "Privatised base utilities (Sandhills Utility at Fort Bragg, City Light and Power at Fort Campbell)",
+   "status": "selected",
+   "documented": "Sandhills Utility owns and operates Fort Bragg's distribution system; City Light and Power has run Fort Campbell's since 2018. Neither source names a Janus utility partner, and the Aberdeen award shows the buyer of on-base generation is increasingly the privatised utility signing $24–34M microgrid contracts at four installations at once. Janus converts to an Army power purchase agreement after the first year.",
+   "load": "The electrical distribution systems of Janus installations, owned and operated under DLA Energy privatisation awards",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://api.usaspending.gov/api/v2/awards/CONT_AWD_W912QR25CA034_9700_-NONE-_-NONE-/"
+   ]
+  },
+  {
+   "id": "texas-programs",
+   "name": "Texas Energy Fund backup program and the HB 14 nuclear fund",
+   "status": "policy-gated",
+   "documented": "The backup power program buys the replacement outright from a technology list that does not name nuclear. The state's nuclear fund opened in 2026 with zero eligible microreactor projects, and the one Texas microreactor project with an NRC docket is excluded by a rule.",
+   "load": "Site-scale backup at hospitals, water treatment, nursing homes and police and fire stations under a $1.8B program; a $350M nuclear fund with few eligible projects",
+   "source_urls": [
+    "https://www.uh.edu/uh-energy-innovation/news-events/energy/stories/2025/microgirdresilience.php",
+    "https://txses.org/power-when-it-matters-most-texas-backup-power-package-program/",
+    "https://www.ans.org/news/2026-04-09/article-7920/texas-opens-350m-in-nuclear-funding/"
+   ]
+  },
+  {
+   "id": "fuel-chokepoints",
+   "name": "BWXT, Standard Nuclear and Centrus",
+   "status": "signed",
+   "documented": "BWXT makes the TRISO fuel it uses at Fort Campbell and supplies its Janus competitors from Lynchburg. Standard Nuclear holds Radiant's multi-ton agreement through 2031 and Antares' one-ton deal with options through 2035, and priced a downsized IPO in July 2026. Centrus signed a $900M fixed-price contract to move its Piketon cascade to commercial production. The GAO says nobody yet knows how much HALEU defence microreactors will need. Standard Nuclear's July 2026 prospectus is the first public TRISO price: an assumed $50-80 million per metric ton of uranium behind a $245M contract backlog, $65M of it funded. DOE publishes only an aggregate HALEU schedule (21 metric tons by mid-2026), never a per-recipient quantity.",
+   "load": "TRISO fabrication for every Janus vendor and the only domestic HALEU cascade",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.renaissancecapital.com/IPO-Center/News/120497/Small-modular-reactor-fuel-developer-Standard-Nuclear-prices-previously-dow",
+    "https://www.powermag.com/centrus-signs-900m-doe-contract-pivots-sole-u-s-haleu-cascade-to-commercial-operation/",
+    "https://www.ans.org/news/2026-08-25/article-8336/gao-report-analyzes-nuclear-fuel-efforts-in-national-security-and-commercial-sectors/",
+    "https://www.sec.gov/Archives/edgar/data/2086716/000121390026078747/ea0276071-13.htm",
+    "https://www.energy.gov/documents/haleu-allocation-process-08282025"
+   ]
+  }
+ ]
+}

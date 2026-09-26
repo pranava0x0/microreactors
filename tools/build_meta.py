@@ -85,7 +85,7 @@ def main() -> int:
         f"selections, letters of intent and memoranda.",
         f"{s['filing_rows']} of {s['opportunities']} have a utility filing on record.",
         f"{s['milestones_2026']} vendor milestones were hit in 2026 and "
-        f"{s['reactors_critical_2026']} test reactors reached criticality.",
+        f"{s['reactors_critical_2026']} reactors in DOE's pilot program reached criticality.",
         f"The largest single preorder is {s['units_largest_preorder']} units; the earliest "
         f"stated delivery target is {s['first_delivery_year']}.",
         f"No microreactor has sold power, so every cost figure on the site is an estimate "

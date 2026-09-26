@@ -50,7 +50,8 @@ def build(pass_dir: pathlib.Path) -> dict:
             "instrument the event rests on.",
         "binding_note":
             f"{binding} of {len(uniq)} items rest on something executed - a signed contract, a "
-            f"filed application, an achieved milestone. The other {len(uniq) - binding} are "
+            f"filed application, an achieved milestone or a formal regulatory step. The other "
+            f"{len(uniq) - binding} are "
             "selections, letters of intent, memoranda and non-binding term sheets. Both are "
             "reported; only one is a commitment.",
         "window": f"{min(dates)} to {max(dates)}" if dates else "",

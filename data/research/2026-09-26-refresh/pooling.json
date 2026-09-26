@@ -1,0 +1,436 @@
+{
+  "_meta": {
+    "captured": "2026-09-26",
+    "agent": "pooling",
+    "scope": "Type D precedents: pooled buying, buyers' clubs, AMCs, assurance contracts, shared ownership, mutual/parametric insurance, overrun cover, subscription payment — outside nuclear (2026-09-26-refresh wave 1 'pooling' partition)",
+    "angles_run": [
+      "Kickstarter all-or-nothing / Pebble smartwatch, incl. 2016 Fitbit shutdown and refunds (assurance-contract)",
+      "Tesla Model 3 refundable $1,000 reservations (prepayment)",
+      "Bordeaux en primeur wine futures, 2011 vintage and Chateau Latour withdrawal (prepayment, failure)",
+      "Apple $578M prepayment to GT Advanced Technologies for sapphire, 2013-2014 bankruptcy (prepayment, failure)",
+      "NetJets fractional business-jet ownership (fractional-ownership)",
+      "Strategic Airlift Capability C-17 pool, 12 nations / Papa AB Hungary (fractional-ownership)",
+      "NATO Multinational MRTT Fleet (MMF) tanker pool and its 1,100-flight-hour aircraft-order threshold (consortium-ownership)",
+      "Civica Rx hospital-owned generic drug manufacturer (consortium-ownership)",
+      "New York Proton Center hospital consortium (consortium-ownership)",
+      "Pacaso luxury home co-ownership and municipal cease-and-desist/lawsuit pushback (fractional-ownership, failure)",
+      "2Africa submarine cable consortium and IRU capacity resale (consortium-ownership, telecom)",
+      "NHS England antimicrobial subscription 'Netflix model' (capacity-subscription)",
+      "PAHO Revolving Fund for Access to Vaccines (joint-procurement)",
+      "Global Fund Pooled Procurement Mechanism (joint-procurement)",
+      "Louisiana hepatitis C 'Netflix model' subscription with Asegua Therapeutics (capacity-subscription)",
+      "Rolls-Royce TotalCare power-by-the-hour and the Trent 1000 blade-cracking cost overrun (overrun-or-performance-cover, failure)",
+      "H2Global / Hintco double-auction hydrogen mechanism (advance-market-commitment)",
+      "Sustainable Aviation Buyers Alliance (SABA) SAF certificate collective purchases (buyers-club)",
+      "Zero Emission Maritime Buyers Alliance (ZEMBA) collective shipping tender (buyers-club)",
+      "Maschinenring (machinery ring) farm equipment/labor sharing cooperatives (buyers-club)",
+      "Pool Re UK terrorism reinsurance mutual (government-backstop)",
+      "US Terrorism Risk Insurance Act (TRIA) federal backstop thresholds and cap (government-backstop)",
+      "CCRIF SPC parametric catastrophe pool and the 2010 Haiti earthquake payout (parametric-pool, failure/basis-risk)",
+      "International Group of P&I Clubs pooling agreement and Hydra captive (mutual-insurance-pool)"
+    ],
+    "absences": [
+      "ITER (fusion) was a listed seed candidate but was deliberately excluded: fusion falls under this pass's 'anything nuclear' skip rule, so no cost-overrun record was written for it.",
+      "Louisiana hepatitis C: could not confirm via any fetchable primary source the widely reported '31,000 of an estimated 39,000 patients by end of 2024' treatment target — NPR's article timed out on fetch and AJMC returned 403 twice; the record was kept narrower, using only the STAT News-confirmed fixed-fee/5-year structure.",
+      "Pacaso: The Real Deal and two Monterey County outlets (montereycountynow, montereycountyweekly) all blocked the fetch (403/429) for the Carmel cease-and-desist story; substituted Wikipedia plus the Press Democrat's St. Helena settlement story, which fetched cleanly.",
+      "NATO Multinational MRTT Fleet total programme cost in EUR/USD: not found in any source that would fetch (NSPA's own MMF page returned 403); the record reports aircraft count and the 1,100-flight-hour expansion threshold instead of a total price tag.",
+      "Strategic Airlift Capability per-nation percentage shares (e.g. US ~32%, Sweden ~17%) appeared only in unfetched search-result summaries; ukdefencejournal.org.uk fetched cleanly but did not itself state the percentages, so they were dropped and the record cites only the fetched 'pre-agreed distribution of flight hours' mechanism.",
+      "Not researched this pass despite being reasonable candidates (quota of 24 reached first; flagging so a future pass doesn't assume they were checked and found wanting): Oil Insurance Limited, Flood Re, Pacific Catastrophe Risk Insurance Company, IDB Energy Savings Insurance, carbon-removal delivery insurance (Kita/Oka), Norway's Longship CCS state overrun share, Middelgrunden offshore wind co-op, Boston aggregated PPA, Google-Microsoft-Nucor clean-firm demand aggregation, Sourcewell/NASPO cooperative contracts, EU JIVE/JIVE2 fuel-cell bus procurement, Climate Mayors EV Purchasing Collaborative, EU joint COVID-19 vaccine procurement, Symbiosis Coalition, mobile MRI units shared across rural hospitals, and airline pre-delivery payments (PDPs) as their own standalone record (touched on only in passing)."
+    ]
+  },
+  "precedents": [
+    {
+      "id": "kickstarter-pebble-assurance-contract",
+      "mechanism": "assurance-contract",
+      "sector": "consumer electronics",
+      "name": "Kickstarter all-or-nothing crowdfunding (Pebble smartwatch)",
+      "year": "2012",
+      "parties": "Individual backers pledged card-on-file funds; Pebble Technology Corp was the supplier; Kickstarter Inc. administered the fixed-goal, fixed-deadline pledge mechanism and released funds only if the goal was met.",
+      "size": "goal $100,000; raised $1 million in the first 28 hours; over $3 million within a month; closed having raised over $10 million",
+      "how_it_works": "Backers pledge a card-on-file amount against a fixed dollar goal and a fixed deadline; if the goal isn't reached, no backer is charged and the project gets nothing, which is the textbook 'assurance contract' solution to a threshold public-goods problem. Pebble cleared its $100,000 threshold within about two hours and kept collecting pledges for the rest of the campaign window, so Kickstarter released the full amount to Pebble as one lump sum rather than per-unit escrow. Backers got a unit once production shipped instead of cash back, so the guarantee each backer bought was that their money would never be spent unless enough other buyers joined.",
+      "outcome": "Pebble asked for $100,000, raised $1 million in the first 28 hours, passed $3 million within a month, and closed having raised over $10 million — proof the threshold mechanism can recruit far more buyers than the seller expected.",
+      "failure_mode": "The volume the assurance contract attracted outstripped Pebble's ability to execute: the company folded within about four years, and when Fitbit acquired its software/IP in December 2016, unfulfilled orders for the Pebble 2 and Pebble Core were cancelled outright and refunded rather than shipped.",
+      "microreactor_read": "Copy the hard threshold itself: no vendor is paid and no site work is committed unless a stated number of reactor orders (or dollars) clears a public bar by a public deadline — but pair it with a delivery-capacity cap so a rush of orders can't outrun the vendor the way it outran Pebble.",
+      "sources": [
+        {"label": "TechCrunch — Pebble Smart Watch Raises Over $3M On Kickstarter After Asking For Only $100K (2012)", "url": "https://techcrunch.com/2012/04/17/pebble-smart-watch-raises-over-3m-on-kickstarter-after-asking-for-only-100k", "quote": "Pebble raised its first $1 million in the first 28 hours", "status": "fetched"},
+        {"label": "BGR — Pebble Is Kickstarter's Worst Failure (2016)", "url": "https://www.bgr.com/business/pebble-kickstarter-fitbit-acquisition-pebble-core/", "quote": "those devices are being cancelled and refunds will be issued", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "tesla-model3-refundable-reservations-prepayment",
+      "mechanism": "prepayment",
+      "sector": "consumer goods (automotive)",
+      "name": "Tesla Model 3 refundable $1,000 reservations",
+      "year": "2016",
+      "parties": "Prospective buyers worldwide paid Tesla Motors directly; Tesla held the deposits and used the running reservation count as a public demand signal and production-priority queue; no dealer or bank intermediary.",
+      "size": "$1,000 refundable deposit per reservation; over 115,000 reservations within 24 hours; 232,000 within two days; over 325,000 within one week, representing potential sales over US$14 billion",
+      "how_it_works": "Buyers pay a small, fully refundable deposit to reserve a production slot rather than the car itself; the deposit buys queue position, not a locked price or delivery date, and can be pulled back in full at any time before the car is built. Tesla used the running reservation count as a live, public demand signal to justify production investment before a single Model 3 existed. Because deposits were refundable, Tesla carried the volume risk (whether reservation-holders would actually convert to buyers at delivery) while depositors carried none of the price or delivery-date risk.",
+      "outcome": "Tesla said it had over 115,000 reservations in the first 24 hours, 232,000 within two days, and over 325,000 within one week of the March 31, 2016 unveiling, worth over $14 billion in potential sales; Tesla kept the refundable structure for about two years before shifting new US/Canada reservations to a non-refundable $2,500 deposit.",
+      "microreactor_read": "A fully refundable deposit turns 'who wants one' into a hard, public, dollar-denominated number a vendor can take to its own capital providers before committing to build capacity — publish a live refundable-deposit count the same way, without implying any delivery date until volume is proven.",
+      "sources": [
+        {"label": "Wikipedia — Tesla Model 3, reservations (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Tesla_Model_3", "quote": "One week after the unveiling, Tesla said it had over 325,000 reservations", "status": "fetched"},
+        {"label": "CleanTechnica — Specifics Of Tesla Model 3 Reservations Revealed (2016)", "url": "https://cleantechnica.com/2016/03/29/specifics-of-tesla-model-3-reservations-revealed/", "quote": "the reservation fee, which is $1,000 in the United States, is fully refundable", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "bordeaux-en-primeur-wine-futures-prepayment",
+      "mechanism": "prepayment",
+      "sector": "luxury goods (wine)",
+      "name": "Bordeaux en primeur wine futures",
+      "year": "2011 vintage campaign (priced spring 2012)",
+      "parties": "Individual and trade wine buyers worldwide prepay Bordeaux chateaux, via negociants who allocate the futures; each buyer prepays individually into the same campaign with no pooled fund and no refund guarantee.",
+      "size": "2011 futures for Palmer, La Mission Haut-Brion and Cos d'Estournel were still priced 15%, 10% and 8% respectively above their own chateaux's 2008 retail levels",
+      "how_it_works": "Chateaux sell each vintage as a 'future' about 18-24 months before the wine is bottled and delivered, at an opening price the chateau itself sets; buyers prepay in full for an allocation on the bet that the eventual retail price will be higher than the futures price. The chateau captures early cash flow and shifts price risk for an unfinished, unbottled product onto the buyer; there is no collective threshold, no pooled refund fund, and no protection if the retail price two years later turns out lower than what was prepaid.",
+      "outcome": "For the widely panned 2011 vintage, several chateaux still priced their futures 8-15% above the same chateau's already-bottled 2008 vintage sitting on retail shelves, so buyers who prepaid gained nothing versus simply waiting; Chateau Latour announced the 2011 vintage would be its last en primeur offering and left the futures system entirely afterward.",
+      "failure_mode": "The prepayment carried full price risk with no refund path: buyers who locked in 2011 futures priced above prevailing retail levels for older vintages had no recourse, and the mismatch was severe enough that one of Bordeaux's five first growths quit the futures system rather than keep selling into it.",
+      "microreactor_read": "A prepayment-for-early-access model only works if the future price is credibly lower than the eventual market price; if the vendor prices the offtake at or above what a buyer could get later by waiting, participation collapses the way it did for Bordeaux after 2011 — reactor offtake prepayments need a visible, binding discount against the fallback price, not just priority.",
+      "sources": [
+        {"label": "Wine Spectator — Bordeaux 2011 Futures Fizzle (2012)", "url": "https://www.winespectator.com/articles/bordeaux-2011-futures-fizzle-47033", "quote": "many 2011s were still costlier than older vintages currently on retail shelves", "status": "fetched"},
+        {"label": "Wine Spectator — Chateau Latour Abandons Futures System (2012)", "url": "https://www.winespectator.com/articles/chateau-latour-abandons-futures-system-46662", "quote": "The 2011 vintage will be the last en primeur offering", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "apple-gtat-sapphire-prepayment-bankruptcy",
+      "mechanism": "prepayment",
+      "sector": "consumer electronics (advanced materials)",
+      "name": "Apple's $578 million prepayment to GT Advanced Technologies for sapphire",
+      "year": "2013-2014",
+      "parties": "Apple Inc. prepaid GT Advanced Technologies (GTAT) directly under a multi-year supply agreement; GTAT built and operated the Mesa, Arizona sapphire furnace plant; a single-buyer prepayment, not a pooled vehicle.",
+      "size": "$578 million multi-year prepayment agreed November 2013, paid in four installments to fund the Arizona plant; $439 million was still outstanding when GTAT filed Chapter 11 in October 2014",
+      "how_it_works": "Apple prepaid GTAT in four installments to fund the capital cost of a dedicated sapphire-furnace factory before a single usable panel had shipped, in exchange for exclusivity and a multi-year supply commitment, with the final $139 million installment released only if GTAT hit unspecified 'operational targets.' GTAT was contracted to repay the prepayment over five years starting in 2015 out of production proceeds, making Apple the plant's financier as well as its customer. Because the money was a repayable prepayment rather than equity or a grant, GTAT alone carried the production-yield risk; Apple's exposure was to GTAT's solvency, not to sapphire prices.",
+      "outcome": "GTAT filed for Chapter 11 bankruptcy on October 6, 2014, after it missed the operational targets tied to Apple's final installment and sapphire was left out of the iPhone 6 line entirely; the settlement freed GTAT from its Apple exclusivity and repaid Apple the $439 million outstanding balance, interest-free, from the proceeds of selling off the furnaces — Apple recovered its cash, but the sapphire-manufacturing venture the prepayment funded was liquidated.",
+      "failure_mode": "The prepayment concentrated volume and technology risk in one undiversified supplier: when GTAT couldn't hit the yield and cost targets implied by the contract, the whole facility failed at once, taking the prepayment's intended purpose down with it — a single-supplier prepayment has no diversification against exactly the execution risk it was meant to buy down.",
+      "microreactor_read": "A prepayment to a single first-of-a-kind vendor is a bet on that vendor's execution, not just on demand; spreading a cost-overrun or construction-prepayment pool across more than one vendor or site protects the buyer from the GTAT failure mode, where one factory's yield miss voided the whole arrangement.",
+      "sources": [
+        {"label": "TechCrunch — GT Advanced Technologies To End Sapphire Business And Settle Debt With Apple (2014)", "url": "https://techcrunch.com/2014/10/23/gt-advanced-technologies-to-end-sapphire-business-and-settle-debt-with-apple/", "quote": "Apple repaid the $439 million outstanding prepayment that it apparently won't see any tangible benefit from, without any interest", "status": "fetched"},
+        {"label": "The Motley Fool — Understanding GT Advanced Technology, Inc.'s Bankruptcy (2014)", "url": "https://www.fool.com/investing/general/2014/10/06/understanding-gt-advanced-technology-incs-bankrupt.aspx", "quote": "pursuant to which GTAT will receive approximately $578 million", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "netjets-fractional-jet-ownership",
+      "mechanism": "fractional-ownership",
+      "sector": "aviation (business jets)",
+      "name": "NetJets fractional business-jet ownership",
+      "year": "1987",
+      "parties": "Individual and corporate buyers each purchase a fractional share of a specific aircraft; NetJets (a Berkshire Hathaway subsidiary since 1998) pools every owner's aircraft into one fleet and manages scheduling, crews and maintenance for all of them.",
+      "size": "combined US/Europe fleet of 792 aircraft as of April 2025 (668 US, 124 Europe); owners get 50-400 guaranteed flight hours a year depending on share size, on as little as four hours' notice",
+      "how_it_works": "A buyer purchases a fractional share of a specific aircraft rather than a whole plane, paying an upfront capital cost for the share plus a monthly management fee and hourly flight cost. NetJets pools every owner's aircraft into one operating fleet and guarantees each owner a set number of hours per year on demand, dispatching whichever tail is available rather than 'the' aircraft the owner nominally holds a share of. NetJets, not the individual owner, therefore carries the fleet-utilization and scheduling risk across the whole pool.",
+      "outcome": "The category NetJets pioneered in 1987 has grown into a combined fleet of 792 aircraft (April 2025) guaranteeing owners 50-400 flight hours a year depending on share size, on as little as four hours' notice — letting thousands of buyers who could not justify a whole aircraft's utilization still get one on short notice.",
+      "microreactor_read": "The mechanic worth copying is the pooled-fleet guarantee: an owner of a fraction doesn't wait for 'their' unit, they draw against a shared pool sized to cover everyone's peak demand — a host owning a fractional interest in a multi-unit reactor fleet, rather than one dedicated unit, could get the same uptime guarantee without paying for a whole reactor's worst-case downtime.",
+      "sources": [
+        {"label": "Wikipedia — NetJets (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/NetJets", "quote": "Owners then have guaranteed access (50–400 hours annually, depending on share size) to that aircraft with as little as four hours' notice", "status": "fetched"},
+        {"label": "Wikipedia — NetJets, fleet size (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/NetJets", "quote": "792 total, 668 Netjets US, 124 Netjets Europe (April 2025)", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "strategic-airlift-capability-c17-fractional-ownership",
+      "mechanism": "fractional-ownership",
+      "sector": "aviation (strategic airlift, asset-sharing mechanics only)",
+      "name": "Strategic Airlift Capability C-17 pool",
+      "year": "2008",
+      "parties": "12 nations (NATO Allies Hungary, Bulgaria, Estonia, Lithuania, the Netherlands, Norway, Poland, Romania, Slovenia and the United States, plus Partnership for Peace nations Finland and Sweden) jointly bought and share 3 Boeing C-17 aircraft; a multinational Heavy Airlift Wing based in Hungary operates them for all 12.",
+      "size": "3 C-17 aircraft shared by 12 owner nations, with missions and costs allocated by a pre-agreed distribution of flight hours per nation",
+      "how_it_works": "Each nation buys into the pool rather than a specific tail number and draws flight hours according to its pre-agreed share; the aircraft are based at Papa Air Base, Hungary and flown under Hungarian military registration no matter which member is using them that day. A single multinational unit schedules, crews and maintains all 3 aircraft for all 12 owners, so no member nation needs its own maintenance and training pipeline to access strategic airlift.",
+      "outcome": "12 nations that individually could not justify buying or maintaining even one C-17 have had guaranteed, proportional access to a shared 3-aircraft strategic airlift fleet since 2008, with costs and flight hours allocated according to each nation's pre-agreed commitment rather than equal split.",
+      "microreactor_read": "A capital asset too large for any one small buyer to own alone can still be owned in percentage shares of a shared pool rather than in whole units — a group of small utilities or industrial buyers could each hold a share of a multi-unit reactor fleet's output sized to what they can use, rather than each buying a whole reactor.",
+      "sources": [
+        {"label": "UK Defence Journal — NATO-Partner Strategic Airlift Capability provides airlift to 12 member nations", "url": "https://ukdefencejournal.org.uk/nato-partner-strategic-airlift-capability-provides-airlift-to-12-member-nations/", "quote": "SAC member nations are NATO Allies Hungary (host nation), Bulgaria, Estonia, Lithuania, the Netherlands, Norway, Poland, Romania, Slovenia and the United States", "status": "fetched"},
+        {"label": "Wikipedia — Strategic Airlift Capability (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Strategic_Airlift_Capability", "quote": "three Boeing C-17 Globemaster III long range cargo aircraft", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "nato-mmf-tanker-pool-consortium-ownership",
+      "mechanism": "consortium-ownership",
+      "sector": "aviation (aerial refueling fleet, asset-sharing mechanics only)",
+      "name": "NATO Multinational MRTT Fleet (MMF)",
+      "year": "2012",
+      "parties": "The Netherlands and Luxembourg signed the founding memorandum of understanding; Belgium, Germany, Norway, the Czech Republic, Denmark, Sweden and Finland joined afterward; NATO owns the fleet outright and the NATO Support and Procurement Agency (NSPA) manages it for every member.",
+      "size": "fleet grown to 12 Airbus A330 MRTT aircraft by 2025, funded and expanded by member nations under a rule that adds one more aircraft for every 1,100 additional flying hours the members commit to the programme",
+      "how_it_works": "Member nations sign a single memorandum of understanding and NATO itself takes title to the aircraft, rather than any one nation owning a tail and leasing it to the others; NSPA runs one multinational squadron that schedules, crews and maintains the whole fleet for every member. Instead of buying aircraft in fixed lot sizes, the programme scales by a hard, pre-published rule: it orders another A330 MRTT only once members' collective flight-hour commitments cross a 1,100-hour increment, so fleet growth tracks demonstrated demand rather than a single member's guess.",
+      "outcome": "From a two-nation MoU in 2012, the pooled fleet had grown to 12 aircraft by 2025 as more nations joined and flight-hour commitments accumulated past the 1,100-hour ordering thresholds, giving members air-refueling and transport capacity none of them could have funded and staffed alone.",
+      "microreactor_read": "Copy the expansion rule, not just the ownership pool: fix a hard unit of additional demand (here, 1,100 flight-hours; for reactors, a block of committed offtake-MW) that automatically triggers the next unit order, so the consortium's fleet grows in lockstep with proven demand instead of on a single sponsor's forecast.",
+      "sources": [
+        {"label": "Joint Air Power Competence Centre — NATO's Multinational MRTT Unit", "url": "https://www.japcc.org/articles/natos-multinational-mrtt-unit/", "quote": "The programme's member nations have the option to order an additional aircraft for every 1,100 flying hours added to the programme", "status": "fetched"},
+        {"label": "Joint Air Power Competence Centre — NATO's Multinational MRTT Unit", "url": "https://www.japcc.org/articles/natos-multinational-mrtt-unit/", "quote": "The Netherlands and Luxembourg signed the Memorandum of Understanding (MoU). Shortly after, Belgium, Germany, Norway, and then the Czech Republic joined by signing the MoU", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "civica-rx-hospital-owned-generic-manufacturer",
+      "mechanism": "consortium-ownership",
+      "sector": "healthcare (generic pharmaceuticals)",
+      "name": "Civica Rx hospital-owned generic drug manufacturer",
+      "year": "2018",
+      "parties": "Founded in 2018 by leading U.S. health systems and philanthropies (including Intermountain Healthcare, HCA Healthcare, Mayo Clinic and others); Civica Rx is the nonprofit manufacturer its member health systems collectively own and buy from.",
+      "size": "serves 55 health systems and 1,500 hospitals, about one-third of all licensed U.S. hospital beds; distributing more than 210 million vials or syringes of essential medicines as of April 2025",
+      "how_it_works": "Member hospitals do not just buy from Civica, they co-own it, and each signs a long-term purchase and supply contract with the company that commits to buying an agreed volume over years rather than shopping the spot generics market. Those long-term commitments are what let Civica plan and finance its own manufacturing capacity (it targets six months of extra inventory as a shortage buffer) instead of relying on the boom-bust order patterns that push ordinary generic makers out of low-margin drugs.",
+      "outcome": "From seven founding health systems in 2018, Civica now supplies more than 80 generic drugs to 55 health systems and 1,500 hospitals — about a third of all U.S. hospital beds — and has distributed over 210 million vials or syringes, addressing the chronic generic-drug shortages the members previously experienced separately.",
+      "microreactor_read": "The design element to copy is binding the ownership stake to a matching long-term offtake contract: members don't just co-own the supplier, each also signs a multi-year purchase commitment sized to its own demand, which is what lets the shared vehicle finance capacity that no single member's order alone could justify.",
+      "sources": [
+        {"label": "Wikipedia — Civica Rx (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Civica_Rx", "quote": "While serving 55 health systems and 1,500 hospitals (or 1/3 of all licensed U.S. hospital beds)", "status": "fetched"},
+        {"label": "Wikipedia — Civica Rx (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Civica_Rx", "quote": "Member hospitals sign long-term purchase and supply contracts with Civica, adding stability to the market", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "ny-proton-center-hospital-consortium",
+      "mechanism": "consortium-ownership",
+      "sector": "healthcare equipment (proton therapy)",
+      "name": "New York Proton Center hospital consortium",
+      "year": "2019",
+      "parties": "Memorial Sloan Kettering Cancer Center, Mount Sinai Health System and Montefiore Health System co-own and jointly built the center; ProHEALTH provides back-office business support; the three systems compete for patients downstream of the shared facility.",
+      "size": "$300 million, 140,000-square-foot facility in East Harlem, opened June 7, 2019, jointly funded by three competing hospital systems",
+      "how_it_works": "Three New York hospital systems that otherwise compete for cancer patients co-invested in a single $300 million proton-therapy facility because none of them could individually justify the capital cost and patient volume needed to run it alone. Each partner refers its own patients to the shared machine and shares in its capital and operating costs, rather than each system trying to build a smaller, separately underutilized proton unit.",
+      "outcome": "The consortium delivered New York State's first proton therapy center, a $300 million facility that opened in East Harlem on June 7, 2019, giving all three systems' patients access to equipment none of the three systems had been able to justify building alone.",
+      "microreactor_read": "Direct competitors can still co-own one lumpy, expensive asset when the alternative is each buying a separate, underused unit — a group of hospitals, industrial parks or utilities that individually can't absorb a whole reactor's output could co-own one plant and split both its cost and its downstream capacity the way MSK, Mount Sinai and Montefiore split proton therapy.",
+      "sources": [
+        {"label": "CBS News New York — Trio Of Medical Networks Join Forces To Fight Cancer With New Proton Center In Harlem", "url": "https://www.cbsnews.com/newyork/news/trio-of-medical-networks-join-forces-to-fight-cancer-with-new-proton-center-in-harlem/", "quote": "it is a consortium of Memorial Sloan Kettering, Mount Sinai and Montefiore", "status": "fetched"},
+        {"label": "CBS News New York — Trio Of Medical Networks Join Forces To Fight Cancer With New Proton Center In Harlem", "url": "https://www.cbsnews.com/newyork/news/trio-of-medical-networks-join-forces-to-fight-cancer-with-new-proton-center-in-harlem/", "quote": "a gleaming New York Proton Center, a $300 million state of the art facility taking up an entire city block in East Harlem", "status": "fetched"},
+        {"label": "BioSpace - New York State's first proton therapy center opens in East Harlem (2019)", "url": "https://www.biospace.com/article/releases/new-york-state-s-first-proton-therapy-center-opens-in-east-harlem/", "quote": "140,000-square-foot facility will be a beacon of top-quality cancer care nationwide", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "pacaso-fractional-home-co-ownership",
+      "mechanism": "fractional-ownership",
+      "sector": "luxury goods (real estate)",
+      "name": "Pacaso luxury home co-ownership",
+      "year": "2020",
+      "parties": "Individual buyers purchase LLC shares in a specific vacation home through Pacaso's platform; Pacaso sources, furnishes and manages the property and caps each home at eight owners.",
+      "size": "each home split into up to eight shares, which Pacaso says start around $200,000 and can reach $2 million or more; St. Helena, California settlement caps Pacaso at four homes in that city",
+      "how_it_works": "Pacaso buys a single-family vacation home, places it in an LLC, and sells shares of that LLC — up to eight per home — to buyers who each get a proportional number of weeks of use per year; Pacaso itself handles furnishing, scheduling and property management across all owners, functioning like NetJets for houses instead of jets. Because each home is capped at eight owners rather than sold as a single-owner property, many local zoning codes written around single-family or timeshare definitions do not clearly cover it.",
+      "outcome": "Multiple California and other resort towns (including Carmel, Palm Springs and St. Helena) issued cease-and-desist orders or sued Pacaso over whether its model is an illegal timeshare under single-family zoning; the St. Helena suit, filed in 2021, settled in February 2024 with Pacaso capped at the four homes it already managed there and barred from adding more without further city approval.",
+      "failure_mode": "Fractionalizing ownership into 8 shares was enough to trigger the exact regulatory classification (timeshare) the structure was designed to avoid in multiple cities, and the resulting litigation capped Pacaso's local growth by negotiated settlement rather than by market demand.",
+      "microreactor_read": "A fractional-ownership vehicle can satisfy every buyer's finance and usage math and still collide with a regulator that just counts the number of co-owners and reclassifies the whole asset — a microreactor consortium-ownership structure needs its legal form pre-cleared with the host jurisdiction's siting and utility regulators, not just its capital stack, before selling shares.",
+      "sources": [
+        {"label": "Wikipedia — Pacaso (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/Pacaso", "quote": "Ownership of the LLC is divided into up to eight shares, which are then sold through Pacaso's platform", "status": "fetched"},
+        {"label": "Santa Rosa Press Democrat — St. Helena, Pacaso settle suit over fractional home ownership company's operations in city (2024)", "url": "https://www.pressdemocrat.com/2024/02/09/st-helena-pacaso-settle-suit-over-fractional-home-ownership-companys-operations-in-city/", "quote": "Pacaso will maintain the four homes it currently manages in St. Helena, but will not add other properties", "status": "fetched"},
+        {"label": "Pacaso - Pacaso explained", "url": "https://www.pacaso.com/blog/pacaso-explained", "quote": "Pacaso 1/8 shares typically start from around $200,000 and can reach $2 million or more", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "2africa-submarine-cable-consortium-ownership",
+      "mechanism": "consortium-ownership",
+      "sector": "telecom (submarine cables)",
+      "name": "2Africa submarine cable consortium",
+      "year": "2020",
+      "parties": "Eight telecom operators — Meta Platforms, China Mobile International, MTN Group, Orange, Saudi Telecom Company (stc), Telecom Egypt, Vodafone Group and West Indian Ocean Cable Company (WIOCC) — jointly fund, own and operate the cable, and each can resell its own capacity share to non-members.",
+      "size": "45,000 km cable connecting 46 landing stations in 33 countries; design capacity of 180 Tbps across 16 fiber pairs; stc alone disclosed a $205 million investment in just the 2Africa Pearls extension",
+      "how_it_works": "Eight competing telecom operators co-invest directly in one shared cable system instead of each building or leasing separate capacity, splitting the fixed cost of laying 45,000 km of cable across all eight balance sheets. Each member's ownership stake converts into a claim on a share of total system capacity, which it can carry on its own network or resell wholesale — including to non-owners, via an indefeasible right of use (IRU), a long-term prepaid lease on specific fiber capacity. Because the same operators repeat this structure across many cable systems, no single company carries any one cable's full construction and stranding risk alone.",
+      "outcome": "The consortium built the longest subsea cable system in the world — 45,000 km linking 46 landing stations in 33 countries with 180 Tbps of design capacity — with stakes large enough that stc alone disclosed a $205 million investment in just one branch of the system.",
+      "microreactor_read": "An ownership share that converts directly into a resellable capacity right (the IRU) lets a consortium member monetize headroom it isn't using yet — a microreactor consortium could let an owner with more contracted MW than it currently needs sell long-term prepaid capacity to a non-owner the same way, instead of that capacity sitting idle.",
+      "sources": [
+        {"label": "Wikipedia — 2Africa (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/2Africa", "quote": "2Africa is funded by a consortium consisting of eight members, namely:", "status": "fetched"},
+        {"label": "Wikipedia — 2Africa (retrieved 2026)", "url": "https://en.wikipedia.org/wiki/2Africa", "quote": "2Africa is the largest subsea cable in the world, at 45,000 kilometers long, connecting 46 cable landing stations across 33 countries", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "nhs-antimicrobial-subscription-netflix-model",
+      "mechanism": "capacity-subscription",
+      "sector": "healthcare (pharmaceuticals / antimicrobials)",
+      "name": "NHS England antimicrobial products subscription ('Netflix model')",
+      "year": "2022",
+      "parties": "NHS England, the single national payer for English hospitals, contracts directly with Pfizer and Shionogi; there is no multi-payer pool because NHS England is already a national-scale single buyer.",
+      "size": "fixed payment of up to £10 million per year per drug in the 2022 pilot (Pfizer's Zavicefta, Shionogi's Fetcroja); expanded 12 August 2024 to new contracts worth up to £1.9 billion over 16 years, capped at £20 million per drug per year",
+      "how_it_works": "NHS England pays each company a fixed annual fee, set in advance from the drug's estimated value to the health service, for unlimited access to the drug — completely decoupling the company's revenue from how many packs are actually prescribed. This delinks the incentive to sell more antibiotics (which drives resistance) from the incentive to keep developing new ones, since the manufacturer is paid the same fee however many patients the drug treats that year (NHS England estimated about 1,700 a year would be eligible for the first two drugs). NHS bears no volume risk and the manufacturer bears no revenue risk from low prescribing.",
+      "outcome": "The 2022 pilot committed up to £10 million a year to each of two antimicrobials; NHS England judged it enough of a success to tender an expanded program on 12 August 2024 worth up to £1.9 billion over 16 years, capped at £20 million per drug per year, for contracts beginning April 2026.",
+      "microreactor_read": "A single large buyer can replace a per-unit price with a fixed annual capacity fee sized to value delivered, not volume drawn — a utility or federal buyer could pay a microreactor operator a fixed annual 'always-available capacity' fee instead of a per-MWh price, so the vendor's revenue doesn't depend on the reactor running at any particular load factor.",
+      "sources": [
+        {"label": "pharmaphorum — UK launches its 'Netflix-style' payment model for antibiotics (2023)", "url": "https://pharmaphorum.com/news/uk-launches-its-netflix-style-payment-model-for-antibiotics", "quote": "the NHS in England will pay a fixed annual fee for access to the two medicines of £10 million per year", "status": "fetched"},
+        {"label": "AMR Industry Alliance — NHS launches 'subscription' scheme for antibiotics with pharma sector (2024)", "url": "https://www.amrindustryalliance.org/mediaroom/nhs-launches-subscription-scheme-for-antibiotics-with-pharma-sector/", "quote": "The maximum annual payment the UK will make per drug is £20mn over no more than 16 years", "status": "fetched"},
+        {"label": "The Pharmaceutical Journal - First two antimicrobial drugs funded by NHS subscription payment scheme (2022)", "url": "https://pharmaceutical-journal.com/article/news/first-two-antimicrobial-drugs-funded-by-nhs-subscription-payment-scheme-to-be-given-to-patients", "quote": "around 1,700 patients per year with severe bacterial infections would be eligible", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "paho-revolving-fund-vaccines-joint-procurement",
+      "mechanism": "joint-procurement",
+      "sector": "vaccines",
+      "name": "PAHO Revolving Fund for Access to Vaccines",
+      "year": "2024",
+      "parties": "Nearly every country and territory in the Americas except Canada and the United States pools its national vaccine and health-supply demand through the Pan American Health Organization, which negotiates directly with manufacturers on their collective behalf.",
+      "size": "over $800 million in vaccines, medicines and health technology procured in 2024 alone; 32 countries and territories source at least 80% of their total vaccine and supply need through the fund",
+      "how_it_works": "Member countries commit their national vaccine and health-supply demand to PAHO instead of procuring individually; PAHO aggregates it into single tenders, letting even small Caribbean states buy at close to the unit price a much larger single buyer would get. A rotating capital fund (the 'revolving' part) lets PAHO pay manufacturers promptly while member countries reimburse the fund on their own budget cycles, decoupling the manufacturer's payment timing from any one country's payment delays.",
+      "outcome": "PAHO's Regional Revolving Funds procured over $800 million in vaccines, medicines and health technology in 2024, with 32 countries and territories now sourcing at least 80% of their total vaccine and supply need through the mechanism rather than buying alone.",
+      "microreactor_read": "The revolving-capital feature is the transferable piece: a shared fund that pays the vendor on a predictable schedule while individual buyers reimburse it on their own slower cycles would let a group of small utilities pool reactor payments without any one member's billing delay becoming the vendor's cash-flow problem.",
+      "sources": [
+        {"label": "PAHO/WHO — Over $800 million in vaccines, medicines and health technology procured by PAHO's Regional Revolving Funds in 2024 (2025)", "url": "https://www.paho.org/en/news/24-2-2025-over-800-million-vaccines-medicines-and-health-technology-procured-pahos-regional", "quote": "Over $800 million in vaccines, medicines and health technology procured by PAHO's Regional Revolving Funds in 2024", "status": "fetched"},
+        {"label": "PAHO/WHO — Over $800 million in vaccines, medicines and health technology procured by PAHO's Regional Revolving Funds in 2024 (2025)", "url": "https://www.paho.org/en/news/24-2-2025-over-800-million-vaccines-medicines-and-health-technology-procured-pahos-regional", "quote": "thirty-two countries and territories of the region access at least 80% of their total need for vaccines and related supplies through the funds", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "global-fund-pooled-procurement-mechanism",
+      "mechanism": "joint-procurement",
+      "sector": "vaccines (HIV, TB and malaria commodities)",
+      "name": "Global Fund Pooled Procurement Mechanism (PPM)",
+      "year": "2025",
+      "parties": "Grant implementers in 81 countries pool their HIV, TB and malaria commodity orders through the Global Fund's Pooled Procurement Mechanism, which negotiates centrally with manufacturers on their combined behalf; non-Global-Fund domestic financing can also route through the same platform.",
+      "size": "managed approximately US$1.02 billion in orders in 2025 across 81 countries' grant implementers",
+      "how_it_works": "Grant implementers in dozens of countries submit their HIV, TB and malaria commodity needs to the Global Fund instead of each negotiating separately with manufacturers; the Fund aggregates the volumes into single negotiations for price and delivery terms, so small countries' orders ride on the purchasing power of the combined total. The mechanism also lets non-Global-Fund money buy through the same negotiated terms, so a country's own domestic budget can extend the pool's pricing beyond Global-Fund-financed purchases.",
+      "outcome": "In 2025 the mechanism managed about $1.02 billion in orders on behalf of grant implementers in 81 countries.",
+      "microreactor_read": "Let outside money ride the pool's negotiated terms: a joint-procurement vehicle that lets a buyer outside the original consortium pay to access the same vendor price and delivery terms, without becoming a governing member, extends the pool's buying power past its original membership, the way the Global Fund lets non-member financing use PPM pricing.",
+      "sources": [
+        {"label": "The Global Fund — Procurement Tools (Sourcing & Management of Health Products)", "url": "https://www.theglobalfund.org/en/sourcing-management/procurement-tools/", "quote": "In 2025, the Pooled Procurement Mechanism managed approximately US$1.02 billion in orders, serving grant implementers in 81 countries", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "louisiana-hepatitis-c-subscription-2019",
+      "mechanism": "capacity-subscription",
+      "sector": "healthcare (pharmaceuticals)",
+      "name": "Louisiana hepatitis C 'Netflix model' subscription",
+      "year": "2019",
+      "parties": "Louisiana's Department of Health and Department of Corrections contracted directly with Asegua Therapeutics, a Gilead Sciences subsidiary, which won the deal over competing bids from Merck and AbbVie.",
+      "size": "a 5-year, fixed-amount contract for unlimited access to an authorized generic version of the hepatitis C drug Epclusa, covering both the state Medicaid program and the prison system",
+      "how_it_works": "Instead of paying a per-prescription price for a drug that can cost tens of thousands of dollars per patient, Louisiana pays Asegua one fixed amount for 5 years in exchange for unlimited access to a generic antiviral, so the state's total drug bill no longer scales with how many patients it treats. That flips the incentive from rationing treatment to conserve budget toward treating as many patients as clinical capacity allows, since one more patient treated adds nothing to the bill. Asegua in turn gets a guaranteed multi-year revenue stream instead of per-unit sales that would shrink as the treatable population is cured down over time.",
+      "outcome": "Louisiana's Department of Health finalized the 5-year subscription agreement with Asegua in 2019 for unlimited generic Epclusa access across Medicaid and its prison population, converting an open-ended per-patient drug budget into one fixed, budgetable line item regardless of how many people the state's clinics actually treat.",
+      "microreactor_read": "A fixed multi-year payment for unlimited access works best when the buyer's real goal is to maximize utilization rather than ration it — a state or federal buyer wanting maximum microreactor deployment across many small sites could pay one fixed sum for 'as many units as we can site in five years' rather than a per-unit price that turns each additional site into a new budget fight.",
+      "sources": [
+        {"label": "STAT News — Gilead and Louisiana agree to a 'Netflix' subscription model for hepatitis C drugs (2019)", "url": "https://www.statnews.com/pharmalot/2019/03/26/gilead-louisiana-netflix-drug-prices-hepatitis/", "quote": "Asegua Therapeutics, the Gilead unit, has agreed to provide the state Medicaid program and Department of Corrections with unlimited access to an authorized generic version of the Epclusa treatment for a fixed amount of money for five years", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "rolls-royce-totalcare-trent1000-overrun-cover",
+      "mechanism": "overrun-or-performance-cover",
+      "sector": "aviation (jet engine maintenance)",
+      "name": "Rolls-Royce TotalCare power-by-the-hour engine coverage",
+      "year": "1997",
+      "parties": "Airlines operating Rolls-Royce engines (here, Boeing 787 Trent 1000 operators including British Airways and Virgin Atlantic) pay Rolls-Royce a fixed rate per engine flying hour; Rolls-Royce alone, not a pooled underwriter, bears the shop-visit and time-on-wing cost risk across its whole customer base.",
+      "size": "customers pay a secured $-per-engine-flying-hour rate; the Trent 1000 durability crisis (2016-2019) cost Rolls-Royce a £554 million exceptional charge, a £1.26 billion first-half pre-tax loss, and total in-service costs that ran past £2 billion ($2.704 billion), with Dreamliner groundings peaking at close to 50 aircraft in 2018",
+      "how_it_works": "Under TotalCare, an airline pays Rolls-Royce a fixed amount per engine flying hour instead of paying for maintenance events as they occur; that per-hour rate is meant to already price in Rolls-Royce's expected shop-visit and unscheduled-removal costs across its whole fleet of that engine type, transferring both time-on-wing and shop-visit cost risk from every individual airline onto Rolls-Royce. Rolls-Royce, not any one airline, therefore carries the tail risk if the engine type needs far more maintenance than priced in — there is no separate reinsurance layer or reserve fund behind the manufacturer's own balance sheet.",
+      "outcome": "When corrosion-related cracking emerged in the Trent 1000's turbine blades fleet-wide, Rolls-Royce — not its airline customers — absorbed the cost under TotalCare: a £554 million exceptional charge, a £1.26 billion first-half pre-tax loss, and total in-service costs that eventually ran past £2 billion ($2.704 billion), while Dreamliner groundings peaked at close to 50 aircraft in 2018.",
+      "failure_mode": "A performance-cover mechanism priced for normal wear transferred a systemic design-and-manufacturing failure onto the single manufacturer's balance sheet with no reinsurance layer behind it — when the fault turned out to be fleet-wide rather than isolated, the manufacturer had underpriced the very risk the contract was built to cover.",
+      "microreactor_read": "A power-by-the-hour-style performance guarantee (the vendor eats maintenance-cost overruns, the buyer pays a flat per-output rate) only works if the vendor has correctly priced tail risk across its whole fleet — a microreactor overrun-cover pool needs an actual reinsurance or reserve layer behind the vendor's promise, not just the vendor's own balance sheet, so one fleet-wide design flaw can't sink the guarantee the way Trent 1000 nearly did.",
+      "sources": [
+        {"label": "Rolls-Royce — TotalCare (civil aerospace services page, retrieved 2026)", "url": "https://www.rolls-royce.com/products-and-services/civil-aerospace/services/totalcare.aspx", "quote": "TotalCare transfers both time-on-wing and shop visit cost risks back to Rolls-Royce, covering the risk for shop visit cost for both planned and un-planned events", "status": "fetched"},
+        {"label": "Simple Flying — 1 Component, Triple The Time On Wing: Inside Rolls-Royce's Trent 1000 Turnaround", "url": "https://simpleflying.com/1-coponent-triple-time-wing-inside-rolls-royce-trent-1000-turnaround/", "quote": "Total in-service costs tied to the Trent 1000 eventually ran past £2 billion ($2.704 billion)", "status": "fetched"},
+        {"label": "IMechE - Rolls-Royce Trent 1000 turbine blade issues contribute to £1.26bn pre-tax loss (2018)", "url": "https://www.imeche.org/news/news-article/rolls-royce-trent-1000-turbine-blade-issues-contribute-to-1.26bn-pre-tax-lo", "quote": "an exceptional charge of £554m", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "h2global-hintco-double-auction-hydrogen",
+      "mechanism": "advance-market-commitment",
+      "sector": "green hydrogen (energy)",
+      "name": "H2Global / Hintco double-auction mechanism",
+      "year": "2024",
+      "parties": "Hintco, a German-founded nonprofit intermediary, signs long-term purchase contracts with renewable-hydrogen-derivative producers and short-term sale contracts with industrial offtakers; Germany's BMWK and the Netherlands' KGG fund the subsidy pool that covers the price gap between the two sides.",
+      "size": "first pilot auction (2024) awarded a maximum contract value of €397 million to Fertiglobe for renewable ammonia; a second auction round with a budget of up to €3 billion followed, with Germany and the Netherlands committing up to €2.5 billion of it",
+      "how_it_works": "Hintco runs a double auction: on the supply side it signs long-term, roughly 10-year fixed-price purchase agreements with the most competitive renewable-hydrogen-derivative producers, giving them bankable revenue certainty; on the demand side it resells the same volumes through short-term sales agreements to whichever industrial buyers bid the highest price. Because early-market production costs exceed what industrial buyers will currently pay, a gap between the purchase and sale price is expected by design, and that 'cost of difference' is covered by a public subsidy pool rather than by the producer or the buyer — so neither counterparty carries the price-gap risk, only the funder does.",
+      "outcome": "Hintco's first pilot auction concluded in 2024 with a maximum contract value of €397 million awarded to Fertiglobe for renewable ammonia deliveries; a second, larger auction round with a budget of up to €3 billion followed, with Germany and the Netherlands jointly committing up to €2.5 billion toward it.",
+      "microreactor_read": "Splitting one pooled intermediary into a long-term buy side (fixed price, bankable for the vendor) and a short-term sell side (market price, flexible for the buyer), with a named public fund absorbing only the gap between them, isolates exactly the risk a first-of-a-kind reactor vendor can't price and a small buyer can't absorb — the fund, not either counterparty, prices the transition-period gap.",
+      "sources": [
+        {"label": "Hintco — How it works (retrieved 2026)", "url": "https://hintco.eu/how-it-works/", "quote": "it is anticipated that a gap between purchase and sales prices will occur (cost of difference)", "status": "fetched"},
+        {"label": "Hydrocarbon Processing — H2Global pilot auction results in first significant renewable ammonia supply for EU (2024)", "url": "https://www.hydrocarbonprocessing.com/news/2024/07/h2global-pilot-auction-results-in-first-significant-renewable-ammonia-supply-for-eu/", "quote": "maximum contract value of €397 MM", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "sustainable-aviation-buyers-alliance-saf-rfp",
+      "mechanism": "buyers-club",
+      "sector": "aviation fuel (sustainable aviation fuel certificates)",
+      "name": "Sustainable Aviation Buyers Alliance (SABA) collective SAF certificate purchases",
+      "year": "2023",
+      "parties": "Corporate buyers (initial purchase: Bank of America, Boom Supersonic, Boston Consulting Group, JPMorgan Chase, Meta) organized by nonprofit RMI pool their demand and jointly buy book-and-claim SAF certificates; no single member contracts directly with a fuel producer or airline.",
+      "size": "first collective purchase (2023): certificates linked to 850,000 gallons of high-integrity SAF, an estimated 8,500 tons of lifecycle CO2; a follow-on multi-year round grew to close to 20 corporate buyers committing close to $200 million for about 50 million gallons of SAF, roughly 500,000 tons of abated CO2e",
+      "how_it_works": "No individual corporate buyer uses enough jet fuel to negotiate directly with a SAF producer or airline, so SABA pools many buyers' purchase intent into one collective RFP; members then jointly buy 'book-and-claim' certificates representing real SAF supplied into the fuel system elsewhere, decoupling the environmental-attribute purchase from having to physically fuel at a SAF-producing airport. Members don't split a single tank of fuel; each buyer's share of the certificates is sized to, and paid for according to, its own stated volume commitment in the RFP.",
+      "outcome": "SABA's first collective purchase in 2023 covered certificates for 850,000 gallons of SAF; a follow-on multi-year procurement scaled that to close to 20 corporate buyers channeling close to $200 million into roughly 50 million gallons of SAF certificates, about 500,000 tons of abated CO2e.",
+      "microreactor_read": "A buyers' club lets many buyers each too small to matter to a vendor alone pool into one RFP the vendor will actually answer — a group of small industrial or municipal buyers, none of whom individually wants a whole reactor's output, could jointly issue one RFP for a shared allocation of clean firm capacity the way SABA members jointly buy SAF certificates.",
+      "sources": [
+        {"label": "SABA — Sustainable Aviation Buyers Alliance Announces Aviation Decarbonization First (2023)", "url": "https://flysaba.org/2023/04/04/first-collective-purchase-of-sustainable-aviation-fuel-certificates/", "quote": "SABA members are purchasing SAF certificates linked to 850,000 gallons of this high-integrity SAF", "status": "fetched"},
+        {"label": "SABA — Sustainable Aviation Buyers Alliance Announces Historic Agreements to Purchase SAF Certificates (2024)", "url": "https://flysaba.org/2024/04/17/sustainable-aviation-buyers-alliance-announces-historic-agreements-to-purchase-sustainable-aviation-fuel-certificates-to-grow-investment-in-clean-fuel-technologies/", "quote": "have committed to channel close to $200 million into purchasing SAFc — equal to about 50 million gallons of high integrity SAF", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "zemba-shipping-tender-buyers-club",
+      "mechanism": "buyers-club",
+      "sector": "shipping (containerized ocean freight)",
+      "name": "Zero Emission Maritime Buyers Alliance (ZEMBA) collective tender",
+      "year": "2024",
+      "parties": "Corporate cargo owners (Amazon, Patagonia, Tchibo, Bauhaus, Brooks Running, DB Journey, Green Worldwide Shipping, Meta, New Balance, Nike, REI Co-op, Sport-Thieme) pool their container-shipping demand into one RFP; Hapag-Lloyd won the tender as the sole carrier supplying every member.",
+      "size": "members collectively committed to over 1 billion twenty-foot container-miles of zero-emission shipping on the Singapore-Rotterdam route for 2025-2026, expected to avoid at least 82,000 metric tons of CO2e over two years",
+      "how_it_works": "No single cargo owner ships enough containers on one route to induce a carrier to run a dedicated low-emission service, so ZEMBA aggregates many shippers' forecast container volumes into a single RFP a carrier can answer with one committed service. Hapag-Lloyd won by committing a waste-based biomethane service cutting emissions over 90% versus fossil fuel on the Singapore-Rotterdam lane; each member's share of the committed volume is sized to, and paid for according to, the container-miles it pledged into the tender, not split evenly.",
+      "outcome": "ZEMBA's inaugural tender, launched September 2023 and completed April 2024, locked in Hapag-Lloyd for over 1 billion twenty-foot container-miles of greater-than-90%-lower-emission shipping across 2025-2026, expected to avoid at least 82,000 metric tons of CO2e over the two years.",
+      "microreactor_read": "The tender-not-purchase-order structure lets a buyers' club commit collectively to a volume before any single member's shipment exists, giving the vendor one bankable, multi-year commitment instead of dozens of separate uncertain orders — a group of small industrial buyers could run one joint RFP for reactor-backed power the way ZEMBA ran one for zero-emission freight.",
+      "sources": [
+        {"label": "ZEMBA — Zero Emission Maritime Buyers Alliance Announces Successful Completion of Inaugural Collective Tender (2024)", "url": "https://www.shipzemba.org/zero-emission-maritime-buyers-alliance-zemba-announces-successful-completion-of-inaugural-collective-tender-2/", "quote": "over 1 billion twenty-foot shipping container-miles of zero-emission shipping on a route from Singapore to Rotterdam, Netherlands in 2025-2026", "status": "fetched"},
+        {"label": "ZEMBA — Zero Emission Maritime Buyers Alliance Announces Successful Completion of Inaugural Collective Tender (2024)", "url": "https://www.shipzemba.org/zero-emission-maritime-buyers-alliance-zemba-announces-successful-completion-of-inaugural-collective-tender-2/", "quote": "ZEMBA members to collectively avoid at least 82,000 metric tonnes of CO2e over two years", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "maschinenring-farm-machinery-ring-buyers-club",
+      "mechanism": "buyers-club",
+      "sector": "agriculture",
+      "name": "Maschinenring (machinery ring) farm equipment and labor sharing",
+      "year": "1960s",
+      "parties": "Individual farmers are simultaneously members, suppliers and customers of their local ring; each ring is a self-help cooperative, not a jointly owned equipment pool, and a central Maschinenring organization runs the booking, billing and coordination layer across all local rings.",
+      "size": "about 240 local rings represent roughly 192,000 agricultural farms in Germany alone; more than 80 rings operate across Austria; the Maschinenring organization employs 2,500 people to run the network",
+      "how_it_works": "A farmer who owns a piece of expensive equipment (a combine, a specialized sprayer) lists it as available through the local ring; a farmer who needs that equipment for a few days but can't justify owning one himself books it and pays the ring, which pays the owning farmer and keeps a coordination fee. The same farmer is typically both a provider (renting out equipment or labor he owns) and a customer (renting what he doesn't) across a season, so the ring nets out each member's use against their supply rather than requiring every member to buy every machine. No central entity owns the equipment; the ring only owns the matching, scheduling and billing layer.",
+      "outcome": "What began as 1960s farmer self-help has scaled to about 240 local rings representing roughly 192,000 farms in Germany alone plus more than 80 rings in Austria, with the coordinating organization now employing 2,500 people just to run the booking and billing layer that connects them.",
+      "microreactor_read": "The ring doesn't own any equipment, only the matching, scheduling and billing layer that lets owners of idle capacity reach occasional users of it — a microreactor host network could run the same broker layer, letting a site with temporarily spare thermal or electrical output sell it to a neighboring small buyer without either needing to co-own a physical asset.",
+      "sources": [
+        {"label": "Rosewood Forest Innovation Hubs — Machinery ring (retrieved 2026)", "url": "https://forestinnovationhubs.rosewood-network.eu/en/content/machinery-ring", "quote": "In Germany there are about 240 local machinery ring organizations that represent about 192.000 agricultural farms", "status": "fetched"},
+        {"label": "Rosewood Forest Innovation Hubs — Machinery ring (retrieved 2026)", "url": "https://forestinnovationhubs.rosewood-network.eu/en/content/machinery-ring", "quote": "The Maschinenring itself offers jobs for 2.500 employees", "status": "fetched"},
+        {"label": "Maschinenring Österreich - Die Maschinenringe", "url": "https://www.maschinenring.at/die-maschinenringe", "quote": "Mehr als 80 regionale Maschinenring-Standorte", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "pool-re-uk-terrorism-reinsurance-backstop",
+      "mechanism": "government-backstop",
+      "sector": "finance / insurance",
+      "name": "Pool Re UK terrorism reinsurance mutual",
+      "year": "1993",
+      "parties": "UK commercial property insurers are Pool Re's members; each pays Pool Re a premium and chooses its own retention level; Pool Re itself buys retrocession from commercial reinsurers, with an uncapped HM Treasury guarantee as the final layer behind both.",
+      "size": "£2.3 billion retrocession programme placed with more than 50 international reinsurers, sitting above members' own chosen retentions and below the UK government's uncapped guarantee",
+      "how_it_works": "Pool Re reinsures its member insurers' entire book of UK commercial terrorism risk, not policy by policy: each member pays one annual premium and picks a retention level, and Pool Re pays whatever exceeds that retention, with terrorism losses that fall within scheme rules automatically covered without individual declaration. Pool Re itself then buys retrocession cover in the private reinsurance market (£2.3 billion placed with 50-plus reinsurers) before the uncapped HM Treasury guarantee behind it is ever touched — so the sequence is member retention, then Pool Re's own retrocession, then the state, strictly in that order.",
+      "outcome": "Founded in 1993 after the Baltic Exchange and Bishopsgate bombings made commercial terrorism cover commercially unavailable, Pool Re has grown to place a £2.3 billion retrocession programme with more than 50 international reinsurers, with the government's uncapped guarantee behind it never yet called upon since the scheme's launch.",
+      "microreactor_read": "The strict payout order — private member retention first, then the pool's own reinsurance, then an uncapped state guarantee only as the last resort — is the design element to copy for an overrun or performance-cover pool: the state backstop should sit behind a real private capital layer, not replace one, so it only ever gets called on for the genuine tail.",
+      "sources": [
+        {"label": "Pool Re — Terrorism Reinsurance Cover by Pool Re (retrieved 2026)", "url": "https://www.poolre.co.uk/terrorism-reinsurance/", "quote": "Members pay a single annual premium and choose agreed retention levels, with Pool Re responding once losses exceed those retentions during the underwriting period", "status": "fetched"},
+        {"label": "Captive Insurance Times — Pool Re completes largest terrorism risk placement ever", "url": "https://www.captiveinsurancetimes.com/captiveinsurancenews/reinsurancearticle.php?article_id=6273&navigationaction=reinsurancenews&newssection=reinsurance", "quote": "Pool Re, the British government-backed terrorism reinsurer, has placed a £2.3 billion retrocession programme with more than 50 international reinsurers", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "tria-federal-terrorism-backstop",
+      "mechanism": "government-backstop",
+      "sector": "finance / insurance",
+      "name": "Terrorism Risk Insurance Act (TRIA) federal backstop",
+      "year": "2002",
+      "parties": "All US property-casualty insurers offering commercial coverage must participate; the US Treasury stands behind the whole industry only after two thresholds are crossed and only up to a hard cap; individual insurers retain a deductible before any federal money flows.",
+      "size": "a single act must cause more than $5 million in insured losses to be certified as terrorism; the industry's aggregate certified losses must exceed $200 million in a year before federal coverage activates; the federal government then reimburses 80% of losses above each insurer's own deductible, up to a $100 billion total program cap",
+      "how_it_works": "TRIA requires two separate thresholds before any government money moves: a single act must be certified as terrorism (over $5 million in insured losses), and the whole industry's aggregate certified losses for the year must separately exceed $200 million. Only above both thresholds does the federal government start reimbursing 80% of each individual insurer's losses above its own deductible, and only up to a hard $100 billion cap on total federal exposure, beyond which insurers and policyholders are on their own again.",
+      "outcome": "Enacted in 2002 after commercial terrorism coverage largely disappeared from the market post-9/11, TRIA has been renewed repeatedly on the same architecture: a $5 million per-event certification floor, a $200 million industry-aggregate trigger, an 80% federal cost-share above each insurer's deductible, and a $100 billion total program cap that has never been reached.",
+      "microreactor_read": "A two-threshold trigger — a per-event floor plus a separate aggregate-for-the-year floor — keeps a government backstop from firing on routine losses while still being available for a genuine tail event; a federal cost-overrun backstop for microreactors could copy the same double gate (a minimum overrun size, plus an aggregate program-wide cap) instead of guaranteeing every individual project's cost from dollar one.",
+      "sources": [
+        {"label": "LegalClarity — TRIA Insurance: What It Covers and How It Works (retrieved 2026)", "url": "https://legalclarity.org/what-does-tria-stand-for-in-insurance/", "quote": "aggregate insured losses across the entire industry exceed $200 million in a calendar year", "status": "fetched"},
+        {"label": "LegalClarity — TRIA Insurance: What It Covers and How It Works (retrieved 2026)", "url": "https://legalclarity.org/what-does-tria-stand-for-in-insurance/", "quote": "continues until total insured losses across the industry hit $100 billion. Beyond that cap, there is no federal coverage", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "ccrif-parametric-pool-haiti-basis-risk",
+      "mechanism": "parametric-pool",
+      "sector": "finance / insurance (sovereign disaster risk)",
+      "name": "CCRIF SPC parametric catastrophe pool",
+      "year": "2010",
+      "parties": "Caribbean governments pool their catastrophe risk into one mutual insurance vehicle, CCRIF SPC, which pays each member a pre-agreed, formula-based amount once a modeled hazard crosses a threshold, rather than paying based on assessed damage; reinsurers absorb the pooled tail beyond members' premiums.",
+      "size": "Haiti received a payout of US$7,753,579 after the magnitude-7.0 earthquake of January 12, 2010, about 20 times the US$385,500 premium it had paid",
+      "how_it_works": "Each member government pays CCRIF a premium for a policy that pays out automatically once an independent model of a specific earthquake's or storm's physical parameters, not surveyed damage, crosses a pre-agreed trigger; CCRIF can then verify the trigger and transfer funds within days instead of the months or years a loss-adjusted claim takes. Because the payout is fixed by the model and the trigger rather than actual losses, CCRIF never faces open-ended damage assessments — but a member can also be paid far less than its real loss if the model's parameters don't fully capture what happened on the ground.",
+      "outcome": "CCRIF transferred Haiti's full US$7,753,579 payout within about a day of the January 12, 2010 earthquake, roughly 20 times the US$385,500 premium Haiti had paid — but that payout was a small fraction of total damage that was widely estimated in the billions of dollars, illustrating the basis-risk gap between a fast, formula-based parametric payout and a country's actual reconstruction need.",
+      "failure_mode": "The parametric trigger paid out exactly what the model said it should, fast — but the model's earthquake parameters did not scale with the true scope of Haiti's damage, so the country that most needed the money got a payout worth a small fraction of its loss even though the mechanism worked exactly as designed.",
+      "microreactor_read": "A parametric trigger (pay on a measured, objective parameter, not on assessed loss) is only as good as the correlation between that parameter and the buyer's real exposure — a cost-overrun pool triggered by an objective index (steel prices, a named delay in months) needs that index checked against real construction-cost variance before it's trusted, or a member could get paid on the trigger while still being underwater on the actual overrun.",
+      "sources": [
+        {"label": "CCRIF SPC — Haitian Government receives US$7.75M CCRIF payout", "url": "https://www.ccrif.org/node/155", "quote": "US $7,753,579 following the Magnitude 7.0 earthquake which struck close to Port-au-Prince on 12 January", "status": "fetched"},
+        {"label": "CCRIF SPC — Haitian Government receives US$7.75M CCRIF payout", "url": "https://www.ccrif.org/node/155", "quote": "This value represents approximately 20 times the premium of US$385,500", "status": "fetched"}
+      ]
+    },
+    {
+      "id": "international-group-pandi-clubs-mutual-pool",
+      "mechanism": "mutual-insurance-pool",
+      "sector": "shipping (marine protection & indemnity liability insurance)",
+      "name": "International Group of P&I Clubs pooling agreement",
+      "year": "2026",
+      "parties": "12 mutual P&I clubs, each owned by and insuring its own shipowner members, pool claims above an individual retention through a shared pooling agreement; a Group-owned Bermuda captive, Hydra, provides a further shared reinsurance layer with its own segregated cell per club, before the clubs jointly buy market reinsurance above that.",
+      "size": "each club retains the first US$10 million of a claim itself; the Pool covers the next US$90 million in excess of that; Hydra's Layer 1 Annual Aggregate Deductible was set at US$103.6 million for the 2026/27 policy year, down from US$107.1 million the year before",
+      "how_it_works": "A shipowner's own club pays the first US$10 million of a large claim alone; above that, the claim is shared across all 12 clubs through the pooling agreement up to US$100 million total, so no single club is wiped out by one member's catastrophic loss. Above the pool layer, Hydra — a Bermuda-domiciled captive reinsurer the Group itself owns, structured with a separate segregated cell for each club — retains a further slice before commercial market reinsurance takes the remaining tail, so the clubs mutually reinsure each other before ever paying a commercial reinsurer.",
+      "outcome": "For the 2026/27 policy year, each club still retains the first US$10 million of a claim itself, the pool shares the US$10-100 million layer across all 12 clubs, and Hydra's own retained deductible in the layer above that was set at US$103.6 million, down from US$107.1 million the prior year as the clubs' claims experience improved.",
+      "microreactor_read": "This is the concrete design element to copy for a reactor cost-overrun or liability pool: a fixed individual-member retention (US$10 million here), then a shared pool layer with a hard ceiling (US$100 million here), then a jointly owned captive reinsurer for the next slice, and only then commercial reinsurance — members mutually reinsure each other in ascending layers before any outside capital is asked to price the risk.",
+      "sources": [
+        {"label": "Hellenic Shipping News — Reinsurance arrangements for the 2026 policy year arranged through the International Group of P&I Clubs", "url": "https://www.hellenicshippingnews.com/reinsurance-arrangements-for-the-2026-policy-year-arranged-through-the-international-group-of-pi-clubs/", "quote": "Pool retention: USD 90 million (inexcess USD 10 million)", "status": "fetched"},
+        {"label": "Hellenic Shipping News — Reinsurance arrangements for the 2026 policy year arranged through the International Group of P&I Clubs", "url": "https://www.hellenicshippingnews.com/reinsurance-arrangements-for-the-2026-policy-year-arranged-through-the-international-group-of-pi-clubs/", "quote": "Hydra continues to retain an Annual Aggregate Deductible (\"AAD\") in Layer 1, which in 100% terms has moved down in value from USD 107.1m", "status": "fetched"}
+      ]
+    }
+  ]
+}

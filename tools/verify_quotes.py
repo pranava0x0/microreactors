@@ -29,7 +29,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from typing import Any, List, Tuple
+from typing import Any, List, Optional, Tuple
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -81,7 +81,11 @@ def walk(node: Any, out: List[dict], any_status: bool = False) -> None:
             walk(v, out, any_status)
 
 
-def cached_text(cache_file: pathlib.Path) -> str:
+def cached_text(cache_file: pathlib.Path) -> Optional[str]:
+    """Text of a cached source, or None when it is a PDF and no PDF extractor is
+    installed. None is not "", because "" reads as a page that lacks the quote:
+    a stdlib-only interpreter once reported every PDF-backed quote as a mismatch
+    (147 of them) when nothing was wrong except the missing library."""
     raw = cache_file.read_bytes()
     if raw[:5] == b"%PDF-":
         try:
@@ -92,7 +96,7 @@ def cached_text(cache_file: pathlib.Path) -> str:
                 from pypdf import PdfReader
                 return " ".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(raw)).pages)
             except ImportError:
-                return ""
+                return None
     text = raw.decode("utf-8", errors="replace")
     text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S | re.I)
     return re.sub(r"<[^>]+>", " ", text)
@@ -107,7 +111,7 @@ def check_against_cache(verbose: bool = False) -> int:
     if index_p.exists():
         for r in json.loads(index_p.read_text())["sources"]:
             by_url[r["url"]] = DATA / "cache" / r["cache"]
-    ok, missing, mismatched, snippet = [], [], [], []
+    ok, missing, mismatched, snippet, unreadable = [], [], [], [], []
     for name in FILES:
         targets: List[dict] = []
         walk(json.loads((DATA / f"{name}.json").read_text()), targets, any_status=True)
@@ -116,7 +120,10 @@ def check_against_cache(verbose: bool = False) -> int:
             if not cache_file or not cache_file.exists():
                 missing.append((name, src["url"]))
                 continue
-            if norm(src["quote"]) in norm(cached_text(cache_file)):
+            text = cached_text(cache_file)
+            if text is None:
+                unreadable.append((name, src["url"]))
+            elif norm(src["quote"]) in norm(text):
                 ok.append((name, src["url"]))
             elif src.get("status") == "snippet-only":
                 # The row already declares the page was never fetched, so its quote is
@@ -128,6 +135,9 @@ def check_against_cache(verbose: bool = False) -> int:
                 mismatched.append((name, src["url"], src["quote"][:60]))
     print(f"cache-verified {len(ok)} · not-in-cache {len(missing)} · "
           f"snippet-only {len(snippet)} · MISMATCH {len(mismatched)}")
+    if unreadable:
+        print(f"UNCHECKED {len(unreadable)} PDF-backed quotes: no PDF extractor installed "
+              "(pip install PyMuPDF). They are neither verified nor failed.")
     for name, url, q in mismatched:
         print(f"QUOTE MISMATCH  {name}: {url}\n    quote: {q}…")
     if verbose:

@@ -28,7 +28,10 @@ def srcs_of(rec):
 # Homepages that are knowingly weak citations are not allowed to hide: either
 # the row's gaps note names the weakness, or the URL must carry a real path.
 URL_RE = re.compile(r"^https://[^\s]+$")
-BAND_RE = re.compile(r"^\d+(\.\d+)?–\d+(\.\d+)?\+? MW$")
+# A band is a range ("5–20 MW") or, where the source gives one figure, a single
+# value ("0.24 MW"). A range whose ends are equal ("0.24–0.24 MW") is a single
+# value misprinted and is rejected below.
+BAND_RE = re.compile(r"^\d+(\.\d+)?(–\d+(\.\d+)?)?\+? MW$")
 
 
 class SourceShape(unittest.TestCase):
@@ -131,6 +134,9 @@ class DemandBands(unittest.TestCase):
         self.assertGreater(len(loads), 40)
         for l in loads:
             self.assertRegex(l["band"], BAND_RE, f"load {l['label']!r} band {l['band']!r}")
+            ends = re.findall(r"\d+(?:\.\d+)?", l["band"])
+            if len(ends) == 2:
+                self.assertNotEqual(ends[0], ends[1], f"load {l['label']!r}: degenerate range {l['band']!r}")
 
     def test_every_load_cited_or_registered_uncited(self):
         """A load either carries a source or its label sits in _meta.uncited —
@@ -177,7 +183,10 @@ class Register(unittest.TestCase):
         if isinstance(node, dict):
             out = []
             for k, v in node.items():
-                if k in ("sources", "source", "url", "label", "quote"):
+                # Same exemptions as tools/check_register.py, plus labels and a
+                # voice's venue: external titles ("Unlocking Hypergrowth: ..." is
+                # Aalo's blog headline), verbatim quotes and internal notes.
+                if k in ("sources", "source", "url", "label", "quote", "_meta", "venue"):
                     continue
                 out.extend(Register.prose_of(v))
             return out
@@ -191,13 +200,20 @@ class Register(unittest.TestCase):
         return []
 
     def test_no_ai_register_in_authored_prose(self):
-        for name in ("costs.json", "sectors.json", "mechanisms.json",
-                     "policy.json", "opportunities.json", "vendors.json", "strategy.json"):
+        """Every data file the site bundles, derived from the builder's registry
+        (issue #18): a hand-typed tuple of seven files had left benchmarks,
+        instruments, voices, news, deployment_sites, arguments and gaps unswept."""
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+        for name in (f"{n}.json" for n in build_data.FILES):
             strings = self.prose_of(load(name))
             self.assertTrue(strings, f"{name}: prose extraction found nothing")
             text = " \n".join(strings).lower()
             for word in self.BANNED:
-                self.assertNotIn(word, text, f"{name} contains banned register word {word!r}")
+                i = text.find(word)
+                # An excerpt, not the file: assertNotIn printed ~290 KB of prose.
+                self.assertEqual(i, -1, f"{name} contains banned register word {word!r}: "
+                                        f"...{text[max(0, i - 60):i + 60]}...")
 
     def test_no_ai_register_in_markup(self):
         """index.html was outside this lint until 2026-08-23, which is how a

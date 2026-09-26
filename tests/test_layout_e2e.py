@@ -103,20 +103,33 @@ class Layout(unittest.TestCase):
                           })
                         };
                       }
+                      const active = tabs.querySelector('[aria-selected="true"]').getBoundingClientRect();
+                      const navrow = tabs.parentNode;
                       return {
                         scrollW: doc.scrollWidth, clientW: doc.clientWidth,
                         lastTabIn: lastTab.right <= tabsBox.right + 0.5,
                         tabOverflow: tabs.scrollWidth > tabs.clientWidth + 1,
+                        activeIn: active.left >= tabsBox.left - 0.5 && active.right <= tabsBox.right + 0.5,
+                        fade: navrow.classList.contains('more-left') || navrow.classList.contains('more-right'),
                         visible, wide, sub,
                         tabH: document.querySelector('.tab').getBoundingClientRect().height
                       };
                     }""", panel)
                     if m["scrollW"] > m["clientW"] + 1:
                         problems.append(f"{width}px {panel}: horizontal scroll {m['scrollW']}>{m['clientW']}")
-                    if width >= 768 and not m["lastTabIn"]:
+                    # From 1280px all nine tabs sit on one row. Below it the strip
+                    # scrolls (wrapping cost 143px of sticky chrome at 768px), which is
+                    # only discoverable if the active tab is in view and an edge fade
+                    # marks the side that hides more tabs (UAT 2026-09-26).
+                    if width >= 1280 and not m["lastTabIn"]:
                         problems.append(f"{width}px {panel}: last tab clipped")
-                    if width < 768 and not m["tabOverflow"]:
-                        problems.append(f"{width}px {panel}: primary navigation should scroll")
+                    if width < 1280:
+                        if not m["tabOverflow"]:
+                            problems.append(f"{width}px {panel}: primary navigation should scroll")
+                        if not m["activeIn"]:
+                            problems.append(f"{width}px {panel}: active tab scrolled out of view")
+                        if m["tabOverflow"] and not m["fade"]:
+                            problems.append(f"{width}px {panel}: hidden tabs with no edge fade")
                     if m["visible"] != [panel]:
                         problems.append(f"{width}px {panel}: visible={m['visible']}")
                     if m["wide"]:
@@ -140,12 +153,12 @@ class Layout(unittest.TestCase):
                 if width == 375:
                     page.click("#tab-demand")
                     page.wait_for_timeout(50)
-                    page.click("#demand-tab-all")
+                    page.click("#demand-tab-overview")
                     page.wait_for_timeout(50)
-                    before = page.evaluate("document.querySelectorAll('details.sector[open]').length")
-                    page.click("details.sector:nth-of-type(2) summary")
+                    before = page.evaluate("document.querySelectorAll('details.segcard[open]').length")
+                    page.click("#demand-overview details.segcard >> nth=1 >> summary")
                     page.wait_for_timeout(50)
-                    after = page.evaluate("document.querySelectorAll('details.sector[open]').length")
+                    after = page.evaluate("document.querySelectorAll('details.segcard[open]').length")
                     if after != before + 1:
                         problems.append(f"accordion toggle {before}->{after}")
                 ctx.close()
@@ -155,6 +168,61 @@ class Layout(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class Routing(unittest.TestCase):
+    def test_register_search_restores_the_first_page(self):
+        """The source register shows its first 30 rows until the reader searches
+        or asks for all. Clearing a search used to leave all ~700 rows open and
+        hide the Show all button (UAT 2026-09-26)."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page()
+            page.goto(base + "#sources", wait_until="networkidle")
+            page.wait_for_timeout(200)
+            count = "[...document.querySelectorAll('.rrow')].filter(r => r.offsetParent).length"
+            first = page.evaluate(count)
+            page.fill("#regq", "alaska")
+            page.wait_for_timeout(60)
+            searched = page.evaluate(count)
+            page.fill("#regq", "")
+            page.wait_for_timeout(60)
+            cleared = page.evaluate(count)
+            button_back = page.is_visible("#regall")
+            page.click("#regall")
+            page.wait_for_timeout(60)
+            everything = page.evaluate(count)
+            browser.close()
+        self.assertEqual(first, 30)
+        self.assertGreater(searched, 0)
+        self.assertEqual(cleared, 30, "clearing the search should restore the first page")
+        self.assertTrue(button_back, "Show all should return with the first page")
+        self.assertGreater(everything, 30)
+
+    def test_deep_link_scrolls_its_tab_into_view(self):
+        """On a phone the tab strip scrolls. Landing on #sources left its tab
+        ~500px off-screen, so the page gave no sign of where the reader was."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            ctx = browser.new_context(viewport={"width": 375, "height": 812},
+                                      has_touch=True, is_mobile=True)
+            page = ctx.new_page()
+            page.goto(base + "#sources", wait_until="networkidle")
+            page.wait_for_timeout(80)
+            got = page.evaluate("""() => {
+              const tabs = document.getElementById('tabs'), box = tabs.getBoundingClientRect();
+              const on = tabs.querySelector('[aria-selected="true"]').getBoundingClientRect();
+              return {id: tabs.querySelector('[aria-selected="true"]').id,
+                      inView: on.left >= box.left - 0.5 && on.right <= box.right + 0.5,
+                      scrolled: tabs.scrollLeft > 0};
+            }""")
+            browser.close()
+        self.assertEqual(got["id"], "tab-sources")
+        self.assertTrue(got["scrolled"] and got["inView"], got)
+
     def test_legacy_evidence_hash_lands_on_sources(self):
         """The Sources tab shipped as "Evidence" until 2026-08-23. Anything
         already linked or bookmarked uses #evidence, and an unknown route
@@ -202,10 +270,11 @@ class Routing(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class HomePage(unittest.TestCase):
-    def test_home_front_page_has_lead_and_top_stories_and_working_paths(self):
-        """The newspaper front page: one lead story, three "more top stories"
-        cards, and a non-empty "also recent" rail, all derived from D.news.items
-        rather than a hand-typed id list (see renderHome() in app.js)."""
+    def test_home_is_a_directory_of_the_site_with_the_newest_headlines(self):
+        """Home opens on one card per tab (each linking to a real panel) and then
+        the headlines, newest first. The first-page list once trusted file order
+        and promoted a 2026-08-17 story over three newer ones; a headline also
+        has to open its own record, not the top of a 47-row list."""
         with serve_site() as base, sync_playwright() as pw:
             try:
                 browser = pw.chromium.launch()
@@ -214,18 +283,33 @@ class HomePage(unittest.TestCase):
             page = browser.new_page()
             page.goto(base + "#home", wait_until="networkidle")
             page.wait_for_timeout(100)
-            lead_count = page.locator("#home-lead .leadstory").count()
-            story_count = page.locator("#home-topstories .storycard").count()
-            latest_count = page.locator("#home-latestlist li:not(.more)").count()
-            page.locator('.homepaths a[href="#economics"]').click()
-            page.wait_for_timeout(50)
-            visible = page.evaluate("""() => [...document.querySelectorAll('section[role=tabpanel]')]
-              .filter(p => !p.hidden).map(p => p.id)""")
+            got = page.evaluate("""() => {
+              const cards = [...document.querySelectorAll('#home-glance .glancecard')];
+              const panels = [...document.querySelectorAll('#tabs [role=tab]')].map(t => t.dataset.panel);
+              const dates = [...document.querySelectorAll('#home-lead .ndate, #home-headlist .ndate')]
+                .map(e => e.textContent);
+              return {cards: cards.map(c => c.getAttribute('href').slice(1)), panels,
+                      empty: cards.filter(c => !c.querySelector('.ga').textContent.trim()).length,
+                      undefinedText: cards.filter(c => /undefined|NaN/.test(c.textContent)).length,
+                      lead: document.querySelectorAll('#home-lead .leadstory').length,
+                      heads: document.querySelectorAll('#home-headlist li:not(.more)').length, dates};
+            }""")
+            first = page.locator("#home-headlist li:not(.more) a").first
+            target = first.get_attribute("href")
+            first.click()
+            page.wait_for_timeout(300)
+            opened = page.evaluate("""(id) => {
+              const el = document.getElementById('n-' + id);
+              return {visible: !document.getElementById('news').hidden, open: !!(el && el.open)};
+            }""", target.split("/", 1)[1])
             browser.close()
-        self.assertEqual(lead_count, 1)
-        self.assertEqual(story_count, 3)
-        self.assertGreater(latest_count, 0)
-        self.assertEqual(visible, ["economics"])
+        self.assertEqual(sorted(got["cards"]), sorted(p for p in got["panels"] if p != "home"))
+        self.assertEqual(got["empty"], 0)
+        self.assertEqual(got["undefinedText"], 0)
+        self.assertEqual(got["lead"], 1)
+        self.assertGreaterEqual(got["heads"], 5)
+        self.assertEqual(got["dates"], sorted(got["dates"], reverse=True), "headlines not newest-first")
+        self.assertEqual(opened, {"visible": True, "open": True})
 
     def test_site_filters_expose_the_selected_state(self):
         with serve_site() as base, sync_playwright() as pw:

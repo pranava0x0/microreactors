@@ -233,6 +233,8 @@ vs test bug), status.
 
 ## 2026-08-29 — link rot found by check_links (pre-existing, not introduced)
 
+> **Resolved 2026-09-26** (see the 2026-09-26 section below).
+
 Three registered URLs are dead as of 2026-08-29. All three predate this session's changes
 (confirmed present in `origin/main`'s `site/data.js`). `tools/check_links.py` exits 1 on them;
 the test suite only imports its `collect_urls()`, so CI stays green.
@@ -251,3 +253,153 @@ one may simply have no live equivalent now that the project is off.
 ## 2026-09-02 — commercial-strategy pass
 
 - **2026-09-02 · Costs / learning curve · data bug · Fixed.** `costs.json` `learning_curve.floor` read "INL models 6 to 10 full-time staff at $162,000 to $188,000 each." A grep of both cached INL reports finds no such figures: INL uses a single $178,500 per FTE rate (security 5 FTEs shared one guard per two reactors, remote monitoring one person per 20 reactors). The 3-10 staff and $120,000-225,000 ranges are the University of Michigan paper's uniform input distributions (Table 2, nominal 5 staff at $150,000), and its optimized solution is ten FTEs at $162,424. The $188,000 figure appears in no cached source. Root cause: a paraphrase from the 2026-08-29 cost pass that merged two papers' assumptions under one attribution; the block's sources were the right documents, so the citation-coverage gate could not see it. Fix: sentence re-attributed and two quote-locks added (`Using $178,500/FTE`; `ten FTEs at $162,424.20/year`), verified against the cache. The same wrong sentence is in the (uncommitted) pitch documents; flagged in the pitch improvement plan.
+
+## 2026-09-26 — full refresh (UAT, claim validation, research pass)
+
+- **2026-09-26 · home · The front page promoted an older story over three newer ones — Fixed.**
+  `renderHome()` sliced `D.news.items` assuming newest-first ("already sorted by build_data.py"),
+  but nothing sorted it and `data/news.json` had a 2026-08-17 item above 2026-09-04. Root cause:
+  **code bug plus a false comment**. `tools/build_data.py` now sorts news and ships the newest
+  eight as `headlines`; `test_home_is_a_directory_of_the_site_with_the_newest_headlines` asserts
+  date order.
+- **2026-09-26 · data · news.json had drifted from its research pass — Fixed.** PR #21 hand-edited
+  five items in and three items' fields, while the seed pass stayed marked `incomplete`, so no
+  tool could rebuild the file. Root cause: **process gap** (no drift test for news, unlike voices).
+  The curated items are now `data/research/news/curated-2026-09-21.json`; `test_news_matches_its_pass`.
+- **2026-09-26 · tooling · The quote gate reported 147 PDF quotes as mismatches — Fixed.** With no
+  PDF library installed `cached_text()` returned "", which reads as "the page lacks the quote".
+  Root cause: **tool bug** (an unreadable input reported as a failure). It now returns None and the
+  gate prints `UNCHECKED n PDF-backed quotes` instead. With PyMuPDF: 734 verified, 0 mismatches.
+- **2026-09-26 · site · Duplicate citation chips — Fixed.** A record citing one page twice printed
+  "[10][10]" on the front page. `cite()` now emits one chip per URL.
+- **2026-09-26 · site · Sourced facts typed into app.js — Retired.** Why > The loads rendered six
+  hand-typed cards whose citations did not support them (a 5-30 MW spaceport band cited to an
+  Antares base-selection release; mining transmission costs cited to a Valdez utility page).
+  Root cause: **data in the renderer**, outside every gate. Replaced by the derived Applications
+  overview; `test_app_js_carries_no_sourced_facts` keeps inline sources out of app.js.
+- **2026-09-26 · site · Hand-typed stats — Fixed.** Applications' "$250-$850/MWh displaced diesel
+  ceiling" and Sites' "5 load categories" / "0 FERC hits" were literals; all are counted now.
+- **2026-09-26 · data · Degenerate band "0.24-0.24 MW" — Fixed.** Now "0.24 MW"; the band test
+  accepts single values and rejects equal-ended ranges.
+- **2026-09-26 · data · eVinci's criticality was invisible on Vendors — Fixed.** The 2026-08-24
+  NCERC milestone lacked the `unit` field `criticalityMilestone()` requires, so the new vendor
+  table said "no criticality yet" beside a News item recording it. Antares also listed its Mark-0
+  criticality twice (deduped). Root cause: **data bug**.
+- **2026-09-26 · layout · Two-row nav and an off-screen active tab — Fixed.** Nine tabs wrapped to
+  two rows at 768 and 1280px (129-143px of sticky chrome); on phones #sources left its tab ~500px
+  off-screen. The strip now scrolls below 1280px with an edge fade and reveals the active tab.
+- **2026-09-26 · tooling · The language lint read six object keys of app.js — Fixed.** Copy built
+  around variables (every new Home and Applications string) was never scanned. It now tokenizes
+  every string literal, skipping regex literals and comments.
+- **2026-09-26 · gate · Banned-word sweep covered 7 of 15 data files (#18) — Fixed.** Derived from
+  `build_data.FILES`; three hits fixed or exempted (a blog headline in a venue field).
+- **2026-09-26 · data · Janus binding status disagrees between tracker and News — Open.** The tracker
+  row says not binding; the six 2026-08-26 News items say executed; the Army's release says the five
+  vendors were "down-selected ... for negotiation of Other Transactions Authority-based agreements".
+  Under verification in the 2026-09-26 pass.
+- **2026-09-26 · sources · Five dead citations — Fixed.** `tools/check_links.py`: 639 URLs, 535
+  live, 99 bot-blocked (page exists), 5 dead. The AEP Ohio tariff book moved to the September 2026
+  edition (both Schedule DCT quotes re-verified in it); the CNSC MMR review page and the reflector.com
+  Radiant release now cite Wayback snapshots whose cached copies contain the quotes; the CNSC GFP
+  admin-protocol filing row was dropped (removed after the project paused, never archived).
+- **2026-09-26 · data · Two Transportation loads were cited to a quote that is not on the page —
+  Fixed.** "Large Amazon, Walmart and similar fulfillment and distribution centers" and "Large rail,
+  truck and fleet-charging hubs" cited data.nrel.gov/submissions/162 for a sentence ("A 20-bus transit
+  depot ... could draw 3 MW") that the archived dataset page does not contain: a search-engine
+  synthesis, already marked snippet-only. Root cause: **data bug** (DATA.md: never cite a fact that
+  exists only in a search summary). Both loads are in `_meta.uncited` until a facility-level source
+  is found; the filings agent is looking.
+- **2026-09-26 · site · Clearing a register search left all ~700 rows open — Fixed.** Typing lifted
+  the 30-row page limit and hid Show all, and nothing restored either when the box was emptied.
+  Found by the interaction sweep (every filter chip, disclosure, deal row, search and deep link at
+  375 and 1280px). Root cause: **code bug** (one-way state). The limit now returns when the box is
+  cleared unless the reader chose Show all or arrived on a #src-N link;
+  `test_register_search_restores_the_first_page`.
+- **2026-09-26 · data · Five Janus news items said "signed" — Fixed.** Their binding notes claimed
+  signed OTA agreements; the Army's release says the five vendors were "down-selected ... for
+  negotiation", and the BWXT, General Atomics and Westinghouse releases use selection language
+  (Antares says "awarded", Radiant says binding). The five are now announced, not executed (News:
+  42 of 60 executed). The Janus tracker row moves the other way, to binding, because the tracker's
+  own rule counts a selection with a named site, as it already did for the ANPI rows. Root cause:
+  **data bug** (an agent's reading of "award" as "signed"). Found by the verification pass.
+- **2026-09-26 · data · UK Last Energy row carried the Welsh project's design review — Fixed.** The
+  2025 ONR review covers the Llynfi site, not the DP World Thames Freeport project.
+- **2026-09-26 · data · Antares Series C dated to a recap article — Fixed.** Announced 2026-07-27
+  (TechCrunch, BusinessWire); the row said 2026-08-03, the date of a later recap.
+- **2026-09-26 · data · Site and prospect claims corrected by the verification pass — Fixed.** 44 checks
+  (all 16 sites, all 25 prospects): 37 confirmed. Penn State's letter of intent was *submitted*
+  2025-02-28 (the letter is dated 2025-02-17, which a 2026-08-23 fix had used for "told the NRC on");
+  UIUC's application notice of receipt was published 2026-04-21 and it was docketed 2026-05-18, not
+  "announced 2026-04-15"; Chalk River's vendor is NANO Nuclear since its 2025-10-22 purchase of
+  Global First Power; Wales' consenting route is a Significant (not Strategic) Infrastructure
+  Project; Doyon's obligations are $906M, not $895M. One verdict was itself wrong: the agent called
+  CVEA's vendor list unsupported after reading only the press release, but CVEA's September 2023
+  Ruralite article names Westinghouse, Oklo, NuScale and Radiant; the site now attributes the list
+  to that article and cites it. Root cause of the originals: **data bugs** (dates read off the wrong
+  document, a corporate change applied to one record and not its sibling).
+- **2026-09-26 · data · The one unverifiable site claim is confirmed in ADAMS — Fixed.** The
+  verification agent could not find Aalo's letter of intent for an early site permit at Texas A&M
+  RELLIS because web search does not index ADAMS. `tools/adams_search.py --accession ML26190A374`
+  returns it (Aalo Holdings, 2026-07-09, docket 99902128). The same search found NRC's 2026-09-02
+  e-mail to Aalo on a RELLIS ESP project number (ML26245A061, docket 99902180), now in the site's
+  filing trail. Root cause: **tool choice** (a web-only verifier checking a docket-only fact).
+- **2026-09-26 · data · Five news items had no fetched source — Fixed.** The news validator added in
+  this pass requires one fetched source per item. Four items cited investor-relations pages that
+  stall scripted clients (Q4 and GlobeNewswire hosts), so they carried search snippets only; each now
+  also cites a fetched copy of the same release (PR Newswire for the two Centrus contracts, X-energy's
+  and NANO's own sites). One snippet quote was not verbatim ("signed a definitive" where the release
+  reads "the signing of a definitive") and was re-copied. The PJM ER26-1479-002 row had no quote: its
+  eLibrary page is a script shell, so it is now cached as rendered (capture "out-of-band") and quotes
+  FERC's filing description. Root cause: **data bug** (snippet-only sources shipped as the only
+  evidence for four executed events).
+- **2026-09-26 · data · The older news archive fails two structural news rules — Open.**
+  `python3 tools/research_pass.py validate data/research/news` reports 94 errors, none in this pass's
+  files: 42 ids in `seed-2026-08-30.json` repeat in `curated-2026-09-21.json`, which superseded it
+  (merge_news keeps the later file, so the site is unaffected), and 52 older items list one URL twice,
+  usually two quotes from one page (`cite()` already renders one chip per URL). Root cause: **rules
+  added after the data** (the news type and its no-repeated-URL rule arrived in this pass). Fix
+  when next touched: fold each item's same-page quotes into one source and mark the seed file
+  superseded, so the validator skips it.
+- **2026-09-26 · data · The #17 station table carried figures no cited page contained — Fixed.**
+  Checked before closing #17: the mine-life column (23 years, 20+ and 35+ years, to 2033) was in none
+  of the six cited pages, Agnew's capacity read 60 MW where EDL's page states "Generating capacity:
+  47 MW", Syama's 70 MW added its battery to its generation, and the Export Finance Australia
+  guarantee was described as provided "for that PPA" when Australian Mining reports it was approved
+  for Liontown "to underpin the timely construction of the station". Each row now cites its own
+  documents (Liontown, Lynas, Resolute via Global Mining Review, MINING.COM for mine life), and the
+  table renders a chip per row. Syama's term note also records that its 16 years may run from
+  signing or from first power (3Q20): 9 to 10 years remain either way, under the 10-year flag test.
+  Root cause: **data bug** (agent figures from search summaries placed in an extra field the quote
+  gate never reads, because `sites` rows carried no sources).
+- **2026-09-26 · data · Prospect answers checked number by number — Fixed.** Every number in the
+  nine answers from this pass was searched for in its cited pages. Pages that block scripted
+  fetches (SEC, canada.ca, GlobeNewswire, src.sk.ca, North of 60 Mining News) were read in a
+  browser; their figures match (Oklo's $24.0 million, 4,750 kg and 15-75 MWe; Standard Nuclear's
+  50 kgU; SRC's $21.5 million; the Gunnar licence to 2031-05-31; Red Dog's C$200-250 million and
+  42.2 Mt at 15.8% zinc; the Kivalliq $2.8 million, $11.6 million and "by 2028"). Fixed: the Nunavut
+  answer quoted "reaffirmed" where the release says "reaffirms", credited the release's own "another
+  significant milestone" to Nukik's CEO, and cited the Manitoba Hydro TSR and MISO certification to
+  unnamed trade press (now Nukik's 2025-11-27 release, cached); Red Dog's 2026 budget carried a
+  breakdown the article does not give; the Oklo answer omitted that the same 2023 deck gives
+  "<$60 million" as estimated construction costs. Root cause: **data bugs** (paraphrase inside
+  quotation marks, and an agent's summary of a search result presented as a sourced fact).
+- **2026-09-26 · data · Verification C: numbers the offline check could not find in any cited page — Fixed.**
+  44 records from this pass carried a number that no cached copy of a cited page contained. Two
+  Sonnet agents checked each one against the pages (`verify-c-A.json`, `verify-c-B.json`); pages
+  that block scripted clients were then read in a browser. Wrong: Greenland's Tanbreez "70%
+  acquired" (the 70% was an unrelated 60 North ApS purchase; Critical Metals owns 92.5%), American
+  Samoa's "43 cents, 2023, 3.5x" (DOE: 44.97 cents, 2022, almost three times), the Chatham
+  Islands' $1.02/kWh dated 2020 (the article is from 2012), Yukon's Minto 53,000 t/yr, Pacaso's
+  $2.8M top share, AVEC's 58 communities off 46 plants (a 2026 listing says 59 locations),
+  Donlin's 316 miles (Alaska DNR: 315), SETuP's 10 MW across 25 communities (ARENA: 26
+  communities). Removed as unsourced anywhere: Donlin's 220 MW, Ekati's 30.8 MW, WA mine diesel at
+  $0.50 and hybrids at $0.25-0.35/kWh, CNMI's 62.1 and 42.5 MW, a $2.42/gal Greenland tracker
+  price, Palau's 97.5% diesel share and "28 MW" (which contradicted its plants' 23.7 + 13.08 MW),
+  Majuro's 9.8 MW demand, the $0.41 and $0.36 tariffs, Nunavik's "14 villages", Yukon's LNG share,
+  the Global Fund's $128M and the NHS "5,000 patients". Figures that were right but cited to pages that do
+  not carry them now cite pages that do (28 sources added across 22 records). `apply_verify_c.py` holds every edit. Root cause: **data bugs**
+  (agent figures from search summaries, and from pages it summarised rather than quoted); the
+  quote gate cannot see them because it checks quotes, not prose. Open: a gate that checks every
+  number in a record's prose against its cited pages (this pass's `numcheck` script, in the scratch
+  directory) would have caught all of them, but it needs a way to accept confirmed figures on pages
+  that cannot be cached before it can run in CI.

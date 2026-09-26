@@ -23,16 +23,39 @@ body{overflow-x:hidden}
   font-size:13px;font-weight:var(--weight-medium);letter-spacing:var(--track-nav);text-transform:uppercase;
   font-family:var(--font-core);transition:var(--transition-control);white-space:nowrap;
   touch-action:manipulation}
-@media(min-width:768px){.tab{font-size:15px;padding:var(--space-2) var(--space-4)}}
+@media(min-width:768px){.tab{font-size:14px;padding:var(--space-2) var(--space-3)}}
+/* Nine tabs on one row from 1280px: at 15px with 16px padding the strip needed
+   ~1,240px and parked Sources alone on a second row, 129px of chrome on a
+   800px-tall laptop screen (UAT 2026-09-26). */
+@media(min-width:1280px){.tab{letter-spacing:.07em;padding:var(--space-2) 10px}
+  .tabs{flex-wrap:nowrap}}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
 @media(max-width:767px){
   .navrow{display:block}
   .wordmark{display:block;margin:0 0 var(--space-1)}
-  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;
+}
+/* Below 1280px the nine tabs do not fit one row, so the strip scrolls instead of
+   wrapping (wrapping cost 143px of sticky chrome at 768px). */
+@media(max-width:1279px){
+  .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;
     -webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar{display:none}
   .tab{flex:0 0 auto}
+  /* The strip scrolls; a fade on whichever edge hides more tabs says so.
+     app.js toggles .more-left / .more-right from the strip's scroll position. */
+  .navrow{position:relative}
+  .navrow::before,.navrow::after{content:"";position:absolute;bottom:0;width:36px;height:44px;
+    pointer-events:none;opacity:0;transition:opacity var(--dur-fast) var(--ease-standard)}
+  /* Inset by the page gutter so the fade sits on the strip's clipped edge. */
+  .navrow::before{left:var(--gutter-page);background:linear-gradient(to left,transparent,var(--surface-page))}
+  .navrow::after{right:var(--gutter-page);background:linear-gradient(to right,transparent,var(--surface-page))}
+  .navrow.more-left::before,.navrow.more-right::after{opacity:1}
+}
+@media(min-width:900px) and (max-width:1279px){
+  .navrow::before{left:var(--gutter-page-lg)}
+  .navrow::after{right:var(--gutter-page-lg)}
 }
 
 /* ---------- type helpers ---------- */
@@ -61,6 +84,9 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
   color:var(--text-tertiary);text-decoration:none;margin-left:var(--space-1);
   vertical-align:super;line-height:1}
 .cite:hover{color:var(--antares-red);opacity:1}
+/* WCAG 2.2 target size (24px) on touch without changing the desktop look: the
+   chips were 12x14px and sat edge to edge. */
+@media(pointer:coarse){.cite{padding:6px 3px;margin-left:0;min-width:24px;text-align:center}}
 .nosrc{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--antares-red);
   margin-left:var(--space-1);vertical-align:super;line-height:1;white-space:nowrap}
 
@@ -73,7 +99,10 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
    strands dead cells in the last row (DESIGN.md 12.18). */
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-10)}
-@media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr)}}
+/* 640-1023px: three tiles then two, on a six-track grid, so the fifth stat never
+   leaves a dead cell (DESIGN.md 8.9; the 3-column version did, UAT 2026-09-26). */
+@media(min-width:640px) and (max-width:1023px){.stats{grid-template-columns:repeat(6,1fr)}
+  .stats .stat{grid-column:span 2}.stats .stat:nth-child(n+4){grid-column:span 3}}
 @media(min-width:1024px){.stats{grid-template-columns:repeat(5,1fr)}}
 .stat{background:var(--surface-page);padding:var(--space-6);display:block;
   text-decoration:none;color:inherit;transition:background var(--transition-control)}
@@ -134,11 +163,14 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .rowtop{display:grid;grid-template-columns:1fr auto;gap:var(--space-4);align-items:start;cursor:pointer;
   position:relative}
 .rowtop:hover .rowname{color:var(--antares-red)}
-.rowtop .pill{margin-right:var(--space-6)}
-.rowtop::after{content:"\25BE";color:var(--antares-red);font-size:var(--size-caption);
-  position:absolute;right:0;top:var(--space-1);
-  transition:transform var(--dur-fast) var(--ease-standard)}
-.row.open .rowtop::after{transform:rotate(180deg)}
+
+.rowtop:hover{background:linear-gradient(to right,transparent,var(--surface-raised))}
+.rowmore{margin-left:auto;font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red);border:1px solid var(--antares-red-40);
+  padding:2px var(--space-2);white-space:nowrap}
+.rowmore::after{content:" \25BE";display:inline-block;transition:transform var(--dur-fast) var(--ease-standard)}
+.row.open .rowmore::after{transform:rotate(180deg)}
+.rowtop:hover .rowmore{background:var(--antares-red);color:var(--text-on-accent)}
 .rowname{font-size:var(--size-heading-3);font-weight:var(--weight-semibold);
   letter-spacing:var(--track-heading);transition:var(--transition-control)}
 .rowmeta{display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-2);
@@ -268,71 +300,139 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .dstat .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);margin-top:var(--space-2);display:block}
 
-.topgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
-@media(min-width:768px){.topgrid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.topgrid{grid-template-columns:repeat(3,1fr)}}
-.topcard{background:var(--surface-page);border:1px solid var(--border-subtle);padding:var(--space-6);
-  display:flex;flex-direction:column}
-.topcard .thdr{display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-3);margin-bottom:var(--space-3)}
-.topcard h4{font-size:var(--size-heading-3);color:var(--text-primary);margin:0;font-weight:var(--weight-semibold)}
-.topcard .tband{color:var(--antares-red);font-family:var(--font-mono);font-size:var(--size-caption);white-space:nowrap;font-weight:var(--weight-medium)}
-.topcard .tinc{font-size:var(--size-caption);color:var(--text-tertiary);margin-bottom:var(--space-3);line-height:1.4}
-.topcard .tinc strong{color:var(--text-secondary);font-weight:var(--weight-medium)}
-.topcard .tdesc{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin-bottom:var(--space-4);flex-grow:1}
-.topcard .tedge{font-size:var(--size-caption);color:var(--text-tertiary);border-left:2px solid var(--antares-red-40);padding-left:var(--space-3);line-height:1.45;margin-top:auto}
-.topcard .tedge strong{color:var(--antares-red);font-weight:var(--weight-medium)}
+/* Applications > Overview: buyer types grouped by the cost rung that wins them,
+   then a sector table (2026-09-26; replaced eight bare accordions and the six
+   hand-typed "top options" cards). */
+.ladder{display:grid;gap:var(--space-8);margin-top:var(--space-6)}
+.tierhead{display:grid;grid-template-columns:auto auto 1fr;gap:var(--space-2) var(--space-4);
+  align-items:baseline;border-bottom:1px solid var(--border-default);padding-bottom:var(--space-3);
+  margin-bottom:var(--space-3)}
+.tiername{font-size:var(--size-heading-3);font-weight:var(--weight-semibold)}
+.tierprice{font-family:var(--font-mono);font-size:var(--size-body-sm);color:var(--antares-red);white-space:nowrap}
+.tiernote{font-size:var(--size-body-sm);color:var(--text-tertiary);justify-self:end;text-align:right}
+@media(max-width:767px){.tierhead{grid-template-columns:auto 1fr}.tiernote{grid-column:1/-1;justify-self:start;text-align:left}}
+details.segcard summary .cat,details.region summary .cat{text-transform:none;letter-spacing:0;
+  font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-secondary)}
+.sectortable{width:100%;border-collapse:collapse;font-size:var(--size-body-sm)}
+.sectortable th,.sectortable td{border-bottom:1px solid var(--border-subtle);padding:var(--space-3) var(--space-3) var(--space-3) 0;
+  text-align:left;vertical-align:top}
+.sectortable thead th{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
+  color:var(--text-tertiary);font-weight:var(--weight-medium)}
+.sectortable th[scope=row] a{color:var(--text-primary);font-weight:var(--weight-semibold);white-space:nowrap}
+.sectortable th[scope=row] a:hover{color:var(--antares-red)}
+.sectortable .num{font-family:var(--font-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sectortable .today{color:var(--text-secondary);min-width:18rem}
+.vendortable .vtreactor{display:block;font-weight:var(--weight-regular);color:var(--text-tertiary);
+  font-size:var(--size-caption);margin-top:2px}
+.vendortable td{color:var(--text-secondary)}
+/* A finding's station table (issue #17): compact, flagged rows marked with a badge. */
+.findingsites{font-size:var(--size-caption);margin:0 0 var(--space-4)}
+.findingsites th[scope=row]{font-weight:var(--weight-semibold);color:var(--text-primary)}
+.findingsites td{color:var(--text-secondary)}
+@media(max-width:639px){
+  .findingsites,.findingsites tbody{display:block;width:100%}
+  .findingsites thead{display:none}
+  .findingsites tr{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-2) 0}
+  .findingsites th,.findingsites td{border:none;padding:0}
+  .findingsites td:nth-of-type(2)::before{content:"Start \00b7  term: ";color:var(--text-tertiary)}
+  .findingsites td:nth-of-type(3)::before{content:"MW (firm thermal): ";color:var(--text-tertiary)}
+  .findingsites td:nth-of-type(4)::before{content:"Mine life: ";color:var(--text-tertiary)}
+}
+.vendortable .vbadge{display:inline-block;margin:0 var(--space-1) var(--space-1) 0}
+/* Six columns do not fit a tablet: stack each company below 900px. */
+@media(max-width:899px){
+  .vendortable,.vendortable tbody{display:block;width:100%}
+  .vendortable thead{display:none}
+  .vendortable th[scope=row] a{white-space:normal}
+  .vendortable tr{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--space-1);
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
+  .vendortable th,.vendortable td{border:none;padding:0}
+  .vendortable td:nth-of-type(1)::before{content:"Output \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(2)::before{content:"Fuel \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(4)::before{content:"Next \00b7  ";color:var(--text-tertiary)}
+  .vendortable td:nth-of-type(5)::before{content:"Delivery \00b7  ";color:var(--text-tertiary)}
+}
+/* Phones: each sector becomes a block instead of a five-column row. */
+@media(max-width:639px){
+  .sectortable.apps thead{display:none}
+  .sectortable.apps tr{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:var(--space-1) var(--space-3);
+    border-bottom:1px solid var(--border-subtle);padding:var(--space-3) 0}
+  .sectortable.apps th,.sectortable.apps td{border:none;padding:0}
+  .sectortable.apps th[scope=row]{grid-column:1/-1}
+  .sectortable.apps td.num:nth-of-type(1)::after{content:" loads"}
+  .sectortable.apps td.num:nth-of-type(3)::after{content:" inside 1\2013 20 MW"}
+
+  .sectortable.apps .today{grid-column:1/-1;min-width:0}
+}
 
 /* ---------- candidate deployment sites ---------- */
 .sites-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
 @media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
 .sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
-.homegrid{display:grid;gap:var(--space-8);padding:var(--space-10) 0 var(--space-8);border-bottom:1px solid var(--border-subtle)}
-.homegrid h2{font-size:var(--size-heading-2);margin:0 0 var(--space-4)}
-.homepaths{display:grid;align-content:start;border-top:1px solid var(--border-subtle)}
-.homepaths a{display:flex;justify-content:space-between;align-items:center;padding:var(--space-4) 0;border-bottom:1px solid var(--border-subtle);font-weight:var(--weight-semibold);color:var(--text-primary)}
-.homepaths a span{color:var(--antares-red)}
-@media(min-width:768px){.homegrid{grid-template-columns:minmax(0,1.4fr) minmax(18rem,.8fr);align-items:start}}
-
-/* ---------- home front page (newspaper layout) ----------
-   Lead story + a 3-up "more top stories" grid in the main column, a compact
-   "also recent" rail alongside. All three pull the same D.news.items array
-   (already newest-first) by slice, never a hand-typed list of ids — see
-   renderHome() in app.js. */
-.front{display:grid;gap:var(--space-10);padding:var(--space-10) 0 var(--space-12)}
-@media(min-width:768px){.front{grid-template-columns:minmax(0,1.6fr) minmax(16rem,.8fr);align-items:start}}
-
+/* ---------- home: the site at a glance, then the newest headlines ----------
+   2026-09-26: the landing tab was a newspaper front page; it now opens on a
+   directory of the site (one card per tab, each with a derived figure) and
+   keeps the headlines below it. Every value is computed in renderHome(). */
+.homeblock{padding:var(--space-10) 0 var(--space-4)}
+.homeblock + .homeblock{padding-top:var(--space-8)}
 .fronthead{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);
   border-bottom:1px solid var(--border-default);padding-bottom:var(--space-3);margin-bottom:var(--space-6)}
-.fronthead h3{margin:0;font-size:var(--size-heading-3)}
+.fronthead h2{margin:0;font-size:var(--size-heading-3);letter-spacing:var(--track-heading)}
 .fronthead a{font-size:var(--size-caption);font-weight:var(--weight-semibold);color:var(--antares-red);
   white-space:nowrap}
-
+.glance{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border-subtle);
+  border:1px solid var(--border-subtle)}
+@media(min-width:640px){.glance{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.glance{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.glancecard{display:grid;grid-template-rows:auto auto 1fr;gap:var(--space-2);position:relative;
+  padding:var(--space-5) var(--space-10) var(--space-5) var(--space-6);background:var(--surface-page);color:inherit;
+  transition:background var(--dur-fast) var(--ease-standard)}
+.glancecard .go{position:absolute;top:var(--space-5);right:var(--space-5)}
+@media(max-width:639px){.glancecard{padding:var(--space-4) var(--space-10) var(--space-4) var(--space-5)}
+  .homeblock{padding-top:var(--space-8)}}
+.glancecard:hover{background:var(--surface-plate)}
+.glancecard:hover .gq,.glancecard:hover .go{color:var(--antares-red)}
+.gtab{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red)}
+.gq{font-size:var(--size-body-lg);font-weight:var(--weight-semibold);color:var(--text-primary);
+  line-height:var(--lh-heading);transition:var(--transition-control)}
+.ga{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
+.go{color:var(--text-tertiary);transition:var(--transition-control)}
+.frontcols{display:grid;gap:var(--space-8)}
+@media(min-width:900px){.frontcols{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}}
 .leadstory{border:1px solid var(--border-subtle);border-left:3px solid var(--antares-red);
-  padding:var(--space-6);margin-bottom:var(--space-8);background:var(--surface-page)}
+  padding:var(--space-6);background:var(--surface-page)}
 .leadstory h3{font-size:var(--size-heading-2);line-height:var(--lh-heading);
   margin:var(--space-3) 0;color:var(--text-primary)}
 .leadstory p{color:var(--text-secondary);margin:0 0 var(--space-4)}
-.leadstory a.more,.storycard a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);
+.leadstory a.more{font-size:var(--size-caption);font-weight:var(--weight-semibold);
   color:var(--antares-red);display:inline-block;margin-top:var(--space-3)}
-
-.topstories{display:grid;gap:var(--space-6)}
-@media(min-width:640px){.topstories{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.storycard{border-top:1px solid var(--border-default);padding-top:var(--space-4);min-width:0}
-.storycard h4{font-size:var(--size-body-lg);line-height:var(--lh-heading);
-  margin:var(--space-2) 0;color:var(--text-primary)}
-.storycard p{color:var(--text-secondary);font-size:var(--size-body-sm);margin:0}
-
-.frontaside h3{font-size:var(--size-caption);text-transform:uppercase;letter-spacing:var(--track-label);
-  color:var(--text-tertiary);border-bottom:1px solid var(--border-subtle);
-  padding-bottom:var(--space-3);margin:0}
-.latestlist{list-style:none;margin:0;padding:0}
-.latestlist li{border-bottom:1px solid var(--border-subtle);padding:var(--space-4) 0}
-.latestlist a{color:var(--text-primary);font-weight:var(--weight-medium);display:block;margin-top:var(--space-1)}
-.latestlist a:hover{color:var(--antares-red)}
-.latestlist li.more{padding-top:var(--space-4);border-bottom:none}
-.latestlist li.more a{color:var(--antares-red);font-weight:var(--weight-semibold);
-  font-size:var(--size-caption);margin-top:0}
+.headlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--border-subtle)}
+.headlist li{border-bottom:1px solid var(--border-subtle)}
+.headlist a{display:block;padding:var(--space-4) 0;color:var(--text-primary);min-height:44px}
+.headlist a:hover .hl{color:var(--antares-red)}
+.headlist .hl{display:block;font-weight:var(--weight-medium);margin-top:var(--space-1);
+  transition:var(--transition-control)}
+.headlist li.more{border-bottom:none}
+.headlist li.more a{color:var(--antares-red);font-size:var(--size-caption);font-weight:var(--weight-semibold)}
+/* A headline links to #news/<id>; keep the opened record clear of the sticky nav. */
+.newsitem{scroll-margin-top:120px}
+/* Phones: the numbers, not the pitch (DESIGN.md 7). The lede goes and the five
+   stats become one swipeable row instead of a three-row grid: the hero was
+   922px on an 812px screen. */
+@media(max-width:639px){
+  .hero{padding:var(--space-8) 0 var(--space-6)}
+  .hero .lede{display:none}
+  .hero h1{margin-bottom:0}
+  .stats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:var(--space-6);
+    scrollbar-width:none;-webkit-mask-image:linear-gradient(to right,black calc(100% - 32px),transparent);
+    mask-image:linear-gradient(to right,black calc(100% - 32px),transparent)}
+  .stats::-webkit-scrollbar{display:none}
+  .stat{flex:0 0 42%;scroll-snap-align:start;padding:var(--space-4)}
+  .stat .n{font-size:var(--size-heading-2)}
+}
 .sitecard{background:var(--surface-page);border:1px solid var(--border-subtle);
   min-width:0;overflow-wrap:break-word;word-break:break-word}
 .sitecard > summary{list-style:none;cursor:pointer;padding:var(--space-5) var(--space-6);
@@ -420,7 +520,8 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
 /* ---------- market design ---------- */
 .mech{display:grid;gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);
   margin-top:var(--space-6)}
-@media(min-width:900px){.mech{grid-template-columns:repeat(3,1fr)}}
+/* Four proposal cards since 2026-09-26: two columns, so none sits alone on a row. */
+@media(min-width:900px){.mech{grid-template-columns:repeat(2,1fr)}}
 .mechcard{background:var(--surface-page);padding:var(--space-6)}
 .mechcard h4{color:var(--antares-red);font-size:var(--size-body);margin-bottom:var(--space-3);
   letter-spacing:var(--track-heading)}
@@ -432,7 +533,11 @@ details.sector .loads,.sector.solo .loads{padding:0 var(--space-6) var(--space-3
   text-transform:uppercase;padding:1px var(--space-2);border:1px solid var(--antares-red-40);
   color:var(--antares-red);border-radius:var(--radius-control);white-space:nowrap}
 /* ---------- precedents & market subpanels ---------- */
-.precgroup{margin-bottom:var(--space-10)}
+.precgroup{margin-bottom:var(--space-8)}
+.precgrouphead{font-size:var(--size-body);font-weight:var(--weight-semibold);color:var(--text-secondary)}
+details.precgroup{border-bottom:1px solid var(--border-subtle);padding:var(--space-2) 0}
+details.precgroup[open] > .precgrid{margin:var(--space-3) 0 var(--space-4)}
+details.prec .body p.copyline{border-left:2px solid var(--antares-red);padding-left:var(--space-3);color:var(--text-primary)}
 .precgroup .prose{margin-bottom:var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 .precgrid{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
 details.prec{border:1px solid var(--border-subtle);background:var(--surface-page);margin-bottom:0}
@@ -465,6 +570,16 @@ details.prec .body .k{color:var(--text-tertiary)}
 .pw .st{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);white-space:nowrap}
 .pw p{font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body);margin:0}
+/* Rules are disclosures since 2026-09-26: name, status and the lead sentence in
+   the summary, the rest of the mechanism and its sources on tap. */
+details.pw > summary{list-style:none;cursor:pointer;display:grid;gap:var(--space-2);touch-action:manipulation}
+details.pw > summary::-webkit-details-marker{display:none}
+details.pw > summary .nm::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-caption);
+  display:inline-block;margin-right:var(--space-2);transition:transform var(--dur-fast) var(--ease-standard)}
+details.pw[open] > summary .nm::before{transform:rotate(90deg)}
+details.pw > summary:hover .nm{color:var(--antares-red)}
+details.pw .pwlead{color:var(--text-primary)}
+details.pw > p{margin-top:var(--space-2)}
 .trackblurb{margin-bottom:var(--space-6)}
 /* ---------- evidence: source register ---------- */
 .regsearch{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;
@@ -536,6 +651,16 @@ footer a{color:var(--text-secondary);text-decoration:underline;text-underline-of
    same closed-state behaviour, no new disclosure CSS. Only the inner beats and
    the sector headings are new. */
 .instband{margin-top:var(--space-10);border-top:1px solid var(--border-subtle);padding-top:var(--space-6)}
+details.instband > summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:var(--space-3);
+  min-height:44px;touch-action:manipulation}
+details.instband > summary::-webkit-details-marker{display:none}
+details.instband > summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  transition:transform var(--dur-fast) var(--ease-standard)}
+details.instband[open] > summary::before{transform:rotate(90deg)}
+details.instband > summary h3{margin:0;font-size:var(--size-heading-3)}
+details.instband > summary:hover h3{color:var(--antares-red)}
+details.instband > summary .cnt{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary)}
+details.instband > .prose{margin-top:var(--space-4)}
 .instband .prose{margin-bottom:var(--space-5);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 details.prec .body .beat{margin-top:var(--space-4)}
 details.prec .body .beat > .k{display:block;color:var(--text-tertiary);
@@ -546,10 +671,42 @@ details.prec .body .beat p{margin-top:0}
 details.prec .body ul.blockers{margin:0;padding-left:var(--space-5);
   font-size:var(--size-body-sm);color:var(--text-secondary);line-height:var(--lh-body)}
 details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
-.benchsector{margin-bottom:var(--space-10)}
-.benchsector h4{font-size:var(--size-heading-3);margin:0 0 var(--space-4)}
-.benchsector h4 .cnt{font-family:var(--font-mono);font-size:var(--size-caption);
-  color:var(--text-tertiary);margin-left:var(--space-2)}
+/* Applications > Regions: where each jurisdiction's law stands on civil nuclear
+   power. The label carries the meaning; the border is only a cue. */
+.postag{display:inline-block;font-family:var(--font-mono);font-size:var(--size-label-sm);letter-spacing:.06em;
+  text-transform:uppercase;border:1px solid var(--border-default);padding:1px var(--space-2);
+  color:var(--text-secondary);white-space:nowrap;vertical-align:middle;font-weight:var(--weight-regular)}
+.postag.enabling{border-color:var(--antares-red-40);color:var(--antares-red)}
+.postag.review{border-color:var(--border-strong);color:var(--text-primary)}
+.postag.restricted,.postag.banned{border-style:dashed;color:var(--text-tertiary)}
+.taglegend{display:grid;gap:var(--space-2) var(--space-6);margin:var(--space-4) 0 0;font-size:var(--size-body-sm)}
+@media(min-width:768px){.taglegend{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.taglegend dt{display:inline;color:var(--text-primary);font-family:var(--font-mono);font-size:var(--size-caption)}
+.taglegend dd{display:inline;margin:0 0 0 var(--space-2);color:var(--text-tertiary)}
+details.region summary .nm .postag{margin-left:var(--space-2)}
+
+/* Customer cost: one collapsed section per sector (2026-09-26). */
+details.benchsector{border:1px solid var(--border-subtle);margin-bottom:var(--space-3)}
+details.benchsector > summary{list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:auto 1fr auto;gap:var(--space-3);align-items:baseline;
+  padding:var(--space-4) var(--space-5);min-height:44px;touch-action:manipulation}
+details.benchsector > summary::-webkit-details-marker{display:none}
+details.benchsector > summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-body-sm);
+  transition:transform var(--dur-fast) var(--ease-standard)}
+details.benchsector[open] > summary::before{transform:rotate(90deg)}
+details.benchsector > summary:hover h4{color:var(--antares-red)}
+details.benchsector h4{font-size:var(--size-heading-3);margin:0}
+details.benchsector .cnt{font-family:var(--font-mono);font-size:var(--size-caption);
+  color:var(--text-tertiary);white-space:nowrap}
+details.benchsector > .precgrid{padding:0 var(--space-4) var(--space-4)}
+@media(max-width:640px){details.benchsector > summary{grid-template-columns:auto 1fr}
+  details.benchsector .cnt{grid-column:2;white-space:normal}}
+/* Source register: first page only until the reader searches or asks for all. */
+.reg.paged .rrow:nth-child(n+31){display:none}
+.showall{appearance:none;background:transparent;border:1px solid var(--border-default);color:var(--text-primary);
+  font-family:var(--font-core);font-size:var(--size-body-sm);font-weight:var(--weight-semibold);
+  padding:var(--space-3) var(--space-5);margin-top:var(--space-6);cursor:pointer;min-height:44px}
+.showall:hover{border-color:var(--antares-red);color:var(--antares-red)}
 
 /* Closed-state rule for every styled disclosure on the site. Without it the
    collapsed body still takes its full height — 25 closed instrument rows left a
@@ -557,7 +714,12 @@ details.prec .body ul.blockers li{margin-bottom:var(--space-1)}
    enough once a details is author-styled, so state it explicitly. Scoped to
    `details` so it can never match a non-details element carrying the same class. */
 details.prec:not([open]) > :not(summary),
-details.sector:not([open]) > :not(summary){display:none}
+details.sector:not([open]) > :not(summary),
+details.benchsector:not([open]) > :not(summary),
+details.pw:not([open]) > :not(summary),
+details.instband:not([open]) > :not(summary),
+details.newsmonth:not([open]) > :not(summary),
+details.precgroup:not([open]) > :not(summary){display:none}
 
 /* "Why a small reactor, case by case" — every microreactor-specific note on the
    site, gathered onto the Top options sub-tab. One disclosure per group, reusing
@@ -658,11 +820,33 @@ details.voicegroup[open] > .note{margin:var(--space-3) 0 var(--space-5) 0}
   letter-spacing:var(--track-label);padding:var(--space-2) var(--space-3);cursor:pointer;
   min-height:44px}
 .newschip.on{border-color:var(--antares-red);color:var(--antares-red)}
-.newsmonth{margin-bottom:var(--space-8)}
+/* Phones: filter chips scroll in one row instead of wrapping into six (News had
+   eleven chips filling the first screen). */
+@media(max-width:639px){
+  .newsfilter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin-right:calc(-1 * var(--gutter-page));padding-right:48px;
+    /* A fade on the right edge says the row scrolls; the end padding lets the last
+       chip scroll clear of it. */
+    -webkit-mask-image:linear-gradient(to right,black calc(100% - 40px),transparent);
+    mask-image:linear-gradient(to right,black calc(100% - 40px),transparent)}
+  .newsfilter::-webkit-scrollbar{display:none}
+  .newsfilter .newschip{flex:0 0 auto}
+}
+.newsmonth{margin-bottom:var(--space-6)}
+details.newsmonth > summary,details.precgroup > summary{list-style:none;cursor:pointer;display:flex;
+  align-items:baseline;gap:var(--space-3);min-height:44px;touch-action:manipulation}
+details.newsmonth > summary::-webkit-details-marker,details.precgroup > summary::-webkit-details-marker{display:none}
+details.newsmonth > summary::before,details.precgroup > summary::before{content:"\25B8";color:var(--antares-red);
+  font-size:var(--size-caption);transition:transform var(--dur-fast) var(--ease-standard)}
+details.newsmonth[open] > summary::before,details.precgroup[open] > summary::before{transform:rotate(90deg)}
+details.newsmonth > summary .cnt,details.precgroup > summary .cnt{font-family:var(--font-mono);
+  font-size:var(--size-caption);color:var(--text-tertiary)}
+details.precgroup > summary:hover h4,details.newsmonth > summary:hover h3{color:var(--antares-red)}
+details.precgroup > summary h4{margin:0}
 .newsmonth h3{font-size:var(--size-caption);text-transform:uppercase;
-  letter-spacing:var(--track-label);color:var(--text-tertiary);
-  border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
-  margin:0 0 var(--space-4) 0}
+  letter-spacing:var(--track-label);color:var(--text-tertiary);margin:0}
+details.newsmonth > summary{border-bottom:1px solid var(--border-subtle);padding-bottom:var(--space-2);
+  margin-bottom:var(--space-2)}
 .newsitem{border-bottom:1px solid var(--border-subtle);min-width:0}
 .newsitem > summary{list-style:none;cursor:pointer;padding:var(--space-4) 0 var(--space-4) var(--space-5);
   position:relative;min-height:44px}

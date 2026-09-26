@@ -1,9 +1,10 @@
 {
  "_meta": {
-  "captured": "2026-08-29",
+  "captured": "2026-09-26",
   "pass": [
    "data/research/deep-2026-08-24",
-   "data/research/2026-08-28-apps"
+   "data/research/2026-08-28-apps",
+   "data/research/2026-09-26-cases"
   ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
@@ -287,6 +288,16 @@
      "Large integrated sawmills and wood-products plants: no per-mill power purchase agreement, CHP contract or utility large-load deal was found. Trade press (Forest Business Network, Random Lengths) and USDA Forest Service materials report only aggregate industry energy use, matching the same absence sectors.json already recorded for this load.",
      "Chemical plants: searched for a named US chemical plant on-site CHP PPA or utility large-load agreement (Dow, LyondellBasell, BASF Freeport); two angles surfaced only general CHP suitability statements (already captured qualitatively in sectors.json's context block) with no plant-specific contract, MW figure or price beyond the Dow/X-energy SMR case written up below.",
      "Semiconductor fabs: Samsung's Taylor, Texas fab is served by Oncor and county officials cite reliability commitments, but no verified MW figure or contract term for the Oncor-Samsung arrangement was found in a fetched primary or trade source (a search-summary figure of '30 MW initial, 60 MW LOI' could not be confirmed by fetching a page and is dropped per the snippet-only rule); Micron's Boise, Idaho fab expansion (announced 2027 startup) has no new large-load agreement found distinct from a 1990s/2010-era 60-100 MW legacy IPUC contract, which predates the current fab buildout and was judged too stale to cite as evidence of what a modern fab pays. TSMC's Phase 1 north Phoenix fab needs 'approximately 200 megawatts' per a fetched trade-press source, and APS is relocating multiple transmission lines to serve it, but no formal signed electric-service-agreement instrument, capex for the power infrastructure, or contract date was found (Linde's associated $600 million investment is for on-site gas supply, not power) - too thin against the numbers-or-nothing bar next to the fully documented Intel/AEP Ohio case."
+    ]
+   },
+   {
+    "file": "2026-09-26-cases/cases.json",
+    "kind": "case",
+    "records": 4,
+    "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
+    "incomplete": false,
+    "absences": [
+     "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
     ]
    }
   ],
@@ -1478,7 +1489,7 @@
      "group": "diesel",
      "family": "utility-tariff",
      "name": "Tariffed on-bill lease of a customer-sited backup asset, paid for by aggregating it into a virtual power plant",
-     "what_it_is": "The regulated utility leases a backup asset to the customer under a commission-approved tariff and bills it monthly on the electric bill. The customer gets seamless backup power; the utility gets dispatch rights over the asset during system peaks and aggregates thousands of them into a virtual power plant, and the peak-shaving value is what holds the lease price below the customer's cost of buying the same hardware. A parallel 'bring your own device' track pays a rebate to customers who buy their own asset and enrol it for shared dispatch. This is the cleanest example of the general principle that a backup asset only becomes affordable when someone is allowed to USE it between emergencies — the exact freedom the RICE NESHAP denies a diesel engine.",
+     "what_it_is": "The regulated utility leases a backup asset to the customer under a commission-approved tariff and bills it monthly on the electric bill. The customer gets backup power without running its own generator; the utility gets dispatch rights over the asset during system peaks and aggregates thousands of them into a virtual power plant, and the peak-shaving value is what holds the lease price below the customer's cost of buying the same hardware. A parallel 'bring your own device' track pays a rebate to customers who buy their own asset and enrol it for shared dispatch. This is the cleanest example of the general principle that a backup asset only becomes affordable when someone is allowed to USE it between emergencies — the exact freedom the RICE NESHAP denies a diesel engine.",
      "who_signs": "Regulated utility <-> retail customer, under a tariff approved by the state Public Utility Commission",
      "asset_owner": "utility (lease track) or host (BYOD track, with dispatch rights assigned to the utility)",
      "term": "10-year lease",
@@ -1757,7 +1768,7 @@
      "who_signs": "Health care facility (self-election) <-> CMS state survey agency at survey",
      "asset_owner": "host | third-party developer",
      "term": "Indefinite; effective immediately from 2023-03-31, re-verified at each survey; HCMS recommissioning required every 5 years",
-     "price_form": "not a payment instrument — it is the permission that unlocks one",
+     "price_form": "not a payment instrument; it is the permission a payment instrument needs",
      "precedents": [
       {
        "name": "Kaiser Permanente Ontario Medical Center microgrid",
@@ -2554,20 +2565,20 @@
      ],
      "sources": [
       {
-       "label": "Ohio Power Company (AEP Ohio) — P.U.C.O. No. 22, Schedule DCT (Data Center Tariff), Original Sheet No. 223-5, effective 2026-04-10 (AEP Ohio Tariff Book, July 24 2026)",
-       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "label": "Ohio Power Company (AEP Ohio) — P.U.C.O. No. 22, Schedule DCT (Data Center Tariff), Sheet No. 223-5 (1st Revised), AEP Ohio Tariff Book, September 2026 edition",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/September_2026_AEP_Ohio_Tariff_Book.pdf",
        "quote": "contracts under the Schedule shall be made for an initial period of not less than the Load Ramp Period plus 8 years",
        "status": "fetched"
       },
       {
        "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-4 — Minimum Demand table",
-       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/September_2026_AEP_Ohio_Tariff_Book.pdf",
        "quote": "57,500 kW plus 100% of marginal amount over 75,000 kW; provided, however, that the minimum demand will not exceed 85% of the total contract capacity.",
        "status": "fetched"
       },
       {
        "label": "AEP Ohio Schedule DCT, Original Sheet No. 223-7 — Customer-Owned Generation and Emergency Conditions",
-       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/July_24_2026_AEP_Ohio_Tariff_Book.pdf",
+       "url": "https://www.aepohio.com/lib/docs/ratesandtariffs/Ohio/September_2026_AEP_Ohio_Tariff_Book.pdf",
        "quote": "to instantaneously curtail load equal to or greater than the behind-the-meter generation output",
        "status": "fetched"
       }

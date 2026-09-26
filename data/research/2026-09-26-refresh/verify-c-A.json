@@ -1,0 +1,576 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "verify-c-partA",
+  "scope": "Type G checks for the 22 records in verify-c-claims-A.json (part A of the 2026-09-26 refresh's post-hoc citation audit): re-fetched each record's own cited sources, and where those did not state a flagged number, ran up to 2 targeted searches for a primary/fetchable page that does.",
+  "angles_run": [
+   "WebFetch on every cited source for all 22 records, prioritizing cached:false ones first",
+   "curl with a browser user-agent as a fallback when WebFetch returned 403",
+   "up to 2 WebSearch queries per still-unsupported number, followed by a WebFetch of the most promising result",
+   "Wayback Machine attempted for persistently-blocked avec.org/dec.alaska.gov pages -- unavailable to this tool"
+  ],
+  "absences": [
+   "AVEC's own rate-change and PCE-funding pages (avec.org) are unreachable end-to-end (DataDome bot wall on every path tried, including curl with a browser UA); the $0.3647/$0.3720/750-kWh energy-charge figures could not be confirmed or contradicted by any reachable page.",
+   "Alaska DEC's 18 AAC 87 regulation page (dec.alaska.gov) sits behind a captcha wall (geo.captcha-delivery.com) and could not be fetched by any method tried.",
+   "Power and Water Corporation's remote-power-sources page, NMI News Service's Bavi recovery post, North of 60 Mining News' Red Dog articles, and NOVAGOLD's own Donlin infrastructure page all returned persistent 403s; the underlying numbers (IES station counts, Saipan MW, Red Dog Life Extension budget, Donlin plant MW) rest on search-engine snippets of those same pages rather than independent fetches.",
+   "WA off-grid mine diesel/hybrid $/kWh figures (0.50 / 0.25-0.35) and the Global Fund's $128 million non-Global-Fund figure were not found in any reachable source within the 2-search budget.",
+   "Ekati's 30.8 MW / seven 4.4 MW generator figures were found only in an inaccessible secondary (grokipedia.com, 404) and remain unconfirmed by any fetched page."
+  ],
+  "skipped": [
+   "alaska-rural-pce-communities: 08: fragment of the filing-posted date 2026-08-08",
+   "alaska-rural-pce-communities: 177: SB 177 bill number, not a quantity",
+   "alaska-rural-pce-communities: 18: part of the regulation citation 18 AAC 87",
+   "alaska-rural-pce-communities: 87: part of the regulation citation 18 AAC 87",
+   "australia-remote-power-market: 04: fragment of the criticality date 2026-06-04",
+   "alaska-legal-framework: 18.45: statute citation (Alaska Statute 18.45), not a quantity",
+   "alaska-legal-framework: 177: SB 177 bill number, not a quantity",
+   "alaska-legal-framework: 18: part of the regulation citation 18 AAC 87",
+   "alaska-legal-framework: 87: part of the regulation citation 18 AAC 87",
+   "alaska-legal-framework: 360: part of the pollster name 'Strategies 360,' not a quantity",
+   "alaska-legal-framework: 34: ordinal identifier of the 34th Legislature, not a quantity",
+   "cnmi-cuc: 03: fragment of the Fuel Adjustment Charge effective date 2025-03-01",
+   "kivalliq-hydro-fibre-link-transmission: 07: fragment of the MOU-signing date 2026-07-07",
+   "polar-research-stations: 130: part of the aircraft designation LC-130, not a standalone quantity",
+   "alaska-mines-power: 177: SB 177 bill number, not a quantity",
+   "greenland: 404: HTTP error code noted in the record's own research process, not a claim about the world",
+   "uk-overseas-territories-south-atlantic: 05: fragment of the tariff-change effective date 2020-05-01",
+   "tva-2025-draft-irp-nuclear: 09: fragment of the IRP release date 2024-09-23",
+   "ferc-rejects-oklo-pjm-complaint-2026-09-24: 101: part of the FERC docket number EL26-101",
+   "nrc-part71-transport-rule-proposed-2026-07-24: 1667: part of the NRC docket number NRC-2025-1667",
+   "nano-ameresco-mou-2026-01-12: 12: fragment of the MOU-announcement date 2026-01-12",
+   "tennessee-nuclear-energy-fund-2025: 300: part of the reactor model designation BWRX-300, not a quantity"
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-c-alaska-rural-pce-communities-1",
+   "target": "alaska-rural-pce-communities",
+   "file": "regions",
+   "claim": "Rural Alaska (Power Cost Equalization communities) US US state Alaska Village Electric Cooperative (AVEC) alone serves 58 communities off 46 separate diesel power plants, each an isolated microgrid with no interconnection between villages;",
+   "verdict": "unsupported",
+   "evidence": "Both cited AVEC pages return HTTP 403 under DataDome bot protection (confirmed via WebFetch and via curl with a browser user-agent). A reachable trade-association page instead states AVEC serves 59 locations with 160+ diesel generators, not 58 communities/46 plants.",
+   "correction": "AVEC serves dozens of rural Alaska communities off dozens of diesel power plants (one 2026 trade source: 59 locations, 160+ generators; AVEC's own current count is unconfirmed).",
+   "sources": [
+    {
+     "label": "North America Off Grid Utility Association -- Alaska Village Electric Cooperative Inc. (2026)",
+     "url": "https://www.naogua.org/alaska-village-electric-cooperative-inc",
+     "quote": "AVEC is a non-profit electric utility serving residents in 59 locations throughout rural Alaska.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-alaska-rural-pce-communities-2",
+   "target": "alaska-rural-pce-communities",
+   "file": "regions",
+   "claim": "the statewide FY2026 PCE base rate (the subsidized floor the state pays down to) is reported at 20.38 cents/kWh AVEC system-wide 46 diesel power plants across 58 communities off-grid;",
+   "verdict": "unsupported",
+   "evidence": "The 20.38 cents/kWh figure is real and confirmed by the Regulatory Commission of Alaska's FY26 PCE base-amount notice (not one of this record's 2 cited AVEC pages, both 403). The repeated 46-plants/58-communities figures remain unconfirmed by any reachable AVEC page (see check-c-alaska-rural-pce-communities-1).",
+   "correction": "the statewide FY2026 PCE base rate is 20.38 cents/kWh (RCA notice, confirmed); AVEC's plant and community counts are unconfirmed.",
+   "sources": [
+    {
+     "label": "Regulatory Commission of Alaska -- Notice of Proposed Revision to PCE Base Amount (2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=219490",
+     "quote": "The Commission proposes to adjust the base amount to 20.38¢/kWh.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-alaska-rural-pce-communities-3",
+   "target": "alaska-rural-pce-communities",
+   "file": "regions",
+   "claim": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08;",
+   "verdict": "unverifiable",
+   "evidence": "Every AVEC page on this filing (the schedule of proposed rate changes and the related public notice) returns HTTP 403 under DataDome bot protection, tried via WebFetch and via curl with a browser user-agent. A general search confirms AVEC filed 2026 tariff amendments (effective November 1, 2026, hearing September 9, 2026) but no reachable page states the $0.3647/$0.3720 figures themselves."
+  },
+  {
+   "id": "check-c-australia-remote-power-market-1",
+   "target": "australia-remote-power-market",
+   "file": "regions",
+   "claim": "Horizon Power, WA's regional/remote state-owned utility, runs 34 microgrids supplying about 100,000 residents and 10,000 businesses, and is rolling out standalone solar-battery power systems to remote Aboriginal communities under a state-funded 'R",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 5 cited sources address Horizon Power's customer counts (the pv-magazine-australia piece, fetched, covers only the A$27m ReGen commitment and site-level diesel litres). Horizon Power's own 'who we serve' page is unreachable (403); a search summary of it states 'more than 100,000 residents and more than 10,000 businesses,' consistent with the shipped figures but not independently fetched.",
+   "correction": "add Horizon Power's own 'who we serve' page as the source once it can be fetched (figure plausible but not independently confirmed).",
+   "sources": [
+    {
+     "label": "Horizon Power -- Who We Serve (search summary, page returned 403)",
+     "url": "https://www.horizonpower.com.au/about-us/who-we-serve/",
+     "quote": "supplying more than 100,000 residents and more than 10,000 businesses in regional towns and remote communities",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "check-c-australia-remote-power-market-2",
+   "target": "australia-remote-power-market",
+   "file": "regions",
+   "claim": "In the Northern Territory, Power and Water Corporation's not-for-profit subsidiary Indigenous Essential Services runs 51 diesel-fired power stations (about 80 MW installed) across 72 remote communities and 66 outstations under a Uniform Tariff Policy with a Community Service Obligation subsidy;",
+   "verdict": "unsupported",
+   "evidence": "The record's own citation of this fact (powerwater.com.au) was already snippet-only/unreachable in the shipped sources and remains unreachable to this pass too (403). None of the record's other 4 cited sources address IES's station/community counts. A fresh search of the same powerwater.com.au page corroborates the figures but was not independently fetched.",
+   "sources": [
+    {
+     "label": "Power and Water Corporation -- Remote Power Sources (search summary, page returned 403)",
+     "url": "https://www.powerwater.com.au/about/what-we-do/remote-operations/remote-power-sources",
+     "quote": "72 remote communities and 66 outstations",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "check-c-australia-remote-power-market-3",
+   "target": "australia-remote-power-market",
+   "file": "regions",
+   "claim": "Separately, 'more than 100 mines (out of a total of 350)' in Australia run fully off-grid, concentrated in WA's Pilbara and Goldfields, with large hybrid renewable-plus-gas microgrids now built at sites including Agnew (EDL/Gold Fields), Tropicana (Pacific Energy), Kathleen Valley (lithium) and BHP and Rio Tinto operations.",
+   "verdict": "confirmed",
+   "evidence": "Cited source states the figure verbatim.",
+   "sources": [
+    {
+     "label": "Mining Technology -- Off-grid, on-site power: Australian mines (2026)",
+     "url": "https://www.mining-technology.com/features/off-grid-on-site-power-australian-mines/",
+     "quote": "There are more than 100 mines (out of a total of 350) in the country equipped with an independent power supply",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-australia-remote-power-market-4",
+   "target": "australia-remote-power-market",
+   "file": "regions",
+   "claim": "its ARENA-funded Solar Energy Transformation Program (SETuP) added 10 MW of solar microgrids across 25 communities, saving an estimated 94 million litres of diesel over the program's 25-year life.",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 5 cited sources mention SETuP. ARENA's own program blog (not cited, fetched) confirms the figure: the program 'will cut diesel use by 15 per cent, equivalent to 94 million litres over the life of the panels.'",
+   "correction": "add ARENA's SETuP program page as the source for the 94-million-litre figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "ARENA -- Top End solar rollout enters next phase (2026)",
+     "url": "https://arena.gov.au/blog/solar-setup-next-phase/",
+     "quote": "will cut diesel use by 15 per cent, equivalent to 94 million litres over the life of the panels",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-australia-remote-power-market-5",
+   "target": "australia-remote-power-market",
+   "file": "regions",
+   "claim": "WA off-grid mine diesel generation has historically cost upwards of $0.50/kWh, with recent hybrid-displaced costs reported around $0.25-0.35/kWh;",
+   "verdict": "unsupported",
+   "evidence": "The record's cited mining-technology.com feature (fetched) discusses WA off-grid mine power qualitatively but gives no $/kWh figures. General industry sources describe off-grid diesel in the $0.50-1.00/kWh range and hybrid systems at $0.08-0.35/kWh, consistent with but not a direct match for the WA-specific figures shipped; no WA-specific primary source was found within 2 searches.",
+   "sources": [
+    {
+     "label": "Mining Technology -- Off-grid, on-site power: Australian mines (2026, no cost figures)",
+     "url": "https://www.mining-technology.com/features/off-grid-on-site-power-australian-mines/",
+     "quote": "if the renewable element comes in at less than the cost of the fuel, you end up with cheaper power",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-alaska-legal-framework-1",
+   "target": "alaska-legal-framework",
+   "file": "regions",
+   "claim": "SB 177, signed by Governor Dunleavy in 2022, defines a microreactor as an advanced reactor of no more than 50 MW and removes the prior requirement that the legislature designate land before DEC can issue a siting permit (legislative designation is still required only for sites in an unorganized borough).",
+   "verdict": "unsupported",
+   "evidence": "Neither of the record's 2 cited sources states the 50 MW definition (dec.alaska.gov returns 403; citizenportal.ai, fetched, covers the 2026 awareness survey, not SB 177's text). World Nuclear News (not cited, fetched) confirms it: SB 177 covers 'an advanced nuclear reactor capable of producing no more than 50 MW,' and confirms the land-designation change.",
+   "correction": "add World Nuclear News as the source for SB 177's 50 MW definition (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "World Nuclear News -- Alaska simplifies microreactor regulations (2023)",
+     "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+     "quote": "an advanced nuclear reactor capable of producing no more than 50 MW",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-cnmi-cuc-1",
+   "target": "cnmi-cuc",
+   "file": "regions",
+   "claim": "Saipan (CUC Power Plants 1, 2 and 4) 42.5 MW available (2026 post-typhoon recovery update), versus 62.1 MW combined availability in March 2025 diesel;",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 4 cited sources state either figure (energy.gov and mvariety.com cover rates, not plant-level MW; nminewsservice.com and rnz.co.nz are snippet-only/unreachable, as already flagged in the shipped sources). A search finds 42.5 MW in that same nminewsservice.com piece's headline and finds 62.1 MW attributed to CUC's own March 2025 Integrated Resource Plan, but neither page could be independently fetched (nminewsservice.com 403; the IRP PDF 404s).",
+   "sources": [
+    {
+     "label": "NMI News Service -- Bavi Recovery Rundown Day 10 (2026, page returned 403)",
+     "url": "https://www.nminewsservice.com/bavi-recovery-rundown-day-10/",
+     "quote": "Saipan Generation Jumps to 42.5 Megawatts as Rota Timelines Take Shape",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "check-c-cnmi-cuc-2",
+   "target": "cnmi-cuc",
+   "file": "regions",
+   "claim": "CUC's own comparison put CNMI at US$0.2749/kWh residential in November 2024, called the lowest among US-affiliated Pacific jurisdictions versus $0.4139/kWh in Guam, $0.4414/kWh on Hawaii Island and $0.3986/kWh in American Samoa at that date.",
+   "verdict": "confirmed",
+   "evidence": "Cited source (fetched) gives CNMI's rate as $27.49 residential and separately gives Guam $41.39, Hawaii Island $44.14 and American Samoa $39.86 in the same November 2024 comparison -- all matching the shipped $0.2749/$0.4139/$0.4414/$0.3986 per kWh once divided by 100 (cents to dollars).",
+   "sources": [
+    {
+     "label": "Marianas Variety -- CUC: NMI power rates lowest in US Pacific region (2024)",
+     "url": "https://www.mvariety.com/news/local/cuc-nmi-power-rates-lowest-in-us-pacific-region/article_aac108fc-accd-11ef-844a-939e3ec3ca67.html/",
+     "quote": "$27.49 residential and $32.42 commercial",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-kivalliq-hydro-fibre-link-transmission-1",
+   "target": "kivalliq-hydro-fibre-link-transmission",
+   "file": "benchmarks",
+   "claim": "The Kivalliq Hydro-Fibre Link is a proposed 1,200 km, 150 MW transmission and fibre line connecting Manitoba's grid to 5 Kivalliq communities and at least one gold mine",
+   "verdict": "confirmed",
+   "evidence": "Cited source states the figures verbatim.",
+   "sources": [
+    {
+     "label": "Crown-Indigenous Relations and Northern Affairs Canada -- Minister Vandal funding announcement (2024)",
+     "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html",
+     "quote": "a 1,200 kilometre, 150 megawatt transmission line with fibre-optic cabling connecting Manitoba's grid to the Kivalliq region of Nunavut",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-kivalliq-hydro-fibre-link-transmission-2",
+   "target": "kivalliq-hydro-fibre-link-transmission",
+   "file": "benchmarks",
+   "claim": "As of this pass, the federal government has committed $2.8 million (2024, on top of $11.6 million for earlier planning) toward development-phase engineering and environmental work, with construction 'expected to begin by 2028';",
+   "verdict": "confirmed",
+   "evidence": "Cited source confirms $2.8 million in new funding and separately states the government 'provided $11.6 million in funding to support the earlier planning and feasibility phase,' and confirms 'Construction is expected to begin by 2028.'",
+   "sources": [
+    {
+     "label": "Crown-Indigenous Relations and Northern Affairs Canada -- Minister Vandal funding announcement (2024)",
+     "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html",
+     "quote": "Nukik Corporation is receiving an additional $2.8 million in funding from Canada's Northern REACHE Program",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-kivalliq-hydro-fibre-link-transmission-3",
+   "target": "kivalliq-hydro-fibre-link-transmission",
+   "file": "benchmarks",
+   "claim": "developer Nukik Corporation has since filed a Transmission Service Request with Manitoba Hydro, become MISO-certified, and on 2026-07-07 secured a Nunavut-Manitoba government MOU committing Manitoba to supply 50 MW of firm capacity to the project.",
+   "verdict": "confirmed",
+   "evidence": "Cited source confirms the 50 MW firm-capacity commitment; the MOU date (the press release calls the signing 'yesterday' relative to its July 8, 2026 dateline, i.e. July 7, 2026) is consistent with the shipped date.",
+   "sources": [
+    {
+     "label": "GlobeNewswire -- Nukik Corporation Welcomes the MOU Signing (2026)",
+     "url": "https://www.globenewswire.com/news-release/2026/07/08/3324346/0/en/Nukik-Corporation-Welcomes-the-MOU-Signing-Between-the-Governments-of-Nunavut-and-Manitoba.html",
+     "quote": "Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-polar-research-stations-1",
+   "target": "polar-research-stations",
+   "file": "regions",
+   "claim": "a 'pressurised-water reactor, with a capacity of 1.8 megawatts' by one account and '1,500 kilowatt' by another",
+   "verdict": "unsupported",
+   "evidence": "Neither of the record's 2 cited sources states 1.8 MW (atomicinsights.com, fetched, gives only the 1,500 kilowatt 'Nukey-Poo' figure; theconversation.com, fetched, gives no capacity figure at all). A third source (not cited, fetched) confirms 1.8 MW as PM-3A's design rating.",
+   "correction": "add Engineering.com as the source for the 1.8 MW figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Engineering.com -- 60 Years Ago, There Was a Small Modular Reactor",
+     "url": "https://www.engineering.com/60-years-ago-there-was-a-small-modular-reactor/",
+     "quote": "Design output was 1,800 kW electrical operating at an 80 percent power factor",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-polar-research-stations-2",
+   "target": "polar-research-stations",
+   "file": "regions",
+   "claim": "Summit Station, Greenland, run on behalf of the National Science Foundation at 3,200 m elevation) are diesel-generator powered, resupplied by aircraft (LC-130 airlift) given the absence of any road or port access.",
+   "verdict": "unsupported",
+   "evidence": "Neither cited source (both McMurdo-focused) addresses Summit Station's elevation or Greenland diesel prices. NSF's own Summit Station notice (not cited, fetched) confirms '10,530 feet (3200 meters) above sea level.' A diesel-price tracker (not cited, fetched) shows Greenland at $2.42/gallon, though as a live/current figure rather than one dated specifically to April 16, 2026. The related 1.5 MW McMurdo figure elsewhere in this record IS supported by the cited atomicinsights.com page ('the 1,500 kilowatt power station').",
+   "correction": "Summit Station sits at 3,200 m elevation (NSF, confirmed); the $2.42/gallon Greenland diesel price is a current tracker figure, not independently dated to April 16, 2026.",
+   "sources": [
+    {
+     "label": "NSF -- Summit Station, Greenland news notice",
+     "url": "https://www.nsf.gov/news/news_summ.jsp?cntn_id=307191&org=OPP",
+     "quote": "at an elevation of 10,530 feet (3200 meters) above sea level",
+     "status": "fetched"
+    },
+    {
+     "label": "AnalyticAuto -- Diesel prices for Greenland (accessed 2026-09-27)",
+     "url": "https://analyticauto.com/diesel_prices/greenland",
+     "quote": "the average diesel price per gallon in Greenland was $2.42",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-alaska-mines-power-1",
+   "target": "alaska-mines-power",
+   "file": "regions",
+   "claim": "Donlin Gold (not yet built) would need a 220 MW dual-fuel plant and a 316-mile gas pipeline.",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 3 cited sources (Kensington, Greens Creek, Graphite One pages) mention Donlin Gold. Alaska DNR's own Donlin Gold project page (not cited, fetched) states 'a buried 14-inch diameter, 315-mile-long natural gas pipeline' -- 1 mile short of the shipped figure -- and gives no MW rating for the power plant; a 2026 ADN article (fetched) instead says 316 miles. Secondary reporting on the plant's MW rating is inconsistent (220 MW vs. 227 MW) and no fetched source confirms either.",
+   "correction": "Donlin Gold (not yet built) would need a dual-fuel power plant (MW rating varies by source) and a 315-to-316-mile gas pipeline.",
+   "sources": [
+    {
+     "label": "Alaska Division of Mining, Land, and Water -- Donlin Gold Project",
+     "url": "https://dnr.alaska.gov/mlw/mining/large-mines/donlin/",
+     "quote": "a buried 14-inch diameter, 315-mile-long natural gas pipeline",
+     "status": "fetched"
+    },
+    {
+     "label": "Anchorage Daily News -- Donlin Gold expects 2027 final decision (2026)",
+     "url": "https://www.adn.com/business-economy/2026/01/16/donlin-gold-expects-2027-final-decision-on-proposed-mine-and-multibillion-dollar-gas-pipeline/",
+     "quote": "a natural gas pipeline stretching 316 miles from Anchorage's Beluga power plant on Cook Inlet to the mine site",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-alaska-mines-power-2",
+   "target": "alaska-mines-power",
+   "file": "regions",
+   "claim": "Red Dog mine (Teck/NANA) ~25 MW, ~40,000 gallons diesel/day",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 3 cited sources mention Red Dog. A 2026 Anchorage Daily News article (not cited, fetched) confirms Red Dog needs 'roughly 40,000 gallons each day' and 'roughly 25 megawatts.'",
+   "correction": "add the Anchorage Daily News solar-PPA article as the source for Red Dog's ~40,000 gallons/day figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Anchorage Daily News -- One of Alaska's flagship mines soon could draw energy from the sun (2026)",
+     "url": "https://www.adn.com/business-economy/energy/2026/03/22/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+     "quote": "roughly 40,000 gallons each day",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-northwest-territories-1",
+   "target": "northwest-territories",
+   "file": "regions",
+   "claim": "The territorial utility, NTPC, operates diesel plants ranging from under 0.1 MW (Buffalo Junction) to 27.66 MW (a diesel combustion turbine at Yellowknife). Ekati diamond mine 30.8 MW installed (seven 4.4 MW diesel generators) off-grid Diavik diamond mine (Rio Tinto) 55.4 MW wind-diesel hybrid facility off-grid;",
+   "verdict": "unsupported",
+   "evidence": "The record's 2 cited sources give only NWT's 233 MW aggregate capacity (CER) and Diavik's 9.2 MW wind-only turbines and separate solar output (Rio Tinto), not these plant-level numbers. Wikipedia's NWT generating-stations list (not cited, fetched) confirms 'Yellowknife (Jackfish Lake) 27.66 ... Combustion turbine (diesel).' A mining-industry article (not cited, fetched) confirms Diavik's hybrid facility at '55.4 megawatts.' Ekati's 30.8 MW / seven 4.4 MW generators figure was found only in an inaccessible secondary (grokipedia.com, 404) and remains unconfirmed by any fetched page.",
+   "correction": "Yellowknife's Jackfish combustion turbine is 27.66 MW and Diavik's wind-diesel hybrid facility is 55.4 MW (both confirmed); Ekati's 30.8 MW / seven 4.4 MW generator figures are unconfirmed.",
+   "sources": [
+    {
+     "label": "Wikipedia -- List of generating stations in the Northwest Territories",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_the_Northwest_Territories",
+     "quote": "Yellowknife (Jackfish Lake) 27.66 Yellowknife NTPC Combustion turbine (diesel)",
+     "status": "fetched"
+    },
+    {
+     "label": "SustainableBiz Canada -- Rio Tinto plans largest solar farm in Canada's North at Diavik mine",
+     "url": "https://sustainablebiz.ca/rio-tinto-plans-largest-solar-farm-canada-north-diavik-mine",
+     "quote": "Diavik already features a wind-diesel hybrid power facility with a capacity of 55.4 megawatts",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-greenland-1",
+   "target": "greenland",
+   "file": "regions",
+   "claim": "Nukissiorfiit, Greenland's sole state-owned utility, supplies electricity, water and (in some places) heat to 'approximately 56,000 residents across 17 towns and 54 settlements' with 'no nationwide or regional electricity grid'",
+   "verdict": "unsupported",
+   "evidence": "The cited Nukissiorfiit page (fetched) confirms '17 towns and 54 settlements' but does not state a resident count. Wikipedia's Nukissiorfiit article (not cited, fetched) confirms 'approximately 56,000 residents across 17 towns and 54 settlements' verbatim.",
+   "correction": "add Wikipedia's Nukissiorfiit article as the source for the 56,000-resident figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Wikipedia -- Nukissiorfiit",
+     "url": "https://en.wikipedia.org/wiki/Nukissiorfiit",
+     "quote": "supplying electricity, clean water, and heating to approximately 56,000 residents across 17 towns and 54 settlements",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-greenland-2",
+   "target": "greenland",
+   "file": "regions",
+   "claim": "Tanbreez rare earth project (Critical Metals Corp, 70% acquired) n/a (pre-production) site sits 2 km from an existing hydro power line;",
+   "verdict": "unsupported",
+   "evidence": "None of the record's 4 cited sources address Critical Metals Corp's Tanbreez stake. Critical Metals Corp's own press releases (not cited, fetched) show the 70% figure belongs to a different, unrelated deal -- 'the Company to acquire 70% of the shares in 60 degrees North ApS' (a services firm) -- while its Tanbreez ownership itself reached 92.5% after 'transfer of the final 50.5% interest in Tanbreez.'",
+   "correction": "Tanbreez rare earth project (Critical Metals Corp, 92.5% owned); the shipped 70% figure was for an unrelated 60 degrees North ApS share purchase, not Tanbreez itself.",
+   "sources": [
+    {
+     "label": "Critical Metals Corp -- 70% Acquisition of 60 degrees North ApS (2026)",
+     "url": "https://www.criticalmetalscorp.com/critical-metals-corp-nasdaq-crml-secures-greenland-government-approval-for-70-acquisition-of-60-north-aps-accelerating-development-of-world-class-tanbreez-project/",
+     "quote": "acquire 70% of the shares in 60 degrees North ApS, thereby indirectly acquiring title to the associated land and asset portfolio",
+     "status": "fetched"
+    },
+    {
+     "label": "Critical Metals Corp -- Greenland Government Approves Transfer of Final 50.5% of Tanbreez (2026)",
+     "url": "https://www.criticalmetalscorp.com/greenland-government-approves-transfer-of-final-50-5-of-tanbreez-taking-critical-metals-corp-to-92-5-ownership/",
+     "quote": "bringing total CRML ownership to 92.5%",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-maschinenring-farm-machinery-ring-buyers-club-1",
+   "target": "maschinenring-farm-machinery-ring-buyers-club",
+   "file": "mechanisms",
+   "claim": "about 240 local rings represent roughly 192,000 agricultural farms in Germany alone;",
+   "verdict": "confirmed",
+   "evidence": "Cited source states the figure verbatim.",
+   "sources": [
+    {
+     "label": "RoseWood Network -- Forest Innovation Hubs: Machinery Ring",
+     "url": "https://forestinnovationhubs.rosewood-network.eu/en/content/machinery-ring",
+     "quote": "In Germany there are about 240 local machinery ring organizations that represent about 192.000 agricultural farms",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-maschinenring-farm-machinery-ring-buyers-club-2",
+   "target": "maschinenring-farm-machinery-ring-buyers-club",
+   "file": "mechanisms",
+   "claim": "more than 80 rings operate across Austria;",
+   "verdict": "unsupported",
+   "evidence": "The cited source (fetched) covers only Germany's ring/farm counts and total employees; it says nothing about Austria. Maschinenring's own Austrian site (not cited, fetched) confirms: 'Mehr als 80 regionale Maschinenring-Standorte' (more than 80 regional Maschinenring locations).",
+   "correction": "add maschinenring.at as the source for Austria's 80-ring figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Maschinenring Oesterreich -- Die Maschinenringe (2026)",
+     "url": "https://www.maschinenring.at/die-maschinenringe",
+     "quote": "Mehr als 80 regionale Maschinenring-Standorte bieten ein breites Spektrum an Dienstleistungen",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-maschinenring-farm-machinery-ring-buyers-club-3",
+   "target": "maschinenring-farm-machinery-ring-buyers-club",
+   "file": "mechanisms",
+   "claim": "the Maschinenring organization employs 2,500 people to run the network",
+   "verdict": "confirmed",
+   "evidence": "Cited source states the figure verbatim (rendered '2.500' in European notation).",
+   "sources": [
+    {
+     "label": "RoseWood Network -- Forest Innovation Hubs: Machinery Ring",
+     "url": "https://forestinnovationhubs.rosewood-network.eu/en/content/machinery-ring",
+     "quote": "The Maschinenring itself offers jobs for 2.500 employees",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-tennessee-nuclear-energy-fund-2025-1",
+   "target": "tennessee-nuclear-energy-fund-2025",
+   "file": "dockets",
+   "claim": "Tennessee's Nuclear Energy Fund, created in 2023 with $70 million, has been topped up each session through 2025-2026, reaching $95 million total;",
+   "verdict": "unsupported",
+   "evidence": "The cited tn.gov release (fetched) confirms only the original $70 million (2023) and the separate $400 million DOE grant; it does not state a current $95 million total. A 2026 news article (not cited, fetched) confirms: 'Since 2023, the state has invested $95 million into a fund to support new nuclear projects.'",
+   "correction": "add Spectrum News' 2026 nuclear-development article as the source for the $95 million total (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Spectrum News -- A new era of nuclear development comes to Tennessee (2026)",
+     "url": "https://spectrumlocalnews.com/us/snplus/news/2026/08/31/tennessee-nuclear-development",
+     "quote": "Since 2023, the state has invested $95 million into a fund to support new nuclear projects",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-rolls-royce-totalcare-trent1000-overrun-cover-1",
+   "target": "rolls-royce-totalcare-trent1000-overrun-cover",
+   "file": "mechanisms",
+   "claim": "the Trent 1000 durability crisis (2016-2019) cost Rolls-Royce a £554 million exceptional charge, a £1.26 billion first-half pre-tax loss, and total in-service costs that ran past £2 billion ($2.704 billion), with Dreamliner groundings peaking at close to 50 aircraft in 2018",
+   "verdict": "unsupported",
+   "evidence": "Neither cited source states these two figures directly: the Rolls-Royce TotalCare marketing page (fetched) has no financial figures; SimpleFlying (fetched) confirms the £2 billion/$2.704 billion total and 'close to 50' groundings but not the £554m/£1.26bn interim figures. A trade-press source (not cited, fetched) confirms both: 'an exceptional charge of £554m' and 'a £1.26bn pre-tax loss.'",
+   "correction": "add IMechE's 2018 coverage as the source for the £554m charge and £1.26bn loss (numbers confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Institution of Mechanical Engineers -- Rolls-Royce Trent 1000 turbine blade issues contribute to £1.26bn pre-tax loss (2018)",
+     "url": "https://www.imeche.org/news/news-article/rolls-royce-trent-1000-turbine-blade-issues-contribute-to-1.26bn-pre-tax-lo",
+     "quote": "an exceptional charge of £554m because of 'significant' in-service issues",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-red-dog-tugliq-solar-ppa-1",
+   "target": "red-dog-tugliq-solar-ppa",
+   "file": "benchmarks",
+   "claim": "Teck reported in July 2026 that its Red Dog Mine Life Extension project (the Anarraaq and Aktigiruq zinc deposits, one of the world's largest undeveloped zinc resources) is progressing, with a connecting road substantially complete and C$200-250 million budgeted for 2026 engineering and drilling",
+   "verdict": "unsupported",
+   "evidence": "The cited ADN article (fetched) covers the solar PPA and diesel gallons, not the Life Extension budget; the cited miningnewsnorth.com article returns HTTP 403 (already flagged cached:false) to both the original pass and this one. A fresh search of the same miningnewsnorth.com piece corroborates the figure, but the page itself could not be fetched to confirm exact wording.",
+   "sources": [
+    {
+     "label": "North of 60 Mining News -- Red Dog 2.0 is beginning to take shape (2026, page returned 403)",
+     "url": "https://www.miningnewsnorth.com/story/2026/07/24/news-nuggets/red-dog-20-is-beginning-to-take-shape/9788.html",
+     "quote": "Teck has budgeted C$200 million to C$250 million for the extension project in 2026",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "check-c-ny-proton-center-hospital-consortium-1",
+   "target": "ny-proton-center-hospital-consortium",
+   "file": "mechanisms",
+   "claim": "$300 million, 140,000-square-foot facility in East Harlem, opened June 7, 2019, jointly funded by three competing hospital systems",
+   "verdict": "unsupported",
+   "evidence": "The cited CBS News article (fetched) confirms the $300 million figure and the 3-hospital consortium but gives no square footage. A press release (not cited, fetched) confirms: 'the $300 million, 140,000-square-foot facility.'",
+   "correction": "add BioSpace's 2019 opening announcement as the source for the 140,000-square-foot figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "BioSpace -- New York State's First Proton Therapy Center Opens in East Harlem (2019)",
+     "url": "https://www.biospace.com/article/releases/new-york-state-s-first-proton-therapy-center-opens-in-east-harlem/",
+     "quote": "the $300 million, 140,000-square-foot facility will be a beacon of top-quality cancer care nationwide",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-nhs-antimicrobial-subscription-netflix-model-1",
+   "target": "nhs-antimicrobial-subscription-netflix-model",
+   "file": "mechanisms",
+   "claim": "This delinks the incentive to sell more antibiotics (which drives resistance) from the incentive to keep developing new ones, since the manufacturer is paid the same fee whether the drug treats 50 patients or 5,000 that year.",
+   "verdict": "unsupported",
+   "evidence": "Neither cited source (pharmaphorum, amrindustryalliance.org) gives a 50-vs-5,000-patient comparison; both describe only the fixed annual fee. The Pharmaceutical Journal (not cited, fetched) gives NHS England's own estimate: 'around 1,700 patients per year' were eligible for the 2 pilot drugs -- a real figure well short of the shipped illustrative 5,000.",
+   "correction": "...since the manufacturer is paid the same fee regardless of how many patients are treated that year (NHS England estimated about 1,700/year eligible for the 2 pilot drugs).",
+   "sources": [
+    {
+     "label": "The Pharmaceutical Journal -- First two antimicrobial drugs funded by NHS subscription payment scheme (2022)",
+     "url": "https://pharmaceutical-journal.com/article/news/first-two-antimicrobial-drugs-funded-by-nhs-subscription-payment-scheme-to-be-given-to-patients",
+     "quote": "around 1,700 patients per year with severe bacterial infections would be eligible",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-global-fund-pooled-procurement-mechanism-1",
+   "target": "global-fund-pooled-procurement-mechanism",
+   "file": "mechanisms",
+   "claim": "a further $128 million in non-Global-Fund money has been routed through the platform since 2018",
+   "verdict": "unsupported",
+   "evidence": "The cited theglobalfund.org page (fetched) confirms the $1.02 billion/81-countries figure but has no $128 million figure anywhere. 2 targeted searches (including the Global Fund's own board-decision and policy-note documents on non-Global-Fund-financed procurement) turned up no reachable page stating this dollar amount.",
+   "sources": [
+    {
+     "label": "The Global Fund -- Procurement Tools (2026, no $128 million figure found)",
+     "url": "https://www.theglobalfund.org/en/sourcing-management/procurement-tools/",
+     "quote": "In 2025, the Pooled Procurement Mechanism managed approximately US$1.02 billion in orders, serving grant implementers in 81 countries",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-c-agnew-gold-mine-edl-hybrid-microgrid-1",
+   "target": "agnew-gold-mine-edl-hybrid-microgrid",
+   "file": "benchmarks",
+   "claim": "Agnew shows an independent power producer will finance, own and operate a roughly A$112 million hybrid plant against a single mine's 10-year offtake",
+   "verdict": "unsupported",
+   "evidence": "Neither cited source (arena.gov.au project page, edlenergy.com) states the plant's capital cost. Mining Technology's 2020 feature (not cited, fetched) confirms: 'an A$112m (approximately $80.2m) investment.'",
+   "correction": "add Mining Technology's Agnew feature as the source for the A$112m figure (number confirmed, unsourced in the shipped record).",
+   "sources": [
+    {
+     "label": "Mining Technology -- Agnew gold mine: a vision for green power at mines? (2020)",
+     "url": "https://www.mining-technology.com/features/agnew-gold-mine-a-vision-for-green-power-at-mines/",
+     "quote": "The agreement constituted an A$112m (approximately $80.2m) investment",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
