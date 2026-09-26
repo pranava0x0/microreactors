@@ -337,3 +337,26 @@ one may simply have no live equivalent now that the project is off.
   Ruralite article names Westinghouse, Oklo, NuScale and Radiant; the site now attributes the list
   to that article and cites it. Root cause of the originals: **data bugs** (dates read off the wrong
   document, a corporate change applied to one record and not its sibling).
+- **2026-09-26 · data · The one unverifiable site claim is confirmed in ADAMS — Fixed.** The
+  verification agent could not find Aalo's letter of intent for an early site permit at Texas A&M
+  RELLIS because web search does not index ADAMS. `tools/adams_search.py --accession ML26190A374`
+  returns it (Aalo Holdings, 2026-07-09, docket 99902128). The same search found NRC's 2026-09-02
+  e-mail to Aalo on a RELLIS ESP project number (ML26245A061, docket 99902180), now in the site's
+  filing trail. Root cause: **tool choice** (a web-only verifier checking a docket-only fact).
+- **2026-09-26 · data · Five news items had no fetched source — Fixed.** The news validator added in
+  this pass requires one fetched source per item. Four items cited investor-relations pages that
+  stall scripted clients (Q4 and GlobeNewswire hosts), so they carried search snippets only; each now
+  also cites a fetched copy of the same release (PR Newswire for the two Centrus contracts, X-energy's
+  and NANO's own sites). One snippet quote was not verbatim ("signed a definitive" where the release
+  reads "the signing of a definitive") and was re-copied. The PJM ER26-1479-002 row had no quote: its
+  eLibrary page is a script shell, so it is now cached as rendered (capture "out-of-band") and quotes
+  FERC's filing description. Root cause: **data bug** (snippet-only sources shipped as the only
+  evidence for four executed events).
+- **2026-09-26 · data · The older news archive fails two structural news rules — Open.**
+  `python3 tools/research_pass.py validate data/research/news` reports 94 errors, none in this pass's
+  files: 42 ids in `seed-2026-08-30.json` repeat in `curated-2026-09-21.json`, which superseded it
+  (merge_news keeps the later file, so the site is unaffected), and 52 older items list one URL twice,
+  usually two quotes from one page (`cite()` already renders one chip per URL). Root cause: **rules
+  added after the data** (the news type and its no-repeated-URL rule arrived in this pass). Fix
+  when next touched: fold each item's same-page quotes into one source and mark the seed file
+  superseded, so the validator skips it.

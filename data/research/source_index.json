@@ -691,11 +691,12 @@
     {
       "url": "https://elibrary.ferc.gov/eLibrary/filelist?accession_number=20260817-5195",
       "fetched": "2026-09-26",
-      "sha256": "94c7c06c3ea41cf6860a57ef1f3ed3905eb4482b74d9114f6476ad71262c2dad",
-      "bytes": 22464,
+      "sha256": "64686ed84ff08b309716da6a6e4da022af464abfb5bb2db02feb368ad55aaff6",
+      "bytes": 143360,
       "content_type": "text/html",
       "cache": "cc247c1f824bf336.html",
-      "note": "2026-09-26 refresh: news"
+      "capture": "out-of-band",
+      "note": "2026-09-26 refresh: news. Rendered DOM captured with headless Chromium; the served HTML is a script shell that carries no filing text"
     },
     {
       "url": "https://elibrary.ferc.gov/eLibrary/search",
@@ -1507,6 +1508,15 @@
       "content_type": "text/html",
       "cache": "657e613d2474e37d.html",
       "note": "2026-08-30 cache sweep"
+    },
+    {
+      "url": "https://nanonuclearenergy.com/nano-nuclear-energy-and-enveniam-sign-memorandum-of-understanding-to-advance-u-s-nuclear-fuel-cycle-microreactor-deployment-and-energy-infrastructure/",
+      "fetched": "2026-09-26",
+      "sha256": "dd7cc4eca76a6a0ed8b563bf47b2e9dec59aab7bb3bf1892b11931ad01cfc2d6",
+      "bytes": 349928,
+      "content_type": "text/html",
+      "cache": "8cc6e5818f2e61f8.html",
+      "note": "2026-09-26 refresh: news verification (fetched copy of a release whose IR page blocks scripted clients)"
     },
     {
       "url": "https://nanonuclearenergy.com/nano-nuclear-finalizes-acquisition-of-global-first-power-from-usnc-strengthening-its-position-as-a-north-american-leader-in-nuclear-microreactor-development/",
@@ -4977,6 +4987,24 @@
       "note": "2026-09-26 refresh: cache a cited source that was never indexed"
     },
     {
+      "url": "https://www.prnewswire.com/news-releases/centrus-and-antares-sign-multi-year-haleu-supply-contract-302881954.html",
+      "fetched": "2026-09-26",
+      "sha256": "10bc275e3c5a38a8b8ae7f543d0a1f6446473eac6952b43f92c02908a4427948",
+      "bytes": 215833,
+      "content_type": "text/html",
+      "cache": "1ce4ab1ce642bf75.html",
+      "note": "2026-09-26 refresh: news verification (fetched copy of a release whose IR page blocks scripted clients)"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/centrus-and-radiant-announce-long-term-partnership-for-domestic-haleu-to-supply-kaleidos-microreactors-302873669.html",
+      "fetched": "2026-09-26",
+      "sha256": "d8e8c7693adef040561d7833e5f2866fbec2a16824bfc9c395f7eb881007f05d",
+      "bytes": 218032,
+      "content_type": "text/html",
+      "cache": "017ef57b311b8089.html",
+      "note": "2026-09-26 refresh: news verification (fetched copy of a release whose IR page blocks scripted clients)"
+    },
+    {
       "url": "https://www.prnewswire.com/news-releases/ice-thermal-harvesting-and-unisea-launch-alaska-seafood-industrys-first-waste-heat-to-power-system-302546873.html",
       "fetched": "2026-08-28",
       "sha256": "d98de367889e25acd04ebb33737bd115a3ed1b3e643b971854518cce09a92fe7",
@@ -5953,6 +5981,15 @@
       "content_type": "text/html",
       "cache": "09933fb09e02e26c.html",
       "note": "2026-08-30 cache sweep"
+    },
+    {
+      "url": "https://x-energy.com/news/centrica-x-energy-advance-nuclear-plans-as-uk-regulators-to-begin-design-review-for-xe-100/",
+      "fetched": "2026-09-26",
+      "sha256": "3703716439a5eca9de235933f45c4117f25b988d7bb719c71d8b24dd4ab183ab",
+      "bytes": 364898,
+      "content_type": "text/html",
+      "cache": "7d9c4e3aff509c87.html",
+      "note": "2026-09-26 refresh: news verification (fetched copy of a release whose IR page blocks scripted clients)"
     },
     {
       "url": "https://x-energy.com/news/jesse-b-walker-chief-supply-chain-officer/",
