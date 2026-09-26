@@ -316,7 +316,7 @@
    "verdict": "confirmed",
    "evidence": "Westinghouse's own release confirms the test 'was completed in partnership with Los Alamos and Idaho National Laboratories at the National Criticality Experiments Research Center (NCERC)...on August 24, 2026 at 10:39 a.m. PT', matching the claim exactly.",
    "sources": [
-    {"label": "Westinghouse — Westinghouse eVinci Microreactor Achieves Zero-Power Criticality (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-achieves-zero-power-criticality", "quote": "was completed in partnership with Los Alamos and Idaho National Laboratories at the National Criticality Experiments Research Center (NCERC)...on August 24, 2026 at 10:39 a.m. PT", "status": "fetched"}
+    {"label": "Westinghouse — Westinghouse eVinci Microreactor Achieves Zero-Power Criticality (2026)", "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-achieves-zero-power-criticality", "quote": "at the National Criticality Experiments Research Center (NCERC), a National Nuclear Security Administration (NNSA) facility at the Nevada National Security Site (NNSS), on August 24, 2026 at 10:39 a.m. PT", "status": "fetched"}
    ]
   },
   {
@@ -429,6 +429,57 @@
    "evidence": "Radiant's own release is the outlier among the five: it states the Army 'has executed a binding agreement totaling up to $750 million dollars', unlike Antares/BWXT/GA/Westinghouse's own releases, which all use selection/award (not signed/binding) language for the same 2026-08-26 event.",
    "sources": [
     {"label": "POWER Magazine — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028 (2026)", "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/", "quote": "Radiant Industries secured a binding Janus agreement worth up to $750 million", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-general-atomics-fort-hood-2026-08-26-1",
+   "target": "army-janus-general-atomics-fort-hood-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: A signed Janus OTA agreement covering development and testing milestones, not yet a deployment commitment; the company is explicitly in a development phase.",
+   "verdict": "wrong",
+   "evidence": "GA-EMS's own 2026-08-26 release calls this a 'selection' and says the company 'will execute its effort through an Other Transaction Authority-based agreement' — future tense, not a claim of an already-signed agreement. This matches the Army's own same-day 'down-selected...for negotiation' framing, not 'signed.'",
+   "correction": "Down-selected for OTA negotiation, not signed: GA-EMS's own release calls it a 'selection' that 'will execute...through an OTA-based agreement' in future.",
+   "sources": [
+    {"label": "General Atomics — General Atomics Microreactor Selected for US Army Janus Program (2026)", "url": "https://www.ga.com/ga-microreactor-selected-for-us-army-janus-program", "quote": "General Atomics Electromagnetic Systems (GA-EMS) today announced its selection by the U.S. Army as one of multiple industry partners for the Janus Program", "status": "fetched"},
+    {"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026)", "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "quote": "the Army down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-bwxt-fort-campbell-2026-08-26-1",
+   "target": "army-janus-bwxt-fort-campbell-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: A signed Janus OTA agreement; the specific dollar value was not disclosed.",
+   "verdict": "wrong",
+   "evidence": "BWXT's own 2026-08-26 release headlines this as a 'selection to deploy' its BANR technology, going on to describe a 'phased contracting approach' still to come — i.e. contracts follow the selection, they are not already signed. This matches the Army's own 'down-selected...for negotiation' framing for all five vendors.",
+   "correction": "Not signed: BWXT's release calls it a selection, contracts to follow.",
+   "sources": [
+    {"label": "BWX Technologies — U.S. Army Chooses BWXT Advanced Nuclear Reactor (BANR) for Janus Program (2026)", "url": "https://www.bwxt.com/u-s-army-chooses-bwxt-advanced-nuclear-reactor-banr-for-janus-program/", "quote": "announced today its selection to deploy its BWXT Advanced Nuclear Reactor (BANR) technology in support of the Janus program", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-award-2026-08-26-1",
+   "target": "army-janus-award-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: Each vendor holds a signed, executed OTA agreement, not a preliminary selection — funds release against technical milestones for prototype construction and a first year of operation, after which the Army plans to shift to a power purchase agreement. Per-vendor dollar figures beyond Radiant's remain undisclosed.",
+   "verdict": "wrong",
+   "evidence": "This directly contradicts the Army's own 2026-08-26 release, which says the Army 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' — the opposite of 'each vendor holds a signed, executed OTA.' Four of the five vendors' own releases (Antares, BWXT, General Atomics, Westinghouse) independently use selection/award/future-tense language, not 'signed'; only Radiant's own release claims an executed binding agreement. This claim is also internally inconsistent with the opportunities.json 'janus' tracker row, which correctly says 'none has been recorded as executed.'",
+   "correction": "Contradicts the Army's own release: vendors were 'down-selected...for negotiation,' not holding signed OTAs — only Radiant's own release claims an executed, binding $750M agreement; GA, BWXT, Westinghouse and Antares releases use selection/award language, not 'signed.'",
+   "sources": [
+    {"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026)", "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "quote": "the Army down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements", "status": "fetched"},
+    {"label": "BWX Technologies — U.S. Army Chooses BWXT Advanced Nuclear Reactor (BANR) for Janus Program (2026)", "url": "https://www.bwxt.com/u-s-army-chooses-bwxt-advanced-nuclear-reactor-banr-for-janus-program/", "quote": "announced today its selection to deploy its BWXT Advanced Nuclear Reactor (BANR) technology in support of the Janus program", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-army-janus-antares-fort-bragg-2026-08-26-1",
+   "target": "army-janus-antares-fort-bragg-2026-08-26",
+   "file": "news",
+   "claim": "binding_note: A signed Janus OTA agreement, not a mere selection; the dollar value of this specific award is undisclosed, only the combined cross-program total.",
+   "verdict": "wrong",
+   "evidence": "Antares's own 2026-08-26 release says it 'has been awarded an Other Transactions Authority agreement', with funding explicitly milestone-based/performance-contingent — stronger than its BWXT/GA/Westinghouse peers' pure 'selection' language, but the Army's own same-day release still frames all five as 'down-selected...for negotiation,' not signed. No source found independently confirms Antares's OTA as executed rather than under negotiation.",
+   "correction": "Down-selected for OTA negotiation per the Army's own release; Antares's own release says 'awarded...an OTA agreement' with milestone-based funding, not confirmed as signed.",
+   "sources": [
+    {"label": "Yahoo Finance (syndicating Antares) — Antares Awarded Army Janus Program Agreement to Deliver Nuclear Microreactor Power for Army's Energy Resilience Mission (2026)", "url": "https://finance.yahoo.com/energy/articles/antares-awarded-army-janus-program-200000664.html", "quote": "it has been awarded an Other Transactions Authority agreement under the U.S. Army's Janus Program", "status": "fetched"},
+    {"label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026)", "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors", "quote": "the Army down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements", "status": "fetched"}
    ]
   }
  ]

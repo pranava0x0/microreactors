@@ -315,3 +315,14 @@ one may simply have no live equivalent now that the project is off.
   375 and 1280px). Root cause: **code bug** (one-way state). The limit now returns when the box is
   cleared unless the reader chose Show all or arrived on a #src-N link;
   `test_register_search_restores_the_first_page`.
+- **2026-09-26 · data · Five Janus news items said "signed" — Fixed.** Their binding notes claimed
+  signed OTA agreements; the Army's release says the five vendors were "down-selected ... for
+  negotiation", and the BWXT, General Atomics and Westinghouse releases use selection language
+  (Antares says "awarded", Radiant says binding). The five are now announced, not executed (News:
+  42 of 60 executed). The Janus tracker row moves the other way, to binding, because the tracker's
+  own rule counts a selection with a named site, as it already did for the ANPI rows. Root cause:
+  **data bug** (an agent's reading of "award" as "signed"). Found by the verification pass.
+- **2026-09-26 · data · UK Last Energy row carried the Welsh project's design review — Fixed.** The
+  2025 ONR review covers the Llynfi site, not the DP World Thames Freeport project.
+- **2026-09-26 · data · Antares Series C dated to a recap article — Fixed.** Announced 2026-07-27
+  (TechCrunch, BusinessWire); the row said 2026-08-03, the date of a later recap.

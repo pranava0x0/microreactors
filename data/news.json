@@ -2,7 +2,7 @@
   "_meta": {
     "captured": "2026-09-26",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "47 of 60 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 13 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "42 of 60 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 18 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-09-24",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
@@ -306,8 +306,8 @@
       "category": "award",
       "what_happened": "The Army selected Westinghouse Government Services to deploy its eVinci heat-pipe microreactor at Fort Drum, New York, home of the 10th Mountain Division; Westinghouse did not disclose output, schedule or contract value. POWER reported the selection followed a mid-August letter from Sen. Chuck Schumer (D-N.Y.) to Army Secretary Dan Driscoll urging that Fort Drum be prioritized. Westinghouse is also the ANPI selectee at Malmstrom Air Force Base, Montana.",
       "why_it_matters": "This is a rare documented case of a named senator lobbying directly for a specific base's inclusion in a reactor siting decision, and it landed — worth watching whether other undisclosed sites got the same treatment without a public paper trail.",
-      "binding": true,
-      "binding_note": "A signed Janus OTA agreement, not a mere selection, though none of output, schedule or value has been disclosed for this specific pairing.",
+      "binding": false,
+      "binding_note": "Westinghouse says eVinci was selected for the next phase; the Army describes all five as down-selected for negotiation. Announced, not yet signed.",
       "sources": [
         {
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
@@ -328,7 +328,7 @@
       "what_happened": "Radiant secured the largest of the five Janus awards, up to $750 million to develop and deploy 15 Kaleidos microreactors across Army installations by 2030, starting with a three-unit deployment at Fort Benning targeted for 2028. Radiant called it one of the largest contracts ever issued through the Defense Innovation Unit. The award adds to Radiant's existing Air Force ANPI selection at Buckley Space Force Base and its commercial Equinix agreement for 20 Kaleidos units.",
       "why_it_matters": "A single award now covers three quarters of the Janus program's disclosed dollar figure and 15 of its 20-plus planned units, meaning the program's near-term commercial track record will be dominated by one vendor and one reactor design.",
       "binding": true,
-      "binding_note": "Radiant itself described this as a binding Janus agreement, the only one of the five vendors to publish its own award ceiling.",
+      "binding_note": "Radiant describes this as a binding Janus agreement and is the only one of the five to publish its award ceiling; the Army's same-day release describes all five as down-selected for negotiation.",
       "sources": [
         {
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
@@ -354,8 +354,8 @@
       "category": "award",
       "what_happened": "General Atomics Electromagnetic Systems will advance its GA-TES microreactor at Fort Hood, Texas through development, testing and site-planning milestones; the award's value was not disclosed. GA-TES is the only Janus reactor that does not use TRISO fuel — it runs on uranium-zirconium hydride drawing on General Atomics' TRIGA research-reactor heritage, is liquid-metal-cooled with natural circulation, and has a baseline output of about 5 MWe scalable to roughly 20 MWe. GA-EMS did not name a fuel supplier or utility partner for the site.",
       "why_it_matters": "GA-TES is the least mature of the five Janus designs by disclosed detail, and it is also the only one using a fuel form other than TRISO, so its supply chain and licensing path diverge from the rest of the program's four TRISO-based vendors.",
-      "binding": true,
-      "binding_note": "A signed Janus OTA agreement covering development and testing milestones, not yet a deployment commitment; the company is explicitly in a development phase.",
+      "binding": false,
+      "binding_note": "GA-EMS calls it a selection and says it will execute the work through an OTA-based agreement, in the future tense. Announced, not yet signed.",
       "sources": [
         {
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
@@ -381,8 +381,8 @@
       "category": "award",
       "what_happened": "BWXT Advanced Technologies will deploy a 20 MWe (75 MWth) configuration of its BANR high-temperature gas reactor at Fort Campbell, Kentucky, the largest single reactor in the Janus program. BWXT did not disclose the contract's value but confirmed a phased structure, with groundbreaking targeted for late 2028 and operation in the early 2030s. The design scales up BWXT's 1.5 MWe Project Pele microreactor, which delivered a full TRISO fuel core to the Department of Defense in late 2025.",
       "why_it_matters": "BWXT is the only Janus vendor that fabricates its own TRISO fuel, at its NRC-licensed Lynchburg, Virginia plant, which also supplies fuel to Antares and Radiant — making it a supplier to its own Janus competitors as well as a reactor vendor in its own right.",
-      "binding": true,
-      "binding_note": "A signed Janus OTA agreement; the specific dollar value was not disclosed.",
+      "binding": false,
+      "binding_note": "BWXT calls it a selection with a phased contracting approach still to come. Announced, not yet signed.",
       "sources": [
         {
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
@@ -412,8 +412,8 @@
       "category": "award",
       "what_happened": "The Army signed milestone-based Other Transaction Authority agreements worth up to $2.2 billion combined, running FY2027-FY2031, with five companies to build and operate microreactors: Antares at Fort Bragg, Radiant at Fort Benning, BWXT at Fort Campbell, General Atomics at Fort Hood, and Westinghouse Government Services at Fort Drum. Only Radiant disclosed its own award value, up to $750 million for 15 Kaleidos units; the Army declined to break out the other four. The five installations were narrowed down from a longer list of nine candidate sites that the Army and the Defense Innovation Unit identified in November 2025.",
       "why_it_matters": "This is the largest concentrated public bet on the microreactor class to date, and the Army's own program lead was candid that nobody knows what these reactors will actually cost and that some of the five vendors will likely fail before 2028 — the government is explicitly underwriting first-of-a-kind construction risk rather than waiting for a market price to form.",
-      "binding": true,
-      "binding_note": "Each vendor holds a signed, executed OTA agreement, not a preliminary selection — funds release against technical milestones for prototype construction and a first year of operation, after which the Army plans to shift to a power purchase agreement. Per-vendor dollar figures beyond Radiant's remain undisclosed.",
+      "binding": false,
+      "binding_note": "The Army's own release says the five vendors were down-selected for negotiation of Other Transactions Authority agreements; only Radiant has said its agreement is executed. Announced, not yet signed.",
       "sources": [
         {
           "label": "Federal News Network — Army awards $2.2B in contracts for nuclear microreactors",
@@ -445,8 +445,8 @@
       "category": "award",
       "what_happened": "The Army selected Antares Nuclear to own, build and operate a three-unit R1 deployment at Fort Bragg, home of the XVIII Airborne Corps, under Janus. Antares declined to disclose the contract's value but said its combined book across Janus, the Air Force ANPI award at Joint Base San Antonio, and Space Force work is now on the order of $1 billion. The R1 units, 100 kWe-1 MWe sodium heat-pipe reactors fueled by TRISO, build on the company's Mark-0 test reactor, which reached criticality at Idaho National Laboratory on June 4, 2026.",
       "why_it_matters": "Antares is now a three-program vendor (Janus, ANPI, Space Force) without a single disclosed contract value for any of them, so the $1 billion figure is entirely self-reported — a case study in how thin the public paper trail is even for a company winning federal reactor work.",
-      "binding": true,
-      "binding_note": "A signed Janus OTA agreement, not a mere selection; the dollar value of this specific award is undisclosed, only the combined cross-program total.",
+      "binding": false,
+      "binding_note": "Antares says it was awarded an OTA agreement with milestone-based funding; the Army's release describes all five as down-selected for negotiation, and no signed agreement has been published.",
       "sources": [
         {
           "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
