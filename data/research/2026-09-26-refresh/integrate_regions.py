@@ -59,7 +59,7 @@ CURATION = {
     "us-virgin-islands": ("us-islands", "silent", "$0.42/kWh residential (2025)"),
     "guam": ("us-islands", "proposed-ban", "fuel charge $0.136/kWh (2025)"),
     "cnmi-cuc": ("us-islands", "study", "$0.27/kWh residential (2024)"),
-    "american-samoa": ("us-islands", "silent", "$0.43/kWh average (2023)"),
+    "american-samoa": ("us-islands", "silent", "$0.45/kWh residential (2022)"),
     "hawaii": ("us-islands", "restricted", "$0.396/kWh average (2025)"),
     "freely-associated-states-pacific": ("us-islands", "silent", "$0.28-0.48/kWh (Palau, FSM)"),
     "australia-nuclear-legal-position": ("australia", "banned", "federal and state law"),

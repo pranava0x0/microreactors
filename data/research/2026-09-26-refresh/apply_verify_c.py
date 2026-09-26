@@ -39,6 +39,8 @@ EDITS = [
      "Donlin Gold (not yet built) would need its own dual-fuel power plant, fed by a 315-mile gas pipeline."),
     ("north.json", "regions", "alaska-mines-power", "loads.2.mw",
      "220 MW planned dual-fuel plant, 316-mile gas pipeline", "planned dual-fuel plant (MW not published), 315-mile gas pipeline"),
+    ("north.json", "regions", "alaska-mines-power", "blockers.2",
+     "so its 220 MW load is not yet a live near-term buyer", "so its load is not yet a live near-term buyer"),
     # --- NWT: Ekati's 30.8 MW / seven 4.4 MW units are in no fetched source
     ("north.json", "regions", "northwest-territories", "loads.0.mw",
      "30.8 MW installed (seven 4.4 MW diesel generators)", "installed capacity not found in a fetched source"),
@@ -87,6 +89,49 @@ EDITS = [
     ("pooling.json", "precedents", "global-fund-pooled-procurement-mechanism", "outcome",
      ", and since 2018 countries have separately routed a further $128 million in non-Global-Fund money through the same platform to capture its negotiated prices.",
      "."),
+    # ===== part B (verify-c-B.json) =====
+    # --- Yukon: the LNG share's only source (Yukon Energy Facts 2024) is gone; the Minto 53,000 t/yr is
+    #     far above every account found (22,000-30,000), none of them primary, so the figure goes
+    ("north.json", "regions", "yukon", "power_system",
+     " LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.", ""),
+    ("north.json", "regions", "yukon", "loads.1.note",
+     "grid connection over self-generation saved an estimated 53,000 tonnes/year of GHG emissions vs. diesel",
+     "connected to the grid rather than generating its own diesel power"),
+    # --- Nunavut: the 2026-09-02 figures check out against the plant list (19 of 25 over 1 MW)
+    ("north.json", "regions", "nunavut", "power_system",
+     "(~76 MW total, 19 over 1 MW, Iqaluit largest at 13.6 MW -- established in the 2026-09-02 pass and not re-verified here)",
+     "(about 76 MW in total per QEC's 2023-2026 corporate plan; 19 of the 25 exceed 1 MW, Iqaluit's the largest at 13.6 MW)"),
+    # --- Nunavik: no fetched page gives a village count
+    ("north.json", "regions", "nunavik-northern-quebec", "power_system",
+     "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home'",
+     "Hydro-Quebec serves Nunavik's villages from a diesel power plant in each community ('The power plant is located in your village. It uses diesel fuel to generate the electricity needed in your home.')"),
+    ("north.json", "regions", "nunavik-northern-quebec", "blockers.1",
+     "wind/solar/battery conversion of its 14 diesel villages", "wind/solar/battery conversion of its diesel villages"),
+    # --- American Samoa: DOE's baseline report gives 44.97 cents in 2022, almost three times the US average
+    ("islands.json", "regions", "american-samoa", "price",
+     "43 cents/kWh average retail price, 2023 (about 3.5x the US average);",
+     "44.97 cents/kWh average residential price in 2022, almost three times the US average (DOE);"),
+    # --- Freely associated states: the $0.41, $0.36, 97.5% and Majuro demand figures are in no fetched page,
+    #     and "roughly 28 MW installed" contradicted the two plants' own 23.7 + 13.08 MW
+    ("islands.json", "regions", "freely-associated-states-pacific", "price",
+     "US$0.28/kWh residential in Palau (rising to $0.41/kWh commercial/government on an inverted block tariff) and about US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting; a separate estimate put Marshall Islands residential price at about US$0.36/kWh",
+     "US$0.28/kWh in Palau and US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting"),
+    ("islands.json", "regions", "freely-associated-states-pacific", "power_system",
+     "(about 13.08 MW across 4 diesel generators), for roughly 28 MW installed capacity against a 15 MW peak load and a generation mix around 97.5% diesel / 2.5% solar.",
+     "(about 13.08 MW across 4 diesel generators)."),
+    ("islands.json", "regions", "freely-associated-states-pacific", "power_system",
+     "its Majuro system, the country's largest, had a 2023 recorded maximum demand of about 9.8 MW (9.0 MW daily average), generated about 99.6% from diesel and 0.4% from grid-connected PV.",
+     "its Majuro grid, the country's largest, produces 74 percent of the electricity sector's greenhouse-gas emissions."),
+    ("islands.json", "regions", "freely-associated-states-pacific", "loads.0.mw",
+     "about 9.8 MW maximum demand, 9.0 MW daily average (2023)", "demand not found in a fetched source"),
+    # --- Chatham Islands: the $1.02 figure is from a 2012 article
+    ("islands.json", "regions", "nz-chatham-islands-and-nuclear-law", "price",
+     "islanders had already been paying $1.02/kWh in 2020 versus about 25c on the mainland",
+     "islanders had already been paying $1.02/kWh in 2012 versus about 25c on the mainland"),
+    # --- Pacaso: its own page says shares reach "$2 million or more", not $2.8 million
+    ("pooling.json", "precedents", "pacaso-fractional-home-co-ownership", "size",
+     "each home split into up to eight shares priced from $200,000 to $2.8 million depending on the property;",
+     "each home split into up to eight shares, which Pacaso says start around $200,000 and can reach $2 million or more;"),
 ]
 
 ADD_SOURCES = [
@@ -150,6 +195,30 @@ ADD_SOURCES = [
     ("filings.json", "dockets", "tennessee-nuclear-energy-fund-2025", [
         src("Spectrum News - Tennessee nuclear development (2026)", "https://spectrumlocalnews.com/us/snplus/news/2026/08/31/tennessee-nuclear-development",
             "Since 2023, the state has invested $95 million into a fund to support new nuclear projects")]),
+    # ===== part B =====
+    ("north.json", "regions", "nunavut", [
+        src("Qulliq Energy Corporation - 2023-2026 Corporate Plan", "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf",
+            "Through the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts"),
+        src("Wikipedia - List of generating stations in Nunavut", "https://en.wikipedia.org/wiki/List_of_generating_stations_in_Nunavut",
+            "Iqaluit 13.6")]),
+    ("north.json", "regions", "nunavik-northern-quebec", [
+        src("Tarquti Energy - Diesel in Nunavik", "https://tarquti.ca/learn/diesel-in-nunavik/",
+            "A thermal power plant located in each community uses diesel to produce electricity")]),
+    ("islands.json", "regions", "american-samoa", [
+        src("US DOE - American Samoa Baseline Energy Report (2025)", "https://www.energy.gov/sites/default/files/2025-11/American%20Samoa_Baseline_Energy_Report.pdf",
+            "the average electricity price for residential customers in American Samoa was approximately 44.97 cents")]),
+    ("islands.json", "regions", "freely-associated-states-pacific", [
+        src("Wikipedia - Aimeliik Power Plant", "https://en.wikipedia.org/wiki/Aimeliik_Power_Plant",
+            "4 installed diesel generators with a total installed capacity of 13.08 MW"),
+        src("Republic of the Marshall Islands - Electricity Roadmap (2018)", "https://unfccc.int/sites/default/files/NDC/2022-06/RMI%20Electricity%20Roadmap.pdf",
+            "Majuro's grid currently produces 74 percent of electricity sector GHG emissions")]),
+    ("islands.json", "regions", "nz-chatham-islands-and-nuclear-law", [
+        src("NZ Herald - Freight, power costs top Chatham Islanders' agenda (2012)",
+            "https://www.nzherald.co.nz/nz/freight-power-costs-top-chatham-islanders-agenda/MG4W6Z4GPQVAOX5PTLUWD32VHA/",
+            "Islanders paid $1.02 per kw/hour for power, compared with around 25c in the rest of New Zealand")]),
+    ("pooling.json", "precedents", "pacaso-fractional-home-co-ownership", [
+        src("Pacaso - Pacaso explained", "https://www.pacaso.com/blog/pacaso-explained",
+            "Pacaso 1/8 shares typically start from around $200,000 and can reach $2 million or more")]),
 ]
 
 # Pages that read as fetched but hold the figure only in a stitched quote, or no longer exist
@@ -159,6 +228,8 @@ FIX_SOURCES = [
 ]
 DROP_SOURCES = [
     ("islands.json", "regions", "cnmi-cuc", "https://www.nminewsservice.com/bavi-recovery-rundown-day-10/"),
+    # the Palau figures it was cited for are removed, and the page is behind a Cloudflare challenge
+    ("islands.json", "regions", "freely-associated-states-pacific", "https://prdrse4all.spc.int/content/palau-public-utilities-corporation-ppuc"),
 ]
 
 
@@ -235,6 +306,8 @@ def main() -> None:
         holder, leaf = rec, parts[-1]
         for p in parts[:-1]:
             holder = holder[int(p)] if p.isdigit() else holder[p]
+        if leaf.isdigit():
+            leaf = int(leaf)
         text = holder[leaf]
         if old in text:
             assert text.count(old) == 1, (rid, field, old[:40])

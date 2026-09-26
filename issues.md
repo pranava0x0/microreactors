@@ -383,3 +383,23 @@ one may simply have no live equivalent now that the project is off.
   breakdown the article does not give; the Oklo answer omitted that the same 2023 deck gives
   "<$60 million" as estimated construction costs. Root cause: **data bugs** (paraphrase inside
   quotation marks, and an agent's summary of a search result presented as a sourced fact).
+- **2026-09-26 · data · Verification C: numbers the offline check could not find in any cited page — Fixed.**
+  44 records from this pass carried a number that no cached copy of a cited page contained. Two
+  Sonnet agents checked each one against the pages (`verify-c-A.json`, `verify-c-B.json`); pages
+  that block scripted clients were then read in a browser. Wrong: Greenland's Tanbreez "70%
+  acquired" (the 70% was an unrelated 60 North ApS purchase; Critical Metals owns 92.5%), American
+  Samoa's "43 cents, 2023, 3.5x" (DOE: 44.97 cents, 2022, almost three times), the Chatham
+  Islands' $1.02/kWh dated 2020 (the article is from 2012), Yukon's Minto 53,000 t/yr, Pacaso's
+  $2.8M top share, AVEC's 58 communities off 46 plants (a 2026 listing says 59 locations),
+  Donlin's 316 miles (Alaska DNR: 315), SETuP's 10 MW across 25 communities (ARENA: 26
+  communities). Removed as unsourced anywhere: Donlin's 220 MW, Ekati's 30.8 MW, WA mine diesel at
+  $0.50 and hybrids at $0.25-0.35/kWh, CNMI's 62.1 and 42.5 MW, a $2.42/gal Greenland tracker
+  price, Palau's 97.5% diesel share and "28 MW" (which contradicted its plants' 23.7 + 13.08 MW),
+  Majuro's 9.8 MW demand, the $0.41 and $0.36 tariffs, Nunavik's "14 villages", Yukon's LNG share,
+  the Global Fund's $128M and the NHS "5,000 patients". Figures that were right but cited to pages that do
+  not carry them now cite pages that do (28 sources added across 22 records). `apply_verify_c.py` holds every edit. Root cause: **data bugs**
+  (agent figures from search summaries, and from pages it summarised rather than quoted); the
+  quote gate cannot see them because it checks quotes, not prose. Open: a gate that checks every
+  number in a record's prose against its cited pages (this pass's `numcheck` script, in the scratch
+  directory) would have caught all of them, but it needs a way to accept confirmed figures on pages
+  that cannot be cached before it can run in CI.

@@ -2,7 +2,7 @@
  "_meta": {
   "captured": "2026-09-26",
   "what_this_is": "24 remote and cold places, most running on diesel, where a 1-20 MW reactor would compete: what each pays, what it draws, and where its law stands on civil nuclear power.",
-  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 93 of 105 sources were fetched and read; 12 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
+  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 100 of 111 sources were fetched and read; 11 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
   "groups": [
    {
     "id": "alaska",
@@ -200,7 +200,7 @@
    "blockers": [
     "Graphite One: reactor vendors judged 'not far enough along yet' and a stated social-acceptability bar, by the company's own account",
     "Kensington and Greens Creek already have a working power solution (diesel at full efficiency, or discounted hydropower) reducing urgency",
-    "Donlin remains unbuilt and unfinanced, so its 220 MW load is not yet a live near-term buyer"
+    "Donlin remains unbuilt and unfinanced, so its load is not yet a live near-term buyer"
    ],
    "sources": [
     {
@@ -406,7 +406,7 @@
    "region": "Nunavik (northern Quebec)",
    "country": "CA",
    "jurisdiction": "Canadian province (north)",
-   "power_system": "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home', off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
+   "power_system": "Hydro-Quebec serves Nunavik's villages from a diesel power plant in each community ('The power plant is located in your village. It uses diesel fuel to generate the electricity needed in your home.'), off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
    "price": "Hydro-Quebec Tarif D N (off-grid networks north of the 53rd parallel, including Nunavik villages): 7.065 cents/kWh for the first 40 kWh of energy per day and 50.469 cents/kWh for the remainder (both times a location multiplier), plus a 46.154 cents/day network access charge times the multiplier, effective 2026-04-01",
    "nuclear_position": "No Nunavik-specific nuclear policy found. At the provincial level, Hydro-Quebec's only nuclear plant, Gentilly-2, closed in 2012; press reporting (not independently fetched this pass) indicates the utility studied recommissioning it in 2023 and chose not to proceed. Quebec's Strategic Plan 2022-2026 frames its clean-electricity growth (100+ TWh needed for carbon neutrality by 2050) around hydro expansion, not nuclear, consistent with no Nunavik nuclear activity being found.",
    "microreactor_activity": "None found. All identified Nunavik decarbonization activity (Quaqtaq/Puvirnituq wind, Raglan's TUGLIQ turbines) is wind- or solar-based, run by Hydro-Quebec or TUGLIQ, with no reactor study identified.",
@@ -428,7 +428,7 @@
    ],
    "blockers": [
     "Quebec's provincial nuclear posture is now inactive by its own choice (Gentilly-2 recommissioning study abandoned on social-acceptability grounds)",
-    "Hydro-Quebec's Nunavik strategy is wind/solar/battery conversion of its 14 diesel villages, already funded and underway, reducing near-term appetite for a new technology",
+    "Hydro-Quebec's Nunavik strategy is wind/solar/battery conversion of its diesel villages, already funded and underway, reducing near-term appetite for a new technology",
     "Raglan already has an operating wind-diesel hybrid (TUGLIQ, since 2014) that is the incumbent 'what a reactor has to beat' precedent"
    ],
    "sources": [
@@ -445,6 +445,12 @@
      "status": "fetched"
     },
     {
+     "label": "Tarquti Energy - Diesel in Nunavik",
+     "url": "https://tarquti.ca/learn/diesel-in-nunavik/",
+     "quote": "A thermal power plant located in each community uses diesel to produce electricity",
+     "status": "fetched"
+    },
+    {
      "label": "Hydro-Quebec - Grille des tarifs d'electricite 2026 (Tarif D N, Reseaux autonomes au nord du 53e parallele)",
      "url": "https://www.hydroquebec.com/data/documents-donnees/pdf/grille-tarifaire.pdf",
      "quote": "9.2 9.2 Tarif D N Frais d’accès au réseau, par jour × multiplicateur 46,154 ¢ 46,154 ¢ 0,0 %\nJusqu’à 40 k W h d’énergie par jour, par k W h × multiplicateur 6,905 ¢ 7,065 ¢ 2,3 %",
@@ -457,7 +463,7 @@
    "region": "Nunavut",
    "country": "CA",
    "jurisdiction": "Canadian territory",
-   "power_system": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (~76 MW total, 19 over 1 MW, Iqaluit largest at 13.6 MW, established in the 2026-09-02 pass and not re-verified here). New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
+   "power_system": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (about 76 MW in total per QEC's 2023-2026 corporate plan; 19 of the 25 exceed 1 MW, Iqaluit's the largest at 13.6 MW). New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
    "price": "Interim 2025 QEC rates of $555-1,130/MWh by class (established in the 2026-09-02 pass)",
    "nuclear_position": "No territorial nuclear ban or enabling law found. QEC's own 2023-2026 Corporate Plan does not mention nuclear power (established in the 2026-09-02 pass). New: the federal Department of National Defence confirmed in August 2026 that it 'has launched a multi-year program to see whether a small nuclear reactor can be deployed in the Arctic,' funding the defence company Canadian Strategic Missions Corporation (CSMC) with $4.5 million in July 2026 'to advance Canadian-made energy solutions that will secure the North.'",
    "microreactor_activity": "Kivalliq Hydro-Fibre Link schedule/funding, updated this pass: the Government of Canada's most recent dedicated funding announcement (March 2024) added $2.8 million to the project's development phase (on top of $11.6 million already provided for planning/feasibility), stating 'construction is expected to begin by 2028.' Since then, Nukik Corporation reports filing a Transmission Service Request with Manitoba Hydro (by December 2025) and becoming 'the first Arctic electricity developer in North America to be certified by the Midcontinent Independent System Operator (MISO)'; on July 7, 2026 the governments of Nunavut and Manitoba signed an MOU reaffirming 'Manitoba's commitment to provide 50 megawatts of firm electric capacity to the project.' No newer construction-start or financial-close date than 2028 was found. Separately, on the federal nuclear-for-the-North question: CSMC's CEO Daniel Sax said the company is 'working on building... very small nuclear reactors deployable into the Arctic to replace the diesel generators that are up there,' with 'a demonstration of the nuclear reactor by 2028 and then... this technology into the field by 2030,' and 'it's still unclear where in the North it will go.' Canadian Nuclear Laboratories' Ryan Clarke separately noted the North is 'already in an energy deficit.'",
@@ -495,6 +501,18 @@
      "url": "https://www.rcinet.ca/eye-on-the-arctic/2026/08/06/to-help-solve-the-norths-energy-deficit-ottawa-looks-at-nuclear-options/",
      "quote": "very small nuclear reactors deployable into the Arctic to replace the diesel generators that are up there",
      "status": "fetched"
+    },
+    {
+     "label": "Qulliq Energy Corporation - 2023-2026 Corporate Plan",
+     "url": "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf",
+     "quote": "Through the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - List of generating stations in Nunavut",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_Nunavut",
+     "quote": "Iqaluit 13.6",
+     "status": "fetched"
     }
    ]
   },
@@ -503,7 +521,7 @@
    "region": "Yukon",
    "country": "CA",
    "jurisdiction": "Canadian territory",
-   "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units. LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.",
+   "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units.",
    "price": "ATCO Electric Yukon Rate Schedule 1160 (Residential, Non-Government, Hydro area incl. Whitehorse): Customer Charge C$14.65/month plus Energy Charge 12.14 cents/kWh for the first 1,000 kWh (base rate, Board Order 2011-06), with Rider J at 100.23% of base rates (effective 2026-04-01, Board Order 2026-08) and Rider F fuel adjustment of 0.378 cents/kWh added to all consumption (effective 2026-05-01)",
    "nuclear_position": "No territorial ban. On April 22, 2026, the Government of Yukon signed a formal partnership agreement with the Government of Ontario 'to strengthen collaboration on energy development, with a focus on improving long-term reliability and exploring emerging technologies such as small modular reactors.'",
    "microreactor_activity": "Under the April 2026 Yukon-Ontario agreement, 'Ontario Power Generation and Yukon Energy will collaborate on the necessary groundwork to deploy SMRs to Yukon's grid,' covering 'nuclear energy, SMRs and microreactors including technological readiness, regulatory frameworks, supply chains, economics and financing, nuclear waste management and public and Indigenous engagement.' Yukon's energy minister, Ted Laking, framed it as a direct response to winter reliability: 'Our electricity grid is under strain and will soon be unable to meet the needs of the territory... we require significant investment in new generation capacity we can rely on in our coldest and darkest months of the year.' This is an assessment/knowledge-sharing agreement, not a project commitment, contract or site selection.",
@@ -520,7 +538,7 @@
     {
      "name": "Minto mine (Capstone Mining, now closed)",
      "mw": "grid-connected",
-     "note": "grid connection over self-generation saved an estimated 53,000 tonnes/year of GHG emissions vs. diesel"
+     "note": "connected to the grid rather than generating its own diesel power"
     }
    ],
    "blockers": [
@@ -754,13 +772,13 @@
    "country": "US",
    "jurisdiction": "US territory",
    "power_system": "American Samoa Power Authority (ASPA) generates almost entirely on imported diesel, diesel-dependent generation is about 97% of output, with solar about 11% of installed utility-scale capacity but only about 3% of generation (2023), and 'spends about $27 million to $30 million on diesel every year.' Construction began in 2024 on the first phase of a 20-megawatt Pavaiai solar PV project, and a 4-megawatt/8-megawatt-hour battery system was commissioned in early 2025.",
-   "price": "43 cents/kWh average retail price, 2023 (about 3.5x the US average); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
+   "price": "44.97 cents/kWh average residential price in 2022, almost three times the US average (DOE); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
    "nuclear_position": "No nuclear ban or enabling law found; no statement located from ASPA, the territorial government or the Fono on nuclear power or microreactors in this search pass.",
    "microreactor_activity": "none found, searched ASPA's own site and general microreactor literature for any American-Samoa-specific MOU, feasibility study or vendor visit. Any future outreach should be handled with care given the wider Pacific region's history with nuclear-weapons-test fallout, even though American Samoa itself was not a test site.",
    "microreactor_read": "ASPA's diesel bill (about 27 cents/kWh, $27-30M/year in fuel alone) is exactly the delivered-fuel cost a reactor should beat, and Tutuila's 27 MW yearly system peak is inside the 1-20 MW range several times over, but ASPA has already committed its near-term capital to solar-plus-storage (Pavaiai, and previously Ta'u) rather than nuclear, and no study has opened that door.",
    "group": "us-islands",
    "position": "silent",
-   "price_short": "$0.43/kWh average (2023)",
+   "price_short": "$0.45/kWh residential (2022)",
    "loads": [
     {
      "name": "ASPA Tutuila system",
@@ -802,6 +820,12 @@
      "url": "https://www.eia.gov/state/?sid=AQ",
      "quote": "diesel-dependent generation still comprises 97% of ASPA's output",
      "status": "snippet-only"
+    },
+    {
+     "label": "US DOE - American Samoa Baseline Energy Report (2025)",
+     "url": "https://www.energy.gov/sites/default/files/2025-11/American%20Samoa_Baseline_Energy_Report.pdf",
+     "quote": "the average electricity price for residential customers in American Samoa was approximately 44.97 cents",
+     "status": "fetched"
     }
    ]
   },
@@ -955,8 +979,8 @@
    "region": "Palau, Federated States of Micronesia and Marshall Islands",
    "country": "PW/FM/MH",
    "jurisdiction": "Compact of Free Association states (freely associated with the US)",
-   "power_system": "All three run small, diesel-dominated grids with no interconnection to any other network. Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators), for roughly 28 MW installed capacity against a 15 MW peak load and a generation mix around 97.5% diesel / 2.5% solar. The Marshall Islands' Marshalls Energy Company (MEC) supplies Majuro (plus Jaluit and Wotje); its Majuro system, the country's largest, had a 2023 recorded maximum demand of about 9.8 MW (9.0 MW daily average), generated about 99.6% from diesel and 0.4% from grid-connected PV.",
-   "price": "US$0.28/kWh residential in Palau (rising to $0.41/kWh commercial/government on an inverted block tariff) and about US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting; a separate estimate put Marshall Islands residential price at about US$0.36/kWh",
+   "power_system": "All three run small, diesel-dominated grids with no interconnection to any other network. Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators). The Marshall Islands' Marshalls Energy Company (MEC) supplies Majuro (plus Jaluit and Wotje); its Majuro grid, the country's largest, produces 74 percent of the electricity sector's greenhouse-gas emissions.",
+   "price": "US$0.28/kWh in Palau and US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting",
    "nuclear_position": "No civil nuclear power position, statute or study was found for Palau, FSM or the Marshall Islands in this pass; all three are eligible to join, but have not signed, the South Pacific Nuclear Free Zone Treaty. The Marshall Islands carries a distinct, unrelated legacy of '67 atmospheric nuclear test explosions conducted between 1946 and 1958' at Bikini and Enewetak atolls, addressed by a US-RMI compensation MOU (fiscal year 2024) providing '$50 million annually,' '$200 million over 20 years for joint health care programs' and a '$700 million' repurposed trust fund, plus a UN nuclear-weapons-impact study launched in November 2024, a weapons-testing history that any civil microreactor outreach must approach with care and keep clearly separate from.",
    "microreactor_activity": "none found for civil power generation in any of the three states, searched directly and via Pacific-region energy literature; the only nuclear-related activity found for any of them concerns weapons-testing legacy and compensation, not power generation",
    "microreactor_read": "Palau and the FSM pay among the highest delivered-diesel prices found in this whole pass, but no state has studied nuclear power, every identified grid is small even for the bottom of the 1-20 MW range, and the Marshall Islands' weapons-testing history means outreach there needs deliberately careful, separate framing rather than a standard utility pitch.",
@@ -966,7 +990,7 @@
    "loads": [
     {
      "name": "Majuro (Marshalls Energy Company system)",
-     "mw": "about 9.8 MW maximum demand, 9.0 MW daily average (2023)",
+     "mw": "demand not found in a fetched source",
      "note": "diesel; the Marshall Islands' largest single grid"
     }
    ],
@@ -1001,10 +1025,16 @@
      "status": "snippet-only"
     },
     {
-     "label": "Devex / PRDR Sustainable Energy for All — Palau Public Utilities Corporation (PPUC) profile",
-     "url": "https://prdrse4all.spc.int/content/palau-public-utilities-corporation-ppuc",
-     "quote": "installed generation capacity of 28.05 megawatts (MW) and peak load of 15 MW",
-     "status": "snippet-only"
+     "label": "Wikipedia - Aimeliik Power Plant",
+     "url": "https://en.wikipedia.org/wiki/Aimeliik_Power_Plant",
+     "quote": "4 installed diesel generators with a total installed capacity of 13.08 MW",
+     "status": "fetched"
+    },
+    {
+     "label": "Republic of the Marshall Islands - Electricity Roadmap (2018)",
+     "url": "https://unfccc.int/sites/default/files/NDC/2022-06/RMI%20Electricity%20Roadmap.pdf",
+     "quote": "Majuro's grid currently produces 74 percent of electricity sector GHG emissions",
+     "status": "fetched"
     }
    ]
   },
@@ -1316,7 +1346,7 @@
    "country": "NZ",
    "jurisdiction": "New Zealand (Chatham Islands, a special local-government area)",
    "power_system": "The Chatham Islands sit roughly 800 km east of Christchurch with no connection to New Zealand's national grid, so the main settlement has run overwhelmingly on diesel. A community wind-turbine project 'began operation in November' 2025 and is 'expected to reduce diesel use by up to 68%, and save more than $1 million a year,' with grid power for islanders 'expected to drop by 20%.'",
-   "price": "NZ$1.32/kWh from 2026-06-01 (a 32% rise), 'more than three times the mainland average of about 40 cents'; islanders had already been paying $1.02/kWh in 2020 versus about 25c on the mainland",
+   "price": "NZ$1.32/kWh from 2026-06-01 (a 32% rise), 'more than three times the mainland average of about 40 cents'; islanders had already been paying $1.02/kWh in 2012 versus about 25c on the mainland",
    "nuclear_position": "New Zealand's Nuclear Free Zone, Disarmament, and Arms Control Act 1987 is widely assumed to ban nuclear power outright, but per the World Nuclear Association, 'The New Zealand Nuclear Free Zone established under the Act does not ban land-based nuclear power plants', its actual prohibitions target nuclear weapons and nuclear-propelled vessels entering New Zealand's territorial sea, land and airspace, not civilian electricity generation. No national or Chatham Islands-specific law bans a civil reactor, but no government body has proposed one either.",
    "microreactor_activity": "none found from any New Zealand government body, nationally or for the Chathams specifically. The only advocacy found was an August 2025 opinion piece calling nuclear 'the last swear word in New Zealand politics' and urging 'a feasibility study to work out the who, when, and where of SMRs', itself confirming no such study yet exists.",
    "microreactor_read": "The Chathams pay the highest, most volatile delivered-diesel price found in this whole record (NZ$1.32/kWh, up 32% in a year even after new wind capacity), and contrary to popular belief no New Zealand law actually bans a land-based reactor, but the political taboo is doing the work the law does not, and the islands' own funded fix (new wind turbines, targeting a 68% diesel cut) is already delivering savings.",
@@ -1365,6 +1395,12 @@
      "url": "https://www.rnz.co.nz/news/national/589190/chatham-islands-braces-for-energy-shock",
      "quote": "Power cost 129.5c/kWh -- among the highest in New Zealand",
      "status": "snippet-only"
+    },
+    {
+     "label": "NZ Herald - Freight, power costs top Chatham Islanders' agenda (2012)",
+     "url": "https://www.nzherald.co.nz/nz/freight-power-costs-top-chatham-islanders-agenda/MG4W6Z4GPQVAOX5PTLUWD32VHA/",
+     "quote": "Islanders paid $1.02 per kw/hour for power, compared with around 25c in the rest of New Zealand",
+     "status": "fetched"
     }
    ]
   },

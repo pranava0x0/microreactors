@@ -162,7 +162,7 @@
    "blockers": [
     "Graphite One: reactor vendors judged 'not far enough along yet' and a stated social-acceptability bar, by the company's own account",
     "Kensington and Greens Creek already have a working power solution (diesel at full efficiency, or discounted hydropower) reducing urgency",
-    "Donlin remains unbuilt and unfinanced, so its 220 MW load is not yet a live near-term buyer"
+    "Donlin remains unbuilt and unfinanced, so its load is not yet a live near-term buyer"
    ],
    "microreactor_read": "Graphite One is the cleanest small-mine microreactor lead in Alaska after Red Dog: a company executive has already put nuclear on the list of options at a forecast 12.5 MW load, conditioned only on vendor maturity and social acceptability, not on cost or law.",
    "sources": [
@@ -308,7 +308,7 @@
    "region": "Yukon",
    "country": "CA",
    "jurisdiction": "Canadian territory",
-   "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units. LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.",
+   "power_system": "Yukon Energy runs a predominantly hydro grid (Whitehorse/Aishihik/Mayo) backstopped by LNG and diesel for winter peaking; low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units.",
    "price": "No consumer $/kWh figure fetched this pass; see Yukon Energy's own rate filings with the Yukon Utilities Board for tariffs",
    "loads": [
     {
@@ -319,7 +319,7 @@
     {
      "name": "Minto mine (Capstone Mining, now closed)",
      "mw": "grid-connected",
-     "note": "grid connection over self-generation saved an estimated 53,000 tonnes/year of GHG emissions vs. diesel"
+     "note": "connected to the grid rather than generating its own diesel power"
     }
    ],
    "nuclear_position": "No territorial ban. On April 22, 2026, the Government of Yukon signed a formal partnership agreement with the Government of Ontario 'to strengthen collaboration on energy development, with a focus on improving long-term reliability and exploring emerging technologies such as small modular reactors.'",
@@ -404,7 +404,7 @@
    "region": "Nunavut",
    "country": "CA",
    "jurisdiction": "Canadian territory",
-   "power_system": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (~76 MW total, 19 over 1 MW, Iqaluit largest at 13.6 MW -- established in the 2026-09-02 pass and not re-verified here). New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
+   "power_system": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (about 76 MW in total per QEC's 2023-2026 corporate plan; 19 of the 25 exceed 1 MW, Iqaluit's the largest at 13.6 MW). New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
    "price": "Interim 2025 QEC rates of $555-1,130/MWh by class (established in the 2026-09-02 pass)",
    "loads": [
     {
@@ -439,6 +439,18 @@
      "url": "https://www.rcinet.ca/eye-on-the-arctic/2026/08/06/to-help-solve-the-norths-energy-deficit-ottawa-looks-at-nuclear-options/",
      "quote": "very small nuclear reactors deployable into the Arctic to replace the diesel generators that are up there",
      "status": "fetched"
+    },
+    {
+     "label": "Qulliq Energy Corporation - 2023-2026 Corporate Plan",
+     "url": "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf",
+     "quote": "Through the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts",
+     "status": "fetched"
+    },
+    {
+     "label": "Wikipedia - List of generating stations in Nunavut",
+     "url": "https://en.wikipedia.org/wiki/List_of_generating_stations_in_Nunavut",
+     "quote": "Iqaluit 13.6",
+     "status": "fetched"
     }
    ]
   },
@@ -447,7 +459,7 @@
    "region": "Nunavik (northern Quebec)",
    "country": "CA",
    "jurisdiction": "Canadian province (north)",
-   "power_system": "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home' -- off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
+   "power_system": "Hydro-Quebec serves Nunavik's villages from a diesel power plant in each community ('The power plant is located in your village. It uses diesel fuel to generate the electricity needed in your home.') -- off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators. Raglan mine (Glencore), Nunavik's largest industrial load, runs 'an off-grid power system consisting of over 20 generators that consume several thousand litres of diesel fuel per hour.'",
    "price": "No published $/kWh figure fetched this pass for Nunavik village tariffs",
    "loads": [
     {
@@ -465,7 +477,7 @@
    "microreactor_activity": "None found. All identified Nunavik decarbonization activity (Quaqtaq/Puvirnituq wind, Raglan's TUGLIQ turbines) is wind- or solar-based, run by Hydro-Quebec or TUGLIQ, with no reactor study identified.",
    "blockers": [
     "Quebec's provincial nuclear posture is now inactive by its own choice (Gentilly-2 recommissioning study abandoned on social-acceptability grounds)",
-    "Hydro-Quebec's Nunavik strategy is wind/solar/battery conversion of its 14 diesel villages, already funded and underway, reducing near-term appetite for a new technology",
+    "Hydro-Quebec's Nunavik strategy is wind/solar/battery conversion of its diesel villages, already funded and underway, reducing near-term appetite for a new technology",
     "Raglan already has an operating wind-diesel hybrid (TUGLIQ, since 2014) that is the incumbent 'what a reactor has to beat' precedent"
    ],
    "microreactor_read": "Nunavik's off-grid diesel villages and Raglan mine are physically the right scale, but Quebec's provincial nuclear posture (an abandoned Gentilly-2 restart) and Hydro-Quebec's active wind/solar conversion program both point away from nuclear as the near-term answer here.",
@@ -480,6 +492,12 @@
      "label": "World Nuclear News — Hydro-Quebec mulls Gentilly 2 recommissioning",
      "url": "https://www.world-nuclear-news.org/Articles/Hydro-Quebec-mulls-Gentilly-2-recommissioning",
      "quote": "Hydro-Québec mulls Gentilly 2 recommissioning",
+     "status": "fetched"
+    },
+    {
+     "label": "Tarquti Energy - Diesel in Nunavik",
+     "url": "https://tarquti.ca/learn/diesel-in-nunavik/",
+     "quote": "A thermal power plant located in each community uses diesel to produce electricity",
      "status": "fetched"
     }
    ]

@@ -235,7 +235,7 @@
    "country": "US",
    "jurisdiction": "US territory",
    "power_system": "American Samoa Power Authority (ASPA) generates almost entirely on imported diesel -- diesel-dependent generation is about 97% of output, with solar about 11% of installed utility-scale capacity but only about 3% of generation (2023) -- and 'spends about $27 million to $30 million on diesel every year.' Construction began in 2024 on the first phase of a 20-megawatt Pavaiai solar PV project, and a 4-megawatt/8-megawatt-hour battery system was commissioned in early 2025.",
-   "price": "43 cents/kWh average retail price, 2023 (about 3.5x the US average); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
+   "price": "44.97 cents/kWh average residential price in 2022, almost three times the US average (DOE); ASPA states 'ASPA's cost for electric generation today is about 27-cents per kilowatt hour' (24 cents fuel, 3 cents O&M), projected to fall to about 11 cents/kWh once new solar and wind independent-power-producer contracts are online",
    "loads": [
     {
      "name": "ASPA Tutuila system",
@@ -280,6 +280,12 @@
      "url": "https://www.eia.gov/state/?sid=AQ",
      "quote": "diesel-dependent generation still comprises 97% of ASPA's output",
      "status": "snippet-only"
+    },
+    {
+     "label": "US DOE - American Samoa Baseline Energy Report (2025)",
+     "url": "https://www.energy.gov/sites/default/files/2025-11/American%20Samoa_Baseline_Energy_Report.pdf",
+     "quote": "the average electricity price for residential customers in American Samoa was approximately 44.97 cents",
+     "status": "fetched"
     }
    ]
   },
@@ -343,12 +349,12 @@
    "region": "Palau, Federated States of Micronesia and Marshall Islands",
    "country": "PW/FM/MH",
    "jurisdiction": "Compact of Free Association states (freely associated with the US)",
-   "power_system": "All three run small, diesel-dominated grids with no interconnection to any other network. Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators), for roughly 28 MW installed capacity against a 15 MW peak load and a generation mix around 97.5% diesel / 2.5% solar. The Marshall Islands' Marshalls Energy Company (MEC) supplies Majuro (plus Jaluit and Wotje); its Majuro system, the country's largest, had a 2023 recorded maximum demand of about 9.8 MW (9.0 MW daily average), generated about 99.6% from diesel and 0.4% from grid-connected PV.",
-   "price": "US$0.28/kWh residential in Palau (rising to $0.41/kWh commercial/government on an inverted block tariff) and about US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting; a separate estimate put Marshall Islands residential price at about US$0.36/kWh",
+   "power_system": "All three run small, diesel-dominated grids with no interconnection to any other network. Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators). The Marshall Islands' Marshalls Energy Company (MEC) supplies Majuro (plus Jaluit and Wotje); its Majuro grid, the country's largest, produces 74 percent of the electricity sector's greenhouse-gas emissions.",
+   "price": "US$0.28/kWh in Palau and US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting",
    "loads": [
     {
      "name": "Majuro (Marshalls Energy Company system)",
-     "mw": "about 9.8 MW maximum demand, 9.0 MW daily average (2023)",
+     "mw": "demand not found in a fetched source",
      "note": "diesel; the Marshall Islands' largest single grid"
     }
    ],
@@ -386,10 +392,16 @@
      "status": "snippet-only"
     },
     {
-     "label": "Devex / PRDR Sustainable Energy for All — Palau Public Utilities Corporation (PPUC) profile",
-     "url": "https://prdrse4all.spc.int/content/palau-public-utilities-corporation-ppuc",
-     "quote": "installed generation capacity of 28.05 megawatts (MW) and peak load of 15 MW",
-     "status": "snippet-only"
+     "label": "Wikipedia - Aimeliik Power Plant",
+     "url": "https://en.wikipedia.org/wiki/Aimeliik_Power_Plant",
+     "quote": "4 installed diesel generators with a total installed capacity of 13.08 MW",
+     "status": "fetched"
+    },
+    {
+     "label": "Republic of the Marshall Islands - Electricity Roadmap (2018)",
+     "url": "https://unfccc.int/sites/default/files/NDC/2022-06/RMI%20Electricity%20Roadmap.pdf",
+     "quote": "Majuro's grid currently produces 74 percent of electricity sector GHG emissions",
+     "status": "fetched"
     }
    ]
   },
@@ -634,7 +646,7 @@
    "country": "NZ",
    "jurisdiction": "New Zealand (Chatham Islands, a special local-government area)",
    "power_system": "The Chatham Islands sit roughly 800 km east of Christchurch with no connection to New Zealand's national grid, so the main settlement has run overwhelmingly on diesel. A community wind-turbine project 'began operation in November' 2025 and is 'expected to reduce diesel use by up to 68%, and save more than $1 million a year,' with grid power for islanders 'expected to drop by 20%.'",
-   "price": "NZ$1.32/kWh from 2026-06-01 (a 32% rise), 'more than three times the mainland average of about 40 cents'; islanders had already been paying $1.02/kWh in 2020 versus about 25c on the mainland",
+   "price": "NZ$1.32/kWh from 2026-06-01 (a 32% rise), 'more than three times the mainland average of about 40 cents'; islanders had already been paying $1.02/kWh in 2012 versus about 25c on the mainland",
    "loads": [
     {
      "name": "Chatham Islands (Waitangi main grid)",
@@ -680,6 +692,12 @@
      "url": "https://www.rnz.co.nz/news/national/589190/chatham-islands-braces-for-energy-shock",
      "quote": "Power cost 129.5c/kWh -- among the highest in New Zealand",
      "status": "snippet-only"
+    },
+    {
+     "label": "NZ Herald - Freight, power costs top Chatham Islanders' agenda (2012)",
+     "url": "https://www.nzherald.co.nz/nz/freight-power-costs-top-chatham-islanders-agenda/MG4W6Z4GPQVAOX5PTLUWD32VHA/",
+     "quote": "Islanders paid $1.02 per kw/hour for power, compared with around 25c in the rest of New Zealand",
+     "status": "fetched"
     }
    ]
   }
