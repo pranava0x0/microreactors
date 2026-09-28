@@ -104,6 +104,15 @@ class ResearchPass(unittest.TestCase):
         self.assertTrue(excluded, "gate has no opted-out case to exercise")
         self.assertFalse(excluded & rendered)
 
+    def test_integrated_proposed_prices_disclose_approval_status(self):
+        bench = json.loads((ROOT / "data" / "benchmarks.json").read_text())
+        proposed = [r for s in bench["sectors"] for r in s["records"]
+                    if r.get("price_status") == "proposed"]
+        self.assertTrue(proposed, "gate has no proposed benchmark to exercise")
+        for row in proposed:
+            self.assertTrue(row.get("approval_status"), row["id"])
+            self.assertRegex(row["approval_status"].lower(), r"not verified|proposed")
+
     def test_capture_date_handles_both_pass_folder_shapes(self):
         """Pass folders are named `<slug>-<date>` by hand and `<date>-<slug>` by
         research_pass.py init. Splitting on the first hyphen only handled the

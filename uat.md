@@ -21,7 +21,7 @@ Environment: local static server, Playwright Chromium
 | What supports those regional figures? | Applications card -> Regions -> open record | 2 | Rural Alaska begins 2.32 screens into the phone view; Greenland 3.34 |
 | Which regulators or utilities name advanced nuclear? | Home card -> Utility filings | 1 | Direct sub-tab route; 16 records render |
 | Is the Natrium PPA approved, and is its price public? | Utility filings -> open Rocky Mountain Power record | 2 | Record starts 1.28 screens into the phone view; price is explicitly redacted |
-| What signed prices can a reactor be compared against? | Home card -> Price to beat -> open first sector/record | 3 | Direct Costs sub-tab; sector groups keep 96 cases collapsed |
+| What published contracts, filings and cost figures can a reactor be compared against? | Home card -> Price to beat -> open first sector/record | 3 | Direct Costs sub-tab; sector groups keep 96 cases collapsed and visibly mark 2 proposed prices |
 
 Finding: the two highest-value remote-market price questions now have zero-click answers. Full source context remains one route click plus one disclosure click. Greenland is the deepest likely record; its phone position is 3.34 screens into Regions.
 
@@ -47,7 +47,7 @@ Baseline was 488,005 B with four resources. Change: +1,362 B (+0.28%). FCP remai
 - PASS: sitemap contains only the canonical crawlable URL; fragments stay in `llms.txt` as navigation hints.
 - PASS: JSON-LD download URLs point to raw JSON, not GitHub HTML views.
 - PASS: generic `User-agent: *` allow rule covers people-facing and agent crawlers; sitemap is declared.
-- PASS: every cost-band value and all three axis ticks state `$ / MWh`; the chart explains LCOE, FOAK and NOAK and warns that source dollar years were not normalized.
+- PASS: every cost-band value and all three axis ticks state a per-MWh unit; values distinguish `US$` from `source $` when currency is unstated. The chart explains LCOE, FOAK and NOAK and warns that dollar years were not normalized.
 - PASS: cost chart at 375 px and 1280 px has no horizontal overflow after adding unit suffixes.
 - PASS: screenshots reviewed; no visible overlap, truncation, blank panel or horizontal overflow.
 

@@ -856,8 +856,10 @@
      },
      "instrument": "PPA",
      "signed": "2026",
+     "price_status": "proposed",
+     "approval_status": "RCA approval not verified; filed amendment economics are proposed",
      "term_years": 5,
-     "capacity": "150,000 MWh required by December 31, 2026; estimated additional 5,000-10,000 MWh annually beginning in 2027",
+     "annual_energy": "150,000 MWh required by December 31, 2026; estimated additional 5,000-10,000 MWh annually beginning in 2027; plant capacity not stated in the notice",
      "price": "$115.23/MWh base rate for 2026, up from $94.23/MWh; 2.8% annual escalation for the remaining term",
      "filings": [
       {
@@ -893,6 +895,8 @@
      },
      "instrument": "PPA",
      "signed": "2022",
+     "price_status": "proposed",
+     "approval_status": "RCA approval not verified; signed PPA was filed for approval",
      "term_years": 25,
      "capacity": "6 MW solar; MEA commits to purchase 100% of metered output",
      "price": "$0.06700/kWh in year one, with 1.5% annual inflation increase",
@@ -906,7 +910,7 @@
       }
      ],
      "summary": "MEA filed a 25-year PPA for all output from Energy 49's 6 MW Houston solar project. The initial price is $67/MWh with 1.5% annual escalation; delivery was required within three years of execution. The agreement also splits REC economic benefits equally and allows termination after an uncured material breach. The fetched notice requests approval and warns the Commission may vary the rate, so this record does not claim final approval.",
-     "microreactor_read": "This is an exact Alaska unit-size comparator: a 6 MW project secured a 25-year utility offtake at $67/MWh initially. A reactor offer must price firm output and nuclear risk against that escalator and term, not against retail tariffs.",
+     "microreactor_read": "This is an Alaska unit-size filing comparator: a signed 6 MW solar PPA was filed at $67/MWh initially for 25 years, but final RCA approval was not verified. A reactor offer would need its own negotiated PPA or special contract and approval, with firm-output and nuclear risks priced explicitly.",
      "sources": [
       {
        "label": "State of Alaska / RCA - TA535-18 MEA-Energy 49 PPA notice (2022)",
@@ -1672,10 +1676,12 @@
      },
      "instrument": "utility tariff",
      "signed": "2021-05",
+     "price_status": "historical standard tariff",
+     "approval_status": "cooperation agreement signed; later supply agreement and term not published",
      "capacity": "up to 7.5 MW and approximately 30 GWh/year of hydropower",
      "price": "standard electricity tariff, 1.65 DKK/kWh when announced in May 2021; Tanbreez funds the connection and required infrastructure",
      "summary": "Tanbreez and Greenland's government-owned utility signed a cooperation agreement for mine power. Nukissiorfiit can supply about 30 GWh/year with maximum demand of 7.5 MW; Tanbreez must fund the interconnection and infrastructure and retain backup generation. The parties contemplated a later agreement and government-approved hydropower expansion if mine production exceeds available utility supply. A 2025 SEC-filed technical report still says Nukissiorfiit will supply all project power needs, but does not restate the tariff or volume.",
-     "microreactor_read": "This is a near-perfect 1-20 MW mine comparator: 7.5 MW firm demand bought from a public utility at 1.65 DKK/kWh, with interconnection and backup shifted to the mine. A reactor contract must allocate those same infrastructure and outage risks explicitly.",
+     "microreactor_read": "This is a future 1-20 MW mine-load comparator: the cooperation agreement contemplated up to 7.5 MW at the May 2021 standard tariff, with interconnection and backup shifted to the mine. The mine was pre-production, and the later supply term and current tariff were not published. A reactor contract must allocate those same infrastructure and outage risks explicitly.",
      "sources": [
       {
        "label": "SermitSIAQ - Stort mineprojekt indgar strom-aftale (2021)",

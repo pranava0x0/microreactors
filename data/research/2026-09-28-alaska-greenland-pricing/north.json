@@ -34,8 +34,10 @@
       },
       "instrument": "PPA",
       "signed": "2026",
+      "price_status": "proposed",
+      "approval_status": "RCA approval not verified; filed amendment economics are proposed",
       "term_years": 5,
-      "capacity": "150,000 MWh required by December 31, 2026; estimated additional 5,000-10,000 MWh annually beginning in 2027",
+      "annual_energy": "150,000 MWh required by December 31, 2026; estimated additional 5,000-10,000 MWh annually beginning in 2027; plant capacity not stated in the notice",
       "price": "$115.23/MWh base rate for 2026, up from $94.23/MWh; 2.8% annual escalation for the remaining term",
       "filings": [
         {
@@ -70,6 +72,8 @@
       },
       "instrument": "PPA",
       "signed": "2022",
+      "price_status": "proposed",
+      "approval_status": "RCA approval not verified; signed PPA was filed for approval",
       "term_years": 25,
       "capacity": "6 MW solar; MEA commits to purchase 100% of metered output",
       "price": "$0.06700/kWh in year one, with 1.5% annual inflation increase",
@@ -83,7 +87,7 @@
         }
       ],
       "summary": "MEA filed a 25-year PPA for all output from Energy 49's 6 MW Houston solar project. The initial price is $67/MWh with 1.5% annual escalation; delivery was required within three years of execution. The agreement also splits REC economic benefits equally and allows termination after an uncured material breach. The fetched notice requests approval and warns the Commission may vary the rate, so this record does not claim final approval.",
-      "microreactor_read": "This is an exact Alaska unit-size comparator: a 6 MW project secured a 25-year utility offtake at $67/MWh initially. A reactor offer must price firm output and nuclear risk against that escalator and term, not against retail tariffs.",
+      "microreactor_read": "This is an Alaska unit-size filing comparator: a signed 6 MW solar PPA was filed at $67/MWh initially for 25 years, but final RCA approval was not verified. A reactor offer would need its own negotiated PPA or special contract and approval, with firm-output and nuclear risks priced explicitly.",
       "sources": [
         {
           "label": "State of Alaska / RCA - TA535-18 MEA-Energy 49 PPA notice (2022)",
@@ -106,10 +110,12 @@
       },
       "instrument": "utility tariff",
       "signed": "2021-05",
+      "price_status": "historical standard tariff",
+      "approval_status": "cooperation agreement signed; later supply agreement and term not published",
       "capacity": "up to 7.5 MW and approximately 30 GWh/year of hydropower",
       "price": "standard electricity tariff, 1.65 DKK/kWh when announced in May 2021; Tanbreez funds the connection and required infrastructure",
       "summary": "Tanbreez and Greenland's government-owned utility signed a cooperation agreement for mine power. Nukissiorfiit can supply about 30 GWh/year with maximum demand of 7.5 MW; Tanbreez must fund the interconnection and infrastructure and retain backup generation. The parties contemplated a later agreement and government-approved hydropower expansion if mine production exceeds available utility supply. A 2025 SEC-filed technical report still says Nukissiorfiit will supply all project power needs, but does not restate the tariff or volume.",
-      "microreactor_read": "This is a near-perfect 1-20 MW mine comparator: 7.5 MW firm demand bought from a public utility at 1.65 DKK/kWh, with interconnection and backup shifted to the mine. A reactor contract must allocate those same infrastructure and outage risks explicitly.",
+      "microreactor_read": "This is a future 1-20 MW mine-load comparator: the cooperation agreement contemplated up to 7.5 MW at the May 2021 standard tariff, with interconnection and backup shifted to the mine. The mine was pre-production, and the later supply term and current tariff were not published. A reactor contract must allocate those same infrastructure and outage risks explicitly.",
       "sources": [
         {
           "label": "SermitSIAQ - Stort mineprojekt indgar strom-aftale (2021)",
@@ -149,7 +155,7 @@
         }
       ],
       "summary": "Alaska Power Company filed its first Small Facility Power Purchase Rate methodology for six Rate Group 5 load-center groupings, requesting a February 13, 2026 effective date. Proposed avoided-cost purchase rates span $22.50/MWh to $511.90/MWh, a 22.8-fold spread inside one utility tariff. The filing notice states that the RCA may approve a different rate, so these are proposed rather than final prices.",
-      "microreactor_read": "Village economics cannot be modeled from one statewide Alaska price. These six proposed avoided-cost rates create location-specific ceilings: a seller faces only $22.50/MWh in one grouping but more than $400/MWh in three others.",
+      "microreactor_read": "Village economics cannot be modeled from one statewide Alaska price. These are proposed non-nuclear qualifying-facility avoided-cost comparators, not tariffs available to a reactor. A reactor would need a negotiated PPA or special contract and separate RCA approval.",
       "sources": [
         {
           "label": "State of Alaska / RCA - TA924-2 Alaska Power Company SFPPR notice (2026)",
@@ -183,7 +189,7 @@
         }
       ],
       "summary": "TDX Manley filed a quarterly update for the period beginning September 1, 2026. It proposed raising the COPA surcharge from $0.2961 to $0.8157/kWh and the small-facility purchase rate from $0.5161 to $1.1802/kWh, while the PCE level stayed at the FY2026 statutory maximum of $0.7424/kWh. TDX also removed solar-generation kWh from its SFPPR calculation. The notice does not establish final RCA approval.",
-      "microreactor_read": "At Manley, the proposed $1,180.20/MWh small-facility purchase rate is an extreme remote-system value signal, but PCE and quarterly fuel-cost mechanics mean retail savings cannot be equated directly with a bankable reactor PPA.",
+      "microreactor_read": "At Manley, the proposed $1,180.20/MWh small-facility rate is an extreme non-nuclear qualifying-facility comparator. It is not available to a reactor; a nuclear sale would need a negotiated PPA or special contract, and PCE and quarterly fuel-cost mechanics cannot be equated with a bankable reactor price.",
       "sources": [
         {
           "label": "State of Alaska / RCA - TA201-72 TDX Manley COPA, PCE and SFPPR notice (2026)",
@@ -261,7 +267,7 @@
         "The modeled 100% solar-wind South case reaches 2,761 EUR/MWh because it requires 893 MW wind, 50 MW solar, and 351 MWh of batteries",
         "Some mine demand data were unavailable or confidential, so 10 MW generalized loads replace project-specific profiles"
       ],
-      "microreactor_read": "The report creates a direct pricing screen for a 10 MW-class firm source: below 199 EUR/MWh beats the modeled least-cost hybrid, while 297 EUR/MWh is the diesel ceiling. A viable offer also needs a 20-year commercial structure and clear residual-value treatment.",
+      "microreactor_read": "The report creates a modeled LCOE screen, not a tariff or PPA price: below 199 EUR/MWh would beat its least-cost hybrid case, while 297 EUR/MWh is its diesel case. Both use a 20-year project life, 8% discount rate and generalized or confidential mine inputs. A viable reactor offer also needs a 20-year commercial structure and clear residual-value treatment.",
       "sources": [
         {
           "label": "Greenland Ministry of Business and Minerals / Ramboll - Clean energy micro-grids in the mining industry in Greenland (2026)",

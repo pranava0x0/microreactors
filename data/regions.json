@@ -241,10 +241,10 @@
    "country": "US",
    "jurisdiction": "US state",
    "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 59 locations across rural Alaska, each village an isolated microgrid with no interconnection to the next; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
-   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh; 2026 proposed small-facility purchase rates range from $0.0225 to $0.5119/kWh across six Alaska Power Company groupings, while TDX Manley filed $1.1802/kWh. These are requested rates, not final orders.",
+   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh; 2026 proposed non-nuclear qualifying-facility purchase rates range from $0.0225 to $0.5119/kWh across six Alaska Power Company groupings, while TDX Manley filed $1.1802/kWh. These are requested rates, not final orders.",
    "nuclear_position": "No PCE-community utility has taken a position on nuclear power. State law (SB 177, 2022) and DEC's siting regulation (18 AAC 87, effective 2023) apply statewide and are not community-specific.",
    "microreactor_activity": "None found at any individual PCE community. Searched AVEC's own news posts and RCA filing notices; found only diesel/COPA rate mechanics and PCE-funding advocacy testimony to the legislature, no reactor studies.",
-   "microreactor_read": "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 purchase rates span $22.50-$1,180.20/MWh before final RCA action; a reactor offer needs a named utility, location and approved avoided-cost baseline.",
+   "microreactor_read": "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 non-nuclear qualifying-facility comparators span $22.50-$1,180.20/MWh before final RCA action. A reactor cannot claim those tariffs; it needs a negotiated PPA or special contract with a named utility and separate approval.",
    "group": "alaska",
    "position": "enabling",
    "price_short": "$0.3647/kWh base rate (AVEC)",
@@ -298,7 +298,7 @@
      "status": "fetched"
     }
    ],
-   "home_price": "Alaska: $22.50-$1,180.20/MWh proposed purchase rates."
+   "home_price": "Alaska QF comparators: $22.50-$1,180.20/MWh proposed."
   },
   {
    "id": "labrador-northern-ontario",
@@ -589,7 +589,7 @@
    "price": "Nukissiorfiit electricity price for ordinary customers (kundegruppe 1), uniform across every listed Greenland locality: 2.00 kr./kWh, per Prisblad nr. 39, effective 2026-01-01; government mine study: Modeled 2030-reference LCOE: 297 EUR/MWh for diesel business-as-usual; 199 EUR/MWh for the lowest-cost South solar-wind-diesel mix; 60 EUR/MWh for upgraded hydropower with a roughly 100 km line",
    "nuclear_position": "Greenland's own Uranium Act (Greenland Parliament Act No. 20) 'came into force' on 2 December 2021 and bans 'prospecting, exploration, and exploitation of uranium' as well as any other mineral resource whose 'average uranium content' exceeds '100 ppm by weight.' On 26 June 2026 Greenland's government rejected Energy Transition Minerals' licence-renewal application for the Kvanefjeld/Kuannersuit deposit, stating 'further exploration in the area is not deemed likely to lead to the discovery of deposits that can be exploited in accordance with the Uranium Act.' Denmark, which controls defense and largely leaves mineral/energy policy to Greenland's home rule but retains the 1985 nationwide nuclear-power ban's legal legacy, announced in January 2026 that it is reviewing that 40-year ban: 'Denmark is considering building small modular nuclear reactors to meet its energy needs... which would bring an end to its 1985 ban on nuclear power,' after the Danish parliament 'agreed in early 2025 to begin examining new nuclear power technologies.' No specific Greenland carve-out or position within that Danish review was found.",
    "microreactor_activity": "None found. The Danish SMR review is national and does not name Greenland; Nukissiorfiit has made no public statement on nuclear power. No microreactor procurement, study, MOU, or tariff filing was found in the government mine-energy report or in the named mines' power documents reviewed.",
-   "microreactor_read": "The report creates a direct pricing screen for a 10 MW-class firm source: below 199 EUR/MWh beats the modeled least-cost hybrid, while 297 EUR/MWh is the diesel ceiling. A viable offer also needs a 20-year commercial structure and clear residual-value treatment. No Greenland reactor procurement, utility study or nuclear filing was found.",
+   "microreactor_read": "The report creates a modeled LCOE screen, not a tariff or PPA price: below 199 EUR/MWh would beat its least-cost hybrid case, while 297 EUR/MWh is its diesel case. Both use a 20-year project life, 8% discount rate and generalized or confidential mine inputs. A viable reactor offer also needs a 20-year commercial structure and clear residual-value treatment. No Greenland reactor procurement, utility study or nuclear filing was found.",
    "group": "arctic-europe",
    "position": "review",
    "price_short": "DKK 2.00/kWh in every town (2026)",
@@ -688,7 +688,7 @@
      "status": "fetched"
     }
    ],
-   "home_price": "Greenland: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+   "home_price": "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel."
   },
   {
    "id": "polar-research-stations",
