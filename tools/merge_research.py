@@ -21,9 +21,8 @@ each time, so a call naming only the new pass would silently drop every sector
 an earlier pass had already contributed.
 
 Usage:
-  python3 tools/merge_research.py data/research/deep-2026-08-24
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases --check
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases data/research/2026-09-28-alaska-greenland-pricing
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases data/research/2026-09-28-alaska-greenland-pricing --check
 
 Stdlib only, like every tool in this repo.
 """

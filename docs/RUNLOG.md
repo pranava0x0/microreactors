@@ -15,3 +15,11 @@
 - Cost: subagent token count not reported.
 - Result: 2 dockets in `data/research/2026-09-28-alaska-greenland-pricing/filings-contracts.json`; 0 validator errors.
 - Worth it: yes. Added one approved nuclear PPA framework and one microreactor-specific regulator process while preserving redactions and non-procurement status.
+
+## 2026-09-28 - PR #23 expert review
+
+- Why: review the finished PR through nuclear-project, regulated-utility and energy-contract lenses.
+- Tools: branch diff, data contracts and tests; no web or subagents.
+- Cost: subagent token count not reported.
+- Result: 8 findings: 2 P1 and 6 P2; all accepted for repair.
+- Worth it: yes. It caught commercially material category errors that schema, citation and browser tests cannot detect.

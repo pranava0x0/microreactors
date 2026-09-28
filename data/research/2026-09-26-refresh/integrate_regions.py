@@ -147,14 +147,15 @@ def main() -> None:
         cases = {r["id"]: r for r in follow.get("cases", [])}
         alaska = by_id["alaska-rural-pce-communities"]
         alaska["price"] += (
-            "; 2026 proposed small-facility purchase rates range from $0.0225 to "
+            "; 2026 proposed non-nuclear qualifying-facility purchase rates range from $0.0225 to "
             "$0.5119/kWh across six Alaska Power Company groupings, while TDX Manley "
             "filed $1.1802/kWh. These are requested rates, not final orders.")
         alaska["microreactor_read"] = (
             "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 "
-            "purchase rates span $22.50-$1,180.20/MWh before final RCA action; a reactor "
-            "offer needs a named utility, location and approved avoided-cost baseline.")
-        alaska["home_price"] = "Alaska: $22.50-$1,180.20/MWh proposed purchase rates."
+            "non-nuclear qualifying-facility comparators span $22.50-$1,180.20/MWh before "
+            "final RCA action. A reactor cannot claim those tariffs; it needs a negotiated "
+            "PPA or special contract with a named utility and separate approval.")
+        alaska["home_price"] = "Alaska QF comparators: $22.50-$1,180.20/MWh proposed."
         for case_id in ("apc-rate-group5-2026-small-facility-rates",
                         "tdx-manley-2026-copa-small-facility-rates"):
             for src in cases[case_id].get("sources", []):
@@ -168,7 +169,7 @@ def main() -> None:
         greenland["microreactor_activity"] += " " + study["microreactor_activity"]
         greenland["microreactor_read"] = study["microreactor_read"] + (
             " No Greenland reactor procurement, utility study or nuclear filing was found.")
-        greenland["home_price"] = "Greenland: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+        greenland["home_price"] = "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel."
         greenland["blockers"].extend(study.get("blockers", [])[:2])
         for src in study.get("sources", []):
             if src["url"] not in {x["url"] for x in greenland["sources"]}:

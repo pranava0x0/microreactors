@@ -558,10 +558,12 @@
   var bands = [];
   D.costs.microreactor_lcoe.forEach(function (c) {
     bands.push({ lab: c.scenario, lo: c.low_mwh, hi: c.high_mwh, cls: "micro",
+                 currency: c.currency, dollarYear: c.dollar_year,
                  srcs: srcsOf(c), caveat: c.caveat });
   });
   D.costs.displaced_alternatives.forEach(function (a) {
     if (a.low_mwh != null) bands.push({ lab: a.alternative, lo: a.low_mwh, hi: a.high_mwh, cls: "alt",
+                                        currency: a.currency, dollarYear: a.dollar_year,
                                         srcs: srcsOf(a) });
   });
   // A rural-Alaska rate at $1,950/MWh is a real but exceptional diesel case.
@@ -578,11 +580,15 @@
   // implying two-decimal precision on a forward-looking cost estimate is false
   // precision. Full values stay in data/costs.json.
   var money = function (n) { return "$" + Math.round(n); };
+  var bandMoney = function (b, n) {
+    return (b.currency === "USD" ? "US$" : "source $") + Math.round(n);
+  };
   render($("chart"), chartBands.map(function (b) {
     var lo = Math.max(0, b.lo), hi = Math.max(lo + 4, b.hi);
     var left = (lo / MAX) * 100, width = ((hi - lo) / MAX) * 100;
     var txt = Math.round(b.lo) === Math.round(b.hi)
-      ? money(b.lo) + "/MWh" : money(b.lo) + "–" + Math.round(b.hi) + "/MWh";
+      ? bandMoney(b, b.lo) + "/MWh"
+      : bandMoney(b, b.lo) + "–" + Math.round(b.hi) + "/MWh";
     // A band narrower than its own label pushes the text outside the bar rather
     // than letting it spill across the edge.
     var narrow = width < 11;
@@ -598,7 +604,7 @@
   render($("cost-outliers"), outlierBands.map(function (b) {
     return '<div class="costoutlier"><span class="k">Exceptional diesel case</span>' +
       '<span class="nm">' + esc(b.lab) + cite(b.srcs) + '</span>' +
-      '<span class="val">' + esc(money(b.lo) + "–" + money(b.hi) + "/MWh") + '</span>' +
+      '<span class="val">' + esc(bandMoney(b, b.lo) + "–" + Math.round(b.hi) + "/MWh") + '</span>' +
       '<span class="note">Shown outside the chart so one extreme rate does not flatten the rest of the comparison.</span></div>';
   }).join(""));
 
@@ -676,11 +682,12 @@
     var B = D.benchmarks;
     if (!(B && B.sectors)) { return; }
     render($("benchsummary"),
-      esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power " +
-      "actually costs at places like these, from signed contracts, government awards and rate " +
-      "orders. " + esc(s.benchmarks - s.benchmarks_nuclear) + " are the non-nuclear incumbent a " +
+      esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power costs, " +
+      "was contracted to cost, or was filed to cost, from signed contracts, filed PPAs, government " +
+      "awards and rate orders. " + esc(s.benchmarks - s.benchmarks_nuclear) + " are the non-nuclear incumbent a " +
       "reactor would have to beat; " + esc(s.benchmarks_nuclear) + " are nuclear projects kept " +
       "for their published cost. " + esc(s.benchmarks_priced) + " give a price or a cost, and " +
+      esc(s.benchmarks_priced_proposed) + " of those are proposed, not final. " +
       esc(s.benchmarks_filed) + " include the paperwork.");
 
     /* One collapsed section per sector, its summary carrying the counts: 89 rows
@@ -693,11 +700,13 @@
         (nFiled ? " · " + nFiled + " with filings" : "") + "</span></summary>" +
         '<div class="precgrid">' + sec.records.map(function (c) {
           var facts = [
-            ["Signed", c.signed], ["Term", c.term_years ? c.term_years + " years" : ""],
-            ["Instrument", c.instrument], ["Capacity", c.capacity],
+            ["Date", c.signed], ["Approval status", c.approval_status],
+            ["Term", c.term_years ? c.term_years + " years" : ""],
+            ["Instrument", c.instrument], ["Capacity", c.capacity], ["Annual energy", c.annual_energy],
             ["Price", c.price], ["Capex", c.capex], ["Displaces", c.displaced]
           ].filter(function (f) { return f[1]; });
-          var head = [c.price, c.capex, c.displaced].filter(Boolean)[0] || c.capacity || "";
+          var head = [c.price, c.capex, c.displaced].filter(Boolean)[0] || c.capacity || c.annual_energy || "";
+          if (c.price_status === "proposed") { head = "proposed · " + head; }
           return '<details class="prec"><summary><span class="nm">' + esc(c.name) +
             (c.nuclear ? ' <span class="nuctag">nuclear</span>' : "") + "</span>" +
             '<span class="cat">' + esc(head) + "</span></summary>" +
@@ -1544,8 +1553,10 @@
     }
     var costs = first && opt
       ? "Estimates fall from " + lcoe(first) + "/MWh for a first unit to " + lcoe(opt) +
-        " for a modeled optimized design. " + s.benchmarks_priced + " priced cases show what buyers pay today."
-      : s.benchmarks_priced + " priced cases show what buyers pay today.";
+        " for a modeled optimized design. " + s.benchmarks_priced +
+        " cases publish a contract, filing, award or cost figure; " + s.benchmarks_priced_proposed +
+        " are proposed, not final."
+      : s.benchmarks_priced + " cases publish a contract, filing, award or cost figure.";
     return [
       { href: "#pipeline", tab: "Deals", q: "Who is buying now",
         a: s.binding_rows + " of " + s.opportunities + " tracked buyers hold a binding instrument. " +

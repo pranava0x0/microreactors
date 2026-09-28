@@ -199,6 +199,9 @@ def main() -> int:
         "benchmarks": sum(len(s_["records"]) for s_ in bundle["benchmarks"]["sectors"]),
         "benchmarks_priced": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                  for r in s_["records"] if priced(r)),
+        "benchmarks_priced_proposed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                          for r in s_["records"]
+                                          if priced(r) and r.get("price_status") == "proposed"),
         "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                 for r in s_["records"] if r.get("filings")),
         # Most benchmark rows are the non-nuclear incumbent a reactor would displace,
