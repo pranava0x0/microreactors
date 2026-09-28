@@ -54,6 +54,18 @@ class BuildSync(unittest.TestCase):
                       f"Captured {s['built']}"):
             self.assertIn(claim, txt, f"llms.txt does not carry: {claim}")
 
+    def test_machine_discovery_points_to_real_resources(self):
+        """Fragments are client state, not crawlable pages; dataset downloads
+        must return JSON bytes instead of GitHub's HTML file viewer."""
+        sitemap = (ROOT / "site" / "sitemap.xml").read_text()
+        self.assertEqual(sitemap.count("<loc>"), 1)
+        self.assertNotIn("#", sitemap)
+        llms = (ROOT / "site" / "llms.txt").read_text()
+        self.assertIn("## Fast answers", llms)
+        index = (ROOT / "site" / "index.html").read_text()
+        self.assertIn("https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/", index)
+        self.assertNotIn('"contentUrl": "https://github.com/', index)
+
     def test_gaps_in_sync(self):
         committed = (ROOT / "data" / "gaps.json").read_bytes()
         r = run("build_gaps.py")

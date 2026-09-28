@@ -303,7 +303,8 @@ class HomePage(unittest.TestCase):
               return {visible: !document.getElementById('news').hidden, open: !!(el && el.open)};
             }""", target.split("/", 1)[1])
             browser.close()
-        self.assertEqual(sorted(got["cards"]), sorted(p for p in got["panels"] if p != "home"))
+        self.assertEqual(sorted(h.split("/", 1)[0] for h in got["cards"]),
+                         sorted(p for p in got["panels"] if p != "home"))
         self.assertEqual(got["empty"], 0)
         self.assertEqual(got["undefinedText"], 0)
         self.assertEqual(got["lead"], 1)

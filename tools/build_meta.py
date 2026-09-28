@@ -96,7 +96,12 @@ def main() -> int:
         f"{s['sector_count']} demand sectors with {s['load_types']} load profiles "
         f"({s['cited_loads']} cited).",
     ]
-    lines += [f"- {f}" for f in facts] + ["", "## Sections", ""]
+    lines += [f"- {f}" for f in facts] + ["", "## Fast answers", "",
+              f"- [Remote-region prices, laws and buyers]({BASE}#demand/regions)",
+              f"- [Signed power contracts and price benchmarks]({BASE}#economics/price-to-beat)",
+              f"- [Utility plans, dockets and contract approvals]({BASE}#policy/utility-filings)",
+              f"- [Named buyers and prospects]({BASE}#pipeline/prospects)",
+              "", "## Sections", ""]
     for p in ps:
         lines.append(f"- [{p['label']}]({BASE}#{p['id']}): {p['head']}."
                      + (f" {p['lede']}" if p["lede"] else ""))
@@ -114,14 +119,13 @@ def main() -> int:
     (SITE / "llms.txt").write_text("\n".join(lines))
 
     # --- sitemap.xml ---------------------------------------------------------
-    urls = "".join(
-        f"  <url>\n    <loc>{BASE}#{p['id']}</loc>\n"
-        f"    <lastmod>{s['built']}</lastmod>\n  </url>\n" for p in ps)
+    # URL fragments are client-side state, not separate crawlable documents.
+    # Listing nine fragment variants gives crawlers ten copies of one page.
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         f"  <url>\n    <loc>{BASE}</loc>\n    <lastmod>{s['built']}</lastmod>\n  </url>\n"
-        f"{urls}</urlset>\n")
+        "</urlset>\n")
 
     # --- robots.txt ----------------------------------------------------------
     (SITE / "robots.txt").write_text(
@@ -129,6 +133,7 @@ def main() -> int:
         f"Sitemap: {BASE}sitemap.xml\n")
 
     # --- JSON-LD, injected between markers in index.html ---------------------
+    raw = "https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/"
     ld = {
         "@context": "https://schema.org",
         "@type": "Dataset",
@@ -138,7 +143,19 @@ def main() -> int:
         "dateModified": s["built"],
         "isAccessibleForFree": True,
         "creator": {"@type": "Person", "name": "Pranava Raparla"},
-        "keywords": [p["label"] for p in ps],
+        "keywords": [
+            "microreactor contracts", "microreactor cost", "microreactor pricing",
+            "small modular reactor utility filings", "advanced nuclear power purchase agreement",
+            "Alaska remote power", "Greenland mine power", "diesel replacement",
+            "1-20 MW nuclear", "nuclear project finance",
+        ],
+        "about": [
+            {"@type": "Thing", "name": "Microreactors"},
+            {"@type": "Thing", "name": "Power purchase agreements"},
+            {"@type": "Thing", "name": "Utility integrated resource plans"},
+            {"@type": "Thing", "name": "Remote power systems"},
+        ],
+        "spatialCoverage": ["Alaska", "Greenland", "Northern Canada", "United States"],
         "variableMeasured": [
             {"@type": "PropertyValue", "name": "tracked buyers", "value": s["opportunities"]},
             {"@type": "PropertyValue", "name": "buyers holding a binding instrument",
@@ -149,7 +166,7 @@ def main() -> int:
         ],
         "distribution": [{
             "@type": "DataDownload", "encodingFormat": "application/json",
-            "contentUrl": f"{src}{f}.json"} for f in sorted(p.stem for p in DATA.glob("*.json"))],
+            "contentUrl": f"{raw}{f}.json"} for f in sorted(p.stem for p in DATA.glob("*.json"))],
     }
     block = (MARK_OPEN + '\n<script type="application/ld+json">\n'
              + json.dumps(ld, indent=1, ensure_ascii=False) + "\n</script>\n" + MARK_CLOSE)
@@ -169,7 +186,7 @@ def main() -> int:
 
     print(f"site/llms.txt        {(SITE / 'llms.txt').stat().st_size:,} bytes")
     print(f"site/sitemap.xml     {(SITE / 'sitemap.xml').stat().st_size:,} bytes  "
-          f"({len(ps) + 1} urls)")
+        "(1 canonical URL)")
     print(f"site/robots.txt      {(SITE / 'robots.txt').stat().st_size:,} bytes")
     print(f"index.html JSON-LD   {len(block):,} bytes  (dateModified {s['built']})")
     return 0
