@@ -1563,7 +1563,7 @@
            s.sites + " named sites and " + s.prospects + " prospects to watch." },
       { href: "#why", tab: "Why microreactors", q: "What the case rests on",
         a: s.arguments + " arguments for a 1\u201320 MW unit, and " + s.counters + " places where they fail." },
-      { href: "#demand/regions", tab: "Applications", q: "Where a unit wins first", a: apps },
+      { href: "#demand/regions", tab: "Applications", q: "What Alaska and Greenland signal", a: apps },
       { href: "#economics/price-to-beat", tab: "Costs", q: "What the power costs", a: costs },
       { href: "#vendors", tab: "Vendors", q: "Who builds them",
         a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " reactors in DOE's pilot " +
