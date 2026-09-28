@@ -1,10 +1,11 @@
 {
  "_meta": {
-  "captured": "2026-09-26",
+  "captured": "2026-09-28",
   "pass": [
    "data/research/deep-2026-08-24",
    "data/research/2026-08-28-apps",
-   "data/research/2026-09-26-cases"
+   "data/research/2026-09-26-cases",
+   "data/research/2026-09-28-alaska-greenland-pricing"
   ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
@@ -12,6 +13,7 @@
     "file": "deep-2026-08-24/apps-federal-awards.json",
     "kind": "case",
     "records": 26,
+    "raw_records": 26,
     "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
     "incomplete": false,
     "absences": [
@@ -32,6 +34,7 @@
     "file": "deep-2026-08-24/apps-medical-civic.json",
     "kind": "case",
     "records": 12,
+    "raw_records": 12,
     "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
     "incomplete": false,
     "absences": [
@@ -54,6 +57,7 @@
     "file": "deep-2026-08-24/apps-mining.json",
     "kind": "case",
     "records": 13,
+    "raw_records": 13,
     "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
     "incomplete": false,
     "absences": [
@@ -72,6 +76,7 @@
     "file": "deep-2026-08-24/apps-remote-marine.json",
     "kind": "case",
     "records": 10,
+    "raw_records": 10,
     "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -92,6 +97,7 @@
     "file": "deep-2026-08-24/mech-batteries.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
     "incomplete": false,
     "absences": [
@@ -111,6 +117,7 @@
     "file": "deep-2026-08-24/mech-diesel.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
     "incomplete": false,
     "absences": [
@@ -131,6 +138,7 @@
     "file": "deep-2026-08-24/mech-dockets.json",
     "kind": "mechanism",
     "records": 8,
+    "raw_records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
     "incomplete": false,
     "absences": [
@@ -150,6 +158,7 @@
     "file": "deep-2026-08-24/mech-economics-permitting.json",
     "kind": "mechanism",
     "records": 6,
+    "raw_records": 6,
     "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
     "incomplete": false,
     "absences": [
@@ -162,6 +171,7 @@
     "file": "deep-2026-08-24/mech-ferc-census.json",
     "kind": "mechanism",
     "records": 2,
+    "raw_records": 2,
     "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
     "incomplete": false,
     "absences": [
@@ -176,6 +186,7 @@
     "file": "deep-2026-08-24/mech-interconnection.json",
     "kind": "mechanism",
     "records": 12,
+    "raw_records": 12,
     "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
     "incomplete": false,
     "absences": [
@@ -195,6 +206,7 @@
     "file": "deep-2026-08-24/mech-nuclear-structures.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
     "incomplete": false,
     "absences": [
@@ -219,6 +231,7 @@
     "file": "deep-2026-08-24/mech-selling-structure.json",
     "kind": "mechanism",
     "records": 7,
+    "raw_records": 7,
     "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
     "incomplete": false,
     "absences": [
@@ -232,6 +245,7 @@
     "file": "2026-08-28-apps/apps-agri-food.json",
     "kind": "case",
     "records": 8,
+    "raw_records": 8,
     "scope": "Agriculture & Food sector - controlled-environment ag and food-processing power deals, the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -248,6 +262,7 @@
     "file": "2026-08-28-apps/apps-compute.json",
     "kind": "case",
     "records": 12,
+    "raw_records": 12,
     "scope": "Compute sector - data-center/AI power deals: signed hyperscaler nuclear PPAs re-verified against source, plus the non-nuclear incumbent price (utility large-load tariffs, on-site gas backup, colocation power pricing) a 1-20 MW reactor has to beat at data-center scale.",
     "incomplete": false,
     "absences": [
@@ -262,6 +277,7 @@
     "file": "2026-08-28-apps/apps-gapfill.json",
     "kind": "case",
     "records": 2,
+    "raw_records": 2,
     "scope": "Second-pass angles on the 9 Manufacturing/Agriculture & Food loads that apps-manufacturing.json and apps-agri-food.json (2026-08-28) could not close: fresh named-facility searches, PUC dockets, and DOE award pages not tried in the prior pass.",
     "incomplete": false,
     "absences": [
@@ -278,6 +294,7 @@
     "file": "2026-08-28-apps/apps-manufacturing.json",
     "kind": "case",
     "records": 6,
+    "raw_records": 6,
     "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
     "incomplete": false,
     "absences": [
@@ -294,10 +311,26 @@
     "file": "2026-09-26-cases/cases.json",
     "kind": "case",
     "records": 4,
+    "raw_records": 4,
     "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
     "incomplete": false,
     "absences": [
      "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
+    ]
+   },
+   {
+    "file": "2026-09-28-alaska-greenland-pricing/north.json",
+    "kind": "case",
+    "records": 3,
+    "raw_records": 6,
+    "scope": "Alaska RCA power contracts and tariffs plus Greenland mine-power contracts and current government mine-energy evidence relevant to 1-20 MW microreactor pricing.",
+    "incomplete": false,
+    "absences": [
+     "No final RCA approval order for TA401-13, TA535-18, TA924-2, TA201-72, or TA404-13 was located in the public pages searched; those records retain filed/proposed status.",
+     "No public Tanbreez-Nukissiorfiit contract term was found; the announced 1.65 DKK/kWh price was the 2021 standard tariff, not a fixed long-term contract price.",
+     "No executed Malmbjerg power contract or $/MWh price was found; current public documents describe a future 33-43 MW third-party tender and about $150 million of power investment.",
+     "No Greenland microreactor procurement, feasibility study, utility filing, or government nuclear-energy position was found in the mine-power sources reviewed.",
+     "The Greenland government report withholds or generalizes some mine load and cost inputs; exact project-level hourly demand and commercial tariffs remain unavailable."
     ]
    }
   ],

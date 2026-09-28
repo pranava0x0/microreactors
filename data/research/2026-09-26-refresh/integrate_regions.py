@@ -135,6 +135,44 @@ def main() -> None:
             for src in t.get("sources", []):
                 if src["url"] not in {x["url"] for x in r["sources"]}:
                     r["sources"].append(src)
+
+    # The 2026-09-28 follow-up adds two pricing views the regional sweep lacked:
+    # proposed avoided-cost purchase rates for rural Alaska, and a government-
+    # commissioned mine-microgrid cost model for Greenland. Merge them into the
+    # existing jurisdiction records instead of rendering duplicate places.
+    follow_p = HERE.parent / "2026-09-28-alaska-greenland-pricing" / "north.json"
+    if follow_p.exists():
+        follow = json.loads(follow_p.read_text())
+        by_id = {r["id"]: r for r in regions}
+        cases = {r["id"]: r for r in follow.get("cases", [])}
+        alaska = by_id["alaska-rural-pce-communities"]
+        alaska["price"] += (
+            "; 2026 proposed small-facility purchase rates range from $0.0225 to "
+            "$0.5119/kWh across six Alaska Power Company groupings, while TDX Manley "
+            "filed $1.1802/kWh. These are requested rates, not final orders.")
+        alaska["microreactor_read"] = (
+            "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 "
+            "purchase rates span $22.50-$1,180.20/MWh before final RCA action; a reactor "
+            "offer needs a named utility, location and approved avoided-cost baseline.")
+        alaska["home_price"] = "Alaska: $22.50-$1,180.20/MWh proposed purchase rates."
+        for case_id in ("apc-rate-group5-2026-small-facility-rates",
+                        "tdx-manley-2026-copa-small-facility-rates"):
+            for src in cases[case_id].get("sources", []):
+                if src["url"] not in {x["url"] for x in alaska["sources"]}:
+                    alaska["sources"].append(src)
+
+        study = follow["regions"][0]
+        greenland = by_id["greenland"]
+        greenland["price"] += "; government mine study: " + study["price"]
+        greenland["loads"].extend(study.get("loads", []))
+        greenland["microreactor_activity"] += " " + study["microreactor_activity"]
+        greenland["microreactor_read"] = study["microreactor_read"] + (
+            " No Greenland reactor procurement, utility study or nuclear filing was found.")
+        greenland["home_price"] = "Greenland: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+        greenland["blockers"].extend(study.get("blockers", [])[:2])
+        for src in study.get("sources", []):
+            if src["url"] not in {x["url"] for x in greenland["sources"]}:
+                greenland["sources"].append(src)
     regions.sort(key=lambda x: (order.index(x["group"]), x["region"]))
     # Counted from the records, never asserted: an earlier version said every
     # source was fetched while 14 were snippet-only (Codex review, PR #22).
@@ -142,13 +180,15 @@ def main() -> None:
     fetched, snippet = statuses.count("fetched"), statuses.count("snippet-only")
     out = {
         "_meta": {
-            "captured": "2026-09-26",
+            "captured": "2026-09-28",
             "what_this_is": (f"{len(regions)} remote and cold places, most running on diesel, where a "
                              "1-20 MW reactor would compete: what each pays, what it draws, and where "
                              "its law stands on civil nuclear power."),
             "method": ("Two research passes (data/research/2026-09-26-refresh/north.json and "
                        "islands.json), one record per jurisdiction, with eight tariffs added from "
-                       f"that folder's issues.json. {fetched} of {len(statuses)} "
+                       "that folder's issues.json, plus Alaska tariff and Greenland mine-model "
+                       "evidence from data/research/2026-09-28-alaska-greenland-pricing/north.json. "
+                       f"{fetched} of {len(statuses)} "
                        f"sources were fetched and read; {snippet} are search-corroborated only and "
                        "carry status snippet-only, which the page marks with a dagger. The group, "
                        "the law-and-policy tag and the short price label are curated in that "

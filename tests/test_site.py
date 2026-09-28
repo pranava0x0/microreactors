@@ -83,6 +83,14 @@ class ScriptOrder(unittest.TestCase):
         self.assertGreater(a, d, "data.js must load before app.js")
 
 
+class CostUnits(unittest.TestCase):
+    def test_cost_chart_explains_units_and_shorthand(self):
+        for text in ("dollars per megawatt-hour ($/MWh)", "LCOE spreads", "FOAK is", "NOAK is"):
+            self.assertIn(text, HTML)
+        self.assertIn('money(b.lo) + "/MWh"', JS)
+        self.assertIn('"/MWh</span><span>$"', JS)
+
+
 class MarkupIds(unittest.TestCase):
     """A duplicate id is invalid HTML and silently breaks getElementById.
 

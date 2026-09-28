@@ -200,6 +200,8 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .gapnote ul{margin:0;padding-left:var(--space-5)}
 
 /* ---------- cost chart ---------- */
+.costunits{font-size:var(--size-body-sm);color:var(--text-secondary);max-width:var(--measure-prose)}
+.costunits strong{color:var(--text-primary)}
 .chart{margin-top:var(--space-8);max-width:960px}
 .bar{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:var(--space-4);
   align-items:center;padding:var(--space-3) 0;border-bottom:1px solid var(--border-subtle)}

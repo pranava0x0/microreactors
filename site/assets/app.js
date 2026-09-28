@@ -582,7 +582,7 @@
     var lo = Math.max(0, b.lo), hi = Math.max(lo + 4, b.hi);
     var left = (lo / MAX) * 100, width = ((hi - lo) / MAX) * 100;
     var txt = Math.round(b.lo) === Math.round(b.hi)
-      ? money(b.lo) : money(b.lo) + "–" + Math.round(b.hi);
+      ? money(b.lo) + "/MWh" : money(b.lo) + "–" + Math.round(b.hi) + "/MWh";
     // A band narrower than its own label pushes the text outside the bar rather
     // than letting it spill across the edge.
     var narrow = width < 11;
@@ -592,7 +592,7 @@
       '%"><span class="t">' + esc(txt) + "</span></div></div>" +
       (b.caveat ? '<div class="caveat">' + esc(b.caveat) + "</div>" : "") + "</div>";
   }).join("") +
-    '<div class="axis"><span>$0</span><span>$' + Math.round(MAX / 2) + "</span><span>$" +
+    '<div class="axis"><span>$0/MWh</span><span>$' + Math.round(MAX / 2) + "/MWh</span><span>$" +
     MAX + "/MWh</span></div>");
 
   render($("cost-outliers"), outlierBands.map(function (b) {
@@ -1536,7 +1536,12 @@
         " buyer types already pay more. " + count("mass-produced") + " open with mass production (" +
         lcoe(mass) + "), and " + count("optimized") + " need the modeled optimized design (" + lcoe(opt) + ")."
       : s.load_types + " facility load profiles across " + s.sector_count + " sectors.";
-    if (s.regions) { apps += " " + s.regions + " remote and cold regions profiled."; }
+    if (s.featured_prices) {
+      apps = s.featured_prices.alaska + " " + s.featured_prices.greenland +
+        (s.regions ? " " + s.regions + " remote and cold regions profiled." : "");
+    } else if (s.regions) {
+      apps += " " + s.regions + " remote and cold regions profiled.";
+    }
     var costs = first && opt
       ? "Estimates fall from " + lcoe(first) + "/MWh for a first unit to " + lcoe(opt) +
         " for a modeled optimized design. " + s.benchmarks_priced + " priced cases show what buyers pay today."
@@ -1547,12 +1552,12 @@
            s.sites + " named sites and " + s.prospects + " prospects to watch." },
       { href: "#why", tab: "Why microreactors", q: "What the case rests on",
         a: s.arguments + " arguments for a 1\u201320 MW unit, and " + s.counters + " places where they fail." },
-      { href: "#demand", tab: "Applications", q: "Where a unit wins first", a: apps },
-      { href: "#economics", tab: "Costs", q: "What the power costs", a: costs },
+      { href: "#demand/regions", tab: "Applications", q: "Where a unit wins first", a: apps },
+      { href: "#economics/price-to-beat", tab: "Costs", q: "What the power costs", a: costs },
       { href: "#vendors", tab: "Vendors", q: "Who builds them",
         a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " reactors in DOE's pilot " +
            "program reached criticality in 2026, and the earliest delivery target is " + s.first_delivery_year + "." },
-      { href: "#policy", tab: "Rules & deal design", q: "What unlocks a sale",
+      { href: "#policy/utility-filings", tab: "Rules & deal design", q: "What unlocks a sale",
         a: s.pathways + " rule changes and " + s.instruments + " ways a deal gets signed, with a " +
            "shared-orderbook proposal checked against " + s.precedents + " precedents." +
            (s.dockets ? " " + s.dockets + " utility filings name advanced reactors; " +

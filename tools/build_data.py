@@ -184,6 +184,7 @@ def main() -> int:
     }
     bundle["sources_index"] = reg
     bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
+    regions_by_id = {r["id"]: r for r in bundle["regions"]["regions"]}
     bundle["summary"] = {
         "opportunities": len(opps),
         "vendors": len(vendors),
@@ -232,6 +233,13 @@ def main() -> int:
         "regions": len(bundle["regions"]["regions"]),
         "dockets": len(bundle["dockets"]["dockets"]),
         "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
+        # Home answers the two most likely remote-market price questions without
+        # making the reader open a region accordion. Text stays source-owned in
+        # data/regions.json; the generator only takes its first decision sentence.
+        "featured_prices": {
+            "alaska": regions_by_id["alaska-rural-pce-communities"]["home_price"],
+            "greenland": regions_by_id["greenland"]["home_price"],
+        },
         "built": captured_date(bundle),
     }
 

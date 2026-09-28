@@ -74,12 +74,21 @@ def collect(pass_dirs: list):
             # Namespaced by pass so two passes can each hold a file with the
             # same basename without one's provenance entry shadowing the other's.
             from_tag = f"{pass_dir.name}/{path.name}"
+            accepted = 0
             for r in recs:
                 r = dict(r)
+                # A research pass can surface useful proposed tariffs alongside
+                # signed deals. Keep those findings in the raw pass, but do not
+                # put them on the customer-cost page, whose contract promises
+                # signed contracts, awards and final rate orders only.
+                if r.pop("integrate", True) is False:
+                    continue
                 r["_from"] = from_tag
                 (mechanisms if kind == "mechanism" else cases).append(r)
+                accepted += 1
             provenance.append({
-                "file": from_tag, "kind": kind, "records": len(recs),
+                "file": from_tag, "kind": kind, "records": accepted,
+                "raw_records": len(recs),
                 "scope": meta.get("scope", ""),
                 "incomplete": bool(meta.get("incomplete")),
                 "absences": meta.get("absences") or [],

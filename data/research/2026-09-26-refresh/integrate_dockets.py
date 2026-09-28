@@ -19,7 +19,10 @@ def clean(t):
 
 
 def main() -> None:
-    rows = json.loads((HERE / "filings.json").read_text())["dockets"]
+    rows = list(json.loads((HERE / "filings.json").read_text())["dockets"])
+    follow = HERE.parent / "2026-09-28-alaska-greenland-pricing" / "filings-contracts.json"
+    if follow.exists():
+        rows.extend(json.loads(follow.read_text()).get("dockets", []))
     out_rows = []
     for r in rows:
         rec = {k: clean(v) for k, v in r.items() if k != "sources"}
@@ -30,19 +33,22 @@ def main() -> None:
                 srcs.append(s)
         rec["sources"] = srcs
         out_rows.append(rec)
-    out_rows.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    by_id = {r["id"]: r for r in out_rows}
+    assert len(by_id) == len(out_rows), "duplicate docket ids across research passes"
+    out_rows = sorted(by_id.values(), key=lambda x: str(x.get("date", "")), reverse=True)
     size = collections.Counter(r.get("size_class", "unspecified") for r in out_rows)
+    micro = size.get("micro", 0)
     out = {
         "_meta": {
-            "captured": "2026-09-26",
+            "captured": "2026-09-28",
             "what_this_is": (f"{len(out_rows)} utility plans, dockets and state laws that name advanced "
-                             f"reactors. {size.get('micro', 0)} of them name a reactor of 1-20 MW; "
+                             f"reactors. {micro} of them {'names' if micro == 1 else 'name'} a reactor of 1-20 MW; "
                              f"{size.get('small', 0)} model small modular reactors of 100-600 MW, and the "
                              f"rest name nuclear without a size. None of the nine Janus or ANPI host "
                              f"bases has a utility commission filing yet."),
-            "method": ("One research pass (data/research/2026-09-26-refresh/filings.json) against the "
-                       "commissions' own e-filing systems and state legislatures; integrated by that "
-                       "folder's integrate_dockets.py."),
+            "method": ("The 2026-09-26 filings pass plus the 2026-09-28 contract-approval follow-up, "
+                       "searched against commissions' own dockets, minutes and testimony; integrated "
+                       "by data/research/2026-09-26-refresh/integrate_dockets.py."),
         },
         "dockets": out_rows,
     }
