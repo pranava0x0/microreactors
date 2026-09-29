@@ -26,7 +26,9 @@ from typing import Any, Dict, List
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 STRATEGY = ROOT / "data" / "strategy.json"
-COPY = ("status", "question", "finding", "figures", "searched", "sources")
+# `sites` (added 2026-09-26) is an optional station table on an answer, e.g. the
+# off-grid power contractors' mine sites that issue #17 asked for.
+COPY = ("status", "question", "finding", "figures", "sites", "searched", "sources")
 
 
 def collect(pass_dirs: List[pathlib.Path]) -> Dict[str, List[Dict[str, Any]]]:

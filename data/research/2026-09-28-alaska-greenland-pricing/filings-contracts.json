@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "captured": "2026-09-28",
+    "agent": "filings-contracts",
+    "scope": "Utility filings, approved energy contracts, and public risk-allocation evidence relevant to 1-20 MW microreactor procurement.",
+    "angles_run": [
+      "Utah PSC Docket 25-035-55 final order, settlement, public testimony, and redacted Natrium PPA",
+      "Louisiana PSC February 25, 2026 LANE directive and X-36987 linkage",
+      "Alaska RCA TA401-13 final order search",
+      "Alaska RCA TA535-18, TA924-2, TA201-72, and TA404-13 final-order search",
+      "Utah PSC settlement notice and public risk-allocation testimony",
+      "Utah PSC Natrium PPA term and public pricing disclosure",
+      "Utah PSC final-order index and docket chronology",
+      "California PUC 2025-2026 approved PPA records with public economics",
+      "Utah PSC executed settlement IRP reporting terms",
+      "Utah PSC annual post-operation reporting terms",
+      "Utah PSC final-order text",
+      "Utah PSC public ratepayer-liability provisions"
+    ],
+    "absences": [
+      "No final RCA approval order was located for TA401-13, TA535-18, TA924-2, TA201-72, or TA404-13 after two targeted regulator-domain searches; the proposed-status records in north.json were not duplicated.",
+      "The approved Natrium PPA price, pricing formula, liability cap, and most risk-allocation details remain confidential or redacted; no public dollar-per-MWh value was inferred.",
+      "The LANE directive creates a staff process, not a utility solicitation, executed contract, project approval, or cost-recovery authorization.",
+      "No additional 2025-2026 regulator-approved 1-20 MW contract with public signed pricing survived the date, size, primary-source, and non-duplicate gates within the 12-angle cap."
+    ]
+  },
+  "dockets": [
+    {
+      "id": "utah-psc-25-035-55-natrium-ppa-approval",
+      "forum": "Public Service Commission of Utah",
+      "docket": "25-035-55",
+      "url": "https://psc.utah.gov/2025/10/03/docket-no-25-035-55/",
+      "utility": "PacifiCorp d/b/a Rocky Mountain Power",
+      "state": "UT",
+      "type": "contract-approval",
+      "date": "2026-06-01",
+      "size_class": "small",
+      "status": "approved",
+      "what_it_says": "The Commission approved a settlement authorizing Rocky Mountain Power to enter a power purchase agreement with TerraPower subsidiary US SFR Owner, LLC for output from the 345 MW Natrium plant near Kemmerer, Wyoming. Public testimony describes flexible output from 100 to 500 MW and a projected end-2031 online date. The public price and core pricing mechanism are redacted. Publicly disclosed risk allocation says the PPA limits utility and ratepayer exposure to construction cost overruns and caps total ratepayer liability even if other expected contract elements fail. The settlement also requires PacifiCorp to model portfolios with and without the project in each IRP and IRP update, and to report plant performance and key metrics annually after the first commercial year.",
+      "microreactor_read": "Not a 1-20 MW project, but the strongest current public template for a first-of-a-kind nuclear utility PPA: bounded utility and ratepayer construction-overrun exposure, recurring with-and-without-project portfolio tests, and post-operation performance reporting. Public testimony does not identify who bears the residual overrun risk; that allocation and the price remain confidential or redacted.",
+      "sources": [
+        {
+          "label": "Utah Division of Public Utilities — Statement Supporting Settlement in Docket 25-035-55 (2026-03-30)",
+          "url": "https://pscdocs.utah.gov/electric/25docs/2503555/344561DPUSmryDirTstmnyDWilliamsMar312026Hrng3-30-2026.pdf",
+          "quote": "limit the Company and ratepayers from being liable for Natrium cost overruns",
+          "status": "fetched"
+        },
+        {
+          "label": "Utah PSC — Docket 25-035-55 chronology and Order Approving the Settlement (2026-06-01)",
+          "url": "https://psc.utah.gov/2025/10/03/docket-no-25-035-55/",
+          "quote": "Order Approving the Settlement",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "lpsc-lane-microreactor-vendor-directive-2026",
+      "forum": "Louisiana Public Service Commission",
+      "docket": "R-37871 (following X-36987)",
+      "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32712",
+      "utility": "Louisiana investor-owned utilities and interested rural electric cooperatives",
+      "state": "LA",
+      "type": "other",
+      "date": "2026-02-25",
+      "size_class": "micro",
+      "status": "pending",
+      "what_it_says": "Without opposition, the Commission directed staff to review the Louisiana Advanced Nuclear Competitive Edge framework in Docket X-36987 and develop the Louisiana Advanced Nuclear Exploration program. LANE is meant to let investor-owned utilities and interested rural electric cooperatives engage qualified vendors for possible integration of SMRs, microreactors, and other advanced nuclear technologies. Staff must return a plan to the Commission. The directive states no outside contract work is anticipated. It does not approve a project, procurement, PPA, tariff, or rate recovery. The Commission opened LANE rulemaking docket R-37871 in March 2026. Its initial public-comment deadline was April 10, 2026; the docket remains marked open, but this is not an open vendor bid.",
+      "microreactor_read": "Open rulemaking docket, closed initial comment window, no identified vendor procurement or project approval. Monitor for a later comment round and adopted vendor-engagement rules.",
+      "sources": [
+        {
+          "label": "Louisiana Public Service Commission — Minutes of February 25, 2026 Open Session",
+          "url": "https://www.lpsc.louisiana.gov/docs/minutes/Feb_25_2026_Minutes.pdf",
+          "quote": "There was no opposition to the directive.",
+          "status": "fetched"
+        },
+        {
+          "label": "Louisiana PSC — LANE docket R-37871",
+          "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32712",
+          "quote": "Louisiana Advanced Nuclear Exploration Program.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

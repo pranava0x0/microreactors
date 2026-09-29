@@ -1,0 +1,139 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "curated from the 2026-09-26-refresh pass",
+  "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
+  "angles_run": [
+   "copied verbatim from north.json, islands.json and issues.json"
+  ],
+  "absences": [
+   "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
+  ]
+ },
+ "cases": [
+  {
+   "id": "graphite-one-graphite-creek-power-plan",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "Graphite One / Graphite Creek Project power plan",
+   "country": "US",
+   "region": "Seward Peninsula (Nome), Alaska",
+   "parties": {
+    "host": "Graphite One Inc.",
+    "provider": "not yet selected"
+   },
+   "capacity": "12.5 MW forecast draw per 2025 reporting (an earlier feasibility study cited 4 MW rising to 6 MW); default plan is a trio of diesel generators",
+   "summary": "Graphite One's Graphite Creek graphite mine on Alaska's Seward Peninsula, targeting first production around 2030, is forecast to draw 12.5 MW of power -- 'over twice the amount of power the entire city of Nome draws' -- against an earlier feasibility-study estimate of 4 MW rising to 6 MW after five years. The company's leading proposal remains a trio of diesel generators (one on standby), but its own SVP of Operations named nuclear power as a genuine option in April 2025 reporting, alongside wind (strong resource, long lead time) and solar (good in summer only), citing zero carbon footprint against two conditions: vendor maturity and social acceptability. No vendor, RFP or financing decision has been made for any option.",
+   "microreactor_read": "Graphite One is the clearest pre-construction Alaska mine naming nuclear power as an option, at a forecast load (12.5 MW) inside the 1-20 MW band; a vendor has a multi-year window before 2030 production to prove a design mature and accepted enough to displace the company's default diesel-genset plan.",
+   "sources": [
+    {
+     "label": "KNOM Radio Mission — Graphite One forecasts $43 billion in revenue from proposed Seward Peninsula mine (2025-04-30)",
+     "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/",
+     "quote": "the proposed mine would draw 12.5 mW of power",
+     "status": "fetched"
+    },
+    {
+     "label": "Mining Technology — Graphite Creek Project, Alaska (project profile)",
+     "url": "https://www.mining-technology.com/projects/graphite-creek-project-alaska/",
+     "quote": "The mine operations are expected to require 4MW of power, which would increase to 6MW after five years.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "tau-american-samoa-solarcity-tesla-microgrid",
+   "sector": "Remote outposts & microgrids",
+   "name": "Ta'u Island solar-plus-storage microgrid",
+   "country": "US",
+   "region": "Ta'u, American Samoa",
+   "parties": {
+    "host": "American Samoa Power Authority (ASPA)",
+    "provider": "SolarCity (acquired by Tesla during construction)"
+   },
+   "instrument": "grant-funded",
+   "signed": "2016",
+   "capacity": "1.41 MW solar (5,328 panels) + 6 MWh battery storage (60 Tesla Powerpacks)",
+   "capex": "US$8 million total, including a US$927,500 Department of the Interior grant for the batteries and a US$70,715 EPA Diesel Emissions Reduction Act grant, balance from ASPA",
+   "displaced": "100% of the island's prior diesel generation -- 'almost 110,000 gallons of diesel per year'",
+   "summary": "Ta'u, a small American Samoa island previously running entirely on shipped diesel, was converted in November 2016 to a solar-plus-battery microgrid able to run the whole island on solar with three days of storage autonomy. The US$8 million project was funded jointly by the US Department of the Interior and ASPA, with a separate EPA Diesel Emissions Reduction Act grant, and built by SolarCity, which Tesla acquired during construction. It stands as the clearest precedent for a fully off-grid US-territory microgrid conversion at small-island scale.",
+   "microreactor_read": "A reactor pitching Ta'u-scale island grids has to beat a fully depreciated $8M solar-plus-storage build that already eliminated 100% of diesel burn on a comparable off-grid island -- the incumbent to displace is not diesel here, it is this exact microgrid model, at a capex per islander that a 1-20 MW reactor is unlikely to match at this population scale.",
+   "sources": [
+    {
+     "label": "National Geographic — Ta'u, American Samoa, Changed From Diesel to Solar Power With Tesla's SolarCity",
+     "url": "https://www.nationalgeographic.com/science/article/tau-american-samoa-solar-power-microgrid-tesla-solarcity",
+     "quote": "The $8 million project was funded by the U.S. Department of Interior and the American Samoa Power Authority (ASPA).",
+     "status": "fetched"
+    },
+    {
+     "label": "Utility Dive — Tesla, SolarCity ready diesel-reducing microgrid in American Samoa",
+     "url": "https://www.utilitydive.com/news/tesla-solarcity-ready-diesel-reducing-microgrid-in-american-samoa/431053/",
+     "quote": "The system it installed will offset the use of almost 110,000 gallons of diesel per year",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "prepa-asap-battery-storage-contracts",
+   "sector": "Remote outposts & microgrids",
+   "name": "PREPA Accelerated Storage Addition Program (ASAP) battery contracts",
+   "country": "US",
+   "region": "Puerto Rico (multiple municipalities)",
+   "parties": {
+    "host": "PREPA (Puerto Rico Electric Power Authority)",
+    "provider": "Solaner Puerto Rico One, Xzerta-Tec Solar I, Polaris Power US, Lajas Solar Project, CS-UR Juncos PV and Infinigen Yabucoa ASAP (six separate developers)"
+   },
+   "signed": "2025-05",
+   "capacity": "six battery storage projects totaling about 486 MW: Solaner Puerto Rico One (40 MW), Xzerta-Tec Solar I (120 MW), Polaris Power US (71.4 MW), Lajas Solar Project (80 MW), CS-UR Juncos PV (125 MW) and Infinigen Yabucoa ASAP (50 MW)",
+   "price": "storage capability payment of $16,000 per MW per month of tested storage capability with no escalation, rising to $20,600/MW/month if the developer's federal investment tax credit is not secured",
+   "filings": [
+    {
+     "forum": "Financial Oversight and Management Board for Puerto Rico",
+     "type": "contract-approval",
+     "date": "2025-05-08",
+     "url": "https://www.sanjuandailystar.com/post/fiscal-board-greenlights-solar-plus-storage-additions-sets-conditions-for-prepa-contracts"
+    }
+   ],
+   "summary": "In May 2025 Puerto Rico's Financial Oversight and Management Board approved a set of PREPA battery-storage contracts under the island's Accelerated Storage Addition Program (ASAP), covering six projects for about 486 MW of tested storage capability combined. The approved structure pays each developer 'a storage capability payment price of $16,000 per MW per month of tested storage capability with no escalation,' rising to $20,600/MW/month if the developer's federal investment tax credit is not secured, addressing tight 2025 generation margins on an island still short of dispatchable capacity years after Hurricane Maria.",
+   "microreactor_read": "PREPA's own board-approved yardstick for new dispatchable capacity is a pure capacity payment -- $16,000-20,600 per MW per month, with no separate energy price -- giving a direct, apples-to-apples number a microreactor bid would have to beat on the capacity side alone, before counting any energy it sells.",
+   "sources": [
+    {
+     "label": "San Juan Daily Star — Fiscal board greenlights solar-plus-storage additions, sets conditions for PREPA contracts (2025-05-12)",
+     "url": "https://www.sanjuandailystar.com/post/fiscal-board-greenlights-solar-plus-storage-additions-sets-conditions-for-prepa-contracts",
+     "quote": "$16,000 per MW per month of tested storage capability with no escalation",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "kcgm-kalgoorlie-zenith-25-year-ppa",
+   "sector": "Off-grid mining & mineral processing",
+   "name": "KCGM (Kalgoorlie \"Super Pit\") Renewables and Thermal Power Project",
+   "country": "AU",
+   "region": "Kalgoorlie, Western Australia (Goldfields-Esperance)",
+   "parties": {
+    "host": "Northern Star Resources (KCGM operations)",
+    "provider": "Zenith Energy",
+    "utility": "None - off-grid"
+   },
+   "instrument": "PPA",
+   "signed": "2025-12",
+   "term_years": 25,
+   "capacity": "256 MW wind, 138 MW solar, 138 MW/300 MWh battery storage, plus a Zenith-Northern Star joint venture supplying 120 MW of thermal generation and a 132kV transmission network; commissioning targeted for mid-2027",
+   "summary": "Zenith Energy signed a 25-year PPA with Northern Star Resources, announced December 2025, to build what is described as Australia's largest renewable energy project for the mining sector at KCGM's Kalgoorlie operations: 256 MW of wind, 138 MW of solar and 138 MW/300 MWh of battery storage. Zenith and Northern Star also formed a joint venture to supply 120 MW of firm thermal generation as backup, plus a 132kV transmission network and substations, with commissioning targeted for mid-2027 subject to approvals.",
+   "microreactor_read": "The 120 MW firm-thermal joint-venture slice is six to eight 20 MWe-class units at a single site with 25 years of contracted term and a mine life Northern Star states as multiple decades — the longest-term, largest-residual off-grid mine opportunity found in this sector to date, and evidence Zenith will structure firm generation as its own joint venture rather than folding it into the renewables PPA.",
+   "sources": [
+    {
+     "label": "Energy-Storage.News - Zenith locks in 25-year PPA for 300MWh hybrid storage project at Western Australia gold mine",
+     "url": "https://www.energy-storage.news/zenith-locks-in-25-year-ppa-for-300mwh-hybrid-storage-project-at-western-australia-gold-mine/",
+     "quote": "Zenith Energy has signed a landmark 25-year power purchase agreement (PPA) with Northern Star Resources",
+     "status": "fetched"
+    },
+    {
+     "label": "Mining.com.au - Zenith Energy to power Northern Star's KCGM",
+     "url": "https://mining.com.au/zenith-energy-to-power-northern-stars-kcgm/",
+     "quote": "Zenith Energy has entered a joint venture with Northern Star to supply 120MW of thermal generation",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

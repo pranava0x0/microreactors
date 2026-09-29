@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "captured": "2026-09-08",
+    "agent": "jam-alaska-opportunities-dossier-sync",
+    "scope": "Two items unique to the jam/alaska-opportunities-dossier branch's news.json (Sept 2026 commit) not present in the vibe/alaska-greenland-pricing research pass, carried forward during branch sync on 2026-09-29 so no reported event is lost."
+  },
+  "items": [
+    {
+      "id": "pjm-ferc-colocation-tariff-el25-49-2026-09-08",
+      "date": "2026-09-08",
+      "headline": "PJM submits compliance framework under FERC Docket EL25-49 for co-located generation",
+      "companies": [
+        "PJM Interconnection"
+      ],
+      "category": "regulatory",
+      "what_happened": "PJM Interconnection filed its compliance framework under FERC Docket EL25-49, proposing tariff provisions for behind-the-meter generation serving co-located large loads without requiring full wholesale network transmission interconnection, while instituting standby service obligations and capacity tag minimums for on-site resources.",
+      "why_it_matters": "This proceeding establishes the federal regulatory precedent for whether private-wire microreactors adjacent to data centers in PJM can bypass the 4-to-8 year transmission queue or face network exit fees.",
+      "binding": true,
+      "binding_note": "A formal compliance filing submitted to FERC under Docket No. EL25-49-000.",
+      "sources": [
+        {
+          "label": "CEA Advisors — Summary of FERC Order on Co-Located Large Loads (Docket EL25-49-000)",
+          "url": "https://ceadvisors.com/summary-of-ferc-order-instituting-proceeding-on-co-located-large-loads-at-generating-facilities-docket-no-el25-49-000-et-al/",
+          "quote": "proceeding on co-located large loads at generating facilities",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "meta-advanced-nuclear-clean-firm-agreements-2026-09-04",
+      "date": "2026-09-04",
+      "headline": "Meta advances clean firm procurement framework across multiple nuclear developers",
+      "companies": [
+        "Oklo Inc.",
+        "TerraPower",
+        "Vistra"
+      ],
+      "category": "contract",
+      "what_happened": "Meta expanded its advanced clean electricity portfolio by detailing framework agreements for up to 6.6 GW of nuclear generation through the 2030s, pairing operating plant capacity with exploratory advance offtake mechanisms for advanced reactor developers including Oklo and TerraPower.",
+      "why_it_matters": "Following Google's Kairos master agreement, Meta's multi-technology approach shows hyperscalers are creating structured off-balance-sheet demand signals to justify vendor supply-chain buildouts.",
+      "binding": false,
+      "binding_note": "Framework agreements and exploratory clean firm commitments; definitive per-site PPAs remain subject to licensing and project development milestones.",
+      "sources": [
+        {
+          "label": "POWER — Meta Locks in Advanced Nuclear and Clean Firm Power Agreements",
+          "url": "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+          "quote": "Meta Locks in Up to 6.6 GW of Nuclear Power",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ]
+}

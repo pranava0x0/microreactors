@@ -62,6 +62,36 @@ if _strategy_p.exists():
 # A case record with none of these carries no number, and is not a record.
 CASE_NUMERIC_ANY = ["price", "capex", "displaced", "capacity", "term_years", "filings"]
 
+# Types D-G, added 2026-09-26 for the full-refresh pass (see that pass's CONTRACT.md).
+# D precedent: a pooled-buying, shared-ownership or shared-risk arrangement OUTSIDE
+# nuclear, kept for the one design element a microreactor orderbook could copy.
+PRECEDENT_MECHANISMS = {
+    "advance-market-commitment", "buyers-club", "assurance-contract", "joint-procurement",
+    "consortium-ownership", "fractional-ownership", "capacity-subscription", "prepayment",
+    "mutual-insurance-pool", "parametric-pool", "overrun-or-performance-cover",
+    "government-backstop",
+}
+PRECEDENT_REQUIRED = ["id", "mechanism", "sector", "name", "year", "how_it_works",
+                      "outcome", "microreactor_read", "sources"]
+# E region: a remote or cold jurisdiction's power system and its stated position on nuclear.
+REGION_REQUIRED = ["id", "region", "power_system", "nuclear_position",
+                   "microreactor_read", "sources"]
+# F docket: a utility or regulator filing that names microreactors or SMRs.
+DOCKET_REQUIRED = ["id", "forum", "utility", "type", "date", "what_it_says", "sources"]
+DOCKET_TYPES = {"IRP", "rider", "CPCN", "RFP", "tariff", "study", "rate-case",
+                "legislation", "contract-approval", "other"}
+DOCKET_SIZES = {"micro", "small", "large", "unspecified"}
+DOCKET_STATUS = {"filed", "approved", "rejected", "pending", "withdrawn", "enacted"}
+# G check: a verdict on one claim already shipped in data/*.json.
+CHECK_REQUIRED = ["id", "target", "file", "claim", "verdict", "evidence"]
+CHECK_VERDICTS = {"confirmed", "outdated", "wrong", "unsupported", "unverifiable"}
+# N news: a dated event in the shape of data/news.json items.
+NEWS_REQUIRED = ["id", "date", "headline", "category", "what_happened", "why_it_matters", "sources"]
+NEWS_CATEGORIES = {"fuel", "award", "regulatory", "criticality", "financing", "contract",
+                   "construction", "policy", "setback", "personnel"}
+ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+HAS_DIGIT = re.compile(r"\d")
+
 PLACEHOLDER = re.compile(r"^\s*(tbd|todo|n/?a|unknown|none|\.\.\.|-+)\s*$", re.I)
 # The claim's own date field is an ISO-ish date, so a trailing hyphen is expected.
 CLAIM_YEAR = re.compile(r"^\s*((?:19|20)\d{2})")
@@ -97,6 +127,10 @@ def check_sources(sources, path, rec_id, errors) -> None:
         status = s.get("status")
         if status and status not in SOURCE_STATUS:
             fail(errors, path, rec_id, f"{where} status {status!r} not in {sorted(SOURCE_STATUS)}")
+        # Added 2026-09-26: agents joined passages with "..." in 11 of ~55 quotes in one
+        # pass, despite the contract. A fetched quote is one verbatim span.
+        if status == "fetched" and "..." in str(s.get("quote", "")):
+            fail(errors, path, rec_id, f"{where} quote joins passages with '...'; copy one verbatim span")
 
 
 def check_impossible_citation(rec, sources, path, rec_id, errors) -> None:
@@ -205,7 +239,77 @@ def check_record(rec, kind, path, errors, seen_ids) -> None:
                              "typo here silently produces no link")
 
 
-KINDS = {"mechanism": "mechanisms", "case": "cases", "answer": "answers"}
+def _missing(rec, required, path, rec_id, errors) -> None:
+    for k in required:
+        v = rec.get(k)
+        if v is None or (isinstance(v, str) and (not v.strip() or PLACEHOLDER.match(v))):
+            fail(errors, path, rec_id, f"missing or placeholder field {k!r}")
+
+
+def check_extended(rec, kind, path, errors, seen_ids) -> None:
+    """Types D-G. Same universal rules as A-C (unique id, deep-linked and
+    status-tagged sources, a number somewhere), plus each type's own enum."""
+    rec_id = str(rec.get("id", "<no id>"))
+    required = {"precedent": PRECEDENT_REQUIRED, "region": REGION_REQUIRED,
+                "docket": DOCKET_REQUIRED, "check": CHECK_REQUIRED, "news": NEWS_REQUIRED}[kind]
+    _missing(rec, required, path, rec_id, errors)
+    if rec_id in seen_ids:
+        fail(errors, path, rec_id, f"duplicate id, also in {seen_ids[rec_id]}")
+    else:
+        seen_ids[rec_id] = path.name
+    sources = rec.get("sources") or []
+    if kind == "check":
+        # An unverifiable verdict is an honest absence and may carry no source;
+        # every other verdict rests on a document someone read.
+        if rec.get("verdict") not in CHECK_VERDICTS:
+            fail(errors, path, rec_id, f"verdict {rec.get('verdict')!r} not in {sorted(CHECK_VERDICTS)}")
+        if rec.get("verdict") != "unverifiable":
+            check_sources(sources, path, rec_id, errors)
+        if rec.get("verdict") in ("outdated", "wrong") and not str(rec.get("correction", "")).strip():
+            fail(errors, path, rec_id, "an outdated or wrong verdict must carry a correction")
+        return
+    check_sources(sources, path, rec_id, errors)
+    if kind == "news":
+        if rec.get("category") not in NEWS_CATEGORIES:
+            fail(errors, path, rec_id, f"category {rec.get('category')!r} not in {sorted(NEWS_CATEGORIES)}")
+        if not isinstance(rec.get("binding"), bool):
+            fail(errors, path, rec_id, "binding must be true or false")
+        if not ISO_DATE.match(str(rec.get("date", ""))):
+            fail(errors, path, rec_id, f"date {rec.get('date')!r} is not YYYY-MM-DD")
+        if not any(s.get("status") == "fetched" for s in sources if isinstance(s, dict)):
+            fail(errors, path, rec_id, "a news item needs at least one fetched source")
+        urls = [s.get("url") for s in sources if isinstance(s, dict)]
+        if len(urls) != len(set(urls)):
+            fail(errors, path, rec_id, "the same url is listed twice")
+        return
+    if kind == "precedent":
+        if rec.get("mechanism") not in PRECEDENT_MECHANISMS:
+            fail(errors, path, rec_id,
+                 f"mechanism {rec.get('mechanism')!r} not in {sorted(PRECEDENT_MECHANISMS)}")
+        if not HAS_DIGIT.search(str(rec.get("size", "")) + str(rec.get("outcome", ""))):
+            fail(errors, path, rec_id, "carries no number in size or outcome")
+        if "nuclear" in str(rec.get("sector", "")).lower():
+            fail(errors, path, rec_id, "precedents are non-nuclear by definition")
+    elif kind == "region":
+        blob = str(rec.get("price", "")) + str(rec.get("power_system", "")) + json.dumps(rec.get("loads", []))
+        if not HAS_DIGIT.search(blob):
+            fail(errors, path, rec_id, "carries no number in price, power_system or loads")
+    elif kind == "docket":
+        if rec.get("type") not in DOCKET_TYPES:
+            fail(errors, path, rec_id, f"type {rec.get('type')!r} not in {sorted(DOCKET_TYPES)}")
+        if rec.get("size_class") and rec.get("size_class") not in DOCKET_SIZES:
+            fail(errors, path, rec_id, f"size_class {rec.get('size_class')!r} not in {sorted(DOCKET_SIZES)}")
+        if rec.get("status") and rec.get("status") not in DOCKET_STATUS:
+            fail(errors, path, rec_id, f"status {rec.get('status')!r} not in {sorted(DOCKET_STATUS)}")
+        if not (str(rec.get("docket", "")).strip() or str(rec.get("url", "")).strip()):
+            fail(errors, path, rec_id, "names neither a docket number nor a filing url")
+        check_impossible_citation(rec, sources, path, rec_id, errors)
+
+
+KINDS = {"mechanism": "mechanisms", "case": "cases", "answer": "answers",
+         "precedent": "precedents", "region": "regions", "docket": "dockets",
+         "check": "checks", "news": "items"}
+EXTENDED = {"precedent", "region", "docket", "check", "news"}
 
 
 def load_pass(pass_dir: pathlib.Path):
@@ -239,7 +343,7 @@ def cmd_validate(pass_dir: pathlib.Path) -> int:
             errors.append(f"{path.name}: invalid JSON — {doc}")
             continue
         if kind == "unknown":
-            errors.append(f"{path.name}: has none of 'mechanisms', 'cases' or 'answers'")
+            errors.append(f"{path.name}: has none of " + ", ".join(repr(k) for k in KINDS.values()))
             continue
         meta = doc.get("_meta") or {}
         if not meta.get("absences"):
@@ -249,6 +353,8 @@ def cmd_validate(pass_dir: pathlib.Path) -> int:
             records += 1
             if kind == "answer":
                 check_answer(rec, path, errors, seen_ids)
+            elif kind in EXTENDED:
+                check_extended(rec, kind, path, errors, seen_ids)
             else:
                 check_record(rec, kind, path, errors, seen_ids)
 
@@ -271,7 +377,9 @@ def cmd_report(pass_dir: pathlib.Path) -> int:
         total += len(recs)
         buckets: dict = {}
         for r in recs:
-            buckets.setdefault(r.get("group") or r.get("sector") or r.get("status") or "?", []).append(r)
+            key = (r.get("mechanism") or r.get("verdict") or r.get("type") or r.get("group")
+                   or r.get("sector") or r.get("status") or r.get("country") or "?")
+            buckets.setdefault(key, []).append(r)
         fetched = sum(1 for r in recs for s in (r.get("sources") or [])
                       if s.get("status") == "fetched")
         snippet = sum(1 for r in recs for s in (r.get("sources") or [])

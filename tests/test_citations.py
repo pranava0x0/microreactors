@@ -18,6 +18,16 @@ class ClaimCoverage(unittest.TestCase):
                          "numbered claims without a source (fix the data or, with a "
                          "stated reason, the allowlist): " + str(violations))
 
+    def test_every_bundled_file_is_walked(self):
+        """check() lists its files by hand because each has its own shape. It
+        silently skipped benchmarks and instruments for weeks (issues.md,
+        2026-08-29), so every file the builder bundles must be named in it,
+        except gaps.json, which is derived from the others."""
+        import build_data
+        src = (ROOT / "tools" / "check_citations.py").read_text()
+        missing = [n for n in build_data.FILES if n != "gaps" and f'"{n}.json"' not in src]
+        self.assertEqual(missing, [], "check_citations.py never opens these data files")
+
     def test_link_sweep_collects_urls_offline(self):
         """The sweep's URL collection must survive contract changes in
         collect_sources — it crashed once when the tuple grew a field.

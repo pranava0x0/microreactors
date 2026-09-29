@@ -18,7 +18,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
-         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy"]
+         "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy",
+         "regions", "dockets"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -31,7 +32,14 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # strategy is read by two sub-tabs on two panels (Costs "What wins", Deals
 # "Prospects"); neither needs it for a first screen, and loadLazy hands both the
 # same promise, so it ships once and arrives when either opens.
-LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy"]
+# regions (2026-09-26) is read only by Applications > Regions; mechanisms only by
+# Rules > Deal design and deployment_sites only by Deals > Sites (their counts
+# ride in `summary`).
+LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy", "regions",
+        "mechanisms", "deployment_sites", "dockets"]
+
+# How many of the newest news items ship in the eager bundle for the front page.
+HEADLINES = 8
 
 # Citation numbering walks the data in the order the tabs render it, so [1] is
 # the first source a reader meets. One number per URL, reused everywhere that
@@ -43,7 +51,9 @@ CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mec
               "policy", "instruments", "deployment_sites", "voices", "arguments", "news", "gaps",
               # last on purpose: strategy restates rows the files above already cite, so
               # walking it last keeps every existing chip number where it was.
-              "strategy"]
+              "strategy",
+              # files added later append here, for the same reason.
+              "regions", "dockets"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -140,8 +150,41 @@ def main() -> int:
             for label in r.get("load", []):
                 load_cases[label] = load_cases.get(label, 0) + 1
     bundle["load_cases"] = load_cases
+
+    # News reads newest-first everywhere. The file is not kept in order by hand
+    # (a 2026-08-17 item sat above 2026-09-04 and the front page promoted it over
+    # three newer stories), so the order is imposed here, once.
+    bundle["news"]["items"] = sorted(bundle["news"]["items"],
+                                     key=lambda it: (it.get("date", ""), it.get("id", "")),
+                                     reverse=True)
+    # The front page draws from these, so the landing tab never waits on the lazy
+    # news payload.
+    bundle["headlines"] = [{k: it[k] for k in ("id", "date", "headline", "category", "binding",
+                                                "what_happened", "sources") if k in it}
+                           for it in bundle["news"]["items"][:HEADLINES]]
+    # Applications > Overview: the buyer segments from strategy.json, ranked by the
+    # cost rung at which a reactor wins them. The strategy payload stays lazy; this
+    # is the slice the overview needs.
+    strat = bundle["strategy"]
+    rung_ids = [r["id"] for r in strat["ladder"]["rungs"]]
+    prospects_by_sector: Dict[str, int] = {}
+    for pr in strat["prospects"]:
+        prospects_by_sector[pr["sector"]] = prospects_by_sector.get(pr["sector"], 0) + 1
+    bundle["applications"] = {
+        "rungs": [{k: r.get(k) for k in ("id", "name", "lcoe_low_mwh", "lcoe_high_mwh",
+                                           "capex_low_kwe", "capex_high_kwe", "opens_note")}
+                  for r in strat["ladder"]["rungs"]],
+        "segments": [{**{k: sg.get(k) for k in ("id", "name", "sector", "incumbent",
+                                                 "incumbent_low_mwh", "incumbent_high_mwh",
+                                                 "clears", "verdict", "blocker", "first_deal",
+                                                 "sources")},
+                      "benchmarks": len(sg.get("benchmark_ids", [])),
+                      "prospects": prospects_by_sector.get(sg["sector"], 0)}
+                     for sg in sorted(strat["segments"], key=lambda x: rung_ids.index(x["clears"]))],
+    }
     bundle["sources_index"] = reg
     bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
+    regions_by_id = {r["id"]: r for r in bundle["regions"]["regions"]}
     bundle["summary"] = {
         "opportunities": len(opps),
         "vendors": len(vendors),
@@ -156,6 +199,9 @@ def main() -> int:
         "benchmarks": sum(len(s_["records"]) for s_ in bundle["benchmarks"]["sectors"]),
         "benchmarks_priced": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                  for r in s_["records"] if priced(r)),
+        "benchmarks_priced_proposed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                          for r in s_["records"]
+                                          if priced(r) and r.get("price_status") == "proposed"),
         "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                 for r in s_["records"] if r.get("filings")),
         # Most benchmark rows are the non-nuclear incumbent a reactor would displace,
@@ -178,6 +224,25 @@ def main() -> int:
         # eager bundle, since the strategy payload itself arrives lazily.
         "prospects": len(bundle["strategy"]["prospects"]),
         "segments": len(bundle["strategy"]["segments"]),
+        # Front-page directory: one derived figure per tab.
+        "news_items": len(bundle["news"]["items"]),
+        "news_binding": sum(1 for it in bundle["news"]["items"] if it.get("binding")),
+        "news_first": min(it["date"] for it in bundle["news"]["items"]),
+        "arguments": len(bundle["arguments"]["arguments"]),
+        "counters": len(bundle["arguments"]["counters"]),
+        "pathways": sum(len(g["pathways"]) for g in bundle["policy"]["groups"]),
+        "precedents": sum(len(g["items"]) for g in bundle["mechanisms"]["precedent_groups"]),
+        "sites": len(bundle["deployment_sites"]["sites"]),
+        "regions": len(bundle["regions"]["regions"]),
+        "dockets": len(bundle["dockets"]["dockets"]),
+        "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
+        # Home answers the two most likely remote-market price questions without
+        # making the reader open a region accordion. Text stays source-owned in
+        # data/regions.json; the generator only takes its first decision sentence.
+        "featured_prices": {
+            "alaska": regions_by_id["alaska-rural-pce-communities"]["home_price"],
+            "greenland": regions_by_id["greenland"]["home_price"],
+        },
         "built": captured_date(bundle),
     }
 

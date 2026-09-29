@@ -83,6 +83,30 @@ class ScriptOrder(unittest.TestCase):
         self.assertGreater(a, d, "data.js must load before app.js")
 
 
+class CostUnits(unittest.TestCase):
+    def test_cost_chart_explains_units_and_shorthand(self):
+        for text in ("currency per megawatt-hour", "source $", "Dollar years",
+                     "Levelized cost of electricity (LCOE)", "First-of-a-kind (FOAK)",
+                     "nth-of-a-kind (NOAK)"):
+            self.assertIn(text, HTML)
+        self.assertIn('bandMoney(b, b.lo) + "/MWh"', JS)
+        self.assertIn('"/MWh</span><span>$"', JS)
+
+
+class PlainDealLabels(unittest.TestCase):
+    """Reader-facing deal labels must explain the shorthand in the source data."""
+
+    def test_benchmark_and_policy_labels_are_plain(self):
+        self.assertIn('["Deal type", dealType(c.instrument)]', JS)
+        self.assertIn('"design-build": "One contractor designs and builds it"', JS)
+        self.assertIn('"PPA": "Power purchase agreement"', JS)
+        self.assertIn('"commercial-contract": "Commercial contract"', JS)
+        self.assertNotIn('" instruments</span>"', JS)
+
+    def test_prose_uses_the_full_panel_width(self):
+        self.assertIn('.prose{color:var(--text-secondary);max-width:none}', CSS)
+
+
 class MarkupIds(unittest.TestCase):
     """A duplicate id is invalid HTML and silently breaks getElementById.
 
