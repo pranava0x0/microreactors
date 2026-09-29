@@ -298,7 +298,11 @@
      "status": "fetched"
     }
    ],
-   "home_price": "Alaska QF comparators: $22.50-$1,180.20/MWh proposed."
+   "home_price": "Alaska QF comparators: $22.50-$1,180.20/MWh proposed.",
+   "home_price_source_urls": [
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222183",
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224914"
+   ]
   },
   {
    "id": "labrador-northern-ontario",
@@ -688,7 +692,10 @@
      "status": "fetched"
     }
    ],
-   "home_price": "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+   "home_price": "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel.",
+   "home_price_source_urls": [
+    "https://govmin.gl/wp-content/uploads/2026/07/Ramboll_2026_Clean-energy-micro-grids-in-the-mining-industry-in-Greenland.pdf"
+   ]
   },
   {
    "id": "polar-research-stations",

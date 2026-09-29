@@ -1571,7 +1571,7 @@
         lcoe(mass) + "), and " + count("optimized") + " need the modeled optimized design (" + lcoe(opt) + ")."
       : s.load_types + " facility load profiles across " + s.sector_count + " sectors.";
     if (s.featured_prices) {
-      apps = s.featured_prices.alaska + " " + s.featured_prices.greenland +
+      apps = s.featured_prices.alaska.text + " " + s.featured_prices.greenland.text +
         (s.regions ? " " + s.regions + " remote and cold regions profiled." : "");
     } else if (s.regions) {
       apps += " " + s.regions + " remote and cold regions profiled.";
@@ -1588,7 +1588,11 @@
            s.sites + " named sites and " + s.prospects + " prospects to watch." },
       { href: "#why", tab: "Why microreactors", q: "What the case rests on",
         a: s.arguments + " arguments for a 1\u201320 MW unit, and " + s.counters + " places where they fail." },
-      { href: "#demand/regions", tab: "Applications", q: "What Alaska and Greenland signal", a: apps },
+      { href: "#demand/regions", tab: "Applications", q: "What Alaska and Greenland signal", a: apps,
+        srcs: s.featured_prices ? [
+          { label: "Alaska", sources: s.featured_prices.alaska.sources },
+          { label: "Greenland", sources: s.featured_prices.greenland.sources }
+        ] : [] },
       { href: "#economics/price-to-beat", tab: "Costs", q: "What the power costs", a: costs },
       { href: "#vendors", tab: "Vendors", q: "Who builds them",
         a: s.vendors + " companies tracked. " + s.reactors_critical_2026 + " reactors in DOE's pilot " +
@@ -1618,9 +1622,12 @@
   }
   function renderHome() {
     render($("home-glance"), glanceCards().map(function (c) {
-      return '<a class="glancecard" href="' + esc(c.href) + '"><span class="gtab">' + esc(c.tab) +
+      return '<div class="glancebox"><a class="glancecard" href="' + esc(c.href) + '"><span class="gtab">' + esc(c.tab) +
         '</span><span class="gq">' + esc(c.q) + '</span><span class="ga">' + esc(c.a) +
-        '</span><span class="go" aria-hidden="true">\u2192</span></a>';
+        '</span><span class="go" aria-hidden="true">\u2192</span></a>' +
+        (c.srcs && c.srcs.length ? '<div class="glancecite">' + c.srcs.map(function (group) {
+          return '<span>' + esc(group.label) + ' ' + cite(group.sources) + '</span>';
+        }).join(' <span aria-hidden="true">\u00b7</span> ') + '</div>' : '') + '</div>';
     }).join(""));
     var H = D.headlines || [];
     if (!H.length) { return; }
