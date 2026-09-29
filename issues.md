@@ -3,6 +3,7 @@
 Living audit trail. Each bug: date, area, description, root cause (code bug vs data bug
 vs test bug), status.
 
+- **2026-09-28 · site · Voices opened as an 11.4-screen page on phones — Fixed.** The first quote group expanded on entry even though the renderer described groups as collapsed by default. Removed the automatic expansion. The phone entry page is now 4.9 screens; each group opens on demand. Browser regression test covers the closed state and expansion.
 - **2026-09-09 · data · DOE Reactor Pilot Program criticality count stale, 3 vs actual 5 — Fixed.**
   `opportunities.json`'s `reactors_critical_2026` field (feeding the homepage hero stat)
   was hand-set to 3 and never updated after Aalo (2026-07-04) and Oklo's Groves Isotope

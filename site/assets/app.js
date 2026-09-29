@@ -442,7 +442,7 @@
     var sites = D.deployment_sites.sites;
     render($("pipeline-sites"),
       '<div class="subhead"><h3>Sites</h3></div>' +
-      '<p class="prose">Named sites, their utility and regulator context, and the public filing trail. A row says when a docket search found nothing.</p>' +
+      '<p class="prose">Named deployments and screening prospects, ordered by remote grids, off-grid mines, then marine terminals. A concept row does not mean its owner plans a reactor.</p>' +
       '<div class="sites-summary" id="sites-summary"></div>' +
       '<div class="sitefilters" id="site-filters"></div>' +
       '<div id="sites-content"></div>');
@@ -453,7 +453,7 @@
     render($("sites-summary"), [
       { n: String(sites.length), k: "candidate sites tracked" },
       { n: String(Object.keys(siteCats).length), k: "load categories covered" },
-      { n: String(sites.filter(function (s) { return s.filings && s.filings.length; }).length), k: "sites with active filings", accent: true },
+      { n: String(sites.filter(function (s) { return s.filings && s.filings.length; }).length), k: "sites with listed filings", accent: true },
       { n: String((D.deployment_sites._meta.negative_findings || []).length), k: "confirmed negative docket searches", accent: true }
     ].map(function (x) {
       return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
@@ -487,7 +487,7 @@
         '<div class="sitedetails">' +
           '<div class="drow"><span class="dlbl">Category:</span><span>' + esc(s.category) + (s.band ? " &middot; " + esc(s.band) : "") + "</span></div>" +
           '<div class="drow"><span class="dlbl">Owner/Host:</span><span>' + esc(s.owner || "") + "</span></div>" +
-          '<div class="drow"><span class="dlbl">Reactor:</span><span>' + esc(s.vendor || "") + (s.power ? " (" + esc(s.power) + ")" : "") + "</span></div>" +
+          '<div class="drow"><span class="dlbl">Reactor:</span><span>' + esc(s.vendor || "None announced") + (s.power ? " (" + esc(s.power) + ")" : "") + "</span></div>" +
           '<div class="drow"><span class="dlbl">Utility:</span><span>' + esc(s.utility_context || "Behind-the-meter") + "</span></div>" +
         "</div>" +
         '<div class="sitesummary">' + esc(s.summary) + " " + cite(s.sources) + "</div>" +
@@ -496,15 +496,26 @@
         "</div></details>";
     };
 
-    var univSites = sites.filter(function (s) {
-      return s.category === "Civic Infrastructure";
-    });
-    var defSites = sites.filter(function (s) {
-      return s.category === "Defense installations" || (s.category === "Electric Utilities" && s.id === "cvea-valdez");
-    });
-    var commSites = sites.filter(function (s) {
-      return s.category === "Compute" || s.category === "Oil & Gas" || (s.category === "Electric Utilities" && s.id !== "cvea-valdez");
-    });
+    var remoteIds = ["cvea-valdez", "eielson-pilot", "fort-wainwright-doyon",
+      "guantanamo-bay-base", "iqaluit-qec"];
+    var siteGroups = [
+      { id: "remote", label: "Remote outposts & microgrids", sites: sites.filter(function (s) {
+        return remoteIds.indexOf(s.id) !== -1;
+      }) },
+      { id: "mining", label: "Off-grid mining & minerals", sites: sites.filter(function (s) {
+        return s.category === "Mining";
+      }) },
+      { id: "marine", label: "Marine terminals", sites: sites.filter(function (s) {
+        return s.category === "Transportation" && s.band ===
+          "Cargo-port electrical systems combining terminal operations and ship plug-in power";
+      }) }
+    ];
+    var prioritized = siteGroups.reduce(function (all, group) {
+      return all.concat(group.sites);
+    }, []);
+    siteGroups.push({ id: "other", label: "Other sites", sites: sites.filter(function (s) {
+      return prioritized.indexOf(s) === -1;
+    }) });
 
     var negs = D.deployment_sites._meta.negative_findings || [];
     var negHTML = '<div class="negfindings">' +
@@ -520,24 +531,19 @@
         : "") +
       "</div>";
 
-    var siteKinds = [
-      { id: "all", label: "All (" + sites.length + ")" },
-      { id: "universities-labs", label: "Universities & Labs (" + univSites.length + ")" },
-      { id: "defense-remote", label: "Defense & Remote (" + defSites.length + ")" },
-      { id: "commercial-grid", label: "Commercial & Grid (" + commSites.length + ")" },
-      { id: "findings-absences", label: "Findings & Absences" }
-    ];
+    var siteKinds = [{ id: "all", label: "All (" + sites.length + ")" }].concat(
+      siteGroups.map(function (group) {
+        return { id: group.id, label: group.label + " (" + group.sites.length + ")" };
+      }), [{ id: "findings-absences", label: "Findings & Absences" }]);
     render($("site-filters"), siteKinds.map(function (k, i) {
       return '<button class="newschip' + (i === 0 ? " on" : "") + '" data-site-filter="' +
         esc(k.id) + '" aria-pressed="' + (i === 0 ? "true" : "false") + '">' + esc(k.label) + "</button>";
     }).join(""));
-    render($("sites-content"), '<div class="sitesgrid" id="sites-grid">' +
-      sites.map(function (s) {
-        var kinds = ["all"];
-        if (univSites.indexOf(s) !== -1) kinds.push("universities-labs");
-        if (defSites.indexOf(s) !== -1) kinds.push("defense-remote");
-        if (commSites.indexOf(s) !== -1) kinds.push("commercial-grid");
-        return '<div data-site-kinds="' + kinds.join(" ") + '">' + renderSiteCard(s) + "</div>";
+    render($("sites-content"), '<div id="sites-grid">' +
+      siteGroups.map(function (group) {
+        return '<section class="sitegroup" data-site-group="' + group.id + '">' +
+          '<h4>' + esc(group.label) + '</h4><div class="sitesgrid">' +
+          group.sites.map(renderSiteCard).join("") + '</div></section>';
       }).join("") + '</div><div id="site-negative-findings" hidden>' + negHTML + "</div>");
     $("site-filters").addEventListener("click", function (e) {
       var b = e.target.closest("[data-site-filter]");
@@ -547,8 +553,8 @@
         x.classList.toggle("on", x === b);
         x.setAttribute("aria-pressed", String(x === b));
       });
-      Array.prototype.forEach.call($("sites-grid").children, function (row) {
-        row.hidden = kind === "findings-absences" || row.dataset.siteKinds.split(" ").indexOf(kind) === -1;
+      Array.prototype.forEach.call($("sites-grid").children, function (group) {
+        group.hidden = kind === "findings-absences" || (kind !== "all" && group.dataset.siteGroup !== kind);
       });
       $("site-negative-findings").hidden = kind !== "findings-absences";
     });
@@ -682,13 +688,7 @@
     var B = D.benchmarks;
     if (!(B && B.sectors)) { return; }
     render($("benchsummary"),
-      esc(s.benchmarks) + " rows across " + esc(B.sectors.length) + " sectors: what power costs, " +
-      "was contracted to cost, or was filed to cost, from signed contracts, filed PPAs, government " +
-      "awards and rate orders. " + esc(s.benchmarks - s.benchmarks_nuclear) + " are the non-nuclear incumbent a " +
-      "reactor would have to beat; " + esc(s.benchmarks_nuclear) + " are nuclear projects kept " +
-      "for their published cost. " + esc(s.benchmarks_priced) + " give a price or a cost, and " +
-      esc(s.benchmarks_priced_proposed) + " of those are proposed, not final. " +
-      esc(s.benchmarks_filed) + " include the paperwork.");
+      "Published power costs and construction costs across " + esc(B.sectors.length) + " sectors.");
 
     /* One collapsed section per sector, its summary carrying the counts: 89 rows
        rendered flat ran to 25 screens on a phone even with each row collapsed. */
@@ -702,8 +702,8 @@
           var facts = [
             ["Date", c.signed], ["Approval status", c.approval_status],
             ["Term", c.term_years ? c.term_years + " years" : ""],
-            ["Instrument", c.instrument], ["Capacity", c.capacity], ["Annual energy", c.annual_energy],
-            ["Price", c.price], ["Capex", c.capex], ["Displaces", c.displaced]
+            ["Deal type", dealType(c.instrument)], ["Capacity", c.capacity], ["Annual energy", c.annual_energy],
+            ["Price", c.price], ["Construction cost", c.capex], ["Displaces", c.displaced]
           ].filter(function (f) { return f[1]; });
           var head = [c.price, c.capex, c.displaced].filter(Boolean)[0] || c.capacity || c.annual_energy || "";
           if (c.price_status === "proposed") { head = "proposed · " + head; }
@@ -1423,6 +1423,33 @@
      waits on one promise instead. */
   var P = D.policy;
   var policyRendered = false;
+  var dealType = function (value) {
+    var labels = {
+      "PPA": "Power purchase agreement",
+      "ESPC/UESC": "Energy savings or utility service contract",
+      "EaaS": "Energy as a service",
+      "BOO": "Build-own-operate",
+      "ESA (energy services agreement)": "Energy services agreement",
+      "MOU (technical collaboration and commercial discussions)": "Memorandum of understanding",
+      "PPA (terms under negotiation as of March 2026)": "Power purchase agreement under negotiation",
+      "design-build": "One contractor designs and builds it",
+      "design-build with utility supply upgrade and CleanBC support": "One contractor designs and builds it; utility upgrade and British Columbia clean-energy support",
+      "owner-built (no PPA)": "Buyer builds and owns it",
+      "owner-built, part grant-funded": "Buyer builds and owns it; partly grant-funded",
+      "grant-funded": "Government grant",
+      "grant-funded demonstration plus third-party-owned generation": "Government-funded demonstration with third-party generation",
+      "utility tariff": "Standard utility rate",
+      "public procurement / government program": "Public purchase or government program",
+      "colocation power agreement": "Power agreement for a colocated facility",
+      "lease": "Lease",
+      "Early Works Agreement plus Task Order; state decision-in-principle obtained": "Early works agreement and task order",
+      "commercial-contract": "Commercial contract",
+      "public-procurement": "Public purchase",
+      "regulatory-rule": "Rule or regulation",
+      "utility-tariff": "Utility rate"
+    };
+    return labels[value] || value || "";
+  };
   function renderPolicy() {
     if (policyRendered || !P) { return; }
     policyRendered = true;
@@ -1437,18 +1464,16 @@
     var instrumentBand = function (groupId) {
       var recs = INST[groupId];
       if (!recs || !recs.length) { return ""; }
-      return '<details class="instband"><summary><h3>How the deal gets signed</h3>' +
-        '<span class="cnt">' + recs.length + " instruments</span></summary>" +
-        '<p class="prose">' + recs.length + " ways a deal like this gets done. Each one shows " +
-        "who signs, who has already done it without a reactor, and what changes once a " +
-        "reactor is involved.</p>" +
+      return '<details class="instband"><summary><h3>Deal structures</h3>' +
+        '<span class="cnt">' + recs.length + " examples</span></summary>" +
+        '<p class="prose">How each arrangement works without a reactor, and what changes with a reactor.</p>' +
         '<div class="precgrid">' + recs.map(function (m) {
           var facts = [
             ["Who signs", m.who_signs], ["Asset owner", m.asset_owner],
             ["Term", m.term], ["How it is priced", m.price_form]
           ].filter(function (f) { return f[1]; });
           return '<details class="prec"><summary><span class="nm">' + esc(m.name) + "</span>" +
-            '<span class="cat">' + esc((m.family || "").replace(/-/g, " ")) + "</span></summary>" +
+            '<span class="cat">' + esc(dealType(m.family)) + "</span></summary>" +
             '<div class="body">' +
             '<div class="sitedetails">' + facts.map(function (f) {
               return '<div class="drow"><span class="dlbl">' + esc(f[0]) + "</span><span>" +
@@ -1796,8 +1821,8 @@
     /* Collapsed by default: at 120 quotes an open list is a wall. The summary
        carries the count and the note, so a reader never opens a group just to
        find out what is in it. */
-    render($("voices"), D.voices.groups.map(function (g, i) {
-      return "<details class=\"voicegroup\"" + (i === 0 ? " open" : "") + ">" +
+    render($("voices"), D.voices.groups.map(function (g) {
+      return "<details class=\"voicegroup\">" +
         "<summary><span class=\"vgname\">" + esc(g.name) + "</span>" +
         '<span class="vgcount">' + g.voices.length + "</span></summary>" +
         '<p class="prose note">' + esc(g.note) + "</p>" +

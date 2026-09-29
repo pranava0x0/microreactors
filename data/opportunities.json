@@ -34,12 +34,20 @@
       "vendor": "Antares Nuclear (R1)",
       "power_mw": "0.1–1 MWe class",
       "timeline": "Deployment targeted 2028 or earlier; ANPI goal ≥1 reactor operating by 2030",
-      "instrument": "ANPI selection (DAF + Defense Innovation Unit), contractor-owned/contractor-operated",
+      "instrument": "ANPI selection for one proposed prototype (DAF + Defense Innovation Unit), contractor-owned/contractor-operated; cited announcements disclose no committed JBSA unit order",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
       "status": "Selected",
       "sources": [
+        {
+          "label": "Antares — JBSA ANPI selection, 2026-04-22",
+          "url": "https://antaresindustries.com/updates/anpi-jbsa"
+        },
+        {
+          "label": "JBSA — Advanced Nuclear Power for Installations",
+          "url": "https://www.jbsa.mil/Information/JBSA-Advanced-Nuclear-Power-for-Installations-ANPI/"
+        },
         {
           "label": "Businesswire 2026-04-22",
           "url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"
@@ -437,12 +445,16 @@
       "vendor": "Last Energy (PWR-20)",
       "power_mw": "20 MWe",
       "timeline": "Target online 2030; the 2025 ONR design review Last Energy completed covers its separate Llynfi site in Wales",
-      "instrument": "Named commercial customer; UK regulatory review underway",
+      "instrument": "Announced customer-development plan; no disclosed executed PPA or site licence",
       "land_acres": null,
       "shell": null,
       "utility_filing": null,
-      "status": "In regulatory review",
+      "status": "Announced plan",
       "sources": [
+        {
+          "label": "UK government — Last Energy and DP World London Gateway plan",
+          "url": "https://www.gov.uk/government/news/golden-age-of-nuclear-delivers-uk-us-deal-on-energy-security"
+        },
         {
           "label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)",
           "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"
@@ -455,9 +467,10 @@
         }
       ],
       "gaps": [
-        "Competitor deployment, not an opening for Antares, Radiant or Westinghouse. It is here as proof that a commercial port operator will sign for microreactor power."
+        "No executed customer power contract, price or London Gateway site licence disclosed",
+        "ONR early review names Llynfi, Wales, not London Gateway"
       ],
-      "binding": true
+      "binding": false
     },
     {
       "id": "canada-src",

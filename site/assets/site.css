@@ -67,7 +67,7 @@ h2{font:var(--text-display-2);letter-spacing:var(--track-display)}
 h3{font-size:var(--size-heading-2)}
 .lede{font-size:var(--size-body-lg);line-height:var(--lh-body-lg);color:var(--text-secondary);
   max-width:var(--measure-prose)}
-.prose{color:var(--text-secondary);max-width:var(--measure-prose)}
+.prose{color:var(--text-secondary);max-width:none}
 .mono{font-family:var(--font-mono);font-size:var(--size-body-sm)}
 
 section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
@@ -373,6 +373,9 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
   background:var(--border-subtle);border:1px solid var(--border-subtle);margin-top:var(--space-6)}
 @media(min-width:640px){.sites-summary{grid-template-columns:repeat(4,1fr)}}
 .sitesgrid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+.sitegroup{margin-top:var(--space-8)}
+.sitegroup[hidden]{display:none}
+.sitegroup h4{margin:0 0 var(--space-4);color:var(--text-primary)}
 /* ---------- home: the site at a glance, then the newest headlines ----------
    2026-09-26: the landing tab was a newspaper front page; it now opens on a
    directory of the site (one card per tab, each with a derived figure) and
@@ -452,6 +455,7 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
   border:1px solid var(--border-subtle);text-transform:uppercase;letter-spacing:var(--track-label);
   color:var(--text-tertiary)}
 .sitetag.status-permitted,.sitetag.status-operating{color:var(--stance-positive);border-color:var(--stance-positive-40)}
+.sitetag.status-agreement-reported{color:var(--stance-positive);border-color:var(--stance-positive-40)}
 .sitetag.status-application,.sitetag.status-pre-application,.sitetag.status-intent-to-award{color:var(--antares-red);border-color:var(--antares-red-40)}
 .sitetag.status-tabled,.sitetag.status-paused,.sitetag.status-cancelled{color:var(--text-tertiary);border-color:var(--border-subtle)}
 .sitedetails{display:grid;grid-template-columns:1fr;gap:var(--space-2);margin:0 0 var(--space-4) 0;
@@ -543,15 +547,16 @@ details.prec .body p.copyline{border-left:2px solid var(--antares-red);padding-l
 .precgroup .prose{margin-bottom:var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body)}
 .precgrid{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
 details.prec{border:1px solid var(--border-subtle);background:var(--surface-page);margin-bottom:0}
-details.prec summary{display:grid;grid-template-columns:auto 1fr auto;gap:var(--space-4);align-items:baseline;
+details.prec summary{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(9rem,42%);gap:var(--space-4);align-items:baseline;
   cursor:pointer;padding:var(--space-4) var(--space-5);list-style:none;touch-action:manipulation}
 details.prec summary::-webkit-details-marker{display:none}
 details.prec summary::before{content:"\25B8";color:var(--antares-red);font-size:var(--size-caption);
   transition:transform var(--dur-fast) var(--ease-standard)}
 details.prec[open] summary::before{transform:rotate(90deg)}
-details.prec summary .nm{font-weight:var(--weight-semibold);font-size:var(--size-body)}
+details.prec summary .nm{font-weight:var(--weight-semibold);font-size:var(--size-body);min-width:0;overflow-wrap:anywhere}
 details.prec summary .cat{font-size:var(--size-label-sm);letter-spacing:var(--track-label);
-  text-transform:uppercase;color:var(--text-tertiary);white-space:nowrap;justify-self:end}
+  text-transform:uppercase;color:var(--text-tertiary);white-space:normal;overflow-wrap:anywhere;
+  justify-self:stretch;min-width:0;text-align:right}
 @media(max-width:640px){
   details.prec summary{grid-template-columns:auto 1fr}
   details.prec summary .cat{grid-column:2;white-space:normal;justify-self:start}
