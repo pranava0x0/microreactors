@@ -271,6 +271,34 @@ def check() -> List[Tuple[str, str]]:
                 violations.append((f"dockets:{d['id']}", "no source"))
             need(d, f"dockets:{d['id']}")
 
+    # alaska.json (2026-09-29): buyer models and regulatory findings are claims
+    # of fact and need a source whether or not they carry a digit, like
+    # regions.json above. opportunity_rows deliberately carry no new numbers
+    # (they restate already-cited opportunity/site rows), so they are checked
+    # for stray digits only, via need().
+    ak_p = DATA / "alaska.json"
+    if ak_p.exists():
+        ak = json.loads(ak_p.read_text())
+        for bm in ak.get("buyer_models", []):
+            if not has_source(bm):
+                violations.append((f"alaska:buyer_models:{bm['id']}", "no source"))
+            need(bm, f"alaska:buyer_models:{bm['id']}")
+        pm = ak.get("power_mix", {})
+        if pm.get("statewide"):
+            if not has_source(pm["statewide"]):
+                violations.append(("alaska:power_mix:statewide", "no source"))
+            need(pm["statewide"], "alaska:power_mix:statewide")
+        for r in pm.get("regions", []):
+            if not has_source(r):
+                violations.append((f"alaska:power_mix:{r['id']}", "no source"))
+            need(r, f"alaska:power_mix:{r['id']}")
+        for rn in ak.get("regulatory_notes", []):
+            if not has_source(rn):
+                violations.append((f"alaska:regulatory_notes:{rn['id']}", "no source"))
+            need(rn, f"alaska:regulatory_notes:{rn['id']}")
+        for row in ak.get("_meta", {}).get("opportunity_rows", []):
+            need(row, f"alaska:opportunity_rows:{row['id']}")
+
     return violations
 
 
