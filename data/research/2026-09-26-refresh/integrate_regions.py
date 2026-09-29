@@ -156,11 +156,18 @@ def main() -> None:
             "final RCA action. A reactor cannot claim those tariffs; it needs a negotiated "
             "PPA or special contract with a named utility and separate approval.")
         alaska["home_price"] = "Alaska QF comparators: $22.50-$1,180.20/MWh proposed."
+        # The two figures in home_price come one each from these two cases, so
+        # the Home page's featured-price citation (build_data.py:featured_price)
+        # points at exactly the sources that back the $22.50 and $1,180.20 ends,
+        # not the full merged alaska["sources"] list.
+        alaska["home_price_source_urls"] = []
         for case_id in ("apc-rate-group5-2026-small-facility-rates",
                         "tdx-manley-2026-copa-small-facility-rates"):
             for src in cases[case_id].get("sources", []):
                 if src["url"] not in {x["url"] for x in alaska["sources"]}:
                     alaska["sources"].append(src)
+                if src["url"] not in alaska["home_price_source_urls"]:
+                    alaska["home_price_source_urls"].append(src["url"])
 
         study = follow["regions"][0]
         greenland = by_id["greenland"]
@@ -170,6 +177,9 @@ def main() -> None:
         greenland["microreactor_read"] = study["microreactor_read"] + (
             " No Greenland reactor procurement, utility study or nuclear filing was found.")
         greenland["home_price"] = "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+        # Both LCOE figures come from the Ramboll mine-microgrid model specifically,
+        # not the CIPF investment catalogue also merged into greenland["sources"].
+        greenland["home_price_source_urls"] = [study["sources"][0]["url"]]
         greenland["blockers"].extend(study.get("blockers", [])[:2])
         for src in study.get("sources", []):
             if src["url"] not in {x["url"] for x in greenland["sources"]}:
