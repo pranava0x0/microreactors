@@ -2,7 +2,7 @@
   "_meta": {
     "captured": "2026-09-26",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "42 of 60 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 18 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "42 of 61 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 19 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-09-24",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
@@ -24,15 +24,15 @@
       "count": 8
     },
     {
+      "id": "contract",
+      "count": 6
+    },
+    {
       "id": "criticality",
       "count": 6
     },
     {
       "id": "construction",
-      "count": 5
-    },
-    {
-      "id": "contract",
       "count": 5
     },
     {
@@ -290,6 +290,29 @@
           "url": "https://nanonuclearenergy.com/nano-nuclear-energy-and-enveniam-sign-memorandum-of-understanding-to-advance-u-s-nuclear-fuel-cycle-microreactor-deployment-and-energy-infrastructure/",
           "quote": "signed a non-binding Memorandum of Understanding",
           "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "meta-advanced-nuclear-clean-firm-agreements-2026-09-04",
+      "date": "2026-09-04",
+      "headline": "Meta advances clean firm procurement framework across multiple nuclear developers",
+      "companies": [
+        "Oklo Inc.",
+        "TerraPower",
+        "Vistra"
+      ],
+      "category": "contract",
+      "what_happened": "Meta expanded its advanced clean electricity portfolio by detailing framework agreements for up to 6.6 GW of nuclear generation through the 2030s, pairing operating plant capacity with exploratory advance offtake mechanisms for advanced reactor developers including Oklo and TerraPower.",
+      "why_it_matters": "Following Google's Kairos master agreement, Meta's multi-technology approach shows hyperscalers are creating structured off-balance-sheet demand signals to justify vendor supply-chain buildouts.",
+      "binding": false,
+      "binding_note": "Framework agreements and exploratory clean firm commitments; definitive per-site PPAs remain subject to licensing and project development milestones.",
+      "sources": [
+        {
+          "label": "POWER — Meta Locks in Advanced Nuclear and Clean Firm Power Agreements",
+          "url": "https://www.powermag.com/meta-locks-in-up-to-6-6-gw-of-nuclear-power-through-deals-with-vistra-oklo-and-terrapower/",
+          "quote": "Meta Locks in Up to 6.6 GW of Nuclear Power",
+          "status": "snippet-only"
         }
       ]
     },

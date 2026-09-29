@@ -169,7 +169,7 @@
   function activate(route, opts) {
     opts = opts || {};
     var parts = String(route || "").split("/");
-    var id = parts[0], sub = parts[1] || "";
+    var id = parts[0], sub = parts[1] || "", item = parts[2] || "";
     if (ALIASES[id]) id = ALIASES[id];
     if (id === "sites") { id = "pipeline"; sub = "sites"; }
     if (id === "market") { id = "policy"; sub = "market-design"; }
@@ -206,9 +206,18 @@
       setTimeout(function () { openNewsItem(sub); }, 0);
     }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
+    /* "#demand/alaska/<id>" opens that opportunity's detail card, the same
+       reload/bookmark/share contract #news/<id> gives news records. The
+       subtab itself is already showing by now (SUBS[id].show ran above and
+       triggered the lazy fetch); chain onto the same cached promise rather
+       than re-deriving whether the fetch already started. */
+    if (id === "demand" && sub === "alaska" && item) {
+      loadLazy("alaska").then(function () { openAlaskaItem(item); });
+    }
     // News has no sub-tabs, but #news/<id> names a record: keep it, so a link
     // followed from a headline can be copied and shared as that record.
-    var here = id + (subRes ? "/" + subRes : (id === "news" && sub ? "/" + sub : ""));
+    var here = id + (subRes ? "/" + subRes : (id === "news" && sub ? "/" + sub : "")) +
+      (id === "demand" && sub === "alaska" && item ? "/" + item : "");
     if (location.hash.slice(1) !== here) {
       if (opts.push) location.hash = here;
       else history.replaceState(null, "", "#" + here);
@@ -1162,6 +1171,133 @@
     });
   }
 
+  /* Applications > Alaska: a one-page dossier over data the rest of the site
+     already owns. site/data-alaska.js (lazy) ships the join build_alaska_page()
+     already did in Python — opportunity_rows and precedent_rows are read-only
+     here, never re-derived in JS, so this function is display logic only. */
+  var STATUS_LABEL = { "evidence-only": "evidence only", "letter-of-intent": "letter of intent",
+                       "intent-to-award": "intent to award", "orphaned": "vendor orphaned",
+                       "concept": "concept", "tabled": "tabled" };
+  var BUYER_LABEL = {}; // filled once D.alaska loads, below.
+  var alaskaRendered = false;
+  function renderAlaska() {
+    var A = D.alaska;
+    if (alaskaRendered || !(A && A.opportunity_rows)) { return; }
+    alaskaRendered = true;
+    A.buyer_models.forEach(function (m) { BUYER_LABEL[m.id] = m.label; });
+
+    render($("alaska-intro"), esc(A._meta.what_this_is));
+
+    var rural = (D.costs.displaced_alternatives || []).filter(function (a) {
+      return a.alternative === "Small rural Alaskan communities (diesel-fired)";
+    })[0];
+    var ruralRemote = A.power_mix.regions.filter(function (r) { return r.id === "power-mix-rural-remote"; })[0];
+    render($("alaska-summary"), [
+      { n: String(A.opportunity_rows.length), k: "opportunities tracked" },
+      { n: String(A.precedent_rows_priced), k: "priced or funded precedents" },
+      { n: ruralRemote ? ruralRemote.mix_2021.oil + "%" : "—", k: "of rural Alaska's power is oil/diesel", accent: true },
+      { n: rural ? usd(rural.low_mwh) + "–" + usd(rural.high_mwh) : "—", k: "per MWh, rural Alaska diesel (RCA PCE order)" }
+    ].map(function (x) {
+      return '<div class="dstat"><span class="n' + (x.accent ? " accent" : "") + '">' +
+        esc(x.n) + '</span><span class="k">' + esc(x.k) + "</span></div>";
+    }).join(""));
+
+    render($("alaska-opps-body"), A.opportunity_rows.map(function (r) {
+      return '<tr><th scope="row"><a href="#demand/alaska/' + esc(r.id) + '" class="alaska-detail-link" ' +
+        'data-id="' + esc(r.id) + '">' + esc(r.name) + "</a></th>" +
+        "<td>" + esc(r.sector || "—") + "</td>" +
+        "<td>" + esc(BUYER_LABEL[r.buyer_model] || r.buyer_model) + "</td>" +
+        "<td>" + esc(firstSentenceOf(r.load) || r.load || "—") + "</td>" +
+        '<td><span class="sitetag status-' + cls(r.status) + '">' +
+        esc(STATUS_LABEL[r.status] || r.status || "—") + "</span></td></tr>";
+    }).join(""));
+    render($("alaska-opps-detail"), A.opportunity_rows.map(function (r) {
+      return '<details class="prec" id="alaska-detail-' + esc(r.id) + '"><summary>' +
+        '<span class="nm">' + esc(r.name) + "</span>" +
+        '<span class="cat">' + esc(r.region) + "</span></summary>" +
+        '<div class="body">' +
+        '<p><span class="k">Grid today · </span>' + esc(r.grid_note) + "</p>" +
+        '<p><span class="k">What is documented · </span>' + esc(r.documented) + "</p>" +
+        (r.sale_shape ? '<p><span class="k">How a sale would be shaped · </span>' + esc(r.sale_shape) + "</p>" : "") +
+        srcList(r.sources) +
+        '<p class="seealso">' +
+        (r.site_id ? '<a href="#pipeline/sites">full filing trail →</a>' : "") +
+        (r.site_id && r.prospect_id ? " · " : "") +
+        (r.prospect_id ? '<a href="#pipeline/prospects">prospect record →</a>' : "") +
+        "</p></div></details>";
+    }).join(""));
+    $("alaska-opps-body").addEventListener("click", function (e) {
+      var a = e.target.closest(".alaska-detail-link");
+      if (!a) { return; }
+      e.preventDefault();
+      openAlaskaItem(a.dataset.id);
+    });
+
+    render($("alaska-precedents-intro"),
+      "Every row below already appears, fully sourced, on this site's Deals or Costs tabs; " +
+      "this table just pulls the Alaska rows into one place. Most carry a price, capex or " +
+      "funding figure; a few (Graphite One's power plan) are load forecasts with no signed " +
+      "instrument yet, kept here for deployment context, not counted in the stat above.");
+    render($("alaska-precedents-body"), A.precedent_rows.map(function (r) {
+      var parties = r.parties ? [r.parties.host, r.parties.provider].filter(function (v, i, a) {
+        return v && a.indexOf(v) === i;
+      }).join(" × ") : "—";
+      var size = firstSentenceOf(r.capacity) || r.capacity || "—";
+      var price = r.price ? esc(r.price) + (r.price_status ? ' <span class="note">(' + esc(r.price_status) + ")</span>" : "")
+        : (r.capex ? esc(firstSentenceOf(r.capex) || r.capex) : "—");
+      return "<tr><th scope=\"row\">" + esc(r.name) + cite(r.sources) + "</th>" +
+        "<td>" + esc(parties) + "</td>" +
+        "<td>" + esc(r.instrument || "—") + "</td>" +
+        "<td>" + esc(size) + "</td>" +
+        "<td>" + price + "</td>" +
+        "<td>" + esc(r.signed || "—") + "</td></tr>";
+    }).join(""));
+
+    render($("alaska-power-mix-note"), esc(A.power_mix.statewide.note) + cite(A.power_mix.statewide.sources));
+    var mixOrder = ["power-mix-rural-remote", "power-mix-railbelt", "power-mix-coastal"];
+    var mixById = {};
+    A.power_mix.regions.forEach(function (r) { mixById[r.id] = r; });
+    render($("alaska-power-mix"), mixOrder.filter(function (id) { return mixById[id]; }).map(function (id) {
+      var r = mixById[id];
+      var oil = r.mix_2021.oil || 0;
+      var width = Math.max(oil, 3);
+      var narrow = width < 20;
+      var rest = Object.keys(r.mix_2021).filter(function (k) { return k !== "oil"; })
+        .map(function (k) { return k + " " + r.mix_2021[k] + "%"; }).join(", ");
+      return '<div class="bar"><div class="lab">' + esc(r.label) + cite(r.sources) + "</div>" +
+        '<div class="track"><div class="span micro' + (narrow ? " narrow" : "") +
+        '" style="left:0%;width:' + width + '%">' +
+        '<span class="t">' + oil + "% oil/diesel</span></div></div>" +
+        '<div class="caveat">Rest of the mix: ' + esc(rest) + "</div></div>";
+    }).join("") + '<div class="axis"><span>0%</span><span>50%</span><span>100%</span></div>');
+
+    render($("alaska-buyer-models"), A.buyer_models.map(function (m) {
+      return '<details class="prec"><summary><span class="nm">' + esc(m.label) + "</span>" +
+        '<span class="cat">' + esc((m.examples || []).length + " named example" + (m.examples.length === 1 ? "" : "s")) + "</span></summary>" +
+        '<div class="body">' +
+        "<p>" + esc(m.what_it_means) + "</p>" +
+        '<p><span class="k">Sale shape · </span>' + esc(m.sale_shape) + "</p>" +
+        '<p><span class="k">Watch for · </span>' + esc(m.watch_for) + "</p>" +
+        srcList(m.sources) + "</div></details>";
+    }).join(""));
+
+    render($("alaska-rules"), A.regulatory_notes.map(function (n) {
+      return '<details class="prec"><summary><span class="nm">' + esc(n.topic) + "</span></summary>" +
+        '<div class="body">' +
+        "<p>" + esc(n.finding) + "</p>" +
+        (n.read ? '<p><span class="k">Read · </span>' + esc(n.read) + "</p>" : "") +
+        srcList(n.sources) + "</div></details>";
+    }).join(""));
+  }
+  /* Shared by the in-page table-row click and by "#demand/alaska/<id>" on
+     boot/reload (see activate()), the same reload/bookmark contract
+     openNewsItem gives news records. A no-op if the card isn't there yet
+     (still rendering) or the id is unknown. */
+  function openAlaskaItem(id) {
+    var d = id && $("alaska-detail-" + id);
+    if (d) { d.open = true; d.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  }
+
   var secItems = D.sectors.sectors.map(function (sec) {
     return { id: slug(sec.sector), label: sec.sector };
   });
@@ -1271,7 +1407,10 @@
   makeSubnav("demand", [
     { id: "overview", label: "Overview" },
     { id: "regions", label: "Regions" + (s.regions != null ? " (" + s.regions + ")" : ""),
-      lazy: { name: "regions", el: "regions", render: renderRegions } }
+      lazy: { name: "regions", el: "regions", render: renderRegions } },
+    { id: "alaska", label: "Alaska"
+        + (s.alaska_opportunities != null ? " (" + s.alaska_opportunities + ")" : ""),
+      lazy: { name: "alaska", el: "demand-alaska", render: renderAlaska } }
   ].concat(secItems));
 
   /* ---------- market design ----------
