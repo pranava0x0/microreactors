@@ -1088,10 +1088,10 @@
         {
           "name": "Fleet decommissioning surety trust pool",
           "category": "regulatory assurance pool",
-          "mechanism": "Under 10 CFR 50.75(c)(1), a small PWR is penalized by the instruction to substitute P = 1200 MWt, forcing a 20 MWt unit to certify the same $85.56M (1986 dollars, ~$200M+ today) as a 1200 MWt plant. A fleet captive or mutual surety trust pools decommissioning liability across multiple modular units, replacing cash escrows with pooled surety bonds or letters of credit.",
-          "outcome": "Proposed in NRC Part 57 (Docket NRC-2025-0379) to scale decommissioning obligations to actual plant inventory and radionuclide risk rather than a rigid 1200 MWt table floor.",
-          "early_vs_late": "Pooled across operating units; contributions scale with operating life and unit count.",
-          "relevance": "Removes an upfront capital roadblock where mandatory regulatory decommissioning funds for a single microreactor would otherwise approach the capital cost of the unit itself.",
+          "mechanism": "Under 10 CFR 50.75(c)(1), a small PWR is penalized by the instruction to substitute P = 1200 MWt, forcing a 20 MWt unit to certify the same $85.56M (1986 dollars, ~$200M+ today) as a 1200 MWt plant. A fleet captive or mutual surety trust pooling decommissioning liability across multiple modular units, replacing cash escrows with pooled surety bonds or letters of credit, is this site's own proposed extension of that idea — not something a regulator has put forward.",
+          "outcome": "Not proposed by NRC: Part 57 (Docket NRC-2025-0379) tailors financial-protection/indemnification coverage (the Price-Anderson mechanism) to a facility's risk profile, per two law-firm summaries of the rule that this site's own research could not verify word-for-word against the primary Federal Register text. Decommissioning-fund reform specifically is not part of the Part 57 proposal as found. No NRC proposal to pool decommissioning funds across a fleet was located.",
+          "early_vs_late": "As proposed here: pooled across operating units, with contributions scaling with operating life and unit count.",
+          "relevance": "The 1200 MWt floor is a real, cited capital roadblock; pooling to work around it is this site's own idea for how Price-Anderson's mutual-pool logic could extend to decommissioning, not a live regulatory track.",
           "sources": [
             {
               "label": "10 CFR 50.75, Reporting and recordkeeping for decommissioning planning (CFR 2024 edition, govinfo)",
@@ -1100,9 +1100,9 @@
               "status": "fetched"
             },
             {
-              "label": "Federal Register — Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed Part 57)",
-              "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
-              "quote": "Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
+              "label": "Orrick — 'NRC Proposes New Framework to Enable High-Volume Microreactor Deployment' (2026-05)",
+              "url": "https://www.orrick.com/en/Insights/2026/05/NRC-Proposes-New-Framework-to-Enable-High-Volume-Microreactor-Deployment",
+              "quote": "Adjusted financial protection. While microreactors remain subject to the NRC's financial protection requirements, the Commission may tailor the level of required coverage based on the facility's risk profile.",
               "status": "fetched"
             }
           ],

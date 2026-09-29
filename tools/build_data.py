@@ -200,6 +200,11 @@ def build_alaska_page(bundle: Dict[str, Any]) -> None:
 
     ak["opportunity_rows"] = opp_rows
     ak["precedent_rows"] = precedent_rows
+    # Graphite One's row (a load forecast with no price, capex or funding —
+    # priced() correctly says no) still belongs in the table as deployment
+    # context, but the headline count must not claim it as a priced/funded
+    # deal (Codex review, PR #24).
+    ak["precedent_rows_priced"] = sum(1 for r in precedent_rows if priced(r))
 
 
 def main() -> int:
