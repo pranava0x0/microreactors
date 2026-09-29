@@ -1,8 +1,8 @@
 {
  "_meta": {
-  "captured": "2026-09-26",
-  "what_this_is": "14 utility plans, dockets and state laws that name advanced reactors. 0 of them name a reactor of 1-20 MW; 10 model small modular reactors of 100-600 MW, and the rest name nuclear without a size. None of the nine Janus or ANPI host bases has a utility commission filing yet.",
-  "method": "One research pass (data/research/2026-09-26-refresh/filings.json) against the commissions' own e-filing systems and state legislatures; integrated by that folder's integrate_dockets.py."
+  "captured": "2026-09-28",
+  "what_this_is": "16 utility plans, dockets and state laws that name advanced reactors. 1 of them names a reactor of 1-20 MW; 11 model small modular reactors of 100-600 MW, and the rest name nuclear without a size. None of the nine Janus or ANPI host bases has a utility commission filing yet.",
+  "method": "The 2026-09-26 filings pass plus the 2026-09-28 contract-approval follow-up, searched against commissions' own dockets, minutes and testimony; integrated by data/research/2026-09-26-refresh/integrate_dockets.py."
  },
  "dockets": [
   {
@@ -14,14 +14,78 @@
    "type": "RFP",
    "date": "2026-06-01",
    "size_class": "unspecified",
-   "status": "pending",
-   "what_it_says": "Following Governor Hochul's June 2025 directive, NYPA is pursuing 'at least 1 gigawatt (GW) of advanced nuclear energy in Upstate New York': it issued two RFIs in October 2025 (drawing 23 developer/partner responses and 8 community responses) and by June 2026 was moving to an RFQ stage with Ontario Power Generation as a technical partner. No site or reactor size class has been chosen.",
-   "microreactor_read": "NYPA's 1 GW program is technology- and site-open at this stage, which is exactly the window for a microreactor vendor to get evaluated before the program locks onto a single large-reactor developer.",
+   "status": "closed",
+   "what_it_says": "Following Governor Hochul's June 2025 directive, NYPA is pursuing at least 1 GW of advanced nuclear energy in Upstate New York. Two RFIs were issued in October 2025, followed by a developer RFQ in June 2026. The RFQ response window closed June 26, 2026; no site or reactor size has been selected publicly.",
+   "microreactor_read": "This developer RFQ is closed and its bid description excluded first-of-a-kind and micro modular reactors. NYPA's broader nuclear planning is relevant context, but this RFQ is not an open microreactor sales lead.",
    "sources": [
     {
      "label": "NYPA — Governor Hochul Announces Significant Steps in Development of at Least 1 GW of Nuclear Energy in Upstate New York (2026-06-01)",
      "url": "https://www.nypa.gov/News/Press-Releases/2026/20260601-nuclear",
      "quote": "at least 1 gigawatt (GW) of advanced nuclear energy in Upstate New York",
+     "status": "fetched"
+    },
+    {
+     "label": "NYPA procurement portal — Advanced Nuclear Project Developer RFQ 6520",
+     "url": "https://rfp.nypa.gov/#/bid-details?rfqId=6520"
+    },
+    {
+     "label": "HigherGov — RFQ notice mirror with deadline and technology exclusions",
+     "url": "https://www.highergov.com/sl/contract-opportunity/ny-advanced-nuclear-project-developer-rf-68539574/"
+    }
+   ]
+  },
+  {
+   "id": "utah-psc-25-035-55-natrium-ppa-approval",
+   "forum": "Public Service Commission of Utah",
+   "docket": "25-035-55",
+   "url": "https://psc.utah.gov/2025/10/03/docket-no-25-035-55/",
+   "utility": "PacifiCorp d/b/a Rocky Mountain Power",
+   "state": "UT",
+   "type": "contract-approval",
+   "date": "2026-06-01",
+   "size_class": "small",
+   "status": "approved",
+   "what_it_says": "The Commission approved a settlement authorizing Rocky Mountain Power to enter a power purchase agreement with TerraPower subsidiary US SFR Owner, LLC for output from the 345 MW Natrium plant near Kemmerer, Wyoming. Public testimony describes flexible output from 100 to 500 MW and a projected end-2031 online date. The public price and core pricing mechanism are redacted. Publicly disclosed risk allocation says the PPA limits utility and ratepayer exposure to construction cost overruns and caps total ratepayer liability even if other expected contract elements fail. The settlement also requires PacifiCorp to model portfolios with and without the project in each IRP and IRP update, and to report plant performance and key metrics annually after the first commercial year.",
+   "microreactor_read": "Not a 1-20 MW project, but the strongest current public template for a first-of-a-kind nuclear utility PPA: bounded utility and ratepayer construction-overrun exposure, recurring with-and-without-project portfolio tests, and post-operation performance reporting. Public testimony does not identify who bears the residual overrun risk; that allocation and the price remain confidential or redacted.",
+   "sources": [
+    {
+     "label": "Utah Division of Public Utilities — Statement Supporting Settlement in Docket 25-035-55 (2026-03-30)",
+     "url": "https://pscdocs.utah.gov/electric/25docs/2503555/344561DPUSmryDirTstmnyDWilliamsMar312026Hrng3-30-2026.pdf",
+     "quote": "limit the Company and ratepayers from being liable for Natrium cost overruns",
+     "status": "fetched"
+    },
+    {
+     "label": "Utah PSC — Docket 25-035-55 chronology and Order Approving the Settlement (2026-06-01)",
+     "url": "https://psc.utah.gov/2025/10/03/docket-no-25-035-55/",
+     "quote": "Order Approving the Settlement",
+     "status": "snippet-only"
+    }
+   ]
+  },
+  {
+   "id": "lpsc-lane-microreactor-vendor-directive-2026",
+   "forum": "Louisiana Public Service Commission",
+   "docket": "R-37871 (following X-36987)",
+   "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32712",
+   "utility": "Louisiana investor-owned utilities and interested rural electric cooperatives",
+   "state": "LA",
+   "type": "other",
+   "date": "2026-02-25",
+   "size_class": "micro",
+   "status": "pending",
+   "what_it_says": "Without opposition, the Commission directed staff to review the Louisiana Advanced Nuclear Competitive Edge framework in Docket X-36987 and develop the Louisiana Advanced Nuclear Exploration program. LANE is meant to let investor-owned utilities and interested rural electric cooperatives engage qualified vendors for possible integration of SMRs, microreactors, and other advanced nuclear technologies. Staff must return a plan to the Commission. The directive states no outside contract work is anticipated. It does not approve a project, procurement, PPA, tariff, or rate recovery. The Commission opened LANE rulemaking docket R-37871 in March 2026. Its initial public-comment deadline was April 10, 2026; the docket remains marked open, but this is not an open vendor bid.",
+   "microreactor_read": "Open rulemaking docket, closed initial comment window, no identified vendor procurement or project approval. Monitor for a later comment round and adopted vendor-engagement rules.",
+   "sources": [
+    {
+     "label": "Louisiana Public Service Commission — Minutes of February 25, 2026 Open Session",
+     "url": "https://www.lpsc.louisiana.gov/docs/minutes/Feb_25_2026_Minutes.pdf",
+     "quote": "There was no opposition to the directive.",
+     "status": "fetched"
+    },
+    {
+     "label": "Louisiana PSC — LANE docket R-37871",
+     "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/DocketDetails?docketId=32712",
+     "quote": "Louisiana Advanced Nuclear Exploration Program.",
      "status": "fetched"
     }
    ]

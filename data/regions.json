@@ -1,8 +1,8 @@
 {
  "_meta": {
-  "captured": "2026-09-26",
+  "captured": "2026-09-28",
   "what_this_is": "24 remote and cold places, most running on diesel, where a 1-20 MW reactor would compete: what each pays, what it draws, and where its law stands on civil nuclear power.",
-  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json. 100 of 111 sources were fetched and read; 11 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
+  "method": "Two research passes (data/research/2026-09-26-refresh/north.json and islands.json), one record per jurisdiction, with eight tariffs added from that folder's issues.json, plus Alaska tariff and Greenland mine-model evidence from data/research/2026-09-28-alaska-greenland-pricing/north.json. 104 of 115 sources were fetched and read; 11 are search-corroborated only and carry status snippet-only, which the page marks with a dagger. The group, the law-and-policy tag and the short price label are curated in that folder's integrate_regions.py from each record's own text. Military bases appear only as context.",
   "groups": [
    {
     "id": "alaska",
@@ -241,10 +241,10 @@
    "country": "US",
    "jurisdiction": "US state",
    "power_system": "Alaska Village Electric Cooperative (AVEC) alone serves 59 locations across rural Alaska, each village an isolated microgrid with no interconnection to the next; Nome, Kotzebue, Bethel and Utqiagvik each have their own separate municipal or cooperative diesel utility outside AVEC. AVEC adjusts customer bills every few months through an RCA-approved Cost of Power Adjustment (COPA) filing layered on top of a base Energy Charge.",
-   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh",
+   "price": "AVEC's 'All Other' service-area base residential Energy Charge for the first 750 kWh (before the COPA fuel surcharge and before any PCE subsidy): $0.3647/kWh, proposed to rise to $0.3720/kWh in a filing posted 2026-08-08; the RCA proposed raising the PCE base amount (the floor the state subsidy pays down to) from 19.92 to 20.38 cents/kWh; 2026 proposed non-nuclear qualifying-facility purchase rates range from $0.0225 to $0.5119/kWh across six Alaska Power Company groupings, while TDX Manley filed $1.1802/kWh. These are requested rates, not final orders.",
    "nuclear_position": "No PCE-community utility has taken a position on nuclear power. State law (SB 177, 2022) and DEC's siting regulation (18 AAC 87, effective 2023) apply statewide and are not community-specific.",
    "microreactor_activity": "None found at any individual PCE community. Searched AVEC's own news posts and RCA filing notices; found only diesel/COPA rate mechanics and PCE-funding advocacy testimony to the legislature, no reactor studies.",
-   "microreactor_read": "Rural PCE villages carry the sector's best-regulated diesel price signal (a published base rate plus a disclosed fuel-surcharge mechanism) but the worst-matched load; a reactor needs a hub-and-aggregation buyer like the tribal utility in the tanana-chiefs prospect, not any single PCE village.",
+   "microreactor_read": "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 non-nuclear qualifying-facility comparators span $22.50-$1,180.20/MWh before final RCA action. A reactor cannot claim those tariffs; it needs a negotiated PPA or special contract with a named utility and separate approval.",
    "group": "alaska",
    "position": "enabling",
    "price_short": "$0.3647/kWh base rate (AVEC)",
@@ -284,7 +284,24 @@
      "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=219490",
      "quote": "The Commission proposes to adjust the base amount to 20.38",
      "status": "fetched"
+    },
+    {
+     "label": "State of Alaska / RCA - TA924-2 Alaska Power Company SFPPR notice (2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222183",
+     "quote": "Allakaket/Alatna $0.5119/kWh Bettles/Evansville $0.4413/kWh Chistochina/Mentasta/Slana $ 0.0225/kWh Eagle/Eagle Village $ 0.3241/kWh",
+     "status": "fetched"
+    },
+    {
+     "label": "State of Alaska / RCA - TA201-72 TDX Manley COPA, PCE and SFPPR notice (2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224914",
+     "quote": "The proposed SFPPR is increasing from $0.5161 per kWh to $1.1802 per kWh.",
+     "status": "fetched"
     }
+   ],
+   "home_price": "Alaska QF comparators: $22.50-$1,180.20/MWh proposed.",
+   "home_price_source_urls": [
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222183",
+    "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224914"
    ]
   },
   {
@@ -573,10 +590,10 @@
    "country": "GL",
    "jurisdiction": "Danish autonomous territory",
    "power_system": "Nukissiorfiit, Greenland's sole state-owned utility, supplies electricity, water and (in some places) heat to 'approximately 56,000 residents across 17 towns and 54 settlements' with 'no nationwide or regional electricity grid', every town and settlement is its own isolated system. Hydropower stations exist only at Nuuk, Sisimiut, Ilulissat and Tasiilaq; 'the power stations in all other towns and settlements are operated with diesel generators.' Nukissiorfiit reports about 72% of its energy from renewables (mostly hydro), targeting fossil-free supply by 2030.",
-   "price": "Nukissiorfiit electricity price for ordinary customers (kundegruppe 1), uniform across every listed Greenland locality: 2.00 kr./kWh, per Prisblad nr. 39, effective 2026-01-01",
+   "price": "Nukissiorfiit electricity price for ordinary customers (kundegruppe 1), uniform across every listed Greenland locality: 2.00 kr./kWh, per Prisblad nr. 39, effective 2026-01-01; government mine study: Modeled 2030-reference LCOE: 297 EUR/MWh for diesel business-as-usual; 199 EUR/MWh for the lowest-cost South solar-wind-diesel mix; 60 EUR/MWh for upgraded hydropower with a roughly 100 km line",
    "nuclear_position": "Greenland's own Uranium Act (Greenland Parliament Act No. 20) 'came into force' on 2 December 2021 and bans 'prospecting, exploration, and exploitation of uranium' as well as any other mineral resource whose 'average uranium content' exceeds '100 ppm by weight.' On 26 June 2026 Greenland's government rejected Energy Transition Minerals' licence-renewal application for the Kvanefjeld/Kuannersuit deposit, stating 'further exploration in the area is not deemed likely to lead to the discovery of deposits that can be exploited in accordance with the Uranium Act.' Denmark, which controls defense and largely leaves mineral/energy policy to Greenland's home rule but retains the 1985 nationwide nuclear-power ban's legal legacy, announced in January 2026 that it is reviewing that 40-year ban: 'Denmark is considering building small modular nuclear reactors to meet its energy needs... which would bring an end to its 1985 ban on nuclear power,' after the Danish parliament 'agreed in early 2025 to begin examining new nuclear power technologies.' No specific Greenland carve-out or position within that Danish review was found.",
-   "microreactor_activity": "None found. The Danish SMR review is national and does not name Greenland; Nukissiorfiit has made no public statement on nuclear power.",
-   "microreactor_read": "Greenland is the least-prepared civilian buyer in this file: no enabling law, no utility study, and its parent state is only beginning to reconsider a 40-year nuclear ban. A reactor sale here depends on Denmark's still-open 2026 SMR review landing somewhere favorable, which has not yet happened.",
+   "microreactor_activity": "None found. The Danish SMR review is national and does not name Greenland; Nukissiorfiit has made no public statement on nuclear power. No microreactor procurement, study, MOU, or tariff filing was found in the government mine-energy report or in the named mines' power documents reviewed.",
+   "microreactor_read": "The report creates a modeled LCOE screen, not a tariff or PPA price: below 199 EUR/MWh would beat its least-cost hybrid case, while 297 EUR/MWh is its diesel case. Both use a 20-year project life, 8% discount rate and generalized or confidential mine inputs. A viable reactor offer also needs a 20-year commercial structure and clear residual-value treatment. No Greenland reactor procurement, utility study or nuclear filing was found.",
    "group": "arctic-europe",
    "position": "review",
    "price_short": "DKK 2.00/kWh in every town (2026)",
@@ -595,12 +612,29 @@
      "name": "Kvanefjeld/Kuannersuit rare earth-uranium deposit (Energy Transition Minerals)",
      "mw": "n/a (licence renewal rejected 2026-06-26)",
      "note": "uranium content ~300 ppm, exceeds the Uranium Act's 100 ppm threshold"
+    },
+    {
+     "name": "Greenland Resources / Malmbjerg (East)",
+     "mw": "33 MW peak electricity consumption",
+     "note": "all-hours mine load supplied in the feasibility case by third-party power"
+    },
+    {
+     "name": "GreenRoc and Tanbreez representative South case",
+     "mw": "10 MW modeled peak; Tanbreez company input was 4.5 MW and GreenRoc 11 MW",
+     "note": "government study generalizes the combined South case to 10 MW because the two projects reported different peaks"
+    },
+    {
+     "name": "Representative West and North mine cases",
+     "mw": "10 MW modeled peak in each region",
+     "note": "generalized because actual data were absent or confidential"
     }
    ],
    "blockers": [
     "The Uranium Act bans uranium mining/byproducts above 100 ppm, and Greenland's government has just (2026) shown it will enforce that against a major rare-earth project (Kvanefjeld)",
     "Denmark's own nuclear review is at an early, information-gathering stage with no timeline for a political decision",
-    "No town or settlement publishes a load anywhere near even the smallest current microreactor design; the entire population (~56,000) is spread across 71 separate systems"
+    "No town or settlement publishes a load anywhere near even the smallest current microreactor design; the entire population (~56,000) is spread across 71 separate systems",
+    "A 1-20 MW reactor must beat the study's 199-297 EUR/MWh delivered-power band while financing construction before mine revenue begins",
+    "The study assumes a 20-year mine life, shorter than many nuclear asset lives, creating residual-value and early-closure risk"
    ],
    "sources": [
     {
@@ -644,7 +678,23 @@
      "url": "https://nukissiorfiit.gl/wp-content/uploads/2025/12/DK-Bilag-a-Prisblad-nr.-39-01.01.2026-.pdf",
      "quote": "1.1.1 Priser for el til kundegruppe 1 (Almindelige kunder):\nLokalitet El tarif. pr. kWh\nLokalitet El tarif. pr. kWh\n010 NANORTALIK 2,00",
      "status": "fetched"
+    },
+    {
+     "label": "Greenland Ministry of Business and Minerals / Ramboll - Clean energy micro-grids in the mining industry in Greenland (2026)",
+     "url": "https://govmin.gl/wp-content/uploads/2026/07/Ramboll_2026_Clean-energy-micro-grids-in-the-mining-industry-in-Greenland.pdf",
+     "quote": "the business-as-usual scenario (199-297 EUR/MWh) while reducing dependence on fossil fuels by more than half",
+     "status": "fetched"
+    },
+    {
+     "label": "CIP Foundation - Greenland Investment Catalogue (2026)",
+     "url": "https://cipfonden.dk/wp-content/uploads/2026/05/Investment-catalogue-English-final.pdf",
+     "quote": "Renewable energy solution (33–43 MW) Approx. 150 The mine’s energy supply is expected to be tendered to a third party",
+     "status": "fetched"
     }
+   ],
+   "home_price": "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel.",
+   "home_price_source_urls": [
+    "https://govmin.gl/wp-content/uploads/2026/07/Ramboll_2026_Clean-energy-micro-grids-in-the-mining-industry-in-Greenland.pdf"
    ]
   },
   {

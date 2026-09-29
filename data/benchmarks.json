@@ -1,10 +1,11 @@
 {
  "_meta": {
-  "captured": "2026-09-26",
+  "captured": "2026-09-28",
   "pass": [
    "data/research/deep-2026-08-24",
    "data/research/2026-08-28-apps",
-   "data/research/2026-09-26-cases"
+   "data/research/2026-09-26-cases",
+   "data/research/2026-09-28-alaska-greenland-pricing"
   ],
   "generated_by": "tools/merge_research.py",
   "provenance": [
@@ -12,6 +13,7 @@
     "file": "deep-2026-08-24/apps-federal-awards.json",
     "kind": "case",
     "records": 26,
+    "raw_records": 26,
     "scope": "Application-side demand cases priced from structured US federal award data (USAspending.gov API, EPA Clean Ports, DOE OCED/ERA and Office of Indian Energy grants, FEMA OpenFEMA hazard-mitigation projects, DoD ESPC/UESC and utility-privatization vehicles) rather than press releases, so every record carries an obligated, total-potential or federal-share value tied to a named site.",
     "incomplete": false,
     "absences": [
@@ -32,6 +34,7 @@
     "file": "deep-2026-08-24/apps-medical-civic.json",
     "kind": "case",
     "records": 12,
+    "raw_records": 12,
     "scope": "Signed deals with published numbers at medical campuses and critical civic infrastructure (water/wastewater, airports, EOCs, shelters, civic anchor campuses).",
     "incomplete": false,
     "absences": [
@@ -54,6 +57,7 @@
     "file": "deep-2026-08-24/apps-mining.json",
     "kind": "case",
     "records": 13,
+    "raw_records": 13,
     "scope": "Signed off-grid mine and mineral-processing power deals with published capacity, capex, contract term or price - the diesel/HFO cost band a 1-20 MW reactor must beat at the mine gate.",
     "incomplete": false,
     "absences": [
@@ -72,6 +76,7 @@
     "file": "deep-2026-08-24/apps-remote-marine.json",
     "kind": "case",
     "records": 10,
+    "raw_records": 10,
     "scope": "Signed deals and published prices in remote outposts/microgrids and marine terminals - the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -92,6 +97,7 @@
     "file": "deep-2026-08-24/mech-batteries.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "How a generator gets contractually and legally paired with storage, who owns each half, who pays — and what those instruments look like wrapped around a 1-20 MW reactor.",
     "incomplete": false,
     "absences": [
@@ -111,6 +117,7 @@
     "file": "deep-2026-08-24/mech-diesel.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "The actual instruments by which a site stops relying on diesel standby and starts buying power/resilience from someone else: who signs, who owns, who bears risk, how the host pays, and which rule permits it.",
     "incomplete": false,
     "absences": [
@@ -131,6 +138,7 @@
     "file": "deep-2026-08-24/mech-dockets.json",
     "kind": "mechanism",
     "records": 8,
+    "raw_records": 8,
     "scope": "Recovery pass: retrieve the primary regulator documents behind seven named proceedings an earlier wave could not open (TLS/403), and confirm or correct the numbers attributed to them.",
     "incomplete": false,
     "absences": [
@@ -150,6 +158,7 @@
     "file": "deep-2026-08-24/mech-economics-permitting.json",
     "kind": "mechanism",
     "records": 6,
+    "raw_records": 6,
     "scope": "The recurring costs and permitting traps that decide whether an on-site plant pencils: standby charges, the blue-sky revenue gap, air-permit potential-to-emit, interconnection cost overruns, and fire-code fragmentation. Read directly from the cached LBNL Report No. 1.",
     "incomplete": false,
     "absences": [
@@ -162,6 +171,7 @@
     "file": "deep-2026-08-24/mech-ferc-census.json",
     "kind": "mechanism",
     "records": 2,
+    "raw_records": 2,
     "scope": "Two measured censuses of FERC eLibrary, closing the gap the interconnection agent declared: ferc.gov returns 403 to ordinary web fetches, but this repo's own tools/ferc_elibrary.py reaches the search API. Counts are derived by this project, not quoted from a publication.",
     "incomplete": false,
     "absences": [
@@ -176,6 +186,7 @@
     "file": "deep-2026-08-24/mech-interconnection.json",
     "kind": "mechanism",
     "records": 12,
+    "raw_records": 12,
     "scope": "The legal routes by which an on-site generator connects (or deliberately does not connect) to the grid, and how long each route takes.",
     "incomplete": false,
     "absences": [
@@ -195,6 +206,7 @@
     "file": "deep-2026-08-24/mech-nuclear-structures.json",
     "kind": "mechanism",
     "records": 13,
+    "raw_records": 13,
     "scope": "When the asset is a reactor: what commercial structure has actually been signed, by whom, on what terms, and at what published price.",
     "incomplete": false,
     "absences": [
@@ -219,6 +231,7 @@
     "file": "deep-2026-08-24/mech-selling-structure.json",
     "kind": "mechanism",
     "records": 7,
+    "raw_records": 7,
     "scope": "Who may lawfully sell the power: the corporate/regulatory structure that has to be settled before any diesel-replacement contract can be signed. Read directly from the two cached LBNL reports rather than delegated, because the taxonomy is the spine the other mechanism records hang off.",
     "incomplete": false,
     "absences": [
@@ -232,6 +245,7 @@
     "file": "2026-08-28-apps/apps-agri-food.json",
     "kind": "case",
     "records": 8,
+    "raw_records": 8,
     "scope": "Agriculture & Food sector - controlled-environment ag and food-processing power deals, the price a 1-20 MW reactor has to beat.",
     "incomplete": false,
     "absences": [
@@ -248,6 +262,7 @@
     "file": "2026-08-28-apps/apps-compute.json",
     "kind": "case",
     "records": 12,
+    "raw_records": 12,
     "scope": "Compute sector - data-center/AI power deals: signed hyperscaler nuclear PPAs re-verified against source, plus the non-nuclear incumbent price (utility large-load tariffs, on-site gas backup, colocation power pricing) a 1-20 MW reactor has to beat at data-center scale.",
     "incomplete": false,
     "absences": [
@@ -262,6 +277,7 @@
     "file": "2026-08-28-apps/apps-gapfill.json",
     "kind": "case",
     "records": 2,
+    "raw_records": 2,
     "scope": "Second-pass angles on the 9 Manufacturing/Agriculture & Food loads that apps-manufacturing.json and apps-agri-food.json (2026-08-28) could not close: fresh named-facility searches, PUC dockets, and DOE award pages not tried in the prior pass.",
     "incomplete": false,
     "absences": [
@@ -278,6 +294,7 @@
     "file": "2026-08-28-apps/apps-manufacturing.json",
     "kind": "case",
     "records": 6,
+    "raw_records": 6,
     "scope": "Real signed power deals, utility large-load tariffs, CHP economics, and DOE industrial-decarbonization awards for the 12 Manufacturing sub-applications (steel rolling/finishing, cement, lime, chemicals, fertilizer, hydrogen/low-carbon fuels, pulp and paper, sawmills, semiconductor fabs, battery-cell, battery-material, battery-recycling plants).",
     "incomplete": false,
     "absences": [
@@ -294,10 +311,26 @@
     "file": "2026-09-26-cases/cases.json",
     "kind": "case",
     "records": 4,
+    "raw_records": 4,
     "scope": "The Type B cases from the 2026-09-26 refresh pass (north.json, islands.json, issues.json) that are new to data/benchmarks.json.",
     "incomplete": false,
     "absences": [
      "Not copied, because benchmarks.json already holds the same deal: red-dog-tugliq-solar-ppa (= red-dog-mine-solar-teck-nana-tugliq), kivalliq-hydro-fibre-link-transmission (= kivalliq-hydro-fibre-link-agnico-nukik), agnew-gold-mine-edl-hybrid-microgrid (= agnew-gold-mine-hybrid-microgrid-edl). The six filings.json cases are on-site generation at named facilities, not their load or price, and are left in the research pass."
+    ]
+   },
+   {
+    "file": "2026-09-28-alaska-greenland-pricing/north.json",
+    "kind": "case",
+    "records": 3,
+    "raw_records": 6,
+    "scope": "Alaska RCA power contracts and tariffs plus Greenland mine-power contracts and current government mine-energy evidence relevant to 1-20 MW microreactor pricing.",
+    "incomplete": false,
+    "absences": [
+     "No final RCA approval order for TA401-13, TA535-18, TA924-2, TA201-72, or TA404-13 was located in the public pages searched; those records retain filed/proposed status.",
+     "No public Tanbreez-Nukissiorfiit contract term was found; the announced 1.65 DKK/kWh price was the 2021 standard tariff, not a fixed long-term contract price.",
+     "No executed Malmbjerg power contract or $/MWh price was found; current public documents describe a future 33-43 MW third-party tender and about $150 million of power investment.",
+     "No Greenland microreactor procurement, feasibility study, utility filing, or government nuclear-energy position was found in the mine-power sources reviewed.",
+     "The Greenland government report withholds or generalizes some mine load and cost inputs; exact project-level hourly demand and commercial tariffs remain unavailable."
     ]
    }
   ],
@@ -809,6 +842,84 @@
       "Regional grids serving several communities"
      ],
      "_from": "deep-2026-08-24/apps-remote-marine.json"
+    },
+    {
+     "id": "gvea-aurora-chena-2026-ppa-amendment",
+     "sector": "Remote outposts & microgrids",
+     "name": "GVEA-Aurora Chena power purchase agreement amendment",
+     "country": "US",
+     "region": "Fairbanks, Alaska",
+     "parties": {
+      "host": "Golden Valley Electric Association",
+      "provider": "Aurora Energy, LLC",
+      "utility": "Golden Valley Electric Association"
+     },
+     "instrument": "PPA",
+     "signed": "2026",
+     "price_status": "proposed",
+     "approval_status": "RCA approval not verified; filed amendment economics are proposed",
+     "term_years": 5,
+     "annual_energy": "150,000 MWh required by December 31, 2026; estimated additional 5,000-10,000 MWh annually beginning in 2027; plant capacity not stated in the notice",
+     "price": "$115.23/MWh base rate for 2026, up from $94.23/MWh; 2.8% annual escalation for the remaining term",
+     "filings": [
+      {
+       "forum": "Regulatory Commission of Alaska",
+       "type": "tariff filing / PPA amendment",
+       "id": "TA401-13",
+       "date": "2026-01-26",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222446"
+      }
+     ],
+     "summary": "GVEA filed an amendment to its existing Aurora Energy wholesale PPA and asked the RCA for approval by February 23, 2026, with a March 1 effective date. The proposed amendment pays $115.23/MWh in 2026, escalates 2.8% annually, and supports repairs intended to restore 150,000 MWh of annual output. The public notice does not establish that the Commission approved the amendment, so the economics remain proposed rather than final.",
+     "microreactor_read": "A firm 1-20 MW reactor serving Interior Alaska must compete with a filed dispatchable-power benchmark of $115.23/MWh plus 2.8% annual escalation, while matching the PPA's dependable annual volume.",
+     "sources": [
+      {
+       "label": "State of Alaska / RCA - TA401-13 GVEA-Aurora tariff filing notice (2026)",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222446",
+       "quote": "1 sets a new base rate for 2026 of $115.23/MWh, an increase from the current 2026 rate of $94.23/MWh.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-09-28-alaska-greenland-pricing/north.json"
+    },
+    {
+     "id": "mea-energy49-houston-solar-ppa",
+     "sector": "Remote outposts & microgrids",
+     "name": "MEA-Energy 49 Houston solar power purchase agreement",
+     "country": "US",
+     "region": "Houston, Alaska",
+     "parties": {
+      "host": "Matanuska Electric Association",
+      "provider": "Energy 49, LLC",
+      "utility": "Matanuska Electric Association"
+     },
+     "instrument": "PPA",
+     "signed": "2022",
+     "price_status": "proposed",
+     "approval_status": "RCA approval not verified; signed PPA was filed for approval",
+     "term_years": 25,
+     "capacity": "6 MW solar; MEA commits to purchase 100% of metered output",
+     "price": "$0.06700/kWh in year one, with 1.5% annual inflation increase",
+     "filings": [
+      {
+       "forum": "Regulatory Commission of Alaska",
+       "type": "special contract filing",
+       "id": "TA535-18",
+       "date": "2022-01-12",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=205057"
+      }
+     ],
+     "summary": "MEA filed a 25-year PPA for all output from Energy 49's 6 MW Houston solar project. The initial price is $67/MWh with 1.5% annual escalation; delivery was required within three years of execution. The agreement also splits REC economic benefits equally and allows termination after an uncured material breach. The fetched notice requests approval and warns the Commission may vary the rate, so this record does not claim final approval.",
+     "microreactor_read": "This is an Alaska unit-size filing comparator: a signed 6 MW solar PPA was filed at $67/MWh initially for 25 years, but final RCA approval was not verified. A reactor offer would need its own negotiated PPA or special contract and approval, with firm-output and nuclear risks priced explicitly.",
+     "sources": [
+      {
+       "label": "State of Alaska / RCA - TA535-18 MEA-Energy 49 PPA notice (2022)",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=205057",
+       "quote": "MEA agrees to pay Energy 49 an initial rate of $0.06700/kWh for all energy delivered to MEA during the first year",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-09-28-alaska-greenland-pricing/north.json"
     },
     {
      "id": "prepa-asap-battery-storage-contracts",
@@ -1553,6 +1664,41 @@
      "_from": "deep-2026-08-24/apps-mining.json"
     },
     {
+     "id": "tanbreez-nukissiorfiit-hydropower-agreement",
+     "sector": "Off-grid mining & mineral processing",
+     "name": "Tanbreez-Nukissiorfiit mine hydropower agreement",
+     "country": "GL",
+     "region": "Killavaat Alannguat, Kujalleq, Greenland",
+     "parties": {
+      "host": "Tanbreez Mining Greenland A/S",
+      "provider": "Nukissiorfiit",
+      "utility": "Nukissiorfiit"
+     },
+     "instrument": "utility tariff",
+     "signed": "2021-05",
+     "price_status": "historical standard tariff",
+     "approval_status": "cooperation agreement signed; later supply agreement and term not published",
+     "capacity": "up to 7.5 MW and approximately 30 GWh/year of hydropower",
+     "price": "standard electricity tariff, 1.65 DKK/kWh when announced in May 2021; Tanbreez funds the connection and required infrastructure",
+     "summary": "Tanbreez and Greenland's government-owned utility signed a cooperation agreement for mine power. Nukissiorfiit can supply about 30 GWh/year with maximum demand of 7.5 MW; Tanbreez must fund the interconnection and infrastructure and retain backup generation. The parties contemplated a later agreement and government-approved hydropower expansion if mine production exceeds available utility supply. A 2025 SEC-filed technical report still says Nukissiorfiit will supply all project power needs, but does not restate the tariff or volume.",
+     "microreactor_read": "This is a future 1-20 MW mine-load comparator: the cooperation agreement contemplated up to 7.5 MW at the May 2021 standard tariff, with interconnection and backup shifted to the mine. The mine was pre-production, and the later supply term and current tariff were not published. A reactor contract must allocate those same infrastructure and outage risks explicitly.",
+     "sources": [
+      {
+       "label": "SermitSIAQ - Stort mineprojekt indgar strom-aftale (2021)",
+       "url": "https://www.sermitsiaq.ag/erhverv/stort-mineprojekt-indgar-strom-aftale/296404",
+       "quote": "Nukissiorfiit er i stand til at levere cirka 30 GWh af vandkraft med et maksimum energibehov af 7,5 MW",
+       "status": "fetched"
+      },
+      {
+       "label": "Critical Metals Corp. SEC Exhibit 96.1 - Tanbreez S-K 1300 Technical Report Summary (2025)",
+       "url": "https://www.sec.gov/Archives/edgar/data/1951089/000121390025023337/ea023391301ex96-1_critical.htm",
+       "quote": "Tanbreez has signed an agreement with the Greenland government power company (Nukissiorfiit) to supply all the projects power needs.",
+       "status": "fetched"
+      }
+     ],
+     "_from": "2026-09-28-alaska-greenland-pricing/north.json"
+    },
+    {
      "id": "graphite-one-graphite-creek-power-plan",
      "sector": "Off-grid mining & mineral processing",
      "name": "Graphite One / Graphite Creek Project power plan",
@@ -1633,7 +1779,7 @@
      "signed": "2024-05",
      "term_years": 2,
      "capacity": "Shore power distribution serving two piers; megawatt rating not stated in the award record",
-     "capex": "$18,232,308.77 obligated; base and all options identical, so this is the whole job. Period of performance 2024-05-23 to 2026-08-22.",
+     "capex": "$18,232,308.77 obligated; base and all options are identical, covering the full award. Period of performance 2024-05-23 to 2026-08-22.",
      "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life pier electrical distribution",
      "filings": [
       {
@@ -1710,6 +1856,53 @@
       "Cargo-port electrical systems combining terminal operations and ship plug-in power"
      ],
      "_from": "deep-2026-08-24/apps-remote-marine.json"
+    },
+    {
+     "id": "port-of-los-angeles-epa-clean-ports",
+     "sector": "Marine terminals",
+     "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
+     "country": "US",
+     "region": "San Pedro, California",
+     "parties": {
+      "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
+      "provider": "U.S. Environmental Protection Agency (funder)",
+      "utility": "Los Angeles Department of Water and Power"
+     },
+     "instrument": "grant-funded",
+     "signed": "2025-01",
+     "term_years": 4,
+     "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
+     "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
+     "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
+     "filings": [
+      {
+       "forum": "USAspending.gov (federal assistance record)",
+       "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+       "id": "FAIN 97T27601",
+       "date": "2025-01-01",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+      }
+     ],
+     "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
+     "microreactor_read": "The award funds new electrical load, but the Port and LADWP have a ZEPEO utility expansion plan: 213 MVA additional capacity by 2030 and 306 MVA more by 2035. A reactor proposal would need to beat the actual terminal-level utility service schedule, upgrade cost, tariffs and siting constraints. The grant does not establish an unfunded interconnection gap or an open power procurement.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+       "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+       "status": "fetched"
+      },
+      {
+       "label": "Port of Los Angeles — May 28, 2026 ZEPEO board agenda",
+       "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda",
+       "quote": "adding an additional 213 MVA of Medium Voltage Power at 34.5kV by 2030",
+       "status": "fetched"
+      }
+     ],
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-of-seattle-cruise-shore-power",
@@ -1822,7 +2015,7 @@
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
       }
      ],
-     "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
+     "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, covering the full award. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation.",
      "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
      "sources": [
       {
@@ -1869,47 +2062,6 @@
        "label": "USAspending.gov API — Award CONT_AWD_N4425526F0125 (PIID N44255-26-F-0125), Absher Construction Co., Port Hadlock WA",
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/",
        "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
-       "status": "fetched"
-      }
-     ],
-     "load": [
-      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-     ],
-     "_from": "deep-2026-08-24/apps-federal-awards.json"
-    },
-    {
-     "id": "port-of-los-angeles-epa-clean-ports",
-     "sector": "Marine terminals",
-     "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
-     "country": "US",
-     "region": "San Pedro, California",
-     "parties": {
-      "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
-      "provider": "U.S. Environmental Protection Agency (funder)",
-      "utility": "Los Angeles Department of Water and Power"
-     },
-     "instrument": "grant-funded",
-     "signed": "2025-01",
-     "term_years": 4,
-     "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
-     "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
-     "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
-     "filings": [
-      {
-       "forum": "USAspending.gov (federal assistance record)",
-       "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
-       "id": "FAIN 97T27601",
-       "date": "2025-01-01",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
-      }
-     ],
-     "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
-     "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
-     "sources": [
-      {
-       "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
-       "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
        "status": "fetched"
       }
      ],

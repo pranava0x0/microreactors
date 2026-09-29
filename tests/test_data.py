@@ -87,6 +87,11 @@ class SourceShape(unittest.TestCase):
             self.assertTrue(ss, f"cost band {name!r} has no source")
             for s in ss:
                 self.assert_source(s, f"cost band {name!r}")
+            if r.get("low_mwh") is not None:
+                self.assertIn(r.get("currency"), ("USD", "not stated"),
+                              f"cost band {name!r} needs an explicit currency basis")
+                self.assertTrue(r.get("dollar_year"),
+                                f"cost band {name!r} needs an explicit dollar-year basis")
 
     def test_incentive_points_cited(self):
         inc = load("costs.json")["incentives"]

@@ -21,6 +21,7 @@ PASS_DIRS = (
     ROOT / "data" / "research" / "deep-2026-08-24",
     ROOT / "data" / "research" / "2026-08-28-apps",
     ROOT / "data" / "research" / "2026-09-26-cases",
+    ROOT / "data" / "research" / "2026-09-28-alaska-greenland-pricing",
 )
 DERIVED = ("data/instruments.json", "data/benchmarks.json")
 
@@ -88,6 +89,29 @@ class ResearchPass(unittest.TestCase):
             self.assertIn(g["group"], merge_research.GROUP_ORDER, "unrendered instrument group")
         for s in bench["sectors"]:
             self.assertIn(s["sector"], merge_research.SECTOR_ORDER, "unrendered benchmark sector")
+
+    def test_proposed_tariffs_stay_out_of_signed_deal_benchmarks(self):
+        """Raw passes may retain proposed rates as research. The customer-cost
+        page promises signed deals and final orders, so opt-outs cannot leak in."""
+        excluded = set()
+        for pass_dir in PASS_DIRS:
+            for path in pass_dir.glob("*.json"):
+                doc = json.loads(path.read_text())
+                excluded.update(r["id"] for r in doc.get("cases", [])
+                                if r.get("integrate") is False)
+        bench = json.loads((ROOT / "data" / "benchmarks.json").read_text())
+        rendered = {r["id"] for s in bench["sectors"] for r in s["records"]}
+        self.assertTrue(excluded, "gate has no opted-out case to exercise")
+        self.assertFalse(excluded & rendered)
+
+    def test_integrated_proposed_prices_disclose_approval_status(self):
+        bench = json.loads((ROOT / "data" / "benchmarks.json").read_text())
+        proposed = [r for s in bench["sectors"] for r in s["records"]
+                    if r.get("price_status") == "proposed"]
+        self.assertTrue(proposed, "gate has no proposed benchmark to exercise")
+        for row in proposed:
+            self.assertTrue(row.get("approval_status"), row["id"])
+            self.assertRegex(row["approval_status"].lower(), r"not verified|proposed")
 
     def test_capture_date_handles_both_pass_folder_shapes(self):
         """Pass folders are named `<slug>-<date>` by hand and `<date>-<slug>` by
