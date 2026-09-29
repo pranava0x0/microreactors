@@ -957,35 +957,41 @@
    "sector": "Defense installations",
    "region": "Interior Alaska",
    "load": "Electric, heat, water and wastewater systems at Alaska Army installations; capacity not stated in the award record",
-   "documented": "An Alaska Native corporation joint venture holds a 51-year utility privatisation worth up to $3.08B, with $906M obligated as of 2026-09-26 since 2007, roughly $60M a year, and its generation is coal and oil delivered by rail and barge. Fort Wainwright is one of the nine Janus candidate installations and the only one whose displaced fuel is priced at Alaskan rates; it has not been matched to a vendor. Fort Wainwright was not among the five installations matched to vendors on 2026-08-26. A 2011-2012 rate dispute shows the contract runs as cost-of-service regulation: Doyon claimed $79M of plant additions in its rate base and said it was losing $1.1M a month across three installations, and the additions were contested case by case.",
-   "fit": "The reactor enters as an asset inside a rate base a regulator already approves, so it does not have to win a $/kW contest. The unit can be 5–20 MW because the plant it supplements is a central heat-and-power station.",
-   "sale_shape": "Rate-based generation inside the existing 10 U.S.C. 2688 contract, with the delivered-fuel line as the saving the contractor already prices.",
+   "documented": "Doyon operates Fort Wainwright utility systems under a long-term privatization contract. The Army FEIS identified 19 MW electric capacity and 45 MW average heat as system needs, then the Army terminated that upgrade EIS in September 2025 to reevaluate the action. A July 2026 RCA notice seeks monthly electric and heat revenue requirements of $824,912 and $3,363,703 based on a 2025 test year; final approval and fuel cost per MWh remain unverified. Fort Wainwright is an unpaired Janus candidate, not a reactor award.",
+   "fit": "A reactor would need to meet useful steam and electric needs, Army mission requirements, site and licence constraints, and Doyon/DLA/RCA cost-recovery approval. Thermal demand is larger than electrical capacity need.",
+   "sale_shape": "Possible utility-contract plant addition or separate Army power purchase, subject to DLA, Doyon and RCA approval; no reactor instrument documented.",
    "status": "evidence-only",
-   "next_question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
+   "next_question": "Will the Army evaluate nuclear CHP after terminating its upgrade EIS, and what are hourly heat/electric load, delivered fuel cost, final RCA tariffs and plant-addition rules?",
    "findings": [
     {
-     "id": "doyon-fort-wainwright-2024-tariff-filing",
+     "id": "doyon-fort-wainwright-2026-tariff-correction",
      "date": "2026-09-26",
      "pass": "data/research/2026-09-26-refresh",
      "status": "partial",
      "question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
-     "finding": "No $/MWh figure can be built: the filing found gives a monthly revenue requirement, not a per-unit rate, and no Fort Wainwright electricity-sales (MWh) total was found to divide it by. The most recent RCA filing located (not found in the 2026-09-02 pass, which reported none) is a 2024 revenue-requirement study on a 2023 test year: an RCA public notice shows Doyon requesting, effective 2024-08-15, a 7.04% electric-rate increase at Fort Wainwright to a revenue requirement of $759,391 per month, alongside heat ($3,161,990/month, +5.49%) and water ($1,078,099/month, +24.95%); comments were due 2024-07-22. This is a real, dated regulatory figure that upgrades the prior pass's finding of none, but it is 2 years old, not a 2026 filing, and no more recent Doyon electric tariff notice was found in 2 searches. No new information was found on whether DLA Energy would accept a reactor as a rate-base plant addition under the 10 U.S.C. 2688 contract; this sub-question remains unanswered.",
+     "finding": "A later RCA public notice corrects this research pass: Doyon filed 2026 tariff advice based on a 2025 test year, seeking Fort Wainwright monthly electric revenue requirement of $824,912 (TA15-726) and heat requirement of $3,363,703 (TA19-725), proposed effective August 15, 2026. The previous 2024 notice was not the latest. These are monthly utility-service revenue requirements, not fuel-only or all-in prices per MWh; no matching hourly or annual electricity-sales and heat-delivery volumes or final orders were found. Whether DLA Energy and the RCA would approve a reactor plant addition remains unverified.",
      "figures": {
-      "fwa_electric_revenue_requirement_2024": "$759,391 per month (7.04% increase over prior rate)",
-      "fwa_heat_revenue_requirement_2024": "$3,161,990 per month (5.49% increase)",
-      "fwa_water_revenue_requirement_2024": "$1,078,099 per month (24.95% increase)",
-      "filing_effective_date": "2024-08-15",
-      "filing_test_year": "2023"
+      "fwa_electric_revenue_requirement_2026": "$824,912 per month, proposed; 8.63% above $759,391 current",
+      "fwa_heat_revenue_requirement_2026": "$3,363,703 per month, proposed; 6.38% above $3,161,990 current",
+      "filing_effective_date_proposed": "2026-08-15",
+      "filing_test_year": "2025"
      },
      "searched": [
       "Regulatory Commission of Alaska Doyon Utilities Fort Wainwright revenue requirement docket 2026",
-      "Doyon Utilities tariffs page rate schedule"
+      "Doyon Utilities tariffs page rate schedule",
+      "Alaska Online Public Notices 2026 Doyon Fort Wainwright tariff TA15-726 TA19-725"
      ],
      "sources": [
       {
        "label": "Regulatory Commission of Alaska — Notice of Utility Tariff Filings (Doyon Utilities, Fort Greely/Richardson/Wainwright)",
        "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971",
        "quote": "FWA - Electric $709,476 $759,391 7.04%",
+       "status": "fetched"
+      },
+      {
+       "label": "Regulatory Commission of Alaska — 2026 Doyon Fort Wainwright tariff notice",
+       "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368",
+       "quote": "TA15-726  | FWA - Electric  | $759,391  | $824,912",
        "status": "fetched"
       }
      ]
@@ -1057,6 +1063,18 @@
     {
      "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors",
      "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors"
+    },
+    {
+     "label": "Alaska RCA — 2026 Doyon utility tariff notice",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368"
+    },
+    {
+     "label": "U.S. Army — Fort Wainwright heat and electrical upgrade FEIS",
+     "url": "https://home.army.mil/wainwright/2517/3144/3965/Final_Environmental_Impact_Statement_Addressing_Heat_and_Electrical_Upgrades_at_Fort_Wainwright_Alaska.pdf"
+    },
+    {
+     "label": "Federal Register — Army termination of upgrade EIS",
+     "url": "https://www.federalregister.gov/documents/2025/09/17/2025-17972/notice-of-termination-of-environmental-impact-statement"
     }
    ]
   },
@@ -2261,17 +2279,21 @@
    "sector": "Transportation",
    "region": "United Kingdom",
    "load": "One 20 MWe unit for a freeport, target online 2030",
-   "documented": "The one commercial port operator anywhere with a named microreactor deal, under UK regulatory review since a preliminary design review in July 2025. It is a competitor's deployment, and proof that a port will sign.",
+   "documented": "UK government announced that Last Energy and DP World plan a 20 MWe microreactor at London Gateway. No executed power contract or site licence was located; ONR early review concerns Llynfi, Wales.",
    "fit": "A freeport's terminal load is inside the band, and a UK site answers to the Office for Nuclear Regulation plus US export control, not the NRC.",
-   "sale_shape": "Named commercial customer with the vendor carrying the regulatory review.",
-   "status": "signed",
-   "next_question": "What did DP World agree to pay, and does the freeport's grid connection or its own load justify the 20 MW?",
+   "sale_shape": "Announced developer/customer plan; contract structure and price undisclosed.",
+   "status": "evidence-only",
+   "next_question": "Is there an executed customer power agreement, and what terminal load and grid costs support 20 MW?",
    "refs": [
     {
      "opportunity": "uk-lastenergy"
     }
    ],
    "sources": [
+    {
+     "label": "UK government — Last Energy and DP World London Gateway plan",
+     "url": "https://www.gov.uk/government/news/golden-age-of-nuclear-delivers-uk-us-deal-on-energy-security"
+    },
     {
      "label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)",
      "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"

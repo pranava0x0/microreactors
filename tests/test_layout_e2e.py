@@ -49,6 +49,23 @@ def serve_site():
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class Layout(unittest.TestCase):
+    def test_voices_open_on_short_index(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 375, "height": 812})
+            page.goto(base + "#sources/voices", wait_until="networkidle")
+            groups = page.locator("#voices details.voicegroup")
+            self.assertGreater(groups.count(), 1)
+            self.assertEqual(page.locator("#voices details.voicegroup[open]").count(), 0)
+            initial_height = page.evaluate("document.documentElement.scrollHeight")
+            groups.first.locator("summary").click()
+            self.assertEqual(page.locator("#voices details.voicegroup[open]").count(), 1)
+            self.assertGreater(page.evaluate("document.documentElement.scrollHeight"), initial_height)
+            browser.close()
+
     def test_all_tabs_all_widths(self):
         problems = []
         with serve_site() as base, sync_playwright() as pw:
@@ -167,6 +184,42 @@ class Layout(unittest.TestCase):
 
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+class CustomerCostsMobile(unittest.TestCase):
+    """The cost examples need plain labels and must stay inside a phone viewport."""
+
+    def test_price_to_beat_uses_plain_labels_without_overflow(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            ctx = browser.new_context(viewport={"width": 375, "height": 812},
+                                      has_touch=True, is_mobile=True)
+            page = ctx.new_page()
+            page.goto(base + "?view=costs#economics/price-to-beat", wait_until="networkidle")
+            page.wait_for_function("document.querySelectorAll('#benchmarks details.benchsector').length > 0")
+            page.evaluate("""() => {
+              document.querySelectorAll('#benchmarks details').forEach(d => { d.open = true; });
+            }""")
+            got = page.evaluate("""() => ({
+              text: document.getElementById('benchmarks').innerText,
+              dealTypes: [...document.querySelectorAll('#benchmarks .drow')]
+                .filter(row => row.querySelector('.dlbl')?.textContent === 'Deal type')
+                .map(row => row.lastElementChild.textContent),
+              scrollW: document.documentElement.scrollWidth,
+              clientW: document.documentElement.clientWidth
+            })""")
+            ctx.close()
+            browser.close()
+        self.assertIn("Deal type", got["text"])
+        self.assertIn("Power purchase agreement", got["text"])
+        self.assertIn("One contractor designs and builds it", got["text"])
+        self.assertNotIn("Instrument", got["text"])
+        self.assertNotIn("design-build", got["dealTypes"])
+        self.assertLessEqual(got["scrollW"], got["clientW"] + 1)
+
+
+@unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class Routing(unittest.TestCase):
     def test_register_search_restores_the_first_page(self):
         """The source register shows its first 30 rows until the reader searches
@@ -270,6 +323,26 @@ class Routing(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class HomePage(unittest.TestCase):
+    def test_featured_prices_link_to_their_sources(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 375, "height": 812})
+            page.goto(base + "#home", wait_until="networkidle")
+            box = page.locator(".glancebox", has=page.locator('a.glancecard[href="#demand/regions"]'))
+            self.assertEqual(box.count(), 1)
+            chips = box.locator(".glancecite a.cite")
+            self.assertEqual(chips.count(), 3)
+            self.assertTrue(all(chips.nth(i).get_attribute("href").startswith("https://")
+                                and "?" not in chips.nth(i).inner_text()
+                                for i in range(chips.count())))
+            self.assertEqual(box.locator("a.glancecard a").count(), 0)
+            box.locator("a.glancecard").click()
+            self.assertTrue(page.url.endswith("#demand/regions"))
+            browser.close()
+
     def test_home_is_a_directory_of_the_site_with_the_newest_headlines(self):
         """Home opens on one card per tab (each linking to a real panel) and then
         the headlines, newest first. The first-page list once trusted file order
@@ -303,7 +376,8 @@ class HomePage(unittest.TestCase):
               return {visible: !document.getElementById('news').hidden, open: !!(el && el.open)};
             }""", target.split("/", 1)[1])
             browser.close()
-        self.assertEqual(sorted(got["cards"]), sorted(p for p in got["panels"] if p != "home"))
+        self.assertEqual(sorted(h.split("/", 1)[0] for h in got["cards"]),
+                         sorted(p for p in got["panels"] if p != "home"))
         self.assertEqual(got["empty"], 0)
         self.assertEqual(got["undefinedText"], 0)
         self.assertEqual(got["lead"], 1)
@@ -320,10 +394,23 @@ class HomePage(unittest.TestCase):
             page = browser.new_page()
             page.goto(base + "#pipeline/sites", wait_until="networkidle")
             page.wait_for_timeout(80)
-            page.locator('[data-site-filter="defense-remote"]').click()
-            state = page.locator('[data-site-filter="defense-remote"]').get_attribute("aria-pressed")
+            group_order = page.locator('.sitegroup').evaluate_all(
+                '(nodes) => nodes.map(n => n.dataset.siteGroup)')
+            remote_names = page.locator('[data-site-group="remote"] .sitecard h3').all_text_contents()
+            mining_names = page.locator('[data-site-group="mining"] .sitecard h3').all_text_contents()
+            marine_names = page.locator('[data-site-group="marine"] .sitecard h3').all_text_contents()
+            page.locator('[data-site-filter="remote"]').click()
+            state = page.locator('[data-site-filter="remote"]').get_attribute("aria-pressed")
+            visible = page.locator('.sitegroup:not([hidden])').count()
+            first_group = page.locator('.sitegroup:not([hidden])').first.get_attribute('data-site-group')
             browser.close()
         self.assertEqual(state, "true")
+        self.assertEqual(visible, 1)
+        self.assertEqual(first_group, "remote")
+        self.assertEqual(group_order, ["remote", "mining", "marine", "other"])
+        self.assertIn("Iqaluit isolated diesel grid", remote_names)
+        self.assertIn("Tanbreez rare-earth project", mining_names)
+        self.assertIn("DP World London Gateway (Thames Freeport)", marine_names)
 
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")

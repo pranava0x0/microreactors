@@ -824,27 +824,33 @@
    ]
   },
   {
-   "id": "doyon-fort-wainwright-2024-tariff-filing",
+   "id": "doyon-fort-wainwright-2026-tariff-correction",
    "for": "doyon-utilities",
    "question": "What does Doyon's current RCA revenue requirement imply per MWh at Fort Wainwright, and would DLA Energy accept a reactor as a plant addition under the 2688 contract, given how the $79M of additions was contested in 2012?",
    "status": "partial",
-   "finding": "No $/MWh figure can be built: the filing found gives a monthly revenue requirement, not a per-unit rate, and no Fort Wainwright electricity-sales (MWh) total was found to divide it by. The most recent RCA filing located (not found in the 2026-09-02 pass, which reported none) is a 2024 revenue-requirement study on a 2023 test year: an RCA public notice shows Doyon requesting, effective 2024-08-15, a 7.04% electric-rate increase at Fort Wainwright to a revenue requirement of $759,391 per month, alongside heat ($3,161,990/month, +5.49%) and water ($1,078,099/month, +24.95%); comments were due 2024-07-22. This is a real, dated regulatory figure that upgrades the prior pass's finding of none, but it is 2 years old, not a 2026 filing, and no more recent Doyon electric tariff notice was found in 2 searches. No new information was found on whether DLA Energy would accept a reactor as a rate-base plant addition under the 10 U.S.C. 2688 contract; this sub-question remains unanswered.",
+   "finding": "A later RCA public notice corrects this research pass: Doyon filed 2026 tariff advice based on a 2025 test year, seeking Fort Wainwright monthly electric revenue requirement of $824,912 (TA15-726) and heat requirement of $3,363,703 (TA19-725), proposed effective August 15, 2026. The previous 2024 notice was not the latest. These are monthly utility-service revenue requirements, not fuel-only or all-in prices per MWh; no matching hourly or annual electricity-sales and heat-delivery volumes or final orders were found. Whether DLA Energy and the RCA would approve a reactor plant addition remains unverified.",
    "figures": {
-    "fwa_electric_revenue_requirement_2024": "$759,391 per month (7.04% increase over prior rate)",
-    "fwa_heat_revenue_requirement_2024": "$3,161,990 per month (5.49% increase)",
-    "fwa_water_revenue_requirement_2024": "$1,078,099 per month (24.95% increase)",
-    "filing_effective_date": "2024-08-15",
-    "filing_test_year": "2023"
+    "fwa_electric_revenue_requirement_2026": "$824,912 per month, proposed; 8.63% above $759,391 current",
+    "fwa_heat_revenue_requirement_2026": "$3,363,703 per month, proposed; 6.38% above $3,161,990 current",
+    "filing_effective_date_proposed": "2026-08-15",
+    "filing_test_year": "2025"
    },
    "searched": [
     "Regulatory Commission of Alaska Doyon Utilities Fort Wainwright revenue requirement docket 2026",
-    "Doyon Utilities tariffs page rate schedule"
+    "Doyon Utilities tariffs page rate schedule",
+    "Alaska Online Public Notices 2026 Doyon Fort Wainwright tariff TA15-726 TA19-725"
    ],
    "sources": [
     {
      "label": "Regulatory Commission of Alaska — Notice of Utility Tariff Filings (Doyon Utilities, Fort Greely/Richardson/Wainwright)",
      "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971",
      "quote": "FWA - Electric $709,476 $759,391 7.04%",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska — 2026 Doyon Fort Wainwright tariff notice",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368",
+     "quote": "TA15-726  | FWA - Electric  | $759,391  | $824,912",
      "status": "fetched"
     }
    ]

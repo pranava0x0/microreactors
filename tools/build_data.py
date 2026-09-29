@@ -184,6 +184,14 @@ def main() -> int:
     }
     bundle["sources_index"] = reg
     bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
+    regions_by_id = {r["id"]: r for r in bundle["regions"]["regions"]}
+    def featured_price(region_id: str) -> Dict[str, Any]:
+        region = regions_by_id[region_id]
+        by_url = {s["url"]: s for s in region["sources"]}
+        urls = region["home_price_source_urls"]
+        assert urls and all(url in by_url for url in urls), f"uncited home price: {region_id}"
+        return {"text": region["home_price"], "sources": [by_url[url] for url in urls]}
+
     bundle["summary"] = {
         "opportunities": len(opps),
         "vendors": len(vendors),
@@ -198,6 +206,9 @@ def main() -> int:
         "benchmarks": sum(len(s_["records"]) for s_ in bundle["benchmarks"]["sectors"]),
         "benchmarks_priced": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                  for r in s_["records"] if priced(r)),
+        "benchmarks_priced_proposed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
+                                          for r in s_["records"]
+                                          if priced(r) and r.get("price_status") == "proposed"),
         "benchmarks_filed": sum(1 for s_ in bundle["benchmarks"]["sectors"]
                                 for r in s_["records"] if r.get("filings")),
         # Most benchmark rows are the non-nuclear incumbent a reactor would displace,
@@ -232,6 +243,13 @@ def main() -> int:
         "regions": len(bundle["regions"]["regions"]),
         "dockets": len(bundle["dockets"]["dockets"]),
         "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
+        # Home answers the two most likely remote-market price questions without
+        # making the reader open a region accordion. Text stays source-owned in
+        # data/regions.json; the generator only takes its first decision sentence.
+        "featured_prices": {
+            "alaska": featured_price("alaska-rural-pce-communities"),
+            "greenland": featured_price("greenland"),
+        },
         "built": captured_date(bundle),
     }
 

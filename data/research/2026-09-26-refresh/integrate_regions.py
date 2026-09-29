@@ -135,6 +135,55 @@ def main() -> None:
             for src in t.get("sources", []):
                 if src["url"] not in {x["url"] for x in r["sources"]}:
                     r["sources"].append(src)
+
+    # The 2026-09-28 follow-up adds two pricing views the regional sweep lacked:
+    # proposed avoided-cost purchase rates for rural Alaska, and a government-
+    # commissioned mine-microgrid cost model for Greenland. Merge them into the
+    # existing jurisdiction records instead of rendering duplicate places.
+    follow_p = HERE.parent / "2026-09-28-alaska-greenland-pricing" / "north.json"
+    if follow_p.exists():
+        follow = json.loads(follow_p.read_text())
+        by_id = {r["id"]: r for r in regions}
+        cases = {r["id"]: r for r in follow.get("cases", [])}
+        alaska = by_id["alaska-rural-pce-communities"]
+        alaska["price"] += (
+            "; 2026 proposed non-nuclear qualifying-facility purchase rates range from $0.0225 to "
+            "$0.5119/kWh across six Alaska Power Company groupings, while TDX Manley "
+            "filed $1.1802/kWh. These are requested rates, not final orders.")
+        alaska["microreactor_read"] = (
+            "Rural Alaska cannot be modeled from one statewide diesel number. Filed 2026 "
+            "non-nuclear qualifying-facility comparators span $22.50-$1,180.20/MWh before "
+            "final RCA action. A reactor cannot claim those tariffs; it needs a negotiated "
+            "PPA or special contract with a named utility and separate approval.")
+        alaska["home_price"] = "Alaska QF comparators: $22.50-$1,180.20/MWh proposed."
+        # The two figures in home_price come one each from these two cases, so
+        # the Home page's featured-price citation (build_data.py:featured_price)
+        # points at exactly the sources that back the $22.50 and $1,180.20 ends,
+        # not the full merged alaska["sources"] list.
+        alaska["home_price_source_urls"] = []
+        for case_id in ("apc-rate-group5-2026-small-facility-rates",
+                        "tdx-manley-2026-copa-small-facility-rates"):
+            for src in cases[case_id].get("sources", []):
+                if src["url"] not in {x["url"] for x in alaska["sources"]}:
+                    alaska["sources"].append(src)
+                if src["url"] not in alaska["home_price_source_urls"]:
+                    alaska["home_price_source_urls"].append(src["url"])
+
+        study = follow["regions"][0]
+        greenland = by_id["greenland"]
+        greenland["price"] += "; government mine study: " + study["price"]
+        greenland["loads"].extend(study.get("loads", []))
+        greenland["microreactor_activity"] += " " + study["microreactor_activity"]
+        greenland["microreactor_read"] = study["microreactor_read"] + (
+            " No Greenland reactor procurement, utility study or nuclear filing was found.")
+        greenland["home_price"] = "Greenland modeled LCOE: EUR 199/MWh hybrid; EUR 297/MWh diesel."
+        # Both LCOE figures come from the Ramboll mine-microgrid model specifically,
+        # not the CIPF investment catalogue also merged into greenland["sources"].
+        greenland["home_price_source_urls"] = [study["sources"][0]["url"]]
+        greenland["blockers"].extend(study.get("blockers", [])[:2])
+        for src in study.get("sources", []):
+            if src["url"] not in {x["url"] for x in greenland["sources"]}:
+                greenland["sources"].append(src)
     regions.sort(key=lambda x: (order.index(x["group"]), x["region"]))
     # Counted from the records, never asserted: an earlier version said every
     # source was fetched while 14 were snippet-only (Codex review, PR #22).
@@ -142,13 +191,15 @@ def main() -> None:
     fetched, snippet = statuses.count("fetched"), statuses.count("snippet-only")
     out = {
         "_meta": {
-            "captured": "2026-09-26",
+            "captured": "2026-09-28",
             "what_this_is": (f"{len(regions)} remote and cold places, most running on diesel, where a "
                              "1-20 MW reactor would compete: what each pays, what it draws, and where "
                              "its law stands on civil nuclear power."),
             "method": ("Two research passes (data/research/2026-09-26-refresh/north.json and "
                        "islands.json), one record per jurisdiction, with eight tariffs added from "
-                       f"that folder's issues.json. {fetched} of {len(statuses)} "
+                       "that folder's issues.json, plus Alaska tariff and Greenland mine-model "
+                       "evidence from data/research/2026-09-28-alaska-greenland-pricing/north.json. "
+                       f"{fetched} of {len(statuses)} "
                        f"sources were fetched and read; {snippet} are search-corroborated only and "
                        "carry status snippet-only, which the page marks with a dagger. The group, "
                        "the law-and-policy tag and the short price label are curated in that "
