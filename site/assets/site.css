@@ -391,11 +391,16 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
   border:1px solid var(--border-subtle)}
 @media(min-width:640px){.glance{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1100px){.glance{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.glancebox{display:flex;flex-direction:column;min-width:0;background:var(--surface-page)}
 .glancecard{display:grid;grid-template-rows:auto auto 1fr;gap:var(--space-2);position:relative;
-  padding:var(--space-5) var(--space-10) var(--space-5) var(--space-6);background:var(--surface-page);color:inherit;
+  flex:1;padding:var(--space-5) var(--space-10) var(--space-5) var(--space-6);background:var(--surface-page);color:inherit;
   transition:background var(--dur-fast) var(--ease-standard)}
+.glancecite{padding:0 var(--space-6) var(--space-4);font-family:var(--font-mono);
+  font-size:var(--size-caption);color:var(--text-tertiary)}
+.glancecite .cite{vertical-align:baseline}
 .glancecard .go{position:absolute;top:var(--space-5);right:var(--space-5)}
 @media(max-width:639px){.glancecard{padding:var(--space-4) var(--space-10) var(--space-4) var(--space-5)}
+  .glancecite{padding:0 var(--space-5) var(--space-4)}
   .homeblock{padding-top:var(--space-8)}}
 .glancecard:hover{background:var(--surface-plate)}
 .glancecard:hover .gq,.glancecard:hover .go{color:var(--antares-red)}

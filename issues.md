@@ -4,6 +4,7 @@ Living audit trail. Each bug: date, area, description, root cause (code bug vs d
 vs test bug), status.
 
 - **2026-09-28 · site · Voices opened as an 11.4-screen page on phones — Fixed.** The first quote group expanded on entry even though the renderer described groups as collapsed by default. Removed the automatic expansion. The phone entry page is now 4.9 screens; each group opens on demand. Browser regression test covers the closed state and expansion.
+- **2026-09-29 · site · Home price claims had no direct citations — Fixed.** The Alaska and Greenland figures appeared inside a linked directory card with no source chips. The card now keeps its route link and has separate, labeled citation links below it. The generator resolves those links from the same region sources as the detail view; a browser test checks all three links and the card click.
 - **2026-09-09 · data · DOE Reactor Pilot Program criticality count stale, 3 vs actual 5 — Fixed.**
   `opportunities.json`'s `reactors_critical_2026` field (feeding the homepage hero stat)
   was hand-set to 3 and never updated after Aalo (2026-07-04) and Oklo's Groves Isotope
