@@ -79,7 +79,7 @@ class BenchmarkPrecedentCoverage(unittest.TestCase):
     def test_every_alaska_benchmark_is_listed(self):
         bench = load("benchmarks")
         alaska_ids = {r["id"] for sec in bench["sectors"] for r in sec["records"]
-                     if "Alaska" in json.dumps(r)}
+                     if "Alaska" in json.dumps(r)} - set(build_data.NON_ALASKA_BENCHMARK_MENTIONS)
         listed = set(build_data.ALASKA_BENCHMARK_IDS)
         missing = alaska_ids - listed
         self.assertFalse(missing,
@@ -89,6 +89,12 @@ class BenchmarkPrecedentCoverage(unittest.TestCase):
         self.assertFalse(stale,
                          f"build_data.ALASKA_BENCHMARK_IDS names {stale}, which no longer exists "
                          "in benchmarks.json or no longer mentions Alaska")
+
+    def test_excluded_mentions_are_not_also_listed(self):
+        overlap = set(build_data.NON_ALASKA_BENCHMARK_MENTIONS) & set(build_data.ALASKA_BENCHMARK_IDS)
+        self.assertFalse(overlap,
+                         f"{overlap} are in both ALASKA_BENCHMARK_IDS and "
+                         "NON_ALASKA_BENCHMARK_MENTIONS — pick one")
 
 
 class AlaskaPageBuild(unittest.TestCase):

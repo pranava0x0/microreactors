@@ -2,17 +2,17 @@
   "_meta": {
     "captured": "2026-09-26",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "43 of 62 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 19 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "42 of 61 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 19 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-09-24",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
   "categories": [
     {
-      "id": "regulatory",
-      "count": 11
+      "id": "fuel",
+      "count": 10
     },
     {
-      "id": "fuel",
+      "id": "regulatory",
       "count": 10
     },
     {
@@ -261,27 +261,6 @@
           "label": "PR Newswire — Centrus and Radiant Announce Long-Term Partnership for Domestic HALEU to Supply Kaleidos Microreactors",
           "url": "https://www.prnewswire.com/news-releases/centrus-and-radiant-announce-long-term-partnership-for-domestic-haleu-to-supply-kaleidos-microreactors-302873669.html",
           "quote": "definitive multi-year contract to supply high-assay, low-enriched uranium",
-          "status": "fetched"
-        }
-      ]
-    },
-    {
-      "id": "pjm-ferc-colocation-tariff-el25-49-2026-09-08",
-      "date": "2026-09-08",
-      "headline": "PJM submits compliance framework under FERC Docket EL25-49 for co-located generation",
-      "companies": [
-        "PJM Interconnection"
-      ],
-      "category": "regulatory",
-      "what_happened": "PJM Interconnection filed its compliance framework under FERC Docket EL25-49, proposing tariff provisions for behind-the-meter generation serving co-located large loads without requiring full wholesale network transmission interconnection, while instituting standby service obligations and capacity tag minimums for on-site resources.",
-      "why_it_matters": "This proceeding establishes the federal regulatory precedent for whether private-wire microreactors adjacent to data centers in PJM can bypass the 4-to-8 year transmission queue or face network exit fees.",
-      "binding": true,
-      "binding_note": "A formal compliance filing submitted to FERC under Docket No. EL25-49-000.",
-      "sources": [
-        {
-          "label": "CEA Advisors — Summary of FERC Order on Co-Located Large Loads (Docket EL25-49-000)",
-          "url": "https://ceadvisors.com/summary-of-ferc-order-instituting-proceeding-on-co-located-large-loads-at-generating-facilities-docket-no-el25-49-000-et-al/",
-          "quote": "proceeding on co-located large loads at generating facilities",
           "status": "fetched"
         }
       ]

@@ -169,7 +169,7 @@
   function activate(route, opts) {
     opts = opts || {};
     var parts = String(route || "").split("/");
-    var id = parts[0], sub = parts[1] || "";
+    var id = parts[0], sub = parts[1] || "", item = parts[2] || "";
     if (ALIASES[id]) id = ALIASES[id];
     if (id === "sites") { id = "pipeline"; sub = "sites"; }
     if (id === "market") { id = "policy"; sub = "market-design"; }
@@ -206,9 +206,18 @@
       setTimeout(function () { openNewsItem(sub); }, 0);
     }
     var subRes = SUBS[id] ? SUBS[id].show(sub) : "";
+    /* "#demand/alaska/<id>" opens that opportunity's detail card, the same
+       reload/bookmark/share contract #news/<id> gives news records. The
+       subtab itself is already showing by now (SUBS[id].show ran above and
+       triggered the lazy fetch); chain onto the same cached promise rather
+       than re-deriving whether the fetch already started. */
+    if (id === "demand" && sub === "alaska" && item) {
+      loadLazy("alaska").then(function () { openAlaskaItem(item); });
+    }
     // News has no sub-tabs, but #news/<id> names a record: keep it, so a link
     // followed from a headline can be copied and shared as that record.
-    var here = id + (subRes ? "/" + subRes : (id === "news" && sub ? "/" + sub : ""));
+    var here = id + (subRes ? "/" + subRes : (id === "news" && sub ? "/" + sub : "")) +
+      (id === "demand" && sub === "alaska" && item ? "/" + item : "");
     if (location.hash.slice(1) !== here) {
       if (opts.push) location.hash = here;
       else history.replaceState(null, "", "#" + here);
@@ -1221,8 +1230,7 @@
       var a = e.target.closest(".alaska-detail-link");
       if (!a) { return; }
       e.preventDefault();
-      var d = $("alaska-detail-" + a.dataset.id);
-      if (d) { d.open = true; d.scrollIntoView({ behavior: "smooth", block: "start" }); }
+      openAlaskaItem(a.dataset.id);
     });
 
     render($("alaska-precedents-intro"),
@@ -1278,6 +1286,14 @@
         (n.read ? '<p><span class="k">Read · </span>' + esc(n.read) + "</p>" : "") +
         srcList(n.sources) + "</div></details>";
     }).join(""));
+  }
+  /* Shared by the in-page table-row click and by "#demand/alaska/<id>" on
+     boot/reload (see activate()), the same reload/bookmark contract
+     openNewsItem gives news records. A no-op if the card isn't there yet
+     (still rendering) or the id is unknown. */
+  function openAlaskaItem(id) {
+    var d = id && $("alaska-detail-" + id);
+    if (d) { d.open = true; d.scrollIntoView({ behavior: "smooth", block: "start" }); }
   }
 
   var secItems = D.sectors.sectors.map(function (sec) {

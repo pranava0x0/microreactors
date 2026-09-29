@@ -137,8 +137,16 @@ ALASKA_BENCHMARK_IDS = [
     "graphite-one-graphite-creek-power-plan", "kokhanok-paradigm-shift-era-microgrid",
     "avec-new-stuyahok-ekwok-era-solar-storage", "tanana-chiefs-alaskan-tribal-energy-sovereignty-era",
     "doyon-utilities-alaska-utility-privatization", "alaska-pce-fy2024-base-rate-order",
-    "project-pele-bwxt-2022", "unisea-dutch-harbor-waste-heat-to-power",
+    "unisea-dutch-harbor-waste-heat-to-power",
 ]
+
+# benchmarks.json records that mention "Alaska" but are not Alaska deployments —
+# excluded from ALASKA_BENCHMARK_IDS and from tests/test_alaska.py's coverage
+# check, each with the reason a plain string search would false-positive on it.
+NON_ALASKA_BENCHMARK_MENTIONS = {
+    "project-pele-bwxt-2022": "sited at Idaho National Laboratory, built in Virginia and Ohio; "
+                              "'Alaska' appears only in a cost comparison sentence (Codex review, PR #24)",
+}
 
 PRECEDENT_FIELDS = ("id", "name", "sector", "region", "parties", "instrument", "capacity",
                     "price", "price_status", "capex", "signed", "term_years", "displaced",
@@ -170,7 +178,14 @@ def build_alaska_page(bundle: Dict[str, Any]) -> None:
             "sector": (p or {}).get("sector") or (s or {}).get("category"),
             "region": (p or s)["region"],
             "load": (p or {}).get("load") or (s or {}).get("power"),
-            "status": (p or {}).get("status") or (s or {}).get("status"),
+            # Site status preferred over prospect status: deployment_sites.json and
+            # opportunities.json (the Deals tracker) already agree with each other
+            # (e.g. eielson-pilot and the "eielson" tracker row both read "intent to
+            # award"), while strategy.json's status is a narrower deal-progression
+            # label that goes stale independently (it still read "letter-of-intent"
+            # for Eielson — Codex review, PR #24). Showing the site's status keeps
+            # this page consistent with Deals > Sites rather than contradicting it.
+            "status": (s or {}).get("status") or (p or {}).get("status"),
             "buyer_model": row["buyer_model"],
             "grid_note": row["grid_note"],
             "documented": (p or {}).get("documented") or (s or {}).get("summary"),
