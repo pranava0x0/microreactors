@@ -1194,7 +1194,7 @@
     var ruralRemote = A.power_mix.regions.filter(function (r) { return r.id === "power-mix-rural-remote"; })[0];
     render($("alaska-summary"), [
       { n: String(A.opportunity_rows.length), k: "opportunities tracked" },
-      { n: String(A.precedent_rows.length), k: "priced or funded precedents" },
+      { n: String(A.precedent_rows_priced), k: "priced or funded precedents" },
       { n: ruralRemote ? ruralRemote.mix_2021.oil + "%" : "—", k: "of rural Alaska's power is oil/diesel", accent: true },
       { n: rural ? usd(rural.low_mwh) + "–" + usd(rural.high_mwh) : "—", k: "per MWh, rural Alaska diesel (RCA PCE order)" }
     ].map(function (x) {
@@ -1235,7 +1235,9 @@
 
     render($("alaska-precedents-intro"),
       "Every row below already appears, fully sourced, on this site's Deals or Costs tabs; " +
-      "this table just pulls the Alaska rows into one place.");
+      "this table just pulls the Alaska rows into one place. Most carry a price, capex or " +
+      "funding figure; a few (Graphite One's power plan) are load forecasts with no signed " +
+      "instrument yet, kept here for deployment context, not counted in the stat above.");
     render($("alaska-precedents-body"), A.precedent_rows.map(function (r) {
       var parties = r.parties ? [r.parties.host, r.parties.provider].filter(function (v, i, a) {
         return v && a.indexOf(v) === i;

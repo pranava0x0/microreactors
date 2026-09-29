@@ -116,6 +116,14 @@ class AlaskaPageBuild(unittest.TestCase):
             self.assertTrue(row.get("id"))
             self.assertTrue(row.get("sources"), f"{row['id']} has no sources")
 
+    def test_priced_count_excludes_unpriced_rows(self):
+        # graphite-one-graphite-creek-power-plan is a load forecast with no price,
+        # capex or funding figure and must not count toward the "priced or funded"
+        # stat (Codex review, PR #24).
+        self.assertLess(self.ak["precedent_rows_priced"], len(self.ak["precedent_rows"]))
+        priced_ids = {r["id"] for r in self.ak["precedent_rows"] if build_data.priced(r)}
+        self.assertNotIn("graphite-one-graphite-creek-power-plan", priced_ids)
+
     def test_power_mix_regions_sum_close_to_100(self):
         for region in self.ak["power_mix"]["regions"]:
             total = sum(region["mix_2021"].values())

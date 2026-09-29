@@ -63,10 +63,16 @@
       "id": "municipal-utility",
       "label": "Municipal or borough utility",
       "examples": [],
-      "what_it_means": "A town-owned utility answers to its city council or a utility board rather than a membership vote, and its rates still go through the RCA's normal tariff process. This site's Regions tab documents Nome, Kotzebue, Bethel and Utqiagvik each running their own municipal or cooperative diesel utility outside the Alaska Village Electric Cooperative system.",
-      "sale_shape": "A single-town buyer is small, so a reactor sized for one town has to clear that town's own diesel cost, not a statewide average — and PCE-community rates documented in this site's Regions tab range 20x community to community.",
-      "watch_for": "No named microreactor prospect at a municipal utility has been documented yet; this row states the model, not a live deal.",
+      "what_it_means": "A town-owned utility answers to its city council or a utility board rather than a membership vote — and by default it sets its own rates outside RCA review. AS 42.05.711(b) exempts a utility owned and operated by a political subdivision from Chapter 42.05 except for the certification provisions (AS 42.05.221–42.05.281) and AS 42.05.385; a town keeps that exemption unless its own governing body elects to be regulated. This site's Regions tab documents Nome, Kotzebue, Bethel and Utqiagvik each running their own municipal or cooperative diesel utility outside the Alaska Village Electric Cooperative system.",
+      "sale_shape": "A single-town buyer is small, so a reactor sized for one town has to clear that town's own diesel cost, not a statewide average — and PCE-community rates documented in this site's Regions tab range 20x community to community. Whether a reactor deal needs a CPCN still applies (certification is not exempted), but the ongoing rate itself may be set locally rather than by RCA tariff order, unless the town opted in.",
+      "watch_for": "No named microreactor prospect at a municipal utility has been documented yet; this row states the model, not a live deal. Confirm whether the specific town has elected RCA regulation before assuming either rate path.",
       "sources": [
+        {
+          "label": "FindLaw — Alaska Statutes Title 42 Sec. 42.05.711 (Exemptions)",
+          "url": "https://codes.findlaw.com/ak/title-42-public-utilities-and-carriers-and-energy-programs/ak-st-sect-42-05-711/",
+          "quote": "public utilities owned and operated by a political subdivision of the state",
+          "status": "fetched"
+        },
         {
           "label": "This site — Applications · Regions · Rural Alaska (Power Cost Equalization communities)",
           "url": "https://pranava0x0.github.io/microreactors/#demand/regions",
