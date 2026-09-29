@@ -17,6 +17,9 @@ One row per subagent/workflow run: why, cost, verdict, and the cheaper route in 
 | 2026-09-09 | Write up in-scope news candidates (4 investigated, 0 new records) | y | high — correctly judged all 4 candidates: 2 added as corroborating sources to existing records, 2 skipped as out-of-scope/no-new-fact, with reasons for each; no padding | 152K | Could have been a direct inline pass (~20K) — the judgment calls were straightforward once the 4 URLs were fetched |
 | 2026-09-09 | PTC/45Y/48E status after OBBBA and 2026 (7 findings) | y | high — verified the site's nuclear-PTC claim against the enacted statute text (not just a law-firm summary), and found IRS Notice 2026-15's FEOC "material assistance" test, not yet reflected anywhere on the site, bearing directly on the site's own tracked TRISO deals; wrote data/research/2026-09-09-orderbook-filings/ptc-45y-48e-update.json | 139K | None — resolving conflicting secondary-source claims about the enacted deadline needed the primary statute |
 | 2026-09-09 | AI in nuclear operations/policy survey (12 findings) | y | high — separated real named systems (Aalo+Microsoft permitting AI, DOE/INL/Argonne "Gordian" pilot, Project Prometheus) from unverifiable vendor marketing claims (Westinghouse eVinci "autonomous operation" is hardware I&C, not AI; Radiant's "ML fleet" traces to one 2023 blog post); wrote data/research/2026-09-09-orderbook-filings/ai-in-nuclear.json | 165K | None — this was genuinely open scouting with no existing site content to build from |
+| 2026-09-28 | Alaska + Greenland pricing/contracts follow-up | y | medium — 6 priced records and 1 government-study region; exact RCA, SEC, Greenland ministry, and investment-catalogue evidence; proposed tariffs still need reclassification before integration | not reported | Correct agent use for multi-source regulator/PDF synthesis after the inline web seed; keep the agent on evidence collection and enforce the Type B final-order rule during integration |
+| 2026-09-28 | Utility filing and contract-approval follow-up | y | high — 2 non-duplicate regulator records, 4 explicit absences, and no invented Natrium price; 0 validator errors | not reported | Correct agent use: Utah docket chronology and Louisiana minutes needed cross-document legal/contract reading after the inline web seed |
+| 2026-09-28 | PR #23 nuclear, utility and energy-contract review | y | high — 8 actionable findings; caught QF eligibility, proposed-vs-approved display, LCOE-vs-price, residual-risk and currency overclaims | not reported | Expert review was worth the agent: the legal and contract distinctions survived ordinary tests but changed the product meaning |
 
 Retro discipline: after each run, verify the file landed, spot-check 2–3 quotes against
 their URLs, then fold the verified state into a deterministic gate (see
@@ -194,3 +197,32 @@ the 2026-08-29 voices pass saw, and it is why the gate runs on cached bytes and 
 **One improvement.** Fetch and cache the primary documents the agents are going to need
 (SEC filings, regulator PDFs) in the main session *before* spawning, since agents cannot write
 the shared cache; and run the seed search at `--pause 8` in two halves rather than one burst.
+
+## 2026-09-26 — full refresh: pooling, remote regions, islands, filings, news, verification
+
+Plan and contract: `data/research/2026-09-26-refresh/PLAN.md`, `CONTRACT.md` (types D-G added to
+`tools/research_pass.py` with known-good and known-bad fixtures before any agent launched).
+Sonnet agents only, two at a time, every file written incrementally.
+
+| agent | why an agent | tokens | tools | time | result | worth it |
+|---|---|---|---|---|---|---|
+| pooling | 24 cross-sector precedents need ~70 fetches; no local archive covered non-nuclear pooling | 270K | 103 | 25 min | 24 records, 0 validator errors, all 12 mechanism types, 6 failure cases; 3 of ~35 quotes needed narrowing to the page text | yes: every row shipped, and seven design elements now in the orderbook proposal |
+| north | 12 jurisdictions across Alaska, Canada, Greenland, the Nordics and polar stations; no enumeration existed | 397K | 197 | 5 h 6 min (its file was complete and integrated hours before it returned) | 12 regions, 3 cases (all 3 duplicated existing benchmarks), 5 prospect answers | yes: the regions and answers shipped; the file-on-disk rule is why integration did not wait on the agent |
+| islands | 12 island, territory and AUKUS/allied jurisdictions | 322K | 181 | 31 min | 12 regions, 3 cases (2 new), 0 validator errors; 11 of ~55 quotes were ellipsis joins or paraphrases and one misattributed a system peak to a cannery | yes, with a quote-repair pass in the main session |
+| filings | commission e-filing systems are not indexed by search | 422K | 186 | 36 min | 14 dockets (0 name a 1-20 MW reactor), 6 facility records; rate-limited mid-run, switched to curl against EIA-860M | partly: dockets shipped; the six facility records report on-site generation, not load, and were not used |
+| news | 16 leads needing a fetched primary page each | 237K | 82 | 19 min | 14 items, 0 validator errors; 1 duplicate of an existing record dropped | yes: 13 items shipped |
+| verify A | 40 shipped claims (tracker rows, vendor milestones, Janus labels) each needing the counterparty's newest statement | 295K | 138 | 28 min | 33 confirmed, 7 wrong: five Janus news items said "signed" against the Army's "down-selected for negotiation", a UK row carried the Welsh site's review, and a funding round was dated to a recap article | yes: every wrong verdict became a correction, and the Janus tracker/news split is now consistent |
+| verify B | 41 site and prospect claims | 291K | 122 | 25 min | 37 confirmed, 3 wrong, 2 outdated, 1 unsupported, 1 unverifiable; the "unsupported" verdict was itself wrong (the agent read the CVEA release but not the cited Ruralite article that names the vendors), and the "unverifiable" one (Aalo's RELLIS letter of intent) is confirmed by its ADAMS record ML26190A374, which web search does not index; ADAMS also showed NRC's 2026-09-02 e-mail to Aalo on a RELLIS ESP project number, now in the filing trail | yes, with every non-confirmed verdict re-checked against the cached source or ADAMS before applying |
+| issues | four open research issues plus eight missing tariffs, each needing a primary page | 369K | 173 | 39 min | 4 answers (1 answered, 3 partial), 8 of 8 tariffs, 1 new case (KCGM, 25-year PPA); 1 quote transliterated Norwegian and was re-copied | yes: #17 is closed by its table; the Regions list has no unpriced row left |
+| verify C, part A | 22 records whose prose carried numbers no cached cited page contained | 331K | 133 | 27 min | 7 confirmed, 23 unsupported, 1 unverifiable, 22 skipped as bill/date fragments; found Tanbreez's 70% belonged to an unrelated purchase | yes: 15 records corrected or sourced; four hosts (AVEC, Power and Water, Horizon Power, Mining Technology) block agents and scripts alike and were read in a browser |
+| verify C, part B | 22 more such records | 453K | 191 | 43 min | 25 confirmed, 3 wrong, 6 unsupported, 1 unverifiable | yes: American Samoa, Chatham Islands and Yukon figures corrected; one agent "unsupported" (Nunavut's 19 plants over 1 MW) was confirmed against the plant list it had not checked |
+
+**Improvements.** (1) Ellipsis-joined quotes kept arriving despite the contract saying not to; the
+validator should reject a quote containing "..." or "…". (2) Ask for loads, not "capacity": a
+facility's on-site generation is not its demand, and the filings agent reported the former for five
+of six loads. (3) Tell agents which existing benchmark ids exist, so they do not re-find Red Dog,
+Kivalliq and Agnew.
+
+**One improvement.** The agent cited the same URL twice as two "sources" on 11 of 24 rows
+(Wikipedia and one trade page doing double duty). Harmless after `cite()` dedupes, but the
+contract should say "two sources means two documents".

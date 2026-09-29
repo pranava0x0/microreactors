@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "captured": "2026-08-29",
+    "captured": "2026-09-28",
     "purpose": "Candidate deployment SITES per Applications-tab category (US + abroad), with the regulatory/utility filing trail for each. Complements opportunities.json: that file tracks buyer instruments; this file tracks named physical sites and their filings. Rows that correspond to a tracker row carry tracker_id and add site-level facts only.",
     "method": "Depth-first: deep rows were built by reading primary documents (docket searches via tools/adams_search.py + tools/ferc_elibrary.py, pages cached via tools/fetch_source.py and indexed in data/research/source_index.json with URL + access date + SHA-256). Scan rows come from click-through on the Applications tab's citations plus web search, each with at least one source. No row is written without a source.",
     "depth_values": [
@@ -10,6 +10,7 @@
     "status_values": [
       "concept",
       "feasibility",
+      "agreement-reported",
       "tabled",
       "pre-application",
       "application",
@@ -18,7 +19,8 @@
       "paused",
       "cancelled",
       "under-construction",
-      "operating"
+      "operating",
+      "announced"
     ],
     "filing_note": "A filing entry is a document lodged with (or issued by) a regulator or utility forum: NRC ADAMS accessions, FERC eLibrary accessions, state PUC dockets, CNSC records. 'None located' gaps are honest absences after a docket-system search, not unchecked blanks.",
     "negative_findings": [
@@ -43,7 +45,7 @@
         "evidence": "data/research/ferc/malmstrom-description-search.json"
       }
     ],
-    "category_absences": "Categories where no named candidate microreactor site was located as of the capture date, beyond what opportunities.json already tracks: Mining (the IANC consortium is multi-site and unassigned; the tracker's counter-signal row stands), Agriculture & Food, Transportation (US — the one named port deployment is abroad, see the tracker's Thames Freeport row), and the hospital/prison/water bands of Civic Infrastructure. Honest absences, not unchecked blanks.",
+    "category_absences": "No named reactor procurement found in Greenland remote town grids or in the new off-grid mine and US marine-terminal prospects. Tanbreez has a hydropower agreement; the Los Angeles and New York/New Jersey awards fund electrified loads, not generation. Agriculture & Food and the hospital/prison/water bands of Civic Infrastructure still have no named candidate reactor site in this file.",
     "extra_categories": {
       "Defense installations": [
         "Remote installation power",
@@ -51,7 +53,8 @@
       ]
     },
     "extra_categories_note": "Deployment categories the Applications taxonomy (sectors.json) deliberately does not carry — that page maps civilian load types, while defense procurement is its own buyer frame (as in opportunities.json's tracks). Declared here with their allowed bands so a Sites UI can group these rows and so a row with an undeclared category fails the tests instead of being silently skipped.",
-    "janus_note": "Added 2026-08-29: the five Army Janus installations announced 2026-08-26. They are recorded as scan depth, not deep — the announcement and trade coverage are the only public record. Unlike every other site here, a Janus reactor generates no NRC docket and no state utility filing, because the Army licenses it. Absence of a paper trail for these five is a feature of the contracting route, not a research gap."
+    "janus_note": "Added 2026-08-29: the five Army Janus installations announced 2026-08-26. They are recorded as scan depth, not deep — the announcement and trade coverage are the only public record. Unlike every other site here, a Janus reactor generates no NRC docket and no state utility filing, because the Army licenses it. Absence of a paper trail for these five is a feature of the contracting route, not a research gap.",
+    "priority_note": "Sites opens with remote outposts/microgrids, then off-grid mining/minerals, then marine terminals. Rows marked concept are screening prospects; cited load or incumbent-power evidence does not show reactor interest."
   },
   "sites": [
     {
@@ -66,14 +69,15 @@
       "owner": "The Pennsylvania State University",
       "vendor": "Westinghouse (eVinci)",
       "power": "15 MWt",
-      "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-17 it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
+      "summary": "Penn State's FRONTIER Project told the NRC on 2025-02-28 (in a letter dated 2025-02-17) it intends to file a Construction Permit application for a research reactor based on the eVinci design at University Park, at a thermal power of 15 MWt, under 10 CFR 50.21(c)/50.23 (AEA §104(c) nonprofit-educational pathway). The letter asks for a project number and a dedicated NRR project manager, and says a Regulatory Engagement Plan would be issued to the NRC later in 2025. The vendor's own pre-application docket (99902079) holds 244 documents from 2019 through 2026, including NRC safety evaluations of eVinci topical reports issued into mid-2026.",
       "filings": [
         {
           "forum": "NRC ADAMS",
           "type": "Notice of intent to submit a CP application (research reactor)",
           "id": "ML25059A029",
-          "date": "2025-02-17",
-          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf"
+          "date": "2025-02-28",
+          "url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf",
+          "note": "letter dated 2025-02-17, submitted 2025-02-28 (ML25059A029)"
         },
         {
           "forum": "NRC ADAMS",
@@ -92,6 +96,12 @@
           "quote": "The RR will be designed, constructed, licensed and operated at a thermal power level of 15 MWt",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/35aba5f2c9cde917.pdf)"
+        },
+        {
+          "label": "Penn State Engineering — FRONTIER letter of intent to the NRC (2025)",
+          "url": "https://news.engr.psu.edu/2025/frontier-westinghouse-nrc-evinci-microreactor.aspx",
+          "quote": "Penn State submitted a letter of intent to the NRC on Feb. 28",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -111,7 +121,7 @@
       "owner": "Copper Valley Electric Association (member-owned cooperative, islanded grid)",
       "vendor": "USNC (MMR) — vendor entered Chapter 11 in 2024",
       "power": "2 × 15 MWt studied",
-      "summary": "The completed pre-feasibility study (USNC doc 027263, 2023-06-09) found an MMR 'a match for CVEA's needs': replacing the Valdez cogeneration unit, with CVEA ownership beating vendor ownership on economics, year-round heat sales pivotal, and IRA credits worth 30–50% of capital (energy-community + domestic-content bonuses, direct pay available). It evaluated a Mountain Site at ~Mile 3 Dayville Road, Valdez — a bedrock bench at the toe of Sugarloaf Mountain ~600 feet below the Trans-Alaska Pipeline, zoned Public Use / Heavy Industrial — as lowest tsunami risk and suitable for construction, plus a Glennallen site with no nearby heat off-taker. CVEA nonetheless tabled the project indefinitely on 2023-08-09. The paired state-policy artifact is Alaska SB 177 (signed 2022-05-24), which removed the legislative-designation requirement for reactor siting in AS 18.45.",
+      "summary": "The completed pre-feasibility study (USNC doc 027263, 2023-06-09) found an MMR 'a match for CVEA's needs': replacing the Valdez cogeneration unit, with CVEA ownership beating vendor ownership on economics, year-round heat sales pivotal, and IRA credits worth 30–50% of capital (energy-community + domestic-content bonuses, direct pay available). It evaluated a Mountain Site at ~Mile 3 Dayville Road, Valdez — a bedrock bench at the toe of Sugarloaf Mountain ~600 feet below the Trans-Alaska Pipeline, zoned Public Use / Heavy Industrial — as lowest tsunami risk and suitable for construction, plus a Glennallen site with no nearby heat off-taker. CVEA nonetheless tabled the project indefinitely on 2023-08-09. The paired state-policy artifact is Alaska SB 177 (signed 2022-05-24), which removed the legislative-designation requirement for reactor siting in AS 18.45. CVEA’s January 2026 technology review confirms the MMR was technically feasible but not cost-effective for members. It says the Alyeska Valdez Marine Terminal intertie was built in 2024, tested in 2025 and scheduled for commercial exchange in spring 2026; actual start is unverified.",
       "filings": [
         {
           "forum": "Utility (self-published project record)",
@@ -148,11 +158,17 @@
           "quote": "Micro-Modular Nuclear Reactor Project Tabled Indefinitely by CVEA",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/1b6a9d74ec6ffdeb.html)"
+        },
+        {
+          "label": "CVEA — Future Technologies, January 2026",
+          "url": "https://www.cvea.org/uploads/future-technologies-january-2026.pdf?_cchid=a3d219df0167f4f033f8c76822c57b7c",
+          "quote": "economic analysis showed it was not cost-effective for CVEA members",
+          "status": "fetched"
         }
       ],
       "gaps": [
-        "The tabling release's stated reasons not yet extracted from the cached PDF",
-        "No RCA docket search performed (RCA's docket system has no public API located); CVEA's own project page is the record of state of play"
+        "Confirm current intertie operation, delivered costs and any CVEA reconsideration trigger",
+        "No RCA reactor docket located; utility project remains tabled"
       ]
     },
     {
@@ -168,7 +184,7 @@
       "owner": "U.S. Department of the Air Force (DLA Energy contracting)",
       "vendor": "Oklo (Aurora)",
       "power": "5 MWe (2023 selection figure); DAF describes the class as 1–50 MW",
-      "summary": "The DAF's preferred site for the first commercial microreactor on a DoD installation. NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC are preparing the environmental analysis. Site logic: the base runs a 72-year-old coal-fired heat-and-power plant and buys electricity from Golden Valley Electric Association — the pilot is backup power and grid-independence for an Arctic F-35 base, taking electricity and heat under a long-term PPA.",
+      "summary": "The DAF's preferred site for the first commercial microreactor on a DoD installation. NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); NOITA starts negotiations; a potential 30-year power contract awaits NRC licensing; DAF and NRC are preparing the environmental analysis. Site logic: the base runs a 72-year-old coal-fired heat-and-power plant and buys electricity from Golden Valley Electric Association — the pilot is backup power and grid-independence for an Arctic F-35 base, taking electricity and heat under a long-term PPA.",
       "filings": [
         {
           "forum": "DAF / DLA Energy (procurement record)",
@@ -192,11 +208,17 @@
           "quote": "the DAF and Nuclear Regulatory Commission (NRC) are preparing an environmental analysis for the project as a next step",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/b2a27fcdd4682985.txt)"
+        },
+        {
+          "label": "DAF — Eielson microreactor project page and 2026 updates",
+          "url": "https://www.eielson.af.mil/microreactor/",
+          "quote": "If ultimately awarded the contract",
+          "status": "fetched"
         }
       ],
       "gaps": [
         "Land parcel on base not identified",
-        "No NRC docket or pre-application entry for an Oklo Eielson unit located in ADAMS as of 2026-08-23 — the environmental analysis is the next paper trail to watch"
+        "Track DAF environmental analysis, NRC licence and executed power contract; NOITA is not an award"
       ]
     },
     {
@@ -209,7 +231,7 @@
       "status": "paused",
       "depth": "deep",
       "owner": "Global First Power (OPG + USNC joint venture)",
-      "vendor": "USNC (MMR)",
+      "vendor": "NANO Nuclear (acquired Global First Power from USNC on 2025-10-22); formerly USNC (MMR)",
       "power": "up to 45 MWt process heat",
       "summary": "The richest foreign filing trail in the microreactor class and the first SMR licence application in Canada (announced 2019-04-02): a licence to prepare site under NSCA s.24(2) plus a CNSC-led environmental assessment under CEAA 2012, for an MMR delivering up to 45 MWt of process heat via molten salt at Canada's national laboratory campus, ~200 km northwest of Ottawa. CNSC staff paused all EA and licence-review work in 2024; parent USNC filed Chapter 11 in October 2024. CNSC's project page now reads 'Current Status: Paused' and its review-status page is archived.",
       "filings": [
@@ -224,11 +246,6 @@
           "type": "Environmental assessment under CEAA 2012 (CNSC-led)",
           "date": "2019–2024 (paused)",
           "url": "https://www.cnsc-ccsn.gc.ca/eng/resources/environmental-protection/environmental-assessments/ea-80182/"
-        },
-        {
-          "forum": "CNSC",
-          "type": "GFP–CNSC administrative protocol for the EA + PRSL application",
-          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/chalk-river/global-first-micro-modular-reactor-project/gfp-admin/"
         }
       ],
       "utility_context": "Process-heat + power demonstration at a federal lab campus (CNL-managed, AECL-owned); Ontario Power Generation is a co-venturer, but no provincial rate filing applies.",
@@ -242,7 +259,7 @@
         },
         {
           "label": "CNSC — Regulatory review status for the MMR Project (archived)",
-          "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/other-reactor-facilities/regulatory-review-status-micro-modular-reactor/",
+          "url": "https://web.archive.org/web/20251211125613/https://www.cnsc-ccsn.gc.ca/eng/reactors/research-reactors/other-reactor-facilities/regulatory-review-status-micro-modular-reactor/",
           "quote": "produce up to 45 megawatts (thermal) of process heat",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/1247b9c24a69722e.html)"
@@ -253,6 +270,12 @@
           "quote": "announced their submission of the application",
           "status": "fetched",
           "verified": "2026-08-23 quote confirmed in cached copy (data/cache/52f1d4a9784380b4.html)"
+        },
+        {
+          "label": "NANO Nuclear — finalizes acquisition of Global First Power from USNC (2025-10-22)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-finalizes-acquisition-of-global-first-power-from-usnc-strengthening-its-position-as-a-north-american-leader-in-nuclear-microreactor-development/",
+          "quote": "an approximately $640,000 liability owned by GFPL to the CNSC",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -328,6 +351,13 @@
           "id": "ML26190A374",
           "date": "2026-07-09",
           "url": "https://www.nrc.gov/docs/ML2619/ML26190A374.pdf"
+        },
+        {
+          "forum": "NRC ADAMS",
+          "type": "NRC e-mail to Aalo: RELLIS ESP project number (docket 99902180)",
+          "id": "ML26245A061",
+          "date": "2026-09-02",
+          "url": "https://www.nrc.gov/docs/ML2624/ML26245A061.pdf"
         }
       ],
       "utility_context": "Reactors at RELLIS could feed the ERCOT grid; no ERCOT interconnection filing identified per vendor yet.",
@@ -355,14 +385,14 @@
       "owner": "University of Illinois Urbana-Champaign (NPRE)",
       "vendor": "NANO Nuclear (Kronos MMR; formerly USNC MMR — project continued after USNC's 2024 bankruptcy)",
       "power": "45 MWt (research reactor)",
-      "summary": "The longest-running university microreactor program to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC announced receipt of the construction permit application on 2026-04-15. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
+      "summary": "The longest-running university microreactor program to reach an actual construction permit application: pre-application docket 99902094 opened with a regulatory engagement plan in 2021 (then for USNC's MMR); after USNC's bankruptcy the project rebooted with NANO Nuclear's Kronos MMR, and the NRC published notice of receipt of the construction permit application on 2026-04-21 and docketed it on 2026-05-18. Environmental Report Rev. 0 and a pre-application readiness assessment landed in ADAMS in spring 2026.",
       "filings": [
         {
           "forum": "NRC ADAMS / Federal Register",
           "type": "Acceptance for docketing of construction permit application (Docket 50-618, NRC-2026-1717)",
           "id": "NRC-2026-1717",
           "date": "2026-05-18",
-          "url": "https://www.federalregister.gov/documents/2026/05/22/2026-10821/university-of-illinois-construction-permit-application-docketing"
+          "url": "https://www.federalregister.gov/documents/2026/05/26/2026-10419/university-of-illinois-urbana-champaign-construction-permit-application"
         },
         {
           "forum": "NRC ADAMS",
@@ -396,12 +426,20 @@
         },
         {
           "label": "Federal Register — UIUC Construction Permit Application Acceptance",
-          "url": "https://www.federalregister.gov/documents/2026/05/22/2026-10821/university-of-illinois-construction-permit-application-docketing",
-          "quote": "accepted for docketing the application for a construction permit for the University of Illinois Urbana-Champaign KRONOS test reactor"
+          "url": "https://www.federalregister.gov/documents/2026/05/26/2026-10419/university-of-illinois-urbana-champaign-construction-permit-application",
+          "quote": "The application was docketed on May 18, 2026",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Federal Register — U. of I. Urbana-Champaign Construction Permit Application, notice of receipt (2026-04-21)",
+          "url": "https://www.federalregister.gov/documents/2026/04/21/2026-07677/university-of-illinois-urbana-champaign-construction-permit-application",
+          "quote": "construction permit application is dated March 27, 2026",
+          "status": "fetched"
         }
       ],
       "gaps": [
-        "Final NRC Safety Evaluation Report (SER) and Environmental Impact Statement (EIS) milestones pending under the formal Docket 50-618 review schedule"
+        "Final NRC Safety Evaluation Report (SER) and Environmental Impact Statement (EIS) milestones pending under the formal Docket 50-618 review schedule",
+        "The July 27, 2026 hearing and intervention-petition deadline passed; this scan did not determine whether a petition was filed"
       ]
     },
     {
@@ -511,7 +549,7 @@
       "owner": "Last Energy UK (site control announced 2024-10)",
       "vendor": "Last Energy (PWR-20)",
       "power": "4 × 20 MWe (or 83 MWt heat per unit)",
-      "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Strategic Infrastructure Project application in July 2026, and targets a site license decision by December 2027.",
+      "summary": "A microreactor plant proposed on the site of the former Llynfi coal power station (operated 1951–1977) — the cleanest coal-repowering data point in the class. Last Energy completed a Preliminary Design Review with UK nuclear regulators, plans a Welsh Significant Infrastructure Project (SIP) application in July 2026, and targets a site license decision by December 2027.",
       "filings": [
         {
           "forum": "ONR/Natural Resources Wales",
@@ -773,6 +811,579 @@
         "No contract value disclosed except Radiant's $750M ceiling",
         "No Army Reactor Regulatory Office authorization document located",
         "No site-specific environmental review located"
+      ]
+    },
+    {
+      "id": "fort-wainwright-doyon",
+      "name": "Fort Wainwright central utility plant",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "US",
+      "region": "Fairbanks, Alaska",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "U.S. Army; Doyon Utilities operates installation utilities",
+      "vendor": null,
+      "power": "Army 2023 FEIS need: 19 MW electric capacity plus 45 MW average thermal output; current operating profile unverified",
+      "summary": "Doyon holds the installation utility contract and operates a coal-fired combined heat and power plant. The Army’s 2023 FEIS identified 19 MW electrical capacity and 45 MW average thermal output as system needs. Its heat-and-electricity upgrade EIS was terminated in September 2025 for reevaluation. Doyon’s July 2026 RCA tariff advice seeks monthly Fort Wainwright revenue requirements of $824,912 electric and $3,363,703 heat based on a 2025 test year; the notice is a proposed rate, not proof of final approval or an energy price. Fort Wainwright remains an unpaired Janus candidate with no reactor procurement.",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Utility service contract for utility privatization, firm fixed price",
+          "id": "PIID SP0600-07-C-8263",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/"
+        },
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "Companion utility privatization contract, same recipient and date",
+          "id": "PIID SP0600-07-C-8261",
+          "date": "2007-09-28",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8261_9700_-NONE-_-NONE-/"
+        },
+        {
+          "forum": "Regulatory Commission of Alaska",
+          "type": "Utility tariff advice; proposed permanent electric rate",
+          "id": "TA14-726",
+          "date": "2024-07-03",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971"
+        },
+        {
+          "forum": "Regulatory Commission of Alaska",
+          "type": "Utility tariff advice; proposed permanent heat rate",
+          "id": "TA18-725",
+          "date": "2024-07-03",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971"
+        },
+        {
+          "forum": "Regulatory Commission of Alaska",
+          "type": "2026 utility tariff advice; proposed permanent electric rate",
+          "id": "TA15-726",
+          "date": "2026-07-07",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368"
+        },
+        {
+          "forum": "Regulatory Commission of Alaska",
+          "type": "2026 utility tariff advice; proposed permanent heat rate",
+          "id": "TA19-725",
+          "date": "2026-07-07",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368"
+        },
+        {
+          "forum": "U.S. Army / Federal Register",
+          "type": "Termination of Fort Wainwright heat-and-electrical-upgrade EIS",
+          "id": "90 FR 44810",
+          "date": "2025-09-17",
+          "url": "https://www.federalregister.gov/documents/2025/09/17/2025-17972/notice-of-termination-of-environmental-impact-statement"
+        }
+      ],
+      "utility_context": "Doyon Utilities is regulated by the Regulatory Commission of Alaska; a reactor would need a specific procurement and rate treatment.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_SP060007C8263 (PIID SP0600-07-C-8263), Doyon Utilities LLC, Fort Wainwright AK",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_SP060007C8263_9700_-NONE-_-NONE-/",
+          "quote": "UTILITY SERVICE CONTRACT FOR UTILITY PRIVATIZATION",
+          "status": "fetched"
+        },
+        {
+          "label": "Alaska RCA — Doyon Fort Wainwright electric and heat tariff notice",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=215971"
+        },
+        {
+          "label": "Alaska RCA — 2026 Doyon utility tariff notice",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=224368",
+          "quote": "TA15-726  | FWA - Electric  | $759,391  | $824,912",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Army — Fort Wainwright heat and electrical upgrade FEIS",
+          "url": "https://home.army.mil/wainwright/2517/3144/3965/Final_Environmental_Impact_Statement_Addressing_Heat_and_Electrical_Upgrades_at_Fort_Wainwright_Alaska.pdf",
+          "quote": "annual average of 45 MW of heat energy and 19 MW of electrical capacity",
+          "status": "fetched"
+        },
+        {
+          "label": "Federal Register — termination of upgrade EIS",
+          "url": "https://www.federalregister.gov/documents/2025/09/17/2025-17972/notice-of-termination-of-environmental-impact-statement",
+          "quote": "The Army will reevaluate the proposed action.",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "Obtain 8,760-hour electric and thermal load, coal/oil delivered cost, and purchased-power volumes; monthly revenue requirement is not $/MWh",
+        "Confirm final RCA orders for TA15-726 and TA19-725 and DLA contract treatment for new generation",
+        "Ask Army whether a new heat-and-power alternative will be evaluated after EIS termination"
+      ]
+    },
+    {
+      "id": "guantanamo-bay-base",
+      "name": "Naval Station Guantanamo Bay power plant",
+      "category": "Defense installations",
+      "band": "Remote installation power",
+      "country": "CU",
+      "region": "Guantanamo Bay, Cuba",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "U.S. Navy / NAVFAC Southeast",
+      "vendor": null,
+      "power": "20 MW existing LNG plant",
+      "summary": "The isolated Navy base commissioned a 20 MW LNG plant in 2023 under an energy savings contract; solar and retained diesel generators also serve the base. This is a documented remote-power comparator, not a Navy reactor solicitation. A reactor would have to compete with a recently built plant and its contract.",
+      "filings": [
+        {
+          "forum": "USAspending.gov (FPDS-derived contract record)",
+          "type": "ESPC task order under DOE IDIQ DE-AM36-09GO29041, firm fixed price",
+          "id": "PIID N3943019F9909",
+          "date": "2019-07-24",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/"
+        }
+      ],
+      "utility_context": "Islanded Navy system; Siemens energy savings contract runs into the 2040s.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Award CONT_AWD_N3943019F9909 (PIID N3943019F9909), Siemens Government Technologies",
+          "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N3943019F9909_9700_DEAM3609GO29041_8900/",
+          "quote": "\"total_obligation\":101059504.3",
+          "status": "fetched",
+          "note": "Quote narrowed 2026-08-25 to the one field verbatim in the payload. Note base_and_all_options_value is null in this response, so any ceiling figure for this award comes from elsewhere."
+        },
+        {
+          "label": "DVIDS / U.S. Navy — Naval Station Guantanamo Bay commissions new energy efficient power plant",
+          "url": "https://www.dvidshub.net/news/453129/naval-station-guantanamo-bay-commissions-new-energy-efficient-power-plant",
+          "quote": "a 20 Megawatt (MW) Liquefied Natural Gas Power Plant",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "No Navy microreactor study or procurement found for this base",
+        "Contract and plant replacement economics need review"
+      ]
+    },
+    {
+      "id": "iqaluit-qec",
+      "name": "Iqaluit isolated diesel grid",
+      "category": "Electric Utilities",
+      "band": "Individual remote grids with sufficient year-round demand",
+      "country": "CA",
+      "region": "Iqaluit, Nunavut",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Qulliq Energy Corporation",
+      "vendor": null,
+      "power": "2025/26 forecast: 10.594 MW peak; 62,575 MWh/year diesel generation (7.14 MW annual average)",
+      "summary": "QEC’s 2025/26 rate application forecasts 62,575 MWh diesel generation, 10.594 MW peak, 15.922 million litres of fuel, and CAD 19.809 million fuel plus lubricant cost at Iqaluit. Fuel and lubricant alone equal about CAD 317/MWh generated (derived, not a delivered tariff or all-in cost). QEC also has a district-heat system. A competing Inuit-led 15–30 MW hydro project has a QEC commercial-framework MOU and federal Major Projects Office support. No QEC reactor procurement is documented.",
+      "filings": [
+        {
+          "forum": "Utility Rates Review Council (Nunavut)",
+          "type": "General Rate Application, interim rates authorized",
+          "id": "QEC 2025-2026 GRA",
+          "date": "2024-11-29",
+          "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application"
+        },
+        {
+          "forum": "Nunavut Utility Rates Review Council / responsible minister",
+          "type": "Standby power rate application for self-generation customers",
+          "id": "QEC 2025 standby rate application",
+          "date": "2025-07-10",
+          "url": "https://www.qec.nu.ca/sites/default/files/2025-07/Standby%20Rate%20Application%20-%20Final%202025-07-10.pdf"
+        },
+        {
+          "forum": "QEC / Nunavut Utility Rates Review Council",
+          "type": "2025/26 General Rate Application; Iqaluit generation and fuel schedules",
+          "id": "Schedule A-3.1 and Schedule 4.2.4",
+          "date": "2024-11-29",
+          "url": "https://www.qec.nu.ca/sites/default/files/2025-26%20QEC%20GRA%20-%20Master-Final.pdf"
+        }
+      ],
+      "utility_context": "Territorial Crown utility; interim rates authorized through Nunavut rate review.",
+      "sources": [
+        {
+          "label": "Qulliq Energy Corporation - Interim Electricity Rates effective April 1, 2025 (General Rate Application)",
+          "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application",
+          "quote": "$0.6733 to $0.7494 per kWh",
+          "status": "fetched"
+        },
+        {
+          "label": "Qulliq Energy Corporation - QEC's General Rate Application",
+          "url": "https://www.qec.nu.ca/qecs-general-rate-application",
+          "quote": "seeks rate increases to meet QEC",
+          "status": "fetched"
+        },
+        {
+          "label": "QEC — 2025 standby rate application",
+          "url": "https://www.qec.nu.ca/sites/default/files/2025-07/Standby%20Rate%20Application%20-%20Final%202025-07-10.pdf",
+          "quote": "peak demands ranging from approximately 200 kW at Grise Fiord to 11MW at Iqaluit",
+          "status": "fetched"
+        },
+        {
+          "label": "QEC — 2025/26 General Rate Application, Iqaluit generation and fuel schedules",
+          "url": "https://www.qec.nu.ca/sites/default/files/2025-26%20QEC%20GRA%20-%20Master-Final.pdf",
+          "quote": "13 701 Iqaluit 62,575 3.93 15,922 1.22 19,432 377 19,809",
+          "status": "fetched"
+        },
+        {
+          "label": "Government of Canada — Iqaluit Nukkiksautiit Hydro Project",
+          "url": "https://www.canada.ca/en/privy-council/major-projects-office/projects/national/nukkiksautiit.html",
+          "quote": "proposed 15-30 megawatt hydropower plant",
+          "status": "fetched"
+        },
+        {
+          "label": "QEC — Iqaluit hydro commercial-framework MOU",
+          "url": "https://www.qec.nu.ca/path-forward-collaboration-iqaluit-water-power-project-mou-signed-between-qec-and-nnc.html"
+        },
+        {
+          "label": "QEC — District Heating System",
+          "url": "https://www.qec.nu.ca/power-nunavut/alternative-energy/district-heating-system"
+        }
+      ],
+      "gaps": [
+        "Hourly electricity and heat load, current diesel cost and final standby-rate decision still needed",
+        "Test whether hydro covers the same firm load before treating nuclear as a competing proposal",
+        "QEC reactor interest, site control and procurement path not documented"
+      ]
+    },
+    {
+      "id": "red-dog-mine",
+      "name": "Red Dog zinc-lead mine",
+      "category": "Mining",
+      "band": "Remote copper and other large mines",
+      "country": "US",
+      "region": "Northwest Arctic Borough, Alaska",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Teck Alaska; NANA Regional Corporation owns the land",
+      "vendor": null,
+      "power": "About 25 MW existing site load",
+      "summary": "The off-grid mine relies on roughly 24.5 MW of diesel generation. Teck and TUGLIQ have discussed solar and storage under a power-purchase structure. A reactor is only a prospect: no nuclear agreement is documented, and mine-life uncertainty makes relocation or residual value central.",
+      "filings": [],
+      "utility_context": "Off-grid mine system.",
+      "sources": [
+        {
+          "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun",
+          "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+          "quote": "8.8-megawatt solar farm",
+          "status": "fetched"
+        },
+        {
+          "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun (diesel burn)",
+          "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+          "quote": "roughly 40,000 gallons each day",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "No nuclear procurement or land agreement",
+        "Delivered diesel price and mine-life extension timetable unresolved"
+      ]
+    },
+    {
+      "id": "raglan-mine",
+      "name": "Raglan nickel mine",
+      "category": "Mining",
+      "band": "Remote copper and other large mines",
+      "country": "CA",
+      "region": "Nunavik, Quebec",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Glencore",
+      "vendor": null,
+      "power": null,
+      "summary": "Raglan is an off-grid Arctic mine with diesel generation and third-party-owned wind and storage. Its documented power arrangement gives a contracting precedent, not evidence of reactor interest. Firming, ventilation reliability and Indigenous and regulatory consent need site-specific work.",
+      "filings": [
+        {
+          "forum": "Natural Resources Canada - ecoENERGY Innovation Initiative",
+          "type": "Demonstration Component public completion report",
+          "id": "GC 128296",
+          "date": "2016-11-11",
+          "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf"
+        },
+        {
+          "forum": "Natural Resources Canada - Emerging Innovations / funding partnerships",
+          "type": "Federal contribution record",
+          "id": "Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+          "date": "2024-12-23",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid"
+        }
+      ],
+      "utility_context": "Mine-owned isolated grid; TUGLIQ owns the wind assets.",
+      "sources": [
+        {
+          "label": "TUGLIQ Energy Co. / ecoENERGY Innovation Initiative - Glencore RAGLAN Mine Renewable Electricity Smart-Grid Pilot Demonstration, Public Completion Report GC 128296",
+          "url": "https://tugliq.com/wp-content/uploads/2019/09/2016-11-11-tugliq-raglan-public-report-en.pdf",
+          "quote": "north range from a high of $1.20 / kWh, to a low of $0.20 / kWh",
+          "status": "fetched"
+        },
+        {
+          "label": "Natural Resources Canada - Nunavik Mining: RAGLAN 2.0 Large Scale Renewable Energy Smart Grid",
+          "url": "https://natural-resources.canada.ca/funding-partnerships/nunavik-mining-raglan-20-large-scale-renewable-energy-smart-grid",
+          "quote": "60%-90% diesel displacement at a Northern mine",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "No reactor study or procurement found",
+        "Current delivered diesel cost and firming criteria not published"
+      ]
+    },
+    {
+      "id": "graphite-creek",
+      "name": "Graphite Creek graphite mine",
+      "category": "Mining",
+      "band": "Remote lithium and rare-earth mines with onsite processing",
+      "country": "US",
+      "region": "Seward Peninsula near Nome, Alaska",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Graphite One Inc.",
+      "vendor": null,
+      "power": "15.6 MW connected; 12.5 MW nominal operating electric load; 6.6 MW recovered diesel heat in 2025 feasibility study",
+      "summary": "The 2025 NI 43-101 feasibility study specifies a 15.6 MW connected load, 12.5 MW nominal operating load, three 7.5 MW diesel generators (two running, one standby), about 25.7 million litres/year of diesel for power, and 6.6 MW of recovered heat. It chose diesel as the base case because an SMR option was not readily available and indicative SMR CHP capital was $80–90 million. It recommends an SMR-versus-diesel tradeoff study costing less than $50,000. No public award or study completion was located. The federal permitting dashboard now shows environmental review in progress with estimated completion September 24, 2027.",
+      "filings": [],
+      "utility_context": "Planned off-grid power system.",
+      "sources": [
+        {
+          "label": "Graphite One — Graphite Creek NI 43-101 feasibility study, section 26.12",
+          "url": "https://www.graphiteoneinc.com/wp-content/uploads/2025/04/NI-43101_FS_Report_20250422_Final.pdf",
+          "quote": "An initial study of this tradeoff should cost less than $50,000.",
+          "status": "fetched"
+        },
+        {
+          "label": "KNOM Radio Mission — Graphite One forecasts $43 billion in revenue from proposed Seward Peninsula mine (2025-04-30)",
+          "url": "https://knom.org/2025/04/30/graphite-one-forecasts-43-billion-in-revenue-from-proposed-seward-peninsula-mine/",
+          "quote": "the proposed mine would draw 12.5 mW of power",
+          "status": "fetched"
+        },
+        {
+          "label": "Mining Technology — Graphite Creek Project, Alaska (project profile)",
+          "url": "https://www.mining-technology.com/projects/graphite-creek-project-alaska/",
+          "quote": "The mine operations are expected to require 4MW of power, which would increase to 6MW after five years.",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Permitting Dashboard — Graphite Creek",
+          "url": "https://www.permits.performance.gov/permitting-project/fast-41-covered-projects/graphite-creek-project",
+          "quote": "09/24/2027",
+          "status": "fetched"
+        },
+        {
+          "label": "Graphite One — news releases through September 2026",
+          "url": "https://www.graphiteoneinc.com/news/"
+        }
+      ],
+      "gaps": [
+        "Ask Graphite One whether the under-$50,000 SMR tradeoff study was commissioned and obtain scope/results if so",
+        "Need vendor-ready heat grade, hourly power profile, fuel delivered cost and mine financing schedule",
+        "Environmental review target moved to September 2027; no reactor bid or contract found"
+      ]
+    },
+    {
+      "id": "tanbreez-greenland",
+      "name": "Tanbreez rare-earth project",
+      "category": "Mining",
+      "band": "Remote lithium and rare-earth mines with onsite processing",
+      "country": "GL",
+      "region": "Killavaat Alannguat, Kujalleq, Greenland",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Tanbreez Mining Greenland A/S / Critical Metals Corp.",
+      "vendor": null,
+      "power": "Up to 7.5 MW in 2021 cooperation agreement",
+      "summary": "Tanbreez has a cooperation agreement to take up to 7.5 MW of hydropower from Nukissiorfiit, with connection work and backup generation assigned to the mine. This is a mine-load comparison, not a nuclear project; hydropower is the stated supply plan.",
+      "filings": [],
+      "utility_context": "Nukissiorfiit supply agreement; mine funds interconnection and keeps backup.",
+      "sources": [
+        {
+          "label": "Critical Metals Corp. SEC Exhibit 96.1 - Tanbreez S-K 1300 Technical Report Summary (2025)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1951089/000121390025023337/ea023391301ex96-1_critical.htm",
+          "quote": "Tanbreez has signed an agreement with the Greenland government power company (Nukissiorfiit) to supply all the projects power needs.",
+          "status": "fetched"
+        },
+        {
+          "label": "SermitSIAQ - Stort mineprojekt indgar strom-aftale (2021)",
+          "url": "https://www.sermitsiaq.ag/erhverv/stort-mineprojekt-indgar-strom-aftale/296404",
+          "quote": "Nukissiorfiit er i stand til at levere cirka 30 GWh af vandkraft med et maksimum energibehov af 7,5 MW",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "No Greenland nuclear position, reactor study or procurement found",
+        "Later final power contract and current mine tariff not published"
+      ]
+    },
+    {
+      "id": "thames-freeport",
+      "name": "DP World London Gateway (Thames Freeport)",
+      "category": "Transportation",
+      "band": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
+      "country": "UK",
+      "region": "Thames Freeport, England",
+      "status": "announced",
+      "depth": "scan",
+      "owner": "DP World; Last Energy",
+      "vendor": "Last Energy (PWR-20)",
+      "power": "20 MWe proposed",
+      "summary": "The UK government says Last Energy and DP World plan a 20 MWe microreactor at London Gateway, backed by proposed £80 million private investment. No executed power purchase agreement or London Gateway nuclear site licence was found. ONR’s Last Energy early review concerns Llynfi in Wales, a separate site.",
+      "filings": [],
+      "utility_context": "Announced developer/customer plan; site-specific utility arrangement and licence unverified.",
+      "sources": [
+        {
+          "label": "UK government — UK-US advanced nuclear announcement",
+          "url": "https://www.gov.uk/government/news/golden-age-of-nuclear-delivers-uk-us-deal-on-energy-security"
+        },
+        {
+          "label": "The Civil Engineer — UK/US partnership fast-tracks SMRs and microreactors (Last Energy PWR-20 / Thames Freeport)",
+          "url": "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"
+        },
+        {
+          "label": "ONR — Last Energy preliminary design review summary report (2025)",
+          "url": "https://www.onr.org.uk/generic-design-assessment/early-regulatory-engagement-on-new-nuclear-projects/last-energy-pdr-summary-report",
+          "quote": "would instead apply directly for nuclear site licensing and environmental permitting for the Llynfi site in Wales",
+          "status": "fetched"
+        }
+      ],
+      "gaps": [
+        "Obtain executed customer instrument and economics, if any",
+        "No London Gateway nuclear site licence, environmental permit or grid agreement found"
+      ],
+      "tracker_id": "uk-lastenergy"
+    },
+    {
+      "id": "port-of-los-angeles",
+      "name": "Port of Los Angeles container terminals",
+      "category": "Transportation",
+      "band": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
+      "country": "US",
+      "region": "San Pedro, California",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "City of Los Angeles Harbor Department; participating terminal operators",
+      "vendor": null,
+      "power": null,
+      "summary": "EPA Clean Ports funding buys electric cargo equipment and shore power across five terminals. The Port and LADWP also advanced a ten-year Zero-Emission Port Electrification and Operations (ZEPEO) MOU and environmental review in May 2026; planning calls for 213 MVA additional capacity by 2030 and 306 MVA more by 2035. This is an active utility upgrade path, not an established nuclear supply gap.",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+          "id": "FAIN 97T27601",
+          "date": "2025-01-01",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+        },
+        {
+          "forum": "Los Angeles Harbor Commission / LADWP",
+          "type": "ZEPEO MOU approval agenda and CEQA findings",
+          "date": "2026-05-28",
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda"
+        }
+      ],
+      "utility_context": "Los Angeles Department of Water and Power service area.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+          "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+          "status": "fetched"
+        },
+        {
+          "label": "Port of Los Angeles — May 28, 2026 ZEPEO board agenda",
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda"
+        }
+      ],
+      "gaps": [
+        "Confirm executed MOU, terminal-level upgrade schedule and costs",
+        "No reactor procurement, site parcel or terminal-specific firm load"
+      ]
+    },
+    {
+      "id": "port-of-ny-nj",
+      "name": "Port of New York and New Jersey terminal electrification",
+      "category": "Transportation",
+      "band": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
+      "country": "US",
+      "region": "Newark, Elizabeth and Bayonne, New Jersey; New York City",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Port Authority of New York and New Jersey",
+      "vendor": null,
+      "power": null,
+      "summary": "A federal Clean Ports award funds electric cargo equipment, charging and shore-power connections at the port complex. It documents new electrical demand but neither a microreactor buyer nor a site-specific power deficit. Each terminal needs separate load and siting review. APM Terminals issued a separate RFI for battery-electric empty handlers at Elizabeth; its January 2026 response window has closed and did not seek nuclear generation.",
+      "filings": [
+        {
+          "forum": "USAspending.gov (federal assistance record)",
+          "type": "Project grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+          "id": "FAIN 96275025",
+          "date": "2024-12-20",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/"
+        }
+      ],
+      "utility_context": "Multiple utility territories and terminal operators; interconnection terms unverified.",
+      "sources": [
+        {
+          "label": "USAspending.gov API — Assistance award ASST_NON_96275025 (FAIN 96275025), Port Authority of New York & New Jersey, Clean Ports Program",
+          "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_96275025_068/",
+          "quote": "THE INSTALLATION OF SHORE POWER CONNECTIONS FOR MARINE VESSELS, THE REPLACEMENT OF DIESEL ENGINES ON A CEMENT HAULER BARGE WITH ELECTRIC POWER",
+          "status": "fetched"
+        },
+        {
+          "label": "APM Terminals / PANYNJ — electric empty handlers RFI",
+          "url": "https://www.panynj.gov/content/dam/port/doing-business-pdfs/RFI-CPP-Tech-Deployment-Empty-Handlers.pdf"
+        }
+      ],
+      "gaps": [
+        "No reactor procurement or candidate parcel",
+        "Terminal-level peak demand and utility upgrade costs not published"
+      ]
+    },
+    {
+      "id": "yusen-terminal-los-angeles",
+      "name": "Yusen Terminals (Port of Los Angeles)",
+      "category": "Transportation",
+      "band": "Cargo-port electrical systems combining terminal operations and ship plug-in power",
+      "country": "US",
+      "region": "Berths 212–224, Terminal Island, California",
+      "status": "concept",
+      "depth": "scan",
+      "owner": "Yusen Terminals LLC (Ocean Network Express); Los Angeles Harbor Department landlord; LADWP utility",
+      "vendor": null,
+      "power": null,
+      "summary": "The Harbor Commission approved a 30-year Yusen lease extension in August 2026 with a $200 million zero-emission equipment commitment at a 232-acre terminal. Yusen is a named Clean Ports equipment partner and an actual LADWP-served terminal. Port-wide ZEPEO plans call for added grid capacity; no Yusen-specific firm load, meter profile, upgrade cost or reactor procurement is public. LADWP publishes a 2026 34.5-kV A-3 rate, but its applicability to Yusen’s meter is unverified.",
+      "filings": [
+        {
+          "forum": "Los Angeles Harbor Commission",
+          "type": "Fourteenth amendment to Permit No. 692; 30-year lease and zero-emission equipment conditions",
+          "id": "Permit No. 692",
+          "date": "2026-08-27",
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/08272026-regular-agenda"
+        },
+        {
+          "forum": "Los Angeles Harbor Commission / LADWP",
+          "type": "Port-wide ZEPEO MOU approval agenda; not a Yusen service agreement",
+          "date": "2026-05-28",
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda"
+        }
+      ],
+      "utility_context": "LADWP supplies the port; exact Yusen tariff class, capacity allocation, interconnection cost and outage cost require the customer meter and agreement.",
+      "sources": [
+        {
+          "label": "Port of Los Angeles — Yusen lease extension and $200 million equipment commitment",
+          "url": "https://portoflosangeles.org/references/2026-news-releases/news_082726_yusen_lease",
+          "quote": "approved a 30-year lease with Yusen Terminals",
+          "status": "fetched"
+        },
+        {
+          "label": "Port of Los Angeles — ZEPEO utility MOU agenda",
+          "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda"
+        },
+        {
+          "label": "LADWP — 2026 commercial and industrial electric rates, including A-3",
+          "url": "https://acquia.ladwp.com/account/customer-service/electric-rates/standard-commercial-industrial-rates"
+        },
+        {
+          "label": "LADWP and Port of Los Angeles — 2026 power-quality and reliability report",
+          "url": "https://cityclerk.lacity.org/onlinedocs/2024/24-0916_rpt_dwp_4-1-26.pdf"
+        }
+      ],
+      "gaps": [
+        "Obtain Yusen hourly meter data, peak demand, shore-power schedule, rate class and current bill",
+        "Obtain Yusen-specific ZEPEO upgrade allocation, service date, and EPRI reliability recommendations",
+        "Do not price a reactor against port-wide MVA or assume 34.5-kV A-3 applies to this terminal"
       ]
     }
   ]

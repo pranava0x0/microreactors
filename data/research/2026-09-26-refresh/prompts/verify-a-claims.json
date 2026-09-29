@@ -1,0 +1,581 @@
+{
+ "opportunities": [
+  {
+   "id": "anpi-jbsa",
+   "name": "Joint Base San Antonio (ANPI)",
+   "status": "Selected",
+   "timeline": "Deployment targeted 2028 or earlier; ANPI goal ≥1 reactor operating by 2030",
+   "vendor": "Antares Nuclear (R1)",
+   "power_mw": "0.1–1 MWe class",
+   "binding": true,
+   "instrument": "ANPI selection (DAF + Defense Innovation Unit), contractor-owned/contractor-operated",
+   "source_urls": [
+    "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative",
+    "https://breakingdefense.com/2026/04/department-of-air-force-picks-bidders-for-nuclear-microreactors-assigns-locations/"
+   ]
+  },
+  {
+   "id": "anpi-buckley",
+   "name": "Buckley Space Force Base (ANPI)",
+   "status": "Selected",
+   "timeline": "ANPI goal ≥1 reactor operating by 2030; Radiant FOAK to a USAF base in 2028",
+   "vendor": "Radiant Nuclear (Kaleidos)",
+   "power_mw": "1 MWe (3 MWt)",
+   "binding": true,
+   "instrument": "ANPI selection (DAF + DIU)",
+   "source_urls": [
+    "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/",
+    "https://www.executivegov.com/articles/air-force-anpi-nuclear-microreactor"
+   ]
+  },
+  {
+   "id": "anpi-malmstrom",
+   "name": "Malmstrom Air Force Base (ANPI)",
+   "status": "Selected",
+   "timeline": "ANPI goal ≥1 reactor operating by 2030",
+   "vendor": "Westinghouse (eVinci)",
+   "power_mw": "up to 5 MWe",
+   "binding": true,
+   "instrument": "ANPI selection (DAF + DIU)",
+   "source_urls": [
+    "https://www.exchangemonitor.com/air-force-picks-three-companies-to-deploy-microreactors-at-military-bases/?printmode=1",
+    "https://neutronbytes.com/2026/04/24/air-force-selects-three-microreactors-for-base-power/"
+   ]
+  },
+  {
+   "id": "janus",
+   "name": "Army Janus Program — nine candidate installations",
+   "status": "Five of nine sites matched to vendors, up to $2.2bn across FY2027-FY2031; agreements are fixed-price milestone-based Other Transaction Authority awards and none has been recorded as executed",
+   "timeline": "Sites announced November 2025; five vendors named 2026-08-26; Army-regulated reactor operational at a domestic installation by 2028-09-30",
+   "vendor": "Antares (Fort Bragg), Radiant (Benning), BWXT (Campbell), General Atomics (Hood), Westinghouse (Drum); four of the nine sites are still unassigned",
+   "power_mw": "Not specified per site",
+   "binding": false,
+   "instrument": "Army program + DIU solicitation",
+   "source_urls": [
+    "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy",
+    "https://www.ans.org/news/article-7567/us-army-chooses-nine-sites-for-possible-microreactor-by-2030/",
+    "https://www.world-nuclear-news.org/articles/us-army-names-potential-microreactor-sites",
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/"
+   ]
+  },
+  {
+   "id": "dome",
+   "name": "DOE DOME test bed, Idaho National Laboratory",
+   "status": "Operating",
+   "timeline": "First fuelled experiment from spring 2026; Radiant fuel received 2026-07-01; Radiant campaign targeted to complete Q3 2026",
+   "vendor": "Radiant (first), Westinghouse eVinci, Ultra Safe Nuclear (FEEED)",
+   "power_mw": "Houses fuelled experiments up to 20 MWt",
+   "binding": true,
+   "instrument": "DOE National Reactor Innovation Center test-bed access",
+   "source_urls": [
+    "https://www.energy.gov/ne/articles/energy-department-announces-first-microreactor-experiments-dome-test-bed",
+    "https://www.world-nuclear-news.org/articles/first-of-a-kind-microreactor-test-bed-open-for-business",
+    "https://www.energy.gov/ne/articles/3-microreactor-experiments-watch-starting-2026"
+   ]
+  },
+  {
+   "id": "doe-pilot",
+   "name": "DOE Reactor Pilot Program — 11 projects",
+   "status": "Five critical, others in safety review",
+   "timeline": "Selected 2025-08-12; four reactors critical by the 2026-07-04 executive-order deadline (Antares Mark-0 2026-06-04, Valar Ward 250 2026-06-18, Deployable Unity 2026-07-01, Aalo-X 2026-07-04 at 12:20am, hours before the deadline expired), then Oklo's Groves Isotope Test Reactor afterward on 2026-08-05 — five critical as of this research",
+   "vendor": "11 projects from 10 companies incl. Antares (Mark-0), Valar Atomics, Deployable Energy, Aalo, Oklo, Last Energy",
+   "power_mw": "Test-reactor scale; Deployable Energy's Unity is 1 MWe",
+   "binding": true,
+   "instrument": "EO 14301 pilot program under DOE's own authorization authority, with no NRC license",
+   "source_urls": [
+    "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+    "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders",
+    "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality"
+   ]
+  },
+  {
+   "id": "eielson",
+   "name": "Eielson Air Force Base micro-reactor pilot",
+   "status": "Intent to award (NOITA)",
+   "timeline": "NOITA announced 2025-06-11; 30-year firm-fixed-price contract to follow NRC licensing; DAF and NRC preparing environmental analysis",
+   "vendor": "Oklo (Aurora)",
+   "power_mw": "Power and heat; Aurora class above microreactor band",
+   "binding": true,
+   "instrument": "Notice of Intent to Award. Oklo would design, construct, own and operate, selling electricity and heat under a long-term PPA",
+   "source_urls": [
+    "https://www.eielson.af.mil/News/Display/Article/4213214/microreactor-pilot-reaches-major-project-milestone/",
+    "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+    "https://www.murkowski.senate.gov/press/release/murkowski-welcomes-eielson-afb-announcement-on-microreactor-pilot-program",
+    "https://www.nasdaq.com/articles/oklo-selected-provide-clean-power-eielson-air-force-base-aurora-microreactor"
+   ]
+  },
+  {
+   "id": "equinix-radiant",
+   "name": "Equinix — 20-reactor purchase agreement",
+   "status": "Signed",
+   "timeline": "Not published",
+   "vendor": "Radiant Nuclear (Kaleidos)",
+   "power_mw": "20 × 1 MWe = 20 MWe committed",
+   "binding": true,
+   "instrument": "Purchase agreement / pre-order with deposits",
+   "source_urls": [
+    "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+    "https://www.radiantnuclear.com/blog/series-d-announcement/"
+   ]
+  },
+  {
+   "id": "oklo-switch",
+   "name": "Switch — 12 GW Oklo master power agreement",
+   "status": "Master agreement (non-binding)",
+   "timeline": "Framework signed 2024-12; individual binding PPAs to follow per project",
+   "vendor": "Oklo (Aurora)",
+   "power_mw": "12 GW program through 2044; 50 MWe units",
+   "binding": false,
+   "instrument": "Non-binding Master Power Agreement, the largest announced corporate nuclear framework; it grew Oklo's order book to ~14 GW",
+   "source_urls": [
+    "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+    "https://www.utilitydive.com/news/oklo-aurora-smr-advanced-nuclear-reactor-supply-agreement-data-center-developer-switch/735933/"
+   ]
+  },
+  {
+   "id": "ianc",
+   "name": "Industrial Advanced Nuclear Consortium (IANC)",
+   "status": "Consortium formed; no procurement",
+   "timeline": "ExxonMobil stated goal: make nuclear a viable option for industrial projects by 2030",
+   "vendor": "Technology-neutral; explicitly covers SMRs and MMRs",
+   "power_mw": "Use cases span remote well pads, offshore platforms, refinery/LNG heat, mining",
+   "binding": false,
+   "instrument": "Demand-aggregation consortium, launched 2025-09-02 by The Open Group",
+   "source_urls": [
+    "https://www.opengroup.org/IANC",
+    "https://www.businesswire.com/news/home/20250902229163/en/The-Open-Group-Launches-the-Industrial-Advanced-Nuclear-Consortium"
+   ]
+  },
+  {
+   "id": "nano-supermicro",
+   "name": "NANO Nuclear × Supermicro",
+   "status": "MOU",
+   "timeline": "MOU signed May 2026",
+   "vendor": "NANO Nuclear",
+   "power_mw": "Not specified",
+   "binding": false,
+   "instrument": "Strategic MOU for a standardized microreactor power package for data centers, pre-integrated with compute",
+   "source_urls": [
+    "https://smrintel.com/nuclear-data-center-deals/"
+   ]
+  },
+  {
+   "id": "texas-backup",
+   "name": "Texas Backup Power Package Program",
+   "status": "Live program, nuclear not yet eligible",
+   "timeline": "Announced 2025-06-11",
+   "vendor": "None; currently solar, battery and gas",
+   "power_mw": "Site-scale backup at hospitals, water treatment, nursing homes, police/fire",
+   "binding": false,
+   "instrument": "$1.8B state funding program",
+   "source_urls": [
+    "https://www.uh.edu/uh-energy-innovation/news-events/energy/stories/2025/microgirdresilience.php"
+   ]
+  },
+  {
+   "id": "uk-lastenergy",
+   "name": "DP World Thames Freeport — Last Energy PWR-20",
+   "status": "In regulatory review",
+   "timeline": "Preliminary Design Review completed with UK ONR July 2025; target online 2030",
+   "vendor": "Last Energy (PWR-20)",
+   "power_mw": "20 MWe",
+   "binding": true,
+   "instrument": "Named commercial customer; UK regulatory review underway",
+   "source_urls": [
+    "https://www.thecivilengineer.org/news/fast-track-nuclear-how-the-ukus-partnership-accelerates-smrs-and-microreactors"
+   ]
+  },
+  {
+   "id": "canada-src",
+   "name": "Saskatchewan Research Council eVinci pilot",
+   "status": "Cancelled; vendor withdrew",
+   "timeline": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+   "vendor": "Westinghouse (eVinci)",
+   "power_mw": "up to 5 MWe",
+   "binding": false,
+   "instrument": "Was the first eVinci customer (CA$80M government funding, SRC as licensed operator); Westinghouse cancelled the contract in fall 2025",
+   "source_urls": [
+    "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/",
+    "https://www.src.sk.ca/src-nuclear/additional-information"
+   ]
+  },
+  {
+   "id": "romania-nuscale",
+   "name": "Doicești NuScale VOYGR-6",
+   "status": "FID approved",
+   "timeline": "Final Investment Decision approved February 2026",
+   "vendor": "NuScale",
+   "power_mw": "6 modules (SMR scale, not microreactor)",
+   "binding": true,
+   "instrument": "FID, the most construction-advanced U.S.-linked SMR export relationship",
+   "source_urls": [
+    "https://neutronbytes.com/2026/02/13/final-investment-decision-approved-for-six-nuscale-smrs-in-romania/"
+   ]
+  },
+  {
+   "id": "jp-kr-moc",
+   "name": "U.S.–Japan–Korea trilateral SMR Memorandum of Cooperation",
+   "status": "Signed",
+   "timeline": "Signed 2026-07-07 at the NATO Summit, Ankara",
+   "vendor": "Channel, not vendor-specific",
+   "power_mw": "N/A",
+   "binding": false,
+   "instrument": "Trilateral MOC: U.S. reactor design, Japan heavy manufacturing, Korea construction and supply chain",
+   "source_urls": [
+    "https://www.state.gov/releases/office-of-the-spokesperson/2026/07/the-united-states-japan-and-the-republic-of-korea-sign-a-trilateral-memorandum-of-cooperation-on-small-modular-reactor-deployments-in-other-countries/",
+    "https://www.upi.com/Top_News/World-News/2026/07/13/united-states-japan-joint-small-modular-reactor-project/9231783994951/"
+   ]
+  }
+ ],
+ "vendors": [
+  {
+   "id": "antares",
+   "name": "Antares Nuclear",
+   "reactor": "R1",
+   "first_delivery_target": "2028 or earlier",
+   "milestones": [
+    {
+     "date": "2026-04-22",
+     "label": "Selected for Joint Base San Antonio under ANPI",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"
+    },
+    {
+     "date": "2026-06-04",
+     "label": "Mark-0 test reactor critical at INL (DOE Reactor Pilot Program)",
+     "status": "done",
+     "unit": "Mark-0",
+     "source_url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"
+    },
+    {
+     "date": "2028",
+     "label": "R1 delivery to JBSA",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://www.businesswire.com/news/home/20260422886007/en/Antares-Selected-for-Proposed-Deployment-of-Nuclear-Microreactor-at-Joint-Base-San-Antonio-Under-Department-of-the-Air-Force-ANPI-Initiative"
+    },
+    {
+     "date": "2030",
+     "label": "ANPI goal: at least one reactor operating on a base",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://world-nuclear-news.org/articles/us-air-force-announces-selections-for-microreactor-deployments"
+    },
+    {
+     "date": "2026-06-04",
+     "label": "Mark-0 reached criticality at Idaho National Laboratory — the first privately built non-light-water reactor to go critical in the US in over 40 years",
+     "status": "done",
+     "unit": "Mark-0",
+     "source_url": "https://thedefensepost.com/2026/08/03/us-nuclear-microreactors-base/"
+    },
+    {
+     "date": "2026-07-28",
+     "label": "Dr. Rian Bahran joined as Chief Nuclear Officer from the Department of Energy, where he was Deputy Assistant Secretary for Nuclear Reactors",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.businesswire.com/news/home/20260728822415/en/Dr.-Rian-Bahran-Joins-Antares-as-Chief-Nuclear-Officer"
+    },
+    {
+     "date": "2026-08-03",
+     "label": "Closed a $470M Series C — $370M equity and $100M debt — to build the Mark-1 platform and field units from 2028",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://thedefensepost.com/2026/08/03/us-nuclear-microreactors-base/"
+    },
+    {
+     "date": "2026-08-26",
+     "label": "Selected for the Army's Janus programme at Fort Bragg, NC, to own, build and operate three R1 units. Antares declined to disclose the contract value.",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    },
+    {
+     "date": "2026-09-17",
+     "label": "Signed a definitive multi-year HALEU supply contract with Centrus; delivery before 2030 depends on Centrus completing its DOE-supported capacity expansion; prepayments disclosed, volume and price undisclosed",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-antares-sign-multi-year-haleu-supply-contract"
+    }
+   ]
+  },
+  {
+   "id": "radiant",
+   "name": "Radiant Nuclear",
+   "reactor": "Kaleidos",
+   "first_delivery_target": "2028 (DIU/Dept of the Air Force FOAK)",
+   "milestones": [
+    {
+     "date": "2025-08-14",
+     "label": "Equinix preorder with deposits: 20 Kaleidos units",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy"
+    },
+    {
+     "date": "2026-04-22",
+     "label": "Selected for Buckley Space Force Base under ANPI",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/"
+    },
+    {
+     "date": "2026-07-01",
+     "label": "First TRISO fuel received at INL's DOME test bed",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.radiantnuclear.com/blog/triso-fuel-inl/"
+    },
+    {
+     "date": "2026 Q3",
+     "label": "DOME campaign complete: criticality through 150 h unattended run",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://www.radiantnuclear.com/blog/dome-selection/"
+    },
+    {
+     "date": "2028",
+     "label": "FOAK Kaleidos to a USAF base",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://world-nuclear-news.org/articles/kaleidos-microreactor-begins-journey-to-idaho"
+    },
+    {
+     "date": "2026-08-26",
+     "label": "Won the largest Janus award — up to $750M to deploy 15 Kaleidos units by 2030, starting with three at Fort Benning, GA",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    },
+    {
+     "date": "2026-09-08",
+     "label": "Signed a definitive multi-year HALEU supply contract with Centrus; delivery before 2030 depends on Centrus completing its DOE-supported capacity expansion; prepayments disclosed, volume and price undisclosed",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-and-radiant-announce-long-term-partnership-domestic"
+    }
+   ]
+  },
+  {
+   "id": "evinci",
+   "name": "Westinghouse",
+   "reactor": "eVinci",
+   "first_delivery_target": null,
+   "milestones": [
+    {
+     "date": "2025-02-17",
+     "label": "Penn State files NRC notice of intent for a 15 MWt eVinci-based research reactor CP",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.nrc.gov/docs/ML2505/ML25059A029.pdf"
+    },
+    {
+     "date": "2025",
+     "label": "SRC first-customer contract cancelled; eVinci refocused on space, defence and government",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.src.sk.ca/src-nuclear/additional-information"
+    },
+    {
+     "date": "2026",
+     "label": "Scaled 3 MWt heat-pipe test reactor selected for DOME testing",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/westinghouse-radiant-selected-for-first-fueled-nuclear-microreactor-tests-at-inls-dome-facility/"
+    },
+    {
+     "date": "2026-04-22",
+     "label": "Selected for Malmstrom Air Force Base under ANPI",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.exchangemonitor.com/air-force-picks-three-companies-to-deploy-microreactors-at-military-bases/?printmode=1"
+    },
+    {
+     "date": "2030",
+     "label": "Malmstrom AFB operating (ANPI goal)",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://neutronbytes.com/2026/04/24/air-force-selects-three-microreactors-for-base-power/"
+    },
+    {
+     "date": "2026-08-26",
+     "label": "Selected for Janus at Fort Drum, NY, through Westinghouse Government Services",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    },
+    {
+     "date": "2026-08-24",
+     "label": "eVinci test assembly reached zero-power criticality at NCERC",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    },
+    {
+     "date": "2026-09-03",
+     "label": "Heated-core test reached criticality at 663°C and a 1,011°C peak at NCERC",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone"
+    }
+   ]
+  },
+  {
+   "id": "bwxt-banr",
+   "name": "BWXT Advanced Technologies",
+   "reactor": "BANR",
+   "first_delivery_target": "Operation targeted for the early 2030s",
+   "milestones": [
+    {
+     "date": "2026-08-26",
+     "label": "Selected for Janus at Fort Campbell",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    },
+    {
+     "date": "2030",
+     "label": "Operation targeted in the early 2030s",
+     "status": "target",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    }
+   ]
+  },
+  {
+   "id": "general-atomics-ga-tes",
+   "name": "General Atomics",
+   "reactor": "GA-TES",
+   "first_delivery_target": "Not published",
+   "milestones": [
+    {
+     "date": "2026-08-26",
+     "label": "Selected for Janus at Fort Hood",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+    }
+   ]
+  },
+  {
+   "id": "valar-ward250",
+   "name": "Valar Atomics",
+   "reactor": "Ward 250",
+   "first_delivery_target": "Not published",
+   "milestones": [
+    {
+     "date": "2026-06-18",
+     "label": "Ward 250 reached zero-power criticality in Utah",
+     "status": "done",
+     "unit": "Ward 250",
+     "source_url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"
+    }
+   ]
+  },
+  {
+   "id": "aalo-x",
+   "name": "Aalo Atomics",
+   "reactor": "Aalo-X Critical Test Reactor",
+   "first_delivery_target": "Not published",
+   "milestones": [
+    {
+     "date": "2026-07-04",
+     "label": "Aalo-X reached zero-power fueled criticality at INL",
+     "status": "done",
+     "unit": "Aalo-X",
+     "source_url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/"
+    }
+   ]
+  },
+  {
+   "id": "oklo-aurora",
+   "name": "Oklo",
+   "reactor": "Aurora Powerhouse",
+   "first_delivery_target": "Not published",
+   "milestones": [
+    {
+     "date": "2026-06-11",
+     "label": "DOE preliminary safety approval announced for Aurora-INL",
+     "status": "done",
+     "unit": null,
+     "source_url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/"
+    },
+    {
+     "date": "2026-08-05",
+     "label": "Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so",
+     "status": "done",
+     "unit": "Groves Isotope Test Reactor",
+     "source_url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality"
+    }
+   ]
+  }
+ ],
+ "news_janus": [
+  {
+   "id": "army-janus-westinghouse-fort-drum-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "Westinghouse to bring eVinci to Fort Drum after Schumer push",
+   "binding": true,
+   "binding_note": "A signed Janus OTA agreement, not a mere selection, though none of output, schedule or value has been disclosed for this specific pairing.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+   ]
+  },
+  {
+   "id": "army-janus-radiant-fort-benning-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "Radiant wins largest Janus award, up to $750M for 15 units",
+   "binding": true,
+   "binding_note": "Radiant itself described this as a binding Janus agreement, the only one of the five vendors to publish its own award ceiling.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/"
+   ]
+  },
+  {
+   "id": "army-janus-general-atomics-fort-hood-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "General Atomics to advance GA-TES microreactor at Fort Hood",
+   "binding": true,
+   "binding_note": "A signed Janus OTA agreement covering development and testing milestones, not yet a deployment commitment; the company is explicitly in a development phase.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/"
+   ]
+  },
+  {
+   "id": "army-janus-bwxt-fort-campbell-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "BWXT to deploy 20 MWe BANR reactor at Fort Campbell",
+   "binding": true,
+   "binding_note": "A signed Janus OTA agreement; the specific dollar value was not disclosed.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+   ]
+  },
+  {
+   "id": "army-janus-award-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "Army awards up to $2.2bn across five bases for microreactors",
+   "binding": true,
+   "binding_note": "Each vendor holds a signed, executed OTA agreement, not a preliminary selection — funds release against technical milestones for prototype construction and a first year of operation, after which the Army plans to shift to a power purchase agreement. Per-vendor dollar figures beyond Radiant's remain undisclosed.",
+   "source_urls": [
+    "https://federalnewsnetwork.com/army/2026/08/army-awards-2-2b-in-contracts-for-nuclear-microreactors/",
+    "https://breakingdefense.com/2026/08/army-taps-5-vendors-to-build-nuclear-microreactors-with-2-2b-pot/",
+    "https://www.world-nuclear-news.org/articles/us-army-selects-five-microreactor-vendors-to-power-bases"
+   ]
+  },
+  {
+   "id": "army-janus-antares-fort-bragg-2026-08-26",
+   "date": "2026-08-26",
+   "headline": "Antares to build three R1 microreactors at Fort Bragg",
+   "binding": true,
+   "binding_note": "A signed Janus OTA agreement, not a mere selection; the dollar value of this specific award is undisclosed, only the combined cross-program total.",
+   "source_urls": [
+    "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/"
+   ]
+  }
+ ]
+}

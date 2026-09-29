@@ -1,0 +1,424 @@
+{
+ "_meta": {
+  "captured": "2026-09-26",
+  "agent": "verify-c-B",
+  "scope": "Verification pass (part B, 22 records) across regions, dockets, precedents/mechanisms, news items and one benchmark case whose shipped numbers an offline check could not confirm in any cached source",
+  "skipped": [
+   "nunavut: 09: date fragment (from 2026-09-02, appears twice)",
+   "us-virgin-islands: 06: date fragment (from 2026-06-30)",
+   "us-virgin-islands: 30: date fragment (from 2026-06-30)",
+   "yukon: 26: date fragment (from winter 2025-26)",
+   "yukon: 22: date fragment (day of month, April 22, 2026)",
+   "guam: 09: date fragment (from 2025-09-01)",
+   "alaska-railbelt-utilities: 177: bill number (SB 177)",
+   "alaska-railbelt-utilities: 18: statute/regulation number (18 AAC 87)",
+   "alaska-railbelt-utilities: 87: statute/regulation number (18 AAC 87)",
+   "trisox-tx1-vertical-construction-2026-09-24: 24: date fragment (September 24 announcement date)",
+   "trisox-tx1-vertical-construction-2026-09-24: 100: reactor model designation (Xe-100), not a measured claim",
+   "nucube-launch-two-s4-filing-2026-09-11: 11: date fragment (September 11 filing date)",
+   "nucube-launch-two-s4-filing-2026-09-11: 25: date fragment (June 25 agreement date)",
+   "dnd-arctic-microreactor-study-2026-04-29: 27: fiscal-year fragment (2026-27 fiscal year)"
+  ],
+  "absences": [
+   "Nunavut: QEC's '19 plants over 1 MW' and Iqaluit's 13.6 MW plant capacity -- QEC's own 2023-2026 Corporate Plan confirms only the 25-plant, ~76 MW fleet total, not this breakdown",
+   "Nunavut: the $555-1,130/MWh interim rate range was ultimately confirmed via QEC's own rate schedule, but only after its two originally-cited sources (Kivalliq/DND items) proved unrelated to it",
+   "Yukon: 2024 LNG capacity (13.2 MW / 8.7%) -- the Yukon Bureau of Statistics 'Energy Facts 2024' PDF now 404s and no mirror or alternate source was found",
+   "Palau: a territory-wide 97.5% diesel / 2.5% solar generation-mix figure -- not stated on either power plant's own Wikipedia page or in trade-press coverage checked",
+   "Marshall Islands: Majuro's 2023 maximum demand (9.8 MW) and diesel/PV split (99.6%/0.4%) -- not in the 90-page RMI Electricity Roadmap or other sources fetched",
+   "Palau/Marshall Islands: a $0.41/kWh Palau commercial-government tariff and a $0.36/kWh Marshall Islands residential estimate -- absent from the cited trade-press source, which gives only the $0.28/$0.48 residential pair",
+   "Nunavik: a count of '14' serviced villages -- not stated on Hydro-Quebec's own Nunavik or thermal-generating-stations pages, only in unverified search summaries",
+   "Pacaso: a specific $2.8 million top-end share price -- Pacaso's own site instead states shares 'can reach $2 million or more'"
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-c-nunavut-1",
+   "target": "nunavut",
+   "file": "regions",
+   "claim": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (~76 MW total, 19 over 1 MW, Iqaluit largest at 13.6 MW -- established in the 2026-09-02 pass and not re-verified here).",
+   "verdict": "unsupported",
+   "evidence": "QEC's own 2023-2026 Corporate Plan confirms the fleet size and total ('Through the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts') but does not break out how many plants exceed 1 MW, nor Iqaluit's own plant capacity; no other fetched or found source states 19-over-1MW or Iqaluit at 13.6 MW.",
+   "correction": "Qulliq Energy Corporation (QEC) runs 25 stand-alone diesel plants (~76 MW total per QEC's 2023-2026 Corporate Plan).",
+   "sources": [
+    {"label": "Qulliq Energy Corporation — 2023-2026 Corporate Plan", "url": "https://www.qec.nu.ca/sites/default/files/qulliq_energy_corporation_2023_-_2026_corporate_plan.pdf", "quote": "Through the operation of 25 stand-alone diesel power plants with a total installed capacity of approximately 76,000 kilowatts", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavut-2",
+   "target": "nunavut",
+   "file": "regions",
+   "claim": "New this pass: the Kivalliq Hydro-Fibre Link (Nukik Corporation, Inuit-owned) proposes a 1,200 km, 150 MW transmission and fibre line from Manitoba's grid to five Kivalliq communities and at least one gold mine.",
+   "verdict": "confirmed",
+   "evidence": "Government of Canada release (2024-03-21, still the project's live description): 'The Kivalliq Hydro-Fibre Link proposes to build a 1,200 kilometre, 150 megawatt transmission line with fibre-optic cabling connecting Manitoba's grid to the Kivalliq region of Nunavut.'",
+   "sources": [
+    {"label": "Government of Canada (CIRNAC) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html", "quote": "The Kivalliq Hydro-Fibre Link proposes to build a 1,200 kilometre, 150 megawatt transmission line with fibre-optic cabling", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavut-3",
+   "target": "nunavut",
+   "file": "regions",
+   "claim": "Interim 2025 QEC rates of $555-1,130/MWh by class (established in the 2026-09-02 pass)",
+   "verdict": "confirmed",
+   "evidence": "QEC's interim rate schedule effective 2025-04-01 spans exactly this range by class: Commercial Non-Government 'From $0.5554 to $0.6208 per kWh' up to Residential Government 'From $1.0221 to $1.1300 per kWh'. $0.5554/kWh = $555.40/MWh (the low end) and $1.1300/kWh = $1,130/MWh (the high end): $555-1,130/MWh is plain arithmetic (x1000) on the page's own per-kWh figures.",
+   "sources": [
+    {"label": "Qulliq Energy Corporation — Interim Electricity Rates effective April 1, 2025 (General Rate Application)", "url": "https://www.qec.nu.ca/interim-electricity-rates-effective-april-1-2025-general-rate-application", "quote": "Energy Rate (for Commercial Non-Government/Municipal Tax Base): From $0.5554 to $0.6208 per kWh", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavut-4",
+   "target": "nunavut",
+   "file": "regions",
+   "claim": "the Government of Canada's most recent dedicated funding announcement (March 2024) added $2.8 million to the project's development phase (on top of $11.6 million already provided for planning/feasibility), stating 'construction is expected to begin by 2028.'",
+   "verdict": "confirmed",
+   "evidence": "canada.ca (2024-03-21): 'Nukik Corporation is receiving an additional $2.8 million in funding from Canada's Northern REACHE Program' and 'Prior to today's announcement... provided $11.6 million in funding to support the earlier planning and feasibility phase.'",
+   "sources": [
+    {"label": "Government of Canada (CIRNAC) — Minister Vandal announces federal funding towards Kivalliq Hydro-Fibre Link (2024-03-21)", "url": "https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2024/03/minister-vandal-announces-federal-funding-towards-kivalliq-hydro-fibre-link-to-advance-clean-energy-transition-and-broadband-service-delivery-to-th.html", "quote": "provided $11.6 million in funding to support the earlier planning and feasibility phase of the Kivalliq Hydro-Fibre Link project", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-us-virgin-islands-1",
+   "target": "us-virgin-islands",
+   "file": "regions",
+   "claim": "WAPA (Virgin Islands Water and Power Authority) runs two separate island grids on delivered fuel: St. Thomas/St. John and St. Croix, with 238 MW of installed capacity as of 2020 (138 MW St. Thomas district, 100 MW St. Croix), historically burning a propane/diesel mix (74% propane, 26% diesel in March 2020).",
+   "verdict": "confirmed",
+   "evidence": "DOE's 2020 USVI Energy Snapshot: 'Installed Capacity 238 MW / St. Thomas.138 MW St. Croix 100 MW.' WAPA's Executive Director, per the board's May 2020 meeting: 'the consumption ratio was 74 percent propane and 26 percent diesel fuel' in March 2020.",
+   "sources": [
+    {"label": "U.S. Department of Energy — U.S. Virgin Islands Energy Snapshot (2020)", "url": "https://www.energy.gov/sites/prod/files/2020/09/f79/ETI-Energy-Snapshot-US-Virgin-Islands_FY20.pdf", "quote": "Installed Capacity 238 MW St. Thomas.138 MW St. Croix 100 MW", "status": "fetched"},
+    {"label": "St. Croix Source — New WAPA Generators Will Mean 100 Percent Propane, Zero Fuel Oil (2020-05-01)", "url": "https://stcroixsource.com/2020/05/01/new-wapa-generators-will-mean-100-percent-propane-zero-fuel-oil/", "quote": "the consumption ratio was 74 percent propane and 26 percent diesel fuel", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-us-virgin-islands-2",
+   "target": "us-virgin-islands",
+   "file": "regions",
+   "claim": "WAPA's Phase II Wartsila project — four new dual-fuel engines able to run on LPG or light fuel oil, rated at 36 MW and able to 'power 55% of the St. Thomas/St. John district' — reached completion at a ribbon-cutting on 2025-01-17.",
+   "verdict": "confirmed",
+   "evidence": "American Public Power Association (2025-01-28), reporting the same ribbon-cutting: 'These engines will deliver a total output of 36 MW and have the capacity to power 55% of the St. Thomas/St. John district.'",
+   "sources": [
+    {"label": "American Public Power Association — Virgin Islands Water and Power Authority Celebrates Ribbon-Cutting Ceremony for Power Plant Project", "url": "https://www.publicpower.org/periodical/article/virgin-islands-water-and-power-authority-celebrates-ribbon-cutting-ceremony-power-plant-project", "quote": "These engines will deliver a total output of 36 MW and have the capacity to power 55% of the St. Thomas/St. John district", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-us-virgin-islands-3",
+   "target": "us-virgin-islands",
+   "file": "regions",
+   "claim": "the fuel-cost LEAC component was set at 22.22 cents/kWh through 2026-06-30 under a 2025 WAPA-PSC settlement",
+   "verdict": "confirmed",
+   "evidence": "V.I. Consortium reports the PSC keeping WAPA's rate at this level: 'The V.I. Water and Power Authority's Levelized Energy Adjustment Clause will remain at 22.22 cents per kilowatt hour through the end of the year,' continuing the level the 2025 settlement fixed through mid-2026.",
+   "sources": [
+    {"label": "V.I. Consortium — PSC Keeps WAPA LEAC at 22.22 Cents Through Year-End as Required Rate Review Stalls", "url": "https://viconsortium.com/vi-wapa/virgin-islands-psc-keeps-wapa-leac-at-22-22-cents-through-year-end-as-required-rate-review-stalls", "quote": "Levelized Energy Adjustment Clause will remain at 22.22 cents per kilowatt hour through the end of the year", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-yukon-1",
+   "target": "yukon",
+   "file": "regions",
+   "claim": "low water in the Aishihik reservoir constrained winter 2025-26 output, and Yukon Energy is building a 15 MW thermal power centre in South Whitehorse using relocated rental diesel units.",
+   "verdict": "confirmed",
+   "evidence": "Yukon Energy's own Whitehorse Power Centres project page lists the south (First Power Centre Build) site as 'Construct 15 MW power centre', in-service 2028.",
+   "sources": [
+    {"label": "Yukon Energy — Whitehorse Power Centres Project", "url": "https://yukonenergy.ca/energy-in-yukon/projects-facilities/whitehorse-power-centres", "quote": "Construct 15 MW power centre", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-yukon-2",
+   "target": "yukon",
+   "file": "regions",
+   "claim": "LNG plants held 13.2 MW (8.7%) of 2024 installed capacity per Yukon government statistics.",
+   "verdict": "unverifiable",
+   "evidence": "The only candidate primary document, the Yukon Bureau of Statistics' 'Yukon Energy Facts 2024' PDF, now 404s at its published URL; no cached or mirrored copy, and no alternate page stating this LNG MW/share figure, could be reached.",
+   "sources": []
+  },
+  {
+   "id": "check-c-yukon-3",
+   "target": "yukon",
+   "file": "regions",
+   "claim": "Eagle Gold mine (Victoria Gold) grid-connected via a 45 km, 69kV powerline",
+   "verdict": "confirmed",
+   "evidence": "NS Energy Business project page: 'Power supply for the project will be provided by a 45km-long, 69kV powerline from the Yukon electrical grid.'",
+   "sources": [
+    {"label": "NS Energy Business — Eagle Gold Mine, Mayo Mining District, Yukon", "url": "https://www.nsenergybusiness.com/projects/eagle-gold-mine/", "quote": "Power supply for the project will be provided by a 45km-long, 69kV powerline from the Yukon electrical grid", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-yukon-4",
+   "target": "yukon",
+   "file": "regions",
+   "claim": "grid connection over self-generation saved an estimated 53,000 tonnes/year of GHG emissions vs. diesel",
+   "verdict": "wrong",
+   "evidence": "Every account found of this same Minto-mine/Pelly Crossing hydro connection puts the saving far lower, around 22,000-30,000 tonnes/year, not 53,000; Yukon Energy's own page on the utility's cumulative emissions impact separately shows just 68,800 tonnes/year across ALL of its projects combined over more than a decade, making a single-connection 53,000 t/yr figure implausible.",
+   "correction": "grid connection over self-generation saved an estimated 30,000 tonnes/year of GHG emissions vs. diesel",
+   "sources": [
+    {"label": "Yukon Energy — How have our projects impacted GHG emissions?", "url": "https://yukonenergy.ca/energy-in-yukon/electricity-101/electricity-library/how-have-our-projects-impacted-ghg-emissions", "quote": "reduction of up to 68,800 tonnes a year of greenhouse gas (GHG) emissions", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-guam-1",
+   "target": "guam",
+   "file": "regions",
+   "claim": "LEAC (fuel cost adjustment) proposed to fall from $0.208802/kWh to $0.188781/kWh effective 2025-08-01, then to $0.135840/kWh effective 2025-09-01 as Ukudu came online;",
+   "verdict": "confirmed",
+   "evidence": "KANDIT News (2025-05-22): 'GPA's current proposal is to reduce the LEAC rate from $0.208802/kWh to $0.188781/kWh effective August 1, 2025... immediately be followed by a second proposed LEAC rate reduction to $0.135840/kWh effective September 1, 2025.'",
+   "sources": [
+    {"label": "KANDIT News Group — Guam Power Rates Likely to Go Down Again, and Sooner Than Planned (2025-05-22)", "url": "https://kanditnews.com/guam-power-rates-likely-to-go-down-again-and-sooner-than-planned/", "quote": "reduce the LEAC rate from $0.208802/kWh to $0.188781/kWh effective August 1, 2025", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-guam-2",
+   "target": "guam",
+   "file": "regions",
+   "claim": "the residential base rate was separately proposed to rise about 2.2-2.8 cents/kWh in the same filing",
+   "verdict": "confirmed",
+   "evidence": "The Guam Daily Post (2025-05-22), on the same GPA filing: 'The residential base rate is proposed to go up about 2.2 cents per kWh for the first 500 kilowatt-hours... For energy consumption above 500 kWh, the residential base rate is proposed to go up about 2.8 cents per kWh.'",
+   "sources": [
+    {"label": "Post Guam / The Guam Daily Post — GPA: Rate adjustments to shave $42 off current bills (2025-05-22)", "url": "https://www.postguam.com/news/local/gpa-rate-adjustments-to-shave-42-off-current-bills/article_3fd8b24f-81ed-463b-8ef0-a9690cd95e7b.html", "quote": "residential base rate is proposed to go up about 2.2 cents per kWh for the first 500 kilowatt-hours", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-freely-associated-states-pacific-1",
+   "target": "freely-associated-states-pacific",
+   "file": "regions",
+   "claim": "Palau's Public Utilities Corporation (PPUC) operates the Malakal Power Plant (23.7 MW installed across 8 diesel generators) and the Aimeliik Power Plant (about 13.08 MW across 4 diesel generators), for roughly 28 MW installed capacity against a 15 MW peak load and a generation mix around 97.5% diesel / 2.5% solar.",
+   "verdict": "unsupported",
+   "evidence": "Aimeliik's own Wikipedia page confirms '4 installed diesel generators with a total installed capacity of 13.08 MW,' but no fetched or reachable source states a 97.5%/2.5% diesel/solar split for Palau; the closest fetched figure is a 2025 DOE-adjacent estimate of diesel 'still comprises 97%' of a neighboring territory's output, not Palau's own mix.",
+   "sources": [
+    {"label": "Wikipedia — Aimeliik Power Plant", "url": "https://en.wikipedia.org/wiki/Aimeliik_Power_Plant", "quote": "4 installed diesel generators with a total installed capacity of 13.08 MW", "status": "fetched"},
+    {"label": "Wikipedia — Malakal Power Plant", "url": "https://en.wikipedia.org/wiki/Malakal_Power_Plant", "quote": "8 installed diesel generators with a total installed capacity of 23.7 MW", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-freely-associated-states-pacific-2",
+   "target": "freely-associated-states-pacific",
+   "file": "regions",
+   "claim": "its Majuro system, the country's largest, had a 2023 recorded maximum demand of about 9.8 MW (9.0 MW daily average), generated about 99.6% from diesel and 0.4% from grid-connected PV.",
+   "verdict": "unsupported",
+   "evidence": "The Marshall Islands Electricity Roadmap (fetched in full, 90 pages) discusses Majuro's grid extensively but states neither a 9.8 MW/9.0 MW demand figure nor a 99.6%/0.4% diesel/PV split; it instead gives a different, non-matching figure (Majuro's grid GHG share at 74%).",
+   "sources": [
+    {"label": "Marshall Islands Electricity Roadmap (RMI Ministry of Finance / NDC Partnership)", "url": "https://unfccc.int/sites/default/files/NDC/2022-06/RMI%20Electricity%20Roadmap.pdf", "quote": "Majuro's grid currently produces 74 percent of electricity sector GHG emissions", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-freely-associated-states-pacific-3",
+   "target": "freely-associated-states-pacific",
+   "file": "regions",
+   "claim": "US$0.28/kWh residential in Palau (rising to $0.41/kWh commercial/government on an inverted block tariff) and about US$0.48/kWh in the Federated States of Micronesia, per trade-press reporting; a separate estimate put Marshall Islands residential price at about US$0.36/kWh",
+   "verdict": "unsupported",
+   "evidence": "POWER Magazine's own trade-press piece, the record's cited source for the $0.28/$0.48 pair, states only 'Pacific island nations pay between $0.28/kWh (Palau) and $0.48/kWh (the Federated States of Micronesia)' -- it does not give Palau's higher commercial/government tier ($0.41/kWh) or a Marshall Islands residential estimate ($0.36/kWh), and no other fetched source states either figure.",
+   "sources": [
+    {"label": "POWER Magazine — Marooned: How Island Power Systems Keep the Lights On", "url": "https://www.powermag.com/marooned-how-island-power-systems-keep-the-lights-on/", "quote": "Pacific island nations pay between $0.28/kWh (Palau) and $0.48/kWh (the Federated States of Micronesia)", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-alaska-railbelt-utilities-1",
+   "target": "alaska-railbelt-utilities",
+   "file": "regions",
+   "claim": "Governor Dunleavy's stated (unmet) Railbelt target is 10 cents/kWh;",
+   "verdict": "confirmed",
+   "evidence": "Alaska Beacon (2026-07-01), by ACEP's Gwen Holdmann: 'The Governor had just thrown out a bold challenge: find a path to 10-cent per kilowatt electricity on the Railbelt.'",
+   "sources": [
+    {"label": "Alaska Beacon — Could nuclear power Alaska's future? (2026-07-01)", "url": "https://alaskabeacon.com/2026/07/01/could-nuclear-power-alaskas-future/", "quote": "find a path to 10-cent per kilowatt electricity on the Railbelt", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-alaska-railbelt-utilities-2",
+   "target": "alaska-railbelt-utilities",
+   "file": "regions",
+   "claim": "May 2026: the Alaska Center for Energy and Power organized a tour of Idaho National Laboratory for utility executives including staff from Golden Valley Electric Association, to view Radiant's Kaleidos microreactor test facility and Oklo's 75 MW Aurora construction site. ACEP's own account of the trip raises, as an open question rather than a utility commitment, whether Oklo's 5 MW Eielson microreactor could be followed by 'a larger 75 MW reactor at the same location supplying power to the GVEA's grid.'",
+   "verdict": "confirmed",
+   "evidence": "Alaska Beacon (2026-07-01): 'We also took a slight detour through the desert to drive by the site where Oklo is beginning construction on its 75 MW Aurora reactor commercial demonstration plant,' and separately: 'follow it with a larger 75 MW reactor at the same location supplying power to the GVEA's grid?'",
+   "sources": [
+    {"label": "Alaska Beacon — Could nuclear power Alaska's future? (2026-07-01)", "url": "https://alaskabeacon.com/2026/07/01/could-nuclear-power-alaskas-future/", "quote": "beginning construction on its 75 MW Aurora reactor commercial demonstration plant", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-trisox-tx1-vertical-construction-2026-09-24-1",
+   "target": "trisox-tx1-vertical-construction-2026-09-24",
+   "file": "news",
+   "claim": "TRISO-X, X-energy's fuel subsidiary, announced on September 24, 2026 that it completed vertical construction of the 214,000-square-foot TX-1 fuel fabrication facility in Oak Ridge, Tennessee... TX-1 is sized to produce about 700,000 TRISO-X pebbles a year, enough for up to 11 Xe-100-class reactors.",
+   "verdict": "confirmed",
+   "evidence": "GlobeNewswire release (2026-09-24): 'The milestone completes the primary building structure of the 214,000-square-foot facility'; 'TX-1 is expected to produce approximately 700,000 TRISO-X fuel pebbles annually'; and elsewhere gives it 'capacity to provide fuel for up to 11 Xe-100 reactors.'",
+   "sources": [
+    {"label": "GlobeNewswire — TRISO-X Completes Vertical Construction of TX-1 Fuel Fabrication Facility (2026-09-24)", "url": "https://www.globenewswire.com/news-release/2026/09/24/3368186/0/en/triso-x-completes-vertical-construction-of-tx-1-fuel-fabrication-facility.html", "quote": "The milestone completes the primary building structure of the 214,000-square-foot facility", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavik-northern-quebec-1",
+   "target": "nunavik-northern-quebec",
+   "file": "regions",
+   "claim": "Hydro-Quebec Remote Communities serves 14 Nunavik villages, each 'a power plant... located in your village [that] uses diesel fuel to generate the electricity needed in your home' -- off-grid, no connection to Hydro-Quebec's main hydro system despite the utility being one of the world's largest hydro generators.",
+   "verdict": "unsupported",
+   "evidence": "Hydro-Quebec's own Nunavik page (fetched twice) and its Conventional Thermal Generating Stations learning page (fetched) both describe diesel plants serving Nunavik's isolated villages but neither states a village count of 14; no fetched page gives this number, only search-result summaries (not independently verified).",
+   "sources": [
+    {"label": "Hydro-Quebec — Energy efficiency in Nunavik", "url": "https://www.hydroquebec.com/energy-efficiency-nunavik/", "quote": "The power plant is located in your village. It uses diesel fuel to generate the electricity needed in your home.", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavik-northern-quebec-2",
+   "target": "nunavik-northern-quebec",
+   "file": "regions",
+   "claim": "TUGLIQ Energy's 2 wind turbines (since 2014) save an estimated 4.4 million litres of diesel/year",
+   "verdict": "confirmed",
+   "evidence": "Glencore's own Raglan Mine page: 'these two wind turbines now produce about 10% of our total electricity consumption - representing an estimated average annual savings of about 4.4 million litres of diesel fuel compared to 2019.'",
+   "sources": [
+    {"label": "Glencore — Raglan Mine, Renewable energy", "url": "https://www.glencore.ca/en/raglan/sustainability/environment/Environment--Renewable-energy", "quote": "estimated average annual savings of about 4.4 million litres of diesel fuel compared to 2019", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nunavik-northern-quebec-3",
+   "target": "nunavik-northern-quebec",
+   "file": "regions",
+   "claim": "Hydro-Quebec states the project would meet roughly 60% of the two villages' needs and save 96 million litres of diesel over 25 years (snippet-only, source access blocked)",
+   "verdict": "confirmed",
+   "evidence": "Found and fetched Hydro-Quebec's own press release on the Quaqtaq/Puvirnituq wind projects (the CBC piece the record flagged as blocked was not needed): 'They will provide renewable energy to meet approximately 60% of the two villages' electricity needs. Over 25 years, the initiatives will save 96 million litres of diesel.' This is no longer snippet-only or blocked.",
+   "sources": [
+    {"label": "Hydro-Quebec — The energy transition in Nunavik: a collaboration agreement and two new wind power projects (2025-05-13)", "url": "https://news.hydroquebec.com/news/press-releases/nord-du-quebec/energy-transition-nunavik-collaboration-agreement-two-new-wind-power-projects.html", "quote": "Over 25 years, the initiatives will save 96 million litres of diesel", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-puerto-rico-1",
+   "target": "puerto-rico",
+   "file": "regions",
+   "claim": "In 2021 DOE awarded NAP about $1.6 million for a site-suitability phase, which named two candidate sites, one lying 'on the island's north coast near an industrial hub' and the other 'on its east coast at the former Roosevelt Roads Naval Station' (a decommissioned base, not an active military installation).",
+   "verdict": "confirmed",
+   "evidence": "Puerto Rico Report (2021-11-29): the Office of Nuclear Energy awarded '$1,628,285... Awarded to Puerto Rico for Nuclear Energy' for the Nuclear Alternative Project's site-suitability study naming the same two regions, which rounds to 'about $1.6 million.'",
+   "sources": [
+    {"label": "Puerto Rico Report — $1,628,285 Awarded to Puerto Rico for Nuclear Energy (2021-11-29)", "url": "https://puertoricoreport.com/1628285-awarded-to-puerto-rico-for-nuclear-energy/", "quote": "The funds will go toward a site suitability study examining the prospect of two possible locations", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-puerto-rico-2",
+   "target": "puerto-rico",
+   "file": "regions",
+   "claim": "2025-2026 regulatory attention is on emergency thermal procurement (Genera's request to acquire 700-850 MW of temporary generation) rather than nuclear",
+   "verdict": "confirmed",
+   "evidence": "BNamericas (2025-03-10), on LUMA's assessment supporting Genera's urgent request: 'the past three annual [resource adequacy] reports have consistently shown that Puerto Rico has a generation supply deficit of between 700-850MW.'",
+   "sources": [
+    {"label": "BNamericas — Pressure increasing for Puerto Rico to address 700-850MW deficit (2025-03-10)", "url": "https://www.bnamericas.com/en/news/pressure-increasing-for-puerto-rico-to-address-700-850mw-deficit", "quote": "Puerto Rico has a generation supply deficit of between 700-850MW", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-american-samoa-1",
+   "target": "american-samoa",
+   "file": "regions",
+   "claim": "43 cents/kWh average retail price, 2023 (about 3.5x the US average);",
+   "verdict": "wrong",
+   "evidence": "DOE's own 2023-2024 Energy Baseline Report for American Samoa: 'in 2022, the average electricity price for residential customers in American Samoa was approximately 44.97 cents/kilowatt hours (kWh)-almost three times the U.S. average of 15.04 cents/kWh (EIA 2023c).' The year is 2022, the price is 44.97 cents, and the multiple is 'almost three times,' not 2023 / 43 cents / 3.5x.",
+   "correction": "44.97 cents/kWh average retail price, 2022 (almost 3x the US average);",
+   "sources": [
+    {"label": "National Renewable Energy Laboratory / DOE — 2023-2024 Energy Baseline Report: American Samoa", "url": "https://www.energy.gov/sites/default/files/2025-11/American%20Samoa_Baseline_Energy_Report.pdf", "quote": "the average electricity price for residential customers in American Samoa was approximately 44.97 cents/kilowatt hours", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-australia-nuclear-legal-position-1",
+   "target": "australia-nuclear-legal-position",
+   "file": "regions",
+   "claim": "The opposition Coalition's 2024-2025 election platform proposed a taxpayer-funded fleet of seven nuclear power stations costing about A$331 billion (reported as roughly US$211 billion), with the first plant targeted for 2035-37.",
+   "verdict": "confirmed",
+   "evidence": "NucNet (2024-12-13): 'Australia's main opposition group has laid out a $331bn ($211bn, EUR200bn) plan to create a taxpayer-funded nuclear power industry,' with 'seven commercial nuclear plants by 2050, with the first operational by 2036.'",
+   "sources": [
+    {"label": "NucNet — Opposition Unveils $211 Billion Plan For Nuclear Power Industry With First Reactor Online By 2036 (2024-12-13)", "url": "https://www.nucnet.org/news/opposition-unveils-usd211-billion-plan-for-nuclear-power-industry-with-first-reactor-online-by-2036-12-1-2024", "quote": "Australia's main opposition group has laid out a $331bn ($211bn, EUR200bn) plan", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-pacaso-fractional-home-co-ownership-1",
+   "target": "pacaso-fractional-home-co-ownership",
+   "file": "mechanisms",
+   "claim": "each home split into up to eight shares priced from $200,000 to $2.8 million depending on the property; St. Helena, California settlement caps Pacaso at four homes in that city",
+   "verdict": "unsupported",
+   "evidence": "Pacaso's own explainer page confirms the low end -- '1/8 shares typically start from around $200,000' -- but gives a different, vaguer top end: 'can reach $2 million or more for top-tier luxury homes.' No fetched page states a specific $2.8 million ceiling.",
+   "sources": [
+    {"label": "Pacaso — How Does Pacaso Work? A Simple Guide to Luxury Co-Ownership", "url": "https://www.pacaso.com/blog/pacaso-explained", "quote": "Pacaso 1/8 shares typically start from around $200,000 and can reach $2 million or more", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-uk-scottish-islands-and-nuclear-framework-1",
+   "target": "uk-scottish-islands-and-nuclear-framework",
+   "file": "regions",
+   "claim": "SSEN Transmission's 600 MW HVDC Shetland link is under construction, and a further 1.8 GW HVDC Western Isles link has been proposed, both meant to connect these island grids to the GB mainland system.",
+   "verdict": "confirmed",
+   "evidence": "SSEN Transmission's own release: 'the Electricity System Operator, National Grid ESO, has confirmed the requirement for a 1.8GW HVDC subsea link from the Western Isles to the north of Scotland mainland.'",
+   "sources": [
+    {"label": "SSEN Transmission — 'Pathway to 2030' confirms need for 1.8GW Western Isles HVDC link (2022-07)", "url": "https://www.ssen-transmission.co.uk/news/news--views/2022/7/pathway-to-2030-confirms-need-for-1.8gw-western-isles-hvdc-link/", "quote": "confirmed the requirement for a 1.8GW HVDC subsea link from the Western Isles to the north of Scotland mainland", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-nz-chatham-islands-and-nuclear-law-1",
+   "target": "nz-chatham-islands-and-nuclear-law",
+   "file": "regions",
+   "claim": "islanders had already been paying $1.02/kWh in 2020 versus about 25c on the mainland",
+   "verdict": "wrong",
+   "evidence": "The only fetched page stating this exact figure, the NZ Herald, dates it to 2012, not 2020: 'Islanders paid $1.02 per kw/hour for power, compared with around 25c in the rest of New Zealand' (article published 2012-09-19, on a Prime Ministerial visit that year).",
+   "correction": "islanders had already been paying $1.02/kWh in 2012 versus about 25c on the mainland",
+   "sources": [
+    {"label": "NZ Herald — Freight, power costs top Chatham Islanders' agenda (2012-09-19)", "url": "https://www.nzherald.co.nz/nz/freight-power-costs-top-chatham-islanders-agenda/MG4W6Z4GPQVAOX5PTLUWD32VHA/", "quote": "Islanders paid $1.02 per kw/hour for power, compared with around 25c in the rest of New Zealand", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-entergy-louisiana-irp-smr-cost-1",
+   "target": "entergy-louisiana-irp-smr-cost",
+   "file": "dockets",
+   "claim": "A microreactor developer now has a concrete Gulf South benchmark to beat: Entergy's own filed SMR cost assumption of just under $15,000/kW.",
+   "verdict": "confirmed",
+   "evidence": "Bayou Colline / Substack (2026-01-30), on Entergy Louisiana's IRP filing: 'SMRs are modeled at approximately $14,965/kW-nearly eight times the cost of utility-scale solar.' $14,965/kW is arithmetically just under $15,000/kW.",
+   "sources": [
+    {"label": "Bayou Colline (Substack) — Gas, Nuclear, or Renewables? Entergy Louisiana's IRP Sets the Terms (2026-01-30)", "url": "https://brcolln.substack.com/p/gas-nuclear-or-renewables-entergy", "quote": "SMRs are modeled at approximately $14,965/kW", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-2africa-submarine-cable-consortium-ownership-1",
+   "target": "2africa-submarine-cable-consortium-ownership",
+   "file": "mechanisms",
+   "claim": "stc alone disclosed a $205 million investment in just the 2Africa Pearls extension",
+   "verdict": "confirmed",
+   "evidence": "stc's own press release on landing the cable in Bahrain (2025-07-14): 'With a US$ 205 million investments in 2Africa Pearls submarine cable system, this massive lift up in international connectivity toward Bahrain.'",
+   "sources": [
+    {"label": "PR Newswire (stc) — stc successfully lands the first Bahraini submarine cable system; 2Africa Pearls in Bahrain (2025-07-14)", "url": "https://www.prnewswire.com/news-releases/stc-successfully-lands-the-first-bahraini-submarine-cable-system-2africa-pearls-in-bahrain-302504180.html", "quote": "With a US$ 205 million investments in 2Africa Pearls submarine cable system", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-paho-revolving-fund-vaccines-joint-procurement-1",
+   "target": "paho-revolving-fund-vaccines-joint-procurement",
+   "file": "mechanisms",
+   "claim": "32 countries and territories source at least 80% of their total vaccine and supply need through the fund",
+   "verdict": "confirmed",
+   "evidence": "PAHO/WHO (2025-02-24): 'Currently, thirty-two countries and territories of the region access at least 80% of their total need for vaccines and related supplies through the funds.'",
+   "sources": [
+    {"label": "PAHO/WHO — Over $800 million in vaccines, medicines and health technology procured by PAHO's Regional Revolving Funds in 2024 (2025-02-24)", "url": "https://www.paho.org/en/news/24-2-2025-over-800-million-vaccines-medicines-and-health-technology-procured-pahos-regional", "quote": "thirty-two countries and territories of the region access at least 80% of their total need", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-h2global-hintco-double-auction-hydrogen-1",
+   "target": "h2global-hintco-double-auction-hydrogen",
+   "file": "mechanisms",
+   "claim": "a second auction round with a budget of up to €3 billion followed, with Germany and the Netherlands committing up to €2.5 billion of it",
+   "verdict": "confirmed",
+   "evidence": "Hintco's own announcement (2024-12-18): 'the second round of H2Global auctions with a budget of up to EUR 3 billion,' and 'Germany's BMWK and the Netherland's KGG have combined their resources, committing up to EUR 2.5 billion to global, non-European producers.'",
+   "sources": [
+    {"label": "Hintco — Hintco Announces EU Approval of Second H2Global Auction Round Worth Up to EUR 3 Billion (2024-12-18)", "url": "https://www.hintco.eu/news/hintco-announces-eu-approval-of-second-h2global-auction-round-worth-up-to-eur-3-billion", "quote": "committing up to EUR 2.5 billion to global, non-European producers", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-kairos-samsung-ct-investment-2026-09-21-1",
+   "target": "kairos-samsung-ct-investment-2026-09-21",
+   "file": "news",
+   "claim": "Samsung C&T will provide up to $100 million — roughly $70 million as a direct equity stake and the rest as in-kind engineering services — toward the 50 MWe Hermes 2 demonstration plant in Oak Ridge, Tennessee",
+   "verdict": "confirmed",
+   "evidence": "TechCrunch (2026-09-21): 'The equity investment will make up $70 million of the total, a Kairos spokesperson told TechCrunch.'",
+   "sources": [
+    {"label": "TechCrunch — Kairos Power gets up to $100M from Samsung group to build nuclear reactor for Google (2026-09-21)", "url": "https://techcrunch.com/2026/09/21/kairos-power-gets-up-to-100m-from-samsung-group-to-build-nuclear-reactor-for-google/", "quote": "The equity investment will make up $70 million of the total", "status": "fetched"}
+   ]
+  },
+  {
+   "id": "check-c-prepa-asap-battery-storage-contracts-1",
+   "target": "prepa-asap-battery-storage-contracts",
+   "file": "benchmarks",
+   "claim": "six battery storage projects totaling about 486 MW: Solaner Puerto Rico One (40 MW), Xzerta-Tec Solar I (120 MW), Polaris Power US (71.4 MW), Lajas Solar Project (80 MW), CS-UR Juncos PV (125 MW) and Infinigen Yabucoa ASAP (50 MW)",
+   "verdict": "confirmed",
+   "evidence": "San Juan Daily Star confirms every individual project size: 'Solaner Puerto Rico One battery system expected to provide 40 megawatts,' 'Xzerta-Tec Solar I project expected to provide 120 MW,' '71.4 MW storage facility associated with Polaris Power US,' '80 MW project tied to the Lajas Solar Project,' '125 MW project linked to CS-UR Juncos PV,' and '50 MW project associated with Infinigen Yabucoa ASAP.' 40+120+71.4+80+125+50 = 486.4 MW, matching 'about 486 MW' by plain arithmetic.",
+   "sources": [
+    {"label": "San Juan Daily Star — Fiscal board greenlights solar-plus-storage additions, sets conditions for PREPA contracts (2025-05-12)", "url": "https://www.sanjuandailystar.com/post/fiscal-board-greenlights-solar-plus-storage-additions-sets-conditions-for-prepa-contracts", "quote": "71.4 MW storage facility associated with Polaris Power US", "status": "fetched"}
+   ]
+  }
+ ]
+}

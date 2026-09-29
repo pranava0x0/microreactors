@@ -19,10 +19,12 @@
   tariff). Still open: CO PUC (Buckley/Xcel), MT PSC (Malmstrom/NorthWestern), San
   Antonio city agendas (JBSA/CPS), Alaska RCA (CVEA), ERCOT queue number for Last
   Energy Haskell.
-- **high** · Integrate the 5 creative off-grid/hybrid demand applications into `data/sectors.json`
-  (from `data/research/creative-demand-applications.json`): add dedicated facility load profiles
-  with primary citations for Orbital Spaceports, Arctic Defense Radar Outposts, Megaton-scale Direct
-  Air Capture Hubs, Subsea Power & Compute Pods, and Biorefinery Cogeneration.
+- **done 2026-09-21** · Reviewed five off-grid/hybrid demand applications against primary
+  sources. Kept the retired 240 kW subsea demonstration as partial evidence, corrected DAC to the
+  NPC's heat-dominant 270–280 MW total-power case, and replaced the spaceport estimate with NASA's
+  6.2–7.9 MW average liquefaction figures. Dropped Arctic radar and Hugoton because neither supports
+  a defensible customer load. Full coverage and exclusions are in
+  `data/research/2026-09-21-market-sweep.json`.
 - **high** · Browser-capture the DAF Microreactor FAQs PDF (eielson.af.mil 403s curl;
   use the JS chunk flow documented in AGENTS.md) — carries the NOITA issuance date and
   site-selection detail the Eielson row currently lacks.

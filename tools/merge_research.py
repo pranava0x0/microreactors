@@ -21,9 +21,8 @@ each time, so a call naming only the new pass would silently drop every sector
 an earlier pass had already contributed.
 
 Usage:
-  python3 tools/merge_research.py data/research/deep-2026-08-24
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps
-  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps --check
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases data/research/2026-09-28-alaska-greenland-pricing
+  python3 tools/merge_research.py data/research/deep-2026-08-24 data/research/2026-08-28-apps data/research/2026-09-26-cases data/research/2026-09-28-alaska-greenland-pricing --check
 
 Stdlib only, like every tool in this repo.
 """
@@ -74,12 +73,21 @@ def collect(pass_dirs: list):
             # Namespaced by pass so two passes can each hold a file with the
             # same basename without one's provenance entry shadowing the other's.
             from_tag = f"{pass_dir.name}/{path.name}"
+            accepted = 0
             for r in recs:
                 r = dict(r)
+                # A research pass can surface useful proposed tariffs alongside
+                # signed deals. Keep those findings in the raw pass, but do not
+                # put them on the customer-cost page, whose contract promises
+                # signed contracts, awards and final rate orders only.
+                if r.pop("integrate", True) is False:
+                    continue
                 r["_from"] = from_tag
                 (mechanisms if kind == "mechanism" else cases).append(r)
+                accepted += 1
             provenance.append({
-                "file": from_tag, "kind": kind, "records": len(recs),
+                "file": from_tag, "kind": kind, "records": accepted,
+                "raw_records": len(recs),
                 "scope": meta.get("scope", ""),
                 "incomplete": bool(meta.get("incomplete")),
                 "absences": meta.get("absences") or [],

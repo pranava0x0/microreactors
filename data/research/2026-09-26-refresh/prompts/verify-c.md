@@ -1,0 +1,17 @@
+You are a verification agent for a cited microreactor-market website (repo: /Users/pranava/Projects/microreactors). Today is 2026-09-26. Records added this week carry numbers that an offline check could not find in any cached copy of their cited pages. Your job: for each number, find out whether a cited page actually states it, and write a Type G `checks` record for each claim.
+
+FIRST read /Users/pranava/Projects/microreactors/data/research/2026-09-26-refresh/CONTRACT.md (Type G `checks` and the universal source rule). Then read your claim list: /Users/pranava/Projects/microreactors/data/research/2026-09-26-refresh/prompts/verify-c-claims-{PART}.json. Each entry gives the record (`file`, `kind`, `id`), the `numbers` that were not found (each with the sentence it sits in), and the record's `sources` (`cached: false` means the offline check could not read that page at all, so it proves nothing either way). Output file: /Users/pranava/Projects/microreactors/data/research/2026-09-26-refresh/verify-c-{PART}.json with top-level keys `_meta` and `checks`.
+
+WHAT TO DO, per record:
+1. WebFetch each cited source (start with `cached: false` ones) and look for every listed number.
+2. Group numbers by sentence: one check per sentence that carries at least one real claim. `claim` = that sentence exactly as listed in `context`.
+3. Verdicts (from the contract): `confirmed` when a cited page states the number, or when it is plain arithmetic on numbers a cited page states (say the formula in `evidence`, e.g. "36.47 cents/kWh = $0.3647/kWh"); `wrong` when the page states a different figure (give `correction`: the sentence with the right figure, same length or shorter); `unsupported` when no cited page states it. For `unsupported`, spend at most 2 searches for a primary page that does; if you find one, the verdict is still `unsupported` but put the new page in `sources` with a verbatim quote and write the fix in `correction` ("add source" is not a correction; the correction is the sentence as it should read, keeping the number only if the new page supports it). `unverifiable` only when no page can be reached.
+4. Not claims, skip without a check (list them in `_meta.skipped` as "id: number: reason"): bill, docket, statute, form or section numbers (SB 177, 10 U.S.C. 2688, ER26-1479); fragments of dates (the "09" of 2026-09-01); counts the record makes about its own list; numbers inside a quoted document title.
+
+EVIDENCE: quote verbatim (<= 25 words, no ellipses joining passages), give the page's date if it shows one. `file` is one of: regions | dockets | mechanisms | news | benchmarks (use `regions` for kind `regions`, `dockets` for `dockets`, `mechanisms` for `precedents`, `news` for `items`, `benchmarks` for `cases`). `target` = the record id. Ids: `check-c-<record id>-<n>`.
+
+METHOD: WebFetch the cited pages first; search only for `unsupported` numbers. Max 2 sources per check. Do not spawn sub-agents. Do not run tools/ scripts except, at the end, `python3 tools/research_pass.py validate data/research/2026-09-26-refresh` from the repo root; fix FAIL lines naming your file and ignore other files.
+
+WRITE INCREMENTALLY: first Write = `_meta` + the first 2 checks; then one Edit per record's checks. Before starting, Read the output path: if complete, stop; if partial, continue from the first record without checks.
+
+FINAL MESSAGE (parsed, not read): path, count per verdict, count skipped, every `wrong` and `unsupported` in one line each (record id: number: what the page says). Under 250 words.

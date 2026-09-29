@@ -54,6 +54,18 @@ class BuildSync(unittest.TestCase):
                       f"Captured {s['built']}"):
             self.assertIn(claim, txt, f"llms.txt does not carry: {claim}")
 
+    def test_machine_discovery_points_to_real_resources(self):
+        """Fragments are client state, not crawlable pages; dataset downloads
+        must return JSON bytes instead of GitHub's HTML file viewer."""
+        sitemap = (ROOT / "site" / "sitemap.xml").read_text()
+        self.assertEqual(sitemap.count("<loc>"), 1)
+        self.assertNotIn("#", sitemap)
+        llms = (ROOT / "site" / "llms.txt").read_text()
+        self.assertIn("## Fast answers", llms)
+        index = (ROOT / "site" / "index.html").read_text()
+        self.assertIn("https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/", index)
+        self.assertNotIn('"contentUrl": "https://github.com/', index)
+
     def test_gaps_in_sync(self):
         committed = (ROOT / "data" / "gaps.json").read_bytes()
         r = run("build_gaps.py")
@@ -142,17 +154,15 @@ class BundleConsistency(unittest.TestCase):
         self.assertEqual(found - set(nums), set(),
                          "cited URLs with no register number would render as [?]")
 
-    def test_app_js_hardcoded_citations_resolve(self):
-        """app.js carries a few sources inline rather than in a data file. Nothing
-        walked them, so three dangled unnoticed — one of them orphaned by an edit
-        to policy.json that removed the only row citing that URL."""
+    def test_app_js_carries_no_sourced_facts(self):
+        """Sourced facts live in data files, where the citation, quote and
+        language gates read them. app.js once carried inline sources: three
+        dangled unnoticed, and six hand-typed "top options" cards cited pages
+        that did not support them (a 5-30 MW spaceport band cited to an Antares
+        base-selection release). Retired 2026-09-26; keep the renderer clean."""
         js = (ROOT / "site" / "assets" / "app.js").read_text()
         urls = re.findall(r'url:\s*"(https?://[^"]+)"', js)
-        self.assertTrue(urls, "no inline citation found in app.js")
-        unknown = [u for u in urls if u not in self.MR["source_numbers"]]
-        self.assertEqual(unknown, [],
-                         "inline app.js citations missing from the source register "
-                         f"(they render as [?]): {unknown}")
+        self.assertEqual(urls, [], "app.js carries inline sources; move them to a data file")
 
     def test_static_html_citations_resolve(self):
         """Citations hand-written into index.html carry a [?] placeholder that
