@@ -68,3 +68,9 @@ The pricing-focused pass found no new product defect and added no `issues.md` en
 - Phone reading length: `Sources > In their words` was 11.4 screens because the first quote group opened by default. Fixed to a 4.9-screen index; the quotes still open on demand. `Deals > Sites` and `Costs > What wins` remain the longest data views at 8.3 screens; both have sectioning or filters.
 - JBSA: Antares and JBSA describe **one proposed prototype microreactor**. No committed JBSA unit order was disclosed. The tracker now says this explicitly and cites both primary pages. Fort Bragg's three-unit Janus deployment is separate.
 - Browser regression: the Voices index starts collapsed and expands on click. Full suite: 122 tests.
+
+## Home price citations — 2026-09-29
+
+- Alaska's two RCA notices and Greenland's government-commissioned cost study now link directly below their Home-card claims. The card remains a separate click target for the Regions view.
+- Checked the card at 375 and 1280 px: source labels stay visible, links are distinct, and neither width has page overflow. Browser test verifies three numbered citation links and the route click.
+- Full suite: 123 tests passed.

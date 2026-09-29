@@ -323,6 +323,26 @@ class Routing(unittest.TestCase):
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
 class HomePage(unittest.TestCase):
+    def test_featured_prices_link_to_their_sources(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 375, "height": 812})
+            page.goto(base + "#home", wait_until="networkidle")
+            box = page.locator(".glancebox", has=page.locator('a.glancecard[href="#demand/regions"]'))
+            self.assertEqual(box.count(), 1)
+            chips = box.locator(".glancecite a.cite")
+            self.assertEqual(chips.count(), 3)
+            self.assertTrue(all(chips.nth(i).get_attribute("href").startswith("https://")
+                                and "?" not in chips.nth(i).inner_text()
+                                for i in range(chips.count())))
+            self.assertEqual(box.locator("a.glancecard a").count(), 0)
+            box.locator("a.glancecard").click()
+            self.assertTrue(page.url.endswith("#demand/regions"))
+            browser.close()
+
     def test_home_is_a_directory_of_the_site_with_the_newest_headlines(self):
         """Home opens on one card per tab (each linking to a real panel) and then
         the headlines, newest first. The first-page list once trusted file order
