@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "captured": "2026-09-29",
+    "agent": "alaska-dossier-new-research",
+    "scope": "Three narrow external research angles for a new Alaska dossier page: (1) EIA statewide Alaska generation mix and Railbelt-vs-rural characterization, (2) Alaska's statutory definition of 'public utility' (AS 42.05) and exemptions from CPCN certification, (3) Alaska electric cooperative governance (AS 10.25) for adding new generation. Repo not explored; pure external web research.",
+    "absences": [
+      "EIA does not appear to publish a single page with a clean current-year (2024/2025) percentage-by-fuel-source table that was fetchable as rendered text; the fuel-mix percentages used here are EIA-sourced but drawn from a third-party compilation (ACEP/UAF Alaska Electricity Trends Report) that cites EIA/FERC-1 data by Railbelt/Coastal/Rural-Remote region for 2011-2021, not a single fetchable EIA 2024 percentage table.",
+      "Could not find an EIA page that explicitly states a rural-Alaska diesel generation share as a single EIA-authored percentage (EIA's own microgrid commentary was only reachable via search snippets, not confirmed by a direct fetch of an eia.gov Today in Energy article with that specific figure).",
+      "Alaska Statutes do not appear to contain an explicit, named statutory exemption for 'generation serving a single customer' or 'not held out to the public' as a defined term (unlike some other states' utility codes). The closest statutory hooks are the AS 42.05.990 'public utility' definition itself (service 'to the public for compensation') and the narrow AS 42.05.711 exemption list (waste-heat/surplus industrial energy sales to a certificated utility; a capped renewable-only exemption). The claim that purely on-site/behind-the-meter generation avoids CPCN because it never meets the 'to the public' threshold is a legal inference repeated in secondary sources and search summaries, not something found stated as a bright-line rule in fetched primary text -- flagged as inference, not verbatim law.",
+      "Could not fetch akleg.gov's Title 42 PDF or law.justia.com pages directly (both returned HTTP 403 to the fetch tool); relied on codes.findlaw.com, lawserver.com, and law.onecle.com mirrors instead, cross-checked against AS 42.05.221's Justia/onecle text.",
+      "Could not find an explicit statutory or RCA-stated requirement that an Alaska electric cooperative hold a member vote before adding a new generation asset to its rate base. AS 10.25.010(c)'s 'expansion activity' board-approval-plus-disclosure requirement (found only via search snippet, not a direct fetch -- akleg.gov and law.justia.com both blocked the fetch tool) concerns extending service territory / soliciting customers away from another utility, not building generation -- recorded as a near-miss, not used as the finding for this angle.",
+      "Could not confirm from a fetched primary source whether Alaska cooperatives follow a CPCN process distinct from investor-owned utilities for new generation specifically; found only that cooperatives get post-certification rate-adjustment flexibility (Simplified Rate Filing) that IOUs do not."
+    ]
+  },
+  "findings": [
+    {
+      "id": "eia-alaska-generation-mix-2024-and-regional-split",
+      "topic": "eia-generation-mix",
+      "finding": "EIA's Alaska Electricity Profile puts the state's total net electricity generation at 6,690,506 MWh for 2024, with EIA characterizing natural gas as Alaska's primary generation source; EIA's own state profile page did not render a fetchable fuel-by-fuel percentage table, so the underlying EIA/FERC-Form-1 data is better sourced through the University of Alaska Fairbanks ACEP's 2024 Alaska Electricity Trends Report, which explicitly cites EIA as its 'net generation' source. That report shows Alaska's grid splits into three EIA/FERC-tracked regions with sharply different fuel mixes in 2021: the Railbelt (avg. 5,109 GWh/yr 2011-2021) ran 61% gas, 15% coal, 12% hydro, 10% oil, 2% wind; the Rural Remote region (avg. 529 GWh/yr) ran 77% oil/diesel, 19% gas, 1% hydro, 3% wind; and the Coastal region (avg. 1,131 GWh/yr) ran 92% hydro, 6% oil, 2% wind. The Rural Remote oil share actually rose from 74% (2011) to 77% (2021) even as the other two regions modestly diversified away from oil.",
+      "figures": {
+        "alaska_total_net_generation_2024_mwh": "6,690,506 MWh (EIA, 2024)",
+        "railbelt_generation_mix_2021": "gas 61%, coal 15%, hydro 12%, oil 10%, wind 2% (EIA/FERC-1 via ACEP, avg. 5,109 GWh/yr 2011-2021)",
+        "rural_remote_generation_mix_2021": "oil/diesel 77%, gas 19%, hydro 1%, wind 3% (EIA/FERC-1 via ACEP, avg. 529 GWh/yr 2011-2021)",
+        "coastal_generation_mix_2021": "hydro 92%, oil 6%, wind 2% (EIA/FERC-1 via ACEP, avg. 1,131 GWh/yr 2011-2021)",
+        "rural_remote_oil_trend": "74% (2011) -> 77% (2021), i.e. rural diesel dependence slightly worsened over the decade"
+      },
+      "sources": [
+        {
+          "label": "EIA -- Alaska Electricity Profile 2024",
+          "url": "https://www.eia.gov/electricity/state/alaska/",
+          "quote": "",
+          "status": "fetched"
+        },
+        {
+          "label": "ACEP/UAF -- 2024 Alaska Electricity Trends Report, Ch. 4 Net/Gross Generation",
+          "url": "https://acep-uaf.github.io/aetr-web-book-2024/generation.html",
+          "quote": "The Railbelt is the only one that consistently saw decreases in generation across the years.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "alaska-public-utility-definition-and-cpcn-exemptions",
+      "topic": "public-utility-exemption",
+      "finding": "Alaska's public-utility jurisdiction attaches only to an entity that meets the AS 42.05.990(6) definition of 'public utility' -- one that 'owns, operates, manages, or controls any plant, pipeline, or system for' furnishing service 'to the public for compensation'; AS 42.05.221 then bars any such 'public utility' from operating and receiving compensation for a commodity or service without first obtaining a Certificate of Public Convenience and Necessity (CPCN) from the RCA. Alaska's statute does not name a standalone 'single customer' or 'not held out to the public' exemption the way some states do; instead, AS 42.05.711's exemption list (a)-(w) carves out specific narrow cases, of which the closest fits for a co-located industrial reactor are: subsection (j), exempting 'sales, exchanges, or gifts of energy to an electric utility certificated under this chapter when the energy... is waste heat, electricity, or other energy which is surplus or the by-product of an industrial process,' and subsection (r), exempting plants generating electricity 'entirely from renewable resources' (up to 65 MW, commissioned 1990-2028, selling only to a regulated electric utility, no state renewable grants/credits) -- a provision a nuclear plant would not qualify for since it is not a 'renewable resource' under the statute. A microreactor selling only to one co-located industrial host (the Red Dog/TUGLIQ pattern) most plausibly avoids RCA certification not through a named exemption but because it would never meet the underlying 42.05.990 threshold of furnishing service 'to the public' in the first place -- a legal inference consistent with secondary/practitioner sources but not itself a codified bright-line rule found in the fetched primary text.",
+      "figures": {
+        "cpcn_trigger_statute": "AS 42.05.221 (Certificates required)",
+        "public_utility_definition_statute": "AS 42.05.990(6)",
+        "exemption_list_statute": "AS 42.05.711(a)-(w)",
+        "renewable_exemption_cap_mw": "65 MW (AS 42.05.711(r)), commercial operation 1990-07-01 through 2028-07-01, sale only to a regulated electric utility -- does not apply to nuclear"
+      },
+      "sources": [
+        {
+          "label": "FindLaw -- Alaska Statutes Title 42 Sec. 42.05.990 (public utility definition)",
+          "url": "https://codes.findlaw.com/ak/title-42-public-utilities-and-carriers-and-energy-programs/ak-st-sect-42-05-990.html",
+          "quote": "that owns, operates, manages, or controls any plant, pipeline, or system for",
+          "status": "fetched"
+        },
+        {
+          "label": "law.onecle.com -- Alaska Statutes Title 42.05 Art. 2, Sec. 42.05.221 (Certificates required)",
+          "url": "https://law.onecle.com/alaska/title-42/chapter-42.05/article-02/index.html",
+          "quote": "A public utility may not operate and receive compensation for providing a commodity or service without first having obtained from the commission under",
+          "status": "fetched"
+        },
+        {
+          "label": "FindLaw -- Alaska Statutes Title 42 Sec. 42.05.711 (Exemptions)",
+          "url": "https://codes.findlaw.com/ak/title-42-public-utilities-and-carriers-and-energy-programs/ak-st-sect-42-05-711/",
+          "quote": "sales, exchanges, or gifts of energy to an electric utility certificated under this chapter when the energy",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "alaska-cooperative-simplified-rate-filing-vs-ioU-rate-case",
+      "topic": "cooperative-governance",
+      "finding": "The one concrete, fetch-verified difference found between how the RCA regulates a member-owned Alaska electric cooperative (e.g. AVEC, CVEA) versus an investor-owned utility is post-certification rate flexibility, not the CPCN process for new generation itself: under 3 AAC 48.500-560, a cooperative can raise its base rates by up to 8% in a 12-month period or 20% over 3 years through the Simplified Rate Filing (SRF) process without a full rate case, while a privately-owned utility must go through a full RCA rate case for any base-rate change; a cooperative also loses access to SRF and is frozen at its interim rate level once it enters a full rate case. No statute or RCA guidance was found (in fetchable primary text) establishing a distinct, lighter CPCN pathway for a cooperative adding a new generation asset, nor an explicit member-vote requirement before a co-op can add generation to its rate base -- AS 10.25.990(6)'s inclusion of 'cooperative' entities within the 'public utility' definition suggests the same AS 42.05.221 certification trigger applies to a co-op's new generation project as to an IOU's; the governance layer that is genuinely different is the elected member board and the SRF rate mechanism described above.",
+      "figures": {
+        "srf_annual_cap_pct": "8% per 12-month period",
+        "srf_three_year_cap_pct": "20% per 3-year period",
+        "srf_governing_reg": "3 AAC 48.500-560",
+        "srf_freeze_condition": "SRF unavailable during an active full rate case; base rates frozen at interim level"
+      },
+      "sources": [
+        {
+          "label": "Alaska Energy Transparency Project -- Rate Case explainer",
+          "url": "https://www.akenergytransparency.org/rate-case",
+          "quote": "Cooperatives can increase base rates by up to 8% a year or 20% every 3 years through the Simplified Rate Filing (SRF) process",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

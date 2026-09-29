@@ -19,7 +19,7 @@ DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
          "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy",
-         "regions", "dockets"]
+         "regions", "dockets", "alaska"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -36,7 +36,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # Rules > Deal design and deployment_sites only by Deals > Sites (their counts
 # ride in `summary`).
 LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy", "regions",
-        "mechanisms", "deployment_sites", "dockets"]
+        "mechanisms", "deployment_sites", "dockets", "alaska"]
 
 # How many of the newest news items ship in the eager bundle for the front page.
 HEADLINES = 8
@@ -53,7 +53,11 @@ CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mec
               # walking it last keeps every existing chip number where it was.
               "strategy",
               # files added later append here, for the same reason.
-              "regions", "dockets"]
+              "regions", "dockets",
+              # alaska.json (2026-09-29) mostly restates URLs cited above (strategy,
+              # deployment_sites, benchmarks); its few new ones (the EIA/ACEP power-mix
+              # data and the AS 42.05 statute pages) get their numbers here.
+              "alaska"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -123,6 +127,66 @@ def priced(record: Dict[str, Any]) -> bool:
     return bool(record.get("price") or record.get("capex") or record.get("displaced"))
 
 
+# benchmarks.json records naming Alaska, selected by id so the join below is
+# explicit rather than re-detected by string search on every build. Adding a
+# new Alaska benchmark means adding its id here — tests/test_alaska.py fails
+# loud if an "Alaska" record exists in benchmarks.json that isn't listed.
+ALASKA_BENCHMARK_IDS = [
+    "gvea-aurora-chena-2026-ppa-amendment", "mea-energy49-houston-solar-ppa",
+    "eielson-afb-oklo-microreactor-noita", "red-dog-mine-solar-teck-nana-tugliq",
+    "graphite-one-graphite-creek-power-plan", "kokhanok-paradigm-shift-era-microgrid",
+    "avec-new-stuyahok-ekwok-era-solar-storage", "tanana-chiefs-alaskan-tribal-energy-sovereignty-era",
+    "doyon-utilities-alaska-utility-privatization", "alaska-pce-fy2024-base-rate-order",
+    "project-pele-bwxt-2022", "unisea-dutch-harbor-waste-heat-to-power",
+]
+
+PRECEDENT_FIELDS = ("id", "name", "sector", "region", "parties", "instrument", "capacity",
+                    "price", "price_status", "capex", "signed", "term_years", "displaced",
+                    "summary", "microreactor_read", "sources")
+
+
+def build_alaska_page(bundle: Dict[str, Any]) -> None:
+    """Applications > Alaska. Joins strategy.json prospects and deployment_sites.json
+    sites into one opportunity row per Alaska prospect (data/alaska.json's own
+    _meta.opportunity_rows is the join key, not a string match), and pulls the
+    named Alaska benchmark records as priced/funded precedents, adding both as
+    new top-level keys on bundle["alaska"] in place — the buyer-model and
+    regulatory synthesis already in data/alaska.json ships alongside them
+    untouched, so the tab is one self-contained lazy payload and never has to
+    also fetch the 300 KB benchmarks.json just for 12 rows."""
+    ak = bundle["alaska"]
+    prospects_by_id = {p["id"]: p for p in bundle["strategy"]["prospects"]}
+    sites_by_id = {s["id"]: s for s in bundle["deployment_sites"]["sites"]}
+    bench_by_id = {r["id"]: r for sec in bundle["benchmarks"]["sectors"] for r in sec["records"]}
+
+    opp_rows = []
+    for row in ak["_meta"]["opportunity_rows"]:
+        p = prospects_by_id[row["prospect_id"]] if row.get("prospect_id") else None
+        s = sites_by_id[row["site_id"]] if row.get("site_id") else None
+        primary = p or s
+        opp_rows.append({
+            "id": row["id"],
+            "name": primary["name"],
+            "sector": (p or {}).get("sector") or (s or {}).get("category"),
+            "region": (p or s)["region"],
+            "load": (p or {}).get("load") or (s or {}).get("power"),
+            "status": (p or {}).get("status") or (s or {}).get("status"),
+            "buyer_model": row["buyer_model"],
+            "grid_note": row["grid_note"],
+            "documented": (p or {}).get("documented") or (s or {}).get("summary"),
+            "sale_shape": (p or {}).get("sale_shape"),
+            "sources": (p or {}).get("sources") or (s or {}).get("sources") or [],
+            "site_id": row.get("site_id"),
+            "prospect_id": row.get("prospect_id"),
+        })
+
+    precedent_rows = [{k: bench_by_id[pid].get(k) for k in PRECEDENT_FIELDS}
+                       for pid in ALASKA_BENCHMARK_IDS]
+
+    ak["opportunity_rows"] = opp_rows
+    ak["precedent_rows"] = precedent_rows
+
+
 def main() -> int:
     bundle: Dict[str, Any] = {}
     for name in FILES:
@@ -185,6 +249,10 @@ def main() -> int:
     bundle["sources_index"] = reg
     bundle["source_numbers"] = {r["url"]: r["n"] for r in reg}
     regions_by_id = {r["id"]: r for r in bundle["regions"]["regions"]}
+    # Applications > Alaska: joins onto bundle["alaska"] in place, below, while
+    # deployment_sites/strategy/benchmarks are still around to join against
+    # (each of those ships separately, or not at all, once the split runs).
+    build_alaska_page(bundle)
     bundle["summary"] = {
         "opportunities": len(opps),
         "vendors": len(vendors),
@@ -235,6 +303,7 @@ def main() -> int:
         "sites": len(bundle["deployment_sites"]["sites"]),
         "regions": len(bundle["regions"]["regions"]),
         "dockets": len(bundle["dockets"]["dockets"]),
+        "alaska_opportunities": len(bundle["alaska"]["opportunity_rows"]),
         "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
         # Home answers the two most likely remote-market price questions without
         # making the reader open a region accordion. Text stays source-owned in

@@ -2,7 +2,7 @@
 
 > Cited data on microreactor contracts, utility filings, power prices, Alaska and Greenland remote-energy markets, vendors, and deployment prospects.
 
-Captured 2026-09-28. Every figure below is derived from the JSON in `data/`, and every claim carrying a number cites a source; 832 distinct sources are registered, each with one stable number reused everywhere it is cited.
+Captured 2026-09-29. Every figure below is derived from the JSON in `data/`, and every claim carrying a number cites a source; 841 distinct sources are registered, each with one stable number reused everywhere it is cited.
 
 ## How far the market has moved
 
@@ -36,6 +36,7 @@ Captured 2026-09-28. Every figure below is derived from the JSON in `data/`, and
 
 The site is static and its data is committed as JSON. Each file carries a `_meta` block naming what it is and when it was captured.
 
+- [alaska.json](https://github.com/pranava0x0/microreactors/blob/main/data/alaska.json)
 - [arguments.json](https://github.com/pranava0x0/microreactors/blob/main/data/arguments.json)
 - [benchmarks.json](https://github.com/pranava0x0/microreactors/blob/main/data/benchmarks.json)
 - [costs.json](https://github.com/pranava0x0/microreactors/blob/main/data/costs.json)
