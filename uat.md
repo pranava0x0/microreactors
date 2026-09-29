@@ -59,4 +59,12 @@ Baseline was 488,005 B with four resources. Change: +1,362 B (+0.28%). FCP remai
 - `screenshots/2026-09-28-cost-units-375.png`
 - `screenshots/2026-09-28-cost-units-1280.png`
 
-No new product defect found. No `issues.md` entry added.
+The pricing-focused pass found no new product defect and added no `issues.md` entry.
+
+## Full navigation and reading-length pass — 2026-09-28
+
+- Chromium at 375×812, 768×1024, and 1280×900: 135 panel/sub-tab visits across all 9 primary tabs. Every route showed the expected active tab and content; no page-level horizontal overflow, empty panel, dead placeholder link, or JavaScript exception.
+- Checked first-screen screenshots for every primary tab at each width. Type family, section headings, colors, and card treatment remained consistent. Narrow navigation shows the active tab and scroll cues. Filter chips and the cost table scroll inside their own bounded containers.
+- Phone reading length: `Sources > In their words` was 11.4 screens because the first quote group opened by default. Fixed to a 4.9-screen index; the quotes still open on demand. `Deals > Sites` and `Costs > What wins` remain the longest data views at 8.3 screens; both have sectioning or filters.
+- JBSA: Antares and JBSA describe **one proposed prototype microreactor**. No committed JBSA unit order was disclosed. The tracker now says this explicitly and cites both primary pages. Fort Bragg's three-unit Janus deployment is separate.
+- Browser regression: the Voices index starts collapsed and expands on click. Full suite: 122 tests.

@@ -263,15 +263,23 @@
       "type": "RFP",
       "date": "2026-06-01",
       "size_class": "unspecified",
-      "status": "pending",
-      "what_it_says": "Following Governor Hochul's June 2025 directive, NYPA is pursuing 'at least 1 gigawatt (GW) of advanced nuclear energy in Upstate New York': it issued two RFIs in October 2025 (drawing 23 developer/partner responses and 8 community responses) and by June 2026 was moving to an RFQ stage with Ontario Power Generation as a technical partner. No site or reactor size class has been chosen.",
-      "microreactor_read": "NYPA's 1 GW program is technology- and site-open at this stage, which is exactly the window for a microreactor vendor to get evaluated before the program locks onto a single large-reactor developer.",
+      "status": "closed",
+      "what_it_says": "Following Governor Hochul's June 2025 directive, NYPA is pursuing at least 1 GW of advanced nuclear energy in Upstate New York. Two RFIs were issued in October 2025, followed by a developer RFQ in June 2026. The RFQ response window closed June 26, 2026; no site or reactor size has been selected publicly.",
+      "microreactor_read": "This developer RFQ is closed and its bid description excluded first-of-a-kind and micro modular reactors. NYPA's broader nuclear planning is relevant context, but this RFQ is not an open microreactor sales lead.",
       "sources": [
         {
           "label": "NYPA — Governor Hochul Announces Significant Steps in Development of at Least 1 GW of Nuclear Energy in Upstate New York (2026-06-01)",
           "url": "https://www.nypa.gov/News/Press-Releases/2026/20260601-nuclear",
           "quote": "at least 1 gigawatt (GW) of advanced nuclear energy in Upstate New York",
-          "status": "fetched"
+        "status": "fetched"
+      },
+      {
+        "label": "NYPA procurement portal — Advanced Nuclear Project Developer RFQ 6520",
+        "url": "https://rfp.nypa.gov/#/bid-details?rfqId=6520"
+      },
+      {
+        "label": "HigherGov — RFQ notice mirror with deadline and technology exclusions",
+        "url": "https://www.highergov.com/sl/contract-opportunity/ny-advanced-nuclear-project-developer-rf-68539574/"
         }
       ]
     },

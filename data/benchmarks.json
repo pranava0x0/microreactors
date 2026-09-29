@@ -1779,7 +1779,7 @@
      "signed": "2024-05",
      "term_years": 2,
      "capacity": "Shore power distribution serving two piers; megawatt rating not stated in the award record",
-     "capex": "$18,232,308.77 obligated; base and all options identical, so this is the whole job. Period of performance 2024-05-23 to 2026-08-22.",
+     "capex": "$18,232,308.77 obligated; base and all options are identical, covering the full award. Period of performance 2024-05-23 to 2026-08-22.",
      "displaced": "Vessel auxiliary diesel generation at berth, and end-of-life pier electrical distribution",
      "filings": [
       {
@@ -1856,6 +1856,53 @@
       "Cargo-port electrical systems combining terminal operations and ship plug-in power"
      ],
      "_from": "deep-2026-08-24/apps-remote-marine.json"
+    },
+    {
+     "id": "port-of-los-angeles-epa-clean-ports",
+     "sector": "Marine terminals",
+     "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
+     "country": "US",
+     "region": "San Pedro, California",
+     "parties": {
+      "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
+      "provider": "U.S. Environmental Protection Agency (funder)",
+      "utility": "Los Angeles Department of Water and Power"
+     },
+     "instrument": "grant-funded",
+     "signed": "2025-01",
+     "term_years": 4,
+     "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
+     "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
+     "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
+     "filings": [
+      {
+       "forum": "USAspending.gov (federal assistance record)",
+       "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
+       "id": "FAIN 97T27601",
+       "date": "2025-01-01",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
+      }
+     ],
+     "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
+     "microreactor_read": "The award funds new electrical load, but the Port and LADWP have a ZEPEO utility expansion plan: 213 MVA additional capacity by 2030 and 306 MVA more by 2035. A reactor proposal would need to beat the actual terminal-level utility service schedule, upgrade cost, tariffs and siting constraints. The grant does not establish an unfunded interconnection gap or an open power procurement.",
+     "sources": [
+      {
+       "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
+       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
+       "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
+       "status": "fetched"
+      },
+      {
+       "label": "Port of Los Angeles — May 28, 2026 ZEPEO board agenda",
+       "url": "https://portoflosangeles.org/commission/agenda-archive-and-videos/agendas/2026/05282026-regular-agenda",
+       "quote": "adding an additional 213 MVA of Medium Voltage Power at 34.5kV by 2030",
+       "status": "fetched"
+      }
+     ],
+     "load": [
+      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
+     ],
+     "_from": "deep-2026-08-24/apps-federal-awards.json"
     },
     {
      "id": "port-of-seattle-cruise-shore-power",
@@ -1968,7 +2015,7 @@
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N6247324F4934_9700_N6247324D5205_9700/"
       }
      ],
-     "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, so this is the whole job. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation whatsoever.",
+     "summary": "NAVFAC Southwest awarded South Bay EDC a design-build task order on 2024-07-28 to repair and replace the shore power mound at Naval Base Ventura County / Point Mugu, California, with a period of performance to 2027-05-27. The obligated value and the base-and-all-options value are both $44,323,562, covering the full award. The award funds only the pierside electrical connection — the distribution equipment that lets a berthed vessel shut down its own diesels — and buys no generation.",
      "microreactor_read": "Shore power at one naval berthing complex costs $44.3M in electrical infrastructure alone, before a single megawatt-hour is generated, and the Navy pays it to move vessel load onto the shore grid. That number is the honest floor a microreactor has to sit under to be worth siting at a marine terminal: if a 5 MW unit plus its own switchgear lands anywhere near $44M, it competes directly with the connection cost the Navy is already paying, and it also removes the shore-grid capacity constraint the mound alone does not solve.",
      "sources": [
       {
@@ -2015,47 +2062,6 @@
        "label": "USAspending.gov API — Award CONT_AWD_N4425526F0125 (PIID N44255-26-F-0125), Absher Construction Co., Port Hadlock WA",
        "url": "https://api.usaspending.gov/api/v2/awards/CONT_AWD_N4425526F0125_9700_N4425523D1700_9700/",
        "quote": "THIS PROJECT CONSTRUCTS BACKUP POWER AND MICROGRID SYSTEM TO EXISTING FACILITIES AND CANNOT BE RELOCATED.",
-       "status": "fetched"
-      }
-     ],
-     "load": [
-      "Cargo-port electrical systems combining terminal operations and ship plug-in power"
-     ],
-     "_from": "deep-2026-08-24/apps-federal-awards.json"
-    },
-    {
-     "id": "port-of-los-angeles-epa-clean-ports",
-     "sector": "Marine terminals",
-     "name": "Port of Los Angeles zero-emission technology deployment, EPA Clean Ports Program (97T27601)",
-     "country": "US",
-     "region": "San Pedro, California",
-     "parties": {
-      "host": "City of Los Angeles Harbor Department (Port of Los Angeles), with subawards to terminals YTI, APMT, Everport, Fenix and TraPac",
-      "provider": "U.S. Environmental Protection Agency (funder)",
-      "utility": "Los Angeles Department of Water and Power"
-     },
-     "instrument": "grant-funded",
-     "signed": "2025-01",
-     "term_years": 4,
-     "capacity": "337 battery-electric yard tractors, 250 zero-emission trucks, 56 battery-electric top handlers, 32 battery-electric heavy lifts, a vessel shore power system, roughly 143 MWh of battery capacity, 307 chargers and 10 battery-solar systems",
-     "capex": "$411,688,296 federal obligation plus $232,523,864 non-federal cost share, $644,212,160 total funding; period of performance 2025-01-01 to 2028-12-31",
-     "displaced": "Diesel cargo-handling equipment and drayage trucks, and at-berth vessel auxiliary diesel via the new shore power system",
-     "filings": [
-      {
-       "forum": "USAspending.gov (federal assistance record)",
-       "type": "Grant under CFDA 66.051, Clean Ports Program (Inflation Reduction Act)",
-       "id": "FAIN 97T27601",
-       "date": "2025-01-01",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/"
-      }
-     ],
-     "summary": "EPA obligated $411,688,296 to the City of Los Angeles Harbor Department under the Inflation Reduction Act's Clean Ports Program, with $232,523,864 in non-federal cost share for a total project value of $644,212,160 running 2025-01-01 to 2028-12-31. The scope is not a power plant — it is the load: 337 battery-electric yard tractors, 250 zero-emission trucks, 56 top handlers, 32 heavy lifts, a vessel shore power system, about 143 MWh of on-site battery capacity, 307 chargers and 10 battery-solar systems, spread across five container terminals as subawards. This is a single-port grant that creates a large new around-the-clock electrical demand at one place on the coast, funded up front by a grant rather than by a supply contract.",
-     "microreactor_read": "The Clean Ports award buys the demand and leaves the supply unsolved: 143 MWh of batteries and 307 chargers at one port is a multi-tens-of-MW peak that has to come from LADWP's distribution system on a schedule set by ship calls, not by the grid. A microreactor seller's opening here is not a $/kW comparison against the $644M of equipment — it is the interconnection upgrade the port has not funded, and the reactor has to be cheaper than the terminal's alternative of paying for a distribution upgrade plus demand charges on a load that is 100 percent electrified by 2030 mandate.",
-     "sources": [
-      {
-       "label": "USAspending.gov API — Assistance award ASST_NON_97T27601 (FAIN 97T27601), City of Los Angeles, Clean Ports Program",
-       "url": "https://api.usaspending.gov/api/v2/awards/ASST_NON_97T27601_068/",
-       "quote": "THIS ASSISTANCE AGREEMENT PROVIDES FEDERAL FUNDING IN THE AMOUNT OF $411,688,296.",
        "status": "fetched"
       }
      ],
