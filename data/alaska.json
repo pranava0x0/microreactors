@@ -1,0 +1,252 @@
+{
+  "_meta": {
+    "captured": "2026-09-29",
+    "what_this_is": "A one-page Alaska dossier: every named opportunity, precedent contract, and rule this site has documented for Alaska, in one place. It draws its opportunity and precedent rows from opportunities.json, strategy.json, deployment_sites.json, regions.json, benchmarks.json and costs.json (already cited there) and adds three things not tracked elsewhere: Alaska's statewide generation mix, which kind of buyer a reactor would actually be signing with, and the state law that governs behind-the-meter and cooperative generation.",
+    "method": "Opportunity and precedent rows are pulled programmatically at build time from the site's existing Alaska-tagged records (tools/build_data.py:build_alaska_page()), not retyped here. This file holds only new synthesis: the buyer-model taxonomy, the grid-isolation note on each opportunity, and the power-mix and regulatory findings, each with its own primary source.",
+    "opportunity_rows": [
+      {
+        "id": "cvea-valdez", "site_id": "cvea-valdez", "prospect_id": "cvea",
+        "buyer_model": "cooperative",
+        "grid_note": "Islanded cooperative grid, now building a Railbelt intertie via the Alyeska Valdez Marine Terminal"
+      },
+      {
+        "id": "eielson-daf", "site_id": "eielson-pilot", "prospect_id": "eielson-daf",
+        "buyer_model": "federal-installation",
+        "grid_note": "On the Railbelt; the base buys its electricity from Golden Valley Electric Association today"
+      },
+      {
+        "id": "fort-wainwright-doyon", "site_id": "fort-wainwright-doyon", "prospect_id": "doyon-utilities",
+        "buyer_model": "federal-installation",
+        "grid_note": "Near the Railbelt but self-contained: Doyon operates the installation's own coal-fired combined heat and power plant, not a GVEA connection"
+      },
+      {
+        "id": "red-dog", "site_id": "red-dog-mine", "prospect_id": "red-dog",
+        "buyer_model": "behind-the-fence-industrial",
+        "grid_note": "Off-grid; the mine runs its own diesel power station with no utility of record"
+      },
+      {
+        "id": "graphite-creek", "site_id": "graphite-creek", "prospect_id": null,
+        "buyer_model": "behind-the-fence-industrial",
+        "grid_note": "Off-grid; the feasibility study's base case is the mine's own diesel generators, not a utility connection"
+      },
+      {
+        "id": "tanana-chiefs", "site_id": null, "prospect_id": "tanana-chiefs",
+        "buyer_model": "cooperative",
+        "grid_note": "Eight isolated village microgrids with no interconnection between them; no single village comes close to a microreactor's minimum output on its own"
+      }
+    ]
+  },
+  "buyer_models": [
+    {
+      "id": "cooperative",
+      "label": "Member-owned cooperative",
+      "examples": ["cvea", "tanana-chiefs"],
+      "what_it_means": "The utility is owned by the people it serves and run by an elected board. It is regulated by the RCA as a public utility like any other, but a cooperative gets one thing an investor-owned utility does not: the right to raise base rates up to 8% a year (20% over 3 years) through a Simplified Rate Filing instead of a full rate case. No Alaska statute or RCA rule found in this research requires a membership vote before a co-op adds a generation asset — that decision sits with the elected board.",
+      "sale_shape": "Cooperative ownership of the reactor, in the rate base, beat vendor ownership on member economics in CVEA's own pre-feasibility study — the study's stated reason for recommending member ownership over a vendor-owned unit.",
+      "watch_for": "A tabled cooperative project (CVEA, 2023) does not mean the law or the site died — it means the board judged the specific unit uneconomic at the time. The siting law and the site itself are unchanged.",
+      "sources": [
+        {
+          "label": "CVEA / Ruralite (September 2023) — Micro-Modular Nuclear Reactor Project Tabled",
+          "url": "https://www.cvea.org/assets/documents/pdfs/ruralite-articles/2023/september.pdf",
+          "quote": "Those included Westinghouse, OKLO, NuScale, & Radiant Technologies",
+          "status": "fetched"
+        },
+        {
+          "label": "Alaska Energy Transparency Project — Rate Case explainer",
+          "url": "https://www.akenergytransparency.org/rate-case",
+          "quote": "Cooperatives can increase base rates by up to 8% a year or 20% every 3 years through the Simplified Rate Filing (SRF) process",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "municipal-utility",
+      "label": "Municipal or borough utility",
+      "examples": [],
+      "what_it_means": "A town-owned utility answers to its city council or a utility board rather than a membership vote, and its rates still go through the RCA's normal tariff process. This site's Regions tab documents Nome, Kotzebue, Bethel and Utqiagvik each running their own municipal or cooperative diesel utility outside the Alaska Village Electric Cooperative system.",
+      "sale_shape": "A single-town buyer is small, so a reactor sized for one town has to clear that town's own diesel cost, not a statewide average — and PCE-community rates documented in this site's Regions tab range 20x community to community.",
+      "watch_for": "No named microreactor prospect at a municipal utility has been documented yet; this row states the model, not a live deal.",
+      "sources": [
+        {
+          "label": "This site — Applications · Regions · Rural Alaska (Power Cost Equalization communities)",
+          "url": "https://pranava0x0.github.io/microreactors/#demand/regions",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "railbelt-utility",
+      "label": "Larger interconnected utility (the Railbelt)",
+      "examples": ["eielson-daf"],
+      "what_it_means": "Six interconnected utilities from Fairbanks to the Kenai Peninsula (GVEA, Chugach, Matanuska, Homer Electric, Anchorage's municipal successor, and Seward) share one grid and buy wholesale power under filed PPAs, the same instrument a reactor developer would use.",
+      "sale_shape": "GVEA's own filed PPA amendment with Aurora Energy is the price a reactor has to beat on the Railbelt: $115.23/MWh in 2026, up from $94.23/MWh, for firm dispatchable power — not a diesel number, a real wholesale-power filing.",
+      "watch_for": "No Railbelt utility has issued an RFI or committed capital to a reactor study; the Alaska Center for Energy and Power's May 2026 tour of Idaho National Laboratory with GVEA staff is interest, not a procurement.",
+      "sources": [
+        {
+          "label": "State of Alaska / RCA - TA401-13 GVEA-Aurora tariff filing notice (2026)",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=222446",
+          "quote": "1 sets a new base rate for 2026 of $115.23/MWh, an increase from the current 2026 rate of $94.23/MWh.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "federal-installation",
+      "label": "Federal installation (direct PPA or a privatized-utility contract)",
+      "examples": ["eielson-daf", "fort-wainwright-doyon"],
+      "what_it_means": "Two different federal buying models exist side by side in interior Alaska. Eielson AFB buys under a direct 30-year firm-fixed-price PPA to a central buying agency (DLA Energy), with the vendor owning and operating the unit. Fort Wainwright's utilities are run under a long-term utility-privatization contract by Doyon, an Alaska Native corporation joint venture, with rates set by the RCA — a reactor there would enter as a rate-based plant addition, not a PPA.",
+      "sale_shape": "Eielson: owner-operator PPA to DLA Energy, NRC licensing first. Fort Wainwright: a plant addition inside an existing privatized-utility rate base, requiring DLA, Doyon and RCA sign-off, not a new contract vehicle.",
+      "watch_for": "Neither is a signed reactor deal yet. Eielson has a Notice of Intent to Award (NOITA) to Oklo, pending NRC licensing. Fort Wainwright is an unpaired Janus candidate with no vendor match as of the 2026-08-26 Army announcement.",
+      "sources": [
+        {
+          "label": "DAF — Eielson microreactor project page and 2026 updates",
+          "url": "https://www.eielson.af.mil/microreactor/",
+          "quote": "If ultimately awarded the contract",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "behind-the-fence-industrial",
+      "label": "Private industrial host (behind the fence)",
+      "examples": ["red-dog", "graphite-creek"],
+      "what_it_means": "A mine or industrial site that already generates its own power on its own land can buy a reactor the way it buys a diesel plant: a term contract for power delivered behind the meter. This site's new legal research on AS 42.05 found no named “behind-the-meter” exemption in Alaska law — a site like this most plausibly stays outside RCA jurisdiction because it was never inside a certificated utility's territory and never sold power “to the public,” not because of a specific carve-out.",
+      "sale_shape": "Third-party-owned generation behind the fence under a term contract; at Red Dog specifically the unit would need to be relocatable, since the mine's closure is planned around 2032 and only a movable unit outlives the site.",
+      "watch_for": "This is the model with the fewest regulatory steps on paper, but the legal basis for staying outside RCA jurisdiction is an inference, not a codified rule — see Rules below — and it is also the smallest buyer: a single mine's remaining life, not a utility's multi-decade rate base.",
+      "sources": [
+        {
+          "label": "ArcticToday - One of Alaska's flagship mines soon could draw energy from the sun",
+          "url": "https://www.arctictoday.com/one-of-alaskas-flagship-mines-soon-could-draw-energy-from-the-sun/",
+          "quote": "8.8-megawatt solar farm",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "power_mix": {
+    "statewide": {
+      "id": "power-mix-statewide",
+      "label": "Statewide, 2024",
+      "total_generation_mwh": 6690506,
+      "primary_source": "Natural gas",
+      "note": "One statewide number hides three very different grids: see the regional split below. EIA does not publish a single fetchable statewide fuel-percentage table for 2024, so the regional breakdown uses the 2021 EIA/FERC-Form-1 data compiled by UAF's Alaska Center for Energy and Power, the most recent year with a full three-region split.",
+      "sources": [
+        {
+          "label": "EIA — Alaska Electricity Profile 2024",
+          "url": "https://www.eia.gov/electricity/state/alaska/",
+          "quote": "Net generation (megawatthours) 6,690,506",
+          "status": "fetched"
+        }
+      ]
+    },
+    "regions": [
+      {
+        "id": "power-mix-railbelt",
+        "label": "Railbelt (Fairbanks to the Kenai Peninsula)",
+        "avg_annual_gwh_2011_2021": 5109,
+        "mix_2021": { "gas": 61, "coal": 15, "hydro": 12, "oil": 10, "wind": 2 },
+        "note": "The interconnected grid GVEA, Chugach, Matanuska, Homer Electric, Anchorage's municipal successor and Seward share; see Regions → Alaska Railbelt for the utility-level detail.",
+        "sources": [
+          {
+            "label": "ACEP/UAF — 2024 Alaska Electricity Trends Report, Ch. 4 Net/Gross Generation",
+            "url": "https://acep-uaf.github.io/aetr-web-book-2024/generation.html",
+            "quote": "In 2021, the region generated 61% of electricity from gas, 15% from coal, 12% from hydro, 10% from oil, and 2% from wind.",
+            "status": "fetched"
+          }
+        ]
+      },
+      {
+        "id": "power-mix-coastal",
+        "label": "Coastal (Southeast and South-central hydro systems)",
+        "avg_annual_gwh_2011_2021": 1131,
+        "mix_2021": { "hydro": 92, "oil": 6, "wind": 2 },
+        "note": "Already the state's cleanest region by far; not where a 24/7 diesel-replacement case is strongest.",
+        "sources": [
+          {
+            "label": "ACEP/UAF — 2024 Alaska Electricity Trends Report, Ch. 4 Net/Gross Generation",
+            "url": "https://acep-uaf.github.io/aetr-web-book-2024/generation.html",
+            "quote": "In 2021, the region generated 92% of electricity from hydro, 6% from oil, and 2% from wind.",
+            "status": "fetched"
+          }
+        ]
+      },
+      {
+        "id": "power-mix-rural-remote",
+        "label": "Rural Remote (off-road-system microgrids)",
+        "avg_annual_gwh_2011_2021": 529,
+        "mix_2021": { "oil": 77, "gas": 19, "hydro": 1, "wind": 3 },
+        "mix_2011": { "oil": 74, "gas": 24, "hydro": 1, "wind": 2 },
+        "note": "The smallest region by total generation and the most diesel-dependent — and it got more diesel-dependent, not less, over the decade EIA has comparable data for. This is the 24/7-diesel band the rest of this page's rural rows (AVEC, Tanana Chiefs) sit inside.",
+        "sources": [
+          {
+            "label": "ACEP/UAF — 2024 Alaska Electricity Trends Report, Ch. 4 Net/Gross Generation",
+            "url": "https://acep-uaf.github.io/aetr-web-book-2024/generation.html",
+            "quote": "In 2021, the region generated 77% of electricity from oil (mostly diesel), 19% from gas, 1% from hydro, and 3% from wind.",
+            "status": "fetched"
+          },
+          {
+            "label": "ACEP/UAF — 2024 Alaska Electricity Trends Report, Ch. 4 Net/Gross Generation (2011 comparison)",
+            "url": "https://acep-uaf.github.io/aetr-web-book-2024/generation.html",
+            "quote": "In 2011, the region generated 74% of electricity from oil, 24% from gas, 1% from hydro, and 2% from wind.",
+            "status": "fetched"
+          }
+        ]
+      }
+    ]
+  },
+  "regulatory_notes": [
+    {
+      "id": "public-utility-threshold",
+      "topic": "Does a reactor need a state utility certificate?",
+      "finding": "Alaska's Regulatory Commission of Alaska (RCA) only has jurisdiction over a “public utility” — defined in AS 42.05.990(6) as an entity furnishing electrical service “to the public for compensation.” A public utility may not operate or charge for service without first getting a Certificate of Public Convenience and Necessity (CPCN) from the RCA under AS 42.05.221. Alaska's statute does not name a bright-line “behind-the-meter” or “single customer” exemption; the closest carve-outs are AS 42.05.711(j), which exempts sales of waste heat or by-product industrial energy to an already-certificated utility, and AS 42.05.711(r), a capped exemption for plants generating entirely from renewable resources (up to 65 MW, in service 1990–2028, selling only to a regulated utility) that a reactor could not use because nuclear is not a listed renewable resource. The statute's own definition of “public” also reaches further than one customer: AS 42.05.990(5)(B) counts even a single customer as “the public” if it buys power for use inside an area a certificated electric utility presently or formerly served and pays that utility over $50,000 a year — so a reactor supplying one customer inside an existing utility's territory does not obviously escape certification the way a true greenfield, never-certificated site like Red Dog's own mine-site plant appears to.",
+      "figures": {
+        "cpcn_statute": "AS 42.05.221",
+        "public_utility_definition": "AS 42.05.990(6)",
+        "public_definition_single_customer_test": "AS 42.05.990(5)(B): one customer counts as “the public” if inside a utility's presently-or-formerly-certificated area and paying over $50,000/year",
+        "renewable_exemption_cap_mw": 65,
+        "renewable_exemption_window": "1990-08-31 to 2028-07-01, sale only to a regulated utility — does not cover nuclear",
+        "de_minimis_exemption": "AS 42.05.711(e): any electric utility grossing under $50,000/year is exempt from the whole chapter"
+      },
+      "read": "The safest reading is model-specific, not statewide: a reactor built on a site that was never inside any certificated utility's territory (Red Dog's own mine-site plant, or a genuinely new industrial site) has the strongest case for staying outside RCA jurisdiction entirely, because it never meets the “to the public” threshold in the first place. A reactor selling behind the meter to one customer inside an existing utility's service area is on much less certain ground and should assume it needs a CPCN unless the RCA says otherwise.",
+      "sources": [
+        {
+          "label": "FindLaw — Alaska Statutes Title 42 Sec. 42.05.990 (public utility definition)",
+          "url": "https://codes.findlaw.com/ak/title-42-public-utilities-and-carriers-and-energy-programs/ak-st-sect-42-05-990.html",
+          "quote": "that owns, operates, manages, or controls any plant, pipeline, or system for",
+          "status": "fetched"
+        },
+        {
+          "label": "law.onecle.com — Alaska Statutes Title 42.05 Art. 2, Sec. 42.05.221 (Certificates required)",
+          "url": "https://law.onecle.com/alaska/title-42/chapter-42.05/article-02/index.html",
+          "quote": "A public utility may not operate and receive compensation for providing a commodity or service without first having obtained from the commission under",
+          "status": "fetched"
+        },
+        {
+          "label": "FindLaw — Alaska Statutes Title 42 Sec. 42.05.711 (Exemptions)",
+          "url": "https://codes.findlaw.com/ak/title-42-public-utilities-and-carriers-and-energy-programs/ak-st-sect-42-05-711/",
+          "quote": "does not generate more than 65 megawatts of electricity",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "cooperative-rate-flexibility",
+      "topic": "Is a cooperative buyer different from an investor-owned utility?",
+      "finding": "The clearest documented difference is rate flexibility, not the certification process for new generation. Under 3 AAC 48.500–560, a cooperative like AVEC or CVEA can raise its base rates up to 8% in any 12-month period, or 20% over 3 years, through the RCA's Simplified Rate Filing (SRF) process without a full rate case; an investor-owned utility has no equivalent shortcut and must file a full rate case for any base-rate change. A cooperative loses SRF access and is frozen at its interim rate level once it enters a full rate case. No statute or RCA guidance was found stating that a cooperative follows a lighter CPCN process than an IOU when adding new generation specifically, and no member-vote requirement for adding a generation asset to the rate base was found in a fetchable primary source — the governance lever that is documented is the elected member board plus SRF, not a formal generation-specific vote.",
+      "figures": {
+        "srf_annual_cap_pct": 8,
+        "srf_three_year_cap_pct": 20,
+        "srf_regulation": "3 AAC 48.500-560"
+      },
+      "read": "Treat “cooperative members get a vote on the reactor” as CVEA's own board practice, not a codified state requirement — the one hard rule this research found is that co-ops raise rates faster than IOUs can, not that they decide generation differently.",
+      "sources": [
+        {
+          "label": "Alaska Energy Transparency Project — Rate Case explainer",
+          "url": "https://www.akenergytransparency.org/rate-case",
+          "quote": "Cooperatives can increase base rates by up to 8% a year or 20% every 3 years through the Simplified Rate Filing (SRF) process",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

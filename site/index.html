@@ -23,7 +23,7 @@
  "name": "Microreactor Opportunity Map",
  "description": "Cited data on microreactor contracts, utility filings, power prices, Alaska and Greenland remote-energy markets, vendors, and deployment prospects.",
  "url": "https://pranava0x0.github.io/microreactors/",
- "dateModified": "2026-09-28",
+ "dateModified": "2026-09-29",
  "isAccessibleForFree": true,
  "creator": {
   "@type": "Person",
@@ -79,7 +79,7 @@
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 832
+   "value": 841
   },
   {
    "@type": "PropertyValue",
@@ -88,6 +88,11 @@
   }
  ],
  "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/alaska.json"
+  },
   {
    "@type": "DataDownload",
    "encodingFormat": "application/json",
@@ -177,8 +182,8 @@
 }
 </script>
 <!-- /generated:meta -->
-<link rel="stylesheet" href="assets/tokens.css?v=2026-09-28">
-<link rel="stylesheet" href="assets/site.css?v=2026-09-28">
+<link rel="stylesheet" href="assets/tokens.css?v=2026-09-29">
+<link rel="stylesheet" href="assets/site.css?v=2026-09-29">
 </head>
 <body>
 
@@ -278,6 +283,33 @@
       <p class="prose" id="regions-intro"></p>
       <div class="newsfilter" id="regions-filter" role="group" aria-label="Filter regions"></div>
       <div id="regions"></div>
+    </div>
+    <div data-sub="alaska" id="demand-alaska" role="tabpanel" tabindex="0">
+      <p class="prose" id="alaska-intro"></p>
+      <div class="dsummary" id="alaska-summary"></div>
+      <div class="subhead gap"><h3>Opportunities across Alaska</h3></div>
+      <div class="tablewrap"><table class="sectortable alaska" id="alaska-opps">
+        <thead><tr><th scope="col">Site / buyer</th><th scope="col">Sector</th>
+          <th scope="col">Buyer model</th><th scope="col">Load / size</th>
+          <th scope="col">Status</th></tr></thead>
+        <tbody id="alaska-opps-body"></tbody>
+      </table></div>
+      <div class="precgrid" id="alaska-opps-detail"></div>
+      <div class="subhead gap"><h3>Priced contracts and funded precedents</h3></div>
+      <p class="prose" id="alaska-precedents-intro"></p>
+      <div class="tablewrap"><table class="sectortable alaska" id="alaska-precedents">
+        <thead><tr><th scope="col">Deal</th><th scope="col">Parties</th>
+          <th scope="col">Instrument</th><th scope="col">Size</th>
+          <th scope="col">Price</th><th scope="col">Date</th></tr></thead>
+        <tbody id="alaska-precedents-body"></tbody>
+      </table></div>
+      <div class="subhead gap"><h3>Where Alaska's power comes from</h3></div>
+      <p class="prose" id="alaska-power-mix-note"></p>
+      <div class="bars" id="alaska-power-mix"></div>
+      <div class="subhead gap"><h3>Who you'd actually be selling to</h3></div>
+      <div class="precgrid" id="alaska-buyer-models"></div>
+      <div class="subhead gap"><h3>Rules that matter</h3></div>
+      <div class="precgrid" id="alaska-rules"></div>
     </div>
   </div>
 </section>
@@ -441,7 +473,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=2026-09-28"></script>
-<script src="assets/app.js?v=2026-09-28"></script>
+<script src="data.js?v=2026-09-29"></script>
+<script src="assets/app.js?v=2026-09-29"></script>
 </body>
 </html>
