@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "captured": "2026-10-02",
+    "agent": "news-refresh-2026-10-02",
+    "scope": "microreactor news 2026-09-24..2026-10-02 from tools/news_watch.py candidates plus targeted search"
+  },
+  "items": [
+    {
+      "id": "oklo-atm-refresh-1b-2026-09-11",
+      "date": "2026-09-11",
+      "headline": "Oklo starts a new $1B at-the-market stock program after selling out the first",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "financing",
+      "what_happened": "On September 11, 2026 Oklo signed an equity distribution agreement with ten banks, led by Goldman Sachs, to sell up to $1 billion of Class A stock at market prices, with a commission of up to 1.5%. The same 8-K reports that the earlier May 13 program had sold 17,971,448 shares for about $1 billion before Oklo terminated it on September 10. The prospectus supplement was filed with the SEC the same day, and proceeds are for general corporate purposes, working capital, capital expenditures and possible investments.",
+      "why_it_matters": "Oklo raised $1 billion in under four months and has set up another $1 billion, so its Aurora build-out is funded by sales of new shares as it goes.",
+      "binding": true,
+      "binding_note": "An executed equity distribution agreement (8-K Item 1.01) and a filed 424B5 prospectus supplement; sales are at Oklo's discretion, so none of the $1 billion is guaranteed to be raised.",
+      "sources": [
+        {
+          "label": "SEC EDGAR — Oklo Inc. Form 8-K, equity distribution agreement (2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926106897/tm2625056d1_8k.htm",
+          "quote": "The Company will not make any further sales of shares of its Common Stock under the Prior Sales Agreement and the related prospectus supplement.",
+          "status": "fetched"
+        },
+        {
+          "label": "SEC EDGAR — Oklo Inc. Form 424B5 prospectus supplement (2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926106909/tm2625056-3_424b5.htm",
+          "quote": "We currently intend to use the net proceeds from this offering for general corporate purposes, working capital and capital expenditures, and potential future investments.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-ip3-cybernetic-loi-2026-09-25",
+      "date": "2026-09-25",
+      "headline": "NANO Nuclear signs non-binding LOI with IP3 and Cybernetic Intelligence",
+      "companies": [
+        "NANO Nuclear Energy",
+        "IP3 Corporation",
+        "Cybernetic Intelligence"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear announced on September 25, 2026 a letter of intent with IP3 Corporation and Cybernetic Intelligence to pursue nuclear-powered AI, defense and computing projects in the US and select international markets. The LOI names NANO Nuclear a preferred provider of microreactor technology, fuel supply and reactor operations. The release says the LOI was signed the month before, and its first step is to pick a pilot program, which would need a separate project agreement.",
+      "why_it_matters": "No site, reactor count, price or schedule is attached, so this shows NANO courting AI and defense customers, not a deal with a buyer.",
+      "binding": false,
+      "binding_note": "A signed letter of intent that the release calls a non-binding framework; any project needs diligence, regulatory approvals, financing and definitive agreements.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — NANO Nuclear, IP3 and Cybernetic Intelligence Sign Letter of Intent (2026)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-ip3-and-cybernetic-intelligence-sign-letter-of-intent-to-pursue-nuclear-powered-ai-infrastructure-projects/",
+          "quote": "Any pilot would be subject to a separate project-specific agreement establishing its scope, timeline, commercial terms and deliverables.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-space-force-strategic-breakthrough-2026-09-11",
+      "date": "2026-09-11",
+      "headline": "Antares selected for $161M Space Force award to demonstrate a space reactor",
+      "companies": [
+        "Antares",
+        "US Space Force"
+      ],
+      "category": "award",
+      "what_happened": "On September 11, 2026 Antares announced it was selected by the Air Force's Office of the Assistant Secretary for Space Acquisition and Integration for a $161 million Strategic Breakthrough award. Antares will run a nuclear ground demonstration of its R1-S reactor and integrate it with a spacecraft for flight certification ahead of launch. The company will also power a ground-to-space asset with its Mark-1 reactor, scheduled for testing in 2027.",
+      "why_it_matters": "This is a defense customer paying for a second use of Antares' reactor line, space power, alongside its Army and Air Force base work.",
+      "binding": false,
+      "binding_note": "Antares' release says it was selected for the award; it does not say a contract has been signed, so this is a selection, not an executed instrument.",
+      "sources": [
+        {
+          "label": "Antares — Antares Selected for $161M Strategic Breakthrough Award to Demonstrate Space Reactor (2026)",
+          "url": "https://antaresindustries.com/updates/strategicbreakthrough",
+          "quote": "Through this program, Antares will perform a nuclear ground demonstration of the R1-S and integrate with a spacecraft for flight certification forward of launch.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

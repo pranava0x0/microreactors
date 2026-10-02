@@ -1,43 +1,43 @@
 {
   "_meta": {
-    "captured": "2026-09-26",
+    "captured": "2026-10-02",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "42 of 61 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 19 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-09-24",
-    "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
+    "binding_note": "48 of 73 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 25 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-10-01",
+    "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
   "categories": [
     {
       "id": "fuel",
-      "count": 10
+      "count": 13
     },
     {
       "id": "regulatory",
-      "count": 10
+      "count": 12
     },
     {
       "id": "financing",
-      "count": 8
+      "count": 9
     },
     {
       "id": "award",
-      "count": 8
+      "count": 9
     },
     {
       "id": "contract",
-      "count": 6
+      "count": 8
+    },
+    {
+      "id": "construction",
+      "count": 7
     },
     {
       "id": "criticality",
       "count": 6
     },
     {
-      "id": "construction",
-      "count": 5
-    },
-    {
       "id": "policy",
-      "count": 4
+      "count": 5
     },
     {
       "id": "setback",
@@ -49,6 +49,124 @@
     }
   ],
   "items": [
+    {
+      "id": "nano-radnostix-nrc-license-acquisition-2026-10-01",
+      "date": "2026-10-01",
+      "headline": "NANO Nuclear signs deal to buy an NRC-licensed fuel facility license in New Mexico",
+      "companies": [
+        "NANO Nuclear Energy",
+        "Radnostix",
+        "International Isotopes"
+      ],
+      "category": "fuel",
+      "what_happened": "On October 1, 2026 NANO Nuclear and its HALEU Energy Fuel subsidiary signed a definitive asset purchase agreement with Radnostix (formerly International Isotopes) for an NRC license and related technical work for a planned uranium hexafluoride deconversion plant in Lea County, New Mexico. The plant was never built. Terms are 9.5 million dollars in cash and 4.0 million dollars in NANO stock, and closing needs NRC consent to the license transfer and other approvals, expected in 90 to 120 days.",
+      "why_it_matters": "It gives NANO a licensed foothold in the fuel cycle, though the company states no final investment decision has been made and the facility does not exist yet.",
+      "binding": true,
+      "binding_note": "A signed definitive asset purchase agreement; closing is conditional on NRC consent to the license transfer, New Mexico approvals and site arrangements.",
+      "sources": [
+        {
+          "label": "Newsfile (NANO Nuclear Energy press release) — NANO Nuclear Energy Advances Vertical Integration Strategy by Signing Definitive Agreement to Acquire NRC-Licensed U.S. Nuclear Fuel Processing Assets (2026)",
+          "url": "https://www.newsfilecorp.com/release/316891/NANO-Nuclear-Energy-Advances-Vertical-Integration-Strategy-by-Signing-Definitive-Agreement-to-Acquire-Strategic-NRCLicensed-U.S.-Nuclear-Fuel-Processing-Assets",
+          "quote": "The parties currently expect closing in approximately 90 to 120 days, although the timing will depend on those approvals and conditions.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "west-virginia-withdraws-nlic-2026-09-30",
+      "date": "2026-09-30",
+      "headline": "West Virginia backs out of DOE's Nuclear Lifecycle Innovation Campus race",
+      "companies": [
+        "Department of Energy",
+        "State of West Virginia"
+      ],
+      "category": "policy",
+      "what_happened": "West Virginia's Office of Energy sent DOE a letter on September 30, 2026 saying the state could not submit a hosting agreement by the deadline for the Nuclear Lifecycle Innovation Campus program. The governor said the state would not be a dumping ground for nuclear waste, after the September 2 memorandum of understanding was found to require plans for out-of-state used fuel. DOE says talks continue with the other states, and Utah and Idaho were among the first five picked for consideration in July.",
+      "why_it_matters": "The campus program bundles fuel fabrication, enrichment, recycling and waste storage, so the state host list shapes where microreactor fuel services could cluster; Utah and Idaho remain in the field.",
+      "binding": false,
+      "binding_note": "A state letter declining to sign a host agreement; no federal site selection has been made and DOE negotiations with the remaining states are ongoing.",
+      "sources": [
+        {
+          "label": "The Intelligencer — West Virginia withdraws from consideration for Nuclear Lifecycle Innovation Campus (2026)",
+          "url": "https://www.theintelligencer.net/news/top-headlines/2026/09/west-virginia-withdraws-from-consideration-for-nuclear-lifecycle-innovation-campus/",
+          "quote": "stating that West Virginia would be unable to submit a hosting agreement by Wednesday's deadline",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-project-beehive-blm-application-2026-09-30",
+      "date": "2026-09-30",
+      "headline": "Valar files BLM application for 456-reactor Utah data center campus",
+      "companies": [
+        "Valar Atomics",
+        "Bureau of Land Management"
+      ],
+      "category": "regulatory",
+      "what_happened": "NPR reported on September 30, 2026 that Valar Atomics has applied to the Bureau of Land Management's Utah office for 'Project Beehive', a campus on more than 9,000 acres near Price, Utah. The proposal covers data centers and some 456 reactors of 25 MW electric each, about 9.6 GW in total, plus fuel production and waste storage facilities. BLM said it is reviewing the application for completeness and that it will go through the National Environmental Policy Act process with public input. KSL reported that the Utah Trust Lands Administration board separately approved a lease of more than 640 acres of state trust land in Carbon County to Valar on September 17.",
+      "why_it_matters": "It moves Valar's Utah plan from announcements to a filed federal land application, which now goes through environmental review with public comment, where local opposition is already organizing.",
+      "binding": true,
+      "binding_note": "Rests on two executed steps: a filed BLM land-use application (not yet confirmed complete) and a state trust lands lease approval on Sept 17. No NEPA decision or NRC license exists.",
+      "sources": [
+        {
+          "label": "NPR (via WLRN) — A startup wants to build a massive nuclear-powered data center on public land in Utah (2026)",
+          "url": "https://www.wlrn.org/npr-breaking-news/2026-09-30/a-startup-wants-to-build-a-massive-nuclear-powered-data-center-on-public-land-in-utah",
+          "quote": "The facility would include data centers and some 456 small nuclear reactors",
+          "status": "fetched"
+        },
+        {
+          "label": "KSL — Nuclear-powered AI data center proposed on state and federal land in central eastern Utah (2026)",
+          "url": "https://ksl.com/article/51630741/nuclear-powered-ai-data-center-proposed-on-state-and-federal-land-in-central-eastern-utah",
+          "quote": "A land lease proposal from Valar Atomics was approved by the Utah Trust Lands Administration at a meeting Sept. 17",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "general-matter-paducah-nrc-application-2026-09-29",
+      "date": "2026-09-29",
+      "headline": "General Matter files NRC license application for Paducah enrichment plant",
+      "companies": [
+        "General Matter",
+        "NRC"
+      ],
+      "category": "fuel",
+      "what_happened": "General Matter submitted a license application of more than 1,000 pages to the NRC for a commercial uranium enrichment plant in Paducah, Kentucky, filed under 10 CFR Part 70. The first filing covers standard enrichment, and the company says it plans a separate amendment next year to produce HALEU. Pre-construction site work is already under way, and the company says it will enrich at commercial scale by the end of the decade.",
+      "why_it_matters": "HALEU supply is the main fuel bottleneck for microreactors, and this is a US enrichment project with a filed license, though its HALEU output depends on a later amendment.",
+      "binding": true,
+      "binding_note": "A filed NRC license application; no NRC acceptance or approval is reported, and the HALEU amendment has not been filed.",
+      "sources": [
+        {
+          "label": "World Nuclear News — General Matter submits licence application for enrichment plant (2026)",
+          "url": "https://www.world-nuclear-news.org/articles/general-matter-submits-enrichment-plant-licence-application",
+          "quote": "Next year, we intend to submit an amendment to produce High-Assay Low-Enriched Uranium (HALEU)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-ip3-cybernetic-loi-2026-09-25",
+      "date": "2026-09-25",
+      "headline": "NANO Nuclear signs non-binding LOI with IP3 and Cybernetic Intelligence",
+      "companies": [
+        "NANO Nuclear Energy",
+        "IP3 Corporation",
+        "Cybernetic Intelligence"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear announced on September 25, 2026 a letter of intent with IP3 Corporation and Cybernetic Intelligence to pursue nuclear-powered AI, defense and computing projects in the US and select international markets. The LOI names NANO Nuclear a preferred provider of microreactor technology, fuel supply and reactor operations. The release says the LOI was signed the month before, and its first step is to pick a pilot program, which would need a separate project agreement.",
+      "why_it_matters": "No site, reactor count, price or schedule is attached, so this shows NANO courting AI and defense customers, not a deal with a buyer.",
+      "binding": false,
+      "binding_note": "A signed letter of intent that the release calls a non-binding framework; any project needs diligence, regulatory approvals, financing and definitive agreements.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — NANO Nuclear, IP3 and Cybernetic Intelligence Sign Letter of Intent (2026)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-ip3-and-cybernetic-intelligence-sign-letter-of-intent-to-pursue-nuclear-powered-ai-infrastructure-projects/",
+          "quote": "Any pilot would be subject to a separate project-specific agreement establishing its scope, timeline, commercial terms and deliverables.",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "trisox-tx1-vertical-construction-2026-09-24",
       "date": "2026-09-24",
@@ -93,6 +211,54 @@
       ]
     },
     {
+      "id": "natura-flibe-salt-delivery-2026-09-22",
+      "date": "2026-09-22",
+      "headline": "DOE ships 4,700 pounds of 1960s reactor salt to Natura for its Texas reactor",
+      "companies": [
+        "Natura Resources",
+        "Department of Energy",
+        "Oak Ridge National Laboratory",
+        "Idaho National Laboratory",
+        "Abilene Christian University"
+      ],
+      "category": "fuel",
+      "what_happened": "DOE, working with Oak Ridge and Idaho National Laboratories, completed shipment of more than 4,700 pounds of FLiBe salt to Natura Resources the week before September 22, 2026. The salt is leftover coolant from Oak Ridge's Molten Salt Reactor Experiment and is meant for Natura's MSR-1 research reactor at Abilene Christian University. Natura is in DOE's Reactor Pilot Program, and INL ran a competitive solicitation for the salt in August 2025.",
+      "why_it_matters": "Securing the specialty salt removes one supply-chain item for the MSR-1, which is aiming to be among the first fueled molten salt reactors in the US since the 1960s experiment.",
+      "binding": true,
+      "binding_note": "An achieved delivery under DOE's competitive solicitation; the reactor still needs fuel salt, and startup is not dated in the source.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Department of Energy Provides Rare Salt Material to Natura Resources (2026)",
+          "url": "https://www.energy.gov/ne/articles/department-energy-provides-rare-salt-material-natura-resources",
+          "quote": "completed shipment of more than 4,700 pounds of a rare salt used in molten salt reactors to Natura Resources",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-oklo-aurora-doe-to-nrc-construction-letter-2026-09-21",
+      "date": "2026-09-21",
+      "headline": "NRC tells Oklo how it will license a reactor already built under DOE authorization",
+      "companies": [
+        "Oklo",
+        "NRC",
+        "Department of Energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "On September 21, 2026 the NRC's Advanced Reactor Licensing Branch 1 sent Oklo a letter on its expectations for the Aurora Powerhouse at Idaho National Laboratory if Oklo later seeks an NRC operating license. The letter says NRC jurisdiction starts only when a license application is filed, so staff cannot inspect construction done under DOE authorization. It describes how staff will reach its reasonable-assurance finding for an already built facility and encourages NRC observation of construction-related activities.",
+      "why_it_matters": "It spells out what a reactor built under the DOE Reactor Pilot Program must show to convert to an NRC license, which applies to microreactor developers on the same path.",
+      "binding": false,
+      "binding_note": "A staff guidance letter to one applicant; it is not a rule, license, or Commission decision.",
+      "sources": [
+        {
+          "label": "NRC — Expectations regarding construction activities associated with the proposed Oklo, Inc. Aurora Powerhouse at Idaho National Laboratory, letter ML26259A330 (2026)",
+          "url": "https://www.nrc.gov/docs/ML2625/ML26259A330.pdf",
+          "quote": "The NRC is committed to leveraging DOE and DOW authorizations to the maximum extent practicable to streamline subsequent NRC licensing",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "kairos-samsung-ct-investment-2026-09-21",
       "date": "2026-09-21",
       "headline": "Samsung C&T signs binding term sheet to invest $100M in Kairos",
@@ -110,6 +276,29 @@
           "label": "Kairos Power — Kairos Power and Samsung C&T Agree to Pursue Strategic Investment and Collaboration for KP-FHR Deployment (2026)",
           "url": "https://www.kairospower.com/updates/kairos-power-and-samsung-c-t-agree-to-pursue-strategic-investment-and-collaboration-for-kp-fhr-deployment",
           "quote": "up to $100 million through a combination of direct investment and in-kind engineering services",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "micronuclear-inl-foundation-msnb-2026-09-17",
+      "date": "2026-09-17",
+      "headline": "INL Foundation and MicroNuclear team up on 20 MW molten salt microreactor",
+      "companies": [
+        "MicroNuclear",
+        "INL Foundation",
+        "Idaho National Laboratory"
+      ],
+      "category": "contract",
+      "what_happened": "On September 17, 2026 the INL Foundation and MicroNuclear announced an agreement to collaborate on MicroNuclear's Molten Salt Nuclear Battery, a 20 MW thermal molten salt microreactor concept. The work covers detailed engineering, safety and licensing activities, prototype manufacturing and first-fission testing. The foundation will help with early fundraising and access to Idaho National Laboratory, and testing is expected at INL or another DOE lab under separate agreements.",
+      "why_it_matters": "It adds a concept-stage molten salt microreactor to the Idaho ecosystem, but the foundation's role is fundraising and access, not funding a build.",
+      "binding": false,
+      "binding_note": "A collaboration agreement announced by the company; testing at DOE labs would need separate agreements, and no funding amount, license or fuel arrangement is stated.",
+      "sources": [
+        {
+          "label": "PR Newswire (MicroNuclear LLC) — INL Foundation and MicroNuclear partner to advance the Molten Salt Nuclear Battery (2026)",
+          "url": "https://www.prnewswire.com/news-releases/inl-foundation-and-micronuclear-partner-to-advance-the-molten-salt-nuclear-battery-302882604.html",
+          "quote": "Testing is expected to be carried out at Idaho National Laboratory or other U.S. Department of Energy national laboratories through separate agreements.",
           "status": "fetched"
         }
       ]
@@ -138,6 +327,29 @@
           "label": "PR Newswire — Centrus and Antares Sign Multi-Year HALEU Supply Contract",
           "url": "https://www.prnewswire.com/news-releases/centrus-and-antares-sign-multi-year-haleu-supply-contract-302881954.html",
           "quote": "the signing of a definitive multi-year contract for Centrus to supply Antares with High-Assay Low-Enriched Uranium",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "isu-nucube-art-reactor-site-2026-09-16",
+      "date": "2026-09-16",
+      "headline": "Idaho State picks campus site for NuCube microreactor under DOE Launch Pad",
+      "companies": [
+        "NuCube Energy",
+        "Idaho State University",
+        "DOE Nuclear Energy Launch Pad USA"
+      ],
+      "category": "construction",
+      "what_happened": "Idaho State University announced on September 16, 2026 that its Advanced Research and Test reactor, built with Idaho Falls-based NuCube Energy, will go on the ISU Business and Research Park in Pocatello. Idaho's governor attended the event. A DOE Launch Pad official said the new reactor would take ISU from a 50-watt research reactor to nearly four megawatts of thermal output.",
+      "why_it_matters": "The site gives NuCube a hosted test unit at a university while its SPAC merger is still pending.",
+      "binding": false,
+      "binding_note": "A site announcement under DOE's Launch Pad selection of April 2026; no NRC license or construction contract is reported.",
+      "sources": [
+        {
+          "label": "KIFI LocalNews8 — Idaho State University unveils site for second Advanced Research and Test Nuclear Reactor (2026)",
+          "url": "https://localnews8.com/news/2026/09/16/idaho-state-university-unveils-site-for-second-advanced-research-and-test-nuclear-reactor/",
+          "quote": "the new project will take ISU's opportunities from 50 watts to nearly four megawatts of thermal energy produced",
           "status": "fetched"
         }
       ]
@@ -192,6 +404,33 @@
       ]
     },
     {
+      "id": "oklo-atm-refresh-1b-2026-09-11",
+      "date": "2026-09-11",
+      "headline": "Oklo starts a new $1B at-the-market stock program after selling out the first",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "financing",
+      "what_happened": "On September 11, 2026 Oklo signed an equity distribution agreement with ten banks, led by Goldman Sachs, to sell up to $1 billion of Class A stock at market prices, with a commission of up to 1.5%. The same 8-K reports that the earlier May 13 program had sold 17,971,448 shares for about $1 billion before Oklo terminated it on September 10. The prospectus supplement was filed with the SEC the same day, and proceeds are for general corporate purposes, working capital, capital expenditures and possible investments.",
+      "why_it_matters": "Oklo raised $1 billion in under four months and has set up another $1 billion, so its Aurora build-out is funded by sales of new shares as it goes.",
+      "binding": true,
+      "binding_note": "An executed equity distribution agreement (8-K Item 1.01) and a filed 424B5 prospectus supplement; sales are at Oklo's discretion, so none of the $1 billion is guaranteed to be raised.",
+      "sources": [
+        {
+          "label": "SEC EDGAR — Oklo Inc. Form 8-K, equity distribution agreement (2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926106897/tm2625056d1_8k.htm",
+          "quote": "The Company will not make any further sales of shares of its Common Stock under the Prior Sales Agreement and the related prospectus supplement.",
+          "status": "fetched"
+        },
+        {
+          "label": "SEC EDGAR — Oklo Inc. Form 424B5 prospectus supplement (2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1849056/000110465926106909/tm2625056-3_424b5.htm",
+          "quote": "We currently intend to use the net proceeds from this offering for general corporate purposes, working capital and capital expenditures, and potential future investments.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "nucube-launch-two-s4-filing-2026-09-11",
       "date": "2026-09-11",
       "headline": "NuCube-Launch Two SPAC merger's S-4 goes public with the SEC",
@@ -215,6 +454,49 @@
           "label": "Investing.com — NuCube, Launch Two file registration for merger with SEC (2026)",
           "url": "https://www.investing.com/news/company-news/nucube-launch-two-file-registration-for-merger-with-sec-93CH-4901698",
           "quote": "a preliminary proxy statement and prospectus",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deep-fission-borehole-demo-2026-09-11",
+      "date": "2026-09-11",
+      "headline": "Deep Fission lowers and retrieves a full-size reactor canister from a borehole",
+      "companies": [
+        "Deep Fission"
+      ],
+      "category": "construction",
+      "what_happened": "Deep Fission announced it installed and then retrieved a full-size, non-nuclear replica of the Gravity reactor canister in a borehole, using drilling equipment already in commercial service. The 20-foot canister went to 100 feet in a 34-inch borehole and was aligned and brought back to the surface. The actual reactor is designed to sit in a borehole one mile deep.",
+      "why_it_matters": "It tests the emplacement and retrieval step that the underground design depends on, though only to a small fraction of the planned depth and without any nuclear material.",
+      "binding": true,
+      "binding_note": "An achieved engineering milestone reported by the company and World Nuclear News; it is a non-nuclear mock-up test, not a licensing step.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Deep Fission completes borehole demonstration (2026)",
+          "url": "https://world-nuclear-news.org/articles/deep-fission-completes-borehole-demonstration",
+          "quote": "successfully lowered the 20 foot (6 metre) canister to a depth of 100 feet inside a 34 inch (86 centimetre) wide borehole",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-space-force-strategic-breakthrough-2026-09-11",
+      "date": "2026-09-11",
+      "headline": "Antares selected for $161M Space Force award to demonstrate a space reactor",
+      "companies": [
+        "Antares",
+        "US Space Force"
+      ],
+      "category": "award",
+      "what_happened": "On September 11, 2026 Antares announced it was selected by the Air Force's Office of the Assistant Secretary for Space Acquisition and Integration for a $161 million Strategic Breakthrough award. Antares will run a nuclear ground demonstration of its R1-S reactor and integrate it with a spacecraft for flight certification ahead of launch. The company will also power a ground-to-space asset with its Mark-1 reactor, scheduled for testing in 2027.",
+      "why_it_matters": "This is a defense customer paying for a second use of Antares' reactor line, space power, alongside its Army and Air Force base work.",
+      "binding": false,
+      "binding_note": "Antares' release says it was selected for the award; it does not say a contract has been signed, so this is a selection, not an executed instrument.",
+      "sources": [
+        {
+          "label": "Antares — Antares Selected for $161M Strategic Breakthrough Award to Demonstrate Space Reactor (2026)",
+          "url": "https://antaresindustries.com/updates/strategicbreakthrough",
+          "quote": "Through this program, Antares will perform a nuclear ground demonstration of the R1-S and integrate with a spacecraft for flight certification forward of launch.",
           "status": "fetched"
         }
       ]

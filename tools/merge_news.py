@@ -57,7 +57,7 @@ def build(pass_dir: pathlib.Path) -> dict:
         "window": f"{min(dates)} to {max(dates)}" if dates else "",
         "refresh":
             "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR "
-            "full-text search and reports what is not yet written up here. It does not write this "
+            "full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this "
             "file: judging whether an instrument binds means reading the document.",
     }
     if skipped:
