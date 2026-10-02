@@ -5,6 +5,7 @@
   python3 tools/news_watch.py --since 2026-06-01
   python3 tools/news_watch.py --json out.json    # machine-readable, for a research agent to write up
   python3 tools/news_watch.py --check-feeds      # which sources are reachable today
+  python3 tools/news_watch.py --reddit           # also scan Reddit (slow: ~1 request a minute)
 
 This does NOT write data/news.json. It produces CANDIDATES. Turning a headline
 into a record means reading the article, judging whether the instrument is
@@ -22,6 +23,11 @@ Two sources, chosen because both are machine-readable and neither needs a key:
   saying something in a filing is bound by securities law and a company saying it
   in a press release is not. 151 filings mentioned "microreactor" at the time of
   writing.
+
+Reddit (opt-in, --reddit) is a third, discovery-only layer: subreddit and search
+Atom feeds, with each link post reduced to the article it points at. It is slow
+because the unauthenticated bucket allows about one request a minute, and it is
+never a citation. Endpoint findings: data/research/news/reddit-patterns-2026-10-02.md.
 
 Every candidate carries the URL it came from, so the write-up step starts from a
 document rather than a summary. Stdlib only.
@@ -61,13 +67,27 @@ BLOCKED = {
     "Oklo investor relations": "403 to non-browser clients",
 }
 
+# Reddit, probed 2026-10-02. Only the Atom feeds answer a script: every .json
+# endpoint (new.json, search.json, api.reddit.com) returns 403, and old.reddit.com
+# redirects to an HTML shell. r/nuclear and r/NuclearPower carry the trade-press
+# links; r/NanoNuclear auto-posts NANO releases; r/OKLOSTOCK posts NRC documents.
+# r/Utah, r/Idaho, r/alaska, r/energy and r/uraniumsqueeze yielded nothing on a
+# month's pull, r/OKLO and r/smallmodularreactors are dead, r/NNE does not exist.
+REDDIT_SUBS = ["nuclear", "NuclearPower", "NanoNuclear", "OKLOSTOCK"]
+# Bare company names return food posts and game mods ("Aalo", "Radiant"), and
+# "Reactor Pilot Program" returns airline pilots: pair every name with a nuclear word.
+REDDIT_QUERIES = ["microreactor", "Valar Atomics nuclear", "Antares nuclear",
+                  "Oklo Aurora", "Radiant Kaleidos", "HALEU microreactor"]
+REDDIT_LINK = re.compile(r'href="([^"]+)">\[link\]<')
+
+
 # A headline has to carry one of these to be a candidate. Deliberately narrow:
 # the point is to miss the general-nuclear firehose, not to catch it.
 TERMS = re.compile(
     r"\bmicroreactor|micro-reactor|\bSMR\b|small modular|"
     r"Antares|Radiant|Oklo|X-energy|Kairos|BWXT|eVinci|Westinghouse|"
     r"Aalo|Valar|Deep Fission|Last Energy|NANO Nuclear|TerraPower|Zeno Power|"
-    r"Standard Nuclear|General Atomics|"
+    r"Standard Nuclear|General Atomics|NuCube|Natura Resources|General Matter|MicroNuclear|"
     r"\bJanus\b|ANPI|HALEU|TRISO|Part 53|Part 57|reactor pilot", re.I)
 
 
@@ -110,6 +130,51 @@ def parse_feed(name: str, url: str) -> List[dict]:
         date = text(it, "pubDate", "published", "updated", "a:published", "a:updated")
         if title:
             out.append({"source": name, "title": title, "url": link, "date_raw": date})
+    return out
+
+
+def reddit_entries(raw: bytes, name: str) -> List[dict]:
+    """Atom entries from a Reddit feed, each pointed at the article it links to.
+    A self post has no [link] anchor and keeps its thread URL."""
+    a = "{http://www.w3.org/2005/Atom}"
+    out = []
+    for e in ET.fromstring(raw).iter(a + "entry"):
+        title = text(e, a + "title")
+        m = REDDIT_LINK.search(text(e, a + "content"))  # text() already unescaped it
+        le = e.find(a + "link")
+        thread = le.get("href", "") if le is not None else ""
+        url = m.group(1) if m and "reddit.com" not in m.group(1) else thread
+        if title:
+            out.append({"source": name, "title": title, "url": url,
+                        "date_raw": text(e, a + "updated", a + "published")})
+    return out
+
+
+def get_reddit(url: str) -> bytes:
+    """One request, and on a 429 one retry after the advertised reset."""
+    import time
+    try:
+        return get(url)
+    except urllib.error.HTTPError as e:
+        if e.code != 429:
+            raise
+        wait = float(e.headers.get("x-ratelimit-reset") or 60) + 2
+        print(f"  rate-limited  Reddit: sleeping {wait:.0f}s", file=sys.stderr)
+        time.sleep(wait)
+        return get(url)
+
+
+def parse_reddit() -> List[dict]:
+    urls = {f"Reddit r/{s}": f"https://www.reddit.com/r/{s}/new/.rss?limit=100" for s in REDDIT_SUBS}
+    for q in REDDIT_QUERIES:
+        urls[f"Reddit search: {q}"] = ("https://www.reddit.com/search.rss?sort=new&t=month&q="
+                                       + urllib.parse.quote(q))
+    out = []
+    for name, url in urls.items():
+        try:
+            out.extend(reddit_entries(get_reddit(url), name))
+        except Exception as e:  # noqa: BLE001 — report, never swallow
+            print(f"  unreachable  {name}: {type(e).__name__}", file=sys.stderr)
     return out
 
 
@@ -181,6 +246,8 @@ def main() -> int:
     ap.add_argument("--since", default="")
     ap.add_argument("--json", default="")
     ap.add_argument("--check-feeds", action="store_true")
+    ap.add_argument("--reddit", action="store_true",
+                    help="also scan subreddit and search feeds (discovery only; ~1 request a minute)")
     ap.add_argument("--query", action="append", default=[], metavar="TERM",
                     help="EDGAR full-text term instead of \"microreactor\"; repeatable. "
                          "Feeds are skipped, since a feed cannot be searched by term.")
@@ -207,6 +274,8 @@ def main() -> int:
         for n, u in FEEDS.items():
             rows.extend(parse_feed(n, u))
         rows.extend(parse_edgar(since))
+        if a.reddit:
+            rows.extend(parse_reddit())
 
     cands = []
     for r in rows:
@@ -216,6 +285,9 @@ def main() -> int:
         if r["url"] in seen:
             continue
         if r["source"] != "SEC EDGAR full-text" and not TERMS.search(r["title"]):
+            continue
+        # Reddit search feeds also return matching subreddits as entries; drop them.
+        if r["source"].startswith("Reddit") and "reddit.com" in r["url"] and "/comments/" not in r["url"]:
             continue
         seen.add(r["url"])  # one candidate per filing, however many terms it matched
         cand = {"date": d, "source": r["source"], "title": r["title"], "url": r["url"]}

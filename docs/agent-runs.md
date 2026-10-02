@@ -226,3 +226,22 @@ Kivalliq and Agnew.
 **One improvement.** The agent cited the same URL twice as two "sources" on 11 of 24 rows
 (Wikipedia and one trade page doing double duty). Harmless after `cite()` dedupes, but the
 contract should say "two sources means two documents".
+
+## 2026-10-02 news refresh: feed candidates plus a Reddit discovery pass
+
+`tools/news_watch.py --since 2026-09-24` returned 7 candidates, and 6 of them were already covered or out of
+scope (300 MW-class SMRs). Two Sonnet agents ran in parallel, each writing its own file incrementally.
+
+| agent | why an agent | tokens | tools | time | result | worth it |
+|---|---|---|---|---|---|---|
+| verify | 8 leads from feeds and web search, each needing a primary page | 158K | 44 | 4 min | 3 records; 5 skipped with reasons. 3 of the 8 search-summary dates were wrong (Deep Fission's reverse merger was 2025, Oklo's PDC approval was May, Antares' factory was 2025) | yes: the skips were as useful as the records |
+| reddit | no Reddit scan existed, and the endpoints and rate limits were unknown | 254K | 89 | 29 min | 11 records (2 duplicated the verify agent's ids and were dropped), plus a pattern note | yes: 9 new records, and the scan is now `news_watch.py --reddit` |
+
+**Checked in the main session.** The Antares award date was triple-checked. The page metadata says Oct 1,
+SpaceNews says Sept 14, and the agent said Sept 11. Sept 11 is confirmed by the AOL wire copy at 13:00 UTC
+and the page body. Two unverified superlatives were cut ("largest reactor siting proposal", "only
+university in Launch Pad"). The NANO LOI was recategorized from policy to contract, to match earlier MOUs.
+
+**One improvement.** When two agents run over the same window, give each a disjoint lead list *and* the
+other's ids. Both independently wrote up NANO-IP3 and Antares, with identical ids, so the merge's dedupe
+silently kept whichever file sorted first.
