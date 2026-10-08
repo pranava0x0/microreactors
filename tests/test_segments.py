@@ -14,7 +14,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 import research_pass  # noqa: E402
 
-STATUSES = {"operating", "contracted", "funded", "studied", "proposed", "cancelled"}
+STATUSES = research_pass.APPLICATION_STATUS
 
 
 class TestSegments(unittest.TestCase):
@@ -50,6 +50,12 @@ class TestSegments(unittest.TestCase):
                     {"_meta": {"captured": "2026-10-08", "absences": ["x"]}, "applications": [rec]}))
             self.assertEqual(research_pass.cmd_validate(pathlib.Path(tmp) / "good"), 0)
             self.assertEqual(research_pass.cmd_validate(pathlib.Path(tmp) / "bad"), 1)
+            d = pathlib.Path(tmp) / "status"
+            d.mkdir()
+            (d / "f.json").write_text(json.dumps(
+                {"_meta": {"captured": "2026-10-08", "absences": ["x"]},
+                 "applications": [dict(good, id="a3", status="announced")]}))
+            self.assertEqual(research_pass.cmd_validate(d), 1, "status outside the enum")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 {
  "_meta": {
   "captured": "2026-10-08",
-  "what_this_is": "17 named projects and buyers outside the eight sector tabs: lunar and in-space power, launch sites, district heat and process heat, ports, broadcast and backup power, and university research reactors. Each says how big the load is and whether a 1-20 MW block fits.",
-  "method": "A search-seeded draft (data/research/2026-10-08-refresh/drafts/space-apps.json) rewritten against fetched pages by a second agent, then quote-checked offline. 28 of 28 sources were fetched and read. The group is curated in that folder's integrate_segments.py.",
+  "what_this_is": "15 named projects and buyers outside the eight sector tabs: lunar and in-space power, a launch site, district and process heat, a port, broadcast data centres, an Arctic outpost and university research reactors.",
+  "method": "A search-seeded draft (data/research/2026-10-08-refresh/drafts/space-apps.json) rewritten against fetched pages by a second agent, then quote-checked offline. 19 of 23 distinct sources are cached and quote-checked offline; the rest sit on hosts that block scripts. The group is curated in that folder's integrate_segments.py.",
   "groups": [
    {
     "id": "space",
@@ -14,7 +14,7 @@
    },
    {
     "id": "ports-sites",
-    "label": "Ports, broadcast and backup power"
+    "label": "Ports, broadcast and Arctic outposts"
    },
    {
     "id": "campuses",
@@ -33,7 +33,7 @@
    "sponsor": "DARPA, NASA",
    "vendor": "Lockheed Martin (prime); BWXT Advanced Technologies (reactor)",
    "what_it_says": "DARPA and NASA gave Lockheed Martin a $499 million deal in 2023 to build a nuclear thermal rocket, with a flight demonstration aimed at fiscal 2027. DARPA then ended the program in 2025 because, in its deputy director's account, the costs no longer matched the benefits as launch prices fell.",
-   "microreactor_read": "This is a propulsion engine, not a power plant, so no 1-20 MW block fits. The cancellation shows a nuclear space program ended on cost, with the same reactor-fuel supply chain that microreactors need left without a customer.",
+   "microreactor_read": "A propulsion engine is not a power plant, so no 1-20 MW block fits. The program ended on cost once launch prices fell.",
    "sources": [
     {
      "label": "Breaking Defense — DARPA, NASA tap Lockheed Martin to design, build DRACO (2023)",
@@ -55,12 +55,12 @@
    "segment": "spacecraft and lunar power systems",
    "name": "AFRL JETSON and Intuitive Machines radioisotope Stirling power",
    "status": "funded",
-   "power_class": "not stated on the fetched pages",
+   "power_class": "not published",
    "timeline": "$33.7 million JETSON award announced September 2023; $8.2 million extension reported 2025-10-31; flight experiment on the International Space Station planned",
    "sponsor": "U.S. Air Force Research Laboratory, Space Vehicles Directorate",
    "vendor": "Intuitive Machines",
    "what_it_says": "AFRL gave Intuitive Machines a $33.7 million contract in 2023 for the JETSON low-power system, then an $8.2 million extension in 2025 on top of $9.5 million from an earlier AFRL program. The money funds a Stirling power converter that turns radioisotope heat into electricity and has passed a preliminary design review.",
-   "microreactor_read": "Radioisotope heat is orders of magnitude below 1-20 MW, so this is not a buyer for a microreactor. It matters as evidence that the Air Force is paying to qualify compact nuclear power conversion for off-grid duty.",
+   "microreactor_read": "No output is published here. Radioisotope units are far smaller than a 1-20 MW block, so this is a conversion-technology precedent, with no microreactor buyer in it.",
    "sources": [
     {
      "label": "Military & Aerospace Electronics — Space Force picks Intuitive Machines for space nuclear power (2023)",
@@ -83,10 +83,10 @@
    "name": "NASA and DOE fission surface power for the Moon",
    "status": "proposed",
    "power_class": "at least 100 kWe",
-   "timeline": "launch-ready by first quarter of fiscal 2030; NASA-DOE MOU announced 2026-01-13",
+   "timeline": "NASA directive: launch-ready by first quarter of fiscal 2030; DOE-NASA agreement 2026-01-13",
    "sponsor": "NASA, U.S. Department of Energy",
-   "what_it_says": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030. It wants industry to design a system of at least 100 kilowatts electric with a closed Brayton power cycle. DOE and NASA signed an agreement in January 2026 to pursue the system.",
-   "microreactor_read": "At 100 kWe this is two orders of magnitude below the 1-20 MW band, so it is a design and supply-chain precedent (fuel, heat transfer, remote operation) rather than a buyer for a 1-20 MW block.",
+   "what_it_says": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030, and has asked industry for a design of at least 100 kilowatts electric with a closed Brayton power cycle. Separately, DOE and NASA signed an agreement in January 2026 to pursue the system.",
+   "microreactor_read": "At 100 kWe this is one to two orders of magnitude below the 1-20 MW band, so it is a design and supply-chain precedent (fuel, heat transfer, remote operation) and no buyer for a 1-20 MW block.",
    "sources": [
     {
      "label": "NASA — NASA Seeks Industry Feedback on Fission Surface Power (2025)",
@@ -124,26 +124,6 @@
      "label": "CNBC — SpaceX is expanding the solar farm at its South Texas launch facility (2022)",
      "url": "https://www.cnbc.com/2022/05/03/spacex-expanding-solar-farm-at-boca-chica-texas-launch-facility.html",
      "quote": "It also operates a natural gas power plant in Boca Chica.",
-     "status": "fetched"
-    }
-   ],
-   "group": "space"
-  },
-  {
-   "id": "vandenberg-south-loop-two",
-   "segment": "launch sites and spaceports",
-   "name": "Vandenberg Space Force Base south loop two power line",
-   "status": "operating",
-   "power_class": "load not published (substations K and N)",
-   "timeline": "Canyon Fire September 2016; line restored 2022-06-02",
-   "sponsor": "U.S. Space Force",
-   "what_it_says": "The Canyon Fire damaged 44,000 feet of line between substations K and N and destroyed or heavily damaged over 161 poles. South loop two feeds Atlas V, Delta IV and Falcon 9 launch operations. It came back into service on June 2, 2022, almost six years after the fire.",
-   "microreactor_read": "No load figure is published, so sizing a 1-20 MW block is not possible from this page. The six-year outage of one feeder is the case for on-site generation at a remote launch range.",
-   "sources": [
-    {
-     "label": "DVIDS — Vandenberg's South Base Re-energizes with the Activation of Substation N (2022)",
-     "url": "https://www.dvidshub.net/news/printable/423436",
-     "quote": "After almost six years of rebuilding, on June 2, 2022, south loop two came back to life.",
      "status": "fetched"
     }
    ],
@@ -226,7 +206,7 @@
    "timeline": "research project; no deployment date",
    "sponsor": "Penn State Architectural Engineering (research project)",
    "what_it_says": "Penn State researchers say a single 15 MWth reactor can supply enough heat to replace the calciner burner in a 2,000 ton/day cement plant, because calcination at about 900 C is within current core designs. They note that cement makes up 8% of global CO2 from human activity, and that 70 to 80% of a plant's fuel goes to the kiln burner and the rest to the calciner.",
-   "microreactor_read": "15 MWth is inside the 1-20 MW band, but it only replaces the calciner share, so the kiln burner still needs fuel. The page gives no heat price and no plant has committed.",
+   "microreactor_read": "The 15 MWth figure is heat, so it does not compare directly with the 1-20 MW electric band. It would replace only the calciner share, and the kiln burner still needs fuel. The page gives no heat price and no plant has committed.",
    "sources": [
     {
      "label": "Penn State — Feasibility Study of Micro-Nuclear Reactor Thermal Output for Air Rotary Kilns in Portland Cement Clinker Manufacturing",
@@ -247,7 +227,7 @@
    "sponsor": "Steady Energy (privately raised capital); Helen hosts",
    "vendor": "Steady Energy",
    "what_it_says": "Steady Energy poured first concrete on 12 February 2026 for a non-nuclear, full-scale pilot of its LDR-50 district heating reactor in the Salmisaari B turbine hall in Helsinki. The pilot uses an electric element instead of fuel, outputs about 6 MW of heat to Helen's network, and has a EUR15-20 million budget. The reactor design is 50 MW thermal and runs at about 150C and below 10 bar.",
-   "microreactor_read": "A 50 MWth unit is above the 1-20 MW band, but the 6 MW pilot sits inside it and the design runs at low pressure, which suits district heat. The pilot contains no fuel, so it proves the plant, not a licensed reactor.",
+   "microreactor_read": "The figures are thermal (50 MWth design, about 6 MW pilot heat), so they do not compare directly with the 1-20 MW electric band. Low pressure suits district heat. The pilot holds no fuel, so a licensed reactor is a later step.",
    "sources": [
     {
      "label": "World Nuclear News — Construction of Steady Energy pilot plant begins (2026)",
@@ -270,22 +250,16 @@
    "name": "Canadian Strategic Missions Corporation Arctic microreactor",
    "status": "funded",
    "power_class": "not stated",
-   "timeline": "$4.5 million award reported 2026-07-23; company target of fleet-scale deployment by 2030; U.S. Arctic microreactor workshop held 9-11 September 2026",
+   "timeline": "$4.5 million award reported 2026-07-23; company target of fleet-scale deployment by 2030",
    "sponsor": "FedDev Ontario (Government of Canada)",
    "vendor": "Canadian Strategic Missions Corporation",
-   "what_it_says": "FedDev Ontario awarded Canadian Strategic Missions Corporation $4.5 million to fund detailed design and a fuelled demonstration of its microreactor for the Arctic, part of a $40.5 million package split among 23 organisations. Canada's Department of National Defence has trouble supplying diesel to remote northern outposts. In September 2026 the U.S. Arctic Research Commission and Army hosted an Advanced Microreactors Arctic Deployment Workshop in Fairbanks.",
-   "microreactor_read": "No reactor size is published, so a fit to the 1-20 MW band cannot be confirmed. The buyer is defence-led, diesel is the displaced fuel, and the money funds design and a demonstration, not a delivered unit.",
+   "what_it_says": "FedDev Ontario awarded Canadian Strategic Missions Corporation $4.5 million to fund detailed design and a fuelled demonstration of its microreactor for the Arctic, part of a $40.5 million package split among 23 organisations. Canada's Department of National Defence has trouble supplying diesel to remote northern outposts.",
+   "microreactor_read": "No reactor size is published, so fit to the 1-20 MW band cannot be confirmed. The buyer is defence-led and diesel is the displaced fuel. The money funds design and a demonstration.",
    "sources": [
     {
      "label": "SpaceQ — CSMC secures $4.5 million federal investment for Arctic microreactor development (2026)",
      "url": "https://spaceq.ca/csmc-secures-4-5-million-federal-investment-for-arctic-microreactor-development/",
      "quote": "has been awarded a $4.5 million investment from the Federal Economic Development Agency for Southern Ontario",
-     "status": "fetched"
-    },
-    {
-     "label": "U.S. Arctic Research Commission — Advanced Microreactors Arctic Deployment Workshop (2026)",
-     "url": "https://arctic.gov/?p=27209",
-     "quote": "hosted the Advanced Microreactors Arctic Deployment Workshop at UAF in Fairbanks, Alaska, from September",
      "status": "fetched"
     }
    ],
@@ -319,33 +293,6 @@
    "group": "ports-sites"
   },
   {
-   "id": "radiant-kaleidos-backup-power",
-   "segment": "hospitals and backup power",
-   "name": "Radiant Kaleidos 1 MWe test at INL DOME",
-   "status": "funded",
-   "power_class": "1 MWe (1 MW thermal in the thermal validation step)",
-   "timeline": "shipped from El Segundo to Idaho National Laboratory, reported 2026-08-21; 150-hour unattended run is the final test step",
-   "sponsor": "U.S. Department of Energy (hosts the test at INL)",
-   "vendor": "Radiant",
-   "what_it_says": "Radiant trucked its 1 MWe Kaleidos microreactor about 1,000 miles to INL's DOME facility, where it will be loaded with TRISO fuel and taken through criticality and a 150-hour unattended endurance run. Separately, the Centers for Medicare and Medicaid Services now lets hospitals use microgrids as a first line of defence against outages instead of requiring a diesel backstop.",
-   "microreactor_read": "1 MWe is at the bottom of the 1-20 MW band and could serve a large hospital campus on size. No hospital has signed, and the CMS rule is written around microgrids generally, not nuclear.",
-   "sources": [
-    {
-     "label": "Nuclear Engineering International — Kaleidos moves to Idaho test facility (2026)",
-     "url": "https://www.neimagazine.com/news/kaleidos-moves-to-idaho-test-facility/",
-     "quote": "US-based startup Radiant has dispatched its 1 MWe Kaleidos microreactor on a 1,000-mile road trip",
-     "status": "fetched"
-    },
-    {
-     "label": "EC&M — Exploring Alternatives to Health Care Microgrids",
-     "url": "https://ecmweb.com/design/article/55041385/exploring-alternatives-to-health-care-microgrids",
-     "quote": "cleared the way for subject hospitals to utilize microgrids as a first line of defense against power outages",
-     "status": "fetched"
-    }
-   ],
-   "group": "ports-sites"
-  },
-  {
    "id": "terra-innovatum-waiken-broadcast",
    "segment": "telecom and broadcast data centres",
    "name": "Terra Innovatum and Waiken ILW letter of intent for DIRECTV Latin America and SKY Brasil",
@@ -371,12 +318,12 @@
    "segment": "universities",
    "name": "Penn State and Westinghouse eVinci research reactor",
    "status": "proposed",
-   "power_class": "5 MWe eVinci design",
-   "timeline": "letter of intent to the NRC submitted 2025-02-28",
+   "power_class": "size not stated on the cited page (parent eVinci design: 5 MWe)",
+   "timeline": "Penn State announced its letter of intent to the NRC on 2025-02-28",
    "sponsor": "Penn State University",
    "vendor": "Westinghouse",
-   "what_it_says": "Penn State told the NRC on 28 February 2025 that it intends to host and operate a Westinghouse eVinci reactor on its University Park campus. eVinci is a HALEU TRISO-fueled sodium heat-pipe reactor, and Westinghouse describes its parent design as 5 MWe.",
-   "microreactor_read": "A 5 MWe unit is inside the 1-20 MW band. Only a letter of intent has been filed, and the page gives no campus load or heat price.",
+   "what_it_says": "Penn State announced on 28 February 2025 that it submitted a letter of intent to the NRC to host and operate a Westinghouse eVinci reactor on its University Park campus. eVinci is a HALEU TRISO-fueled sodium heat-pipe reactor, and Westinghouse describes its parent design as 5 MWe.",
+   "microreactor_read": "This is a research reactor, and the Deals tab lists it at 15 MWt. Only a letter of intent has been filed, and the page gives no campus load or heat price.",
    "sources": [
     {
      "label": "American Nuclear Society — Penn State and Westinghouse make eVinci microreactor plan official (2025)",
@@ -397,13 +344,13 @@
    "id": "tamu-rellis-aalo",
    "segment": "universities",
    "name": "Texas A&M RELLIS Energy Proving Ground, including Aalo Atomics",
-   "status": "contracted",
-   "power_class": "Aalo 30 MWth microreactor; site over 1 GW electric combined",
+   "status": "proposed",
+   "power_class": "Aalo unit 30 MWth; site projected above 1 GW combined across developers",
    "timeline": "agreements announced 2025-02-05; first reactors aimed within five years",
    "sponsor": "Texas A&M University System",
    "vendor": "Aalo Atomics, Kairos Power, Natura Resources, Terrestrial Energy",
    "what_it_says": "Four developers signed agreements in February 2025 to site reactors at the 2,400-acre RELLIS campus in Bryan, Texas, with an Early Site Permit application already started and a combined output above one gigawatt projected. Aalo Atomics is the microreactor entrant and is aiming to develop a 30 MWth sodium-cooled unit.",
-   "microreactor_read": "Aalo's 30 MWth is above the 1-20 MW band, and the other three developers build larger plants, so the campus is mainly a siting and permitting venue. No power buyer or price is named.",
+   "microreactor_read": "Aalo's 30 MWth is heat, so it does not compare directly with the 1-20 MW electric band. The campus is a siting and permitting venue, and no power buyer or price is named.",
    "sources": [
     {
      "label": "World Nuclear News — Four SMR developers aim to build reactors at Texas A&M University site (2025)",

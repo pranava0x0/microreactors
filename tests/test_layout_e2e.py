@@ -322,6 +322,56 @@ class Routing(unittest.TestCase):
 
 
 @unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+@unittest.skipUnless(_HAVE_PW, "playwright not installed; layout gate skipped")
+class TabIntentPrefetch(unittest.TestCase):
+    def test_hover_prefetches_once_and_a_sweep_does_not(self):
+        """Resting on the Rules tab fetches its payload before the click; moving
+        across the strip fetches nothing; a failed prefetch is retried on open."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 1280, "height": 800})
+            seen = []
+            page.on("request", lambda r: seen.append(r.url.split("/")[-1].split("?")[0]))
+            page.goto(base, wait_until="networkidle")
+            page.hover("#tab-policy")
+            page.mouse.move(5, 400)            # leave before the 150 ms rest
+            page.wait_for_timeout(400)
+            self.assertNotIn("data-instruments.js", seen, "a sweep must not prefetch")
+            page.hover("#tab-policy")
+            page.wait_for_timeout(500)
+            self.assertEqual(seen.count("data-instruments.js"), 1)
+            page.click("#tab-policy")
+            page.wait_for_timeout(500)
+            self.assertEqual(seen.count("data-instruments.js"), 1, "the open reuses the prefetch")
+            self.assertGreater(page.locator("#pathways *").count(), 5)
+            browser.close()
+
+    def test_failed_lazy_load_is_retried_on_open(self):
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 1280, "height": 800})
+            calls = {"n": 0}
+
+            def flaky(route):
+                calls["n"] += 1
+                route.abort() if calls["n"] == 1 else route.continue_()
+            page.route("**/data-news.js*", flaky)
+            page.goto(base, wait_until="networkidle")
+            page.hover("#tab-news")
+            page.wait_for_timeout(500)         # prefetch fails, quietly
+            page.click("#tab-news")
+            page.wait_for_timeout(800)
+            self.assertEqual(calls["n"], 2, "open must request the file again")
+            self.assertGreater(page.locator("#newslist *").count(), 5)
+            browser.close()
+
+
 class HomePage(unittest.TestCase):
     def test_featured_prices_link_to_their_sources(self):
         with serve_site() as base, sync_playwright() as pw:

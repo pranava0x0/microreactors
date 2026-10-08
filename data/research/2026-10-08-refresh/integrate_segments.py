@@ -15,17 +15,17 @@ OUT = ROOT / "data" / "segments.json"
 GROUPS = [
     {"id": "space", "label": "Space and launch"},
     {"id": "heat", "label": "Heat, water and industry"},
-    {"id": "ports-sites", "label": "Ports, broadcast and backup power"},
+    {"id": "ports-sites", "label": "Ports, broadcast and Arctic outposts"},
     {"id": "campuses", "label": "Universities"},
 ]
 GROUP_OF = {
     "nasa-doe-fsp-lunar": "space", "westinghouse-evinci-lunar": "space",
     "draco-nuclear-thermal": "space", "jetson-intuitive-machines": "space",
-    "vandenberg-south-loop-two": "space", "starbase-spaceport": "space",
+    "starbase-spaceport": "space",
     "steady-energy-ldr50": "heat", "inl-marvel-desalination": "heat",
     "microreactor-ammonia-hydrogen": "heat", "microreactor-cement-calciner": "heat",
     "last-energy-london-gateway": "ports-sites", "terra-innovatum-waiken-broadcast": "ports-sites",
-    "arctic-microreactor-canada": "ports-sites", "radiant-kaleidos-backup-power": "ports-sites",
+    "arctic-microreactor-canada": "ports-sites",
     "uiuc-kronos-mmr": "campuses", "penn-state-evinci": "campuses", "tamu-rellis-aalo": "campuses",
 }
 # Wording fixes made after the verifier pass (the page says 85 kWt or 20 kWe, a block of 1-20 MW is 12 to 1,000 times larger).
@@ -55,12 +55,13 @@ def main() -> None:
         raise SystemExit(f"no group for: {missing}")
     order = [g["id"] for g in GROUPS]
     rows.sort(key=lambda r: (order.index(r["group"]), r["id"]))
-    fetched = sum(1 for r in rows for s in r["sources"] if s.get("status") == "fetched")
-    total = sum(len(r["sources"]) for r in rows)
+    indexed = {s["url"] for s in json.loads((ROOT / "data" / "research" / "source_index.json").read_text())["sources"]}
+    urls = {s["url"] for r in rows for s in r["sources"]}
+    fetched, total = len(urls & indexed), len(urls)
     out = {"_meta": {
         "captured": "2026-10-08",
-        "what_this_is": f"{len(rows)} named projects and buyers outside the eight sector tabs: lunar and in-space power, launch sites, district heat and process heat, ports, broadcast and backup power, and university research reactors. Each says how big the load is and whether a 1-20 MW block fits.",
-        "method": f"A search-seeded draft (data/research/2026-10-08-refresh/drafts/space-apps.json) rewritten against fetched pages by a second agent, then quote-checked offline. {fetched} of {total} sources were fetched and read. The group is curated in that folder's integrate_segments.py.",
+        "what_this_is": f"{len(rows)} named projects and buyers outside the eight sector tabs: lunar and in-space power, a launch site, district and process heat, a port, broadcast data centres, an Arctic outpost and university research reactors.",
+        "method": f"A search-seeded draft (data/research/2026-10-08-refresh/drafts/space-apps.json) rewritten against fetched pages by a second agent, then quote-checked offline. {fetched} of {total} distinct sources are cached and quote-checked offline; the rest sit on hosts that block scripts. The group is curated in that folder's integrate_segments.py.",
         "groups": GROUPS},
         "segments": rows}
     OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")

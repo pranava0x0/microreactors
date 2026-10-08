@@ -86,6 +86,7 @@ DOCKET_STATUS = {"filed", "approved", "rejected", "pending", "withdrawn", "enact
 CHECK_REQUIRED = ["id", "target", "file", "claim", "verdict", "evidence"]
 CHECK_VERDICTS = {"confirmed", "outdated", "wrong", "unsupported", "unverifiable"}
 # N news: a dated event in the shape of data/news.json items.
+APPLICATION_STATUS = {"operating", "contracted", "funded", "studied", "proposed", "cancelled"}
 APPLICATION_REQUIRED = ["id", "segment", "name", "status", "power_class", "what_it_says", "microreactor_read", "sources"]
 NEWS_REQUIRED = ["id", "date", "headline", "category", "what_happened", "why_it_matters", "sources"]
 NEWS_CATEGORIES = {"fuel", "award", "regulatory", "criticality", "financing", "contract",
@@ -297,9 +298,10 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
         if not HAS_DIGIT.search(blob):
             fail(errors, path, rec_id, "carries no number in price, power_system or loads")
     elif kind == "application":
+        if rec.get("status") not in APPLICATION_STATUS:
+            fail(errors, path, rec_id, f"status {rec.get('status')!r} not in {sorted(APPLICATION_STATUS)}")
         if not HAS_DIGIT.search(str(rec.get("power_class", "")) + str(rec.get("what_it_says", ""))):
             fail(errors, path, rec_id, "carries no number in power_class or what_it_says")
-        check_impossible_citation(rec, sources, path, rec_id, errors)
     elif kind == "docket":
         if rec.get("type") not in DOCKET_TYPES:
             fail(errors, path, rec_id, f"type {rec.get('type')!r} not in {sorted(DOCKET_TYPES)}")

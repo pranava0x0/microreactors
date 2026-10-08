@@ -148,7 +148,13 @@
         s.onload = function () { resolve(D[name]); };
         // Fail loud: a swallowed error here leaves a panel permanently empty
         // with no explanation, which reads as a rendering bug for weeks.
-        s.onerror = function () { reject(new Error("could not load data-" + name + ".js")); };
+        s.onerror = function () {
+          // Evict the rejected promise and the dead tag so the next call retries
+          // instead of replaying this failure for the life of the page.
+          delete LAZY[name];
+          s.remove();
+          reject(new Error("could not load data-" + name + ".js"));
+        };
         document.head.appendChild(s);
       });
     }
@@ -166,20 +172,26 @@
     });
   }
 
-  /* Fetch a tab's lazy data the moment the pointer or a finger lands on the tab,
-     which is ~100-300 ms before the click resolves. Only the payload that tab
-     opens on is prefetched, so a user who never visits it downloads nothing. A
-     failure here is ignored on purpose: the real open calls loadLazy again and
-     reports the error where the reader can see it. */
+  /* Fetch a tab's lazy data once the pointer has rested on the tab for 150 ms or
+     the tab takes keyboard focus, which is ahead of the click. The delay filters
+     out a mouse sweeping across the strip; touch is left out because a swipe that
+     starts on a tab would otherwise download a payload nobody asked for. Only the
+     payload that tab opens on is prefetched. A failure here is ignored on
+     purpose: loadLazy evicts it, and the real open retries and reports the error
+     where the reader can see it. */
   var INTENT = { policy: ["instruments"], news: ["news"], sources: ["sources_index"] };
+  var intentTimer = 0;
   function prefetchFor(e) {
     var t = e.target.closest && e.target.closest("[data-panel]");
     if (!t) { return; }
-    (INTENT[t.dataset.panel] || []).forEach(function (n) { loadLazy(n).catch(function () {}); });
+    clearTimeout(intentTimer);
+    intentTimer = setTimeout(function () {
+      (INTENT[t.dataset.panel] || []).forEach(function (n) { loadLazy(n).catch(function () {}); });
+    }, e.type === "focusin" ? 0 : 150);
   }
-  ["pointerover", "touchstart", "focusin"].forEach(function (ev) {
-    tablist.addEventListener(ev, prefetchFor, { passive: true });
-  });
+  tablist.addEventListener("pointerover", prefetchFor, { passive: true });
+  tablist.addEventListener("focusin", prefetchFor, { passive: true });
+  tablist.addEventListener("pointerout", function () { clearTimeout(intentTimer); }, { passive: true });
 
   function activate(route, opts) {
     opts = opts || {};

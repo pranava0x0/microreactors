@@ -32,6 +32,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # strategy is read by two sub-tabs on two panels (Costs "What wins", Deals
 # "Prospects"); neither needs it for a first screen, and loadLazy hands both the
 # same promise, so it ships once and arrives when either opens.
+# segments (2026-10-08) is read only by Applications > Space and more;
 # regions (2026-09-26) is read only by Applications > Regions; mechanisms only by
 # Rules > Deal design and deployment_sites only by Deals > Sites (their counts
 # ride in `summary`).
