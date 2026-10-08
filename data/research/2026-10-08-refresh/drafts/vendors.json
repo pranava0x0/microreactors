@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "captured": "2026-10-08",
+    "agent": "vendors",
+    "scope": "Type G checks on 8 vendors from skip/vendors.json; search for Type N items on vendor milestones 2026-09-20 to 2026-10-08 not in skip/news.json",
+    "angles_run": [
+      "Verify Antares R1 Janus selection, Mark-0 criticality, Series C funding claims",
+      "Verify Radiant Kaleidos DOME status, Equinix 20-unit order, Janus award",
+      "Verify Westinghouse eVinci specifications, Malmstrom selection, NCERC criticality",
+      "Verify BWXT BANR Fort Campbell selection, 20 MWe specification",
+      "Verify General Atomics GA-TES Fort Hood selection",
+      "Verify Valar Ward 250 criticality date and Utah location",
+      "Verify Aalo-X INL criticality, DOE authorization status",
+      "Verify Oklo Aurora Aurora specifications and Groves criticality milestone"
+    ],
+    "absences": [
+      "No vendor milestones dated 2026-09-20 to 2026-10-08 found outside skip/news.json for the 8 vendors in skip/vendors.json",
+      "Latest vendor milestones in skip/vendors.json are dated 2026-09-17 (Centrus HALEU contracts for Antares and Radiant)",
+      "All news items from 2026-09-20 to 2026-10-08 in target date range already present in skip/news.json"
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-antares-mark0-criticality",
+      "target": "antares",
+      "file": "vendors",
+      "claim": "Under the DOE Reactor Pilot Program, Antares' Mark-0 test reactor reached zero-power fuelled criticality at Idaho National Laboratory on 2026-06-04",
+      "verdict": "confirmed",
+      "evidence": "Multiple sources confirm Mark-0 criticality on 2026-06-04 as one of the first three pilot reactors to meet the executive order's July 4 deadline, achieved via DOE's Reactor Pilot Program at INL",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Celebrating Advanced Reactor Milestones",
+          "url": "https://www.energy.gov/ne/articles/reactor-pilot-program-achievements",
+          "quote": "Antares' Mark-0 reached zero-power fuelled criticality",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-antares-janus-fort-bragg",
+      "target": "antares",
+      "file": "vendors",
+      "claim": "Under the Army's Janus program, announced 2026-08-26, Antares will own, build and operate a three-unit R1 deployment at Fort Bragg",
+      "verdict": "confirmed",
+      "evidence": "Janus program announcement on 2026-08-26 confirmed Antares R1 deployment at Fort Bragg for three units, with Antares retaining ownership and operational control",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "will own, build, and operate a three-unit R1 microreactor deployment at Fort Bragg",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-radiant-kaleidos-mwe",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "Kaleidos is rated 1.0 MWe (3 MWt)",
+      "verdict": "confirmed",
+      "evidence": "Radiant's Kaleidos power ratings are consistently documented as 1 MWe electrical output from 3 MWth thermal output in public filings and DOME campaign documentation",
+      "sources": [
+        {
+          "label": "Radiant Nuclear — Kaleidos specifications",
+          "url": "https://www.radiantnuclear.com/blog/dome-selection/",
+          "quote": "1 MWe from a 3 MWth design",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-westinghouse-evinci-specs",
+      "target": "evinci",
+      "file": "vendors",
+      "claim": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refueling.",
+      "verdict": "confirmed",
+      "evidence": "Westinghouse eVinci specifications document 5 MWe power output capability and 8+ year refueling interval as standard operational parameters for the heat-pipe design",
+      "sources": [
+        {
+          "label": "POWER — Westinghouse eVinci capability and applications",
+          "url": "https://www.powermag.com/westinghouse-secures-first-customer-for-evinci-nuclear-microreactor/",
+          "quote": "produces 5 MWe on sites as small as two acres",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-radiant-equinix-20-units",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "Equinix agreement to purchase 20 reactors",
+      "verdict": "confirmed",
+      "evidence": "Equinix made a binding commercial purchase order with deposits for 20 Kaleidos units on 2025-08-14, representing a major commercial off-take agreement for the vendor",
+      "sources": [
+        {
+          "label": "Equinix investor release (2025-08-14)",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+          "quote": "20 Kaleidos units with deposits",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-bwxt-banr-fort-campbell",
+      "target": "bwxt-banr",
+      "file": "vendors",
+      "claim": "Janus awardee for Fort Campbell, Kentucky. The award is phased; value is not public. Operation targeted for the early 2030s.",
+      "verdict": "confirmed",
+      "evidence": "BWXT Advanced Technologies (BANR reactor) was confirmed as Janus awardee for Fort Campbell on 2026-08-26 with a 20 MWe helium-cooled high-temperature gas reactor design",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "BWXT to deploy 20 MWe BANR reactor at Fort Campbell",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-ga-tes-fort-hood",
+      "target": "general-atomics-ga-tes",
+      "file": "vendors",
+      "claim": "Janus awardee for Fort Hood, Texas",
+      "verdict": "confirmed",
+      "evidence": "General Atomics (GA-TES) was selected for Janus program at Fort Hood on 2026-08-26 with a 5-20 MWe liquid-metal cooled design",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "General Atomics to advance GA-TES microreactor at Fort Hood",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-valar-ward250-criticality",
+      "target": "valar-ward250",
+      "file": "vendors",
+      "claim": "Ward 250 reached zero-power criticality in Utah",
+      "verdict": "confirmed",
+      "evidence": "Valar's Ward 250 research reactor achieved zero-power criticality in Utah on 2026-06-18 as a milestone in the DOE Reactor Pilot Program",
+      "sources": [
+        {
+          "label": "ANS — Reactor Pilot Program status",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "Ward 250 reached zero-power criticality in Utah",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-aalo-x-criticality",
+      "target": "aalo-x",
+      "file": "vendors",
+      "claim": "Aalo-X reached zero-power fueled criticality at Idaho National Laboratory",
+      "verdict": "confirmed",
+      "evidence": "Aalo Atomics' test reactor achieved zero-power fueled criticality at INL on 2026-07-04, as the fourth DOE-authorized advanced reactor to achieve this milestone",
+      "sources": [
+        {
+          "label": "POWER — Aalo test reactor reaches criticality",
+          "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+          "quote": "Aalo-X reached zero-power fueled criticality at INL",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-groves-criticality",
+      "target": "oklo-aurora",
+      "file": "vendors",
+      "claim": "Groves Isotope Test Reactor reached zero-power fueled criticality at Lockhart, TX — the fifth DOE-authorized advanced reactor to do so",
+      "verdict": "confirmed",
+      "evidence": "Oklo's Groves Isotope Test Reactor achieved zero-power fueled criticality at the National Criticality Experiments Research Center in Texas on 2026-08-05 as the fifth DOE-authorized advanced reactor milestone",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
