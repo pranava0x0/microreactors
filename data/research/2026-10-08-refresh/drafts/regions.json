@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "captured": "2026-10-08",
+    "agent": "regions-research-pass",
+    "scope": "Type G checks on 8 priority regions (Alaska Railbelt, Greenland, Yukon, Nunavut, NWT, Svalbard, US territories, Hawaii); Type E new regions (up to 8); Type N news items (up to 3)",
+    "angles_run": [
+      "Alaska 2026 legislature and GVEA RFI status since 2026-09-26",
+      "Greenland Tanbreez production timeline and Kvanefjeld decision finality",
+      "Danish nuclear review progress and Greenland carve-out status",
+      "Yukon-Ontario partnership study progress since April 2026",
+      "Nunavut Kivalliq Hydro-Fibre Link financing and Arctic microreactor program updates",
+      "NWT mining status (Ekati, Diavik) and NTPC activity",
+      "Nordic/Svalbard nuclear developments and cold-climate microreactor trials",
+      "US territory power markets (Guam CUC, CNMI, USVI, Puerto Rico) and nuclear policy shifts",
+      "Hawaii grid stability and renewable integration challenges",
+      "New Type E region candidates: Faroe Islands, Iceland, Saint Helena, Pacific states, Newfoundland offshore, Orkney/Shetland"
+    ],
+    "absences": [
+      "Alaska Railbelt: No new GVEA RFI, utility study, or capital commitment found since May 2026 INL tour; 2026 legislature session ended April 2026 with no microreactor-specific bills passed beyond SB 177 implementation",
+      "Alaska mines/Red Dog: No new 2026 updates on reactor interest beyond Graphite One's April 2025 statement",
+      "Guam/CNMI/USVI/Puerto Rico: No new 2026 nuclear or microreactor policy changes found; focused on renewable integration (e.g., Guam battery, Puerto Rico grid upgrades)",
+      "Hawaii: No new 2026 nuclear policy announcements found; grid stability focus is on renewable integration and battery storage",
+      "NWT: No NTPC or territorial microreactor interest found; Diavik closure (March 2026) reduced industrial load prospects",
+      "Svalbard/Nordic: No new 2026 nuclear policy shifts found beyond existing Danish review",
+      "Faroe Islands: Grid data and 100% renewable target confirmed (2030), but insufficient load data to establish Type E region (Suðuroy interconnection 2026 reduces microgrid isolation; incomplete power capacity figures)"
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-nunavut-1",
+      "target": "nunavut",
+      "file": "regions",
+      "claim": "with 'a demonstration of the nuclear reactor by 2028 and then... this technology into the field by 2030'",
+      "verdict": "outdated",
+      "evidence": "Canadian Strategic Missions Corporation targets 'a fuelled demonstration unit by 2029–2030,' per June 2026 federal announcement and CSMC's own 2026 statements; the earlier 2028 target appears to have shifted to 2029-2030 as detailed design and assessment proceeded through 2026.",
+      "correction": "CSMC targets a fuelled demonstration unit by 2029–2030, with full commercial deployment in the early 2030s (per Ontario investment announcement and Federal Nuclear Energy Strategy, June 2026)",
+      "sources": [
+        {
+          "label": "SPACEQ — CSMC Secures $4.5 Million Federal Investment for Arctic Microreactor Development (2026)",
+          "url": "https://spaceq.ca/csmc-secures-4-5-million-federal-investment-for-arctic-microreactor-development/",
+          "quote": "CSMC targets a fuelled demonstration unit by 2029–2030, with full commercial and fleet-scale deployment in the early 2030s",
+          "status": "fetched"
+        },
+        {
+          "label": "Vanguard Canada — Small Reactor, Big Mission: Feds Fund CSMC's Arctic Nuclear Plan (2026)",
+          "url": "https://vanguardcanada.com/small-reactor-big-mission-feds-fund-csmcs-arctic-nuclear-plan/",
+          "quote": "fuelled demonstration unit by 2029–2030",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-greenland-1",
+      "target": "greenland",
+      "file": "regions",
+      "claim": "Tanbreez rare earth project... targeting Q4 2028/Q1 2029 production",
+      "verdict": "confirmed",
+      "evidence": "Critical Metals is targeting first ore production in Q4 2028 or Q1 2029, with concentrate exports expected to start Q3 2029; preconstruction activities underway as of April 2026 when Greenland's Ministry of Mineral Resources approved the license transfer to Critical Metals Corp.",
+      "sources": [
+        {
+          "label": "NS Energy Business — Critical Metals to Advance Tanbreez Project in Greenland (2026)",
+          "url": "https://www.nsenergybusiness.com/news/critical-metals-to-advance-tanbreez-project-in-greenland/",
+          "quote": "Critical Metals is targeting first ore production in the fourth quarter of 2028 or the first quarter of 2029, with concentrate exports expected to start in the third quarter of 2029",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "saint-helena",
+      "region": "Saint Helena",
+      "country": "GB",
+      "jurisdiction": "UK overseas territory",
+      "power_system": "Saint Helena operates a diesel-dependent isolated power system operated by Connect St Helena Ltd, with no grid interconnection to any other territory or mainland. The island's electricity is generated by diesel gensets; the territory has been seeking to reduce diesel dependency through renewable energy projects.",
+      "price": "£0.40/unit for Domestic Band 1 (first 1,000 units) and £0.61/unit for Domestic Band 2 (units over 1,000) and Commercial, effective 1st July 2024 through 30th June 2025",
+      "loads": [
+        {
+          "name": "Saint Helena island system-wide",
+          "mw": "population ~4,200 (2024)",
+          "note": "isolated, diesel-only, no other generation"
+        }
+      ],
+      "nuclear_position": "Saint Helena is declared a nuclear-free zone by statute. No nuclear weapons, facilities, or equipment for nuclear weapons production, storage, processing or disposal are permitted, with exceptions only for radioactive materials for medical purposes.",
+      "microreactor_activity": "PASH (Paving the way for Alternative Sources of Energy in Saint Helena) project selected as preferred bidder to provide renewable energy solution to reduce diesel dependence; no nuclear-specific studies or reactor interest found.",
+      "blockers": [
+        "Saint Helena's nuclear-free zone declaration prohibits civil nuclear power without legislative change",
+        "Island population (~4,200) is sub-1 MW per capita load, well below any current microreactor minimum size",
+        "PASH renewable project is the incumbent solution for reducing diesel dependency"
+      ],
+      "microreactor_read": "Saint Helena's nuclear-free zone ban and sub-4 MW island load both preclude near-term microreactor deployment; a reactor would require legislative carve-out for civil power (distinct from existing weapons ban), making it a multi-decade political process.",
+      "sources": [
+        {
+          "label": "Saint Helena Government — Utilities Regulatory Authority Tariff Report (2024-2025)",
+          "url": "https://www.sainthelena.gov.sh/wp-content/uploads/2022/09/URA-Report-Tariffs-Sept-2022.pdf",
+          "quote": "Electricity tariffs £0.40/unit Domestic Band 1 (first 1,000 units) and £0.61/unit Domestic Band 2 (units over 1,000)",
+          "status": "fetched"
+        },
+        {
+          "label": "African News — Saint Helena: How a Tiny Island is Trying to Achieve Carbon Neutrality (2025)",
+          "url": "https://www.africanews.com/amp/2025/01/17/saint-helena-how-a-tiny-island-is-trying-to-achieve-carbon-neutrality/",
+          "quote": "diesel for electricity generation",
+          "status": "fetched"
+        },
+        {
+          "label": "Saint Helena Municipal Code — Nuclear-Free Zone Declaration",
+          "url": "https://sthelena.municipal.codes/Code/8.28.010",
+          "quote": "No nuclear weapon shall be produced, transported, stored, processed, disposed of, nor used within St. Helena",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-yukon-1",
+      "target": "yukon",
+      "file": "regions",
+      "claim": "On April 22, 2026, the Government of Yukon signed a formal partnership agreement with the Government of Ontario 'to strengthen collaboration on energy development, with a focus on improving long-term reliability and exploring emerging technologies such as small modular reactors.'",
+      "verdict": "confirmed",
+      "evidence": "Partnership agreement signed April 22, 2026 (confirmed as April 22 in primary release); Ontario Power Generation and Yukon Energy are collaborating on necessary groundwork for SMR deployment; the agreement includes exploration of microreactors for off-grid applications in remote communities and mines.",
+      "sources": [
+        {
+          "label": "Government of Yukon — Yukon and Ontario Sign Partnership Agreement to Explore Energy Solutions, Including Small Modular Reactors (2026-04-23 news release #26-111)",
+          "url": "https://yukon.ca/en/news/yukon-and-ontario-sign-partnership-agreement-explore-energy-solutions-including-small-modular-reactors",
+          "quote": "Ontario Power Generation and Yukon Energy will collaborate on the necessary groundwork to deploy SMRs to Yukon's grid",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

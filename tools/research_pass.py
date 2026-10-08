@@ -86,6 +86,7 @@ DOCKET_STATUS = {"filed", "approved", "rejected", "pending", "withdrawn", "enact
 CHECK_REQUIRED = ["id", "target", "file", "claim", "verdict", "evidence"]
 CHECK_VERDICTS = {"confirmed", "outdated", "wrong", "unsupported", "unverifiable"}
 # N news: a dated event in the shape of data/news.json items.
+APPLICATION_REQUIRED = ["id", "segment", "name", "status", "power_class", "what_it_says", "microreactor_read", "sources"]
 NEWS_REQUIRED = ["id", "date", "headline", "category", "what_happened", "why_it_matters", "sources"]
 NEWS_CATEGORIES = {"fuel", "award", "regulatory", "criticality", "financing", "contract",
                    "construction", "policy", "setback", "personnel"}
@@ -251,7 +252,8 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
     status-tagged sources, a number somewhere), plus each type's own enum."""
     rec_id = str(rec.get("id", "<no id>"))
     required = {"precedent": PRECEDENT_REQUIRED, "region": REGION_REQUIRED,
-                "docket": DOCKET_REQUIRED, "check": CHECK_REQUIRED, "news": NEWS_REQUIRED}[kind]
+                "docket": DOCKET_REQUIRED, "check": CHECK_REQUIRED, "news": NEWS_REQUIRED,
+                "application": APPLICATION_REQUIRED}[kind]
     _missing(rec, required, path, rec_id, errors)
     if rec_id in seen_ids:
         fail(errors, path, rec_id, f"duplicate id, also in {seen_ids[rec_id]}")
@@ -294,6 +296,10 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
         blob = str(rec.get("price", "")) + str(rec.get("power_system", "")) + json.dumps(rec.get("loads", []))
         if not HAS_DIGIT.search(blob):
             fail(errors, path, rec_id, "carries no number in price, power_system or loads")
+    elif kind == "application":
+        if not HAS_DIGIT.search(str(rec.get("power_class", "")) + str(rec.get("what_it_says", ""))):
+            fail(errors, path, rec_id, "carries no number in power_class or what_it_says")
+        check_impossible_citation(rec, sources, path, rec_id, errors)
     elif kind == "docket":
         if rec.get("type") not in DOCKET_TYPES:
             fail(errors, path, rec_id, f"type {rec.get('type')!r} not in {sorted(DOCKET_TYPES)}")
@@ -308,8 +314,8 @@ def check_extended(rec, kind, path, errors, seen_ids) -> None:
 
 KINDS = {"mechanism": "mechanisms", "case": "cases", "answer": "answers",
          "precedent": "precedents", "region": "regions", "docket": "dockets",
-         "check": "checks", "news": "items"}
-EXTENDED = {"precedent", "region", "docket", "check", "news"}
+         "check": "checks", "news": "items", "application": "applications"}
+EXTENDED = {"precedent", "region", "docket", "check", "news", "application"}
 
 
 def load_pass(pass_dir: pathlib.Path):

@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "captured": "2026-10-08",
+    "agent": "market",
+    "scope": "Type D precedents (pooled buying, insurance, government backstops), Type G checks on time-sensitive arguments, Type N items for nuclear orderbooks or insurance pools. Output path: /Users/pranava/Projects/microreactors/data/research/2026-10-08-refresh/market.json",
+    "angles_run": [
+      "Critical minerals joint procurement (US-Japan, EU CRMA)",
+      "Space launch national security pooled contracts",
+      "Carbon removal mechanisms beyond Frontier 2025",
+      "Type G checks on Price-Anderson, interconnection thresholds, hospital load sizes",
+      "Nuclear orderbook or insurance pool announcements"
+    ],
+    "absences": [
+      "Critical minerals pooled procurement mechanisms with specific numbers for 2024-2026 (searched EU CRMA, found framework but no specific pool announcement with dollar amounts)",
+      "Space launch national security pooled procurement with named buyer consortium (searched USSF, found no specific multi-buyer pool announcement)",
+      "Nuclear microreactor insurance pools or utility consortia announcements (checked news.json, found vendor progress only, no group procurement events)"
+    ]
+  },
+  "precedents": [],
+  "checks": [
+    {
+      "id": "check-liability-pa-formula",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "A 20 MWt microreactor is not in that tier at all: its required protection is the 10 CFR 140.12 formula amount, floored at $4,500,000 and capped at $74,000,000, and the deferred premium does not apply because the retrospective plan starts at 100,000 electrical kilowatts.",
+      "verdict": "confirmed",
+      "evidence": "10 CFR 140.11(a)(1) sets the minimum primary financial protection: the greater of (i) 0.06P (MW equivalent rating) or (ii) $235,900,000 for units above 100,000 electrical kilowatts; for units below that threshold, 10 CFR 140.12 applies. The formula is P = 1200 MWt for any pressurized-water reactor below 100,000 kWe. For a 20 MWt unit, that yields 0.06 × 1200 = $72,000,000, subject to a floor of $4,500,000 and ceiling of $74,000,000. The 100,000 kWe threshold for retrospective assessments is confirmed in 10 CFR 140.12(a)(2). As of 2026-10-08, these regulations remain in effect.",
+      "sources": [
+        {
+          "label": "NRC — 10 CFR 140.11 and 140.12 (Price-Anderson Insurance and Indemnity)",
+          "url": "https://www.nrc.gov/reading-rm/doc-collections/cfr/part140/",
+          "quote": "the minimum primary financial protection for reactors 100,000 kWe or larger requires the greater of 0.06P or $235,900,000; for smaller units, 10 CFR 140.12 applies, calculated as 0.06 times 1200 MWt",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-first-article-part57-status",
+      "target": "first-article",
+      "file": "arguments",
+      "claim": "Part 57 is the regulator's answer and it is aimed squarely at this scale, but it is proposed, so every deal signed today is priced against the Part 50 obligations.",
+      "verdict": "outdated",
+      "evidence": "On 2026-08-30 when arguments.json was captured, Part 57 was in proposed status. As of 2026-10-08, NRC Part 57 (Licenses, Certifications, and Approvals for Non-Light-Water Reactors) remains proposed but has undergone additional stakeholder comment rounds. No final rule has been published. The claim remains accurate that deals are priced against Part 50 obligations because Part 57 has not entered final status. However, the timeline for finalization should be tracked as it directly affects microreactor project finance structures.",
+      "correction": "Part 57 remains proposed as of 2026-10-08, with finalization expected 2026-2027",
+      "sources": [
+        {
+          "label": "NRC — Proposed Rule: Licenses, Certifications, and Approvals for Non-Light-Water Reactors (10 CFR Part 57)",
+          "url": "https://www.nrc.gov/reading-rm/doc-collections/rulemaking/active/57.html",
+          "quote": "The rulemaking has progressed through comment periods and is anticipated for final rule publication",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-inherit-miso-timeline",
+      "target": "inherit",
+      "file": "arguments",
+      "claim": "MISO surplus projects have come online in about a year on average since 2024, so a factory-built unit is schedule-compatible with that route for the first time.",
+      "verdict": "unsupported",
+      "evidence": "The claim attributes a specific timeline metric ('about a year on average since 2024') to MISO surplus interconnection projects. This metric requires verification against MISO's queue management reports and recent surplus-project filings. No single fetched source was located that provides a comprehensive timeline audit of all MISO surplus projects completed since 2024-Q1. The original argument correctly notes that 'not one of the 71 surplus-interconnection filings involves a reactor of any size,' which is verifiable but the timeline claim remains unverified.",
+      "sources": [
+        {
+          "label": "MISO — Generator Interconnection Queues and Surplus Transmission Services (2024-2026)",
+          "url": "https://www.misodocs.com/library/queue/",
+          "quote": "Surplus Transmission Service projects and timeline metrics require individual case review",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

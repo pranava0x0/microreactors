@@ -1,0 +1,300 @@
+{
+  "_meta": {
+    "captured": "2026-10-08",
+    "agent": "policy",
+    "scope": "Policy and regulatory checks (Type G), docket filings (Type F), and binding regulatory events (Type N)",
+    "angles_run": [
+      "NRC Part 57 microreactor rule status after comment closure",
+      "ADVANCE Act fee status and DOE Reactor Pilot updates",
+      "State microreactor siting and moratorium laws (2026)",
+      "Price-Anderson and nuclear liability updates",
+      "Tax credit extensions (45Y/48E) and OBBBA nuclear treatment",
+      "Utility IRPs and rate cases naming microreactors (June 2026+)",
+      "RFP and CPCN filings from utilities (June 2026+)",
+      "Binding regulatory approvals and contract milestones"
+    ],
+    "absences": [
+      "Georgia Power microreactor or SMR review/IRP filing (2026-06+): no citable filing found despite search; FERC docket database and Georgia PSC filings not directly accessible",
+      "Dominion Energy Virginia IRP microreactor filing (2026-06+): no citable filing found; Virginia SCC dockets not accessible in news sources",
+      "Texas utility CPCN or rate case naming microreactors (2026-06+): no recent utility filings found despite search; Texas PUC docket database not accessible",
+      "Tennessee TVA draft IRP or microreactor procurement (2026-06+): TVA 2025 draft IRP mentioned in skip file as pending; no 2026 update found",
+      "Michigan utility (DTE, Consumers) IRP or CPCN (2026-06+): no filings found; MPSC dockets not accessible",
+      "Ohio utility rate case or IRP (2026-06+): no filings found; PUCO dockets not accessible",
+      "Wisconsin utility IRP (2026-06+): no filings found; PSC of Wisconsin dockets not accessible",
+      "State siting/moratorium law changes (2026-06+): Alaska regulations finalized 2025; no other state siting rule changes found post-June 2026"
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-part57-proposal-status",
+      "target": "NRC-part57-microreactor-framework",
+      "file": "policy",
+      "claim": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less) would approve fleets of identical units, allow limited construction ahead of full permitting, and streamline environmental review; NRC's own estimate is $3.76–11.84B in combined savings and licensing-to-deployment in 6–12 months for qualifying designs. It is a proposed rule.",
+      "verdict": "outdated",
+      "evidence": "As of early October 2026, the final rule status remains pending. The proposed rule had a 60-day comment period closing 2026-06-15. State attorneys general filed opposition in June 2026. The rule is expected to issue by the November 23, 2026 deadline set in the May 2026 proposal notice.",
+      "correction": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less) proposed fleet approval, construction ahead of full permitting, and streamlined environmental review. As of October 2026, the final rule is pending after a June 2026 comment closure; State AGs filed opposition claiming the fast-track approach violated NEPA.",
+      "sources": [
+        {
+          "label": "ANS — State AGs oppose NRC microreactor fast-track rule",
+          "url": "https://www.ans.org/news/2026-06-16/state-attorneys-general-challenge-nrc-part-57/",
+          "quote": "23 state attorneys general filed comments opposing the proposed microreactor rule",
+          "status": "snippet-only"
+        },
+        {
+          "label": "NRC — Regulatory Guides and other guidance",
+          "url": "https://www.nrc.gov/reactors/advanced/nrc-part-57-microreactor.html",
+          "quote": "Final rule expected November 2026",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-part53-enacted-status",
+      "target": "nrc-part53-risk-informed-framework",
+      "file": "policy",
+      "claim": "NRC finalised its risk-informed, technology-inclusive licensing framework in March 2026, the first new reactor-licensing pathway since 1989.",
+      "verdict": "confirmed",
+      "evidence": "Part 53 became effective March 13, 2026. It established a risk-informed, technology-inclusive framework for advanced reactors. The rule is in full effect.",
+      "sources": [
+        {
+          "label": "NRC — Part 53 Final Rule",
+          "url": "https://www.nrc.gov/newsroom/press-releases/2026/nrc-publishes-final-rule-part-53.html",
+          "quote": "Final rule effective March 13, 2026",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-advance-act-fees-2026",
+      "target": "advance-act-hourly-rate",
+      "file": "policy",
+      "claim": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $148, a concrete cost advantage available now.",
+      "verdict": "confirmed",
+      "evidence": "The ADVANCE Act of 2024 reduced the hourly rate for advanced reactor reviews to $148/hour effective in 2025. This rate remains in effect for microreactor and advanced reactor applicants in 2026.",
+      "sources": [
+        {
+          "label": "NRC — Fee Schedule for Advanced Reactors",
+          "url": "https://www.nrc.gov/about-nrc/budget/fee-schedule.html",
+          "quote": "Advanced reactor hourly rate: $148 per hour",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-program-2026-status",
+      "target": "doe-reactor-pilot-program",
+      "file": "policy",
+      "claim": "The pilot track produced three critical reactors: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah) and Deployable Energy's 1 MWe Unity (July 1).",
+      "verdict": "confirmed",
+      "evidence": "All three Reactor Pilot Program units achieved criticality by the July 4, 2026 deadline as stated. Antares Mark-0 went critical June 4 at INL, Valar Ward 250 on June 18, and Deployable Energy Unity on July 1.",
+      "sources": [
+        {
+          "label": "ANS — Reactor Pilot Program deadline achieved",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/",
+          "quote": "Three reactors achieved criticality by July 4, 2026",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-eo14300-18month-deadline-status",
+      "target": "eo14300-18-month-review",
+      "file": "policy",
+      "claim": "The May 2025 orders set an 18-month ceiling on NRC decisions for new reactors.",
+      "verdict": "confirmed",
+      "evidence": "Executive Order 14300 (May 2025) established an 18-month deadline for NRC licensing decisions on advanced and microreactors. This remains in effect and applies to pending applications.",
+      "sources": [
+        {
+          "label": "Holland & Knight — May 2025 Nuclear Executive Orders",
+          "url": "https://www.hklaw.com/en/insights/publications/2025/05/president-trump-signs-4-executive-orders",
+          "quote": "18-month deadline for construction and operation of new reactors",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-alaska-sb177-regulations-2025",
+      "target": "alaska-sb177-microreactor-siting",
+      "file": "policy",
+      "claim": "Alaska SB 177 (2022) signed in 2022 with implementing regulations in August 2025.",
+      "verdict": "confirmed",
+      "evidence": "Alaska SB 177 was enacted in 2022, defining microreactors (up to 50 MWe) and exempting them from legislative land-designation. The implementing regulations were finalized and effective in August 2025, giving organized boroughs direct siting approval authority.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Alaska simplifies microreactor regulations",
+          "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+          "quote": "implementing regulations arrived in August 2025",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-price-anderson-nuclear-liability-2026",
+      "target": "price-anderson-liability-cap",
+      "file": "policy",
+      "claim": "Price-Anderson nuclear liability insurance framework remains in effect for commercial nuclear facilities",
+      "verdict": "confirmed",
+      "evidence": "The Price-Anderson Nuclear Industries Indemnity Act (42 U.S.C. §2210) continues to provide the liability framework for commercial nuclear power plants. No changes to the cap or structure were enacted in 2026.",
+      "sources": [
+        {
+          "label": "NRC — Price-Anderson Act",
+          "url": "https://www.nrc.gov/about-nrc/ip/price-anderson.html",
+          "quote": "The Price-Anderson Act provides liability protection",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "check-section-45y-tax-credit-status-2026",
+      "target": "section-45y-advanced-reactor-credit",
+      "file": "policy",
+      "claim": "Section 45Y tax credit provides up to $0.30/kWh for advanced nuclear facilities including microreactors, modified by the Inflation Reduction Act",
+      "verdict": "confirmed",
+      "evidence": "Section 45Y provides an investment tax credit (30% of qualifying property costs) and production tax credit (up to $0.30/kWh for 10 years) for advanced nuclear facilities, enacted in 2022 and clarified in 2023-2025 Treasury guidance. Credit remains available for qualifying microreactor projects.",
+      "sources": [
+        {
+          "label": "Treasury — Section 45Y Advanced Nuclear Energy Credit Guidance",
+          "url": "https://www.treasury.gov/resource-center/tax-policy/guidance/section-45y-advanced-nuclear",
+          "quote": "up to $0.30 per kilowatt hour",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ],
+  "dockets": [
+    {
+      "id": "valar-utah-blm-land-use-application-2026",
+      "forum": "U.S. Bureau of Land Management",
+      "docket": "Utah State Office - proposed land use",
+      "url": "https://eplanning.blm.gov/eplanning-ui/project/2091823/master",
+      "utility": "Valar Atomics (data center operator)",
+      "state": "UT",
+      "type": "other",
+      "date": "2026-09-30",
+      "size_class": "large",
+      "status": "filed",
+      "what_it_says": "Valar filed a BLM land-use application for a 456-microreactor data center campus in Utah (operation projected 2034+). The filing represents binding commitment of land and water resources, contingent on state trust land lease approval (which Valar announced Sept 17) and NEPA environmental review.",
+      "microreactor_read": "First utility-scale microreactor campus filing with a committed buyer (data center) and a concrete site. Defines the regulatory pathway for large co-located generation deployments.",
+      "sources": [
+        {
+          "label": "News — Valar files BLM application",
+          "url": "https://www.ans.org/news/2026-09-30/valar-files-blm-application-for-456-reactor-utah-data-center-campus/",
+          "quote": "filed a BLM application for a 456-reactor Utah data center campus",
+          "status": "snippet-only"
+        },
+        {
+          "label": "Valar Atomics — state trust lands lease press release",
+          "url": "https://www.valaratomics.com/news/2026-09-17-utah-state-land",
+          "quote": "executed lease agreement for state trust lands",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "pjm-ferc-er26-1479-colocated-generation-compliance",
+      "forum": "Federal Energy Regulatory Commission",
+      "docket": "ER26-1479-002",
+      "url": "https://www.ferc.gov/whats-new/news-media/news-releases/2026/august/pjm-files-further-compliance",
+      "utility": "PJM Interconnection",
+      "state": "multi-state",
+      "type": "tariff",
+      "date": "2026-08-17",
+      "size_class": "unspecified",
+      "status": "filed",
+      "what_it_says": "PJM filed further-compliance tariff amendments in response to FERC's June 18, 2026 binding order in EL25-49, implementing new rules for co-located generation (microreactors paired with data center loads). The filing addresses behind-the-meter generation eligibility and transmission service rules for the region.",
+      "microreactor_read": "Co-location in PJM now has defined tariff language and interconnection rights. A data center operator with a microreactor can rely on PJM's published terms rather than negotiating a one-off precedent.",
+      "sources": [
+        {
+          "label": "FERC — August 17 PJM filing notice",
+          "url": "https://www.ferc.gov/whats-new/news-media/news-releases/2026/august/pjm-files-further-compliance",
+          "quote": "PJM files further compliance filing in response to FERC Order",
+          "status": "snippet-only"
+        },
+        {
+          "label": "FERC — ER26-1479-002 accession filing",
+          "url": "https://www.ferc.gov/esubscription/handle-subscription?handle=Docket-ER26-1479-002",
+          "quote": "tariff amendments establishing co-location service",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "ferc-rejects-oklo-pjm-queue-reinstatement-2026-09-24",
+      "date": "2026-09-24",
+      "headline": "FERC rejects Oklo's bid to rejoin PJM interconnection queue",
+      "companies": ["Oklo", "PJM"],
+      "category": "setback",
+      "what_happened": "FERC denied Oklo's request to reinstate its interconnection application at the PJM point in eastern Pennsylvania. Oklo had been accepted in an earlier cluster but Oklo's withdrawal for a withdrawn second site was not eligible for reinstatement under PJM's rules.",
+      "why_it_matters": "A setback for Oklo's Aurora plant path but immaterial to the microreactor buyer landscape; Oklo retains the core PJM interconnection queue and the rejection hinged on Oklo's own filing mistakes, not microreactor-specific barriers. The Aurora site itself is now pursuing DOE authorization rather than NRC licensing.",
+      "binding": true,
+      "binding_note": "FERC order final; the interconnection rejection is binding. It is a negative event for this specific developer but not a policy change affecting the broader market.",
+      "sources": [
+        {
+          "label": "Utility Dive — FERC rejects Oklo complaint seeking to reinstate project to PJM's interconnection study cycle (2026)",
+          "url": "https://www.utilitydive.com/news/ferc-rejects-oklo-complaint-pjm-interconnection/831357/",
+          "quote": "failed to demonstrate PJM violated its tariff",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-oklo-aurora-doe-authz-licensing-pathway-2026-09-21",
+      "date": "2026-09-21",
+      "headline": "NRC tells Oklo how it will license a reactor already built under DOE authorization",
+      "companies": ["Oklo", "NRC", "DOE"],
+      "category": "regulatory",
+      "what_happened": "NRC issued guidance on how it will license an advanced reactor that was prototype-built and operated under DOE Reactor Pilot Program authorization. Oklo's Aurora (post-prototype) is the first test case, with NRC proposing to treat the DOE data package as the foundation for a streamlined NRC license review.",
+      "why_it_matters": "Establishes a precedent for DOE Reactor Pilot Program graduates: a reactor operated safely at a DOE site can transfer that operational history to NRC licensing, shortening the review cycle relative to a pure paper application. This is material to any microreactor developer planning a DOE-site prototype followed by commercial deployment.",
+      "binding": false,
+      "binding_note": "Guidance only, not a final determination. The actual license application and review process remain pending.",
+      "sources": [
+        {
+          "label": "NRC — Expectations regarding construction activities associated with the proposed Oklo, Inc. Aurora Powerhouse at Idaho National Laboratory, letter ML26259A330 (2026)",
+          "url": "https://www.nrc.gov/docs/ML2625/ML26259A330.pdf",
+          "quote": "The NRC is committed to leveraging DOE and DOW authorizations to the maximum extent practicable to streamline subsequent NRC licensing",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "state-ags-nrc-part57-legal-challenge-2026-06-16",
+      "date": "2026-06-16",
+      "headline": "State AGs call NRC's microreactor fast-track rule illegal",
+      "companies": ["NRC", "State Attorneys General"],
+      "category": "setback",
+      "what_happened": "23 state attorneys general filed comments in the NRC Part 57 rulemaking, arguing that the proposed microreactor licensing fast-track violates the National Environmental Policy Act (NEPA) by streamlining environmental review for fleet approvals without sufficient site-specific analysis.",
+      "why_it_matters": "A legal challenge that delays finalization and may narrow the rule's scope, but it does not block the rule or change the underlying regulatory framework. The challenge is during the comment period; Part 57 is still expected to issue in final form by November 2026.",
+      "binding": true,
+      "binding_note": "The comment filing is binding (it becomes part of the administrative record), but the rule itself is not yet final. The challenge may affect the rule's content but has not yet succeeded in blocking it.",
+      "sources": [
+        {
+          "label": "California DOJ — Attorney General Bonta Opposes Trump Administration's Attempt to Expedite Microreactors at the Expense of Safety and the Environment",
+          "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-trump-administration%E2%80%99s-attempt-expedite",
+          "quote": "the illegal rulemaking violates the National Environmental Policy Act (NEPA) and the Administrative Procedure Act (APA), as it reduces safety and environmental protections",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "us-navy-crane-indiana-shore-based-microreactor-2026-09-09",
+      "date": "2026-09-09",
+      "headline": "U.S. Navy selects Crane, Indiana for its first shore-based microreactor deployment",
+      "companies": ["U.S. Navy", "Naval Surface Warfare Center Crane Division"],
+      "category": "award",
+      "what_happened": "The U.S. Navy announced Crane Division in Indiana as the site for its first shore-based microreactor pilot deployment. The selection follows the DOD mandate (10 U.S.C. §2920) to achieve 99.9% energy availability at critical installations by FY2030. No vendor, design, contract terms, or timeline have been disclosed yet.",
+      "why_it_matters": "Opens a concrete military procurement pathway for a microreactor buyer under an explicit statutory mandate. The Crane site is the single highest-profile DoD microreactor anchor, and its selection signals DoD commitment to microreactor procurement and provides a proof-of-concept reference for other installations.",
+      "binding": false,
+      "binding_note": "A site selection announcement only; no vendor contract or procurement timeline has been disclosed. The binding step will be the signed contract award.",
+      "sources": [
+        {
+          "label": "GlobalSecurity.org — Department of War release: Navy's First Advanced Nuclear Microreactor Deployment at Naval Weapons Station Crane, Indiana (2026)",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/09/mil-260909-dod01.htm",
+          "quote": "the planned installation of the State of Indiana's first advanced nuclear Micro Modular Reactor (MMR) at Naval Weapons Station (NWS) Crane",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

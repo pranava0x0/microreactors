@@ -19,7 +19,7 @@ DATA, SITE = ROOT / "data", ROOT / "site"
 
 FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanisms", "policy",
          "instruments", "deployment_sites", "voices", "arguments", "news", "gaps", "strategy",
-         "regions", "dockets", "alaska"]
+         "regions", "dockets", "alaska", "segments"]
 
 # Datasets pulled out of the main bundle and fetched when their sub-tab opens.
 # The test is that no panel needs one to draw its first screen. `benchmarks` used
@@ -36,7 +36,7 @@ FILES = ["opportunities", "vendors", "costs", "benchmarks", "sectors", "mechanis
 # Rules > Deal design and deployment_sites only by Deals > Sites (their counts
 # ride in `summary`).
 LAZY = ["instruments", "voices", "news", "benchmarks", "sources_index", "strategy", "regions",
-        "mechanisms", "deployment_sites", "dockets", "alaska"]
+        "mechanisms", "deployment_sites", "dockets", "alaska", "segments"]
 
 # How many of the newest news items ship in the eager bundle for the front page.
 HEADLINES = 8
@@ -57,7 +57,9 @@ CITE_ORDER = ["opportunities", "costs", "benchmarks", "vendors", "sectors", "mec
               # alaska.json (2026-09-29) mostly restates URLs cited above (strategy,
               # deployment_sites, benchmarks); its few new ones (the EIA/ACEP power-mix
               # data and the AS 42.05 statute pages) get their numbers here.
-              "alaska"]
+              "alaska",
+              # segments.json (2026-10-08): space and other new Applications segments.
+              "segments"]
 
 # Dict identity fields, in priority order, used as the "cited by" context label
 # for any source found beneath that dict.
@@ -330,6 +332,7 @@ def main() -> int:
         "precedents": sum(len(g["items"]) for g in bundle["mechanisms"]["precedent_groups"]),
         "sites": len(bundle["deployment_sites"]["sites"]),
         "regions": len(bundle["regions"]["regions"]),
+        "app_segments": len(bundle["segments"]["segments"]),
         "dockets": len(bundle["dockets"]["dockets"]),
         "alaska_opportunities": len(bundle["alaska"]["opportunity_rows"]),
         "dockets_micro": sum(1 for d in bundle["dockets"]["dockets"] if d.get("size_class") == "micro"),
