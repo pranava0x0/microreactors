@@ -183,7 +183,7 @@
   var intentTimer = 0;
   function prefetchFor(e) {
     var t = e.target.closest && e.target.closest("[data-panel]");
-    if (!t) { return; }
+    if (!t || e.pointerType === "touch") { return; }
     clearTimeout(intentTimer);
     intentTimer = setTimeout(function () {
       (INTENT[t.dataset.panel] || []).forEach(function (n) { loadLazy(n).catch(function () {}); });

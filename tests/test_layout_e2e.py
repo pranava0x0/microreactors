@@ -339,6 +339,11 @@ class TabIntentPrefetch(unittest.TestCase):
             page.mouse.move(5, 400)            # leave before the 150 ms rest
             page.wait_for_timeout(400)
             self.assertNotIn("data-instruments.js", seen, "a sweep must not prefetch")
+            # a touch contact (the start of a swipe) must not prefetch either
+            page.evaluate("document.getElementById('tab-policy').dispatchEvent("
+                          "new PointerEvent('pointerover', {pointerType: 'touch', bubbles: true}))")
+            page.wait_for_timeout(400)
+            self.assertNotIn("data-instruments.js", seen, "touch must not prefetch")
             page.hover("#tab-policy")
             page.wait_for_timeout(500)
             self.assertEqual(seen.count("data-instruments.js"), 1)
