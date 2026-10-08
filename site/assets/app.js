@@ -329,7 +329,8 @@
       var it = items[ids.indexOf(id)];
       if (it && it.lazy && !it.lazy.done && !panel.hidden) {
         it.lazy.done = true;
-        lazyPanel(it.lazy.name, it.lazy.el, it.lazy.render);
+        // A failed load clears the guard so revisiting the sub-tab retries.
+        lazyPanel(it.lazy.name, it.lazy.el, it.lazy.render).catch(function () { it.lazy.done = false; });
       }
       return isDefault ? "" : id;
     }
