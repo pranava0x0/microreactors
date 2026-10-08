@@ -1,0 +1,99 @@
+{
+ "_meta": {
+  "captured": "2026-10-08",
+  "agent": "costs",
+  "scope": "Type G checks (8 numbers), Type B cases (6 displaced alternatives), Type N items (3 news)",
+  "angles_run": [
+   "Mining PPAs 2026: 2 searches - no new deals with published $/MWh rates found outside skip list",
+   "Data center power agreements: 2 searches - major deals announced but prices confidential",
+   "Diesel fuel prices October 2026: requires EIA or commodity market data access",
+   "Vendor capex announcements 2026: no BWXT/NuScale/Radiant unit prices found with published values",
+   "HALEU/TRISO pricing: Antares-Centrus contract found but volume and price undisclosed",
+   "Selected 3 recent Type N items from existing data/news.json (Sept-Oct 2026 binding events)"
+  ],
+  "absences": [
+   "Type B cases: No NEW signed power PPAs from 2026 with published $/MWh or $/kWh rates. Existing GPAs in skip/benchmarks_ids.json cover red-dog mine, graphite creek, tau samoa, agnew gold mine, PREPA storage. Major mining/data center deals exist but prices are confidential.",
+   "Type G checks: No published vendor capex ($/kWe) announcements found. Antares-Centrus HALEU contract (2026-09-17) has undisclosed volume and price. Samsung-Kairos $100M is financing, not unit cost. HALEU/TRISO unit prices not publicly available.",
+   "Diesel fuel prices: Current Oct 2026 prices require EIA.gov access or commodity market data",
+   "Insurance premium data: No microreactor insurance cost quotes found in public sources",
+   "Staffing costs: INL and Michigan figures in skip/costs.json are the primary published sources"
+  ]
+ },
+ "checks": [],
+ "cases": [],
+ "items": [
+  {
+   "id": "nano-radnostix-nrc-license-acquisition-2026-10-01",
+   "date": "2026-10-01",
+   "headline": "NANO Nuclear signs deal to buy an NRC-licensed fuel facility license in New Mexico",
+   "companies": [
+    "NANO Nuclear Energy",
+    "Radnostix",
+    "International Isotopes"
+   ],
+   "category": "fuel",
+   "what_happened": "On October 1, 2026 NANO Nuclear and its HALEU Energy Fuel subsidiary signed a definitive asset purchase agreement with Radnostix (formerly International Isotopes) for an NRC license and related technical work for a planned uranium hexafluoride deconversion plant in Lea County, New Mexico. The plant was never built. Terms are 9.5 million dollars in cash and 4.0 million dollars in NANO stock, and closing needs NRC consent to the license transfer and other approvals, expected in 90 to 120 days.",
+   "why_it_matters": "It gives NANO a licensed foothold in the fuel cycle, though the company states no final investment decision has been made and the facility does not exist yet.",
+   "binding": true,
+   "binding_note": "A signed definitive asset purchase agreement; closing is conditional on NRC consent to the license transfer, New Mexico approvals and site arrangements.",
+   "sources": [
+    {
+     "label": "Newsfile (NANO Nuclear Energy press release) \u2014 NANO Nuclear Energy Advances Vertical Integration Strategy by Signing Definitive Agreement to Acquire NRC-Licensed U.S. Nuclear Fuel Processing Assets (2026)",
+     "url": "https://www.newsfilecorp.com/release/316891/NANO-Nuclear-Energy-Advances-Vertical-Integration-Strategy-by-Signing-Definitive-Agreement-to-Acquire-Strategic-NRCLicensed-U.S.-Nuclear-Fuel-Processing-Assets",
+     "quote": "The parties currently expect closing in approximately 90 to 120 days, although the timing will depend on those approvals and conditions.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "valar-project-beehive-blm-application-2026-09-30",
+   "date": "2026-09-30",
+   "headline": "Valar files BLM application for 456-reactor Utah data center campus",
+   "companies": [
+    "Valar Atomics",
+    "Bureau of Land Management"
+   ],
+   "category": "regulatory",
+   "what_happened": "NPR reported on September 30, 2026 that Valar Atomics has applied to the Bureau of Land Management's Utah office for 'Project Beehive', a campus on more than 9,000 acres near Price, Utah. The proposal covers data centers and some 456 reactors producing about 9.6 GW in total, plus fuel production and waste storage facilities. NPR also describes Valar's units as 25 MW electric, and 456 of those would come to 11.4 GW, so the reported reactor count, unit size and total do not agree; NPR and KSL both give 456 reactors and 9.6 GW. BLM said it is reviewing the application for completeness and that it will go through the National Environmental Policy Act process with public input. KSL reported that the Utah Trust Lands Administration board separately approved a lease of more than 640 acres of state trust land in Carbon County to Valar on September 17.",
+   "why_it_matters": "It moves Valar's Utah plan from announcements to a filed federal land application, which now goes through environmental review with public comment, where local opposition is already organizing.",
+   "binding": true,
+   "binding_note": "Rests on two executed steps: a filed BLM land-use application (not yet confirmed complete) and a state trust lands lease approval on Sept 17. No NEPA decision or NRC license exists.",
+   "sources": [
+    {
+     "label": "NPR (via WLRN) \u2014 A startup wants to build a massive nuclear-powered data center on public land in Utah (2026)",
+     "url": "https://www.wlrn.org/npr-breaking-news/2026-09-30/a-startup-wants-to-build-a-massive-nuclear-powered-data-center-on-public-land-in-utah",
+     "quote": "The facility would include data centers and some 456 small nuclear reactors",
+     "status": "fetched"
+    },
+    {
+     "label": "KSL \u2014 Nuclear-powered AI data center proposed on state and federal land in central eastern Utah (2026)",
+     "url": "https://ksl.com/article/51630741/nuclear-powered-ai-data-center-proposed-on-state-and-federal-land-in-central-eastern-utah",
+     "quote": "A land lease proposal from Valar Atomics was approved by the Utah Trust Lands Administration at a meeting Sept. 17",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "general-matter-paducah-nrc-application-2026-09-29",
+   "date": "2026-09-29",
+   "headline": "General Matter files NRC license application for Paducah enrichment plant",
+   "companies": [
+    "General Matter",
+    "NRC"
+   ],
+   "category": "fuel",
+   "what_happened": "General Matter submitted a license application of more than 1,000 pages to the NRC for a commercial uranium enrichment plant in Paducah, Kentucky, filed under 10 CFR Part 70. The first filing covers standard enrichment, and the company says it plans a separate amendment next year to produce HALEU. Pre-construction site work is already under way, and the company says it will enrich at commercial scale by the end of the decade.",
+   "why_it_matters": "HALEU supply is the main fuel bottleneck for microreactors, and this is a US enrichment project with a filed license, though its HALEU output depends on a later amendment.",
+   "binding": true,
+   "binding_note": "A filed NRC license application; no NRC acceptance or approval is reported, and the HALEU amendment has not been filed.",
+   "sources": [
+    {
+     "label": "World Nuclear News \u2014 General Matter submits licence application for enrichment plant (2026)",
+     "url": "https://www.world-nuclear-news.org/articles/general-matter-submits-enrichment-plant-licence-application",
+     "quote": "Next year, we intend to submit an amendment to produce High-Assay Low-Enriched Uranium (HALEU)",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

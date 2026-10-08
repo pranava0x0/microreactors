@@ -1,0 +1,130 @@
+{
+ "_meta": {
+  "captured": "2026-10-08",
+  "agent": "verify-items",
+  "scope": "Verification of costs.json items, policy.json items+dockets, space-apps.json items against fetched pages",
+  "angles_run": [
+   "WebFetch of each cited source",
+   "dedup against skip/news.json and skip/dockets.json",
+   "web search for PJM ER26-1479 and Valar BLM docket"
+  ],
+  "absences": [
+   "Westinghouse as FSP primary contractor and 40 kWe: not on the DOE page; removed",
+   "Penn State 'second university after UIUC' claim: not in the ANS article; removed",
+   "UIUC replacing the Abbott coal plant: not in the ANS article; removed",
+   "FERC ferc.gov pages return 403; PJM ER26-1479-002 filing dated 2026-08-17 could not be confirmed",
+   "BLM ePlanning URL for Valar returned 404; no BLM docket page found",
+   "Whether Last Energy MOU signing date differs from 2025-09-18 announcement: no exact signing date stated"
+  ],
+  "dropped": [
+   "nano-radnostix-nrc-license-acquisition-2026-10-01: already in skip/news.json",
+   "valar-project-beehive-blm-application-2026-09-30: already in skip/news.json",
+   "general-matter-paducah-nrc-application-2026-09-29: already in skip/news.json",
+   "ferc-rejects-oklo-pjm-queue-reinstatement-2026-09-24: same event as skip id ferc-rejects-oklo-pjm-complaint-2026-09-24",
+   "nrc-oklo-aurora-doe-authz-licensing-pathway-2026-09-21: same event as skip id nrc-oklo-aurora-doe-to-nrc-construction-letter-2026-09-21",
+   "state-ags-nrc-part57-legal-challenge-2026-06-16: same event as skip id ag-coalition-opposes-part57-2026-06-16",
+   "us-navy-crane-indiana-shore-based-microreactor-2026-09-09: same event as skip id navy-crane-microreactor-2026-09-09",
+   "valar-utah-blm-land-use-application-2026: docket URL 404, no BLM docket page found; event already covered in skip/news.json",
+   "pjm-ferc-er26-1479-colocated-generation-compliance: FERC page 403, no source mentions microreactors or SMRs, Aug 17 filing unconfirmed"
+  ]
+ },
+ "items": [
+  {
+   "id": "nasa-doe-fsp-mou-2026-01-13",
+   "date": "2026-01-13",
+   "headline": "NASA and DOE sign MOU to develop a lunar surface reactor by 2030",
+   "companies": [
+    "NASA",
+    "U.S. Department of Energy"
+   ],
+   "category": "policy",
+   "what_happened": "On January 13, 2026 the Department of Energy and NASA announced a renewed partnership on a fission surface power system for the Moon and future Mars missions. A recently signed memorandum of understanding between the agencies backs it, and the stated goal includes a lunar surface reactor by 2030.",
+   "why_it_matters": "It sets a federal 2030 target for a space-rated reactor, which gives space-power vendors a dated customer goal. The MOU itself carries no stated contract value or vendor.",
+   "binding": false,
+   "binding_note": "A memorandum of understanding between two agencies; the page names no vendor, power level or funding.",
+   "sources": [
+    {
+     "label": "U.S. Department of Energy — U.S. Department of Energy and NASA to Develop Lunar Surface Reactor by 2030 (2026)",
+     "url": "https://www.energy.gov/node/4855740",
+     "quote": "announced a renewed commitment to their longstanding partnership to support the research and development of a fission surface power system",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "penn-state-evinci-intent-2025-02-28",
+   "date": "2025-02-28",
+   "headline": "Penn State tells NRC it intends to host a Westinghouse eVinci reactor",
+   "companies": [
+    "Penn State University",
+    "Westinghouse Electric",
+    "NRC"
+   ],
+   "category": "regulatory",
+   "what_happened": "Penn State and Westinghouse are working to place an eVinci research reactor, a HALEU TRISO-fueled sodium heat-pipe design, at the University Park campus in Pennsylvania. Penn State submitted a letter of intent to the Nuclear Regulatory Commission on February 28, 2025. The university already runs the Breazeale research reactor, which began operating in 1955.",
+   "why_it_matters": "A university with decades of research-reactor operating experience is lining up an eVinci host site. A letter of intent is a first step and no license application is reported.",
+   "binding": false,
+   "binding_note": "A letter of intent to the NRC, not a license application.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — Penn State and Westinghouse eVinci research reactor (2025)",
+     "url": "https://www.ans.org/news/author-nnstaff/step-1741284029/",
+     "quote": "Penn State has announced that it submitted a letter of intent to host and operate an eVinci reactor to the Nuclear Regulatory Commission on February 28",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "last-energy-dp-world-london-gateway-mou-2025-09-18",
+   "date": "2025-09-18",
+   "headline": "Last Energy and DP World sign MOU for a 20 MWe microreactor at London Gateway",
+   "companies": [
+    "Last Energy",
+    "DP World"
+   ],
+   "category": "contract",
+   "what_happened": "Last Energy and DP World signed a memorandum of understanding during President Trump's state visit to the UK, announced September 18, 2025, for a PWR-20 microreactor at the London Gateway port. The unit would supply 20 MWe to the port and export extra capacity to the grid, backed by 80 million pounds of private investment, with operations targeted for 2030.",
+   "why_it_matters": "It is a named port customer for a 20 MWe unit with a stated investment figure. An MOU does not commit either side to build or buy.",
+   "binding": false,
+   "binding_note": "A memorandum of understanding; no construction contract, licence or financing close is reported.",
+   "sources": [
+    {
+     "label": "Nuclear Engineering International — London Gateway to host microreactor (2025)",
+     "url": "https://www.neimagazine.com/news/london-gateway-to-host-microreactor/",
+     "quote": "The deal, backed by £80m ($108m) in private investment, was signed during US President Donald Trump's state visit to the UK.",
+     "status": "fetched"
+    },
+    {
+     "label": "The National — World's first port-centric micro nuclear plant planned for DP World's London Gateway (2025)",
+     "url": "https://www.thenationalnews.com/business/energy/2025/09/18/worlds-first-port-centric-micro-nuclear-plant-planned-for-dp-worlds-london-gateway/",
+     "quote": "backed by £80 million in private investment",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "uiuc-kronos-permit-application-2026-04-02",
+   "date": "2026-04-02",
+   "headline": "UIUC and NANO Nuclear submit Kronos microreactor construction permit application",
+   "companies": [
+    "University of Illinois Urbana-Champaign",
+    "NANO Nuclear Energy",
+    "NRC"
+   ],
+   "category": "regulatory",
+   "what_happened": "The University of Illinois Urbana-Champaign, with NANO Nuclear Energy, submitted a construction permit application to the NRC for a Kronos micro modular reactor, reported April 2, 2026. Each TRISO-fueled, helium-cooled unit is designed to produce up to 15 MWe (45 MWt). It is the first step of the two-part 10 CFR Part 50 process for a research and test reactor.",
+   "why_it_matters": "A filed construction permit application for a gas-cooled microreactor at a named site moves the project past announcements. The reactor is for training and research, not power sales.",
+   "binding": true,
+   "binding_note": "A filed NRC application; the date is the article date, and no NRC acceptance or approval is reported.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — University of Illinois submits construction permit application for Kronos MMR (2026)",
+     "url": "https://www.ans.org/news/2026-04-02/article-7904/",
+     "quote": "has submitted a construction permit application to the Nuclear Regulatory Commission for construction of a Kronos micro modular reactor (MMR)",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "dockets": []
+}

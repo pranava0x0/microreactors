@@ -148,7 +148,13 @@
         s.onload = function () { resolve(D[name]); };
         // Fail loud: a swallowed error here leaves a panel permanently empty
         // with no explanation, which reads as a rendering bug for weeks.
-        s.onerror = function () { reject(new Error("could not load data-" + name + ".js")); };
+        s.onerror = function () {
+          // Evict the rejected promise and the dead tag so the next call retries
+          // instead of replaying this failure for the life of the page.
+          delete LAZY[name];
+          s.remove();
+          reject(new Error("could not load data-" + name + ".js"));
+        };
         document.head.appendChild(s);
       });
     }
@@ -165,6 +171,27 @@
       throw err;
     });
   }
+
+  /* Fetch a tab's lazy data once the pointer has rested on the tab for 150 ms or
+     the tab takes keyboard focus, which is ahead of the click. The delay filters
+     out a mouse sweeping across the strip; touch is left out because a swipe that
+     starts on a tab would otherwise download a payload nobody asked for. Only the
+     payload that tab opens on is prefetched. A failure here is ignored on
+     purpose: loadLazy evicts it, and the real open retries and reports the error
+     where the reader can see it. */
+  var INTENT = { policy: ["instruments"], news: ["news"], sources: ["sources_index"] };
+  var intentTimer = 0;
+  function prefetchFor(e) {
+    var t = e.target.closest && e.target.closest("[data-panel]");
+    if (!t || e.pointerType === "touch") { return; }
+    clearTimeout(intentTimer);
+    intentTimer = setTimeout(function () {
+      (INTENT[t.dataset.panel] || []).forEach(function (n) { loadLazy(n).catch(function () {}); });
+    }, e.type === "focusin" ? 0 : 150);
+  }
+  tablist.addEventListener("pointerover", prefetchFor, { passive: true });
+  tablist.addEventListener("focusin", prefetchFor, { passive: true });
+  tablist.addEventListener("pointerout", function () { clearTimeout(intentTimer); }, { passive: true });
 
   function activate(route, opts) {
     opts = opts || {};
@@ -302,7 +329,8 @@
       var it = items[ids.indexOf(id)];
       if (it && it.lazy && !it.lazy.done && !panel.hidden) {
         it.lazy.done = true;
-        lazyPanel(it.lazy.name, it.lazy.el, it.lazy.render);
+        // A failed load clears the guard so revisiting the sub-tab retries.
+        lazyPanel(it.lazy.name, it.lazy.el, it.lazy.render).catch(function () { it.lazy.done = false; });
       }
       return isDefault ? "" : id;
     }
@@ -1171,6 +1199,47 @@
     });
   }
 
+  /* Applications > Space and new segments: named projects and buyers outside the
+     eight sector tabs (lunar and in-space power, launch sites, district heat,
+     process heat, ports, campuses). data/segments.json, lazy. */
+  var segmentsRendered = false;
+  function renderSegments() {
+    var G = D.segments;
+    if (segmentsRendered || !(G && G.segments)) { return; }
+    segmentsRendered = true;
+    render($("segments-intro"), esc(G._meta.what_this_is));
+    render($("segments-filter"), '<button class="newschip on" data-group="" aria-pressed="true">All ' +
+      G.segments.length + "</button>" + (G._meta.groups || []).map(function (g) {
+        var n = G.segments.filter(function (r) { return r.group === g.id; }).length;
+        return n ? '<button class="newschip" data-group="' + esc(g.id) + '" aria-pressed="false">' +
+          esc(g.label) + " " + n + "</button>" : "";
+      }).join(""));
+    render($("segments"), '<div class="precgrid">' + G.segments.map(function (r) {
+      return '<details class="prec region" data-group="' + esc(r.group) + '"><summary>' +
+        '<span class="nm">' + esc(r.name) + "</span>" +
+        '<span class="cat">' + esc(r.power_class) + " \u00b7 " + esc(r.status) + "</span></summary>" +
+        '<div class="body">' +
+        '<p class="copyline"><span class="k">For a 1\u201320 MW unit \u00b7 </span>' + esc(r.microreactor_read) + "</p>" +
+        "<p>" + esc(r.what_it_says) + "</p>" +
+        (r.timeline ? '<p><span class="k">Timeline \u00b7 </span>' + esc(r.timeline) + "</p>" : "") +
+        (r.sponsor ? '<p><span class="k">Sponsor \u00b7 </span>' + esc(r.sponsor) + "</p>" : "") +
+        (r.vendor ? '<p><span class="k">Vendor \u00b7 </span>' + esc(r.vendor) + "</p>" : "") +
+        srcList(r.sources) + "</div></details>";
+    }).join("") + "</div>");
+    $("segments-filter").addEventListener("click", function (e) {
+      var b = e.target.closest(".newschip");
+      if (!b) { return; }
+      Array.prototype.forEach.call($("segments-filter").querySelectorAll(".newschip"), function (x) {
+        x.classList.toggle("on", x === b);
+        x.setAttribute("aria-pressed", String(x === b));
+      });
+      var g = b.dataset.group;
+      Array.prototype.forEach.call($("segments").querySelectorAll("details.region"), function (d) {
+        d.hidden = !!g && d.dataset.group !== g;
+      });
+    });
+  }
+
   /* Applications > Alaska: a one-page dossier over data the rest of the site
      already owns. site/data-alaska.js (lazy) ships the join build_alaska_page()
      already did in Python — opportunity_rows and precedent_rows are read-only
@@ -1408,6 +1477,8 @@
     { id: "overview", label: "Overview" },
     { id: "regions", label: "Regions" + (s.regions != null ? " (" + s.regions + ")" : ""),
       lazy: { name: "regions", el: "regions", render: renderRegions } },
+    { id: "segments", label: "Space and more" + (s.app_segments != null ? " (" + s.app_segments + ")" : ""),
+      lazy: { name: "segments", el: "segments", render: renderSegments } },
     { id: "alaska", label: "Alaska"
         + (s.alaska_opportunities != null ? " (" + s.alaska_opportunities + ")" : ""),
       lazy: { name: "alaska", el: "demand-alaska", render: renderAlaska } }

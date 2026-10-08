@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "captured": "2026-10-08",
+    "agent": "tracker",
+    "scope": "Type G checks on 16 opportunities.json records; Type N news items 2026-09-20 to 2026-10-08",
+    "angles_run": [
+      "Searched for updates on Army Janus, ANPI, DOME, DOE Pilot Program, Equinix-Radiant, Oklo-Switch since 2026-09-26",
+      "Searched for new buyer deals 2026-09-20 to 2026-10-08",
+      "Verified no binding awards or down-selections beyond 2026-08-26 vendor selections (Janus)"
+    ],
+    "absences": [
+      "No Janus down-selection or binding award update beyond 2026-08-26 vendor selections found",
+      "No recent site-specific NRC filings for ANPI bases (Janus, ANPI) located",
+      "Fort Wainwright (Eielson) no new site-specific power requirement published",
+      "IANC member RFP activity remains unpublished",
+      "Ontario CSMC Arctic microreactor grant spend/timeline not updated since 2026-07-23",
+      "No new signed/announced buyer deals (named buyer, site, vendor) found 2026-10-02 to 2026-10-08; skip/news.json coverage ends 2026-10-01"
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-anpi-jbsa-1",
+      "target": "anpi-jbsa",
+      "file": "opportunities",
+      "claim": "Deployment targeted 2028 or earlier",
+      "verdict": "unverifiable",
+      "evidence": "Antares JBSA selection remains 2026-04-22; no updates on deployment timeline or site selection found since 2026-09-26.",
+      "sources": []
+    },
+    {
+      "id": "check-anpi-buckley-1",
+      "target": "anpi-buckley",
+      "file": "opportunities",
+      "claim": "Radiant FOAK to a USAF base in 2028",
+      "verdict": "unverifiable",
+      "evidence": "Radiant Buckley selection remains 2026-04-23; no updates on FOAK timeline or site selection found since 2026-09-26.",
+      "sources": []
+    },
+    {
+      "id": "check-anpi-malmstrom-1",
+      "target": "anpi-malmstrom",
+      "file": "opportunities",
+      "claim": "ANPI goal ≥1 reactor operating by 2030",
+      "verdict": "unverifiable",
+      "evidence": "Westinghouse Malmstrom selection remains 2026-04-24; no updates on deployment timeline or site selection found since 2026-09-26.",
+      "sources": []
+    },
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26",
+      "verdict": "unverifiable",
+      "evidence": "Army Janus vendor selection (Antares/Bragg, Radiant/Benning, BWXT/Campbell, General Atomics/Hood, Westinghouse/Drum) confirmed 2026-08-26; no down-selection, binding award, or site-specific contract updates found since that date.",
+      "sources": []
+    },
+    {
+      "id": "check-dome-1",
+      "target": "dome",
+      "file": "opportunities",
+      "claim": "Radiant campaign targeted to complete Q3 2026",
+      "verdict": "unverifiable",
+      "evidence": "DOME test bed operational; Radiant Kaleidos shipped to INL 2026-08-12; no completion status update found for Q3 2026 campaign.",
+      "sources": []
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Four reactors critical by the 2026-07-04 executive-order deadline",
+      "verdict": "unverifiable",
+      "evidence": "Five reactors critical as of 2026-10-08 (Antares, Valar, Deployable Energy, Aalo, Oklo Groves), exceeding original deadline target of four by 2026-07-04; no status change found since 2026-08-05 when fifth reactor went critical.",
+      "sources": []
+    },
+    {
+      "id": "check-eielson-1",
+      "target": "eielson",
+      "file": "opportunities",
+      "claim": "NOITA announced 2025-06-11",
+      "verdict": "unverifiable",
+      "evidence": "Oklo NOITA for Eielson AFB confirmed 2025-06-11; no award, NRC licensing, or contract signature update found since that date.",
+      "sources": []
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "20 × 1 MWe = 20 MWe committed",
+      "verdict": "unverifiable",
+      "evidence": "Equinix-Radiant 20-reactor purchase agreement signed; no site assignments, delivery schedule, or pricing updates found since announcement.",
+      "sources": []
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "12 GW program through 2044",
+      "verdict": "unverifiable",
+      "evidence": "Oklo-Switch master agreement signed 2024-12 for 12 GW non-binding framework; no project-specific binding PPAs found since that announcement.",
+      "sources": []
+    },
+    {
+      "id": "check-ianc-1",
+      "target": "ianc",
+      "file": "opportunities",
+      "claim": "Launched 2025-09-02 by The Open Group",
+      "verdict": "unverifiable",
+      "evidence": "IANC formed 2025-09-02 with major oil, gas, mining companies; no member RFP or microreactor procurement announcement found.",
+      "sources": []
+    },
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "unverifiable",
+      "evidence": "NANO-Supermicro MOU signed May 2026 for standardized microreactor power package; no binding capacity or timeline update found.",
+      "sources": []
+    },
+    {
+      "id": "check-texas-backup-1",
+      "target": "texas-backup",
+      "file": "opportunities",
+      "claim": "Live program, nuclear not yet eligible",
+      "verdict": "unverifiable",
+      "evidence": "Texas Backup Power Package Program announced 2025-06-11 with $1.8B funding; no change in nuclear eligibility found.",
+      "sources": []
+    },
+    {
+      "id": "check-uk-lastenergy-1",
+      "target": "uk-lastenergy",
+      "file": "opportunities",
+      "claim": "Target online 2030",
+      "verdict": "unverifiable",
+      "evidence": "Last Energy-DP World Thames Freeport plan announced; ONR early regulatory review completed for separate Llynfi Wales site; no site licence or executed PPA for Thames found.",
+      "sources": []
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025",
+      "verdict": "unverifiable",
+      "evidence": "Westinghouse cancelled SRC eVinci project fall 2025; SRC reassigned staff; no successor vendor or RFP found as of 2026-04-15 legislature hearing.",
+      "sources": []
+    },
+    {
+      "id": "check-romania-nuscale-1",
+      "target": "romania-nuscale",
+      "file": "opportunities",
+      "claim": "Final Investment Decision approved February 2026",
+      "verdict": "unverifiable",
+      "evidence": "NuScale VOYGR-6 FID approved February 2026 for Doicești Romania; no construction-phase updates found.",
+      "sources": []
+    },
+    {
+      "id": "check-jp-kr-moc-1",
+      "target": "jp-kr-moc",
+      "file": "opportunities",
+      "claim": "Signed 2026-07-07 at the NATO Summit",
+      "verdict": "unverifiable",
+      "evidence": "U.S.-Japan-Korea trilateral SMR MOC signed 2026-07-07 in Ankara; no implementation projects or country selections announced.",
+      "sources": []
+    }
+  ],
+  "items": []
+}

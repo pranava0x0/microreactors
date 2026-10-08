@@ -1,0 +1,387 @@
+{
+ "_meta": {
+  "captured": "2026-10-08",
+  "agent": "verify-apps",
+  "scope": "Verification and rewrite of the 19 space-apps.json Applications records; every number and quote re-checked against raw page text",
+  "angles_run": [
+   "NASA/DOE fission surface power",
+   "Westinghouse eVinci lunar",
+   "DRACO status",
+   "JETSON/Intuitive Machines",
+   "launch sites",
+   "district heat",
+   "MARVEL",
+   "process heat",
+   "telecom",
+   "ports",
+   "Arctic",
+   "hospitals",
+   "universities"
+  ],
+  "absences": [
+   "Cape Canaveral: no electrical load figure on any page I could fetch (the 7 MW diesel and 13.8 kV claims came only from an unfetchable Air Force photo page and a Breitbart URL)",
+   "Vandenberg: no launch-range load in MW published on the pages fetched",
+   "Starbase: whether the 250 MW gas station proposed in 2021 was built is not shown on fetched pages",
+   "Steel finishing 5-20 MWth claim: source page (21stcentech) unreachable, claim removed",
+   "Radiant company page and INL GAIN MARVEL page blocked or empty to curl; MARVEL final-agreements-2026 claim removed",
+   "Fort Wainwright siting claim for CSMC and Texas A&M Last Energy pilot not confirmed on a fetched page",
+   "Hospital buyer for Kaleidos: none named"
+  ],
+  "dropped": [
+   "cape-canaveral-power: no load figure and no fetchable Cape source; cited Breitbart and a blocked Air Force photo page",
+   "intuitive-machines-lunar: duplicate of jetson; merged into jetson-intuitive-machines"
+  ]
+ },
+ "applications": [
+  {
+   "id": "nasa-doe-fsp-lunar",
+   "segment": "lunar surface power",
+   "name": "NASA and DOE fission surface power for the Moon",
+   "status": "proposed",
+   "power_class": "at least 100 kWe",
+   "timeline": "NASA directive: launch-ready by first quarter of fiscal 2030; DOE-NASA agreement 2026-01-13",
+   "sponsor": "NASA, U.S. Department of Energy",
+   "what_it_says": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030, and has asked industry for a design of at least 100 kilowatts electric with a closed Brayton power cycle. Separately, DOE and NASA signed an agreement in January 2026 to pursue the system.",
+   "microreactor_read": "At 100 kWe this is one to two orders of magnitude below the 1-20 MW band, so it is a design and supply-chain precedent (fuel, heat transfer, remote operation) and no buyer for a 1-20 MW block.",
+   "sources": [
+    {
+     "label": "NASA — NASA Seeks Industry Feedback on Fission Surface Power (2025)",
+     "url": "https://www.nasa.gov/centers-and-facilities/glenn/nasa-seeks-industry-feedback-on-fission-surface-power/",
+     "quote": "NASA will work with industry to design a fission surface power system that would provide at least 100 kilowatts of electrical power",
+     "status": "fetched"
+    },
+    {
+     "label": "U.S. Department of Energy — DOE and NASA fission surface power announcement (2026)",
+     "url": "https://www.energy.gov/node/4855740",
+     "quote": "DOE and NASA anticipate deploying a fission surface power system capable of producing safe, efficient, and plentiful electrical power",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "westinghouse-evinci-lunar",
+   "segment": "lunar surface power",
+   "name": "Westinghouse eVinci space microreactor and Astrobotic LunaGrid",
+   "status": "funded",
+   "power_class": "40 kW class (scaled down from the 5 MWe eVinci)",
+   "timeline": "Phase 2 contract announced 2025-01-07; LunaGrid first operational target 2028 (stated June 2023)",
+   "sponsor": "NASA, U.S. Department of Energy (award via Idaho National Laboratory)",
+   "vendor": "Westinghouse; Astrobotic (LunaGrid)",
+   "what_it_says": "Westinghouse is scaling down its 5 MWe eVinci microreactor into a 40-kilowatt class system for the lunar surface, and in January 2025 it won a Phase 2 contract to keep developing it. In June 2023 Astrobotic said it wanted the first operational LunaGrid at the lunar south pole by 2028.",
+   "microreactor_read": "The 40 kW lunar unit is far below 1-20 MW, but the parent design is a 5 MWe terrestrial microreactor, so lunar work on heat pipes and fuel feeds the same product line.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Westinghouse, Astrobotic team up on space projects (2023)",
+     "url": "https://wnn.world-nuclear.org/articles/westinghouse,-astrobotic-team-up-on-space-projects",
+     "quote": "Westinghouse is developing a scaled-down version of its 5-MWe eVinci microreactor",
+     "status": "fetched"
+    },
+    {
+     "label": "Westinghouse — NASA-DOE contract to continue space microreactor development (2025)",
+     "url": "https://info.westinghousenuclear.com/news/westinghouse-awarded-nasa-doe-contract-to-continue-development-of-space-microreactor-concept",
+     "quote": "would provide up to 40 kilowatts of power",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "draco-nuclear-thermal",
+   "segment": "space propulsion",
+   "name": "DRACO nuclear thermal rocket (DARPA and NASA)",
+   "status": "cancelled",
+   "power_class": "nuclear thermal propulsion engine (thrust, not electric output)",
+   "timeline": "awarded July 2023 with a flight demo targeted for fiscal 2027; killed by DARPA, reported June 2025",
+   "sponsor": "DARPA, NASA",
+   "vendor": "Lockheed Martin (prime); BWXT Advanced Technologies (reactor)",
+   "what_it_says": "DARPA and NASA gave Lockheed Martin a $499 million deal in 2023 to build a nuclear thermal rocket, with a flight demonstration aimed at fiscal 2027. DARPA then ended the program in 2025 because, in its deputy director's account, the costs no longer matched the benefits as launch prices fell.",
+   "microreactor_read": "A propulsion engine is not a power plant, so no 1-20 MW block fits. The program ended on cost once launch prices fell.",
+   "sources": [
+    {
+     "label": "Breaking Defense — DARPA, NASA tap Lockheed Martin to design, build DRACO (2023)",
+     "url": "https://breakingdefense.com/2023/07/darpa-nasa-tap-lockheed-martin-to-design-build-draco-nuclear-rocket-for-deep-space-missions/",
+     "quote": "DARPA and NASA have jointly awarded Lockheed Martin a $499 million deal to design and build an experimental rocket using a nuclear thermal propulsion engine",
+     "status": "fetched"
+    },
+    {
+     "label": "Breaking Defense — DARPA's DRACO nuclear propulsion project roars no more (2025)",
+     "url": "https://breakingdefense.com/2025/06/darpas-draco-nuclear-propulsion-project-roars-no-more/",
+     "quote": "was driven by an assessment that the costs no longer match the benefits",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "jetson-intuitive-machines",
+   "segment": "spacecraft and lunar power systems",
+   "name": "AFRL JETSON and Intuitive Machines radioisotope Stirling power",
+   "status": "funded",
+   "power_class": "not published",
+   "timeline": "$33.7 million JETSON award announced September 2023; $8.2 million extension reported 2025-10-31; flight experiment on the International Space Station planned",
+   "sponsor": "U.S. Air Force Research Laboratory, Space Vehicles Directorate",
+   "vendor": "Intuitive Machines",
+   "what_it_says": "AFRL gave Intuitive Machines a $33.7 million contract in 2023 for the JETSON low-power system, then an $8.2 million extension in 2025 on top of $9.5 million from an earlier AFRL program. The money funds a Stirling power converter that turns radioisotope heat into electricity and has passed a preliminary design review.",
+   "microreactor_read": "No output is published here. Radioisotope units are far smaller than a 1-20 MW block, so this is a conversion-technology precedent, with no microreactor buyer in it.",
+   "sources": [
+    {
+     "label": "Military & Aerospace Electronics — Space Force picks Intuitive Machines for space nuclear power (2023)",
+     "url": "https://www.militaryaerospace.com/power/article/14301010/space-nuclear-power",
+     "quote": "announced a $33.7 million contract to Intuitive Machines in late September",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — X-energy sister company contracted for in-space nuclear technology (2025)",
+     "url": "https://wnn.world-nuclear.org/articles/x-energy-sister-company-contracted-for-in-space-nuclear-technology",
+     "quote": "a USD8.2 million contract extension to develop next-generation nuclear power systems for spacecraft and lunar infrastructure",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "starbase-spaceport",
+   "segment": "launch sites and spaceports",
+   "name": "SpaceX Starbase, Boca Chica, Texas",
+   "status": "proposed",
+   "power_class": "250-megawatt gas-fired power station (2021 proposal)",
+   "timeline": "proposed in the FAA draft environmental assessment, September 2021; solar expansion reported May 2022",
+   "sponsor": "SpaceX",
+   "what_it_says": "The FAA's 2021 draft environmental assessment for Starship described a new 250-megawatt gas-fired power station at Starbase. By May 2022 SpaceX already ran a natural gas power plant on site, plus a solar farm that was being enlarged by 1.7 acres.",
+   "microreactor_read": "A 250 MW plant is about twelve times the top of the 1-20 MW band, and the site already runs on gas and solar, so a microreactor would be one add-on block. Whether the 250 MW unit was built is not shown on these pages.",
+   "sources": [
+    {
+     "label": "TechCrunch — The mystery of Elon Musk's missing gas (2021)",
+     "url": "https://techcrunch.com/2021/10/08/the-mystery-of-elon-musks-missing-gas/",
+     "quote": "Much more gas will be needed for a new 250-megawatt gas-fired power station.",
+     "status": "fetched"
+    },
+    {
+     "label": "CNBC — SpaceX is expanding the solar farm at its South Texas launch facility (2022)",
+     "url": "https://www.cnbc.com/2022/05/03/spacex-expanding-solar-farm-at-boca-chica-texas-launch-facility.html",
+     "quote": "It also operates a natural gas power plant in Boca Chica.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "steady-energy-ldr50",
+   "segment": "district heating",
+   "name": "Steady Energy LDR-50 pilot with Helen, Helsinki",
+   "status": "funded",
+   "power_class": "50 MW thermal reactor; about 6 MW pilot heat output",
+   "timeline": "lease to 2028; first concrete poured 2026-02-12",
+   "sponsor": "Steady Energy (privately raised capital); Helen hosts",
+   "vendor": "Steady Energy",
+   "what_it_says": "Steady Energy poured first concrete on 12 February 2026 for a non-nuclear, full-scale pilot of its LDR-50 district heating reactor in the Salmisaari B turbine hall in Helsinki. The pilot uses an electric element instead of fuel, outputs about 6 MW of heat to Helen's network, and has a EUR15-20 million budget. The reactor design is 50 MW thermal and runs at about 150C and below 10 bar.",
+   "microreactor_read": "The figures are thermal (50 MWth design, about 6 MW pilot heat), so they do not compare directly with the 1-20 MW electric band. Low pressure suits district heat. The pilot holds no fuel, so a licensed reactor is a later step.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Construction of Steady Energy pilot plant begins (2026)",
+     "url": "https://wnn.world-nuclear.org/articles/construction-of-steady-energy-pilot-plant-begins",
+     "quote": "The first concrete for the pilot was poured on 12 February in the Salmisaari B turbine hall",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Pilot non-nuclear SMR plant to be built in Finnish coal-fired plant (2025)",
+     "url": "https://wnn.world-nuclear.org/articles/pilot-smr-plant-to-be-built-in-finnish-coal-fired-plant",
+     "quote": "The LDR-50 district heating SMR - with a thermal output of 50 MW - has been under development at VTT since 2020.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "inl-marvel-desalination",
+   "segment": "desalination",
+   "name": "INL MARVEL end-user experiments, including produced-water desalination",
+   "status": "proposed",
+   "power_class": "85 kWt or up to 20 kWe",
+   "timeline": "five end users selected December 2025; MARVEL expected operational by late 2027",
+   "sponsor": "U.S. Department of Energy",
+   "vendor": "Idaho National Laboratory (MARVEL); Shepherd Power, NOV and ConocoPhillips (desalination team)",
+   "what_it_says": "In December 2025 INL picked five teams to run experiments on MARVEL, a sodium-potassium-cooled test microreactor producing 85 kWt or up to 20 kWe. Shepherd Power, NOV and ConocoPhillips propose a pilot-scale desalination project that uses the reactor's heat to treat oil and gas produced water.",
+   "microreactor_read": "MARVEL is about 100 times smaller than a 1-20 MW block, so this tests the desalination hookup, not a buyer. A real produced-water plant would need a full-size unit, and no power price is published.",
+   "sources": [
+    {
+     "label": "Nuclear Engineering International — INL microreactor selects debut users (2025)",
+     "url": "https://www.neimagazine.com/?p=100744",
+     "quote": "Shepherd Power, NOV and ConocoPhillips, which propose leveraging MARVEL for a pilot-scale desalination project using nuclear-generated process heat",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "microreactor-ammonia-hydrogen",
+   "segment": "hydrogen and ammonia production",
+   "name": "5 MWe microreactor for ammonia from biomass (Nuclear Technology study)",
+   "status": "studied",
+   "power_class": "5 MWe",
+   "timeline": "paper published April 2026; no project announced",
+   "sponsor": "academic study",
+   "what_it_says": "A study published in Nuclear Technology in April 2026 costs ammonia made from corn stover, wheat straw or wood, with a 5 MWe nuclear microreactor supplying power and process heat to the Haber-Bosch process. It finds the cost depends strongly on microreactor capital cost and learning rate, and that the route is substantially cheaper than electrolysis plus Haber-Bosch.",
+   "microreactor_read": "A 5 MWe block is inside the 1-20 MW band and the paper treats it as the energy source. It is a paper study, with no site, buyer or ammonia price given on the page.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — Technoeconomic Assessment of Ammonia Production from Biomass with Nuclear Microreactors (2026)",
+     "url": "https://www.ans.org/pubs/journals/nt/article-60263/",
+     "quote": "integrating thermal-chemical biomass gasification with a 5-MW(electric) nuclear microreactor as the energy source within the H-B process",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "microreactor-cement-calciner",
+   "segment": "steel and cement process heat",
+   "name": "Penn State feasibility study of microreactor heat for cement calcination",
+   "status": "studied",
+   "power_class": "15 MWth",
+   "timeline": "research project; no deployment date",
+   "sponsor": "Penn State Architectural Engineering (research project)",
+   "what_it_says": "Penn State researchers say a single 15 MWth reactor can supply enough heat to replace the calciner burner in a 2,000 ton/day cement plant, because calcination at about 900 C is within current core designs. They note that cement makes up 8% of global CO2 from human activity, and that 70 to 80% of a plant's fuel goes to the kiln burner and the rest to the calciner.",
+   "microreactor_read": "The 15 MWth figure is heat, so it does not compare directly with the 1-20 MW electric band. It would replace only the calciner share, and the kiln burner still needs fuel. The page gives no heat price and no plant has committed.",
+   "sources": [
+    {
+     "label": "Penn State — Feasibility Study of Micro-Nuclear Reactor Thermal Output for Air Rotary Kilns in Portland Cement Clinker Manufacturing",
+     "url": "https://pure.psu.edu/en/projects/feasibility-study-of-micro-nuclear-reactor-thermal-output-for-air/",
+     "quote": "a single 15 MWth reactor can provide enough energy in the form of heat to replace the calciner burner in a 2000 ton/day cement plant",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "terra-innovatum-waiken-broadcast",
+   "segment": "telecom and broadcast data centres",
+   "name": "Terra Innovatum and Waiken ILW letter of intent for DIRECTV Latin America and SKY Brasil",
+   "status": "proposed",
+   "power_class": "up to 8 MWe (about 1 MWe per SOLO unit)",
+   "timeline": "letter of intent reported 2026-07-21; no construction timetable",
+   "sponsor": "Waiken ILW",
+   "vendor": "Terra Innovatum",
+   "what_it_says": "Terra Innovatum signed a commercial letter of intent with Waiken ILW for up to 8 MWe of behind-the-meter nuclear capacity at broadcasting data centres in Argentina and Brazil. Each SOLO unit is about 1 MWe, so the deal could mean up to eight modules, and the companies have not disclosed unit count, price or schedule.",
+   "microreactor_read": "Eight 1 MWe units sit inside the 1-20 MW band and the load is continuous communications equipment. The letter of intent does not authorise construction, and SOLO is still in pre-application with the U.S. NRC.",
+   "sources": [
+    {
+     "label": "eeNews Europe — Terra Innovatum plans SOLO microreactors for broadcasters (2026)",
+     "url": "https://www.eenewseurope.com/en/terra-innovatum-solo-microreactors-broadcasters/",
+     "quote": "Terra Innovatum Global has signed a commercial letter of intent with Waiken ILW covering up to 8 MWe of behind-the-meter nuclear generating capacity",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "last-energy-london-gateway",
+   "segment": "ports and cold-chain logistics",
+   "name": "Last Energy PWR-20 and DP World London Gateway",
+   "status": "proposed",
+   "power_class": "20 MWe",
+   "timeline": "MOU signed 2025-09-15; aim to begin operations in 2030",
+   "sponsor": "DP World",
+   "vendor": "Last Energy",
+   "what_it_says": "Last Energy and DP World signed a memorandum of understanding for a PWR-20 microreactor at London Gateway to supply 20 MWe to the logistics hub, with extra output exported to the grid. The deal is described as a 80 million pound, subsidy-free investment in Last Energy's first unit, supporting DP World's 1 billion pound port expansion. London Gateway handles more than 50 per cent of the UK's deep-sea temperature-controlled imports.",
+   "microreactor_read": "20 MWe is the top of the 1-20 MW band and the load is a port with cold stores, so a block fits on size. An MOU is not a purchase agreement, and no power price is published.",
+   "sources": [
+    {
+     "label": "Last Energy — Last Energy Partners With DP World To Bring Micro-Nuclear Power To London Gateway (2025)",
+     "url": "https://www.lastenergy.com/news-press/last-energy-partners-with-dp-world-to-bring-micro-nuclear-power-to-london-gateway",
+     "quote": "A proposed PWR-20 microreactor would supply London Gateway with 20 MWe of clean, reliable electricity to power the logistics hub, with additional capacity exported to the grid.",
+     "status": "fetched"
+    },
+    {
+     "label": "Nuclear Engineering International — London Gateway to host microreactor (2025)",
+     "url": "https://www.neimagazine.com/news/london-gateway-to-host-microreactor/",
+     "quote": "handling a wide range of cargoes including more than 50 per cent of the",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "arctic-microreactor-canada",
+   "segment": "Arctic and defence outposts",
+   "name": "Canadian Strategic Missions Corporation Arctic microreactor",
+   "status": "funded",
+   "power_class": "not stated",
+   "timeline": "$4.5 million award reported 2026-07-23; company target of fleet-scale deployment by 2030",
+   "sponsor": "FedDev Ontario (Government of Canada)",
+   "vendor": "Canadian Strategic Missions Corporation",
+   "what_it_says": "FedDev Ontario awarded Canadian Strategic Missions Corporation $4.5 million to fund detailed design and a fuelled demonstration of its microreactor for the Arctic, part of a $40.5 million package split among 23 organisations. Canada's Department of National Defence has trouble supplying diesel to remote northern outposts.",
+   "microreactor_read": "No reactor size is published, so fit to the 1-20 MW band cannot be confirmed. The buyer is defence-led and diesel is the displaced fuel. The money funds design and a demonstration.",
+   "sources": [
+    {
+     "label": "SpaceQ — CSMC secures $4.5 million federal investment for Arctic microreactor development (2026)",
+     "url": "https://spaceq.ca/csmc-secures-4-5-million-federal-investment-for-arctic-microreactor-development/",
+     "quote": "has been awarded a $4.5 million investment from the Federal Economic Development Agency for Southern Ontario",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "uiuc-kronos-mmr",
+   "segment": "universities",
+   "name": "University of Illinois Urbana-Champaign and Nano Nuclear Kronos MMR",
+   "status": "proposed",
+   "power_class": "up to 15 MWe (45 MWt) per unit",
+   "timeline": "construction permit application submitted to the NRC, reported 2026-04-02; project first announced 2021",
+   "sponsor": "University of Illinois Urbana-Champaign",
+   "vendor": "Nano Nuclear Energy",
+   "what_it_says": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 2 April 2026, the first step of two-part Part 50 licensing for a research and test reactor. Each Kronos unit is designed for up to 15 MWe (45 MWt), and the 2021 plan was to re-power part of the coal-fired Abbott power station with it.",
+   "microreactor_read": "15 MWe is inside the 1-20 MW band and the host is a campus with a coal plant to displace. It is licensed as a research and test reactor, so campus power is secondary to training and research, and no power price is published.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — UIUC submits MMR construction permit application (2026)",
+     "url": "https://www.ans.org/news/2026-04-02/article-7904/",
+     "quote": "Each TRISO-fueled and helium-cooled unit is designed to produce up to 15 MWe (45 MWt)",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — US university plans to build microreactor (2021)",
+     "url": "https://world-nuclear-news.org/Articles/US-university-announces-plans-to-build-microreacto",
+     "quote": "The university plans to re-power partially its coal-fired Abbott power station",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "penn-state-evinci",
+   "segment": "universities",
+   "name": "Penn State and Westinghouse eVinci research reactor",
+   "status": "proposed",
+   "power_class": "size not stated on the cited page (parent eVinci design: 5 MWe)",
+   "timeline": "Penn State announced its letter of intent to the NRC on 2025-02-28",
+   "sponsor": "Penn State University",
+   "vendor": "Westinghouse",
+   "what_it_says": "Penn State announced on 28 February 2025 that it submitted a letter of intent to the NRC to host and operate a Westinghouse eVinci reactor on its University Park campus. eVinci is a HALEU TRISO-fueled sodium heat-pipe reactor, and Westinghouse describes its parent design as 5 MWe.",
+   "microreactor_read": "This is a research reactor, and the Deals tab lists it at 15 MWt. Only a letter of intent has been filed, and the page gives no campus load or heat price.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — Penn State and Westinghouse make eVinci microreactor plan official (2025)",
+     "url": "https://www.ans.org/news/author-nnstaff/step-1741284029/",
+     "quote": "Penn State has announced that it submitted a letter of intent to host and operate an eVinci reactor to the Nuclear Regulatory Commission on February 28",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Westinghouse, Astrobotic team up on space projects (2023)",
+     "url": "https://wnn.world-nuclear.org/articles/westinghouse,-astrobotic-team-up-on-space-projects",
+     "quote": "Westinghouse is developing a scaled-down version of its 5-MWe eVinci microreactor",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "tamu-rellis-aalo",
+   "segment": "universities",
+   "name": "Texas A&M RELLIS Energy Proving Ground, including Aalo Atomics",
+   "status": "proposed",
+   "power_class": "Aalo unit 30 MWth; site projected above 1 GW combined across developers",
+   "timeline": "agreements announced 2025-02-05; first reactors aimed within five years",
+   "sponsor": "Texas A&M University System",
+   "vendor": "Aalo Atomics, Kairos Power, Natura Resources, Terrestrial Energy",
+   "what_it_says": "Four developers signed agreements in February 2025 to site reactors at the 2,400-acre RELLIS campus in Bryan, Texas, with an Early Site Permit application already started and a combined output above one gigawatt projected. Aalo Atomics is the microreactor entrant and is aiming to develop a 30 MWth sodium-cooled unit.",
+   "microreactor_read": "Aalo's 30 MWth is heat, so it does not compare directly with the 1-20 MW electric band. The campus is a siting and permitting venue, and no power buyer or price is named.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Four SMR developers aim to build reactors at Texas A&M University site (2025)",
+     "url": "https://wnn.world-nuclear.org/articles/four-smr-developers-aim-to-build-reactors-at-texas-am-university-site",
+     "quote": "Aalo Atomics is aiming to develop a 30 MWth sodium-cooled microreactor within the next few years.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

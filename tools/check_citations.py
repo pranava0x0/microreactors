@@ -263,6 +263,14 @@ def check() -> List[Tuple[str, str]]:
                 violations.append((f"regions:{r['id']}", "no source"))
             need(r, f"regions:{r['id']}")
 
+    # segments.json (2026-10-08): a named project or buyer, each a bundle of claims.
+    seg_p = DATA / "segments.json"
+    if seg_p.exists():
+        for r in json.loads(seg_p.read_text())["segments"]:
+            if not has_source(r):
+                violations.append((f"segments:{r['id']}", "no source"))
+            need(r, f"segments:{r['id']}")
+
     # dockets.json (2026-09-26): a filing is cited to the filing itself.
     dk_p = DATA / "dockets.json"
     if dk_p.exists():

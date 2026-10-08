@@ -1,0 +1,98 @@
+{
+ "_meta": {
+  "captured": "2026-10-08",
+  "agent": "haiku news + sonnet verify",
+  "scope": "news since 2026-10-02 plus verified application-side milestones",
+  "absences": [
+   "See data/research/2026-10-08-refresh/news.json and verified-items.json _meta."
+  ]
+ },
+ "items": [
+  {
+   "id": "bwxt-banr-belledune-prodigy-2026-10-05",
+   "date": "2026-10-05",
+   "headline": "BWXT's BANR microreactor chosen for Canadian transportable plant",
+   "companies": [
+    "BWXT"
+   ],
+   "category": "award",
+   "what_happened": "BWXT Technologies announced that Prodigy Clean Energy, Pabineau First Nation, and Eel River Bar First Nation have selected its BANR microreactor for a Transportable Nuclear Power Plant (TNPP) project in Belledune, New Brunswick. The proposed plant would feature up to 50 megawatts electric, with the pilot project intended to validate plant logistics and operational requirements for mass deployment across Canada's North.",
+   "why_it_matters": "The Indigenous-led project would bring a transportable microreactor of up to 50 MWe to a Canadian site, with in-service operation targeted for the early 2030s. It is a selection, not a signed supply contract.",
+   "binding": false,
+   "sources": [
+    {
+     "label": "BWXT — BWXT's BANR Microreactor Chosen for Canadian Transportable Nuclear Power Plant Project (2026)",
+     "url": "https://www.bwxt.com/bwxts-banr-microreactor-chosen-for-canadian-transportable-nuclear-power-plant-project/",
+     "quote": "selected its BANR microreactor technology for a Transportable Nuclear Power Plant (TNPP) to be located in Belledune, New Brunswick",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "last-energy-texas-dsa-approval-2026-10-08",
+   "date": "2026-10-08",
+   "headline": "Last Energy's Texas pilot clears DOE safety analysis approval",
+   "companies": [
+    "Last Energy"
+   ],
+   "category": "regulatory",
+   "what_happened": "The U.S. Department of Energy approved Last Energy's Documented Safety Analysis (DSA) for its PWR-5 pilot reactor at Texas A&M-RELLIS. The DSA is the final and most comprehensive safety analysis in the DOE's licensing process. Last Energy now moves into the readiness review, the final step before authorization for criticality and reactor operations.",
+   "why_it_matters": "DSA approval is the last safety document before the readiness review that precedes authorization to start the pilot. The PWR-5 pilot uses the same full-scale reactor core as Last Energy's commercial PWR-20.",
+   "binding": true,
+   "binding_note": "DSA approval is a formal DOE authorization, not binding until criticality is approved",
+   "sources": [
+    {
+     "label": "World Nuclear News — Last Energy's Texas micro-modular reactor clears safety analysis (2026)",
+     "url": "https://world-nuclear-news.org/articles/last-energy-texas-micro-modular-reactor-clears-safety-analysis",
+     "quote": "The Department of Energy's approval of the Documented Safety Analysis clears Last Energy's planned pilot reactor at Texas A&M-RELLIS to move into the readiness review, the final step before authorisation for criticality and reactor operations",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "nasa-doe-fsp-mou-2026-01-13",
+   "date": "2026-01-13",
+   "headline": "NASA and DOE sign MOU to develop a lunar surface reactor by 2030",
+   "companies": [
+    "NASA",
+    "U.S. Department of Energy"
+   ],
+   "category": "policy",
+   "what_happened": "On January 13, 2026 the Department of Energy and NASA announced a renewed partnership on a fission surface power system for the Moon and future Mars missions. A recently signed memorandum of understanding between the agencies backs it, and the stated goal includes a lunar surface reactor by 2030.",
+   "why_it_matters": "It sets a federal 2030 target for a space-rated reactor, which gives space-power vendors a dated customer goal. The MOU itself carries no stated contract value or vendor.",
+   "binding": false,
+   "binding_note": "A memorandum of understanding between two agencies; the page names no vendor, power level or funding.",
+   "sources": [
+    {
+     "label": "U.S. Department of Energy — U.S. Department of Energy and NASA to Develop Lunar Surface Reactor by 2030 (2026)",
+     "url": "https://www.energy.gov/node/4855740",
+     "quote": "announced a renewed commitment to their longstanding partnership to support the research and development of a fission surface power system",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "uiuc-kronos-permit-application-2026-04-02",
+   "date": "2026-04-02",
+   "headline": "UIUC and NANO Nuclear submit Kronos microreactor construction permit application",
+   "companies": [
+    "University of Illinois Urbana-Champaign",
+    "NANO Nuclear Energy",
+    "NRC"
+   ],
+   "category": "regulatory",
+   "what_happened": "The University of Illinois Urbana-Champaign, with NANO Nuclear Energy, submitted a construction permit application to the NRC for a Kronos micro modular reactor, reported April 2, 2026. Each TRISO-fueled, helium-cooled unit is designed to produce up to 15 MWe (45 MWt). It is the first step of the two-part 10 CFR Part 50 process for a research and test reactor.",
+   "why_it_matters": "A filed construction permit application for a gas-cooled microreactor at a named site moves the project past announcements. The reactor is for training and research, not power sales.",
+   "binding": true,
+   "binding_note": "A filed NRC application; the date is the article date, and no NRC acceptance or approval is reported.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — University of Illinois submits construction permit application for Kronos MMR (2026)",
+     "url": "https://www.ans.org/news/2026-04-02/article-7904/",
+     "quote": "has submitted a construction permit application to the Nuclear Regulatory Commission for construction of a Kronos micro modular reactor (MMR)",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

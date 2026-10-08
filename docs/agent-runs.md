@@ -245,3 +245,23 @@ university in Launch Pad"). The NANO LOI was recategorized from policy to contra
 **One improvement.** When two agents run over the same window, give each a disjoint lead list *and* the
 other's ids. Both independently wrote up NANO-IP3 and Antares, with identical ids, so the merge's dedupe
 silently kept whichever file sorted first.
+
+## 2026-10-08 refresh: haiku seeds, sonnet verification
+
+Eight haiku agents (four at a time, as asked) seeded one area each from web searches; two Sonnet agents then
+rewrote the survivors against fetched pages. Offline checks (`verify_pass_quotes.py`, plus a number-by-number look
+at every figure in the prose) decided what shipped.
+
+| agent | scope | tokens | result | worth it |
+|---|---|---|---|---|
+| haiku news | news since 10-02, pilot-program gaps | 112K | 4 items, 4/4 quotes verify, two search-summary dates off by a day | yes |
+| haiku tracker | 16 opportunities | 109K | all 16 "unverifiable", no sources | no: existing rows were already current |
+| haiku vendors | 8 vendors | 100K | 10 "confirmed" checks, 4 of 6 quotes fabricated | no: nothing to correct |
+| haiku space | 18 applications, 4 items | 133K | 7 verified, 9 sloppy, 8 fabricated quotes, 10 unreachable | partly: good leads, bad quotes |
+| haiku policy / regions / costs / market | one tab each | 100-108K each | mostly snippet-only; 12 of 13 items already on the site | no |
+| sonnet verify items | 13 drafts | 116K | 4 kept, 9 dropped as duplicates or unsupported; fixed two 2025 dates the haiku run had put in 2026 | yes |
+| sonnet verify apps | 19 drafts | 188K | 17 kept; 23 quotes verify offline, 5 unreachable; corrected a $9.4M award ($9.5M), a telecom record (really DIRECTV data centres), a "1-20 MW" Aalo unit (30 MWth) | yes: this is where the shipped Applications data came from |
+
+**One improvement.** Haiku is fine for finding leads and poor at quoting: WebFetch hands back a model's summary,
+so a "fetched" quote is often a paraphrase. Budget the Sonnet verify pass up front and give haiku only the
+discovery step and the skip list; the skip list is what kept 12 of 13 policy and cost items from being re-added.

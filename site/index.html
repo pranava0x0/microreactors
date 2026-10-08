@@ -23,7 +23,7 @@
  "name": "Microreactor Opportunity Map",
  "description": "Cited data on microreactor contracts, utility filings, power prices, Alaska and Greenland remote-energy markets, vendors, and deployment prospects.",
  "url": "https://pranava0x0.github.io/microreactors/",
- "dateModified": "2026-10-02",
+ "dateModified": "2026-10-08",
  "isAccessibleForFree": true,
  "creator": {
   "@type": "Person",
@@ -79,7 +79,7 @@
   {
    "@type": "PropertyValue",
    "name": "registered sources",
-   "value": 856
+   "value": 882
   },
   {
    "@type": "PropertyValue",
@@ -161,6 +161,11 @@
   {
    "@type": "DataDownload",
    "encodingFormat": "application/json",
+   "contentUrl": "https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/segments.json"
+  },
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
    "contentUrl": "https://raw.githubusercontent.com/pranava0x0/microreactors/main/data/strategy.json"
   },
   {
@@ -182,8 +187,8 @@
 }
 </script>
 <!-- /generated:meta -->
-<link rel="stylesheet" href="assets/tokens.css?v=2026-10-02">
-<link rel="stylesheet" href="assets/site.css?v=2026-10-02">
+<link rel="stylesheet" href="assets/tokens.css?v=2026-10-08">
+<link rel="stylesheet" href="assets/site.css?v=2026-10-08">
 </head>
 <body>
 
@@ -283,6 +288,11 @@
       <p class="prose" id="regions-intro"></p>
       <div class="newsfilter" id="regions-filter" role="group" aria-label="Filter regions"></div>
       <div id="regions"></div>
+    </div>
+    <div data-sub="segments" id="demand-segments" role="tabpanel" tabindex="0">
+      <p class="prose" id="segments-intro"></p>
+      <div class="newsfilter" id="segments-filter" role="group" aria-label="Filter segments"></div>
+      <div id="segments"></div>
     </div>
     <div data-sub="alaska" id="demand-alaska" role="tabpanel" tabindex="0">
       <p class="prose" id="alaska-intro"></p>
@@ -473,7 +483,7 @@
   </div>
 </footer>
 
-<script src="data.js?v=2026-10-02"></script>
-<script src="assets/app.js?v=2026-10-02"></script>
+<script src="data.js?v=2026-10-08"></script>
+<script src="assets/app.js?v=2026-10-08"></script>
 </body>
 </html>
