@@ -37,7 +37,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
    python3 tools/research_pass.py validate data/research/$D-refresh
    ```
 3. **Integrate:** `python3 tools/refresh_integrate.py data/research/$D-refresh --apply`, then
-   `python3 tools/merge_news.py data/research/news`. Read `REPORT.md`; for every "needs a human"
+   `python3 tools/merge_news.py data/research/news`. Re-running on the same pass is safe
+   (applied corrections and shipped ids are skipped). To ship a Type S application, set its
+   `group` to a `data/segments.json` `_meta.groups` id (add a group there if none fits). Read `REPORT.md`; for every "needs a human"
    line, make the edit by hand only if the fetched source plainly supports it, else leave it.
 4. **Read every new news item and correction against its source before committing.** Haiku
    paraphrases: check each number and date in the prose is on the cited page (the quote gate
