@@ -166,7 +166,7 @@
       "high_mwh": 1950,
       "currency": "USD",
       "dollar_year": "not published",
-      "note": "These grids run on diesel. The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet: its per-utility appendix gives total power cost per kWh for every participating rural utility, running from about $0.41/kWh at wind-equipped Kotzebue to $1.95/kWh at Lime Village, with fuel alone between $0.19 and $1.53/kWh. The PCE base rate was set at 19.35 cents/kWh and the subsidy covers only residential use up to 750 kWh a month; commercial and industrial load pays the full unsubsidised cost, which is the number a microreactor has to beat.",
+      "note": "These grids run on diesel. The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet: its per-utility appendix gives total power cost per kWh for every participating rural utility, running from about $0.41/kWh at wind-equipped Kotzebue to $1.95/kWh at Lime Village, with fuel alone between $0.19 and $1.53/kWh. The PCE base rate, set at 19.35 cents/kWh in 2023, was 20.38 cents/kWh in 2026 (22.11 proposed for FY2027), and the subsidy covers only residential use up to 750 kWh a month; commercial and industrial load pays the full unsubsidised cost, which is the number a microreactor has to beat.",
       "sources": [
         {
           "label": "Regulatory Commission of Alaska — Letter Order L2300184, FY2024 Power Cost Equalization base rate change (docket U-23-010)",
@@ -186,6 +186,12 @@
         {
           "label": "Macdonald & Parsons, MIT CEEPR WP 2021-018 — The Value of Nuclear Microreactors in Providing Heat and Electricity to Alaskan Communities",
           "url": "https://ceepr.mit.edu/workingpaper/the-value-of-nuclear-microreactors-in-providing-heat-and-electricity-to-alaskan-communities/"
+        },
+        {
+          "label": "Regulatory Commission of Alaska — Notice of Proposed Revision to Power Cost Equalization Base Amount, Docket U-26-010 (2026)",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223712",
+          "quote": "The current base amount is 20.38 cents per kilowatt-hour",
+          "status": "fetched"
         }
       ],
       "source": {

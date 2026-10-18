@@ -1,0 +1,3 @@
+TASK: Costs tab. Output data/research/{{DATE}}-refresh/costs.json (top-level _meta, checks (file "costs"), items (Type N, fuel or financing, up to 4)). Read skip/costs.json and skip/news.json.
+(1) Type G checks (target = record id or the key path in skip/costs.json, e.g. "microreactor_lcoe.<id>") on up to 10 numbers: vendor unit prices and $/kWe claims, LCOE ranges, delivered diesel and fuel-oil prices in remote markets, HALEU and TRISO prices and DOE allocations, enrichment contract values, tax-credit values, insurance, staffing. Say what the newest primary source says, with its date.
+(2) Items: dated fuel-supply or financing events after {{NEWEST_NEWS}} (HALEU deliveries, enrichment contracts, DOE fuel awards, loans) not in skip/news.json.

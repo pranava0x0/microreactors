@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "applications",
+    "scope": "Applications tab: new buyer segments and named projects (Type S) not in skip/segments.json or skip/deployment_sites.json; Type G checks on shipped records; Type E regions only where skip/regions.json lacks them (none qualified).",
+    "angles_run": [
+      "Type G: NASA/DOE lunar fission surface power status (2022 Phase 1 40 kW contracts vs 100 kWe shipped)",
+      "Type G: Penn State FRONTIER eVinci NRC status (no 2026 filing found)",
+      "Type G: Steady Energy LDR-50 Helsinki pilot (Feb 2026 first concrete; German headline gives 2034 heating reactor)",
+      "Type G: Last Energy Haskell County and London Gateway status",
+      "Type G: Canadian Strategic Missions Corporation Arctic award (fetched 2026-07-23 page)",
+      "Type G: Eielson AFB Oklo NOITA status (DAF March 2026 fact sheet unreadable)",
+      "Type G: Copper Valley Electric MMR tabled status (CVEA Jan 2026 PDF unreadable)",
+      "Type S: data centers behind the meter (Terra Innovatum/Uvation, Deep Fission/Endeavour)",
+      "Type S: mining and mineral processing (Tata Chemicals Green River trona site)",
+      "Type S: maritime and shipping (Port of Long Beach and Corpus Christi MARAD MoUs; Crowley-BWXT ship)",
+      "Type S: hospitals and medical campuses (no named 2026 deal found)",
+      "Type S: oilfield and oil sands (no microreactor deal found; ProPetro gas microgrid is not nuclear)",
+      "Type S: disaster recovery and remote community emergency power (no 2026 agreement found)"
+    ],
+    "absences": [
+      "Hospitals: no named microreactor power agreement found in one search. Not a record.",
+      "Oilfield and oil sands: no microreactor deal found. The Permian ProPetro/Coterra microgrid (Dec 2025) is gas-fired and not nuclear. Not a record.",
+      "Disaster recovery: no 2026 agreement with a power number found. The Crowley-BWXT ship MoU is 2023 and is recorded as a maritime record below.",
+      "Maritime: Port of Long Beach (July 2026) and Port of Corpus Christi (19 Aug 2026) MARAD memoranda are non-binding and name no reactor size, so they carry no power number and are not recorded. Corpus Christi also reportedly signed a CORE POWER agreement; not verified.",
+      "Penn State FRONTIER (psu-frontier, penn-state-evinci): no 2026 NRC docketing, construction permit or Penn State announcement found in one search. Shipped status left as is, unverified.",
+      "Eielson AFB (eielson-pilot): DAF Microreactor Pilot Fact Sheet of 18 March 2026 returned HTTP 403. Shipped NOITA and 5 MWe text left as is, unverified against that fact sheet.",
+      "Copper Valley Electric MMR (cvea-valdez): CVEA 'Future Technologies, January 2026' PDF is a compressed binary with no extractable text here. Shipped 'tabled' status unverified for 2026.",
+      "NASA/DOE lunar (nasa-doe-fsp-lunar): NASA and Battelle Phase 1 contracts for a 40-kW lunar fission reactor were awarded 21 June 2022, per fetched POWER magazine text and a 2022 engineering-news search result. The shipped segment carries 'at least 100 kWe' from a 2025 NASA request. No verdict issued: the two figures describe different steps and no 2026 document was found that contradicts the shipped text.",
+      "Canadian Strategic Missions Corporation (arctic-microreactor-canada): the fetched SpaceQ page dated 23 July 2026 supports the shipped text ($4.5M from FedDev Ontario; fleet-scale deployment by 2030). A later NucNet piece (URL dated 7-1-2026, returned HTTP 403) reports a POLAR-1 first criticality target of 2028 and fleet deployment in the early 2030s; that conflict is unresolved, and no check was issued.",
+      "Steady Energy LDR-50 (steady-energy-ldr50): a German headline reports the first heating reactor expected to run around 2034; the shipped text covers only the non-nuclear pilot. Not verified beyond a headline; no check issued.",
+      "Last Energy Haskell County (lastenergy-haskell): a secondary report says the first full core of fuel arrives September 2026. No primary source found; not used.",
+      "Last Energy London Gateway (last-energy-london-gateway): searches found no 2026 update; the MoU remains non-binding and no power price is published.",
+      "Terra Innovatum/Waiken ILW Brazil LOI (already shipped as terra-innovatum-waiken-broadcast, dated 31 July 2026 per fetched NEI article): not re-recorded.",
+      "Regions (Type E): no new region with both a price and a load number was checked this pass. skip/regions.json was not expanded.",
+      "Data-center deal sizes are letters of intent or partnerships. Binding status is unstated in the fetched sources for Deep Fission/Endeavour and for Uvation."
+    ]
+  },
+  "applications": [
+    {
+      "id": "uvation-data-center-pilot",
+      "segment": "data centers behind the meter",
+      "name": "Terra Innovatum Global and Uvation 1 MWe data-center pilot",
+      "status": "proposed",
+      "power_class": "1 MWe pilot, with a strategic option to scale up to 100 MWe",
+      "timeline": "letter of intent signed 2025-11-20",
+      "sponsor": "Uvation (private AI and modular data-center developer)",
+      "vendor": "Terra Innovatum (SOLO micro-modular reactor)",
+      "what_it_says": "Terra Innovatum Global and Uvation signed a letter of intent on 20 November 2025 to launch a 1 MWe pilot program with a strategic option to scale up to 100 MWe. The release says the expansion would run across multiple sites, with potentially several megawatt-scale installations in the US. It does not name a site and does not say whether the agreement is binding.",
+      "microreactor_read": "A 1 MWe pilot sits below the 1-20 MW band, and the 100 MWe option would sit at its top end only if built as several units. Only a letter of intent is public, and no power price is published.",
+      "sources": [
+        {
+          "label": "Stock Titan — Terra Innovatum Global and Uvation sign strategic 1 MWe pilot deployment (2025)",
+          "url": "https://www.stocktitan.net/news/NKLR/terra-innovatum-global-and-uvation-sign-strategic-1-m-we-pilot-mpat8agz6woy.html",
+          "quote": "launch a 1 MWe pilot program with a strategic option to scale up to 100 MWe",
+          "status": "fetched"
+        },
+        {
+          "label": "Finviz — Terra Innovatum Global and Uvation sign strategic 1 MWe pilot deployment (2025)",
+          "url": "https://finviz.com/news/234834/terra-innovatum-global-and-uvation-sign-strategic-1-mwe-pilot-deployment-with-100-mwe-expansion-option-to-support-next-generation-ai-and-modular-data-center-growth",
+          "quote": "to launch a 1 MWe pilot program with a strategic option to scale up to 100 MWe",
+          "status": "fetched"
+        }
+      ],
+      "group": "compute-industry"
+    },
+    {
+      "id": "tata-green-river-soda-ash",
+      "segment": "mining and mineral processing",
+      "name": "Tata Chemicals Soda Ash Partners, Green River trona site, with BWXT BANR",
+      "status": "proposed",
+      "power_class": "up to 8 BANR units at 50 MWt each (thermal)",
+      "timeline": "letter of intent signed by 2024-12-17; deployment aimed for the early 2030s",
+      "sponsor": "Tata Chemicals Soda Ash Partners",
+      "vendor": "BWXT Advanced Technologies (BANR)",
+      "what_it_says": "Tata Chemicals' soda ash subsidiary signed a letter of intent with BWXT Advanced Technologies to conditionally purchase up to eight BANR microreactors at its Green River, Wyoming soda ash site, which has an underground trona mine and a surface refining plant. BANR is a 50 MWt high-temperature gas microreactor (thermal rating only). The partners will set a schedule for deployment by the early 2030s.",
+      "microreactor_read": "The 50 MWt rating is thermal, so it does not map directly to the 1-20 MW electric band. The site uses purchased grid power plus its own coal and gas boilers for steam, so the displaced fuel is boiler fuel and purchased power. The letter of intent is conditional and sets no price.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Tata, BWXT to explore microreactor use at Wyoming site (2024)",
+          "url": "https://world-nuclear-news.org/articles/tata-bwxt-to-explore-microreactor-use-at-wyoming-site",
+          "quote": "signed a letter of intent with BWXT Advanced Technologies LLC",
+          "status": "fetched"
+        },
+        {
+          "label": "Sweetwater Now — Tata Chemicals Announces Letter of Intent to Explore Deployment of Nuclear Microreactors (2024)",
+          "url": "https://www.sweetwaternow.com/tata-chemicals-announces-letter-of-intent-to-explore-deployment-of-nuclear-microreactors/",
+          "quote": "signed a letter of intent to explore development of up to eight microreactors in the Green River area",
+          "status": "fetched"
+        }
+      ],
+      "group": "compute-industry"
+    },
+    {
+      "id": "deep-fission-endeavour-data-centers",
+      "segment": "data centers behind the meter",
+      "name": "Deep Fission and Endeavour, 2 GW for data centers",
+      "status": "proposed",
+      "power_class": "15 MWe per borehole reactor; 2 GW total commitment",
+      "timeline": "strategic partnership announced 2025-01-08; first reactors expected to be operational in 2029",
+      "sponsor": "Endeavour (data-center developer)",
+      "vendor": "Deep Fission (borehole pressurised water reactor)",
+      "what_it_says": "Deep Fission and Endeavour committed to co-develop 2 GW of nuclear energy to power Endeavour's expanding portfolio of data centers, announced 8 January 2025. Deep Fission aims to place 15 MWe pressurised water reactors about one mile underground in a borehole. The first reactors are expected to be operational in 2029.",
+      "microreactor_read": "A 15 MWe unit fits the 1-20 MW band, but 2 GW is a portfolio commitment, not an order for units. The article does not say whether the partnership is binding, and no power price is published.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Deep Fission and Endeavour announce strategic partnership (2025)",
+          "url": "https://www.world-nuclear-news.org/articles/deep-fission-and-endeavour-announce-strategic-partnership",
+          "quote": "committed to co-develop 2 GW of nuclear energy to power Endeavour's expanding portfolio of data centres",
+          "status": "fetched"
+        },
+        {
+          "label": "TechCrunch — Nuclear startup Deep Fission plans to bury micro reactors to power data centers (2025)",
+          "url": "https://techcrunch.com/2025/01/07/nuclear-startup-deep-fission-plans-to-bury-micro-reactors-to-power-data-centers",
+          "quote": "signed a deal on Tuesday with data center developer Endeavour",
+          "status": "fetched"
+        }
+      ],
+      "group": "compute-industry"
+    },
+    {
+      "id": "crowley-bwxt-nuclear-ship",
+      "segment": "maritime and shipping",
+      "name": "Crowley and BWXT nuclear power generation vessel concept",
+      "status": "studied",
+      "power_class": "modular reactor between 5 and 50 MW (per the announcement; electric or thermal not specified)",
+      "timeline": "memorandum of understanding announced 2023-09-20; design concept only",
+      "sponsor": "none named; the companies have no customer yet",
+      "vendor": "BWXT Advanced Technologies; Crowley (ship design)",
+      "what_it_says": "Crowley and BWXT Advanced Technologies signed a memorandum of understanding on 20 September 2023 to design a shallow-draft ship carrying a modular reactor between 5 and 50 megawatts. The ship would deliver power to shore for military bases in remote island locations and backup utility grids after disasters. Per a Jacksonville Business Journal report, the companies have no customer for the ship yet.",
+      "microreactor_read": "The 5-50 MW range overlaps the 1-20 MW band at its low end. This is a design concept with no buyer, no price and no site, so it is a segment signal rather than a deal.",
+      "sources": [
+        {
+          "label": "Ocean News — Crowley and BWXT debut nuclear power generation vessel concept (2023)",
+          "url": "https://oceannews.com/news/defense/crowley-and-bwxt-debut-nuclear-power-generation-vessel-concept/",
+          "quote": "carrying a modular reactor between 5 and 50 megawatts",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT — Crowley, BWXT debut nuclear power generation vessel concept (2023)",
+          "url": "https://www.ajot.com/news/crowley-bwxt-debut-nuclear-power-generation-vessel-concept",
+          "quote": "carrying a modular reactor between 5 and 50 megawatts",
+          "status": "fetched"
+        }
+      ],
+      "group": "compute-industry"
+    }
+  ]
+}
