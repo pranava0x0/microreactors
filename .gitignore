@@ -5,3 +5,6 @@ data/cache/
 
 # Local-only pitch documents. Never committed, never published.
 pitch/
+
+# Refresh skip lists are regenerated from data/*.json by tools/refresh_init.py.
+data/research/*-refresh/skip/

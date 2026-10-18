@@ -1,0 +1,3 @@
+TASK: Vendors tab. Output data/research/{{DATE}}-refresh/vendors.json (top-level _meta, checks (file "vendors"), items (Type N, up to 6)). Read skip/vendors.json and skip/news.json.
+(1) Type G checks, one per shipped vendor where something changed (target = vendor id): first_delivery_target, milestones, MWe range, refuel interval, fuel, notes. At most 3 searches per vendor. Write a check only with a fetched page.
+(2) Items: vendor milestones dated after {{NEWEST_NEWS}} (criticality, fuel loading, factory, financing, licence step, delivery) that skip/news.json lacks. Vendors not in the table with a 1-20 MWe design (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy) count when the event is dated.

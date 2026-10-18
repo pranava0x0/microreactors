@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "news",
+    "scope": "1-20 MW microreactor market news with event dates after 2026-10-08, then the 60-day gap 2026-08-19 to 2026-10-08. Skip list: skip/news.json (77 ids through 2026-10-08).",
+    "angles_run": [
+      "reactor criticality and testing (DOE Reactor Pilot Program, INL DOME)",
+      "factories and construction (Radiant Oak Ridge)",
+      "financing and SPAC events (Valar, Aalo, Solaris/Deployable, NuCube, Blue Energy)",
+      "fuel (HALEU, TRISO, FLiBE salt delivery to Natura)",
+      "first-of-a-kind deployments (Last Energy PWR-5, Kairos Hermes, Natura MSR-1)",
+      "setbacks and regulation (NRC Part 57 status, Oklo PJM, Last Energy)",
+      "key hires and departures (Fermi, Nuclea, Hadron)",
+      "company sweep: Radiant, Westinghouse eVinci, BWXT, Oklo, Antares, Aalo, Valar, Last Energy, NANO, X-energy, Kairos, Deployable, Deep Fission, Terrestrial, General Atomics, Natura, Blue Energy, Centrus"
+    ],
+    "absences": [
+      "No event dated after 2026-10-08 was found for any listed company. Searches for October 2026 news on Oklo, Antares, Valar, Aalo, Radiant, Westinghouse, Kairos, Terrestrial Energy, Natura and Centrus returned nothing dated after the 2026-10-08 skip cutoff.",
+      "Radiant Kaleidos fueled test at INL DOME: last confirmed step is the 2026-08-13 shipment to Idaho, with a Q3 2026 target. Criticality or test completion is not confirmed. No new dated event found.",
+      "Solaris Energy Infrastructure equity investment in Deployable Energy, announced 2026-08-10: outside the 60-day gap window, so not written.",
+      "Fermi CEO appointment reported 2026-08-13: single blog-style source, not verified against a company release. Not written.",
+      "Blue Energy and GE Vernova 2026-08-13 agreement and the October 2026 ERCOT interconnection application: 300 MW BWRX-300 class, outside the 1-20 MW scope. Not written.",
+      "Radiant Oak Ridge factory: 2026 construction start not confirmed; only the October 2025 announcement was found.",
+      "NRC Part 57 final rule: not found as issued. Sources describe a final rule due by 2026-11-23 (one non-authoritative source). Not written.",
+      "Last Energy PWR-5 readiness review and criticality date: not reported after the DSA approval already in skip.",
+      "Natura MSR-1 criticality date and fuel status: not confirmed.",
+      "Valar Ward 250 criticality date conflicts across sources (2026-06-18 in skip, 2026-07-14 in one search summary). Not reopened.",
+      "INL news release for the DOME selection (inl.gov/?p=152071) returned HTTP 403, so the DOE/INL primary page could not be fetched. The 2026-09-30 date rests on the East Idaho News fetch, which quotes the DOE release date.",
+      "Search budget: 24 web searches and 3 fetches used. Fetch-verified items are limited because most search results were summaries only."
+    ]
+  },
+  "items": [
+    {
+      "id": "deployable-energy-dome-selection-2026-09-30",
+      "date": "2026-09-30",
+      "headline": "DOE picks Deployable Energy's Unity nuclear battery for 2027 DOME test",
+      "companies": [
+        "Deployable Energy",
+        "Idaho National Laboratory",
+        "Department of Energy"
+      ],
+      "category": "award",
+      "what_happened": "DOE's National Reactor Innovation Center selected Deployable Energy to test its Unity nuclear battery in the DOME testbed at Idaho National Laboratory in 2027. The test is planned to start in May 2027 and run for up to six months. Deployable announced the selection on October 7, 2026.",
+      "why_it_matters": "A DOME slot gives a transportable reactor design access to federal test infrastructure. It is an access selection, not a purchase, and the source gives no agreement value or terms.",
+      "binding": false,
+      "binding_note": "A DOE selection for a test slot in 2027. No test agreement or contract terms are published, and the test has not started.",
+      "sources": [
+        {
+          "label": "East Idaho News — DOE taps company for historic INL battery test after 150-day reactor milestone (2026)",
+          "url": "https://www.eastidahonews.com/?p=875954",
+          "quote": "to test a nuclear battery at the Demonstration of Microreactor Experiments (DOME), an INL testbed, in 2027.",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Deployable Energy to test its Unity nuclear battery in DOME (2026)",
+          "url": "https://world-nuclear-news.org/articles/deployable-energy-to-test-its-unity-nuclear-battery-in-dome",
+          "quote": "The DOE noted that Deployable Energy was competitively selected from the most recent round of applications",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

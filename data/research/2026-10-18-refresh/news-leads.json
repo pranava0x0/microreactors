@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "news-leads",
+    "scope": "1-20 MW microreactor market news in the 60-day gap 2026-08-19 to 2026-10-08 and after 2026-10-08. Worked through all 14 entries of skip/candidates.json first, then searched. Skip list: skip/news.json (77 ids through 2026-10-08). Does not repeat news.json id deployable-energy-dome-selection-2026-09-30.",
+    "angles_run": [
+      "skip/candidates.json triage (14 entries)",
+      "reactor criticality and testing (Reactor Pilot Program, INL DOME, eVinci NCERC)",
+      "financing and SPAC events (Valar Series B, Kairos Hermes 2 financing, NuCube/Launch Two 425)",
+      "fuel (HALEU, TRISO, Kairos pebble inspection automation)",
+      "first-of-a-kind deployments (Last Energy PWR-5 Texas A&M, Aalo-X)",
+      "setbacks and cancellations (general sweep, U-Battery and Eielson surfaced only as pre-window or undated)",
+      "key hires and departures (Nuclea CEO, Hadron EVP, NANO licensing; none in window)",
+      "company sweep: Radiant, Westinghouse eVinci, Antares, Valar, Aalo, NANO Nuclear, Last Energy"
+    ],
+    "candidates_triage": {
+      "already shipped in skip/news.json": ["Last Energy Texas DSA approval (2026-10-08)", "BWXT BANR chosen for Canadian project (2026-10-05)", "NuCube-Launch Two S-4 (2026-09-11), so the 2026-10-06 Launch Two filing adds nothing dated", "Radiant Kaleidos to INL (2026-08-12)", "eVinci zero-power criticality (2026-08-24)", "Army Janus awards (2026-08-26)", "Samsung C&T Kairos investment (2026-09-21)", "Westinghouse Fort Drum eVinci (2026-08-26)"],
+      "written as a follow-up item at coordinator request (50 MWe, flagged in its why_it_matters)": ["Kairos Hermes 2 $643M financing (2026-10-14 Bloomberg; 2026-10-16 Neutron Bytes)"],
+      "out of 1-20 MW scope, not written": ["Westinghouse / Poland long-lead procurement (2026-10-16), Westinghouse / Poland initial orders (2026-10-14), Poland six-unit SMR JV (2026-10-15), Czech SMR EIA (2026-10-13), Westinghouse / Hyundai E&C Dutch FEED (2026-10-08): large LWR or SMR builds abroad", "Chinese SMR hot testing (2026-10-14): large SMR, not 1-20 MW"],
+      "fetched and not written": ["Kairos automated fuel pebble inspections (2026-10-14, WNN fetched): a manufacturing process change at the Albuquerque campus, no MW figure, and the only number is a 70,000-pebble inspection target; does not change a microreactor buyer's position", "ARK Venture Fund SEC filing (2026-10-07): an EDGAR index page with no form type or microreactor deal named; not written"]
+    },
+    "absences": [
+      "No event dated after 2026-10-08 was found for any listed 1-20 MW company (Radiant, Antares, Valar, Aalo, Last Energy, NANO Nuclear, Oklo, Westinghouse eVinci, Natura, Kairos, Deployable, Centrus, Terrestrial). Searches returned only pre-window items.",
+      "Radiant Kaleidos at INL DOME: last confirmed step is the 2026-08-12 shipment (already shipped). The Q3 2026 test-campaign target has no confirmed start, criticality or completion in any source found.",
+      "Valar $1B Series B closed, led by Sequoia, dated 2026-08-07 (NEI Magazine fetched, with $200M credit facility led by Erebor and JPMorgan). Dated before the 60-day gap window (starts 2026-08-19), so not written. Not in skip/news.json, so a future gap-window pass could pick it up.",
+      "NANO Nuclear Kronos construction permit application: docketed by NRC in May 2026 (Q3 report fetched, 2026-08-12); NRC schedule for environmental assessment (Q1 2027) and safety evaluation (Q3 2027) given in that report. Both dated before the window; the 2026-04-02 permit filing is already shipped. Not written.",
+      "Last Energy PWR-5 at Texas A&M RELLIS: only 2025 announcements found; no 2026 criticality or startup report. The test was planned for summer 2026 and is unconfirmed.",
+      "Aalo-X: criticality 2026-07-04 already shipped. No post-July event found; the 2026-07-30 Idaho Falls commemorative event outcome is unverified.",
+      "NANO Nuclear / Fortil fuel handling milestone: undated German-language item only, so not written.",
+      "Nuclea Energy CEO (announced 2026-02-11) and Hadron Energy EVP Engineering Eric Williams (effective 2026-08-31): personnel items with no fetched primary page; not written. Hadron item is a briefing-site summary.",
+      "Setbacks: U-Battery suspension (Urenco update, April 2026) and Rolls-Royce lunar reactor suspension are undated or pre-window; not written. Eielson Air Force microreactor procurement pause is from a March 2025 FAQ; not in window.",
+      "Kairos Hermes 2 $643M: no Kairos release, DOE page or TVA page was found or fetchable (kairospower.com/tennessee and the newsroom post fetched, neither has the figure). The item rests on Neutron Bytes and RuntimeWire, which both attribute to Bloomberg, 2026-10-14. The DOE $275M is not confirmed from a DOE source.",
+      "Valar Ward 250 criticality date conflicts across sources (2026-06-18 in skip, 2026-07-14 in one summary, November 2025 in another). Not reopened.",
+      "Search budget used: 13 web searches and 7 fetches. The DOE eVinci page and the WNN eVinci page were fetched; several other results were search summaries only and were not used as sources."
+    ]
+  },
+  "items": [
+    {
+      "id": "evinci-high-temp-criticality-2026-09-03",
+      "date": "2026-09-03",
+      "headline": "Westinghouse eVinci reaches criticality at 663 C in Nevada test",
+      "companies": [
+        "Westinghouse",
+        "Los Alamos National Laboratory",
+        "Idaho National Laboratory",
+        "National Nuclear Security Administration"
+      ],
+      "category": "criticality",
+      "what_happened": "On September 3, 2026, Westinghouse's eVinci test reached criticality at 663 C at the National Criticality Experiments Research Center (NCERC) in Nevada, an NNSA facility. Los Alamos ran the work with Idaho National Laboratory involved. Researchers then measured a peak core temperature of 1,011 C in a subcritical reactivity measurement.",
+      "why_it_matters": "The test gives Westinghouse data at much higher core temperature than its August zero-power test. For a buyer of a 1-20 MW reactor it is a design-data step, not a delivery: no customer, price or in-service date is attached.",
+      "binding": true,
+      "binding_note": "An achieved test milestone. It is separate from the 2026-08-24 zero-power criticality already shipped. The DOE and WNN articles describe it as continuing the earlier campaign, so keep the two distinct.",
+      "sources": [
+        {
+          "label": "U.S. Department of Energy, Office of Nuclear Energy — Westinghouse eVinci Microreactor Achieves Criticality Milestone (2026)",
+          "url": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone",
+          "quote": "On September 3, 2026, the eVinci test reached criticality at 663 degrees Celsius.",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — eVinci sets temperature record during zero-power criticality tests (2026)",
+          "url": "https://www.world-nuclear-news.org/articles/evinci-sets-temperature-record-during-zero-power-criticality-tests",
+          "quote": "a subcritical reactivity measurement at a peak core temperature of 1,011 degrees C",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kairos-hermes2-643m-financing-2026-10-14",
+      "date": "2026-10-14",
+      "headline": "Kairos lines up $643M for Hermes 2 in Tennessee, $275M from DOE",
+      "companies": [
+        "Kairos Power",
+        "U.S. Department of Energy"
+      ],
+      "category": "financing",
+      "what_happened": "Kairos Power has lined up a $643 million funding package for its Tennessee reactor program, according to a Bloomberg report on October 14, 2026. It includes $368 million from private backers and $275 million in U.S. Department of Energy financing. Kairos expects the 50 MW Hermes 2 demonstration plant in Oak Ridge to start up in 2030.",
+      "why_it_matters": "Hermes 2 is a 50 MWe plant, above the 1-20 MW range this site tracks. It is a read on how much capital and federal money a non-light-water design now needs, and on whether DOE support is reaching commercial-scale builds.",
+      "binding": false,
+      "binding_note": "Reported as lined up or secured, but no closing agreement, DOE loan or award document, or Kairos release was found. Secondary coverage differs on how the private $368 million is split among investors. The Samsung C&T $70 million is separate and already shipped.",
+      "sources": [
+        {
+          "label": "Neutron Bytes — Kairos Lands $643M for Hermes 2 Reactor in Tennessee (2026)",
+          "url": "https://neutronbytes.com/2026/10/16/kairos-lands-643m-for-hermes-2-reactor-in-tennessee/",
+          "quote": "secured $643 million in combined private and government financing",
+          "status": "fetched"
+        },
+        {
+          "label": "RuntimeWire — Kairos Power lines up $643M for Tennessee reactor, including $275M from DOE (2026)",
+          "url": "https://runtimewire.com/article/kairos-power-643-million-tennessee-reactor-funding",
+          "quote": "has lined up a $643 million funding package for Kairos Power's Tennessee reactor program",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

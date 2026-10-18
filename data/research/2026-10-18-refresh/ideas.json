@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on time-sensitive arguments (arguments.json); Type N items for major studies dated after 2026-10-08 that change the 1-20 MW case.",
+    "angles_run": [
+      "NRC Price-Anderson amounts (10 CFR 140.11, 140.12) against the current CFR text",
+      "ERCOT Small Generation vs Large Generation interconnection timelines (thresholds argument)",
+      "ERCOT PGRR 140 status for non-settled generators under 10 MW",
+      "Post-2026-10-08 microreactor cost or economics reports (general, national lab, INL, ORNL, academic, arXiv, engrXiv)",
+      "DOE Liftoff update 2026",
+      "EPRI microreactor economics 2026",
+      "GAO advanced reactor or microreactor report 2026",
+      "NEI SMR or microreactor cost study 2026",
+      "CBO and IEA SMR or microreactor cost reports",
+      "Insurer and lender reports on advanced nuclear risk (Swiss Re, Moody's, Lloyd's, WTW, Clyde & Co)",
+      "DOE Reactor Pilot Program report, October 2026"
+    ],
+    "absences": [
+      "No study, report or analysis dated after 2026-10-08 that changes the 1-20 MW case was found in 15 searches across national labs (INL, ORNL), DOE Liftoff, EPRI, GAO, NEI, CBO, IEA, insurers and academic or arXiv work. The items array is empty for this reason.",
+      "INL MARVEL cost paper (cited in search summaries as under journal review, March 2026 slides with TCI $153 M) was not fetched and is not a post-2026-10-08 item, so it was not used.",
+      "thresholds: ERCOT Small Generation (9.9 MW, 8-12 months) and Large Generation (18-30 months) durations were not verified. The ERCOT Planning Guide Section 5.3 and 5.4 text was not reached; the ERCOT PGRR 140 ROS report (dated 2026-08-06) was returned by search but the .docx could not be read by WebFetch. Per the search summary only, PGRR 140 concerns the interconnection process for non-settled generators under 10 MW, is Recommended Approval, and has a proposed effective date 'to be determined'. A reviewer should read that report and the current Planning Guide before the 8-12 month figure is treated as current.",
+      "thresholds: New York 5 MW distribution cut-off and the $750 fee and 60-business-day study were not checked.",
+      "inherit: 'MISO surplus projects have come online in about a year on average since 2024' was not verified against a fetched MISO or FERC source.",
+      "first-article: the DOME 20 MWth cap and 'every project selected under the reactor pilot programme ... no federal cost share' were not verified. Search summaries say the Reactor Pilot Program selected eleven firms in August 2025 and that four microreactors reached criticality by 4 July 2026; those are not confirmed from fetched pages.",
+      "Federal Register (2023-09-05 fee and Price-Anderson adjustment) and eCFR 10 CFR 140.11 fetches redirected to an unblock page and were not followed. The Price-Anderson figures were checked against the Cornell LII mirror of the CFR instead.",
+      "Price-Anderson 2026 adjustment: none found. The 2023 adjustment is the current one in the CFR text fetched on 2026-10-18; the next five-year adjustment is due by about 2028."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "A 300 MWe unit carries $500,000,000 of primary financial protection and accepts a contingent retrospective assessment of $158,026,000.",
+      "verdict": "confirmed",
+      "evidence": "10 CFR 140.11(a)(4), current CFR text as fetched on 2026-10-18, sets the maximum deferred premium at 'no more than $158,026,000 with respect to any nuclear incident', and the same paragraph sets primary protection at $500,000,000. The shipped figures match the current text.",
+      "sources": [
+        {
+          "label": "Cornell Legal Information Institute — 10 CFR § 140.11 (current text)",
+          "url": "https://www.law.cornell.edu/cfr/text/10/140.11",
+          "quote": "no more than $158,026,000 with respect to any nuclear incident",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
