@@ -33,6 +33,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
    V=~/.venvs/microreactors/bin/python
    $V tools/repair_pass_quotes.py data/research/$D-refresh
    $V tools/verify_pass_quotes.py data/research/$D-refresh      # FABRICATED / SLOPPY must be 0
+   $V tools/check_pass_numbers.py data/research/$D-refresh      # UNSUPPORTED: fix the prose or drop the record
    python3 tools/research_pass.py validate data/research/$D-refresh
    ```
 3. **Integrate:** `python3 tools/refresh_integrate.py data/research/$D-refresh --apply`, then
@@ -44,7 +45,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
 5. **Cache new sources:** `python3 tools/fetch_source.py <every new url>` (extends the quote gate).
 6. **Build and test:**
    ```bash
-   python3 tools/build_gaps.py && python3 tools/build_data.py
+   python3 tools/build_gaps.py && python3 tools/build_data.py && python3 tools/build_meta.py
    $V tools/verify_quotes.py --cache            # MISMATCH must be 0
    $V -m unittest discover -s tests             # must pass; print the exit code, never tail -1
    ```

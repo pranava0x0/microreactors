@@ -76,7 +76,10 @@ def resolve(doc, target: str):
         try:
             node = node[int(idx)] if idx else node[key]
         except (KeyError, IndexError, TypeError):
-            return None
+            # `microreactor_lcoe.<row id>`: a list step addressed by a record id
+            node = find_record(node, key) if key and isinstance(node, list) else None
+            if node is None:
+                return None
     return node if isinstance(node, dict) else parent if isinstance(parent, dict) else None
 
 
@@ -176,6 +179,9 @@ def main() -> int:
         if rec is None:
             manual.append(f"{tag}: no record with that id")
             continue
+        if replace_once(json.loads(json.dumps(rec)), c["correction"], c["correction"]) and \
+                not replace_once(json.loads(json.dumps(rec)), c.get("claim", ""), ""):
+            continue  # already applied on an earlier run of this pass
         n = replace_once(rec, c.get("claim", ""), c["correction"])
         if n != 1:
             manual.append(f"{tag}: claim found {n} times, apply by hand -> {c['correction']!r}")
