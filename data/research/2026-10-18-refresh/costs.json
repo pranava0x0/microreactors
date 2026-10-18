@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on shipped costs.json numbers; Type N items for dated fuel-supply or financing events after 2026-10-08 not in skip/news.json",
+    "angles_run": [
+      "HALEU enrichment contracts Oct 2026",
+      "DOE HALEU allocations Oct 2026",
+      "Alaska PCE base rate FY2026/FY2027 (RCA dockets U-25-010, U-26-010)",
+      "Centrus news Oct 2026 deliveries",
+      "Orano Oak Ridge enrichment contract status",
+      "TRISO fuel supply Oct 2026",
+      "DOE LPO / Office of Energy Dominance Financing nuclear conditional commitments Oct 2026",
+      "Urenco / GLE / LIS Technologies contracts Oct 2026",
+      "Launch Pad fuel awards Oct 2026 (Nusano, Oklo)",
+      "microreactor fuel financing this week",
+      "Antares Series C date (July 27, 2026, before window, excluded)",
+      "45Y/48E nuclear IRS guidance 2026"
+    ],
+    "absences": [
+      "No fuel-supply or financing event dated after 2026-10-08 surfaced in any angle; searches returned only June-September 2026 items, all already in skip/news.json or before the window.",
+      "Vistra $4.2B DOE conditional loan (announced 'Oct. 5') found in one snippet with no year shown; it funds existing-fleet uprates, not a microreactor, so excluded even if dated 2026.",
+      "Antares $470M Series C: announced July 27, 2026 (Business Wire URL date; govconwire page returned 403), before the window, so not an item.",
+      "No October 2026 Centrus HALEU delivery, Orano contract finalisation, Urenco or GLE contract, or DOE HALEU allocation round found. Orano's DOE $900M award is dated January 2026 and its contract finalisation was not confirmed in any source found.",
+      "Could not verify the OBBBA nuclear 45Y/48E 2034 construction-start date against the statute or an IRS source; the search returned only 2024-2025 material. The Morgan Lewis shipped citation was not re-fetched.",
+      "The FY2026 final PCE order (docket U-25-010 adoption) was not fetched; the 20.38 cents/kWh current base comes from the May 1, 2026 RCA notice in docket U-26-010, which states it as the current base amount without naming a fiscal year.",
+      "The INL, NEI and Michigan LCOE and capex figures were not re-checked: no newer primary source for those numbers surfaced in the search budget."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-alaska-pce-base-rate-2026",
+      "target": "displaced_alternatives[1].note",
+      "file": "costs",
+      "claim": "The PCE base rate was set at 19.35 cents/kWh",
+      "verdict": "outdated",
+      "evidence": "Regulatory Commission of Alaska notice dated May 1, 2026 (docket U-26-010) states the current PCE base amount is 20.38 cents per kWh and proposes 22.11 cents/kWh for FY2027. The 19.35 figure was set June 13, 2023 and is no longer the current base.",
+      "correction": "The PCE base rate, set at 19.35 cents/kWh in 2023, was 20.38 cents/kWh in 2026 (22.11 proposed for FY2027)",
+      "sources": [
+        {
+          "label": "Regulatory Commission of Alaska — Notice of Proposed Revision to Power Cost Equalization Base Amount, Docket U-26-010 (2026)",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223712",
+          "quote": "The current base amount is 20.38 cents per kilowatt-hour",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

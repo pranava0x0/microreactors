@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "captured": "2026-10-18",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (first_delivery_target) and vendor milestones dated after 2026-10-08 not in skip/news.json, including non-table 1-20 MWe designs.",
+    "angles_run": [
+      "Radiant Kaleidos DOME criticality / status (Oct 2026)",
+      "Antares Mark-1 and Janus follow-ups (Oct 2026)",
+      "Westinghouse eVinci news (Oct 2026)",
+      "Deployable Energy Unity (Oct 2026)",
+      "NANO Nuclear KRONOS / ZEUS (Oct 2026)",
+      "Valar Ward 250 (Oct 2026)",
+      "Aalo-X status (Oct 2026)",
+      "Last Energy PWR-5 fuel load (Oct 2026)",
+      "Steady Energy LDR-50 (Oct 2026)",
+      "Blue Energy, Terra Innovatum, Natura Resources (Oct 2026)",
+      "Generic microreactor news mid-October 2026",
+      "BWXT BANR Fort Campbell update",
+      "Radiant DOME fueling (Sep 2026)",
+      "Natura MSR-1 salt and criticality status",
+      "Oklo Aurora-INL 2028 startup target (Q2 2026 call)",
+      "Army Janus program update (Oct 2026)",
+      "Terra Innovatum SOLO NRC status (Oct 2026)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-09 to 2026-10-18 was found for any shipped or non-table vendor. The search index returned nothing dated after early October for these names, so this is absence of evidence, not confirmed quiet.",
+      "Deployable Energy: full-power DOME test selection announced 2026-10-07 (per Xenospectrum and NEI coverage). Dated one day before the 2026-10-08 cutoff, so excluded as an item. Not fetched from a primary page.",
+      "Radiant: shipped status says the DOME campaign targets completion in Q3 2026. No criticality, completion or delay report was found after the August 2026 transit coverage. radiantnuclear.com returned HTTP 403 to WebFetch, so no check was written.",
+      "Radiant: shipped DOME status cannot be checked against a fetched page, so the Q3 2026 target is left as is.",
+      "Last Energy: full core fuel delivery was scheduled for September 2026 (aggregator source only). No confirmation found, so no item.",
+      "Aalo-X: a job posting (August 2026) says criticality on 2026-07-04. The shipped record is already backed by a fetched POWER article dated 2026-07-06. No new evidence, so no check.",
+      "NANO Nuclear KRONOS and ZEUS: no dated event after 2026-10-08 found. Latest coverage is spring/summer 2026 (Ameresco MOU, UIUC permit pre-application).",
+      "Steady Energy LDR-50: latest dated coverage is July 2026 (STUK preliminary assessment). No October event found.",
+      "Terra Innovatum SOLO: latest coverage 2026-08-19 (NRC readiness assessment). Not on the shipped table; no October event found.",
+      "Natura MSR-1: no criticality or fuel-loading report found. FLiBe salt delivery is already on the news skip list (2026-09-22). Blue Energy: searches returned no results.",
+      "Oklo Aurora-INL: the Oklo fact-sheet PDF exceeded the 10 MB fetch limit. The 2028 startup target is verified only through a MarketBeat fetch of the Q2 2026 call summary (2026-08-08). Oklo's primary Q2 release was not found.",
+      "Westinghouse eVinci: no October 2026 news found. Latest verified items (zero-power criticality, 663 C test) are already on the news skip list.",
+      "Army Janus: no program update after the 2026-08-26 award found. The DOE and DIU release pages were not reachable.",
+      "Antares Mark-0 criticality date: sources conflict (Antares release says 2026-06-04; SMR Intel says 2026-07-04). The shipped date 2026-06-04 is kept; no check written."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-oklo-aurora-1",
+      "target": "oklo-aurora",
+      "file": "vendors",
+      "claim": "Not published",
+      "verdict": "wrong",
+      "evidence": "Oklo's Q2 2026 earnings call (reported 2026-08-08) said the company continues to target a 2028 startup for Aurora-INL, the planned 75 MWe plant. Shipped first_delivery_target and first_delivery_year treated the date as unpublished.",
+      "correction": "2028 (Aurora-INL startup target)",
+      "sources": [
+        {
+          "label": "MarketBeat — Oklo Q2 earnings call highlights (2026-08-08)",
+          "url": "https://www.marketbeat.com/instant-alerts/oklo-q2-earnings-call-highlights-2026-08-08/",
+          "quote": "Aurora-INL, which remains targeted for a 2028 startup",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

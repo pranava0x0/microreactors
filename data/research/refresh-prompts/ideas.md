@@ -1,0 +1,3 @@
+TASK: Why microreactors tab (arguments, ideas, studies). Output data/research/{{DATE}}-refresh/ideas.json (top-level _meta, checks (file "arguments"), items (Type N, category policy, up to 4)). Read skip/arguments.json and skip/news.json.
+(1) Type G checks (target = argument id) on arguments whose numbers are time-sensitive (fuel supply, costs per kW, demand sizes, deployment counts, state laws). Write a check only with a fetched page.
+(2) Items: major published studies, reports or analyses dated after {{NEWEST_NEWS}} that change the case for or against 1-20 MW reactors (national labs, DOE Liftoff updates, NEI, EPRI, IEA, CBO/GAO, academic cost studies, insurer or lender reports). The record's what_happened must carry the study's headline number.

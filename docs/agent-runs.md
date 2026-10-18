@@ -265,3 +265,29 @@ at every figure in the prose) decided what shipped.
 **One improvement.** Haiku is fine for finding leads and poor at quoting: WebFetch hands back a model's summary,
 so a "fetched" quote is often a paraphrase. Budget the Sonnet verify pass up front and give haiku only the
 discovery step and the skip list; the skip list is what kept 12 of 13 policy and cost items from being re-added.
+
+## 2026-10-18 refresh: haiku only, first run of the daily routine
+
+Seven haiku agents (four at a time), one per tab, from the reusable prompts in
+`data/research/refresh-prompts/`. Offline gates (`verify_pass_quotes.py`, `check_pass_numbers.py`)
+and a main-session read decided what shipped; `refresh_integrate.py` applied it.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news (blind search) | 159K | 1 item (Deployable DOME selection) | partly |
+| news (watcher leads) | 277K | 2 items; 1 dropped as a duplicate of a shipped eVinci item | yes: the watcher found 14 leads search missed |
+| politics | 148K | nothing new after 10-08 | no |
+| deals | 126K | 1 confirmed check (Janus) | no |
+| vendors | 142K | 1 correction (Oklo Aurora-INL 2028 target) | yes |
+| costs | 150K | 1 correction (Alaska PCE base rate 20.38c, 22.11c proposed) | yes |
+| ideas | 137K | 1 confirmed check | no |
+| applications | 166K | 4 new segment rows (data centers, mining, shipping) | yes |
+
+**Validation of shipped data.** Caching 46 previously uncached sources raised the offline quote gate from
+943 to 1,005 checked quotes and surfaced 3 drifted quotes in older rows (a table quote with invented `|`
+separators, a PDF span whose spacing changed, a page now behind a login wall). Two were re-copied; the
+paywalled capture was dropped from the index.
+
+**One improvement.** Blind web search by haiku finds almost nothing in a 10-day window. Run
+`tools/news_watch.py` first and hand the news agent its candidates; give the politics, deals and ideas
+agents the same kind of lead list or run them every other day.
