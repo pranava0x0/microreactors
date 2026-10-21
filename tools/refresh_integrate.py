@@ -116,6 +116,26 @@ def dump(path: pathlib.Path, doc: dict) -> None:
     path.write_text(json.dumps(doc, indent=indent, ensure_ascii=False) + ("\n" if old.endswith("\n") else ""))
 
 
+def source_owner(node, text: str):
+    """The innermost dict with a `sources` list whose subtree holds `text`. A check's
+    target can resolve to a group (policy.json `licensing`) whose pathways carry the
+    sources; attaching only at the target left a corrected figure with no citation."""
+    best = None
+
+    def walk(n) -> bool:
+        nonlocal best
+        if isinstance(n, str):
+            return text in n
+        kids = n.values() if isinstance(n, dict) else n if isinstance(n, list) else []
+        hit = any([walk(k) for k in kids])
+        if hit and best is None and isinstance(n, dict) and isinstance(n.get("sources"), list):
+            best = n
+        return hit
+
+    walk(node)
+    return best
+
+
 def write_news_pass(out: pathlib.Path, date: str, ship: list) -> None:
     """A re-run of the same pass appends: overwriting would drop every item an
     earlier run of this pass already shipped (it did, on 2026-10-21)."""
@@ -193,9 +213,10 @@ def main() -> int:
         if n != 1:
             manual.append(f"{tag}: claim found {n} times, apply by hand -> {c['correction']!r}")
             continue
-        if isinstance(rec.get("sources"), list):
-            seen = {s.get("url") for s in rec["sources"] if isinstance(s, dict)}
-            rec["sources"] += [clean(s) for s in fetched(c) if s.get("url") not in seen]
+        owner = source_owner(rec, c["correction"])
+        if owner is not None:
+            seen = {s.get("url") for s in owner["sources"] if isinstance(s, dict)}
+            owner["sources"] += [clean(s) for s in fetched(c) if s.get("url") not in seen]
         applied.append(f"{tag}: {c['claim']!r} -> {c['correction']!r}")
     report += ["", f"## Validation of shipped data: {confirmed} confirmed, {len(applied)} corrected, "
                f"{len(manual)} need a human", ""]
