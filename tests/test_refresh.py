@@ -64,6 +64,13 @@ class TestNewsPassAppends(unittest.TestCase):
             ri.write_news_pass(out, "2026-10-21", [{"id": "b"}])
             self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a", "b"])
 
+    def test_rerun_with_the_same_item_does_not_duplicate_it(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "refresh-2026-10-21.json"
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a"])
+
 
 class TestSourceOwner(unittest.TestCase):
     def test_group_target_attaches_to_the_pathway_holding_the_text(self):
