@@ -2,7 +2,7 @@
   "_meta": {
     "captured": "2026-10-21",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "52 of 84 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 32 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "52 of 85 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 33 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-10-21",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
@@ -12,12 +12,12 @@
       "count": 15
     },
     {
-      "id": "fuel",
+      "id": "award",
       "count": 13
     },
     {
-      "id": "award",
-      "count": 12
+      "id": "fuel",
+      "count": 13
     },
     {
       "id": "contract",
@@ -66,6 +66,27 @@
           "label": "NANO Nuclear Energy via Newsfile, NANO Nuclear Energy and IMPSA Sign Master Services Agreement (Oct. 21, 2026)",
           "url": "https://www.newsfilecorp.com/release/320115",
           "quote": "The initial program provides for an estimated six-month period, supported by a retainer.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "navy-selects-radiant-crane-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Navy picks Radiant's Kaleidos for Naval Weapons Station Crane, Indiana",
+      "companies": [
+        "Radiant"
+      ],
+      "category": "award",
+      "what_happened": "The Department of the Navy selected Radiant to deploy a 1 MW Kaleidos microreactor at Naval Weapons Station Crane, Indiana, through the Army's Janus Program. The project still has to go through design refinement, prototype testing, environmental review, site preparation and regulatory coordination before deployment.",
+      "why_it_matters": "This names the vendor for the Crane site the Navy announced in September. Radiant now has selections from the Army, Navy and Air Force, all for 1 MW Kaleidos units.",
+      "binding": false,
+      "binding_note": "A selection, not a contract with a price or delivery date.",
+      "sources": [
+        {
+          "label": "Radiant, US Navy Selects Radiant to Power Critical Infrastructure at Naval Weapons Station Crane (Oct. 20, 2026)",
+          "url": "https://www.radiantnuclear.com/news/navy-selects-radiant",
+          "quote": "today announced its selection by the Department of the Navy to deploy its Kaleidos microreactor at Naval Weapons Station Crane, Indiana",
           "status": "fetched"
         }
       ]

@@ -56,5 +56,14 @@ class TestDumpKeepsLayout(unittest.TestCase):
                     self.assertEqual(p.read_text(), before)
 
 
+class TestNewsPassAppends(unittest.TestCase):
+    def test_rerun_keeps_items_an_earlier_run_shipped(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "refresh-2026-10-21.json"
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            ri.write_news_pass(out, "2026-10-21", [{"id": "b"}])
+            self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a", "b"])
+
+
 if __name__ == "__main__":
     unittest.main()

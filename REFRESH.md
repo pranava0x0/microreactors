@@ -73,7 +73,21 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   what ships, never the agent's own status flag.
 - **`unverifiable` checks are wasted tokens.** The contract now forbids them; a check ships only
   with a fetched page behind it.
-- **2026-10-21: a source that renders empty in the browser pane is unverified, not "probably fine".**
-  radiantnuclear.com returns a title and no body even to a real browser; the item citing it was
-  dropped. newsfilecorp.com and sec.gov (403 to scripts) do read in the browser pane via
-  `javascript_tool` `document.body.innerText`.
+- **2026-10-21: X (x.com) is the best discovery layer for the last 72 hours.** Searched in the
+  user's logged-in Chrome (Latest tab, `since:` operator), it surfaced 15 leads in four queries,
+  including a Navy selection and a NANO supplier deal posted that morning, which the RSS watcher,
+  Reddit and four Haiku web-search agents all missed (search indexes lag 1-2 days). Queries and
+  noise patterns: `data/research/news/x-leads-2026-10-21.md`. Hand the leads to Haiku
+  agents, but expect them to fail on anything under ~2 days old; the main session sources those
+  in the browser. Discovery only: cite the primary page, never a post.
+- **2026-10-21: a page that blocks scripts can still be cached.** radiantnuclear.com and inl.gov
+  (403 to curl) and newsfilecorp.com (HTTP 202 with an empty body) all render in headless
+  Playwright from the venv; index the rendered HTML with `fetch_source.py URL --from-file
+  page.html --force` and the offline quote gate checks it. neimagazine.com and energynews.pro
+  403 even to Playwright: verify those in the browser pane (`document.body.innerText`). An empty
+  body is now FETCH FAILED / UNREACHABLE in both tools, not a page the quote is missing from.
+- **2026-10-21: two refreshes in one checkout collide.** The scheduled routine ran while a manual
+  refresh was mid-pass, committed its working tree and opened the PR, dropping an item the manual
+  run had verified. Before a manual run, check `gh pr list --search head:refresh/` and the
+  sessions list; a routine that finds an uncommitted pass dir it did not create should stop.
+  `refresh_integrate.py` re-runs now append to `refresh-<date>.json` instead of overwriting it.

@@ -294,7 +294,10 @@ agents the same kind of lead list or run them every other day.
 
 ## 2026-10-21 daily refresh
 
-Pass dir already held agent output from an earlier run, so no agents were re-run. 6 news items
-integrated; 5 shipped, 1 dropped (Radiant/Navy Crane: the page is a JS shell and no
-text could be read). 2 corrections (NRC advanced-reactor rate $154, Radiant Kaleidos status). The
-GridMarket application was held (403, quote unreadable).
+Manual run (Opus main session) plus the scheduled routine, which committed mid-pass. 9 Haiku
+agents: the 7 tab prompts plus two on X leads. X search in the user's Chrome found 15 leads;
+Reddit (`news_watch.py --reddit`, ~45 min) confirmed 3 of them and added none of note. Shipped:
+6 news items (Navy/Radiant Crane, NANO/IMPSA, Deep Fission MEPA, NTHU/NuCube, Oklo Groves-2,
+MARVEL DSA), 1 application (GridMarket/Deployable), 2 corrections (NRC advanced-reactor rate,
+Radiant Kaleidos status). Three of the six news items were sourced by the main session from X
+leads the agents could not find; Haiku agents on leads under two days old found nothing.
