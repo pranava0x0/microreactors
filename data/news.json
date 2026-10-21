@@ -2,7 +2,7 @@
   "_meta": {
     "captured": "2026-10-21",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "52 of 85 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 33 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "53 of 85 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 32 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-10-21",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
@@ -227,8 +227,8 @@
       "category": "regulatory",
       "what_happened": "DOE's Idaho Operations Office approved the final documented safety analysis for MARVEL, authorizing a dry criticality configuration at near-zero power. The reactor's primary coolant system arrived at INL's Transient Reactor Test Facility in mid-September, and INL anticipates criticality in December.",
       "why_it_matters": "MARVEL is DOE's own test microreactor, built to host end-user experiments. INL says it will share the approved safety document as a template for industry.",
-      "binding": false,
-      "binding_note": "A DOE safety authorization for a lab test reactor, not a commercial deal.",
+      "binding": true,
+      "binding_note": "DOE formally approved the safety analysis; it authorizes a dry criticality configuration but is not a commercial commitment.",
       "sources": [
         {
           "label": "Idaho National Laboratory, MARVEL reactor gets federal safety approval as its primary vessel arrives in Idaho (Oct. 6, 2026)",
