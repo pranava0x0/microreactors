@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (vendors.json) where a dated primary page shows a change; Type N items for vendor milestones dated after 2026-10-14 that skip/news.json lacks, including 1-20 MWe designs not in the vendors table.",
+    "angles_run": [
+      "Radiant Kaleidos DOME campaign status (criticality, fuel load, Q3 2026 completion target)",
+      "Microreactor milestones October 2026 (criticality, fuel loading), cross-vendor",
+      "Antares Mark-1 and Janus/R1 news after 2026-09",
+      "Valar Ward 250 news after June 2026",
+      "Deployable Energy Unity DOME 2027 (selection confirmed in skip/news.json)",
+      "Aalo-X news after July 2026",
+      "Last Energy PWR-5 status (Texas A&M story date checked: 2026-05-29, not eligible)",
+      "Natura MSR-1 Abilene news after 2026-09",
+      "NANO Nuclear KRONOS and LOKI news after 2026-01",
+      "Westinghouse eVinci news after 2026-09",
+      "Steady Energy product and news",
+      "Terra Innovatum news after 2026-09",
+      "Janus program award updates after 2026-08-26",
+      "Blue Energy microreactor news (found only 300 MW BWRX-300 SMR work; out of 1-20 MWe scope)"
+    ],
+    "absences": [
+      "Radiant Kaleidos DOME campaign: no fuel-load, zero-power criticality or campaign-completion report found through 2026-10-21. The Q3 2026 completion target has passed unreported. Radiant's own newsroom (radiantnuclear.com) returned HTTP 403 to WebFetch, so company-side confirmation was not obtained.",
+      "Antares Mark-1 / R1: no news dated after 2026-09 found. Latest found: Space Force $161M award, 2026-09-11 (already in skip/news.json). No new post-2026-10-14 milestone.",
+      "Valar Ward 250: no news after June 2026 found, including no power, contract or delivery update for the 30 MW Utah project.",
+      "Aalo-X: no news after the 2026-07-04 criticality found.",
+      "Last Energy PWR-5: no criticality or fuel-load report found. Texas A&M story is dated 2026-05-29 (not eligible). The 2026-10-08 DSA approval is already in skip/news.json.",
+      "Natura MSR-1 (Abilene): no 2026 construction, permit or fuel news found. Only a 2024 item. The 2026-09-22 salt delivery is already in skip/news.json.",
+      "NANO Nuclear KRONOS (UIUC) and LOKI: no news after 2026-01 found. Latest is a 2026-01 MOU and a Loki lunar RFI. The company says its DOME 2027 LOKI timeline is under review after an acquisition. Oct 2026 NANO items in skip/news.json (IP3 LOI, Radnostix licence) are out of scope here.",
+      "Westinghouse eVinci: no news dated after 2026-09-15 found. The 2026-08-24 and 2026-09-03/15 criticality events are already shipped.",
+      "Steady Energy 'LOKI': no product by that name found. The only Steady Energy item found is a March 2025 funding raise. The 2026-09-15 EIB loan is already in skip/news.json.",
+      "Terra Innovatum SOLO: Brazil LOI and Illinois MOU found, but no dated item after 2026-10-14. Brazil LOI date not confirmed.",
+      "Janus program: no award, contract-signing or post-award update after 2026-08-26 found. All five awards are already in skip/news.json.",
+      "Blue Energy: 2026 news is a 2.5 GW gas-plus-BWRX-300 SMR project in Texas, outside the 1-20 MWe scope, so not recorded."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "First new reactor design to be tested in DOE's DOME test bed. First TRISO fuel tranche received 2026-07-01; five-phase campaign (criticality → heat/power → full power → 150 h unattended continuous operation) targeting completion Q3 2026.",
+      "verdict": "outdated",
+      "evidence": "NEI Magazine article dated 2026-08-21 says Radiant 'has dispatched its 1 MWe Kaleidos microreactor on a 1,000-mile road trip' from its El Segundo facility to INL, and that 'The entire campaign is targeted to conclude rapidly during the third quarter of 2026.' No fuel-load, zero-power criticality or campaign-completion report was found through 2026-10-21, so the Q3 2026 target has passed unreported.",
+      "correction": "First TRISO fuel received 2026-07-01. Kaleidos left El Segundo for INL in August 2026. Campaign was targeted to finish Q3 2026; no completion reported as of 2026-10-21.",
+      "sources": [
+        {
+          "label": "NEI Magazine — Kaleidos moves to Idaho test facility (2026-08-21)",
+          "url": "https://www.neimagazine.com/news/kaleidos-moves-to-idaho-test-facility/",
+          "quote": "The entire campaign is targeted to conclude rapidly during the third quarter of 2026.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

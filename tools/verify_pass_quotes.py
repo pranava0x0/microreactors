@@ -81,6 +81,10 @@ def page_text(url: str) -> Tuple[str, str]:
         return "", f"HTTP {e.code}"
     except Exception as e:  # noqa: BLE001
         return "", type(e).__name__
+    if not raw.strip():
+        # newsfilecorp.com answers a script with HTTP 202 and no body. An empty
+        # page is unreachable, not a page the quote is missing from.
+        return "", "empty body"
     if raw[:4] == b"%PDF":
         try:
             from pypdf import PdfReader
@@ -111,6 +115,7 @@ def main() -> int:
     fabricated: List[str] = []
     displayed: List[str] = []
     noquote: List[str] = []
+    unreachable: List[str] = []
 
     for f in files:
         d = json.loads(f.read_text())
@@ -162,6 +167,7 @@ def main() -> int:
                 text, err = cache[url]
                 if err:
                     tally["UNREACHABLE"] += 1
+                    unreachable.append(f"{where}  {err}  ({url[:90]})")
                     continue
                 if norm(q) in norm(text):
                     tally["VERIFIED"] += 1
@@ -191,6 +197,8 @@ def main() -> int:
         print(f"  SLOPPY      {m}")
     for m in noquote:
         print(f"  NOQUOTE     {m}  (fetched, but nothing to check)")
+    for m in unreachable:
+        print(f"  UNREACHABLE {m}")
     if fabricated or sloppy:
         print()
     print("  ".join(f"{k.lower()} {v}" for k, v in tally.items()))

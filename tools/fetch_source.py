@@ -107,6 +107,11 @@ def add(url: str, title: str, note: str, force: bool, idx: dict,
         except (urllib.error.URLError, urllib.error.HTTPError, OSError) as e:
             print(f"FETCH FAILED  {url}: {e}", file=sys.stderr)
             return False
+    if not body.strip():
+        # newsfilecorp.com answers a script with HTTP 202 and no body. Indexing
+        # that would make the quote gate read an empty page as the source.
+        print(f"FETCH FAILED  {url}: empty body", file=sys.stderr)
+        return False
     CACHE.mkdir(parents=True, exist_ok=True)
     p = cache_path(url, ctype)
     p.write_bytes(body)

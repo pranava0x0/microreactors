@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "news-x-b",
+    "scope": "X discovery leads 3, 4, 6, 7, 9, 10, 14, 15 from skip/x-leads.md (discovery only; every record cites a fetched primary page). Leads 7 and 10 were left to the Applications agent unless a dated announcement existed. Leads 14 and 15 were written only if they changed something for a buyer.",
+    "angles_run": [
+      "Lead 3: Deep Fission Great Plains Development Authority agreement (SEC 8-K and Ex. 99.1 fetched)",
+      "Lead 4: NANO Nuclear / IMPSA engineering services agreement (search only)",
+      "Lead 6: NuCube / National Tsing Hua University THOR replacement (Focus Taiwan fetched)",
+      "Lead 7: Idaho State University / NuCube training reactor (search only)",
+      "Lead 9: Zeno Power Vallecitos hot-cell lease (search only)",
+      "Lead 10: BWXT BANR / Pabineau and Eel River Bar First Nations (checked against skip/news.json)",
+      "Lead 14: Valar Atomics VP Nuclear Operations hire (search only)",
+      "Lead 15: Oklo and Vertiv cooling collaboration (search only)"
+    ],
+    "absences": [
+      "Lead 4 NANO Nuclear and IMPSA: no engineering services master agreement found in two searches. Search results show a NANO Nuclear master services agreement with AECOM (July 2025) and a Fortil collaboration on the KRONOS fuel handling system, neither of which is IMPSA. A March 2026 Forbes Argentina item on an IMPSA nuclear-component export deal names no US counterparty. Dropped.",
+      "Lead 6 NuCube and NTHU: only one fetched source (Focus Taiwan, Oct. 19, 2026). NuCube's own release and the memorandum text were not found. The 2031 install target rests on a CTEE report that was not fetched, so it is not used. A briefglance.com piece calls the deal exclusive and names a 1 MW unit; not used because it is unconfirmed.",
+      "Lead 7 Idaho State University and NuCube training reactor: ISU and NuCube pages exist (DOE Launch Pad selection, April 2026; site selection shipped as isu-nucube-art-reactor-site-2026-09-16). No October 2026 announcement was found or fetched. Dropped; left to the Applications agent.",
+      "Lead 9 Zeno Power Vallecitos lease: the lease is real (NorthStar Group Services, Sunol, CA), but the product is a strontium-90 and americium-241 radioisotope battery plant, not a 1-20 MW reactor. Sources disagree on the deal date (March 2024 in Zeno's release, March 2025 in Interesting Engineering and Seraphim). Not written, as it does not change anything for a microreactor buyer.",
+      "Lead 10 BWXT BANR at Belledune: the selection by Prodigy, Pabineau and Eel River Bar is already shipped as bwxt-banr-belledune-prodigy-2026-10-05. Not duplicated. Note: a press summary says the New Brunswick government signed a letter of intent to buy the output, which is not binding and is not in the shipped record.",
+      "Lead 14 Valar Atomics hire of Brian Cummings as VP Nuclear Operations: no record found in searches. Only Mark Mitchell (Chief Nuclear Officer, 2024) surfaced. Dropped.",
+      "Lead 15 Oklo and Vertiv cooling collaboration: the announcement is dated July 22, 2025, not 2026, and is not a new event. Dropped."
+    ]
+  },
+  "items": [
+    {
+      "id": "deep-fission-gpda-master-energy-purchase-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Deep Fission signs binding 25-year power deal for Kansas industrial park",
+      "companies": ["Deep Fission"],
+      "category": "contract",
+      "what_happened": "Deep Fission signed a Master Energy Purchase Agreement with the Great Plains Development Authority, which owns the Great Plains Industrial Park in Parsons, Kansas. It turns a December 2025 letter of intent into a 25-year contract. The first phase is anticipated at 150 MW with a target commercial operation date of September 30, 2028, growing to 2,000 MW in later phases if demand grows.",
+      "why_it_matters": "The first phase is far larger than a 1-20 MW block. The authority buys power only for tenants' needs, with no minimum purchase obligation, so the offtake depends on tenant demand.",
+      "binding": true,
+      "binding_note": "Executed contract, but the 8-K says it is subject to regulatory approvals and other conditions to commercial operation. Purchases depend on tenant demand.",
+      "sources": [
+        {
+          "label": "Deep Fission — Exhibit 99.1 press release, Deep Fission Signs Binding 25-Year Master Energy Purchase Agreement (Oct. 20, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001918102/000110465926117389/tm2627978d1_ex99-1.htm",
+          "quote": "The initial phase is anticipated to be 150 MW with a target date of commercial operation on September 30, 2028",
+          "status": "fetched"
+        },
+        {
+          "label": "Deep Fission — Form 8-K, Item 7.01 (Oct. 20, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001918102/000110465926117389/tm2627978d1_8k.htm",
+          "quote": "The Agreement is subject to regulatory approvals and other conditions to commercial operation",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nthu-nucube-thor-replacement-mou-2026-10-19",
+      "date": "2026-10-19",
+      "headline": "NTHU and NuCube sign MOU to study replacing Taiwan research reactor",
+      "companies": ["NuCube Energy"],
+      "category": "contract",
+      "what_happened": "National Tsing Hua University and NuCube Energy signed a memorandum of understanding in Taipei to assess replacing the university's Tsing Hua Open-pool Reactor (THOR), which began operating in 1961 and is scheduled for decommissioning in 2040. NuCube's CEO said at the signing that the company planned its first deployment for the end of 2029.",
+      "why_it_matters": "A university research reactor is a small, dated replacement need, not a power sale. The memorandum names no capacity, price or contract value, so it shows interest, not demand.",
+      "binding": false,
+      "binding_note": "Memorandum of understanding. The university calls it an exploratory step; it covers technology, research use and deployment feasibility.",
+      "sources": [
+        {
+          "label": "Focus Taiwan (Central News Agency) — NTHU to explore research reactor development with NuCube (Oct. 19, 2026)",
+          "url": "https://focustaiwan.tw/sci-tech/202610190020",
+          "quote": "an exploratory step toward possible deployment of a NuCube microreactor to replace THOR",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

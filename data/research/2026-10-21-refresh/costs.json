@@ -1,0 +1,34 @@
+{
+ "_meta": {
+  "captured": "2026-10-21",
+  "agent": "costs",
+  "scope": "Costs tab: Type G checks on shipped cost claims (costs.json) and Type N items for fuel-supply or financing events dated after 2026-10-14 not in skip/news.json.",
+  "angles_run": [
+   "HALEU enrichment contracts Oct 2026",
+   "DOE loans for nuclear / Office of Energy Dominance Financing",
+   "Alaska PCE rates and rural retail tariffs (checked the shipped regulator claim)",
+   "Treasury/IRS guidance on 45Y/48E for nuclear (incentives claim)",
+   "Centrus news Oct 2026",
+   "TRISO fuel supply agreements for microreactors",
+   "DOE HALEU allocation rounds and deliveries",
+   "Orano / Urenco / GLE enrichment awards",
+   "Microreactor financing rounds",
+   "Oklo fuel fabrication",
+   "energy.gov HALEU awards Oct 2026",
+   "Antares / Radiant / Kairos fuel news Oct 2026"
+  ],
+  "absences": [
+   "No dated fuel-supply or financing event after 2026-10-14 found in any angle. Searches returned only events dated on or before 2026-10-05 (for example EDF's $4.2B Vistra conditional commitment dated 2026-10-05, a large-reactor uprate loan and therefore outside this tab's microreactor scope, and already dated before the window).",
+   "Alaska: the shipped claim that the state regulator puts rural Alaska at $410-1,950/MWh could not be verified. The RCA/AEA PCE notice fetched (dated 2026-05-01, aws.state.ak.us id=223712) gives the PCE base of 20.38 cents/kWh and a proposed 22.11 cents/kWh for FY2027 for Anchorage, Fairbanks and Juneau residential averages, and no $410-1,950/MWh band. No contradiction found, so no check written.",
+   "Incentives: the shipped claim that nuclear under 45Y/48E is available for construction beginning before 2034 is supported by a Morgan Lewis article dated 2025-07-24 (fetched). That is a secondary source and older than the ~60-day window for a confirmed verdict; no check written. Treasury/IRS nuclear-specific guidance in 2026 was not found.",
+   "HALEU: no 2026 cumulative delivery total was found. Sources conflict on delivered kilograms (900 kg by June 2025 vs. more than 920 kg; a 1,900 kg lifetime figure in a press release). DOE's 21 MT by June 2026 target status was not confirmed. No check written.",
+   "Centrus $900M DOE task order (January 2026) and July 2026 contract finalization are already on the shipped news tab; no new event found.",
+   "No Oct 2026 microreactor financing round found. Latest found: Valar $1B Series B (2026-08-06), Antares Series C (date not confirmed), Radiant >$300M (date not shown).",
+   "No Oct 2026 TRISO supply deal found. Latest: Standard Nuclear with Antares (2026-08-27) and Radiant (2026-08-20), both already shipped.",
+   "No Oct 2026 Orano, Urenco or GLE enrichment award found. The shipped January 2026 $2.7B task orders are the latest.",
+   "Searches were run with WebSearch only; the DOE and company newsrooms were not fetched directly for October 2026 items, so an unindexed October event is possible."
+  ]
+ },
+ "checks": [],
+ "items": []
+}

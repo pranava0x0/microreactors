@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "applications",
+    "scope": "Applications tab: Type S new named buyer projects in segments the tab lacks or covers thinly (behind-the-meter data centers, mines, hospitals, disaster recovery, military civilian loads, maritime, remote First Nations power); Type G checks on shipped segment/deployment_sites records only where a fetched primary page changed or contradicted them; Type E only where skip/regions.json lacks the jurisdiction. Shipped subjects found in skip/news.json, skip/opportunities.json or skip/deployment_sites.json were not re-added.",
+    "angles_run": [
+      "ISU / NuCube training reactor (fetched isu.edu/artreactor; already shipped in news 2026-09-16)",
+      "Pabineau and Eel River Bar First Nations / BWXT BANR, Belledune (fetched WNN 2026-10-06; already shipped in news 2026-10-05)",
+      "Malmstrom AFB preferred site (search only; ANPI site already in opportunities anpi-malmstrom; military load, context only)",
+      "hospital microreactor 2026 (search only; no named hospital deal with MW found)",
+      "disaster recovery / emergency power microreactor 2026 (search only; no 2026 agreement with MW found)",
+      "behind-the-meter data center microreactor 2026 (search; Waiken, Uvation, Equinix, Last Energy Haskell already shipped; GridMarket and Deployable not in any skip list, fetched energynews.pro 2026-07-08)",
+      "mine-site microreactor 2026 (search only; Tata Green River already in segments; no new 2026 mine deal with MW)",
+      "NASA / DOE fission surface power 2026 award (search only; Jan 2026 MOU matches shipped record; no new award found)",
+      "CVEA Valdez microreactor 2026 (search only; no 2026 project update; CVEA Jan 2026 PDF fetched as binary, unreadable)",
+      "Eielson AFB Oklo 2026 (search; AF CAMP newsletter 2026-06-18 fetch returned HTTP 403, so only snippet-level status)",
+      "Last Energy London Gateway 2026 (search only; no 2026 update found)",
+      "Last Energy Llynfi Bridgend SIP application 2026 (search plus fetched public notice dated 2026-06-12; pre-application consultation to 2026-07-31, no submitted application found)",
+      "Penn State FRONTIER eVinci 2026 (search only; no 2026 status found)",
+      "Uvation / Terra Innovatum data center pilot 2026 (search only; no site, no 2026 status)",
+      "Equinix / Radiant Kaleidos (search only; already shipped as opportunity equinix-radiant)"
+    ],
+    "absences": [
+      "Hospitals: two searches; no named hospital microreactor agreement with a megawatt figure found for 2026.",
+      "Disaster recovery and emergency power: two searches; only a Radiant Kaleidos plan (no signed agreement with MW), and a 2023 bill whose enactment I could not verify. No record written.",
+      "Mines: one search; the only named mine deal with a microreactor (Tata Chemicals and BWXT, Green River) is already shipped in segments and states no MW. No new 2026 mine deal with MW found.",
+      "Malmstrom AFB: Air Force preferred-site announcement found in search, but the load is military, so it is context only, and it is already in skip/opportunities.json as anpi-malmstrom.",
+      "Idaho State University ART reactor: the ISU page (fetched) gives no kW or MW rating, only 'about 0.1% of the power of a large grid-scale' plant. The event is already in skip/news.json (2026-09-16), so no Type S record was written.",
+      "Belledune, New Brunswick (Pabineau and Eel River Bar First Nations, Prodigy, BWXT BANR): fetched WNN 2026-10-06 gives 22 MWe/75 MWt per unit, two units, early-2030s target, and a letter of intent (not a definitive agreement) for offtake. The event is already in skip/news.json (2026-10-05); no applications or deployment_sites record was written, so the main session may want a deployment_sites record.",
+      "CVEA Valdez (cvea-valdez): the January 2026 CVEA PDF returned as binary without extractable text, so the 'tabled' status could not be checked. No check written.",
+      "Eielson AFB (eielson-pilot): the AF CAMP newsletter dated 2026-06-18 returned HTTP 403. A search summary (not fetched) gives a Q3 2026 fuel-loading forecast; a March 2026 Energy Intelligence item says 'tentatively selected'. These conflict, so no check written.",
+      "Penn State FRONTIER (psu-frontier, penn-state-evinci): no 2026 status change found in search; no check written.",
+      "Uvation pilot (uvation-data-center-pilot): no site, binding agreement, or 2026 filing found in search.",
+      "Last Energy Llynfi (lastenergy-llynfi): the notice of 2026-06-12 shows pre-application consultation to 2026-07-31 and no submitted application. The shipped 'plans a Welsh SIP application in July 2026' is neither confirmed nor contradicted, so no check written.",
+      "NASA/DOE fission surface power (nasa-doe-fsp-lunar): search found only the Jan 2026 MOU and older design-phase awards; no 2026 award. No check written.",
+      "Last Energy London Gateway (last-energy-london-gateway): no 2026 update found in search; the record stays proposed (MOU).",
+      "Type E regions: none written. No new 2026 jurisdiction or price-and-load pair was found within the lane, and the sweep spent its budget on the Type S and check leads."
+    ]
+  },
+  "applications": [
+    {
+      "id": "gridmarket-deployable-unb-framework",
+      "segment": "data centers behind the meter",
+      "name": "GridMarket and Deployable Energy Unity Nuclear Battery framework",
+      "status": "proposed",
+      "power_class": "approximately 1 megawatt electric (MWe) per unit; nearly 3 GW pipeline",
+      "timeline": "framework announced July 2026 (article dated 2026-07-08); target about 500 MW per year of deployment",
+      "vendor": "Deployable Energy (Unity Nuclear Battery)",
+      "what_it_says": "GridMarket and Deployable Energy announced a framework in July 2026 for a pipeline of nearly 3 GW of Unity Nuclear Battery microreactors. Each unit is about 1 MWe and fits in a 20-foot ISO container, with power integrated at the client's site to serve data centers, hyperscalers and industrial clients. The article does not say whether the framework is binding and says the pilot's definitive commercial terms remain to be specified.",
+      "microreactor_read": "A 1 MWe unit is at the small end of the 1-20 MW block range for a data-center load, but the framework names no site, load or price. It would count as a buyer deal only once it has a named first site, a binding instrument and a stated load.",
+      "sources": [
+        {
+          "label": "Energy News — GridMarket and Deployable Energy partner to deploy 3 GW of nuclear micro reactors (2026-07-08)",
+          "url": "https://energynews.pro/en/gridmarket-and-deployable-energy-partner-to-deploy-3-gw-of-nuclear-micro-reactors",
+          "quote": "approximately 1 megawatt electric (MWe)",
+          "status": "fetched"
+        }
+      ],
+      "group": "compute-industry"
+    }
+  ]
+}

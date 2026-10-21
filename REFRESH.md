@@ -73,3 +73,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   what ships, never the agent's own status flag.
 - **`unverifiable` checks are wasted tokens.** The contract now forbids them; a check ships only
   with a fetched page behind it.
+- **2026-10-21: a source that renders empty in the browser pane is unverified, not "probably fine".**
+  radiantnuclear.com returns a title and no body even to a real browser; the item citing it was
+  dropped. newsfilecorp.com and sec.gov (403 to scripts) do read in the browser pane via
+  `javascript_tool` `document.body.innerText`.

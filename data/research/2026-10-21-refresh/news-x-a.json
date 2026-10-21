@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "news-x-a",
+    "scope": "News tab, X-discovery leads 1, 2, 5, 8 (Aurora-INL DOE safety approval only), 11, 12, 13 from skip/x-leads.md. Discovery only; every lead had to be sourced to a fetched primary or trade page, checked against skip/news.json.",
+    "angles_run": [
+      "Lead 1: Navy selects Radiant for Crane (navy.mil / Radiant / trade)",
+      "Lead 2: Fort Benning Janus planning, Radiant Kaleidos 2028",
+      "Lead 5: Antares Nuclear Energy Launch Pad selection",
+      "Lead 8: Oklo Aurora-INL DOE safety approval (Oct 2026)",
+      "Lead 11: MARVEL dry criticality approval and December test",
+      "Lead 12: Malmstrom AFB microreactor preferred site",
+      "Lead 13: Exens neutron detectors in Reactor Pilot Program criticalities"
+    ],
+    "absences": [
+      "Lead 1 (Navy selects Radiant for Crane, dated 2026-10-20): not found. The Department of War announcement of 2026-09-11 says a commercial microreactor will be installed at NWS Crane by September 2028 under Janus, and names no vendor. SMR Intel lists Radiant only as one of five Janus vendors, so Radiant is a candidate, not a selection. No navy.mil or Radiant release for an Oct 20 selection surfaced, and no WebFetch of one succeeded. Dropped.",
+      "Lead 2 (Fort Benning planning for three Radiant Kaleidos units in 2028, dated 2026-10-19): the Oct 19 article was not found. The underlying award (Radiant, up to $750M, 15 Kaleidos at Fort Benning, Janus) is already shipped as army-janus-radiant-fort-benning-2026-08-26. Dropped as a duplicate.",
+      "Lead 5 (Antares selected for DOE Nuclear Energy Launch Pad, dated 2026-10-20): no October announcement found. The Antares selection is in the August 24 Launch Pad round, already shipped as launch-pad-round2-2026-08-25. Dropped as a duplicate.",
+      "Lead 8 (Oklo Aurora-INL DOE safety approval, ~2026-10-18): not found. The most recent DOE approval for Aurora-INL is the PDSA of 2026-06-11, already shipped as oklo-aurora-inl-pdsa-2026-06-11. Oklo's Q2 call (2026-08-08) lists the final documented safety analysis as still outstanding. The lead's claimed step (advance to final design/construction) does not match any source found. Dropped; the Oct 19 Groves-2 item is out of scope for this agent.",
+      "Lead 11 (DOE approves MARVEL dry-criticality configuration, dated 2026-10-14, INL targets December test): unverified. An INL release of 2026-10-06 (inl.gov/?p=152712), seen only as a search summary, reportedly says DOE's Idaho Operations Office approved MARVEL's final documented safety analysis for dry criticality, with criticality expected December 2026. The fetch of that page returned HTTP 403, so the text was not read and no quote could be verified. The NEI article of 2026-03-16 (fetched) describes the March 11 approval as a preliminary DSA (PDSA), with dry criticality slated for 2027. The two sources conflict. Dropped pending a fetchable INL release.",
+      "Lead 12 (Malmstrom AFB named preferred microreactor site, dated 2026-10-15): not found as an October event. The Air Force and DIU named Malmstrom and Buckley as preferred ANPI sites on 2026-04-13 (ANS). That is already referenced in the shipped ANPI row in news.json. Dropped as a duplicate.",
+      "Lead 13 (Exens neutron detectors in two Reactor Pilot Program criticalities, 2026-10-16): not searched in depth. It is a component supplier with no 1-20 MW buyer, deployment or financing content, so it is outside the market scope. Dropped as minor.",
+      "Net result: none of the seven assigned leads yielded a new, fetched, unshipped microreactor event dated after 2026-10-14. The primary-source pages for the October items (navy.mil, army.mil, inl.gov/?p=152712, Radiant and Oklo newsrooms) were blocked (403) or not indexed, so the October claims could not be quoted. This is a sourcing gap, not evidence the events did not happen.",
+      "Tooling: no tools/ scripts were run. One stray browser navigate call was made by mistake and returned an error, with no effect on any output."
+    ]
+  },
+  "items": []
+}
