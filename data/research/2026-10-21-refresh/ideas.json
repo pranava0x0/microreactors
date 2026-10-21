@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "ideas",
+    "scope": "Why tab arguments (checks on time-sensitive numbers) and major studies dated after 2026-10-14 that change the case for or against 1-20 MW reactors",
+    "angles_run": [
+      "general microreactor cost study Oct 2026",
+      "DOE Liftoff update 2026",
+      "EPRI advanced reactor economics 2026",
+      "GAO microreactor 2026",
+      "NEI microreactor report Oct 2026",
+      "IEA SMR cost 2026",
+      "INL microreactor analysis Oct 2026",
+      "national lab LCOE 2026",
+      "insurer and lender microreactor risk 2026",
+      "CBO advanced reactor cost 2026",
+      "Army or Air Force microreactor cost study Oct 2026",
+      "ERCOT small generation 10 MW threshold 2026",
+      "MISO surplus interconnection time to service 2026",
+      "Argonne / ORNL / Sandia techno-economic 2026",
+      "OECD NEA microreactor 2026",
+      "arXiv Oct 2026 microreactor cost",
+      "DOE deployment analysis after Oct 14 2026"
+    ],
+    "absences": [
+      "No study, report or analysis dated after 2026-10-14 on 1-20 MW reactor economics was found from DOE Liftoff, EPRI, NEI, IEA, GAO, CBO, OECD NEA, Argonne, ORNL, Sandia, INL or insurer and lender sources. Searches returned only 2024-2026 items dated earlier, so no item records were written.",
+      "The ERCOT Planning Guide Section 5 (08-01-26 version) could not be read: the WebFetch returned binary .docx content. The shipped 10 MW threshold and the 8-12 and 18-30 month figures in the 'thresholds' argument are therefore unverified this pass. A PDF or text export of that Section 5 is needed.",
+      "The 'fuel', 'liability', 'first-article', 'battery' and 'product' arguments were not re-checked: no time-sensitive number in those claims turned up in a fetched page this pass.",
+      "The Royal Society microreactor cost figure (about $3,465/kW) and the INL 2026 LCOE slide figures appeared only in search summaries; they were not fetched and are not used.",
+      "The x-leads file listed a 2026-10-20 Navy, Army, Deep Fission and NANO items. These are news or deal events outside this agent's lane and were not added."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-inherit-1",
+      "target": "inherit",
+      "file": "arguments",
+      "claim": "MISO surplus projects have come online in about a year on average since 2024",
+      "verdict": "confirmed",
+      "evidence": "mgrid.org article dated 2026-08-22 reports that 44 surplus interconnection projects have come online in MISO and that since 2024 the MISO projects took one year on average to reach service. Secondary source, not MISO's own data; no MISO 2026 average was found.",
+      "sources": [
+        {
+          "label": "mgrid.org — PJM Approved Two of Eight Surplus Interconnection Applications While 150 GW Sits Behind Existing Plants (2026-08-22)",
+          "url": "https://mgrid.org/2026/08/22/pjm-approved-two-of-eight-surplus-interconnection-applications-while-150-gw-sits-behind-existing-plants/",
+          "quote": "Since 2024 the MISO projects took one year on average to reach service.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

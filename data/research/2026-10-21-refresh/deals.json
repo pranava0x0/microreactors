@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (janus, eielson, equinix-radiant, oklo-switch); new buyer deals dated after 2026-10-14 not in skip/news.json",
+    "angles_run": [
+      "Type G: Army Janus site assignments (fetched DefenseScoop 2026-08-26)",
+      "Type G: Eielson ANPI / Oklo NOITA status (fetched Oklo Q2 2026 10-Q)",
+      "Type G: Equinix-Radiant preorder (fetched Equinix 2025-08-14 release)",
+      "Type G: Oklo-Switch binding status (fetched Oklo Q2 2026 10-Q)",
+      "Type N: new buyer deals after 2026-10-14, general microreactor PPA/MOU/LOI queries",
+      "Type N: named-vendor sweeps (NANO, Last Energy, Valar, Aalo, Deep Fission, Oklo, Kairos, X-energy, Radiant, Antares, BWXT, Westinghouse, Deployable Energy)",
+      "Type N: SMR MOU / utility and industrial site sweep"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract or site selection) dated 2026-10-15 to 2026-10-21 surfaced in any of the searches, so no Type N items were written.",
+      "Last Energy: a search result about a Llynfi (South Wales) four-unit plan showed an 'October 15' date with no year; the context pointed to 2025, so it was not used.",
+      "GridMarket and Deployable Energy partnership (2026-07-07) is dated before the cutoff and is not in skip/news.json; excluded as out of window.",
+      "Equinix-Radiant: the Radiant release 'Radiant Announces Equinix Preorder & Deposits for 20 Kaleidos Microreactors' returned HTTP 403 on fetch; the deposit wording rests on its search-result title only.",
+      "Oklo-Switch: the 2024 master agreement's non-binding framework language comes from search summaries; the fetched 2026 Oklo 10-Q names Switch only as a prospective customer and does not describe the agreement's terms.",
+      "Eielson: the fetched Oklo 10-Q (Q2 2026) excerpt gives no filing date; the cover page share count is dated 2026-08-04. The NRC licensing condition and 30-year contract terms were not found in the excerpt read.",
+      "Janus: Holston Army Ammunition Plant and Redstone Arsenal remain unassigned; no later Army award for either was found.",
+      "ANPI Joint Base San Antonio, Buckley and Malmstrom: not re-checked within budget; shipped status left as is.",
+      "DOE Reactor Pilot Program, Equinix-Radiant power (MW per unit), NANO-Supermicro MOU, Canada SRC and the Texas backup program: not checked within budget."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Antares (Fort Bragg), Radiant (Benning), BWXT (Campbell), General Atomics (Hood), Westinghouse (Drum); four of the nine sites are still unassigned",
+      "verdict": "confirmed",
+      "evidence": "DefenseScoop, 2026-08-26: the Army named five installations, paired with Antares, BWXT, General Atomics, Radiant and Westinghouse (Forts Bragg, Campbell, Hood, Benning and Drum). Four short-listed installations were not chosen, and the article says the initiative is expected to expand to other bases.",
+      "sources": [
+        {
+          "label": "DefenseScoop — Army announces initial bases to host nuclear microreactors (2026-08-26)",
+          "url": "https://defensescoop.com/2026/08/26/army-annouces-initiial-bases-to-host-nuclear-microreactors/",
+          "quote": "the initial five installations that have been selected to host nuclear microreactors as part of the Janus program",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-eielson-1",
+      "target": "eielson",
+      "file": "opportunities",
+      "claim": "Intent to award (NOITA)",
+      "verdict": "confirmed",
+      "evidence": "Oklo's Q2 2026 Form 10-Q (cover share count dated 2026-08-04) says a Notice of Intent to Award has been issued by the Defense Logistics Agency-Energy, tentatively selecting Oklo for Eielson. The filing does not show a signed contract.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 10-Q for the quarter ended 2026-06-30 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026054571/oklo-20260630.htm",
+          "quote": "tentatively selecting Oklo to provide electricity and heat to Eielson Air Force Base",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "Purchase agreement / pre-order with deposits",
+      "verdict": "confirmed",
+      "evidence": "Equinix's 2025-08-14 release describes a preorder agreement for the purchase of 20 Kaleidos microreactors. Radiant's matching release is titled 'Radiant Announces Equinix Preorder & Deposits for 20 Kaleidos Microreactors' (search-result title only; the page returned HTTP 403 on fetch, so the deposit element is not fetched).",
+      "sources": [
+        {
+          "label": "Equinix investor release — Equinix collaborates with leading alternative energy providers (2025-08-14)",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+          "quote": "Today Equinix announced a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Master agreement (non-binding)",
+      "verdict": "confirmed",
+      "evidence": "Oklo's Q2 2026 Form 10-Q lists Switch among 'prospective customers', not as a signed customer. No executed Switch power purchase agreement appears in the filing excerpt read. The 2024 release describes the master agreement as a framework with individual binding agreements to follow.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 10-Q for the quarter ended 2026-06-30 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026054571/oklo-20260630.htm",
+          "quote": "potentially including prospective customers such as Meta, Equinix, Diamondback Energy, Prometheus Hyperscale, Switch",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

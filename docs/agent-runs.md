@@ -291,3 +291,10 @@ paywalled capture was dropped from the index.
 **One improvement.** Blind web search by haiku finds almost nothing in a 10-day window. Run
 `tools/news_watch.py` first and hand the news agent its candidates; give the politics, deals and ideas
 agents the same kind of lead list or run them every other day.
+
+## 2026-10-21 daily refresh
+
+Pass dir already held agent output from an earlier run, so no agents were re-run. 6 news items
+integrated; 5 shipped, 1 dropped (Radiant/Navy Crane: the page is a JS shell and no
+text could be read). 2 corrections (NRC advanced-reactor rate $154, Radiant Kaleidos status). The
+GridMarket application was held (403, quote unreadable).
