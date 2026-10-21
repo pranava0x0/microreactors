@@ -65,5 +65,20 @@ class TestNewsPassAppends(unittest.TestCase):
             self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a", "b"])
 
 
+class TestSourceOwner(unittest.TestCase):
+    def test_group_target_attaches_to_the_pathway_holding_the_text(self):
+        grp = {"id": "licensing", "pathways": [
+            {"mechanism": "other", "sources": []},
+            {"mechanism": "rate is $154", "sources": [{"url": "a"}]}]}
+        self.assertIs(ri.source_owner(grp, "$154"), grp["pathways"][1])
+
+    def test_flat_record_owns_its_own_sources(self):
+        rec = {"id": "v", "status": "new text", "sources": []}
+        self.assertIs(ri.source_owner(rec, "new text"), rec)
+
+    def test_no_sources_anywhere_is_none(self):
+        self.assertIsNone(ri.source_owner({"id": "x", "a": "t"}, "t"))
+
+
 if __name__ == "__main__":
     unittest.main()
