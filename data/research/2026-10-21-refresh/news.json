@@ -1,0 +1,70 @@
+{
+ "_meta": {
+  "captured": "2026-10-21",
+  "agent": "news",
+  "scope": "News tab: watcher candidates since 2026-10-14 (skip/candidates.json), then web sweep of the 1-20 MW microreactor market for events after 2026-10-14 and gap-fill in the prior 60 days. Skip list: skip/news.json (79 shipped items).",
+  "angles_run": [
+    "watcher candidates triage (13 headlines): Launch Two SPAC 425 filings, Oklo Launch Pad isotope facility, AEP/Amazon/X-energy 960 MW, HALEU South Africa JV, Westinghouse Poland, Poland SMR JV, Chinese SMR hot testing, Kairos fuel pebble inspection",
+    "Oklo Groves-2 Forge / Launch Pad (fetched WNN and Business Wire repost)",
+    "Radiant: DOME test status, Urenco HALEU, Standard Nuclear TRISO",
+    "Antares: October 2026 news, Mark-0, Mark-1, Series C",
+    "Valar Atomics: October 2026 news, funding, Ward 250",
+    "Westinghouse eVinci: October 2026 news, NCERC criticality",
+    "Army Janus microreactor awards",
+    "Aalo, Deep Fission, Deployable Energy: recent status",
+    "NANO Nuclear KRONOS: October 2026 announcements",
+    "Centrus HALEU: October 2026 news",
+    "Last Energy PWR-5 DSA status",
+    "Kairos Hermes: October 2026 news",
+    "General Atomics, Terrestrial Energy, Holtec microreactor news",
+    "DOE Reactor Pilot Program next criticality",
+    "microreactor financing rounds October 2026",
+    "generic October 2026 SMR and microreactor agreements"
+  ],
+  "absences": [
+    "No candidate or search result dated 2026-10-15 to 2026-10-21 that is a 1-20 MW microreactor event other than the Oklo Groves-2 Forge item. The search index returned no October 2026 company, DOE or NRC release for Antares, Valar, Radiant, Aalo, Deep Fission, Deployable Energy, NANO Nuclear, Centrus, Kairos, Last Energy, Westinghouse, General Atomics, Terrestrial Energy or Holtec.",
+    "SEC EDGAR filing 0001213900-26-110814 and 0001213900-26-110837 (Launch Two Acquisition Corp, CIK 2023676, NuCube merger): the fetched index shows main document ea0309104-425_nucube.htm, a likely Form 425 communication. The index page gives no filing date, closing timing or deal terms. Not written up; the NuCube S-4 is already shipped (nucube-launch-two-s4-filing-2026-09-11). Main document not opened.",
+    "AEP, Amazon and X-energy 960 MW Indiana plant (World Nuclear News and Utility Dive, 2026-10-19): roughly twelve 80 MW-class units, outside the 1-20 MW scope. Not written up.",
+    "HALEU joint venture in South Africa (World Nuclear News, 2026-10-19; Quantum Leap Energy and Necsa): a binding Heads of Agreement is confirmed in the fetch, but no HALEU capacity figure or production date is given. Not written up because it has no number for a 1-20 MW buyer; it is a fuel-supply item for a later pass.",
+    "Westinghouse and Poland long-lead procurement and Poland six-unit SMR JV (2026-10-14 to 2026-10-16), and Chinese SMR hot testing (2026-10-14): large LWR or outside the 1-20 MW scope. Not written up.",
+    "Radiant Urenco HALEU enrichment contract: the signing is dated 2025-09-15 in the search results, so it is not a new event. Not written up.",
+    "Antares zero-power criticality at INL: an undated ANS tag-page headline surfaced in search; the date and primary release were not confirmed. Mark-0 criticality is already shipped (antares-mark0-criticality-2026-06-04).",
+    "Aalo Atomics criticality date: sources conflict (a July 2 2026 ANS report calls Aalo the likely next reactor to go critical, a later ANS article says it had). Shipped item aalo-atomics-criticality-2026-07-04 was not re-checked against DOE.",
+    "Launch Pad round details (13 projects, 12 developers, NRIC selection date) conflict across sources: INL and WNN date the NRIC round to 2026-08-24, Oklo's release is dated 2026-10-13. The round is covered by the shipped launch-pad-round2-2026-08-25 item; the Oklo project is written up as its own item.",
+    "Army Janus award date: the search results confirm the $2.2 billion five-base award but not its date; the shipped 2026-08-26 items are not re-verified here.",
+    "Watcher-blocked sources (per skip/candidates.json): ANS Nuclear Newswire RSS 404, NRC press releases 403, Radiant newsroom 403, Oklo investor relations 403. Radiant and Oklo primary pages were not reachable; Oklo's own release was read from a Business Wire repost.",
+    "Unsearched within budget: Standard Nuclear, Natura, Blue Energy, Holtec SMR-300 Palisades filings, BWXT, X-energy TRISO-X, Deep Fission Kansas borehole. Search budget was spent on higher-yield angles."
+  ]
+ },
+ "items": [
+  {
+   "id": "oklo-groves-2-forge-launch-pad-2026-10-13",
+   "date": "2026-10-13",
+   "headline": "Oklo announces Groves-2 Forge, a Launch Pad isotope pilot built on its test reactor",
+   "companies": [
+    "Oklo",
+    "National Reactor Innovation Center",
+    "U.S. Department of Energy"
+   ],
+   "category": "award",
+   "what_happened": "On October 13, 2026 Oklo said it will advance Groves 2 Forge, an isotope production and processing pilot, as one of 13 projects under DOE's Nuclear Energy Launch Pad. The facility builds on the Groves Isotope Test Reactor in Texas and will first produce lutetium-177, a cancer-treatment isotope. The announcement gives no dollar figure, power rating or completion date.",
+   "why_it_matters": "This is a non-power use of a DOE-authorized test reactor, and it shows a microreactor developer moving from a test reactor toward a commercial product line. Commercial operation would need NRC licenses that Oklo has not yet applied for.",
+   "binding": false,
+   "binding_note": "A selection for the Launch Pad program, not a contract. The release discloses no award value or terms.",
+   "sources": [
+    {
+     "label": "Business Wire (reposted by OffshoreSource) — Oklo to Advance Groves 2 Forge as Part of U.S. Department of Energy's Nuclear Energy Launch Pad Selection (2026)",
+     "url": "https://offshoresource.com/business-wire/oklo-to-advance-groves-2-forge-as-part-of-u-s-department-of-energys-nuclear-energy-launch-pad-selection/",
+     "quote": "Groves 2 Forge to initially focus on producing lutetium-177, an isotope used in targeted cancer treatments.",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Oklo plans isotope facility under US Launch Pad initiative (2026)",
+     "url": "https://www.world-nuclear-news.org/articles/oklo-plans-isotope-facility-under-us-launch-pad-initiative",
+     "quote": "Groves-2 Forge will build directly on that foundation by adding the capabilities needed to irradiate target materials",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
