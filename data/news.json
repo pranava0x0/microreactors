@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "captured": "2026-10-18",
+    "captured": "2026-10-21",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "50 of 79 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 29 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-10-14",
+    "binding_note": "53 of 85 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 32 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-10-21",
     "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 14
+      "count": 15
+    },
+    {
+      "id": "award",
+      "count": 13
     },
     {
       "id": "fuel",
       "count": 13
     },
     {
-      "id": "award",
+      "id": "contract",
       "count": 11
     },
     {
       "id": "financing",
       "count": 10
-    },
-    {
-      "id": "contract",
-      "count": 8
     },
     {
       "id": "construction",
@@ -49,6 +49,96 @@
     }
   ],
   "items": [
+    {
+      "id": "nano-impsa-kronos-esma-2026-10-21",
+      "date": "2026-10-21",
+      "headline": "NANO Nuclear hires Argentina's IMPSA to review KRONOS MMR for manufacturability",
+      "companies": [
+        "NANO Nuclear"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear signed a three-year, non-exclusive Engineering Services Master Agreement with the U.S. subsidiary of IMPSA, an Argentine heavy-component maker with ASME N stamps. The first task is a design review and manufacturability study of KRONOS MMR components, starting with the reactor pressure vessel, over an estimated six months on a retainer.",
+      "why_it_matters": "It is a supplier study, not a fabrication order. Any component production needs further work orders or definitive agreements.",
+      "binding": true,
+      "binding_note": "Executed services agreement for engineering work only; fabrication is not committed.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy via Newsfile, NANO Nuclear Energy and IMPSA Sign Master Services Agreement (Oct. 21, 2026)",
+          "url": "https://www.newsfilecorp.com/release/320115",
+          "quote": "The initial program provides for an estimated six-month period, supported by a retainer.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "navy-selects-radiant-crane-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Navy picks Radiant's Kaleidos for Naval Weapons Station Crane, Indiana",
+      "companies": [
+        "Radiant"
+      ],
+      "category": "award",
+      "what_happened": "The Department of the Navy selected Radiant to deploy a 1 MW Kaleidos microreactor at Naval Weapons Station Crane, Indiana, through the Army's Janus Program. The project still has to go through design refinement, prototype testing, environmental review, site preparation and regulatory coordination before deployment.",
+      "why_it_matters": "This names the vendor for the Crane site the Navy announced in September. Radiant now has selections from the Army, Navy and Air Force, all for 1 MW Kaleidos units.",
+      "binding": false,
+      "binding_note": "A selection, not a contract with a price or delivery date.",
+      "sources": [
+        {
+          "label": "Radiant, US Navy Selects Radiant to Power Critical Infrastructure at Naval Weapons Station Crane (Oct. 20, 2026)",
+          "url": "https://www.radiantnuclear.com/news/navy-selects-radiant",
+          "quote": "today announced its selection by the Department of the Navy to deploy its Kaleidos microreactor at Naval Weapons Station Crane, Indiana",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deep-fission-gpda-master-energy-purchase-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Deep Fission signs binding 25-year power deal for Kansas industrial park",
+      "companies": [
+        "Deep Fission"
+      ],
+      "category": "contract",
+      "what_happened": "Deep Fission signed a Master Energy Purchase Agreement with the Great Plains Development Authority, which owns the Great Plains Industrial Park in Parsons, Kansas. It turns a December 2025 letter of intent into a 25-year contract. The first phase is anticipated at 150 MW with a target commercial operation date of September 30, 2028, growing to 2,000 MW in later phases if demand grows.",
+      "why_it_matters": "The first phase is far larger than a 1-20 MW block. The authority buys power only for tenants' needs, with no minimum purchase obligation, so the offtake depends on tenant demand.",
+      "binding": true,
+      "binding_note": "Executed contract, but the 8-K says it is subject to regulatory approvals and other conditions to commercial operation. Purchases depend on tenant demand.",
+      "sources": [
+        {
+          "label": "Deep Fission — Exhibit 99.1 press release, Deep Fission Signs Binding 25-Year Master Energy Purchase Agreement (Oct. 20, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001918102/000110465926117389/tm2627978d1_ex99-1.htm",
+          "quote": "The initial phase is anticipated to be 150 MW with a target date of commercial operation on September 30, 2028",
+          "status": "fetched"
+        },
+        {
+          "label": "Deep Fission — Form 8-K, Item 7.01 (Oct. 20, 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001918102/000110465926117389/tm2627978d1_8k.htm",
+          "quote": "The Agreement is subject to regulatory approvals and other conditions to commercial operation",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nthu-nucube-thor-replacement-mou-2026-10-19",
+      "date": "2026-10-19",
+      "headline": "NTHU and NuCube sign MOU to study replacing Taiwan research reactor",
+      "companies": [
+        "NuCube Energy"
+      ],
+      "category": "contract",
+      "what_happened": "National Tsing Hua University and NuCube Energy signed a memorandum of understanding in Taipei to assess replacing the university's Tsing Hua Open-pool Reactor (THOR), which began operating in 1961 and is scheduled for decommissioning in 2040. NuCube's CEO said at the signing that the company planned its first deployment for the end of 2029.",
+      "why_it_matters": "A university research reactor is a small, dated replacement need, not a power sale. The memorandum names no capacity, price or contract value, so it shows interest, not demand.",
+      "binding": false,
+      "binding_note": "Memorandum of understanding. The university calls it an exploratory step; it covers technology, research use and deployment feasibility.",
+      "sources": [
+        {
+          "label": "Focus Taiwan (Central News Agency) — NTHU to explore research reactor development with NuCube (Oct. 19, 2026)",
+          "url": "https://focustaiwan.tw/sci-tech/202610190020",
+          "quote": "an exploratory step toward possible deployment of a NuCube microreactor to replace THOR",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "kairos-hermes2-643m-financing-2026-10-14",
       "date": "2026-10-14",
@@ -78,6 +168,35 @@
       ]
     },
     {
+      "id": "oklo-groves-2-forge-launch-pad-2026-10-13",
+      "date": "2026-10-13",
+      "headline": "Oklo announces Groves-2 Forge, a Launch Pad isotope pilot built on its test reactor",
+      "companies": [
+        "Oklo",
+        "National Reactor Innovation Center",
+        "U.S. Department of Energy"
+      ],
+      "category": "award",
+      "what_happened": "On October 13, 2026 Oklo said it will advance Groves 2 Forge, an isotope production and processing pilot, as one of 13 projects under DOE's Nuclear Energy Launch Pad. The facility builds on the Groves Isotope Test Reactor in Texas and will first produce lutetium-177, a cancer-treatment isotope. The announcement gives no dollar figure, power rating or completion date.",
+      "why_it_matters": "This is a non-power use of a DOE-authorized test reactor, and it shows a microreactor developer moving from a test reactor toward a commercial product line. Commercial operation would need NRC licenses that Oklo has not yet applied for.",
+      "binding": false,
+      "binding_note": "A selection for the Launch Pad program, not a contract. The release discloses no award value or terms.",
+      "sources": [
+        {
+          "label": "Business Wire (reposted by OffshoreSource) — Oklo to Advance Groves 2 Forge as Part of U.S. Department of Energy's Nuclear Energy Launch Pad Selection (2026)",
+          "url": "https://offshoresource.com/business-wire/oklo-to-advance-groves-2-forge-as-part-of-u-s-department-of-energys-nuclear-energy-launch-pad-selection/",
+          "quote": "Groves 2 Forge to initially focus on producing lutetium-177, an isotope used in targeted cancer treatments.",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Oklo plans isotope facility under US Launch Pad initiative (2026)",
+          "url": "https://www.world-nuclear-news.org/articles/oklo-plans-isotope-facility-under-us-launch-pad-initiative",
+          "quote": "Groves-2 Forge will build directly on that foundation by adding the capabilities needed to irradiate target materials",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "last-energy-texas-dsa-approval-2026-10-08",
       "date": "2026-10-08",
       "headline": "Last Energy's Texas pilot clears DOE safety analysis approval",
@@ -94,6 +213,27 @@
           "label": "World Nuclear News — Last Energy's Texas micro-modular reactor clears safety analysis (2026)",
           "url": "https://world-nuclear-news.org/articles/last-energy-texas-micro-modular-reactor-clears-safety-analysis",
           "quote": "The Department of Energy's approval of the Documented Safety Analysis clears Last Energy's planned pilot reactor at Texas A&M-RELLIS to move into the readiness review, the final step before authorisation for criticality and reactor operations",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "inl-marvel-dsa-approved-2026-10-06",
+      "date": "2026-10-06",
+      "headline": "DOE approves MARVEL's safety analysis; INL now expects criticality in December",
+      "companies": [
+        "Idaho National Laboratory"
+      ],
+      "category": "regulatory",
+      "what_happened": "DOE's Idaho Operations Office approved the final documented safety analysis for MARVEL, authorizing a dry criticality configuration at near-zero power. The reactor's primary coolant system arrived at INL's Transient Reactor Test Facility in mid-September, and INL anticipates criticality in December.",
+      "why_it_matters": "MARVEL is DOE's own test microreactor, built to host end-user experiments. INL says it will share the approved safety document as a template for industry.",
+      "binding": true,
+      "binding_note": "DOE formally approved the safety analysis; it authorizes a dry criticality configuration but is not a commercial commitment.",
+      "sources": [
+        {
+          "label": "Idaho National Laboratory, MARVEL reactor gets federal safety approval as its primary vessel arrives in Idaho (Oct. 6, 2026)",
+          "url": "https://inl.gov/news-release/marvel-reactor-gets-federal-safety-approval-as-its-primary-vessel-arrives-in-idaho/",
+          "quote": "approved MARVEL’s final documented safety analysis",
           "status": "fetched"
         }
       ]

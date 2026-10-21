@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "captured": "2026-10-21",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy.json pathways; Type F dockets not in skip/dockets.json; Type N items dated after 2026-10-14 (policy, regulatory).",
+    "angles_run": [
+      "NRC Part 57 microreactor rule status and comment period (ANS, NRC pages via search)",
+      "NRC Part 57 Federal Register publication and extension requests",
+      "NRC Part 53 effective date (NRC 2026 effective-dates listing)",
+      "DOE Reactor Pilot Program criticality milestones (ANS 2026-07-02 fetched)",
+      "ADVANCE Act reduced hourly rate: FY2025 $148 vs FY2026 rule (ANS 2026-06-25 and SMR Intel fetched)",
+      "California SB 978 status (leginfo 403; GovBuddy fetched, last action 2026-05-14)",
+      "Texas Backup Power Package Program rule adoption and nuclear eligibility",
+      "Congress: FY2027 NDAA and DOE appropriations for microreactors (no October 2026 items found)",
+      "NRC commission approvals and microreactor license actions, Oct 2026 (none found)",
+      "State laws signed for microreactors or SMRs, Aug-Oct 2026 (none found in window)",
+      "CNSC small modular reactor decisions, Oct 2026 (none found)",
+      "State PUC / utility dockets naming SMRs or microreactors filed in last 90 days (none found in window)",
+      "DOE and Army microreactor policy announcements, Oct 2026 (none found beyond shipped Janus awards)"
+    ],
+    "absences": [
+      "Part 57 final-rule date (brief cites 2026-11-23): no source found. The NRC proposal was published in the Federal Register in May 2026 with comments due 2026-06-15; NRC's own page does not state a final-rule schedule. Extension requests from the Nuclear Innovation Alliance and the California and Maryland attorneys general were found but no grant or reopening was found.",
+      "California SB 978 current status: leginfo.legislature.ca.gov returned HTTP 403. GovBuddy (fetched) gives last action 2026-05-14 'Held in committee and under submission'. The shipped text says 'would' and 'proposed', so it is not contradicted, only stale. No check written.",
+      "NRC FY2026 fee rule in the Federal Register (2026-12067): the federalregister.gov page redirected and was not fetched; the NRC fee page returned 403. The $154 figure rests on two fetched secondary sources (ANS and SMR Intel) quoting the rule.",
+      "Texas PUC final text of 16 TAC 25.513 eligibility (b): the PUC order was not reached. The shipped claim that nuclear is not an eligible source is consistent with secondary sources listing gas, propane, battery and solar, but was not checked against the final rule text. No check written.",
+      "FY2027 NDAA microreactor sections and House or Senate Armed Services text: not found in search results.",
+      "Congressional bills or appropriations acts dated 2026-10-15 to 2026-10-21 that name microreactors or the DOE Office of Nuclear Energy: none found.",
+      "NRC commission votes or approvals dated after 2026-10-14: none found. Latest NRC item surfaced was a page updated 2026-09-14.",
+      "State laws on microreactors or SMRs signed after 2026-10-14: none found. Pennsylvania Act 37 (HB 2017) was signed before 2026-07-23 and is out of window. Illinois HB 2473 lifted the construction moratorium in a prior session and is out of window.",
+      "CNSC or ONR decisions dated after 2026-10-14 affecting a 1-20 MW buyer: none found.",
+      "Dockets filed or decided in the last 90 days (since 2026-07-23) naming SMRs or microreactors: none verified. Results surfaced only out-of-window items (Virginia SMR cost-recovery statute, South Dakota 2025 NorthWestern rider order, TVA Clinch River NRC application 2025), none qualifying as Type F.",
+      "Shipped Texas TBPP figure ($1.8B, adopted May 2026): consistent with secondary sources (SCTTX press item, 2026-05-07); the PUC order itself was not reached. No check written."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $148, a concrete cost advantage available now.",
+      "verdict": "outdated",
+      "evidence": "NRC's FY 2026 final fee rule (Federal Register 2026-12067, published 2026-06-16, effective 60 days later) sets a reduced hourly rate of $154 for advanced nuclear reactor applicants and preapplicants, with a professional rate of $337. The $148 rate was the FY 2025 rate, effective 2025-10-01. ANS (2026-06-25) reports the FY 2026 fees; SMR Intel (fetched) states the $154 rate and the June 16 publication date.",
+      "correction": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $154, a concrete cost advantage available now.",
+      "sources": [
+        {
+          "label": "American Nuclear Society (ANS) News — NRC news: FY 2026 fees finalized, facility licensing reviews launched (2026-06-25)",
+          "url": "https://www.ans.org/news/2026-06-25/article-8148/nrc-news-fy-2026-fees-finalized-facility-licensing-reviews-launched/",
+          "quote": "a reduced hourly rate for advanced nuclear reactor applicants and preapplicants of $154 for certain activities.",
+          "status": "fetched"
+        },
+        {
+          "label": "SMR Intel — Does the NRC's New $154/hr SMR Rate Meaningfully Lower the Barrier to Entry? (FY 2026 fees finalized)",
+          "url": "https://smrintel.com/news/nrc-fy2026-fees-finalized-smr-rate-eden-cooper-renewal",
+          "quote": "a reduced hourly rate of $154 for advanced nuclear reactor applicants and preapplicants",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

@@ -56,5 +56,36 @@ class TestDumpKeepsLayout(unittest.TestCase):
                     self.assertEqual(p.read_text(), before)
 
 
+class TestNewsPassAppends(unittest.TestCase):
+    def test_rerun_keeps_items_an_earlier_run_shipped(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "refresh-2026-10-21.json"
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            ri.write_news_pass(out, "2026-10-21", [{"id": "b"}])
+            self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a", "b"])
+
+    def test_rerun_with_the_same_item_does_not_duplicate_it(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = pathlib.Path(d) / "refresh-2026-10-21.json"
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            ri.write_news_pass(out, "2026-10-21", [{"id": "a"}])
+            self.assertEqual([i["id"] for i in json.loads(out.read_text())["items"]], ["a"])
+
+
+class TestSourceOwner(unittest.TestCase):
+    def test_group_target_attaches_to_the_pathway_holding_the_text(self):
+        grp = {"id": "licensing", "pathways": [
+            {"mechanism": "other", "sources": []},
+            {"mechanism": "rate is $154", "sources": [{"url": "a"}]}]}
+        self.assertIs(ri.source_owner(grp, "$154"), grp["pathways"][1])
+
+    def test_flat_record_owns_its_own_sources(self):
+        rec = {"id": "v", "status": "new text", "sources": []}
+        self.assertIs(ri.source_owner(rec, "new text"), rec)
+
+    def test_no_sources_anywhere_is_none(self):
+        self.assertIsNone(ri.source_owner({"id": "x", "a": "t"}, "t"))
+
+
 if __name__ == "__main__":
     unittest.main()
