@@ -143,7 +143,7 @@ def write_news_pass(out: pathlib.Path, date: str, ship: list) -> None:
     out.write_text(json.dumps(
         {"_meta": {"captured": date, "agent": f"refresh-{date}",
                    "scope": "daily refresh: haiku agents, quotes repaired and verified offline"},
-         "items": prior + ship}, indent=2, ensure_ascii=False) + "\n")
+         "items": prior + [i for i in ship if i["id"] not in {p["id"] for p in prior}]}, indent=2, ensure_ascii=False) + "\n")
 
 
 def clean(rec: dict) -> dict:
