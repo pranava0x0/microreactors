@@ -1,12 +1,11 @@
 # Refresh 2026-10-21: integration report
 
-## News: 0 added
+## News: 1 added
 
-- none
+- 2026-10-20 Navy picks Radiant's Kaleidos for Naval Weapons Station Crane, Indiana
 
 Dropped:
 - nano-impsa-kronos-esma-2026-10-21: already on the News tab
-- navy-selects-radiant-crane-2026-10-20: already on the News tab
 - deep-fission-gpda-master-energy-purchase-2026-10-20: already on the News tab
 - nthu-nucube-thor-replacement-mou-2026-10-19: already on the News tab
 - oklo-groves-2-forge-launch-pad-2026-10-13: already on the News tab

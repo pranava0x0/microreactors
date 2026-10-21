@@ -116,6 +116,16 @@ def dump(path: pathlib.Path, doc: dict) -> None:
     path.write_text(json.dumps(doc, indent=indent, ensure_ascii=False) + ("\n" if old.endswith("\n") else ""))
 
 
+def write_news_pass(out: pathlib.Path, date: str, ship: list) -> None:
+    """A re-run of the same pass appends: overwriting would drop every item an
+    earlier run of this pass already shipped (it did, on 2026-10-21)."""
+    prior = json.loads(out.read_text())["items"] if out.exists() else []
+    out.write_text(json.dumps(
+        {"_meta": {"captured": date, "agent": f"refresh-{date}",
+                   "scope": "daily refresh: haiku agents, quotes repaired and verified offline"},
+         "items": prior + ship}, indent=2, ensure_ascii=False) + "\n")
+
+
 def clean(rec: dict) -> dict:
     return {k: v for k, v in rec.items() if not k.startswith("_")}
 
@@ -151,10 +161,7 @@ def main() -> int:
     if dropped:
         report += ["", "Dropped:"] + [f"- {d}" for d in dropped]
     if args.apply and ship:
-        NEWS_PASS.joinpath(f"refresh-{date}.json").write_text(json.dumps(
-            {"_meta": {"captured": date, "agent": f"refresh-{date}",
-                       "scope": "daily refresh: haiku agents, quotes repaired and verified offline"},
-             "items": ship}, indent=2, ensure_ascii=False) + "\n")
+        write_news_pass(NEWS_PASS / f"refresh-{date}.json", date, ship)
 
     # --- checks
     applied, manual, confirmed = [], [], 0
