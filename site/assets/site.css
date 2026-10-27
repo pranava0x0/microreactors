@@ -32,10 +32,27 @@ body{overflow-x:hidden}
 .tab:hover{color:var(--text-primary)}
 .tab[aria-selected="true"]{color:var(--text-primary);border-bottom-color:var(--antares-red)}
 @media(pointer:coarse){.tab{min-height:44px;padding:var(--space-3)}}
+/* Long labels only where the nine fit one row; below that each tab shows its
+   short name (accessible name unchanged via aria-label). */
+.tab .ts{display:none}
+@media(max-width:1279px){.tab .tl{display:none}.tab .ts{display:inline}}
 @media(max-width:767px){
   .navrow{display:block}
   .wordmark{display:block;margin:0 0 var(--space-1)}
 }
+/* Phones: all nine tabs on two wrapped rows, no sideways swiping. The strip
+   used to hide seven of nine tabs off the right edge and cost up to three
+   swipes per section (UAT 2026-10-27). The wordmark row goes to pay for the
+   second row; the hero title carries the name. */
+@media(max-width:639px){
+  .nav{padding:var(--space-1) 0}
+  .wordmark{display:none}
+  .tabs{display:grid !important;grid-template-columns:repeat(5,minmax(0,1fr));
+    overflow:visible !important;gap:0}
+  .tab{padding:var(--space-2) 0;font-size:12px;letter-spacing:.05em;text-align:center;min-height:44px}
+  .navrow::before,.navrow::after{display:none}
+}
+@media(max-width:359px){.tab{font-size:11px;letter-spacing:.02em}}
 /* Below 1280px the nine tabs do not fit one row, so the strip scrolls instead of
    wrapping (wrapping cost 143px of sticky chrome at 768px). */
 @media(max-width:1279px){
@@ -95,6 +112,15 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .kicker{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
   letter-spacing:var(--track-label);color:var(--antares-red);margin:0 0 var(--space-4)}
 .hero h1{max-width:16ch;margin-bottom:var(--space-6)}
+/* Newest headline under the title, linked to its record. */
+.latest{margin:0 0 var(--space-6);font-size:var(--size-body-sm);line-height:var(--lh-body);max-width:68ch}
+.latest .ltag{font-family:var(--font-mono);font-size:var(--size-caption);text-transform:uppercase;
+  letter-spacing:var(--track-label);color:var(--antares-red)}
+.latest .ldate{font-family:var(--font-mono);font-size:var(--size-caption);color:var(--text-tertiary);margin-right:var(--space-1)}
+.latest a{color:var(--text-primary);text-decoration:underline;text-decoration-color:var(--border-subtle);
+  text-underline-offset:3px}
+.latest a:hover{color:var(--antares-red)}
+.latest:empty{display:none}
 /* Five stats. Explicit column counts per band: auto-fit against a known count
    strands dead cells in the last row (DESIGN.md 12.18). */
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
@@ -301,6 +327,17 @@ section[role="tabpanel"]{padding:var(--space-12) 0 var(--space-24)}
 .dstat .n.accent{color:var(--antares-red)}
 .dstat .k{font-size:var(--size-label-sm);letter-spacing:var(--track-label);text-transform:uppercase;
   color:var(--text-tertiary);margin-top:var(--space-2);display:block}
+/* Phones: the section intro, four stats and a dozen wrapped sub-tabs used to
+   fill the whole first screen of Applications before any record (UAT
+   2026-10-27). Tighter stats and sub-tab rows give the content back. */
+@media(max-width:639px){
+  .sechead{margin-bottom:var(--space-6)}
+  .dsummary{margin-top:var(--space-4)}
+  .dstat{padding:var(--space-3) var(--space-4)}
+  .dstat .k{margin-top:var(--space-1)}
+  .subtabs{column-gap:var(--space-4);margin-bottom:var(--space-6)}
+  .subtab{padding:var(--space-2) 0}
+}
 
 /* Applications > Overview: buyer types grouped by the cost rung that wins them,
    then a sector table (2026-09-26; replaced eight bare accordions and the six
@@ -434,6 +471,7 @@ details.segcard summary .cat,details.region summary .cat{text-transform:none;let
    922px on an 812px screen. */
 @media(max-width:639px){
   .hero{padding:var(--space-8) 0 var(--space-6)}
+  .latest{margin:var(--space-4) 0 0}
   .hero .lede{display:none}
   .hero h1{margin-bottom:0}
   .stats{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:var(--space-6);

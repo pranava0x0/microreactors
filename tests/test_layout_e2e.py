@@ -129,7 +129,13 @@ class Layout(unittest.TestCase):
                         activeIn: active.left >= tabsBox.left - 0.5 && active.right <= tabsBox.right + 0.5,
                         fade: navrow.classList.contains('more-left') || navrow.classList.contains('more-right'),
                         visible, wide, sub,
-                        tabH: document.querySelector('.tab').getBoundingClientRect().height
+                        tabH: document.querySelector('.tab').getBoundingClientRect().height,
+                        allTabsIn: [...tabs.children].every(t => {
+                          const r = t.getBoundingClientRect();
+                          return r.left >= tabsBox.left - 0.5 && r.right <= tabsBox.right + 0.5
+                            && t.scrollWidth <= t.clientWidth + 1;
+                        }),
+                        tabRows: new Set([...tabs.children].map(t => Math.round(t.getBoundingClientRect().top))).size
                       };
                     }""", panel)
                     if m["scrollW"] > m["clientW"] + 1:
@@ -140,7 +146,15 @@ class Layout(unittest.TestCase):
                     # marks the side that hides more tabs (UAT 2026-09-26).
                     if width >= 1280 and not m["lastTabIn"]:
                         problems.append(f"{width}px {panel}: last tab clipped")
-                    if width < 1280:
+                    # Phones: all nine tabs on two wrapped rows, none hidden, so
+                    # any section is one tap with no sideways swipe (UAT
+                    # 2026-10-27: the strip cost up to three swipes per section).
+                    if width < 640:
+                        if m["tabOverflow"] or not m["allTabsIn"]:
+                            problems.append(f"{width}px {panel}: a tab is hidden off the strip")
+                        if m["tabRows"] > 2:
+                            problems.append(f"{width}px {panel}: tabs wrap to {m['tabRows']} rows")
+                    elif width < 1280:
                         if not m["tabOverflow"]:
                             problems.append(f"{width}px {panel}: primary navigation should scroll")
                         if not m["activeIn"]:
@@ -253,15 +267,15 @@ class Routing(unittest.TestCase):
         self.assertGreater(everything, 30)
 
     def test_deep_link_scrolls_its_tab_into_view(self):
-        """On a phone the tab strip scrolls. Landing on #sources left its tab
-        ~500px off-screen, so the page gave no sign of where the reader was."""
+        """Where the tab strip scrolls (640-1279px), landing on #sources left its
+        tab ~500px off-screen, so the page gave no sign of where the reader was.
+        Phones wrap the strip instead, so the tab only has to be in view."""
         with serve_site() as base, sync_playwright() as pw:
             try:
                 browser = pw.chromium.launch()
             except Exception as e:
                 self.skipTest(f"chromium unavailable: {e}")
-            ctx = browser.new_context(viewport={"width": 375, "height": 812},
-                                      has_touch=True, is_mobile=True)
+            ctx = browser.new_context(viewport={"width": 768, "height": 1024})
             page = ctx.new_page()
             page.goto(base + "#sources", wait_until="networkidle")
             page.wait_for_timeout(80)

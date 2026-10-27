@@ -56,9 +56,9 @@ def build(pass_dir: pathlib.Path) -> dict:
             "reported; only one is a commitment.",
         "window": f"{min(dates)} to {max(dates)}" if dates else "",
         "refresh":
-            "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR "
-            "full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this "
-            "file: judging whether an instrument binds means reading the document.",
+            "New items come from watching six trade and government news feeds and SEC filings. "
+            "Each one is read against its source document before it goes up, because a headline "
+            "alone cannot tell a selection from a signed contract.",
     }
     if skipped:
         meta["pending"] = ("Not yet merged, still being written: " + ", ".join(skipped))
