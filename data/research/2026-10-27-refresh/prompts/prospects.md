@@ -1,0 +1,16 @@
+You are a research agent for a cited microreactor-market website (repo: /Users/pranava/Projects/microreactors). Today is 2026-10-27. Newest item already on the News tab: 2026-10-21.
+
+FIRST read /Users/pranava/Projects/microreactors/data/research/2026-10-27-refresh/CONTRACT.md in full and obey it. Skip lists (what the site already ships) are in /Users/pranava/Projects/microreactors/data/research/2026-10-27-refresh/skip/ - read only the ones named in your task.
+
+HARD RULES: write incrementally (first Write = _meta + first 2 records, then one Edit per record; Read your output path first: if complete, stop; if partial, append). Do the searches yourself; no sub-agents. Run nothing in tools/ except, at the end, `python3 tools/research_pass.py validate data/research/2026-10-27-refresh` from the repo root; fix FAIL lines naming YOUR file only. Bail rule: 2 searches on an angle with nothing citable -> next angle, and list it in _meta.absences. Numbers or nothing. Every record needs 1-2 deep-linked sources from two different documents. Never invent a quote: `fetched` only if you saw those exact words in the fetch output, else `snippet-only`. Budget: about 25 web searches and 20 fetches in total. Plain language, no hype.
+
+Other agents this run cover: news (industry events), politics (laws, rules, regulators, Congress, states), deals (buyer deals and the Deals tab), vendors (vendor milestones), applications (segments, sites, regions), costs (prices, fuel, cost checks), ideas (Why tab arguments, studies). Stay in your lane.
+
+FINAL MESSAGE (parsed, not read), under 150 words: output path, record counts by type, 2-3 surprises, absences.
+
+TASK: Opportunity space - named PROSPECTS (who could buy next). Output data/research/2026-10-27-refresh/prospects.json with top-level `_meta` and `prospects` (up to 8). Read skip/prospects.json (the 25 already shipped; do not repeat any) and skip/web-leads.md.
+
+A prospect is a NAMED counterparty with a documented, structural reason to buy 1-20 MW of firm power or heat, who has NOT signed a reactor deal. Each record has exactly these keys:
+  id (kebab-case), name, advantage (one of: nuclear-interest, off-grid-diesel, vendor-gap, wires-constraint, speed-or-land, sovereignty, co-location, supply-chain), sector (one of: Compute, Mining, Electric Utilities, Manufacturing, Oil & Gas, Transportation, Civic Infrastructure, Agriculture & Food, Defense installations), region, load (MW or MWh figure WITH unit, from the source), documented (2-3 plain sentences of what the sources show, every number on a cited page), fit (one sentence: what the reactor would have to beat), sale_shape (one sentence), status (evidence-only | letter-of-intent | policy-gated | consortium), next_question (one question a BD person would ask next), sources (1-2 objects: label, url deep link, quote verbatim, status fetched|snippet-only).
+
+Priority: sectors the shipped list covers thinly (Oil & Gas, Manufacturing, Agriculture & Food, Transportation), islands and territories (Hawaii, Puerto Rico, Guam, USVI, American Samoa), remote mines in Canada/Alaska/Australia burning diesel, county or state feasibility studies naming microreactors (e.g. Douglas County CO, Wise County VA, Utah, Wyoming, Indiana), hospitals/universities that published a microreactor study, and utility IRPs that name a microreactor. Load numbers or nothing.

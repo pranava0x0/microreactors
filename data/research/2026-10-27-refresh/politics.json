@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "politics",
+    "scope": "Rules & deal design tab: policy and regulation. Type G checks on shipped policy.json rules; Type F state/utility dockets naming microreactors or SMRs (last 90 days); Type N policy and regulatory items dated after 2026-10-21.",
+    "angles_run": [
+      "NRC Part 57 microreactor rule status",
+      "NRC DOE/DoW prior-authorization rule (web lead 8)",
+      "NRC commission and construction approvals, Oct 2026",
+      "DOE Reactor Pilot Program criticality dates",
+      "Alaska SB 177 microreactor regulations date",
+      "California SB 978, AB 2647 status",
+      "FERC EL25-49 co-located load status",
+      "FY2027 NDAA and FY2027 Energy and Water appropriations",
+      "Army Janus and Department of War microreactor actions",
+      "State microreactor bills (NJ S4849, S4734, IL, WV, AZ, CA AB 1757)",
+      "State PUC/IRP/RFP filings naming SMRs (GA, VA, NC, IN, TX, UT, ID, AZ)",
+      "CNSC and UK ONR microreactor decisions"
+    ],
+    "absences": [
+      "NRC Part 57: searched for a final rule or Federal Register final-rule date; found only the April 2026 proposal. The 2026-11-23 final due date in the brief was not verified, and no page confirmed it.",
+      "NRC Part 57 shipped text ('May 2026') was not checked as a Type G item: sources disagree on the date (April 24 announcement per Orrick and ANS; May 1 Federal Register publication per Pillsbury).",
+      "California SB 978: leginfo.legislature.ca.gov returned HTTP 403. A third-party tracker shows last action May 14, 2026 (held in committee, under submission). Not written as a check because the shipped text states a mechanism, not a status.",
+      "FERC EL25-49 / ER26-1088 (PJM co-location): latest found is PJM's July 28, 2026 request for a 90-day compliance extension (notice Aug 14, 2026). Whether the extension was granted is unverified. Shipped 'still in flight at capture' is not checked against a current filing.",
+      "FY2027 NDAA: House passed H.R. 8800 on July 22, 2026 (216-212). Senate S. 4784 cloture failed July 14; no Senate floor action found through October. No October NDAA event found.",
+      "FY2027 Energy and Water (H.R. 9022): House Appropriations passed May 21, 2026; Rules Committee June 23. No final House floor vote or Senate action found. No microreactor-specific line item found.",
+      "Dockets: only one filing in the 90-day window was found (NJ S4849, introduced 2026-10-19). Searched GA PSC, Virginia SCC, NCUC (Duke), Indiana IURC, Texas PUC, Utah PSC, Idaho PSC, Montana PSC, and general PSC SMR orders; no state commission filing from 2026-07-29 to 2026-10-27 naming microreactors or SMRs was found.",
+      "NJ S4734 (introduced 2026-10-05) directs BPU and DEP to inventory former nuclear sites and provides expedited permitting for nuclear reactors. Not written as a docket: the synopsis does not name microreactors or SMRs.",
+      "NJ Power NJ Act (AB 4881 / SB 4296, 1,100 MW nuclear procurement): signed in July 2026, outside the 90-day window and large-reactor scope. Not written.",
+      "Clinch River (TVA BWRX-300) NRC construction permit: dated 2026-09-29, before the 2026-10-21 item cutoff. Not written as an item. It is a 300 MW SMR, outside the 1-20 MW buyer scope.",
+      "Army Janus selections (Aug 26, 2026) and the Department of War Crane selection (Sept 2026): before the item cutoff. Not written.",
+      "CNSC (Canada): no 2026 microreactor licensing change or policy announcement found. UK ONR: no October 2026 microreactor decision found (UK Rolls-Royce SMR regulatory justification debated July 7, 2026; too large for scope).",
+      "Texas HB 14 / TANEO grant round and the Dec 1, 2026 TANEO study report: not checked against a fetched page. Not written.",
+      "Sen. Lee S. 4284 (Nuclear Energy Innovation and Deployment Act of 2026): intro date unverified and it is a federal bill, not a utility or regulator filing. Not written."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "Signed in 2022, SB 177 defines a microreactor (up to 50 MWe) and exempts it from the legislative land-designation step before siting permits; the implementing regulations arrived in August 2025, giving organized boroughs direct approval authority with standard setbacks retained. The date split matters for citation accuracy: statute 2022, regulations 2025.",
+      "verdict": "wrong",
+      "evidence": "World Nuclear News (28 Jul 2023) says Alaska's 2022 updates to AS 18.45 define a microreactor as an advanced nuclear reactor capable of producing no more than 50 MW, that Gov. Dunleavy signed SB 177 in 2022, and that the implementing regulations come into effect in August 2023. akbizmag (2 Aug 2023) says streamlined regulations are now in place and that SB 177 removed the legislative approval requirement, except in the Unorganized Borough. No fetched page supports an August 2025 regulation date.",
+      "correction": "Signed in 2022, SB 177 defines a microreactor (up to 50 MW) and removes the legislative siting approval step outside the Unorganized Borough; the implementing regulations took effect in August 2023.",
+      "sources": [
+        {
+          "label": "akbizmag — Streamlined state regulations adopted for nuclear microreactors (2 Aug 2023)",
+          "url": "https://www.akbizmag.com/industry/energy/streamlined-state-regulations-adopted-for-nuclear-microreactors/",
+          "quote": "Streamlined regulations are now in place for the next generation of nuclear reactors",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Alaska simplifies microreactor regulations (28 Jul 2023)",
+          "url": "https://www.world-nuclear-news.org/Articles/Alaska-simplifies-microreactor-regulations",
+          "quote": "defined as an advanced nuclear reactor capable of producing no more than 50 MW",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [
+    {
+      "id": "nj-s4849-micro-reactor-incentive-act-2026",
+      "forum": "New Jersey Senate",
+      "docket": "S4849 (companion A5726)",
+      "url": "https://pub.njleg.gov/Bills/2026/S5000/4849_I1.HTM",
+      "utility": "n/a (directs NJ Board of Public Utilities to solicit proposals)",
+      "state": "NJ",
+      "type": "legislation",
+      "date": "2026-10-19",
+      "size_class": "micro",
+      "status": "filed",
+      "what_it_says": "The Micro-Reactor Incentive Act directs the NJ Board of Public Utilities to develop a competitive solicitation program for awarding micro-reactor incentive contracts. The bill text defines a micro-reactor as a nuclear fission reactor with a rated electric generating capacity of not more than 20 megawatts. It was introduced 2026-10-19 and referred to the Senate Environment and Energy Committee; the fetched text gives no cost, cost-recovery mechanism or capacity target.",
+      "microreactor_read": "A state solicitation for reactors up to 20 MW would be a new buyer path in New Jersey, but the bill has only been referred to committee.",
+      "sources": [
+        {
+          "label": "New Jersey Legislature — S4849 Micro-Reactor Incentive Act, introduced text (19 Oct 2026)",
+          "url": "https://pub.njleg.gov/Bills/2026/S5000/4849_I1.HTM",
+          "quote": "the board shall develop a competitive solicitation program for awarding micro-reactor incentive contracts",
+          "status": "fetched"
+        },
+        {
+          "label": "FastDemocracy — NJ S4849 bill page (introduced 19 Oct 2026)",
+          "url": "https://fastdemocracy.com/bill-search/nj/2026-2027/bills/NJB00076463/",
+          "quote": "directs BPU to request proposals to construct micro nuclear reactors in State.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "nrc-doe-dow-prior-authorization-final-rule-2026-10-22",
+      "date": "2026-10-22",
+      "headline": "NRC finalizes rule letting reactor applicants use DOE and DoW authorization data",
+      "companies": [],
+      "category": "regulatory",
+      "what_happened": "The NRC finalized a rule titled 'NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War' on 2026-10-22. It adds Section 50.43(f) to 10 CFR Part 50 and revises Section 53.440(a)(1) in Part 53 so that an application may use information gathered from a DOE- or DOW-authorized reactor. The NRC says the rule does not let it forgo an independent review.",
+      "why_it_matters": "A vendor with a DOE-authorized test unit can point to that operating record in an NRC application, which may shorten review. Reliance depends on how closely the tested unit matches the commercial design.",
+      "binding": true,
+      "binding_note": "Final rule. Power Magazine reports the NRC expected Federal Register publication in the week of Oct. 26, with effect 30 days after publication; publication was not verified. Orrick's article does not state an effective date.",
+      "sources": [
+        {
+          "label": "Power Magazine — NRC finalizes rule allowing reactor applicants to use DOE, DOW demonstration data (22 Oct 2026)",
+          "url": "https://www.powermag.com/nrc-finalizes-rule-allowing-reactor-applicants-to-use-doe-dow-demonstration-data/",
+          "quote": "may include consideration of relevant information gathered from a utilization facility",
+          "status": "fetched"
+        },
+        {
+          "label": "Orrick — NRC Finalizes DOE-to-NRC Licensing Pathway Rulemaking (23 Oct 2026)",
+          "url": "https://www.orrick.com/en/Insights/2026/10/NRC-Finalizes-DOE-to-NRC-Licensing-Pathway-Rulemaking-The-Regulatory-Crosswalk-Takes-Shape",
+          "quote": "NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dropped": []
+}

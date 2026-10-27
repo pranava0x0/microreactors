@@ -310,3 +310,16 @@ one-line here is the pointer.
 - **low** · An interactive version of the $/kWe-to-$/MWh conversion (rate, life, capacity factor as
   inputs) once a second reader asks for one; the static table covers the two published cases.
 - **medium** · Re-run the seven seed topics that DuckDuckGo blocked on 2026-09-02 (`python3 tools/web_search.py --plan data/research/2026-09-02-prospects/plan.json --out data/research/2026-09-02-prospects/seeds --only red-dog nunavut-kivalliq src-saskatchewan chalk-river-gfp fuel-triso-haleu vendor-unit-prices offgrid-ipps --pause 8`) so the digest on disk matches what the agents were given. The block came after about ten queries at a 2.5 s pause; a rerun an hour later at an 8 s pause with a 45 s cooldown per blocked query still returned zero for every topic, so the block is per-address and lasts at least an hour. Run the plan from a different network or a day later, in two halves, or seed the next pass from the agents' own WebSearch as this one did. Bing's keyless RSS was tried as a fallback and answers with generic pages for the first word of the query, so it was removed rather than left to seed junk.
+
+## Added 2026-10-27 (refresh)
+
+- **medium** · Decide whether a Notice of Intent to Award counts as binding. Eielson (Oklo)
+  ships `binding: true` under the 2026-08-21 rule "selection with a named site"; the Sonnet
+  adjudicator read the NOITA as non-binding. Changing the rule moves the Home "9/16" figure.
+- **medium** · Westinghouse eVinci: Neutron Bytes (2026-10-24) says commercial work is
+  cancelled and the factory on hold. No second source yet; re-check before the next refresh.
+- **low** · Valar: re-check the "30 MW Nvidia data center" note against Project Beehive's
+  BLM filing (456 reactors, 9.6 GW); eVinci Penn State LOI date conflict (2025-02-17 vs
+  2025-02-28) needs the cached NRC PDF read.
+- **low** · Prospects with "Load not published" (Douglas County, Wise County, Canada DND,
+  Meadow Lake, Idaho Strategic): revisit when their studies report (Wise County due Dec 2026).

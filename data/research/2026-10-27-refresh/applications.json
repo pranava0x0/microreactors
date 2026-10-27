@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "applications",
+    "scope": "Applications tab: new buyer-side projects (Type S) sized in MW, with a focus on Indiana, Kentucky and Alaska per the lead list; shipped-record checks (Type G) and regions (Type E) only where a fetched source gave a verdict or a price and load.",
+    "angles_run": [
+      "Indiana and Kentucky leads (Neutron Bytes state roundup; AEP/Amazon/X-energy Breed station; The Nuclear Company Prosperity One)",
+      "Alaska (AIDEA/NuCube SEC Form 425; NuAlaska MOU with Alaska Fund)",
+      "Shipped-record checks (Penn State eVinci, Last Energy London Gateway, Steady Energy LDR-50, Westinghouse eVinci lunar, CSMC Arctic, NASA/DOE fission surface power)",
+      "Behind-the-meter data centers",
+      "Mines (Idaho Strategic / Radiant; Tata / BWXT; Natura / NGL)",
+      "Hydrogen and ammonia",
+      "Hospitals",
+      "Desalination and produced water",
+      "Military installation civilian loads (Army Janus)",
+      "Utility IRPs with SMR lines",
+      "District heat"
+    ],
+    "absences": [
+      "Westinghouse eVinci commercial work cancelled / factory on hold (lead 5, Neutron Bytes 2026-10-22): two searches found no primary or second-source confirmation; not written. Left for the vendors agent to verify before any shipped change.",
+      "Type G checks: no fetched primary contradicted or updated a shipped record in the segments or deployment_sites files. Penn State eVinci (no 2026 NRC update found), Last Energy London Gateway (no 2026 update found), NASA/DOE fission surface power (no change found), Steady Energy LDR-50 (Feb 2026 construction matches; spring 2027 operations seen only in a search summary).",
+      "CSMC Arctic (POLAR-1): a 2026 article says 'megawatt range' and first criticality by 2028 but gives no MW figure. Shipped power_class 'not stated' is not corrected because there is no number to write.",
+      "Idaho Strategic / Radiant: no deployment or unit update after the May 2024 MOU was found; the Radiant blog returned HTTP 403, so the Kaleidos rating is taken from a fetched Neutron Bytes sentence about a different site.",
+      "Mines: no 2026 microreactor power agreement for a mine was found; Tata/BWXT is already shipped and the Rusatom Kyuchus contract is an older large-reactor deal.",
+      "Hydrogen and ammonia: no microreactor offtake found. The 2026 large offtakes (Uniper/AM Green, RWE, Air Products/NEOM) are renewable-electrolysis deals and not nuclear.",
+      "Hospitals: no hospital-specific microreactor feasibility study found. Brazil's CNEN 3-5 MW study lists hospitals only as a suggested use, not a named buyer; not written.",
+      "Desalination: only Natura/NGL (written). Rosatom/Egypt is a 2014 deal.",
+      "Military: Army Janus awards (reported 2026-08-27) are already shipped as deployment_sites. Civilian loads at those bases are not published.",
+      "Utility IRPs: Ameren Missouri plans 1,200 MW of nuclear by 2040 with no technology or site; Seattle City Light lists SMR as a candidate with no MW; I&M's 600 MW SMR line is from the 2024 cycle. None names a 1-20 MW microreactor load, so none written.",
+      "Wise County, Virginia feasibility study (due end 2026, per a May 2026 report): no MW figure found; not written.",
+      "AIDEA/NuCube $25M purchase is an equity investment, not a site or offtake contract, and names no MW. It appears only as context in the NuAlaska record.",
+      "Kentucky Prosperity One: no electric utility partner named in any fetched source (Power Magazine, via search summary only).",
+      "Regions (Type E): none new beyond skip/regions.json with both a price and a load number in a fetched source.",
+      "Items (Type N): none written. News web leads 1, 2, 4, 7, 8, 9 belong to the news and politics agents; lead 6 (Indiana/Kentucky) is written as applications.",
+      "Budget used: 18 web searches, 10 fetches. Natura/NGL date: the fetched WNN article is dated Wednesday 4 February 2026; a search snippet gave 3 February, not written."
+    ]
+  },
+  "applications": [
+    {
+      "id": "aep-amazon-breed-indiana",
+      "segment": "data centers via utility PPA",
+      "name": "AEP, Amazon and X-energy: Breed Generating Station, Sullivan County, Indiana",
+      "status": "proposed",
+      "power_class": "960 MW (twelve Xe-100 units; the Xe-100 provides 80 MW)",
+      "timeline": "Announced 2026-10-19. Joint development agreement only; no final investment decision.",
+      "sponsor": "Amazon (long-term power purchase agreement); American Electric Power (Indiana Michigan Power); X-energy",
+      "vendor": "X-energy",
+      "what_it_says": "AEP, Amazon and X-energy plan a potential 960 MW project of twelve Xe-100 units near the former site of I&M's retired 496 MW Breed Generating Station, a former coal plant site in Sullivan County, Indiana. It is under a joint development agreement, with Amazon to provide a long-term power purchase agreement. No final investment decision has been taken.",
+      "microreactor_read": "At 960 MW the project is about 50 times the top of the 1-20 MW band, so no block of that size fits. It is a buyer signal for nuclear at retired coal plants in Indiana; no microreactor buyer is named.",
+      "sources": [
+        {
+          "label": "World Nuclear News: AEP, Amazon and X-energy plan 12-SMR plant (2026)",
+          "url": "https://world-nuclear-news.org/articles/aep-amazon-and-x-energy-plan-12-smr-plant",
+          "quote": "a potential 960 MW project",
+          "status": "fetched"
+        },
+        {
+          "label": "Neutron Bytes: Nuclear reactor developers target Indiana and Kentucky for sites and customers (2026)",
+          "url": "https://neutronbytes.com/2026/10/24/nuclear-reactor-developers-target-indiana-kentucky-for-sites-and-customers/",
+          "quote": "will evaluate the development of a 12-unit Xe-100 plant near the former site",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "prosperity-one-kentucky",
+      "segment": "large-reactor campuses",
+      "name": "The Nuclear Company: Prosperity One, Lewis County, Kentucky",
+      "status": "proposed",
+      "power_class": "6.6 GW (up to six AP1000 reactors; first phase two AP1000s)",
+      "timeline": "Announced 2026-10-21. Construction targeted to begin in 2028, after site characterisation, transmission planning and federal licensing preparation.",
+      "sponsor": "The Nuclear Company; local landowner Sam Howard (Trace Creek Construction)",
+      "vendor": "Westinghouse (AP1000)",
+      "what_it_says": "The Nuclear Company proposes an energy campus in Lewis County, Kentucky, with up to six Westinghouse AP1000 reactors totalling about 6.6 GW and two AP1000s in the first phase. It would be developed with landowner Sam Howard, founder of Trace Creek Construction, and local leaders. The article names no utility partner.",
+      "microreactor_read": "6.6 GW is far above the 1-20 MW band, so it offers no buyer for a microreactor block. It is a large-reactor project competing for the same Kentucky site and state nuclear-ready programs.",
+      "sources": [
+        {
+          "label": "World Nuclear News: The Nuclear Company proposes 6.6 GW Kentucky project (2026)",
+          "url": "https://world-nuclear-news.org/articles/nuclear-company-proposes-66-gw-kentucky-project",
+          "quote": "could feature up to six AP1000 reactors",
+          "status": "fetched"
+        },
+        {
+          "label": "Neutron Bytes: Nuclear reactor developers target Indiana and Kentucky for sites and customers (2026)",
+          "url": "https://neutronbytes.com/2026/10/24/nuclear-reactor-developers-target-indiana-kentucky-for-sites-and-customers/",
+          "quote": "could support up to six Westinghouse AP1000 reactors",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nualaska-nusun1-alaska",
+      "segment": "remote Alaska communities and industry",
+      "name": "NuAlaska: NuCube NuSun-1 with Alaska Fund (memorandum of understanding)",
+      "status": "proposed",
+      "power_class": "1.3 MWe per unit (NuSun-1, TRISO fuel, heat-pipe cooled)",
+      "timeline": "MOU announced 2026-07-30. No DOE, NRC or deployment dates published.",
+      "sponsor": "Alaska Fund (to lead financing, construction and ownership)",
+      "vendor": "NuCube Energy",
+      "what_it_says": "NuCube Energy and Alaska Fund signed a memorandum of understanding to launch NuAlaska and deploy NuCube's NuSun-1 reactor, rated at 1.3 MWe, as a turnkey project that Alaska Fund would lead on financing, construction and ownership. No site, community or customer load is named. Separately, AIDEA agreed on 2026-10-19 to buy $25 million of NuCube shares at $9.25 each, an equity investment and not a site contract.",
+      "microreactor_read": "At 1.3 MWe per unit this is below the 1-20 MW band, so several units or a named remote load are needed before a block can be sized. No load figure exists yet.",
+      "sources": [
+        {
+          "label": "American Nuclear Society: State roundup, momentum from Arkansas to Alaska (2026-08-12)",
+          "url": "https://www.ans.org/news/2026-08-12/article-8286/state-roundup-momentum-from-arkansas-to-alaska/",
+          "quote": "signed a memorandum of understanding with Alaska Fund",
+          "status": "fetched"
+        },
+        {
+          "label": "Launch Two Acquisition Corp. Form 425 filing (NuCube, 2026-10-19)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2023676/000121390026110814/ea0309104-425_nucube.htm",
+          "quote": "AIDEA has agreed to purchase $25 million of Class A ordinary shares at $9.25 per share.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "idaho-strategic-radiant-kaleidos",
+      "segment": "mining",
+      "name": "Idaho Strategic Resources and Radiant: Kaleidos at an Idaho mine (non-binding MOU)",
+      "status": "proposed",
+      "power_class": "1 MWe (1.9 MWt) Kaleidos",
+      "timeline": "Non-binding MOU dated May 8, 2024. No later deployment update found.",
+      "sponsor": "Idaho Strategic Resources (mine operator)",
+      "vendor": "Radiant Industries",
+      "what_it_says": "Idaho Strategic Resources and Radiant Industries signed a non-binding memorandum of understanding on May 8, 2024 that establishes a pathway to operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site. The release names no site and gives no mine load or price. The Kaleidos unit is rated at 1 MWe and 1.9 MWt.",
+      "microreactor_read": "A 1 MWe unit sits at the bottom of the 1-20 MW band, but the MOU is non-binding, names no site and states no mine load.",
+      "sources": [
+        {
+          "label": "Miningstockeducation: Idaho Strategic announces MOU with Radiant Industries Frontier Program (2024-05)",
+          "url": "https://www.miningstockeducation.com/2024/05/idaho-strategic-announces-memorandum-of-understanding-with-radiant-industries-frontier-program/",
+          "quote": "operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site",
+          "status": "fetched"
+        },
+        {
+          "label": "Neutron Bytes: Nuclear reactor developers target Indiana and Kentucky (2026-10-24), Radiant Crane sentence",
+          "url": "https://neutronbytes.com/2026/10/24/nuclear-reactor-developers-target-indiana-kentucky-for-sites-and-customers/",
+          "quote": "Kaleidos is a factory-built, transportable 1-MW microreactor",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "natura-ngl-permian-produced-water",
+      "segment": "produced water and desalination",
+      "name": "Natura Resources and NGL Water Solutions Permian: produced-water treatment",
+      "status": "proposed",
+      "power_class": "100 MW (MSR-100 molten salt reactor)",
+      "timeline": "Announced Wednesday 4 February 2026. Natura expects to deploy its first 100 MW commercial reactor in 2029.",
+      "sponsor": "NGL Water Solutions Permian",
+      "vendor": "Natura Resources",
+      "what_it_says": "Natura Resources and NGL Water Solutions Permian will collaborate in seeking opportunities to combine Natura's 100 MW molten salt reactor with NGL's water treatment. NGL handles more than 3 million barrels per day of produced and flowback water in the Permian. The release gives no power output for the combined system and no supply or construction contract.",
+      "microreactor_read": "100 MW is about five times the top of the 1-20 MW band, and 2029 is Natura's own target for a first commercial reactor. The article gives no power load for the water system, so a 1-20 MW block cannot be sized.",
+      "sources": [
+        {
+          "label": "World Nuclear News: Natura, NGL collaboration on water treatment (2026-02-04)",
+          "url": "https://wnn.world-nuclear.org/articles/natura-ngl-collaboration-on-water-treatment",
+          "quote": "Natura's 100 MW molten salt reactor (MSR)",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dropped": []
+}

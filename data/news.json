@@ -1,31 +1,31 @@
 {
   "_meta": {
-    "captured": "2026-10-21",
+    "captured": "2026-10-27",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "53 of 85 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 32 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-10-21",
-    "refresh": "tools/news_watch.py polls six trade and government RSS feeds plus SEC EDGAR full-text search (and, with --reddit, Reddit feeds as discovery only) and reports what is not yet written up here. It does not write this file: judging whether an instrument binds means reading the document."
+    "binding_note": "55 of 90 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 35 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-10-27",
+    "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 15
+      "count": 17
+    },
+    {
+      "id": "fuel",
+      "count": 14
     },
     {
       "id": "award",
       "count": 13
     },
     {
-      "id": "fuel",
-      "count": 13
-    },
-    {
       "id": "contract",
-      "count": 11
+      "count": 12
     },
     {
       "id": "financing",
-      "count": 10
+      "count": 11
     },
     {
       "id": "construction",
@@ -49,6 +49,108 @@
     }
   ],
   "items": [
+    {
+      "id": "nano-hyundai-engineering-kronos-mou-2026-10-27",
+      "date": "2026-10-27",
+      "headline": "NANO Nuclear signs MOU with Hyundai Engineering on KRONOS MMR execution",
+      "companies": [
+        "NANO Nuclear",
+        "Hyundai Engineering"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear Energy signed a memorandum of understanding with Hyundai Engineering to set a framework for potential collaboration on the KRONOS MMR project at the University of Illinois Urbana-Champaign, whose construction permit application is under NRC review. The parties initially intend to focus on project-execution planning, procurement readiness, constructability and modularization. Any wider role in engineering, construction or fleet deployment would need separate definitive agreements.",
+      "why_it_matters": "It adds an engineering partner to a KRONOS project that has no buyer-side power contract. The MOU awards no work package and commits neither party to funding or construction.",
+      "binding": false,
+      "binding_note": "An MOU. A StockTitan summary of the release states the non-exclusive MOU awards no specific work package and commits neither party to funding or construction. The GlobeNewswire release itself returned HTTP 403, so terms rest on that summary.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy via GlobeNewswire - NANO Nuclear Energy and Hyundai Engineering Sign Memorandum of Understanding (2026-10-27)",
+          "url": "https://www.globenewswire.com/news-release/2026/10/27/3388916/0/en/nano-nuclear-energy-and-hyundai-engineering-sign-memorandum-of-understanding-to-advance-kronos-mmr-project-execution-and-future-fleet-deployment.html",
+          "quote": "The parties initially intend to focus on project-execution planning, conventional and site-related work, procurement readiness, constructability, modularization",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-bwxt-triso-framework-2026-10-27",
+      "date": "2026-10-27",
+      "headline": "BWXT signs TRISO fuel framework contract with Antares",
+      "companies": [
+        "Antares",
+        "BWXT"
+      ],
+      "category": "fuel",
+      "what_happened": "BWXT announced a multi-year commercial agreement with Antares, through its BWXT Advanced Fuels subsidiary, for TRISO fuel production. The release calls it a framework for production, with an initial allocation of 1 MTU (metric ton uranium) that can grow, and says quantities and delivery schedules are set in future task orders. Antares describes it as securing fuel fabrication through the end of the decade.",
+      "why_it_matters": "It gives Antares a named fuel fabricator, which is one supply question for its small reactors. Only 1 MTU is committed so far; a buyer still needs delivered fuel on a schedule.",
+      "binding": false,
+      "binding_note": "A signed commercial agreement, but a framework: firm quantities, delivery schedules and requirements come only through future task orders, so it commits little until those are issued.",
+      "sources": [
+        {
+          "label": "BWXT — BWXT Announces Contract with Antares for TRISO Nuclear Fuel Production (2026-10-27)",
+          "url": "https://www.bwxt.com/bwxt-announces-contract-with-antares-for-triso-nuclear-fuel-production/",
+          "quote": "an initial allocation of 1 MTU (metric ton uranium), with the ability to increase as deployment requirements evolve",
+          "status": "fetched"
+        },
+        {
+          "label": "Antares — Updates index (Oct. 27, 2026: Antares Signs TRISO Fuel Agreement with BWXT)",
+          "url": "https://antaresindustries.com/updates",
+          "quote": "Securing Fabrication Through the End of the Decade",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-mark1-doe-nsda-2026-10-23",
+      "date": "2026-10-23",
+      "headline": "Antares clears first DOE authorization gate for Mark-1",
+      "companies": [
+        "Antares"
+      ],
+      "category": "regulatory",
+      "what_happened": "The US Department of Energy approved the Nuclear Safety Design Agreement for Antares' Mark-1 system, an electricity-producing reactor. Antares calls it the first DOE authorization gate for Mark-1. The decision opens the door for construction and testing at Idaho National Laboratory, according to trade coverage dated 2026-10-24.",
+      "why_it_matters": "A regulatory milestone, not a power sale, fuel delivery or construction start. A buyer should not read it as a commercial commitment.",
+      "binding": true,
+      "binding_note": "A formal DOE approval of a safety design agreement, an achieved regulatory step and not a commercial commitment. Antares dated its announcement 2026-10-23.",
+      "sources": [
+        {
+          "label": "Antares — Updates index (Oct. 23, 2026: Antares Clears First DOE Authorization Gate for Mark-1)",
+          "url": "https://antaresindustries.com/updates",
+          "quote": "Antares Clears First DOE Authorization Gate for Mark-1, Its Electricity-Producing Reactor",
+          "status": "fetched"
+        },
+        {
+          "label": "Interesting Engineering — US power-producing microreactor clears DOE safety milestone (Oct. 24, 2026)",
+          "url": "https://interestingengineering.com/energy/us-power-producing-microreactor-safety-milestone",
+          "quote": "The decision opens the door for construction and testing at Idaho National Laboratory.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-doe-dow-prior-authorization-final-rule-2026-10-22",
+      "date": "2026-10-22",
+      "headline": "NRC finalizes rule letting reactor applicants use DOE and DoW authorization data",
+      "companies": [],
+      "category": "regulatory",
+      "what_happened": "The NRC finalized a rule titled 'NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War' on 2026-10-22. It adds Section 50.43(f) to 10 CFR Part 50 and revises Section 53.440(a)(1) in Part 53 so that an application may use information gathered from a DOE- or DOW-authorized reactor. The NRC says the rule does not let it forgo an independent review.",
+      "why_it_matters": "A vendor with a DOE-authorized test unit can point to that operating record in an NRC application, which may shorten review. Reliance depends on how closely the tested unit matches the commercial design.",
+      "binding": true,
+      "binding_note": "Final rule. Power Magazine reports the NRC expected Federal Register publication in the week of Oct. 26, with effect 30 days after publication; publication was not verified. Orrick's article does not state an effective date.",
+      "sources": [
+        {
+          "label": "Power Magazine — NRC finalizes rule allowing reactor applicants to use DOE, DOW demonstration data (22 Oct 2026)",
+          "url": "https://www.powermag.com/nrc-finalizes-rule-allowing-reactor-applicants-to-use-doe-dow-demonstration-data/",
+          "quote": "may include consideration of relevant information gathered from a utilization facility",
+          "status": "fetched"
+        },
+        {
+          "label": "Orrick — NRC Finalizes DOE-to-NRC Licensing Pathway Rulemaking (23 Oct 2026)",
+          "url": "https://www.orrick.com/en/Insights/2026/10/NRC-Finalizes-DOE-to-NRC-Licensing-Pathway-Rulemaking-The-Regulatory-Crosswalk-Takes-Shape",
+          "quote": "NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "nano-impsa-kronos-esma-2026-10-21",
       "date": "2026-10-21",
@@ -135,6 +237,29 @@
           "label": "Focus Taiwan (Central News Agency) — NTHU to explore research reactor development with NuCube (Oct. 19, 2026)",
           "url": "https://focustaiwan.tw/sci-tech/202610190020",
           "quote": "an exploratory step toward possible deployment of a NuCube microreactor to replace THOR",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aidea-nucube-share-purchase-2026-10-19",
+      "date": "2026-10-19",
+      "headline": "Alaska's AIDEA agrees to buy $25M of NuCube shares in SPAC deal",
+      "companies": [
+        "NuCube",
+        "Launch Two Acquisition Corp",
+        "AIDEA"
+      ],
+      "category": "financing",
+      "what_happened": "The Alaska Industrial Development and Export Authority, a state-backed investment authority, agreed on 2026-10-19 to buy $25 million of Class A ordinary shares of NuCube at $9.25 per share, about a 14.5% discount to a $10.82 reference price, plus one-half warrant per share. NuCube is going public through a merger with the SPAC Launch Two Acquisition Corp.",
+      "why_it_matters": "A state authority putting equity into a microreactor developer is a signal for Alaska off-grid buyers, but it is a financing term and not a power deal. The $25 million counts toward the $75 million minimum cash condition for closing the merger.",
+      "binding": false,
+      "binding_note": "A signed share purchase agreement announced with the SPAC filing. It counts toward the merger's minimum cash condition, and the filing does not show the merger has closed.",
+      "sources": [
+        {
+          "label": "NuCube / Launch Two Acquisition Corp — SEC Form 425 filing (Oct. 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2023676/000121390026110814/ea0309104-425_nucube.htm",
+          "quote": "AIDEA has agreed to purchase $25 million of Class A ordinary shares at $9.25 per share",
           "status": "fetched"
         }
       ]

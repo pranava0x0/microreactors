@@ -2708,6 +2708,137 @@
      "url": "https://www.energy.gov/documents/haleu-allocation-process-08282025"
     }
    ]
+  },
+  {
+   "id": "douglas-county-co",
+   "name": "Douglas County, Colorado (Board of County Commissioners)",
+   "advantage": "nuclear-interest",
+   "sector": "Civic Infrastructure",
+   "region": "Colorado, US",
+   "load": "Not published",
+   "documented": "On 2026-07-07 county commissioners directed staff to obtain cost estimates for a feasibility study of whether SMRs or microreactors could be developed in the county. The county memo cited growing interest in nuclear among companies seeking reliable power for data centers, and officials named aerospace, advanced manufacturing and data centers as sectors. No vendor, site or load figure is reported, and the board will decide the study's scope after seeing estimates.",
+   "fit": "A reactor would have to beat grid power on resilience for a county with no named load.",
+   "sale_shape": "A county-commissioned study first; any reactor would sit behind a private or utility offtaker, not a county purchase.",
+   "status": "evidence-only",
+   "next_question": "Which named load in the county (a data center or an aerospace plant) would sign for firm power, and at what size?",
+   "sources": [
+    {
+     "label": "Colorado Politics — Douglas County seeks cost estimates for nuclear feasibility study (2026-07-07)",
+     "url": "https://www.coloradopolitics.com/2026/07/07/douglas-county-seeks-cost-estimates-for-nuclear-feasibility-study/",
+     "quote": "a feasibility study examining whether small modular nuclear reactors or microreactors could be developed in the county",
+     "status": "fetched"
+    }
+   ],
+   "refs": [],
+   "pass": "data/research/2026-10-27-refresh"
+  },
+  {
+   "id": "wise-county-va",
+   "name": "Wise County, Virginia (with LENOWISCO Planning District Commission and GO Virginia Region 1)",
+   "advantage": "speed-or-land",
+   "sector": "Civic Infrastructure",
+   "region": "Southwest Virginia, US",
+   "load": "Not published",
+   "documented": "GO Virginia Region 1 approved a $100,000 grant in January 2025 for a study of a possible microreactor site, its infrastructure, baseload power capability and customers such as data centers. The county administrator said the county would likely use a microreactor to power places the grid cannot serve efficiently, such as a data center. As of July 2026 the county had no concrete plan, and the study was expected to finish in December.",
+   "fit": "A microreactor would have to beat grid power for an unnamed data center, in a county that says the study approves no specific project, site or design.",
+   "sale_shape": "A site-ready finding from the study that a vendor or developer could take to a data center customer.",
+   "status": "evidence-only",
+   "next_question": "Does the December study name a site and a customer load in MW?",
+   "sources": [
+    {
+     "label": "Cardinal News — Funding approved to study building nuclear microreactor in Wise County (2025-01-16)",
+     "url": "https://cardinalnews.org/2025/01/16/funding-approved-to-study-building-nuclear-microreactor-in-wise-county/",
+     "quote": "a $100,000 grant that would fund the study was approved by the GO Virginia Region 1 Council",
+     "status": "fetched"
+    },
+    {
+     "label": "Cardinal News — SWVA field notes (2026-07-31)",
+     "url": "https://cardinalnews.org/2026/07/31/swva-field-notes-2/",
+     "quote": "expected to be completed in December",
+     "status": "snippet-only"
+    }
+   ],
+   "refs": [],
+   "pass": "data/research/2026-10-27-refresh"
+  },
+  {
+   "id": "canada-dnd-northern-microreactor",
+   "name": "Canada Department of National Defence (northern bases and operations)",
+   "advantage": "sovereignty",
+   "sector": "Defense installations",
+   "region": "Northern Canada",
+   "load": "Not published",
+   "documented": "On 2026-04-29 Canada announced an initial $40-million investment for 2026-2027 through National Defence to assess a Canadian-controlled microreactor that could supply heat and power to remote and northern military facilities. The feasibility program received $6 million in 2025-2026, with $4.7 million going to research at Chalk River Laboratories. No bases, reactor size or load are named.",
+   "fit": "A reactor would have to beat diesel supply at isolated northern sites, with Canadian control of the technology as a stated requirement.",
+   "sale_shape": "A government-funded feasibility program that could lead to a defence procurement.",
+   "status": "policy-gated",
+   "next_question": "Which northern sites does the program screen, and what diesel load do they carry in MW?",
+   "sources": [
+    {
+     "label": "Natural Resources Canada — Government of Canada commits to new strategy for nuclear energy (2026-04-29)",
+     "url": "https://www.canada.ca/en/natural-resources-canada/news/2026/04/government-of-canada-commits-to-new-strategy-for-nuclear-energy.html",
+     "quote": "an initial $40-million investment for 2026–2027 to assess the potential of a Canadian‑controlled microreactor",
+     "status": "fetched"
+    },
+    {
+     "label": "Cabin Radio — Canada looks at giving northern military micro nuclear reactors (2026-04-29)",
+     "url": "https://cabinradio.ca/288529/news/economy/infrastructure/energy/canada-looks-at-giving-northern-military-micro-nuclear-reactors/",
+     "quote": "remote and northern DND and Canadian Armed Forces facilities",
+     "status": "fetched"
+    }
+   ],
+   "refs": [
+    {
+     "news": "dnd-arctic-microreactor-study-2026-04-29"
+    }
+   ],
+   "pass": "data/research/2026-10-27-refresh"
+  },
+  {
+   "id": "meadow-lake-tribal-council",
+   "name": "Meadow Lake Tribal Council (nine First Nations, northwestern Saskatchewan)",
+   "advantage": "sovereignty",
+   "sector": "Electric Utilities",
+   "region": "Saskatchewan, Canada",
+   "load": "Not published",
+   "documented": "The Saskatchewan Research Council and the Meadow Lake Tribal Council signed an MOU on 2024-06-06 to set up a collaboration framework for microreactor applications in the council's communities, which cover nine First Nations. The release cites $80 million in provincial funding announced in November 2023 for SRC to pursue licensing and commercial deployment of a microreactor. It gives no load and no later update.",
+   "fit": "A reactor would have to beat the heating and power the communities buy now, with no load figure published.",
+   "sale_shape": "An MOU framework with SRC; any deployment would run through SRC's own microreactor program.",
+   "status": "letter-of-intent",
+   "next_question": "With Westinghouse out of SRC's program, which vendor does SRC now pair with the MLTC communities?",
+   "sources": [
+    {
+     "label": "Saskatchewan Research Council — SRC signs MOU with MLTC to evaluate potential microreactor applications (2024-06-06)",
+     "url": "https://www.src.sk.ca/news/src-signs-mou-mltc-evaluate-potential-microreactor-applications",
+     "quote": "signed a Memorandum of Understanding (MOU) to establish a framework for collaboration regarding the applications of microreactors",
+     "status": "fetched"
+    }
+   ],
+   "refs": [],
+   "pass": "data/research/2026-10-27-refresh"
+  },
+  {
+   "id": "idaho-strategic-resources",
+   "name": "Idaho Strategic Resources (mine operator)",
+   "advantage": "off-grid-diesel",
+   "sector": "Mining",
+   "region": "Idaho, US",
+   "load": "Not published",
+   "documented": "Idaho Strategic Resources and Radiant Industries signed a non-binding MOU on 2024-05-08 that establishes a pathway to operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site. The Kaleidos unit is rated at 1 MWe and 1.9 MWt. The release names no site and gives no mine load or price, and no later update was found.",
+   "fit": "A 1 MWe unit would have to beat the mine's current grid or generator power at an unnamed site.",
+   "sale_shape": "Non-binding MOU for a unit from Radiant's first production batch.",
+   "status": "letter-of-intent",
+   "next_question": "Which Idaho Strategic site would host a unit, and what is its load in MW?",
+   "sources": [
+    {
+     "label": "Idaho Strategic — MOU with Radiant Industries Frontier Program (2024-05-08)",
+     "url": "https://www.miningstockeducation.com/2024/05/idaho-strategic-announces-memorandum-of-understanding-with-radiant-industries-frontier-program/",
+     "quote": "operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site",
+     "status": "fetched"
+    }
+   ],
+   "refs": [],
+   "pass": "data/research/2026-10-27-refresh"
   }
  ]
 }

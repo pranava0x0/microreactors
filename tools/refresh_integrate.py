@@ -19,6 +19,7 @@ only trusts `fetched` sources; `snippet-only` facts never ship on their own.
                          else is listed under "needs a human" in REPORT.md.
   dockets (Type F)    -> appended to data/dockets.json when the id and url are new.
   applications        -> appended to data/segments.json once `group` names one of its groups.
+  prospects           -> appended to data/strategy.json `prospects` (needs a fetched source).
   regions             -> listed in REPORT.md for hand curation (group, price_short, position).
 
 Writes <pass>/REPORT.md either way (the PR body quotes it). Stdlib only.
@@ -38,7 +39,7 @@ def fetched(rec: dict) -> list:
 
 
 def load_pass(pass_dir: pathlib.Path) -> dict:
-    out = {"items": [], "checks": [], "dockets": [], "applications": [], "regions": []}
+    out = {"items": [], "checks": [], "dockets": [], "applications": [], "regions": [], "prospects": []}
     for f in sorted(pass_dir.glob("*.json")):
         doc = json.loads(f.read_text())
         if doc.get("_meta", {}).get("incomplete"):
@@ -244,6 +245,19 @@ def main() -> int:
     sg["segments"] += new_sg
     report += ["", f"## Applications: {len(new_sg)} added", ""]
     report += [f"- {a['name']} ({a['power_class']})" for a in new_sg] or ["- none"]
+
+    # --- prospects: named counterparties with a reason to buy -> Deals > Prospects
+    st_path = DATA / "strategy.json"
+    st = docs.setdefault(st_path, json.loads(st_path.read_text()))
+    st_ids = {r["id"] for r in st["prospects"]}
+    # `pass` marks a row generated from a validated research pass, which may cite
+    # sources the register has not seen yet (tests/test_strategy.py); `refs` link
+    # it to tracked records and may start empty.
+    new_pr = [dict(clean(r), refs=r.get("refs", []), **{"pass": str(pass_dir.relative_to(ROOT))})
+              for r in p["prospects"] if r["id"] not in st_ids and fetched(r)]
+    st["prospects"] += new_pr
+    report += ["", f"## Prospects: {len(new_pr)} added", ""]
+    report += [f"- {r['name']} ({r['advantage']}, {r['status']})" for r in new_pr] or ["- none"]
 
     # --- curated-only records
     held = [a for a in p["applications"] if a.get("group") not in groups] + p["regions"]

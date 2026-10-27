@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "deals",
+    "scope": "Deals tab: Type G verdicts on shipped opportunities (Army Janus, DOE Reactor Pilot Program, Eielson, Equinix-Radiant, Oklo-Switch, Last Energy, ANPI sites); new buyer deals dated after 2026-10-21 not in skip/news.json; up to 4 pipeline opportunities with binding=false.",
+    "angles_run": [
+      "Army Janus vendors, bases and OTA status",
+      "Eielson NOITA status (2023 revocation vs 2025 NOITA)",
+      "Equinix-Radiant status",
+      "DOE Reactor Pilot Program criticality count",
+      "ANPI JBSA / Buckley / Malmstrom pairings",
+      "Oklo-Switch master agreement status (SEC 10-Q)",
+      "New microreactor PPA / MOU / LOI in late Oct 2026",
+      "Aalo, Valar, Deep Fission customer agreements",
+      "Last Energy Haskell County / Texas customer status",
+      "Pipeline: feasibility studies and RFIs by named buyers or hosts (Wise County, Douglas County, Meralco, Penn State, Idaho AEC)",
+      "web-leads.md lead 6 (Neutron Bytes Indiana/Kentucky article)"
+    ],
+    "absences": [
+      "No new buyer deal (signed or announced) dated after 2026-10-21 found with a fetchable primary page. Searched microreactor PPA/MOU/LOI for Oct 2026 and company-specific queries (Aalo, Valar, Deep Fission, NANO, Last Energy). Deep Fission's Kansas binding PPA (2026-10-20) is already shipped as deep-fission-gpda-master-energy-purchase-2026-10-20.",
+      "Eielson (eielson): the DAF release and the Alaska Beacon page both returned HTTP 403 to WebFetch, so no 2026 status could be read from a primary page. The 2023 DLA intent-to-award to Oklo was rescinded in Sept 2023; the shipped 2025-06-11 NOITA is a separate, later notice and was not contradicted. Not checked. The shipped binding flag (true) on a notice of intent to award is not an executed instrument under the contract rule; left for the main session to review.",
+      "Equinix-Radiant (equinix-radiant): searches returned only 2025 items (Aug 2025 preorder, Radiant Oak Ridge factory, DOME plans). No 2026 status found. Not checked.",
+      "Oklo-Switch (oklo-switch): the June 2026 10-Q excerpt (first 100,000 of 148,391 characters) states 'we signed a 12 gigawatt (GW) Master Power Agreement with Switch, Ltd.' and does not say binding or non-binding. No conversion to binding terms found. Not checked.",
+      "ANPI JBSA, Buckley, Malmstrom (anpi-jbsa, anpi-buckley, anpi-malmstrom): April 2026 pairings (Antares-JBSA, Radiant-Buckley, Westinghouse-Malmstrom) matched in search summaries only; no fetch. No verdict written.",
+      "Last Energy Texas (uk-lastenergy and the Haskell County plan): no 2026 customer agreement found; the Haskell County plan is 2025 reporting. Not checked.",
+      "Web-leads out of this lane, not fetched: lead 1 (BWXT-Antares TRISO fuel contract, fuel vendor-to-vendor); lead 2 (NANO-Hyundai Engineering MOU, an EPC partner rather than a buyer); lead 3 (AIDEA share purchase in NuCube, an investor); lead 4 (Antares Mark-1 DSA, regulatory); lead 5 (Westinghouse eVinci commercial cancellation, vendors); lead 7 (Fortune context piece); lead 8 (NRC prior-authorization rule, politics); lead 9 (Westinghouse LEU+ plant, fuel).",
+      "Web-leads lead 6 (Neutron Bytes, 2026-10-24) fetched. Named buyers and hosts in it are already shipped (Navy/Crane) or are large reactors (Dairyland Genoa, 100 MW SMR; Indiana and Kentucky utilities). Deployable Energy at INL DOME is a DOE test, not a buyer.",
+      "NANO Nuclear with BaRupOn LLC (1 GW feasibility study; LAMP data center campus, Texas): the announcement date could not be read from the search results, so it was not added. Date needed before it can be a record.",
+      "Penn State FRONTIER: the 2025 letter of intent with Westinghouse is a signed LOI and the 2025 RFP was for an architect-engineer firm, so it was not added as a pipeline row.",
+      "Idaho Advanced Energy Consortium RFI: a consortium offering support, not a buyer; responses were due 2026-07-01.",
+      "Wise County VA (pipeline row): the study was expected to finish in December 2026 per July 2026 coverage; final report not found."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn across FY2027-FY2031 under milestone-based Other Transactions agreements the Army says it is negotiating; four of the nine candidate sites are still unassigned",
+      "verdict": "confirmed",
+      "evidence": "Army.mil release dated August 26, 2026 names five vendors and bases (Antares-Fort Bragg, BWXT-Fort Campbell, General Atomics EMS-Fort Hood, Radiant-Fort Benning, Westinghouse Government Services-Fort Drum), up to a combined $2.2 billion across FY2027-2031, and says the vendors were down-selected for negotiation of Other Transactions Authority-based agreements. It says additional Army and other Service sites will be announced at a later date. The page does not state 'four of nine', so that count is unchecked.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+          "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "quote": "Other Transactions Authority-based agreements",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Five critical, others in safety review",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy release dated August 6, 2026 says Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer, and lists Oklo Groves, Antares, Valar, Deployable Energy and Aalo. The page names no reactors in safety review, so the 'others in safety review' half is unchecked.",
+      "sources": [
+        {
+          "label": "U.S. DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "dropped": []
+}

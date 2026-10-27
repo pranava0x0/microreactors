@@ -913,7 +913,9 @@
     advs.forEach(function (a) { advLabel[a.id] = a.label; advGloss[a.id] = a.gloss; });
     var HREF = { benchmark: "#economics/price-to-beat", site: "#pipeline/sites", opportunity: "#pipeline",
                  instrument: "#policy", news: "#news" };
-    render($("prospects-intro"), esc(T._meta.what_this_is) + " " + esc(T._meta.method));
+    // The method note (build dates, script names) is for maintainers; it stays
+    // in data/strategy.json and the reader gets what the list is.
+    render($("prospects-intro"), esc(T._meta.what_this_is));
     render($("prospects-filter"),
       '<button class="newschip on" data-adv="">All ' + T.prospects.length + "</button>" +
       advs.map(function (a) {
@@ -1036,7 +1038,9 @@
 
   var vItems = [{ id: "all", label: "All companies (" + D.vendors.vendors.length + ")" }].concat(
     D.vendors.vendors.map(function (v) {
-      return { id: slug(v.name), label: v.name };
+      // Short label, same route: "BWXT Advanced Technologies" wrapped the
+      // phone strip to five rows (UAT 2026-10-27).
+      return { id: slug(v.name), label: v.name.replace(/ (Nuclear|Advanced Technologies)$/, "") };
     })
   );
 
@@ -1842,6 +1846,10 @@
     var H = D.headlines || [];
     if (!H.length) { return; }
     var lead = H[0];
+    /* One line above the fold: on a phone the lead story sat 1.85 screens down
+       under the directory cards (UAT 2026-10-27). */
+    render($("hero-latest"), '<span class="ltag">Latest</span> <span class="ldate">' + esc(lead.date) +
+      '</span> <a href="#news/' + esc(lead.id) + '">' + esc(lead.headline) + ' \u2192</a>');
     render($("home-lead"), '<article class="leadstory">' + newsHdr(lead) +
       "<h3>" + esc(lead.headline) + "</h3><p>" + esc(lead.what_happened) + " " + cite(lead.sources) +
       '</p><a class="more" href="#news/' + esc(lead.id) + '">Read the news record \u2192</a></article>');
@@ -2081,4 +2089,15 @@
      mid-page because the section ids double as hash routes. */
   renderHome();
   activate(location.hash.slice(1) || PANELS[0], { scroll: true });
+  /* #home is the one panel visible at parse time, so the browser's anchor jump
+     still lands after boot and hid the hero under the nav (528px down on a
+     phone, UAT 2026-10-27). Undo it once the page has loaded. */
+  if (PANELS.indexOf(location.hash.slice(1)) >= 0) {
+    window.addEventListener("load", function () {
+      // Only undo the anchor jump (section pinned at the top), never a reader
+      // who started scrolling while a slow load was still finishing.
+      var sec = document.getElementById(location.hash.slice(1));
+      if (sec && Math.abs(sec.getBoundingClientRect().top) < 2) { window.scrollTo(0, 0); }
+    }, { once: true });
+  }
 })();
