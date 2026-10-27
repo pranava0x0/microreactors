@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor events dated after 2026-10-21, from skip/candidates.json and skip/web-leads.md (lane items only), plus targeted sweeps of named companies. Skip list: skip/news.json (85 shipped items).",
+    "angles_run": [
+      "candidates.json: WNN Radiant/Navy (already shipped as navy-selects-radiant-crane-2026-10-20, not re-added); WNN Westinghouse LEU+ $1B fuel plant (large LWR fuel, outside 1-20 MW market, not written up)",
+      "web-leads 1: BWXT + Antares TRISO framework (written up)",
+      "web-leads 2: NANO + Hyundai Engineering MOU (no citable source found; dropped)",
+      "web-leads 3: AIDEA $25M NuCube share purchase (written up)",
+      "web-leads 4: Antares Mark-1 DOE Nuclear Safety Design Agreement (written up)",
+      "web-leads 5: Westinghouse eVinci commercial work cancelled (not confirmed on any primary page; not shipped)",
+      "sweeps: Radiant, Aalo, Valar, Deep Fission, Last Energy, Terrestrial, Centrus, Standard Nuclear, Oklo, Kairos, DOE Reactor Pilot Program criticality, Oct 2026 general"
+    ],
+    "absences": [
+      "NANO Nuclear + Hyundai Engineering KRONOS MMR MOU (2026-10-27): the GlobeNewswire release returned HTTP 403; two searches found no Hyundai Engineering item. Not written up. Search returned only earlier NANO MOUs (DS Dansuk, EHC, Supermicro, UIUC).",
+      "Westinghouse eVinci commercial work cancelled / factory on hold (2026-10-22): only the Neutron Bytes blog reported it. No primary page confirmed it, and searches found the 2025 Beaver County factory change and the 2026-08-24 zero-power criticality. Not shipped as fact.",
+      "BWXT release itself (investors.bwxt.com): HTTP 403. The BWXT-Antares item rests on the Antares updates index page (dated 2026-10-27, headline only) and does not give volume, price, or whether the framework is binding.",
+      "Mark-1 DOE NSDA at INL: the INL location in the lead is not stated in either fetched source (Antares updates page, Interesting Engineering article). Record says only Mark-1.",
+      "Oct 2026 sweeps with no October-dated company item found: Radiant Kaleidos, Aalo Atomics, Valar Atomics, Last Energy, Terrestrial Energy, Centrus, Standard Nuclear, Oklo, Kairos. Search index is thin after 2026-10-21; these are gaps, not confirmed absences of news.",
+      "Deep Fission: a Yahoo Finance page lists an Oct 20, 2026 business update and a short-seller rebuttal headline. Headline only, no fetched text, not written up.",
+      "Out of scope for this lane: NRC rule on prior DOE/DoD authorization (politics lane), Fortune 2026-10-25 military/NASA context piece (context only), Westinghouse LEU+ $1B (large LWR fuel)."
+    ]
+  },
+  "items": [
+    {
+      "id": "antares-bwxt-triso-framework-2026-10-27",
+      "date": "2026-10-27",
+      "headline": "BWXT signs TRISO fuel framework contract with Antares",
+      "companies": [
+        "Antares",
+        "BWXT"
+      ],
+      "category": "fuel",
+      "what_happened": "BWXT announced a multi-year commercial agreement with Antares, through its BWXT Advanced Fuels subsidiary, for TRISO fuel production. The release calls it a framework for production, with an initial allocation of 1 MTU (metric ton uranium) that can grow, and says quantities and delivery schedules are set in future task orders. Antares describes it as securing fuel fabrication through the end of the decade.",
+      "why_it_matters": "It gives Antares a named fuel fabricator, which is one supply question for its small reactors. Only 1 MTU is committed so far; a buyer still needs delivered fuel on a schedule.",
+      "binding": false,
+      "binding_note": "A signed commercial agreement, but a framework: firm quantities, delivery schedules and requirements come only through future task orders, so it commits little until those are issued.",
+      "sources": [
+        {
+          "label": "BWXT — BWXT Announces Contract with Antares for TRISO Nuclear Fuel Production (2026-10-27)",
+          "url": "https://www.bwxt.com/bwxt-announces-contract-with-antares-for-triso-nuclear-fuel-production/",
+          "quote": "an initial allocation of 1 MTU (metric ton uranium), with the ability to increase as deployment requirements evolve",
+          "status": "fetched"
+        },
+        {
+          "label": "Antares — Updates index (Oct. 27, 2026: Antares Signs TRISO Fuel Agreement with BWXT)",
+          "url": "https://antaresindustries.com/updates",
+          "quote": "Securing Fabrication Through the End of the Decade",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "antares-mark1-doe-nsda-2026-10-23",
+      "date": "2026-10-23",
+      "headline": "Antares clears first DOE authorization gate for Mark-1",
+      "companies": [
+        "Antares"
+      ],
+      "category": "regulatory",
+      "what_happened": "The US Department of Energy approved the Nuclear Safety Design Agreement for Antares' Mark-1 system, an electricity-producing reactor. Antares calls it the first DOE authorization gate for Mark-1. The decision opens the door for construction and testing at Idaho National Laboratory, according to trade coverage dated 2026-10-24.",
+      "why_it_matters": "A regulatory milestone, not a power sale, fuel delivery or construction start. A buyer should not read it as a commercial commitment.",
+      "binding": true,
+      "binding_note": "A formal DOE approval of a safety design agreement, an achieved regulatory step and not a commercial commitment. Antares dated its announcement 2026-10-23.",
+      "sources": [
+        {
+          "label": "Antares — Updates index (Oct. 23, 2026: Antares Clears First DOE Authorization Gate for Mark-1)",
+          "url": "https://antaresindustries.com/updates",
+          "quote": "Antares Clears First DOE Authorization Gate for Mark-1, Its Electricity-Producing Reactor",
+          "status": "fetched"
+        },
+        {
+          "label": "Interesting Engineering — US power-producing microreactor clears DOE safety milestone (Oct. 24, 2026)",
+          "url": "https://interestingengineering.com/energy/us-power-producing-microreactor-safety-milestone",
+          "quote": "The decision opens the door for construction and testing at Idaho National Laboratory.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aidea-nucube-share-purchase-2026-10-19",
+      "date": "2026-10-19",
+      "headline": "Alaska's AIDEA agrees to buy $25M of NuCube shares in SPAC deal",
+      "companies": [
+        "NuCube",
+        "Launch Two Acquisition Corp",
+        "AIDEA"
+      ],
+      "category": "financing",
+      "what_happened": "The Alaska Industrial Development and Export Authority, a state-backed investment authority, agreed on 2026-10-19 to buy $25 million of Class A ordinary shares of NuCube at $9.25 per share, about a 14.5% discount to a $10.82 reference price, plus one-half warrant per share. NuCube is going public through a merger with the SPAC Launch Two Acquisition Corp.",
+      "why_it_matters": "A state authority putting equity into a microreactor developer is a signal for Alaska off-grid buyers, but it is a financing term and not a power deal. The $25 million counts toward the $75 million minimum cash condition for closing the merger.",
+      "binding": false,
+      "binding_note": "A signed share purchase agreement announced with the SPAC filing. It counts toward the merger's minimum cash condition, and the filing does not show the merger has closed.",
+      "sources": [
+        {
+          "label": "NuCube / Launch Two Acquisition Corp — SEC Form 425 filing (Oct. 2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2023676/000121390026110814/ea0309104-425_nucube.htm",
+          "quote": "AIDEA has agreed to purchase $25 million of Class A ordinary shares at $9.25 per share",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nano-hyundai-engineering-kronos-mou-2026-10-27",
+      "date": "2026-10-27",
+      "headline": "NANO Nuclear signs MOU with Hyundai Engineering on KRONOS MMR execution",
+      "companies": [
+        "NANO Nuclear",
+        "Hyundai Engineering"
+      ],
+      "category": "contract",
+      "what_happened": "NANO Nuclear Energy signed a memorandum of understanding with Hyundai Engineering to set a framework for potential collaboration on the KRONOS MMR project at the University of Illinois Urbana-Champaign, whose construction permit application is under NRC review. The parties initially intend to focus on project-execution planning, procurement readiness, constructability and modularization. Any wider role in engineering, construction or fleet deployment would need separate definitive agreements.",
+      "why_it_matters": "It adds an engineering partner to a KRONOS project that has no buyer-side power contract. The MOU awards no work package and commits neither party to funding or construction.",
+      "binding": false,
+      "binding_note": "An MOU. A StockTitan summary of the release states the non-exclusive MOU awards no specific work package and commits neither party to funding or construction. The GlobeNewswire release itself returned HTTP 403, so terms rest on that summary.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy via GlobeNewswire - NANO Nuclear Energy and Hyundai Engineering Sign Memorandum of Understanding (2026-10-27)",
+          "url": "https://www.globenewswire.com/news-release/2026/10/27/3388916/0/en/nano-nuclear-energy-and-hyundai-engineering-sign-memorandum-of-understanding-to-advance-kronos-mmr-project-execution-and-future-fleet-deployment.html",
+          "quote": "The parties initially intend to focus on project-execution planning, conventional and site-related work, procurement readiness, constructability, modularization",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dropped": []
+}

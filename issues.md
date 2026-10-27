@@ -405,3 +405,16 @@ one may simply have no live equivalent now that the project is off.
   number in a record's prose against its cited pages (this pass's `numcheck` script, in the scratch
   directory) would have caught all of them, but it needs a way to accept confirmed figures on pages
   that cannot be cached before it can run in CI.
+
+## 2026-10-27: refresh
+
+- **Open · tooling · SEC EDGAR 403.** `tools/news_watch.py` sends the GitHub noreply address
+  as its SEC contact after the history rewrite; efts.sec.gov answers 403 for that domain
+  (a generic contact gets 200). The SEC leg of the watcher is dark until `SEC_CONTACT_EMAIL`
+  (PR #29) is set to a real mailbox. Root cause: **code bug** (contact domain rejected).
+- **Fixed · UI · #home deep link landed 528px down on phones.** The Home section is the one
+  panel visible at parse time, so the browser's anchor jump ran after boot. app.js now resets
+  scroll on load for bare panel routes. Root cause: **code bug**.
+- **Fixed · UI · Prospects intro printed the maintainer method note** (build dates, script
+  names), and the News refresh note named `tools/news_watch.py`. Root cause: **code bug**
+  (meta fields meant for maintainers rendered as reader copy).

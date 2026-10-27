@@ -250,7 +250,11 @@ def main() -> int:
     st_path = DATA / "strategy.json"
     st = docs.setdefault(st_path, json.loads(st_path.read_text()))
     st_ids = {r["id"] for r in st["prospects"]}
-    new_pr = [clean(r) for r in p["prospects"] if r["id"] not in st_ids and fetched(r)]
+    # `pass` marks a row generated from a validated research pass, which may cite
+    # sources the register has not seen yet (tests/test_strategy.py); `refs` link
+    # it to tracked records and may start empty.
+    new_pr = [dict(clean(r), refs=r.get("refs", []), **{"pass": str(pass_dir.relative_to(ROOT))})
+              for r in p["prospects"] if r["id"] not in st_ids and fetched(r)]
     st["prospects"] += new_pr
     report += ["", f"## Prospects: {len(new_pr)} added", ""]
     report += [f"- {r['name']} ({r['advantage']}, {r['status']})" for r in new_pr] or ["- none"]

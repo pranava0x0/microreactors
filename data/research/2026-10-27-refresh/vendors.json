@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records, and Type N items for vendor milestones dated after 2026-10-21 that skip/news.json lacks, including dated events for 1-20 MWe designs not in the vendors table.",
+    "angles_run": [
+      "web-leads: BWXT-Antares TRISO framework (lead 1)",
+      "web-leads: NANO-Hyundai KRONOS MOU (lead 2)",
+      "web-leads: Antares Mark-1 DOE NSDA (lead 4)",
+      "web-leads: Westinghouse eVinci commercial cancellation (lead 5)",
+      "shipped vendor: valar-ward250 notes vs Project Beehive BLM filing",
+      "shipped vendor: evinci milestone date for Penn State NRC notice",
+      "shipped vendor: radiant DOME campaign status",
+      "sweep dated post-2026-10-21 events: Deployable Energy, Last Energy, Natura, Steady Energy, Blue Energy, Terra Innovatum, Aalo, Valar, NANO ZEUS/KRONOS, Oklo"
+    ],
+    "absences": [
+      "Web-leads 1 (BWXT + Antares TRISO fuel production framework, 2026-10-27): investors.bwxt.com returned HTTP 403 to WebFetch; two searches found no Antares framework contract, only the June 2026 criticality supply story. Not shipped.",
+      "Web-leads 2 (NANO Nuclear + Hyundai Engineering KRONOS MOU, 2026-10-27): globenewswire returned HTTP 403; two searches found no Hyundai item and no 2026-10-27 release. Not shipped.",
+      "Web-leads 3 (AIDEA buys $25M of NuCube shares, 2026-10-19): dated before the 2026-10-21 window. Not written. SEC exhibit not fetched.",
+      "Web-leads 5 (Westinghouse eVinci commercial work cancelled / factory on hold, 2026-10-22): two searches returned only 2023 and Aug-Sep 2026 coverage. No primary or trade page confirms it. Not shipped as fact.",
+      "Web-leads 6-9 (Neutron Bytes state targets, Fortune military/NASA piece, NRC Part 53/57 rule status, Westinghouse LEU+ plant): outside the vendors lane or not a vendor event. Left for the other agents.",
+      "eVinci milestone dated 2025-02-28 (Penn State NRC notice of intent) conflicts with the eVinci notes, which say 2025-02-17, and with the shipped source label ML25059A029. The NRC PDF returned HTTP 403 to WebFetch. Not checked. Cached copy named in the shipped verified note: data/cache/35aba5f2c9cde917.pdf. Main session should read its date line.",
+      "Radiant Kaleidos DOME campaign was targeted for Q3 2026 (quarter ended 2026-09-30). Three searches found no completion report. Latest fetched page is NEI 2026-08-21, outside the 60-day confirmation window, so no check was written. Status should be re-read from Radiant or INL.",
+      "Deployable Energy, Last Energy, Natura, Steady Energy, Blue Energy, Terra Innovatum, Aalo, NANO ZEUS, Oklo: no vendor milestone dated after 2026-10-21 surfaced in one sweep each. Search results were mostly dated before 2026-10-21 or undated.",
+      "Antares Mark-1 NSDA date: the fetched article is timestamped 2026-10-24. Secondary coverage says the announcement was 2026-10-23, but no DOE or Antares release was fetched. The item uses 2026-10-24 and says so in binding_note."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-valar-ward250-1",
+      "target": "valar-ward250",
+      "file": "vendors",
+      "claim": "Ward 250 reached zero-power criticality in Utah. Valar later announced a 30 MW Utah data-center project with Nvidia; no public power contract, price, or delivery date was found.",
+      "verdict": "outdated",
+      "evidence": "East Idaho News (2026-10-01, KSL story): Valar's Project Beehive would include 456 small nuclear reactors and, per NPR-reported documents, could produce 9.6 gigawatts. The BLM confirmed Valar filed an initial application for an industrial campus of about 9,000 acres near Price, Utah; the BLM would run a Notice of Realty Action, NEPA analysis and public comment if it finds the application complete. Utah's Trust Lands board approved a lease of more than 640 acres of state land in Carbon County on 2026-09-17. The article does not mention Nvidia or 30 MW, so that half of the shipped claim is neither confirmed nor contradicted.",
+      "correction": "Ward 250 reached zero-power criticality in Utah. Valar later filed an initial BLM application for a campus near Price, UT (Project Beehive: 456 reactors, 9.6 GW per NPR-reported documents); it is not yet approved. The Nvidia 30 MW claim was not re-checked.",
+      "sources": [
+        {
+          "label": "East Idaho News — Nuclear-powered AI data center proposed on state and federal land in central eastern Utah (2026-10-01)",
+          "url": "https://www.eastidahonews.com/2026/10/nuclear-powered-ai-data-center-proposed-on-state-and-federal-land-in-central-eastern-utah/",
+          "quote": "would include 456 small nuclear reactors",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": [],
+  "dropped": [
+    {
+      "id": "antares-mark1-nsda-2026-10-24",
+      "reason": "Duplicate of news.json antares-mark1-doe-nsda-2026-10-23 (same DOE approval; Antares dated it 2026-10-23, the news record carries the correct date)."
+    }
+  ]
+}

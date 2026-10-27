@@ -525,7 +525,7 @@
       "mwe_label": "Research reactor; public sources describe 100 kWt criticality and a 250 kWt proposed facility",
       "first_delivery_target": "Not published",
       "first_delivery_year": null,
-      "notes": "Ward 250 reached zero-power criticality in Utah. Valar later announced a 30 MW Utah data-center project with Nvidia; no public power contract, price, or delivery date was found.",
+      "notes": "Ward 250 reached zero-power criticality in Utah. Valar later filed an initial BLM application for a campus near Price, UT (Project Beehive: 456 reactors, 9.6 GW per NPR-reported documents); it is not yet approved. The Nvidia 30 MW claim was not re-checked.",
       "sources": [
         {
           "label": "ANS — Reactor Pilot Program status",
@@ -536,6 +536,12 @@
           "label": "DOE NEPA — Ward250 research reactor",
           "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
           "status": "snippet-only"
+        },
+        {
+          "label": "East Idaho News — Nuclear-powered AI data center proposed on state and federal land in central eastern Utah (2026-10-01)",
+          "url": "https://www.eastidahonews.com/2026/10/nuclear-powered-ai-data-center-proposed-on-state-and-federal-land-in-central-eastern-utah/",
+          "quote": "would include 456 small nuclear reactors",
+          "status": "fetched"
         }
       ],
       "gaps": [

@@ -1,0 +1,187 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "prospects",
+    "scope": "Adjudicator pass: 6 prospects built from deals.json opportunities, prospects _meta.absences and applications.json, each fact checked on a fetched page; `load` is 'Not published' where no figure exists.",
+    "angles_run": [
+      "Hawaii island power and HECO IRP (state SCR 136 report, Jan 2026)",
+      "Guam Power Authority microreactor",
+      "Puerto Rico data center or hospital microreactor",
+      "Virgin Islands WAPA SMR",
+      "American Samoa Power Authority",
+      "Douglas County CO feasibility study",
+      "Wise County VA feasibility study (fetched cardinalnews 2026-05-18)",
+      "Utah and Wyoming county studies; Carbon County UT data-center proposals",
+      "Oil and gas: Permian produced water (NGL/Natura), Diamondback, oil sands SAGD, North Slope, oilfield operators",
+      "Manufacturing and process heat: ethanol, fertilizer, cement (Penn State NEUP kiln), steel (Last Energy), manufacturer PPAs",
+      "Agriculture: greenhouse heat, microreactor bioconversion",
+      "Transportation: airports (Denver), Port of Anchorage, Alaska Railroad",
+      "Canada remote: Yukon, NWT, Ontario First Nations, Meadow Lake Tribal Council, Des Nedhe / Prodigy MOU, DND northern bases (fetched cabinradio 2026-04-29)",
+      "Mining: Baffinland Mary River, Ekati, Australian remote mines"
+    ],
+    "absences": [
+      "No record written. Every candidate lacked a load figure with unit in a fetched or dated source, or fell outside 1-20 MW.",
+      "Wise County VA (GO Virginia study, LENOWISCO, results due end 2026): fetched 2026-05-18 article gives a $100,000 grant and says the study will 'determine the baseload power capabilities' with no figure. Re-check when the study reports.",
+      "Canada DND northern microreactor ($40M, 2026-27): fetched cabinradio 2026-04-29 states reactor size, named bases and load are not stated. Politics or defense lane may track it.",
+      "Denver International Airport: about 45 MW current demand per search summary (not fetched). Exceeds 1-20 MW; the SMR study was withdrawn in 2025 and replaced by a broader RFI.",
+      "Des Nedhe Group and Prodigy Clean Energy (March 2024 MOU, remote mines and communities): trade-press summary only, no load, no signed project. Not fetched.",
+      "Meadow Lake Tribal Council (CBC story 1.7229121): fetch returned HTTP 403. Not verified.",
+      "Baffinland Mary River and Ekati diamond mine: no diesel MW found in search results; not fetched. Would need Baffinland NIRB filings or Dominion sustainability reports.",
+      "Permian produced water (NGL Water Solutions and Natura Resources, 2026-02-03): already shipped in deployment_sites and news. Its 100 MW figure is the reactor size, not the NGL load.",
+      "Carbon County UT (Valar 'Project Beehive' 9.6 GW claim per NPR; Altigen 250 MW gas): far above 1-20 MW. Not a prospect.",
+      "Hawaii: state energy office report (Jan 2026, per ANS) recommends against nuclear for 1-20 MW microreactors. No utility or customer microreactor plan found. Hawaii island is covered by the regions lane.",
+      "Guam, USVI, American Samoa, Puerto Rico: no named 2026 buyer with a load. Covered by the regions lane.",
+      "Oil sands SAGD: 2024 Next Energy paper on SMR steam; no named operator deal in 2026 found.",
+      "Ethanol, fertilizer, greenhouse, and cement: no named buyer with a signed or documented heat load found. Penn State NEUP 24-32112 (15 MWth kiln study) is research, not a buyer. Last Energy steel-mill item is an unverified trade article.",
+      "Australia remote mines: no named mine with a diesel MW figure found. A microreactor industry source says Australian law classes power reactors as banned; not verified against the statute.",
+      "Search budget overshot: about 29 web searches and 3 fetches against a quota of about 25 searches and 20 fetches, because most leads failed on load and I stopped after the fetches that could change the answer.",
+      "Adjudicator: Meralco dropped as a prospect. A USTDA-funded study (Power Philippines, 2025-08-15) covers 300-500 MW SMRs, and the earlier USNC micro modular reactor proposal was shelved, so the buyer is outside 1-20 MW. Denver International Airport dropped: its SMR RFP was paused 2025-08-08 and no 2026 plan was found. Natura/NGL dropped: the reactor is 100 MW. Meadow Lake Tribal Council diesel/propane rationale not verified (CBC fetch returned HTTP 403; SRC page does not mention it)."
+    ]
+  },
+  "prospects": [
+    {
+      "id": "douglas-county-co",
+      "name": "Douglas County, Colorado (Board of County Commissioners)",
+      "advantage": "nuclear-interest",
+      "sector": "Civic Infrastructure",
+      "region": "Colorado, US",
+      "load": "Not published",
+      "documented": "On 2026-07-07 county commissioners directed staff to obtain cost estimates for a feasibility study of whether SMRs or microreactors could be developed in the county. The county memo cited growing interest in nuclear among companies seeking reliable power for data centers, and officials named aerospace, advanced manufacturing and data centers as sectors. No vendor, site or load figure is reported, and the board will decide the study's scope after seeing estimates.",
+      "fit": "A reactor would have to beat grid power on resilience for a county with no named load.",
+      "sale_shape": "A county-commissioned study first; any reactor would sit behind a private or utility offtaker, not a county purchase.",
+      "status": "evidence-only",
+      "next_question": "Which named load in the county (a data center or an aerospace plant) would sign for firm power, and at what size?",
+      "sources": [
+        {
+          "label": "Colorado Politics — Douglas County seeks cost estimates for nuclear feasibility study (2026-07-07)",
+          "url": "https://www.coloradopolitics.com/2026/07/07/douglas-county-seeks-cost-estimates-for-nuclear-feasibility-study/",
+          "quote": "a feasibility study examining whether small modular nuclear reactors or microreactors could be developed in the county",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "wise-county-va",
+      "name": "Wise County, Virginia (with LENOWISCO Planning District Commission and GO Virginia Region 1)",
+      "advantage": "speed-or-land",
+      "sector": "Civic Infrastructure",
+      "region": "Southwest Virginia, US",
+      "load": "Not published",
+      "documented": "GO Virginia Region 1 approved a $100,000 grant in January 2025 for a study of a possible microreactor site, its infrastructure, baseload power capability and customers such as data centers. The county administrator said the county would likely use a microreactor to power places the grid cannot serve efficiently, such as a data center. As of July 2026 the county had no concrete plan, and the study was expected to finish in December.",
+      "fit": "A microreactor would have to beat grid power for an unnamed data center, in a county that says the study approves no specific project, site or design.",
+      "sale_shape": "A site-ready finding from the study that a vendor or developer could take to a data center customer.",
+      "status": "evidence-only",
+      "next_question": "Does the December study name a site and a customer load in MW?",
+      "sources": [
+        {
+          "label": "Cardinal News — Funding approved to study building nuclear microreactor in Wise County (2025-01-16)",
+          "url": "https://cardinalnews.org/2025/01/16/funding-approved-to-study-building-nuclear-microreactor-in-wise-county/",
+          "quote": "a $100,000 grant that would fund the study was approved by the GO Virginia Region 1 Council",
+          "status": "fetched"
+        },
+        {
+          "label": "Cardinal News — SWVA field notes (2026-07-31)",
+          "url": "https://cardinalnews.org/2026/07/31/swva-field-notes-2/",
+          "quote": "expected to be completed in December",
+          "status": "snippet-only"
+        }
+      ]
+    },
+    {
+      "id": "canada-dnd-northern-microreactor",
+      "name": "Canada Department of National Defence (northern bases and operations)",
+      "advantage": "sovereignty",
+      "sector": "Defense installations",
+      "region": "Northern Canada",
+      "load": "Not published",
+      "documented": "On 2026-04-29 Canada announced an initial $40-million investment for 2026-2027 through National Defence to assess a Canadian-controlled microreactor that could supply heat and power to remote and northern military facilities. The feasibility program received $6 million in 2025-2026, with $4.7 million going to research at Chalk River Laboratories. No bases, reactor size or load are named.",
+      "fit": "A reactor would have to beat diesel supply at isolated northern sites, with Canadian control of the technology as a stated requirement.",
+      "sale_shape": "A government-funded feasibility program that could lead to a defence procurement.",
+      "status": "policy-gated",
+      "next_question": "Which northern sites does the program screen, and what diesel load do they carry in MW?",
+      "sources": [
+        {
+          "label": "Natural Resources Canada — Government of Canada commits to new strategy for nuclear energy (2026-04-29)",
+          "url": "https://www.canada.ca/en/natural-resources-canada/news/2026/04/government-of-canada-commits-to-new-strategy-for-nuclear-energy.html",
+          "quote": "an initial $40-million investment for 2026–2027 to assess the potential of a Canadian‑controlled microreactor",
+          "status": "fetched"
+        },
+        {
+          "label": "Cabin Radio — Canada looks at giving northern military micro nuclear reactors (2026-04-29)",
+          "url": "https://cabinradio.ca/288529/news/economy/infrastructure/energy/canada-looks-at-giving-northern-military-micro-nuclear-reactors/",
+          "quote": "remote and northern DND and Canadian Armed Forces facilities",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "meadow-lake-tribal-council",
+      "name": "Meadow Lake Tribal Council (nine First Nations, northwestern Saskatchewan)",
+      "advantage": "sovereignty",
+      "sector": "Electric Utilities",
+      "region": "Saskatchewan, Canada",
+      "load": "Not published",
+      "documented": "The Saskatchewan Research Council and the Meadow Lake Tribal Council signed an MOU on 2024-06-06 to set up a collaboration framework for microreactor applications in the council's communities, which cover nine First Nations. The release cites $80 million in provincial funding announced in November 2023 for SRC to pursue licensing and commercial deployment of a microreactor. It gives no load and no later update.",
+      "fit": "A reactor would have to beat the heating and power the communities buy now, with no load figure published.",
+      "sale_shape": "An MOU framework with SRC; any deployment would run through SRC's own microreactor program.",
+      "status": "letter-of-intent",
+      "next_question": "With Westinghouse out of SRC's program, which vendor does SRC now pair with the MLTC communities?",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — SRC signs MOU with MLTC to evaluate potential microreactor applications (2024-06-06)",
+          "url": "https://www.src.sk.ca/news/src-signs-mou-mltc-evaluate-potential-microreactor-applications",
+          "quote": "signed a Memorandum of Understanding (MOU) to establish a framework for collaboration regarding the applications of microreactors",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "aidea-alaska-fund-nucube",
+      "name": "AIDEA and Alaska Fund with NuCube (NuAlaska)",
+      "advantage": "sovereignty",
+      "sector": "Electric Utilities",
+      "region": "Alaska, US",
+      "load": "Not published",
+      "documented": "NuCube Energy and Alaska Fund signed an MOU to launch NuAlaska and deploy NuCube's NuSun-1, rated at 1.3 MWe, as a turnkey project that Alaska Fund would lead on financing, construction and ownership. On 2026-10-19 the state-backed Alaska Industrial Development and Export Authority agreed to buy $25 million of NuCube Class A shares at $9.25 each. No site, community or customer load is named.",
+      "fit": "At 1.3 MWe per unit, several units or a named remote load are needed, and the reactor must beat village diesel.",
+      "sale_shape": "Turnkey build-own-operate by Alaska Fund, with a state authority as an equity holder in the vendor.",
+      "status": "letter-of-intent",
+      "next_question": "Which Alaska community or industrial load would take NuSun-1 power, and at what price?",
+      "sources": [
+        {
+          "label": "Launch Two Acquisition Corp. — Form 425 (NuCube, 2026-10-19)",
+          "url": "https://www.sec.gov/Archives/edgar/data/2023676/000121390026110814/ea0309104-425_nucube.htm",
+          "quote": "AIDEA has agreed to purchase $25 million of Class A ordinary shares at $9.25 per share",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society — State roundup, momentum from Arkansas to Alaska (2026-08-12)",
+          "url": "https://www.ans.org/news/2026-08-12/article-8286/state-roundup-momentum-from-arkansas-to-alaska/",
+          "quote": "signed a memorandum of understanding with Alaska Fund",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "idaho-strategic-resources",
+      "name": "Idaho Strategic Resources (mine operator)",
+      "advantage": "off-grid-diesel",
+      "sector": "Mining",
+      "region": "Idaho, US",
+      "load": "Not published",
+      "documented": "Idaho Strategic Resources and Radiant Industries signed a non-binding MOU on 2024-05-08 that establishes a pathway to operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site. The Kaleidos unit is rated at 1 MWe and 1.9 MWt. The release names no site and gives no mine load or price, and no later update was found.",
+      "fit": "A 1 MWe unit would have to beat the mine's current grid or generator power at an unnamed site.",
+      "sale_shape": "Non-binding MOU for a unit from Radiant's first production batch.",
+      "status": "letter-of-intent",
+      "next_question": "Which Idaho Strategic site would host a unit, and what is its load in MW?",
+      "sources": [
+        {
+          "label": "Idaho Strategic — MOU with Radiant Industries Frontier Program (2024-05-08)",
+          "url": "https://www.miningstockeducation.com/2024/05/idaho-strategic-announces-memorandum-of-understanding-with-radiant-industries-frontier-program/",
+          "quote": "operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

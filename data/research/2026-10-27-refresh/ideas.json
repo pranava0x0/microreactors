@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "captured": "2026-10-27",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: arguments (Type G checks on time-sensitive argument claims) and major studies, reports or analyses dated after 2026-10-21 that change the case for or against 1-20 MW reactors (Type N items with category policy).",
+    "angles_run": [
+      "Type G: thresholds argument, ERCOT small/large generator 10 MW split and month durations (Planning Guide Section 5, dated 2026-08-01)",
+      "Type G: liability argument, 10 CFR 140.12 floor and cap ($4.5M / $74M) via Cornell LII (eCFR redirected)",
+      "Studies: microreactor cost study Oct 2026; DOE Liftoff update 2026; NEI 2026 report; EPRI 2026 SMR/microreactor cost; GAO military microreactors; IEA SMR 2026; insurer/lender microreactor risk 2026; national lab LCOE; Oak Ridge/Sandia 2026; INL late-October news; IAEA SMR economics; CBO SMR cost; microreactor vs diesel cost 2026; microreactor data-center economics Oct 2026; university remote-community study 2026",
+      "Regulatory context: NRC Part 57 microreactor proposed rule (financial protection and status)"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-10-22 to 2026-10-27 found in the ideas lane after 18 searches. Searched: DOE Liftoff (only the Sept 2024 update found), NEI, EPRI, IEA (only Jan 2025 report), CBO (nothing found), GAO (Army Janus coverage only, no GAO microreactor report), insurer/lender reports (no microreactor-specific 2026 report found; DWF horizon scan and Clyde & Co podcast, both undated for this purpose), national-lab LCOE (INL Dec 2025 arXiv heat-pipe preprint and 2024 INL report are the newest), Oak Ridge/Sandia 2026 (none found), IAEA SMR economics (Coordinated Research Project, no report yet), university remote-community studies 2026 (none found), microreactor vs diesel 2026 (none found), data-center microreactor economics Oct 2026 (none found).",
+      "OECD NEA SMR-ECON report on SMR costs was said to complete before end-2026; not published as of this search, so not written.",
+      "Could not verify the 'Michigan study' $48-78/MWh figure (secondary source only). Not written.",
+      "10 CFR 140.12 check (liability argument): the Cornell LII page matches the shipped $4,500,000 floor, $74,000,000 cap and $185 x thermal kW formula, but it carries no currency date (last amendment cite 91 FR 15879, 2026-03-30) and eCFR redirected, so the check does not meet the contract's dated-page bar for 'confirmed'. No check written. The proposed NRC Part 57 rule may change financial protection for microreactors; the NRC status was not found, and the financial-protection text of Part 57 was not located.",
+      "NY distribution threshold (5 MW), $750 fee and 60-business-day study in the thresholds argument: not checked (budget).",
+      "Could not confirm the ERCOT 8-12 month (small) and 18-30 month (large) durations in the thresholds argument. The Aug 1 2026 Planning Guide Section 5 confirms the 10 MW split but states no such durations. Other ERCOT sources (for example a stakeholder slide) were not checked.",
+      "Web leads 1-9 in skip/web-leads.md are news, vendor, deal, politics and applications items outside this lane; not written here. Lead 7 (Fortune, military/NASA power) was searched; the article itself was not found and no event was identified."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-thresholds-1",
+      "target": "thresholds",
+      "file": "arguments",
+      "claim": "ERCOT is the sharpest: a unit at 9.9 MW runs the Small Generation process at a stated 8-12 months; the identical unit at 10.1 MW runs Large Generation at 18-30 months. Ten to twenty-two months of schedule decided by 0.2 MW.",
+      "verdict": "unsupported",
+      "evidence": "ERCOT Planning Guide, Section 5 (Generator Interconnection or Modification), dated August 1, 2026, confirms the size split: a generator is a large generator at 10 MW or greater and a small generator below 10 MW, so a 9.9 MW unit is small and a 10.1 MW unit is large. The section does not state the 8-12 month (small) or 18-30 month (large) study durations, so those figures are not supported by this document. The durations may come from another ERCOT source that was not checked.",
+      "sources": [
+        {
+          "label": "ERCOT — Planning Guide, Section 5: Generator Interconnection or Modification (August 1, 2026)",
+          "url": "https://www.ercot.com/files/docs/2025/12/01/05-080126.docx",
+          "quote": "if it currently has or is proposed to have an aggregate nameplate capacity of ten MW or greater",
+          "status": "snippet-only"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

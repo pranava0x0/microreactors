@@ -117,7 +117,10 @@ class TestStrategy(unittest.TestCase):
             for bid in sg["benchmark_ids"]:
                 self.assertIn(bid, self.pools["benchmark"], f"segment {sg['id']} names unknown benchmark {bid}")
         for p in self.prospects:
-            self.assertTrue(p["refs"], f"prospect {p['id']} has no refs")
+            # A row from a research pass may stand on its own sources; a
+            # hand-written row restates tracked records, so it must name them.
+            if "pass" not in p:
+                self.assertTrue(p["refs"], f"prospect {p['id']} has no refs")
             for ref in p["refs"]:
                 self.assertEqual(len(ref), 1, f"prospect {p['id']}: ref must be one {{kind: id}} pair")
                 kind, rid = next(iter(ref.items()))
@@ -152,6 +155,10 @@ class TestStrategy(unittest.TestCase):
         walk(self.doc, mine, skip_findings=True)
         for rec in self.prospects + self.segments:
             walk(rec.get("findings", []), via_findings)
+            # Rows integrated from a research pass (refresh_integrate.py) carry
+            # sources that passed that pass's quote gate, like a finding does.
+            if "pass" in rec:
+                walk(rec.get("sources", []), via_findings)
         # A row may cite a URL its own findings brought in: the finding is where it
         # was verified, and the row's prose then restates it.
         self.assertEqual(mine - others - via_findings, set(),
