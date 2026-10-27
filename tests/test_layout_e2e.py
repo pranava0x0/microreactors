@@ -290,6 +290,23 @@ class Routing(unittest.TestCase):
         self.assertEqual(got["id"], "tab-sources")
         self.assertTrue(got["scrolled"] and got["inView"], got)
 
+    def test_home_deep_link_lands_at_the_top(self):
+        """#home is the one panel visible at parse time, so the browser's anchor
+        jump landed after boot and hid the hero 528px down on a phone (UAT
+        2026-10-27)."""
+        with serve_site() as base, sync_playwright() as pw:
+            try:
+                browser = pw.chromium.launch()
+            except Exception as e:
+                self.skipTest(f"chromium unavailable: {e}")
+            page = browser.new_page(viewport={"width": 375, "height": 812},
+                                    has_touch=True, is_mobile=True)
+            page.goto(base + "#home", wait_until="networkidle")
+            page.wait_for_timeout(100)
+            y = page.evaluate("scrollY")
+            browser.close()
+        self.assertEqual(y, 0)
+
     def test_legacy_evidence_hash_lands_on_sources(self):
         """The Sources tab shipped as "Evidence" until 2026-08-23. Anything
         already linked or bookmarked uses #evidence, and an unknown route

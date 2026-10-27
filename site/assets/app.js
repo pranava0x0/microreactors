@@ -2093,6 +2093,11 @@
      still lands after boot and hid the hero under the nav (528px down on a
      phone, UAT 2026-10-27). Undo it once the page has loaded. */
   if (PANELS.indexOf(location.hash.slice(1)) >= 0) {
-    window.addEventListener("load", function () { window.scrollTo(0, 0); }, { once: true });
+    window.addEventListener("load", function () {
+      // Only undo the anchor jump (section pinned at the top), never a reader
+      // who started scrolling while a slow load was still finishing.
+      var sec = document.getElementById(location.hash.slice(1));
+      if (sec && Math.abs(sec.getBoundingClientRect().top) < 2) { window.scrollTo(0, 0); }
+    }, { once: true });
   }
 })();
