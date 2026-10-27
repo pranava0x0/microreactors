@@ -177,6 +177,10 @@ class ResearchPass(unittest.TestCase):
             "items": [{"id": "n1", "date": "2026-09-09", "headline": "x", "category": "award",
                        "what_happened": "x", "why_it_matters": "x", "binding": False,
                        "sources": [src]}],
+            "prospects": [{"id": "pr1", "name": "x", "advantage": "off-grid-diesel",
+                           "sector": "Mining", "region": "x", "load": "Not published",
+                           "documented": "x", "fit": "x", "sale_shape": "x",
+                           "status": "evidence-only", "next_question": "x", "sources": [src]}],
         }
         bad = {
             # nuclear sector, and no number anywhere
@@ -195,6 +199,9 @@ class ResearchPass(unittest.TestCase):
             # unknown category, a non-ISO date, and the same url twice
             "items": [dict(good["items"][0], id="n2", category="rumour", date="Sept 9",
                            sources=[src, src])],
+            # an unknown advantage, and a signed buyer filed as a prospect
+            "prospects": [dict(good["prospects"][0], id="pr2", advantage="vibes"),
+                          dict(good["prospects"][0], id="pr3", status="signed")],
         }
         with tempfile.TemporaryDirectory() as tmp:
             for name, doc in (("good", good), ("bad", bad)):
@@ -210,7 +217,7 @@ class ResearchPass(unittest.TestCase):
             for rule in ("non-nuclear", "no number in size", "no number in price",
                          "type 'memo'", "neither a docket", "must carry a correction",
                          "category 'rumour'", "is not YYYY-MM-DD", "the same url is listed twice",
-                         "joins passages"):
+                         "joins passages", "advantage 'vibes'", "is a deal, not a prospect"):
                 self.assertIn(rule, ko.stdout)
 
     def test_quote_repair_keeps_literal_source_text(self):

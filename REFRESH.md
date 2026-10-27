@@ -50,6 +50,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
    python3 tools/build_gaps.py && python3 tools/build_data.py && python3 tools/build_meta.py
    $V tools/verify_quotes.py --cache            # MISMATCH must be 0
    $V -m unittest discover -s tests             # must pass; print the exit code, never tail -1
+   $V tools/uat_paths.py                        # phone interaction cost; compare with the last run
    ```
 7. **Commit** to the refresh branch (`Refresh <D>: <n> news, <n> corrections`), push, and append a
    section for the day to the PR body.
@@ -91,3 +92,21 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   run had verified. Before a manual run, check `gh pr list --search head:refresh/` and the
   sessions list; a routine that finds an uncommitted pass dir it did not create should stop.
   `refresh_integrate.py` re-runs now append to `refresh-<date>.json` instead of overwriting it.
+- **2026-10-27: SEC EDGAR full-text search 403s the GitHub noreply address.** After the history
+  rewrite that removed the personal email, `news_watch.py` sends
+  `2497510+pranava0x0@users.noreply.github.com` and efts.sec.gov answers 403 (a generic
+  `@example.org` contact gets 200, so it is the domain, not the tool). The SEC leg is dark until
+  the contact is read from `SEC_CONTACT_EMAIL` (open PR #29) and that variable is set to a real
+  mailbox. The watcher reports it as `unreachable SEC EDGAR: HTTPError`, not as zero filings.
+- **2026-10-27: the agent hook caps this project at 2 concurrent agents**
+  (`.claude/agent-cap`), not the 4 this playbook assumed. Seven Haiku lanes plus a prospects
+  lane ran as 2-wide waves in ~20 minutes. Order the waves by what the run is for: this run
+  put news and deals first, applications and politics second.
+- **2026-10-27: main-session web search first, then agents.** Eight searches in the main
+  session (one `extended`) found the week's leads in ~2 minutes and went to every agent as
+  `skip/web-leads.md`. Agents still could not open 403 press releases (BWXT, GlobeNewswire);
+  the adjudicator (Sonnet) retried alternate copies.
+- **2026-10-27: measure phone navigation cost each refresh.** `tools/uat_paths.py` (venv)
+  prints taps, swipes and screens for 14 key questions. Baseline after this run at 375x812:
+  mean 1.65, 0 swipes. A new tab, sub-tab or Home block that raises the mean is a regression
+  to justify in the PR.
