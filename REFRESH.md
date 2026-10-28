@@ -110,3 +110,12 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   prints taps, swipes and screens for 14 key questions. Baseline after this run at 375x812:
   mean 1.65, 0 swipes. A new tab, sub-tab or Home block that raises the mean is a regression
   to justify in the PR.
+- **2026-10-28: `refresh_integrate.py` drops `unsupported` verdicts without a report line.** Only
+  `outdated`/`wrong` are applied and only `confirmed` is counted, so an `unsupported` check vanishes from
+  REPORT.md. Read every check in the pass files, not just the report. Haiku also judges "unsupported"
+  after opening one of a row's sources: open them all before acting on it.
+- **2026-10-28: a check that a row is "outdated" must quote the whole shipped sentence.** The costs
+  agent flagged a 2023 base rate as stale; the same sentence already gave the 2026 rate. Before applying
+  an `outdated` check, grep the shipped field for the corrected figure.
+- **2026-10-28: the agent-cap hook allows 2 concurrent agents here.** Seven agents run as four pairs
+  (~25 min wall clock). Start quote repair on finished files while the last pairs run.

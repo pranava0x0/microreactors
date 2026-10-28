@@ -89,7 +89,7 @@
    "power_class": "at least 100 kWe",
    "timeline": "NASA directive: launch-ready by first quarter of fiscal 2030; DOE-NASA agreement 2026-01-13",
    "sponsor": "NASA, U.S. Department of Energy",
-   "what_it_says": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030, and has asked industry for a design of at least 100 kilowatts electric with a closed Brayton power cycle. Separately, DOE and NASA signed an agreement in January 2026 to pursue the system.",
+   "what_it_says": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030, and has asked industry for a design of at least 100 kilowatts electric with a closed Brayton power cycle. Separately, DOE and NASA announced in January 2026 that they had signed an agreement to pursue the system.",
    "microreactor_read": "At 100 kWe this is one to two orders of magnitude below the 1-20 MW band, so it is a design and supply-chain precedent (fuel, heat transfer, remote operation) and no buyer for a 1-20 MW block.",
    "sources": [
     {
@@ -515,6 +515,69 @@
      "label": "Energy News — GridMarket and Deployable Energy partner to deploy 3 GW of nuclear micro reactors (2026-07-08)",
      "url": "https://energynews.pro/en/gridmarket-and-deployable-energy-partner-to-deploy-3-gw-of-nuclear-micro-reactors",
      "quote": "approximately 1 megawatt electric (MWe)",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "nuclea-new-mining-data-center",
+   "segment": "data centers behind the meter",
+   "name": "Nuclea Energy and New Mining Co. data-center MOU (Morpheus microreactor)",
+   "status": "proposed",
+   "power_class": "3.5-50 MWe per Morpheus unit (design range); first phase about 30 MWe of load",
+   "timeline": "MOU announced 2026-08-06; phased engineering study, no construction date",
+   "sponsor": "New Mining Co.",
+   "vendor": "Nuclea Energy",
+   "what_it_says": "Nuclea Energy and New Mining Co. signed a non-binding MOU on 2026-08-06 to study a behind-the-meter Morpheus microreactor for New Mining's data centers. The first phase covers engineering for New Mining's current operational data-center load of about 30 MWe, with expansion toward up to 100 MWe. The MOU is not a power purchase agreement.",
+   "microreactor_read": "The 3.5-50 MWe Morpheus design range includes a 1-20 MW block, but this is a design-stage MOU with no commercial unit, and it sets no supply price.",
+   "sources": [
+    {
+     "label": "StockTitan — Mangoceuticals merger partner Nuclea Energy signs MOU with New Mining Co. (2026-08-06)",
+     "url": "https://www.stocktitan.net/news/MGRX/mangoceuticals-merger-partner-nuclea-energy-inc-signs-mou-with-new-pwe91rkvk7ah.html",
+     "quote": "The MOU is non-binding and does not constitute a power purchase agreement",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "oklo-wyoming-hyperscale-aspen-mountain",
+   "segment": "data centers behind the meter",
+   "name": "Oklo and Wyoming Hyperscale, Aspen Mountain data-center campus (letter of intent)",
+   "status": "proposed",
+   "power_class": "100 MW of carbon-free power (letter of intent)",
+   "timeline": "letter of intent announced May 2024 (ANS article dated 2024-05-29); 20-year power purchase agreement proposed",
+   "sponsor": "Wyoming Hyperscale",
+   "vendor": "Oklo",
+   "what_it_says": "Oklo and Wyoming Hyperscale signed a nonbinding letter of intent to supply 100 MW of carbon-free power for a 20-year power purchase agreement. The data center is planned for Aspen Mountain, a remote site southeast of Evanston, Wyoming. The source gives no price.",
+   "microreactor_read": "100 MW is more than one 1-20 MW block, so it would take several units. The letter of intent is non-binding, and no price is published in the source.",
+   "sources": [
+    {
+     "label": "American Nuclear Society — Oklo, Wyoming Hyperscale partner for data center energy (2024-05-29)",
+     "url": "https://www.ans.org/news/article-6080/oklo-wyoming-hyperscale-partner-for-data-center-energy/",
+     "quote": "signed a nonbinding letter of intent to provide 100 megawatts of carbon-free energy for a 20-year power purchase agreement",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "radiant-idaho-strategic-mine-pilot",
+   "segment": "mining and mineral processing",
+   "name": "Idaho Strategic Resources and Radiant Kaleidos (Frontier pilot)",
+   "status": "proposed",
+   "power_class": "1 MWe per Kaleidos unit (1.9 MWt heat)",
+   "timeline": "non-binding MOU announced 2024-05-08; the release names no mine load and no construction date",
+   "sponsor": "Idaho Strategic Resources",
+   "vendor": "Radiant Industries",
+   "what_it_says": "Idaho Strategic Resources and Radiant Industries signed a non-binding MOU on 2024-05-08. It sets a path for the two companies to operate one or more of the first five Frontier Kaleidos units at a viable Idaho Strategic site. Kaleidos can output 1 MWe electric and 1.9 MWt of heat.",
+   "microreactor_read": "1 MWe sits at the bottom of the 1-20 MW block, so one unit would cover only a small share of a working mine's load. The MOU is non-binding and the release gives no mine load or price.",
+   "sources": [
+    {
+     "label": "Idaho Strategic Resources — Idaho Strategic announces memorandum of understanding with Radiant Industries Frontier Program (2024-05-08)",
+     "url": "https://webdisclosure.com/press-release/idaho-strategic-resources-inc-nasdaq-idr-idaho-strategic-announces-memorandum-of-understanding-with-radiant-industries-frontier-program-Gdjhn46QKqH",
+     "quote": "Kaleidos can output 1 MWe electric and 1.9 MWt of heat",
      "status": "fetched"
     }
    ],

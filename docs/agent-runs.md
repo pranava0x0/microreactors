@@ -301,3 +301,25 @@ Reddit (`news_watch.py --reddit`, ~45 min) confirmed 3 of them and added none of
 MARVEL DSA), 1 application (GridMarket/Deployable), 2 corrections (NRC advanced-reactor rate,
 Radiant Kaleidos status). Three of the six news items were sourced by the main session from X
 leads the agents could not find; Haiku agents on leads under two days old found nothing.
+
+## 2026-10-28 daily refresh
+
+Scheduled routine (Opus main session). 7 Haiku agents, two at a time (the project's agent-cap hook
+allows 2, not the 4 REFRESH.md assumes). No X or Reddit pass. Shipped: 1 news item (Quantum Leap
+Energy/Necsa HALEU heads of agreement), 3 applications (Nuclea/New Mining, Oklo/Wyoming Hyperscale,
+Idaho Strategic/Radiant), 2 corrections (FERC EL25-49 rehearing order, DOE-NASA lunar MOU wording).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 158K | 1 item; both watcher leads already shipped | partly |
+| deals | 157K | 3 confirmed checks | no |
+| vendors | 140K | nothing | no |
+| politics | 163K | 1 correction (EL25-49), 1 wrong "unsupported" check overturned | yes |
+| applications | 165K | 3 rows, 1 correction | yes |
+| costs | 152K | 1 check, dropped: the shipped row already had the new figure | no |
+| ideas | 141K | nothing | no |
+
+Main session overturned three agent conclusions: a Texas TBPP "unsupported" verdict (the figures were
+on the row's second source, which the agent never opened), a Canada/SRC "reason not on page" note (the
+FAQ answer is in a collapsed accordion the agent's fetch missed), and an Alaska PCE "outdated" check
+that quoted only the 2023 half of a sentence already giving the 2026 rate.

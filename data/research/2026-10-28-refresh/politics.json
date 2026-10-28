@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy checks (Type G) on shipped skip/policy.json pathways, new state and utility dockets (Type F) filed or decided in the last 90 days, and dated political or regulatory items after 2026-10-27 (Type N).",
+    "angles_run": [
+      "NRC Part 57 status and final-rule date",
+      "NRC Part 57 Federal Register proposal date and comment period",
+      "NRC Part 57 shipped figures (savings, 100 MWe scope, 6-12 month timeline)",
+      "FERC EL25-49 co-location proceeding status (December 2025 order, June 2026 rehearing)",
+      "California SB 978 status and generator provisions",
+      "Texas Backup Power Package Program scope and technology mix",
+      "DOE Reactor Pilot Program criticality dates (June 4, June 18, July 1 2026)",
+      "State legislation on microreactors or SMRs, enacted or pending 2025-2026",
+      "State PUC and utility IRP filings naming SMRs or microreactors",
+      "FY2027 NDAA microreactor provisions (House passage July 2026)",
+      "NRC commission votes on microreactors, October 2026",
+      "Army Janus microreactor program announcements, October 2026",
+      "DOE microreactor policy announcements, October 2026",
+      "Louisiana PSC LANE nuclear study charge (R-37871)",
+      "Ameren Missouri 2026 IRP (filed September 28, 2026)",
+      "Virginia SCC Dominion Rider SMR Phase II (PUR-2025-00196)",
+      "Texas, Georgia, Alaska commission microreactor orders, August-September 2026"
+    ],
+    "absences": [
+      "Part 57 final-rule deadline of 2026-11-23: one secondary search summary gives it; no NRC, Federal Register or regulations.gov page fetched states a final-rule date. No final rule found as of 2026-10-28. Not written as a check.",
+      "California SB 978 current status: LegiScan and leginfo both returned HTTP 403 to fetch. The only status evidence is a search summary (held in committee and placed under submission, 2026-05-14). Not written as a check.",
+      "Texas Backup Power Package Program $1.8B figure, 16 TAC 25.513 rule number and 2.5 MW threshold: the cited EnergyChoiceMatters article does not state them. Written as an unsupported check against the cited source only.",
+      "Virginia SCC PUR-2025-00196 (Dominion Rider SMR Phase II, filed 2025-11-03): outside the 90-day window by filing date. Final order not found. Hearing schedule ran to May 2026, so an order may exist. Not written as a docket.",
+      "Louisiana PSC R-37871 (LANE nuclear study charge): already shipped as lpsc-lane-microreactor-vendor-directive-2026. Newer status found only in search summaries: vote postponed (August 2026); September 16, 2026 agenda lists a possible vote on a final rule. Not fetched.",
+      "Ameren Missouri 2026 IRP (filed 2026-09-28, SEC 8-K fetched): the 8-K names 1,200 MW of new nuclear by 2040 but no SMR or microreactor. Missouri order EO-2026-0037 requires SMR review commitments, but that is search-summary only and the PSC document was an unreadable PDF. Not written as a docket.",
+      "Minnesota bill draft requiring nuclear as an option in resource plans: proposed only, not enacted, not verified. Not written.",
+      "Items after 2026-10-27: no dated political or regulatory event found. The FY2027 NDAA House microreactor provision (Harrigan release, 2026-07-22) and the Army Janus awards (2026-08-26) fall before the window. Senate NDAA action and October 2026 NRC commission votes were not found.",
+      "Louisiana PSC August 2026 nuclear-tariff vote postponement: source is lailluminator.com, which returned HTTP 403 to fetch. Taken from a search summary only.",
+      "Search budget: 17 web searches and 11 fetches used of about 25 and 20. Blocked hosts: leginfo.legislature.ca.gov, legiscan.com, lailluminator.com (HTTP 403)."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-pathway-frc-el25-49-1",
+      "target": "interconnection",
+      "file": "policy",
+      "claim": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; compliance filings were still in flight at capture.",
+      "verdict": "outdated",
+      "evidence": "Troutman Energy Report (June 2026) reports that on June 18, 2026 FERC accepted in part and rejected in part requests for rehearing of its December 18, 2025 order in Docket EL25-49-002, and directed further PJM compliance on behind-the-meter generation rules. The shipped sentence is pre-June 2026 and treats the compliance stage as still open at capture without the rehearing order.",
+      "correction": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; on June 18, 2026 (EL25-49-002) it ruled on rehearing, set aside parts of that order, and directed further PJM compliance on the behind-the-meter rules.",
+      "sources": [
+        {
+          "label": "Troutman Energy Report — FERC addresses arguments on rehearing and requires additional PJM tariff revisions to accommodate co-located load (June 2026)",
+          "url": "https://www.troutmanenergyreport.com/2026/06/ferc-addresses-arguments-on-rehearing-and-requires-additional-pjm-tariff-revisions-to-accommodate-co-located-load/",
+          "quote": "directing further compliance related to BTMG rules",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-pathway-texas-tbpp-1",
+      "target": "diesel",
+      "file": "policy",
+      "claim": "The $1.8B program (16 TAC §25.513, adopted May 2026) funds critical facilities under 2.5 MW to install a hybrid backup package",
+      "verdict": "confirmed",
+      "evidence": "The cited EnergyChoiceMatters article (dated 2026-05-08) describes the program as one that will provide loans and grants to qualifying critical facilities and lists the required mix as natural gas or propane generation, battery storage, and solar generation. The fetched text does not state the $1.8B figure, the 16 TAC §25.513 rule number, the adoption date, or the 2.5 MW threshold. The article's technology list does support the shipped point that nuclear is not an eligible source. Main session: the row's second source (PowerGen Enterprises TBPP guide, fetched) states the $1.8 billion, the 2.5 MW threshold and adoption on May 7, 2026; the Texas Register (January 2026 proposed rules) titles new 16 TAC 25.513 as the TBPP rule. Shipped text stands.",
+      "sources": [
+        {
+          "label": "EnergyChoiceMatters — PUC clarifies TBPP islanding rules (2026-05-08)",
+          "url": "https://www.energychoicematters.com/stories/20260508b.html",
+          "quote": "will provide loans and grants to qualifying critical facilities",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}
