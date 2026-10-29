@@ -323,3 +323,19 @@ Main session overturned three agent conclusions: a Texas TBPP "unsupported" verd
 on the row's second source, which the agent never opened), a Canada/SRC "reason not on page" note (the
 FAQ answer is in a collapsed accordion the agent's fetch missed), and an Alaska PCE "outdated" check
 that quoted only the 2023 half of a sentence already giving the 2026 rate.
+
+## 2026-10-29 daily refresh
+
+Scheduled routine (Opus main session), odd day: news, deals, vendors, politics only, two at a time.
+Shipped 1 news item (Tupras/USTDA SMR study) and 1 correction (eVinci Penn State NRC letter dates).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 136K | 1 item; 3 of 5 watcher leads already shipped, 1 out of scope | partly |
+| deals | 162K | 3 confirmed, 1 unsupported (kept); re-checked canada-src a second day running | no |
+| vendors | 151K | 1 date correction, rewritten by the main session to keep both dates | yes |
+| politics | 164K | nothing | no |
+
+Main session rewrote a "wrong" date correction: the ADAMS letter is dated 2025-02-17, the
+submission was 2025-02-28. The agent had replaced one true date with another. It also kept
+Eielson `binding: true`, because the site's binding definition includes a selection with a named site.

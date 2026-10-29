@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "captured": "2026-10-29",
+    "agent": "deals",
+    "scope": "Type G checks on shipped opportunities (Army Janus, Air Force ANPI, DOE Reactor Pilot, Equinix-Radiant, Oklo-Switch, NANO-Supermicro, Last Energy, Canada SRC, Eielson); Type N items for buyer deals dated after 2026-10-27 not in skip/news.json. Main-session web leads reviewed.",
+    "angles_run": [
+      "Army Janus vendor awards and milestone agreements (2026)",
+      "Air Force ANPI Buckley, Malmstrom, JBSA updates (2026)",
+      "Eielson AFB NOITA and any 2026 contract",
+      "DOE Reactor Pilot Program criticality (Oct 2026)",
+      "Equinix Radiant Kaleidos preorder",
+      "Oklo-Switch Master Power Agreement binding status (10-Q to 2026-06-30)",
+      "NANO Nuclear Supermicro MOU",
+      "Last Energy DP World London Gateway",
+      "Canada SRC eVinci status",
+      "Hyundai Engineering SMR cooperation (web lead, WNN 2026-10-28)",
+      "Turkish refiner SMR (web lead, WNN 2026-10-29)",
+      "New buyer deals dated 2026-10-28 or later (generic, Deep Fission, Valar, Aalo, data center PPA)"
+    ],
+    "absences": [
+      "No buyer deal dated after 2026-10-27 found with a fetched source. Four deal-focused searches (generic microreactor agreement 28 Oct; data-center PPA late Oct; Oklo Oct 2026; Deep Fission, Valar, Aalo Oct) surfaced nothing new in window.",
+      "Hyundai Engineering (WNN 2026-10-28, fetched): MoUs with NANO Nuclear Energy and ARC Clean Technology. The NANO MoU is already shipped as nano-hyundai-engineering-kronos-mou-2026-10-27; the announcement was Tuesday 2026-10-27, so the ARC MoU is the same event and not dated after the window. Not added.",
+      "Turkish refiner (Tupras): USTDA cooperation agreement to study SMRs, reported 2026-10-24, before the window. It is a feasibility study, not a buyer deal, and no vendor or site is named. Not added.",
+      "Westinghouse AP1000 Slovakia study: large reactor, outside the microreactor scope. Not searched.",
+      "Antares-BWXT TRISO fuel deal: already shipped as antares-bwxt-triso-framework-2026-10-27. Not re-added.",
+      "Deep Fission SEC 8-K (search snippet only, not fetched) describes a first binding, conditional offtake agreement in October 2026. This is probably the shipped deep-fission-gpda-master-energy-purchase-2026-10-20 event, but the counterparty and date were not confirmed. Not added.",
+      "Eielson AFB: no 2026 signed contract found. Search summaries reporting a rescinded award or a re-award were undated or referred to 2023 announcements and were not verified. The DAF page (eielson.af.mil) returned HTTP 403 to WebFetch.",
+      "ANPI Buckley, Malmstrom, JBSA: searches found no update after late April 2026 and no DAF primary release with new status. No check written.",
+      "Equinix-Radiant: fetched Equinix release (2025-08-14) confirms a preorder for 20 Kaleidos units. It does not mention deposits or per-unit MW. The 'with deposits' wording rests on a Radiant release that was not fetched. No check written.",
+      "NANO-Supermicro: non-binding MOU (early May 2026) is supported by press coverage in search results only. The NANO investor-relations page returned HTTP 403. No check written; the shipped source is an aggregator (smrintel).",
+      "Last Energy and DP World: a MoU exists per search results (London Gateway, Thames Freeport). The shipped 'Announced customer-development plan' label is not contradicted. Not fetched; no check written.",
+      "DOE Reactor Pilot: no criticality event in Oct 2026 found; latest fetched item was DOE's 2026-08-06 release. The shipped 'five critical' figure is not contradicted. No check written.",
+      "Oklo-Switch: the 10-Q (period ending 2026-06-30) calls the 12 GW agreement signed but does not say binding or non-binding. Read was limited to the first 100,000 characters of a 148,391-character page."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn across FY2027-FY2031 under milestone-based Other Transactions agreements the Army says it is negotiating",
+      "verdict": "confirmed",
+      "evidence": "Army.mil article dated 2026-08-26 names five selected vendors and installations (Antares at Fort Bragg; BWXT at Fort Campbell; General Atomics at Fort Hood; Radiant at Fort Benning; Westinghouse Government Services at Fort Drum). It says the Army is awarding up to a combined $2.2 billion, and that the Army 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements.' It says additional sites will be announced later. The article does not state the FY2027-FY2031 span, which comes from a secondary source.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+          "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "quote": "down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled; vendor withdrew",
+      "verdict": "confirmed",
+      "evidence": "SRC FAQ page on the nuclear project states that Westinghouse cancelled the SRC project contract, and dates this to fall 2025. The page also says SRC is looking at other microreactor technologies. The page does not give the reason (the shipped record's 'shift to space, defense and government applications' explanation is not in the fetched text).",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "Westinghouse canceled the project contract with SRC.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Non-binding Master Power Agreement",
+      "verdict": "unsupported",
+      "evidence": "Oklo Form 10-Q for the period ending 2026-06-30 says the company 'signed a 12 gigawatt (\"GW\") Master Power Agreement with Switch, Ltd. (\"Switch\")'. The filing does not describe the agreement as binding or non-binding, and the fetched text shows no binding PPA. The non-binding label is therefore not supported by this primary filing, though the agreement's structure as a framework is consistent with it. Read covered the first 100,000 characters of the filing.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 10-Q for the period ended 2026-06-30 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026054571/oklo-20260630.htm",
+          "quote": "we signed a 12 gigawatt (\"GW\") Master Power Agreement with Switch, Ltd. (\"Switch\")",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-eielson-1",
+      "target": "eielson",
+      "file": "opportunities",
+      "claim": "NOITA announced 2025-06-11",
+      "verdict": "confirmed",
+      "evidence": "Oklo release, dated 06.11.25 on the page, says Oklo 'has been issued a Notice of Intent to Award' and that the NOITA 'again designates Oklo as the apparent successful offeror.' The release refers to an 'anticipated agreement' and lists no executed contract. The date is confirmed; the shipped binding flag should be reviewed against this (a NOITA is not an executed instrument).",
+      "sources": [
+        {
+          "label": "Oklo — Selected as Intended Awardee to Provide Clean, Reliable Power to Eielson Air Force Base in Alaska (2025-06-11)",
+          "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+          "quote": "The NOITA again designates Oklo as the apparent successful offeror following a comprehensive evaluation process.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "captured": "2026-10-29",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy pathways (none written), Type F dockets not in skip/dockets.json filed or decided in the last 90 days, Type N items after 2026-10-27 (none found).",
+    "angles_run": [
+      "NRC Part 57 status and final-rule date (Nov 23, 2026 target)",
+      "State microreactor legislation signed, Oct 2026",
+      "State PUC SMR/microreactor filings, Oct 2026",
+      "NRC Clinch River BWRX-300 construction permit (Sept 29, 2026)",
+      "Part 57 Commission vote",
+      "FY2027 NDAA microreactor provisions (House passed July 22; Senate, Army)",
+      "DOE Reactor Pilot criticality dates (Antares, Valar, Deployable Energy)",
+      "Virginia SCC Dominion SMR cost-recovery petition",
+      "Dominion North Anna SMR RFP (dated 2024, out of window)",
+      "NRC final rule and Commission approvals, Oct 2026",
+      "FY2027 Energy and Water appropriations (H.R. 9022)",
+      "Federal microreactor bills, 2026",
+      "Senate NDAA amendments on Army microreactors",
+      "State microreactor laws and moratoria, 2026",
+      "Commission dockets filed Aug 2026 (IRPs with nuclear)",
+      "Texas PUC advanced nuclear rule, Sept 2026",
+      "Army Janus licensing framework",
+      "NCSL News Reactor, Oct 23, 2026 (state roundup)",
+      "Palisades SMR construction permit Federal Register notice (PDF not readable by fetch)"
+    ],
+    "absences": [
+      "Type F candidate NRC Clinch River BWRX-300 construction permit (issued Sept 29, 2026, 300 MW SMR, GE Vernova release fetched): not recorded because no filing URL or verified NRC docket number could be fetched. A search summary gives docket 50-0615, which could not be verified (S&P Global returned HTTP 403).",
+      "Part 57 final rule: no evidence it has issued. Sources show only the proposed rule (comments closed June 15, 2026) and the Nov 23, 2026 executive-order target. No primary NRC page confirming current status was fetched, so no Type G check written.",
+      "Political or regulatory events dated after 2026-10-27: none found across Congress, NRC, DOE, DoD, states and PUCs. The NCSL October 2026 roundup (dated Oct 23) lists none after Oct 27.",
+      "FY2027 NDAA: the House bill (passed July 22, 2026) carries a microreactor amendment for INDOPACOM (sponsor Rep. Pat Harrigan). No Senate microreactor provision was found, and no conference action after Oct 27 was found. The S. 2389 ARMOR Act is not confirmed as attached to any NDAA text.",
+      "State PUC or state commission SMR/microreactor dockets filed or decided Aug to Oct 2026: none confirmed. The Dominion SCC SMR petition (hearing May 5, 2026) and the Dominion North Anna RFP (dated July 10, 2024) are outside the window. Minnesota HF 4711 and SF 4901 are bills, not dockets, and predate the window.",
+      "Texas PUC adopting an advanced-nuclear or microreactor rule in Sept 2026: could not confirm.",
+      "Palisades SMR construction permit and limited work authorization (Federal Register public-inspection 2026-20094, dated Sept 29, 2026): the PDF is not readable by the fetch tool, so no record was written.",
+      "Alaska bill setting 180-day microreactor permit timelines: could not confirm enactment.",
+      "Louisiana Executive Order 2026-15 (advanced nuclear task force, 90-day site permits): the source names Gov. John Bel Edwards, who is not in office in 2026, so the citation is doubtful. Not recorded.",
+      "Army Janus licensing framework: Army-licensed (not NRC) reactors are confirmed in press coverage of the Aug 26, 2026 awards. No published Army regulatory framework was found.",
+      "Shipped pathways on price-anderson, 45Y/48E tax credits and state moratoria: skip/policy.json has no pathway by those names, so no check was run against them.",
+      "Deployable Energy Unity: the shipped 'July 1' is the announcement date (ANS, July 1, 2026, fetched). DOE's criticality date is not fetched verbatim, so no correction was written.",
+      "Valar Ward 250 criticality: the shipped June 18 date matches the fetched ANS article, so no correction was written."
+    ]
+  },
+  "items": []
+}

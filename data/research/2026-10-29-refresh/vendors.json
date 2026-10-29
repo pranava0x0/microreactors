@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-10-29",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on the 8 shipped vendor records (target = vendor id) and Type N items for vendor milestones dated after 2026-10-27 that skip/news.json lacks, including non-table 1-20 MWe designs with a dated event.",
+    "angles_run": [
+      "Radiant Kaleidos DOME criticality status (search; fetch of radiantnuclear.com DOME pages returned 403)",
+      "Antares Mark-1 and Mark-0 news (search)",
+      "Valar Ward 250 and Project Beehive (search)",
+      "Last Energy PWR-5 status (search)",
+      "Deployable Energy Unity / DOME (search)",
+      "Natura MSR-1 Abilene (search)",
+      "Aalo-X criticality and completion (search)",
+      "Steady Energy LDR-50 (search; 50 MWt heat-only, outside 1-20 MWe)",
+      "Terra Innovatum SOLO and Blue Energy (search; latest dated item Aug 2026)",
+      "BWXT BANR Fort Campbell Janus (search)",
+      "General Atomics GA-TES Fort Hood (search)",
+      "Westinghouse eVinci Oct 2026 news (search)",
+      "NANO Nuclear KRONOS / ZEUS news (search; latest hits Oct 2025)",
+      "Penn State FRONTIER letter of intent date (search and fetch of Westinghouse release)",
+      "NRC eVinci pre-application page (fetch; no Penn State date on page)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-28 or 2026-10-29 found for any shipped vendor or for the non-table 1-20 MWe designs (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy). Items: zero.",
+      "Radiant DOME campaign: the shipped Q3 2026 completion target has passed. No completion or criticality report found after the August 2026 transit coverage. radiantnuclear.com pages returned HTTP 403 to WebFetch, so the Radiant newsroom could not be read. No check written.",
+      "Last Energy PWR-5 criticality: the mid-2026 target has no confirming source in the search results. Not written as a check; no fetched page.",
+      "Natura Resources: searches returned only a July 2024 article. No 2026 status found for its MSR-1 or Abilene reactor.",
+      "Blue Energy: no results in any search. Terra Innovatum's NRC SOLO readiness assessment (from 2026-08-10) is dated before the window and is not a milestone after 2026-10-27.",
+      "NANO Nuclear KRONOS and ZEUS: search returned nothing after Oct 2025 beyond what news.json already ships. The investor relations page was not fetched.",
+      "Westinghouse eVinci: the Oct 24 Etna accelerator hub announcement has no stated year in search results; not verified as 2026, so not written.",
+      "Aalo-X: the July 4, 2026 criticality claim rests on a company press release (streetinsider/businesswire) and was not confirmed against a DOE or INL page.",
+      "Penn State FRONTIER: the NRC eVinci pre-application page does not name the Penn State letter. The date conflict was resolved only against the Westinghouse release of 2025-03-04, not the NRC docket."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-evinci-1",
+      "target": "evinci",
+      "file": "vendors",
+      "claim": "Penn State FRONTIER: NRC notice of intent filed 2025-02-17 for a construction permit for a 15 MWt eVinci-based research reactor at University Park, PA.",
+      "verdict": "wrong",
+      "evidence": "Westinghouse release dated 2025-03-04 states: \"Penn State submitted a letter of intent to the NRC on February 28, 2025.\" The release does not give 2025-02-17. The shipped milestone for the same event already uses 2025-02-28, so the notes contradict the record's own timeline. The release also describes a letter of intent to pursue an application, not a filed construction permit application. Main session: the ADAMS letter ML25059A029 is dated 2025-02-17 (read 2026-08-23); Westinghouse gives the submission date 2025-02-28. Correction keeps both dates and says the filing is an intent to apply, not an application.",
+      "correction": "Penn State FRONTIER: NRC notice of intent (letter dated 2025-02-17, submitted 2025-02-28) to apply for a construction permit for a 15 MWt eVinci-based research reactor at University Park, PA.",
+      "sources": [
+        {
+          "label": "Westinghouse — Penn State Submits Letter of Intent to NRC to Pursue Application for New Nuclear Research Facility (2025-03-04)",
+          "url": "https://info.westinghousenuclear.com/news/penn-state-applies-to-nrc-to-build-a-new-nuclear-research-facility",
+          "quote": "Penn State submitted a letter of intent to the NRC on February 28, 2025,",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

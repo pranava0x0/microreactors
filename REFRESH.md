@@ -119,3 +119,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   an `outdated` check, grep the shipped field for the corrected figure.
 - **2026-10-28: the agent-cap hook allows 2 concurrent agents here.** Seven agents run as four pairs
   (~25 min wall clock). Start quote repair on finished files while the last pairs run.
+- **2026-10-29: two different dates for one filing are not a contradiction.** The vendors agent marked
+  "NRC notice filed 2025-02-17" wrong because Westinghouse says the letter was submitted 2025-02-28.
+  Both are true: one is the letter's date, the other is the submission date. Before applying a
+  date correction, check whether the two dates name different events, and write both if they do.
+  The deals agent also re-checked `canada-src` for a second day running. A shipped row that passed a
+  check in the last week is wasted tokens; the skip list should carry recently checked ids.
