@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation. Type G checks on shipped licensing and policy pathways; Type F dockets filed or decided in the last 90 days (since 2026-08-01); Type N items dated after 2026-10-27. Other agents' lanes (news, deals, vendors, applications, costs, ideas) not covered.",
+    "angles_run": [
+      "NRC Part 57 status and EO 14300 final-rule deadline",
+      "NRC October 2026 approvals (DOE/DoW authorization final rule, Part 53)",
+      "DOE Reactor Pilot Program criticality dates (July 2026 deadline)",
+      "2025 executive order 18-month decision ceiling (primary EO text)",
+      "State SMR and microreactor legislation (NJ, NM, IL, IN, LA, AZ, VA, WV, TX)",
+      "PUC and IRP dockets naming SMRs (VA, IN, CA, NC, Duke and Appalachian Power)",
+      "Texas TANEO nuclear grant awards (HB 14)",
+      "Federal: Army Janus follow-ups, FY2027 NDAA, DOE appropriations, Congress bills",
+      "NRC and federal news after 2026-10-27"
+    ],
+    "absences": [
+      "Part 57 final rule: no evidence of finalization as of 2026-10-30. A July 30, 2026 ANS article says Part 57 is 'slated to be finalized by the end of the year'. The 2026-11-23 date is the EO 14300 18-month deadline for NRC final rules generally (checked against the White House order); I found no source tying 11-23 to Part 57 specifically, so no Part 57 check was written.",
+      "Part 57 comment period: a search summary says comments closed June 15, 2026; not fetched, not used.",
+      "No dated political or regulatory events found after 2026-10-27. The NRC 2026 news index in search shows nothing later than 2026-09-29, which may be an index lag.",
+      "No Type F docket in the 90-day window (2026-08-01 to 2026-10-30) confirmed. Ruled out or out of window: Radiant NRC special nuclear material license (docket 70-7045, accepted 2026-05-01); TVA Clinch River construction permit (2026-09-29, already in skip/dockets.json); Indiana SB 424 (2025, shipped); Louisiana SB 127 (2025, Act 111, not 2026); West Virginia HB 4491 (introduced 2026-01-19); Virginia HB 74 (killed Feb 2026); Duke Belews Creek early site permit (NRC docketed Feb 2026).",
+      "Texas TANEO nuclear grants: RFA projected selections for the week of July 20, 2026 and performance start around 2026-09-14. No announcement of recipients found, so no docket written.",
+      "New Mexico microreactor bill: a 2026 session search showed nuclear debate but no confirmed passage or signature.",
+      "Arizona S.1418 (SMR without certificate of environmental compatibility): enactment status not found.",
+      "Duke, Georgia Power, Entergy 2026 SMR filings at state commissions: not found in search.",
+      "FY2027 NDAA nuclear or microreactor provisions: HASC bill text released May 2026 but no nuclear provisions verified; Senate and conference text not found.",
+      "DOE FY2027 appropriations for nuclear or microreactor programs: not found.",
+      "Federal microreactor bills introduced in October 2026: none found. Sen. Lee's S. 4284 (introduced 2026-04-14) is outside the window and its microreactor scope is unverified."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "The executive order's goal of three test reactors critical by July 4, 2026 was met: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah) and Deployable Energy's 1 MWe Unity (July 1).",
+      "verdict": "unsupported",
+      "evidence": "The July 2, 2026 ANS article gives July 1 as the day Deployable announced it had achieved zero-power criticality at INL, not a dated achievement. A July 8, 2026 Neutron Bytes article says Antares, Valar and Deployable 'completed' their demonstrations 'earlier in June'. The same Neutron Bytes article reports a fourth firm, Aalo-X, reaching criticality on 07/04/26, so the 'three' framing is also incomplete. Antares (June 4) and Valar (June 18) dates agree across both sources. Unity's achievement date is unresolved; check DOE or Deployable's own release before reusing '(July 1)' as the critical date.",
+      "sources": [
+        {
+          "label": "ANS: The deadline arrives, checking in on the Reactor Pilot Program (2026-07-02)",
+          "url": "https://www.ans.org/news/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "had achieved zero-power fueled criticality at INL",
+          "status": "fetched"
+        },
+        {
+          "label": "Neutron Bytes: Four micro reactors hit criticality milestones crossing DOE's finish line on July 4th (2026-07-08)",
+          "url": "https://neutronbytes.com/2026/07/08/four-micro-reactors-hit-criticality-milestones-crossing-does-finish-line-on-july-4th/",
+          "quote": "Earlier in June, Antares Nuclear, Valar Atomics, and Deployable Energy completed",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session 2026-10-30: fixed by hand. POWER (2026-07-06) dates Unity's criticality to June 30 under DOE's Launch Pad initiative and Aalo-X to July 4 as a fourth; row renamed and both dates written."
+    },
+    {
+      "id": "check-licensing-2",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "The May 2025 orders set an 18-month ceiling on NRC decisions for new reactors and created the DOE Reactor Pilot Program, which authorizes test reactors at DOE sites under DOE's own safety authority rather than NRC licensing.",
+      "verdict": "confirmed",
+      "evidence": "The May 2025 nuclear executive order ('Ordering the Reform of the Nuclear Regulatory Commission') sets a deadline of no more than 18 months for final NRC decision on an application to construct and operate a new reactor of any type (Section 5(a)(1)). The same order requires NRC to issue final rules within 18 months, which puts the final-rule deadline at 2026-11-23. Only the 18-month clause was verified here; the DOE Reactor Pilot Program clause was not checked against this page.",
+      "sources": [
+        {
+          "label": "White House — Ordering the Reform of the Nuclear Regulatory Commission (May 2025)",
+          "url": "https://www.whitehouse.gov/presidential-actions/2025/05/ordering-the-reform-of-the-nuclear-regulatory-commission/",
+          "quote": "a deadline of no more than 18 months for final decision on an application to construct and operate a new reactor of any type",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}

@@ -1,0 +1,29 @@
+{
+ "_meta": {
+  "captured": "2026-10-30",
+  "agent": "news",
+  "scope": "News tab, 1-20 MW microreactor market: event dates after 2026-10-27, then a 60-day gap sweep. Triaged skip/candidates.json (6 RSS/SEC candidates) first. Skip list read: skip/news.json (92 ids through 2026-10-27).",
+  "angles_run": [
+    "candidates.json triage: Hyundai Engineering US SMR cooperation (WNN 10-28, fetched), Herald Corp (fetched) for the ARC MOU",
+    "candidates.json triage: Doosan NuScale vessel, Hitachi SMR revenue, Westinghouse AP1000 Slovakia, Antares-BWXT TRISO procurement (WNN 10-29, POWER 10-27): judged out of market or duplicates of shipped records, not fetched",
+    "general sweep for microreactor news dated 2026-10-29 (search only)",
+    "Project Pele (BWXT) 2026 operating status (search only)",
+    "Aalo Atomics 2026 financing and factory (search only)",
+    "Blue Energy 2026 microreactor news (search only)",
+    "Radiant Oak Ridge R-50 factory 2026 progress (search only)"
+  ],
+  "absences": [
+    "No Type N item written. The only new event in the 10-28 to 10-30 window that touches the 1-20 MW market is the NANO Nuclear half of the Hyundai Engineering MOUs, already shipped as nano-hyundai-engineering-kronos-mou-2026-10-27.",
+    "Excluded: Hyundai Engineering and ARC Clean Technology MOUs (Herald Corp 2026-10-27; WNN 2026-10-28). ARC-100 is a 100 MWe sodium-cooled fast reactor, with a planned ~200 MW demonstration at INL. Outside the 1-20 MW market; no microreactor buyer impact.",
+    "Excluded candidates: Doosan upper reactor vessel for NuScale SMR (WNN 2026-10-30, NuScale module size is outside 1-20 MW); Hitachi nuclear revenue and BWRX-300 delivery (Utility Dive 2026-10-30, large SMR); Westinghouse AP1000 study in Slovakia (WNN 2026-10-29, large LWR abroad); Antares-BWXT TRISO procurement (WNN 2026-10-29, POWER 2026-10-27), same event as shipped antares-bwxt-triso-framework-2026-10-27.",
+    "Project Pele (BWXT, 1-5 MWe HTGR for DoD, INL): no dated event found after 2026-10-27 and operating status not verified. Latest found: Axios 2026-09-30 tour piece. Not written.",
+    "Blue Energy: 2026 news is gas-plus-nuclear plants on BWRX-300 units (about 2.5 GW Texas site), not microreactors. Out of market; not written.",
+    "Aalo Atomics: no 2026 financing or factory news found in search. Only the Series B (2025-08-20) and the Aalo-X criticality target (July 4, 2026, already shipped) surfaced.",
+    "Radiant R-50 Oak Ridge factory: no 2026 construction progress found in search. Radiant's own newsroom returns 403 to non-browser clients (skip/candidates.json meta).",
+    "Not swept, budget and bail rule: Centrus, Westinghouse eVinci, BWXT, Oklo, Antares, Valar, Last Energy, NANO Nuclear, X-energy, Kairos, Deployable Energy, Deep Fission, Terrestrial, Holtec, General Atomics, Natura, USNC successor, Standard Nuclear, and the key hires and departures angle. The bail rule stopped the sweep after three consecutive empty gap angles. Coverage of the 2026-10-28 to 2026-10-30 window beyond the candidates is therefore not complete.",
+    "Blocked hosts per skip/candidates.json: ANS Nuclear Newswire RSS 404; NRC press releases, Radiant newsroom and Oklo IR return 403 to non-browser clients. Primary-page checks for these were not possible in this pass.",
+    "Search summary dates unverified: the Blue Energy search gave two different dates for the GE Vernova agreement (April 2026 and August 13, 2026). Not used in any record."
+  ]
+ },
+ "items": []
+}

@@ -374,7 +374,7 @@
    "timeline": "construction permit application submitted to the NRC, reported 2026-04-02; project first announced 2021",
    "sponsor": "University of Illinois Urbana-Champaign",
    "vendor": "Nano Nuclear Energy",
-   "what_it_says": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 2 April 2026, the first step of two-part Part 50 licensing for a research and test reactor. Each Kronos unit is designed for up to 15 MWe (45 MWt), and the 2021 plan was to re-power part of the coal-fired Abbott power station with it.",
+   "what_it_says": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 31 March 2026, the first step of two-part Part 50 licensing for a research and test reactor. Each Kronos unit is designed for up to 15 MWe (45 MWt), and the 2021 plan was to re-power part of the coal-fired Abbott power station with it.",
    "microreactor_read": "15 MWe is inside the 1-20 MW band and the host is a campus with a coal plant to displace. It is licensed as a research and test reactor, so campus power is secondary to training and research, and no power price is published.",
    "sources": [
     {
@@ -387,6 +387,12 @@
      "label": "World Nuclear News — US university plans to build microreactor (2021)",
      "url": "https://world-nuclear-news.org/Articles/US-university-announces-plans-to-build-microreacto",
      "quote": "The university plans to re-power partially its coal-fired Abbott power station",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News: Application lodged to build microreactor at US university (2026)",
+     "url": "https://world-nuclear-news.org/articles/application-lodged-to-build-microreactor-at-us-university",
+     "quote": "was submitted on 31 March by The Grainger College of Engineering",
      "status": "fetched"
     }
    ],
@@ -582,6 +588,33 @@
     }
    ],
    "group": "compute-industry"
+  },
+  {
+   "id": "ngl-natura-produced-water-2026-02-04",
+   "segment": "desalination",
+   "name": "NGL Energy Partners and Natura Resources: produced-water desalination with a molten salt reactor",
+   "status": "proposed",
+   "power_class": "100 MW molten salt reactor (electric or thermal basis not stated)",
+   "timeline": "agreement announced 4 February 2026; no deployment date given",
+   "sponsor": "NGL Energy Partners (oilfield water treatment)",
+   "vendor": "Natura Resources",
+   "what_it_says": "Natura Resources and NGL Energy Partners agreed to look at pairing Natura's 100 MW molten salt reactor with NGL's produced-water treatment and desalination. The source says the two will collaborate in seeking opportunities and does not say the agreement is binding or give a site. Natura's produced-water work began in 2025 with Texas Tech and Abilene Christian University, which aims to treat produced water from oil and gas operations for beneficial use.",
+   "microreactor_read": "A 100 MW reactor is about five times the top of the 1-20 MW band, so it would take several blocks. The page gives no electric or thermal basis, no water volume, no power price and no site, so fit and price cannot be checked.",
+   "sources": [
+    {
+     "label": "World Nuclear News: Natura, NGL collaboration on water treatment (2026-02-04)",
+     "url": "https://wnn.world-nuclear.org/articles/natura-ngl-collaboration-on-water-treatment",
+     "quote": "Natura's 100 MW molten salt reactor (MSR)",
+     "status": "fetched"
+    },
+    {
+     "label": "Texas Tech University: Texas Tech, ACU, Natura Resources announce path to deployment for nuclear reactor desalination of produced water (2025-07-03)",
+     "url": "https://www.ttu.edu/now/posts/2025/07/texas-tech-acu-natura-resources-announce-path-to-deployment-for-nuclear-reactor-desalination-of-produced-water.php",
+     "quote": "aiming to purify produced water from oil and gas operations for beneficial use.",
+     "status": "fetched"
+    }
+   ],
+   "group": "heat"
   }
  ]
 }

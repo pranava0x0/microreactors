@@ -125,3 +125,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   date correction, check whether the two dates name different events, and write both if they do.
   The deals agent also re-checked `canada-src` for a second day running. A shipped row that passed a
   check in the last week is wasted tokens; the skip list should carry recently checked ids.
+- **2026-10-30: integrate splices a correction into the claim's sentence, and has no "rejected" verdict.**
+  A costs check's claim was the first clause of a longer sentence; `--apply` would have left
+  "...is proposed.: its per-utility appendix..." in the shipped note. Read each correction against the
+  surrounding text before `--apply`. To overrule an agent check, set `verdict: confirmed`, keep the
+  agent's call in `agent_verdict`, and write why in `review`; the validator rejects any other verdict.
+  Two of seven checks were overruled this run, both because the agent read one source or one clause.

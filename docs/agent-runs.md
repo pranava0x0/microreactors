@@ -339,3 +339,21 @@ Shipped 1 news item (Tupras/USTDA SMR study) and 1 correction (eVinci Penn State
 Main session rewrote a "wrong" date correction: the ADAMS letter is dated 2025-02-17, the
 submission was 2025-02-28. The agent had replaced one true date with another. It also kept
 Eielson `binding: true`, because the site's binding definition includes a selection with a named site.
+
+## 2026-10-30 daily refresh
+
+Seven Haiku agents (even day), 2 at a time. 0 news, 4 corrections, 1 application, 1 quote lock.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 122K | nothing (all 6 RSS candidates shipped or above 20 MW) | no |
+| deals | 153K | 1 "unsupported" check, overruled: Radiant's own release says "with deposits"; canada-src re-checked a third day | no |
+| vendors | 157K | eVinci duplicate milestone removed; Valar Utah lease added (correction rewritten to keep NPR attribution) | yes |
+| politics | 164K | flagged "Unity (July 1)"; main session fixed it to June 30 and added Aalo-X as a fourth | yes |
+| applications | 172K | Kronos filing date 31 March; NGL-Natura produced-water application shipped | yes |
+| costs | 144K | 1 "outdated" check, overruled: the shipped sentence already gave the FY2027 proposal | no |
+| ideas | 139K | 1 confirmation (Price-Anderson $158,026,000) | marginal |
+
+Main session overruled two of seven checks, both by reading the row's other source or the whole
+sentence. Two 403 hosts (radiantnuclear.com, eastidahonews.com) were read in the browser pane and
+cached as innerText excerpts with `--from-file`.

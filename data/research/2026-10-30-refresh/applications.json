@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "applications",
+    "scope": "Applications tab: Type G checks on shipped segments and deployment_sites records most likely to have changed; Type S new named applications in segments the tab lacks or covers thinly; Type E regions none (no new region with a fetched price and load number found in budget).",
+    "angles_run": [
+      "lunar surface power (NASA/DOE fission surface power status)",
+      "university reactors (UIUC Kronos submission and NRC acceptance; Penn State eVinci; Texas A&M RELLIS)",
+      "district heat (Steady Energy LDR-50 pilot; Jyvaskyla and other Finnish cities)",
+      "ports (Last Energy London Gateway MOU date)",
+      "data centers behind the meter (Oklo-Wyoming Hyperscale LOI; Uvation LOI; Valar Utah)",
+      "Alaska military (Eielson Oklo NOI status)",
+      "desalination and produced water (Natura/NGL; Texas Tech/ACU; INL MARVEL)",
+      "mines (Idaho Strategic, Red Dog, Saskatchewan)",
+      "hydrogen and ammonia",
+      "hospitals, disaster recovery and emergency backup",
+      "maritime and shipping (Port of Long Beach and MARAD; Corpus Christi)"
+    ],
+    "absences": [
+      "Jyvaskyla (Finland) Steady Energy and Alva letter of intent, Feb 2026, up to six LDR-50 units: seen only in search summaries; the NucNet source returned HTTP 403 and no fetched page confirmed it. Not shipped.",
+      "Valar Atomics and Nvidia 30 MW behind-the-meter data center, Emery County, Utah: in search results but already carried on the news skip list (valar-nvidia-datacenter-2026-06-22), so not added as a new application.",
+      "Port of Long Beach and MARAD nonbinding memorandum of cooperation, 22 Jul 2026: no megawatt figure in any source found. Not added.",
+      "Texas Tech and ACU MSR-1 research reactor power rating: the fetched ACU page did not state the rating; 1 MWt appeared only in a search summary. Not shipped.",
+      "Last Energy and DP World London Gateway MOU date (shipped as 2025-09-15): the fetched Loadstar page gives only a publication date of 18 September 2025 and no signing date. Not verified, not changed.",
+      "Oklo and Wyoming Hyperscale Aspen Mountain LOI: fetched ANS article (dated 2024-05-29) confirms 100 MW, a 20-year PPA and a nonbinding LOI, all consistent with the shipped text. Search summaries say the developer merged with Prometheus Hyperscale and the campus grew to 1 GW of IT load with a 120 MW utility contract; the DCD source returned HTTP 403 and the claim was not fetched, so no correction issued.",
+      "Uvation pilot: search summaries say the LOI is non-binding and was signed 20 Nov 2025, consistent with the shipped text; no 2026 status update found. No check written.",
+      "NASA fission surface power: a July 2025 policy directive for a 100 kWe lunar reactor by 2030 matches the shipped record. No 2026 solicitation or award confirmed. No check written.",
+      "Penn State eVinci: no 2026 construction permit filing found; the shipped February 2025 letter of intent is consistent with what search surfaced. No check written.",
+      "Eielson AFB Oklo: no 2026 signed PPA or NRC license found; the shipped notice-of-intent status is consistent with search results. No check written.",
+      "Hospitals and disaster recovery: only job postings and plans surfaced; no named contract with a megawatt figure found.",
+      "Mines: no 2026 agreement with a megawatt figure found; Red Dog and Idaho Strategic are already in the deployment_sites skip list.",
+      "Hydrogen and ammonia: UK Energy Group and UK Nuclear 2026 MoU has no capacity figure; other items are 2023 or older. Not added.",
+      "Type E regions: none added. Budget went to Type G and Type S checks."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-uiuc-kronos-mmr-1",
+      "target": "uiuc-kronos-mmr",
+      "file": "segments",
+      "claim": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 2 April 2026",
+      "verdict": "wrong",
+      "evidence": "World Nuclear News reports that the construction permit application was submitted on 31 March 2026 by the Grainger College of Engineering, with NANO Nuclear as partner. The 2 April 2026 date is the date of the trade-press report, not the filing date.",
+      "correction": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 31 March 2026",
+      "sources": [
+        {
+          "label": "World Nuclear News: Application lodged to build microreactor at US university (2026)",
+          "url": "https://world-nuclear-news.org/articles/application-lodged-to-build-microreactor-at-us-university",
+          "quote": "was submitted on 31 March by The Grainger College of Engineering",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "ngl-natura-produced-water-2026-02-04",
+      "segment": "desalination",
+      "name": "NGL Energy Partners and Natura Resources: produced-water desalination with a molten salt reactor",
+      "status": "proposed",
+      "power_class": "100 MW molten salt reactor (electric or thermal basis not stated)",
+      "timeline": "agreement announced 4 February 2026; no deployment date given",
+      "sponsor": "NGL Energy Partners (oilfield water treatment)",
+      "vendor": "Natura Resources",
+      "what_it_says": "Natura Resources and NGL Energy Partners agreed to look at pairing Natura's 100 MW molten salt reactor with NGL's produced-water treatment and desalination. The source says the two will collaborate in seeking opportunities and does not say the agreement is binding or give a site. Natura's produced-water work began in 2025 with Texas Tech and Abilene Christian University, which aims to treat produced water from oil and gas operations for beneficial use.",
+      "microreactor_read": "A 100 MW reactor is about five times the top of the 1-20 MW band, so it would take several blocks. The page gives no electric or thermal basis, no water volume, no power price and no site, so fit and price cannot be checked.",
+      "sources": [
+        {
+          "label": "World Nuclear News: Natura, NGL collaboration on water treatment (2026-02-04)",
+          "url": "https://wnn.world-nuclear.org/articles/natura-ngl-collaboration-on-water-treatment",
+          "quote": "Natura's 100 MW molten salt reactor (MSR)",
+          "status": "fetched"
+        },
+        {
+          "label": "Texas Tech University: Texas Tech, ACU, Natura Resources announce path to deployment for nuclear reactor desalination of produced water (2025-07-03)",
+          "url": "https://www.ttu.edu/now/posts/2025/07/texas-tech-acu-natura-resources-announce-path-to-deployment-for-nuclear-reactor-desalination-of-produced-water.php",
+          "quote": "aiming to purify produced water from oil and gas operations for beneficial use.",
+          "status": "fetched"
+        }
+      ],
+      "group": "heat"
+    }
+  ]
+}

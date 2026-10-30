@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "deals",
+    "scope": "Type G checks on shipped opportunities.json rows (Army Janus, ANPI bases, DOE Reactor Pilot Program, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada SRC); Type N items for buyer deals dated after 2026-10-27 missing from skip/news.json. No new items found.",
+    "angles_run": [
+      "Eielson AFB Oklo NOITA status (search; DAF page fetch returned HTTP 403)",
+      "Equinix-Radiant purchase/pre-order (search; Equinix release fetched)",
+      "Oklo-Switch Master Power Agreement status (search; Oklo 2026-06-30 10-Q fetched, silent on binding status)",
+      "Deals dated 2026-10-28 to 2026-10-30 (generic and named-vendor searches: Radiant, Antares, Westinghouse, NANO, Oklo, Kairos, TVA, Deep Fission, Last Energy)",
+      "ANPI JBSA / Buckley / Malmstrom (search; no status change found)",
+      "DOE Reactor Pilot Program criticality (search; DOE 2026-08-06 release fetched)",
+      "Army Janus OTA awards (search; no October 2026 change found)",
+      "Last Energy / DP World Thames Freeport (search)",
+      "NANO Nuclear October 2026 agreements (search; all already in skip/news.json)",
+      "Canada SRC eVinci cancellation (SRC FAQ fetched)"
+    ],
+    "absences": [
+      "No new buyer deal (named buyer, site, vendor) dated 2026-10-28 to 2026-10-30 found in any search. Deep Fission and Great Plains Development Authority master energy purchase agreement (announced 2026-10-20) is already shipped as deep-fission-gpda-master-energy-purchase-2026-10-20.",
+      "Eielson AFB NOITA (anpi-jbsa neighbour, opportunities id eielson): the DAF release that cites the 2025-06-11 NOITA returned HTTP 403 to WebFetch. Search results disagree on status (a 2026 'tentatively selected' item and an undated DLA notice of intent), so the shipped status was not checked and no check was written.",
+      "Oklo-Switch (id oklo-switch): the 2026-06-30 Oklo 10-Q confirms the December 2024 12 GW Master Power Agreement with Switch but does not say whether it is binding. Shipped binding=false was not contradicted or confirmed by a primary page; no check written.",
+      "DOE Reactor Pilot Program (id doe-pilot): the DOE 2026-08-06 release says 'Last night' Oklo's Groves reactor reached criticality, which implies 2026-08-05 but does not state the date. Shipped text matches that inference; no check written.",
+      "ANPI JBSA (Antares), Buckley (Radiant) and Malmstrom (Westinghouse): search confirmed the April 2026 selections and no later status change, but no primary DAF page was fetched. No checks written.",
+      "Army Janus (id janus): search confirmed five vendors and the 2026-08-26 OTA awards with no October 2026 change. No army.mil page fetched. No check written.",
+      "Last Energy / DP World Thames Freeport (id uk-lastenergy): a memorandum of understanding was found with no date shown in search results. No primary page fetched. No check written.",
+      "Radiant-Air Force ANPI agreement (Radiant press release, undated in search) is an existing ANPI selection, not a new deal."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "Purchase agreement / pre-order with deposits",
+      "verdict": "confirmed",
+      "evidence": "Equinix release dated 2025-08-14 announces a preorder agreement for 20 Kaleidos microreactors. The fetched page does not mention deposits or any deposit terms. Shipped 'with deposits' has no support in the cited source.",
+      "sources": [
+        {
+          "label": "Equinix — Equinix collaborates with leading alternative energy (2025-08-14)",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+          "quote": "Today Equinix announced a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors.",
+          "status": "fetched"
+        },
+        {
+          "label": "Radiant — Series D announcement (2025-12-17)",
+          "url": "https://www.radiantnuclear.com/blog/series-d-announcement/",
+          "quote": "Radiant signed a deal – with deposits – with the world leader in digital infrastructure to purchase 20 reactors.",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session 2026-10-30: the row's second source, Radiant's Series D release (2025-12-17), says Radiant signed a deal – with deposits – with Equinix. Shipped wording stands; quote added to that source.",
+      "agent_verdict": "unsupported"
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "SRC FAQ page (undated; primary source) states that in fall 2025 Westinghouse cancelled the project contract with SRC because it shifted focus, toward space, defence and government applications and away from commercial markets. The same page says SRC 'continues to pursue the licensing and demonstration of the first nuclear microreactor in Saskatchewan', so the page confirms the Westinghouse contract ended and does not show a replacement vendor.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status, undated)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
