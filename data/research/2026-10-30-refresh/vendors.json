@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (data/vendors.json) where a fetched primary or trade page changes or contradicts the text; Type N items for vendor milestones dated after 2026-10-27 that skip/news.json lacks, for the 8 shipped vendors and the unlisted 1-20 MWe designs (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "Post-2026-10-27 vendor milestones, broad sweep (microreactor news late October 2026)",
+      "Radiant Kaleidos DOME criticality and campaign status",
+      "Blue Energy microreactor announcements",
+      "Terra Innovatum SOLO news",
+      "Steady Energy LDR-50 news after IPO",
+      "Last Energy PWR-20 news",
+      "Deployable Energy Unity news",
+      "Natura MSR-1 Abilene news",
+      "Valar Ward 250 and Project Beehive status",
+      "NANO Nuclear KRONOS and ZEUS announcements",
+      "Aalo-X after criticality",
+      "Westinghouse eVinci Janus and Fort Drum",
+      "Oklo Aurora-INL construction status",
+      "Antares Mark-0, Mark-1 and R1 news",
+      "Radiant DOME schedule (Radiant pages blocked; trade press used)",
+      "General Atomics GA-TES Fort Hood",
+      "Fetched verification: Valar Ward 250 criticality date (ANS), Valar Beehive approval status (East Idaho News), eVinci criticality date (DOE), Radiant DOME Q3 target (NEI)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-10-27 found for the 8 shipped vendors or the 9 unlisted 1-20 MWe designs in about 16 searches; no Type N items written.",
+      "Blue Energy: recent news is 2.5 GW gas-plus-nuclear with BWRX-300 units (out of 1-20 MWe scope); no microreactor milestone found.",
+      "Steady Energy: latest dated item found is the 2026-09-27 report giving 2034 for the first heating reactor (before cutoff); no LDR-50 item after 2026-10-27.",
+      "Last Energy: no dated item after 2026-10-27 found; Texas 30-unit and Romania 20 MWe items are undated in the search results.",
+      "Natura MSR-1 (Abilene): no 2026 news found; the only related hit is a 2024 article.",
+      "Radiant Kaleidos DOME: radiantnuclear.com returned HTTP 403 for both the dome-selection and triso-fuel pages, so the Q3 2026 campaign target could not be checked against Radiant's own page. NEI (2026-08-21, fetched) states the campaign is targeted to conclude in Q3 2026. No completion or criticality report found through 2026-10-30; no check written because no fetched page confirms or contradicts current status.",
+      "Oklo Aurora-INL: no late-October news found; Q2 call coverage (2026-08-08) still gives a 2028 startup target.",
+      "Antares: no October 2026 news found beyond items already shipped.",
+      "GA-TES (Fort Hood): no milestone beyond the 2026-08-26 Janus selection; no contract value or schedule published.",
+      "Deployable Energy, NANO KRONOS/ZEUS, Aalo-X: no dated milestones after 2026-10-27 found. NANO 'October 29' search returned no such announcement.",
+      "Valar Ward 250 criticality (2026-06-18, 100 kWt) matches ANS (fetched); not written as a check because the source is trade press about four months old."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-evinci-1",
+      "target": "evinci",
+      "file": "vendors",
+      "claim": "Zero-power criticality at 663 C in high-temperature tests (date 2026-09-15)",
+      "verdict": "wrong",
+      "evidence": "U.S. DOE article (published 2026-09-16) states the heated-core criticality at 663 C occurred on 2026-09-03. The shipped 2026-09-15 row describes the same event under a different date and duplicates the 2026-09-03 milestone.",
+      "correction": "Duplicate of the 2026-09-03 row; remove.",
+      "sources": [
+        {
+          "label": "U.S. Department of Energy — Westinghouse eVinci Microreactor Achieves Criticality Milestone (2026-09-16)",
+          "url": "https://www.energy.gov/ne/articles/westinghouse-evinci-microreactor-achieves-criticality-milestone",
+          "quote": "On September 3, 2026, the eVinci test reached criticality at 663 degrees Celsius.",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session 2026-10-30: confirmed duplicate. Westinghouse and WNN pages dated 2026-09-15 report the same 663 C criticality the DOE dates to 2026-09-03; removed the 2026-09-15 milestone by hand."
+    },
+    {
+      "id": "check-valar-ward250-1",
+      "target": "valar-ward250",
+      "file": "vendors",
+      "claim": "Valar later filed an initial BLM application for a campus near Price, UT (Project Beehive: 456 reactors, 9.6 GW per NPR-reported documents); it is not yet approved.",
+      "verdict": "outdated",
+      "evidence": "East Idaho News (published 2026-10-01): the BLM has not approved the application. The Utah Trust Lands Administration Board approved a state trust land lease on Sept. 17, 2026, covering more than 640 acres.",
+      "correction": "Valar later filed an initial BLM application for a campus near Price, UT (Project Beehive: 456 reactors, 9.6 GW per NPR-reported documents); the BLM has not approved it, but Utah's Trust Lands Administration Board approved a lease of more than 640 acres of state trust land in Carbon County on Sept. 17, 2026.",
+      "sources": [
+        {
+          "label": "East Idaho News — Nuclear-powered AI data center proposed on state and federal land in central eastern Utah (2026-10-01)",
+          "url": "https://www.eastidahonews.com/2026/10/nuclear-powered-ai-data-center-proposed-on-state-and-federal-land-in-central-eastern-utah/",
+          "quote": "More than 640 acres were unanimously approved by the Trust Lands Administration Board on Sept. 17.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

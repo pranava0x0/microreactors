@@ -351,7 +351,7 @@
           "name": "FERC EL25-49 on co-located load",
           "status": "proposed",
           "kind": "proposed",
-          "mechanism": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; compliance filings were still in flight at capture. This docket will define whether a microreactor can serve an adjacent data center behind the meter in PJM without full wholesale interconnection.",
+          "mechanism": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; on June 18, 2026 (EL25-49-002) it ruled on rehearing, set aside parts of that order, and directed further PJM compliance on the behind-the-meter rules. This docket will define whether a microreactor can serve an adjacent data center behind the meter in PJM without full wholesale interconnection.",
           "sources": [
             {
               "label": "Concentric — FERC EL25-49 co-location proceeding summary",
@@ -364,6 +364,12 @@
               "url": "https://www.ferc.gov/news-events/news/fact-sheet-ferc-directs-nations-largest-grid-operator-create-new-rules-embrace",
               "quote": "establish three new transmission services, and to create new behind-the-meter generation rules",
               "status": "snippet-only"
+            },
+            {
+              "label": "Troutman Energy Report — FERC addresses arguments on rehearing and requires additional PJM tariff revisions to accommodate co-located load (June 2026)",
+              "url": "https://www.troutmanenergyreport.com/2026/06/ferc-addresses-arguments-on-rehearing-and-requires-additional-pjm-tariff-revisions-to-accommodate-co-located-load/",
+              "quote": "directing further compliance related to BTMG rules",
+              "status": "fetched"
             }
           ]
         },
@@ -464,15 +470,21 @@
           ]
         },
         {
-          "name": "The pilot track produced three critical reactors",
+          "name": "The DOE track produced four critical reactors by July 4",
           "status": "finding",
           "kind": "finding",
-          "mechanism": "The executive order's goal of three test reactors critical by July 4, 2026 was met: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah) and Deployable Energy's 1 MWe Unity (July 1). Application to criticality in under a year is the concrete demonstration that the DOE-authorization track is materially faster than NRC licensing, with the honest caveat that these are DOE-site test reactors, not commercially licensed plants.",
+          "mechanism": "The executive order's goal of three test reactors critical by July 4, 2026 was met and passed: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah), Deployable Energy's 1 MWe Unity (June 30, at INL, under DOE's Nuclear Energy Launch Pad initiative) and Aalo Atomics' Aalo-X (July 4, at INL). Application to criticality in under a year is the concrete demonstration that the DOE-authorization track is materially faster than NRC licensing, with the honest caveat that these are DOE-site test reactors, not commercially licensed plants.",
           "sources": [
             {
               "label": "ANS — checking in on the Reactor Pilot Program at the deadline",
               "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
               "quote": "three reactors achieving criticality by July 4, 2026",
+              "status": "fetched"
+            },
+            {
+              "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4 (2026-07-06)",
+              "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+              "quote": "Deployable Energy’s Unity reactor reached zero-power criticality at INL on June 30 through DOE’s Nuclear Energy Launch Pad initiative",
               "status": "fetched"
             }
           ]

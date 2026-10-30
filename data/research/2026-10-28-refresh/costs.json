@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on shipped costs.json numbers (one verdict with a fetched primary source); Type N items for fuel-supply or financing events dated after 2026-10-27 not in skip/news.json.",
+    "angles_run": [
+      "Alaska PCE base rate FY2026 (RCA docket U-25-010 and AEA PCE slides)",
+      "INL LMTR-20 cost figures (INL/RPT-24-80433 fetched copy; INL/RPT-25-87273 lookup)",
+      "arXiv 2506.13361 optimized-design LCOE and PTC (v2)",
+      "45Y/48E nuclear begin-construction deadline (Morgan Lewis, July 2025)",
+      "Remote Alaska diesel prices and rural power costs, 2026",
+      "HALEU allocations and DOE HALEU contract values (DOE rounds, Centrus)",
+      "Microreactor HALEU supply deals, Oct 2026 (none found after 2026-10-27)",
+      "Microreactor financing, Oct 2026 (none found after 2026-10-27)",
+      "Enrichment contracts, Orano/Urenco, Oct 2026 (none found)"
+    ],
+    "absences": [
+      "Items: no fuel-supply or financing event dated after 2026-10-27 surfaced in searches (HALEU deliveries, enrichment contracts, DOE fuel awards, loans). Latest found: Centrus-Radiant HALEU (2026-09-08), Centrus-X-energy enrichment (2026-08-07, outside window), Last Energy EXIM letter of interest (undated in search result, not a loan). Items left empty.",
+      "displaced_alternatives.1: the final RCA order adopting the FY2026 base amount (docket U-25-010) was not located. The 20.38 cents/kWh figure rests on the AEA PCE slides dated April 29, 2026, which list FY26 BRC at 20.38 cents/kWh. An RCA notice dated 2026-08-21 (docket TA201-72) gives a FY2026 statutory maximum of $0.7424/kWh, while the slides give 75.64 cents; the conflict is unresolved and not used in the check.",
+      "displaced_alternatives.1 per-utility FY2024 figures ($0.41 Kotzebue, $1.95 Lime Village, fuel $0.19 to $1.53/kWh) were not re-verified against the FY2024 appendix.",
+      "microreactor_lcoe.2 / caveat on microreactor_lcoe.3: the caveat says the INL report's abstract gives about $120/MWh. The fetched copy (INL/RPT-24-80433, August 2024, Rev 0, 79 pages) has no abstract containing that figure. Its LCOE table (p. 72) gives $119/MWh for the mass-produced LMTR-20 and $325/MWh for first unit; the text gives a 61% reduction to $146/MWh (p. 72) and a ~$150/MWh range (p. 76). Not a verdict: the report's own cover-to-conclusion text is ambiguous and the record is kept as shipped.",
+      "INL/RPT-25-87273 (2025, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors) full text not retrieved; only the GAIN listing was found.",
+      "Remote Alaska diesel: statewide diesel reported at $6.68 to $6.69/gal in September to October 2026 (news summaries, not fetched in full; the fetched Oct 21, 2026 article gave a Noatak village diesel figure of $10.33/gal dated July 2). No 2026 rural kWh figure post-dating the fuel spike was found, so the FY2024 Alaska per-kWh bands remain unrevised.",
+      "incentives.points[0] (45Y/48E begin-construction before 2034) confirmed against Morgan Lewis (July 24, 2025) only; the statute and IRS guidance were not fetched. Not a check (confirmation not prioritized).",
+      "microreactor_lcoe.5 (arXiv 2506.13361, PTC 22-24%, $48.21 to $78.32/MWh): v2 abstract (submitted 2025-12-19) matches shipped numbers. Not a check.",
+      "microreactor_lcoe.4 (Nuclear Business Platform published range) and displaced_alternatives.0/.2/.3: no newer primary source searched; not checked.",
+      "Type G records with HALEU or enrichment price numbers: none exist in skip/costs.json, so no HALEU price check was written. Public data found: Centrus DOE options at a fixed $17M per MTU (about $17,000/kg by my arithmetic, not stated by the source), Centrus base contract $900M milestone-paid (June 30, 2026)."
+    ],
+    "notes": [],
+    "main_session_note": "Dropped check-displaced-alternatives-1-1: the shipped note already states the base rate 'was 20.38 cents/kWh in 2026'; the agent quoted only the 2023 half of the sentence."
+  },
+  "checks": [],
+  "items": []
+}

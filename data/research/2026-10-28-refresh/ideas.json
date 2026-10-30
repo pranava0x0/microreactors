@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "ideas",
+    "scope": "Why microreactors tab (arguments, ideas, studies): Type G checks on time-sensitive argument numbers (target argument ids in skip/arguments.json) and Type N items for major studies dated after 2026-10-27 that change the case for or against 1-20 MW reactors. Skip lists read: skip/arguments.json, skip/news.json.",
+    "angles_run": [
+      "Studies or reports dated 2026-10-28 (date-literal search, national labs, EPRI/NEI/IEA, CBO/GAO, DOE Liftoff, INL cost studies)",
+      "ERCOT small vs large generation interconnection timelines (thresholds argument)",
+      "MISO and SPP surplus interconnection in-service times (inherit argument)",
+      "Price-Anderson financial protection amounts for microreactors (liability argument); eCFR 140.11 fetched via Cornell LII mirror",
+      "DOME test bed 20 MWth cap and schedule (first-article argument)",
+      "GAO and Army Janus microreactor cost review (product argument, costs)",
+      "NEI 2026 microreactor demand and diesel replacement (fuel, load-fit arguments)"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-10-28 (the only date after the 2026-10-27 cutoff before today) was found in any angle. Searches for national-lab, EPRI, NEI, IEA, CBO, GAO and DOE Liftoff publications from late October 2026 returned nothing from that window.",
+      "Most recent DOE Liftoff edition located is the Advanced Nuclear 2024 Update (published 2024-09-20); no 2026 Liftoff update found.",
+      "Most recent INL microreactor cost study located is the August 2024 bottom-up technoeconomic study (INL/RPT-24-80433, NOAK about $6,000/kWe, LCOE about $120/MWh). No 2026 successor found.",
+      "GAO review of microreactor or Army Janus costs: not found. Army Janus award coverage (Aug 2026) states unit cost is unknown; no official per-unit cost published.",
+      "NEI 2026 report on microreactor demand or diesel replacement: not found.",
+      "thresholds argument (ERCOT): the 8-12 month small-generation and 18-30 month large-generation figures trace to an October 2024 ERCOT workshop deck; current Planning Guide Section 5.4 text was not retrievable (ERCOT .docx ROS report did not parse). PGRR 140 project page (fetched, undated, status Pending) says it clarifies Distributed Generation usage and states no change to the 10 MW line and no effective date. Not verified as current; no check written.",
+      "inherit argument: the one-year MISO surplus in-service average comes from a single secondary analysis (Utility Dive, 2026-08-21, citing Surplus Interconnection). Fetched and matches the shipped claim, but it is a secondary figure about 68 days old, so no confirmed check written.",
+      "liability argument: 10 CFR 140.11 figures ($500,000,000 base; $158,026,000 retrospective limit) match the fetched Cornell LII text, but that is a mirror of the CFR rather than eCFR (eCFR redirected). The 140.12 microreactor formula amounts were not verified. NRC Part 57 proposed rule (91 FR 23628, 2026-05-01) and its financial-protection terms were not reviewed; a final rule was due about November 2026 per the executive order.",
+      "first-article argument: DOME 20 MWth cap confirmed by Power Magazine coverage (secondary); DOE schedule reported as first experimental reactor ready in fall 2026 with testing in 2027. No primary DOE page fetched, so no check written."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

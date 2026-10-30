@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on shipped numbers in data/costs.json (skip/costs.json); Type N items for dated fuel or financing events after 2026-10-27 not in skip/news.json.",
+    "angles_run": [
+      "HALEU enrichment contracts, Oct 2026",
+      "DOE HALEU allocation rounds, 2026",
+      "Alaska PCE FY2027 base rate (search and fetch of docket U-26-010 notice)",
+      "LPO / Office of Energy Dominance Financing microreactor loans, Oct 2026",
+      "TRISO fuel supply agreements, late Oct 2026",
+      "Nuclear fuel news, Oct 28-29 2026",
+      "OBBBA section 45Y/48E nuclear clause (search, then govinfo PL 119-21 at offsets 0, 400000, 500000, 600000, 700000; congress.gov returned 403)",
+      "Oklo HALEU / plutonium fuel, late Oct 2026",
+      "DOE fuel awards for advanced reactors, Oct 2026",
+      "Microreactor financing rounds, Oct 2026"
+    ],
+    "absences": [
+      "No HALEU or enrichment contract, DOE fuel award, or loan dated 2026-10-28 to 2026-10-30 surfaced in 10 searches. Items are empty for that reason. The newest fuel items found (Centrus $900M, General Matter DOE IDIQ, DOE third HALEU round 2026-07-23) are already in skip/news.json.",
+      "No microreactor conditional commitment or loan from the Office of Energy Dominance Financing (formerly LPO) in Oct 2026. The June 2026 $17.5B nuclear loan action covers AP1000 reactors, not microreactors.",
+      "Antares $470M Series C (closed sometime in 2026, exact date not confirmed) was seen in search only. Not written as an item: no dated primary source fetched.",
+      "OBBBA nuclear clause not verified against statute text. govinfo PL 119-21 fetches reached Sec. 70512-70513 (wind and solar terms) but not the nuclear begin-construction deadline or the nuclear energy community 10% adder; congress.gov returned 403. The skip's 2034 date and three-year phase-out remain unchecked.",
+      "Alaska: only the FY2027 proposal (22.11 cents/kWh, notice 2026-05-01) was found. No final FY2027 order or appendix was located, so the per-utility $0.41-$1.95/kWh figures are not re-checked against a newer order.",
+      "HALEU and TRISO price points, DOE allocation quantities, enrichment contract values, insurance and staffing: no shipped figure for these exists in skip/costs.json (only a HALEU mention in the incentives text), so nothing was checked.",
+      "INL LMTR-20 capex and LCOE bands, NEI FOAK range, and the U-Michigan $48-78/MWh band: not re-searched this pass. No newer primary source was seen for them, and the NEI and INL reports are older than 60 days, so they could not support a confirmation."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-displaced-alternatives-1",
+      "target": "displaced_alternatives[1]",
+      "file": "costs",
+      "claim": "The Regulatory Commission of Alaska's FY2024 Power Cost Equalization order is the definitive price sheet",
+      "verdict": "confirmed",
+      "evidence": "The RCA's notice dated 2026-05-01 (docket U-26-010, comments due 2026-06-01) proposes a FY2027 PCE base amount of 22.11 cents/kWh. The FY2024 order (base 19.35 cents/kWh, set 2023-06-13) is therefore no longer the current price basis. The proposal is not final; no FY2027 order was found.",
+      "sources": [
+        {
+          "label": "Regulatory Commission of Alaska — Notice of Proposed Revision to Power Cost Equalization Base Amount, Docket U-26-010 (2026)",
+          "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223712",
+          "quote": "The Commission proposes to adjust the base amount to 22.11¢/kWh.",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session 2026-10-30: the shipped note already gives the 2026 base (20.38) and the proposed FY2027 base (22.11); the FY2024 order is cited for its per-utility appendix, which is still the price data. Not applied.",
+      "agent_verdict": "outdated"
+    }
+  ]
+}

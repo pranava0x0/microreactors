@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "captured": "2026-10-27",
+    "captured": "2026-10-29",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "55 of 90 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 35 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "55 of 92 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 37 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-10-27",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
@@ -13,15 +13,15 @@
     },
     {
       "id": "fuel",
-      "count": 14
+      "count": 15
+    },
+    {
+      "id": "contract",
+      "count": 13
     },
     {
       "id": "award",
       "count": 13
-    },
-    {
-      "id": "contract",
-      "count": 12
     },
     {
       "id": "financing",
@@ -96,6 +96,34 @@
           "url": "https://antaresindustries.com/updates",
           "quote": "Securing Fabrication Through the End of the Decade",
           "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "tupras-ustda-smr-study-2026-10-24",
+      "date": "2026-10-24",
+      "headline": "Turkey's largest refiner signs US agency deal to study SMRs",
+      "companies": [
+        "Tupras",
+        "U.S. Trade and Development Agency"
+      ],
+      "category": "contract",
+      "what_happened": "Tupras, Turkey's largest crude oil refiner, signed a cooperation agreement with the US Trade and Development Agency on 24 October 2026. The agreement covers a study of small modular reactor technology in technical, economic and potential industrial terms. WNN reports the refiner wants SMR power, heat and steam for its refining processes, and that the study is scheduled to take about one year.",
+      "why_it_matters": "A refinery needs process steam, heat and electricity at a steady scale, so it is a plausible industrial buyer for a 1-20 MW reactor. This is a study with no named vendor, reactor or site, so it signals interest rather than a purchase.",
+      "binding": false,
+      "binding_note": "A cooperation agreement to study SMRs. The sources read name no grant amount, reactor design or vendor, so no equipment or power commitment is executed.",
+      "sources": [
+        {
+          "label": "Foreks - Tupras signs cooperation agreement with US Trade and Development Agency for SMR technology study (2026-10-24)",
+          "url": "https://www.foreks.com/haber/detay/6adccd5a422c786f3f7a95ef/FRKS/tr/tupras-abd-ticaret-ve-kalkinma-ajansi-ile-smr-teknolojileri-calismasi-icin-is-birligi-anlasmasi-imzaladi-24-10-26/",
+          "quote": "küçük modüler reaktör (SMR) teknolojilerinin teknik, ekonomik ve potansiyel endüstriyel uygulamalar açısından",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News - Turkish oil refiner to consider SMR deployment (2026-10-29)",
+          "url": "https://www.world-nuclear-news.org/articles/turkish-oil-refiner-to-consider-smr-deployment",
+          "quote": "to fund technical assistance to assess the potential of small modular reactors",
+          "status": "snippet-only"
         }
       ]
     },
@@ -260,6 +288,35 @@
           "label": "NuCube / Launch Two Acquisition Corp — SEC Form 425 filing (Oct. 2026)",
           "url": "https://www.sec.gov/Archives/edgar/data/2023676/000121390026110814/ea0309104-425_nucube.htm",
           "quote": "AIDEA has agreed to purchase $25 million of Class A ordinary shares at $9.25 per share",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "quantum-leap-necsa-haleu-jv-hoa-2026-10-15",
+      "date": "2026-10-15",
+      "headline": "Quantum Leap Energy and Necsa sign heads of agreement for South African HALEU plant",
+      "companies": [
+        "Quantum Leap Energy",
+        "Necsa",
+        "TerraPower"
+      ],
+      "category": "fuel",
+      "what_happened": "Quantum Leap Energy (QLE) and South Africa's state nuclear company Necsa signed a heads of agreement to form a joint venture that would develop, build and operate a commercial-scale HALEU facility at Necsa's Pelindaba site. QLE would hold about 80% and Necsa about 20%. QLE says it has already secured offtake for the output through supply agreements with TerraPower.",
+      "why_it_matters": "It is a new non-US source of HALEU, one of the fuel bottlenecks for advanced reactors. For a 1-20 MW buyer it is still years away, and the stated output is already committed to TerraPower.",
+      "binding": false,
+      "binding_note": "A heads of agreement. The release calls the agreement a binding commercial framework for the joint venture, but no final investment decision, construction start or licence is announced in the sources read.",
+      "sources": [
+        {
+          "label": "Quantum Leap Energy and Necsa press release, reprinted by Finviz (2026-10-15)",
+          "url": "https://finviz.com/news/402933/quantum-leap-energy-and-necsa-sign-binding-heads-of-agreement-to-establish-joint-venture-for-haleu-production-in-south-africa",
+          "quote": "The Agreement establishes a binding commercial framework for a joint venture between QLE and Necsa",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Joint venture to produce HALEU in South Africa (2026-10-19)",
+          "url": "https://world-nuclear-news.org/articles/joint-ventureto-produce-haleu-in-south-africa",
+          "quote": "A binding Heads of Agreement has been signed by the companies",
           "status": "fetched"
         }
       ]

@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "vendors",
+    "scope": "Vendors tab: (1) Type G checks on shipped vendor records (skip/vendors.json) where a fetched page changes or confirms the text; (2) Type N items for vendor milestones dated after 2026-10-27 that skip/news.json lacks, including 1-20 MWe vendors outside the table (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "Broad microreactor vendor news dated 2026-10-28 (no dated hit)",
+      "Radiant Kaleidos DOME campaign completion (criticality, 150 h run)",
+      "Valar Ward 250 and Project Beehive status, Oct 2026",
+      "Penn State eVinci letter of intent date (shipped milestone 2025-02-28), fetched Westinghouse and WNN pages",
+      "NANO Nuclear KRONOS and ZEUS, late Oct 2026",
+      "Last Energy PWR-5 / PWR-20 Texas pilot after DSA approval",
+      "Natura MSR Abilene, Oct 2026",
+      "Steady Energy LDR-50 (LOKI name), Sept-Oct 2026",
+      "Terra Innovatum SOLO PSAR chapters and 30 Oct 2026 target",
+      "Oklo Aurora-INL 2028 startup target after Q2 2026",
+      "Blue Energy, 2026 (BWRX-300 projects, outside 1-20 MWe scope)",
+      "Aalo-X power operation after zero-power criticality",
+      "Antares Mark-1 DOE gates and fuel-loading schedule"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-28 or later was found in any search, so items is empty. Searches covered Radiant, Valar, NANO, Last Energy, Natura, Steady, Terra Innovatum, Blue Energy, Aalo, Antares and Oklo. Deployable Energy was not searched beyond the skip list (its last dated item there is 2026-09-30).",
+      "Radiant DOME campaign (Q3 2026 target): no completion, criticality or 150-hour run reported in any search. Kaleidos shipment to INL (12 Aug 2026) appears only in secondary coverage. radiantnuclear.com/news returned HTTP 403 to WebFetch, so Radiant's own newsroom was not read.",
+      "Terra Innovatum: '12 of 18 PSAR chapters shared with the NRC; remaining six targeted for 30 Oct 2026' appears only in search-result summaries. The Oct 2026 company release could not be located, and the 19 Aug 2026 release fetched (finviz 383626) does not contain it. Not written as an item or check.",
+      "Valar Ward 250 and Project Beehive: no October 2026 development found. The Nvidia 30 MW claim from the shipped note was not re-checked.",
+      "Natura: no October 2026 news found beyond the skip list (natura-flibe-salt-delivery-2026-09-22).",
+      "Steady Energy: no 'LOKI' product found; the company's design is the LDR-50. No October 2026 milestone found beyond the EIB financing already in skip/news.json.",
+      "NANO Nuclear KRONOS and ZEUS: no late-October 2026 news beyond the skip list (KRONOS-Hyundai MOU 2026-10-27, IMPSA review 2026-10-21).",
+      "Last Energy PWR-5 pilot at Texas A&M-RELLIS: no new criticality date after the DSA approval already in skip/news.json (2026-10-08). The mid-2026 criticality target has slipped, and no revised date was found.",
+      "Aalo-X: no announcement of power production or grid connection. Shipped record's 2027 full-scale plant target was not re-verified.",
+      "Oklo Aurora-INL: 2028 startup reaffirmed on the Q2 2026 call (Aug 2026). The Q3 2026 results were not found, so no check was written.",
+      "Blue Energy: projects found are 300 MW BWRX-300 units, outside the 1-20 MWe scope. No microreactor announcement found.",
+      "Penn State eVinci letter of intent: shipped date 2025-02-28 confirmed by two fetched pages (Westinghouse, 4 Mar 2025; WNN, 5 Mar 2025). No check written because the evidence is from 2025, not within ~60 days, and the shipped text is correct.",
+      "Antares Mark-1: NSDA approval (23 Oct 2026, already shipped) is the latest gate. Preliminary and final DSA dates, fuel loading and criticality were not found."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

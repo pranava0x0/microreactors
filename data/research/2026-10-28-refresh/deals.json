@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (Army Janus, Air Force ANPI, DOE Reactor Pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada); new buyer deals dated after 2026-10-27 that skip/news.json lacks",
+    "angles_run": [
+      "Janus vendor and site assignments (Army 2026-08-26 award)",
+      "Eielson AFB NOITA vs final contract",
+      "DOE Reactor Pilot Program criticality count",
+      "Equinix-Radiant preorder status",
+      "Oklo-Switch master agreement vs binding PPA",
+      "NANO Nuclear x Supermicro MOU status",
+      "Last Energy DP World London Gateway",
+      "Saskatchewan Research Council eVinci status",
+      "ANPI Buckley / Malmstrom / JBSA vendor pairings",
+      "New buyer deals dated 2026-10-28 (general, company-specific: Radiant, Aalo, Valar, Oklo, Last Energy, X-energy)"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract, site selection) dated 2026-10-28 found across 17 searches and 6 fetches; items left empty.",
+      "Equinix-Radiant: only the 2025-08-14 preorder release found; no 2026 order, deposit or delivery update located. Shipped 'Purchase agreement' wording is not the release's wording ('preorder agreement').",
+      "Oklo-Switch: no binding Switch PPA found in 2026 coverage; Oklo Q1 2026 10-Q still describes the 12 GW Master Power Agreement without a binding conversion. Not fetched from a primary Switch or Oklo page, so no check written.",
+      "DOE Reactor Pilot Program: no October 2026 criticality found; DOE's fifth-criticality release dated 2026-08-06 is the latest located. The program may now be reported under the Nuclear Energy Launch Pad name, which was not searched.",
+      "Eielson AFB: no final 30-year contract award to Oklo located; NOITA is the latest status found. Shipped 'binding: true' on this row was not changed (see surprises).",
+      "ANPI Malmstrom / Buckley: no siting, NRC or construction milestones after the April 2026 vendor pairings found.",
+      "Radiant Kaleidos: no 2026 customer order or deployment agreement found beyond the Janus and Navy items already on the site.",
+      "Last Energy: no 2026 update on the London Gateway MoU or licensing located; shipped row not checked.",
+      "Aalo, Valar: no 2026 customer power purchase agreement found. Deep Fission Parsons Master Energy Purchase Agreement (2026-10-20) is already in the skip list as a news item.",
+      "NANO Nuclear IR site returned HTTP 403; the same release was read from the company's main site instead."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Antares (Fort Bragg), Radiant (Benning), BWXT (Campbell), General Atomics (Hood), Westinghouse (Drum); four of the nine sites are still unassigned",
+      "verdict": "confirmed",
+      "evidence": "Army release dated 2026-08-26 fetched: Fort Drum is among five installations selected, with the contract awarded to Westinghouse Government Services. Fort Drum pairing confirmed from the fetched primary page. The Antares, Radiant, BWXT and General Atomics pairings come from press search snippets (Breaking Defense, DefenseScoop, ANS, Power) and were not fetched. Five of nine candidate sites assigned implies four unassigned.",
+      "sources": [
+        {
+          "label": "U.S. Army — Fort Drum selected for Janus Program microreactor (2026-08-26)",
+          "url": "https://www.army.mil/article/294897/army_selects_fort_drum_for_janus_program_microreactor",
+          "quote": "with the contract awarded to Westinghouse Government Services.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Westinghouse cancelled the contract in fall 2025",
+      "verdict": "confirmed",
+      "evidence": "Saskatchewan Research Council FAQ page (rendered in a browser; curl gets 403): 'In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus of their eVinci microreactor program toward space, defence and government applications, moving away from commercial markets.' Both the cancellation and the shipped reason are confirmed.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status, undated page)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "confirmed",
+      "evidence": "NANO Nuclear release dated May 06, 2026 fetched from the company's site: it 'today announced it has entered into a Memorandum of Understanding (MOU) with Super Micro Computer, Inc.' and states 'While the MOU is non-binding,'. Confirms the MOU and its non-binding status, so binding:false is correct. This primary release can replace the smrintel tracker as the source.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — Strategic MOU with Supermicro (2026-05-06)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-signs-strategic-mou-with-supermicro-to-power-the-next-generation-of-ai-data-centers-with-advanced-nuclear-energy/",
+          "quote": "While the MOU is non-binding,",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

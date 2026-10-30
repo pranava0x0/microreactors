@@ -301,3 +301,59 @@ Reddit (`news_watch.py --reddit`, ~45 min) confirmed 3 of them and added none of
 MARVEL DSA), 1 application (GridMarket/Deployable), 2 corrections (NRC advanced-reactor rate,
 Radiant Kaleidos status). Three of the six news items were sourced by the main session from X
 leads the agents could not find; Haiku agents on leads under two days old found nothing.
+
+## 2026-10-28 daily refresh
+
+Scheduled routine (Opus main session). 7 Haiku agents, two at a time (the project's agent-cap hook
+allows 2, not the 4 REFRESH.md assumes). No X or Reddit pass. Shipped: 1 news item (Quantum Leap
+Energy/Necsa HALEU heads of agreement), 3 applications (Nuclea/New Mining, Oklo/Wyoming Hyperscale,
+Idaho Strategic/Radiant), 2 corrections (FERC EL25-49 rehearing order, DOE-NASA lunar MOU wording).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 158K | 1 item; both watcher leads already shipped | partly |
+| deals | 157K | 3 confirmed checks | no |
+| vendors | 140K | nothing | no |
+| politics | 163K | 1 correction (EL25-49), 1 wrong "unsupported" check overturned | yes |
+| applications | 165K | 3 rows, 1 correction | yes |
+| costs | 152K | 1 check, dropped: the shipped row already had the new figure | no |
+| ideas | 141K | nothing | no |
+
+Main session overturned three agent conclusions: a Texas TBPP "unsupported" verdict (the figures were
+on the row's second source, which the agent never opened), a Canada/SRC "reason not on page" note (the
+FAQ answer is in a collapsed accordion the agent's fetch missed), and an Alaska PCE "outdated" check
+that quoted only the 2023 half of a sentence already giving the 2026 rate.
+
+## 2026-10-29 daily refresh
+
+Scheduled routine (Opus main session), odd day: news, deals, vendors, politics only, two at a time.
+Shipped 1 news item (Tupras/USTDA SMR study) and 1 correction (eVinci Penn State NRC letter dates).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 136K | 1 item; 3 of 5 watcher leads already shipped, 1 out of scope | partly |
+| deals | 162K | 3 confirmed, 1 unsupported (kept); re-checked canada-src a second day running | no |
+| vendors | 151K | 1 date correction, rewritten by the main session to keep both dates | yes |
+| politics | 164K | nothing | no |
+
+Main session rewrote a "wrong" date correction: the ADAMS letter is dated 2025-02-17, the
+submission was 2025-02-28. The agent had replaced one true date with another. It also kept
+Eielson `binding: true`, because the site's binding definition includes a selection with a named site.
+
+## 2026-10-30 daily refresh
+
+Seven Haiku agents (even day), 2 at a time. 0 news, 4 corrections, 1 application, 1 quote lock.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 122K | nothing (all 6 RSS candidates shipped or above 20 MW) | no |
+| deals | 153K | 1 "unsupported" check, overruled: Radiant's own release says "with deposits"; canada-src re-checked a third day | no |
+| vendors | 157K | eVinci duplicate milestone removed; Valar Utah lease added (correction rewritten to keep NPR attribution) | yes |
+| politics | 164K | flagged "Unity (July 1)"; main session fixed it to June 30 and added Aalo-X as a fourth | yes |
+| applications | 172K | Kronos filing date 31 March; NGL-Natura produced-water application shipped | yes |
+| costs | 144K | 1 "outdated" check, overruled: the shipped sentence already gave the FY2027 proposal | no |
+| ideas | 139K | 1 confirmation (Price-Anderson $158,026,000) | marginal |
+
+Main session overruled two of seven checks, both by reading the row's other source or the whole
+sentence. Two 403 hosts (radiantnuclear.com, eastidahonews.com) were read in the browser pane and
+cached as innerText excerpts with `--from-file`.

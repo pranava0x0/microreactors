@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "captured": "2026-10-30",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on time-sensitive arguments; Type N items for studies dated after 2026-10-27 that change the 1-20 MW case",
+    "angles_run": [
+      "post-2026-10-27 microreactor cost or economics studies (general, INL, NEI, EPRI, Lazard, IEA, DOE Liftoff)",
+      "GAO and CBO reports on SMRs and microreactors",
+      "NRC microreactor licensing reports and rulemaking",
+      "ERCOT Small Generation vs Large Generation interconnection timelines (thresholds argument)",
+      "MISO surplus interconnection in-service times (inherit argument)",
+      "Price-Anderson 10 CFR 140.11 and 140.12 amounts (liability argument)"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-10-28 to 2026-10-30 found from INL, DOE, NEI, EPRI, NRC, GAO, CBO, IEA or Lazard after about 15 searches; no Type N items written.",
+      "INL 2026 MRP economics slides (Hanna, March 2026) found only as search snippets; not fetched, so not cited.",
+      "ERCOT Oct 2024 presentation with the 8-12 and 18-30 month figures returned as raw PDF bytes by WebFetch; the thresholds argument is not checked.",
+      "MISO 'about one year' surplus in-service figure found only in a secondary mgrid.org article (2026-08-22), not a MISO filing; not checked.",
+      "No 2026 Federal Register inflation adjustment for 10 CFR 140.11 or 140.12 found; the 2023 rule is the latest adjustment located.",
+      "GAO 2015 technology assessment (GAO-15-652) is older than the window and was not used."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "accepts a contingent retrospective assessment of $158,026,000.",
+      "verdict": "confirmed",
+      "evidence": "NRC final rule published 2023-09-05 (Federal Register, FR Doc 2023-19009) raises the maximum total deferred premium in 10 CFR 140.11(a)(4) to $158,026,000 per reactor, with an annual standard deferred premium of $24,714,000. No later adjustment located; the next adjustment is due in about 2028 under the five-year cycle (inference from the statute, not stated in the notice).",
+      "sources": [
+        {
+          "label": "Federal Register — NRC, Inflation Adjustments to the Price-Anderson Act Financial Protection Regulations (2023-09-05)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-05/html/2023-19009.htm",
+          "quote": "new maximum total deferred premium is $158,026,000",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

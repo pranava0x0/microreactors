@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-10-28",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW market: events after 2026-10-27, then gap check over the prior 60 days. Skip list: skip/news.json (76 shipped items) and skip/candidates.json (2 watcher headlines).",
+    "angles_run": [
+      "watcher candidates: Hyundai Engineering (WNN 2026-10-28), Antares-BWXT TRISO (POWER 2026-10-27, already shipped)",
+      "WNN front page latest headlines (2026-10-15 to 2026-10-28)",
+      "ANS Nuclear Newswire front page and tag pages (Oklo, Kairos)",
+      "NEI Magazine front page",
+      "HALEU and fuel supply: Centrus, Necsa/QLE, Standard Nuclear",
+      "criticality and testing: Radiant Kaleidos DOME, Deployable Unity, Aalo, Valar, Westinghouse eVinci",
+      "first-of-a-kind and sites: Last Energy PWR-5, Natura MSR-1, Antares Fort Bragg, GA-TES Fort Hood",
+      "financing: Valar Series B, Antares Series C, Solaris stake in Deployable Energy"
+    ],
+    "absences": [
+      "Hyundai Engineering and ARC Clean Technology MOU (WNN 2026-10-28, fetched): only one source document found, so it fails the two-document rule; the ARC side its size and output were not established from a fetched page, so it cannot be placed in the 1-20 MW market. Not written up. NANO Nuclear leg of the same MOU is already shipped as nano-hyundai-engineering-kronos-mou-2026-10-27.",
+      "Radiant Kaleidos DOME criticality: no confirmation found after the 2026-08-12 departure to INL. INL schedule showed a June 2026 target that passed; Radiant's own newsroom returned HTTP 403 and an aggregator said Q3 2026. Unverified, not written up.",
+      "Deployable Energy Solaris stake (announced 2026-08-10 per aggregator): dollar amount conflicts across sources ($5M per a Motley Fool listing, unspecified per Stock Titan) and no primary release was fetched. Not written up.",
+      "Deployable Energy 2026-10-07 announcement (fuel at factory, transport to INL, self-funded campaign): found only in a search summary; self-funding not confirmed in any fetched page. Not written up.",
+      "Radiant, Oklo, NRC, Kairos, Standard Nuclear and Centrus newsrooms: 403 or no October 2026 item found in search; no company-primary October 2026 news confirmed.",
+      "Valar Atomics and Aalo Atomics: no October 2026 announcement found. Valar Ward 250 criticality date differs across sources (June 18 in search summaries), so not re-used.",
+      "Natura MSR-1 (Abilene), Last Energy PWR-5 (RELLIS), Antares Fort Bragg unit count: no October 2026 update found; unit count stays unconfirmed in the sources.",
+      "Out-of-lane or out-of-size items seen and not written up: SpaceNukes DARPA ground-test award (ANS 2026-10-26; kWt-class space reactor, no award amount in source); AEP-Amazon-X-energy 12-SMR plant (WNN 2026-10-19; SMR scale); Indiana 6 GW CANDU; Wisconsin and Vermont SMR siting at former plant sites (ANS 2026-10-27); TRISO silicon study (ANS 2026-10-28; research, not news)."
+    ]
+  },
+  "items": [
+    {
+      "id": "quantum-leap-necsa-haleu-jv-hoa-2026-10-15",
+      "date": "2026-10-15",
+      "headline": "Quantum Leap Energy and Necsa sign heads of agreement for South African HALEU plant",
+      "companies": ["Quantum Leap Energy", "Necsa", "TerraPower"],
+      "category": "fuel",
+      "what_happened": "Quantum Leap Energy (QLE) and South Africa's state nuclear company Necsa signed a heads of agreement to form a joint venture that would develop, build and operate a commercial-scale HALEU facility at Necsa's Pelindaba site. QLE would hold about 80% and Necsa about 20%. QLE says it has already secured offtake for the output through supply agreements with TerraPower.",
+      "why_it_matters": "It is a new non-US source of HALEU, one of the fuel bottlenecks for advanced reactors. For a 1-20 MW buyer it is still years away, and the stated output is already committed to TerraPower.",
+      "binding": false,
+      "binding_note": "A heads of agreement. The release calls the agreement a binding commercial framework for the joint venture, but no final investment decision, construction start or licence is announced in the sources read.",
+      "sources": [
+        {
+          "label": "Quantum Leap Energy and Necsa press release, reprinted by Finviz (2026-10-15)",
+          "url": "https://finviz.com/news/402933/quantum-leap-energy-and-necsa-sign-binding-heads-of-agreement-to-establish-joint-venture-for-haleu-production-in-south-africa",
+          "quote": "The Agreement establishes a binding commercial framework for a joint venture between QLE and Necsa",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Joint venture to produce HALEU in South Africa (2026-10-19)",
+          "url": "https://world-nuclear-news.org/articles/joint-ventureto-produce-haleu-in-south-africa",
+          "quote": "A binding Heads of Agreement has been signed by the companies",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
