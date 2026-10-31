@@ -74,3 +74,33 @@ The pricing-focused pass found no new product defect and added no `issues.md` en
 - Alaska's two RCA notices and Greenland's government-commissioned cost study now link directly below their Home-card claims. The card remains a separate click target for the Regions view.
 - Checked the card at 375 and 1280 px: source labels stay visible, links are distinct, and neither width has page overflow. Browser test verifies three numbered citation links and the route click.
 - Full suite: 123 tests passed.
+
+## Interaction cost and page weight — 2026-10-31
+
+`tools/uat_paths.py` was under-charging. Every journey after the first reused the loaded
+document: `goto(base#home)` on the same URL is a same-document hash navigation, and the
+browser's anchor jump to `#home` counted as free scroll. The phone lead story was charged
+1.27 screens when it sits 1.94 down; tablet charged 0.21 for 0.98. Each journey now starts
+from `about:blank`, and the run fails if it does not begin at the top of Home.
+`tests/test_uat_paths.py` fails on the old tool and passes on the fix.
+
+| Viewport | Mean cost (old tool) | Mean cost (fixed) | Swipes | Costliest answer |
+| --- | ---: | ---: | ---: | --- |
+| 375 x 812 | 1.66 | 1.69 | 0 | Sites, 2 taps + 0.9 screens (2.9) |
+| 768 x 1024 | 1.31 | 1.36 | 0 | Prospects, 2 taps (2.11) |
+| 1280 x 800 | 1.41 | 1.41 | 0 | Sites, 2 taps (2.24) |
+
+The phone lead story ("What happened this week?") is the deepest zero-tap answer at 1.95
+screens: it sits below the hero, the glance cards and the headline column. The hero's
+latest-headline line answers the same question at zero cost, so this is left as is.
+
+Page weight, cold local load (uncompressed; the local server does not gzip):
+
+| Viewport | Requests | Transfer | FCP | Home height |
+| --- | ---: | ---: | ---: | ---: |
+| 375 x 812 | 5 | 551,694 B | 57 ms | 4.29 screens |
+| 768 x 1024 | 5 | 551,694 B | 40 ms | 2.79 screens |
+| 1280 x 800 | 5 | 551,694 B | 37 ms | 2.85 screens |
+
+Up from 489,367 B / 4 requests on 2026-09-28 (+12.7%, plus `tokens.css`). `data.js` is
+338 KB raw and 106 KB gzipped, 61% of the total. This refresh added 422 B.

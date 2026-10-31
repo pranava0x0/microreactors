@@ -126,8 +126,17 @@ def serve_site():
 
 
 def run_journey(page, base: str, steps: list[tuple[str, str]]) -> dict:
-    page.goto(base + "#home", wait_until="networkidle")
+    # Leave the document first: goto() to the URL already loaded is a
+    # same-document hash navigation, which keeps the last journey's state and
+    # lets the browser's anchor jump to #home hand out free scroll (it charged
+    # the phone lead story 1.27 screens instead of 1.94, 2026-10-31).
+    page.goto("about:blank")
+    page.goto(base + "#home", wait_until="load")
+    page.wait_for_load_state("networkidle")
     page.evaluate("scrollTo(0,0)")
+    page.wait_for_timeout(100)
+    if page.evaluate("scrollY") != 0:
+        raise RuntimeError("journey did not start at the top of Home")
     taps = swipes = 0
     screens = 0.0
     for kind, sel in steps:

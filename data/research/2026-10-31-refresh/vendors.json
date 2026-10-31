@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "captured": "2026-10-31",
+    "agent": "vendors",
+    "scope": "Vendors tab: dated vendor milestones after 2026-10-27 not in skip/news.json, plus Type G checks on shipped vendor records. Radiant 2026-10-29 DOE full-power approval excluded (main session owns it). radiantnuclear.com not fetched (403).",
+    "angles_run": [
+      "Antares Mark-1 / BWXT TRISO (Oct 2026)",
+      "Westinghouse eVinci (Oct 2026)",
+      "Valar Ward 250 (Oct 2026)",
+      "Aalo Atomics / Aalo-X (Oct 2026)",
+      "Radiant Kaleidos DOME criticality status",
+      "NANO Nuclear KRONOS / ZEUS (late Oct 2026)",
+      "Last Energy PWR-5 (Oct 2026)",
+      "Deployable Energy Unity / DOME 2027",
+      "BWXT BANR Janus / Belledune",
+      "Terra Innovatum / Blue Energy / Steady Energy",
+      "Natura MSR-1 salt (Oct 2026)",
+      "General Atomics GA-TES Janus Fort Hood",
+      "Aalo Series B funding date",
+      "Blue Energy NRC and ERCOT filings",
+      "Steady Energy LOKI",
+      "Army Janus announcements Oct 29",
+      "Air Force ANPI / Eielson / Malmstrom / Buckley",
+      "Penn State FRONTIER eVinci NRC application",
+      "Generic microreactor milestone Oct 30 2026",
+      "Radiant 2026-10-29 release (WebFetch, schedule wording only)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-28 to 2026-10-31 found for any 1-20 MWe vendor in the table or the non-table list, other than the Radiant 2026-10-29 DOE full-power DSA approval, which the main session owns.",
+      "Radiant DOME campaign: shipped 'Campaign was targeted to finish Q3 2026' is stale. The 2026-10-29 release (fetched via a Business Wire syndication, not radiantnuclear.com) says the unit will run 60 effective full-power days over several months, then 150 h. Not written as a Type G check because the WebFetch output was a model summary, so no quote is verbatim-verified. Main session should verify against the raw release and correct the Radiant milestone if confirmed.",
+      "Penn State FRONTIER eVinci: no 2026 NRC construction-permit application found. Index only reaches the 2025 notice of intent.",
+      "Valar Ward 250: no October 2026 vendor milestone found. Utah Trust Lands lease (2026-09-17) is in the shipped notes, not checked here.",
+      "Aalo-X: no October 2026 milestone found. Aalo's $100M Series B is dated 2025-08-19, not 2026.",
+      "Deployable Energy Unity: criticality 2026-06-30 and DOME 2027 selection (2026-09-30) both predate the cutoff or are already shipped. No new dated event.",
+      "Last Energy PWR-5: DSA approval 2026-10-07 is already shipped. No later startup or readiness-review date found.",
+      "NANO KRONOS: IMPSA MSA (2026-10-21) and Hyundai MOU (2026-10-27) are shipped. Only undated article coverage after that.",
+      "BWXT BANR: Janus Fort Campbell (2026-08-26) and Belledune (2026-10-05) are shipped. No later dated milestone found.",
+      "Natura MSR-1: FLiBE salt delivery (2026-09-18) is shipped. No October milestone found.",
+      "General Atomics GA-TES: no milestone after the 2026-08-26 Janus selection. An October 6 Fort Hood site visit predates the cutoff.",
+      "Terra Innovatum SOLO (about 2 MWe class): 2026-10-22 NRC chapter release predates the cutoff and is outside this lane. The promised remaining chapters by 2026-10-30 are unconfirmed.",
+      "Blue Energy: out of scope (about 300 MWe SMRs, 1.5 GW campus). Steady Energy LDR-50: out of scope (50 MW heat-only).",
+      "Oklo, Kairos, Westinghouse AP1000 and ARC-100 are outside the 1-20 MWe scope or have no dated post-cutoff vendor milestone."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "Campaign was targeted to finish Q3 2026; no completion reported as of 2026-10-21.",
+      "verdict": "outdated",
+      "evidence": "Radiant's 2026-10-29 release: DOE approved the Kaleidos DSA; after the Readiness Review Radiant will fuel the unit and run a 60 EFPD campaign at DOME over several months.",
+      "correction": "DOE approved full-power safety analysis 2026-10-29; Readiness Review next.",
+      "sources": [
+        {
+          "label": "Radiant, DOE Safety Analysis Approval for Full Power Operations (Oct. 29, 2026)",
+          "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
+          "quote": "allows the company to advance to DOE's Readiness Review, the next step before nuclear operations can begin",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-dome-1",
+      "target": "dome",
+      "file": "opportunities",
+      "claim": "Radiant campaign targeted to complete Q3 2026",
+      "verdict": "outdated",
+      "evidence": "Radiant's 2026-10-29 release: DOE approved the Kaleidos DSA; after the Readiness Review Radiant will fuel the unit and run a 60 EFPD campaign at DOME over several months.",
+      "correction": "Radiant DSA approved 2026-10-29; not yet fueled",
+      "sources": [
+        {
+          "label": "Radiant, DOE Safety Analysis Approval for Full Power Operations (Oct. 29, 2026)",
+          "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
+          "quote": "allows the company to advance to DOE's Readiness Review, the next step before nuclear operations can begin",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

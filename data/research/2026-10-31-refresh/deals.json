@@ -1,0 +1,136 @@
+{
+  "_meta": {
+    "captured": "2026-10-31",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities.json rows (Army Janus, Air Force ANPI, DOE Reactor Pilot Program, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada SRC); Type N search for buyer deals dated after 2026-10-27 absent from skip/news.json.",
+    "angles_run": [
+      "Army Janus award status (Aug 2026 five-vendor OTA)",
+      "Air Force ANPI and Eielson/Oklo NOITA status",
+      "Equinix-Radiant preorder status",
+      "DOE Reactor Pilot Program criticality count",
+      "Saskatchewan Research Council eVinci status",
+      "Last Energy / DP World Thames Freeport status",
+      "NANO Nuclear / Supermicro MOU",
+      "Oklo-Switch Master Power Agreement binding status",
+      "New microreactor PPA / LOI / site selection late Oct 2026 (4 queries)",
+      "Radiant Kaleidos customer orders 2026",
+      "BWXT BANR customer agreements 2026",
+      "Westinghouse eVinci customer agreements 2026",
+      "Oklo agreements Oct 2026",
+      "Terra Innovatum / Tata / BWXT Wyoming LOI",
+      "Valar / Aalo / Last Energy customer deals late Oct 2026",
+      "Kairos-TVA Hermes 2 PPA date"
+    ],
+    "absences": [
+      "Janus Aug 26 2026 award: army.mil fetch returned the Nov 18 2025 site-list article, not the award; FNN and other award pages returned 403. Verified only through the POWER article dated 2026-08-27.",
+      "Eielson NOITA status: the DAF FAQ PDF (Mar 2026) and eielson.af.mil article returned 403 or did not contain the contract text; no 2026 final award found. Eielson check not written.",
+      "ANPI JBSA, Buckley, Malmstrom: only the JBSA (Antares) page was fetched. Buckley (Radiant) and Malmstrom (Westinghouse) were not checked.",
+      "NANO-Supermicro MOU (May 2026): NANO IR release and DataCenterDynamics both returned 403. Date and non-binding wording come from search summaries only; no check written.",
+      "Last Energy / DP World: a fetched trade article dated 2025-09-18 says Last Energy signed an MoU with DP World, which the shipped 'Announced customer-development plan' text omits. Source is older than the 60-day window and is not primary, so no correction written. Candidate for a future correction.",
+      "DOE Reactor Pilot Program: the TRTR newsletter and ANS disagree on which reactors reached criticality and when; no sixth reactor found. 'others in safety review' not verified.",
+      "Equinix-Radiant: no public update on the 20-unit preorder since the 2025-08-14 release.",
+      "Oklo-Switch: the 10-Q names the 12 GW Master Power Agreement and discloses no executed PPA, but does not use the word 'non-binding'.",
+      "No buyer deal dated 2026-10-28 to 2026-10-31 found in searches. Queries covered PPAs, LOIs, site selection, Radiant, BWXT, Westinghouse, Oklo, Valar, Aalo, Last Energy and Terra Innovatum. Terra Innovatum / Waiken ILW LOI found but undated, so not included.",
+      "Excluded from Type N as not buyer deals: Hyundai Engineering / ARC Clean Technology MOU (10-28, engineering partner, no buyer or site); Radiant DOE full-power DSA (10-29, regulatory milestone, news lane)."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn across FY2027-FY2031 under milestone-based Other Transactions agreements",
+      "verdict": "confirmed",
+      "evidence": "POWER magazine article dated 2026-08-27 names five vendors and their bases (BWXT at Fort Campbell, Radiant at Fort Benning, General Atomics at Fort Hood, Antares at Fort Bragg, Westinghouse at Fort Drum), gives up to $2.2 billion through FY2031, and describes fixed-price, milestone-based OTAs. It does not say the Army is still negotiating, and the shipped 'four of nine sites unassigned' is consistent with five named bases.",
+      "sources": [
+        {
+          "label": "POWER — The Janus Five: 20+ commercial microreactors, starting in 2028 (2026-08-27)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "fixed-price, milestone-based Other Transaction Authority agreements",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-anpi-jbsa-1",
+      "target": "anpi-jbsa",
+      "file": "opportunities",
+      "claim": "ANPI selection for one proposed prototype (DAF + Defense Innovation Unit), contractor-owned/contractor-operated; cited announcements disclose no committed JBSA unit order",
+      "verdict": "confirmed",
+      "evidence": "Antares release dated 2026-04-22 describes a selection for a proposed deployment of a prototype microreactor at Joint Base San Antonio. It states no capacity rating and mentions no unit order or contract. The contractor-owned/contractor-operated wording was not verified on the page.",
+      "sources": [
+        {
+          "label": "Antares — JBSA ANPI selection, 2026-04-22",
+          "url": "https://antaresindustries.com/updates/anpi-jbsa",
+          "quote": "has selected Antares for the proposed deployment of a prototype nuclear microreactor at Joint Base San Antonio",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "Purchase agreement / pre-order with deposits",
+      "verdict": "confirmed",
+      "evidence": "Radiant release dated 2025-08-14 says Equinix signed a preorder agreement and submitted deposits for 20 Kaleidos microreactors, which the release describes as designed to deliver 1 MW each. No later public update on the preorder was found.",
+      "sources": [
+        {
+          "label": "Radiant — Equinix preorder and deposits for 20 Kaleidos microreactors (2025-08-14)",
+          "url": "https://www.newswire.com/view/content/radiant-announces-equinix-preorder-deposits-for-20-kaleidos-22625143",
+          "quote": "has signed a preorder agreement and submitted deposits",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Five critical, others in safety review",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy article dated 2026-08-06 names Oklo's Groves Isotope Test Reactor as the fifth DOE-authorized advanced reactor to achieve criticality this summer, consistent with five critical. The 'others in safety review' part was not verified. A TRTR newsletter lists the same five but with different dates for two of them.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Groves is the fifth DOE-authorized advanced reactor to achieve criticality this summer",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Non-binding Master Power Agreement",
+      "verdict": "confirmed",
+      "evidence": "Oklo Form 10-Q for the quarter ended 2026-03-31 describes a 12 GW Master Power Agreement with Switch signed in December 2024. It does not describe the agreement as converted into a binding PPA, and it does not use the word non-binding.",
+      "sources": [
+        {
+          "label": "Oklo Inc. — Form 10-Q for the quarter ended 2026-03-31 (SEC EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026034095/oklo-20260331.htm",
+          "quote": "In December 2024, we signed a 12 gigawatt (GW) Master Power Agreement with Switch, Ltd.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "Saskatchewan Research Council FAQ page (undated, describing fall 2025) says Westinghouse cancelled the project contract with SRC, citing its decision to shift focus. SRC says it is now looking at other microreactor technologies.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "Westinghouse canceled the project contract with SRC due to their decision to shift focus",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

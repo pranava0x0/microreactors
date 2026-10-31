@@ -108,7 +108,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   the adjudicator (Sonnet) retried alternate copies.
 - **2026-10-27: measure phone navigation cost each refresh.** `tools/uat_paths.py` (venv)
   prints taps, swipes and screens for 14 key questions. Baseline after this run at 375x812:
-  mean 1.65, 0 swipes. A new tab, sub-tab or Home block that raises the mean is a regression
+  mean 1.65, 0 swipes (re-measured 1.69 on 2026-10-31 after a tool fix, below). A new tab, sub-tab or Home block that raises the mean is a regression
   to justify in the PR.
 - **2026-10-28: `refresh_integrate.py` drops `unsupported` verdicts without a report line.** Only
   `outdated`/`wrong` are applied and only `confirmed` is counted, so an `unsupported` check vanishes from
@@ -131,3 +131,16 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   surrounding text before `--apply`. To overrule an agent check, set `verdict: confirmed`, keep the
   agent's call in `agent_verdict`, and write why in `review`; the validator rejects any other verdict.
   Two of seven checks were overruled this run, both because the agent read one source or one clause.
+- **2026-10-31: `uat_paths.py` charged free scroll to every journey after the first.** Re-navigating to
+  the same `#home` URL is a same-document hash change, and the anchor jump counted as travel already
+  done (phone lead story 1.27 screens instead of 1.94). Journeys now start from `about:blank`; the
+  corrected phone baseline is **1.69**. Compare against that number, not 1.65.
+- **2026-10-31: a refresh in a git worktree needs two fixes before agents launch.** `refresh_init.py`
+  writes prompts naming the main checkout, so agents would write there: `sed` the pass dir's prompts
+  and CONTRACT.md to the worktree path. `data/cache/` is gitignored and empty in a fresh worktree, so
+  the quote gate checks nothing: symlink it to the main checkout's cache (and add `data/cache` to
+  `.git/info/exclude`, since the gitignore's `data/cache/` does not match a symlink).
+- **2026-10-31: radiantnuclear.com now times out headless Playwright too** (the 10-21 note no longer
+  holds). Read it in the browser pane, write the paragraphs you cite to an HTML file, and index that
+  with `fetch_source.py URL --from-file`. A quiet week: four Haiku lanes found one item between them
+  (Centrus); the main session's own searches found the week's only microreactor event (Radiant's DSA).
