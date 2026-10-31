@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "captured": "2026-10-31",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy pathways, Type F dockets not in skip/dockets.json (last 90 days), Type N items dated after 2026-10-27 (policy or regulatory).",
+    "angles_run": [
+      "NRC Part 57 final-rule status and EO 14300 deadline",
+      "California SB 978 backup-generator text and amendments",
+      "FERC EL25-49 co-located load: PJM compliance and Aug 2026 order",
+      "State microreactor laws: governor signings 2026, Illinois moratorium, Alaska SB 177",
+      "FY2027 NDAA microreactor provision (House, Senate, conference status)",
+      "FY2027 Energy and Water appropriations, DOE nuclear and ARDP line",
+      "NRC commission votes, October 2026",
+      "State PUC and legislative SMR or microreactor filings, Aug-Oct 2026",
+      "CNSC microreactor licence decisions 2026",
+      "Army and Pentagon microreactor policy, Oct 2026",
+      "Late-October 2026 microreactor policy and regulation news"
+    ],
+    "absences": [
+      "Part 57 final-rule date (2026-11-23, per the brief) not verified. Only fetched pages: Orrick (2026-05, proposed 2026-04-24, comments due 2026-06-15) and POWER Magazine (2026-05-20, Chairman Nieh conceded some final rules will land beyond the EO 14300 18-month target). Neither states a November 2026 date. No Federal Register final rule found.",
+      "California SB 978 generator provisions unverified. leginfo.legislature.ca.gov returned HTTP 403 to WebFetch. Sources disagree (one says the bill bans backup diesel generators, another says it mandates clean backup). Current amended text not read; shipped 'California's diesel rules' pathway not checked.",
+      "FERC EL25-49: PJM's partial compliance filing was planned for 2026-08-17 and a FERC order dated 2026-08-14 addresses an extension request. The PDF is binary and WebFetch could not read it, so the outcome is unknown. October 2026 compliance status not found.",
+      "FY2027 NDAA microreactor demonstration (INDOPACOM): House passed 2026-07-22 (outside the 90-day window and before 2026-10-27). Senate cloture on its version failed 46-50 (date not found). No conference report or enacted text found.",
+      "FY2027 Energy and Water bill: House Appropriations approved it 34-25. ARDP line for FY2027 not confirmed; sources disagree. No House floor vote or Senate action found.",
+      "No NRC commission vote or approval dated October 2026 found in search results.",
+      "No state PUC, IRP, or RFP filing naming microreactors or SMRs dated 2026-08-02 to 2026-10-31 found. West Virginia HB 4491 (introduced 2026-01-19) and Virginia SMR pilot language found, but no filing dates or status in the window.",
+      "No governor signing of a 2026 microreactor bill confirmed. New Mexico (signing status unknown) and an unverified Alaska 2026 bill were the only leads. The Illinois moratorium-lift article is dated 2023-11-13 and the Alaska SB 177 signing is dated 2022-05-24, both outside the window.",
+      "No CNSC microreactor licence decision dated 2026 found. Global First Power MMR Chalk River review was paused per CNSC pages dated 2024-08 and 2025-01.",
+      "Army and Pentagon: Reuters 2026-08-27 reports a $2.2B microreactor plan (Janus). Dated before the 2026-10-27 window. No Army or DoD policy memo dated October 2026 found.",
+      "Late-October 2026 (2026-10-28 to 2026-10-31) searches returned no dated policy or regulatory item. Search recency was poor; official NRC, DOE, Army, FERC, and state dockets were not reachable through search or WebFetch."
+    ]
+  },
+  "checks": [],
+  "dockets": [],
+  "items": []
+}

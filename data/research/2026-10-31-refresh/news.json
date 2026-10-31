@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "captured": "2026-10-31",
+    "agent": "news",
+    "scope": "News tab: industry events after 2026-10-27 for the 1-20 MW microreactor market, then gaps in the prior 60 days. Starts from skip/candidates.json; skip/news.json read for dedupe.",
+    "angles_run": [
+      "candidates.json triage: Radiant Kaleidos DSA full-power (10-29), Hyundai/ARC MOU (10-28), Doosan NuScale vessel (10-30), Hitachi BWRX-300 revenue (10-30), Westinghouse Slovakia AP1000 study (10-29), Antares/BWXT TRISO (10-29, shipped), POWER Antares/BWXT (10-27, shipped)",
+      "Radiant primary page and mirrors (radiantnuclear.com, www.radiantnuclear.com) for the 10-29 full-power DSA approval",
+      "WNN homepage headline scan for 28-31 Oct 2026",
+      "Centrus first-centrifuge shipment (fuel)",
+      "Antares/Urenco HALEU supply (checked date; outside window)",
+      "Generic microreactor news late Oct 2026",
+      "Oklo Oct 2026 announcements",
+      "DOE Reactor Pilot Program criticality status (Valar, Aalo, Deep Fission, Terrestrial)",
+      "INL DOME / LOTUS test bed status",
+      "Westinghouse eVinci Oct 2026",
+      "X-energy / Holtec / Blue Energy / Terrestrial Oct 2026 deals",
+      "ANS Nuclear Newswire HALEU/TRISO late Oct 2026",
+      "Army Janus / Air Force Eielson award timing"
+    ],
+    "absences": [
+      "Radiant 2026-10-29 DSA approval: agent could not fetch (403); written by the main session from the page rendered in a browser. No secondary report found yet.",
+      "Hyundai Engineering / ARC Clean Technology MOU (2026-10-28): not written. ARC-100 is a 100 MWe sodium-cooled fast reactor, outside the 1-20 MW market. The NANO half is already shipped (nano-hyundai-engineering-kronos-mou-2026-10-27).",
+      "Doosan NuScale upper reactor vessel (2026-10-30), Hitachi BWRX-300 revenue (2026-10-30), Westinghouse AP1000 Slovakia study (2026-10-29): not written. These are SMR or large-LWR items with no microreactor buyer read.",
+      "Antares / Urenco HALEU supply deal: WNN article dated 2026-05-22, outside the 60-day gap window, and binding status is not stated in the article.",
+      "Oklo Eielson / Air Force microreactor contract: Notice of Intent dated May 2026 per search summary; no dated Oct 2026 action found. Not written.",
+      "DOE Reactor Pilot Program status for Valar, Aalo, Deep Fission, Terrestrial Energy: searches returned only mid-2026 items. No criticality or new milestone dated 2026-10-28 to 2026-10-31 found in fetched or searched sources.",
+      "INL DOME and LOTUS: DOME opened for industry tests per April 2026 secondary coverage (primary INL/DOE page not opened). LOTUS groundbreaking now listed for March 2027 in an NRIC presentation. No Oct 2026 news found.",
+      "Westinghouse eVinci: no dated Oct 2026 news found. Latest verified items are the Aug 24 zero-power criticality (already shipped) and a Sept 3 DOE summary, not written as new.",
+      "Oklo, X-energy, Holtec, Blue Energy, Terrestrial Energy, Kairos, Aalo, Deep Fission, Last Energy, NANO Nuclear, General Atomics, Natura: no new 2026-10-28 to 2026-10-31 items found through search. Search index shows little coverage after 2026-10-27.",
+      "Blue Energy and USNC successor: not found in searches."
+    ]
+  },
+  "items": [
+    {
+      "id": "radiant-kaleidos-dsa-full-power-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "DOE approves Radiant's safety analysis for full-power Kaleidos testing",
+      "companies": [
+        "Radiant"
+      ],
+      "category": "regulatory",
+      "what_happened": "DOE approved the Documented Safety Analysis for Radiant's Kaleidos microreactor, which covers operation at power as well as first criticality. Radiant moves next to DOE's Readiness Review, then fuels the unit at INL's DOME facility. The test plan runs 60 effective full power days, including at least 150 hours at full power without operator intervention.",
+      "why_it_matters": "This is the last safety document before startup, and it covers a full-power run rather than criticality alone. Radiant ties the test to first commercial units for Buckley Space Force Base and Fort Benning in 2028.",
+      "binding": true,
+      "binding_note": "A regulatory approval granted, not a sale. Startup still waits on the Readiness Review.",
+      "sources": [
+        {
+          "label": "Radiant, Radiant Achieves Industry Milestone as the Only Microreactor Design to Secure DOE Safety Analysis Approval for Full Power Operations (Oct. 29, 2026)",
+          "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
+          "quote": "has granted approval of its Documented Safety Analysis (DSA)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "centrus-first-centrifuge-piketon-expansion-2026-10-30",
+      "date": "2026-10-30",
+      "headline": "Centrus ships first new centrifuge for Piketon plant expansion",
+      "companies": [
+        "Centrus"
+      ],
+      "category": "fuel",
+      "what_happened": "Centrus has shipped the first new centrifuge for its multibillion-dollar enrichment expansion, from its manufacturing plant in Oak Ridge, Tennessee. The article gives no machine count. The first new enrichment capacity from the expansion is expected in 2029.",
+      "why_it_matters": "HALEU for 1-20 MW reactors depends on enrichment capacity. This is an equipment shipment, not new capacity, so near-term fuel supply for buyers is unchanged.",
+      "binding": true,
+      "binding_note": "An achieved milestone (equipment shipped), not a supply contract.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Centrus ships first centrifuge for Piketon plant expansion (2026)",
+          "url": "https://world-nuclear-news.org/articles/centrus-ships-first-centrifuge-for-piketon-plant-expansion",
+          "quote": "has despatched the first new centrifuge as part of the company's multibillion-dollar expansion",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

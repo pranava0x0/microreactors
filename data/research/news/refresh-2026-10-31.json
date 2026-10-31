@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "captured": "2026-10-31",
+    "agent": "refresh-2026-10-31",
+    "scope": "daily refresh: haiku agents, quotes repaired and verified offline"
+  },
+  "items": [
+    {
+      "id": "centrus-first-centrifuge-piketon-expansion-2026-10-30",
+      "date": "2026-10-30",
+      "headline": "Centrus ships first new centrifuge for Piketon plant expansion",
+      "companies": [
+        "Centrus"
+      ],
+      "category": "fuel",
+      "what_happened": "Centrus has shipped the first new centrifuge for its multibillion-dollar enrichment expansion, from its manufacturing plant in Oak Ridge, Tennessee. The article gives no machine count. The first new enrichment capacity from the expansion is expected in 2029.",
+      "why_it_matters": "HALEU for 1-20 MW reactors depends on enrichment capacity. This is an equipment shipment, not new capacity, so near-term fuel supply for buyers is unchanged.",
+      "binding": true,
+      "binding_note": "An achieved milestone (equipment shipped), not a supply contract.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Centrus ships first centrifuge for Piketon plant expansion (2026)",
+          "url": "https://world-nuclear-news.org/articles/centrus-ships-first-centrifuge-for-piketon-plant-expansion",
+          "quote": "has despatched the first new centrifuge as part of the company's multibillion-dollar expansion",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "radiant-kaleidos-dsa-full-power-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "DOE approves Radiant's safety analysis for full-power Kaleidos testing",
+      "companies": [
+        "Radiant"
+      ],
+      "category": "regulatory",
+      "what_happened": "DOE approved the Documented Safety Analysis for Radiant's Kaleidos microreactor, which covers operation at power as well as first criticality. Radiant moves next to DOE's Readiness Review, then fuels the unit at INL's DOME facility. The test plan runs 60 effective full power days, including at least 150 hours at full power without operator intervention.",
+      "why_it_matters": "This is the last safety document before startup, and it covers a full-power run rather than criticality alone. Radiant ties the test to first commercial units for Buckley Space Force Base and Fort Benning in 2028.",
+      "binding": true,
+      "binding_note": "A regulatory approval granted, not a sale. Startup still waits on the Readiness Review.",
+      "sources": [
+        {
+          "label": "Radiant, Radiant Achieves Industry Milestone as the Only Microreactor Design to Secure DOE Safety Analysis Approval for Full Power Operations (Oct. 29, 2026)",
+          "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
+          "quote": "has granted approval of its Documented Safety Analysis (DSA)",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
