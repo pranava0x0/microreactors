@@ -144,3 +144,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   holds). Read it in the browser pane, write the paragraphs you cite to an HTML file, and index that
   with `fetch_source.py URL --from-file`. A quiet week: four Haiku lanes found one item between them
   (Centrus); the main session's own searches found the week's only microreactor event (Radiant's DSA).
+- **2026-11-01: `verify_pass_quotes.py` labels a check's punctuation slip FABRICATED.** A check record
+  has no `name`/`speaker`, so any span not found verbatim falls to FABRICATED ("subject: (none)"),
+  never SLOPPY. The Valar KUNC quote was real; Haiku had swapped the page's trailing comma for a
+  period. When a check is FABRICATED with no subject, grep the page for the span before dropping it.
+- **2026-11-01: a weekend with an empty watcher is a confirmations-only day.** The watcher found 2
+  SMR leads, web search nothing after 10-30, and four agents spent ~620K tokens on 5 confirmations.

@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "captured": "2026-11-01",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (skip/vendors.json) and Type N items for vendor milestones dated after 2026-10-30 that skip/news.json lacks. Non-table 1-20 MWe vendors checked for dated events.",
+    "angles_run": [
+      "generic post-10-30 vendor milestone sweep",
+      "Antares R1 / Mark-1 / Janus news",
+      "Radiant Kaleidos DOME status and fuel",
+      "Westinghouse eVinci post-10-30 news",
+      "NANO Nuclear KRONOS MMR post-10-30 news",
+      "Last Energy PWR-5 post-10-30 news",
+      "Deployable Energy Unity / DOME",
+      "Natura MSR-1 (2024-era results only)",
+      "Steady Energy LDR-50 (IPO and EIB loan, dated before 10-30)",
+      "Terra Innovatum / Blue Energy",
+      "Valar Project Beehive BLM status (fetched KUNC 2026-09-30)",
+      "Aalo-X post-criticality status",
+      "Janus program award confirmations (fetched POWER 2026-08-27)",
+      "Primary newsrooms: DOE reactor pilot page (404), NANO IR (403), Antares (stale), Westinghouse tag page (stale to 2025), Radiant news (403), Last Energy press list (404)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-10-30 was found for any shipped or non-table 1-20 MWe vendor. Search indexes returned nothing newer than about 2026-10-08 for these vendors, and the primary newsrooms that could be fetched were stale or blocked.",
+      "Radiant newsroom and blog pages returned HTTP 403 to WebFetch (radiantnuclear.com/news, /blog/triso-fuel-inl, /blog/kaleidos-shipped). Radiant's DOME milestone (shipped target '2026 Q3', DOME campaign complete) could not be checked against a Radiant page. World Nuclear News dated 2026-08-18 still gives the Q3 target and says Kaleidos left El Segundo on 12 August. No completion report was found. Not written as a check because no fetched page shows a new status.",
+      "Radiant's Kaleidos criticality at DOME: no report found. Search summaries from August say the unit was still in transit to INL with fuel loading pending.",
+      "Antares Mark-0 date 2026-06-04 and Series C and Space Force items were not re-fetched. They are in news and were not rechecked.",
+      "Last Energy PWR-5 criticality: no 2026 news found. The DOE PDSA approval is dated 2026-05-28 on Last Energy's own release (fetched), which matches the news skip entry from 2026-05-29. Criticality was expected 'this summer' per a secondary report; no confirmation found.",
+      "Aalo-X: a search summary says the critical test reactor reached criticality on 4 July 2026 under a DOE execution order signed 25 June. The Business Wire release (streetinsider) returned 403, so the summary is snippet-only and no check was written.",
+      "Valar Beehive: the shipped note says Utah Trust Lands approved a lease of more than 640 acres on 17 Sept 2026. The lease approval was not confirmed by a fetched page, so the check covers only the BLM status sentence.",
+      "Oklo Aurora 2028 startup target and BWXT BANR Fort Campbell timing: no new dated source found in this pass.",
+      "Deployable Energy 2027 DOME selection: already in news skip (2026-09-30). A Deployable item after 10-30 was not found.",
+      "NANO Nuclear KRONOS MMR: latest found is the Q3 FY2026 earnings release dated 2026-08-12. The Q3 fiscal release and the Hyundai MOU (2026-10-27, in news skip) are the newest. No post-10-30 event found.",
+      "Natura Resources MSR-1: search returned 2024-era material only. No 2026 vendor milestone found.",
+      "Steady Energy: trading on First North Finland was expected from 2 October 2026 and the EIB loan is in news skip (2026-09-15). The LDR-50 is a 50 MWth heat-only design, outside the 1-20 MWe electric scope, so no Type N item was written.",
+      "Terra Innovatum: NRC readiness assessment (entrance meeting 10 Aug 2026, about six weeks) and the Waiken LOI are dated before 10-30 and are outside the window. Blue Energy: no results at all."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-valar-ward250-1",
+      "target": "valar-ward250",
+      "file": "vendors",
+      "claim": "the BLM has not approved it",
+      "verdict": "confirmed",
+      "evidence": "KUNC/NPR article dated 2026-09-30: the BLM Utah office confirmed it had received Valar's application and said it is reviewing the application for completeness. No BLM approval is reported. The article says NEPA review and public input will follow.",
+      "sources": [
+        {
+          "label": "KUNC / NPR — A startup wants to build a massive nuclear-powered data center on public land in Utah (2026-09-30)",
+          "url": "https://www.kunc.org/npr-news/2026-09-30/a-startup-wants-to-build-a-massive-nuclear-powered-data-center-on-public-land-in-utah",
+          "quote": "We are currently reviewing the application for completeness",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

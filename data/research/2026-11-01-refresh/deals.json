@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "captured": "2026-11-01",
+    "agent": "deals",
+    "scope": "Deals tab: Type G validation of shipped opportunities rows (DOE pilot, Army Janus, Equinix-Radiant, Last Energy, ANPI, Eielson, Oklo-Switch); Type N search for buyer deals dated after 2026-10-30 not in skip/news.json.",
+    "angles_run": [
+      "Type G: Army Janus site assignments (janus)",
+      "Type G: DOE Reactor Pilot Program, Oklo Groves criticality date (doe-pilot)",
+      "Type G: Eielson AFB NOITA status (eielson)",
+      "Type G: Equinix-Radiant preorder (equinix-radiant)",
+      "Type G: Last Energy Thames Freeport / Llynfi (uk-lastenergy)",
+      "Type G: Air Force ANPI Buckley, Malmstrom, JBSA (anpi-*)",
+      "Type G: Oklo-Switch master agreement status (oklo-switch)",
+      "Type N: post-2026-10-30 microreactor PPA, MOU, LOI, site deals (generic)",
+      "Type N: NANO, Valar, Aalo, Deep Fission deals",
+      "Type N: Westinghouse, Kairos, Last Energy LOIs and site selections",
+      "Type N: Army Janus vendor agreements after 2026-08-26"
+    ],
+    "absences": [
+      "No buyer deal dated 2026-10-31 to 2026-11-01 found in 16 searches. Search index shows nothing after 2026-10-30; the NANO-Hyundai MOU (2026-10-27) and Deep Fission GPDA binding PPA (2026-10-20) are already on the News tab.",
+      "Eielson AFB: no final 30-year contract found; DLA/DAF notice of intent stands and is conditional on an NRC licence. The DAF primary page was not fetched, so the NOITA wording was not re-verified and no check was written.",
+      "Air Force ANPI Joint Base San Antonio (Antares, 2026-04-22): no search result mentions JBSA or an ANPI agreement there. Not verified, no check written.",
+      "Buckley and Malmstrom ANPI selections: confirmed by search summaries only (no fetched page). No check written.",
+      "Army Janus: which four of the nine candidate sites remain unassigned is not named in any fetched page. The 'four unassigned' figure is arithmetic from the nine-site list (army.mil, 2025-11-18) minus the five awards (Fox Business, 2026-08-26). Federal News Network returned HTTP 403.",
+      "Army Janus, Fort Drum (Westinghouse): contract vehicle (OT or other) not confirmed. Sources disagree on size (5 MWe vs under 20 MWe). No Westinghouse disclosure on output, schedule or value.",
+      "Equinix-Radiant: no delivery, deposit-conversion or site-assignment update since the 2025-08-14 preorder release. The shipped 'binding: true' rests on the release's 'signed a preorder agreement'; terms are not public.",
+      "Oklo-Switch: searched once; still described as a non-binding master agreement, with no 2026 conversion to binding PPAs found. No check written because no new primary page was fetched.",
+      "Valar Atomics: no named power customer found; criticality dates differ across secondary sources. Not verified against primary sources."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "then Oklo's Groves Isotope Test Reactor afterward on 2026-08-05",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy announcement dated August 6, 2026 says the Groves Isotope Test Reactor achieved criticality 'last night', which is the evening of 2026-08-05. Fifth DOE-authorized criticality this summer.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Last night, as part of the U.S. Department of Energy (DOE) Reactor Pilot Program, Oklo's Groves Isotope Test Reactor successfully achieved criticality.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn",
+      "verdict": "confirmed",
+      "evidence": "Fox Business, published 2026-08-26, names five vendors and bases (Antares at Fort Bragg, BWXT at Fort Campbell, General Atomics at Fort Hood, Radiant at Fort Benning, Westinghouse at Fort Drum) and says awards are up to a combined $2.2 billion. Army.mil (2025-11-18) lists the nine candidate installations, which puts four candidate sites outside the five awards.",
+      "sources": [
+        {
+          "label": "Fox Business — US Army plans nuclear microreactors at 5 military bases as part of $2.2B energy security push (2026-08-26)",
+          "url": "https://foxbusiness.com/energy/us-army-plans-nuclear-microreactors-5-military-bases-part-2-2b-energy-security-push",
+          "quote": "awards of up to a combined $2.2 billion",
+          "status": "fetched"
+        },
+        {
+          "label": "army.mil — Army announces next steps on Janus Program for next-generation nuclear energy (2025-11-18)",
+          "url": "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy",
+          "quote": "the Department of the Army has selected nine installations for consideration in which to site microreactor power plants.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "status: Signed; instrument: Purchase agreement / pre-order with deposits; units_committed: 20",
+      "verdict": "confirmed",
+      "evidence": "Radiant release dated 2025-08-14 says Equinix 'has signed a preorder agreement and submitted deposits for the purchase of 20 Kaleidos microreactors.' Terms not published in full, and no later delivery or conversion update found in searches through 2026-11-01. The instrument is a preorder with deposits, not a full purchase contract.",
+      "sources": [
+        {
+          "label": "Radiant — Radiant Announces Equinix Preorder & Deposits for 20 Kaleidos Microreactors (2025-08-14)",
+          "url": "https://www.newswire.com/view/content/radiant-announces-equinix-preorder-deposits-for-20-kaleidos-22625143",
+          "quote": "has signed a preorder agreement and submitted deposits for the purchase of 20 Kaleidos microreactors.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-uk-lastenergy-1",
+      "target": "uk-lastenergy",
+      "file": "opportunities",
+      "claim": "the 2025 ONR design review Last Energy completed covers its separate Llynfi site in Wales",
+      "verdict": "confirmed",
+      "evidence": "ONR preliminary design review summary report for Last Energy names the Llynfi site in Wales as the site for its nuclear site licensing and environmental permitting, and records the PDR as completed in June 2025. The report does not mention the Thames Freeport / London Gateway site.",
+      "sources": [
+        {
+          "label": "ONR — Last Energy preliminary design review summary report (2025)",
+          "url": "https://www.onr.org.uk/generic-design-assessment/early-regulatory-engagement-on-new-nuclear-projects/last-energy-pdr-summary-report",
+          "quote": "would instead apply directly for nuclear site licensing and environmental permitting for the Llynfi site in Wales.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
