@@ -368,3 +368,18 @@ not recorded by that run.
 The 16:00 scheduled firing found today's pass dir already committed on the branch (in the
 `micro-reactor-uat-perf` worktree) and ran no agents, per the "do not re-run" rule. PR #32 is
 0 days old, so no merge gate.
+
+## 2026-11-01 daily refresh
+
+Four Haiku agents (odd day: applications, costs, ideas skipped), 2 at a time. 0 news, 0 corrections, 5 shipped rows confirmed.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | nothing; both watcher leads (Doosan/NuScale, Hitachi BWRX-300) are SMRs | no |
+| deals | 154K | 4 confirmations (DOE pilot, Janus, Equinix-Radiant, UK Last Energy) | marginal |
+| vendors | 147K | 1 confirmation (Valar BLM not approved); quote trimmed to verbatim | marginal |
+| politics | 167K | nothing new; Part 57 still proposed | no |
+
+Main-session web search (4 queries) and the RSS watcher found nothing dated after 2026-10-30. Three
+quiet agents at ~150K each is ~460K for zero new rows; on a weekend with an empty watcher, consider
+running news + deals only.
