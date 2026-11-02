@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (file: opportunities) and Type N items for buyer deals dated after 2026-10-30 that skip/news.json lacks",
+    "angles_run": [
+      "Army Janus: award and vendor/site confirmation (Aug 2026 award, Nov 2025 site list)",
+      "Air Force ANPI: Eielson NOITA status; Buckley/Radiant selection; JBSA and Malmstrom not checked",
+      "DOE Reactor Pilot Program: criticality count, Aug 2026 DOE release",
+      "Equinix-Radiant: preorder status and deposits",
+      "Oklo-Switch: binding status of master agreement",
+      "NANO Nuclear x Supermicro: MOU status (search only)",
+      "Last Energy: DP World Thames Freeport and industrial customers (search only)",
+      "Canada: Saskatchewan Research Council eVinci cancellation (Hansard)",
+      "New buyer deals dated 2026-10-31 to 2026-11-02: generic, vendor-name and date-specific sweeps"
+    ],
+    "absences": [
+      "Eielson (ANPI) NOITA status: a search summary of the June 2026 AF CAMP newsletter says the NOITA was rescinded, source selection continued, and the NOITA reissued. Both the newsletter PDF and the Eielson milestone article returned HTTP 403 to WebFetch, so the check was not written. Shipped 'Intent to award (NOITA)' is unverified against a fetched page.",
+      "Janus site count: the shipped 'four of the nine candidate sites are still unassigned' is arithmetic (nine sites in the Nov 2025 list minus five named in Aug 2026). The Aug 2026 Army release says only that 'additional Army and other Service sites will be announced at a later date'. Confirmed by arithmetic, not by a page stating the count.",
+      "DOE pilot timeline: the shipped Aalo-X criticality date (2026-07-04, 12:20am) is not verified. The DOE Aug 2026 release lists Aalo Atomics among the five critical reactors but gives no date. A search summary said Aalo's CTO had said in early July the reactor had not yet fully reached criticality. Not fetched, not checked.",
+      "ANPI JBSA (Antares), Buckley (Radiant) and Malmstrom (Westinghouse): searched Buckley only. Found no 2026 update beyond the April 2026 selection. No fetched page, so no check written.",
+      "NANO Nuclear x Supermicro (nano-supermicro): search summary says the May 6, 2026 MOU is non-binding and that NRC accepted NANO's Kronos construction permit application two weeks later. Not fetched, so no check written. Did not reach the NANO IR release.",
+      "Last Energy UK (uk-lastenergy): no 2026 update found on the DP World Thames Freeport plan. Search summaries give a licensing decision around late 2027 and a grid offer of 22 MWe, but no fetched source. No check written.",
+      "Equinix deposits: a newswire headline in search results reads 'Equinix Preorder & Deposits for 20 Kaleidos'. The fetched Equinix release says only 'preorder agreement' and gives no deposit amount. The shipped instrument 'Purchase agreement / pre-order with deposits' is not confirmed by a fetched page.",
+      "New buyer deals: no buyer deal (PPA, MOU, LOI, contract or site selection) dated 2026-10-31 to 2026-11-02 surfaced in about 17 searches. Several queries across Oklo, Radiant, TerraPower, NuScale, Kairos, Deep Fission, Valar, Aalo, Last Energy and NANO returned no November 2026 items. The search index looks thin after 2026-10-30, so absence here is not evidence that nothing happened."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn across FY2027-FY2031 under milestone-based Other Transactions agreements the Army says it is negotiating; four of the nine candidate sites are still unassigned",
+      "verdict": "confirmed",
+      "evidence": "Army release dated 2026-08-26 names five vendors and installations (Antares at Fort Bragg, BWXT at Fort Campbell, General Atomics at Fort Hood, Radiant at Fort Benning, Westinghouse at Fort Drum) and gives 'approximately $2.2 billion across FY2027-2031'. It says the Army 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. It does not state a count of unassigned sites; it says 'Additional Army and other Service sites will be announced at a later date'. The 'four of nine' figure follows from the nine-installation list in the Nov 2025 Army article.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+          "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "quote": "The five selected vendors and installations are as follows:",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Army — Army announces next steps on Janus Program for next generation nuclear energy (2025-11-18)",
+          "url": "https://www.army.mil/article/289074/army_announces_next_steps_on_janus_program_for_next_generation_nuclear_energy",
+          "quote": "the Department of the Army has selected nine installations for consideration.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Five critical, others in safety review",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy release dated 2026-08-06 describes Oklo's Groves reactor as 'the fifth DOE-authorized reactor to go critical this summer', and names Oklo with Antares Nuclear, Valar Atomics, Deployable Energy and Aalo Atomics. The release does not address the safety-review status of the remaining projects, and does not date each criticality.",
+      "sources": [
+        {
+          "label": "U.S. DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "becoming the fifth DOE-authorized reactor to go critical this summer.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled; vendor withdrew",
+      "verdict": "confirmed",
+      "evidence": "Saskatchewan Hansard, Standing Committee on the Economy, 2026-04-15 (SRC estimates). SRC CEO Mike Crabtree says the eVinci project 'was cancelled by Westinghouse', and that SRC has put the reactor installation 'on pause'. Minister Warren Kaeding says Westinghouse 'decided to change direction on the eVinci program'. The transcript does not date the cancellation to fall 2025, so that part of the shipped timeline is not confirmed by this source.",
+      "sources": [
+        {
+          "label": "Legislative Assembly of Saskatchewan — Standing Committee on the Economy, Hansard No. 13 (2026-04-15)",
+          "url": "https://docs.legassembly.sk.ca/legdocs/Committees/ECO/Debates/30L/20260415Debates-ECO-HTML.htm",
+          "quote": "So the eVinci project was cancelled by Westinghouse, as the minister has just said.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "Signed",
+      "verdict": "confirmed",
+      "evidence": "Equinix release dated 2025-08-14 announces 'a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors'. The release gives no deposit amount, total MW, or delivery date. The shipped instrument wording 'Purchase agreement / pre-order with deposits' includes deposits, which this release does not state.",
+      "sources": [
+        {
+          "label": "Equinix — Equinix collaborates with leading alternative energy providers (2025-08-14)",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+          "quote": "Today Equinix announced a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Master agreement (non-binding)",
+      "verdict": "confirmed",
+      "evidence": "Oklo and Switch release dated 2024-12-18 (hosted on switch.com) says the companies 'have signed a non-binding Master Power Agreement' to deploy 12 GW of Oklo Aurora powerhouse projects through 2044, and that 'individual binding agreements will be finalized as project milestones are reached'. A search summary of Oklo's mid-2026 10-Q reports no binding Switch PPA; that filing was not fetched.",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship (2024-12-18)",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "quote": "have signed a non-binding Master Power Agreement",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "politics",
+    "scope": "Rules & deal design tab: politics and regulation. Type G checks on shipped policy pathways (time-sensitive rules); Type F dockets not in skip/dockets.json filed or decided in the last 90 days; Type N items dated after 2026-10-30.",
+    "angles_run": [
+      "NRC Part 57 final-rule status (Federal Register listing)",
+      "NRC Part 57 comment period and extension request",
+      "FY2027 NDAA microreactor provisions (House, Senate)",
+      "Army Janus program updates after 2026-08-26 awards",
+      "State microreactor legislation signed in 2026 (incl. September 2026)",
+      "PUC/utility IRP and SMR filings dated Aug-Oct 2026",
+      "NRC commission votes on advanced reactors, Oct 2026",
+      "FY2027 Energy and Water appropriations (DOE Office of Nuclear Energy, ARDP)",
+      "Congressional microreactor bills introduced Oct 2026",
+      "New York PSC microreactor study",
+      "FY2026 NRC fee rule (ADVANCE Act hourly rate) - attempted, fetch redirected"
+    ],
+    "absences": [
+      "No Type N items dated after 2026-10-30 could be verified. Searches for NRC, Army, DOE, Congress and state actions on or after Oct 31, 2026 returned only pre-window material or nothing dated in the window.",
+      "No Type F docket filed or decided in the last 90 days (since about 2026-08-04) was verified. Searched utility IRPs and SMR filings for Aug-Oct 2026 (found only California, Washington and Missouri material without SMR content), state PUC orders, and state legislation. New Jersey S4849 is already in skip/dockets.json.",
+      "House FY2027 NDAA microreactor provision (Harrigan amendment, Indo-Pacific Command, by 2030) is confirmed by the sponsor's 2026-07-22 release, but it is pre-window and not a docket, so it is not written. The Senate NDAA version reportedly has no similar provision; not confirmed from a primary text.",
+      "FY2027 Energy and Water appropriations (H.R. 9022): House committee bill approved in May 2026 with $1.8B for DOE Office of Nuclear Energy and an IIJA reallocation (Sec. 313). Not written because the status after June 2026 could not be verified; the sponsor release and bill text were not fetched.",
+      "NRC Part 57 final-rule deadline of 2026-11-23 comes from search-result summaries (Glitchwire, Pillsbury), not a fetched primary page. No final Part 57 rule appeared in the Federal Register listing as of 2026-11-02.",
+      "NRC Part 57 proposed-rule comment deadline of 2026-06-15 and the Nuclear Innovation Alliance request for a 45-day extension: no fetched evidence that the NRC granted an extension. Not written as a check.",
+      "The FY2026 NRC fee rule's advanced-reactor hourly rate ($154, shipped in the ADVANCE Act record) could not be checked: the federalregister.gov document redirected to an unblock page and was not fetched.",
+      "The DOE Reactor Pilot Program, executive-order deadlines, Price-Anderson, 45Y/48E credits and state siting moratoria were not searched in this pass. Budget went to Part 57, NDAA, Janus, dockets and items.",
+      "New York PSC microreactor study: no 2026 PSC document found. Search results showed only 2014-era NYSERDA microgrid studies. Not written.",
+      "Army Janus updates after the 2026-08-26 awards: no October 2026 coverage found. Shipped news already carries the August awards.",
+      "Search quota: about 18 web searches and 10 fetches used, against a budget of about 25 searches and 20 fetches. The run stopped early after repeated empty results for the window."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-part-57-proposed-1",
+      "target": "licensing: Part 57, the proposed microreactor rule",
+      "file": "policy",
+      "claim": "It is a proposed rule",
+      "verdict": "confirmed",
+      "evidence": "Federal Register listing fetched 2026-11-02 shows the 2026-05-01 NRC document 'Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles' typed Proposed Rule, with comments closing 2026-06-15. No Rule-type (final) document with that title appears in the listing. The only final NRC rule in the same listing is 'NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War', published 2026-10-26.",
+      "sources": [
+        {
+          "label": "Federal Register — Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles (proposed rule, 2026-05-01)",
+          "url": "https://www.federalregister.gov/documents/2026/05/01/2026-08550/licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+          "quote": "Licensing Requirements for Microreactors and Other Reactors With Comparable Risk Profiles",
+          "status": "fetched"
+        },
+        {
+          "label": "Federal Register — NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War (final rule, 2026-10-26)",
+          "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21801/nrc-reviews-of-reactor-designs-previously-authorized-by-us-department-of-energy-or-department-of-war",
+          "quote": "NRC Reviews of Reactor Designs Previously Authorized by U.S. Department of Energy or Department of War",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}

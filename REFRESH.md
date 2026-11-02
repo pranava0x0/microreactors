@@ -150,3 +150,8 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   period. When a check is FABRICATED with no subject, grep the page for the span before dropping it.
 - **2026-11-01: a weekend with an empty watcher is a confirmations-only day.** The watcher found 2
   SMR leads, web search nothing after 10-30, and four agents spent ~620K tokens on 5 confirmations.
+- **2026-11-02: a wire-service paraphrase does not outrank the agency's own verb.** The applications agent
+  marked all five Janus sites `awarded` on AP ("has awarded") and Reuters ("is awarding"); the Army's own
+  2026-08-26 release says it "down-selected potential industry awardees for negotiation". Status fields
+  follow the primary document's verb; overrule secondary-press upgrades. A milestone dated as a past
+  quarter with `status: target` is a free stale-row finder: grep for it each refresh.

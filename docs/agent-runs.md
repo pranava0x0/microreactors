@@ -383,3 +383,21 @@ Four Haiku agents (odd day: applications, costs, ideas skipped), 2 at a time. 0 
 Main-session web search (4 queries) and the RSS watcher found nothing dated after 2026-10-30. Three
 quiet agents at ~150K each is ~460K for zero new rows; on a weekend with an empty watcher, consider
 running news + deals only.
+
+## 2026-11-02 daily refresh
+
+Seven Haiku agents (even day), 2 at a time. 0 news, 2 corrections (vendors), 13 shipped rows confirmed,
+5 agent checks overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 163K | nothing; all 3 watcher leads out of segment (Long Mott 320 MWe, Doosan, Hitachi) | no |
+| deals | 159K | 5 confirmations (Janus, DOE pilot, SRC, Equinix-Radiant, Oklo-Switch) | marginal |
+| vendors | 164K | 2 corrections: Radiant Q3 DOME target passed; eVinci DOME selection was 2025-07-01, not 2026 | yes |
+| politics | 157K | 1 confirmation (Part 57 still proposed) | no |
+| applications | 172K | 5 "awarded" checks on Janus sites, all overruled (Army release says down-selected); 1 out-of-segment application held | no |
+| costs | 138K | nothing; Alaska PCE and 45Y-window leads unverified | no |
+| ideas | 138K | 2 confirmations (Price-Anderson, DOME 20 MWt cap) | marginal |
+
+~1.09M agent tokens for 2 corrections. Deals re-checked canada-src and equinix-radiant again (both checked
+in the last week).

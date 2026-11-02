@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "ideas",
+    "scope": "Why microreactors tab (arguments, ideas, studies). Type G checks on time-sensitive numbers in skip/arguments.json; Type N items for major studies dated after 2026-10-30 that change the 1-20 MW case.",
+    "angles_run": [
+      "Price-Anderson financial protection amounts (checks: liability): NRC periodic inflation adjustment, primary Federal Register notice fetched",
+      "DOME 20 MWt test cap (checks: first-article): energy.gov DOME page fetched",
+      "ERCOT Small Generation (<10 MW) vs Large Generation study durations (checks: thresholds): searched, primary decks not readable, no check written",
+      "10 CFR 140.12 floor and cap (liability): eCFR fetch redirected to an unrelated host, not followed",
+      "Post-2026-10-30 studies (items): DOE Liftoff 2026 update, INL MARVEL public cost estimate, GAO/CBO/NEI/EPRI microreactor cost reports, Army Janus cost analysis, University of Michigan $60/MWh figure"
+    ],
+    "absences": [
+      "No study dated after 2026-10-30 that changes the case for or against 1-20 MW reactors was found. Items list is empty.",
+      "DOE Liftoff: no 2026 update surfaced. The most recent DOE Liftoff material found is the 2024 update, which is not in the window.",
+      "INL MARVEL: no public first-of-a-kind cost estimate found in 2026. Schedule only: a March 2026 Deseret report gives a criticality target of September to December 2026. The INL project page says a cost estimate update is a design-review milestone, with no published figure located.",
+      "GAO, CBO, NEI, EPRI: no 2026 microreactor cost-per-kW study surfaced. The only cost figures found were from vendors, trade press and an index by Axis Intelligence, none of them primary studies.",
+      "Army Janus (August 2026 awards, up to $2.2 billion): contract announcements only. No Army cost study comparing microreactors with diesel was found. Contract amounts per company were not disclosed.",
+      "University of Michigan $60/MWh and $11.9 billion fleet cost figures: not confirmed. The $60/MWh figure appears only in a secondary article. The UMich arXiv paper (2506.13361, June 2025) reports LCOE of $48.21 to $78.32/MWh with the production tax credit, and it is dated before the window. The $11.9 billion figure was not found.",
+      "Thresholds check not written: the 8-12 month (small) and 18-30 month (large) ERCOT generator study durations were found only in search summaries of ERCOT decks. The ERCOT PDF and .docx fetches returned binary content. The 10 MW figure in 2026 ERCOT material belongs to the large-load forecasting rule (16 TAC 25.370), and the large-load interconnection threshold is 75 MW. Neither contradicts the generator process as shipped, but neither verifies it.",
+      "Liability check covers only the $158,026,000 figure and its 2023 effective date. The $500,000,000 primary protection figure and the 10 CFR 140.12 $4,500,000 floor and $74,000,000 cap were not verified. The eCFR fetch redirected to an unrelated host.",
+      "Radiant and Antares DOME criticality in 2026 is not confirmed by a primary source. Not a check target for this pass.",
+      "INL release page (inl.gov/?p=152071) returned HTTP 403, so the DOME opening date claimed there was not verified."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "accepts a contingent retrospective assessment of $158,026,000",
+      "verdict": "confirmed",
+      "evidence": "The NRC final rule of 5 September 2023 (effective 5 October 2023) sets the new maximum total deferred premium at $158,026,000, with a maximum annual deferred premium of $24,714,000. The statute requires re-adjustment at least every five years, so this amount is expected to remain the operative figure until about 2028 (inference, not stated in the rule). The $500,000,000 primary protection figure in the same shipped sentence was not checked in this pass.",
+      "sources": [
+        {
+          "label": "Federal Register — NRC final rule on periodic inflation adjustment of Price-Anderson financial protection amounts (2023), 88 FR 60565",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-05/html/2023-19009.htm",
+          "quote": "new maximum total deferred premium is $158,026,000, and the maximum annual deferred premium is $24,714,000.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-first-article-1",
+      "target": "first-article",
+      "file": "arguments",
+      "claim": "DOE's DOME facility has a 20 MWth cap",
+      "verdict": "confirmed",
+      "evidence": "The DOE Office of Nuclear Energy page on the Demonstration Microreactor Experiments (DOME) facility states the test capacity is up to 20 MWt. The page gives 'Testing will start as early as spring 2026' and does not give an opening date. The inference that a 300 MW design cannot use DOME follows from the cap but is not stated on the page.",
+      "sources": [
+        {
+          "label": "U.S. Department of Energy, Office of Nuclear Energy — Demonstration Microreactor Experiments (DOME)",
+          "url": "https://www.energy.gov/ne/demonstration-microreactor-experiments-dome",
+          "quote": "to provide private industry a safe place to quickly test fueled reactor experiments up to 20 megawatts of thermal energy.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

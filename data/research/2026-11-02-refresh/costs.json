@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on shipped costs.json numbers (LCOE bands, Alaska PCE displaced-cost band, incentives, capex, archetypes) and Type N items for dated fuel-supply or financing events after 2026-10-30 not in skip/news.json. Read skip/costs.json and skip/news.json.",
+    "angles_run": [
+      "Alaska PCE current base rate and per-utility cost (RCA notice, PCE portal, AEA April 2026 presentation)",
+      "DOE HALEU enrichment awards, Nov 2026",
+      "Microreactor fuel financing and loans, Nov 2026",
+      "INL microreactor LCOE 2026 update",
+      "45Y/48E nuclear beginning-of-construction window (OBBBA, IRS guidance)",
+      "TRISO fuel supply contracts, most recent",
+      "DOE loan guarantees, late Oct 2026",
+      "HALEU deliveries (Centrus, Radiant, Antares, Oklo), Nov 2026"
+    ],
+    "absences": [
+      "Alaska PCE displaced-cost band (costs skip displaced_alternatives[1], $410-1,950/MWh, from the FY2024 RCA order L2300184): the RCA public notice (aws.state.ak.us id=223712) returned HTTP 403 to WebFetch. The PCE portal (pce.akenergyauthority.org) says FY27 base-rate notices effective for bills on or after 2026-07-01 were posted, but the fetched text lists no levels. The AEA 2026-04-28 PCE presentation was returned as unreadable binary. A search summary gives a FY2026 base amount of 20.38 cents/kWh versus the 19.35 cents/kWh quoted in the shipped text, but that figure was never seen in a fetched page, so no check was written. Next step: fetch the FY2027 RCA order directly from the RCA docket.",
+      "Nuclear 45Y/48E beginning-of-construction window (costs skip incentives.points[0], 'before 2034'): Morgan Lewis (fetched, dated 2025-07-24) states the 2034 date, but it is a law-firm summary, not the enacted text. Search summaries conflict: CRS reads the nuclear window as ending 2028-12-31, and Taxpayer.net reads begin-construction before 2029. The enacted text and any IRS nuclear beginning-of-construction guidance were not retrieved, so no verdict was written. Next step: pull the enacted OBBBA sections 45Y/48E text.",
+      "INL March 2026 Microreactor Annual Review (gain.inl.gov/content/uploads/4/2026/03/02-Hanna_MREconomics_2026-MRP-Review.pdf): the search summary shows a table with LCOE of about $330, $410 and $980/MWh (first unit) and $160, $170 and $450/MWh (NOAK) for the 20 MWt liquid-metal, 15 MWt gas-cooled and 7 MWt heat-pipe designs. Those values match the shipped archetypes rows, but WebFetch returned binary and no local PDF text extractor is installed, so the table was never read. No check was written; a confirmation of archetypes rows would need that table.",
+      "HALEU and TRISO unit prices, DOE HALEU allocation values, and delivered remote diesel or fuel-oil prices: the costs skip list carries no shipped numeric claim of these kinds, so there was nothing to check.",
+      "Fuel-supply or financing events dated 2026-10-31 to 2026-11-02: none surfaced across the HALEU award, TRISO contract, DOE loan and microreactor financing searches. The newest dated events found were all already in skip/news.json (Centrus first centrifuge 2026-10-30; Antares-BWXT TRISO 2026-10-27; Kairos $643M 2026-10-14). A DOE loan-office item (S&P, 2026-06-23, five utility loans for AP1000s) is outside the window and outside this agent's scope.",
+      "Remote diesel band (displaced_alternatives[0], TUGLIQ Raglan completion report, 2016): not re-checked. The source is a 2016 completion report and no newer primary source for industrial self-generation price was searched."
+    ]
+  },
+  "checks": [],
+  "items": []
+}
