@@ -401,3 +401,16 @@ Seven Haiku agents (even day), 2 at a time. 0 news, 2 corrections (vendors), 13 
 
 ~1.09M agent tokens for 2 corrections. Deals re-checked canada-src and equinix-radiant again (both checked
 in the last week).
+
+## 2026-11-03 daily refresh
+
+Four Haiku agents (odd day), 2 at a time. 0 news, 4 corrections (1 integrated, 3 by hand), 8 shipped rows confirmed.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 173K | 1 correction (Last Energy DSA date 10-08 -> 10-07); both watcher leads out of segment | yes |
+| deals | 157K | 4 confirmations (Janus, canada-src again, oklo-switch, equinix-radiant) | no |
+| vendors | 153K | 1 confirmation; its absences note led to the eVinci DOME-slot correction | yes (via absences) |
+| politics | 146K | 2 corrections (Alaska regs 2023, Texas $2B unsupported), 2 confirmations | yes |
+
+~630K agent tokens. Playwright's Chromium had gone missing from the machine cache; reinstalled the pinned build before the suite would pass.

@@ -155,3 +155,13 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   2026-08-26 release says it "down-selected potential industry awardees for negotiation". Status fields
   follow the primary document's verb; overrule secondary-press upgrades. A milestone dated as a past
   quarter with `status: target` is a free stale-row finder: grep for it each refresh.
+- **2026-11-03: `merge_news.py` regenerates `data/news.json`, so a hand correction to a news item goes in
+  `data/research/news/<file>.json`** (1-space indent; match it or the diff is pure re-encoding). An edit
+  made to `data/news.json` directly is silently overwritten by the next merge.
+- **2026-11-03: read the agents' `_meta.absences`, not just their records.** The vendors agent noted that
+  NEI reported Westinghouse giving up its 2027 DOME slot, then filed nothing because the report predated the
+  window. The shipped eVinci row still implied the slot was held, a month after the 2026-11-02 run re-checked
+  that very field. An out-of-window fact that contradicts a shipped row is a correction, not an absence.
+- **2026-11-03: the e2e tests error (not skip) when Playwright's browser is missing from
+  `~/Library/Caches/ms-playwright`.** Fix with `~/.venvs/microreactors/bin/python -m playwright install chromium`
+  (build 1140 for playwright 1.48.0); it is an environment failure, not a data one.

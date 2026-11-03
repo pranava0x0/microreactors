@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-11-03",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor milestones and MWe/refuel/fuel/notes; Type N items for vendor milestones dated after 2026-10-30 that skip/news.json lacks, including 1-20 MWe designs outside the table (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "generic microreactor vendor milestone Nov 2026 (no dated hit after 2026-10-30)",
+      "Radiant Kaleidos DOME fueling and criticality status (fetched Radiant 2026-10-29 release)",
+      "Valar Ward 250 and Utah news Oct 2026 (no Oct-Nov item found)",
+      "NANO Nuclear KRONOS Nov 2026 (no dated hit)",
+      "Aalo Atomics Nov 2026 (no dated hit)",
+      "Deployable Energy Unity DOME 2027 (Oct 7 selection; NRIC slot timing; both before window)",
+      "Last Energy PWR-5 status (no criticality report found)",
+      "Natura MSR-1 fuel and salt status (FLiBe Sept 18 delivery already shipped)",
+      "General Atomics GA-TES Fort Hood (Aug 26 selection only, no later dated milestone)",
+      "Westinghouse eVinci DOME 2027 slot withdrawal (NEI article fetched, dated 2026-10-05, before window)",
+      "Terra Innovatum SOLO NRC status (latest dated item Aug 10, unverified aggregator)",
+      "Steady Energy LDR-50 (Oct 2 listing and pilot construction, before window)",
+      "Blue Energy (300 MW BWRX-300 plant, out of 1-20 MWe scope)",
+      "Antares Mark-1 DOE NSDA (Oct 23, already shipped in news skip)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-31 through 2026-11-03 was found for any shipped or listed vendor. Searches with dated queries returned no November 2026 vendor item, and the index may lag. Re-check the company news pages (radiantnuclear.com/blog, Antares, Valar, Aalo, NANO Nuclear IR) before the next run.",
+      "Radiant Kaleidos: fueling date not published after the readiness review; criticality not reported as of the 2026-10-29 release. The shipped 'Q3 target passed' wording is inferred from the absence of fueling, not stated in any fetched page.",
+      "Deployable Energy: the 2027 DOME window start is disputed (CEO said May 2027; NRIC call says next slot begins July 2027). Date of the NRIC notice is not verified.",
+      "Westinghouse eVinci: withdrawal from the 2027 DOME slot is reported by NEI Magazine (dated 2026-10-05, before the window) and by no primary NRIC or Westinghouse page; the reason is unverified.",
+      "Last Energy PWR-5: no criticality report found; latest local report (Sept 2026) says construction continues. Final DSA date not verified.",
+      "Natura MSR-1: no fuel-loading or operating-licence news found after the Sept 18 FLiBe delivery.",
+      "General Atomics GA-TES: no firm Fort Hood deployment date; sources disagree on 5 MWe vs 20 MWe sizing for that site.",
+      "Valar: Utah BLM approval of Project Beehive not found; Nvidia 30 MW claim not re-checked (no fetched primary source).",
+      "Terra Innovatum: NRC topical-report evaluations expected by October 2026 not found; the Aug 10 readiness-assessment item comes from one aggregator and could not be checked against a primary source.",
+      "Steady Energy, NANO KRONOS, Aalo, Blue Energy: no milestone dated after 2026-10-30 found. Blue Energy is 300 MW class and out of scope."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "DOME campaign: criticality through 150 h unattended run; the Q3 target passed and fueling waits on DOE's Readiness Review, which has no set date",
+      "verdict": "confirmed",
+      "evidence": "Radiant release dated 2026-10-29 (DSA approval for full-power operation) says: \"Following successful completion of the review, Radiant will fuel Kaleidos\", and gives no date for fueling or the start of the five-phase campaign. The release does not itself say the Q3 target passed; that is inferred from fueling not having happened as of 2026-10-29.",
+      "sources": [
+        {
+          "label": "Business Wire (reprinted by Offshore Source) — Radiant achieves industry milestone as the only microreactor design to secure DOE safety analysis approval for full-power operations (2026-10-29)",
+          "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+          "quote": "Following successful completion of the review, Radiant will fuel Kaleidos",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
