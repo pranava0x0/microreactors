@@ -198,6 +198,12 @@
           "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
           "quote": "allows the company to advance to DOE's Readiness Review, the next step before nuclear operations can begin",
           "status": "fetched"
+        },
+        {
+          "label": "Business Wire via OffshoreSource - Radiant DOE full-power safety analysis approval (2026-10-29)",
+          "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+          "quote": "Following successful completion of the review, Radiant will fuel Kaleidos and begin its five-phase test campaign",
+          "status": "fetched"
         }
       ],
       "gaps": [
@@ -236,7 +242,7 @@
         {
           "date": "2026 Q3",
           "status": "target",
-          "label": "DOME campaign complete: criticality through 150 h unattended run",
+          "label": "DOME campaign: criticality through 150 h unattended run; the Q3 target passed and fueling waits on DOE's Readiness Review, which has no set date",
           "source": {
             "label": "Radiant — DOME selection",
             "url": "https://www.radiantnuclear.com/blog/dome-selection/"
@@ -290,7 +296,7 @@
       "transport": "Transportable, factory-built",
       "anpi_site": "Malmstrom Air Force Base, MT",
       "janus_site": "Fort Drum, NY (via Westinghouse Government Services)",
-      "test_reactor": "Scaled 3 MWt heat-pipe nuclear test reactor at INL DOME, testing from 2026",
+      "test_reactor": "Scaled 3 MWt heat-pipe nuclear test reactor conditionally selected for INL DOME on 2025-07-01 (2027 slot); Westinghouse told NRIC about two months later it would not take the slot, and Deployable Energy now holds it. Zero-power criticality testing moved to NCERC in Nevada; a return to DOME waits on a new NRIC application round in 2027",
       "commercial": "First-customer SRC pilot (CA$80M, target 2029) cancelled by Westinghouse in fall 2025 — eVinci refocused on space, defense and government applications. Penn State FRONTIER: NRC notice of intent (letter dated 2025-02-17, submitted 2025-02-28) to apply for a construction permit for a 15 MWt eVinci-based research reactor at University Park, PA.",
       "notes": "The only one of the three with a published site-footprint figure — designed to produce 5 MWe on sites as small as two acres. Delivers 24/7 for eight-plus years without refueling. Westinghouse Government Services was selected for the Army's Janus program at Fort Drum, NY on 2026-08-26. Neither the contract value nor the unit count was disclosed.",
       "sources": [
@@ -338,6 +344,22 @@
           "url": "https://info.westinghousenuclear.com/news/penn-state-applies-to-nrc-to-build-a-new-nuclear-research-facility",
           "quote": "Penn State submitted a letter of intent to the NRC on February 28, 2025,",
           "status": "fetched"
+        },
+        {
+          "label": "U.S. DOE Office of Nuclear Energy - first microreactor experiments in DOME (July 2025)",
+          "url": "https://www.energy.gov/node/4851650",
+          "quote": "The first fueled reactor experiment will start as early as spring 2026.",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News - Deployable Energy to test its Unity nuclear battery in DOME (2026-10-07)",
+          "url": "https://world-nuclear-news.org/articles/deployable-energy-to-test-its-unity-nuclear-battery-in-dome",
+          "quote": "Westinghouse was also selected last year by the DOE to test the eVinci Nuclear Test Reactor",
+          "status": "fetched"
+        },
+        {
+          "label": "Nuclear Engineering International — NUB to begin full-power DOME testing (2026-10-05)",
+          "url": "https://www.neimagazine.com/news/nub-to-begin-full-power-dome-testing/"
         }
       ],
       "gaps": [
@@ -372,7 +394,7 @@
           }
         },
         {
-          "date": "2026",
+          "date": "2025-07-01",
           "status": "done",
           "label": "Scaled 3 MWt heat-pipe test reactor selected for DOME testing",
           "source": {

@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "captured": "2026-11-03",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: Type G checks on shipped licensing/state-policy pathways (skip/policy.json, group licensing); Type F dockets and Type N items in policy/regulatory. Lane excludes news, deals, vendors, applications, costs, ideas.",
+    "angles_run": [
+      "NRC Part 57 proposed rule status and final-rule deadline",
+      "NRC FY2026 fee rule and advanced-reactor hourly rate",
+      "NRC Part 53 final rule date",
+      "DOE Reactor Pilot Program criticality dates by July 4, 2026",
+      "Texas HB 14 / TANEO nuclear fund size, expansion and eligibility",
+      "Alaska SB 177 implementing regulations date",
+      "FY2027 NDAA, Army Janus and DOE/DoD policy after Oct 30",
+      "Congress nuclear bills (H.R. 6805, Senate DOE authority bill)",
+      "NRC Commission votes and approvals after Oct 30",
+      "State legislation signed Sept-Oct 2026 for microreactors or advanced nuclear",
+      "Utility and state commission SMR or microreactor filings Aug-Nov 2026"
+    ],
+    "absences": [
+      "Dockets (Type F): no state PUC, legislature or IRP filing naming microreactors or SMRs dated 2026-08-05 to 2026-11-03 was found. Dominion PUR-2025-00196 (Rider SMR) was filed in 2025 and is not microreactor-specific. NY RFQ (May 2026) and Maine PUC RFP (statutory, unconfirmed) do not qualify. No dockets written.",
+      "Items (Type N): no dated policy or regulatory event after 2026-10-30 was found in indexed sources. NDAA FY2027 nuclear text, NRC Commission votes in November, and DOE FY2027 appropriations status were searched and not found after Oct 30. No items written.",
+      "Part 57 final-rule deadline of 2026-11-23 (from the executive order) was seen only in a search summary, not in a fetched primary page. Not used in any record.",
+      "Texas HB 14 expansion toward $2B: not stated in the NRC-linked fetched pages (governor statement, ANS 2026-04-09). Texas fund recipients (TANEO said July 2026 announcement) not found.",
+      "Deployable Energy Unity criticality date: shipped June 30; ANS 2026-07-02 gives a July 1 announcement only. Left unchanged, not checked against DOE or INL primary.",
+      "Alaska regulations year: WNN 2023-07-28 says regulations come into effect in August; the year 2023 is inferred from that dateline.",
+      "Primary sources not fetched: Federal Register for Part 57 proposed rule, NRC rulemaking schedule, DOE pilot program page. WebFetch of federalregister.gov redirected to an unblock page; govinfo used instead."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-part57-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "NRC's own estimate is $3.76–11.84B in combined savings and licensing-to-deployment in 6–12 months for qualifying designs.",
+      "verdict": "confirmed",
+      "evidence": "ANS, 2026-04-27: NRC says Part 57 will save 'anywhere from $3.76 billion to $11.84 billion' and projects licensing and deployment in 6–12 months. ANS, 2026-10-22: Part 57 'has yet to be finalized', so the proposed-rule status still holds at that date.",
+      "sources": [
+        {
+          "label": "ANS — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+          "url": "https://ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization",
+          "quote": "Part 57 is aimed at microreactor designs and has yet to be finalized.",
+          "status": "fetched"
+        },
+        {
+          "label": "ANS — NRC introduces microreactor regulatory framework (2026-04-27)",
+          "url": "https://www.ans.org/news/2026-04-27/article-7981/nrc-introduces-microreactor-regulatory-framework/",
+          "quote": "the NRC projects licensing and deployment to take 6–12 months",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-adv-rate-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (it is $154 under the FY2026 fee rule)",
+      "verdict": "confirmed",
+      "evidence": "Federal Register final FY2026 fee rule, 2026-06-16 (doc 2026-12067): reduced hourly rate is $154 per hour, up from $148; professional rate rises from $318 to $337.",
+      "sources": [
+        {
+          "label": "Federal Register — Fee schedules, fee recovery for FY 2026 (final rule, 2026-06-16)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+          "quote": "Thus, in this FY 2026 final fee rule, the Reduced Hourly Rate is $154 per hour",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-texas-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "a $350M development fund, expandable toward $2B, reimbursing project, workforce and supply-chain expenses",
+      "verdict": "unsupported",
+      "evidence": "ANS, 2026-04-09, and the governor's HB 14 statement both give the $350 million figure. Neither fetched page mentions expansion toward $2B. ANS also states the construction reimbursement requires a docketed NRC application 'on or before December 1, 2026'.",
+      "correction": "a $350M development fund, reimbursing project, workforce and supply-chain expenses",
+      "sources": [
+        {
+          "label": "ANS — Texas opens $350M in nuclear funding (2026-04-09)",
+          "url": "https://www.ans.org/news/2026-04-09/article-7920/texas-opens-350m-in-nuclear-funding/",
+          "quote": "Texas has opened $350 million in state funding",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-alaska-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "Alaska SB 177 (2022) and its 2025 regulations",
+      "verdict": "wrong",
+      "evidence": "World Nuclear News, dated 28 July 2023, says Alaska 'has adopted regulations to streamline the regulatory process for the siting of microreactors' and that they 'come into effect in August'. The regulations date from 2023, not 2025. The shipped mechanism text already says August 2023.",
+      "correction": "Alaska SB 177 (2022) and its 2023 regulations",
+      "sources": [
+        {
+          "label": "World Nuclear News — Alaska simplifies microreactor regulations (2023-07-28)",
+          "url": "https://world-nuclear-news.org/articles/alaska-simplifies-microreactor-regulations",
+          "quote": "The US state of Alaska has adopted regulations to streamline the regulatory process for the siting of microreactors.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}

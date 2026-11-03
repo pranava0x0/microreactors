@@ -144,3 +144,24 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   holds). Read it in the browser pane, write the paragraphs you cite to an HTML file, and index that
   with `fetch_source.py URL --from-file`. A quiet week: four Haiku lanes found one item between them
   (Centrus); the main session's own searches found the week's only microreactor event (Radiant's DSA).
+- **2026-11-01: `verify_pass_quotes.py` labels a check's punctuation slip FABRICATED.** A check record
+  has no `name`/`speaker`, so any span not found verbatim falls to FABRICATED ("subject: (none)"),
+  never SLOPPY. The Valar KUNC quote was real; Haiku had swapped the page's trailing comma for a
+  period. When a check is FABRICATED with no subject, grep the page for the span before dropping it.
+- **2026-11-01: a weekend with an empty watcher is a confirmations-only day.** The watcher found 2
+  SMR leads, web search nothing after 10-30, and four agents spent ~620K tokens on 5 confirmations.
+- **2026-11-02: a wire-service paraphrase does not outrank the agency's own verb.** The applications agent
+  marked all five Janus sites `awarded` on AP ("has awarded") and Reuters ("is awarding"); the Army's own
+  2026-08-26 release says it "down-selected potential industry awardees for negotiation". Status fields
+  follow the primary document's verb; overrule secondary-press upgrades. A milestone dated as a past
+  quarter with `status: target` is a free stale-row finder: grep for it each refresh.
+- **2026-11-03: `merge_news.py` regenerates `data/news.json`, so a hand correction to a news item goes in
+  `data/research/news/<file>.json`** (1-space indent; match it or the diff is pure re-encoding). An edit
+  made to `data/news.json` directly is silently overwritten by the next merge.
+- **2026-11-03: read the agents' `_meta.absences`, not just their records.** The vendors agent noted that
+  NEI reported Westinghouse giving up its 2027 DOME slot, then filed nothing because the report predated the
+  window. The shipped eVinci row still implied the slot was held, a month after the 2026-11-02 run re-checked
+  that very field. An out-of-window fact that contradicts a shipped row is a correction, not an absence.
+- **2026-11-03: the e2e tests error (not skip) when Playwright's browser is missing from
+  `~/Library/Caches/ms-playwright`.** Fix with `~/.venvs/microreactors/bin/python -m playwright install chromium`
+  (build 1140 for playwright 1.48.0); it is an environment failure, not a data one.

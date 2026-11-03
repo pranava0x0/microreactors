@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "captured": "2026-11-03",
+    "agent": "deals",
+    "scope": "Type G checks on shipped opportunities.json rows (Janus, ANPI, DOE pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada SRC); Type N buyer deals dated 2026-10-31 to 2026-11-03 not in skip/news.json",
+    "angles_run": [
+      "Army Janus site and vendor status (Aug 2026 tranche)",
+      "Eielson AFB Oklo NOITA status",
+      "DOE Reactor Pilot Program criticality count",
+      "Equinix-Radiant preorder",
+      "Oklo-Switch master agreement status",
+      "Last Energy PWR-20 Thames Freeport / DP World",
+      "Saskatchewan Research Council eVinci status",
+      "NANO Nuclear-Supermicro MOU",
+      "ANPI Buckley, Malmstrom, JBSA pairings",
+      "Window 2026-10-31 to 2026-11-03: generic microreactor PPA/MOU/LOI queries",
+      "Window: Radiant, Valar, Aalo, Antares, Deep Fission, NuScale, X-energy, Kairos, Last Energy, NANO, Oklo named queries"
+    ],
+    "absences": [
+      "No signed or announced buyer deal dated 2026-10-31 to 2026-11-03 was found across about 9 window searches; the search index returned nothing dated in that window, so the Type N list is empty rather than verified-empty.",
+      "Eielson AFB (Oklo): no 2026 award, rescission or contract found. The only rescission found (Canary Media, 2023-11-22) concerns the earlier 2023 Oklo intent, not the 2025-06-11 NOITA. No check written.",
+      "NANO-Supermicro MOU (shipped as signed May 2026): the NANO investor-relations release and DatacenterDynamics both returned HTTP 403, and newsfilecorp returned empty content. No fetched page confirms it, so no check written. A search snippet dated 2026-05-06 was seen but not fetched.",
+      "ANPI (Buckley, Malmstrom, JBSA): April 2026 pairings were confirmed only in trade press (ANS, 2026-04-23), which is older than 60 days and not a primary source. No check written. The DAF primary release was not retrieved.",
+      "DOE Reactor Pilot Program: 'five critical' is not contradicted, but the shipped Oklo Groves date (2026-08-05) differs from an ANS article dated 2026-08-06 that reports criticality on a Wednesday evening Eastern time. The fetched primary for Groves was not retrieved, so no check written.",
+      "Last Energy PWR-20 / DP World London Gateway: search surfaced only 2025 sources (September 2025 MOU; June 2025 ONR preliminary design review). No 2026 status found. No check written.",
+      "Oklo-Switch: the Switch primary (2024-12-18) confirms the non-binding status. 2026 Oklo 10-Q excerpts do not show conversion to binding PPAs, but the 10-Q was not fully read.",
+      "Equinix-Radiant: the Equinix primary confirms the 20-unit preorder but does not mention deposits, which the shipped instrument field claims. Radiant's own release (not fetched) is the likely source for the deposits."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26, up to $2.2bn across FY2027-FY2031 under milestone-based Other Transactions agreements the Army says it is negotiating; four of the nine candidate sites are still unassigned",
+      "verdict": "confirmed",
+      "evidence": "Army.mil, dated 2026-08-26: 'Fort Drum was among five installations selected to host a microreactor', described as the first tranche of the Janus Program, with the Fort Drum contract awarded to Westinghouse Government Services. The page supports the five-installations-on-2026-08-26 part. It does not show the $2.2bn ceiling or the four-unassigned count, which were not in the fetched text; the four-unassigned figure is the arithmetic of nine candidates less five selections.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army selects Fort Drum for Janus Program microreactor (2026-08-26)",
+          "url": "https://www.army.mil/article/294897/army_selects_fort_drum_for_janus_program_microreactor",
+          "quote": "Fort Drum was among five installations selected to host a microreactor",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "Saskatchewan Research Council FAQ (undated page; latest dated item on it is an August 2024 release, but it refers to fall 2025 events): Westinghouse cancelled the SRC project contract in fall 2025 because it decided to shift focus. The page gives the reason as the shift of eVinci toward space, defence and government applications, away from commercial markets. Shipped record stands.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear, 'Is SRC still focusing on the eVinci microreactor?'",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Master agreement (non-binding)",
+      "verdict": "confirmed",
+      "evidence": "Switch release dated 2024-12-18: Oklo and Switch 'have signed a non-binding Master Power Agreement' to deploy 12 GW of Oklo Aurora powerhouse projects through 2044, with individual binding agreements to be finalized as project milestones are reached. The 2026 Oklo 10-Q excerpts seen in search did not show conversion to binding PPAs; the 10-Q was not read in full.",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship (2024-12-18)",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "quote": "have signed a non-binding Master Power Agreement",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-equinix-radiant-1",
+      "target": "equinix-radiant",
+      "file": "opportunities",
+      "claim": "Purchase agreement / pre-order with deposits",
+      "verdict": "confirmed",
+      "evidence": "Equinix investor release dated 2025-08-14: 'Today Equinix announced a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors.' The release does not mention deposits or delivery dates; the deposits part of the shipped text rests on Radiant's own announcement, which was not fetched. Shipped 'binding: true' is a judgement to review against the binding rule, since a preorder is not obviously an executed purchase.",
+      "sources": [
+        {
+          "label": "Equinix — collaborates with leading alternative energy providers (2025-08-14)",
+          "url": "https://investor.equinix.com/news-events/press-releases/detail/1079/equinix-collaborates-with-leading-alternative-energy",
+          "quote": "Today Equinix announced a preorder agreement for the purchase of 20 of Radiant's Kaleidos microreactors.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

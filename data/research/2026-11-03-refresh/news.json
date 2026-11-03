@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "captured": "2026-11-03",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor events dated after 2026-10-30, watcher candidates first (skip/candidates.json), then a sweep of named companies and trade press. Checks limited to news items.",
+    "angles_run": [
+      "watcher candidates: Texas SMR final permitting (WNN 2026-11-02), Doosan/NuScale upper vessel (WNN 2026-10-30)",
+      "trade press index: WNN home page (Nov 2-3 items), ANS news index (Nov 2-3 items)",
+      "ANS 2026-11-02 roundup: Antares, Last Energy, Radiant DOE authorization milestones",
+      "Radiant Kaleidos DOME fueling and Readiness Review",
+      "Last Energy PWR-5 DSA and readiness review",
+      "Antares newsroom index (fetched; newest item 2026-10-27, all shipped)",
+      "Valar Project Beehive and Valar/Aalo criticality status",
+      "Natura MSR-1 fuel salt authorization",
+      "DOE Reactor Pilot Program criticality after Oct 30",
+      "HALEU and TRISO deliveries, late October",
+      "microreactor SPAC, IPO and financing, October 2026",
+      "Westinghouse eVinci DOME and Oklo/NANO/NuCube early-November announcements"
+    ],
+    "absences": [
+      "No microreactor event dated after 2026-10-30 found in a fetched primary or trade page. Search results for Nov 2026 returned only 2025 and mid-2026 coverage; no items written.",
+      "Watcher candidate WNN 2026-11-02 'Texas SMR plant moves to final permitting stage' (Long Mott Generating Station, Dow subsidiary, four Xe-100 units, 800 MWt / 320 MWe): out of the 1-20 MW market; not written.",
+      "Watcher candidate WNN 2026-10-30 'Doosan to manufacture upper reactor vessel for NuScale SMR' (77 MWe modules; contract value not disclosed; no signing date in the article): out of the 1-20 MW market; not written.",
+      "WNN 2026-11-03 'Saltfoss targets US licensing for floating power plant' (seaMSR-100, 100 MWe modules, Part 53 pre-application notice): out of the 1-20 MW market; not written.",
+      "ANS 2026-11-02 roundup 'Antares, Last Energy, and Radiant hit DOE authorization milestones' resolves to Antares NSDA (Oct 23), Last Energy DSA (Oct 7) and Radiant DSA (Oct 29). All three are already shipped.",
+      "Radiant: no date found for the DOME Readiness Review or the fueling of Kaleidos. The Oct 29 DSA is the latest step found.",
+      "Last Energy PWR-5: no DOE startup authorization, readiness-review completion or fuel-load approval found after the Oct 7 DSA.",
+      "Valar Project Beehive (BLM application, Sept 30): no late-October or November update found. BLM completeness review pending per the Oct 6 ANS coverage.",
+      "Natura MSR-1: no October or November 2026 fuel-salt authorization found. The latest step found is the July 2026 NSDA.",
+      "Aalo, Valar, NANO Nuclear, NuCube, Oklo, Westinghouse eVinci, Deep Fission: no announcement dated Nov 1-3, 2026 found.",
+      "Blocked to non-browser clients: ANS RSS (404 earlier), NRC press releases (403), Radiant newsroom and blog (403), Oklo IR (403), INL news releases (403), Last Energy news-press index (404), GlobeNewswire NANO release (403).",
+      "Search-summary dates not confirmed in a fetched page: GSR III / Terra Innovatum vote (year not stated), Deployable Energy Unity criticality (June 30 NRC vs July 2 SMR Intel)."
+    ]
+  },
+  "items": [],
+  "checks": [
+    {
+      "id": "check-last-energy-texas-dsa-approval-2026-10-08-1",
+      "target": "last-energy-texas-dsa-approval-2026-10-08",
+      "file": "news",
+      "claim": "date 2026-10-08 for: Last Energy's Texas pilot clears DOE safety analysis approval",
+      "verdict": "wrong",
+      "evidence": "ANS, 2 Nov 2026, quoting Last Energy's announcement: \"On October 7, Last Energy announced the DOE's approval of its DSA for its pilot reactor.\" The shipped date is 2026-10-08. Two dates differ by one day; the company-announced date is the event date.",
+      "correction": "2026-10-07",
+      "sources": [
+        {
+          "label": "American Nuclear Society — Antares, Last Energy, and Radiant hit DOE authorization milestones (2 Nov 2026)",
+          "url": "https://www.ans.org/news/2026-11-02/article-8549/antares-last-energy-and-radiant-hit-doe-authorization-milestones/",
+          "quote": "On October 7, Last Energy announced the DOE’s approval of its DSA for its pilot reactor.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

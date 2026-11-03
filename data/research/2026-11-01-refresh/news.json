@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "captured": "2026-11-01",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor events after 2026-10-30, then gap fill for 2026-08-31 to 2026-10-30. Checked against skip/news.json (94 shipped items) and skip/candidates.json (2 watcher headlines).",
+    "angles_run": [
+      "watcher candidates: Doosan NuScale upper vessel (fetched, out of scope: 77 MWe SMR), Hitachi BWRX-300 revenue (fetched, out of scope: SMR)",
+      "Radiant Kaleidos DOME criticality and fuel (searched; latest coverage Aug 12 to Aug 20 and Jul 10 fuel shipment; no criticality report found)",
+      "MARVEL / INL (searched; Oct 6 DSA approval already shipped; no later item found)",
+      "Valar, Aalo, Last Energy (searched; Last Energy PWR-5 still awaiting final DOE authorization per Sept 11 coverage; no criticality report)",
+      "NANO Nuclear KRONOS (searched; only fiscal Q3 results for quarter ended June 30 and older MOUs)",
+      "Antares Mark-1 and Mark-0 (searched; nothing after shipped Oct 23 gate)",
+      "Westinghouse eVinci (searched; Aug 25 zero-power criticality and Aug 26 NCERC cold criticality both outside the 60-day window or already shipped; NRC application not found)",
+      "Deep Fission, Terrestrial, Natura (searched; Deep Fission Oct 20 business update call listed but no content fetched; no Oct news for Terrestrial or Natura)",
+      "DOE Reactor Pilot Program and Launch Pad (searched; nothing after shipped Oct 7 and Oct 13 items)",
+      "Oklo (searched; no news after shipped Oct 13 item)",
+      "Army Janus, GA-TES, Fort Hood (searched; Aug 26 awards already shipped)",
+      "Standard Nuclear, HALEU and TRISO supply (searched; latest 2026 items are Jan to Mar)",
+      "Terra Innovatum SOLO (searched; NRC pre-application readiness review began Aug 10, outside window; not shipped, not a gap item)",
+      "Deployable Energy Unity (searched and fetched WNN, dated Oct 7 2026; shipped DOME record is dated 2026-09-30, not contradicted by a fetched page, so not written as a check)",
+      "Holtec, Blue Energy, X-energy (searched; no 2026 Sept to Oct news found)",
+      "Generic microreactor contract and financing sweep for Oct 2026 (searched; no new binding item found)"
+    ],
+    "absences": [
+      "No post-2026-10-30 item found in 22 web searches and 4 fetches. The search index returned nothing dated after 2026-10-30 for any listed company. This matches the 2026-10-18 finding that the index lags. ANS Nuclear Newswire RSS and NRC/Radiant/Oklo investor pages were not reachable with the tools available here.",
+      "Radiant Kaleidos criticality at DOME: not confirmed. Latest coverage found is Aug 20 (in transit). Radiant targeted Q3 2026 for the campaign. Recheck Radiant and INL releases.",
+      "Last Energy PWR-5 criticality: not reported. Sept 11 KBTX coverage says final DOE authorization expected within a couple of months.",
+      "Westinghouse eVinci NRC license application: no 2026 filing found. NRC eVinci page (updated Sept 15, 2026) lists pre-application items only.",
+      "Deep Fission Oct 20 2026 business update call: listed in a search summary, content not fetched. Not written as a record.",
+      "Terrestrial Energy, Natura Resources, Holtec, Blue Energy, X-energy: no Sept to Oct 2026 news found in search.",
+      "Gap-window candidates fetched but out of window or already shipped: Radiant first TRISO fuel shipment at DOME (NEI, dated Jul 10 2026, outside 60 days); eVinci NCERC cold criticality (ANS, Aug 26 2026, outside 60 days); Westinghouse eVinci Pittsburgh hub (WNN, dated 2023, not a 2026 event).",
+      "Watcher candidates excluded as out of scope: Doosan upper reactor coolant system for NuScale (77 MWe SMR, Oct 30 2026, no microreactor link); Hitachi nuclear revenue and BWRX-300 delivery (SMR, Oct 30 2026)."
+    ]
+  },
+  "items": []
+}

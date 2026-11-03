@@ -368,3 +368,49 @@ not recorded by that run.
 The 16:00 scheduled firing found today's pass dir already committed on the branch (in the
 `micro-reactor-uat-perf` worktree) and ran no agents, per the "do not re-run" rule. PR #32 is
 0 days old, so no merge gate.
+
+## 2026-11-01 daily refresh
+
+Four Haiku agents (odd day: applications, costs, ideas skipped), 2 at a time. 0 news, 0 corrections, 5 shipped rows confirmed.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | nothing; both watcher leads (Doosan/NuScale, Hitachi BWRX-300) are SMRs | no |
+| deals | 154K | 4 confirmations (DOE pilot, Janus, Equinix-Radiant, UK Last Energy) | marginal |
+| vendors | 147K | 1 confirmation (Valar BLM not approved); quote trimmed to verbatim | marginal |
+| politics | 167K | nothing new; Part 57 still proposed | no |
+
+Main-session web search (4 queries) and the RSS watcher found nothing dated after 2026-10-30. Three
+quiet agents at ~150K each is ~460K for zero new rows; on a weekend with an empty watcher, consider
+running news + deals only.
+
+## 2026-11-02 daily refresh
+
+Seven Haiku agents (even day), 2 at a time. 0 news, 2 corrections (vendors), 13 shipped rows confirmed,
+5 agent checks overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 163K | nothing; all 3 watcher leads out of segment (Long Mott 320 MWe, Doosan, Hitachi) | no |
+| deals | 159K | 5 confirmations (Janus, DOE pilot, SRC, Equinix-Radiant, Oklo-Switch) | marginal |
+| vendors | 164K | 2 corrections: Radiant Q3 DOME target passed; eVinci DOME selection was 2025-07-01, not 2026 | yes |
+| politics | 157K | 1 confirmation (Part 57 still proposed) | no |
+| applications | 172K | 5 "awarded" checks on Janus sites, all overruled (Army release says down-selected); 1 out-of-segment application held | no |
+| costs | 138K | nothing; Alaska PCE and 45Y-window leads unverified | no |
+| ideas | 138K | 2 confirmations (Price-Anderson, DOME 20 MWt cap) | marginal |
+
+~1.09M agent tokens for 2 corrections. Deals re-checked canada-src and equinix-radiant again (both checked
+in the last week).
+
+## 2026-11-03 daily refresh
+
+Four Haiku agents (odd day), 2 at a time. 0 news, 4 corrections (1 integrated, 3 by hand), 8 shipped rows confirmed.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 173K | 1 correction (Last Energy DSA date 10-08 -> 10-07); both watcher leads out of segment | yes |
+| deals | 157K | 4 confirmations (Janus, canada-src again, oklo-switch, equinix-radiant) | no |
+| vendors | 153K | 1 confirmation; its absences note led to the eVinci DOME-slot correction | yes (via absences) |
+| politics | 146K | 2 corrections (Alaska regs 2023, Texas $2B unsupported), 2 confirmations | yes |
+
+~630K agent tokens. Playwright's Chromium had gone missing from the machine cache; reinstalled the pinned build before the suite would pass.

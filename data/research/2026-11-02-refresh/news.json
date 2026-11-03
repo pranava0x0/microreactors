@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor market events after 2026-10-30, then the prior 60-day gap (2026-09-03 to 2026-10-30). Starts from skip/candidates.json (3 headlines), then searches. Skip list read in full (94 shipped ids).",
+    "angles_run": [
+      "candidates: Texas SMR Long Mott (WNN 2026-11-02), Doosan NuScale upper vessel (WNN 2026-10-30), Hitachi nuclear revenue (Utility Dive 2026-10-30)",
+      "criticality and testing: DOE Reactor Pilot Program status, Last Energy PWR-5 readiness review, Radiant Kaleidos DOME fuel loading",
+      "DOME slots: Westinghouse eVinci withdrawal from 2027 slot, Deployable Energy second slot",
+      "financing: microreactor funding rounds Oct 2026, Antares Series C, Aalo, Valar",
+      "fuel: HALEU allocation rounds, Standard Nuclear TRISO deliveries, General Matter, Radiant TRISO",
+      "companies swept without a new in-window hit: Aalo, Westinghouse, Holtec, Terrestrial, Standard Nuclear, General Atomics, Natura, Blue Energy, Oklo, Valar, Deep Fission, NuCube",
+      "personnel: CEO/COO appointments at microreactor developers, Oct 2026"
+    ],
+    "absences": [
+      "No new 1-20 MW microreactor event dated after 2026-10-30 was found in the sources reachable this pass. The search index returned no items dated 2026-10-31 to 2026-11-02 for the listed companies, so this is a search-coverage absence, not confirmation that nothing happened.",
+      "Prior 60-day gap (2026-09-03 to 2026-10-30): every company hit surfaced in searches was already shipped in skip/news.json (Radiant DSA, Deployable DOME, Last Energy DSA, MARVEL DSA, NANO and Oklo items, Kairos Hermes 2 financing, Natura salt, Valar Beehive). Nothing new was verifiable in that window.",
+      "Last Energy PWR-5: readiness review and DOE startup authorization not found in any source. Shipped DSA item (2026-10-08) remains the latest.",
+      "Radiant Kaleidos DOME: no source found showing the Readiness Review completed or fuel loading begun as of 2026-11-02. A late-October release says the review is the next step; no date given.",
+      "Westinghouse eVinci DOME slot: NEI Magazine (published 2026-10-05, fetched) says Westinghouse notified NRIC it would not take the 2027 DOME slot about two months after the July 2025 conditional selection, so the event date is about September 2025, outside the window. Deployable Energy took that slot; the Deployable selection is already shipped. Not written as a news item.",
+      "Holtec SMR-300, Terrestrial Energy IMSR, Blue Energy, General Atomics, Standard Nuclear: no dated September to October 2026 item found beyond what is shipped.",
+      "Oklo: latest found is an NRC-posted Q4 2026 licensing plan letter dated 2026-09-29, a plan update rather than a milestone. Not written up.",
+      "Valar Ward 250: ANS (2026-10-05) says DOE progressed Ward 250 through authorization for permitting, with no date or document given; the quote was partial and not verifiable verbatim. Not written up.",
+      "DOE HALEU third round to NASA and Radiant: DOE page found, but no date, quantity or fetched text in this pass. Not written up.",
+      "Candidate skipped: Texas SMR Long Mott (WNN 2026-11-02, fetched). NRC Final Safety Evaluation Report released 2026-10-30 for X-energy's Xe-100 construction permit, 4 units, 320 MWe for Dow Seadrift. Outside the 1-20 MW market; it does not change a microreactor buyer's position directly.",
+      "Candidate skipped: Doosan to make upper reactor vessel for NuScale SMR (WNN 2026-10-30) and Hitachi nuclear revenue (Utility Dive 2026-10-30). Outside the 1-20 MW market; not fetched.",
+      "Sources blocked or thin: ANS Nuclear Newswire RSS 404 (per candidates.json), NRC and Radiant newsroom 403 to non-browser clients. Web search returned mostly 2025 and mid-2026 material."
+    ]
+  },
+  "items": []
+}

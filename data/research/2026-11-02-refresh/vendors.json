@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (first_delivery_target, milestones, MWe, refuel, fuel, notes) and Type N items for vendor milestones dated after 2026-10-30 not in skip/news.json, including 1-20 MWe designs outside the vendor table.",
+    "angles_run": [
+      "Radiant Kaleidos DOME criticality status (Q3 2026 target)",
+      "Valar Ward 250 / Project Beehive Utah lease acreage",
+      "Antares Mark-1 and R1 status after 2026-10-23",
+      "Westinghouse eVinci DOME slot and 2025/2026 selection date",
+      "BWXT BANR MWe rating and Janus Fort Campbell",
+      "Aalo-X post-criticality next step",
+      "General Atomics GA-TES Janus Fort Hood terms",
+      "Generic microreactor news for 2026-10-31 to 2026-11-02",
+      "Last Energy PWR-20 Texas pilot after DSA approval",
+      "NANO Nuclear KRONOS / ZEUS after 2026-10-30",
+      "Natura MSR-1 salt and fuel status",
+      "Terra Innovatum SOLO, Blue Energy, Steady Energy LDR-50",
+      "Deployable Energy Unity DOME 2027 timing",
+      "Project Pele (BWXT) reactor shipment status",
+      "Oklo Aurora-INL 2028 startup target",
+      "Valar Nvidia 30 MW Utah study"
+    ],
+    "absences": [
+      "Type N items: no vendor milestone dated 2026-10-31 to 2026-11-02 was found for any shipped or table-external 1-20 MWe vendor (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy). Searches returned nothing dated after 2026-10-30; the index may lag the current date.",
+      "Westinghouse withdrawal from the 2027 DOME slot: one secondary search summary says NRIC confirmed this and that a new DOME application round comes in 2027. No fetched primary (NRIC, DOE, or Westinghouse) confirmed it, so the eVinci check does not rely on it.",
+      "Valar Utah acreage: the Utah Trust Lands board PDF (utah.gov/pmn/files/1479233.pdf) exceeded the fetch size limit. A search summary cites 480 initial acres plus 160 later, against the shipped 640-plus. The fetched East Idaho News page confirms 'more than 640 acres' on Sept. 17, so the shipped text is kept; the 480/640 discrepancy is unresolved.",
+      "Valar Nvidia 30 MW claim (the shipped note says it was not re-checked): search summaries describe a feasibility study for a 30 MW Emery County data center. No primary was fetched, so no check was written.",
+      "Radiant TRISO / DOME pages (radiantnuclear.com) returned HTTP 403 to WebFetch. The Radiant check uses the fetched Business Wire release (via OffshoreSource, dated 2026-10-29) instead.",
+      "BWXT BANR rating: an ANS/WNN search summary gives 22 MWe at 75 MWt for the Belledune Prodigy unit, against 20 MWe for Janus at Fort Campbell. Both are presented as one design rated differently, so the shipped 20 MWe was not changed.",
+      "No check written, shipped text unchanged, for Antares (Mark-1 full-power test in 2027 at INL and 2028 field units are consistent with the shipped milestones), GA-TES (about 5 MWe, scalable to about 20 MWe, matches shipped), Aalo-X (no new output figure found), Oklo Aurora-INL (2028 startup target still reported in Q2 2026 coverage; Q3 2026 10-Q not yet found).",
+      "Project Pele (BWXT, 1.5 MW): no 2026 shipment or startup announcement found. Fuel delivery to INL was December 2025 and the reactor was still being built in Lynchburg per a September 2026 Axios piece. Not a shipped-vendor record; no item written.",
+      "Fetch budget: 1 WebFetch call on the Valar PDF failed on size, and 1 on Radiant returned 403. Searches used: 19 of about 25 budgeted; fetches used: 6 of about 20 budgeted."
+    ]
+  },
+  "items": [],
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "DOME campaign complete: criticality through 150 h unattended run",
+      "verdict": "outdated",
+      "evidence": "Milestone was dated 2026 Q3. Radiant's 2026-10-29 release says testing has not started: fueling follows DOE's Readiness Review, which has no set date. Coverage through early November shows no criticality at INL.",
+      "correction": "DOME campaign: criticality through 150 h unattended run; the Q3 target passed and fueling waits on DOE's Readiness Review, which has no set date",
+      "sources": [
+        {
+          "label": "Business Wire via OffshoreSource - Radiant DOE full-power safety analysis approval (2026-10-29)",
+          "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+          "quote": "Following successful completion of the review, Radiant will fuel Kaleidos and begin its five-phase test campaign",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session fetched every source and confirmed the quotes; correction rewritten to keep the shipped detail. The eVinci selection milestone date was changed from 2026 to 2025-07-01 by hand (DOE release dated July 1, 2025)."
+    },
+    {
+      "id": "check-evinci-1",
+      "target": "evinci",
+      "file": "vendors",
+      "claim": "Scaled 3 MWt heat-pipe nuclear test reactor at INL DOME, testing from 2026",
+      "verdict": "outdated",
+      "evidence": "DOE selected the eVinci Nuclear Test Reactor for DOME in July 2025, not 2026; the milestone dated 2026 should read 2025. DOE then said the first fueled DOME experiment would start as early as spring 2026. A 2026-10-07 WNN article describes the selection as made 'last year' and reports no DOME fueled run. The NCERC criticality test (Aug 2026) was run at Los Alamos, not DOME.",
+      "correction": "Scaled 3 MWt heat-pipe nuclear test reactor selected for INL DOME on 2025-07-01; no fueled DOME run reported as of Oct 2026",
+      "sources": [
+        {
+          "label": "U.S. DOE Office of Nuclear Energy - first microreactor experiments in DOME (July 2025)",
+          "url": "https://www.energy.gov/node/4851650",
+          "quote": "The first fueled reactor experiment will start as early as spring 2026.",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News - Deployable Energy to test its Unity nuclear battery in DOME (2026-10-07)",
+          "url": "https://world-nuclear-news.org/articles/deployable-energy-to-test-its-unity-nuclear-battery-in-dome",
+          "quote": "Westinghouse was also selected last year by the DOE to test the eVinci Nuclear Test Reactor",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session fetched every source and confirmed the quotes; correction rewritten to keep the shipped detail. The eVinci selection milestone date was changed from 2026 to 2025-07-01 by hand (DOE release dated July 1, 2025)."
+    }
+  ]
+}

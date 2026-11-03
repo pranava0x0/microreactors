@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "captured": "2026-11-02",
+    "agent": "applications",
+    "scope": "Applications tab: Type G checks on shipped deployment_sites (Army Janus records); Type S new segment entry (data-center PPA); Type E regions checked, none written.",
+    "angles_run": [
+      "janus-award-status",
+      "eielson-timeline",
+      "last-energy-london-gateway",
+      "army-janus-release",
+      "nasa-doe-lunar-status",
+      "penn-state-frontier-status",
+      "hospital-microreactor",
+      "disaster-emergency-power",
+      "chemical-process-heat",
+      "ciech-synthos-soda-ash",
+      "lh-industrial-bwxt",
+      "valar-utah-data-center",
+      "oklo-equinix-loi",
+      "faroe-islands-tariff"
+    ],
+    "absences": [
+      "Eielson (Oklo NOITA, deployment_sites eielson-pilot): a June 2026 Eielson newsletter says the Air Force now estimates completion in 2030, but the eielson.af.mil PDF returned HTTP 403 and the 2030 date appears only in a search summary. No check written.",
+      "Penn State FRONTIER (psu-frontier and penn-state-evinci) and NASA/DOE lunar (nasa-doe-fsp-lunar): searched for 2026 status; found no 2026 change and no primary page to confirm one. No check written. The lunar record says 'DOE-NASA agreement'; the NASA/DOE sources name a memorandum of understanding (ANS, 2026-01-14). Not fetched from the primary release.",
+      "Last Energy London Gateway (segments last-energy-london-gateway): searched for 2026 updates; none found beyond the 2025 MOU. No check written.",
+      "Janus power figures: janus-bragg shows 100 kWe-1 MWe per unit, but the Army/AP article fetched describes 'Nuclear microreactors can produce 1-20 megawatts of thermal energy' as a class description. Not reconciled; no power check written.",
+      "Hospitals: one search; the only hospital item was a 2022 cogeneration plant, not a microreactor deal. No application written.",
+      "Disaster recovery and emergency power: one search; results were proposed bills (not enacted) and an Air Force base FAQ. No signed 2026 agreement found. No application written.",
+      "Chemical process heat: Tata/BWXT (Wyoming, 2024) is already shipped. Ciech/Synthos (Poland) letter of intent of 2021 was terminated in October 2023 and replaced by an OSGE BWRX-300 study agreement with no power figure stated for the Ciech deal. L&H Industrial/BWXT joint development agreement (about April 2024) has no deal-specific MWe. Neither has a load or price, so neither was written.",
+      "Valar Atomics 30 MW Utah data-center plan: already on the News tab (valar-nvidia-datacenter-2026-06-22), so not added as an application. One source reports the Ward250 output at about 100 kW in June 2026, which conflicts with the 30 MW plan.",
+      "Faroe Islands (new Type E region candidate): no 2025 household tariff or system load in MW found. The 2023-24 SEV tariff changes are older than the 2025 price standard. Not written.",
+      "Equinix/Oklo deal (applications entry): dcd (datacenterdynamics.com) returned HTTP 403, so the single fetched source is WNN (2024-04-09). Pre-payment amount and binding status are not confirmed from a fetched page."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-bragg-1",
+      "target": "janus-bragg",
+      "file": "deployment_sites",
+      "claim": "intent-to-award",
+      "verdict": "confirmed",
+      "evidence": "The Army and DIU announced on 2026-08-26 that they awarded up to $2.2 billion for vendors to construct, own and operate microreactors on military bases under Janus. Antares Nuclear, Inc. was paired with Fort Bragg. AP wording: 'has awarded'; the Reuters copy on AJOT (2026-08-28) says 'it is awarding'. Neither article gives the contract value for Fort Bragg.",
+      "correction": "awarded",
+      "sources": [
+        {
+          "label": "Newschannel9 (AP) — Army announces $2.2 billion agreement to build nuclear microreactors at 5 bases (2026)",
+          "url": "https://newschannel9.com/news/nation-world/army-announces-22-billion-agreement-to-build-nuclear-microreactors-at-5-bases-dod-president-trump-pete-hegseth-dan-driscoll",
+          "quote": "awarded up to $2.2 billion total to construct, own, and operate nuclear microreactors on military bases",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT (Reuters) — US Army awards up to $2.2 billion to five companies to build microreactors on bases (2026)",
+          "url": "https://www.ajot.com/news/us-army-awards-up-to-2.2-billion-to-five-companies-to-build-microreactors-on-bases",
+          "quote": "it is awarding up to $2.2 billion to five companies to build and operate tiny nuclear reactors on military bases",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled: the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' (deals check check-janus-1). AP and Reuters paraphrase that as 'awarded'; the primary source supports intent-to-award until agreements are signed."
+    },
+    {
+      "id": "check-janus-drum-1",
+      "target": "janus-drum",
+      "file": "deployment_sites",
+      "claim": "intent-to-award",
+      "verdict": "confirmed",
+      "evidence": "The Army's Janus award of up to $2.2 billion, announced 2026-08-26, names Westinghouse Government Services for Fort Drum, New York. AP says the Army 'has awarded'; the Reuters copy on AJOT (2026-08-28) says 'it is awarding'. Contract value and unit count are not in either article.",
+      "correction": "awarded",
+      "sources": [
+        {
+          "label": "Newschannel9 (AP) — Army announces $2.2 billion agreement to build nuclear microreactors at 5 bases (2026)",
+          "url": "https://newschannel9.com/news/nation-world/army-announces-22-billion-agreement-to-build-nuclear-microreactors-at-5-bases-dod-president-trump-pete-hegseth-dan-driscoll",
+          "quote": "awarded up to $2.2 billion total to construct, own, and operate nuclear microreactors on military bases",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT (Reuters) — US Army awards up to $2.2 billion to five companies to build microreactors on bases (2026)",
+          "url": "https://www.ajot.com/news/us-army-awards-up-to-2.2-billion-to-five-companies-to-build-microreactors-on-bases",
+          "quote": "Westinghouse Government Services in Fort Drum, New York",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled: the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' (deals check check-janus-1). AP and Reuters paraphrase that as 'awarded'; the primary source supports intent-to-award until agreements are signed."
+    },
+    {
+      "id": "check-janus-benning-1",
+      "target": "janus-benning",
+      "file": "deployment_sites",
+      "claim": "intent-to-award",
+      "verdict": "confirmed",
+      "evidence": "Under the Janus award announced 2026-08-26 (up to $2.2 billion across five bases), Radiant Industries was paired with Fort Benning, Georgia. AP says the Army 'has awarded'; the Reuters copy says 'it is awarding'. The article gives no unit count or first-power date.",
+      "correction": "awarded",
+      "sources": [
+        {
+          "label": "Newschannel9 (AP) — Army announces $2.2 billion agreement to build nuclear microreactors at 5 bases (2026)",
+          "url": "https://newschannel9.com/news/nation-world/army-announces-22-billion-agreement-to-build-nuclear-microreactors-at-5-bases-dod-president-trump-pete-hegseth-dan-driscoll",
+          "quote": "awarded up to $2.2 billion total to construct, own, and operate nuclear microreactors on military bases",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT (Reuters) — US Army awards up to $2.2 billion to five companies to build microreactors on bases (2026)",
+          "url": "https://www.ajot.com/news/us-army-awards-up-to-2.2-billion-to-five-companies-to-build-microreactors-on-bases",
+          "quote": "Radiant Industries Inc in Fort Benning, Georgia",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled: the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' (deals check check-janus-1). AP and Reuters paraphrase that as 'awarded'; the primary source supports intent-to-award until agreements are signed."
+    },
+    {
+      "id": "check-janus-campbell-1",
+      "target": "janus-campbell",
+      "file": "deployment_sites",
+      "claim": "intent-to-award",
+      "verdict": "confirmed",
+      "evidence": "The Janus award announced 2026-08-26 (up to $2.2 billion across five bases) names BWXT Advanced Technologies for Fort Campbell, Kentucky. AP says the Army 'has awarded'; the Reuters copy says 'it is awarding'. Neither article gives the contract value or the groundbreaking date.",
+      "correction": "awarded",
+      "sources": [
+        {
+          "label": "Newschannel9 (AP) — Army announces $2.2 billion agreement to build nuclear microreactors at 5 bases (2026)",
+          "url": "https://newschannel9.com/news/nation-world/army-announces-22-billion-agreement-to-build-nuclear-microreactors-at-5-bases-dod-president-trump-pete-hegseth-dan-driscoll",
+          "quote": "awarded up to $2.2 billion total to construct, own, and operate nuclear microreactors on military bases",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT (Reuters) — US Army awards up to $2.2 billion to five companies to build microreactors on bases (2026)",
+          "url": "https://www.ajot.com/news/us-army-awards-up-to-2.2-billion-to-five-companies-to-build-microreactors-on-bases",
+          "quote": "BWXT Advanced Technologies LLC in Fort Campbell, Kentucky",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled: the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' (deals check check-janus-1). AP and Reuters paraphrase that as 'awarded'; the primary source supports intent-to-award until agreements are signed."
+    },
+    {
+      "id": "check-janus-hood-1",
+      "target": "janus-hood",
+      "file": "deployment_sites",
+      "claim": "intent-to-award",
+      "verdict": "confirmed",
+      "evidence": "The Janus award announced 2026-08-26 (up to $2.2 billion across five bases) names General Atomics Electromagnetic Systems for Fort Hood, Texas. AP says the Army 'has awarded'; the Reuters copy says 'it is awarding'. Neither article gives a contract value or timeline for Fort Hood.",
+      "correction": "awarded",
+      "sources": [
+        {
+          "label": "Newschannel9 (AP) — Army announces $2.2 billion agreement to build nuclear microreactors at 5 bases (2026)",
+          "url": "https://newschannel9.com/news/nation-world/army-announces-22-billion-agreement-to-build-nuclear-microreactors-at-5-bases-dod-president-trump-pete-hegseth-dan-driscoll",
+          "quote": "awarded up to $2.2 billion total to construct, own, and operate nuclear microreactors on military bases",
+          "status": "fetched"
+        },
+        {
+          "label": "AJOT (Reuters) — US Army awards up to $2.2 billion to five companies to build microreactors on bases (2026)",
+          "url": "https://www.ajot.com/news/us-army-awards-up-to-2.2-billion-to-five-companies-to-build-microreactors-on-bases",
+          "quote": "General Atomics Electromagnetic Systems in Fort Hood, Texas",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled: the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements' (deals check check-janus-1). AP and Reuters paraphrase that as 'awarded'; the primary source supports intent-to-award until agreements are signed."
+    }
+  ],
+  "applications": [
+    {
+      "id": "equinix-oklo-data-center-loi",
+      "segment": "data center power (grid-connected PPA)",
+      "name": "Equinix and Oklo letter of intent (right of first refusal on Oklo powerhouses)",
+      "status": "proposed",
+      "power_class": "100-500 MWe",
+      "timeline": "letter of intent reported 2024-04-09; right of first refusal for up to 36 months; 20-year PPA terms if signed",
+      "sponsor": "Equinix (data-center operator, prospective buyer)",
+      "vendor": "Oklo (Aurora powerhouses)",
+      "what_it_says": "Equinix got a right of first refusal for 100-500 MWe of output from certain Oklo powerhouses, for up to 36 months, to supply its US data centres over a 20-year period. World Nuclear News reports that Oklo 'has also recently signed a letter of intent to provide up to 500 MWe of power to Equinix.' The article gives no price.",
+      "microreactor_read": "The 100-500 MWe range implies a fleet of units, far beyond one 1-20 MW block. It is a letter of intent with a right of first refusal, with no price and no order, so it is an option rather than a purchase.",
+      "sources": [
+        {
+          "label": "World Nuclear News — US companies sign up with Oklo for microreactor power (2024-04-09)",
+          "url": "https://world-nuclear-news.org/articles/us-companies-sign-up-with-oklo-for-microreactor-po",
+          "quote": "Equinix would have a right of first refusal for 100-500 MWe of output from certain powerhouses for up to 36 months.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
