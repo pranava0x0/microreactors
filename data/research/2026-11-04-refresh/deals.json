@@ -1,0 +1,25 @@
+{
+ "_meta": {
+  "captured": "2026-11-04",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities (prioritised rows) and Type N items for buyer deals dated after 2026-10-30 that skip/news.json lacks. Read skip/opportunities.json, skip/news.json, skip/web-leads.md. 21 web searches and 5 fetches used (3 fetched successfully).",
+  "angles_run": [
+   "Army Janus site selections after 2026-08-26 (army.mil fetch: Fort Drum, Westinghouse Government Services, dated Aug. 26, 2026; no November change found)",
+   "Air Force ANPI Eielson: DAF 2025 article fetched (2025-06-12); later 2026 notice found only in search summaries; eielson.af.mil, newsminer and alaskabeacon returned 403 or 429",
+   "DOE Reactor Pilot Program sixth criticality (no sixth confirmed; DOE release 2026-08-06 fetched: Groves is the fifth)",
+   "Generic sweeps for microreactor PPA, LOI, MOU and contract news dated November 2026",
+   "Radiant Kaleidos, NANO Nuclear KRONOS, Antares, Oklo, Last Energy, BWXT BANR, Westinghouse eVinci, Valar/Aalo/Deployable, Deep Fission, Kairos, Crusoe-Aalo, Tata Chemicals: post-2026-10-30 buyer deals",
+   "Date checks on undated leads: Ameresco MOU (2026-01-12, shipped elsewhere), Tata LOI (2024-12-17, applications lane), Kairos-TVA PPA (2025-08-18), Deep Fission GPDA (shipped 2026-10-20), Crusoe-Aalo (2026-07-30)"
+  ],
+  "absences": [
+   "No buyer deal (PPA, MOU, LOI, contract or site selection) dated after 2026-10-30 surfaced that skip/news.json lacks, after about 20 searches across the named vendors and buyers and two generic sweeps. Items array left empty on purpose.",
+   "Eielson (opportunities id eielson): search summaries describe the 2025-06-11 award as revoked and a newer notice of intent to award to Oklo issued in 2026 (undated or Feb 2026 per one RTTNews timestamp). No fetched primary page confirms the 2026 notice. newsminer returned 429, alaskabeacon 403, eielson.af.mil 403. The shipped text is unchanged; a check needs the primary DAF or DLA Energy notice fetched.",
+   "anpi-buckley and anpi-malmstrom: not checked. No fetched page in budget. Search summaries are consistent with shipped text (Buckley Radiant selection April 2026; Malmstrom eVinci proposed, not a firm order).",
+   "janus, doe-pilot, equinix-radiant, oklo-switch, canada-src and anpi-jbsa already carry checks in data/research/2026-10-31-refresh/deals.json. Not repeated. The Janus and DOE fetches in this pass agree with those checks: Fort Drum award dated Aug. 26, 2026; DOE release dated Aug. 6, 2026 calls Groves the fifth DOE-authorized advanced reactor to achieve criticality this summer.",
+   "uk-lastenergy: search summaries give the Sept 2025 Thames Freeport (London Gateway) MoU with DP World and a 2030 target, consistent with shipped text. No newer source or fetched page found, so no check written.",
+   "Out-of-window or out-of-scope leads seen and not written: Saltfoss floating 600 MW NRC letter of intent (2026-11-04, regulatory filing, not a buyer deal, outside 1-20 MW band); Crusoe-Aalo partnership 2026-07-30 (voices.json only, before window); Utah Office of Energy Development and Nuclea Energy agreement (about 2026-08-11, before window); Tata Chemicals LOI for up to eight BANR units (2024-12-17, already in applications data)."
+  ]
+ },
+ "checks": [],
+ "items": []
+}

@@ -254,7 +254,7 @@
    "name": "Canadian Strategic Missions Corporation Arctic microreactor",
    "status": "funded",
    "power_class": "not stated",
-   "timeline": "$4.5 million award reported 2026-07-23; company target of fleet-scale deployment by 2030",
+   "timeline": "$4.5 million award reported 2026-07-23; company target of fleet-scale deployment from 2030",
    "sponsor": "FedDev Ontario (Government of Canada)",
    "vendor": "Canadian Strategic Missions Corporation",
    "what_it_says": "FedDev Ontario awarded Canadian Strategic Missions Corporation $4.5 million to fund detailed design and a fuelled demonstration of its microreactor for the Arctic, part of a $40.5 million package split among 23 organisations. Canada's Department of National Defence has trouble supplying diesel to remote northern outposts.",
@@ -264,6 +264,12 @@
      "label": "SpaceQ — CSMC secures $4.5 million federal investment for Arctic microreactor development (2026)",
      "url": "https://spaceq.ca/csmc-secures-4-5-million-federal-investment-for-arctic-microreactor-development/",
      "quote": "has been awarded a $4.5 million investment from the Federal Economic Development Agency for Southern Ontario",
+     "status": "fetched"
+    },
+    {
+     "label": "SpaceQ — CSMC unveils three reactor platforms, defence a priority (2026)",
+     "url": "https://spaceq.ca/csmc-unveils-three-reactor-platforms-defence-a-priority/",
+     "quote": "CSMC aims to switch on POLAR-1 for the first time by 2028, with fleet-scale deployment from 2030 onward.",
      "status": "fetched"
     }
    ],
@@ -615,6 +621,59 @@
     }
    ],
    "group": "heat"
+  },
+  {
+   "id": "hornbeck-deployable-unity-maritime-mou",
+   "segment": "maritime and shipping",
+   "name": "Hornbeck Offshore and Deployable Energy Unity maritime MOU",
+   "status": "proposed",
+   "power_class": "1 MWe",
+   "timeline": "MOU announced 2026-08-17",
+   "vendor": "Deployable Energy (Unity Nuclear Battery)",
+   "what_it_says": "Deployable Energy and Hornbeck Offshore signed a memorandum of understanding on 17 August 2026 to pursue maritime uses of the Unity reactor, which is rated at 1 MWe and is mass-manufactured and transportable. The coverage fetched names no vessel, site or price.",
+   "microreactor_read": "A 1 MWe block sits at the bottom of the 1-20 MW band and suits a single vessel or offshore platform load. Only an MOU is public, with no load, price or order.",
+   "sources": [
+    {
+     "label": "Marine Link — Deployable Energy and Hornbeck Offshore partner to advance nuclear power (2026)",
+     "url": "https://www.marinelink.com/news/deployable-energy-hornbeck-offshore-542181",
+     "quote": "Deployable Energy's Unity Nuclear Battery is a 1 MWe, mass-manufactured, transportable microreactor",
+     "status": "fetched"
+    },
+    {
+     "label": "Offshore Energy (OE Digital) — Deployable Energy and Hornbeck Offshore partner to advance nuclear power (2026)",
+     "url": "https://www.oedigital.com/amp/news/542181-deployable-energy-and-hornbeck-offshore-partner-to-advance-nuclear-power",
+     "quote": "Deployable Energy has signed a Memorandum of Understanding with Hornbeck Offshore",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "ampera-scorpio-floating-nuclear-barge",
+   "segment": "maritime and shipping",
+   "name": "Scorpio Tankers and AMPERA floating nuclear power barges",
+   "status": "proposed",
+   "power_class": "15-30 MWe (expected)",
+   "timeline": "strategic collaboration announced 2026-04-03; floating barges first, nuclear-powered vessels later",
+   "sponsor": "Scorpio Tankers ($10 million equity investment in AMPERA)",
+   "vendor": "AMPERA",
+   "what_it_says": "Scorpio Tankers announced a strategic collaboration with AMPERA on 3 April 2026 and put $10 million into the developer. The companies plan floating nuclear power barges first, with nuclear-powered commercial vessels later. The stated output of 15 to 30 MWe is an expectation, not a design figure.",
+   "microreactor_read": "A 15-30 MWe unit is above the 1-20 MW band at the top end and sits within it at the bottom. No buyer, port, price or site is named, and the money is equity for early design work.",
+   "sources": [
+    {
+     "label": "Scorpio Tankers — Scorpio Tankers announces strategic collaboration with AMPERA (2026)",
+     "url": "https://www.hellenicshippingnews.com/scorpio-tankers-inc-announces-strategic-collaboration-with-ampera-inc-to-develop-commercialize-micronuclear-solutions-for-global-marine-and-shipping-markets/",
+     "quote": "our $10 million investment in AMPERA reflects both our conviction in nuclear",
+     "status": "fetched"
+    },
+    {
+     "label": "Marine Insight — U.S. firm reveals micro nuclear reactor that could power ships for decades without refuelling (2026)",
+     "url": "https://www.marineinsight.com/u-s-firm-reveals-micro-nuclear-reactor-that-could-power-ships-for-decades-without-refuelling/",
+     "quote": "It is expected to generate between 15 and 30 MWe of power.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
   }
  ]
 }

@@ -414,3 +414,19 @@ Four Haiku agents (odd day), 2 at a time. 0 news, 4 corrections (1 integrated, 3
 | politics | 146K | 2 corrections (Alaska regs 2023, Texas $2B unsupported), 2 confirmations | yes |
 
 ~630K agent tokens. Playwright's Chromium had gone missing from the machine cache; reinstalled the pinned build before the suite would pass.
+
+## 2026-11-04 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 11 main-session web searches and a 2-query X pass found nothing new after 10-30. 0 news, 2 corrections, 2 applications, 7 shipped rows confirmed, 3 agent checks overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 156K | 0 items; both watcher leads SMR (320 MWe Xe-100, 77 MWe NuScale) | no |
+| deals | 165K | 0 records; its Eielson "revoked" lead was the 2023 event, superseded by the shipped 2025 NOITA | no |
+| vendors | 155K | 2 checks, both overruled in part: BANR 22 MWe is the Belledune build, not the shipped Janus row (BWXT: 20 MWe); Aalo-X 10 MWe belongs to the demo plant, not the zero-power test reactor (label reworded) | partly |
+| politics | 167K | 4 confirmations (Part 57 still proposed, Part 53 final, $154 reduced rate, four July criticalities); flagged the NRC 10-22 rule as missing, but it is on the News tab | no |
+| applications | 177K | 1 correction (CSMC "by 2030" -> "from 2030"), 1 confirmation, 2 maritime rows shipped (Hornbeck/Unity MOU, Scorpio/AMPERA), 1 held (Jyvaskyla already in regions) | yes |
+| costs | 139K | 1 check overruled: quoted the first clause of a sentence that already carries the 2026 PCE rate (repeat of 10-28) | no |
+| ideas | 142K | 0 records | no |
+
+~1.1M agent tokens for 2 corrections and 2 rows. Phone cost 1.69 (unchanged).

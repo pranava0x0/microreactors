@@ -1,0 +1,130 @@
+{
+  "_meta": {
+    "captured": "2026-11-04",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation. Type G checks on shipped policy pathways (skip/policy.json has no per-pathway ids, so target = group id plus pathway name); Type F dockets not in skip/dockets.json; Type N items dated after 2026-10-30.",
+    "angles_run": [
+      "Part 57 status and final-rule schedule",
+      "Part 53 final-rule status",
+      "ADVANCE Act FY2026 reduced hourly rate",
+      "DOE Reactor Pilot Program criticality dates",
+      "Texas Backup Power Package nuclear eligibility",
+      "California SB 978 status",
+      "FY2027 NDAA and Army Janus",
+      "State utility commission microreactor dockets (VA SCC, Appalachian Power SMR request)",
+      "FY2027 Energy-Water appropriations (DOE nuclear, MARVEL)",
+      "State governor signings, October 2026",
+      "Federal microreactor bills, October 2026",
+      "CNSC microreactor decisions",
+      "NRC Commission votes, November 2026",
+      "Utility microreactor filings, September 2026"
+    ],
+    "absences": [
+      "Part 57 final-rule date: the NRC Part 57 page returned HTTP 403 to WebFetch; no Federal Register notice, Commission paper or NRC schedule with a final-rule date was fetched. The 2026-11-23 target in the brief comes from search summaries citing the executive order, not a fetched page, so it is not written into any check.",
+      "Part 57 comment-period close (2026-06-15) appears only in search summaries; not used as a check.",
+      "California SB 978 (data center backup generators): no source after June 2026 found; the shipped 'proposed' status could not be confirmed or corrected. No check written.",
+      "Texas Backup Power Package (16 TAC 25.513): fetched EnergyChoiceMatters (2026-05-08) describes the required technology mix but does not mention nuclear; the adopted rule text was not fetched. Freshness rule not met, so no check written.",
+      "May 2025 executive orders' 18-month NRC decision ceiling: not re-verified in a fetched page this pass.",
+      "FY2027 Energy-Water bill (H.R. 9022): committee approval (May 2026) fetched only in search summaries; House floor, Senate and continuing-resolution status not found. No event dated after 2026-10-30 found.",
+      "FY2027 NDAA nuclear or microreactor provisions: no text or summary found. Army Janus selections (2026-08-26) are already shipped and no November award was found.",
+      "No NRC Commission vote on a rule dated after 2026-10-30 found. The latest Commission action found is the 2026-10-22 final rule on licensing reactors with prior DOE or DoW authorization (before the window). It is absent from skip/news.json and is not written as an item because it predates 2026-10-30.",
+      "No CNSC or ONR microreactor regulatory decision dated after 2026-10-30 found.",
+      "NRC proposed rule incorporating an IEEE nuclear safety standard, comment deadline 2026-11-09: seen only in a search summary; not fetched and judged too weak for a 1-20 MW buyer's path, so not written.",
+      "Dockets: no filing in the last 90 days with a verified docket number and a fetched source. Appalachian Power's SMR site-cost recovery request (Joshua Falls, Campbell County, Virginia SCC; utility said it expected to file mid-2026) was seen in a paywalled summary with no date or docket number. Virginia SCC case search not reachable.",
+      "Utility microreactor filings in September 2026: none found; Nevada and West Virginia results were gas or non-microreactor filings.",
+      "New Jersey S 4849 (microreactor incentive) and Virginia SB 454 (SMR acceleration): NJ S 4849 is already shipped in skip/dockets.json. Virginia SB 454 signing date not established."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-part57-1",
+      "target": "licensing: Part 57, the proposed microreactor rule",
+      "file": "policy",
+      "claim": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less)",
+      "verdict": "confirmed",
+      "evidence": "Status check only. ANS, 2026-10-22: 'Part 57 is aimed at microreactor designs and has yet to be finalized.' Still a proposed rule on that date. ANS, 2026-04-27: 'While the proposed rule doesn't spell it out, Part 57 is intended for reactors that are 100 MWe or smaller, Nieh said.' The proposed text does not itself state the MWe limit. Other claims in the shipped paragraph (fleet approval, 6-12 month estimate, $3.76-11.84B) were not checked.",
+      "sources": [
+        {
+          "label": "American Nuclear Society (ANS) News — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+          "url": "https://ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization",
+          "quote": "Part 57 is aimed at microreactor designs and has yet to be finalized.",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society (ANS) News — NRC introduces microreactor regulatory framework (2026-04-27)",
+          "url": "https://www.ans.org/news/2026-04-27/article-7981/nrc-introduces-microreactor-regulatory-framework/",
+          "quote": "While the proposed rule doesn't spell it out, Part 57 is intended for reactors that are 100 MWe or smaller, Nieh said.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-part53-1",
+      "target": "licensing: Part 53 is final",
+      "file": "policy",
+      "claim": "NRC finalised its risk-informed, technology-inclusive licensing framework in March 2026",
+      "verdict": "confirmed",
+      "evidence": "ANS, 2026-03-26: 'The Nuclear Regulatory Commission has finalized its new regulatory framework for advanced reactors.' ANS, 2026-10-22, describing the rule just finalized: it 'amends 10 CFR Part 50 and the new 10 CFR Part 53 to establish the framework.' The NRC said publication would be April 3, effective 30 days after Federal Register publication (ANS, 2026-03-26). Only the March finalization date is checked here; the 'first since 1989' and '1956' comparisons were not.",
+      "sources": [
+        {
+          "label": "American Nuclear Society (ANS) News — NRC unveils Part 53 final rule (2026-03-26)",
+          "url": "https://www.ans.org/news/article-7881/nrc-unveils-part-53-final-rule/",
+          "quote": "The Nuclear Regulatory Commission has finalized its new regulatory framework for advanced reactors",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society (ANS) News — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+          "url": "https://ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization",
+          "quote": "amends 10 CFR Part 50 and the new 10 CFR Part 53 to establish the framework",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-advance-fee-1",
+      "target": "licensing: The ADVANCE Act halved the hourly review rate",
+      "file": "policy",
+      "claim": "(it is $154 under the FY2026 fee rule)",
+      "verdict": "confirmed",
+      "evidence": "Federal Register final FY2026 fee rule (2026-06-16): 'Thus, in this FY 2026 final fee rule, the Reduced Hourly Rate is $154 per hour.' ANS (2026-06-25) reports the same rate 'for certain activities.' The reduced rate applies only to certain activities; other work is billed at the full professional rate, so the shipped 'cost advantage' applies only to those activities. The $318 and $148 figures were not checked here.",
+      "sources": [
+        {
+          "label": "Federal Register — Fee Schedules, Fee Recovery for Fiscal Year 2026 (final rule, 2026-06-16)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+          "quote": "Thus, in this FY 2026 final fee rule, the Reduced Hourly Rate is $154 per hour",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society (ANS) News — NRC news: FY 2026 fees finalized, facility licensing reviews launched (2026-06-25)",
+          "url": "https://www.ans.org/news/2026-06-25/article-8148/nrc-news-fy-2026-fees-finalized-facility-licensing-reviews-launched/",
+          "quote": "a reduced hourly rate for advanced nuclear reactor applicants and preapplicants of $154 for certain activities",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-licensing-doe-pilot-1",
+      "target": "licensing: The DOE track produced four critical reactors by July 4",
+      "file": "policy",
+      "claim": "Deployable Energy's 1 MWe Unity (June 30, at INL, under DOE's Nuclear Energy Launch Pad initiative)",
+      "verdict": "confirmed",
+      "evidence": "POWER (2026-07-06): Deployable Energy's Unity 'reached zero-power criticality at INL on June 30'. ANS (2026-07-02): three companies 'have achieved DOE-authorized criticality: Antares Nuclear, Valar Atomics, and Deployable Energy'; Antares 'at INL on June 4 with its Mark-0'; Valar on June 18. POWER gives Aalo's 'Critical Test Reactor' criticality at 12:20 a.m. MT on July 4, at INL, as the fourth. Only the four dates and sites are checked; the Launch Pad program attribution is not in the fetched text.",
+      "sources": [
+        {
+          "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4 (2026-07-06)",
+          "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+          "quote": "Unity reactor reached zero-power criticality at INL on June 30",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society (ANS) News — The deadline arrives: checking in on the Reactor Pilot Program (2026-07-02)",
+          "url": "https://www.ans.org/news/2026-07-02/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/",
+          "quote": "three companies have achieved DOE-authorized criticality: Antares Nuclear, Valar Atomics, and Deployable Energy",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}

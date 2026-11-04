@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "captured": "2026-11-04",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market, event dates after 2026-10-30 (then gap check back 60 days to 2026-09-05). Candidates from skip/candidates.json first, then company and agency sweep.",
+    "angles_run": [
+      "candidates: WNN Texas SMR (Long Mott, 2026-10-30 FSER) fetched, skipped (320 MWe Xe-100, outside market)",
+      "candidates: WNN Doosan NuScale upper vessel fetched, skipped (77 MWe modules, outside market, no buyer named)",
+      "DOE Reactor Pilot Program criticality and status after July 2026",
+      "INL DOME: Radiant Kaleidos status, MARVEL schedule, Deployable Energy 2027 slot, NRIC call",
+      "Radiant, Antares, Valar, Aalo, Westinghouse eVinci, Last Energy, NANO Nuclear, Oklo, Kairos, Terrestrial, Natura, Deep Fission, BWXT, Standard Nuclear, Deployable Energy, Blue Energy, Holtec, General Atomics: company news sweep",
+      "Gap check 2026-09-05 to 2026-10-30: Holtec Pioneer exemption (SMR-300, outside market), Blue Energy Texas grid application (300 MW class, outside market)"
+    ],
+    "absences": [
+      "No dated 1-20 MW microreactor event after 2026-10-30 verified in a fetched primary page. Web search returned nothing dated November 2026 for any of the 20 sweep companies.",
+      "Radiant newsroom (radiantnuclear.com), INL news release pages and NRIC DOME page returned HTTP 403 to WebFetch, so company-side status could not be read directly. Radiant Kaleidos: DSA approval 2026-10-29 is shipped; fueling, readiness review completion and DOME criticality were not confirmed by any source found.",
+      "Westinghouse withdrawal from the 2027 DOME slot: a secondary summary says Westinghouse notified NRIC it would not take the slot. The WNN 2026-10-07 Deployable Energy article, the only fetched source, does not say this. No date found, so not written as a record.",
+      "NRC Part 53/57 and DOE criticality announcements after 2026-10-30: none found. The NRC press page is 403 to non-browser clients.",
+      "Last Energy PWR-5 criticality: no source confirms it; a 2026-08-11 job posting for a reactor operator suggests not yet operating. Not written.",
+      "Natura MSR-1 July 2026 criticality target: no source found confirming it was met or missed. Not written.",
+      "Aalo-X criticality: one search summary attributes a fourth DOE-authorized criticality to Aalo in July 2026, but no fetched DOE page confirmed it. Not written.",
+      "Valar funding: sources conflict ($1B Series B vs $450M at $2B valuation). Not written.",
+      "Standard Nuclear TRISO facility milestones (ANS, 2026-07-24) fall outside the 60-day gap window and are not written.",
+      "SEC EDGAR leg not checked (candidates.json and REFRESH.md note 403)."
+    ]
+  },
+  "items": []
+}
