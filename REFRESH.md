@@ -165,3 +165,14 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
 - **2026-11-03: the e2e tests error (not skip) when Playwright's browser is missing from
   `~/Library/Caches/ms-playwright`.** Fix with `~/.venvs/microreactors/bin/python -m playwright install chromium`
   (build 1140 for playwright 1.48.0); it is an environment failure, not a data one.
+- **2026-11-04: one vendor name can cover two machines, and one core two electrical ratings.** POWER calls both
+  Aalo's zero-power Critical Test Reactor and its 30 MWth / 10 MWe demonstration plant "Aalo-X"; the vendors agent
+  read the 10 MWe onto the test reactor. BWXT's 75 MWt BANR is 20 MWe for Janus and 22 MWe for Belledune, and the
+  agent marked the Janus row stale on the Belledune figure. Before applying an output correction, check which
+  machine and which configuration the shipped row describes.
+- **2026-11-04: an agent's "absent from the skip list" is a grep, not a finding.** The politics agent reported the
+  NRC 2026-10-22 authorization-data rule as missing; `grep -n "2026-10-22" data/news.json` found it in seconds.
+  Grep `data/news.json` for the date or headline before treating any reported gap as real.
+- **2026-11-04: a superscript ordinal splits a quote span.** steadyenergy.com marks up "12th February" as
+  `12<sup>th</sup>`, so every extractor reads "12 th" and a verbatim span across it is FABRICATED. Stop the span
+  before the ordinal, as with the "%o" and "$1" joints.

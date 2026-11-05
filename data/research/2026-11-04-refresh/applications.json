@@ -1,0 +1,161 @@
+{
+ "_meta": {
+  "captured": "2026-11-04",
+  "agent": "applications",
+  "scope": "Applications tab (segments, deployment sites, regions): Type G checks on shipped segments records, new Type S buyer applications in segments the tab covers thinly. Regions not searched this pass. News items out of lane or already shipped.",
+  "angles_run": [
+   "Type G: lunar fission surface power (NASA/DOE)",
+   "Type G: Penn State eVinci NRC filing",
+   "Type G: UIUC Kronos construction permit (NRC docketing)",
+   "Type G: Texas A&M RELLIS / Aalo (criticality, ESP)",
+   "Type G: Steady Energy LDR-50 Helsinki pilot (first concrete date)",
+   "Type G: Last Energy DP World London Gateway",
+   "Type G: CSMC Arctic microreactor (funding, 2030 target)",
+   "Type G: Uvation / Terra Innovatum 1 MWe pilot",
+   "Type G: Copper Valley Electric Valdez (Alaska)",
+   "S: hospitals (bail after 1 search)",
+   "S: disaster relief / emergency power (DHS solicitation)",
+   "S: hydrogen / ammonia with MWe",
+   "S: data centers behind the meter, Oct 2026",
+   "S: mines, diesel replacement",
+   "S: district heating (Finland, Jyvaskyla)",
+   "S: maritime / marine vessels (Hornbeck, AMPERA)",
+   "S: desalination",
+   "Skip-list cross-check of news.json for Aalo, Hornbeck, AMPERA, Jyvaskyla, CSMC, POLAR"
+  ],
+  "absences": [
+   "Hospitals: one search, no 2026 hospital microreactor power agreement found; results were 2022 items and an Army base deal headline with no hospital named.",
+   "Disaster relief: DHS S&T solicitation 70RSAT26R00000003 (issued 2025-12-23, offers due 2026-01-09) seeks a microreactor for emergency response; no award found and no MWe figure, so not a record.",
+   "Hydrogen / ammonia: no 2026 microreactor deal with an MWe figure found. Only 2026 hydrogen item was a non-nuclear aluminum-water reactor offtake (GH Power, 2026-09-14), out of scope.",
+   "Data centers behind the meter: no October 2026 microreactor power agreement found. Results were older deals (Oklo LOIs, TerraPower-Sabey MoU, Kairos-TVA-Google) already on the tab or undated.",
+   "Mines: no new 2026 mine-site microreactor deal with an MWe figure found; Radiant-Idaho Strategic (2024) is already shipped. Trade-blog claims of 600 MW of diesel mine capacity are unsourced and not used.",
+   "Desalination: no 2026 microreactor desalination deal with a utility found. Desalination deals returned were conventional RO or non-nuclear (ACWA-DEWA Hassyan, 2026-10-28; Veolia-SBM floating units, 2026-01).",
+   "District heating beyond Finland: no 2026 sub-10 MWth district-heat microreactor agreement found. Lappeenranta University research reactor mentioned without a thermal rating or date.",
+   "Lunar fission surface power: no change found after the 2026-01-13 DOE-NASA announcement; no check issued because shipped text still matches the primary.",
+   "Penn State eVinci: no 2026 NRC application or Westinghouse license filing found; NRC advanced reactor rule expected by Sept 2026 per secondary coverage. Shipped text stands.",
+   "UIUC Kronos: NRC docketing (2026-05-18) and review kickoff (2026-06-23) are consistent with the shipped 'application' status; no check issued.",
+   "Last Energy London Gateway: no 2026 progress found beyond the 2025-09-15 MOU; shipped 2030 target is a plan, not a verified schedule. No verdict possible.",
+   "Uvation / Terra Innovatum 1 MWe pilot: still an LOI in every 2026 source found; no primary 2026 company release confirming status. Shipped text stands.",
+   "Copper Valley Electric (Valdez): no 2026 CVEA statement found; coverage says the project was dropped on cost grounds, consistent with the shipped 'tabled'.",
+   "Regions (Type E): not searched this pass; no new region candidates.",
+   "Nucnet Jyvaskyla article returned HTTP 403; Jyvaskyla record relies on Steady Energy and WNN primaries instead.",
+   "Wise County, Virginia microreactor feasibility study (Cardinal News, 2026-11-03; public meeting 2026-11-05): a state/county study with no vendor or site named. Web-lead, not a Type S record because it names no buyer load or MWe."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-arctic-microreactor-canada-1",
+   "target": "arctic-microreactor-canada",
+   "file": "segments",
+   "claim": "company target of fleet-scale deployment by 2030",
+   "verdict": "outdated",
+   "evidence": "SpaceQ, dated 2026-09-10, reports three CSMC platforms (POLAR-1, JAY-1, ORCA-1) and says CSMC aims to switch on POLAR-1 for the first time by 2028, with fleet-scale deployment from 2030 onward. The shipped 'by 2030' reads as a deadline, not a start.",
+   "correction": "company target of fleet-scale deployment from 2030",
+   "sources": [
+    {
+     "label": "SpaceQ — CSMC unveils three reactor platforms, defence a priority (2026)",
+     "url": "https://spaceq.ca/csmc-unveils-three-reactor-platforms-defence-a-priority/",
+     "quote": "CSMC aims to switch on POLAR-1 for the first time by 2028, with fleet-scale deployment from 2030 onward.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-steady-energy-ldr50-1",
+   "target": "steady-energy-ldr50",
+   "file": "segments",
+   "claim": "first concrete poured 2026-02-12",
+   "verdict": "confirmed",
+   "evidence": "Steady Energy's own news article, dated 16 Feb 2026, says the first concrete was poured 12 February. The shipped date matches the pour; the article date is later. (Quote span stops before '12th February': the page marks 'th' up as a superscript, which extractors read as '12 th'.)",
+   "sources": [
+    {
+     "label": "Steady Energy — Construction of Steady Energy's small nuclear heating pilot plant begins in Helsinki (2026)",
+     "url": "https://www.steadyenergy.com/news-article/construction-of-steady-energys-small-nuclear-heating-pilot-plant-begins-in-helsinki",
+     "quote": "The first concrete for the pilot was poured",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "applications": [
+  {
+   "id": "hornbeck-deployable-unity-maritime-mou",
+   "segment": "maritime and shipping",
+   "name": "Hornbeck Offshore and Deployable Energy Unity maritime MOU",
+   "status": "proposed",
+   "power_class": "1 MWe",
+   "timeline": "MOU announced 2026-08-17",
+   "vendor": "Deployable Energy (Unity Nuclear Battery)",
+   "what_it_says": "Deployable Energy and Hornbeck Offshore signed a memorandum of understanding on 17 August 2026 to pursue maritime uses of the Unity reactor, which is rated at 1 MWe and is mass-manufactured and transportable. The coverage fetched names no vessel, site or price.",
+   "microreactor_read": "A 1 MWe block sits at the bottom of the 1-20 MW band and suits a single vessel or offshore platform load. Only an MOU is public, with no load, price or order.",
+   "sources": [
+    {
+     "label": "Marine Link — Deployable Energy and Hornbeck Offshore partner to advance nuclear power (2026)",
+     "url": "https://www.marinelink.com/news/deployable-energy-hornbeck-offshore-542181",
+     "quote": "Deployable Energy's Unity Nuclear Battery is a 1 MWe, mass-manufactured, transportable microreactor",
+     "status": "fetched"
+    },
+    {
+     "label": "Offshore Energy (OE Digital) — Deployable Energy and Hornbeck Offshore partner to advance nuclear power (2026)",
+     "url": "https://www.oedigital.com/amp/news/542181-deployable-energy-and-hornbeck-offshore-partner-to-advance-nuclear-power",
+     "quote": "Deployable Energy has signed a Memorandum of Understanding with Hornbeck Offshore",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "ampera-scorpio-floating-nuclear-barge",
+   "segment": "maritime and shipping",
+   "name": "Scorpio Tankers and AMPERA floating nuclear power barges",
+   "status": "proposed",
+   "power_class": "15-30 MWe (expected)",
+   "timeline": "strategic collaboration announced 2026-04-03; floating barges first, nuclear-powered vessels later",
+   "sponsor": "Scorpio Tankers ($10 million equity investment in AMPERA)",
+   "vendor": "AMPERA",
+   "what_it_says": "Scorpio Tankers announced a strategic collaboration with AMPERA on 3 April 2026 and put $10 million into the developer. The companies plan floating nuclear power barges first, with nuclear-powered commercial vessels later. The stated output of 15 to 30 MWe is an expectation, not a design figure.",
+   "microreactor_read": "A 15-30 MWe unit is above the 1-20 MW band at the top end and sits within it at the bottom. No buyer, port, price or site is named, and the money is equity for early design work.",
+   "sources": [
+    {
+     "label": "Scorpio Tankers — Scorpio Tankers announces strategic collaboration with AMPERA (2026)",
+     "url": "https://www.hellenicshippingnews.com/scorpio-tankers-inc-announces-strategic-collaboration-with-ampera-inc-to-develop-commercialize-micronuclear-solutions-for-global-marine-and-shipping-markets/",
+     "quote": "our $10 million investment in AMPERA reflects both our conviction in nuclear",
+     "status": "fetched"
+    },
+    {
+     "label": "Marine Insight — U.S. firm reveals micro nuclear reactor that could power ships for decades without refuelling (2026)",
+     "url": "https://www.marineinsight.com/u-s-firm-reveals-micro-nuclear-reactor-that-could-power-ships-for-decades-without-refuelling/",
+     "quote": "It is expected to generate between 15 and 30 MWe of power.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "steady-energy-jyvaskyla-alva-study",
+   "segment": "district heating",
+   "name": "Steady Energy and Alva (Jyväskylä) LDR-50 district-heat study",
+   "status": "studied",
+   "power_class": "50 MW thermal per LDR-50 reactor (thermal, not electric)",
+   "timeline": "letter of intent announced 2026-05-19; one-year preliminary study",
+   "vendor": "Steady Energy (LDR-50)",
+   "what_it_says": "Steady Energy and Alva, a municipal utility from the city of Jyväskylä in central Finland, signed a letter of intent in May 2026 to investigate the suitability of SMRs as a source for district heating. The LDR-50 is rated at 50 MW thermal. The primary sources fetched do not state how many reactors the city would take.",
+   "microreactor_read": "The 50 MWth design is heat, so it does not fit the 1-20 MW electric band directly. It is a study-stage letter of intent with no reactor count, price or site named.",
+   "sources": [
+    {
+     "label": "Steady Energy — Fourth Finnish city to explore the opportunities of nuclear district heating (2026)",
+     "url": "https://www.steadyenergy.com/news-article/fourth-finnish-city-to-explore-the-opportunities-of-nuclear-district-heating",
+     "quote": "Thermal power 50 MW",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Fourth Finnish municipality to assess nuclear district heating (2026)",
+     "url": "https://world-nuclear-news.org/articles/fourth-finnish-municipality-to-assess-nuclear-district-heating",
+     "quote": "with a thermal output of 50 MW",
+     "status": "fetched"
+    }
+   ],
+   "review": "Held by the main session: the Finland row in data/regions.json already names the Jyvaskyla (Alva) LOI, and segments.json carries the LDR-50 Helsinki pilot; a third row for one study-stage LOI adds nothing a reader can act on."
+  }
+ ]
+}

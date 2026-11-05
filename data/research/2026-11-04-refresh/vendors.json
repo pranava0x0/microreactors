@@ -1,0 +1,82 @@
+{
+ "_meta": {
+  "captured": "2026-11-04",
+  "agent": "vendors",
+  "scope": "Vendors tab: Type G checks on shipped vendor rows; Type N items for vendor milestones dated after 2026-10-30 not in skip/news.json, including unlisted 1-20 MWe vendors.",
+  "angles_run": [
+   "Radiant Kaleidos DOME fueling and readiness review",
+   "Antares Mark-1 and Mark-0 follow-on news",
+   "Valar Ward 250 and Project Beehive BLM/Trust Lands",
+   "Westinghouse eVinci news and NRIC DOME slot",
+   "Last Energy PWR-20 news and Texas 30-unit plan",
+   "Natura MSR-1 salt delivery and criticality status",
+   "NANO Nuclear KRONOS and ZEUS news",
+   "Aalo-X post-criticality status and MWe",
+   "Deployable Energy Unity and DOME 2027",
+   "Terra Innovatum SOLO news",
+   "Steady Energy LDR-50 news",
+   "Blue Energy microreactor news",
+   "BWXT BANR Belledune Prodigy MWe and timing",
+   "Janus program awards (Radiant, BANR, eVinci)",
+   "Oklo Aurora-INL 2028 schedule",
+   "Generic microreactor milestone sweep for early November 2026"
+  ],
+  "absences": [
+   "No vendor milestone dated after 2026-10-30 found for any shipped vendor (Antares, Radiant, eVinci, BWXT, General Atomics, Valar, Aalo, Oklo) or for unlisted 1-20 MWe vendors (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Natura, Blue Energy, Terra Innovatum, Steady Energy). Search results top out in late October 2026; no November 2026 vendor news surfaced.",
+   "Radiant Kaleidos DOME: DSA approval 2026-10-29 is shipped; the DOE Readiness Review that gates fueling has no date in any source found.",
+   "Westinghouse withdrawal from the 2027 DOME slot (appears in an NEI item cited by a search summary) could not be found in any fetched page; no check or item written for it.",
+   "Valar Project Beehive: no BLM completeness decision or Notice of Realty Action found after early October 2026.",
+   "Natura MSR-1: no criticality report found; latest dated event is the FLiBE salt delivery of 2026-09-18, already shipped as news.",
+   "Last Energy Texas 30-unit plan: only the 2025-02-28 announcement found; no dated 2026 update.",
+   "Oklo Aurora-INL 2028 startup target: still stated in 2026 filings and calls per search summaries; the Ohio 2030 timeline cited comes from an older article, not checked.",
+   "Budget: 20 web searches and 2 fetches used. Search-summary facts other than the two fetched quotes are not cited."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-bwxt-banr-1",
+   "target": "bwxt-banr",
+   "file": "vendors",
+   "claim": "20 MWe (75 MWth)",
+   "verdict": "confirmed",
+   "evidence": "World Nuclear News, dated 2026-10-06, describes BANR as a 22 MWe/75 MWt high-temperature gas-cooled reactor, with two units planned for Belledune, New Brunswick.",
+   "correction": "22 MWe (75 MWt)",
+   "sources": [
+    {
+     "label": "World Nuclear News — BWXT's BANR microreactor selected for Canadian project (2026-10-06)",
+     "url": "https://world-nuclear-news.org/articles/bwxts-banr-microreactor-selected-for-canadian-project",
+     "quote": "The BANR - BWXT Advanced Nuclear Reactor - is a 22 MWe/75 MWt high-temperature gas-cooled reactor",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS Nuclear Newswire — BWXT's BANR selected for Canadian project (2026-10-07)",
+     "url": "https://www.ans.org/news/2026-10-07/article-8471/bwxts-banr-selected-for-canadian-project/",
+     "quote": "a 20-megawatt electric version of BANR will be deployed",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled by the main session. The shipped row is the Janus / Fort Campbell configuration; ANS (2026-10-07) quotes BWXT that for Janus 'a 20-megawatt electric version of BANR will be deployed', while the 22 MWe/75 MWt figure is the Belledune (Prodigy) configuration announced 2026-10-05. Two electrical ratings of one 75 MWt core, not a stale number."
+  },
+  {
+   "id": "check-aalo-x-1",
+   "target": "aalo-x",
+   "file": "vendors",
+   "claim": "Research reactor; output not stated in the cited record",
+   "verdict": "wrong",
+   "evidence": "POWER Magazine, dated 2026-07-06 (updated 2026-07-08), describes Aalo-X as the full-power 30-MWth/10-MWe sodium-cooled demonstration nuclear power plant at INL, so the cited record does state an output.",
+   "correction": "Zero-power critical test reactor (no power output); the separate 30 MWth / 10 MWe Aalo-X demonstration plant is slated for construction and licensing in 2027",
+   "sources": [
+    {
+     "label": "POWER Magazine — Aalo Atomics test reactor reaches criticality at INL (2026-07-06)",
+     "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+     "quote": "Aalo-X, the full-power 30-MWth/10-MWe sodium-cooled demonstration nuclear power plant at INL",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "wrong",
+   "review": "Main session narrowed the correction. The row describes the Critical Test Reactor, which the article calls 'a full-scale zero-power physics reactor'; the 30-MWth/10-MWe figure belongs to the demonstration plant the article also calls Aalo-X. The agent's correction would have assigned 10 MWe to the zero-power machine. The claim is still wrong: the cited record does state the demonstration plant's output."
+  }
+ ],
+ "items": []
+}
