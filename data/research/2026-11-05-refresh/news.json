@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "captured": "2026-11-05",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor events after 2026-10-30, then gaps in the prior 60 days (since 2026-09-06). Watcher candidates (skip/candidates.json) checked first.",
+    "angles_run": [
+      "Watcher candidates: WNN Long Mott (Texas), WNN Helen Helsinki, WNN Doosan/NuScale",
+      "Company sweep: Radiant (Kaleidos DOME, Crane, Janus, Centrus HALEU)",
+      "Company sweep: Westinghouse eVinci (NCERC criticality tests)",
+      "Company sweep: Antares, Aalo, Valar (Ward 250 and Aalo-X status)",
+      "Company sweep: Last Energy (PWR-5 DSA and criticality status), NANO Nuclear, Deep Fission",
+      "Company sweep: Oklo, Kairos, X-energy (post-10-30 news)",
+      "Army Janus program award update",
+      "DOE Reactor Pilot Program announcements (Nov 2026)",
+      "NRC construction permit filings and acceptances (Kronos CPA status)",
+      "BWXT BANR (Belledune, Fort Campbell)",
+      "Natura Resources MSR-1 (salt delivery, fueling status)",
+      "Deep Fission, Blue Energy, Terrestrial, General Atomics (late Oct 2026)",
+      "Gap sweep Sept 2026: microreactor agreements",
+      "Gap sweep Oct 2026: microreactor contract awards"
+    ],
+    "absences": [
+      "No dated item after 2026-10-30 surfaced for any sweep company; the search index appears to lag. The newest dated item seen was the WNN Helen article of 2026-11-05, which is out of scope.",
+      "Watcher candidates not written up as out of scope: WNN 2026-11-02 Long Mott (Dow Seadrift, four Xe-100 units, 800 MWt or 320 MWe); WNN 2026-11-05 Helen Helsinki (630 MW heat-only or 1,400 MW cogeneration, no vendor named); WNN 2026-10-30 Doosan upper reactor vessel for NuScale (77 MWe module).",
+      "Radiant Kaleidos DOME criticality: no report found. The latest source (late Oct 2026) says the unit awaits DOE's Readiness Review before fueling.",
+      "Last Energy PWR-5 criticality: no report found. The latest source (KBTX, Sept 2026) said final DSA and DOE authorization were still pending.",
+      "Aalo-X full-power operation and Valar Ward 250 full-power operation: not confirmed. Valar's July 1 demo at about 37% power rests on aggregator and secondary sources only.",
+      "NRC docketing of the NANO Nuclear / University of Illinois Kronos CPA (acceptance 2026-05-18; NRC review start 2026-06-23) falls outside the 60-day gap window, so it was not written up.",
+      "Blue Energy, Terrestrial Energy, General Atomics, Holtec, Standard Nuclear, Centrus and X-energy: no post-10-30 or in-window item surfaced.",
+      "Oklo Q3 2026 results (scheduled 2026-11-06) fall after the cut-off.",
+      "SEC EDGAR leg not checked by this agent; the watcher reported it unreachable.",
+      "The Westinghouse 2026-08-25 release does not mention a one-fifth-scale representation or any September test. It is cited only for the NCERC venue, not for the 2026-09-03 event.",
+      "Search budget used: 18 WebSearch calls and 5 WebFetch calls, against a target of about 25 searches and 20 fetches.",
+      "Main-session review: dropped westinghouse-evinci-ncerc-criticality-2026-09-03; the shipped eVinci zero-power criticality row (2026-08-24) already reports the 2026-09-03 663 C test from the same DOE page."
+    ]
+  },
+  "items": []
+}
