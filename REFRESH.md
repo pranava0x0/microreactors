@@ -176,3 +176,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
 - **2026-11-04: a superscript ordinal splits a quote span.** steadyenergy.com marks up "12th February" as
   `12<sup>th</sup>`, so every extractor reads "12 th" and a verbatim span across it is FABRICATED. Stop the span
   before the ordinal, as with the "%o" and "$1" joints.
+- **2026-11-05: an agent's "binding: true is unsupported" must be read against the file's own `_meta.binding_note`.** The deals
+  agent flagged all three ANPI rows and Eielson as wrong because no signed contract exists; `data/opportunities.json`
+  defines binding=true to include "selection with a named site". All four were overruled. Also, "confirmed" can still hide
+  a stale status: the politics agent confirmed SB 978's text but its own evidence said the bill was held in committee on
+  2026-05-14. Read confirmed checks' evidence for status words ("held", "withdrawn", "paused"), not only the verdict.
+

@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "captured": "2026-11-05",
+    "agent": "politics",
+    "scope": "Rules & deal design tab, politics and regulation: Type G checks on shipped policy pathways, Type F dockets not in skip/dockets.json, Type N items after 2026-10-30 (policy or regulatory, 1-20 MW buyer path).",
+    "angles_run": [
+      "NRC Part 57 final-rule status (none final as of 2026-11-05)",
+      "NRC FY2026/FY2027 fee rule (FY2026 rule found; no FY2027 rule found)",
+      "California SB 978 (bill text and status)",
+      "FERC EL25-49 co-located load rehearing order (2026-06-18)",
+      "Congress: microreactor bills, FY2027 NDAA, FY2027 Energy & Water appropriations",
+      "NRC Commission votes and approvals, Nov 2026",
+      "Texas Backup Power Package (16 TAC 25.513) and Texas HB 14 fund",
+      "DOE Reactor Pilot Program and Nuclear Energy Launch Pad (round 2 dated 2026-08-25)",
+      "Army Janus program (awards dated 2026-08-26 to 08-27)",
+      "State siting laws and PUC/IRP/RFP dockets (Virginia SCC Rider SMR, West Virginia HB 4491, Louisiana nuclear tariff)",
+      "New Jersey microreactor bills (S4849 already shipped; A5727 unverified)",
+      "Texas A&M / Long Mott Texas SMR permitting (WNN 2026-11-02, 320 MWe X-energy, out of 1-20 MW scope)",
+      "CNSC microreactor vendor design reviews (no 2026 microreactor decision found)"
+    ],
+    "absences": [
+      "NRC Part 57 final rule: no final rule found as of 2026-11-05. The 2026-11-23 final-rule target is from secondary search summaries citing EO 14300, not from an NRC page. The NRC rulemaking page fetch gave no schedule (docket NRC-2025-0379 not read).",
+      "Texas Backup Power Package (16 TAC 25.513): the adopted text was not reached. Confirmed only that the PUCT adopted the rule on 2026-05-07 and that the systems must combine natural gas or propane generation, battery storage and solar. The $1.8B figure and the 2.5 MW limit (from a pre-adoption advisory report) are unverified, and the 'nuclear not eligible' claim was not confirmed against adopted text. No check written.",
+      "Louisiana 'nuclear tariff' (Commissioner Skrmetta; 20 cents per customer per month for Entergy Louisiana, Cleco and SWEPCO; feasibility work on SMRs and microreactors): no docket number or filing link found. Vote postponed to the 2026-09-16 meeting; outcome not found. Not written as a Type F docket because it has no docketed filing URL.",
+      "Dockets filed or decided 2026-08-07 to 2026-11-05 naming microreactors or SMRs: none verified. Checked and rejected as out of window or unverifiable: Virginia SCC Rider SMR (PUR-2025-00196, filed 2025-11-03, hearing 2026-05-05, final order not found), West Virginia HB 4491 (introduced 2026-01-19, status unknown), Alaska HB 142 (single trade source, unconfirmed).",
+      "Items after 2026-10-30: no dated political or regulatory event within 1-20 MW scope found. Congress: no November 2026 microreactor bill found; FY2027 NDAA House-passed (216-212), Senate status and any microreactor section not found; FY2027 Energy & Water passed House committee, House floor status not confirmed. NRC: no November 2026 Commission vote or approval found. DOE/Army: Launch Pad round 2 (2026-08-25) and Janus awards (2026-08-26/27) predate the window. CNSC: no 2026 microreactor decision found. ONR (UK): not searched. Texas SMR Long Mott (NRC construction permit final stage, 2026-11-02) is a 320 MWe X-energy plant, out of 1-20 MW scope, so not written.",
+      "Texas HB 14 $350M fund: the shipped text does not mention the statutory limit that the ~$280M construction reimbursement program can only sign with projects that have a docketed NRC application. Not an error, so no check written.",
+      "Part 53 effective date: sources disagree (2026-04-29 versus 2026-05-26). Shipped text states only 'finalised ... March 2026' and was not checked.",
+      "Main session: the agent's note that Launch Pad round 2 and the Janus awards are missing from the skip list is wrong; data/news.json already carries both."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-advance-act-halved-review-rate-1",
+      "target": "The ADVANCE Act halved the hourly review rate",
+      "file": "policy",
+      "claim": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (it is $154 under the FY2026 fee rule), a concrete cost advantage available now.",
+      "verdict": "confirmed",
+      "evidence": "Federal Register, FY 2026 fee schedules final rule, published 2026-06-16: the FY 2026 Reduced Hourly Rate is $154 per hour, up from $148. The shipped '$154 under the FY2026 fee rule' is correct.",
+      "sources": [
+        {
+          "label": "Federal Register — Fee Schedules; Fee Recovery for Fiscal Year 2026 (2026-06-16)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+          "quote": "the Reduced Hourly Rate is $154 per hour",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-ferc-el25-49-co-located-load-1",
+      "target": "FERC EL25-49 on co-located load",
+      "file": "policy",
+      "claim": "FERC's show-cause proceeding found PJM's tariff unjust for lacking co-location rules and, in December 2025, ordered new transmission services and behind-the-meter generation rules for co-located large loads; on June 18, 2026 (EL25-49-002) it ruled on rehearing, set aside parts of that order, and directed further PJM compliance on the behind-the-meter rules. This docket will define whether a micror...",
+      "verdict": "confirmed",
+      "evidence": "FERC Order on Rehearing, Clarification, Compliance Filing, and Paper Hearing, Docket EL25-49-002, issued 2026-06-18: 'We also set aside, in part, the December Order' and further PJM compliance directed on behind-the-meter rules. Shipped text matches.",
+      "sources": [
+        {
+          "label": "FERC — Order on Rehearing, EL25-49-002 (issued 2026-06-18)",
+          "url": "https://www.ferc.gov/sites/default/files/2026-06/EL25-49-002_0.pdf",
+          "quote": "We also set aside, in part, the December Order",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-sb978-backup-power-list-1",
+      "target": "California's diesel rules leave nuclear off the eligible list",
+      "file": "policy",
+      "claim": "CARB's toxic-control measure already limits stationary emergency diesel to outages beyond the facility's control. SB 978 (amended March 2026) would go further for large data centers: backup power restricted to onsite solar, wind or battery storage only. Microreactors are not on the eligible list. That is a drafting gap to close by amendment, and until it closes, the bill is a diesel ban that a mic...",
+      "verdict": "confirmed",
+      "evidence": "Proposed Public Utilities Code 740.22(c)(1) text, as quoted from the bill by the govbuddy tracker, limits backup power to onsite solar, wind or battery storage, so nuclear is not listed. Tracker shows the last action as 2026-05-14 'Held in committee and under submission', so the bill appears stalled; shipped 'would go further' wording is accurate but not live. leginfo.legislature.ca.gov returned 403 and was not read directly.",
+      "sources": [
+        {
+          "label": "GovBuddy — California SB 978 (bill text and status, last verified 2026-05-18)",
+          "url": "https://www.govbuddy.com/california/bills/sb-978/",
+          "quote": "shall only use onsite solar or wind generation or a battery electric storage system",
+          "status": "fetched"
+        }
+      ],
+      "review": "Main session 2026-11-05: read the leginfo bill-status page in the browser pane ('May 14 hearing: Held in committee and under submission.'). Hand edit to data/policy.json: the mechanism now says the bill is stalled in Senate Appropriations, and the status page is added as a source. The eligible-list finding stands."
+    }
+  ]
+}

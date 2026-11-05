@@ -430,3 +430,16 @@ Seven Haiku agents (even day), 2 at a time, after 11 main-session web searches a
 | ideas | 142K | 0 records | no |
 
 ~1.1M agent tokens for 2 corrections and 2 rows. Phone cost 1.69 (unchanged).
+
+## 2026-11-05 daily refresh
+
+Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches found nothing new after 10-30. 0 news, 1 correction (by hand), 8 shipped rows confirmed, 4 agent checks overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | 1 item dropped: the eVinci 2026-09-03 test is already in the shipped 08-24 row; 3 watcher leads all SMR | no |
+| deals | 151K | 4 `wrong` checks overruled: the agent read binding=true as "signed contract", but the taxonomy counts a site-named selection; 1 confirmed | no |
+| vendors | 156K | 0 records; no vendor milestone after 10-30 | no |
+| politics | 188K | 3 confirmed; SB 978 held in committee since 2026-05-14, confirmed on leginfo in the browser pane and hand-edited into policy.json | yes |
+
+~645K agent tokens for 1 correction. Phone cost not re-measured (no layout change).
