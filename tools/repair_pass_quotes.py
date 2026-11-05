@@ -27,6 +27,7 @@ exactly what had been verified and 10 were disjoint from it entirely.
 
 Idempotent: a second run over repaired output reports everything as kept.
 """
+import os
 import json, pathlib, re, html, io, sys, urllib.request, urllib.error
 UA=("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -35,7 +36,8 @@ def norm(s):
     s=s.replace("–","-").replace("—","-").replace("‑","-")
     return re.sub(r"\s+"," ",s).casefold().strip()
 CACHE={}
-SEC_UA = "microreactors-research 2497510+pranava0x0@users.noreply.github.com"
+# SEC EDGAR wants a contact in the User-Agent; set SEC_CONTACT_EMAIL locally, never commit a personal address.
+SEC_UA = "microreactors-research " + os.environ.get("SEC_CONTACT_EMAIL", "2497510+pranava0x0@users.noreply.github.com")
 def page(u):
     if u in CACHE: return CACHE[u]
     ua = SEC_UA if "sec.gov" in u else UA

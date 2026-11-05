@@ -32,6 +32,7 @@ never a citation. Endpoint findings: data/research/news/reddit-patterns-2026-10-
 Every candidate carries the URL it came from, so the write-up step starts from a
 document rather than a summary. Stdlib only.
 """
+import os
 import argparse
 import html
 import json
@@ -48,7 +49,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 NEWS = ROOT / "data" / "news.json"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
-SEC_UA = "microreactors-research 2497510+pranava0x0@users.noreply.github.com"
+# SEC EDGAR wants a contact in the User-Agent; set SEC_CONTACT_EMAIL locally, never commit a personal address.
+SEC_UA = "microreactors-research " + os.environ.get("SEC_CONTACT_EMAIL", "2497510+pranava0x0@users.noreply.github.com")
 
 FEEDS: Dict[str, str] = {
     "World Nuclear News": "https://www.world-nuclear-news.org/rss",
