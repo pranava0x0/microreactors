@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "captured": "2026-11-05",
+    "agent": "deals",
+    "scope": "Deals tab: Type G validation of shipped opportunities (ANPI, Janus, DOE pilot, DOME, Eielson, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada); Type N search for buyer deals dated after 2026-10-30 that skip/news.json lacks.",
+    "angles_run": [
+      "Army Janus vendor and site assignments (army.mil fetch)",
+      "Air Force ANPI JBSA, Buckley, Malmstrom status and NRC contingency (ANS fetch)",
+      "Eielson NOITA status (Oklo release fetch; eielson.af.mil did not resolve)",
+      "Last Energy Thames Freeport vs Llynfi site scope (ONR fetch)",
+      "Saskatchewan Research Council eVinci status (SRC FAQ and Legislative Assembly Hansard fetches)",
+      "DOE Reactor Pilot Program criticality count and Deployable Unity date (ANS fetch)",
+      "NANO Nuclear x Supermicro MOU date (search only)",
+      "Oklo x Switch master agreement binding status (search only)",
+      "Radiant, Valar, Aalo, Deep Fission new buyer deals after 2026-10-30 (search only)",
+      "Texas A&M RELLIS SMR lead from skip/web-leads.md (search only)"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract or site selection) dated after 2026-10-30 found in fetched or search-summary results, so no items were written.",
+      "Oklo x Switch: no 2026 source found showing any individual binding PPA. Only SEC 10-Q excerpts and forecasting pages were reachable; not checked against an Oklo 8-K.",
+      "Eielson: no source found after June 2025 showing a contract signed. eielson.af.mil did not resolve; the check relies on the Oklo release.",
+      "Army Janus: the 'negotiating' status of the Other Transactions agreements was not confirmed by a fetched page, so no check was written for the shipped status text.",
+      "DOE Reactor Pilot Program: no sixth criticality found in search; sources disagree on the count reached by the 2026-07-04 deadline.",
+      "NANO x Supermicro: MOU date of 2026-05-06 seen only in search summaries (primary is ir.nanonuclearenergy.com release); not fetched.",
+      "Texas A&M RELLIS SMR lead (skip/web-leads.md, 2026-11-02): NRC page shows pre-application status; no permitting-stage news found. Not a buyer deal.",
+      "Radiant x Centrus HALEU contract (Sept 2026) appears in search summaries only and is a fuel deal, not a buyer deal; left to the news lane."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-anpi-jbsa-1",
+      "target": "anpi-jbsa",
+      "file": "opportunities",
+      "claim": "ANPI selection for one proposed prototype (DAF + Defense Innovation Unit), contractor-owned/contractor-operated; cited announcements disclose no committed JBSA unit order",
+      "verdict": "confirmed",
+      "evidence": "Shipped binding: true is not supported. ANS, 2026-04-23, says the Air Force 'selected three companies to be potential developers and operators' and that 'formal siting and environmental analyses can now proceed' under NEPA. That is a selection for further analysis, not an executed instrument.",
+      "sources": [
+        {
+          "label": "ANS — Air Force selects three microreactor developers for ANPI (2026-04-23)",
+          "url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/",
+          "quote": "selected three companies to be potential developers and operators",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "wrong",
+      "review": "Overruled 2026-11-05 (main session): data/opportunities.json _meta.binding_note defines binding=true to include a selection with a named site. The source the agent fetched supports a site-named selection, so the shipped flag follows the taxonomy."
+    },
+    {
+      "id": "check-anpi-buckley-1",
+      "target": "anpi-buckley",
+      "file": "opportunities",
+      "claim": "ANPI selection (DAF + DIU)",
+      "verdict": "confirmed",
+      "evidence": "Shipped binding: true is not supported. ANS, 2026-04-23, reports the Air Force selected three companies to be potential developers and operators, with siting and NEPA analysis still to come. No executed contract is described.",
+      "sources": [
+        {
+          "label": "ANS — Air Force selects three microreactor developers for ANPI (2026-04-23)",
+          "url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/",
+          "quote": "selected three companies to be potential developers and operators",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "wrong",
+      "review": "Overruled 2026-11-05 (main session): data/opportunities.json _meta.binding_note defines binding=true to include a selection with a named site. The source the agent fetched supports a site-named selection, so the shipped flag follows the taxonomy."
+    },
+    {
+      "id": "check-anpi-malmstrom-1",
+      "target": "anpi-malmstrom",
+      "file": "opportunities",
+      "claim": "ANPI selection (DAF + DIU)",
+      "verdict": "confirmed",
+      "evidence": "Shipped binding: true is not supported. ANS, 2026-04-23, reports the Air Force selected three companies to be potential developers and operators, with siting and NEPA analysis still to come. No executed contract is described.",
+      "sources": [
+        {
+          "label": "ANS — Air Force selects three microreactor developers for ANPI (2026-04-23)",
+          "url": "https://www.ans.org/news/2026-04-23/article-7972/air-force-selects-three-microreactor-developers-for-anpi/",
+          "quote": "selected three companies to be potential developers and operators",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "wrong",
+      "review": "Overruled 2026-11-05 (main session): data/opportunities.json _meta.binding_note defines binding=true to include a selection with a named site. The source the agent fetched supports a site-named selection, so the shipped flag follows the taxonomy."
+    },
+    {
+      "id": "check-eielson-1",
+      "target": "eielson",
+      "file": "opportunities",
+      "claim": "Notice of Intent to Award. Oklo would design, construct, own and operate, selling electricity and heat under a long-term PPA",
+      "verdict": "confirmed",
+      "evidence": "Shipped binding: true is not supported. Oklo release, dated 2025-06-11, says the Oklo NOITA was issued by DLA Energy and refers to an 'anticipated agreement'. The release does not describe a signed contract. The 30-year contract follows NRC licensing, per the shipped timeline.",
+      "sources": [
+        {
+          "label": "Oklo — Selected as intended awardee for Eielson AFB (2025-06-11)",
+          "url": "https://oklo.com/newsroom/news-details/2025/Oklo-Selected-as-Intended-Awardee-to-Provide-Clean-Reliable-Power-to-Eielson-Air-Force-Base-in-Alaska/default.aspx",
+          "quote": "has been issued a Notice of Intent to Award (NOITA) by the Defense Logistics Agency Energy (DLA Energy)",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "wrong",
+      "review": "Overruled 2026-11-05 (main session): data/opportunities.json _meta.binding_note defines binding=true to include a selection with a named site. The source the agent fetched supports a site-named selection, so the shipped flag follows the taxonomy."
+    },
+    {
+      "id": "check-last-energy-1",
+      "target": "uk-lastenergy",
+      "file": "opportunities",
+      "claim": "Target online 2030; the 2025 ONR design review Last Energy completed covers its separate Llynfi site in Wales",
+      "verdict": "confirmed",
+      "evidence": "ONR's preliminary design review summary for the PWR-20 covers the Llynfi site in Wales, not London Gateway. The review was completed in June 2025. The same page says the ONR review is tied to 'a prospective nuclear site licence application related to the Llynfi site.'",
+      "sources": [
+        {
+          "label": "ONR — Last Energy preliminary design review summary report (2025)",
+          "url": "https://www.onr.org.uk/generic-design-assessment/early-regulatory-engagement-on-new-nuclear-projects/last-energy-pdr-summary-report",
+          "quote": "apply directly for nuclear site licensing and environmental permitting for the Llynfi site in Wales",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

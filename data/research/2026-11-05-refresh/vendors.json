@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "captured": "2026-11-05",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor records (skip/vendors.json) where something changed; Type N items for vendor milestones dated after 2026-10-30 that skip/news.json lacks, including 1-20 MWe designs not in the vendors table (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "Radiant Kaleidos DOME readiness review, fueling and criticality (shipped record radiant: 2026 Q3 DOME target, Readiness Review pending)",
+      "Antares Mark-1 and Janus follow-up (shipped record antares)",
+      "Westinghouse eVinci follow-up after Aug/Sep 2026 criticality tests (shipped record evinci)",
+      "NANO Nuclear KRONOS MMR after the 2026-10-27 MOU and 2026-10-21 IMPSA review",
+      "Last Energy PWR-5 at Texas A&M RELLIS after the 2026-10-07 DSA approval",
+      "Valar Ward 250 and Project Beehive (Utah)",
+      "Natura MSR-1 and MSR-100 (Texas, ACU, RELLIS)",
+      "Aalo-X grid connection, fuel loading and full-plant timing",
+      "Deployable Energy Unity DOME test after the 2026-09-30 selection",
+      "Steady Energy LDR-50 (Finland)",
+      "Terra Innovatum SOLO (NRC topical reports)",
+      "Blue Energy (ERCOT application, GE Vernova Hitachi agreement)",
+      "Oklo Aurora-INL construction (shipped record oklo-aurora)",
+      "BWXT BANR at Fort Campbell (shipped record bwxt-banr)",
+      "Army Janus program follow-up for all five awardees",
+      "General sweep for microreactor criticality or milestone announcements in early November 2026",
+      "Texas A&M RELLIS SMR final permitting (web-leads.md lead, 2026-11-02)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-10-30 was found for any shipped vendor (antares, radiant, evinci, bwxt-banr, general-atomics-ga-tes, valar-ward250, aalo-x, oklo-aurora) or for the unshipped 1-20 MWe designs (NANO KRONOS, Last Energy, Natura, Deployable Energy, Terra Innovatum, Blue Energy, Steady Energy). Searches returned nothing newer than mid-to-late October 2026 for these vendors.",
+      "Radiant DOME: no evidence that DOE's Readiness Review has completed or that fueling or criticality has started. The most recent item found is the 2026-10-29 DOE full-power safety analysis approval, already shipped. The 2026 Q3 DOME target passing is consistent with the shipped record.",
+      "Antares Mark-1: no November 2026 item found. The DOE NSDA approval (2026-10-23) is already shipped; Mark-1 full-power operation is reported for 2027.",
+      "Westinghouse eVinci: no item after the 2026-09-03 heated-core test at NCERC was found. Westinghouse's own release on the cold criticality test is dated 2026-08-25 (shipped record says 2026-08-24). Not checked against a fetched primary page; no check written.",
+      "Last Energy PWR-5: no criticality or fuel-load announcement found. Reporting still describes the 2026-10-07 DSA approval as the latest milestone. The mid-2026 criticality target has passed, but no source gives a revised date.",
+      "Valar: no November 2026 Utah item found. Latest coverage is the early-October 2026 Project Beehive report (456 reactors, BLM application). No BLM decision was found.",
+      "Natura: no 2026 operating-license or MSR-1 fuel-loading item found. The NRC construction permit (2024) was the most recent licensing item found. Natura's own 2024 slide targeted Q3 2026 for OL approval, which has passed without an approval found.",
+      "Aalo-X: no grid-connection or fuel-loading item found after the July 2026 zero-power criticality. The full-plant completion target is end-2026.",
+      "Deployable Energy: the 2026-09-30 DOME selection is already shipped. No later item found, and the DOME test is scheduled for 2027.",
+      "Steady Energy (LDR-50): the most recent item is a pilot-construction report with no date given in the snippet. The design is 50 MWth heat-only, so it sits outside the 1-20 MWe electric scope. Not written up.",
+      "Terra Innovatum (SOLO): NRC topical reports docketed (2026); a safety-evaluation target of October 2026 appears only in an aggregator. No primary NRC item confirming an October or November completion was found. Not written up.",
+      "Blue Energy: the ERCOT interconnection application is reported as October 2026 without an exact date, and the design is 300 MW-class BWRX-300 units, outside 1-20 MWe. Not written up.",
+      "Oklo Aurora-INL: no November 2026 construction or licensing item found. Its latest items found are the 2026-06-11 DOE PDSA approval and the 2026-08-05 Groves test-reactor criticality, both already shipped.",
+      "BWXT BANR (Fort Campbell): no item after the 2026-08-26 Janus selection was found. Groundbreaking is targeted for late 2028.",
+      "Army Janus: no follow-on award, contract value, or site update after 2026-08-26 found for any awardee (Antares, Radiant, Westinghouse, GA, BWXT).",
+      "General sweep for early-November 2026 microreactor criticality or milestone announcements: none found. Results clustered June through September 2026.",
+      "Texas A&M RELLIS SMR permitting (web-leads lead dated 2026-11-02): no final-permit decision or November 2026 item found. Most recent item is a May 2026 status report. Not a vendor milestone in this pass.",
+      "SEC EDGAR filings (NANO Nuclear, Terra Innovatum, Oklo) not checked; the main session reported the EDGAR leg unreachable this run.",
+      "No WebFetch was run; every quote-bearing claim would need a fetched page. Because no record was written, no quote or source needed fetching."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

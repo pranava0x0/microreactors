@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "captured": "2026-11-07",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped data/vendors.json records (targets antares, radiant, evinci, bwxt-banr, general-atomics-ga-tes, valar-ward250, aalo-x, oklo-aurora) and Type N items for vendor milestones dated after 2026-10-30 that skip/news.json lacks, including non-table 1-20 MWe developers (Deployable Energy, NANO KRONOS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "Broad vendor milestone sweep, Nov 2026 (criticality, fuel loading, NRC, financing)",
+      "Radiant Kaleidos DOME Readiness Review and fueling after 2026-10-29 DSA approval",
+      "Antares Mark-1 DOE gates after 2026-10-23 NSDA approval",
+      "Valar Ward 250 and Project Beehive BLM status",
+      "Last Energy PWR-5 readiness review and criticality",
+      "Aalo Atomics Aalo-X status and 2027 demonstration plant schedule",
+      "Westinghouse eVinci news after 2026-08-26 NCERC criticality",
+      "NANO Nuclear KRONOS MMR NRC review schedule",
+      "Natura MSR-1 fuel salt and criticality",
+      "Deployable Energy Unity DOME 2027 test",
+      "Steady Energy LDR-50 status",
+      "Terra Innovatum and Blue Energy announcements"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-31 to 2026-11-07 found for any shipped vendor (antares, radiant, evinci, bwxt-banr, general-atomics-ga-tes, valar-ward250, aalo-x, oklo-aurora). Searches returned no November 2026 coverage for these vendors.",
+      "Radiant Kaleidos: DOE Readiness Review completion and DOME fueling date not found. Radiant has not published a date for the review. Shipped status text (DSA approved 2026-10-29, Readiness Review next) matched the search summaries; not checked against a fetched Radiant page this pass.",
+      "Antares Mark-1: no DOE authorization after the 2026-10-23 NSDA approval found. Next gates (preliminary and final DSA) undated.",
+      "Last Energy PWR-5: no readiness review, DSA final approval or criticality found. KBTX (2026-09-11) said 'months'. Shipped record for this vendor is in news.json (2026-10-07 DSA approval), not in vendors.json.",
+      "Aalo-X: no criticality or construction news found after 2026-07-04. A fetched POWER article dated 2025-08-19 describes Aalo-X as a 10 MWe reactor and attributes the 30 MWth/10 MWe figure to Aalo-1, which conflicts with the shipped mwe_label that assigns it to the separate Aalo-X demonstration plant. The fetch returned a summary, not verbatim text, so no check was written. Needs a verbatim read of the Aalo-X primary source before any correction.",
+      "Valar Ward 250 / Project Beehive: BLM still at completeness review per NPR-based coverage; no November decision. Coverage conflicts on whether a separate Green River application was dropped; unverified, not written.",
+      "eVinci: no November 2026 news found. Latest is the 2026-08-25 Westinghouse zero-power criticality release and the 2026-09-03 DOE heated-core criticality release (both already shipped).",
+      "NANO KRONOS (not a shipped vendor record): NRC review schedule per secondary coverage shows draft EA/SE 2027, but the NRC project page lists milestones as TBD. Not a dated vendor milestone after 2026-10-30.",
+      "Natura MSR-1 (not in vendors table): no fuel salt receipt, criticality or NRC step after July 2026 found.",
+      "Deployable Energy Unity (not in vendors table): DOE documented safety analysis approval for the DOME test is reported in one search summary, undated and unfetched. Not written.",
+      "Steady Energy LDR-50 (not in vendors table): listing on Nasdaq First North (trading from 2026-10-02) and a 2034 first-unit estimate, both before the cutoff or unverified. No post-2026-10-30 milestone found.",
+      "Terra Innovatum and Blue Energy: no November 2026 announcement found. Terra Innovatum results were 2025 coverage. No results for Blue Energy at all.",
+      "Budget: about 12 web searches and 1 fetch used in this lane; no sub-agents."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

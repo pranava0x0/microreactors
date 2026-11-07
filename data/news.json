@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "captured": "2026-10-31",
+    "captured": "2026-11-07",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "57 of 94 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 37 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "57 of 95 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 38 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-10-30",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
@@ -41,7 +41,7 @@
     },
     {
       "id": "setback",
-      "count": 3
+      "count": 4
     },
     {
       "id": "personnel",
@@ -674,6 +674,34 @@
           "label": "Utility Dive — FERC rejects Oklo complaint seeking to reinstate project to PJM's interconnection study cycle (2026)",
           "url": "https://www.utilitydive.com/news/ferc-rejects-oklo-complaint-pjm-interconnection/831357/",
           "quote": "failed to demonstrate PJM violated its tariff",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "deep-fission-iceberg-short-report-2026-09-24",
+      "date": "2026-09-24",
+      "headline": "Short seller's report on Deep Fission calls the project a money pit",
+      "companies": [
+        "Deep Fission",
+        "Iceberg Research"
+      ],
+      "category": "setback",
+      "what_happened": "On September 24, 2026, Iceberg Research published a short-seller report on Deep Fission. Using figures from the company's prospectus, Iceberg put its cost of energy at $148 to $289 per MWh and questioned its claim that it can get NRC approval in under a year. Deep Fission called the report highly misleading. By October 21 its stock had fallen more than 50% since the report came out.",
+      "why_it_matters": "A buyer comparing Deep Fission's offer with other microreactor pricing should note this outside cost estimate, which the company disputes. It is an analyst's calculation, not a verified project cost.",
+      "binding": false,
+      "binding_note": "A third-party short-seller report and the company's rebuttal. No regulator, contract, or financing action is involved.",
+      "sources": [
+        {
+          "label": "Deep Fission via Business Wire (OffshoreSource) — Deep Fission Rejects Distortions in Short-Seller Report (Sep. 25, 2026)",
+          "url": "https://offshoresource.com/business-wire/deep-fission-rejects-distortions-in-short-seller-report/",
+          "quote": "was targeted yesterday by a short-seller report criticizing the Company and its technology.",
+          "status": "fetched"
+        },
+        {
+          "label": "HPPR — Proposed Kansas nuclear reactor stock drops 50% after critical report calls it a money pit (Oct. 21, 2026)",
+          "url": "https://www.hppr.org/hppr-news/2026-10-21/proposed-kansas-nuclear-reactor-stock-drops-50-after-critical-report-calls-it-a-money-pit",
+          "quote": "has dropped more than 50% since the report came out Sept. 24.",
           "status": "fetched"
         }
       ]

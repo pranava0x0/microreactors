@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "captured": "2026-11-07",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor events dated after 2026-10-30, then gaps in the prior 60 days not already shipped. Started from skip/candidates.json (watcher), then company and angle sweeps.",
+    "angles_run": [
+      "Watcher candidates triage: Texas Long Mott Xe-100 (fetched; 320 MWe, out of scope), Calogena CAL30 (fetched; 30 MWt, excluded), Helen Helsinki EIA, X-energy/Fluor, Doosan/NuScale vessel (not fetched; large LWR-class SMRs, out of scope)",
+      "Radiant Kaleidos DOME readiness review (search)",
+      "Valar Ward 250 and Valar November news (search)",
+      "Aalo Atomics 2026 news (search)",
+      "Last Energy PWR-5 readiness review (search)",
+      "Antares Mark-1 construction (search)",
+      "Deep Fission Parsons 8-K, short-seller report (search, 2 fetches)",
+      "Westinghouse eVinci Fort Drum (search)",
+      "HALEU and TRISO deliveries (search)",
+      "Natura MSR-1 fuel salt (search)",
+      "Blue Energy, Terrestrial Energy, Holtec (search)",
+      "Kairos Hermes 2 financing (search)",
+      "General Atomics, BWXT, Westinghouse contracts (search)",
+      "DOE Reactor Pilot Program and INL LOTUS (search)",
+      "Standard Nuclear TRISO (search)",
+      "NuCube-Launch Two vote date (search)"
+    ],
+    "absences": [
+      "No 1-20 MW microreactor event dated 2026-10-31 to 2026-11-07 surfaced in search. The index returned little after early November, so this is a coverage gap, not proof of silence.",
+      "Radiant Kaleidos: DOME readiness review date not published (DSA shipped 2026-10-29).",
+      "Last Energy PWR-5: readiness review date not published; no criticality report found (DSA shipped 2026-10-08).",
+      "NuCube-Launch Two: shareholder meeting date not found in the DEF 14A text returned by search; merger not closed.",
+      "Kairos Hermes 2 $643M: DOE instrument type (grant, loan or milestone funding) unclear across sources; no closing document found.",
+      "Blue Energy, Holtec, General Atomics, Westinghouse eVinci: no November 2026 item found.",
+      "Valar Ward 250 criticality date conflicts across sources (June 18, 2026 in ANS; March 31, 2026 in one aggregator). Not written up; the shipped record stands.",
+      "Deployable Energy Unity: one search summary claims a July 2, 2026 criticality. Unverified and already shipped, so not written up.",
+      "Calogena CAL30 (EUR 40M EU Innovation Fund, 2026-11-06): excluded. The fetched WNN text gives 30 MWt and no electric output, and WNN is the only source read.",
+      "Deep Fission short-seller report: the 2026-09-24 date comes from the company release's 'yesterday' (release dated Sep 25); search summaries say Sep 25. Record uses the release-derived date.",
+      "Radiant, NRC, Oklo investor relations: 403 to non-browser clients (per skip/candidates.json); not retried."
+    ]
+  },
+  "items": [
+    {
+      "id": "deep-fission-iceberg-short-report-2026-09-24",
+      "date": "2026-09-24",
+      "headline": "Short seller's report on Deep Fission calls the project a money pit",
+      "companies": [
+        "Deep Fission",
+        "Iceberg Research"
+      ],
+      "category": "setback",
+      "what_happened": "On or about September 24, 2026, Iceberg Research published a short-seller report on Deep Fission. Iceberg calculated energy costs between $148 and $289 per MWh and said the company's NRC approval timeline is too ambitious. Deep Fission called the report highly misleading. Its stock had dropped more than 50% since the report by October 21.",
+      "why_it_matters": "A buyer comparing Deep Fission's offer with other microreactor pricing should note this outside cost estimate, which the company disputes. It is an analyst's calculation, not a verified project cost.",
+      "binding": false,
+      "binding_note": "A third-party short-seller report and the company's rebuttal. No regulator, contract, or financing action is involved.",
+      "sources": [
+        {
+          "label": "Deep Fission via Business Wire (OffshoreSource) — Deep Fission Rejects Distortions in Short-Seller Report (Sep. 25, 2026)",
+          "url": "https://offshoresource.com/business-wire/deep-fission-rejects-distortions-in-short-seller-report/",
+          "quote": "was targeted yesterday by a short-seller report criticizing the Company and its technology.",
+          "status": "fetched"
+        },
+        {
+          "label": "HPPR — Proposed Kansas nuclear reactor stock drops 50% after critical report calls it a money pit (Oct. 21, 2026)",
+          "url": "https://www.hppr.org/hppr-news/2026-10-21/proposed-kansas-nuclear-reactor-stock-drops-50-after-critical-report-calls-it-a-money-pit",
+          "quote": "has dropped more than 50% since the report came out Sept. 24.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

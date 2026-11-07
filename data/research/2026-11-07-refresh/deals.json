@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "captured": "2026-11-07",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (file opportunities) and new signed or announced buyer deals dated after 2026-10-30 that skip/news.json lacks",
+    "angles_run": [
+      "Army Janus five-vendor award and site assignments (search + Breaking Defense fetch, 2026-08-26)",
+      "Air Force ANPI selections: Eielson, JBSA, Buckley, Malmstrom (search; Eielson and Malmstrom pages returned 403)",
+      "DOE Reactor Pilot Program criticality count (search; energy.gov fetch)",
+      "Equinix-Radiant 20-unit preorder (search; Radiant/Equinix newswire fetch, 2025-08-14)",
+      "Oklo-Switch master agreement (search only; no new status found)",
+      "NANO Nuclear-Supermicro MOU (search; NANO release fetch, 2026-05-06)",
+      "Last Energy PWR-20 and ONR PDR scope (search; ONR fetch)",
+      "Canada SRC eVinci cancellation (search; SRC FAQ fetch)",
+      "New buyer deals after 2026-10-30: general sweeps for PPAs, LOIs, MOUs, site selections, and company-named sweeps (Oklo, Radiant, Deep Fission, Valar, Aalo, Antares, Terra Innovatum)"
+    ],
+    "absences": [
+      "No microreactor buyer deal dated 2026-10-31 to 2026-11-07 found in any sweep; the search index showed nothing dated November 2026 for the named companies, so this is a search-coverage gap, not proof of absence.",
+      "Terra Innovatum and Waiken ILW (Brazil) LOI for SOLO at Jaguariuna: date not verified; the DataCenterDynamics page returned 403 and the only fetched Terra Innovatum item (Uvation 1 MWe LOI, 2025-11-20) predates the cutoff. Not written.",
+      "Janus: Breaking Defense (fetched, 2026-08-26) says each of the five companies 'now has a unique Other Transaction Authority-based agreement'. The shipped text says the Army 'is negotiating' the agreements. Could not reach the Army's own 2026-08-26 release (the army.mil URL fetched returned the November 2025 site-list article), so no check written.",
+      "Eielson: the Air Force milestone article returned 403. A June 2026 Eielson newsletter (search snippet only, not fetched) gives an estimated completion of 2030. No NRC reactor licence decision found. The shipped instrument is a Notice of Intent to Award, yet the record carries binding true; flagged for the main session, not checked.",
+      "Malmstrom: Westinghouse BusinessWire release returned 403; the ANPI selection is supported only by search snippets.",
+      "Equinix-Radiant: the release says Equinix 'signed a preorder agreement and submitted deposits'; it does not say the agreement is binding. The shipped binding true is not confirmed by any fetched page. No delivery schedule published.",
+      "Oklo-Switch: no 2026 status change found in searches; not fetched.",
+      "DOE Reactor Pilot Program: energy.gov (2026-08-06) confirms Oklo's Groves reactor as the 'fifth DOE-authorized reactor to go critical this summer', consistent with the shipped count of five. No newer criticality found. No check written because the verdict is confirmed but the page is 93 days old and nothing newer was found."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "confirmed",
+      "evidence": "NANO Nuclear's release dated 2026-05-06 says the company 'has entered into a Memorandum of Understanding (MOU) with Super Micro Computer, Inc.' and that 'While the MOU is non-binding, it establishes a foundation for future definitive agreements.' The MOU is non-binding, matching the shipped binding false.",
+      "sources": [
+        {
+          "label": "NANO Nuclear — Strategic MOU with Supermicro, 2026-05-06",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-signs-strategic-mou-with-supermicro-to-power-the-next-generation-of-ai-data-centers-with-advanced-nuclear-energy/",
+          "quote": "While the MOU is non-binding, it establishes a foundation for future definitive agreements",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-uk-lastenergy-1",
+      "target": "uk-lastenergy",
+      "file": "opportunities",
+      "claim": "Target online 2030; the 2025 ONR design review Last Energy completed covers its separate Llynfi site in Wales",
+      "verdict": "wrong",
+      "evidence": "The ONR page says the Preliminary Design Review was 'completed in June 2025' and is for 'Last Energy's PWR-20 concept', a design review, not a site review. Separately, ONR set up a framework for a prospective site licence application for the Llynfi site in Wales, and Last Energy plans to apply directly for site licensing there. The Llynfi site licence is a separate, future step.",
+      "correction": "Target online 2030; June 2025 ONR design review covered the PWR-20 concept, not the Llynfi site",
+      "sources": [
+        {
+          "label": "ONR — Last Energy PWR-20 Preliminary Design Review summary report",
+          "url": "https://www.onr.org.uk/generic-design-assessment/early-regulatory-engagement-on-new-nuclear-projects/last-energy-pdr-summary-report",
+          "quote": "directly for nuclear site licensing and environmental permitting for the Llynfi site in Wales",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "SRC's own FAQ says 'In fall 2025, Westinghouse canceled the project contract with SRC' and gives the reason as 'due to their decision to shift focus of their eVinci microreactor program toward space, defence and government applications'. The page gives the season only, not a month.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — Additional information (FAQ)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
