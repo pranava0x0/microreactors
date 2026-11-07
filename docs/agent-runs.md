@@ -443,3 +443,16 @@ Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches foun
 | politics | 188K | 3 confirmed; SB 978 held in committee since 2026-05-14, confirmed on leginfo in the browser pane and hand-edited into policy.json | yes |
 
 ~645K agent tokens for 1 correction. Phone cost not re-measured (no layout change).
+
+## 2026-11-07 daily refresh
+
+Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches found nothing dated after 10-30. 1 news, 2 corrections (1 by hand), 6 shipped rows confirmed.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 168K | 1 item: Deep Fission short-seller report (2026-09-24), a gap from the prior 60 days; all 5 watcher leads were SMRs | yes |
+| deals | 152K | 1 correction (uk-lastenergy: ONR's June 2025 review covered the PWR-20 design, not a site); 2 confirmed | yes |
+| vendors | 163K | 0 records; no vendor milestone after 10-30 | no |
+| politics | 174K | 4 confirmed; 1 unsupported: "every state plus Puerto Rico" had no source and INL GAIN counts 48 of 50 states, rewritten by hand in policy.json | yes |
+
+~657K agent tokens for 1 news item and 2 corrections. Phone cost 1.69 (unchanged).

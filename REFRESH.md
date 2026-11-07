@@ -181,4 +181,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   defines binding=true to include "selection with a named site". All four were overruled. Also, "confirmed" can still hide
   a stale status: the politics agent confirmed SB 978's text but its own evidence said the bill was held in committee on
   2026-05-14. Read confirmed checks' evidence for status words ("held", "withdrawn", "paused"), not only the verdict.
-
+- **2026-11-07: a `snippet-only` source is an unchecked claim, and an `unsupported` check on one is usually right.** The policy row "What
+  states actually did in 2025" rested on one snippet-only Neutron Bytes link whose page mentions neither Puerto Rico nor TerraPower, and
+  its "every state plus Puerto Rico" was wrong (INL GAIN: 48 of 50 states). Grep `"status": "snippet-only"` on a row an agent calls
+  unsupported and treat the row as uncited until a fetched page backs it.

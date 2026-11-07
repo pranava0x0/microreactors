@@ -533,13 +533,19 @@
           "name": "What states actually did in 2025",
           "status": "finding",
           "kind": "finding",
-          "mechanism": "Every state plus Puerto Rico took some nuclear legislative or regulatory action in 2025, and Wyoming hosted the first NRC construction permit for a commercial non-light-water reactor (TerraPower, March 2026). Claims that Tennessee or Utah have Alaska-style microreactor siting statutes were checked and not confirmed; they stay off this site until they can be cited.",
+          "mechanism": "A record 48 of the 50 states introduced at least one nuclear bill in 2025: 279 bills, 73 of them enacted, by INL's count as of December 1, 2025. In March 2026 the NRC approved TerraPower's construction permit for Kemmerer Unit 1 in Wyoming, its first approval of a commercial non-light-water reactor in more than 40 years. Claims that Tennessee or Utah have Alaska-style microreactor siting statutes were checked and not confirmed; they stay off this site until they can be cited.",
           "sources": [
             {
-              "label": "Neutron Bytes — state nuclear activity and the TerraPower permit",
-              "url": "https://neutronbytes.com/2026/08/01/doe-selects-five-states-as-nuclear-lifecycle-innovation-campuses/",
-              "quote": "TerraPower received its construction permit in March 2026 for the Natrium plant in Wyoming",
-              "status": "snippet-only"
+              "label": "INL GAIN — 2024-25 State Activities in Nuclear Overview (as of Dec. 1, 2025)",
+              "url": "https://gain.inl.gov/content/uploads/4/2026/06/State-Activites-in-Nuclear-Overview-December-1-2025.pdf",
+              "quote": "A record 48 of the 50 states introduced and considered at least one piece of nuclear-related legislation",
+              "status": "fetched"
+            },
+            {
+              "label": "ANS Nuclear Newswire — NRC approves TerraPower construction permit (Mar. 4, 2026)",
+              "url": "https://www.ans.org/news/article-7818/nrc-approves-terrapower-construction-permit/",
+              "quote": "it has approved TerraPower’s construction permit application for Kemmerer Unit 1",
+              "status": "fetched"
             }
           ]
         }

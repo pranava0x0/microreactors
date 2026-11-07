@@ -1,0 +1,129 @@
+{
+ "_meta": {
+  "captured": "2026-11-07",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped licensing rules in skip/policy.json; Type F dockets not in skip/dockets.json filed or decided since about 2026-08-09; Type N items dated after 2026-10-30.",
+  "angles_run": [
+   "NRC Part 57 final-rule status and deadline",
+   "NRC Part 53 and the DOE/DOW prior-authorization final rule",
+   "NRC FY2026 fee rule (ADVANCE Act reduced hourly rate)",
+   "DOE Reactor Pilot Program criticality milestones and authorization news after 2026-10-30",
+   "FY2027 NDAA microreactor provisions (House HASC, Senate SASC)",
+   "FY2027 Energy and Water appropriations (DOE Office of Nuclear Energy)",
+   "NRC news and commission votes, November 2026",
+   "CNSC small-modular and microreactor decisions",
+   "Texas HB 14 (TANEO fund) award status",
+   "State nuclear moratorium and state microreactor legislation 2026",
+   "Virginia SCC Dominion Rider SMR (Phase II)",
+   "NRC Palisades SMR (Pioneer) docketing and notices",
+   "Federal microreactor bills, November 2026",
+   "State PUC microreactor orders, September to October 2026",
+   "Neutron Bytes page cited by the shipped 'What states actually did in 2025' pathway"
+  ],
+  "absences": [
+   "No NRC commission vote, approval or final rule dated after 2026-10-30 found. Part 57 (microreactor framework) was still proposed as of the 2026-10-22 ANS report; no final Part 57 rule found as of 2026-11-07.",
+   "The 2026-11-23 date (EO 14300 18-month deadline) is in NRC's own meeting notice per search snippet, not a fetched page. NRC's May 2026 tracker (NIA, last updated 2026-05-18, snippet only) lists the microreactor streamlining final rule for 2026-12-01. Treat as a planning target; NRC chair has said some final rules will miss the 18-month deadline (snippet only).",
+   "The 'What states actually did in 2025' claim (every state plus Puerto Rico; Wyoming TerraPower permit) is not on the cited Neutron Bytes page. The Wyoming permit (NRC release 26-028, 2026-03-04) was seen only in a search summary and was not fetched, so it is not used as evidence here.",
+   "FY2027 NDAA: House HASC-passed bill includes a microreactor provision (Harrigan amendment, 50 MWe cap, Indo-Pacific deployment by 2030), dated June-July 2026, before the items window. Senate SASC bill (S. 4784) reportedly has no matching provision, from one Star-Advertiser column only (not fetched). No conference or final-passage news found for Oct-Nov 2026.",
+   "FY2027 Energy and Water appropriations: House committee approved 2026-05-20 (34-25); no Senate markup or enacted bill found. Search returned no October or November 2026 update.",
+   "DOE Reactor Pilot Program: no authorization announcement dated after 2026-10-30 found. Nuclear Energy Launch Pad (March 2026 successor framing) not checked further.",
+   "Texas HB 14 (TANEO, $350M fund): 2026 selections were projected for the week of 2026-07-20; no award recipient list found in search results.",
+   "CNSC: no 2026 SMR or microreactor licence decision found in one search; results were mostly 2025 coverage.",
+   "Dockets, last 90 days: none found with a fetched source. Dominion Phase II (Virginia SCC PUR-2025-00196) was filed 2025-11-03 and is outside the window. NRC Palisades SMR (Pioneer) notices (FR 2026-11915 and related) date from Feb-June 2026. West Virginia HB 4491 introduced 2026-01-19. Virginia HB74 (2026) killed. No September-October 2026 state PUC microreactor order found.",
+   "Federal bills: no microreactor bill introduced in November 2026 found. Next Generation Nuclear Deployment Act (H.R. 6805) introduced 2025-12-17, in committee.",
+   "State legislation: New Jersey S4849 (Micro-Reactor Incentive Act) is already in skip/dockets.json. No October 2026 state enactment found. Illinois and New Jersey moratorium repeals are 2026 events before the window, and were not added as items."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-licensing-part57-1",
+   "target": "licensing/Part 57, the proposed microreactor rule",
+   "file": "policy",
+   "claim": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less) would approve fleets of identical units, allow limited construction ahead of full permitting, and streamline environmental review; NRC's own estimate is $3.76–11.84B in combined savings and licensing-to-deployment in 6–12 months for qualifying designs. It is a proposed rule, and every use of that 6–12 month number should say so.",
+   "verdict": "confirmed",
+   "evidence": "ANS, 22 Oct 2026, on the NRC final rule amending 10 CFR Part 50 and Part 53 for prior DOE/DOW authorization: a separate microreactor rule 'would do for the proposed Part 57' the same thing, so Part 57 is still a proposed rule as of that date. ANS, 27 Apr 2026, says Part 57 'is intended for reactors that are 100 MWe or smaller'. The $3.76-11.84B estimate and the 6-12 month figure were not checked against a fetched page in this pass.",
+   "sources": [
+    {
+     "label": "ANS — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (22 Oct 2026)",
+     "url": "https://www.ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization%EF%BC%9BAdvanced/",
+     "quote": "A separate proposed rule, “Licensing Requirements for Microreactors and Other Reactors with Comparable Risk Profiles,” would do for the proposed Part 57",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS — NRC introduces microreactor regulatory framework (27 Apr 2026)",
+     "url": "https://www.ans.org/news/article-7981/nrc-introduces-microreactor-regulatory-framework/",
+     "quote": "Part 57 is intended for reactors that are 100 MWe or smaller",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-licensing-advance-fee-1",
+   "target": "licensing/The ADVANCE Act halved the hourly review rate",
+   "file": "policy",
+   "claim": "The 2024 law directed NRC to produce microreactor-specific licensing strategies across eight areas (done, January 2026) and cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (it is $154 under the FY2026 fee rule), a concrete cost advantage available now.",
+   "verdict": "confirmed",
+   "evidence": "The FY2026 final fee rule in the Federal Register (16 Jun 2026) sets the advanced-reactor Reduced Hourly Rate at $154 per hour, effective 17 Aug 2026, so the $154 figure in the shipped text is current. The $318 and $148 comparison figures and the eight-area strategies claim were not checked against a fetched page in this pass.",
+   "sources": [
+    {
+     "label": "Federal Register — Fee schedules, fee recovery for fiscal year 2026 (final rule, 16 Jun 2026)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+     "quote": "Thus, in this FY 2026 final fee rule, the Reduced Hourly Rate is $154 per hour",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-licensing-doe-track-1",
+   "target": "licensing/The DOE track produced four critical reactors by July 4",
+   "file": "policy",
+   "claim": "The executive order's goal of three test reactors critical by July 4, 2026 was met and passed: Antares' Mark-0 (June 4, at INL), Valar Atomics' Ward 250 (June 18, Utah), Deployable Energy's 1 MWe Unity (June 30, at INL, under DOE's Nuclear Energy Launch Pad initiative) and Aalo Atomics' Aalo-X (July 4, at INL).",
+   "verdict": "confirmed",
+   "evidence": "POWER, 6 Jul 2026 (updated 8 Jul): Deployable Energy's Unity 'reached zero-power criticality at INL on June 30.' Antares (4 Jun), Valar (18 Jun) and Aalo (4 Jul) dates also match the shipped text. The article calls Aalo's unit the 'Critical Test Reactor'; the name 'Aalo-X' in the shipped text was not seen in this article, so check the name against Aalo's own release before relying on it.",
+   "sources": [
+    {
+     "label": "POWER — Aalo Atomics' Test Reactor Reaches Criticality at INL, Fourth DOE-Authorized Advanced Reactor by July 4 (6 Jul 2026)",
+     "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+     "quote": "reached zero-power criticality at INL on June 30",
+     "status": "fetched"
+    }
+   ],
+   "review": "Name 'Aalo-X' is on the same POWER page: DOE 'referred to as Aalo-X'. Shipped name stands."
+  },
+  {
+   "id": "check-licensing-part53-1",
+   "target": "licensing/Part 53 is final",
+   "file": "policy",
+   "claim": "NRC finalised its risk-informed, technology-inclusive licensing framework in March 2026, the first new reactor-licensing pathway since 1989 and the first shift in underlying approach since 1956. Advanced designs can now license without the stack of light-water-shaped exemptions the legacy parts required.",
+   "verdict": "confirmed",
+   "evidence": "ANS, 26 Mar 2026: the NRC 'has finalized its new regulatory framework for advanced reactors' (announced the Wednesday before), and Part 53 'is the first new reactor licensing framework issued by the NRC since 1989'. The article describes the 1956 point as 'the first major update to reactor licensing standards since 1956', so the 'first shift in underlying approach' wording is a paraphrase. The article gives 3 April as the Federal Register publication date; the FR date is not pinned here. The second sentence of the shipped text was not checked.",
+   "sources": [
+    {
+     "label": "ANS — NRC unveils Part 53 final rule (26 Mar 2026)",
+     "url": "https://www.ans.org/news/article-7881/nrc-unveils-part-53-final-rule/",
+     "quote": "Part 53 is the first new reactor licensing framework issued by the NRC since 1989, when the agency introduced Part 52.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-licensing-states-2025-1",
+   "target": "licensing/What states actually did in 2025",
+   "file": "policy",
+   "claim": "Every state plus Puerto Rico took some nuclear legislative or regulatory action in 2025, and Wyoming hosted the first NRC construction permit for a commercial non-light-water reactor (TerraPower, March 2026).",
+   "verdict": "unsupported",
+   "evidence": "The cited Neutron Bytes page (1 Aug 2026) is about DOE naming host states for nuclear fuel-cycle campuses. The fetched text does not mention Puerto Rico, 'every state', 'Wyoming', or a TerraPower construction permit, and it cites no 2025 state actions. Its only Tennessee reference is in a DOE host-state list. The claim has no supporting source on this site as shipped.",
+   "sources": [
+    {
+     "label": "Neutron Bytes — DOE selects five states as nuclear lifecycle innovation campuses (1 Aug 2026)",
+     "url": "https://neutronbytes.com/2026/08/01/doe-selects-five-states-as-nuclear-lifecycle-innovation-campuses/",
+     "quote": "Utah, Tennessee, Oklahoma, Louisiana, and Idaho selected as potential hosts to modernize the nation's nuclear fuel cycle.",
+     "status": "fetched"
+    }
+   ],
+   "review": "Main session agreed: the cited page carries neither claim. 'Every state plus Puerto Rico' is not supported (INL GAIN counts 48 of 50 states). Shipped mechanism rewritten by hand in data/policy.json with GAIN PDF and ANS 2026-03-04 as fetched sources."
+  }
+ ],
+ "dockets": [],
+ "items": []
+}
