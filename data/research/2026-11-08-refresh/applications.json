@@ -1,0 +1,73 @@
+{
+ "_meta": {
+  "captured": "2026-11-08",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped segments and deployment-site claims most likely to have moved (UIUC Kronos, Eielson, Janus, NASA lunar, Penn State, Last Energy London Gateway, Oklo Wyoming, CVEA Valdez); new Type S buyer segments the tab lacks (hospitals, district heat, hydrogen/ammonia, disaster recovery, mines); Type E regions checked, none written.",
+  "angles_run": [
+   "NASA fission surface power 2026 award or RFP",
+   "UIUC Kronos NRC docketing and review status",
+   "Last Energy DP World London Gateway 2026",
+   "Penn State eVinci NRC 2026",
+   "Oklo Wyoming Hyperscale 2026",
+   "Army Janus program awards (2026-08-26)",
+   "Eielson AFB microreactor 2026",
+   "CVEA Valdez microreactor 2026",
+   "hospital microreactor agreements 2026",
+   "district heating microreactor agreements 2026 (Finland, Kuopio, Jyvaskyla)",
+   "mine diesel replacement microreactor 2026 (Prodigy, Des Nedhe, Radiant Idaho)",
+   "hydrogen and ammonia microreactor 2026",
+   "disaster recovery and emergency microreactor power 2026",
+   "Chalk River GFP status 2026",
+   "Faroe Islands electricity price and load (region candidate)"
+  ],
+  "absences": [
+   "NASA fission surface power: no 2026 final RFP or award found in search results; shipped nasa-doe-fsp-lunar text left unchanged.",
+   "Penn State eVinci (penn-state-evinci): no 2026 NRC filing or site selection found; shipped text left unchanged.",
+   "Eielson (eielson-pilot): March 2026 DAF FAQ found (installation-only, no grid connection, fuel loading estimated Q4 2026 to Q2 2027), but no 2026 contract award, NRC licence or PPA found; shipped text is not contradicted and no check written.",
+   "Last Energy London Gateway (last-energy-london-gateway): no 2026 update found; 2025 coverage gives conflicting dates for the ONR preliminary design review (June 2025 vs July); no check written.",
+   "Oklo Wyoming Hyperscale (oklo-wyoming-hyperscale-aspen-mountain): no 2026 update found; shipped nonbinding LOI wording not contradicted.",
+   "CVEA Valdez (cvea-valdez): no 2026 update found; an undated Radiant article says CVEA earlier judged a microreactor too costly for its ratepayers, which is a lead only.",
+   "Janus sites (janus-bragg, janus-benning, janus-campbell, janus-hood, janus-drum): shipped records already carry the 2026-08-26 announcement. army.mil (fetched) lists the five vendor and installation pairings. Antares release on BusinessWire returned HTTP 403. The status field still reads intent-to-award while the Army and Antares wording reads as executed agreements; not changed here, flagged for the main session.",
+   "Jyvaskyla Alva letter of intent with Steady Energy (Feb 2026): seen only in a search summary; the NucNet page returned HTTP 403 and the WNN page fetched does not mention Jyvaskyla. Not written.",
+   "Hospitals: no 2026 microreactor supply agreement with a named hospital or health system found. Results were university deals and vendor marketing claims. Not written.",
+   "Disaster recovery and emergency civilian grid power: only academic modelling (engrxiv, 2024) and H.R. 1009 (2023, never enacted) found; no MW commitment. Not written.",
+   "Hydrogen and ammonia: searches returned only utility-scale renewable hydrogen and ammonia projects (Jordan, Morocco, China, Oman). No microreactor-specific agreement found. Not written.",
+   "Prodigy and Des Nedhe remote mines (2024 MOU): 15-45 MWe per remote mine is a sizing estimate from the 2024 release, and the release itself returned HTTP 403. Prodigy 2026 items already ship in news.json. Not written.",
+   "Chalk River GFP (chalk-river-mmr): CNSC project page reports status Paused; no 2026 resumption found. Shipped status left as is, not fetched directly.",
+   "Type E regions: Faroe Islands considered; no fetched 2025-or-later tariff or load figure found (SEV pages and Wikipedia only, dated). No region record written. Other candidate regions were already on skip/regions.json."
+  ],
+  "held_by_main_session": [
+   {
+    "id": "kuopio-kuopion-energia-steady-energy",
+    "why": "Newest source is a one-year pre-planning agreement from July 2024; no evidence it is still live. Not shipped as 'proposed'."
+   }
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-uiuc-kronos-mmr-1",
+   "target": "uiuc-kronos-mmr",
+   "file": "segments",
+   "claim": "It is licensed as a research and test reactor, so campus power is secondary to training and research, and no power price is published.",
+   "verdict": "wrong",
+   "evidence": "The NRC's 2026 advanced reactor highlights page (entry dated March 31, 2026) says the University of Illinois Urbana-Champaign submitted a construction permit application, and that the NRC staff's acceptance review of that application is ongoing. An application under NRC review is not a licence. The ANS article dated April 2, 2026 says the university 'has submitted a construction permit application to the Nuclear Regulatory Commission'.",
+   "correction": "It would be licensed as a research and test reactor (the construction permit application filed on 31 March 2026 is under NRC review), so campus power is secondary to training and research, and no power price is published.",
+   "sources": [
+    {
+     "label": "U.S. NRC — Advanced reactor highlights 2026 (NRC Receives University of Illinois Construction Permit Application)",
+     "url": "https://www.nrc.gov/reactors/new-reactors/advanced/highlights/2026",
+     "quote": "On March 31, 2026, the University of Illinois Urbana-Champaign (U. of I.) submitted its construction permit application",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — UIUC submits MMR construction permit application (2026)",
+     "url": "https://www.ans.org/news/2026-04-02/article-7904/",
+     "quote": "has submitted a construction permit application to the Nuclear Regulatory Commission",
+     "status": "fetched"
+    }
+   ],
+   "agent_correction": "It is applying to the NRC as a research and test reactor, so campus power is secondary to research, and no power price is published.",
+   "review": "Main session: kept the shipped framing and added the permit status from the NRC highlights page."
+  }
+ ]
+}

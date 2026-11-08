@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "captured": "2026-11-08",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor milestones and Type N items for vendor milestones dated after 2026-10-30 that skip/news.json lacks.",
+    "angles_run": [
+      "Generic November 2026 microreactor criticality, fuel load, construction permit search",
+      "Radiant Kaleidos DOME fueling and DOE Readiness Review",
+      "Antares Mark-0 and Mark-1 news",
+      "Westinghouse eVinci news",
+      "Valar Ward250 and Project Beehive",
+      "Last Energy PWR-5",
+      "Natura MSR-1",
+      "Terra Innovatum, Steady Energy, Blue Energy",
+      "NANO Nuclear KRONOS and ZEUS",
+      "Deployable Energy Unity DOME",
+      "Aalo-X 2027 plant",
+      "Janus program update",
+      "Oklo Aurora-INL",
+      "BWXT BANR Fort Campbell",
+      "Fetch of Radiant DOE full-power safety analysis release (Business Wire copy)",
+      "Fetch of Aalo Atomics article (Power Magazine, 2025-08-19)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-10-31 to 2026-11-08 surfaced for any shipped or non-table vendor after 16 searches; searches returned only pre-November items. Zero Type N items written.",
+      "Radiant's own newsroom (radiantnuclear.com) returned HTTP 403 to WebFetch; the Oct 29 release was read through a Business Wire copy on offshoresource.com instead.",
+      "Radiant DOE Readiness Review date: not published in any source found; the shipped 'no set date' wording is consistent with what is public.",
+      "Antares Mark-1 and Mark-0 post-October status: no November 2026 source found; the only Antares reactor item was a Japanese-language article on the Sept 11 Space Force award.",
+      "Westinghouse eVinci: no November 2026 source found; a Russian-language 3dnews report on mass-production steps and an NRC submission is undated and was not used.",
+      "Valar Ward250 and Project Beehive: no November 2026 source found; BLM status unresolved (NPR says under review, a TokenPost report says withdrawal, not confirmed). Not used.",
+      "Last Energy PWR-5 criticality date: no source found after the DOE PDSA approval; the shipped Texas item from Oct 7 is the latest.",
+      "Natura MSR-1 2026 status: no source found after the Dec 2025 OTA; the July 2026 reference could not be read.",
+      "Steady Energy and Blue Energy: no results at all in one search.",
+      "Deployable Energy Unity: the DOME test is dated 2027 (INL release, 2026-09-30), already in news. No November event found.",
+      "Aalo-X 2027 full-scale plant: the Power Magazine fetch (2025-08-19) does not support the shipped 2027 construction-and-licensing wording, and the 30 MWth / 10 MWe figure is attributed there to Aalo-1, so the shipped line was not checked."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "DOME campaign: criticality through 150 h unattended run; the Q3 target passed and fueling waits on DOE's Readiness Review, which has no set date",
+      "verdict": "confirmed",
+      "evidence": "Radiant's Oct 29, 2026 release (Business Wire copy) says its DOE safety analysis approval 'allows the company to advance to DOE's Readiness Review, the next step before nuclear operations can begin.' It says fueling follows successful completion of that review, and gives no date for the review or for fueling. The shipped 'no set date' wording still holds. The release also states the approval covers operation at power, which the shipped line does not mention.",
+      "sources": [
+        {
+          "label": "Business Wire via OffshoreSource — Radiant achieves industry milestone as the only microreactor design to secure DOE safety analysis approval for full power operations (2026-10-29)",
+          "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+          "quote": "allows the company to advance to DOE’s Readiness Review, the next step before nuclear operations can begin",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

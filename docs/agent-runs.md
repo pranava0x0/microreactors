@@ -456,3 +456,19 @@ Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches foun
 | politics | 174K | 4 confirmed; 1 unsupported: "every state plus Puerto Rico" had no source and INL GAIN counts 48 of 50 states, rewritten by hand in policy.json | yes |
 
 ~657K agent tokens for 1 news item and 2 corrections. Phone cost 1.69 (unchanged).
+
+## 2026-11-08 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing dated after 10-30. 1 news, 3 corrections (2 re-worded by the main session), 4 confirmed, 1 agent check overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 156K | 2 items from Centrus SEC filings; shipped the 10-20 HALEU Transfer Agreement, held the construction-package item (overlaps the 10-30 centrifuge story) | yes |
+| deals | 142K | texas-backup "Live program" -> rule adopted, no application schedule (agent said unsupported; converted to a correction) | yes |
+| vendors | 149K | 1 confirmed (Radiant DOME Readiness Review, no date) | no |
+| politics | 151K | NRC fee parenthetical updated to FY2026 ($154 vs $337); agent's rewrite of the FY2025 history rejected | yes |
+| applications | 177K | uiuc-kronos-mmr "is licensed" -> construction permit under review; Kuopio LOI (2023-24) held as stale | yes |
+| costs | 133K | PCE "outdated" overruled: shipped sentence already carries 22.11 proposed | no |
+| ideas | 150K | 3 confirmed (Price-Anderson floor/cap, DOME 20 MWt) | no |
+
+~1.06M agent tokens for 1 news item and 3 corrections. Phone cost 1.69 (unchanged).

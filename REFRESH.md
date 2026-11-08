@@ -185,3 +185,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   states actually did in 2025" rested on one snippet-only Neutron Bytes link whose page mentions neither Puerto Rico nor TerraPower, and
   its "every state plus Puerto Rico" was wrong (INL GAIN: 48 of 50 states). Grep `"status": "snippet-only"` on a row an agent calls
   unsupported and treat the row as uncited until a fetched page backs it.
+- **2026-11-08: sec.gov blocks the repo's fetch User-Agent, but `curl -A "<name> <contact>@example.org"` gets 200.** Two Centrus filings
+  (8-K exhibit, 10-Q) were UNREACHABLE in `verify_pass_quotes.py`; curl with a generic contact UA fetched both and
+  `fetch_source.py URL --from-file` cached them for the offline gate. Same root cause as the 10-27 EDGAR note. Also, a status
+  word like "Live program" can overstate a funded-but-unopened program: the agent's `unsupported` became an `outdated`
+  correction once the source said "has not released an application schedule".
+
