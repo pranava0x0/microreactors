@@ -472,3 +472,16 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches fo
 | ideas | 150K | 3 confirmed (Price-Anderson floor/cap, DOME 20 MWt) | no |
 
 ~1.06M agent tokens for 1 news item and 3 corrections. Phone cost 1.69 (unchanged).
+
+## 2026-11-09 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 2 main-session web searches found nothing dated after 10-30. 1 news, 1 correction (reworded by the main session), 7 confirmed, 1 agent check overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 170K | 1 item: Deployable Energy picks Sargent & Lundy for Unity-1 licensing (2026-10-14), a gap; watcher leads were all SMRs | yes |
+| deals | 152K | 5 confirmed; its "14 GW not in source" note was answered by the row's Utility Dive source | no |
+| vendors | 158K | valar-ward250: "100 kWt criticality" -> 100 kWt design, zero-power criticality, 10 kWt output (also fixed the News sentence) | yes |
+| politics | 170K | NRC fee "outdated" overruled for the second day running (FY2025 history + FY2026 parenthetical); Part 57 still proposed | no |
+
+~650K agent tokens for 1 news item and 1 correction. Phone cost 1.69 (unchanged).

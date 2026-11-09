@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "captured": "2026-11-08",
+    "captured": "2026-11-09",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "58 of 96 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 38 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "58 of 97 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 39 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-10-30",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
@@ -17,7 +17,7 @@
     },
     {
       "id": "contract",
-      "count": 13
+      "count": 14
     },
     {
       "id": "award",
@@ -380,6 +380,34 @@
           "label": "World Nuclear News — Joint venture to produce HALEU in South Africa (2026-10-19)",
           "url": "https://world-nuclear-news.org/articles/joint-ventureto-produce-haleu-in-south-africa",
           "quote": "A binding Heads of Agreement has been signed by the companies",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "sargent-lundy-deployable-unity1-2026-10-14",
+      "date": "2026-10-14",
+      "headline": "Deployable Energy picks Sargent & Lundy for Unity-1 licensing work",
+      "companies": [
+        "Deployable Energy",
+        "Sargent & Lundy"
+      ],
+      "category": "contract",
+      "what_happened": "On 2026-10-14 Deployable Energy said it selected Sargent & Lundy to provide engineering and licensing support for Unity-1, a 1-MWe nuclear battery. The work supports the company's planned NRC construction permit application, which Deployable Energy is targeting for submittal without a stated date. The NRC pre-application page lists a readiness assessment request for that application.",
+      "why_it_matters": "For a 1-20 MW buyer this is licensing progress on a 1 MWe unit, not a power sale. The release gives no contract value and no permit filing date.",
+      "binding": false,
+      "binding_note": "The release says Deployable Energy selected Sargent & Lundy. It names no contract value, and the signed engagement itself was not retrieved.",
+      "sources": [
+        {
+          "label": "Deployable Energy — Sargent & Lundy to provide engineering and licensing support for Deployable Energy's Unity-1 Microreactor (PR Newswire, 2026-10-14, syndicated copy)",
+          "url": "https://www.miningstockeducation.com/2026/10/sargent-lundy-to-provide-engineering-and-licensing-support-for-deployable-energys-unity-1-microreactor/",
+          "quote": "Deployable Energy today announced that it selected Sargent & Lundy",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Nuclear Regulatory Commission — Deployable Energy pre-application activities (Unity Nuclear Battery, 2025-2026)",
+          "url": "https://www.nrc.gov/facilities-safety/new-reactors/advanced-reactors/who-were-working-with/pre-application-activities/deployable-energy",
+          "quote": "UNB is a 1 MWe gas cooled microreactor designed for scalable modular deployment",
           "status": "fetched"
         }
       ]
@@ -1841,7 +1869,7 @@
         "Valar Atomics"
       ],
       "category": "criticality",
-      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS described the criticality test as 100 kWt; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
+      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS describes Ward 250 as a 100-kWt reactor, and Valar reported a 10 kWt output on June 22 during power ascension; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
       "why_it_matters": "A second company crossing the line within two weeks of the first showed the July 4 target was an achievable bar for multiple independent designs and teams, not a stretch goal for a single frontrunner.",
       "binding": true,
       "binding_note": "An achieved, DOE-authorized physical milestone.",
@@ -1857,6 +1885,12 @@
           "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
           "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
           "status": "snippet-only"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — Valar's Ward 250 reaches criticality in Utah (2026-06-22)",
+          "url": "https://www.ans.org/news/2026-06-22/article-8136/valars-ward-250-reaches-criticality-in-utah/",
+          "quote": "Valar is now proceeding with a planned power ascension",
+          "status": "fetched"
         }
       ]
     },

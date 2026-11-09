@@ -191,3 +191,8 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   word like "Live program" can overstate a funded-but-unopened program: the agent's `unsupported` became an `outdated`
   correction once the source said "has not released an application schedule".
 
+- **2026-11-09: a row fixed yesterday gets re-flagged today.** The politics agent called the NRC fee clause
+  outdated a day after the 11-08 run settled it, on the same misreading (the $148 is the FY2025 history; $154 is
+  already in the parenthetical). Until the skip list carries recently checked ids (10-29 note), grep the previous
+  pass dirs for a check's `target` before acting on it. Also: nrc.gov pages that 403 `fetch_source.py` render in
+  headless Playwright from the venv (HTTP 200); cache them with `--from-file`.

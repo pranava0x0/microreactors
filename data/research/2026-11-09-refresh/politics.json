@@ -1,0 +1,74 @@
+{
+ "_meta": {
+  "captured": "2026-11-09",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: policy checks on shipped rules (Type G) and any new politics/regulatory items after 2026-10-30 (Type N). Dockets (Type F) searched; none qualified. Budget: 25 web searches, 7 fetches.",
+  "angles_run": [
+   "NRC Part 57 microreactor rule status and deadline",
+   "NRC Part 53 and ADVANCE Act hourly fee rate (FY2026 fee rule)",
+   "NRC DOE/DoW prior-authorization final rule (Oct 2026)",
+   "NRC news-release index for 2026-10-25 onward",
+   "FY2027 NDAA nuclear and microreactor provisions (House and Senate)",
+   "FY2027 Energy and Water appropriations, ARDP and continuing resolution",
+   "DOE Reactor Pilot Program, Nuclear Energy Launch Pad",
+   "Army Janus and Department of War microreactor policy",
+   "State microreactor and advanced nuclear laws (Oct to Nov 2026)",
+   "PUC and utility dockets naming SMR or microreactors (last 90 days)",
+   "Louisiana PSC R-37871",
+   "CNSC and ONR regulatory changes for small reactors",
+   "Price-Anderson Act 2026 legislation"
+  ],
+  "absences": [
+   "NRC Part 57 final rule due date of 2026-11-23: only one search summary states it, and the NRC proposed-rule page (last updated 2026-09-14) states no final schedule. Not verified against a primary source, so no check or item was written on it.",
+   "Part 57 scope: the NRC chairman's remark (100 MWe or less) conflicts with a trade-press description (20 MWe or less). Not resolved; not written as a correction.",
+   "Federal Register text of the NRC final rule on prior DOE/DoW authorization (public-inspection document 2026-21801): the PDF did not parse in WebFetch. Its publication date (scheduled 2026-10-28 per ANS) falls before the 2026-10-30 window, so it was not written as an item.",
+   "Congress, Oct 31 to Nov 9 2026: no NDAA, appropriations or continuing-resolution action on nuclear or microreactor provisions found. Found only pre-window House committee and floor action (HASC 2026-06-04, House floor July 2026) and a Senate SASC markup (2026-06-11) that one opinion column says has no similar provision; the SASC bill text was not fetched.",
+   "FY2027 Energy and Water appropriations: House committee approved 2026-05-20; no later status or stopgap found. The ARDP line in the House and enacted figures could not be confirmed from a primary source.",
+   "NRC commission votes or approvals, Oct 31 to Nov 9 2026: none found. NRC news index shows only 2026-10-30 (contested-hearing final rule, on the window boundary and excluded by the strictly-after rule) and 2026-11-03 (Chairman Nieh INPO remarks, a speech with no decision).",
+   "DOE Reactor Pilot Program or Launch Pad authorizations after 2026-10-30: none found. Launch Pad second-round selections (about 2026-08-25) and the Aalo-X criticality are pre-window or already shipped.",
+   "DoW or Army policy after 2026-10-30: none found. Army Janus vendor awards (2026-08-26) and the Department of War Naval Weapons Station Crane announcement (2026-09-09) are pre-window.",
+   "State laws Oct 31 to Nov 9 2026: no microreactor or advanced nuclear bill signing found. New Jersey S4849 (introduced 2026-10-19) is already shipped in dockets; the Assembly companion (introduced 2026-10-29) was not separately fetched.",
+   "PUC or utility dockets filed in the last 90 days naming SMRs or microreactors: none found with a fetched filing. Duke Energy Kentucky 2026 IRP (case 2026-00167, filed 2026-06-17) falls outside 90 days. Louisiana R-37871 is already shipped; its 2026-09-16 agenda shows a final-rule vote, outcome not found.",
+   "Virginia SMR cost recovery (Appalachian Power, Dominion PUR-2024-00205): pre-window or outcome not found.",
+   "CNSC and ONR: no 2026 change in microreactor licensing found. ONR published a new Licensing Nuclear Installations guide (May 2026, secondary source) and a revised GDA framework (2026-05-26, legal summary), both before the window and not fetched from ONR.",
+   "NRC construction permit for the TVA Clinch River BWRX-300: reported in an NCSL newsletter (October 2026) with conflicting timing; a 300 MWe reactor, outside the 1-20 MW buyer scope; not verified against NRC.",
+   "Price-Anderson: no 2026 legislation found. Only the 2024 extension (to 2065-12-31) was found, and it is already context for shipped material."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-licensing-1",
+   "target": "licensing",
+   "file": "policy",
+   "claim": "cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (under the FY2026 fee rule it is $154, against a full rate of $337), a concrete cost advantage available now.",
+   "verdict": "confirmed",
+   "evidence": "The NRC fee rule 'Fee Schedules; Fee Recovery for Fiscal Year 2026' (Federal Register, published 2026-06-16, effective 2026-08-17) sets the FY2026 Reduced Hourly Rate for advanced reactor applicants at $154 per hour, against a professional hourly rate of $337. The shipped lead figure of $148 is not the FY2026 rate. The $318 prior figure was not checked against a source.",
+   "sources": [
+    {
+     "label": "Federal Register — Fee Schedules; Fee Recovery for Fiscal Year 2026 (2026-06-16)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+     "quote": "the Reduced Hourly Rate is $154 per hour",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled: the shipped sentence describes the ADVANCE Act cut to $148 (the FY2025 rate, quote-backed in the row's source) and already gives the FY2026 rate of $154 against $337. Nothing is stale."
+  },
+  {
+   "id": "check-licensing-2",
+   "target": "licensing",
+   "file": "policy",
+   "claim": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less)",
+   "verdict": "confirmed",
+   "evidence": "NRC's proposed-rule page for Part 57 describes the rule as proposed, not final, and states no final rule schedule or due date. The page was last reviewed/updated 2026-09-14, and it links to 91 FR 23628 (proposed 2026-05-01, docket NRC-2025-0379). The proposed-stage status is confirmed; the 2026-11-23 final-rule date is not stated on this page and is not verified.",
+   "sources": [
+    {
+     "label": "NRC — Proposed Part 57 rulemaking page (updated 2026-09-14)",
+     "url": "https://www.nrc.gov/reactors/new-reactors/advanced/modernizing/rulemaking/proposed-part57",
+     "quote": "Proposed Title 10 of the Code of Federal Regulations (10 CFR) Part 57 would establish a risk-informed",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
