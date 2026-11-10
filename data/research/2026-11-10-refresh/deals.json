@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "deals",
+    "scope": "Type G checks on shipped opportunities (validation, Janus, ANPI, DOE pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada, DOME); Type N items: new named buyer deals dated after 2026-10-30 not in skip/news.json",
+    "angles_run": [
+      "Army Janus: fourth-site assignment and award status (search + army.mil fetch)",
+      "Air Force ANPI Eielson: NOITA and contract status (search; DAF release returned 403)",
+      "DOE Reactor Pilot Program: sixth criticality (search)",
+      "Equinix-Radiant 20-unit preorder: 2026 status (search)",
+      "Oklo-Switch 12 GW master agreement: 2026 status (search)",
+      "Post-2026-10-30 microreactor PPA/MOU/LOI/contract (search, 3 phrasings)",
+      "NANO Nuclear 2026 KRONOS deals (search)",
+      "Last Energy PWR-20 / DP World London Gateway 2026 status (search)",
+      "Malmstrom ANPI Westinghouse eVinci 2026 status (search)",
+      "Buckley ANPI Radiant Kaleidos 2026 status (search)",
+      "Saskatchewan Research Council eVinci 2026 status (search + SRC FAQ fetch)",
+      "Deep Fission / Aalo / Valar November 2026 agreements (search)",
+      "Westinghouse eVinci 2026 customer agreements (search)",
+      "Radiant new customer agreements 2026 (search)",
+      "Radiant Kaleidos DOME fueling and criticality (search)",
+      "Oklo / DLA Energy Eielson firm-fixed-price contract 2026 (search)"
+    ],
+    "absences": [
+      "Janus: the army.mil page fetched is the 2025-11-18 nine-site release. It does not state assignment counts, vendor count or a dollar ceiling, so the shipped 'four of nine unassigned' and the 2026-08-26 five-vendor award were neither confirmed nor corrected. No check written.",
+      "Eielson (Oklo): the DAF release URL returned HTTP 403. Searches found the June 2025 NOITA and no 2026 award or NRC license. No check written.",
+      "DOE Reactor Pilot Program: no sixth criticality found after 2026-08-06, and no primary page fetched for the current count. No check written.",
+      "Equinix-Radiant and Oklo-Switch: searches returned only 2024-2025 coverage, so no 2026 status was found. Both shipped records left as they are.",
+      "Last Energy / DP World London Gateway: search showed only the Sept 2025 MoU and the June 2025 PDR. No 2026 status found. No check written.",
+      "Malmstrom and Buckley ANPI: corroborated by search snippets (April 2026 selections) only; no primary page fetched. No check written.",
+      "Radiant Kaleidos at DOME: coverage ends late August 2026 with fuel delivered and loading described as planned. No fetched source for the current fuel status. Shipped 'not yet fueled' left as it is.",
+      "Post-2026-10-30 buyer deals: no named buyer, site and vendor deal (PPA, MOU, LOI, contract or site selection) dated after 2026-10-30 was found. Searched Oklo, NANO Nuclear, Deep Fission, Aalo, Valar, Westinghouse eVinci, Radiant and generic microreactor PPA phrasings.",
+      "Excluded: a NANO Nuclear / IMPSA Engineering Services Master Agreement (energiesmedia, dated 2026-11-07). It is a single secondary source and a vendor engineering pact, not a buyer deal.",
+      "The SRC check quote came through WebFetch as a model summary of the page. Main session should verify the quoted sentence against the raw bytes before publishing."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "SRC's project-status FAQ (undated page) states that in fall 2025 Westinghouse cancelled the project contract with SRC, and that Westinghouse shifted eVinci toward space, defence and government uses. The same page says SRC continues to pursue licensing and demonstration of a microreactor in Saskatchewan.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

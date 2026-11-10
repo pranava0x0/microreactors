@@ -485,3 +485,19 @@ Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 
 | politics | 170K | NRC fee "outdated" overruled for the second day running (FY2025 history + FY2026 parenthetical); Part 57 still proposed | no |
 
 ~650K agent tokens for 1 news item and 1 correction. Phone cost 1.69 (unchanged).
+
+## 2026-11-10 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing dated after 10-30. 1 news, 1 docket, 0 corrections, 7 confirmed, 3 agent checks overruled, 2 applications held for curation.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | 0 items; watcher leads were SMRs (left to politics) | no |
+| deals | 150K | canada-src confirmed (third re-check this month) | no |
+| vendors | 155K | Radiant DSA row confirmed | no |
+| politics | 149K | Long Mott construction permit (news) + NJ A5727 micro-reactor bill (docket); NRC fee "outdated" overruled a third day | yes |
+| applications | 171K | NASA lunar "unsupported" overruled (row's RFI source has Q1 FY2030); 2 Finnish 50 MWt district-heat LOIs held | no |
+| costs | 147K | PCE base "outdated" overruled: the same sentence already gives 20.38 (2026) and 22.11 (proposed) | no |
+| ideas | 169K | liability deferred premium confirmed | no |
+
+~1.09M agent tokens for 1 news item and 1 docket. Phone cost not re-measured (no layout change).

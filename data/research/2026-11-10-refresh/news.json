@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market. Event dates after 2026-10-30, then the 2026-09-01 to 2026-10-30 gap. Watcher candidates triaged first (skip/candidates.json). Shipped ids and events in skip/news.json were checked for every lead.",
+    "angles_run": [
+      "watcher candidates triage (skip/candidates.json, 6 WNN items)",
+      "generic microreactor news November 2026",
+      "DOE Reactor Pilot Program criticality and status",
+      "Radiant Kaleidos DOME criticality and readiness",
+      "Westinghouse eVinci and Army Janus",
+      "Aalo, Valar, Last Energy funding and milestones",
+      "NANO Nuclear KRONOS announcements",
+      "INL MARVEL criticality schedule",
+      "Deep Fission Kansas",
+      "Centrus HALEU Piketon",
+      "NuCube Launch Two SPAC vote and closing",
+      "Kairos Hermes and Samsung C&T",
+      "Last Energy PWR-5 criticality status",
+      "Natura MSR-1 fuel salt and status",
+      "BWXT BANR Belledune and Fort Campbell",
+      "Valar Ward 250 and Project NOVA",
+      "Terrestrial Energy TETRA",
+      "Oklo Q3 2026 results and Aurora timeline",
+      "NRC acceptance of KRONOS construction permit application",
+      "GA-TES Fort Hood",
+      "Aalo-X status 2026"
+    ],
+    "absences": [
+      "No microreactor news dated after 2026-10-30 surfaced in any search (about 24 searches). Newest hits were the shipped 2026-10-27 to 2026-10-30 items. The search index appears not to carry November 2026 coverage for this market.",
+      "Watcher candidates skipped as outside the 1-20 MW market: WNN 2026-11-10 TerraPower/X-energy Texas construction permit (X-energy Xe-100, 80 MWe per module, 200 MWt; NRC FSER released 2026-10-30). WNN 2026-11-06 X-energy and Fluor second Xe-100 at Energy Northwest Cascade, Richland WA (320 MWe total). WNN 2026-11-06 Calogena EUR40M EU Innovation Fund award (CAL30 is stated only as 30 MW thermal; no MWe figure in the fetched article). WNN 2026-11-05 Helen Helsinki SMR environmental assessment (large SMR, not fetched). WNN 2026-10-30 Doosan upper reactor vessel for NuScale (77 MWe module class, not fetched).",
+      "Oklo Q3 2026 results (about 2026-11-06) show Aurora first-powerhouse startup moved to 2028-2029. Aurora is about 75 MWe, outside the 1-20 MW scope, so not written up. Source is secondary (MarketBeat/Earnings Whispers transcript coverage); the SEC 10-Q is the primary.",
+      "Radiant Kaleidos criticality at INL DOME: the 2026-07-04 target passed with no criticality report found. The 2026-10-29 DSA approval is already shipped. Readiness review status and a start date remain undisclosed as of the newest coverage.",
+      "Aalo-X criticality status after March 2026: not found. The July 4, 2026 DOE pilot goal outcome for Aalo is unverified.",
+      "Last Energy PWR-5 criticality: not reached as of a September 2026 local report, which said final DOE authorization was expected within months. Post-September status not found.",
+      "Natura MSR-1 operation or criticality: not confirmed after the 2026-09-22 DOE salt delivery (already shipped).",
+      "Terrestrial TETRA initial criticality target of July 2026 is unverified; no post-January 2026 primary update found.",
+      "NuCube-Launch Two SPAC: no shareholder vote result or closing found. The S-4 meeting date was blank in the filing reviewed.",
+      "NANO Nuclear: a Fortil KRONOS fuel-handling milestone appeared in an undated German feed; no primary release found, so not written up. The IMPSA engineering agreement (2026-10-21) is already shipped.",
+      "Radiant TRISO fuel delivery to INL DOME (WNN, 2026-07-03, verified in fetch) predates the 60-day gap window and is not in skip/news.json. Not written up because it is outside the window.",
+      "NRC acceptance of the UIUC KRONOS construction permit application (acceptance letter dated 2026-05-18, company release about 2026-05-20). Outside the window; not in skip, noted only.",
+      "ANS Nuclear Newswire RSS was 404 and NRC and Radiant newsrooms return 403 to non-browser clients, so primary company pages were not read for November 2026.",
+      "Vendor sweep for Westinghouse eVinci Malmstrom deployment, Antares, Standard Nuclear, Holtec, Centrus HALEU deliveries, Blue Energy, and Deployable Energy post-2026-10-30 returned nothing new in the search index."
+    ]
+  },
+  "items": []
+}

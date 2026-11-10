@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendors (skip/vendors.json) and Type N items for vendor milestones dated after 2026-10-30 not in skip/news.json, including unlisted 1-20 MWe developers. Searches and fetches within budget (about 16 searches, 5 fetches, 2 of them 403).",
+    "angles_run": [
+      "Antares Mark-1 / Janus / Mark-0 status (search)",
+      "Radiant Kaleidos DOME readiness review and fueling (search)",
+      "Radiant DSA full-power approval release (fetch, offshoresource mirror; radiantnuclear.com returned 403)",
+      "Westinghouse eVinci post-criticality news (search)",
+      "Valar Ward 250 post-criticality news (search; ANS fetch for 10 kWt output)",
+      "Aalo-X construction, criticality and 2027 goal (search; DOE page fetch dated 2024-12-10; nucnet returned 403)",
+      "Deployable Energy Unity-1 DOME 2027 (search)",
+      "Oklo Aurora-INL construction news (search)",
+      "NANO Nuclear KRONOS and ZEUS news (search)",
+      "Last Energy PWR-5 Texas news (search)",
+      "Natura MSR-1 Abilene news (search)",
+      "Steady Energy LDR-50 news (search)",
+      "Terra Innovatum and Blue Energy news (search, then Blue Energy alone)",
+      "BWXT BANR Fort Campbell news (search)",
+      "General Atomics GA-TES Fort Hood news (search)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-10-30 found for any shipped vendor or any unlisted 1-20 MWe developer. Every search returned items dated on or before 2026-10-30 (the skip list already carries those).",
+      "Radiant: DOE Readiness Review has no published date, and fueling waits on it. radiantnuclear.com returned HTTP 403 to WebFetch, so the release was checked through the OffshoreSource copy.",
+      "Antares: no November 2026 item on Mark-1 power testing (planned for 2027 at INL) or on the 2028 base delivery. The DOE Mark-1 NSDA approval is already in skip/news.json.",
+      "Westinghouse eVinci: no item after the 2026-09-03 heated-core test. Its NRC pre-application status was not updated in any fetched source.",
+      "Valar Ward 250: no power-operation or licensing news after June 2026 found. The shipped 10 kWt figure matches the fetched ANS article dated 2026-06-22.",
+      "Aalo-X: the shipped mwe_label says the demonstration plant is 'slated for construction and licensing in 2027'. The only fetched source (DOE, 2024-12-10) says '10-megawatt-electric' with operations starting 2027. Search summaries say Aalo-X runs under DOE authorization, not NRC licensing, but no fetched page confirmed that. Not written as a check.",
+      "Oklo Aurora-INL: no news after 2025 surfaced beyond the skip list, so the 2027-2028 startup target is unverified against a fresh source.",
+      "NANO Nuclear KRONOS and ZEUS: no dated event after 2026-10-30 found. Most results were 2025 items.",
+      "Last Energy PWR-5: a search summary says the mid-2026 criticality target has passed, but no criticality report was found. Unverified.",
+      "Natura MSR-1: a search summary says the July 2026 criticality target was not confirmed. Latest item found is the September 2026 salt delivery, already in skip/news.json.",
+      "Steady Energy: the STUK Joint Early Review summary (2026-07-03) and the Terra Innovatum NRC readiness assessment (2026-08-19) are dated before the cutoff, so they are not items here.",
+      "Blue Energy: its projects are 300 MW-class SMRs, outside the 1-20 MWe scope. Not counted.",
+      "General Atomics GA-TES: no contract value or construction schedule for Fort Hood found. One report cites an Army target of a working microreactor by 2028-09-30, unverified for GA-TES specifically.",
+      "BWXT BANR: one trade report gives 22 MW rather than 20 MW. Most sources, including the shipped record, say 20 MW. Not written as a check."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "DOE approved full-power safety analysis 2026-10-29; Readiness Review next.",
+      "verdict": "confirmed",
+      "evidence": "Radiant's full-power Documented Safety Analysis approval, dated 2026-10-29 (Business Wire release, posted by OffshoreSource). The release says the approval lets Radiant advance to DOE's Readiness Review, the next step before nuclear operations can begin, and that fueling follows successful completion of that review. The release gives no date for the review.",
+      "sources": [
+        {
+          "label": "Business Wire via OffshoreSource — Radiant achieves industry milestone as the only microreactor design to secure DOE safety analysis approval for full power operations (2026-10-29)",
+          "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+          "quote": "allows the company to advance to DOE's Readiness Review, the next step before nuclear operations can begin",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

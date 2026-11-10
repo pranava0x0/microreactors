@@ -1,0 +1,54 @@
+{
+ "_meta": {
+  "captured": "2026-11-10",
+  "agent": "costs",
+  "scope": "Costs tab refresh pass: Type G checks on shipped cost figures in skip/costs.json; Type N items for dated fuel-supply or financing events after 2026-10-30 not already in skip/news.json.",
+  "angles_run": [
+   "Alaska PCE base amount (RCA dockets U-25-010 and U-26-010)",
+   "OBBBA nuclear 45Y/48E begin-construction window",
+   "HALEU enrichment contracts, Nov 2026",
+   "DOE HALEU allocations and fuel awards, Nov 2026",
+   "TRISO fuel supply agreements, Nov 2026",
+   "DOE loan office (Office of Energy Dominance Financing) microreactor loans, Nov 2026",
+   "Centrus, Urenco, Orano, General Matter enrichment news",
+   "Antares Mark-1 fuel delivery",
+   "INL MOUSE report RPT-25-87273 and RPT-24-80433 cost figures"
+  ],
+  "absences": [
+   "No fuel-supply or financing event dated 2026-10-31 to 2026-11-10 surfaced in 12 searches across HALEU, enrichment, TRISO, DOE fuel awards, DOE loans and vendor newsrooms. The newest fuel or financing item found was dated 2026-10-27 and is already in skip/news.json.",
+   "Alaska FY2026 PCE base: a search summary reports 20.38 cents/kWh for FY2026 (and 19.92 as the prior base), but no page stating 20.38 was fetched. The April 2026 AEA PCE presentation PDF returned no readable text via WebFetch. The correction below uses the fetched May 2025 figure, which may itself be superseded.",
+   "Final RCA order on the proposed FY2027 base (22.11 cents/kWh, docket U-26-010) not found; the only fetched source is the May 1, 2026 proposal notice.",
+   "INL LMTR-20 overnight cost, learning-curve and 100-unit assumptions (INL/RPT-24-80433; INL/RPT-25-87273): both PDFs returned compressed bytes via WebFetch, and no local PDF text extractor is installed. Not checked.",
+   "OBBBA begin-construction date before 2034 and three-year phase-out: supported only by Morgan Lewis (July 2025), a secondary source. No statute or Treasury text fetched, so no verdict written.",
+   "NEI 2019 FOAK/NOAK bands and TUGLIQ 2016 diesel band: no newer primary source found; no verdict written.",
+   "HALEU price and DOE allocation figures: skip/costs.json carries no HALEU or TRISO price, so there was nothing to check."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-displaced-alternatives-1-pce-base-1",
+   "target": "displaced_alternatives[1]",
+   "file": "costs",
+   "claim": "The PCE base rate, set at 19.35 cents/kWh",
+   "verdict": "confirmed",
+   "evidence": "Regulatory Commission of Alaska notice dated May 2, 2025 (docket U-25-010) states the current base amount is 19.92 cents per kWh, so 19.35 was an earlier base. A notice dated May 1, 2026 (docket U-26-010) proposes raising the base amount to 22.11 cents/kWh; that is a proposal, not an order. A FY2026 figure of 20.38 appears in a search summary only and is not fetched.",
+   "sources": [
+    {
+     "label": "Regulatory Commission of Alaska — FY26 Power Cost Equalization Base Amount notice, Docket U-25-010 (May 2, 2025)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/notices/View.aspx?id=219490",
+     "quote": "The current base amount is 19.92 cents per kilowatt-hour (¢/kWh).",
+     "status": "fetched"
+    },
+    {
+     "label": "Regulatory Commission of Alaska — Notice of Proposed Revision to Power Cost Equalization Base Amount, Docket U-26-010 (May 1, 2026)",
+     "url": "https://aws.state.ak.us/OnlinePublicNotices/Notices/View.aspx?id=223712",
+     "quote": "The Commission proposes to adjust the base amount to 22.11¢/kWh.",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled (main session): the claim is a clause of a sentence that continues 'in 2023, was 20.38 cents/kWh in 2026 (22.11 proposed for FY2027)', cited to the U-26-010 notice. 19.35 is correctly dated as the 2023 rate; 19.92 is an intermediate FY2026 base the sentence does not need."
+  }
+ ],
+ "items": []
+}

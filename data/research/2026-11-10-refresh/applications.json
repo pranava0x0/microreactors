@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "applications",
+    "scope": "Applications tab: Type G verdicts on up to 8 shipped segment and deployment-site records most likely to have changed; new Type S buyer projects in segments the tab covers thinly. Type E regions only if not in skip/regions.json with price and load numbers (none found). News items are out of scope.",
+    "angles_run": [
+      "Type G: NASA/DOE lunar surface reactor (segments nasa-doe-fsp-lunar)",
+      "Type G: Steady Energy LDR-50 district heat (segments steady-energy-ldr50)",
+      "Type G: Penn State eVinci (no 2026 status change found; no check written)",
+      "Type G: Texas A&M RELLIS / Aalo (no 2026 status change found; no check written)",
+      "Type G: Chalk River MMR (CNSC page returned 404; no check written)",
+      "Type G: INL MARVEL (conflicting timelines; no fetched source; no check written)",
+      "Type G: Eielson pilot (no 2026 PPA execution found; no check written)",
+      "Type G: CVEA Valdez (no 2026 decision found; no check written)",
+      "Type S: hospitals (2 searches, nothing with a 2026 MW figure)",
+      "Type S: mines (2 searches; Tata/BWXT and Radiant Idaho already shipped)",
+      "Type S: desalination (1 search; nothing new with a MW figure)",
+      "Type S: disaster recovery and emergency power (1 search)",
+      "Type S: data centers behind the meter (1 search; Valar Utah and Deep Fission Kansas already shipped as news)",
+      "Type S: chemical, oil sands and process heat (1 search)",
+      "Type S: semiconductor fab and greenhouse (1 search)",
+      "Type S: district heat in Finland (Jyvaskyla LOI and Helen LOI, both fetched)"
+    ],
+    "absences": [
+      "Hospital microreactor deal naming a buyer with a 2026 MW figure: searched twice, nothing found. Only generic sizing statements.",
+      "Disaster-recovery microreactor agreement with a MW figure: searched once. Found Congressional bills from the 117th and 118th Congresses (status unverified) and Air Force ANPI pairings (Buckley, Malmstrom, JBSA; April 2026; aggregator sources only; no MW figures). Base power, so not added as Type S.",
+      "Binding 2026 microreactor PPA for a mine: not found. The Tata Chemicals / BWXT Wyoming trona letter of intent is already shipped (tata-green-river-soda-ash).",
+      "Microreactor desalination deal in 2026: not found. INL MARVEL and Natura produced-water items are already shipped.",
+      "Hydrogen/ammonia, semiconductor fab, greenhouse, oil sands and petrochemical buyers with a 2026 microreactor MW figure: not found. NuScale/Ebara Elliott petrochemical work has no MW figure. Terrestrial Energy / Invest Alberta MOU has no date or MW in the results.",
+      "Valar Atomics / Nvidia 30 MW Utah data center (2026-07-01, Deseret fetch) and Deep Fission Kansas 150 MW master energy purchase agreement (2026-10-20): real and fetched, but both events are already shipped in skip/news.json, so not added to Applications.",
+      "Chalk River MMR 'paused' status (deployment_sites chalk-river-mmr): CNSC project page returned HTTP 404 on fetch. No 2026 source found confirming or revising the status. No check written.",
+      "Steady Energy Jyvaskyla reactor count: one search summary says 2 to 6 LDR-50 units (100-300 MW of heat). The fetched World Nuclear News article gives no count, and the NucNet source returned HTTP 403. Record uses only the 50 MWt design figure.",
+      "INL MARVEL timeline: shipped news (2026-10-06) says criticality expected in December 2026. Searches found an INL March 2026 safety-basis approval and sources giving dry criticality in 2027 and operation by late 2027. The October 2026 DOE release was not fetched. No check written.",
+      "Penn State eVinci (shipped as proposed): no 2026 NRC docket or site announcement found in search summaries. Not fetched.",
+      "Texas A&M RELLIS / Aalo (shipped as proposed): no 2026 Aalo-specific RELLIS update found in search summaries. Not fetched.",
+      "CVEA Valdez: no 2026 decision or licence filing found. Status of Alaska SB 177 (microreactor enabling bill) not verified.",
+      "Eielson: no 2026 final power purchase agreement found. Local report and DAF FAQ cite a 2029 target and 5 MWe; no fetched 2026 source.",
+      "Regions (Type E): none added. Did not find a new remote jurisdiction absent from skip/regions.json with both a price and a load number within the search budget.",
+      "Search budget: about 20 web searches and 8 fetches (3 fetches failed: CNSC 404, NucNet 403, Steady news page returned partial text)."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-nasa-doe-fsp-lunar-1",
+      "target": "nasa-doe-fsp-lunar",
+      "file": "segments",
+      "claim": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030, and has asked industry for a design of at least 100 kilowatts electric with a closed Brayton power cycle.",
+      "verdict": "confirmed",
+      "evidence": "NASA's January 2026 release on the DOE partnership (fetched) says the agencies will pursue 'including the development of a lunar surface reactor by 2030' and 'to develop, fuel, authorize, and ready a lunar surface reactor for launch'. It gives no fiscal-year or first-quarter date and no power level. The fiscal 2030 date and the 100 kWe figure come from NASA's August 2025 request for information, which I did not fetch. The release does not say the reactor will be placed on the Moon.",
+      "sources": [
+        {
+          "label": "NASA — NASA, Department of Energy to Develop Lunar Surface Reactor by 2030 (January 2026)",
+          "url": "https://www.nasa.gov/news-release/nasa-department-of-energy-to-develop-lunar-surface-reactor-by-2030",
+          "quote": "to develop, fuel, authorize, and ready a lunar surface reactor for launch",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "unsupported",
+      "review": "Overruled (main session): the agent read only the January 2026 release. The row's first source, NASA Glenn's RFI page (cached), says NASA 'declared its intent to put a nuclear reactor on the Moon by the first quarter of fiscal year 2030' and gives the 100 kWe floor."
+    }
+  ],
+  "applications": [
+    {
+      "id": "steady-jyvaskyla-alva-district-heat-loi",
+      "segment": "district heating",
+      "name": "Alva (Jyväskylä city-owned utility) nuclear district heating study with Steady Energy",
+      "status": "proposed",
+      "power_class": "50 MWt per LDR-50 reactor (design); unit count for Jyväskylä not published",
+      "timeline": "letter of intent announced 2026-05-19; one-year preliminary study to follow",
+      "vendor": "Steady Energy (LDR-50)",
+      "what_it_says": "Steady Energy and Alva, Jyväskylä's city-owned utility, signed a letter of intent in May 2026 to look at small reactors as a district heat source for the city. The LDR-50 is a 50 MW thermal design running at about 150 °C, and the announcement does not say how many units Jyväskylä could take. The year-long study covers regulation, sites, technology and costs.",
+      "microreactor_read": "A 50 MWt-class heat plant is far larger than the 1-20 MW block this tab tracks, and this is a letter of intent for a city heat network. The next gates are the one-year study and Finnish licensing, neither of which has a date.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Fourth Finnish municipality to assess nuclear district heating (2026-05-19)",
+          "url": "https://world-nuclear-news.org/articles/fourth-finnish-municipality-to-assess-nuclear-district-heating",
+          "quote": "investigate the suitability of SMRs as a source for district heating in the city of Jyväskylä",
+          "status": "fetched"
+        },
+        {
+          "label": "Steady Energy — Fourth Finnish city to explore the opportunities of nuclear district heating (2026-05-19)",
+          "url": "https://www.steadyenergy.com/news-article/fourth-finnish-city-to-explore-the-opportunities-of-nuclear-district-heating",
+          "quote": "Steady Energy and Alva, a municipal utility from the city of Jyväskylä in central Finland have signed a letter of intent",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "steady-helen-helsinki-district-heat-loi",
+      "segment": "district heating",
+      "name": "Helen (Helsinki district heat utility) letter of intent with Steady Energy",
+      "status": "proposed",
+      "power_class": "up to 10 units at 50 MWt each (LDR-50)",
+      "timeline": "letter of intent reported 3 October 2023; no construction date given",
+      "vendor": "Steady Energy (LDR-50)",
+      "what_it_says": "Helen, a Finnish energy firm, signed a letter of intent with Steady Energy to enable investment in a small-scale nuclear plant for district heating. The letter would let Helen procure up to ten LDR-50 reactor units, each with a 50 MW output.",
+      "microreactor_read": "Ten 50 MWt units is a city-scale heat network, far above the 1-20 MW block this tab tracks. The source gives no construction date, so this is a 2023 intent that has not been tied to an order.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Helen, Steady Energy partner for Finnish SMR deployment (2023-10-03)",
+          "url": "https://www.world-nuclear-news.org/Articles/Helen,-Steady-Energy-partner-for-Finnish-SMR-deplo?feed=feed",
+          "quote": "Finnish energy firm Helen has signed a letter of intent with Steady Energy",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

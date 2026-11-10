@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "captured": "2026-11-09",
+    "captured": "2026-11-10",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "58 of 97 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 39 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-10-30",
+    "binding_note": "59 of 98 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 39 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-11-10",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 18
+      "count": 19
     },
     {
       "id": "fuel",
@@ -49,6 +49,29 @@
     }
   ],
   "items": [
+    {
+      "id": "dow-long-mott-construction-permit-2026-11-10",
+      "date": "2026-11-10",
+      "headline": "NRC issues construction permit for Dow and X-energy Texas plant",
+      "companies": [
+        "Dow",
+        "Long Mott Energy",
+        "X-energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC issued a construction permit for the Long Mott Generating Station at Dow's Seadrift, Texas site. It covers four Xe-100 reactors each rated 80 MWe and 200 MWt. The source reports the permit as already issued and says the NRC's Final Safety Evaluation Report was released on 30 October. Dow has not made a final decision to build; it expects to consider a preliminary investment decision in 2027, and a separate operating licence is needed before fuel load.",
+      "why_it_matters": "Each unit is 80 MWe, several times the top of a 1-20 MW buyer's range, so a small buyer gets no direct path from this permit. It does show a commercial advanced reactor clearing NRC construction review in this window.",
+      "binding": true,
+      "binding_note": "Permit issued, per the 2026-11-10 World Nuclear News report. The report does not state the issuance date, so the item date is the report date.",
+      "sources": [
+        {
+          "label": "World Nuclear News — US issues landmark construction permit for Texas SMR plant (2026-11-10)",
+          "url": "https://www.world-nuclear-news.org/articles/us-issues-landmark-construction-permit-for-texas-smr-plant",
+          "quote": "has issued a construction permit for the proposed plant featuring four Xe-100 small modular reactor units",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "centrus-first-centrifuge-piketon-expansion-2026-10-30",
       "date": "2026-10-30",

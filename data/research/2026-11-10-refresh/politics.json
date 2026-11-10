@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation (NRC, DOE, DoD/Army, Congress, states, PUCs). Items dated after 2026-10-30. Checks on shipped policy.json pathways. Dockets not in skip/dockets.json.",
+    "angles_run": [
+      "NRC Part 57 status and deadline",
+      "NRC final rules and commission approvals",
+      "NDAA FY27 microreactor provisions",
+      "Army microreactor program (Project Janus)",
+      "Energy and Water FY27 appropriations",
+      "DOE Reactor Pilot Program status",
+      "ADVANCE Act fee rate (FY2026 fee rule)",
+      "State microreactor legislation",
+      "Utility and PUC microreactor dockets",
+      "45Y/48E nuclear credit guidance",
+      "CNSC microreactor licensing"
+    ],
+    "absences": [
+      "NRC Part 57 final rule: not finalized as of 2026-10-22 (ANS). The 2026-11-23 final due date appears only in a secondary outlet search summary and was not verified against NRC or the Federal Register. nrc.gov returns 403 to non-browser clients.",
+      "FY27 NDAA: House-passed bill carries a Rep. Harrigan provision directing a transportable microreactor in the Indo-Pacific by 2030. Vote dated 2026-07-22, before the window. Senate action and final text not found.",
+      "Army Project Janus (five vendors, up to $2.2B) was announced 2026-08-26, before the window. Not recorded as an item.",
+      "NRC final rule amending 10 CFR Parts 50 and 53 for reactors with prior DOE or DOD authorization: scheduled Federal Register publication 2026-10-28 per ANS, before the window. Not recorded.",
+      "FY27 Energy and Water (H.R. 9022): House Appropriations approved 2026-05-20. No Senate markup found. Not recorded.",
+      "DOE Reactor Pilot Program: no events after 2026-10-30 found. Oklo Groves criticality (August 2026) is before the window.",
+      "State laws: no microreactor signings after 2026-10-30 found. NJ A5726 (companion to shipped S4849) and CA AB 1757 current status not verified.",
+      "PUC and utility microreactor dockets filed or decided 2026-08-12 to 2026-11-10: none found. Searches for Virginia, North Dakota and South Dakota dockets returned only unrelated SMR or renewable filings.",
+      "45Y/48E nuclear credit guidance: no 2026 microreactor-specific Treasury or IRS action found. Status unverified.",
+      "CNSC: no 2026 microreactor licence decision found. The CNSC project page lists Global First Power Chalk River as paused.",
+      "Not searched within budget: Price-Anderson, state siting moratoria, executive-order deadlines."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (under the FY2026 fee rule it is $154, against a full rate of $337)",
+      "verdict": "confirmed",
+      "evidence": "The NRC FY2026 fee rule (Federal Register, published 2026-06-16) sets the reduced hourly rate for advanced reactor applicants at $154 per hour and the full professional hourly rate at $337. The $148 figure is not the current rate.",
+      "sources": [
+        {
+          "label": "Federal Register — NRC fee rule for FY 2026 (2026-06-16)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+          "quote": "the Reduced Hourly Rate is $154 per hour",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "outdated",
+      "review": "Overruled (main session): the shipped sentence already gives $154 as the FY2026 rate in its parenthetical; $148 is the ADVANCE Act's FY2025 figure, cited to its own source. Same re-flag was overruled on 2026-11-09."
+    },
+    {
+      "id": "check-licensing-2",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "Part 57, the proposed microreactor rule",
+      "verdict": "confirmed",
+      "evidence": "As of the 2026-10-22 ANS report, Part 57 is still a proposal and has not been finalized. The article gives no final date. The 2026-11-23 date in the research brief was not verified.",
+      "sources": [
+        {
+          "label": "American Nuclear Society — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+          "url": "https://www.ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization",
+          "quote": "Part 57 is aimed at microreactor designs and has yet to be finalized.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [
+    {
+      "id": "nj-a5727-micro-reactor-rules-2026",
+      "forum": "New Jersey Legislature (General Assembly)",
+      "docket": "A5727",
+      "url": "https://pub.njleg.gov/bills/2026/A6000/5727_I1.HTM",
+      "utility": "New Jersey Board of Public Utilities (state rules)",
+      "state": "NJ",
+      "type": "legislation",
+      "date": "2026-10-29",
+      "size_class": "micro",
+      "status": "pending",
+      "what_it_says": "Assembly Bill A5727, introduced 2026-10-29 by Assemblymen Myhre and Rumpf, would require the state's rules to authorize construction and operation of micro-reactors, defined as 20 MW or less. The authorization applies only once the NRC has approved the reactor's design. The bill amends the Power NJ Act, which already directs the Board of Public Utilities to authorize advanced reactors but does not name micro-reactors. The fetched text sets no cost-recovery or siting terms.",
+      "microreactor_read": "A 1-20 MW buyer in New Jersey would get a state path only after NRC design approval.",
+      "sources": [
+        {
+          "label": "New Jersey Legislature — Assembly Bill A5727 (2026 session)",
+          "url": "https://pub.njleg.gov/bills/2026/A6000/5727_I1.HTM",
+          "quote": "design has been approved by the United States Nuclear Regulatory Commission",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "dow-long-mott-construction-permit-2026-11-10",
+      "date": "2026-11-10",
+      "headline": "NRC issues construction permit for Dow and X-energy Texas plant",
+      "companies": [
+        "Dow",
+        "Long Mott Energy",
+        "X-energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC issued a construction permit for the Long Mott Generating Station at Dow's Seadrift, Texas site. It covers four Xe-100 reactors each rated 80 MWe and 200 MWt. The source reports the permit as already issued and says the NRC's Final Safety Evaluation Report was released on 30 October. Dow has not made a final decision to build; it expects to consider a preliminary investment decision in 2027, and a separate operating licence is needed before fuel load.",
+      "why_it_matters": "Each unit is 80 MWe, several times the top of a 1-20 MW buyer's range, so a small buyer gets no direct path from this permit. It does show a commercial advanced reactor clearing NRC construction review in this window.",
+      "binding": true,
+      "binding_note": "Permit issued, per the 2026-11-10 World Nuclear News report. The report does not state the issuance date, so the item date is the report date.",
+      "sources": [
+        {
+          "label": "World Nuclear News — US issues landmark construction permit for Texas SMR plant (2026-11-10)",
+          "url": "https://www.world-nuclear-news.org/articles/us-issues-landmark-construction-permit-for-texas-smr-plant",
+          "quote": "has issued a construction permit for the proposed plant featuring four Xe-100 small modular reactor units",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

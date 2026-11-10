@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "captured": "2026-11-10",
+    "agent": "ideas",
+    "scope": "Why microreactors tab (arguments): Type G checks on time-sensitive argument numbers; Type N policy items for studies, reports or analyses dated 2026-10-31 to 2026-11-10 that change the case for or against 1-20 MW reactors. Skip lists read: skip/arguments.json, skip/news.json.",
+    "angles_run": [
+      "Studies: microreactor cost per kW, Nov 2026 (2 searches, nothing dated in window)",
+      "National labs: INL, DOE Liftoff update, NREL, GAIN (4 searches; Liftoff update found is dated 2024-10-01, outside window)",
+      "NEI and EPRI cost reports (2 searches, no 2026 report found)",
+      "IEA, CBO, GAO, NRC/DOE pilot oversight (3 searches, none found)",
+      "Insurer and lender reports (1 search, none dated in window; Marsh/Willis coverage is March to May 2026)",
+      "Academic cost studies, arXiv LCOE (2 searches, nothing dated in window; arXiv 2506.13361 and 2512.16032 predate it)",
+      "EIA Today in Energy SMR cost (1 search, article not located; secondary coverage dated 2026-04-30)",
+      "Argument check: liability, Price-Anderson 10 CFR 140.11 deferred premium (1 search, 2 fetches: confirmed $158,026,000)",
+      "Argument check: inherit, MISO surplus interconnection in-service time (1 search, no figure found)"
+    ],
+    "absences": [
+      "No major study, report or analysis dated 2026-10-31 to 2026-11-10 was found for any of: DOE Liftoff, NEI, EPRI, IEA, CBO, GAO, NREL, INL, insurers or lenders, or academic cost work. The search index returned no items dated inside the window, so zero Type N policy items were written. Re-run later in November with publisher sites (liftoff.energy.gov, nei.org, epri.com, iea.org, gao.gov, cbo.gov, inl.gov) checked directly.",
+      "The DOE Liftoff update surfaced by search (World Nuclear News, 'US DOE launches first update of Liftoff report') is dated 2024-10-01 by its page, so it is outside the window and was not used.",
+      "MISO surplus interconnection average in-service time ('about a year on average since 2024', argument 'inherit'): no published MISO figure found in search. Not checked; no verdict written.",
+      "$500,000,000 primary financial protection for a 300 MWe unit (argument 'liability'): not found in the 2023 Federal Register notice fetched, and the eCFR and NRC copies of 10 CFR 140.11 redirected and were not retrieved. Only the $158,026,000 figure was checked.",
+      "10 CFR 140.12 microreactor formula amount, $4,500,000 floor and $74,000,000 cap (argument 'liability'): not checked.",
+      "DOME 20 MWth facility cap (argument 'first-article'), ERCOT 9.9 MW and 10.1 MW process timings (argument 'thresholds'), and New York 5 MW and $750 fee (argument 'thresholds'): not checked."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "accepts a contingent retrospective assessment of $158,026,000",
+      "verdict": "confirmed",
+      "evidence": "Federal Register notice of the 2023 inflation adjustment to the Price-Anderson financial protection regulations (88 FR 60565, 5 Sept 2023) sets the maximum total deferred premium at $158,026,000 (annual standard deferred premium $24,714,000), amending 10 CFR 140.11(a)(4). The fetched page does not state the $500,000,000 primary amount, which was not checked.",
+      "sources": [
+        {
+          "label": "Federal Register — Inflation Adjustments to the Price-Anderson Act Financial Protection Regulations (5 Sept 2023)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-05/html/2023-19009.htm",
+          "quote": "maximum total premium of $158,026,000",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

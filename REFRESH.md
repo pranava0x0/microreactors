@@ -196,3 +196,10 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   already in the parenthetical). Until the skip list carries recently checked ids (10-29 note), grep the previous
   pass dirs for a check's `target` before acting on it. Also: nrc.gov pages that 403 `fetch_source.py` render in
   headless Playwright from the venv (HTTP 200); cache them with `--from-file`.
+
+- **2026-11-10: three of four non-confirm checks were clause-only misreads, and the fee row was re-flagged a third day.** Costs
+  flagged "19.35 cents/kWh" outdated in a sentence that continues "was 20.38 cents/kWh in 2026"; applications called NASA's
+  Q1 FY2030 date unsupported after reading the row's second source, not its first. Before acting on any outdated/unsupported
+  check: read the whole shipped sentence and every source on the row. The `licensing` fee check has now been overruled on
+  11-08, 11-09 and 11-10: the skip list needs a "recently checked" column (10-29 note) more than any prompt tweak.
+
