@@ -185,3 +185,21 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   states actually did in 2025" rested on one snippet-only Neutron Bytes link whose page mentions neither Puerto Rico nor TerraPower, and
   its "every state plus Puerto Rico" was wrong (INL GAIN: 48 of 50 states). Grep `"status": "snippet-only"` on a row an agent calls
   unsupported and treat the row as uncited until a fetched page backs it.
+- **2026-11-08: sec.gov blocks the repo's fetch User-Agent, but `curl -A "<name> <contact>@example.org"` gets 200.** Two Centrus filings
+  (8-K exhibit, 10-Q) were UNREACHABLE in `verify_pass_quotes.py`; curl with a generic contact UA fetched both and
+  `fetch_source.py URL --from-file` cached them for the offline gate. Same root cause as the 10-27 EDGAR note. Also, a status
+  word like "Live program" can overstate a funded-but-unopened program: the agent's `unsupported` became an `outdated`
+  correction once the source said "has not released an application schedule".
+
+- **2026-11-09: a row fixed yesterday gets re-flagged today.** The politics agent called the NRC fee clause
+  outdated a day after the 11-08 run settled it, on the same misreading (the $148 is the FY2025 history; $154 is
+  already in the parenthetical). Until the skip list carries recently checked ids (10-29 note), grep the previous
+  pass dirs for a check's `target` before acting on it. Also: nrc.gov pages that 403 `fetch_source.py` render in
+  headless Playwright from the venv (HTTP 200); cache them with `--from-file`.
+
+- **2026-11-10: three of four non-confirm checks were clause-only misreads, and the fee row was re-flagged a third day.** Costs
+  flagged "19.35 cents/kWh" outdated in a sentence that continues "was 20.38 cents/kWh in 2026"; applications called NASA's
+  Q1 FY2030 date unsupported after reading the row's second source, not its first. Before acting on any outdated/unsupported
+  check: read the whole shipped sentence and every source on the row. The `licensing` fee check has now been overruled on
+  11-08, 11-09 and 11-10: the skip list needs a "recently checked" column (10-29 note) more than any prompt tweak.
+

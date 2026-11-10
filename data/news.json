@@ -1,23 +1,23 @@
 {
   "_meta": {
-    "captured": "2026-11-07",
+    "captured": "2026-11-10",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "57 of 95 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 38 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-10-30",
+    "binding_note": "59 of 98 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 39 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-11-10",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 18
+      "count": 19
     },
     {
       "id": "fuel",
-      "count": 16
+      "count": 17
     },
     {
       "id": "contract",
-      "count": 13
+      "count": 14
     },
     {
       "id": "award",
@@ -49,6 +49,29 @@
     }
   ],
   "items": [
+    {
+      "id": "dow-long-mott-construction-permit-2026-11-10",
+      "date": "2026-11-10",
+      "headline": "NRC issues construction permit for Dow and X-energy Texas plant",
+      "companies": [
+        "Dow",
+        "Long Mott Energy",
+        "X-energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC issued a construction permit for the Long Mott Generating Station at Dow's Seadrift, Texas site. It covers four Xe-100 reactors each rated 80 MWe and 200 MWt. The source reports the permit as already issued and says the NRC's Final Safety Evaluation Report was released on 30 October. Dow has not made a final decision to build; it expects to consider a preliminary investment decision in 2027, and a separate operating licence is needed before fuel load.",
+      "why_it_matters": "Each unit is 80 MWe, several times the top of a 1-20 MW buyer's range, so a small buyer gets no direct path from this permit. It does show a commercial advanced reactor clearing NRC construction review in this window.",
+      "binding": true,
+      "binding_note": "Permit issued, per the 2026-11-10 World Nuclear News report. The report does not state the issuance date, so the item date is the report date.",
+      "sources": [
+        {
+          "label": "World Nuclear News — US issues landmark construction permit for Texas SMR plant (2026-11-10)",
+          "url": "https://www.world-nuclear-news.org/articles/us-issues-landmark-construction-permit-for-texas-smr-plant",
+          "quote": "has issued a construction permit for the proposed plant featuring four Xe-100 small modular reactor units",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "centrus-first-centrifuge-piketon-expansion-2026-10-30",
       "date": "2026-10-30",
@@ -291,6 +314,27 @@
       ]
     },
     {
+      "id": "centrus-doe-haleu-transfer-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "DOE transfers HALEU title to Centrus unit ACO under new agreement",
+      "companies": [
+        "Centrus"
+      ],
+      "category": "fuel",
+      "what_happened": "On October 20, 2026, Centrus signed a HALEU Transfer Agreement with DOE. Under it, DOE conveyed to American Centrifuge Operating (ACO), a Centrus subsidiary, title to certain HALEU, low-enriched uranium feed and heels, depleted tails and cylinders made or bought under the HALEU Operation Contract. ACO took on facility costs, security and environmental compliance for those materials and agreed to hold the HALEU for resale to DOE on request.",
+      "why_it_matters": "The HALEU moves into a Centrus subsidiary, but it is held for resale to DOE on request. It is not a commercial supply contract, so it does not by itself open HALEU to 1-20 MW reactor developers.",
+      "binding": true,
+      "binding_note": "Signed agreement, as described in Centrus's Q3 2026 Form 10-Q. The agreement text was not retrieved, so terms come from the filing's description.",
+      "sources": [
+        {
+          "label": "Centrus Energy — Form 10-Q for the quarter ended September 30, 2026 (2026)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001065059/000162828026070557/leu-20260930.htm",
+          "quote": "on October 20, 2026, the Company signed a contract with the DOE (the “HALEU Transfer Agreement”)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "nthu-nucube-thor-replacement-mou-2026-10-19",
       "date": "2026-10-19",
       "headline": "NTHU and NuCube sign MOU to study replacing Taiwan research reactor",
@@ -359,6 +403,34 @@
           "label": "World Nuclear News — Joint venture to produce HALEU in South Africa (2026-10-19)",
           "url": "https://world-nuclear-news.org/articles/joint-ventureto-produce-haleu-in-south-africa",
           "quote": "A binding Heads of Agreement has been signed by the companies",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "sargent-lundy-deployable-unity1-2026-10-14",
+      "date": "2026-10-14",
+      "headline": "Deployable Energy picks Sargent & Lundy for Unity-1 licensing work",
+      "companies": [
+        "Deployable Energy",
+        "Sargent & Lundy"
+      ],
+      "category": "contract",
+      "what_happened": "On 2026-10-14 Deployable Energy said it selected Sargent & Lundy to provide engineering and licensing support for Unity-1, a 1-MWe nuclear battery. The work supports the company's planned NRC construction permit application, which Deployable Energy is targeting for submittal without a stated date. The NRC pre-application page lists a readiness assessment request for that application.",
+      "why_it_matters": "For a 1-20 MW buyer this is licensing progress on a 1 MWe unit, not a power sale. The release gives no contract value and no permit filing date.",
+      "binding": false,
+      "binding_note": "The release says Deployable Energy selected Sargent & Lundy. It names no contract value, and the signed engagement itself was not retrieved.",
+      "sources": [
+        {
+          "label": "Deployable Energy — Sargent & Lundy to provide engineering and licensing support for Deployable Energy's Unity-1 Microreactor (PR Newswire, 2026-10-14, syndicated copy)",
+          "url": "https://www.miningstockeducation.com/2026/10/sargent-lundy-to-provide-engineering-and-licensing-support-for-deployable-energys-unity-1-microreactor/",
+          "quote": "Deployable Energy today announced that it selected Sargent & Lundy",
+          "status": "fetched"
+        },
+        {
+          "label": "U.S. Nuclear Regulatory Commission — Deployable Energy pre-application activities (Unity Nuclear Battery, 2025-2026)",
+          "url": "https://www.nrc.gov/facilities-safety/new-reactors/advanced-reactors/who-were-working-with/pre-application-activities/deployable-energy",
+          "quote": "UNB is a 1 MWe gas cooled microreactor designed for scalable modular deployment",
           "status": "fetched"
         }
       ]
@@ -1820,7 +1892,7 @@
         "Valar Atomics"
       ],
       "category": "criticality",
-      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS described the criticality test as 100 kWt; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
+      "what_happened": "Valar Atomics' Ward 250 helium-cooled, TRISO-fueled reactor reached zero-power fueled criticality on June 18, 2026 at the Utah San Rafael Energy Lab, where the company broke ground in September 2025. ANS describes Ward 250 as a 100-kWt reactor, and Valar reported a 10 kWt output on June 22 during power ascension; DOE's April NEPA record describes the proposed Ward250 research facility as 250 kWt. The public sources do not explain the difference, so this record does not choose a single rating. It was the second of what became five companies to reach DOE-authorized criticality ahead of the Reactor Pilot Program's July 4 deadline, following Antares Nuclear. The reactor had earlier reached a separate zero-power criticality milestone in a November 2025 test called Nova Core, run with Los Alamos National Laboratory at the Nevada Criticality Experiments Research Center.",
       "why_it_matters": "A second company crossing the line within two weeks of the first showed the July 4 target was an achievable bar for multiple independent designs and teams, not a stretch goal for a single frontrunner.",
       "binding": true,
       "binding_note": "An achieved, DOE-authorized physical milestone.",
@@ -1836,6 +1908,12 @@
           "url": "https://www.energy.gov/nepa/articles/cx-271015-valar-ward250-research-reactor",
           "quote": "Ward250 is a 250 kilowatt thermal (kWth) high temperature gas-cooled reactor",
           "status": "snippet-only"
+        },
+        {
+          "label": "ANS/Nuclear Newswire — Valar's Ward 250 reaches criticality in Utah (2026-06-22)",
+          "url": "https://www.ans.org/news/2026-06-22/article-8136/valars-ward-250-reaches-criticality-in-utah/",
+          "quote": "Valar is now proceeding with a planned power ascension",
+          "status": "fetched"
         }
       ]
     },

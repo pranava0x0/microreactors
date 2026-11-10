@@ -456,3 +456,48 @@ Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches foun
 | politics | 174K | 4 confirmed; 1 unsupported: "every state plus Puerto Rico" had no source and INL GAIN counts 48 of 50 states, rewritten by hand in policy.json | yes |
 
 ~657K agent tokens for 1 news item and 2 corrections. Phone cost 1.69 (unchanged).
+
+## 2026-11-08 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing dated after 10-30. 1 news, 3 corrections (2 re-worded by the main session), 4 confirmed, 1 agent check overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 156K | 2 items from Centrus SEC filings; shipped the 10-20 HALEU Transfer Agreement, held the construction-package item (overlaps the 10-30 centrifuge story) | yes |
+| deals | 142K | texas-backup "Live program" -> rule adopted, no application schedule (agent said unsupported; converted to a correction) | yes |
+| vendors | 149K | 1 confirmed (Radiant DOME Readiness Review, no date) | no |
+| politics | 151K | NRC fee parenthetical updated to FY2026 ($154 vs $337); agent's rewrite of the FY2025 history rejected | yes |
+| applications | 177K | uiuc-kronos-mmr "is licensed" -> construction permit under review; Kuopio LOI (2023-24) held as stale | yes |
+| costs | 133K | PCE "outdated" overruled: shipped sentence already carries 22.11 proposed | no |
+| ideas | 150K | 3 confirmed (Price-Anderson floor/cap, DOME 20 MWt) | no |
+
+~1.06M agent tokens for 1 news item and 3 corrections. Phone cost 1.69 (unchanged).
+
+## 2026-11-09 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 2 main-session web searches found nothing dated after 10-30. 1 news, 1 correction (reworded by the main session), 7 confirmed, 1 agent check overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 170K | 1 item: Deployable Energy picks Sargent & Lundy for Unity-1 licensing (2026-10-14), a gap; watcher leads were all SMRs | yes |
+| deals | 152K | 5 confirmed; its "14 GW not in source" note was answered by the row's Utility Dive source | no |
+| vendors | 158K | valar-ward250: "100 kWt criticality" -> 100 kWt design, zero-power criticality, 10 kWt output (also fixed the News sentence) | yes |
+| politics | 170K | NRC fee "outdated" overruled for the second day running (FY2025 history + FY2026 parenthetical); Part 57 still proposed | no |
+
+~650K agent tokens for 1 news item and 1 correction. Phone cost 1.69 (unchanged).
+
+## 2026-11-10 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing dated after 10-30. 1 news, 1 docket, 0 corrections, 7 confirmed, 3 agent checks overruled, 2 applications held for curation.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | 0 items; watcher leads were SMRs (left to politics) | no |
+| deals | 150K | canada-src confirmed (third re-check this month) | no |
+| vendors | 155K | Radiant DSA row confirmed | no |
+| politics | 149K | Long Mott construction permit (news) + NJ A5727 micro-reactor bill (docket); NRC fee "outdated" overruled a third day | yes |
+| applications | 171K | NASA lunar "unsupported" overruled (row's RFI source has Q1 FY2030); 2 Finnish 50 MWt district-heat LOIs held | no |
+| costs | 147K | PCE base "outdated" overruled: the same sentence already gives 20.38 (2026) and 22.11 (proposed) | no |
+| ideas | 169K | liability deferred premium confirmed | no |
+
+~1.09M agent tokens for 1 news item and 1 docket. Phone cost not re-measured (no layout change).

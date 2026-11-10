@@ -1,0 +1,53 @@
+{
+ "_meta": {
+  "captured": "2026-11-08",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities rows (status, timeline, binding flags most likely to have changed) and Type N items for new named buyer deals dated after 2026-10-30 that skip/news.json lacks.",
+  "angles_run": [
+   "Army Janus five-vendor selections (checked, confirmed; no record written)",
+   "Air Force ANPI Buckley, Malmstrom, JBSA pairings and any 2026 contract update",
+   "Eielson NOITA and Oklo NRC licence status",
+   "DOE Reactor Pilot Program criticality count and Deployable Energy attribution",
+   "Equinix-Radiant 20-unit preorder and unit rating (1 MW per unit in the release)",
+   "Oklo-Switch 12 GW Master Power Agreement binding status (10-Q still non-binding; not written)",
+   "NANO-Supermicro MOU (May 2026, non-binding per search summary; IR fetch returned 403; not written)",
+   "Last Energy and DP World London Gateway status (no 2026 update found; not written)",
+   "Canada SRC eVinci cancellation (no cancellation reporting found; SRC FAQ fetch silent; not written)",
+   "Texas Backup Power Package Program status (checked; one check written)",
+   "New buyer deals after 2026-10-30: four searches for microreactor PPA, MOU, LOI and customer announcements, none dated after that date"
+  ],
+  "absences": [
+   "No buyer deal dated after 2026-10-30 found in four searches (PPA, MOU/LOI, Radiant customer, Oklo/Aalo/Antares/Deep Fission). The index returned nothing dated November 2026, so the items list is empty rather than verified complete.",
+   "Canada SRC eVinci: the shipped 'Cancelled fall 2025' claim could not be confirmed or refuted. The SRC FAQ page (src.sk.ca/node/1607) does not address the status, and searches surfaced no cancellation report. No verdict written.",
+   "NANO Nuclear and Supermicro: NANO's investor-relations release returned HTTP 403 to WebFetch, so the shipped MOU claim has no fetched source from this pass. No check written.",
+   "Last Energy and DP World London Gateway: no 2026 status found beyond the September 2025 MOU. No check written.",
+   "Oklo and Switch: Oklo's 10-Q for the period ending 2026-06-30 still describes the 12 GW Master Power Agreement without a binding PPA under it. This matches the shipped text, so no check written.",
+   "Janus: vendor and base assignments match the shipped record (DefenseScoop 2026-08-26, fetched). No check written because the match is a confirmation within a stale window.",
+   "Equinix-Radiant: the Radiant release (2025-08-14) gives 1 MW per unit, matching the shipped record. Whether the preorder counts as binding is a judgement call, so no check written.",
+   "DOE Reactor Pilot Program: DOE's fifth-criticality release (fetched) confirms five reactors and that Oklo's Groves is the fifth. The release does not name Deployable Energy as a criticality program participant, but the Launch Pad versus pilot attribution is only in a search summary, so no check written.",
+   "Eielson: no final Oklo contract and NRC licence still pending as of the June 2026 Eielson newsletter (search summary). Shipped text consistent. No check written."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-texas-backup-1",
+   "target": "texas-backup",
+   "file": "opportunities",
+   "claim": "Live program, nuclear not yet eligible",
+   "verdict": "outdated",
+   "evidence": "Spartnerships, dated 2026-05-22, reports that the PUCT has unveiled a rule establishing the grant and loan process and that the commission has not released an application schedule. The article does not mention nuclear or small reactors, and gives gas, propane, solar and battery storage as the examples of qualifying fuel-source combinations. Nothing found after that date describes the program as open for applications.",
+   "sources": [
+    {
+     "label": "Spartnerships — Texas Backup Power Package program 2026 update (2026-05-22)",
+     "url": "https://www.spartnerships.com/texas-backup-power-program-2026-update/",
+     "quote": "The commission has not released an application schedule",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "unsupported",
+   "correction": "Funded; rule adopted 2026, no application schedule as of May 2026; nuclear not eligible",
+   "review": "Main session: Spartnerships 2026-05-22 read via WebFetch (curl 403): PUCT 'unveiled a new rule', 'has not released an application schedule', no mention of nuclear. No later source shows the portal open. 'Live program' overstated an unopened program."
+  }
+ ],
+ "items": []
+}

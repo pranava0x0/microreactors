@@ -1,0 +1,57 @@
+{
+ "_meta": {
+  "captured": "2026-11-08",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: policy and regulation. Type G checks on shipped licensing pathways (file: policy); Type F dockets not in skip/dockets.json filed or decided in the last 90 days; Type N items dated after 2026-10-30. Search index coverage thins after late October 2026.",
+  "angles_run": [
+   "NRC Part 57 final-rule status and deadline",
+   "NRC fee rule, ADVANCE Act reduced hourly rate (FY2026 and FY2027)",
+   "NRC Part 57 cost and timing figures (primary NRC PDF)",
+   "State microreactor legislation signed in Oct-Nov 2026",
+   "State PUC and PSC microreactor or SMR filings (Aug-Nov 2026)",
+   "Utility IRP and SMR cost-recovery dockets (South Dakota, Virginia)",
+   "Texas PUC and TANEO rules for advanced nuclear",
+   "Michigan Palisades NRC review notices (Oct 2026)",
+   "FY2027 NDAA microreactor provisions",
+   "Army Janus program (already shipped; checked for updates)",
+   "FY2027 Energy and Water appropriations (floor status)",
+   "Congress microreactor bills introduced Nov 2026",
+   "DOE advanced reactor policy announcements Nov 2026",
+   "State governor signings and moratorium repeals Nov 2026",
+   "Utility RFPs for microreactors or SMRs in 2026",
+   "NRC approvals of microreactors Nov 2026"
+  ],
+  "absences": [
+   "Part 57 final rule: no fetched page confirms a 2026-11-23 final-rule deadline. The latest coverage found (ANS, 2026-10-22) still describes Part 57 as not yet finalized, and no November 2026 Commission vote or Federal Register final rule was found. The shipped 'proposed' status is consistent with the evidence, so no check was written.",
+   "Part 57 savings and timing figures ($3.76-11.84B; 6-12 months) could not be verified: the NRC primary PDF (ML26124A210) returned HTTP 403. The ANS summary fetched contains neither figure.",
+   "Dockets, last 90 days: none found that is not already in skip/dockets.json. Checked and rejected: South Dakota PUC EL26-019 (petition June 2026, outside window); West Virginia HB 4491 (introduced 2026-01-19, no action found); Virginia SCC SMR cost-recovery order (no 2026 order found); Texas PUC (no adopted microreactor order or rule found); utility microreactor or SMR RFPs (no utility-issued 2026 RFP found; results were federal solicitations only).",
+   "Items after 2026-10-30: none confirmed. Searched Congress microreactor bills (none found for Nov 2026), FY2027 Energy and Water appropriations (House committee approved 2026-05-20; no floor passage or enactment found), NRC Commission votes and approvals (none found), DOE and DoD policy announcements (none found after Oct 30; the Army Janus program was announced Aug 2026 and is already shipped), and governor signings or moratorium repeals (none found in Nov 2026).",
+   "Possible index gap: search results thin out after late October 2026, so an absence here may reflect index coverage, not a lack of events.",
+   "FY2027 NRC fee rule: not found. Only the FY2026 final rule (published 2026-06-16) was located, so the reduced hourly rate is stated as FY2026 only.",
+   "Budget used: about 18 of 25 web searches and 4 fetches (one returned 403) of 20."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-licensing-1",
+   "target": "licensing",
+   "file": "policy",
+   "claim": "cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (it is $154 under the FY2026 fee rule)",
+   "verdict": "outdated",
+   "evidence": "The FY2026 final fee rule (Federal Register, 2026-06-16) sets the Reduced Hourly Rate at $154 per hour, up from $148. It also raises the full professional hourly rate to $337 for FY2026, from $318. The $154 figure is current; the $318 full-rate baseline is the FY2025 figure, not the FY2026 one.",
+   "correction": "cut the hourly rate advanced-reactor applicants pay for review from $318 to $148 (under the FY2026 fee rule it is $154, against a full rate of $337)",
+   "sources": [
+    {
+     "label": "Federal Register — Fee Schedules; Fee Recovery for FY 2026 (final rule, June 16, 2026)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-16/html/2026-12067.htm",
+     "quote": "For FY 2026, the NRC is increasing the professional hourly rate from $318 to $337.",
+     "status": "fetched"
+    }
+   ],
+   "agent_correction": "cut the hourly rate advanced-reactor applicants pay for review from $337 to $154 (the FY2026 fee rule)",
+   "review": "Main session: the shipped sentence describes the FY2025 cut ($318 to $148); the agent's rewrite would misstate that history. Only the parenthetical is updated. FR 2026-12067 fetched: reduced rate $154, full rate $337."
+  }
+ ],
+ "dockets": [],
+ "items": []
+}

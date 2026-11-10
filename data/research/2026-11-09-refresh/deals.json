@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "captured": "2026-11-09",
+    "agent": "deals",
+    "scope": "Deals tab: Type G verdicts on shipped opportunities (Janus, ANPI, DOE Reactor Pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy, Canada SRC); Type N sweep for buyer deals dated after 2026-10-30 not in skip/news.json",
+    "angles_run": [
+      "Army Janus site assignments and vendor awards (fetched army.mil 294897, Fort Drum; search for Fort Campbell BWXT)",
+      "Canada SRC eVinci status (fetched Saskatchewan Hansard 2026-04-15)",
+      "Oklo-Switch master agreement terms (fetched switch.com release, dated 2024-12-18)",
+      "DOE Reactor Pilot Program criticality (fetched energy.gov release, published 2026-08-06)",
+      "NANO Nuclear x Supermicro MOU (fetched placera.se wire, dated 2026-05-06)",
+      "ANPI Buckley, Malmstrom, JBSA 2026 status (search only; no change found)",
+      "Equinix-Radiant 20-unit preorder status (search only; no 2026 update found)",
+      "Eielson NOITA and NRC status (search only; no 2026 award found)",
+      "Last Energy DP World PPA status (search only; no 2026 PPA found)",
+      "Buyer-deal sweeps after 2026-10-30: general microreactor PPA, data-centre deals, Oklo, Radiant, Westinghouse eVinci, Valar/Aalo/Deep Fission (search only; none found)"
+    ],
+    "absences": [
+      "No buyer deal (named buyer, site, vendor) dated after 2026-10-30 found in about nine sweeps; no Type N items written",
+      "Equinix-Radiant 20-unit preorder: no 2026 source on conversion to a firm purchase agreement, deposit status, or the 2026 DOME test; not checked",
+      "Eielson NOITA (2025-06-11): no 2026 contract award, NRC action or environmental analysis found",
+      "Last Energy and DP World: no 2026 PPA found; the DP World arrangement is a 2025 MOU",
+      "ANPI Buckley, Malmstrom and JBSA: no contract award or site-work news after the April 2026 selections",
+      "Oklo-Switch shipped text says the deal grew Oklo's order book to ~14 GW; the fetched release gives 12 GW through 2044 and does not mention the order book, so that clause is unverified",
+      "DOE pilot: Deployable Energy criticality date differs by source (June 30 in an NRC slide vs July 1 in the shipped record); unresolved",
+      "DOE pilot: the fetched DOE release does not name Aalo's reactor or date its criticality; Aalo's 2026-07-04 date is unverified in fetched text",
+      "Canada SRC: the fetched Hansard section does not date the Westinghouse cancellation to fall 2025 or give the reason (space, defense); those parts of the shipped text are unverified",
+      "Janus: the shipped 'four of the nine candidate sites are still unassigned' is not stated in fetched text; a search summary says Fort Campbell has a BWXT assignment, which is consistent with the shipped record"
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-janus-1",
+      "target": "janus",
+      "file": "opportunities",
+      "claim": "Five vendors selected for five named bases on 2026-08-26",
+      "verdict": "confirmed",
+      "evidence": "Army article dated 2026-08-26 names Westinghouse Government Services as the Fort Drum awardee and describes five installations selected as the first tranche. Fetched text does not say whether any candidate sites remain unassigned.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army selects Fort Drum for Janus Program microreactor (2026-08-26)",
+          "url": "https://www.army.mil/article/294897/army_selects_fort_drum_for_janus_program_microreactor",
+          "quote": "with the contract awarded to Westinghouse Government Services.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled; vendor withdrew",
+      "verdict": "confirmed",
+      "evidence": "Saskatchewan Standing Committee on the Economy, Hansard No. 13 (2026-04-15): SRC CEO Mike Crabtree says the eVinci project was cancelled by Westinghouse, and the minister says the eVinci program has moved out of SRC. The transcript does not date the cancellation to fall 2025 or give the reason stated in the shipped text.",
+      "sources": [
+        {
+          "label": "Legislative Assembly of Saskatchewan — Standing Committee on the Economy, Hansard No. 13 (2026-04-15)",
+          "url": "https://docs.legassembly.sk.ca/legdocs/Committees/ECO/Debates/30L/20260415Debates-ECO-HTML.htm",
+          "quote": "So the eVinci project was cancelled by Westinghouse, as the minister has just said.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Framework signed 2024-12; individual binding PPAs to follow per project",
+      "verdict": "confirmed",
+      "evidence": "Oklo and Switch release dated December 18, 2024 describes a non-binding Master Power Agreement to deploy 12 gigawatts of Oklo Aurora powerhouse projects through 2044, with binding agreements expected as milestones are reached. The ~14 GW order-book figure in the shipped instrument text is not in this release.",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship (2024-12-18)",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "quote": "a non-binding Master Power Agreement",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Oklo's Groves Isotope Test Reactor afterward on 2026-08-05",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy release published 2026-08-06 says Oklo's Groves reactor achieved criticality 'last night' under the Reactor Pilot Program, and calls it the fifth DOE-authorized advanced reactor to reach criticality this summer. The release gives no calendar date; 2026-08-05 follows from the publication date.",
+      "sources": [
+        {
+          "label": "U.S. DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "Last night, as part of the U.S. Department of Energy (DOE) Reactor Pilot Program",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "confirmed",
+      "evidence": "Press item dated 2026-05-06 reports that NANO Nuclear 'signed a memorandum of understanding' with Supermicro to explore deploying microreactors for data centers. The page says financial details were not provided and does not say whether the MOU is binding, so the binding: false flag is not checked here.",
+      "sources": [
+        {
+          "label": "Placera — Nano Nuclear Energy, Supermicro Sign Memorandum of Understanding to Power AI Data Centers (2026-05-06)",
+          "url": "https://www.placera.se/telegram/nano-nuclear-energy-supermicro-sign-memorandum-of-understanding-to-power-ai-data-centers-20260506",
+          "quote": "it has signed a memorandum of understanding with Super Micro Computer (SMCI)",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

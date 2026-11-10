@@ -1,0 +1,93 @@
+{
+ "_meta": {
+  "captured": "2026-11-08",
+  "agent": "ideas",
+  "scope": "Why microreactors tab: Type G checks on time-sensitive numbers in data/arguments.json (rule-basis arguments), and Type N items (studies dated after 2026-10-30 that change the case for or against 1-20 MW reactors). No study dated after 2026-10-30 was found, so items is empty.",
+  "angles_run": [
+   "Price-Anderson financial protection (10 CFR 140.12 floor/cap; 140.11 retrospective premium)",
+   "DOME test bed thermal cap (first-article argument)",
+   "ERCOT small vs large generation interconnection timelines (thresholds argument)",
+   "Connecticut microgrid statute 65 MW cap (thresholds argument)",
+   "DOE Liftoff advanced nuclear update after 2026-10-30",
+   "GAO microreactor reports",
+   "NEI cost study for 1-20 MW reactors",
+   "EPRI advanced reactor or microreactor cost analysis",
+   "National-laboratory microreactor LCOE vs diesel",
+   "INL MARVEL first public cost estimate",
+   "CBO / IEA SMR and microreactor cost analyses",
+   "Insurer and lender reports on microreactor risk",
+   "Generic 'microreactor report November 2026' sweeps (2 queries)"
+  ],
+  "absences": [
+   "No major study, report or analysis dated after 2026-10-30 that changes the case for or against 1-20 MW reactors was found. Items list is empty. Searches covered DOE Liftoff, GAO, NEI, EPRI, national labs (INL, ORNL, PNNL), CBO, IEA, insurers and lenders, and generic November 2026 sweeps.",
+   "DOE Liftoff: the most recent Advanced Nuclear Liftoff update found is dated September 2024 (liftoff.energy.gov lists Published March 2023, Updated September 2024). No 2026 microreactor Liftoff edition surfaced.",
+   "GAO: the only microreactor product found is GAO-20-380SP (February 2020). No 2026 GAO microreactor report surfaced.",
+   "NEI: no 2026 NEI report on 1-20 MW advanced reactor costs surfaced. The 2019 NEI diesel-versus-microreactor figures appear only as secondary summaries; not used.",
+   "EPRI: no 2026 EPRI microreactor or advanced reactor cost report surfaced in one search. Not exhaustively checked on epri.com.",
+   "INL MARVEL first public cost estimate: the document was not identified. The March 2026 INL MRP review describes a first public cost estimate for MARVEL (90% design) but the dollar figure was not retrieved.",
+   "CBO and IEA: no CBO analysis of SMR or microreactor cost found. The IEA 2040 SMR construction-cost chart exists but its figures were not fetched. An Axis Intelligence dashboard citing an IEA ~$4,500/kW figure is secondary and was not used.",
+   "Insurers and lenders: no 2026 insurer or lender report specific to microreactor risk found. Commercial Risk article 'Lack of insurance for boom in small reactor nuclear plants' was found but its excerpt returned no body text.",
+   "Not verified, checks not written: ERCOT Small Generation (<10 MW) 8-12 months and Large Generation (>=10 MW) 18-30 months (thresholds argument). The figures come from an ERCOT October 2024 workshop deck found in search; the PDF returned as binary and could not be read in this session. The current Planning Guide section 5.4 was not retrieved.",
+   "Not verified, check not written: Connecticut 65 MW cap under PA 12-148 Sec. 7 (thresholds argument). A 2016 CGA report says 'up to 65 megawatts'; the cga.ct.gov statute fetch failed with a certificate error. Current codified text of Conn. Gen. Stat. 16-243y not confirmed.",
+   "Not searched: New York $750 fee and 60-business-day study (thresholds argument); the 71 surplus-interconnection filings count (inherit argument); Texas Backup Power Package program status (fuel argument); New Jersey microgrid design sizes (load-fit argument).",
+   "eCFR primary text of 10 CFR 140.12 could not be fetched: ecfr.gov redirected to a different host (unblock.federalregister.gov) and was not followed. The 140.12 check cites the Cornell Legal Information Institute mirror of the eCFR text, which states the amendment history with 91 FR 15879 (March 30, 2026)."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-liability-1",
+   "target": "liability",
+   "file": "arguments",
+   "claim": "floored at $4,500,000 and capped at $74,000,000",
+   "verdict": "confirmed",
+   "evidence": "10 CFR 140.12(a), as shown on the Cornell LII mirror of the eCFR text, still sets the amount for a reactor under the formula at no less than $4,500,000 and no more than $74,000,000. The page's amendment history lists 91 FR 15879 (March 30, 2026), the most recent amendment, and the floor and cap appear in the text shown. The eCFR primary page redirected and was not fetched.",
+   "sources": [
+    {
+     "label": "Cornell Legal Information Institute — 10 CFR 140.12 Amount of financial protection required for reactors other than those in 140.11 (eCFR mirror; amendment 91 FR 15879, March 30, 2026)",
+     "url": "https://www.law.cornell.edu/cfr/text/10/140.12",
+     "quote": "less than $4,500,000 or more than $74,000,000",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-liability-2",
+   "target": "liability",
+   "file": "arguments",
+   "claim": "accepts a contingent retrospective assessment of $158,026,000",
+   "verdict": "confirmed",
+   "evidence": "The NRC final rule published 2023-09-05 (effective October 5, 2023), the fourth required periodic inflation adjustment, sets the new maximum total deferred premium at $158,026,000, with a maximum annual deferred premium of $24,714,000. A CRS brief dated February 2025 reports the same figures and no later change. The next statutory adjustment is expected around 2028, so the figure should be re-checked then.",
+   "sources": [
+    {
+     "label": "U.S. Federal Register — Financial protection requirements and indemnity agreements: inflation adjustments (Vol. 88, No. 170, September 5, 2023; final rule effective October 5, 2023)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-05/html/2023-19009.htm",
+     "quote": "results in a maximum total premium of $158,026,000",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-first-article-1",
+   "target": "first-article",
+   "file": "arguments",
+   "claim": "DOME's facility has a 20 MWth cap",
+   "verdict": "confirmed",
+   "evidence": "DOE's release on the DOME test bed states the facility is to safely house and test fueled reactor experiments producing up to 20 megawatts of thermal energy. An April 11, 2026 trade report on DOME's opening repeats the limit as 20 MWt. The DOE release is dated July 1, 2025.",
+   "sources": [
+    {
+     "label": "U.S. Department of Energy — Energy Department announces DOME test bed release (July 1, 2025)",
+     "url": "https://www.energy.gov/node/4851650",
+     "quote": "to safely house and test fueled reactor experiments that produce up to 20 megawatts of thermal energy",
+     "status": "fetched"
+    },
+    {
+     "label": "NeutronBytes — Idaho Lab Opens Its DOME Nuclear Test Bed (April 11, 2026)",
+     "url": "https://neutronbytes.com/2026/04/11/idaho-lab-opens-its-dome-nuclear-test-bed/",
+     "quote": "It is designed to host microreactor experiments generating up to 20 MWt of thermal energy.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "items": []
+}

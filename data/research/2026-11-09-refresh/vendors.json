@@ -1,0 +1,60 @@
+{
+ "_meta": {
+  "captured": "2026-11-09",
+  "agent": "vendors",
+  "scope": "Vendors tab: post-2026-10-30 vendor milestones not in skip/news.json, and Type G checks on shipped vendors/ data/vendors records where a fetched page changes the text. Stayed out of news, politics, deals, applications, costs and ideas lanes.",
+  "angles_run": [
+   "generic microreactor criticality / fuel loading Nov 2026",
+   "Radiant Kaleidos DOME fueling and Readiness Review",
+   "Antares Mark-1 / Mark-0 status",
+   "Westinghouse eVinci news",
+   "Aalo-X post-criticality news",
+   "Last Energy PWR-20 / PWR-5 Texas",
+   "Natura MSR-1 fuel salt status",
+   "Deployable Energy Unity DOME",
+   "NANO Nuclear KRONOS MMR",
+   "Oklo Aurora-INL timing (fetched MarketBeat Q2 call page)",
+   "Valar Ward250 status (fetched ANS 2026-06-22)",
+   "Steady Energy LDR-50",
+   "Terra Innovatum SOLO NRC pre-application and PSAR chapters",
+   "Blue Energy",
+   "Janus award follow-up",
+   "DOE Reactor Pilot Program Nov 2026"
+  ],
+  "absences": [
+   "No vendor milestone dated after 2026-10-30 surfaced for any of the 8 shipped vendors or the 9 unlisted 1-20 MWe designs, across ~20 searches and 3 fetches. Items: none. Not a proof of absence: search coverage of November 2026 was thin, and the newest dated hits were late October.",
+   "Radiant: no report that the DOME Readiness Review was completed, that fuel was loaded, or that Kaleidos reached criticality. The fetch of radiantnuclear.com/news/triso-fuel-inl returned HTTP 403, so the page could not be read.",
+   "Terra Innovatum (SOLO): company said it would deliver the last 6 of 18 draft PSAR chapters to the NRC by 2026-10-30 (update dated 2026-10-22). No confirmation that they were delivered. Not an item without a dated post-10-30 source.",
+   "Last Energy PWR-5 at Texas A&M RELLIS: no criticality report found; latest hit is a KBTX piece dated 2026-09-11 saying criticality could come in months.",
+   "Natura MSR-1: no fuel-salt loading or criticality report found after the 2026-09-22 FLiBe delivery already in news skip.",
+   "Deployable Energy Unity: no November item; the DOME 2027 test is a plan, not a schedule.",
+   "NANO KRONOS MMR: no November 2026 milestone found; latest hit is the 2026-10-27 Hyundai MOU already in news skip.",
+   "Steady Energy LDR-50: sources conflict on first heating-reactor operation year (2034 per one German report; 2030s per company site). Not checked against a primary page, so not written as a check.",
+   "Oklo Aurora-INL: fetched MarketBeat page (dated 2026-08-08) says the company 'continues to target a 2028 startup for Aurora-INL'. Consistent with the shipped first_delivery_target, so no check written (confirmation not required by the brief).",
+   "Blue Energy: no microreactor announcements in 2026; its news is 300 MW BWRX-300 class, so out of lane for the 1-20 MWe list.",
+   "Antares, Westinghouse eVinci, Aalo-X, BWXT BANR, General Atomics GA-TES: no post-10-30 vendor milestone found; no check written for these, because no fetched page changed the shipped text.",
+   "Valar check: the fetched ANS page is a WebFetch model summary, not raw bytes. The quoted sentence was taken from that summary and has not been matched against the raw page, so the main session should verify it against the raw bytes before publishing."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-valar-ward250-1",
+   "target": "valar-ward250",
+   "file": "vendors",
+   "claim": "Research reactor; public sources describe 100 kWt criticality and a 250 kWt proposed facility",
+   "verdict": "wrong",
+   "evidence": "ANS, 2026-06-22: Ward 250 reached zero-power criticality (DOE announced it on June 18), and the design rating is 100 kWt. Valar reported its first power output, 10 kWt, on June 22 and said it was 'proceeding with a planned power ascension'. The shipped text calls the criticality a 100 kWt event, which the page does not support: the criticality was at zero power, and 100 kWt is the design rating. The 250 kWt facility figure was not checked.",
+   "correction": "Research reactor; 100 kWt design, zero-power criticality June 2026 and 10 kWt output on June 22; a DOE NEPA record describes a 250 kWt proposed facility",
+   "sources": [
+    {
+     "label": "ANS — Valar's Ward 250 reaches criticality in Utah (2026-06-22)",
+     "url": "https://www.ans.org/news/2026-06-22/article-8136/valars-ward-250-reaches-criticality-in-utah/",
+     "quote": "Valar is now proceeding with a planned power ascension",
+     "status": "fetched"
+    }
+   ],
+   "review": "Main session fetched the ANS page: 'Ward 250 is a 100-kWt reactor', 'reached a 10 kWt output', criticality was zero-power. Correction keeps the unchecked 250 kWt NEPA figure rather than dropping it."
+  }
+ ],
+ "items": []
+}
