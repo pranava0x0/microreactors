@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "captured": "2026-11-11",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (skip/vendors.json) and Type N items for vendor milestones dated on or after 2026-11-11 not already in skip/news.json. Excludes recently-checked rows bwxt-banr, aalo-x, radiant, valar-ward250.",
+    "angles_run": [
+      "antares: R1 status, JBSA and Fort Bragg (Janus) delivery target",
+      "evinci: Westinghouse eVinci delivery schedule, DOME slot, criticality",
+      "oklo-aurora: Aurora-INL 2028 startup target, incl. fetch of POWER 2025 siting article",
+      "general-atomics-ga-tes: Fort Hood delivery date",
+      "post-2026-11-10 scheduled milestones across the table (fuel load, criticality, delivery)",
+      "NANO KRONOS / ZEUS (non-table 1-20 MWe design)",
+      "Deployable Energy Unity-1: DOME full-power slot",
+      "Last Energy PWR-5 Texas A&M criticality",
+      "Valar Ward 250 criticality date",
+      "Natura MSR-1 fuel salt loading date"
+    ],
+    "absences": [
+      "No vendor milestone dated on or after 2026-11-11 was found in any fetched or snippet source, for shipped or non-table vendors. Items: none.",
+      "No shipped vendor value was contradicted by a fetched page dated 2026. Checks: none. Oklo's 'deployment at INL in 2027' headline is from a POWER article dated 2025-03-20 and does not contradict the shipped 2028 startup target.",
+      "Westinghouse eVinci: first_delivery_target is None. Search snippets say the prototype is slated for DOME in 2027-2028, but a 2025-07-03 POWER article is the only fetched page, and it does not give a delivery date. The 2026 NRIC call says Westinghouse declined the 2027 DOME slot. No firm customer delivery date found.",
+      "General Atomics GA-TES at Fort Hood: no delivery or operation date published. The Army targets at least one operating microreactor by 2028-09-30 across all five vendors, and does not expect all five to meet it. Only search snippets were read; the GA press release was not fetched.",
+      "Antares Fort Bragg (three R1, Janus): snippet-only report of a 2028-09-30 fully-operational requirement. The Businesswire Janus release (2026-08-26) was not fetched.",
+      "Deployable Energy Unity-1: full-power DOME test is 2027 with no month. NRIC's call says the next DOME slot begins July 2027. Unity reached zero-power criticality 2026-06-30 (before the window). No dated 2026-11-11+ event found.",
+      "Last Energy PWR-5 (Texas A&M RELLIS): September 2026 coverage says criticality is 'months away'. No dated event found after 2026-11-10. Last Energy's DSA approval (2026-10-07) is already shipped in skip/news.json.",
+      "NANO Nuclear KRONOS MMR and ZEUS: no 2026 dated event found after 2026-11-10. Search returned 2025 and earlier items plus an undated ZEUS 1:2 scale core-hardware assembly and an undated ODIN letter of intent.",
+      "Aalo-0 commissioning: company says 'fall 2026' with no date. Aalo is in recently-checked, so no check was attempted.",
+      "Natura MSR-1: FLiBe salt reached Abilene 2026-09-18 (before the window). Fuel loading and criticality are undated, and DOE safety-framework status is conflicting across sources.",
+      "Not searched within this pass: Blue Energy, Terra Innovatum, Steady Energy (non-table 1-20 MWe designs). Outside the budget for this run; listed as a gap, not as a finding."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

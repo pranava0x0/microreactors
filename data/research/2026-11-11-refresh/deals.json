@@ -1,0 +1,58 @@
+{
+ "_meta": {
+  "captured": "2026-11-11",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities (not in recently-checked.md) and new buyer deals dated after 2026-11-10 not in skip/news.json",
+  "angles_run": [
+   "Type G: equinix-radiant (preorder status, binding flag)",
+   "Type G: dome (Operating status vs Radiant DSA approval and fuel timeline)",
+   "Type G: ianc (2030 goal source; BusinessWire page returned 403, no check written)",
+   "Type N: new buyer deals after 2026-11-10 (5 searches: general microreactor deals, vendor-named deals, data-center LOIs, nuclear power agreements this week, GridMarket/Deployable lead)"
+  ],
+  "absences": [
+   "No buyer deal dated after 2026-11-10 surfaced in 5 searches; no items written.",
+   "GridMarket and Deployable Energy 40-year pipeline (about $145B, 3 GW) is dated 2026-07-07, outside the window; not written.",
+   "Equinix-Radiant: no 2026 update found. Latest primary is the 2025-08-14 Radiant release; delivery dates and sites are undisclosed.",
+   "DOME: whether Radiant has been fuelled or reached criticality after 2026-10-29 could not be confirmed. A search summary said the DOE test campaign had started; no fetched page confirmed it, so not used.",
+   "IANC: the 2030 ExxonMobil goal cited in the shipped timeline could not be checked. The BusinessWire source returned HTTP 403, and the Open Group IANC page has no 2030 target.",
+   "Radiant's own DSA release returned HTTP 403; the DSA and Readiness Review wording was taken from the OffshoreSource repost of the Business Wire release.",
+   "Not searched: Janus, ANPI, DOE Reactor Pilot, Oklo-Switch, NANO, Last Energy, Canada, Romania NuScale, JP-KR MOC. All are on recently-checked.md or are out of this lane."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-dome-1",
+   "target": "dome",
+   "file": "opportunities",
+   "claim": "Operating",
+   "verdict": "confirmed",
+   "evidence": "Oct 29, 2026 Radiant release (via OffshoreSource repost of Business Wire): DOE granted DSA approval, which lets Radiant advance to DOE's Readiness Review, 'the next step before nuclear operations can begin.' The release says Radiant 'will fuel Kaleidos and begin its five-phase test campaign' after the review. No reactor is operating or critical in the source.",
+   "sources": [
+    {
+     "label": "OffshoreSource / Business Wire — Radiant achieves industry milestone with DOE safety analysis approval (Oct. 29, 2026)",
+     "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+     "quote": "Following successful completion of the review, Radiant will fuel Kaleidos and begin its five-phase test campaign",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "wrong",
+   "review": "Overruled 2026-11-11 (main session): the row describes the DOME test bed facility, which DOE/WNN describe as open for business (operating infrastructure under the file's binding_note), not Radiant's reactor. The row's timeline already says 'Radiant DSA approved 2026-10-29; not yet fueled', which matches the agent's evidence."
+  },
+  {
+   "id": "check-equinix-radiant-1",
+   "target": "equinix-radiant",
+   "file": "opportunities",
+   "claim": "Purchase agreement / pre-order with deposits",
+   "verdict": "confirmed",
+   "evidence": "Radiant release of Aug. 14, 2025 (newswire copy): Equinix 'has signed a preorder agreement and submitted deposits for the purchase of 20 Kaleidos microreactors.' No later update found in searches. No site, delivery date or deposit amount disclosed.",
+   "sources": [
+    {
+     "label": "Radiant — Radiant Announces Equinix Preorder & Deposits for 20 Kaleidos Microreactors (2025-08-14)",
+     "url": "https://www.newswire.com/news/radiant-announces-equinix-preorder-deposits-for-20-kaleidos-22625143",
+     "quote": "has signed a preorder agreement and submitted deposits for the purchase of 20 Kaleidos microreactors",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

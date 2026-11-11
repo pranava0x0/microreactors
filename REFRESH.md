@@ -203,3 +203,8 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   check: read the whole shipped sentence and every source on the row. The `licensing` fee check has now been overruled on
   11-08, 11-09 and 11-10: the skip list needs a "recently checked" column (10-29 note) more than any prompt tweak.
 
+- **2026-11-11: a hand-written `skip/recently-checked.md` stopped the re-checks.** Listing the ids checked 11-04..11-10 (with the fee
+  clause's settled reading) and appending one line to each prompt kept every agent off them; the licensing fee clause was not
+  re-flagged for the first time in four days. Until `refresh_init.py` generates it, build it from the previous week's pass dirs'
+  `checks[].target`. Also: the deals agent called DOME "Operating" wrong because Radiant's reactor is unfueled; the row is the
+  test bed, which WNN reports open for business, so a status check must first ask which object the row names (same family as the 11-04 Aalo-X note).

@@ -501,3 +501,16 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches fo
 | ideas | 169K | liability deferred premium confirmed | no |
 
 ~1.09M agent tokens for 1 news item and 1 docket. Phone cost not re-measured (no layout change).
+
+## 2026-11-11 daily refresh
+
+Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches found nothing dated after 11-08. First run with `skip/recently-checked.md` (ids checked 11-04..11-10): no agent re-checked the licensing fee clause or canada-src. 1 news, 0 corrections, 1 confirmed, 1 check overruled, 1 news item dropped.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 156K | Centrus Q3: DOE not exercising further HALEU options (verified on the SEC exhibit); Westerman acquisition item dropped (no date in source, off scope) | yes |
+| deals | 131K | DOME "Operating" called wrong (agent read the reactor, not the test bed); overruled. equinix-radiant confirmed | no |
+| vendors | 135K | 0 records | no |
+| politics | 152K | 0 records; Louisiana 20-cent tariff outcome unfound | no |
+
+~574K agent tokens for 1 news item. Phone cost not re-measured (no layout change).
