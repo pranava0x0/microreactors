@@ -514,3 +514,19 @@ Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches foun
 | politics | 152K | 0 records; Louisiana 20-cent tariff outcome unfound | no |
 
 ~574K agent tokens for 1 news item. Phone cost not re-measured (no layout change).
+
+## 2026-11-12 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing new after 11-10. `skip/recently-checked.md` rebuilt from the 11-05..11-11 pass dirs' check targets: no agent re-checked a listed row. 2 news, 0 corrections, 9 checks confirmed (6 of them overruled from outdated/wrong), 1 application held (out of band).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 169K | MCRE DOE cost-share (2026-10-14, 150 kWt test reactor), verified on the cached ANS page | yes |
+| deals | 128K | 0 records; nearly every Type G row was on the recently-checked list | no |
+| vendors | 142K | Antares Janus 2028 date confirmed | marginal |
+| politics | 170K | 0 records; leads on Illinois diesel dates, Texas backup-power adoption, Duke SMR docket | no |
+| applications | 176K | Canada CSA lunar microreactor RFI (2026-11-09); MARVEL "outdated" overruled (dry criticality Dec 2026 is not "operational"; date added by hand); Jyväskylä held (100-300 MWt) | yes |
+| costs | 176K | 4 capex/LCOE rows "outdated" against INL's 2025 report and convergence "25%" called wrong; all overruled because the shipped numbers match their cited sources verbatim; flagged for a human | flag only |
+| ideas | 139K | 0 records | no |
+
+~1.1M agent tokens for 2 news items and 1 hand edit. Phone cost 1.69 (baseline).

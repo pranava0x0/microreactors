@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "captured": "2026-11-12",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market. Watcher candidates first, then company sweep, DOE test beds, and the 2026-09-13 to 2026-11-10 gap. Newest shipped item 2026-11-10.",
+    "angles_run": [
+      "watcher candidates (skip/candidates.json): OPG Darlington BWRX-300 revision (WNN 2026-11-11), fetched, out of band",
+      "web leads (skip/web-leads.md): ANS Canada space reactor RFI (2026-11-09), Hyundai/ARC/First American item (2026-11-06), Radiant DSA (already shipped)",
+      "company sweep: Radiant, Westinghouse eVinci, BWXT, Oklo, Antares, Aalo, Valar, Last Energy, NANO Nuclear, X-energy, Kairos, Deployable Energy, Deep Fission, Terrestrial, Holtec, General Atomics, Natura, Blue Energy, Centrus, Standard Nuclear",
+      "reactor criticality and testing: DOE Reactor Pilot Program, INL DOME and LOTUS",
+      "gap check 2026-09-13 to 2026-11-10: MCRE cost-share (Southern Company / Core Power), Tata-BWXT Wyoming LOI date check, Hadron EVP hire date check",
+      "personnel: microreactor CEO and executive appointments",
+      "date sweep for 2026-11-10 to 2026-11-12 announcements"
+    ],
+    "absences": [
+      "No dated news item after 2026-11-10 was found for any of the 20 swept companies. The search index is thin after 2026-11-09, so the list is short by coverage, not by a verified absence of events.",
+      "Only one in-window item is unshipped and verified. The target was up to 12 Type N items; the rest were shipped already, out of the 1-20 MW band, or undated.",
+      "OPG Darlington BWRX-300 timeline and cost revision (WNN, 2026-11-11, watcher candidate): fetched. Large 300 MW-class SMR, outside the 1-20 MW market; not written.",
+      "ANS Nuclear Newswire, Canada space reactor RFI for lunar microreactors (2026-11-09): fetched. The article gives no power rating; lunar reactors are outside 1-20 MW civil buyers; not written.",
+      "NANO Nuclear and IMPSA engineering services master agreement, reported by energiesmedia 2026-11-07: same deal as shipped item nano-impsa-kronos-esma-2026-10-21, with no signing date in the article; not written as a new event.",
+      "Tata Chemicals and BWXT letter of intent for up to eight BANR units in Wyoming: announced 2024-12-12, outside the window. A 2026-08-26 Cardinal News piece was about the Fort Campbell BANR, not this LOI.",
+      "Hadron Energy hires Eric Williams as EVP of Engineering: announced 2026-08-10, outside the 60-day gap; not written.",
+      "Radiant Kaleidos full-power test at INL DOME: Q3 2026 target for the 150-hour run; no start or completion report found. Radiant Part 70 license decision targeted Q4 2026, not yet an event.",
+      "Last Energy PWR-5 criticality (mid-2026 target): no criticality report found after the PDSA approval.",
+      "Natura MSR-1 start-up: no criticality report found; Fortune (July 2026) describes online operation in 2028.",
+      "Deployable Energy Unity-1 NRC pre-application readiness assessment: NRC project page updated 2026-09-23, no dated event.",
+      "Holtec Pioneer 1 and 2 construction permit applications (October 2026), Blue Energy Texas BWRX-300 filing, and X-energy and Fluor Xe-100 design contract (2026-11-05): large SMRs, outside the 1-20 MW market.",
+      "MCRE total cost (about $170 million, 80% DOE) appeared only in search summaries, not in a fetched page, so it is not in the record.",
+      "Terrestrial Energy: no news found after May 2026 Q1 results. GA-TES cost and schedule: not disclosed, per Power Magazine.",
+      "Blocked sources (from candidates.json): ANS RSS 404, NRC press releases 403 to non-browser clients, Radiant newsroom 403, Oklo investor relations 403. Radiant and Oklo claims rely on search summaries and were not used for new records."
+    ]
+  },
+  "items": [
+    {
+      "id": "mcre-southern-core-power-doe-cost-share-2026-10-14",
+      "date": "2026-10-14",
+      "headline": "DOE approves cost-shared funding for Southern-led 150 kWt molten chloride test reactor",
+      "companies": [
+        "Southern Company",
+        "Core Power"
+      ],
+      "category": "financing",
+      "what_happened": "Southern Company and Core Power announced that the Department of Energy approved cost-shared funding for the Molten Chloride Reactor Experiment (MCRE). It is a 150 kWt fast-spectrum test reactor at Idaho National Laboratory's Zero Power Physics Reactor cell. The approval funds an accelerated final development stage, and criticality could come as early as 2027.",
+      "why_it_matters": "MCRE is a test rig, not a product a buyer can order, so it does not add a 1-20 MW offering. It does show DOE money moving to a fast-spectrum salt design, which matters if a microreactor developer later licenses that fuel and coolant chemistry.",
+      "binding": false,
+      "binding_note": "Announcement of DOE approval for cost-shared funding. The funding agreement text was not retrieved, so no executed award is confirmed here.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire — Molten salt–fueled reactor experiment approved for DOE cost-shared funding (Oct. 15, 2026)",
+          "url": "https://www.ans.org/news/2026-10-15/article-8491/molten-saltfueled-reactor-experiment-approved-for-doe-costshared-funding/",
+          "quote": "Southern Company and Core Power announced that the Department of Energy approved cost-shared funding",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

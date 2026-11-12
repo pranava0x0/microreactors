@@ -1,0 +1,150 @@
+{
+ "_meta": {
+  "captured": "2026-11-12",
+  "agent": "costs",
+  "scope": "Costs tab. Type G checks on numbers in skip/costs.json, checked against INL/RPT-25-87273 (Aug 2025, tables read from the saved PDF) and arXiv 2506.13361 (abstract). Items: fuel-supply and financing events dated after 2026-11-10; none found.",
+  "angles_run": [
+   "INL RPT-25-87273 FOAK and NOAK tables vs microreactor_lcoe[2], capex rows, archetypes rows and convergence",
+   "UMich arXiv 2506.13361 PTC optimized band",
+   "OBBBA 45Y/48E nuclear window (secondary sources only)",
+   "HALEU and enrichment awards after 2026-11-10",
+   "TRISO fuel supply agreements after 2026-11-10",
+   "DOE HALEU allocation rounds",
+   "EDF and DOE loans for microreactors",
+   "microreactor financing rounds after 2026-11-10"
+  ],
+  "absences": [
+   "NEI 2019 Cost Competitiveness report (microreactor_lcoe[0] FOAK 140-410 and [1] NOAK 90-330 $/MWh): nei.org returned HTTP 403, so these bands were not checked.",
+   "INL/RPT-24-80433 (2024) was not re-fetched. microreactor_lcoe[3] (mass-produced 120-150) and capex mass-produced 6,000 $/kWe were not checked. The 2025 report's NOAK assumes 100 units built, not 10 a year, so its figures are not comparable with the 2024 basis.",
+   "incentives.points[0] (45Y/48E for nuclear before 2034, three-year phase-out): no primary statute retrieved. Law-firm summaries disagree on the end year (2035 vs 2036). The cited Morgan Lewis page (July 2025) confirms the wording but is secondary, so no check was written.",
+   "displaced_alternatives[2] ($1.50/L diesel breakeven, ScienceDirect) and microreactor_lcoe[4] (Nuclear Business Platform range) were not checked, out of search budget.",
+   "Items: no HALEU delivery, enrichment contract, DOE fuel award or loan dated after 2026-11-10 was found. Latest hits were the Centrus Oak Ridge centrifuge shipment (2026-11-02, the Piketon record is already shipped) and the Standard Nuclear and BWXT TRISO deals with Antares and Radiant (Aug and Oct 2026, already shipped).",
+   "EDF conditional commitments: the only 2026 loan found is the $17.5B AP1000 commitment (2026-06-23). It covers large reactors, outside the 1-20 MW scope. No microreactor commitment surfaced."
+  ]
+ },
+ "items": [],
+ "checks": [
+  {
+   "id": "check-archetypes-2-1",
+   "target": "archetypes.rows[2]",
+   "file": "costs",
+   "claim": "noak_mwh: 450 (7 MWt heat-pipe, TRISO fuel, $/MWh)",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 (Aug 2025) Table 11, NOAK case with 100 units built: levelized cost of energy 160, 170 and 450 $/MWh for the liquid-metal, gas-cooled and heat-pipe designs. Table 10 (FOAK) gives 330, 410 and 980.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "Levelized Cost of Energy ($/MWh) 160 13% 170 9% 450 8%",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-archetypes-convergence-1",
+   "target": "archetypes.convergence",
+   "file": "costs",
+   "claim": "The liquid-metal design is 25% cheaper than the gas-cooled one as a first unit, but only 6% cheaper once both are mass-produced.",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 Table 10 gives first-unit LCOE of 330 (liquid-metal) and 410 (gas-cooled) $/MWh. The liquid-metal design is therefore about 20% cheaper (19.5%); the 25% figure is the gas-cooled premium read the other way. Table 11 gives 160 and 170 for mass-produced units, about 6% cheaper, which the shipped text gets right.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "Levelized Cost of Energy ($/MWh) 330 10% 410 7% 980 6%",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "wrong",
+   "review": "Overruled 2026-11-12 (main session): the shipped '25% cheaper' is INL's own sentence in RPT-25-87273 ('the LCOE for the FOAK LTMR is 25% cheaper compared to the GCMR'), which is the row's cited quote. The agent's arithmetic is right (330 vs 410 is ~20% cheaper; 25% is the gas-cooled premium), but rewriting the number would contradict the quote it cites. Flagged for a human in the PR body."
+  },
+  {
+   "id": "check-microreactor-lcoe-2-1",
+   "target": "microreactor_lcoe[2]",
+   "file": "costs",
+   "claim": "INL reference design, first unit: 325 $/MWh (low and high)",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 (Aug 2025) Table 10 costs the same 20 MWt liquid-metal design (UZrH-fueled LTMR) at 330 $/MWh for the first unit. The 325 figure is from the 2024 report, INL/RPT-24-80433.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "Levelized Cost of Energy ($/MWh) 330 10% 410 7% 980 6%",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-12 (main session): the shipped figure matches its cited source, INL/RPT-24-80433, verbatim. The agent's figure is from a different, later report (INL/RPT-25-87273 Table 10, read in the cached PDF and correct there). Splicing it in would put a 2025 number under a 2024 quote. Whether the capex section should move to the 2025 estimate is an editorial call, flagged for a human in the PR body."
+  },
+  {
+   "id": "check-capex-0-1",
+   "target": "capex.rows[0]",
+   "file": "costs",
+   "claim": "First unit, excluding fuel: 14,500 $/kWe",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 (Aug 2025) Table 10, first-unit (FOAK) 20 MWt liquid-metal design: overnight capital cost excluding fuel is 23,000 $/kW. The 14,500 figure is from the 2024 report, INL/RPT-24-80433.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "OCC excl. fuel per kW Overnight Capital Cost Excluding Fuel per kW 23,000 15% 24,000 11% 46,000 9%",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-12 (main session): the shipped figure matches its cited source, INL/RPT-24-80433, verbatim. The agent's figure is from a different, later report (INL/RPT-25-87273 Table 10, read in the cached PDF and correct there). Splicing it in would put a 2025 number under a 2024 quote. Whether the capex section should move to the 2025 estimate is an editorial call, flagged for a human in the PR body."
+  },
+  {
+   "id": "check-capex-1-1",
+   "target": "capex.rows[1]",
+   "file": "costs",
+   "claim": "First unit, including fuel: 19,800 $/kWe",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 (Aug 2025) Table 10, first-unit 20 MWt liquid-metal design: overnight capital cost per kW, which includes fuel because the excluding-fuel row sits below it, is 24,000 $/kW. The 19,800 figure is from the 2024 report.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "OCC per kW Overnight Capital Cost per kW 24,000 15% 26,000 10% 53,000 8%",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-12 (main session): the shipped figure matches its cited source, INL/RPT-24-80433, verbatim. The agent's figure is from a different, later report (INL/RPT-25-87273 Table 10, read in the cached PDF and correct there). Splicing it in would put a 2025 number under a 2024 quote. Whether the capex section should move to the 2025 estimate is an editorial call, flagged for a human in the PR body."
+  },
+  {
+   "id": "check-capex-2-1",
+   "target": "capex.rows[2]",
+   "file": "costs",
+   "claim": "First unit, including fuel and interest: 22,000 $/kWe",
+   "verdict": "confirmed",
+   "evidence": "INL/RPT-25-87273 (Aug 2025) Table 10, first-unit 20 MWt liquid-metal design: total capital investment per kW, which includes fuel and interest, is 25,000 $/kW. The 22,000 figure is from the 2024 report.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory, A Bottom-Up Cost Estimation Tool for Nuclear Microreactors (INL/RPT-25-87273, Aug 2025)",
+     "url": "https://www.osti.gov/servlets/purl/2588465",
+     "quote": "TCI per kW Total Capital Investment per kW 25,000 14% 27,000 10% 54,000 8%",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-12 (main session): the shipped figure matches its cited source, INL/RPT-24-80433, verbatim. The agent's figure is from a different, later report (INL/RPT-25-87273 Table 10, read in the cached PDF and correct there). Splicing it in would put a 2025 number under a 2024 quote. Whether the capex section should move to the 2025 estimate is an editorial call, flagged for a human in the PR body."
+  },
+  {
+   "id": "check-microreactor-lcoe-5-1",
+   "target": "microreactor_lcoe[5]",
+   "file": "costs",
+   "claim": "Optimized design, with PTC (U.S. only): 48.21 to 78.32 $/MWh",
+   "verdict": "confirmed",
+   "evidence": "arXiv 2506.13361 abstract (Abdussami et al.): LCOE of $48.21/MWh to $78.32/MWh with the PTC, and the PTC cuts LCOE by 22-24%. Submitted 16 June 2025; v2 dated 19 December 2025.",
+   "sources": [
+    {
+     "label": "Abdussami et al., Nuclear Engineering and Design (arXiv 2506.13361), abstract",
+     "url": "https://arxiv.org/abs/2506.13361",
+     "quote": "LCOEs ranging from $48.21/MWh to $78.32/MWh when supported by the Production Tax Credit (PTC)",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

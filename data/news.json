@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "captured": "2026-11-11",
+    "captured": "2026-11-12",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "59 of 99 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 40 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "59 of 101 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 42 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-10",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
@@ -25,15 +25,15 @@
     },
     {
       "id": "financing",
-      "count": 11
+      "count": 12
+    },
+    {
+      "id": "policy",
+      "count": 7
     },
     {
       "id": "construction",
       "count": 7
-    },
-    {
-      "id": "policy",
-      "count": 6
     },
     {
       "id": "criticality",
@@ -68,6 +68,27 @@
           "label": "World Nuclear News — US issues landmark construction permit for Texas SMR plant (2026-11-10)",
           "url": "https://www.world-nuclear-news.org/articles/us-issues-landmark-construction-permit-for-texas-smr-plant",
           "quote": "has issued a construction permit for the proposed plant featuring four Xe-100 small modular reactor units",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "canada-csa-lunar-microreactor-rfi-2026-11-09",
+      "date": "2026-11-09",
+      "headline": "Canada seeks industry input on lunar microreactor technologies",
+      "companies": [
+        "Canadian Space Agency"
+      ],
+      "category": "policy",
+      "what_happened": "The Canadian Space Agency issued a request for information on lunar microreactor technologies, using a planning envelope of 20 kWe to 80 kWe of continuous net output and at least 10 years of life. It lists 16 areas of interest, from fuel and heat transport to launch integration, and says Canada is not assuming one domestic firm would deliver a full system.",
+      "why_it_matters": "This is lunar power, not a terrestrial 1-20 MW buyer. It names no reactor type, no vendor and no buyer, so it signals interest in Canadian supply chains rather than demand.",
+      "binding": false,
+      "binding_note": "A request for information, not a contract. The release names no award and no selected technology.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire: Canada assesses its space reactor capabilities (Nov. 9, 2026)",
+          "url": "https://www.ans.org/news/article-8567/canada-assesses-its-space-reactor-capabilities/",
+          "quote": "lunar reactor capable of producing 20 kWe",
           "status": "fetched"
         }
       ]
@@ -453,6 +474,28 @@
           "label": "U.S. Nuclear Regulatory Commission — Deployable Energy pre-application activities (Unity Nuclear Battery, 2025-2026)",
           "url": "https://www.nrc.gov/facilities-safety/new-reactors/advanced-reactors/who-were-working-with/pre-application-activities/deployable-energy",
           "quote": "UNB is a 1 MWe gas cooled microreactor designed for scalable modular deployment",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "mcre-southern-core-power-doe-cost-share-2026-10-14",
+      "date": "2026-10-14",
+      "headline": "DOE approves cost-shared funding for Southern-led 150 kWt molten chloride test reactor",
+      "companies": [
+        "Southern Company",
+        "Core Power"
+      ],
+      "category": "financing",
+      "what_happened": "Southern Company and Core Power announced that the Department of Energy approved cost-shared funding for the Molten Chloride Reactor Experiment (MCRE). It is a 150 kWt fast-spectrum test reactor at Idaho National Laboratory's Zero Power Physics Reactor cell. The approval funds an accelerated final development stage, and criticality could come as early as 2027.",
+      "why_it_matters": "MCRE is a test rig, not a product a buyer can order, so it does not add a 1-20 MW offering. It does show DOE money moving to a fast-spectrum salt design, which matters if a microreactor developer later licenses that fuel and coolant chemistry.",
+      "binding": false,
+      "binding_note": "Announcement of DOE approval for cost-shared funding. The funding agreement text was not retrieved, so no executed award is confirmed here.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire — Molten salt–fueled reactor experiment approved for DOE cost-shared funding (Oct. 15, 2026)",
+          "url": "https://www.ans.org/news/2026-10-15/article-8491/molten-saltfueled-reactor-experiment-approved-for-doe-costshared-funding/",
+          "quote": "Southern Company and Core Power announced that the Department of Energy approved cost-shared funding",
           "status": "fetched"
         }
       ]

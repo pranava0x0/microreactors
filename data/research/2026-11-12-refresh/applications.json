@@ -1,0 +1,104 @@
+{
+ "_meta": {
+  "captured": "2026-11-12",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped segments and deployment sites; new Type S buyer projects in thin segments; Type N news items tied to applications. No new Type E regions.",
+  "angles_run": [
+   "Type G: UIUC Kronos NRC schedule (search only, not written as a check; shipped as uiuc-kronos-mmr in recently-checked)",
+   "Type G: Last Energy Haskell County ERCOT filing (no change found; not written)",
+   "Type G: Qulliq Energy 2026-27 Iqaluit rate application (none found; 2026 FSR fuel rider is separate; not written)",
+   "Type G: INL MARVEL timeline (fetched INL release 2026-10-06; written)",
+   "Type G: Oklo Wyoming Hyperscale Aspen Mountain LOI (no 2026 update found; not written)",
+   "Type G: Tata Chemicals Green River BWXT BANR LOI (no 2026 update found; not written)",
+   "Type G: Penn State FRONTIER eVinci CP filing (no filing found; not written)",
+   "Type S: hospitals and health systems (none found)",
+   "Type S: telecom towers and cell sites (none found)",
+   "Type S: disaster recovery and emergency mobile power (DHS mobile microreactor solicitation reported cancelled; not a project)",
+   "Type S: municipal utility microreactor study (Los Alamos County; no microreactor study found)",
+   "Type S: hydrogen and ammonia named projects (none with MW and offtake found)",
+   "Type S: desalination named buyers (Natura and NGL already shipped; DEWA and EtihadWE have no nuclear component)",
+   "Type S: industrial process heat named sites (ZettaJoule ZJ0 and L&H Industrial and BWXT have no MWt figure)",
+   "Type S: district heat in Finland (Steady Energy and Alva-yhtiot, Jyvaskyla; fetched POWER Magazine)",
+   "Type N: Canadian Space Agency lunar microreactor RFI (fetched ANS Nuclear Newswire)"
+  ],
+  "absences": [
+   "Hospitals and health systems: no named microreactor power deal with a MW figure found in 2026 coverage.",
+   "Telecom towers and cell sites: no named pilot with a kW or MW figure found.",
+   "Disaster recovery: the DHS mobile and transportable microreactor solicitation (70RSAT26R00000003) is reported cancelled, with no awards; no contract with a kWe figure found.",
+   "Hydrogen and ammonia: no named microreactor project with an MW electrolyzer size and offtake found in 2026.",
+   "Desalination: no utility or municipal microreactor desalination deal found; the Natura and NGL produced-water item is already shipped.",
+   "Industrial process heat: L&H Industrial and BWXT (Wyoming) and ZettaJoule ZJ0 (Texas A&M) have no published MWt figure, so not written.",
+   "Los Alamos County: a 5 to 20 MW microreactor study was not found in any fetched county document; the 2025 electrification study does not mention microreactors.",
+   "Qulliq Energy (Iqaluit): no 2026-27 general rate application found; the March 2026 fuel stabilization rider filing is a separate fuel rider, so the shipped 2025/26 record was not changed.",
+   "Oklo and Wyoming Hyperscale (Aspen Mountain): no 2026 update found on a binding agreement; the shipped May 2024 non-binding LOI could not be re-dated, so no check was written.",
+   "Tata Chemicals and BWXT (Green River): no 2026 news found; shipped LOI status left as is.",
+   "Penn State FRONTIER: no construction permit application found in search; a 2026 renewed MOU exists but was not fetched, so the shipped pre-application status was not checked.",
+   "Regions: no new Type E region with both a verbatim price and a load number was found outside skip/regions.json."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-inl-marvel-desalination-1",
+   "target": "inl-marvel-desalination",
+   "file": "segments",
+   "claim": "MARVEL expected operational by late 2027",
+   "verdict": "confirmed",
+   "evidence": "INL news release, 2026-10-06: DOE's Idaho Operations Office approved MARVEL's final documented safety analysis, authorizing a dry criticality configuration at near-zero power. The primary coolant system arrived at INL's Transient Reactor Test Facility in mid-September, and criticality 'is anticipated to occur in December' (2026). Older INL material from March 2026 and December 2025 coverage gave a 2027 dry-criticality target, so the release is the latest dated statement found.",
+   "sources": [
+    {
+     "label": "Idaho National Laboratory: MARVEL reactor gets federal safety approval as its primary vessel arrives in Idaho (Oct. 6, 2026)",
+     "url": "https://inl.gov/news-release/marvel-reactor-gets-federal-safety-approval-as-its-primary-vessel-arrives-in-idaho/",
+     "quote": "before it achieves criticality, which is anticipated to occur in December",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-12 (main session): dry criticality at near-zero power (Dec 2026) and 'operational' for end-user experiments (late 2027) are different events, so the shipped date is not contradicted. The December 2026 dry-criticality date was added to the row's timeline by hand with the INL release as a second source."
+  }
+ ],
+ "applications": [
+  {
+   "id": "steady-energy-jyvaskyla-district-heat",
+   "segment": "district heat",
+   "name": "Steady Energy and Alva-yhtiöt, Jyväskylä district heating study",
+   "status": "studied",
+   "power_class": "100 MW to 300 MW of heat (2 to 6 LDR-50 units at 50 MWt each)",
+   "timeline": "Letter of intent announced 2026-05-19; a year-long preliminary study, then possible technical and commercial pre-planning",
+   "sponsor": "Alva-yhtiöt, the water and energy group of the City of Jyväskylä",
+   "vendor": "Steady Energy (LDR-50 underground heat reactor)",
+   "what_it_says": "Steady Energy and Alva-yhtiöt signed a letter of intent to study whether an underground LDR-50 plant can supply the city's district heat. The companies said the city could be supplied with two to six units producing 100 MW to 300 MW of heat, and Alva said it is not yet making an investment decision. The study covers regulation, residents' views, sites, land use, technology and costs; no price and no current heat source are published.",
+   "microreactor_read": "Not a 1-20 MW buyer: one LDR-50 is 50 MWt and the study covers two to six of them. It is a district-heat reference point, and the open items are the year-long study and the investment decision.",
+   "sources": [
+    {
+     "label": "POWER Magazine: More Nuclear-Powered District Heating Planned in Finland (May 21, 2026)",
+     "url": "https://www.powermag.com/more-nuclear-powered-district-heating-planned-in-finland/",
+     "quote": "it could supply Jyväskylä with between two and six LDR-50 reactors",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "items": [
+  {
+   "id": "canada-csa-lunar-microreactor-rfi-2026-11-09",
+   "date": "2026-11-09",
+   "headline": "Canada seeks industry input on lunar microreactor technologies",
+   "companies": [
+    "Canadian Space Agency"
+   ],
+   "category": "policy",
+   "what_happened": "The Canadian Space Agency issued a request for information on lunar microreactor technologies, using a planning envelope of 20 kWe to 80 kWe of continuous net output and at least 10 years of life. It lists 16 areas of interest, from fuel and heat transport to launch integration, and says Canada is not assuming one domestic firm would deliver a full system.",
+   "why_it_matters": "This is lunar power, not a terrestrial 1-20 MW buyer. It names no reactor type, no vendor and no buyer, so it signals interest in Canadian supply chains rather than demand.",
+   "binding": false,
+   "binding_note": "A request for information, not a contract. The release names no award and no selected technology.",
+   "sources": [
+    {
+     "label": "ANS Nuclear Newswire: Canada assesses its space reactor capabilities (Nov. 9, 2026)",
+     "url": "https://www.ans.org/news/article-8567/canada-assesses-its-space-reactor-capabilities/",
+     "quote": "lunar reactor capable of producing 20 kWe",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
