@@ -1,0 +1,38 @@
+{
+ "_meta": {
+  "captured": "2026-11-11",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: policy, regulation, Congress, state law, PUC dockets. Checks on non-skipped policy pathways; dockets not in skip/dockets.json; items dated after 2026-11-10.",
+  "angles_run": [
+   "Texas Backup Power Package rule (16 TAC 25.513) adoption and eligible technologies",
+   "FY2027 NDAA nuclear and microreactor provisions",
+   "State microreactor bills filed Oct-Nov 2026",
+   "Talen-Amazon Susquehanna co-location status",
+   "Utility RFP or PUC filings naming SMRs/microreactors, Sept 2026",
+   "PSC IRPs with nuclear cost recovery, 2026",
+   "Illinois Tier 4 Final requirement for data-center diesel permits",
+   "Louisiana PSC nuclear tariff (20-cent fee) docket and vote",
+   "NRC Commission votes on advanced reactor rules, Nov 2026",
+   "FY2027 Energy and Water appropriations, nuclear and microreactor lines",
+   "NRC Part 57 final rule schedule",
+   "Congress microreactor bills introduced Nov 2026"
+  ],
+  "absences": [
+   "No dated political or regulatory event after 2026-11-10 found in any search (Congress, NRC, DOE/DoD, states). Nothing written to items.",
+   "Licensing group (Part 53, Part 57, ADVANCE Act fees, DOE pilot, executive-order deadlines) skipped: recently-checked.md lists policy licensing as settled. Part 57 final rule was reported due 2026-11-23 by one secondary source; no NRC schedule page fetched, so no check written. Brief asked for these checks; skip list overrides.",
+   "Price-Anderson and 45Y/48E credits: no shipped pathway in skip/policy.json, so no check target; not researched.",
+   "Texas Backup Power Package (shipped pathway excludes nuclear): fetched May 2026 trade coverage confirms adoption on 2026-05-07 and a required mix of natural gas or propane, battery storage and solar. No fetched PUCT primary text confirming the nuclear exclusion, and no page dated within 60 days, so no check written. The .8B and 2.5 MW figures were not found in a fetched page.",
+   "Dublin connection rule (shipped pathway): conditions confirmed in a fetched 2025-12-12 trade article. Not within the 60-day window for a confirmed verdict, so no check written.",
+   "Illinois Tier 4 Final for data-center diesel permits: sources conflict on the start date (Dec 1, 2026 vs Jan 8, 2026). Final rule text not found. Not checked.",
+   "Louisiana nuclear tariff (20-cent monthly fee on Entergy Louisiana, Cleco, SWEPCO): vote postponed in August 2026 and rescheduled to 2026-09-16. Outcome not found. Docket number not found. LPSC August 12 supplemental agenda PDF was unreadable. lailluminator.com and newsfromthestates.com returned 403.",
+   "Federal legislation: FY2027 NDAA microreactor amendment (House Armed Services, June 2026) and FY2027 Energy-Water bill (House Appropriations, May 20, 2026; Senate not reported as of July 2026). No November 2026 status found.",
+   "NRC: DOE/DoD prior-authorization final rule (Oct 22, 2026, effective Nov 25) is already shipped as a news item. No November 2026 Commission vote found.",
+   "Dockets: no new docket in the last 90 days passed the microreactor/SMR test. Santee Cooper 2026 IRP (board sent to SC PSC Sept 30, 2026) has no SMR or microreactor language in its fetched article. Minnesota nuclear-IRP bill and NY Nuclear Backbone order (June 11, 2026) are outside the window or unconfirmed.",
+   "State bills: no microreactor bill filed in October or November 2026 found. Most legislatures are out of session.",
+   "Talen-Amazon (shipped finding says FERC rejected the 300-480 MW amendment twice): not contradicted. Search summaries say the deal was restructured to front-of-meter in June 2025 with a spring 2026 transition, but that was not confirmed in a fetched page, so no check written."
+  ]
+ },
+ "checks": [],
+ "dockets": [],
+ "items": []
+}

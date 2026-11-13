@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "captured": "2026-11-13",
+    "agent": "refresh-2026-11-13",
+    "scope": "daily refresh: haiku agents, quotes repaired and verified offline"
+  },
+  "items": [
+    {
+      "id": "centrus-oklo-haleu-definitive-2026-11-13",
+      "date": "2026-11-13",
+      "headline": "Centrus and Oklo finalise HALEU purchase agreements for Ohio Aurora campus",
+      "companies": [
+        "Centrus",
+        "Oklo"
+      ],
+      "category": "contract",
+      "what_happened": "Centrus and Oklo finalised definitive purchase agreements for HALEU, following their June 2026 letter of intent. Fuel from Centrus's American Centrifuge Plant in Pike County, Ohio would power up to five Aurora powerhouses at Oklo's planned 1.2 GW Ohio campus for Meta, with deliveries scheduled to begin in 2029. Oklo will make prepayments for future HALEU deliveries.",
+      "why_it_matters": "For a 1-20 MW buyer this is a fuel-supply contract for a 1.2 GW campus, not a microreactor order. It shows HALEU supply for advanced reactors moving from letter of intent to signed purchase agreement, with first deliveries in 2029.",
+      "binding": true,
+      "binding_note": "Definitive purchase agreements, per the WNN article dated 2026-11-13. The article gives no signing date, and the Centrus release could not be fetched (HTTP 403), so the 2026-11-13 date is the article date.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Centrus, Oklo deal secures fuel for Ohio reactor deployment (2026-11-13)",
+          "url": "https://www.world-nuclear-news.org/articles/centrus-oklo-deal-secures-fuel-for-ohio-reactor-deployment",
+          "quote": "securing fuel to power up to five Aurora powerhouses for multiple years at a 1.2 GW Ohio campus",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Centrus, Oklo HALEU agreement to support reactor deployment (2026-06-19)",
+          "url": "https://world-nuclear-news.org/articles/centrus-oklo-haleu-agreement-to-support-reactor-deployment",
+          "quote": "to support Oklo's planned 1.2 GW power campus in the region under their Letter of Intent",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "oklo-groves-1-unrestricted-operations-2026-11-12",
+      "date": "2026-11-12",
+      "headline": "Oklo's Groves-1 test reactor cleared for unrestricted operations by DOE",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "regulatory",
+      "what_happened": "The US Department of Energy cleared the final operations hold point for Oklo's Groves-1 isotope test reactor near Lockhart, Texas. The reactor first reached criticality in August 2026, under the Reactor Pilot Program authorization pathway. Oklo says it will use the reactor for operator training, control rod drive testing and criticality benchmarking.",
+      "why_it_matters": "This is a test and training platform, not a product a 1-20 MW buyer can order. It shows the DOE authorization pathway can move from criticality to routine operation, which is the step a buyer would need to see before relying on a vendor's design.",
+      "binding": true,
+      "binding_note": "A formal DOE clearance of the final operations hold point. The WNN article is the only source retrieved; no Oklo or DOE primary release was found.",
+      "sources": [
+        {
+          "label": "World Nuclear News, US test reactor cleared for operations (Nov. 12, 2026)",
+          "url": "https://www.world-nuclear-news.org/articles/us-test-reactor-cleared-for-operations",
+          "quote": "The DOE has now cleared the final operations hold point for the reactor",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "texas-am-natura-doe-fuel-recycling-grant-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "Texas A&M wins $5.4M DOE grant to recycle used fuel for molten salt reactors",
+      "companies": [
+        "Texas A&M",
+        "Natura Resources"
+      ],
+      "category": "fuel",
+      "what_happened": "The Texas A&M Engineering Experiment Station won a $5.4 million DOE grant for three years of research on recycling used nuclear fuel into thorium molten salt reactor fuel. Natura Resources, a molten salt developer, is an industry partner, and Savannah River National Laboratory is also involved. Deputy Energy Secretary James Danly announced the award as part of $50 million across universities for nuclear fuel research.",
+      "why_it_matters": "This is research funding that starts in about two months, not a fuel supply or a deployment commitment. Danly said the work is early and will take years to show whether it works.",
+      "binding": false,
+      "binding_note": "A grant award for research. Funding has not yet started, and the article says it pays for research, not for power generation.",
+      "sources": [
+        {
+          "label": "KBTX, Texas A&M gets $5.4M to research turning nuclear waste into fuel (Oct. 29, 2026)",
+          "url": "https://www.kbtx.com/2026/10/30/texas-am-gets-54m-research-turning-nuclear-waste-into-fuel/",
+          "quote": "Texas A&M researchers have been awarded $5.4 million in federal money to study whether used nuclear fuel can be recycled into new reactor fuel.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

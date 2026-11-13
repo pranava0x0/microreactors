@@ -1,0 +1,58 @@
+{
+ "_meta": {
+  "captured": "2026-11-13",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy.json rules (none written, see absences); Type F dockets filed or decided since 2026-08-15 that are not in skip/dockets.json; Type N items dated after 2026-11-10 (none found).",
+  "angles_run": [
+   "Texas backup power program (16 TAC 25.513) nuclear eligibility",
+   "Texas SB 6 75 MW large-load threshold and PUC rulemakings",
+   "Texas Advanced Nuclear Development Fund (TANEO) award status",
+   "Illinois Tier 4 diesel rule for data centers, Dec 2026 date",
+   "NRC Commission votes and Part 57 status, Nov 2026",
+   "FY2027 NDAA and Army Janus policy",
+   "State microreactor and SMR laws signed 2026",
+   "Utility IRPs and SMR filings, Aug-Nov 2026",
+   "Utility RFPs for microreactors or SMRs tied to a commission docket",
+   "Commission cost-recovery orders for SMR development, Oct 2026",
+   "CNSC and ONR microreactor decisions, Nov 2026",
+   "New Jersey S4849 / A5727 status",
+   "FY2027 Energy and Water appropriations and DOE nuclear budget",
+   "NRC Michigan Palisades SMR review (Holtec)",
+   "Virginia SCC SMR cost recovery (Dominion, Appalachian Power)",
+   "Blue Energy Texas BWRX-300 NRC Part 1 filing",
+   "TVA Clinch River NRC construction permit",
+   "DOE nuclear policy announcements, Nov 2026"
+  ],
+  "absences": [
+   "Type G checks: none written. Texas backup program (policy.json diesel): fetched the January 2026 proposed rule text (16 TAC 25.513(b)(3)(A)(vi) lists natural gas or propane with photovoltaic panels and battery storage, and nothing nuclear). The shipped claim says the rule was adopted May 2026; I did not find the adopted text, so the claim is not verified. TANEO (licensing): the TANEO RFA page says applications are closed and gives no award date; no award announcement found, so the shipped text is not contradicted and no check was written. Illinois Tier 4 December 2026 date: the sources conflict (an amendment effective six months after its effective date, i.e. Dec 1 2026, versus an ALL4 note dated Jan 8 2026 saying Tier 4 applies); not resolved. ERCOT/SB 6 75 MW threshold: PUC rulemakings 58479 and 58481 not confirmed final; no fetched primary page on the threshold itself.",
+   "Items after 2026-11-10: none found. No NRC Commission vote on a microreactor rule in November 2026 surfaced. Part 57 is not published as a final rule in any source found (proposed May 1 2026, comments closed June 15); one source says a final rule is due by Nov 23 2026, but no schedule document was fetched. FY2027 NDAA: HASC passed its bill with a microreactor amendment per a trade headline, text not found. FY2027 Energy and Water: House committee action was April-May 2026; no November floor or Senate action found. New Jersey S4849: introduced Oct 19 2026 and referred to committee, already in skip/dockets.json, no hearing found. State laws: no microreactor bill signed in November 2026 found. CNSC/ONR: no microreactor licence or policy decision dated November 2026 found. Army Janus awards (Aug 26 2026) and Dow/X-energy Long Mott permit (Nov 9-10 2026) are already in skip/news.json.",
+   "Dockets considered and rejected: Duke Energy Carolinas resource plan (filed Oct 1 2025 per WNN; the Aug 24 2026 date in one search snippet is contradicted; already in skip). Appalachian Power Virginia SMR site-cost recovery (planned for mid-2026; filing date and docket not confirmed). Dominion Virginia SMR rider (filing planned for fall 2026; not confirmed filed). Holtec Palisades SMR-300 NRC review (review started July 2026, outside the 90-day window). Louisiana nuclear tariff (proposed, reported Aug 13 2026, just outside the window; vote postponed to Sept 16; outcome not found).",
+   "Ameren Missouri IRP: the MoPSC docket number was not found and the record rests on a secondary trade source (mgrid.org), not the Commission filing itself. Clinch River NRC permit: the issue date is taken from the fetched article's 'On Tuesday' with a publication date of Oct 1 2026 (Tuesday = Sept 29 2026); no NRC primary page fetched. Blue Energy: the GE Vernova release is dated Sept 16 2026 and does not state the submission day; the Sept 15 letter date appears only in a search snippet.",
+   "Budget used: about 25 web searches and 7 fetches (plus one browser navigation that yielded nothing usable).",
+   "Main session held tva-clinch-river-unit-1-nrc-construction-permit-2026, blue-energy-texas-bwrx-300-nrc-cpa-part-1-2026: NRC construction-permit actions on 300 MW BWRX-300 SMRs, not utility plans, dockets or state laws (data/dockets.json scope), and far outside the 1-20 MW band. Ameren size_class set to unspecified because the IRP keeps both large reactors and SMRs open."
+  ]
+ },
+ "dockets": [
+  {
+   "id": "ameren-missouri-2026-irp-smr",
+   "forum": "Missouri Public Service Commission",
+   "url": "https://mgrid.org/2026/09/30/ameren-missouri-files-for-10-6-gw-of-new-gas-inverting-last-years-60-percent-clean-target-for-2045/",
+   "utility": "Ameren Missouri",
+   "state": "MO",
+   "type": "IRP",
+   "date": "2026-09-28",
+   "size_class": "unspecified",
+   "status": "filed",
+   "what_it_says": "Ameren Missouri filed a 20-year integrated resource plan with the Missouri Public Service Commission on September 28, 2026. It assigns 1,200 MW to new nuclear by 2040 and has chosen neither a site nor a reactor technology. The filing says both large reactor designs and small modular reactors remain under consideration.",
+   "microreactor_read": "Names SMRs as an option without choosing one, and has no microreactor procurement, so a 1-20 MW buyer has nothing to bid into here yet.",
+   "sources": [
+    {
+     "label": "Mgrid — Ameren Missouri files for 10.6 GW of new gas (2026-09-30)",
+     "url": "https://mgrid.org/2026/09/30/ameren-missouri-files-for-10-6-gw-of-new-gas-inverting-last-years-60-percent-clean-target-for-2045/",
+     "quote": "Ameren assigns 1,200 MW to new nuclear by 2040 and has chosen neither a site nor a reactor technology.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

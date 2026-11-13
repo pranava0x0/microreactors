@@ -203,3 +203,21 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   check: read the whole shipped sentence and every source on the row. The `licensing` fee check has now been overruled on
   11-08, 11-09 and 11-10: the skip list needs a "recently checked" column (10-29 note) more than any prompt tweak.
 
+- **2026-11-11: a hand-written `skip/recently-checked.md` stopped the re-checks.** Listing the ids checked 11-04..11-10 (with the fee
+  clause's settled reading) and appending one line to each prompt kept every agent off them; the licensing fee clause was not
+  re-flagged for the first time in four days. Until `refresh_init.py` generates it, build it from the previous week's pass dirs'
+  `checks[].target`. Also: the deals agent called DOME "Operating" wrong because Radiant's reactor is unfueled; the row is the
+  test bed, which WNN reports open for business, so a status check must first ask which object the row names (same family as the 11-04 Aalo-X note).
+
+- **2026-11-12: an "outdated" check that cites a newer report than the row's own source is an editorial call, not a correction.** The costs
+  agent marked four capex/LCOE rows outdated against INL/RPT-25-87273 while each row quotes INL/RPT-24-80433 verbatim; `--apply` would
+  have put 2025 numbers under 2024 quotes. Overrule and flag the switch for a human. Same day, MARVEL "dry criticality in December" was
+  called a contradiction of "operational by late 2027": different events (the 11-04/11-11 object family again). And arxiv.org abstracts
+  write `\$48.21` (MathJax escape), so a verbatim `$48.21` span reads FABRICATED: grep the page before dropping it.
+
+- **2026-11-13: once `recently-checked.md` covers every row a prompt names, that agent's check step has nothing to do.** The deals
+  prompt's step (1) lists Janus, ANPI, the DOE pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy and Canada, and every one was on
+  the list; the agent flagged the conflict and checked an unlisted row (Romania) instead, which found a real correction. Point the
+  check step at "rows not on the list" rather than at named rows. Also, the politics agent filed two NRC construction permits for
+  300 MW BWRX-300s as dockets; `data/dockets.json` is utility plans, dockets and state laws, so NRC licensing actions belong in news
+  (if in band) or nowhere.

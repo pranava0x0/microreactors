@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-11-12",
+    "agent": "vendors",
+    "scope": "Vendors tab. Type G checks on shipped vendors not in recently-checked.md (antares, evinci, general-atomics-ga-tes, oklo-aurora). Type N items for vendor milestones dated after 2026-11-10 that news.json lacks, including non-table 1-20 MWe vendors (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Natura, Blue Energy, Terra Innovatum, Steady Energy). Aalo, Valar, BWXT and Radiant excluded per recently-checked.md.",
+    "angles_run": [
+      "Antares Mark-1 and JBSA news, Nov 2026 (no post-11-10 item)",
+      "Westinghouse eVinci news, Nov 2026 (latest dated item is 2026-08-26 NCERC cold criticality and Janus selection; no post-11-10 item)",
+      "General Atomics GA-TES Fort Hood / Janus (selection 2026-08-26; no delivery date or value published)",
+      "Oklo Aurora-INL construction update, Nov 2026 (no post-11-10 item found; not fetched)",
+      "Deployable Energy Unity / DOME (DOME selection 2026-09-30 already shipped; Unity criticality 2026-06-30 predates window)",
+      "NANO Nuclear KRONOS / ZEUS, Nov 2026 (no dated item found)",
+      "Last Energy PWR-5 (PDSA 2026-05-28 and DSA 2026-10-07/08 both already shipped in news.json)",
+      "Natura, Blue Energy, Terra Innovatum, Steady Energy, Nov 2026 (no dated post-11-10 item; Blue Energy returned nothing)",
+      "Generic microreactor announcements dated 2026-11-11 / 2026-11-12 (none found)",
+      "Fetched: POWER Janus Five (2026-08-27); POWER Mark-0 criticality (2026-06-05); Last Energy PWR-5 PDSA press release (2026-05-28); NEI Magazine Antares Mark-1 NSDA (2026-10-28)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-10 found for any shipped vendor or any non-table 1-20 MWe vendor. Ten web searches and five fetches were run; the searches surfaced no November 2026 vendor news at all.",
+      "Blue Energy: search returned nothing on the company in 2026.",
+      "Steady Energy: only undated or aggregator leads for 2026 (Fortum collaboration reported 2026-01-13; a Japanese profile updated 2026-09-22 gives plant construction in 2029). No primary Steady release found, so nothing added.",
+      "NANO Nuclear KRONOS and ZEUS: search returned only 2025 or undated items. KRONOS NRC construction-permit review status is unverified (one undated aggregator claim, not used).",
+      "Oklo Aurora-INL: first-operation target 'late 2027 to early 2028' seen only in search summaries; not re-verified on a fetched Oklo page, so the shipped 2028 target is not checked.",
+      "General Atomics GA-TES: shipped 'Not published' delivery is consistent with the POWER table ('Not disclosed'). Shipped technical specs (liquid metal, UZrH, about 5 MWe scalable to about 20 MWe) were not fetched and are not checked.",
+      "Westinghouse eVinci first_delivery_year 2030: no fetched source ties 2030 to a specific eVinci unit; Westinghouse did not disclose schedule for Fort Drum (POWER, 2026-08-27). Left unchanged, not verified.",
+      "Antares Mark-0 criticality (2026-06-04, zero-power, INL): confirmed on POWER (2026-06-05, trade press). Not written as a check because the page is older than 60 days and not primary.",
+      "Quotes in the Antares check were taken from WebFetch output (a model summary of the page); the main session should re-verify them against raw bytes before publishing."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-antares-1",
+      "target": "antares",
+      "file": "vendors",
+      "claim": "2028 or earlier",
+      "verdict": "confirmed",
+      "evidence": "NEI Magazine (2026-10-28), citing Antares after DOE NSDA approval: initial field deployments to US military installations begin in 2028, including a Fort Bragg Janus plant. The Janus contract requires the R1 units to be built, factory-delivered and fully operational by 30 September 2028. POWER (2026-08-27) reports the Army selected Antares for three R1 units at Fort Bragg, with initial production units to military installations beginning in 2028.",
+      "sources": [
+        {
+          "label": "NEI Magazine — DOE approves Antares Mark-1 safety framework (2026-10-28)",
+          "url": "https://www.neimagazine.com/news/doe-approves-antares-mark-1-safety-framework/",
+          "quote": "built, factory-delivered, and fully operational by 30 September 2028",
+          "status": "fetched"
+        },
+        {
+          "label": "POWER — The Janus Five: 20+ Commercial Nuclear Microreactors, Starting in 2028 (2026-08-27)",
+          "url": "https://www.powermag.com/the-janus-five-20-commercial-nuclear-microreactors-starting-in-2028/",
+          "quote": "deploy initial production units to U.S. military installations beginning in 2028",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

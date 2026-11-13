@@ -501,3 +501,45 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches fo
 | ideas | 169K | liability deferred premium confirmed | no |
 
 ~1.09M agent tokens for 1 news item and 1 docket. Phone cost not re-measured (no layout change).
+
+## 2026-11-11 daily refresh
+
+Four Haiku agents (odd day), 2 at a time, after 3 main-session web searches found nothing dated after 11-08. First run with `skip/recently-checked.md` (ids checked 11-04..11-10): no agent re-checked the licensing fee clause or canada-src. 1 news, 0 corrections, 1 confirmed, 1 check overruled, 1 news item dropped.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 156K | Centrus Q3: DOE not exercising further HALEU options (verified on the SEC exhibit); Westerman acquisition item dropped (no date in source, off scope) | yes |
+| deals | 131K | DOME "Operating" called wrong (agent read the reactor, not the test bed); overruled. equinix-radiant confirmed | no |
+| vendors | 135K | 0 records | no |
+| politics | 152K | 0 records; Louisiana 20-cent tariff outcome unfound | no |
+
+~574K agent tokens for 1 news item. Phone cost not re-measured (no layout change).
+
+## 2026-11-12 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing new after 11-10. `skip/recently-checked.md` rebuilt from the 11-05..11-11 pass dirs' check targets: no agent re-checked a listed row. 2 news, 0 corrections, 9 checks confirmed (6 of them overruled from outdated/wrong), 1 application held (out of band).
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 169K | MCRE DOE cost-share (2026-10-14, 150 kWt test reactor), verified on the cached ANS page | yes |
+| deals | 128K | 0 records; nearly every Type G row was on the recently-checked list | no |
+| vendors | 142K | Antares Janus 2028 date confirmed | marginal |
+| politics | 170K | 0 records; leads on Illinois diesel dates, Texas backup-power adoption, Duke SMR docket | no |
+| applications | 176K | Canada CSA lunar microreactor RFI (2026-11-09); MARVEL "outdated" overruled (dry criticality Dec 2026 is not "operational"; date added by hand); Jyväskylä held (100-300 MWt) | yes |
+| costs | 176K | 4 capex/LCOE rows "outdated" against INL's 2025 report and convergence "25%" called wrong; all overruled because the shipped numbers match their cited sources verbatim; flagged for a human | flag only |
+| ideas | 139K | 0 records | no |
+
+~1.1M agent tokens for 2 news items and 1 hand edit. Phone cost 1.69 (baseline).
+
+## 2026-11-13 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches found nothing beyond the watcher's 4 candidates. `skip/recently-checked.md` rebuilt from the 11-06..11-12 pass dirs. 3 news, 2 corrections, 1 utility filing; 2 docket records held.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | Oklo Groves-1 cleared for unrestricted operations (11-12); Texas A&M / Natura $5.4M fuel-recycling grant (10-29) | yes |
+| deals | 139K | Centrus-Oklo definitive HALEU agreements (11-13); Romania NuScale corrected to 1 unit first, 5 conditional | yes |
+| vendors | 139K | Oklo Aurora-INL startup corrected to 2028-2029 (Q3 call) | yes |
+| politics | 185K | Ameren Missouri 2026 IRP (1.2 GW nuclear by 2040, no technology); TVA Clinch River and Blue Energy NRC permits held as out of dockets scope | marginal |
+
+~613K agent tokens for 3 news items, 2 corrections and 1 filing. Phone cost not re-measured (no layout change).

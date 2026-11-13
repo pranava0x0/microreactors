@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "captured": "2026-11-12",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (not on recently-checked.md), and Type N items for buyer deals dated after 2026-11-10 that skip/news.json lacks. No new buyer deals found in window; no checks met the fetched-source bar.",
+    "angles_run": [
+      "Microreactor PPA signed November 2026",
+      "IANC consortium update 2026",
+      "Doicesti NuScale RoPower 2026 status (fetched balkangreenenergynews, powermag, nuclearelectrica)",
+      "NANO Nuclear KRONOS agreement November 2026",
+      "Microreactor LOI data center site selected November 2026",
+      "Last Energy / Aalo / Valar / Antares contract this week",
+      "Army Janus OTA signing November 2026",
+      "Air Force / Navy microreactor contract November 2026",
+      "Canada microreactor remote community agreement November 2026"
+    ],
+    "absences": [
+      "Type G rows named in the brief but listed on skip/recently-checked.md were not checked: janus, anpi-jbsa, anpi-buckley, anpi-malmstrom, eielson, doe-pilot, dome, equinix-radiant, oklo-switch, nano-supermicro, uk-lastenergy, canada-src.",
+      "Type G ianc: searched; the latest IANC item is the June 2026 Application Scenarios whitepaper, about five months old, with no procurement news. Shipped 'no procurement' status is not contradicted, but no fetched page within ~60 days confirms it. No check written.",
+      "Type G romania-nuscale: a search summary reports an August 2026 stall (pre-EPC conditional on unmet conditions, NuScale no firm commitment on module protection, a September 2026 report-back). I could not fetch a page confirming it. Fetched pages (balkangreenenergynews 2026-02-13 with 2026-06-02 update, powermag 2026-02-25, nuclearelectrica press release 2026-02-12) confirm FID only. Unverified lead for the next pass; no check written.",
+      "Type G jp-kr-moc: not checked. The state.gov fetch failed on encoding and no new status surfaced.",
+      "Items: no buyer deal dated after 2026-11-10 was found. Searches covered NANO Nuclear, Janus OTA signings, Air Force and Navy awards, Canadian remote-community agreements, data-center microreactor LOIs, and Last Energy, Aalo, Valar and Antares. The search index may lag by days; no company newsroom or SAM.gov was checked directly.",
+      "Web leads: Hyundai partnerships with ARC Clean Technology and First American Nuclear, and Elementl Power with DS Investment Partners, were not checked. They are partnerships or financing, not buyer deals, and fall outside this lane. OPG Darlington (large SMR, outside 1-20 MW) was not checked.",
+      "Searches used: 9 of ~25. Fetches used: 3 of ~20."
+    ]
+  },
+  "items": []
+}
