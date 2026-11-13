@@ -214,3 +214,10 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   have put 2025 numbers under 2024 quotes. Overrule and flag the switch for a human. Same day, MARVEL "dry criticality in December" was
   called a contradiction of "operational by late 2027": different events (the 11-04/11-11 object family again). And arxiv.org abstracts
   write `\$48.21` (MathJax escape), so a verbatim `$48.21` span reads FABRICATED: grep the page before dropping it.
+
+- **2026-11-13: once `recently-checked.md` covers every row a prompt names, that agent's check step has nothing to do.** The deals
+  prompt's step (1) lists Janus, ANPI, the DOE pilot, Equinix-Radiant, Oklo-Switch, NANO, Last Energy and Canada, and every one was on
+  the list; the agent flagged the conflict and checked an unlisted row (Romania) instead, which found a real correction. Point the
+  check step at "rows not on the list" rather than at named rows. Also, the politics agent filed two NRC construction permits for
+  300 MW BWRX-300s as dockets; `data/dockets.json` is utility plans, dockets and state laws, so NRC licensing actions belong in news
+  (if in band) or nowhere.

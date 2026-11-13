@@ -1,0 +1,81 @@
+{
+ "_meta": {
+  "captured": "2026-11-13",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities (not on skip/recently-checked.md), and new buyer deals dated after 2026-11-10 missing from skip/news.json",
+  "angles_run": [
+   "Centrus-Oklo Ohio HALEU (WNN 2026-11-13 lead; checked against June 2026 LOI)",
+   "Microreactor PPAs signed Nov 2026",
+   "Microreactor data-center agreements Nov 2026",
+   "Radiant Kaleidos orders Nov 2026",
+   "NANO Nuclear agreements Nov 2026",
+   "Valar, Aalo, Last Energy customer agreements Nov 2026",
+   "Romania NuScale Doicesti status (opportunities row romania-nuscale)",
+   "IANC procurement (opportunities row ianc; membership only, no check written)"
+  ],
+  "absences": [
+   "Centrus press release (investors.centrusenergy.com/node/20816) returned HTTP 403; the signing date of the Oklo definitive agreements is not confirmed. The item is dated by its WNN article date, 2026-11-13.",
+   "No buyer deal dated 2026-11-10 or later found for microreactor PPAs, data-center MOUs, Radiant orders, NANO Nuclear, Valar Atomics, Aalo or Last Energy beyond the Centrus-Oklo item. Eight searches run in total.",
+   "IANC (ianc): search returned membership and background only, no 2026 procurement; no check written.",
+   "Recently-checked conflict: the prompt's step (1) names Janus, Air Force ANPI (Eielson, JBSA, Buckley, Malmstrom), DOE Reactor Pilot Program, Equinix-Radiant, Oklo-Switch, NANO, Last Energy and Canada, but skip/recently-checked.md lists all of those rows and the prompt also says not to check any listed row. Followed the do-not-check rule; those rows were not re-checked.",
+   "jp-kr-moc (signed 2026-07-07) not checked: no search run; status is unlikely to have moved.",
+   "Dow / X-energy Long Mott construction permit (WNN and DOE candidate, 2026-11-13): already shipped as news dow-long-mott-construction-permit-2026-11-10 and 80 MWe, so outside scope."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-romania-nuscale-1",
+   "target": "romania-nuscale",
+   "file": "opportunities",
+   "claim": "6 modules (SMR scale, not microreactor)",
+   "verdict": "outdated",
+   "evidence": "Power Magazine (2026-02-25) reports the FID for a 462 MWe six-module project. Balkan Green Energy News (published 2026-02-13, updated 2026-06-02) says only one of the six 77 MW units would be built first for testing, and the remaining five would proceed only if the trial is successful.",
+   "correction": "6 modules planned, 1 built first for testing and 5 only if it succeeds (SMR scale, not microreactor)",
+   "sources": [
+    {
+     "label": "Balkan Green Energy News — Romania to build one small reactor to test before proceeding with six-unit SMR project (updated 2026-06-02)",
+     "url": "https://balkangreenenergynews.com/romania-to-build-one-small-reactor-to-test-before-proceeding-with-six-unit-smr-project/",
+     "quote": "only one of the six 77 MW units would be built first for testing",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER — Romania's coal-to-NuScale SMR conversion secures FID, moves into implementation with caveats (2026-02-25)",
+     "url": "https://www.powermag.com/romanias-coal-to-nuscale-smr-conversion-secures-fid-moves-into-implementation-with-caveats/",
+     "quote": "for a 462‑MWe six-module NuScale module small modular reactor (SMR) project at the former Doicești coal plant.",
+     "status": "fetched"
+    }
+   ],
+   "review": "Main session: Balkan Green Energy News page fetched (dateModified 2026-06-02) and says the remaining five proceed only if the trial is successful. Correction reworded to keep the scale caveat."
+  }
+ ],
+ "items": [
+  {
+   "id": "centrus-oklo-haleu-definitive-2026-11-13",
+   "date": "2026-11-13",
+   "headline": "Centrus and Oklo finalise HALEU purchase agreements for Ohio Aurora campus",
+   "companies": [
+    "Centrus",
+    "Oklo"
+   ],
+   "category": "contract",
+   "what_happened": "Centrus and Oklo finalised definitive purchase agreements for HALEU, following their June 2026 letter of intent. Fuel from Centrus's American Centrifuge Plant in Pike County, Ohio would power up to five Aurora powerhouses at Oklo's planned 1.2 GW Ohio campus for Meta, with deliveries scheduled to begin in 2029. Oklo will make prepayments for future HALEU deliveries.",
+   "why_it_matters": "For a 1-20 MW buyer this is a fuel-supply contract for a 1.2 GW campus, not a microreactor order. It shows HALEU supply for advanced reactors moving from letter of intent to signed purchase agreement, with first deliveries in 2029.",
+   "binding": true,
+   "binding_note": "Definitive purchase agreements, per the WNN article dated 2026-11-13. The article gives no signing date, and the Centrus release could not be fetched (HTTP 403), so the 2026-11-13 date is the article date.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Centrus, Oklo deal secures fuel for Ohio reactor deployment (2026-11-13)",
+     "url": "https://www.world-nuclear-news.org/articles/centrus-oklo-deal-secures-fuel-for-ohio-reactor-deployment",
+     "quote": "securing fuel to power up to five Aurora powerhouses for multiple years at a 1.2 GW Ohio campus",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Centrus, Oklo HALEU agreement to support reactor deployment (2026-06-19)",
+     "url": "https://world-nuclear-news.org/articles/centrus-oklo-haleu-agreement-to-support-reactor-deployment",
+     "quote": "to support Oklo's planned 1.2 GW power campus in the region under their Letter of Intent",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

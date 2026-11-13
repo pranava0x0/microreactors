@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "captured": "2026-11-13",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (not on recently-checked list) and Type N items for vendor milestones dated after 2026-11-10 that skip/news.json lacks.",
+    "angles_run": [
+      "eVinci (Westinghouse) news after 2026-11-10",
+      "General Atomics GA-TES Fort Hood update",
+      "Oklo Aurora-INL timeline after Q3 2026 call",
+      "NANO Nuclear KRONOS / ZEUS news and NRC schedule",
+      "Deployable Energy Unity news",
+      "Last Energy PWR-5 criticality and DSA status",
+      "Natura Resources MSR-1 news",
+      "Blue Energy news",
+      "Terra Innovatum SOLO news",
+      "Steady Energy LDR-50 news",
+      "Generic microreactor vendor announcement, 2026-11-12"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-10 found for any vendor in scope. The newest dated vendor items in the searches were from October 2026, and skip/news.json already carries those.",
+      "eVinci: no post-August 2026 milestone found. Shipped Malmstrom 2030 target not changed by any source found. Shipped first_delivery_target is null, nothing newer to check it against.",
+      "General Atomics GA-TES: no construction or delivery date published after the 2026-08-26 Janus selection. Shipped 'Not published' still holds, so no check written.",
+      "Oklo Aurora: DOE PDSA and Groves criticality milestones confirmed in the shipped text. Only the startup target is outdated (see check). Oklo's Q3 EPS differs between sources (0.28 vs 0.22); not used.",
+      "Last Energy PWR-5: an October 2026 DSA report exists (already in news.json as last-energy-texas-dsa-approval-2026-10-08). No criticality or fuel-load date found; sources conflict on whether the DSA or only the PDSA is in hand.",
+      "Natura MSR-1: DOE's July 4, 2026 criticality goal is unconfirmed; no source found reporting criticality. Natura is not a shipped vendor row.",
+      "NANO KRONOS: NRC review schedule (final safety evaluation Sept 2027) is an NRC target, not a dated event after 11-10. ZEUS: no dated milestone found.",
+      "Deployable Energy: NRIC DOME selection (Sept-Oct 2026) and Utah MOU (Aug 2026) are already dated before 11-10; no later event found.",
+      "Blue Energy: Texas project is a 300 MW-class BWRX-300 plant, outside the 1-20 MWe scope; no microreactor milestone found.",
+      "Terra Innovatum SOLO: NRC safety evaluation was anticipated by Oct 2026; outcome not found in searches (newest item April 2026).",
+      "Steady Energy LDR-50: July 2026 STUK early review is pre-11-10; first-plant date given as 2029 in one source and 2030 in another, unresolved, not a dated post-11-10 event.",
+      "Skipped by rule: bwxt-banr, aalo-x, radiant, valar-ward250, antares (recently-checked list). Aalo and Valar were not searched for the same reason."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-oklo-aurora-1",
+      "target": "oklo-aurora",
+      "file": "vendors",
+      "claim": "2028 (Aurora-INL startup target)",
+      "verdict": "outdated",
+      "evidence": "MarketBeat transcript summary of Oklo's Q3 2026 earnings call (call of 2026-11-07; article dated 2026-11-07): the company's filing indicates the Aurora plant could come online in 2028 or 2029. The first full fuel assembly is targeted for 2027.",
+      "correction": "2028-2029 (Aurora-INL startup)",
+      "sources": [
+        {
+          "label": "MarketBeat — Oklo Q3 earnings call highlights (2026-11-07)",
+          "url": "https://www.marketbeat.com/instant-alerts/transcript-oklo-q3-earnings-call-highlights-2026-11-07/",
+          "quote": "could come online in 2028 or 2029",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

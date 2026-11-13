@@ -530,3 +530,16 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches fo
 | ideas | 139K | 0 records | no |
 
 ~1.1M agent tokens for 2 news items and 1 hand edit. Phone cost 1.69 (baseline).
+
+## 2026-11-13 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches found nothing beyond the watcher's 4 candidates. `skip/recently-checked.md` rebuilt from the 11-06..11-12 pass dirs. 3 news, 2 corrections, 1 utility filing; 2 docket records held.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 150K | Oklo Groves-1 cleared for unrestricted operations (11-12); Texas A&M / Natura $5.4M fuel-recycling grant (10-29) | yes |
+| deals | 139K | Centrus-Oklo definitive HALEU agreements (11-13); Romania NuScale corrected to 1 unit first, 5 conditional | yes |
+| vendors | 139K | Oklo Aurora-INL startup corrected to 2028-2029 (Q3 call) | yes |
+| politics | 185K | Ameren Missouri 2026 IRP (1.2 GW nuclear by 2040, no technology); TVA Clinch River and Blue Energy NRC permits held as out of dockets scope | marginal |
+
+~613K agent tokens for 3 news items, 2 corrections and 1 filing. Phone cost not re-measured (no layout change).

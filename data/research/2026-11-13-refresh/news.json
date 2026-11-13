@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "captured": "2026-11-13",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market, event dates after 2026-11-10 first, then gap fill in the prior 60 days. Watcher candidates from skip/candidates.json checked first.",
+    "angles_run": [
+      "watcher candidates (candidates.json): Centrus/Oklo HALEU, BWXT Cambridge, DOE NE Dow/X-energy, OPG Darlington",
+      "reactor criticality and testing: Oklo Groves-1 operations clearance, Radiant Kaleidos full-power approval recheck",
+      "company sweep after 2026-11-10: Radiant, Valar, Aalo, Westinghouse, Last Energy, NANO Nuclear, Deep Fission, Terrestrial, Natura, Deployable",
+      "fuel: Centrus/Oklo definitive HALEU agreements; Texas A&M and Natura DOE fuel-recycling grant (gap fill, 2026-10-29)",
+      "personnel: microreactor leadership appointments (no November 2026 hits)",
+      "financing: NuCube, Kairos, X-energy (no 2026 closes found)"
+    ],
+    "absences": [
+      "Centrus and Oklo: no primary release found. Centrus IR news list ends at 11/10/26 (board appointment). The Centrus/Oklo definitive agreements rest on the WNN 2026-11-13 article alone; the signing date is not stated.",
+      "Oklo Groves-1: no Oklo or DOE primary release found; the clearance rests on the WNN 2026-11-12 article. A BusinessWire item dated 2026-07-23 with a matching headline was not retrieved.",
+      "No items dated 2026-11-11 to 2026-11-13 found for Radiant, Valar, Aalo, Westinghouse eVinci, Last Energy, NANO Nuclear, Kairos, X-energy, Deployable Energy, Natura (beyond the Texas A&M grant), Holtec, General Atomics, Antares, BWXT BANR, Terrestrial, Deep Fission. Web search returned mostly 2025 and mid-2026 material.",
+      "Not searched or not reachable: ANS Nuclear Newswire (watcher reports 404), NRC press releases (403), Radiant newsroom (403), Oklo IR (403), Utility Dive, NucNet. The 60-day gap fill was thin: ten web searches and about seven fetches.",
+      "Out of scope, not written: BWXT Cambridge, Ontario, facility expansion (2026-11-13). Large components for CANDU refurbishments and the Darlington BWRX-300, not a microreactor product. OPG Darlington timeline revision (2026-11-11). Large SMR.",
+      "Duplicate, not written: DOE NE 2026-11-13 Dow/X-energy construction permit. The same event is shipped as dow-long-mott-construction-permit-2026-11-10. Xe-100 is 80 MWe.",
+      "Duplicate, not written: Radiant Kaleidos full-power DOE approval (press reports 2026-11-04). Shipped as radiant-kaleidos-dsa-full-power-2026-10-29.",
+      "Not written: Terrestrial Energy Q3 2026 results (2026-11-10). The release shows G&A and stock compensation, with no milestone.",
+      "Not written: Natura and Texas A&M item dated 11/02 on Webull, year unverified. Superseded by the KBTX 2026-10-29 fetch.",
+      "Gap: 12-item target not met. Two items written. The Centrus/Oklo definitive HALEU deal (2026-11-13) was dropped because the deals agent already wrote the same id to deals.json. Shipped coverage is dense through 2026-10-29, so the 60-day gap appears to be mostly covered by existing rows."
+    ]
+  },
+  "items": [
+    {
+      "id": "oklo-groves-1-unrestricted-operations-2026-11-12",
+      "date": "2026-11-12",
+      "headline": "Oklo's Groves-1 test reactor cleared for unrestricted operations by DOE",
+      "companies": ["Oklo"],
+      "category": "regulatory",
+      "what_happened": "The US Department of Energy cleared the final operations hold point for Oklo's Groves-1 isotope test reactor near Lockhart, Texas. The reactor first reached criticality in August 2026, under the Reactor Pilot Program authorization pathway. Oklo says it will use the reactor for operator training, control rod drive testing and criticality benchmarking.",
+      "why_it_matters": "This is a test and training platform, not a product a 1-20 MW buyer can order. It shows the DOE authorization pathway can move from criticality to routine operation, which is the step a buyer would need to see before relying on a vendor's design.",
+      "binding": true,
+      "binding_note": "A formal DOE clearance of the final operations hold point. The WNN article is the only source retrieved; no Oklo or DOE primary release was found.",
+      "sources": [
+        {
+          "label": "World Nuclear News, US test reactor cleared for operations (Nov. 12, 2026)",
+          "url": "https://www.world-nuclear-news.org/articles/us-test-reactor-cleared-for-operations",
+          "quote": "The DOE has now cleared the final operations hold point for the reactor",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "texas-am-natura-doe-fuel-recycling-grant-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "Texas A&M wins $5.4M DOE grant to recycle used fuel for molten salt reactors",
+      "companies": ["Texas A&M", "Natura Resources"],
+      "category": "fuel",
+      "what_happened": "The Texas A&M Engineering Experiment Station won a $5.4 million DOE grant for three years of research on recycling used nuclear fuel into thorium molten salt reactor fuel. Natura Resources, a molten salt developer, is an industry partner, and Savannah River National Laboratory is also involved. Deputy Energy Secretary James Danly announced the award as part of $50 million across universities for nuclear fuel research.",
+      "why_it_matters": "This is research funding that starts in about two months, not a fuel supply or a deployment commitment. Danly said the work is early and will take years to show whether it works.",
+      "binding": false,
+      "binding_note": "A grant award for research. Funding has not yet started, and the article says it pays for research, not for power generation.",
+      "sources": [
+        {
+          "label": "KBTX, Texas A&M gets $5.4M to research turning nuclear waste into fuel (Oct. 29, 2026)",
+          "url": "https://www.kbtx.com/2026/10/30/texas-am-gets-54m-research-turning-nuclear-waste-into-fuel/",
+          "quote": "Texas A&M researchers have been awarded $5.4 million in federal money to study whether used nuclear fuel can be recycled into new reactor fuel.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
