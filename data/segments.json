@@ -686,6 +686,32 @@
     }
    ],
    "group": "compute-industry"
+  },
+  {
+   "id": "last-energy-pwr5-rellis-pilot",
+   "segment": "universities",
+   "name": "Last Energy PWR-5 pilot reactor at Texas A&M RELLIS",
+   "status": "funded",
+   "power_class": "5 MW of electrical output",
+   "timeline": "Preliminary documented safety analysis approved, release dated 2026-05-28. On 2026-09-10 the company said: \"In the next couple of months, we intend to get final authorization from the Department of Energy\".",
+   "vendor": "Last Energy",
+   "what_it_says": "Last Energy is building a PWR-5 pilot reactor on the Texas A&M RELLIS campus near Bryan-College Station. The company says the reactor is scaled for 5 MW of electrical output. The pilot is a DOE-authorized test unit, and the company says it is not meant to power homes or businesses right away. The RELLIS site record still reads pre-application, which covers the NRC early-site-permit track and not this DOE pilot.",
+   "microreactor_read": "A 5 MW electric pilot sits inside the 1-20 MW band, but it is a test unit under DOE authorization, not a commercial sale. No power buyer or price is named.",
+   "sources": [
+    {
+     "label": "Last Energy — Receives DOE approval of PWR-5 preliminary documented safety analysis (2026-05-28)",
+     "url": "https://www.lastenergy.com/news-press/last-energy-receives-doe-approval-of-pwr-5-preliminary-documented-safety-analysis",
+     "quote": "scaled for 5 MW of electrical output",
+     "status": "fetched"
+    },
+    {
+     "label": "KBTX — Nuclear reactor at RELLIS could be running within months (2026-09-10)",
+     "url": "https://www.kbtx.com/2026/09/11/nuclear-reactor-rellis-could-be-running-within-months/",
+     "quote": "The PWR-5 is not meant to power homes or businesses right away.",
+     "status": "fetched"
+    }
+   ],
+   "group": "campuses"
   }
  ]
 }

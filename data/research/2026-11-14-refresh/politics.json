@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "captured": "2026-11-14",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy pathways (not in recently-checked.md; licensing group excluded as recently checked), Type F dockets not in skip/dockets.json, Type N items dated after 2026-11-13.",
+    "angles_run": [
+      "Texas Backup Power Package Program (16 TAC 25.513) adopted rule and eligible technologies",
+      "Texas SB 6 75 MW large-load and co-location threshold, PUCT draft rule 16 TAC 25.194",
+      "FERC Talen-Amazon Susquehanna amended ISA: order date, vote, rehearing status",
+      "State PSC microreactor/SMR dockets filed Oct-Nov 2026 (general sweep)",
+      "Virginia SCC Dominion 2026 IRP update (PUR-2026-00163) and SMR rider",
+      "Georgia PSC 2026 SMR/microreactor filings",
+      "State legislation 2026 microreactor/SMR bills signed (Sept-Oct 2026 sweep)",
+      "NRC Commission votes scheduled Nov-Dec 2026 on microreactor policy",
+      "FY2027 NDAA nuclear and microreactor provisions (House H.R. 8800, Senate S. 4784)",
+      "FY2027 energy and water appropriations, DOE Office of Nuclear Energy",
+      "Dated events on or after 2026-11-14 (news sweep)"
+    ],
+    "absences": [
+      "No state PSC docket filed or decided in the last 90 days naming a microreactor or SMR was found and fetched. Searches of the Missouri, Georgia and general PSC sweeps returned only earlier filings, or the Ameren Missouri and NJ dockets already in skip/dockets.json.",
+      "Virginia Dominion 2026 IRP update (SCC Case PUR-2026-00163, filed 2026-10-15, reported to include about 2,046 MW of small modular nuclear) could not be verified. The Virginia Mercury article returned HTTP 403, and the energynewsbeat article returned HTTP 404 on fetch. Only search summaries were seen, so no docket record was written.",
+      "Dominion SMR development-cost rider: an SCC filing was described as expected in fall 2026. No docket number, filing date or order was found.",
+      "Georgia Power: no 2026 SMR or microreactor PSC docket found. Its September 2026 filing covers site studies, and the nuclear dockets are uprates (56002, 44280).",
+      "Texas TBPP: the adopted rule's eligible-facility size threshold (under 2.5 MW) and the $1.8B program figure were not confirmed in any fetched page. Only the technology-mix sentence was checked.",
+      "FERC Talen-Amazon: the 2-1 vote and the November 1, 2024 order date are confirmed in a fetched Utility Dive page. The later rehearing outcome (described in search summaries as FERC declining to reconsider, with an appeal to the Fifth Circuit) has no dated fetched source, so no check was written.",
+      "Texas SB 6 75 MW threshold: the shipped pathway 'ERCOT connect-and-manage and its 75 MW review threshold' cites a bwenergylaw post (dated 2026-08-11). The fetched post does not mention SB 6 or any 75 MW threshold. The 75 MW large-load definition appears in search summaries, and PUCT draft rule 16 TAC 25.194 (published March 12, 2026) was not confirmed as adopted. No check was written because no fetched quote was available. Flagged for the main session to re-source.",
+      "Policy pathways named in the task but not in skip/policy.json: Price-Anderson, 45Y/48E credits, and state siting moratoria. Not checked.",
+      "Licensing group (NRC Part 57, Part 53, ADVANCE Act fees, DOE Reactor Pilot Program, executive-order deadlines, Texas HB 14, Alaska SB 177) is listed in recently-checked.md and was not checked. Part 57 final rule is due 2026-11-23 per the task brief; no post-11-13 status was checked.",
+      "Federal Congress: FY2027 NDAA H.R. 8800 passed the House 216-212 on 2026-07-22, with a Harrigan INDOPACOM transportable microreactor demonstration provision. CRS (updated 2026-09-01) reports no further Senate floor steps. Both are dated before 2026-11-13, so they are not items. No conference text was found.",
+      "FY2027 energy and water appropriations: House committee bill gives DOE NE $1.80B (vs. $1.5B request). No microreactor-specific line item and no Senate action were found. Dated before 2026-11-13, so not an item.",
+      "NRC: no Commission vote scheduled for November or December 2026 on microreactor policy was found in search results.",
+      "Items: no dated policy or regulatory event on or after 2026-11-14 was found. Searches returned nothing dated after 2026-11-13. Result: zero items."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-texas-backup-power-package-program-1",
+      "target": "Texas Backup Power Package Program excludes nuclear",
+      "file": "policy",
+      "claim": "but fixes the technology mix to natural gas or propane generation, battery storage and solar.",
+      "verdict": "confirmed",
+      "evidence": "PUC of Texas press item dated May 7, 2026, as quoted by scttx.com, says the adopted rule requires systems that 'must include a combination of natural gas or propane generation, battery storage, and solar generation' and 'must be capable of operating for at least 48 continuous hours'. Nuclear is not named as an eligible source. The 2.5 MW facility threshold and the $1.8B program figure were not confirmed.",
+      "sources": [
+        {
+          "label": "scttx.com — PUC of Texas Adopts Rule for Texas Backup Power Package Program (quoting PUC press item, 2026-05-07)",
+          "url": "https://scttx.com/node/50226",
+          "quote": "The systems must include a combination of natural gas or propane generation, battery storage, and solar generation",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

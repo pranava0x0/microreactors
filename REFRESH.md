@@ -221,3 +221,8 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   check step at "rows not on the list" rather than at named rows. Also, the politics agent filed two NRC construction permits for
   300 MW BWRX-300s as dockets; `data/dockets.json` is utility plans, dockets and state laws, so NRC licensing actions belong in news
   (if in band) or nowhere.
+
+- **2026-11-14: a cached source can be a nav-and-footer shell, so the offline gate passes a quote it never saw.** The ERCOT pathway's
+  Beatty & Wozniak cache file was 4,206 characters of menus and office addresses; the live page never mentions SB 6 or 75 MW. The
+  politics agent caught it, and the row now cites the Legislature's SB 6 bill analysis (cached, verbatim). Before trusting a cached copy,
+  check its text length. A Saturday even-day run cost ~1.03M agent tokens for one application: on a weekend, skip costs and ideas even on even days.

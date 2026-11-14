@@ -383,7 +383,7 @@
           "name": "ERCOT connect-and-manage and its 75 MW review threshold",
           "status": "enacted",
           "kind": "enacted",
-          "mechanism": "ERCOT connects generators without pre-funding network upgrades, managing congestion by redispatch, which trade coverage credits with 1.5–3.5 year interconnections against 4–6+ elsewhere; the curtailment risk that offsets it matters less to a firm 1–20 MW unit than to weather-dependent resources. Texas SB 6 (2025) adds review only for co-location deals with loads of 75 MW or more, well above any single microreactor, and the new withdrawal-limited private-network structure lets co-located generation net against load at the meter.",
+          "mechanism": "ERCOT connects generators without pre-funding network upgrades, managing congestion by redispatch, which trade coverage credits with 1.5–3.5 year interconnections against 4–6+ elsewhere; the curtailment risk that offsets it matters less to a firm 1–20 MW unit than to weather-dependent resources. Texas SB 6 (2025) adds ERCOT study and PUC approval only for new net-metering deals pairing an existing stand-alone generator with a large load, a threshold the PUC must set at 75 MW unless it finds a lower one necessary, well above any single microreactor, and the new withdrawal-limited private-network structure lets co-located generation net against load at the meter.",
           "sources": [
             {
               "label": "pv magazine — ERCOT interconnection speed and connect-and-manage",
@@ -391,6 +391,13 @@
               "quote": "does not require network upgrades for interconnections",
               "status": "fetched",
               "verified": "2026-08-21 quote confirmed in page"
+            },
+            {
+              "label": "Texas Legislature — SB 6 bill analysis (final version)",
+              "url": "https://capitol.texas.gov/tlodocs/89R/analysis/html/SB00006F.htm",
+              "quote": "Requires the PUC to establish a demand threshold of 75 megawatts unless the PUC determines that a lower threshold is necessary",
+              "status": "fetched",
+              "verified": "2026-11-14 quote confirmed in cached copy"
             },
             {
               "label": "Beatty & Wozniak — SB 6 review and the WLPUN structure",

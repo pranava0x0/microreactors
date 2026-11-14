@@ -1,0 +1,96 @@
+{
+ "_meta": {
+  "captured": "2026-11-14",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped deployment_sites and segments records, Type S new buyer projects in thinly covered segments, Type E regions only where a price and a load number exist, and Type N university-reactor news not yet shipped.",
+  "angles_run": [
+   "Penn State / Westinghouse eVinci status (2026 MOU)",
+   "Texas A&M RELLIS: Aalo, Last Energy PWR-5 pilot, DOE authorization status",
+   "Last Energy DP World London Gateway status",
+   "Oklo / Wyoming Hyperscale LOI term and binding status",
+   "Deep Fission / Endeavour status and 2029 date",
+   "CVEA Valdez status (2026)",
+   "Hospital microreactor agreements (bail after 2 searches, nothing citable)",
+   "Disaster-recovery and deployable microreactor contracts",
+   "Data-center microreactor PPAs signed in 2026",
+   "Hydrogen and ammonia SMR deals with MW figures",
+   "Remote mine microreactor agreements",
+   "Northwest Territories microreactor activity",
+   "Chalk River Global First Power status (CNSC and CNL)",
+   "ACU molten salt research reactor permit status",
+   "Aysen Chile off-grid power and microreactor activity (no usable numbers)",
+   "Bermuda electricity price and generation (price fetched, load not verifiable)"
+  ],
+  "absences": [
+   "Hospital microreactor agreements: two searches returned no hospital deal.",
+   "Disaster-recovery specific microreactor contract: none found. Army Janus and Radiant items are military-base deals, already shipped.",
+   "Data-center microreactor PPAs signed in 2026 with a stated MW figure: none found. Results were large-reactor deals (Meta, Google, Constellation) or 2025 items.",
+   "Hydrogen or ammonia SMR deals with a 2026 MW figure: none found. Non-nuclear electrolysis deals (Synergen, Amogy) are out of scope.",
+   "Mine-site microreactor signed agreements with a 2026 MW figure: none found. Only MOUs; the Prodigy MOU is used as a 2024 record.",
+   "Deep Fission: no 2026 NRC filing or construction update confirmed. The 2029 first-reactor date is unverified for 2026.",
+   "Oklo / Wyoming Hyperscale: sources conflict on the PPA term (fetched ANS 2024 article says 20 years; another outlet says 10 years). No 2026 status found.",
+   "Copper Valley Electric (Valdez): no 2026 update found; the shipped tabled status was not re-checked against a 2026 primary page.",
+   "Aysen (Chile): no diesel price, load, or microreactor project found. Sistemas medianos bill content not read.",
+   "Bermuda: retail price fetched (BMD 0.452/kWh, March 2026). Load not verifiable: the BELCO review PDF returned unreadable binary and the government NESP 2026 PDF returned HTTP 404. Region not written.",
+   "Northwest Territories: 2026 federal and regional items found, but no named microreactor site or contract.",
+   "ACU molten salt research reactor: 2026 construction or schedule status not found; the Q4 2026 deployment target is unconfirmed.",
+   "Last Energy London Gateway: no 2026 update found after the September 2025 MOU; the shipped 2030 and end-2027 dates were not re-checked against a fetched 2026 page."
+  ],
+  "review": [
+   "2026-11-14 main session: dropped prodigy-des-nedhe-remote-canada-mines (2024 MOU; neimagazine 403 to every fetch path, unverifiable; superseded by the 2026 Belledune BANR selection already in news) and penn-state-westinghouse-mou-2026-05-06 (research test reactor with no output or buyer, dated outside the window). Set group campuses on the RELLIS pilot; both its sources re-read in cache."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-chalk-river-mmr-1",
+   "target": "chalk-river-mmr",
+   "file": "deployment_sites",
+   "claim": "paused",
+   "verdict": "confirmed",
+   "evidence": "CNSC project page (modified 2026-01-15) still shows 'Current Status: Paused' and says CNSC staff paused the environmental assessment and application review as of August 2024. Separately, the World Nuclear Association country profile reports that CNL closed its invitation programme in July 2026 and that the Chalk River and Whiteshell proposals are no longer active within the CNL process. That is a different process from the CNSC licence, so the CNSC pause status stands.",
+   "sources": [
+    {
+     "label": "CNSC — Global First Power micro modular reactor project page (status of record)",
+     "url": "https://www.cnsc-ccsn.gc.ca/eng/reactors/new-reactor-power-plant-projects/new-reactor-power-plant-facilities/global-first-micro-modular-reactor-project/",
+     "quote": "CNSC staff have paused all work related to the environmental assessment and the application review",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear Association — Nuclear Power in Canada (country profile)",
+     "url": "https://world-nuclear.org/Information-Library/Country-Profiles/countries-A-F/Canada-Nuclear-Power",
+     "quote": "The projects proposed for its Chalk River and Whiteshell sites are no longer active within the CNL process.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "applications": [
+  {
+   "id": "last-energy-pwr5-rellis-pilot",
+   "segment": "universities",
+   "name": "Last Energy PWR-5 pilot reactor at Texas A&M RELLIS",
+   "status": "funded",
+   "power_class": "5 MW of electrical output",
+   "timeline": "Preliminary documented safety analysis approved, release dated 2026-05-28. On 2026-09-10 the company said: \"In the next couple of months, we intend to get final authorization from the Department of Energy\".",
+   "vendor": "Last Energy",
+   "what_it_says": "Last Energy is building a PWR-5 pilot reactor on the Texas A&M RELLIS campus near Bryan-College Station. The company says the reactor is scaled for 5 MW of electrical output. The pilot is a DOE-authorized test unit, and the company says it is not meant to power homes or businesses right away. The RELLIS site record still reads pre-application, which covers the NRC early-site-permit track and not this DOE pilot.",
+   "microreactor_read": "A 5 MW electric pilot sits inside the 1-20 MW band, but it is a test unit under DOE authorization, not a commercial sale. No power buyer or price is named.",
+   "sources": [
+    {
+     "label": "Last Energy — Receives DOE approval of PWR-5 preliminary documented safety analysis (2026-05-28)",
+     "url": "https://www.lastenergy.com/news-press/last-energy-receives-doe-approval-of-pwr-5-preliminary-documented-safety-analysis",
+     "quote": "scaled for 5 MW of electrical output",
+     "status": "fetched"
+    },
+    {
+     "label": "KBTX — Nuclear reactor at RELLIS could be running within months (2026-09-10)",
+     "url": "https://www.kbtx.com/2026/09/11/nuclear-reactor-rellis-could-be-running-within-months/",
+     "quote": "The PWR-5 is not meant to power homes or businesses right away.",
+     "status": "fetched"
+    }
+   ],
+   "group": "campuses"
+  }
+ ],
+ "items": []
+}

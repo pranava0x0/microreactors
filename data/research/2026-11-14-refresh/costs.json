@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "captured": "2026-11-14",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on skip/costs.json numbers (up to 10) and Type N items for dated fuel-supply or financing events after 2026-11-13 not in skip/news.json. Excludes rows listed in skip/recently-checked.md.",
+    "angles_run": [
+      "OBBBA 45Y/48E phase-out window for nuclear (against shipped incentives.points[0]): search plus one fetch of a 2025 law-firm summary. Phase-out start (construction in 2034 or later) is consistent with the shipped sentence. No check written: the fetched source is secondary and the search summary's year-by-year percentages were not confirmed against the statute (P.L. 119-21).",
+      "FEOC material-assistance guidance (against shipped incentives.points[2]): search plus one fetch of a Feb 2026 law-firm page. Notice 2026-15 (issued 12 Feb 2026, per search summary) covers 45Y, 48E and 45X; the fetched page does not mention 45U. Nothing contradicted; no check written.",
+      "TUGLIQ / Glencore Raglan industrial self-generation band $0.25-0.60/kWh (against shipped displaced_alternatives[0]): located the 2016-11-11 public completion report (GC 128296). The PDF returned raw bytes to WebFetch and no PDF text extractor is installed, so the figure could not be read. The project HTML page (tugliq.com/en/?p=876) states no per-kWh figure. Unverified; no check written.",
+      "INL/RPT-24-80433 headline figures (against shipped microreactor_lcoe[3] and capex.rows[3]): gain.inl.gov returned HTTP 403. The OSTI record for a related INL paper (biblio/3017259) has no numbers. Search summaries cite about $120/MWh and about $6,000/kWe, but these are synthesized, not fetched. No check written.",
+      "HALEU enrichment awards dated after 2026-11-13 (Items): two searches. Latest DOE HALEU item found is the Centrus $900M task order contract finalised in July 2026, which predates the window. Nothing dated 2026-11-14 or later.",
+      "Microreactor fuel and financing loans dated after 2026-11-13 (Items): one search. Results are DOE AP1000 conditional loans (large reactors, not microreactors) and older Kairos and Radiant items. Nothing dated after 2026-11-13."
+    ],
+    "absences": [
+      "No Type N items: no dated fuel-supply or financing event after 2026-11-13 could be found in two searches. Search summaries are not evidence for dates; none was fetched because none surfaced.",
+      "No Type G checks written. The shipped figures I could test were either not readable (TUGLIQ/Glencore $0.25-0.60/kWh: PDF is binary, HTML page has no per-kWh figure) or blocked (INL RPT-24-80433 abstract $120/MWh vs conclusion $150/MWh and $6,000/kWe: gain.inl.gov returned 403).",
+      "Unresolved discrepancy, not a verdict: the search summary for the OBBBA nuclear phase-out gives 100% through 2033, 75% for construction starting 2034, 50% for 2035 and 0% after. The shipped sentence ('survive ... before 2034, then phase out over three years') is consistent with a 2034 start to the phase-out but was not checked against the enacted statute.",
+      "Not checked: microreactor_lcoe[0] and [1] (NEI 2019 FOAK/NOAK bands), microreactor_lcoe[4] (Nuclear Business Platform, no currency stated), displaced_alternatives[2] (diesel breakeven $1.50/litre, no URL on record), displaced_alternatives[3] (NEI position), learning_curve rates (8%/18%/23%), assumptions rows (discount rate, plant life, capacity factor), archetypes rows[0] and [1]. Budget and time went to the rows above.",
+      "Excluded per skip/recently-checked.md: displaced_alternatives[1]; microreactor_lcoe[2] and [5]; capex.rows[0..2]; archetypes convergence and rows[2]; the INL 2024 vs 2025 editorial call.",
+      "PDF text extraction is not available in this environment: WebFetch returns binary for PDFs, and no pdftotext or pypdf or PyMuPDF is installed. Any PDF-sourced costs check will stay unverified until one is installed or the source is available as HTML."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

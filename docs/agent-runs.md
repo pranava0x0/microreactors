@@ -543,3 +543,19 @@ Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 
 | politics | 185K | Ameren Missouri 2026 IRP (1.2 GW nuclear by 2040, no technology); TVA Clinch River and Blue Energy NRC permits held as out of dockets scope | marginal |
 
 ~613K agent tokens for 3 news items, 2 corrections and 1 filing. Phone cost not re-measured (no layout change).
+
+## 2026-11-14 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing after 11-13; both watcher candidates were already settled (Long Mott shipped, BWXT Cambridge out of scope). `skip/recently-checked.md` rebuilt from 11-07..11-13. 0 news, 0 corrections, 1 application, 1 hand re-source.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 153K | nothing in window; absences only | no |
+| deals | 122K | nothing; flagged Dairyland/Applied Atomics LOI (100 MWe mPower, out of band) | no |
+| vendors | 150K | nothing; GA-TES row re-read, matches | no |
+| politics | 157K | Texas backup-power rule confirmed; flagged the ERCOT SB 6 75 MW claim as resting on a page that never mentions it (re-sourced by hand to the Legislature's bill analysis) | yes |
+| applications | 179K | Last Energy PWR-5 pilot at RELLIS shipped (campuses); Chalk River pause confirmed; Prodigy 2024 MOU and Penn State MOU dropped | yes |
+| costs | 139K | nothing verifiable (INL 403, TUGLIQ PDF unreadable) | no |
+| ideas | 135K | nothing; primary PDFs unreadable to WebFetch | no |
+
+~1.03M agent tokens for 1 application and 1 lead that became a re-source. Phone cost 1.70 (baseline 1.69; one more Applications row).

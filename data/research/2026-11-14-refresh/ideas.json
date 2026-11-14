@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "captured": "2026-11-14",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on arguments (time-sensitive numbers) and Type N policy items (studies dated after 2026-11-13). Skip lists: skip/arguments.json, skip/news.json, skip/recently-checked.md, skip/web-leads.md. Recently-checked ids (liability, first-article) not re-checked.",
+    "angles_run": [
+      "ERCOT small-generation (<10 MW) process timeline and threshold",
+      "Texas Backup Power Package program status (PUCT Project 59024)",
+      "Studies dated 2026-11-14 (general microreactor study search)",
+      "NY standardized interconnection requirements: 5 MW scope, $750 fee, 60-business-day study",
+      "MISO surplus interconnection average time in service since 2024",
+      "NEI / EPRI / DOE Liftoff microreactor cost report 2026",
+      "GAO / CBO / IEA SMR and microreactor analysis, Nov 2026",
+      "Connecticut microgrid statute 65 MW cap (PA 12-148, s.16-243y)",
+      "INL MOUSE microreactor cost model web tool release 2026"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-11-14 (the only date after 2026-11-13 in scope) was found from DOE Liftoff, INL, NEI, EPRI, IEA, CBO, GAO, EIA or academic cost work. Today is a Saturday; the search window is one day.",
+      "thresholds / ERCOT: shipped claim 'Small Generation process at a stated 8-12 months' and 'Large Generation at 18-30 months' could not be verified. The ERCOT Resource Interconnection Handbook v1.95 (.docx) fetch returned binary content; the 10 MW small-generator threshold itself appeared only in a search summary of the Planning Guide, not in fetched text.",
+      "thresholds / New York: shipped claim 'cut at 5 MW ... $750 fee on a 60-business-day study' not verified as written. The $750 fee and 5 MW scope appear in search summaries (RG&E portal says the fee applies to applications over 50 kW); the 60-business-day statewide study window was not found. The NYS SIR PDF fetches (NYSEG dated 2025-08-01 timed out; gridwise copy returned binary) failed.",
+      "thresholds / Connecticut: shipped claim 'caps at 65 MW' is supported by a search summary of the statute and by the 2012 legislative summary, but the cga.ct.gov fetch failed (certificate error). The DEEP program page (fetched, last updated January 2020) states no MW limit, so the cap is not verified from fetched text.",
+      "inherit: shipped claim 'MISO surplus projects have come online in about a year on average since 2024' not verified. A search found a Synapse statement that surplus service can come online 'within a year or less' and a Utility Dive statement of nearly two-year delays for the standard MISO queue; neither is a MISO measurement of surplus projects since 2024.",
+      "fuel / one-property: Texas Backup Power Package (TBPP) note 'state money that buys the replacement outright, with a technology list' is not a numeric claim and no fetched PUCT text was reached. Search summaries say the PUCT adopted the final rule in May 2026 (May 7 announcement) and that applications were projected for late 2026 or early 2027; no PUCT notice of an application window was found. Not written as a check.",
+      "NEI, EPRI, DOE Liftoff: the 2026 Liftoff update that search surfaced is undated in results; the NEA/EPRI Costs of Generating Electricity 2025 covers large plants. No 2026 NEI-authored microreactor cost study found.",
+      "INL MOUSE web app: GitHub README and INL project page describe a web scoping tool; no dated 2026 launch announcement found, so no item written."
+    ]
+  },
+  "checks": [],
+  "items": []
+}
