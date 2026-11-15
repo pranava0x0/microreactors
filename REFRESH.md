@@ -226,3 +226,7 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   Beatty & Wozniak cache file was 4,206 characters of menus and office addresses; the live page never mentions SB 6 or 75 MW. The
   politics agent caught it, and the row now cites the Legislature's SB 6 bill analysis (cached, verbatim). Before trusting a cached copy,
   check its text length. A Saturday even-day run cost ~1.03M agent tokens for one application: on a weekend, skip costs and ideas even on even days.
+
+- **2026-11-15: a 7-day recently-checked list leaves the deals and vendors agents almost nothing to check.** It covered 14 of 16
+  opportunity rows and 6 of 8 vendors; deals and vendors spent ~290K tokens for 0 records. On a quiet weekend day, run news and
+  politics only, or shorten the list's window to 4 days so every row comes back into rotation within the week.

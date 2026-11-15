@@ -559,3 +559,16 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches fo
 | ideas | 135K | nothing; primary PDFs unreadable to WebFetch | no |
 
 ~1.03M agent tokens for 1 application and 1 lead that became a re-source. Phone cost 1.70 (baseline 1.69; one more Applications row).
+
+## 2026-11-15 daily refresh
+
+Four Haiku agents (odd day, Sunday), 2 at a time, after 2 main-session web searches found nothing after 11-13; both watcher candidates already settled. `skip/recently-checked.md` rebuilt from 11-08..11-14. 1 news, 0 corrections, 1 docket dropped by hand.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 151K | Oklo Aurora startup window 2028-2029 (Q3 call, 11-06) shipped after a hand check of both cached sources | yes |
+| deals | 143K | nothing; only 2 of 16 opportunity rows were off the recently-checked list | no |
+| vendors | 150K | nothing; eVinci and GA-TES re-read, match | no |
+| politics | 171K | Dominion VA 2026 IRP docket (SMRs from 2042) dropped: case number unverified, outside the 1-20 MW path | no |
+
+~615K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).

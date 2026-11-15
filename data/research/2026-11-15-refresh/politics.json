@@ -1,0 +1,45 @@
+{
+ "_meta": {
+  "captured": "2026-11-15",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy.json rows not on recently-checked.md; Type F dockets filed or decided 2026-08-17 to 2026-11-15 not in skip/dockets.json; Type N items dated after 2026-11-13.",
+  "angles_run": [
+   "Texas HB 14 (TANEO fund): governor release and enrolled bill text fetched",
+   "Alaska SB 177 and 2023 siting regulations: akbizmag fetched",
+   "Talen-Amazon Susquehanna ISA: FERC rejection count (publicpower fetched), rehearing and Fifth Circuit (search only)",
+   "CMS QSO-23-11-LSC categorical waiver: CMS policy page fetched",
+   "10 U.S.C. 2920 availability mandate and Dublin on-site generation template: not fetched (budget)",
+   "Louisiana nuclear tariff and LPSC Advanced Nuclear Exploration Program: search only (lailluminator 403)",
+   "NY PSC Case 26-E-0335 Nuclear Reliability Backbone white paper deadline: search only",
+   "NRC commission votes and final rules Oct-Nov 2026: DOE/DOW pathway rule fetched via Morgan Lewis (Federal Register PDF unreadable)",
+   "Michigan Pioneer (Holtec) NRC docket: search only",
+   "FY2027 NDAA microreactor provision (House Armed Services): search only",
+   "FY2027 Energy and Water appropriations: search only",
+   "Virginia SMR cost recovery (SCC) and Dominion 2026 IRP: mgrid fetched; Virginia Mercury and newsfromthestates 403",
+   "Kentucky PSC nuclear cost recovery: search only",
+   "State governor signings Sep-Nov 2026 for SMR or advanced reactor laws: search only",
+   "PUC orders on SMR or microreactors Sep-Nov 2026: search only",
+   "Army Janus policy Nov 2026: search only"
+  ],
+  "absences": [
+   "Checks: none written. Checked and not contradicted by a fetched page: Texas HB 14 (fetched bill text: 'microreactors' appears only in the advanced nuclear reactor definition, not in the fund provisions; the shipped sentence is arguable, not wrong), Alaska SB 177 regs (akbizmag: 'Streamlined regulations are now in place', published 2023-08-02, no effective date given), CMS QSO-23-11-LSC (page shows posting 2023-03-31, no rescission, undated), Talen-Amazon 'rejected twice' (publicpower fetch confirms the Nov 1 2024 rejection; the rehearing denial is search-only).",
+   "Talen-Amazon: a possible third rejection of a 960 MW amendment (DCD) could not be fetched (403); the rehearing denial and Fifth Circuit suit are search-summary only.",
+   "Louisiana: 20-cent nuclear tariff and Louisiana Advanced Nuclear Exploration Program vote scheduled for LPSC 2026-09-16; outcome and docket number not found. Not written as a docket because filing date falls before the 90-day window and no outcome was verified.",
+   "NY PSC Case 26-E-0335 (opened 2026-06-11, options paper 2026-06-12): white paper due 2026-11-11 or 2026-11-13 per conflicting sources; filing not confirmed. Outside the 90-day window.",
+   "Dominion 2026 IRP: SCC case PUR-2026-00163 and the capacity figure (2,046 MW vs 2 GW) come from search summaries only. The fetched mgrid page states the 2042 date and 'three sets' of SMRs but no MW. Virginia Mercury and newsfromthestates returned 403.",
+   "FY2027 NDAA: House Armed Services adopted a Harrigan microreactor amendment (Indo-Pacific Command program, 50 MWe cap); the House passed 216-212 in July 2026. No conference text or November status found, and the Senate bill showed no microreactor provision in search results.",
+   "FY2027 Energy and Water appropriations: House committee approved 34-25 on 2026-05-20; no Senate markup or November status found.",
+   "NRC DOE/DOW pathway final rule: published 2026-10-26, effective 2026-11-25 (fetched Morgan Lewis, dated 2026-11-11). Already on skip/news.json as nrc-doe-dow-prior-authorization-final-rule-2026-10-22, so not written as an item. Federal Register PDF unreadable.",
+   "Michigan Pioneer (Holtec) two-part construction permit: NRC federal action, not state policy; draft SER anticipated 2026-12. Not written up because no dated event falls in the 2026-11-13 to 2026-11-15 window that I could fetch.",
+   "Items: zero. No dated federal, state, PUC, or international regulatory event after 2026-11-13 surfaced in any search. Window appears quiet, consistent with web-leads.md.",
+   "Budget: about 22 searches and 13 fetches used; 5 fetches blocked (403): DCD, lailluminator, Virginia Mercury, newsfromthestates, energy-storage.news."
+  ],
+  "dropped_by_main_session": [
+   {
+    "id": "dominion-va-2026-irp-smr-2042",
+    "why": "Docket number PUR-2026-00163 unverified (search summary only); a 2042 large-SMR IRP block the record itself says does not touch the 1-20 MW path."
+   }
+  ]
+ },
+ "dockets": []
+}

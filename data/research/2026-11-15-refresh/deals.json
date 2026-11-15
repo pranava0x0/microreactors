@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "captured": "2026-11-15",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities not on skip/recently-checked.md (only ianc and jp-kr-moc remain unlisted); Type N items for buyer deals dated after 2026-11-13 missing from skip/news.json.",
+    "angles_run": [
+      "Type G: ianc (Industrial Advanced Nuclear Consortium) status",
+      "Type G: jp-kr-moc (US-Japan-Korea trilateral SMR memorandum) signing date",
+      "Type N: microreactor PPA signed Nov 2026",
+      "Type N: microreactor MOU / data center agreement, Nov 14 2026",
+      "Type N: microreactor letter of intent / site, Nov 2026",
+      "Type N: developer roundups (Deployable Energy, Last Energy, Valar, Radiant, Antares, Aalo, Oklo, Westinghouse eVinci) for Nov 2026",
+      "Type N: nuclear startup deployment agreement dated Nov 13 2026",
+      "Type N: Canada / Alaska / NWT microreactor agreements, Nov 2026"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract, site selection) dated 2026-11-14 or later found for any microreactor vendor. Search index returned nothing after 2026-11-13 on every angle; the most recent deal-type item found was Oklo's 2026-11-06 manufacturing capacity reservation at U.S. Forged Rings (North Carolina), a supplier arrangement dated before the window, so not written.",
+      "Type G ianc (Industrial Advanced Nuclear Consortium, shipped as 'Consortium formed; no procurement'): The Open Group IANC page (opengroup.org/IANC, fetched) states no procurement, orders or project commitments, consistent with the shipped text. No check written: the fetched page's wording came back as summarized fragments, not a verbatim quote I can confirm character-for-character, and the page is undated, so the confirmation fails the contract's dated-or-primary-and-verbatim bar.",
+      "Type G jp-kr-moc (shipped as signed 2026-07-07 at the NATO Summit, Ankara): UPI (2026-07-13, fetched) says the memorandum was signed 'Tuesday on the sidelines of the NATO summit', which corroborates 2026-07-07 but is not a primary source and is more than 60 days old. The State Department release and the Japan MOFA PDF both returned HTTP 403 to WebFetch, so no primary confirmation was obtained. No check written.",
+      "Shipped opportunity rows not checked because they appear on skip/recently-checked.md (per the task's explicit 'do not check any row it lists'): anpi-jbsa, anpi-buckley, anpi-malmstrom, eielson, uk-lastenergy, nano-supermicro, canada-src, texas-backup, janus, oklo-switch, doe-pilot, dome, equinix-radiant, romania-nuscale. The task's item (1) list named most of these; they were excluded per the RECENTLY CHECKED rule.",
+      "Searches not done: a primary-source check of the Army Janus 'four of the nine sites still unassigned' status and the DOE Reactor Pilot count were excluded by the recently-checked rule. Canada/NWT angle found only a September 2026 Alberta-Saskatchewan-NWT MOU (not microreactor-specific, not Alaska)."
+    ]
+  },
+  "checks": [],
+  "items": []
+}
