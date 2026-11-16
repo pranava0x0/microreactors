@@ -1,0 +1,54 @@
+{
+ "_meta": {
+  "captured": "2026-11-16",
+  "agent": "news",
+  "scope": "News tab: 1-20 MW microreactor market events dated after 2026-11-13, then the prior 60 days (2026-09-17 onward), not already on the shipped News tab. Starts from skip/candidates.json and the web leads in skip/web-leads.md.",
+  "angles_run": [
+   "candidates.json: BWXT Cambridge expansion (2026-11-13) checked and ruled out of scope per web-leads; Dow/X-energy Long Mott permit already shipped (2026-11-10)",
+   "web leads: INL-Purdue construction demonstration (ANS, ~2026-11-09); NRC 'License to Launch' bridge workshop (ANS, ~2026-11-04)",
+   "reactor criticality and testing: DOE Reactor Pilot Program, Last Energy PWR-5, Aalo-X, Valar, Westinghouse eVinci, Deep Fission Kansas",
+   "financing and SPAC events: NuCube / Launch Two S-4 and DEF 14A; Deep Fission; Valar Series B",
+   "fuel: HALEU and TRISO deliveries (Radiant DOME fuel, Centrus, Standard Nuclear)",
+   "first-of-a-kind deployments and programs: Army Janus, Navy Crane, DOE Nuclear Energy Launch Pad rounds",
+   "setbacks: Deep Fission missed July 4 criticality goal; Terrestrial Q3 results",
+   "key hires: NANO Nuclear CTO (dated 2025), Radiant Chief Nuclear Officer (undated), NuCube CLO, Hadron EVP Engineering (effective 2026-08-31, outside window)",
+   "company sweep: Radiant, Westinghouse, BWXT, Oklo, Antares, Aalo, Valar, Last Energy, NANO Nuclear, X-energy, Kairos, Deployable, Deep Fission, Terrestrial, Holtec, General Atomics, Natura, Blue Energy, Centrus, Standard Nuclear"
+  ],
+  "absences": [
+   "No new in-band microreactor event dated 2026-11-13 to 2026-11-16 found outside skip/news.json after roughly 24 web searches and 6 fetches across the company list. The window is effectively empty on the sources reachable here.",
+   "INL-Purdue construction demonstration (ANS, ~2026-11-09; INL release dated 2026-11-05 per search snippet): INL release returned HTTP 403 to WebFetch. Snippets describe a steel-plate composite containment and reactor-building test at Purdue for future SMR deployments, with no microreactor or MW figure. Not written; not verified as in band.",
+   "Last Energy PWR-5 (Texas A&M RELLIS): DSA approved 2026-10-07 (already shipped). Readiness review pending as of a 2026-11-02 report; no criticality announcement found. Watch item, not a new event.",
+   "Deep Fission: missed its July 4, 2026 criticality goal (KMUW, article published 2026-07-23, fetched). Event is outside the 60-day window, so not written. Company says it is focused on non-nuclear installation verification.",
+   "Radiant Kaleidos: first TRISO fuel delivered to INL DOME (Radiant release, dated July 2026) and Rita Baranwal named Chief Nuclear Officer (undated). Both Radiant pages returned HTTP 403. Fuel delivery is outside the window; CNO date unverified.",
+   "NuCube / Launch Two SPAC: DEF 14A filed; no shareholder vote date, vote result, or closing found. Outside-date reported as late 2026 by a secondary source only.",
+   "Terrestrial Energy Q3 2026 results (2026-11-10): found via search snippets only; IMSR is a large-plant design (not 1-20 MW), so not written.",
+   "Blue Energy: first part of the NRC construction permit application for a 300 MW BWRX-300 at Victoria, Texas (September 2026). Out of band (large LWR).",
+   "NANO Nuclear KRONOS 'three-year engineering pact' headline (dated 2026-11-07): this is the IMPSA ESMA of 2026-10-21, already on the News tab. Not written.",
+   "Launch Pad round 2 (2026-08-25), Valar Ward 250 criticality (2026-06-18), Radiant DOME shipment (2026-08-12), Janus awards (2026-08-26), and Antares Mark-1 DSA (2026-10-23) are all already shipped.",
+   "NRC bridge workshop: confirmed by NRC meeting notice (2026-10-28, fetched). ANS article 8557 supplies the 'next session 2026-12-02' detail, which was not confirmed on a fetched NRC page; the workshop is binding: false and only a public information meeting."
+  ]
+ },
+ "items": [
+  {
+   "id": "nrc-license-to-launch-workshop-2-2026-10-28",
+   "date": "2026-10-28",
+   "headline": "NRC holds second License to Launch workshop on DOE-to-NRC licensing",
+   "companies": [
+    "NRC"
+   ],
+   "category": "regulatory",
+   "what_happened": "The NRC held the second workshop in its 'License to Launch' series, 'Building the Bridge: From DOE Authorization to NRC Licensing', on 2026-10-28 from 12:30 to 4:30 pm EDT. It was an information meeting with Q&A covering the DOE authorization process, the proposed expedited NRC route for DOE-authorized reactor designs, and early NRC staff thinking on reusing information from DOE authorization.",
+   "why_it_matters": "A 1-20 MW reactor authorized first by DOE would move to a commercial NRC license through this route. The workshop shows how much DOE work NRC expects to reuse, which bears on how long a buyer waits for a license. The rule itself is already on the News tab (2026-10-22).",
+   "binding": false,
+   "binding_note": "Public information meeting with Q&A. No decision, filing or order.",
+   "sources": [
+    {
+     "label": "NRC - License to Launch Workshop #2 meeting notice (2026)",
+     "url": "https://www.nrc.gov/public-meetings-hearings/public-meeting-schedule/20260774",
+     "quote": "License to Launch - Workshop #2: Building the Bridge: From DOE Authorization to NRC Licensing",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

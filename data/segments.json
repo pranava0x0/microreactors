@@ -695,8 +695,8 @@
    "power_class": "5 MW of electrical output",
    "timeline": "Preliminary documented safety analysis approved, release dated 2026-05-28. On 2026-09-10 the company said: \"In the next couple of months, we intend to get final authorization from the Department of Energy\".",
    "vendor": "Last Energy",
-   "what_it_says": "Last Energy is building a PWR-5 pilot reactor on the Texas A&M RELLIS campus near Bryan-College Station. The company says the reactor is scaled for 5 MW of electrical output. The pilot is a DOE-authorized test unit, and the company says it is not meant to power homes or businesses right away. The RELLIS site record still reads pre-application, which covers the NRC early-site-permit track and not this DOE pilot.",
-   "microreactor_read": "A 5 MW electric pilot sits inside the 1-20 MW band, but it is a test unit under DOE authorization, not a commercial sale. No power buyer or price is named.",
+   "what_it_says": "Last Energy is building a PWR-5 pilot reactor on the Texas A&M RELLIS campus near Bryan-College Station. The company says the reactor is scaled for 5 MW of electrical output. The pilot is a test unit in DOE's Reactor Pilot Program, with its preliminary safety analysis approved and final DOE authorization still pending, and the company says it is not meant to power homes or businesses right away. The RELLIS site record still reads pre-application, which covers the NRC early-site-permit track and not this DOE pilot.",
+   "microreactor_read": "A 5 MW electric pilot sits inside the 1-20 MW band, but it is a test unit in DOE's Reactor Pilot Program, not a commercial sale. No power buyer or price is named.",
    "sources": [
     {
      "label": "Last Energy — Receives DOE approval of PWR-5 preliminary documented safety analysis (2026-05-28)",
@@ -712,6 +712,26 @@
     }
    ],
    "group": "campuses"
+  },
+  {
+   "id": "prodigy-des-nedhe-remote-mines-canada",
+   "segment": "mining and mineral processing",
+   "name": "Prodigy Clean Energy and Des Nëdhé Group transportable plants for remote mines",
+   "status": "proposed",
+   "power_class": "5 MWe (eVinci heat-pipe reactor; 14 MWt heat)",
+   "timeline": "MOU announced March 2024 (article dated 20 March 2024)",
+   "vendor": "Prodigy Clean Energy, with Westinghouse eVinci",
+   "what_it_says": "Prodigy Clean Energy and Des Nëdhé Group, an Indigenous economic development corporation, signed a memorandum of understanding to explore powering remote mines and communities in Canada. The article gives a nominal 5 MWe heat pipe reactor with 14 MWt heat capability, which Prodigy plans to integrate into its Microreactor Power Station. It names no remote-mine load, no price and no site.",
+   "microreactor_read": "A 5 MWe unit sits inside the 1-20 MW band, but the source is a 2024 MOU with no load, price or site, so it is not a supply contract. Prodigy has since picked BWXT's BANR, not eVinci, for its Belledune project (News, 2026-10-05), so the eVinci pairing may not be the one that ships.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Canadian partnership for microreactor deployment (2024)",
+     "url": "https://world-nuclear-news.org/articles/canadian-partnership-for-microreactor-deployment",
+     "quote": "have signed a memorandum of understanding to develop opportunities to power remote mines and communities in Canada",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
   }
  ]
 }

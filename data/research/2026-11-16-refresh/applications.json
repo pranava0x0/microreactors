@@ -1,0 +1,82 @@
+{
+ "_meta": {
+  "captured": "2026-11-16",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped segments and deployment_sites records most likely to have changed; new Type S named buyer projects in segments the tab thinly covers (remote mines, data centers, hydrogen/ammonia, desalination, hospitals, disaster recovery, maritime, district heat); Type E regions (none new); Type N items in lane (none qualified).",
+  "angles_run": [
+   "G: NASA/DOE lunar fission surface power status (nasa-doe-fsp-lunar)",
+   "G: Penn State FRONTIER eVinci CP application status (penn-state-evinci, psu-frontier)",
+   "G: Last Energy London Gateway 2026 update (last-energy-london-gateway)",
+   "G: Eielson AFB Janus / Oklo NOITA status (eielson-pilot)",
+   "G: Oklo Wyoming Hyperscale Aspen Mountain 2026 status (oklo-wyoming-hyperscale-aspen-mountain)",
+   "G: Aalo RELLIS ESP and unit size (tamu-rellis-aalo)",
+   "G: CVEA Valdez tabled status (cvea-valdez) - fetched",
+   "S: remote mines (Canada, Alaska, Yukon/Nunavut)",
+   "S: hospitals",
+   "S: hydrogen and ammonia",
+   "S: disaster recovery / emergency power",
+   "S: data centers behind the meter",
+   "S: desalination",
+   "S: ports (DP World Constanta)",
+   "N: INL and Purdue construction demonstration (web lead)"
+  ],
+  "absences": [
+   "NASA lunar fission surface power (nasa-doe-fsp-lunar): a secondary analysis (New Space Economy, 2026-09-01) says the draft SPARC solicitation's Lunar Reactor-1 requirement is 20 kWe, against the shipped 100 kWe. GovConWire returned 403 and nasa.gov/glenn/fsps returned 404, so no primary NASA text was fetched. No check written. Main session should verify against the SPARC solicitation text on NASA or SAM.gov.",
+   "Eielson AFB (eielson-pilot): the DAF microreactor page returned 403. Search summaries report a late-2028 to Q3-2030 operation shift and a Q4 2026 fuel-loading planning estimate, none fetched. The shipped record carries no operation date, so no check written.",
+   "Penn State FRONTIER (penn-state-evinci, psu-frontier): searched for a 2026 construction permit application; none found. Only the 2025-02-28 letter of intent is reported. No check written.",
+   "Oklo and Wyoming Hyperscale (oklo-wyoming-hyperscale-aspen-mountain): no 2026 update found. Coverage is 2024, and a March 2026 Wikipedia mirror still lists the letter of intent. Unverifiable, so no check written.",
+   "Last Energy London Gateway (last-energy-london-gateway): no 2026 permit, construction or financing news found. A January 2026 22 MWe grid export offer appears only in a search summary, not fetched. No check written.",
+   "Aalo RELLIS (tamu-rellis-aalo): an Aalo post dated 2025-02-04 (fetched) says a pod is 50 MW output, five Aalo-1 units per pod, with MWe or MWth unstated. The shipped 30 MWth cannot be shown outdated. The July 2026 ESP letter of intent appears only in a search summary, not fetched.",
+   "Hospitals: no microreactor power agreement with a hospital found in 2026.",
+   "Hydrogen and ammonia: 2026 deals found were electrolyzer or cracking projects, none with a microreactor. None written.",
+   "Disaster recovery: the Army-linked grid recovery model dates to 2024 and an MDPI food-manufacturing paper to 2026, neither with a named buyer or a dated utility deal. None written.",
+   "Data centers behind the meter: the GridMarket and Deployable Energy pipeline (July 2026) is already shipped as gridmarket-deployable-unb-framework. Equinix PPA figures (over 500 MW) came from one aggregator citing a 'Fictional Data' source and were not used.",
+   "Mines: the Nuclea and New Mining MOU and the Tata and BWXT trona project are already shipped. A BWXT and Wyoming Energy Authority feasibility contract (trona) was seen in a search summary only and not fetched. Yukon and Nunavut: no mine microreactor deal with a MW figure found.",
+   "Ports (DP World Constanta, WNN 2026-06-09, fetched): an SMR feasibility study with no reactor size stated. Not written, since a power number is required.",
+   "Desalination: the Natura and NGL Permian produced-water MOU (2026-02) is already shipped as ngl-natura-produced-water-2026-02-04. No new named desalination project found.",
+   "Regions (Type E): all candidate remote regions surfaced were already in skip/regions.json. No new region written.",
+   "Items (Type N): the INL and Purdue construction demonstration (announced 2026-11-05) concerns SMR construction methods with no microreactor and no MW figure. Dropped.",
+   "Budget: about 18 web searches and 8 fetches, of which 3 fetches returned 403 or 404."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-cvea-valdez-1",
+   "target": "cvea-valdez",
+   "file": "deployment_sites",
+   "claim": "Copper Valley Electric Association MMR (Valdez / Glennallen): status tabled",
+   "verdict": "confirmed",
+   "evidence": "CVEA's own project page, fetched on 2026-11-16, carries the status headline of its 9 August 2023 release. No later status change was found in search results.",
+   "sources": [
+    {
+     "label": "CVEA — Potential MMR Project page (tabled status and document set)",
+     "url": "https://www.cvea.org/about/project-reports/potential-micro-modular-nuclear-reactor-project.html",
+     "quote": "Micro-Modular Nuclear Reactor Project Tabled Indefinitely by CVEA",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "applications": [
+  {
+   "id": "prodigy-des-nedhe-remote-mines-canada",
+   "segment": "mining and mineral processing",
+   "name": "Prodigy Clean Energy and Des Nëdhé Group transportable plants for remote mines",
+   "status": "proposed",
+   "power_class": "5 MWe (eVinci heat-pipe reactor; 14 MWt heat)",
+   "timeline": "MOU announced March 2024 (article dated 20 March 2024)",
+   "vendor": "Prodigy Clean Energy, with Westinghouse eVinci",
+   "what_it_says": "Prodigy Clean Energy and Des Nëdhé Group, an Indigenous economic development corporation, signed a memorandum of understanding to explore powering remote mines and communities in Canada. The article gives a nominal 5 MWe heat pipe reactor with 14 MWt heat capability, which Prodigy plans to integrate into its Microreactor Power Station. It names no remote-mine load, no price and no site.",
+   "microreactor_read": "A 5 MWe unit sits inside the 1-20 MW band, but the source is a 2024 MOU with no load, price or site, so it is not a supply contract. Prodigy has since picked BWXT's BANR, not eVinci, for its Belledune project (News, 2026-10-05), so the eVinci pairing may not be the one that ships.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Canadian partnership for microreactor deployment (2024)",
+     "url": "https://world-nuclear-news.org/articles/canadian-partnership-for-microreactor-deployment",
+     "quote": "have signed a memorandum of understanding to develop opportunities to power remote mines and communities in Canada",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  }
+ ]
+}

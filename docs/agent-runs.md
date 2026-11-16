@@ -572,3 +572,19 @@ Four Haiku agents (odd day, Sunday), 2 at a time, after 2 main-session web searc
 | politics | 171K | Dominion VA 2026 IRP docket (SMRs from 2042) dropped: case number unverified, outside the 1-20 MW path | no |
 
 ~615K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-16 daily refresh
+
+Seven Haiku agents (even day, Monday), 2 at a time, after 2 main-session web searches; both watcher candidates already settled. `skip/recently-checked.md` rebuilt with a 4-day window (11-12..11-15). 1 news, 1 application, 0 corrections; 4 of 9 checks overruled by hand.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 168K | NRC License to Launch workshop #2 (10-28) shipped after a check against the NRC notice (Playwright-cached) | marginal |
+| deals | 140K | Janus confirmed; Equinix-Radiant "binding unsupported" overruled (read 1 of 2 sources; Radiant says signed with deposits) | no |
+| vendors | 150K | Radiant confirmed; Aalo-X "wrong" overruled (the row's own POWER source says 30-MWth/10-MWe, licensing 2027) | no |
+| politics | 174K | Part 57 confirmed proposed; EL25-49 "ordered" overruled (not a status value; proposed vs enacted left for a human) | no |
+| applications | 177K | Prodigy / Des Nëdhé remote-mines MOU (5 MWe) shipped; CVEA tabled confirmed | yes |
+| costs | 136K | PCE 19.35 "outdated" overruled, a third time (sentence already gives 20.38) | no |
+| ideas | 138K | liability confirmed; nothing new | no |
+
+~1.08M agent tokens for 1 news item and 1 application. Phone cost 1.70 (baseline 1.69).

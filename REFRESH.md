@@ -230,3 +230,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
 - **2026-11-15: a 7-day recently-checked list leaves the deals and vendors agents almost nothing to check.** It covered 14 of 16
   opportunity rows and 6 of 8 vendors; deals and vendors spent ~290K tokens for 0 records. On a quiet weekend day, run news and
   politics only, or shorten the list's window to 4 days so every row comes back into rotation within the week.
+
+- **2026-11-16: a 4-day recently-checked window brings settled misreads back.** The PCE "19.35 is outdated" clause (overruled 11-10)
+  was re-flagged the day it fell off the list, and Aalo-X's 30 MWth / 10 MWe (settled 11-04) came back "wrong" from an older article.
+  4 of 9 checks were overruled, every one because the agent read one source or one clause. Keep the 4-day window for rotation, but
+  carry a permanent "settled readings" block (fee clause, PCE 19.35 -> 20.38, Aalo-X CTR vs demo plant, Equinix deposits) in every
+  recently-checked.md. Also: the register lint rejects a colon in an application `name` ("X and Y: what it is"); rename before building.
