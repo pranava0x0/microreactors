@@ -1,0 +1,93 @@
+{
+ "_meta": {
+  "captured": "2026-11-16",
+  "agent": "politics",
+  "scope": "Rules and deal design tab, politics and regulation: Type G checks on shipped policy.json pathways (file policy); Type F dockets not in skip/dockets.json; Type N items dated after 2026-11-13 (category policy or regulatory).",
+  "angles_run": [
+   "NRC Part 57 final-rule status and 2026-11-23 deadline",
+   "NRC Commission votes and news releases after 2026-11-13 (NRC 2026 release index fetched)",
+   "FERC EL25-49 co-located load (PJM) order status",
+   "Texas HB 14 fund eligibility (construction tranche)",
+   "Alaska SB 177 microreactor threshold",
+   "State microreactor and SMR bills 2026 (signings, moratoria)",
+   "State PUC and utility microreactor or SMR dockets, Aug to Nov 2026",
+   "Louisiana nuclear tariff (LPSC)",
+   "Kentucky SB 57 and NJ bills (window check)",
+   "FY2027 NDAA nuclear and microreactor provisions",
+   "FY2027 DOE and NRC appropriations",
+   "DOE Reactor Pilot Program and Nuclear Energy Launch Pad, Nov 2026",
+   "Army microreactor policy (Janus), Nov 2026",
+   "CNSC licensing decisions for SMR or microreactors, 2026",
+   "Executive-order deadlines (May 2025 orders)"
+  ],
+  "absences": [
+   "Part 57 final rule: NRC proposed-rule page (updated 2026-09-14) and ANS (2026-10-22) both still describe it as proposed. No final rule and no scheduled final date found. The 2026-11-23 date traces to the May 2025 executive order's 18-month NRC overhaul deadline (search summary, Foley Hoag; not fetched), not to a Part 57 schedule. Not written as a claim.",
+   "NRC: the 2026 news-release index (fetched) lists no release after 2026-11-13; latest is 26-084 dated 2026-11-12 (NRC Streamlines Advisory Committee Role To Support Advanced Nuclear Licensing), which is before the window. No NRC Commission vote on a microreactor found after 2026-11-13.",
+   "FY2027 NDAA: House version (HR 8800) carries a microreactor provision (Harrigan amendment: Indo-Pacific transportable microreactor program; microreactor defined at 50 MWe or less). House passage was June 2026, before the window. Senate microreactor text not found. Final conference status not found.",
+   "DOE FY2027 appropriations: no House or Senate floor action or enacted bill found after June 2026. The DOE nuclear budget figure is disputed between sources ($1.53B Office of Nuclear Energy in testimony vs. a reported 9% cut); not resolved.",
+   "Army Janus: latest award news is August 2026 (up to $2.2B across five vendors). No November 2026 Army or DoD policy action found.",
+   "CNSC: no 2026 microreactor licence decision found. OPG applied in March 2026 for an operating licence for one BWRX-300 at Darlington (not a microreactor, not decided).",
+   "DOE Reactor Pilot Program: no new DOE authorization announcement dated after 2026-11-13 found. Latest milestone coverage is ANS 2026-11-02 (October milestones for Antares, Last Energy, Radiant).",
+   "Louisiana nuclear tariff (LPSC): a 20-cent monthly fee on Entergy Louisiana, Cleco and SWEPCO bills to fund SMR and microreactor early-stage studies. Reported 2026-08-13; vote postponed to 2026-09-16 per the Louisiana Illuminator summary. No docket number, filing date or outcome found. Louisiana Illuminator and newsfromthestates returned HTTP 403 on fetch. Not written as a docket.",
+   "Alaska SB 177 threshold: shipped text says 50 MW, which WNN (2023, fetched) supports. A search summary cited 20 MW; no fetchable source confirmed it. Left unresolved, not checked.",
+   "Texas HB 14 construction tranche: the $280M Advanced Nuclear Construction Reimbursement Program requires a docketed NRC application by 2026-12-01 (ANS 2026-04-09 and Utility Dive, both fetched). The shipped mechanism line omits this condition. Not written as a check because the shipped sentence is incomplete rather than contradicted; flagged for the main session.",
+   "Texas TANEO award recipients (selections were due July 2026) not found in any source.",
+   "Kentucky SB 57 was signed 2026-04-08 (outside the 90-day window). A September 2026 Kentucky signing is reported in one aggregator with conflicting dates; not verified. NJ S4849 and A5727 are already shipped in skip/dockets.json. NJ Power NJ Act signed 2026-07-13 (outside the window).",
+   "Dockets: no in-window (since 2026-08-18) state legislation, PUC order or IRP naming microreactors or SMRs was found with a verifiable docket number and filing or order date. Dockets list left empty rather than padded.",
+   "FERC EL25-49: PJM compliance filing was due 60 days after the 2026-06-18 order (about 2026-08-17). Whether PJM filed, and any later FERC action, not found. The FERC order PDF (ferc.gov) and the Willkie memo returned binary content on fetch.",
+   "Not checked: 45Y/48E credits, Price-Anderson, and the ADVANCE Act fee rate (the fee clause is in recently-checked and was skipped). Price-Anderson and 45Y/48E have no shipped row in policy.json.",
+   "Web leads: the ANS INL/Purdue construction-demonstration item and the NRC bridge-workshop item are dated before 2026-11-13 and are outside this agent's lane. Not checked.",
+   "Recently-checked rows (Texas Backup Power Package; NRC licensing fee clause) were not re-checked, as instructed."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-licensing-part57-1",
+   "target": "Part 57, the proposed microreactor rule",
+   "file": "policy",
+   "claim": "Part 57, the proposed microreactor rule (status: proposed)",
+   "verdict": "confirmed",
+   "evidence": "The NRC proposed-rule page (last updated 2026-09-14) still describes Part 57 as proposed. ANS on 2026-10-22 says Part 57 is aimed at microreactor designs and has yet to be finalized. No final rule found through 2026-11-16. The 2026-11-23 date in the refresh brief is an executive-order overhaul deadline, not a Part 57 schedule.",
+   "sources": [
+    {
+     "label": "NRC — Proposed 10 CFR Part 57 rulemaking page",
+     "url": "https://www.nrc.gov/reactors/new-reactors/advanced/modernizing/rulemaking/proposed-part57",
+     "quote": "Proposed Title 10 of the Code of Federal Regulations (10 CFR) Part 57 would establish.",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS Nuclear Newswire — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+     "url": "https://www.ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization",
+     "quote": "Part 57 is aimed at microreactor designs and has yet to be finalized.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-interconnection-el25-49-1",
+   "target": "FERC EL25-49 on co-located load",
+   "file": "policy",
+   "claim": "FERC EL25-49 on co-located load (proposed)",
+   "verdict": "confirmed",
+   "evidence": "FERC's June 18, 2026 order in EL25-49 accepted in part and rejected in part rehearing requests of its December 18, 2025 order, accepted certain rates for three new transmission services, and required further PJM tariff revisions (Troutman). Holland & Knight (2026-06-23): PJM has 60 days to submit its next compliance filing. The proceeding is past the proposal stage. Whether PJM has filed is not verified.",
+   "sources": [
+    {
+     "label": "Troutman Energy Report — FERC addresses arguments on rehearing and requires additional PJM tariff revisions to accommodate co-located load (June 2026)",
+     "url": "https://www.troutmanenergyreport.com/2026/06/ferc-addresses-arguments-on-rehearing-and-requires-additional-pjm-tariff-revisions-to-accommodate-co-located-load/",
+     "quote": "On June 18, 2026, FERC accepted in part and rejected in part requests for rehearing of its December 18, 2025, order",
+     "status": "fetched"
+    },
+    {
+     "label": "Holland & Knight — FERC advances new oversight framework for large loads (2026-06-23)",
+     "url": "https://www.hklaw.com/en/insights/publications/2026/06/ferc-advances-new-oversight-framework-for-large-loads",
+     "quote": "PJM has 60 days to submit its next compliance filing.",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled in main session: 'ordered' is not a data/policy.json status (enacted/proposed/finding/idea/program), and the row's mechanism already states the 2025-12-18 order and the 2026-06-18 rehearing order directing further PJM compliance. PJM's compliance tariff is not shown accepted, so moving the label from proposed to enacted is an editorial call for a human (flagged in the PR body)."
+  }
+ ],
+ "dockets": [],
+ "items": []
+}

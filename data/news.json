@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "captured": "2026-11-13",
+    "captured": "2026-11-16",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "61 of 104 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 43 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "61 of 106 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 45 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-13",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 20
+      "count": 21
     },
     {
       "id": "fuel",
@@ -41,7 +41,7 @@
     },
     {
       "id": "setback",
-      "count": 4
+      "count": 5
     },
     {
       "id": "personnel",
@@ -143,6 +143,33 @@
       ]
     },
     {
+      "id": "oklo-aurora-startup-2028-2029-2026-11-06",
+      "date": "2026-11-06",
+      "headline": "Oklo's first Aurora startup window widens to 2028 to 2029",
+      "companies": [
+        "Oklo"
+      ],
+      "category": "setback",
+      "what_happened": "On its Q3 2026 results and call, Oklo said its first Aurora powerhouse at Idaho National Laboratory may not begin operating until 2028 or 2029, against a firm 2028 target it had repeated before. CEO Jake DeWitte tied the added time to commissioning and calibration lessons from the Groves-1 test reactor. He expects the documented safety analysis to move forward closer to construction completion, likely in 2028.",
+      "why_it_matters": "A buyer counting on Aurora for 2028 power should treat 2029 as a live case. The schedule now comes with a range, not a date, and the design's first-of-a-kind timeline is the main open risk.",
+      "binding": false,
+      "binding_note": "A schedule statement made on the earnings call and in the quarterly filing. It is not a contract, order or completed milestone.",
+      "sources": [
+        {
+          "label": "Zacks via Finviz — Oklo narrows its loss against expectations but an Aurora slip and PJM setback overshadow construction progress (2026-11)",
+          "url": "https://finviz.com/news/418461/oklo-narrows-its-loss-against-expectations-but-an-aurora-slip-and-pjm-setback-overshadow-construction-progress",
+          "quote": "Startup is now framed as 2028-2029 rather than the firm 2028 target management repeated",
+          "status": "fetched"
+        },
+        {
+          "label": "MarketBeat — Oklo Q3 earnings call highlights (2026-11-07)",
+          "url": "https://www.marketbeat.com/instant-alerts/transcript-oklo-q3-earnings-call-highlights-2026-11-07/",
+          "quote": "Oklo’s first Aurora powerhouse in Idaho may not begin operating until 2028 or 2029.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "centrus-doe-haleu-options-2026-11-04",
       "date": "2026-11-04",
       "headline": "DOE says it will not exercise further HALEU contract options with Centrus",
@@ -224,6 +251,27 @@
           "label": "Radiant, Radiant Achieves Industry Milestone as the Only Microreactor Design to Secure DOE Safety Analysis Approval for Full Power Operations (Oct. 29, 2026)",
           "url": "https://www.radiantnuclear.com/news/radiant-secure-doe-approval-for-full-power-operations",
           "quote": "has granted approval of its Documented Safety Analysis (DSA)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nrc-license-to-launch-workshop-2-2026-10-28",
+      "date": "2026-10-28",
+      "headline": "NRC holds second License to Launch workshop on DOE-to-NRC licensing",
+      "companies": [
+        "NRC"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC held the second workshop in its 'License to Launch' series, 'Building the Bridge: From DOE Authorization to NRC Licensing', on 2026-10-28 from 12:30 to 4:30 pm EDT. It was an information meeting with Q&A covering the DOE authorization process, the proposed expedited NRC route for DOE-authorized reactor designs, and early NRC staff thinking on reusing information from DOE authorization.",
+      "why_it_matters": "A 1-20 MW reactor authorized first by DOE would move to a commercial NRC license through this route. The workshop shows how much DOE work NRC expects to reuse, which bears on how long a buyer waits for a license. The rule itself is already on the News tab (2026-10-22).",
+      "binding": false,
+      "binding_note": "Public information meeting with Q&A. No decision, filing or order.",
+      "sources": [
+        {
+          "label": "NRC - License to Launch Workshop #2 meeting notice (2026)",
+          "url": "https://www.nrc.gov/public-meetings-hearings/public-meeting-schedule/20260774",
+          "quote": "License to Launch - Workshop #2: Building the Bridge: From DOE Authorization to NRC Licensing",
           "status": "fetched"
         }
       ]

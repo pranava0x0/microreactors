@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "captured": "2026-11-15",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows not in recently-checked.md; Type N vendor milestones dated after 2026-11-13 missing from skip/news.json, including unlisted 1-20 MWe designs.",
+    "angles_run": [
+      "Westinghouse eVinci news (search + DOE and Westinghouse primary pages fetched; shipped 2026-08-24 and 2026-09-03 milestones confirmed)",
+      "General Atomics GA-TES (search + ga.com release fetched; 5 MWe / 20 MWe scalable, UZrH fuel confirmed; no delivery date or refuel interval published)",
+      "Deployable Energy Unity (search x2, Nov 2026 query returned nothing newer than Aug 2026)",
+      "NANO Nuclear KRONOS and ZEUS (search x2; only a Nov 11 scheduling release and a Nov 11 fuel-transport release, neither a vendor milestone)",
+      "Last Energy PWR-20 (search x2; no Nov 2026 release found, Nov query returned unrelated oil and gas results)",
+      "Natura Resources MSR-1 (search x2; latest Jul 2026, out of 1-20 MWe scope as a 1 MWt research reactor)",
+      "Blue Energy (search; 300 MW BWRX-300 projects, out of scope)",
+      "Terra Innovatum SOLO (search x2; latest 2026-11-04 PSAR submission, before the 2026-11-13 window)",
+      "Steady Energy LDR-50 (search; 50 MWth heat-only, out of 1-20 MWe electric scope)",
+      "Cross-vendor sweep for 2026-11-14 announcements (search; none found)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-11-14 or 2026-11-15 found for any non-excluded shipped vendor or unlisted 1-20 MWe design (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Blue Energy, Terra Innovatum, Steady Energy, Natura). Searches for each returned nothing newer than 2026-11-11.",
+      "Excluded by recently-checked.md and not searched: bwxt-banr, aalo-x, radiant, valar-ward250, antares, oklo-aurora. Valar and Aalo unlisted-vendor events not checked for the same reason.",
+      "GA-TES refuelling interval: the ga.com primary release (2026-08-26) states a 40-year design life and no refuelling schedule. A 4-6 year refuel figure appears only in a Fortune summary (2026-10-25) that was not fetched, so it is not written up.",
+      "Last Energy Texas DSA approval: only a secondary summary reports the October 2026 approval; the DOE primary page was not located. Already shipped as news, so not re-checked here.",
+      "Deployable Energy Unity criticality date (2026-06-30) and Unity full-power DOME plan (2027): sourced from secondary reports, not fetched primary pages; not used as checks.",
+      "Natura MSR-1: Fortune (2026-07-04) gives a 2028 Abilene start against a July 4, 2026 criticality target. Natura is not in the vendor table and MSR-1 is a 1 MWt research reactor, so no record written."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

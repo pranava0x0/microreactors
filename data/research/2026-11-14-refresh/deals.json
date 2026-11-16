@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "captured": "2026-11-14",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on opportunities rows not in recently-checked.md; Type N items for buyer deals dated after 2026-11-13 not already in skip/news.json",
+    "angles_run": [
+      "check ianc: IANC / Open Group status (fetched opengroup.org/IANC; primary page describes setting requirements and standards, not procurement; shipped status 'no procurement' still holds, so no check written)",
+      "check jp-kr-moc: trilateral SMR MOC signing date (WNN fetched 2026-07-08: signed 'on Tuesday' in Ankara = 2026-07-07, shipped date correct; state.gov release returned 403, so no check written)",
+      "items: microreactor data-center agreements announced this week (no dated-after-11-13 hits)",
+      "items: named vendor OEM deals on 2026-11-14 (Oklo, Radiant, Antares, NANO) (no hits)",
+      "items: SMR letters of intent with utilities and industrial buyers (only Dairyland/Applied Atomics LOI dated 2026-10-22, before the window)",
+      "items: microreactor PPA signed 2026-11-14 (no hits; closest were undated or older)",
+      "items: Deep Fission, Last Energy, TerraPower binding power deals (only Deep Fission Kansas GPDA, already in news.json as deep-fission-gpda-master-energy-purchase-2026-10-20)"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract, site selection) dated 2026-11-14 found in any search; the 2026-11-13 cutoff yields zero new items",
+      "state.gov release for the trilateral MOC returned HTTP 403; date confirmed only through WNN (fetched) and not through the primary release",
+      "Last Energy: no results for any November 2026 deal in the search",
+      "Dairyland Power / Applied Atomics LOI (announced 2026-10-22 per a search summary, not fetched) is not in skip/news.json; out of the after-2026-11-13 window, so not written, flagged for the main session to verify",
+      "Several undated search results (DCD, NEI, Power Engineering) could not be dated; none used"
+    ]
+  },
+  "checks": [],
+  "items": []
+}

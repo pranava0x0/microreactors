@@ -543,3 +543,48 @@ Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 
 | politics | 185K | Ameren Missouri 2026 IRP (1.2 GW nuclear by 2040, no technology); TVA Clinch River and Blue Energy NRC permits held as out of dockets scope | marginal |
 
 ~613K agent tokens for 3 news items, 2 corrections and 1 filing. Phone cost not re-measured (no layout change).
+
+## 2026-11-14 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches found nothing after 11-13; both watcher candidates were already settled (Long Mott shipped, BWXT Cambridge out of scope). `skip/recently-checked.md` rebuilt from 11-07..11-13. 0 news, 0 corrections, 1 application, 1 hand re-source.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 153K | nothing in window; absences only | no |
+| deals | 122K | nothing; flagged Dairyland/Applied Atomics LOI (100 MWe mPower, out of band) | no |
+| vendors | 150K | nothing; GA-TES row re-read, matches | no |
+| politics | 157K | Texas backup-power rule confirmed; flagged the ERCOT SB 6 75 MW claim as resting on a page that never mentions it (re-sourced by hand to the Legislature's bill analysis) | yes |
+| applications | 179K | Last Energy PWR-5 pilot at RELLIS shipped (campuses); Chalk River pause confirmed; Prodigy 2024 MOU and Penn State MOU dropped | yes |
+| costs | 139K | nothing verifiable (INL 403, TUGLIQ PDF unreadable) | no |
+| ideas | 135K | nothing; primary PDFs unreadable to WebFetch | no |
+
+~1.03M agent tokens for 1 application and 1 lead that became a re-source. Phone cost 1.70 (baseline 1.69; one more Applications row).
+
+## 2026-11-15 daily refresh
+
+Four Haiku agents (odd day, Sunday), 2 at a time, after 2 main-session web searches found nothing after 11-13; both watcher candidates already settled. `skip/recently-checked.md` rebuilt from 11-08..11-14. 1 news, 0 corrections, 1 docket dropped by hand.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 151K | Oklo Aurora startup window 2028-2029 (Q3 call, 11-06) shipped after a hand check of both cached sources | yes |
+| deals | 143K | nothing; only 2 of 16 opportunity rows were off the recently-checked list | no |
+| vendors | 150K | nothing; eVinci and GA-TES re-read, match | no |
+| politics | 171K | Dominion VA 2026 IRP docket (SMRs from 2042) dropped: case number unverified, outside the 1-20 MW path | no |
+
+~615K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-16 daily refresh
+
+Seven Haiku agents (even day, Monday), 2 at a time, after 2 main-session web searches; both watcher candidates already settled. `skip/recently-checked.md` rebuilt with a 4-day window (11-12..11-15). 1 news, 1 application, 0 corrections; 4 of 9 checks overruled by hand.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 168K | NRC License to Launch workshop #2 (10-28) shipped after a check against the NRC notice (Playwright-cached) | marginal |
+| deals | 140K | Janus confirmed; Equinix-Radiant "binding unsupported" overruled (read 1 of 2 sources; Radiant says signed with deposits) | no |
+| vendors | 150K | Radiant confirmed; Aalo-X "wrong" overruled (the row's own POWER source says 30-MWth/10-MWe, licensing 2027) | no |
+| politics | 174K | Part 57 confirmed proposed; EL25-49 "ordered" overruled (not a status value; proposed vs enacted left for a human) | no |
+| applications | 177K | Prodigy / Des Nëdhé remote-mines MOU (5 MWe) shipped; CVEA tabled confirmed | yes |
+| costs | 136K | PCE 19.35 "outdated" overruled, a third time (sentence already gives 20.38) | no |
+| ideas | 138K | liability confirmed; nothing new | no |
+
+~1.08M agent tokens for 1 news item and 1 application. Phone cost 1.70 (baseline 1.69).

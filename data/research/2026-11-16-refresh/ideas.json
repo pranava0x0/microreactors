@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "captured": "2026-11-16",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on time-sensitive numbers in the arguments file; Type N items for studies or reports dated after 2026-11-13 that change the case for or against 1-20 MW reactors.",
+    "angles_run": [
+      "Price-Anderson retrospective premium (10 CFR 140.11 inflation adjustment)",
+      "Microreactor cost studies dated November 2026",
+      "DOE Liftoff reports 2026",
+      "EPRI advanced reactor / microreactor studies November 2026",
+      "GAO / CBO reports on SMRs and microreactors 2026",
+      "Web lead: INL and Purdue construction demonstration (ANS, ~2026-11-09)",
+      "NEI microreactor reports November 2026",
+      "ERCOT Small Generation threshold and process durations",
+      "Insurer / lender reports on microreactors this week",
+      "National laboratory microreactor cost per kWh 2026"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-11-14 to 2026-11-16 found on any angle searched, so zero Type N items. Searches covered DOE Liftoff, EPRI, GAO, CBO, NEI, insurer and lender reports, and national-lab cost work.",
+      "DOE Liftoff: the Liftoff report series exists on liftoff.energy.gov, but no microreactor-specific edition with a 2026 date was found.",
+      "EPRI: the Advanced Reactors Global Market and Technology Overview is dated November 2024, with a 2026 revision planned but not found. No November 2026 release found.",
+      "GAO / CBO: no 2026 GAO or CBO product on SMRs or microreactors found. The latest federal analysis found was EIA (April 2026), which is not a post-11-13 item.",
+      "NEI: no November 2026 NEI microreactor report found.",
+      "Web lead, ANS ~2026-11-09 (INL and Purdue construction demonstration): out of scope. It is an ACTI construction-methods demonstration for steel-plate composite containment at Purdue, announced by NRIC on 2026-11-05, with no microreactor. Not a record.",
+      "Liability: 10 CFR 140.12 formula floor ($4,500,000) and cap ($74,000,000) for reactors under 100,000 kWe could not be verified; the fetched Federal Register page (2023-19009) does not cover 140.12. The $500,000,000 primary protection figure was not checked.",
+      "Liability: no 2026 Price-Anderson inflation adjustment found. The next is due within five years of the 2023 rule, so the $158,026,000 figure may change before 2028.",
+      "Thresholds: ERCOT's 10 MW Small Generation threshold appears unchanged (ERCOT Planning Guide Section 5). PGRR 140 (ROS report 2026-08-06) proposes further revisions to the sub-10 MW interconnection process, status unconfirmed. The 8-12 month and 18-30 month process durations could not be verified: the ERCOT ROS report fetched as a .docx returned binary content with no readable text.",
+      "Quotes for the Federal Register check were taken from a WebFetch summary and should be re-verified against the raw bytes."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "A 300 MWe unit carries $500,000,000 of primary financial protection and accepts a contingent retrospective assessment of $158,026,000.",
+      "verdict": "confirmed",
+      "evidence": "Federal Register final rule (Sept. 5, 2023; effective Oct. 5, 2023) on the fourth periodic inflation adjustment of Price-Anderson financial protection sets the maximum total deferred premium at $158,026,000 per reactor, with a maximum annual deferred premium of $24,714,000. The rule does not restate the $500,000,000 primary figure, which is not checked here. No 2026 adjustment was found.",
+      "sources": [
+        {
+          "label": "Federal Register — Inflation Adjustments to the Price-Anderson Act Financial Protection Regulations (2023-19009), 88 FR 60565",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-05/html/2023-19009.htm",
+          "quote": "maximum total deferred premium is $158,026,000",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

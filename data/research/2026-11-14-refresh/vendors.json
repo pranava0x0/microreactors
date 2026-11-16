@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "captured": "2026-11-14",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendors not on recently-checked.md (evinci, general-atomics-ga-tes); Type N items for vendor milestones dated after 2026-11-13 not in skip/news.json, including non-table 1-20 MWe designs (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+    "angles_run": [
+      "eVinci (evinci) status: Westinghouse news index fetched; eVinci news search",
+      "GA-TES (general-atomics-ga-tes): GA-EMS Janus release fetched; GA-TES update search",
+      "Penn State FRONTIER eVinci NRC construction permit application status",
+      "Deployable Energy Unity: DOME, Hornbeck maritime demo, Utah MOU",
+      "NANO Nuclear KRONOS / ZEUS announcements",
+      "Last Energy PWR-5 DSA and readiness review",
+      "Natura MSR-1 fuel salt and criticality status",
+      "Blue Energy gas-plus-nuclear and NRC filing",
+      "Terra Innovatum SOLO NRC topical report review and PSAR",
+      "Steady Energy LDR-50 pilot and STUK joint early review",
+      "Broad microreactor news sweep for 2026-11-13 and later",
+      "Janus OTA agreements and Fort Bragg, Fort Campbell, Fort Benning follow-up"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-13 was found for any shipped or non-table vendor in scope. Latest dated vendor events found were August to November 2026 and all are already in skip/news.json or are for vendors on recently-checked.md.",
+      "No eVinci check written: the Westinghouse news index (fetched) shows no eVinci milestone after 2026-09-03. The 2026-11-09 Westinghouse item is a personnel appointment (CCO), not a microreactor milestone.",
+      "No GA-TES check written: the fetched GA-EMS release (dated 2026-08-26) matches the shipped record (Fort Hood, no delivery date, no contract value). Nothing contradicts it, so no outdated or wrong verdict.",
+      "Penn State FRONTIER eVinci: no construction permit application or NRC docketing found after the 2025-02-28 notice of intent. Searches did not reach NRC ADAMS or the Penn State docket, so the current filing status is unverified.",
+      "Janus fifth site: a Breaking Defense caption names Fort Hood as a Janus site, but the GA-EMS release places GA-TES at Fort Hood. Not an item or check here.",
+      "Last Energy PWR-5 readiness review date: none announced in results. Covered by the news skip (2026-10-07 DSA item); no new event found.",
+      "Natura MSR-1 criticality (target was 2026-07-04 per a Dec 2025 report): no criticality announcement found. Not written as a check because the vendor is not in data/vendors.json.",
+      "Terra Innovatum SOLO NRC safety evaluations were anticipated by October 2026; no completion found and the target has passed. Terra Innovatum is not a shipped vendor, so no check and no item was written. Noted for the main session.",
+      "Deployable Energy: Utah MOU (2026-08-18) and Hornbeck maritime demo have no firm dates; not in skip/news.json by name, but both are undated or pre-2026-11-13, so no item.",
+      "Blue Energy: NRC construction permit filing date conflicts across sources (one says submitted, one says 2027). Not written as an item because the event date cannot be fixed from fetched pages.",
+      "Steady Energy: STUK joint early review summary has no date in search results; not written.",
+      "NANO Nuclear KRONOS/ZEUS: no new dated milestone after the 2026-10-27 Hyundai MOU and 2026-10-21 IMPSA item (both already in skip/news.json).",
+      "Searches run: 14 web searches, 2 fetches. Budget not exhausted; the sweep stopped after consecutive angles returned nothing new."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

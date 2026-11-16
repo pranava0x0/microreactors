@@ -1,0 +1,68 @@
+{
+ "_meta": {
+  "captured": "2026-11-16",
+  "agent": "vendors",
+  "scope": "Vendors tab: Type G checks on shipped vendor records where a fetched page could confirm or correct; Type N vendor milestones dated after 2026-11-13 not in skip/news.json, including unlisted 1-20 MWe designs (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy).",
+  "angles_run": [
+   "Radiant Kaleidos DOME fueling and Readiness Review status (check)",
+   "Valar Ward 250 and Nvidia 30 MW Utah data center status (search only; no check written)",
+   "Aalo-X demonstration plant schedule and power class (check)",
+   "Deployable Energy Unity post-2026-11-13 events",
+   "NANO Nuclear KRONOS and ZEUS post-2026-11-13 events, Q1 FY2026 release",
+   "Last Energy PWR-5 criticality and DSA status",
+   "Natura Resources post-2026-11-13 events",
+   "Steady Energy LO1 / LDR-50 post-2026-11-13 events",
+   "Blue Energy and Terra Innovatum post-2026-11-13 events",
+   "Generic 2026-11-13..16 microreactor milestone sweep"
+  ],
+  "absences": [
+   "No vendor milestone dated 2026-11-13 or later was found for any unlisted 1-20 MWe design; the latest vendor-side items found (Terra Innovatum PSAR submission 2026-11-04, Natura TEES grant 2026-11-02) predate the window or are already in skip/news.json.",
+   "Radiant's own release page (radiantnuclear.com/news/...) returned HTTP 403; the Oct 29 release was read from a syndicated copy at offshoresource.com.",
+   "Aalo-X 2027 construction and licensing date: not found in any fetched page. Only a 2025 article was fetched, and it gives a July 2026 criticality target, not 2027.",
+   "Aalo-X criticality date: the Aalo test reactor criticality is already shipped (2026-07-04); the search result for a later Aalo-X criticality announcement was undated and not fetched.",
+   "Valar Nvidia 30 MW claim: fetched Deseret (2026-07-01) describes it as exploratory. The shipped note only says the claim was not re-checked, which is not a claim sentence, so no check was written.",
+   "Last Energy PWR-5 criticality: no report found that the reactor reached criticality; the latest fetched-or-snippet status is DSA approval (shipped 2026-10-08).",
+   "Steady Energy LO1: no 2026 result found; search returned only LDR-50 items from 2024 and undated funding items.",
+   "Blue Energy: no result for a 2026 microreactor announcement.",
+   "Deployable Energy: no November 2026 item; latest found are the 2026-10-07 DOME full-power selection and a 2027 timing confirmed by INL (2026-09-30), both already shipped.",
+   "Search budget: 14 web searches and 4 fetches used of roughly 25 and 20 allowed."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-radiant-1",
+   "target": "radiant",
+   "file": "vendors",
+   "claim": "DOME campaign: criticality through 150 h unattended run; the Q3 target passed and fueling waits on DOE's Readiness Review, which has no set date",
+   "verdict": "confirmed",
+   "evidence": "Radiant release of 2026-10-29 (DOE full-power safety analysis approval): fueling and the five-phase campaign follow a Readiness Review, which the release describes as assessing whether Kaleidos and its operating team are prepared to begin nuclear operations. The release gives no date for the review or for fueling, and the 150-hour full-power test is described as the campaign's final phase.",
+   "sources": [
+    {
+     "label": "Business Wire via OffshoreSource — Radiant DOE safety analysis approval for full power operations (2026-10-29)",
+     "url": "https://offshoresource.com/business-wire/radiant-achieves-industry-milestone-as-the-only-microreactor-design-to-secure-doe-safety-analysis-approval-for-full-power-operations/",
+     "quote": "Following successful completion of the review, Radiant will fuel Kaleidos and begin its five-phase test campaign",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-aalo-x-1",
+   "target": "aalo-x",
+   "file": "vendors",
+   "claim": "Zero-power critical test reactor (no power output); the separate 30 MWth / 10 MWe Aalo-X demonstration plant is slated for construction and licensing in 2027",
+   "verdict": "confirmed",
+   "evidence": "POWER, 2025-08-19: describes Aalo-X as a 10 MWe reactor and gives the 30 MWth / 10 MWe figure for Aalo-1, the commercial design that Aalo-X validates, not for Aalo-X itself. No fetched page supports a 2027 construction-and-licensing date for an Aalo-X demonstration plant; the same article gives a July 2026 zero-power criticality target.",
+   "sources": [
+    {
+     "label": "POWER — Aalo test reactor reaches criticality at INL (2026-07)",
+     "url": "https://www.powermag.com/aalo-atomics-test-reactor-reaches-criticality-at-inl-fourth-doe-authorized-advanced-reactor-by-july-4/",
+     "quote": "to support construction and licensing in 2027",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "wrong",
+   "review": "Overruled in main session: the row's own source (POWER, Aalo test reactor reaches criticality, cached) says 'The next major undertaking is Aalo-X, the full-power 30-MWth/10-MWe sodium-cooled demonstration nuclear power plant at INL' and 'construction and licensing in 2027'. The agent read only a 2025-08-19 article. Third run on the Aalo-X naming (2026-11-04 note)."
+  }
+ ],
+ "items": []
+}
