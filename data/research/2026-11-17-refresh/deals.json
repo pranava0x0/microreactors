@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "captured": "2026-11-17",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities rows (not on recently-checked list) and Type N buyer-deal items dated after 2026-11-13 missing from skip/news.json. Stays out of news, politics, vendors, applications, costs and ideas lanes.",
+    "angles_run": [
+      "DOE Reactor Pilot Program criticality count (doe-pilot)",
+      "Air Force ANPI JBSA, Buckley, Malmstrom selection status (anpi-jbsa, anpi-buckley, anpi-malmstrom)",
+      "Eielson NOITA and NRC licensing status (eielson) - primary page blocked",
+      "Oklo-Switch master power agreement binding status (oklo-switch)",
+      "Saskatchewan Research Council eVinci cancellation (canada-src)",
+      "Last Energy DP World Thames Freeport status (uk-lastenergy)",
+      "Buyer deals dated 2026-11-14 to 2026-11-17: general microreactor PPA/LOI/MOU sweep, Oklo, Kairos/X-energy/TerraPower, Radiant/Valar/NANO/Aalo",
+      "Watcher lead: Urenco-Blykalla HALEU deal and SEALER unit size"
+    ],
+    "absences": [
+      "eielson: the DAF Eielson NOITA article (eielson.af.mil) returned HTTP 403 to fetch, so the NOITA date and the NRC licensing sequence could not be verified from a primary page. Search summaries describe a 2023 rescission and reaffirmation of the Oklo selection, which the shipped 2025-06-11 date does not mention; no check written. A June 2026 Eielson newsletter (search summary only) puts NEPA start in summer 2026.",
+      "anpi-jbsa: the Antares Businesswire release returned HTTP 403. The ANS article (2026-04-23, fetched) confirms the JBSA selection but states neither a signed contract nor NRC contingency; no check written.",
+      "anpi-buckley and anpi-malmstrom: the ANS article (fetched) confirms the selections but is trade press dated April 2026, outside the 60-day window for a confirmed verdict; no check written. Shipped binding: true on these ANPI selections and on eielson is not supported by any fetched page saying a contract was executed; the check schema has no binding field, so this is flagged here rather than corrected.",
+      "oklo-switch: the ~14 GW order-book figure and the 50 MWe unit size were not verified in any fetched page; the check covers only the non-binding status and the 12 GW through 2044 term.",
+      "canada-src: the SRC FAQ does not mention the CA$80M government funding figure; that figure remains unverified from a fetched page (search summaries attribute it to the province).",
+      "doe-pilot: 'others in safety review' not verified; no sixth criticality found in searches through 2026-11-17. The DOE criticality page is dated 2026-08-06.",
+      "uk-lastenergy: no 2026 milestone found for London Gateway or Llynfi; no check written. Search summaries show the London Gateway MoU and a PDR date that differs between sources (June vs July 2025).",
+      "Buyer deals 2026-11-14 to 2026-11-17: no buyer deal found in searches. The Oklo-Centrus HALEU definitive contracts (2026-11-12/13) and the Oklo-US Forged Rings manufacturing reservation (2026-11-06) surfaced; the first is already in skip/news.json, the second is dated before the window and is a manufacturing reservation, not a buyer deal.",
+      "Urenco-Blykalla HALEU deal (watcher lead): not found in search results, and the Blykalla SEALER unit size was not found, so no item written.",
+      "janus, equinix-radiant, romania-nuscale: not checked, per recently-checked.md."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Non-binding Master Power Agreement",
+      "verdict": "confirmed",
+      "evidence": "Switch's own release, undated in the fetched text, describes the agreement as \"a non-binding Master Power Agreement\" to \"deploy 12 gigawatts of Oklo Aurora powerhouse projects through 2044\". It says \"individual binding agreements will be finalized as project milestones are reached\". Search results found no binding PPA signed in 2026.",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "quote": "a non-binding Master Power Agreement",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-doe-pilot-1",
+      "target": "doe-pilot",
+      "file": "opportunities",
+      "claim": "Five critical, others in safety review",
+      "verdict": "confirmed",
+      "evidence": "DOE Office of Nuclear Energy, published 2026-08-06, calls Oklo's Groves Isotope Test Reactor the \"fifth DOE-authorized advanced reactor to achieve criticality this summer\". The page confirms five criticalities. Searches through 2026-11-17 found no sixth. The 'others in safety review' half was not verified from a fetched page.",
+      "sources": [
+        {
+          "label": "DOE Office of Nuclear Energy — Office of Nuclear Energy Celebrates Fifth Advanced Reactor Criticality (2026-08-06)",
+          "url": "https://www.energy.gov/ne/articles/office-nuclear-energy-celebrates-fifth-advanced-reactor-criticality",
+          "quote": "fifth DOE-authorized advanced reactor to achieve criticality this summer",
+          "status": "fetched"
+        }
+      ]
+    }
+    ,
+    {
+      "id": "check-canada-src-1",
+      "target": "canada-src",
+      "file": "opportunities",
+      "claim": "Cancelled fall 2025, when Westinghouse shifted eVinci to space, defense and government applications and away from commercial markets",
+      "verdict": "confirmed",
+      "evidence": "The Saskatchewan Research Council FAQ states that Westinghouse canceled the project contract with SRC in fall 2025, citing a decision to shift the eVinci program toward space, defence and government applications and away from commercial markets. The FAQ does not state the $80M funding figure.",
+      "sources": [
+        {
+          "label": "Saskatchewan Research Council — FAQs About Nuclear (project status)",
+          "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+          "quote": "In fall 2025, Westinghouse canceled the project contract with SRC",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

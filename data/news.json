@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "captured": "2026-11-16",
+    "captured": "2026-11-17",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "61 of 106 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 45 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "62 of 107 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 45 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-13",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 21
+      "count": 22
     },
     {
       "id": "fuel",
@@ -73,6 +73,33 @@
           "label": "World Nuclear News — Centrus, Oklo HALEU agreement to support reactor deployment (2026-06-19)",
           "url": "https://world-nuclear-news.org/articles/centrus-oklo-haleu-agreement-to-support-reactor-deployment",
           "quote": "to support Oklo's planned 1.2 GW power campus in the region under their Letter of Intent",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "valar-carbon-county-cup-2026-11-12",
+      "date": "2026-11-12",
+      "headline": "Carbon County planners approve Valar's Raceway Energy Campus permit",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "regulatory",
+      "what_happened": "On November 12, 2026 the Carbon County, Utah planning commission approved a conditional use permit for Valar Atomics' Raceway Energy Campus, a nuclear, natural gas and data center site on 640 acres of state trust land near Wellington. One commissioner voted no. Valar says the campus will generate and use about 3 gigawatts; it plans to start with a natural gas plant and eventually build 40 to 120 nuclear reactors there. The commission took no public comment, which the county attorney said was not required.",
+      "why_it_matters": "It is the first local land-use approval for Valar's Utah plans. The permit does not let construction start: Valar still needs a county building permit, a state air quality permit and an NRC construction permit, and the reactors come after a gas plant.",
+      "binding": true,
+      "binding_note": "A county conditional use permit, approved with conditions. It is a land-use approval, not a construction or reactor license.",
+      "sources": [
+        {
+          "label": "The Salt Lake Tribune, Carbon County approves permit for Valar Atomics' data center, nuclear project (Nov. 13, 2026)",
+          "url": "https://www.sltrib.com/news/environment/2026/11/13/carbon-county-approves-permit/",
+          "quote": "Eventually it aims to build 40 to 120 nuclear reactors on the site.",
+          "status": "fetched"
+        },
+        {
+          "label": "KPCW (via The Salt Lake Tribune), Utah startup submits plans for nuclear-powered data centers (Nov. 12, 2026)",
+          "url": "https://www.kpcw.org/state-regional/2026-11-12/utah-startup-submits-plans-for-nuclear-powered-data-centers",
+          "quote": "about 640 acres leased from the Utah Trust Lands Administration near Wellington",
           "status": "fetched"
         }
       ]

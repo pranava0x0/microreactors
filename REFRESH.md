@@ -236,3 +236,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   4 of 9 checks were overruled, every one because the agent read one source or one clause. Keep the 4-day window for rotation, but
   carry a permanent "settled readings" block (fee clause, PCE 19.35 -> 20.38, Aalo-X CTR vs demo plant, Equinix deposits) in every
   recently-checked.md. Also: the register lint rejects a colon in an application `name` ("X and Y: what it is"); rename before building.
+
+- **2026-11-17: the week's only new item sat in an agent's absences, dismissed as "one day before the window".** The vendors agent
+  found Carbon County's 11-12 permit for Valar and filed nothing because it predated 11-13, though the prompt allows a 60-day gap
+  window. Read every agent's `_meta.absences` for dated in-band events (same family as the 11-03 note), and grep `data/news.json`
+  before treating them as gaps. Also add the 11-05 `binding_note` reading of ANPI/Eielson to the settled-readings block: the deals
+  agent re-raised it today.

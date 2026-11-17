@@ -588,3 +588,16 @@ Seven Haiku agents (even day, Monday), 2 at a time, after 2 main-session web sea
 | ideas | 138K | liability confirmed; nothing new | no |
 
 ~1.08M agent tokens for 1 news item and 1 application. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-17 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-13..11-16) with a permanent settled-readings block. 1 news, 0 corrections. The one item (Valar Carbon County permit) came from the vendors agent's absences, written up and sourced in the main session.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 158K | 0 items; all 3 watcher candidates out of band or shipped; flagged a misdated 2025 Valar NOVA criticality | no |
+| deals | 170K | 3 confirmations; re-raised ANPI/Eielson `binding` (settled 11-05 by the file's binding_note), ignored | no |
+| vendors | 159K | 0 records; its absences named the Valar Carbon County permit (11-12), which shipped | yes (via absences) |
+| politics | 162K | 0 records; NJ BPU advanced-nuclear EOI guidance noted, not microreactor-specific | no |
+
+~650K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).

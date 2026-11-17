@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "captured": "2026-11-17",
+    "agent": "vendors",
+    "scope": "Vendors tab refresh: Type G checks on shipped vendor records (antares, evinci, bwxt-banr, general-atomics-ga-tes, valar-ward250; radiant, oklo-aurora, aalo-x excluded as recently checked) and Type N items for vendor milestones dated after 2026-11-13 not already in skip/news.json, including 1-20 MWe vendors not in the shipped table (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Natura, Terra Innovatum, Steady Energy, Blue Energy).",
+    "angles_run": [
+      "Antares news Nov 2026 (general)",
+      "Deployable Energy UNITY news Nov 2026",
+      "NANO Nuclear KRONOS/ZEUS Nov 2026",
+      "Last Energy PWR-5 news Nov 2026",
+      "Last Energy PWR-5 criticality RELLIS",
+      "Natura MSR-1 news Nov 2026",
+      "Terra Innovatum SOLO milestone Nov 2026",
+      "Steady Energy LOKI/LDR-50 2026",
+      "Blue Energy 2026 (checked for 1-20 MWe fit; BWRX-300 2.5 GW plant, out of band)",
+      "Westinghouse eVinci criticality/heated-core update",
+      "Westinghouse SRC Saskatchewan first-customer status",
+      "Valar Ward 250 news after Nov 2026",
+      "Valar Project Beehive BLM / Utah lease",
+      "Carbon County CUP for Valar Raceway campus",
+      "BWXT BANR Janus Fort Campbell update",
+      "General Atomics GA-TES Fort Hood Janus milestone",
+      "NANO KRONOS UIUC construction permit NRC docketing schedule",
+      "Antares Mark-1 2027 timeline",
+      "Valar Project NOVA criticality (checked for a 2026-11-17 report)",
+      "Broad sweep: microreactor milestone announced Nov 2026"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-11-14 .. 2026-11-17 was found for any vendor in scope. Searches for Antares, Deployable Energy, NANO, Last Energy, Natura, Terra Innovatum, Steady Energy, Westinghouse, BWXT, General Atomics and Valar returned nothing newer than the skip list's latest entries for those vendors.",
+      "Antares: Mark-1 DOE NSDA approval (2026-10-23) is in news skip. Mark-1 operating campaign at INL in 2027 and first defence deliveries targeted 2028 are company targets from search summaries, not fetched pages; the shipped R1 2028 target is not contradicted. No Nov 2026 Antares milestone found.",
+      "Deployable Energy: no news after the 2026-07-01 UNITY criticality (in skip as 2026-06-30). Full-power DOME test and Readiness Review are pending with no dated event found.",
+      "NANO Nuclear KRONOS/ZEUS: no Nov 2026 announcement found. NRC review of the UIUC KRONOS construction permit (accepted 2026-05-18, review start 2026-06-23 per search summaries) has no dated schedule milestones; the NRC project page lists draft and final EA/SE dates as to be determined. Not an item (no dated event after 2026-11-13).",
+      "Last Energy PWR-5: DSA approval (2026-10-07) is in news skip. Criticality not reported; a September 2026 statement says final DOE startup authorization was expected 'in the next couple of months'. No dated event found.",
+      "Natura MSR-1: no Nov 2026 news. FLiBE salt delivery (2026-09-22) and CEO appointment are before the window or already in skip.",
+      "Terra Innovatum SOLO: NRC safety evaluations were expected by Oct 2026 and a readiness review by end of Nov 2026 per company releases (search summaries). No fetched page confirms either happened; neither is a dated event in the window.",
+      "Steady Energy LDR-50: EIB EUR 40m (2026-09-15) is in news skip. STUK preliminary joint assessment (July 2026) is before the window. No later milestone found.",
+      "Blue Energy: 2.5 GW gas-plus-BWRX-300 plant in Victoria, TX, is out of the 1-20 MWe band. Not written.",
+      "Westinghouse eVinci: the heated-core criticality (663 C, 1,011 C peak) in the shipped record is confirmed by a fetched WNN article dated 2026-09-15; no Type G check written since the shipped text is consistent. The SRC (Saskatchewan) first-customer status could not be verified: search returned only 2022-2023 announcements, and a 2029 SRC target from a search summary was not found on a fetched page, so no check was written.",
+      "Valar Ward 250: Carbon County, UT planning commission approved a conditional use permit for the Raceway Energy Campus (40-120 SMRs on 640 acres of state trust land) on 2026-11-12, per Salt Lake Tribune (2026-11-13). This is one day before the window opens, so it is not an item. The shipped note (TLAB lease 2026-09-17; BLM application not approved) is not contradicted; BLM was reviewing the application for completeness per NPR-sourced coverage. Not a Type G check.",
+      "Valar 'Project NOVA criticality 2026-11-17' (single low-quality aggregator, ifttt.itbehere.com): the NOVA Core criticality was announced 2025-11-17 at LANL/NCERC. This is a year-old event mis-dated; not a 2026 milestone. Not written.",
+      "BWXT BANR (Fort Campbell): latest coverage is 2026-08-26/27 (selection). The shipped 'operation targeted early 2030s' and construction late 2028 are consistent with coverage. No later milestone found.",
+      "General Atomics GA-TES (Fort Hood): latest coverage is the 2026-08-26 Janus selection (in skip). No construction, test, or delivery milestone found. Contract value not disclosed.",
+      "Aalo-X, Radiant, and Oklo Aurora were excluded as recently checked (skip/recently-checked.md).",
+      "Search budget: 24 web searches of ~25 and 1 fetch of 20 (WNN eVinci article, used to verify the shipped eVinci heated-core figures). Fetch budget was not used for most vendors because search summaries did not surface any dated post-11-13 event to verify."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

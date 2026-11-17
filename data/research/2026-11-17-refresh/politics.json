@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "captured": "2026-11-17",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy checks on shipped policy.json pathways, new dockets (Type F), and policy/regulatory items dated after 2026-11-13. Recently-checked rows excluded.",
+    "angles_run": [
+      "California SB 978 backup-power bill status (leginfo and legiscan both 403; only May 2026 status found)",
+      "FY2027 NDAA microreactor provisions (House HASC Harrigan amendment, June 2026; no November conference text found)",
+      "State PUC / IRP microreactor or SMR filings, Aug 19 to Nov 17 2026 (Black Hills CO IRP 2026-09-11 has no microreactor; Xcel MN IRP expected Nov 2026 not yet filed)",
+      "NRC Commission votes and actions, Nov 2026 (Long Mott permit 2026-11-10 already shipped; no Commission vote found)",
+      "State microreactor and advanced-nuclear laws (PA HB 2017 Act 37 signed July 2026; NJ Power NJ Act A4881/S4296 signed 2026-07-13; AZ SB 1418 vetoed 2026-06-22; all outside the 90-day docket window)",
+      "New Jersey BPU advanced-nuclear EOI procurement (docket and stakeholder session dated Nov 2026; fetched BPU newsroom 2026-11-09 page)",
+      "Army Janus program (2026-08-26 award, outside item window)",
+      "CNSC and ONR regulatory changes, Nov 2026 (nothing dated after 2026-11-13 found)",
+      "FY2027 Energy and Water appropriations and CR (CR signed 2026-09-02 runs to 2026-12-11; no November action found)",
+      "Generic news sweep, Nov 14 to Nov 17 2026 (no policy item found)"
+    ],
+    "absences": [
+      "No Type N policy or regulatory item dated 2026-11-14 to 2026-11-17 could be found in any angle searched; search results for those dates returned only older material.",
+      "California SB 978 (shipped as stalled in Senate Appropriations since 2026-05-14): leginfo.legislature.ca.gov and legiscan.com both returned HTTP 403 to WebFetch, so no current status could be verified. Not emitted as a check.",
+      "NRC Part 57 (prompt named a 2026-11-23 final date): the row is on the recently-checked list, so it was not checked.",
+      "FY2027 NDAA Indo-Pacific microreactor provision (Harrigan amendment, HASC voice vote, June 2026): no Senate or conference text found, so its survival into any final bill is unknown.",
+      "FY2027 Energy and Water bill (House H.R. 9022, committee-passed May 20, 2026; $1.8B for DOE Office of Nuclear Energy): no enactment found; the CR runs to 2026-12-11.",
+      "NJ BPU advanced-nuclear EOI procurement (Power NJ Act): the Nov 2026 draft guidance and docket QO26100661 are real per the BPU newsroom page, but the page does not name microreactors or SMRs (it says advanced nuclear and 1,100 MW), so it was not written as a Type F docket. The docket number itself was not confirmed from a fetched page.",
+      "Alaska SB 177 definition (50 MW) is confirmed by a WNN fetch, but the page is not dated within 60 days, so no confirmed check was written.",
+      "Xcel Minnesota 2026 IRP (docket 26-212, expected Nov 2026) not yet filed as of the search; not a qualifying filing."
+    ]
+  },
+  "items": [],
+  "checks": [],
+  "dockets": []
+}
