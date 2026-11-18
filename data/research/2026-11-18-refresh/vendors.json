@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "captured": "2026-11-18",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (skip/vendors.json) and Type N vendor milestones dated after 2026-11-13 that skip/news.json lacks, including unlisted 1-20 MWe designs. Radiant and Aalo-X excluded per recently-checked.md.",
+    "angles_run": [
+      "Type G valar-ward250 first_delivery_target (fetched ANS 2026-10-05, NPR/WLRN 2026-09-30)",
+      "Type G status search: antares, westinghouse evinci, bwxt-banr, general-atomics-ga-tes, oklo-aurora (searched; no dated post-11-13 vendor event and no fetched page contradicting shipped text, so no check written)",
+      "Type N search: Valar, Antares Mark-1, eVinci, Deployable Energy Unity, NANO KRONOS, Last Energy PWR-20, Terra Innovatum SOLO, Natura MSR-1, Blue Energy, Steady Energy LDR-50",
+      "Keyword cross-check of skip/news.json for vendor events dated 2026-09-19 to 2026-11-13"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-13 surfaced for any listed vendor or unlisted 1-20 MWe design in 15 searches. Searches for Antares, eVinci, Deployable, NANO KRONOS, Last Energy, Natura, Blue Energy and Terra Innovatum returned nothing newer than their October-2026 items, several of which are already in skip/news.json.",
+      "Terra Innovatum (not a shipped vendor row): company said NRC Safety Evaluations of its SOLO topical reports were expected by October 2026. One search found no published SER. The October target has passed; current status unverified and no record written.",
+      "Valar Project Beehive (Utah): no BLM completeness or NEPA determination found after the NPR article of 2026-09-30, which says the BLM is 'reviewing the application for completeness'. The Utah Trust Lands Administration Board lease approval of 2026-09-17 is not a standalone item in skip/news.json; it is dated 62 days before capture, outside the 60-day window, so not written.",
+      "Steady Energy EIB EUR 40M loan: skip/news.json dates it 2026-09-15. One search summary said October 2026. A fetched Steady Energy article (oenergetice.cz, dated 2026-02-23) does not mention the loan, so neither date was verified. No record written.",
+      "Deployable Energy Utah MOU (2026-08-18) and Hornbeck MOU: dated outside the 60-day window and not in skip/news.json. Not written.",
+      "Blue Energy and Natura: search results show no microreactor-scale vendor milestone in the window. Blue Energy's work is light-water SMR gas-plus-nuclear; Natura's FLiBe salt delivery is already in skip/news.json dated 2026-09-22 (search summary said arrival 2026-09-18; not checked further, news lane).",
+      "Budget used: 15 web searches, 3 fetches."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-valar-ward250-1",
+      "target": "valar-ward250",
+      "file": "vendors",
+      "claim": "Not published",
+      "verdict": "confirmed",
+      "evidence": "Ward 250 delivery is still not published. The ANS article of 2026-10-05 gives Valar's Project Beehive timeline (first reactors online in 2028) and no Ward 250 delivery date. NPR, via WLRN dated 2026-09-30, gives the same 2028 target for the Beehive campus near Price, Utah. Beehive is a separate proposed campus, not the test reactor, and the row does not carry that 2028 target.",
+      "sources": [
+        {
+          "label": "ANS — Details emerge on Valar's Utah plans (2026-10-05)",
+          "url": "https://www.ans.org/news/2026-10-05/article-8462/details-emerge-on-valars-utah-plans/",
+          "quote": "Valar aims to begin nonnuclear construction by the end of this year and to have first reactors on line in 2028.",
+          "status": "fetched"
+        },
+        {
+          "label": "NPR via WLRN — A startup wants to build a massive nuclear-powered data center on public land in Utah (2026-09-30)",
+          "url": "https://www.wlrn.org/npr-breaking-news/2026-09-30/a-startup-wants-to-build-a-massive-nuclear-powered-data-center-on-public-land-in-utah",
+          "quote": "with the first reactors coming online sometime in 2028.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}

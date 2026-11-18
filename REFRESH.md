@@ -242,3 +242,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   window. Read every agent's `_meta.absences` for dated in-band events (same family as the 11-03 note), and grep `data/news.json`
   before treating them as gaps. Also add the 11-05 `binding_note` reading of ANPI/Eielson to the settled-readings block: the deals
   agent re-raised it today.
+
+- **2026-11-18: a secondary column is a pointer to a primary release, not a source.** The deals agent's absences named a SovAI / BAM
+  Energy MOU found only on an opinion column (briefglance); one `extended` search found the Business Wire text syndicated on
+  financialcontent.com, which curl fetches cleanly. The second absence-sourced item in two days: keep reading absences. Also, the
+  applications agent marked Eielson "outdated" because a report said the Air Force "selected a microreactor" without naming the
+  vendor; an unnamed vendor does not contradict a named one, so a correction that replaces a specific fact with a vaguer one is an overrule.

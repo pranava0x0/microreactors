@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "captured": "2026-11-18",
+    "agent": "politics",
+    "scope": "Rules & deal design tab: politics and regulation. Type G checks on shipped skip/policy.json pathways; Type F dockets filed or decided in the last 90 days not in skip/dockets.json; Type N items dated after 2026-11-13 (policy or regulatory).",
+    "angles_run": [
+      "state microreactor bills (Nov 2026)",
+      "state PUC orders on SMR cost recovery (Sept 2026)",
+      "state governor signings on microreactor or advanced nuclear siting (2026)",
+      "state IRP filings naming SMRs or microreactors (Sept-Oct 2026)",
+      "utility RFPs for microreactors (2026)",
+      "Alaska Eielson / DLA Energy microreactor RFP",
+      "FY2027 NDAA microreactor language",
+      "FY2027 Energy and Water appropriations (nuclear energy)",
+      "Army Janus program policy (2026)",
+      "Congressional nuclear bills introduced 2026",
+      "NRC commission votes on microreactors (Nov 2026)",
+      "DOE microreactor announcements (Nov 2026)",
+      "NCSL News Reactor (Nov 2026)",
+      "Texas TANEO award announcements (2026)",
+      "Kentucky SB 57 status",
+      "CNSC microreactor licensing (2026)",
+      "UK ONR design assessment reform (2026)",
+      "Pentagon microreactor policy memo (Nov 2026)",
+      "checks: ERCOT SB 6 75 MW threshold (bill analysis fetched; not written as a check, see absences)",
+      "checks: Alaska SB 177 siting (Alaska Beacon fetch returned HTTP 403; not checked)"
+    ],
+    "absences": [
+      "Items: no policy or regulatory event dated 2026-11-14 to 2026-11-18 was found in any search. The main-session web-leads search also found none, so this is a true empty window, not a search gap.",
+      "Items: House passed four nuclear bills the week of 2026-11-12 (broadbandbreakfast, dated 2026-11-12), naming H.R. 3978 (Nuclear REFUEL Act) and H.R. 9612 (American Enrichment Deployment Act). Dated one day before the window and not microreactor-specific, so not written as an item. news.json has no entry for it.",
+      "Items: FY2027 NDAA. HASC-passed committee print (June 2026) carries the Harrigan amendment calling for a DoD transportable microreactor program in INDOPACOM (microreactor defined at 50 MW or less). Floor, conference or enactment status not confirmed. Nothing dated in-window.",
+      "Items: FY2027 Energy and Water appropriations. House committee approved 2026-05-20 (34-25), with $1.8B for Nuclear Energy. No microreactor-specific line item found. Senate status unconfirmed. Nothing dated in-window.",
+      "Items: Army Janus program. Five-vendor selection with up to $2.2B was announced 2026-08-26, outside the window. Not in policy.json and not written as an item.",
+      "Items: NRC Part 57 final rule is due 2026-11-23 (recently-checked list). Not yet issued as of this pass.",
+      "Items: NRC commission votes. No November 2026 commission vote on microreactors found. The NRC DOE/DoD prior-authorization final rule is dated 2026-10-22 (already in news.json).",
+      "Items: CNSC and ONR. No microreactor-relevant licensing decision in the window. The CNSC Darlington BWRX-300 operating-licence application (April 2026) has no decision date. ONR design-assessment reform (Sept 2026) and the UK Nuclear Regulation Bill (May 2026, unverified) are outside the window.",
+      "Items: Texas TANEO ($350M). Selections were projected for the week of 2026-07-20; no award announcement found in the search index, and the governor's page was not retrievable. Status unverified.",
+      "Dockets: no microreactor-naming state PUC order, IRP, RFP or state law filed or decided within the last 90 days (since 2026-08-20) was verified by fetch. Candidates ruled out: Ameren Missouri 2026 IRP (already in skip); Kentucky SB 57 (signed 2026-04-08, outside window; an August/September 2026 date on one aggregator is a republication artifact); New Jersey Power NJ Act (signed 2026-07-13, 1,100 MWe large-reactor procurement, outside window and not a 1-20 MW buyer path); Virginia SCC Appalachian Power SMR site-cost order (2025-11-14); PJM ER26-1479 co-location compliance (2026-08-17, 92 days, not microreactor-specific); Indiana SEA 258 (early 2026).",
+      "Dockets: Alaska microreactor siting law (governor-signed, date and bill number unconfirmed; Alaska Beacon returned 403; a March 2026 secondary source describes emergency legislation with a 180-day permit timeline). Not written: no fetched primary page and the date is unknown.",
+      "Dockets: Air Force / DLA Energy Eielson microreactor PPA. March 2026 DAF fact sheet describes a 30-year PPA, which conflicts with the 20-year headline. Procurement dates and status unverified. Not a state docket and outside the 90-day filter on the evidence found.",
+      "Checks: no shipped policy.json pathway was checked with a fetched verdict. Part 53, the ADVANCE Act fee rate, the DOE pilot track, FERC EL25-49 and the Texas backup-power exclusion were either recently-checked, settled, or confirmed in news.json. ERCOT SB 6 75 MW threshold: the bill analysis (capitol.texas.gov SB00006F) states the PUC must set a 75 MW demand threshold (Sec. 37.0561(c)) and that net-metering review inherits it by cross-reference. The shipped text is consistent with it, so no check was written.",
+      "Checks: Texas HB 14 $350M fund and Alaska SB 177 were not fetched in full; no contradicting evidence was found, so no check was written."
+    ]
+  },
+  "checks": [],
+  "dockets": [],
+  "items": []
+}

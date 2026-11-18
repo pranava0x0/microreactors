@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "captured": "2026-11-18",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities rows (not on recently-checked list), and Type N items for new signed or announced buyer deals dated after 2026-11-13 that skip/news.json lacks.",
+    "angles_run": [
+      "Air Force ANPI: JBSA (Antares), Eielson (Oklo NOITA), Buckley (Radiant), Malmstrom (Westinghouse eVinci) status search and primary-page fetches",
+      "NANO Nuclear x Supermicro MOU: primary release fetch",
+      "Last Energy: PPA and PWR-5 status search (Last Energy PPA article fetched: dated 2023-03-23, not usable)",
+      "New deal sweep: microreactor PPA / MOU / LOI signed November 2026",
+      "New deal sweep: data-center microreactor LOI, 2026-11-14",
+      "New deal sweep: WNN microreactor agreement, 2026-11-16 and 2026-11-17",
+      "New deal sweep: Aalo, Deployable Energy, Antares customer agreements",
+      "Radiant military deal WNN article (fetched: dated 2025-08-11, not new)",
+      "Standard Nuclear x Radiant TRISO supply (search: announced 2026-08-20, outside window)"
+    ],
+    "absences": [
+      "Type N: no buyer deal dated 2026-11-14 to 2026-11-18 found. Searches on PPA/MOU/LOI sweeps, WNN 11-16 and 11-17, and vendor customer deals returned nothing dated in that window.",
+      "Out-of-window lead: SovAI and BAM Energy MOU for nuclear-powered AI compute campuses, dated 2026-11-12 per a search summary only. Not fetched, unit size unverified, not in data/news.json, so not written as an item. Dated before the 2026-11-13 cut-off.",
+      "Eielson (eielson): DAF FAQ PDF (March 2026) and Eielson AF CAMP newsletter (18 June 2026) both returned HTTP 403 to WebFetch. The 5 MW reactor size and 30-year firm-fixed-price term rest on search summaries only; shipped row left as is.",
+      "Eielson NOITA date: shipped timeline says announced 2025-06-11. A search summary says the NOITA was issued 2025-05-30. The Oklo release (fetched) is dated '06.11.25', which can be read as 11 June or 6 November 2025. Date conflict unresolved, so no check written.",
+      "ANPI JBSA (Antares): no committed unit order or post-April 2026 update found. Shipped row's 'no committed JBSA unit order' still matches the search results.",
+      "ANPI Buckley (Radiant) and Malmstrom (Westinghouse): no milestone found after the April 2026 selections. Latest Malmstrom item found is a 2026-04-24 article, so Malmstrom status is the least current.",
+      "Last Energy (uk-lastenergy row): the Last Energy PPA article (34 PWR-20 units, Poland and UK) is dated 2023-03-23 and cannot document the current row. A Capwolf item dated 2026-11-09 on a Texas permit and NRC lawsuit could not be verified from its text.",
+      "Standard Nuclear and Radiant TRISO supply agreement: announced 2026-08-20, which is about 90 days old and outside the 60-day window. Already reflected in data/news.json (grep found it).",
+      "Rows excluded by recently-checked.md and not re-checked: janus, equinix-radiant, oklo-switch, doe-pilot, canada-src.",
+      "Validator not run in this pass beyond the required final call."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "confirmed",
+      "evidence": "NANO Nuclear's company release, dated May 6, 2026 (GlobeNewswire dateline), describes a strategic MOU with Supermicro and states it is non-binding. This confirms the May 2026 MOU date and the non-binding status. The fetched release does not state a KRONOS MMR output in MW.",
+      "sources": [
+        {
+          "label": "NANO Nuclear Energy — NANO Nuclear Signs Strategic MOU with Supermicro to Power the Next Generation of AI Data Centers with Advanced Nuclear Energy (May 6, 2026)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-signs-strategic-mou-with-supermicro-to-power-the-next-generation-of-ai-data-centers-with-advanced-nuclear-energy/",
+          "quote": "While the MOU is non-binding, it establishes a foundation for future definitive agreements",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "items": []
+}
