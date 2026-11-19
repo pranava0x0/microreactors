@@ -617,3 +617,16 @@ Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches. `
 | ideas | 155K | 0 records | no |
 
 ~1.18M agent tokens for 2 news, 1 correction, 1 application. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-19 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-15..11-18) with the settled-readings block. 1 news, 0 corrections. The day's only item (Radiant's manufacturing expansion) was sourced in the main session: every agent hit the financialcontent shell and filed nothing; the primary radiantnuclear.com release read cleanly in the browser pane and was cached with `--from-file`.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 148K | 0 items; absences named the Radiant release as unverifiable | no |
+| deals | 153K | 2 confirmations (ANPI JBSA, UK Last Energy) | marginal |
+| vendors | 160K | 0 records; 5 shipped rows read without contradiction | no |
+| politics | 159K | 0 records | no |
+
+~620K agent tokens for 1 news item the main session sourced. Phone cost 1.70 (baseline 1.69).

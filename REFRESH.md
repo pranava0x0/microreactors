@@ -248,3 +248,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   financialcontent.com, which curl fetches cleanly. The second absence-sourced item in two days: keep reading absences. Also, the
   applications agent marked Eielson "outdated" because a report said the Air Force "selected a microreactor" without naming the
   vendor; an unnamed vendor does not contradict a named one, so a correction that replaces a specific fact with a vaguer one is an overrule.
+
+- **2026-11-19: a syndication URL that serves a market-data shell sinks every agent at once.** The financialcontent.com copy of
+  Radiant's release (clean on 11-18 for SovAI) returned a Motley Fool ticker page today, and all three agents that tried it filed
+  nothing. The primary radiantnuclear.com page read in the browser pane (`[...document.querySelectorAll('p,h1,h2,h3')]` after a 3s
+  wait; `get_page_text` returns only the nav). When a web lead is a company release, put the company's own news URL in
+  `skip/web-leads.md`, not the wire copy. Four odd-day agents cost ~620K tokens for 0 shipped records.

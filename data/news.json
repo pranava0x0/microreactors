@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "captured": "2026-11-18",
+    "captured": "2026-11-19",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "62 of 109 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 47 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-11-13",
+    "binding_note": "62 of 110 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 48 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-11-19",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
@@ -28,11 +28,11 @@
       "count": 12
     },
     {
-      "id": "policy",
-      "count": 7
+      "id": "construction",
+      "count": 8
     },
     {
-      "id": "construction",
+      "id": "policy",
       "count": 7
     },
     {
@@ -49,6 +49,27 @@
     }
   ],
   "items": [
+    {
+      "id": "radiant-manufacturing-expansion-2026-11-19",
+      "date": "2026-11-19",
+      "headline": "Radiant puts over $100M into El Segundo plant to assemble first commercial Kaleidos",
+      "companies": [
+        "Radiant"
+      ],
+      "category": "construction",
+      "what_happened": "Radiant announced a new headquarters and manufacturing facility in El Segundo, California, an investment of more than $100 million that adds about 200,000 square feet and lets it assemble several Kaleidos units in parallel. Its 81-acre Oak Ridge, Tennessee campus (about $280 million planned) will fuel and refuel reactors, with fueling operations expected in 2027 and commercial deliveries from 2028.",
+      "why_it_matters": "A buyer gets a reactor fueled and sealed at the factory, so the customer site needs no in-ground nuclear construction. The fueling plant still needs its NRC Part 70 license, which the NRC targets for January 2027.",
+      "binding": false,
+      "binding_note": "A company announcement of facilities and spending, not a contract or a regulatory approval.",
+      "sources": [
+        {
+          "label": "Radiant, Radiant Expands Manufacturing to Scale Commercial Microreactor Production (Nov. 19, 2026)",
+          "url": "https://www.radiantnuclear.com/news/radiant-expands-manufacturing",
+          "quote": "Representing an investment of more than $100 million in Radiant’s Los Angeles-area footprint, the expanded El Segundo campus adds approximately 200,000 square feet",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "centrus-oklo-haleu-definitive-2026-11-13",
       "date": "2026-11-13",

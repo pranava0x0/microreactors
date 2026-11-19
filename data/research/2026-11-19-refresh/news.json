@@ -1,0 +1,56 @@
+{
+ "_meta": {
+  "captured": "2026-11-19",
+  "agent": "news",
+  "scope": "News tab, 1-20 MW microreactor market: events dated after 2026-11-13, then any gap in 2026-09-20..2026-11-13. Started from skip/candidates.json, then web sweep of the named companies.",
+  "angles_run": [
+   "candidates.json triage: Rolls-Royce SMR bearing, ENTRA1/Sargent & Lundy, Urenco-Blykalla HALEU, BWXT Cambridge expansion, Dow/X-energy permit",
+   "web-leads: Radiant Kaleidos manufacturing expansion (2026-11-19), NANO Nuclear/SJ Group (2026-11-19)",
+   "criticality and testing: DOME/LOTUS, eVinci, Oklo Groves, Aalo, Valar, Last Energy, Deployable, Antares",
+   "factories and construction: Radiant R-50, Oklo Aurora, Westinghouse",
+   "financing, SPAC and IPO: NuCube, Terra Innovatum, Hadron, Deep Fission, Valar, Aalo",
+   "fuel: Centrus, Standard Nuclear, Urenco-Blykalla, Oklo Forged Rings, ARPA-E HORNIG",
+   "setbacks and personnel: Antares CNO, NANO Nuclear hires, Terrestrial appointments",
+   "gap window 2026-09-20..2026-11-13: ARPA-E HORNIG (already shipped as Texas A&M item)"
+  ],
+  "absences": [
+   "No in-band event dated after 2026-11-13 could be filed with a verbatim quote from a fetched page. Items filed: 0.",
+   "2026-11-19 Radiant expands U.S. manufacturing for Kaleidos (Business Wire release via financialcontent, in band, NOT FILED). The fetch returned excerpted sentences joined with ellipses, so no verbatim span was confirmed and no fetched source was available. URL: https://financialcontent.com/article/bizwire-2026-11-19-radiant-expands-manufacturing-to-scale-commercial-microreactor-production . Excerpt facts for the main session to verify against the raw release: about 200,000 sq ft added; more than $100 million Los Angeles-area investment; approximately $280 million at Oak Ridge; fueling facility operations planned for 2027; commercial deliveries beginning 2028; full-scale Kaleidos testing at INL DOME advancing.",
+   "2026-11-19 NANO Nuclear and SJ Group knowledge-exchange collaboration (GlobeNewswire, low signal, NOT FILED): page returned HTTP 403 to WebFetch and was not read. URL: https://globenewswire.com/news-release/2026/11/19/3406571/0/en/nano-nuclear-energy-and-sj-group-establish-collaboration-to-advance-knowledge-exchange-and-capability-building-in-advanced-nuclear-energy-across-southeast-asia.html",
+   "2026-11-18 Prototype aseismic bearing completed for Rolls-Royce SMR (WNN, NOT FILED): out of band, large SMR-class unit, not fetched. URL: https://www.world-nuclear-news.org/articles/prototype-aseismic-bearing-completed-for-rolls-royce-smr",
+   "2026-11-18 ENTRA1 teams up with Sargent & Lundy for SMR deployment (WNN, NOT FILED): SMR-scale, not fetched; no microreactor tie found in search. URL: https://www.world-nuclear-news.org/articles/entra1-teams-up-with-sargent-lundy-for-smr-deployment",
+   "2026-11-17 Urenco and Blykalla HALEU enrichment contract (WNN, fetched, NOT FILED): Blykalla's SEALER is described as a 55 MWe lead-cooled reactor, outside the 1-20 MW band. Article calls it the world's first HALEU enrichment contract for a commercial lead-cooled reactor; HALEU deliveries expected in the early 2030s; no tonnage; binding status not stated in the article. URL: https://www.world-nuclear-news.org/articles/urenco-blykalla-sign-haleu-deal",
+   "2026-11-13 BWXT manufacturing facility expansion complete, Cambridge, Ontario (WNN, fetched, NOT FILED): C$80 million (US$56 million), 55,000 sq ft added, 200 jobs. Serves large components for conventional and advanced reactors; no microreactor product named. Out of band. URL: https://www.world-nuclear-news.org/articles/bwxt-manufacturing-facility-expansion-complete",
+   "2026-11-06 Oklo and U.S. Forged Rings reserve 27 Aurora module-equivalents across 2030-2035 (Oklo Q3 update; date per Credence Research, NOT FILED): Aurora is outside the 1-20 MW band. greenstocknews page returned HTTP 403; claims taken from search summaries only. URL: https://greenstocknews.com/news/nyse/oklo/oklo-u-s-forged-rings-partner-to-advance-domestic-manufacturing-for-future-aurora-powerhouse-deployments",
+   "2026-11-11 Oklo Aurora structural concrete and steel in place at INL (Oklo X post, cited in search summary only, NOT FILED): not fetched; Aurora out of band. Groves-1 clearance on the same news cycle is already shipped as oklo-groves-1-unrestricted-operations-2026-11-12.",
+   "2026-11-13 / 2026-11-10 Dow and X-energy Long Mott construction permit: already shipped as dow-long-mott-construction-permit-2026-11-10; Xe-100 is out of band. Not refiled.",
+   "2026-10-29 ARPA-E HORNIG eight transuranic fuel awards (ANS, fetched, NOT FILED): same event as the shipped texas-am-natura-doe-fuel-recycling-grant-2026-10-29 record; Texas A&M's $5,377,799 award is one of the eight. Selections, not signed contracts. URL: https://www.ans.org/news/article-8532/does-arpae-selects-eight-transuranic-fuel-development-projects/",
+   "Searched, nothing found dated after 2026-11-13 and in band: Radiant (beyond the 11-19 release), Westinghouse eVinci, Deep Fission, Kairos, Antares, Aalo Atomics, Valar Atomics, Last Energy, Deployable Energy, Natura, Terrestrial Energy, Centrus, Standard Nuclear, General Atomics, Holtec SMR-160, NANO Nuclear, Hadron Energy, Terra Innovatum; INL DOME and LOTUS; SPAC and IPO activity; executive hires. The latest in-band items found were already shipped (for example, the 2026-11-12 Groves-1 clearance and 2026-11-13 Centrus-Oklo HALEU).",
+   "Not verified: DOE Reactor Pilot Program and INL DOME status updates after 2026-11-13; NRC microreactor licensing actions in November 2026 (none found in search).",
+   "Main session filed the 2026-11-19 Radiant release from the primary radiantnuclear.com page (read in the browser pane, cached with fetch_source --from-file); the financialcontent copy is a market-data shell."
+  ]
+ },
+ "items": [
+  {
+   "id": "radiant-manufacturing-expansion-2026-11-19",
+   "date": "2026-11-19",
+   "headline": "Radiant puts over $100M into El Segundo plant to assemble first commercial Kaleidos",
+   "companies": [
+    "Radiant"
+   ],
+   "category": "construction",
+   "what_happened": "Radiant announced a new headquarters and manufacturing facility in El Segundo, California, an investment of more than $100 million that adds about 200,000 square feet and lets it assemble several Kaleidos units in parallel. Its 81-acre Oak Ridge, Tennessee campus (about $280 million planned) will fuel and refuel reactors, with fueling operations expected in 2027 and commercial deliveries from 2028.",
+   "why_it_matters": "A buyer gets a reactor fueled and sealed at the factory, so the customer site needs no in-ground nuclear construction. The fueling plant still needs its NRC Part 70 license, which the NRC targets for January 2027.",
+   "binding": false,
+   "binding_note": "A company announcement of facilities and spending, not a contract or a regulatory approval.",
+   "sources": [
+    {
+     "label": "Radiant, Radiant Expands Manufacturing to Scale Commercial Microreactor Production (Nov. 19, 2026)",
+     "url": "https://www.radiantnuclear.com/news/radiant-expands-manufacturing",
+     "quote": "Representing an investment of more than $100 million in Radiant’s Los Angeles-area footprint, the expanded El Segundo campus adds approximately 200,000 square feet",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

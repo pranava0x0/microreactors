@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "captured": "2026-11-19",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities not on recently-checked.md (ANPI JBSA, ANPI Buckley, ANPI Malmstrom, DOME, Last Energy, Texas backup power); Type N items for signed or announced buyer deals dated after 2026-11-13 not in skip/news.json (none found)",
+    "angles_run": [
+      "ANPI JBSA (anpi-jbsa): Antares selection update search; Antares primary page fetched",
+      "ANPI Buckley (anpi-buckley): Radiant selection update search; no change found",
+      "ANPI Malmstrom (anpi-malmstrom): Westinghouse eVinci search; no change found",
+      "DOME fuel and status (dome): Radiant fuel-loading searches; WNN 3 July 2026 fetched; Radiant pages unfetchable",
+      "Last Energy UK (uk-lastenergy): search plus ONR PDR summary fetched",
+      "Texas Backup Power Package (texas-backup): search plus PUCT Texas Energy Fund page fetch (HTTP 402)",
+      "New buyer deals dated 2026-11-14 to 2026-11-19: PPA, data-center, utility MOU, Janus/Army, Deployable/Valar/Aalo, Oklo/Kairos/Antares searches; none found",
+      "NANO Nuclear + SJ Group (web lead): search found no corroboration; GlobeNewswire page returned HTTP 403"
+    ],
+    "absences": [
+      "2026-11-19 NANO Nuclear Energy and SJ Group knowledge-exchange collaboration (Southeast Asia), https://globenewswire.com/news-release/2026/11/19/3406571/0/en/nano-nuclear-energy-and-sj-group-establish-collaboration-to-advance-knowledge-exchange-and-capability-building-in-advanced-nuclear-energy-across-southeast-asia.html: not filed. Knowledge exchange and capability building, with no named buyer, site or deployment instrument. GlobeNewswire returned HTTP 403, and a search found no corroborating coverage.",
+      "2026-11-19 Radiant expands U.S. manufacturing to scale Kaleidos production (web lead, vendor lane, not filed here): https://financialcontent.com/article/bizwire-2026-11-19-radiant-expands-manufacturing-to-scale-commercial-microreactor-production. The fetched page was an unrelated Motley Fool page, so no quote could be taken. Left to the vendors agent.",
+      "DOME status for Radiant Kaleidos (dome): the shipped 'not yet fueled' could not be confirmed or contradicted. The WNN article dated 3 July 2026 says the fuel is 'now on site' and that Radiant is 'poised to bring Kaleidos online'. Radiant's own pages returned HTTP 403 or were not fetchable. The shipped receipt date of 2026-07-01 is not verified to the day. Radiant's 2026-11-19 lead says full-scale DOME testing is 'advancing', which is consistent with the shipped text. No check written.",
+      "Texas Backup Power Package (texas-backup): the PUCT Texas Energy Fund page returned HTTP 402, so the application schedule could not be read from a primary source. A secondary source (Grantable listing) says applications open late 2026 or early 2027, which would correct the shipped 'no application schedule as of May 2026' if a primary page confirmed it. No check written.",
+      "ANPI JBSA (anpi-jbsa): secondary coverage gives a 2029 target for power to base assets (KSAT) and a 2028 operational target (SA Current). The primary Antares page says '2028 or earlier', which is the shipped text, so it is confirmed. Conflicting secondary dates are not filed.",
+      "ANPI Buckley (anpi-buckley): an aggregator summary paired Antares with Buckley and gave a 2029 date. This conflicts with the Radiant and Air Force primary sources, which name Radiant. Treated as unverified and not filed. No check written.",
+      "ANPI Malmstrom (anpi-malmstrom): no change found in searches. Westinghouse and Air Force coverage agree with the shipped vendor and status. No check written.",
+      "Last Energy PWR-20 PDR date: the ONR primary page says 'The PDR was completed in June 2025.' A secondary summary says the review completed in July. The primary source was used. The Last Energy site-licence decision timing (by December 2027, per the same secondary coverage) was not checked against a primary source.",
+      "No buyer deal dated 2026-11-14 to 2026-11-19 found for any microreactor developer after searching PPA, data-center, utility MOU, Army Janus, Air Force ANPI, Deployable Energy, Valar, Aalo, Oklo, Kairos, Antares, Westinghouse and BWXT."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-anpi-jbsa-1",
+      "target": "anpi-jbsa",
+      "file": "opportunities",
+      "claim": "Deployment targeted 2028 or earlier",
+      "verdict": "confirmed",
+      "evidence": "Antares's 2026-04-22 announcement of the JBSA ANPI selection says the unit is 'targeted for deployment by 2028 or earlier'. No later primary update was found in searches.",
+      "sources": [
+        {
+          "label": "Antares — JBSA ANPI selection, 2026-04-22",
+          "url": "https://antaresindustries.com/updates/anpi-jbsa",
+          "quote": "with systems targeted for deployment by 2028 or earlier.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-uk-lastenergy-1",
+      "target": "uk-lastenergy",
+      "file": "opportunities",
+      "claim": "ONR's June 2025 preliminary review covered the PWR-20 design, not any site",
+      "verdict": "confirmed",
+      "evidence": "The ONR Last Energy PDR summary report states the Preliminary Design Review was completed in June 2025. The page was last updated 3 February 2026. It covers the design review, not a site licence.",
+      "sources": [
+        {
+          "label": "ONR — Last Energy preliminary design review summary report (2025)",
+          "url": "https://www.onr.org.uk/generic-design-assessment/early-regulatory-engagement-on-new-nuclear-projects/last-energy-pdr-summary-report",
+          "quote": "The PDR was completed in June 2025.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
