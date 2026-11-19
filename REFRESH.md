@@ -236,3 +236,21 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   4 of 9 checks were overruled, every one because the agent read one source or one clause. Keep the 4-day window for rotation, but
   carry a permanent "settled readings" block (fee clause, PCE 19.35 -> 20.38, Aalo-X CTR vs demo plant, Equinix deposits) in every
   recently-checked.md. Also: the register lint rejects a colon in an application `name` ("X and Y: what it is"); rename before building.
+
+- **2026-11-17: the week's only new item sat in an agent's absences, dismissed as "one day before the window".** The vendors agent
+  found Carbon County's 11-12 permit for Valar and filed nothing because it predated 11-13, though the prompt allows a 60-day gap
+  window. Read every agent's `_meta.absences` for dated in-band events (same family as the 11-03 note), and grep `data/news.json`
+  before treating them as gaps. Also add the 11-05 `binding_note` reading of ANPI/Eielson to the settled-readings block: the deals
+  agent re-raised it today.
+
+- **2026-11-18: a secondary column is a pointer to a primary release, not a source.** The deals agent's absences named a SovAI / BAM
+  Energy MOU found only on an opinion column (briefglance); one `extended` search found the Business Wire text syndicated on
+  financialcontent.com, which curl fetches cleanly. The second absence-sourced item in two days: keep reading absences. Also, the
+  applications agent marked Eielson "outdated" because a report said the Air Force "selected a microreactor" without naming the
+  vendor; an unnamed vendor does not contradict a named one, so a correction that replaces a specific fact with a vaguer one is an overrule.
+
+- **2026-11-19: a syndication URL that serves a market-data shell sinks every agent at once.** The financialcontent.com copy of
+  Radiant's release (clean on 11-18 for SovAI) returned a Motley Fool ticker page today, and all three agents that tried it filed
+  nothing. The primary radiantnuclear.com page read in the browser pane (`[...document.querySelectorAll('p,h1,h2,h3')]` after a 3s
+  wait; `get_page_text` returns only the nav). When a web lead is a company release, put the company's own news URL in
+  `skip/web-leads.md`, not the wire copy. Four odd-day agents cost ~620K tokens for 0 shipped records.

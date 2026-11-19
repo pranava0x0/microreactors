@@ -588,3 +588,45 @@ Seven Haiku agents (even day, Monday), 2 at a time, after 2 main-session web sea
 | ideas | 138K | liability confirmed; nothing new | no |
 
 ~1.08M agent tokens for 1 news item and 1 application. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-17 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-13..11-16) with a permanent settled-readings block. 1 news, 0 corrections. The one item (Valar Carbon County permit) came from the vendors agent's absences, written up and sourced in the main session.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 158K | 0 items; all 3 watcher candidates out of band or shipped; flagged a misdated 2025 Valar NOVA criticality | no |
+| deals | 170K | 3 confirmations; re-raised ANPI/Eielson `binding` (settled 11-05 by the file's binding_note), ignored | no |
+| vendors | 159K | 0 records; its absences named the Valar Carbon County permit (11-12), which shipped | yes (via absences) |
+| politics | 162K | 0 records; NJ BPU advanced-nuclear EOI guidance noted, not microreactor-specific | no |
+
+~650K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-18 daily refresh
+
+Seven Haiku agents (even day), 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-14..11-17) with the settled-readings block. 2 news, 1 correction, 1 application. The SovAI / BAM Energy Pearl MOU came from the deals agent's absences and was sourced in the main session from the Business Wire release.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 172K | 1 item (Emerald 5 MWe Gem maritime pilot, NOK 20M, 2026-10-28); flagged an eVinci date "conflict" the shipped row already explains | yes |
+| deals | 163K | 1 confirmation (NANO-Supermicro); absences named the SovAI/BAM MOU (11-12), which shipped | yes (via absences) |
+| vendors | 161K | 1 confirmation (Valar Ward 250) | no |
+| politics | 162K | 0 records | no |
+| applications | 203K | Hadron/Smartland shipped; Deep Fission 8 MWe correction applied; USNC Seoul held (2023 MOU, vendor bankrupt); Eielson "outdated" overruled (vendor-unnamed report does not contradict the Oklo NOITA) | yes |
+| costs | 161K | 1 confirmation (arXiv LCOE band) | no |
+| ideas | 155K | 0 records | no |
+
+~1.18M agent tokens for 2 news, 1 correction, 1 application. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-19 daily refresh
+
+Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-15..11-18) with the settled-readings block. 1 news, 0 corrections. The day's only item (Radiant's manufacturing expansion) was sourced in the main session: every agent hit the financialcontent shell and filed nothing; the primary radiantnuclear.com release read cleanly in the browser pane and was cached with `--from-file`.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 148K | 0 items; absences named the Radiant release as unverifiable | no |
+| deals | 153K | 2 confirmations (ANPI JBSA, UK Last Energy) | marginal |
+| vendors | 160K | 0 records; 5 shipped rows read without contradiction | no |
+| politics | 159K | 0 records | no |
+
+~620K agent tokens for 1 news item the main session sourced. Phone cost 1.70 (baseline 1.69).

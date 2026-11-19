@@ -475,12 +475,12 @@
    "segment": "data centers behind the meter",
    "name": "Deep Fission and Endeavour, 2 GW for data centers",
    "status": "proposed",
-   "power_class": "15 MWe per borehole reactor; 2 GW total commitment",
+   "power_class": "up to about 8 MWe first unit, up to 15 MWe later; 2 GW commitment",
    "timeline": "strategic partnership announced 2025-01-08; first reactors expected to be operational in 2029",
    "sponsor": "Endeavour (data-center developer)",
    "vendor": "Deep Fission (borehole pressurised water reactor)",
-   "what_it_says": "Deep Fission and Endeavour committed to co-develop 2 GW of nuclear energy to power Endeavour's expanding portfolio of data centers, announced 8 January 2025. Deep Fission aims to place 15 MWe pressurised water reactors about one mile underground in a borehole. The first reactors are expected to be operational in 2029.",
-   "microreactor_read": "A 15 MWe unit fits the 1-20 MW band, but 2 GW is a portfolio commitment, not an order for units. The article does not say whether the partnership is binding, and no power price is published.",
+   "what_it_says": "Deep Fission and Endeavour committed to co-develop 2 GW of nuclear energy to power Endeavour's expanding portfolio of data centers, announced 8 January 2025. Deep Fission aims to place 15 MWe pressurised water reactors about one mile underground in a borehole. The first reactors are expected to be operational in 2029. By October 2026 Deep Fission was targeting up to about 8 MWe for its first reactor and up to 15 MWe for later units.",
+   "microreactor_read": "An 8 to 15 MWe unit fits the 1-20 MW band, but 2 GW is a portfolio commitment, not an order for units. The article does not say whether the partnership is binding, and no power price is published.",
    "sources": [
     {
      "label": "World Nuclear News — Deep Fission and Endeavour announce strategic partnership (2025)",
@@ -492,6 +492,12 @@
      "label": "TechCrunch — Nuclear startup Deep Fission plans to bury micro reactors to power data centers (2025)",
      "url": "https://techcrunch.com/2025/01/07/nuclear-startup-deep-fission-plans-to-bury-micro-reactors-to-power-data-centers",
      "quote": "signed a deal on Tuesday with data center developer Endeavour",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — Deep Fission signs Kansas power agreement following market woes (2026)",
+     "url": "https://www.ans.org/news/2026-10-28/article-8524/deep-fission-signs-kansas-power-agreement-following-market-woes/",
+     "quote": "for its first reactor and up to 15 MWe for follow-on deployments",
      "status": "fetched"
     }
    ],
@@ -728,6 +734,27 @@
      "label": "World Nuclear News — Canadian partnership for microreactor deployment (2024)",
      "url": "https://world-nuclear-news.org/articles/canadian-partnership-for-microreactor-deployment",
      "quote": "have signed a memorandum of understanding to develop opportunities to power remote mines and communities in Canada",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "hadron-smartland-halo-mou",
+   "segment": "behind-the-meter industrial power",
+   "name": "Hadron Energy and Smartland Energy Halo microreactor framework (non-binding MOU)",
+   "status": "proposed",
+   "power_class": "10 MWe per Halo unit; up to five Smartland project deployments under the MOU",
+   "timeline": "MOU announced 2026-04-28; initial deployment targeted for the early 2030s, subject to diligence and definitive agreements",
+   "sponsor": "Smartland Energy (behind-the-meter developer; made an initial strategic investment in Hadron)",
+   "vendor": "Hadron Energy (Halo micro-modular reactor)",
+   "what_it_says": "Hadron Energy and Smartland Energy signed a non-binding MOU on 2026-04-28 to evaluate Halo reactors across up to five Smartland projects. Smartland describes a pipeline of about 150 MWe per project, with 12 projects targeted by 2035 for about 1.8 GWe of demand. No project site has been publicly identified, and the release says no existing Smartland project has been selected for nuclear deployment.",
+   "microreactor_read": "10 MWe fits the 1-20 MW band. The MOU is non-binding, no site or price is named, and initial deployment is targeted for the early 2030s.",
+   "sources": [
+    {
+     "label": "Hadron Energy / Business Wire via Nasdaq — Hadron Energy Secures Strategic Investment and Multi-Project Nuclear Deployment Framework with Smartland Energy (2026)",
+     "url": "https://www.nasdaq.com/press-release/hadron-energy-secures-strategic-investment-and-multi-project-nuclear-deployment",
+     "quote": "a 10 MWe light-water nuclear system engineered for modular, behind-the-meter deployment.",
      "status": "fetched"
     }
    ],

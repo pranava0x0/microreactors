@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "captured": "2026-11-19",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy checks on shipped policy.json pathways (Type G), new state/utility dockets filed or decided in the last 90 days (Type F), and dated political or regulatory events after 2026-11-13 (Type N). Lane excludes deals, vendors, news contracts and costs.",
+    "angles_run": [
+      "Type G: California SB 978 status (leginfo bill status page, 403 on fetch)",
+      "Type G: Texas Backup Power Package Program $1.8B and 16 TAC 25.513 (EnergyChoiceMatters fetch; PUC rule search)",
+      "Type F: state utility SMR/microreactor IRP and cost-recovery filings, Sept-Nov 2026 (search only)",
+      "Type F: Appalachian Power SCC SMR site cost recovery (search only)",
+      "Type F: Kentucky PSC 2025-00186 nuclear investigation (search only)",
+      "Type F: New Jersey microreactor bills (NCSL Oct 2026 newsletter fetch)",
+      "Type N: NRC commission and rule actions, Nov 2026 (search only)",
+      "Type N: governor signings and state microreactor law, Nov 2026 (search only)",
+      "Type N: DOE, Army, Navy, Air Force microreactor policy, Nov 2026 (search and Army article fetch)",
+      "Type N: FY2027 Energy and Water appropriations, NE funding (search only)",
+      "Type N: NDAA FY2027 nuclear provisions (search and fetch of Army Janus article)",
+      "Type N: CNSC and ONR SMR decisions, Nov 2026 (search only)",
+      "Type N: Congressional microreactor bills, Nov 2026 (search only)"
+    ],
+    "absences": [
+      "Type G, CA SB 978 (skip/policy.json, diesel group, 'California's diesel rules leave nuclear off the eligible list'): the claim 'held in the Senate Appropriations Committee since May 14, 2026' could not be checked. leginfo.legislature.ca.gov billStatusClient returned HTTP 403 to WebFetch, and no other fetchable source gave a current status. Not filed.",
+      "Type G, Texas Backup Power Package (skip/policy.json, diesel group): the fetched EnergyChoiceMatters story (https://www.energychoicematters.com/stories/20260508b.html, dated 2026-05-08) says the PUC 'adopted final rules' and that the mix is 'natural gas or propane generation, battery storage, and solar generation', consistent with the shipped text. It gives no dollar figure or rule number. The $1.8B and 16 TAC 25.513 details came only from search summaries (a May 7, 2026 law-firm alert and the Texas Register proposal of Jan 2, 2026). No dated primary PUC page within 60 days was fetched, so no check was written.",
+      "Type G, Part 57 and FERC EL25-49: skipped as listed in skip/recently-checked.md.",
+      "Type G, Part 53 final (licensing group): consistent with skip/news.json (nrc-part53-final-rule-2026-03-26). No fetch in this pass, so no check was written.",
+      "Type G, DOE Reactor Pilot Program 'four critical reactors by July 4': not checked in this pass (budget went to Type N searches). No in-window reason to suspect a change.",
+      "Type F, New Jersey S4849 / A5726 / A5727: already on skip/dockets.json (nj-s4849-micro-reactor-incentive-act-2026, nj-a5727-micro-reactor-rules-2026). A5726 is the companion of S4849 per the skip record. NJ SB 4734 (described as a bill to inventory nuclear sites and solicit bids within three months, per NCSL Oct 23, 2026 newsletter, https://www.ncsl.org/news/details/news-reactor-october-2026) gives a bill number that conflicts with the tracker's S 4849. No primary NJ Legislature page was fetched, so it was not filed.",
+      "Type F, Appalachian Power (Virginia) SMR site cost recovery: the SCC approved site-development spending in Nov 2025 and the utility said it expected a cost-recovery request in mid-2026. No 2026 filing was found in search results. Not filed.",
+      "Type F, Kentucky PSC Case 2025-00186 (Commission-initiated nuclear investigation): orders dated 2026-01-16, 2026-01-30 and 2026-04-24 fall outside the 90-day window, and no utility microreactor filing was found. Not filed. Docket page: https://psc.ky.gov/Case/ViewCaseFilings/2025-00186",
+      "Type F, Dominion Virginia SMR RFP and Indiana IURC SMR cost trackers: only 2023-2025 material surfaced. Nothing dated in the last 90 days was found. Not filed.",
+      "Type N, Long Mott NRC construction permit (dated 2026-11-09 by the NRC; ANS coverage at https://www.ans.org/news/article-8573/): this is an Xe-100 utility-scale project, not a 1-20 MW reactor, and it is already on skip/news.json (dow-long-mott-construction-permit-2026-11-10). Out of lane for this agent. Listed here because it is dated after 2026-09-20.",
+      "Type N, NCSL October 2026 newsletter (dated 2026-10-23, https://www.ncsl.org/news/details/news-reactor-october-2026): California AB 2647 directs the Energy Commission to assess advanced nuclear by Jan 1, 2028. The passage date is not stated ('recently passed'), and it is a study bill with no 1-20 MW buyer path, so it was not filed. Listed here because it is dated after 2026-09-20.",
+      "Type N, NCSL September 2026 newsletter (dated 2026-09-29, https://www.ncsl.org/resources/details/News-Reactor-September-2026): reports House Energy and Commerce advanced nuclear bills, but the excerpt the search returned names no microreactor bill. Not verified. Listed here because it is dated after 2026-09-20.",
+      "Type N, Army Janus Program selection (army.mil/article/294891, dated 2026-08-26): five vendors (Antares/Fort Bragg, BWXT/Fort Campbell, General Atomics/Fort Hood, Radiant/Fort Benning, Westinghouse/Fort Drum), about $2.2B across FY2027-2031, and the Army regulates the reactor. Dated before the 2026-11-13 window, so not filed as an item. Fort Benning's October 2026 release (army.mil/article/296206) was seen in search summaries only.",
+      "Type N, FY2027 NDAA: HASC advanced the bill 44-12 with $160M for DOE Office of Nuclear Energy per a search summary. The date is not verified, and the summary does not state the microreactor amendment's content. SASC summary (https://www.armed-services.senate.gov/imo/media/doc/fy2027_ndaa_exsum.pdf) did not mention microreactors in the excerpt seen. No November 2026 conference or final action found.",
+      "Type N, FY2027 Energy and Water appropriations: House subcommittee bill gives $1.8B to DOE Office of Nuclear Energy and $892.3M to NRC per a search summary. The date is not verified, and no November 2026 committee or floor action was found. CRS R48944 (updated 2026-06-23) is the latest dated document seen.",
+      "Type N, NRC commission votes and approvals, Nov 2026: none found beyond the Long Mott permit above. Part 57 final rule is on the recently-checked skip list.",
+      "Type N, governor signings or state microreactor laws, Nov 2026: none found. Latest state actions surfaced were 2022-2025 (Alaska SB 177, Illinois HB 2473, Indiana S. 271, Pennsylvania fee law), plus an Arizona SB1418 veto on 2026-06-24 (not microreactor-specific).",
+      "Type N, DOE, Army, Navy, Air Force microreactor policy, Nov 17-19, 2026: none found. The Navy's Crane selection (skip/news.json, navy-crane-microreactor-2026-09-09 and navy-selects-radiant-crane-2026-10-20) is already shipped.",
+      "Type N, CNSC and ONR SMR decisions, Nov 2026: none found. Latest CNSC decision seen was the April 4, 2025 Darlington BWRX-300 construction licence. ONR's generic design assessment work is ongoing, with no November 2026 decision found.",
+      "Type N, Congressional microreactor bills, Nov 2026: none found. Bills seen were H.R. 6805 (Next Generation Nuclear Deployment Act, introduced 2025-12-17), S. 4284 (Nuclear Energy Innovation and Deployment Act of 2026, introduced 2026-04-14) and ARC Act 2.0 (introduced 2026-02-10). All predate the window."
+    ]
+  },
+  "checks": [],
+  "dockets": [],
+  "items": []
+}

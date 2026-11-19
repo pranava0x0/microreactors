@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "captured": "2026-11-17",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market. Event dates after 2026-11-13, then any gap in the prior 60 days (2026-09-14 to 2026-11-13). Watcher candidates (skip/candidates.json) checked first. Skip list read in full (106 shipped items, newest 2026-11-13).",
+    "angles_run": [
+      "watcher candidates (skip/candidates.json): Urenco-Blykalla HALEU, BWXT Cambridge expansion, Dow/X-energy permit",
+      "web leads (skip/web-leads.md): ANS INL-Purdue construction demonstration",
+      "reactor criticality and testing (Reactor Pilot Program, INL DOME, eVinci, Valar, Aalo, Last Energy, Antares)",
+      "factories and construction (Radiant, Standard Nuclear, Deployable, Natura, NANO Nuclear)",
+      "financing and SPAC events (NuCube/Launch Two, Antares, Valar, Deep Fission, Blue Energy, generic microreactor funding)",
+      "fuel (HALEU, TRISO: Urenco, Centrus, Standard Nuclear, Radiant, Antares)",
+      "first-of-a-kind deployments and Janus awards (BWXT Fort Campbell, GA-TES Fort Hood, Antares Fort Bragg)",
+      "setbacks and cancellations (Oklo Aurora timing, NuCube outside date, Deep Fission short report)",
+      "ANS Nuclear Newswire and World Nuclear News front pages (fetched 2026-11-17) for the window"
+    ],
+    "absences": [
+      "No in-band (1-20 MW) event dated after 2026-11-13 that is not already on the News tab was found. Checked: all three watcher candidates, the ANS and WNN front pages, and about 20 targeted searches.",
+      "Urenco-Blykalla HALEU deal (WNN 2026-11-17, fetched): not written. Blykalla SEALER is a 55 MWe lead-cooled reactor, outside the 1-20 MW band. The article gives no HALEU quantity, delivery is early 2030s, and it does not call the deal binding. Not a microreactor buyer event.",
+      "INL-Purdue construction demonstration (INL release 2026-11-05; ANS 2026-11-09 and ConstructConnect 2026-11-10 seen in search summaries, not fetched): not written. It is a general SMR steel-plate containment construction study at Purdue, not a microreactor.",
+      "BWXT Cambridge, Ontario manufacturing expansion (WNN 2026-11-13): not written. Large-reactor components, out of scope per web-leads.md.",
+      "Dow/X-energy Long Mott construction permit (DOE 2026-11-13; NRC 2026-11-10): already shipped as dow-long-mott-construction-permit-2026-11-10.",
+      "Valar 'Project NOVA' cold criticality dated 17 November (aggregator ifttt.itbehere.com, unverified): not written. The primary coverage (ANS 2025-11-18, NCERC) dates NOVA zero-power criticality to 2025-11-17. The aggregator misdated a year-old event.",
+      "Westinghouse eVinci high-temperature zero-power criticality at 663 C, dated 2026-09-03 in a DOE Office of Nuclear Energy article (seen in search summary only): not written. Outside the 60-day gap window. Also conflicts with ANS's 2026-08-26 report of the cold criticality test. Shipped item westinghouse-evinci-criticality-2026-08-24 covers the August test.",
+      "NANO Nuclear 'three-year engineering pact for KRONOS microreactor components' (headline dated 2026-11-07, search summary only): not written. The only matching terms point to the IMPSA ESMA of 2026-10-21, already shipped as nano-impsa-kronos-esma-2026-10-21. Not verified as a separate event.",
+      "NuCube / Launch Two SPAC (S-4/A on EDGAR, undated): not written. Sources give an outside date of 2026-10-09, extendable to 2026-11-09. No vote date, closing, or extension found. Would need the 8-K or EDGAR filing index to date any step.",
+      "Oklo Groves-1 DOE clearance: shipped with date 2026-11-12. Trade coverage in search summaries says Nov. 11. Possible date discrepancy for the main session to check against the DOE or Oklo release. Not re-written.",
+      "Natura / Texas A&M $5.4M molten-salt fuel-recycling project (Natura announcement dated 2026-11-02 in search summary): same event as shipped texas-am-natura-doe-fuel-recycling-grant-2026-10-29. Possible date discrepancy for the main session to check.",
+      "Oklo roundup (ANS 2026-11-16, 'Groves-1 plans, Centrus contract, Aurora concrete'): headline seen on ANS front page; article not reachable by search. Centrus-Oklo fuel was shipped 2026-11-13. Aurora is 75 MWe, out of band.",
+      "Not swept or not found in window: Kairos (out of band, 35 MWe Hermes class), X-energy (out of band, Xe-100), USNC successor (no result), Centrus stand-alone (only via Oklo search), Terrestrial Energy (only a 2025 item), Holtec (only 2025 items), Blue Energy (large LWR, out of band; 2026-08-13 GE Vernova agreement), General Atomics beyond Janus (no November item), Standard Nuclear (Idaho and Tennessee TRISO plants dated 2026-07-24, outside window).",
+      "Budget: about 21 web searches and 3 fetches used. Angles that surfaced nothing new after two searches: setbacks and cancellations (no new in-window item), key hires and departures (no in-window item found)."
+    ]
+  },
+  "items": [
+    {
+      "id": "valar-carbon-county-cup-2026-11-12",
+      "date": "2026-11-12",
+      "headline": "Carbon County planners approve Valar's Raceway Energy Campus permit",
+      "companies": [
+        "Valar Atomics"
+      ],
+      "category": "regulatory",
+      "what_happened": "On November 12, 2026 the Carbon County, Utah planning commission approved a conditional use permit for Valar Atomics' Raceway Energy Campus, a nuclear, natural gas and data center site on 640 acres of state trust land near Wellington. One commissioner voted no. Valar says the campus will generate and use about 3 gigawatts; it plans to start with a natural gas plant and eventually build 40 to 120 nuclear reactors there. The commission took no public comment, which the county attorney said was not required.",
+      "why_it_matters": "It is the first local land-use approval for Valar's Utah plans. The permit does not let construction start: Valar still needs a county building permit, a state air quality permit and an NRC construction permit, and the reactors come after a gas plant.",
+      "binding": true,
+      "binding_note": "A county conditional use permit, approved with conditions. It is a land-use approval, not a construction or reactor license.",
+      "sources": [
+        {
+          "label": "The Salt Lake Tribune, Carbon County approves permit for Valar Atomics' data center, nuclear project (Nov. 13, 2026)",
+          "url": "https://www.sltrib.com/news/environment/2026/11/13/carbon-county-approves-permit/",
+          "quote": "Eventually it aims to build 40 to 120 nuclear reactors on the site.",
+          "status": "fetched"
+        },
+        {
+          "label": "KPCW (via The Salt Lake Tribune), Utah startup submits plans for nuclear-powered data centers (Nov. 12, 2026)",
+          "url": "https://www.kpcw.org/state-regional/2026-11-12/utah-startup-submits-plans-for-nuclear-powered-data-centers",
+          "quote": "about 640 acres leased from the Utah Trust Lands Administration near Wellington",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

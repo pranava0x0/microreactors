@@ -1,0 +1,134 @@
+{
+ "_meta": {
+  "captured": "2026-11-18",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped segments and deployment_sites records most likely to have changed; Type S new named projects in thin segments; no Type E regions (Faroe Islands rejected for lack of a 2026 price); no Type N items (no in-band applications news dated 2026-11-14..18 that the news lane would not cover).",
+  "angles_run": [
+   "lunar fission surface power (NASA/DOE 2026 status)",
+   "Penn State eVinci NRC status",
+   "Oklo / Wyoming Hyperscale Aspen Mountain LOI status",
+   "Last Energy / DP World London Gateway status",
+   "Steady Energy LDR-50 Helen pilot status",
+   "Eielson AFB microreactor selection status (ANPI and DAF pilot)",
+   "Deep Fission / Endeavour 2 GW output and timeline",
+   "hospital and medical-campus SMR (2 searches, nothing named in 2026)",
+   "disaster recovery and emergency utility backup microreactor (nothing utility-named)",
+   "hydrogen and ammonia microreactor MOUs (SK E&C / USNC hub found)",
+   "behind-the-meter data center microreactor deals (already shipped)",
+   "mine microreactor deals (Nuclea, Nano/Digihost, Prodigy, Seligdar)",
+   "desalination and produced-water SMR (Natura/NGL already shipped)",
+   "1 MW off-grid industrial pilots (nothing new signed in 2026)",
+   "food processing and cold storage microreactor (none found)",
+   "Faroe Islands electricity price and nuclear position (rejected)",
+   "Hadron Energy / Smartland Halo MOU (primary press release fetched)",
+   "Deep Fission Great Plains Development Authority Kansas agreement (already shipped in news.json)"
+  ],
+  "absences": [
+   "Hospital or medical-campus microreactor project dated 2026: two searches, none found. The only campus deals found (Texas A&M RELLIS, UIUC Kronos) are already shipped.",
+   "Disaster-recovery or emergency utility backup project with a named buyer: one search. Results were DoD resilience programs (Janus, ANPI), already in deployment_sites. Nothing utility-named.",
+   "Signed 2026 deal for a 1 MW microreactor pilot with an off-grid industrial customer: none found. Terra Innovatum / Uvation (LOI, Nov 2025) is already shipped as uvation-data-center-pilot.",
+   "Food processing or cold-storage microreactor deal: none found. Results were microturbine and solar deals.",
+   "Faroe Islands region (Type E): only price data found was 2019-2020 (DKK 1.31/kWh) and no nuclear activity. Rejected under the price-and-load rule. No 2026 SEV tariff page reached.",
+   "Status checks run with no change found, so no verdict written: NASA/DOE fission surface power (agreement 2026-01-13, 100 kWe class, unchanged); Penn State eVinci (LOI Feb 2025; no 2026 NRC application found); Oklo / Wyoming Hyperscale (LOI May 2024, nonbinding, no 2026 update); Last Energy London Gateway (MOU Sep 2025, no 2026 update); Steady Energy LDR-50 (first concrete 2026-02-12, consistent); Arctic CSMC Canada (not checked this pass).",
+   "Seligdar Kyuchus gold mine (Russia): WNN fetched 2022-01-21. Binding 40-year supply from a RITM-200N SMR, at least 35 MW, commissioning 2028. Out of the 1-20 MW band and dated 2022, so not written up.",
+   "Deep Fission Great Plains Development Authority master energy purchase agreement (Parsons, Kansas): already shipped in data/news.json as deep-fission-gpda-master-energy-purchase-2026-10-20. Not written as a Type S record. Only one fetched document was available for it (ANS, 2026-10-28). Finviz copy not fetched: the user declined that site in the browser pane.",
+   "Nano Nuclear / Digihost 60 MW microreactor, New York (MOU): out of band and seen only in a search summary. Not written.",
+   "Dairyland Power LOI to study Applied Atomics SMRs at Genoa, Wisconsin: no output size published. Not written.",
+   "Business Wire primary release for Hadron / Smartland: HTTP 403. Nasdaq copy of the same release was fetched instead.",
+   "Shipped Eielson and Janus records: Eielson vendor (Oklo) is unconfirmed in the 2026 report. The Army Janus five-site announcement (2026-08-26) is already reflected in shipped janus-* records."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-eielson-pilot-1",
+   "target": "eielson-pilot",
+   "file": "deployment_sites",
+   "claim": "NOITA to Oklo announced 2025-06-11 (re-issued after the 2023 selection was rescinded); NOITA starts negotiations",
+   "verdict": "confirmed",
+   "evidence": "KTUU, 2026-09-02: \"The Air Force has already selected a micro-reactor for Eielson Air Force Base to add to its power supply.\" Construction is planned for 2028 and the reactor could go online by 2030. The report does not name the vendor, so the Oklo attribution is not confirmed for the 2026 selection. Air & Space Forces, 2025-04-23, confirms the earlier notice to Oklo was rescinded after a protest.",
+   "sources": [
+    {
+     "label": "KTUU (Alaska News Source) — Military officials detail nuclear reactor timelines for Alaska bases at Fairbanks forum (2026)",
+     "url": "https://www.alaskasnewssource.com/2026/09/03/military-officials-detail-nuclear-reactor-timelines-alaska-bases-fairbanks-forum/",
+     "quote": "The Air Force has already selected a micro-reactor for Eielson Air Force Base to add to its power supply.",
+     "status": "fetched"
+    },
+    {
+     "label": "Air & Space Forces Magazine — Air Force Still Planning Nuclear Microreactor in Alaska (2025)",
+     "url": "https://www.airandspaceforces.com/air-force-nuclear-microreactor-eielson-and-more/",
+     "quote": "The Air Force and DLA Energy originally intended to award the Eielson contract to Oklo, before rescinding that notice of intent after a protest.",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled (main session 2026-11-18): KTUU says the Air Force selected a microreactor for Eielson without naming the vendor, which does not contradict the 2025-06-11 notice of intent to award to Oklo. Replacing a named vendor with 'vendor unnamed' would lose information the sources support."
+  },
+  {
+   "id": "check-deep-fission-endeavour-data-centers-1",
+   "target": "deep-fission-endeavour-data-centers",
+   "file": "segments",
+   "claim": "15 MWe per borehole reactor; 2 GW total commitment",
+   "verdict": "outdated",
+   "evidence": "ANS, 2026-10-28: the company is now targeting \"up to approximately 8 MWe\" for its first reactor and up to 15 MWe for follow-on deployments. The article notes the design specifics have changed several times. The 2 GW commitment figure is unchanged in this source.",
+   "correction": "8 MWe first unit, 15 MWe later; 2 GW commitment",
+   "sources": [
+    {
+     "label": "American Nuclear Society — Deep Fission signs Kansas power agreement following market woes (2026)",
+     "url": "https://www.ans.org/news/2026-10-28/article-8524/deep-fission-signs-kansas-power-agreement-following-market-woes/",
+     "quote": "for its first reactor and up to 15 MWe for follow-on deployments",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "applications": [
+  {
+   "id": "usnc-sk-hydrogen-micro-hub-seoul",
+   "segment": "hydrogen and ammonia production",
+   "name": "USNC, Hyundai Engineering and SK E&C Hydrogen Micro Hub, Seoul",
+   "status": "proposed",
+   "power_class": "5 MWe (15 MWth) per USNC Micro-Modular Reactor",
+   "timeline": "MOU signed 2023-04-20 (ANS); WNN reported 2023-04-21; five-year joint R&D; no project update after 2023 found",
+   "sponsor": "SK E&C (hydrogen producer)",
+   "vendor": "Ultra Safe Nuclear Corporation (MMR); Hyundai Engineering (balance of plant and EPC)",
+   "what_it_says": "USNC, Hyundai Engineering and SK E&C signed an MOU in April 2023 to build a Hydrogen Micro Hub that makes hydrogen by high-temperature electrolysis, fed by electricity and steam from USNC's 5 MWe Micro-Modular Reactor. The first hub was to be built at SK E&C's Seoul headquarters. No project update after 2023 was found, and ANS lists a related headline reporting that USNC filed for bankruptcy on 2024-10-30.",
+   "microreactor_read": "A 5 MWe block sits inside the 1-20 MW band and makes hydrogen-grade heat, but the design vendor is in bankruptcy and no site, buyer commitment or price is published.",
+   "sources": [
+    {
+     "label": "World Nuclear News — US-Korean partners to build SMR-powered hydrogen production facility (2023)",
+     "url": "https://world-nuclear-news.org/articles/us-korean-partners-to-build-smr-powered-hydrogen-p",
+     "quote": "The three companies plan to construct the first Hydrogen Micro Hub at SK E&C's headquarters in Seoul.",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — USNC enters pact with Korean firms for clean hydrogen production (2023)",
+     "url": "https://www.ans.org/news/article-4947/usnc-enters-pact-with-korean-firms-for-clean-hydrogen-production/",
+     "quote": "The three companies signed a memorandum of understanding on April 20 regarding the construction of a",
+     "status": "fetched"
+    }
+   ],
+   "review": "Not shipped (main session 2026-11-18): a 2023 MOU with no update since, and the design vendor filed for bankruptcy in 2024, so 'proposed' would overstate it."
+  },
+  {
+   "id": "hadron-smartland-halo-mou",
+   "segment": "behind-the-meter industrial power",
+   "name": "Hadron Energy and Smartland Energy Halo microreactor framework (non-binding MOU)",
+   "status": "proposed",
+   "power_class": "10 MWe per Halo unit; up to five units under the MOU",
+   "timeline": "MOU announced 2026-04-28; initial deployment targeted for the early 2030s, subject to diligence and definitive agreements",
+   "sponsor": "Smartland Energy (behind-the-meter developer; made an initial strategic investment in Hadron)",
+   "vendor": "Hadron Energy (Halo micro-modular reactor)",
+   "what_it_says": "Hadron Energy and Smartland Energy signed a non-binding MOU on 2026-04-28 to evaluate Halo reactors across up to five Smartland projects. Smartland describes a pipeline of about 150 MWe per project, with 12 projects targeted by 2035 for about 1.8 GWe of demand. No project site has been publicly identified, and the release says no existing Smartland project has been selected for nuclear deployment.",
+   "microreactor_read": "10 MWe fits the 1-20 MW band. The MOU is non-binding, no site or price is named, and initial deployment is pushed to the early 2030s.",
+   "sources": [
+    {
+     "label": "Hadron Energy / Business Wire via Nasdaq — Hadron Energy Secures Strategic Investment and Multi-Project Nuclear Deployment Framework with Smartland Energy (2026)",
+     "url": "https://www.nasdaq.com/press-release/hadron-energy-secures-strategic-investment-and-multi-project-nuclear-deployment",
+     "quote": "a 10 MWe light-water nuclear system engineered for modular, behind-the-meter deployment.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  }
+ ]
+}

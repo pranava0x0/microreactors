@@ -1,0 +1,46 @@
+{
+ "_meta": {
+  "captured": "2026-11-18",
+  "agent": "costs",
+  "scope": "Costs tab: Type G checks on shipped costs.json numbers (not on the recently-checked list), and Type N items for dated fuel-supply or financing events after 2026-11-13 not in skip/news.json. Searches run by the agent directly; no sub-agents.",
+  "angles_run": [
+   "HALEU enrichment contract / DOE award, Nov 2026 (no in-window award found)",
+   "HALEU deliveries, Nov 2026 (no shipment or delivery found in window)",
+   "DOE loans and financing for nuclear, Nov 2026 (latest found: Constellation conditional loan, 2026-10-28)",
+   "TRISO fuel supply agreements, Nov 2026 (latest found: Standard Nuclear deals, Aug 2026)",
+   "IRC 45Y/48E nuclear credit timing (law-firm summaries only; statute not retrieved)",
+   "Alaska Power Cost Equalization FY2026 base amount and village-level totals (Lime Village, Kotzebue)",
+   "arXiv 2506.13361 optimized-design LCOE band and PTC effect (abstract fetched)",
+   "arXiv 2506.13361 capex range $2,500-4,000/kW (PDF not readable through WebFetch)"
+  ],
+  "absences": [
+   "OBBBA nuclear 2034 begin-construction date and 3-year phase-out (costs.json incentives.points[0], incentives.answer): only law-firm sources retrieved (Morgan Lewis, 2025-07-24, fetched; it confirms the 2034 and three-year wording). The enrolled statute (26 U.S.C. 45Y/48E) and any post-2025 IRS guidance for nuclear were not retrieved, and the Morgan Lewis page is outside the 60-day window, so no check was written. A Cravath summary states an earlier begin-construction date of 2028 for the clean electricity credits; the other sources contradict it and it was not verified either way.",
+   "The 10% nuclear-energy-community adder (costs.json incentives.points[1]) and the 2026 FEOC start year: confirmed in Morgan Lewis only, which gives no explicit start year for FEOC (says 'mostly by 2026'). Statute not retrieved.",
+   "Optimized-design capex inputs $2,500-4,000/kW (nominal $3,000) and capex rows $2,515-3,970/kWe (costs.json capex.rows[4], microreactor_lcoe[4] basis): the arXiv PDF could not be read through WebFetch (binary output), and the abstract does not state them. Neither confirmed nor contradicted.",
+   "Alaska PCE village figures (costs.json displaced_alternatives[1]) are excluded from checks per the recently-checked list. Context for the lane: the FY2026 base is 20.38 cents/kWh; docket U-26-010 (notice posted 2026-05-01, responses due 2026-06-02) proposed raising it to 22.11 cents/kWh; no final order was found. FY2026 village-level totals for Lime Village and Kotzebue were not found, so the $0.41 and $1.95 figures remain FY2024 order values.",
+   "Remote industrial diesel band $0.25-0.60/kWh (costs.json displaced_alternatives[0], TUGLIQ/ecoENERGY completion report, 2016): not checked. No newer primary source was searched for. Candidate for a future pass.",
+   "Diesel breakeven threshold $1.50/litre (costs.json displaced_alternatives[2], ScienceDirect paper): not checked. The paper was not fetched.",
+   "HALEU and TRISO unit prices, DOE HALEU allocations and insurance or staffing costs: no shipped costs.json record carries these as numbers, so no target exists. INL learning-curve staffing ($178,500 per person-year) was not checked; the INL-24 numbers are settled as editorial, not corrections.",
+   "Items: no dated fuel-supply or financing event between 2026-11-14 and 2026-11-18 was found in the searches run. The Centrus first-centrifuge shipment (ANS, 2026-11-02) is the same event as skip id centrus-first-centrifuge-piketon-expansion-2026-10-30 and is already on the site. The Urenco/Blykalla HALEU deal (2026-11-17) is already judged out of band in web-leads.md. The Constellation $5B DOE conditional loan (2026-10-28) predates the window and is not in scope. DOE's Loan Programs Office now trades as the Office of Energy Dominance Financing; searches on the new name did not surface a November item."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-microreactor-lcoe-optimized-ptc-1",
+   "target": "microreactor_lcoe[4] (Optimized design, with PTC), basis sentence",
+   "file": "costs",
+   "claim": "The paper reports the PTC cutting LCOE by 22–24%, so the same optimization unsubsidised lands near $63–103/MWh (derived, not published).",
+   "verdict": "confirmed",
+   "evidence": "The arXiv abstract (Abdussami et al., arXiv 2506.13361, version 2 last revised 19 Dec 2025) states LCOEs of $48.21/MWh to $78.32/MWh with the Production Tax Credit and that the PTC can reduce LCOE by 22-24%. This matches the shipped $48-78 band and the 22-24% reduction; the unsubsidised $63-103 figure remains a derivation from those numbers, as the shipped text already says.",
+   "sources": [
+    {
+     "label": "arXiv — Abdussami et al., Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv 2506.13361, v2, 19 Dec 2025)",
+     "url": "https://arxiv.org/abs/2506.13361",
+     "quote": "when supported by the Production Tax Credit (PTC). High reactor capacity",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "items": []
+}

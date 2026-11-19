@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "captured": "2026-11-18",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on time-sensitive numbers in arguments.json, and Type N items (policy) for major studies dated 2026-11-14 to 2026-11-18 that change the case for or against 1-20 MW reactors. Result: no in-window studies found; no checks written.",
+    "angles_run": [
+      "microreactor study or report published November 2026",
+      "SMR cost study 2026 $/kW national laboratory",
+      "ERCOT Small Generation process 10 MW threshold 2026 (argument: thresholds)",
+      "California SGIP handbook 2026 eligibility (argument: relocatable)",
+      "DOE Liftoff microreactor update 2026",
+      "GAO advanced reactors and microreactors 2026",
+      "EPRI advanced nuclear microreactor economics 2026",
+      "MISO surplus interconnection in-service time 2026 (argument: inherit)",
+      "NEI advanced reactor deployment November 2026",
+      "CBO or IEA SMR report 2026 cost estimate",
+      "insurer and lender microreactor financing report 2026",
+      "microreactor cost per kWh study (secondary check)",
+      "INL, NREL, Sandia microreactor analysis 2026",
+      "microreactor news week of 2026-11-16",
+      "INL Global Market Analysis of Microreactors date"
+    ],
+    "absences": [
+      "No study, report or analysis dated 2026-11-14 to 2026-11-18 on microreactor economics, deployment, or policy was found. Searches covered DOE Liftoff, GAO, EPRI, NEI, CBO, IEA, national labs (INL, NREL, Sandia), insurer and lender analyses, and news from the week of 2026-11-16. The main session's own three searches also found nothing in-window.",
+      "INL/RPT-26-92703 (cost-and-safety gap ranking for microreactors): the PDF is image-only, so its cover date could not be read. Its URL path is /2026/05/, which places the upload in May 2026, outside the window. Not in news.json. Not used.",
+      "DOE Liftoff: the only update found in the search index is the first update (2024). No 2026 Liftoff microreactor cost figure was located. Not in news.json.",
+      "EPRI: no 2026 microreactor-specific report found. The NEA-EPRI LCOE study (2025 data; coverage dated September 2026 by smrintel.com) covers large reactors and SMRs, not microreactors, and its coverage date is not confirmed against the primary release. Not in news.json.",
+      "NEI: 'State of the Nuclear Industry 2026' exists and its date and content could not be confirmed from a fetched page. Not in news.json. No November 2026 NEI report found.",
+      "GAO: no 2026 GAO product focused on microreactors found. GAO-26-107385 (August 2026, enriched uranium supply, includes an NRC advanced-reactor applicant table as of February 2026) and GAO-26-107969 (May 2026, Advanced Test Reactor spent fuel) are adjacent, not microreactor-specific. news.json carries a 2026-08-25 GAO item on HALEU demand for defense microreactors, which is the closest existing coverage.",
+      "LBNL 'Queued Up' 2026 edition (June 2026, eta-publications.lbl.gov) includes fast-track surplus interconnection services. The PDF exceeded the fetch size limit, so the MISO surplus average time behind the 'inherit' argument ('about a year on average since 2024') could not be verified. No check was written, because a verdict needs a fetched page. Not in news.json. Also not found: MISO's own surplus-specific timing data.",
+      "INL 'Enabling Rapid, High-Volume Deployable Microreactors' (April 2026): codes-and-standards study, written mostly before the NRC's final rulemaking steps. Not in news.json. Not a 2026-11 study; flagged as an in-band adjacent item only.",
+      "INL MARVEL preliminary documented safety analysis approval (2026-03-11): news.json carries the later MARVEL DSA item (2026-10-06) but not the March PDSA. The March approval is a regulatory milestone, not a study, and it is outside this tab's scope.",
+      "INL 'Global Market Analysis of Microreactors' (INL/EXT-21-63214): dated June 2021. Out of window. Not used.",
+      "Argument checks skipped: thresholds (ERCOT 10 MW line still in the Planning Guide Section 5 dated 2026-08-01; the 8-12 and 18-30 month durations are not in any fetched page, so no verdict). relocatable (SGIP 'physically and contractually' wording not found in any fetched 2026 handbook; the latest handbook located is 2024, and the 2025/2026 handbook could not be retrieved). liability: settled on the recently-checked list, not re-checked. Other arguments carry no time-sensitive number that the searches could test.",
+      "Shipped data/arguments.json was not read in full: the skip copy truncates detail text, and no check was written, so the exact shipped text was not needed."
+    ]
+  },
+  "items": [],
+  "checks": []
+}

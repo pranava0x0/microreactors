@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "captured": "2026-11-19",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (excluding the recently-checked ids radiant, aalo-x, valar-ward250) and Type N items for vendor milestones dated after 2026-11-13 that skip/news.json lacks, including non-table 1-20 MWe designs.",
+    "angles_run": [
+      "Radiant Oak Ridge / Kaleidos manufacturing expansion (main-session lead, 2026-11-19)",
+      "Deployable Energy Unity news, Nov 2026",
+      "NANO Nuclear KRONOS / ZEUS news, Nov 2026",
+      "NANO Nuclear KRONOS NRC docketing status",
+      "Last Energy PWR-20 / PWR-5 news, Nov 2026",
+      "Antares Mark-1 / Fort Bragg news, Nov 2026",
+      "Blue Energy news, Nov 2026 (design is a 300 MW SMR, out of the 1-20 MWe band)",
+      "Terra Innovatum SOLO news and NRC safety evaluation status",
+      "Steady Energy LDR-50 news, Nov 2026 (design described as 50 MW, out of band unless re-read)",
+      "Natura Resources MSR-1 news, Nov 2026",
+      "Westinghouse eVinci news, Nov 2026",
+      "BWXT BANR Fort Campbell status",
+      "General Atomics GA-TES Fort Hood status",
+      "Army Janus program news, Nov 2026",
+      "Generic microreactor vendor milestone sweep, Nov 18 2026"
+    ],
+    "absences": [
+      "Main-session lead (skip/web-leads.md): Radiant expands U.S. manufacturing, 2026-11-19, https://financialcontent.com/article/bizwire-2026-11-19-radiant-expands-manufacturing-to-scale-commercial-microreactor-production. The fetch returned an unrelated Motley Fool list with no Radiant text, and no search surfaced the Business Wire release. Not filed: no fetched quote. Only coverage found is the 2025-10-13 Oak Ridge factory announcement ($280M, 175 jobs), which predates the band. Needs a main-session fetch of the wire copy.",
+      "Deployable Energy (Unity): no vendor milestone dated after 2026-11-13 found. Latest coverage is the 2026-10-14 Sargent & Lundy item already on news.json.",
+      "NANO Nuclear KRONOS MMR: no milestone dated after 2026-11-13 found. NRC accepted the UIUC construction permit application for docketing on 2026-05-18 (NRC project page https://www.nrc.gov/reactors/new-reactors/advanced/who-were-working-with/applicant-projects/kronos), which is before the band, and is not filed. Company says review finishes 2027; NRC page lists schedule as TBD.",
+      "NANO Nuclear ZEUS: only patent filings and 1:2 scale fuel-element hardware assembly found, undated in search. Not filed.",
+      "Last Energy (PWR-20 / PWR-5): no milestone dated after 2026-11-13 found. UK Preliminary Design Review completion and the Texas DSA approval (already on news.json) are the latest. The Texas DSA source article is undated in search.",
+      "Natura Resources MSR-1: no milestone dated after 2026-11-13 found. Latest found is the 2026-09-22 salt delivery on news.json.",
+      "Terra Innovatum SOLO: company's March 2026 release expected NRC safety evaluations of the topical reports by October 2026. No completion notice found, so the status is unknown and no check was written. Recommend a targeted NRC ADAMS or pre-application page check.",
+      "Steady Energy LDR-50: no milestone dated after 2026-11-13 found. Design described as a 50 MW district-heating reactor, which sits outside the 1-20 MWe band, so not filed.",
+      "Blue Energy: no November 2026 event found. Design is a 300 MW SMR, outside the 1-20 MWe band, so excluded.",
+      "Shipped rows checked and left unchanged (no fetched contradiction and no dated new event): antares (Mark-1 DSA 2026-10-23 and Fort Bragg Janus award already on news.json), evinci (no new milestone since 2026-09-03 criticality), bwxt-banr (Janus Fort Campbell 2026-08-26 award; operations early 2030s consistent with latest coverage), general-atomics-ga-tes (no delivery date published; Fort Hood milestones not yet dated), oklo-aurora (2026-11-06 startup window 2028-2029 already on news.json and matches the shipped row). No Type G check written, because none of these rows is contradicted by a fetched page.",
+      "Janus program generic sweep: no Army or vendor Janus event dated after 2026-11-13 found. The first-reactor target of 2028-09-30 is the program's cited goal, not a site date.",
+      "Generic microreactor sweep for 2026-11-18 and 2026-11-19: no vendor milestone found other than the unverified Radiant lead above."
+    ]
+  },
+  "checks": [],
+  "items": []
+}
