@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "captured": "2026-11-20",
+    "agent": "ideas",
+    "scope": "Why microreactors tab: Type G checks on time-sensitive arguments (file arguments) and Type N-style studies dated after 2026-11-19 that change the case for or against 1-20 MW reactors. Lane excludes news, politics, deals, vendors, applications, costs.",
+    "angles_run": [
+      "Microreactor cost studies Nov 2026 (general)",
+      "DOE Liftoff microreactor report 2026",
+      "ERCOT Small Generation threshold and PGRR 140 (arguments: thresholds)",
+      "MISO surplus interconnection in-service time (arguments: inherit)",
+      "NYSERDA Nuclear Microreactor Technologies Study (Report 26-21h)",
+      "EPRI microreactor cost and deployment 2026",
+      "NEI microreactor report Nov 2026",
+      "GAO / CBO SMR and microreactor reports 2026",
+      "IEA SMR and microreactor cost 2026",
+      "DOME 20 MWth test bed (arguments: first-article)",
+      "SGIP 2026 handbook and backup-only rule (arguments: relocatable)",
+      "Microreactor vs diesel remote-community cost studies",
+      "National lab LCOE and overnight capital, 2026 reports",
+      "Insurer and lender reports on microreactor financing",
+      "Army Janus microreactor cost estimate 2026"
+    ],
+    "absences": [
+      "No study dated 2026-11-20 or later with a headline number on 1-20 MW economics was found across DOE, NEI, EPRI, IEA, GAO, CBO, national labs and insurer or lender publications.",
+      "NYSERDA Nuclear Microreactor Technologies Study (Report 26-21h, dated November 2026 per search summary; no day visible): NYSERDA PDF and publications pages returned HTTP 403 to WebFetch. No fetched text, no day, no headline number, so not filed. Lead for the main session: retrieve through a browser or download path and check the date and findings.",
+      "INL FY26 NST Impact Report (inl.gov/content/uploads/2026/11/26-50840_FY26-NST-Impact-Report.pdf): fetch returned binary PDF with no extractable text. Not filed.",
+      "Berkeley Lab Queued Up 2026 (June 2026): PDF exceeded fetch size limit; emp.lbl.gov/queues returned HTTP 403. No MISO surplus-interconnection average was verified, so the arguments.inherit claim ('about a year on average since 2024') is unchecked.",
+      "ERCOT PGRR 140 (August 2026 ROS report recommends approval): would treat non-settled generators under 10 MW as small generators. Status is a recommendation, not an adopted rule, and no nuclear-specific treatment was found. The arguments.thresholds 9.9 MW / 10.1 MW figures are not contradicted, so no check was written.",
+      "CPUC SGIP 2026 handbook: not found. Only 2022 to 2024 handbooks surfaced. The arguments.relocatable SGIP backup-only exclusion is unchecked.",
+      "DOME test bed capacity (arguments.first-article, '20 MWth cap'): DOE release dated 2026-04-08 describes experiments generating up to 20 MWt. Not written as a check because the exact wording could not be confirmed verbatim from the fetch output.",
+      "Army Janus: no official unit cost. Vendor-reported delivered cost estimates appear only in press coverage, not a study, so not filed.",
+      "arguments.liability: skipped per skip/recently-checked.md.",
+      "Budget used: 17 web searches, 7 fetches (several blocked)."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

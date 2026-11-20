@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "captured": "2026-11-20",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on costs.json numbers (LCOE, capex, incentives, displaced-alternative prices) and Type N items for dated fuel-supply or financing events after 2026-11-19 not already in skip/news.json. Skip list honoured (recently-checked: microreactor_lcoe[4], displaced_alternatives[1]; INL RPT-24-80433 and RPT-25-87273 rows left alone per the settled editorial-switch reading).",
+    "angles_run": [
+      "Michigan arXiv 2506.13361 abstract: optimized LCOE band and PTC effect (costs.json microreactor_lcoe[5])",
+      "OBBBA nuclear credit terms: 45Y/48E begin-construction date, nuclear energy community adder, FEOC, MLP (incentives.points)",
+      "Enacted text PL 119-21 via govinfo (three windows; 2034 clause not located)",
+      "Blykalla/Urenco HALEU supply agreement dated 2026-11-16 (web-leads lead, outside window)",
+      "HALEU enrichment awards, DOE HALEU allocations and Centrus deliveries, Nov 2026",
+      "DOE loan and financing actions for nuclear fuel, Nov 2026",
+      "NEI 2019 FOAK/NOAK band (nei.org returned 403; not verified)",
+      "TUGLIQ Raglan completion report $0.25-0.60/kWh (PDF fetched but text not extractable in this environment)"
+    ],
+    "absences": [
+      "OBBBA incentives.points (2034 begin-construction date for nuclear under 45Y/48E, three-year phase-out, 10% nuclear energy community adder): primary text of Public Law 119-21 read in three windows on govinfo (offsets 640000-900000). Sec. 70512 amends 45Y with 2025, 2026, 2027 and 2032 dates; the nuclear provisions I could read amend 45(b)(11) with a 0.17% MSA employment test. The 2034 clause was not located in the text read. Only a Morgan Lewis summary dated 2025-07-24 confirmed the shipped wording, which is outside the 60-day confirmation window, so no verdict was written. Needs a main-session read of the full Title VII text.",
+      "NEI 2019 Cost Competitiveness of Micro-Reactors for Remote Markets (costs.json microreactor_lcoe[0] and [1], FOAK 140-410 and NOAK 90-330 $/MWh): nei.org returned HTTP 403 to WebFetch and the search summary did not surface the figures. Not verified.",
+      "TUGLIQ Raglan public completion report (displaced_alternatives[0], industrial self-generation $0.25-0.60/kWh): WebFetch saved the PDF but returned no text; no PDF text extractor is available in the system python. Not verified.",
+      "Diesel breakeven threshold $1.50/litre (displaced_alternatives[2], ScienceDirect S2210670723002317): paywalled, not fetched. Threshold is a 2023 modelled result, so no current-price check was possible.",
+      "Blykalla / Urenco HALEU supply agreement, dated 2026-11-16 (web-leads lead; SEALER is 55 MWe, outside the 1-20 MW band). Fetched Blykalla press release confirms a supply agreement for enrichment and says no quantities; it does not say whether the agreement is binding. Not filed as an item because a verbatim fetched quote could not be confirmed. Main session should decide whether it is fuel-supply context.",
+      "HALEU enrichment and deliveries, Nov 2026: searches found no dated event after 2026-11-16. Latest items are already on skip/news.json (Centrus-Oklo 2026-11-13, Centrus Piketon centrifuge 2026-10-30, DOE no further Centrus options 2026-11-04).",
+      "DOE loan and financing actions, Nov 2026: none found in window. The June 2026 $17.5B conditional loans (AP1000 supply chain) and October 2026 Constellation uprate loan are large-reactor or existing-fleet, outside the band and not fuel."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-microreactor-lcoe-5-1",
+      "target": "microreactor_lcoe[5]",
+      "file": "costs",
+      "claim": "Optimized design, with PTC (U.S. only): low_mwh 48.21, high_mwh 78.32, USD/MWh",
+      "verdict": "confirmed",
+      "evidence": "arXiv:2506.13361 abstract, latest version v2 submitted 2025-12-19 (Abdussami et al., Univ. of Michigan): LCOEs of $48.21/MWh to $78.32/MWh when supported by the PTC, and the PTC reduces LCOE by 22-24%. The abstract gives no $/kW capital range. The shipped derived unsubsidised band ($63-103/MWh) was not checked here.",
+      "sources": [
+        {
+          "label": "Abdussami, Khaleb, Gao & Verma (Univ. of Michigan) — Evaluation of Nuclear Microreactor Cost-competitiveness in Current Electricity Markets Considering Reactor Cost Uncertainties (arXiv:2506.13361, v2, 2025-12-19)",
+          "url": "https://arxiv.org/abs/2506.13361",
+          "quote": "LCOEs ranging from $48.21/MWh to $78.32/MWh when supported by the Production Tax Credit (PTC)",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

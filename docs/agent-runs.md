@@ -630,3 +630,19 @@ Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 
 | politics | 159K | 0 records | no |
 
 ~620K agent tokens for 1 news item the main session sourced. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-20 daily refresh
+
+Seven Haiku agents (even weekday: all lanes), 2 at a time, after 4 main-session web searches. `skip/recently-checked.md` rebuilt (11-16..11-19) with the settled-readings block. 2 news, 0 corrections. The news agent found the Last Energy Caldwell LWA filing from the Federal Register (the watcher missed it). The NYSERDA microreactor study came from the ideas agent's absences: the PDF 403s scripts and Playwright, but a same-origin `fetch()` in the browser pane returned it and pdf.js read it in-page.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 185K | 1 item (Last Energy Caldwell LWA) | yes |
+| deals | 144K | 1 check (Romania FID binding), overruled: binding_note counts an FID | no |
+| vendors | 145K | 1 confirmation (eVinci criticality date) | marginal |
+| politics | 175K | 1 confirmation (Part 53 final rule date) | marginal |
+| applications | 165K | 5 Janus "outdated" checks, all overruled (11-02 reading); 1 out-of-window MOU dropped | no |
+| costs | 147K | 1 confirmation (Michigan LCOE band) | marginal |
+| ideas | 152K | 0 records; absences named the NYSERDA study | yes, via absences |
+
+~1.11M agent tokens for 2 news items. Phone cost 1.70 (baseline 1.69).

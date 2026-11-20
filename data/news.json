@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "captured": "2026-11-19",
+    "captured": "2026-11-20",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "62 of 110 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 48 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "63 of 112 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 49 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-19",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 22
+      "count": 23
     },
     {
       "id": "fuel",
@@ -33,7 +33,7 @@
     },
     {
       "id": "policy",
-      "count": 7
+      "count": 8
     },
     {
       "id": "criticality",
@@ -66,6 +66,34 @@
           "label": "Radiant, Radiant Expands Manufacturing to Scale Commercial Microreactor Production (Nov. 19, 2026)",
           "url": "https://www.radiantnuclear.com/news/radiant-expands-manufacturing",
           "quote": "Representing an investment of more than $100 million in Radiant’s Los Angeles-area footprint, the expanded El Segundo campus adds approximately 200,000 square feet",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nyserda-microreactor-study-master-plan-2026-11-18",
+      "date": "2026-11-18",
+      "headline": "New York's nuclear Master Plan includes a microreactor study that stops short of backing deployment",
+      "companies": [
+        "NYSERDA",
+        "Westinghouse Government Services"
+      ],
+      "category": "policy",
+      "what_happened": "Governor Hochul released New York's Master Plan for Responsible Advanced Nuclear Development at a state nuclear summit in Rochester on November 18, 2026. One of its supporting studies, NYSERDA's Nuclear Microreactor Technologies Study (Report 26-21h), calls the microreactor market pre-commercial and says further work is needed to decide which microreactor technologies and applications, if any, are worth further state action. It recommends a cooperation framework with Fort Drum and Westinghouse Government Services on the Army's Janus project there.",
+      "why_it_matters": "New York names industrial, institutional, military, remote and existing nuclear-site loads as the likeliest microreactor buyers, but commits no money or procurement. For now the state's role is learning from the Fort Drum project.",
+      "binding": false,
+      "binding_note": "A screening-level study; it says it does not establish feasibility or commit the state to policy action or deployment.",
+      "sources": [
+        {
+          "label": "NYSERDA, Nuclear Microreactor Technologies Study, Report 26-21h (November 2026)",
+          "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Advanced-Nuclear/Publications/Nuclear-Microreactor-Technologies-Study.pdf",
+          "quote": "Further work is needed to determine which microreactor technologies and applications, if any, offer sufficient value to New York State to warrant further action.",
+          "status": "fetched"
+        },
+        {
+          "label": "WAMC, At a summit in Rochester, Hochul announces the release of a nuclear power plan for New York (2026-11-18)",
+          "url": "https://www.wamc.org/2026-11-18/at-a-summit-in-rochester-hochul-announces-the-release-of-a-nuclear-power-plan-for-new-york",
+          "quote": "The Advanced Nuclear Master Plan addresses issues like commercial viability, workforce readiness and supply chain capacity.",
           "status": "fetched"
         }
       ]
@@ -541,6 +569,27 @@
           "label": "Radiant, US Navy Selects Radiant to Power Critical Infrastructure at Naval Weapons Station Crane (Oct. 20, 2026)",
           "url": "https://www.radiantnuclear.com/news/navy-selects-radiant",
           "quote": "today announced its selection by the Department of the Navy to deploy its Kaleidos microreactor at Naval Weapons Station Crane, Indiana",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "last-energy-caldwell-lwa-application-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Last Energy files NRC request for early foundation work at Texas PWR-20 site",
+      "companies": [
+        "Last Energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "On October 20, 2026, Last Energy filed part one of a two-part phased construction permit application with the NRC. The limited work authorization request covers permanent foundation work for the PWR-20 reactor vessel at Caldwell County, Texas, including steel H-piles and a steel liner. The NRC published notice of the filing on November 5, 2026.",
+      "why_it_matters": "For a 1-20 MW buyer, this is a formal NRC filing for the PWR-20 at a named Texas site. The NRC has not yet accepted the request for docketing, so no construction start date is set.",
+      "binding": true,
+      "binding_note": "A filed NRC application. The notice says the NRC has not yet decided whether to docket the request, and a detailed technical review follows only after that decision.",
+      "sources": [
+        {
+          "label": "Federal Register — NRC notice: Last Energy, Inc; Phased Construction Permit Application – Limited Work Authorization (2026)",
+          "url": "https://www.federalregister.gov/d/2026-22577",
+          "quote": "On October 20, 2026, Last Energy filed the first part of a two-part phased construction permit application",
           "status": "fetched"
         }
       ]
