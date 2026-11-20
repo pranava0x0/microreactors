@@ -1,0 +1,51 @@
+{
+ "_meta": {
+  "captured": "2026-11-20",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities rows not listed in skip/recently-checked.md; Type N buyer-deal items dated after 2026-11-19 that skip/news.json lacks.",
+  "angles_run": [
+   "Air Force ANPI Eielson status and NRC licensing (2 searches; primary eielson.af.mil and af.mil pages returned 403)",
+   "Air Force ANPI Buckley and Malmstrom selection status (2 searches, search summaries only)",
+   "DOME test bed Radiant Kaleidos fueling status (2 searches; radiantnuclear.com returned 403)",
+   "Texas Backup Power Package timeline and nuclear eligibility (1 search, 1 fetch; shipped text consistent with the Feb 2026 projection, no check)",
+   "Doicesti NuScale VOYGR-6 FID status (1 search, 2 fetches; check written)",
+   "New buyer deals dated 2026-11-19 and 2026-11-20: PPA, SMR data-center agreement, MOU site agreement, Last Energy customer deals (4 searches; none found)"
+  ],
+  "absences": [
+   "Skipped per skip/recently-checked.md (settled or checked 2026-11-16..19): janus, equinix-radiant, oklo-switch, doe-pilot, canada-src, nano-supermicro, anpi-jbsa, uk-lastenergy. The task named these; the recently-checked list takes precedence.",
+   "Eielson, Buckley, Malmstrom: no fetched page confirmed or corrected the shipped rows. Primary DAF pages returned 403. Search summaries (Apr to Jun 2026) say the Eielson NOITA stands with NRC licensing still pending, and Buckley and Malmstrom selections stand. No check written.",
+   "DOME (not yet fueled): Radiant pages returned 403. Search summaries stop at 2026-08-13 (Kaleidos shipped to INL, fuel to be loaded after arrival). Could not settle whether fuel has been loaded since the 2026-10-29 DSA approval.",
+   "Texas Backup Power Package: shipped text 'no application schedule as of May 2026' is not contradicted. A Feb 2026 source projects the window for late 2026 or early 2027, with first awards in 2027. No check written.",
+   "Items: no buyer deal dated 2026-11-19 or 2026-11-20 found across four searches. No in-band event just outside the window found either.",
+   "Blykalla and Urenco HALEU contract (2026-11-16): a fuel contract for a 55 MWe SEALER, outside the 1-20 MW band and not a buyer deal. Not filed.",
+   "Budget: 11 of about 25 searches; 7 fetches of about 20, of which 4 returned 403."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-romania-nuscale-1",
+   "target": "romania-nuscale",
+   "file": "opportunities",
+   "claim": "Final Investment Decision approved February 2026",
+   "verdict": "confirmed",
+   "evidence": "World Nuclear News (13 Feb 2026): Nuclearelectrica shareholders approved the FID for six NuScale modules, first module in commercial operation in 2033, and the investment will be made once a funding formula is found. Balkan Green Energy News (undated in fetched text): only one 77 MW unit would be built first for testing, and the company says the project enters financial structuring and partnership consolidation over the next six months. The shareholder approval is supported. The row's binding:true (an executed instrument) is not: the approval is conditional on funding, and no executed commitment is shown.",
+   "sources": [
+    {
+     "label": "World Nuclear News: Final Investment Decision taken for Romania's SMRs (2026-02-13)",
+     "url": "https://world-nuclear-news.org/articles/final-investment-decision-taken-for-romanias-smrs",
+     "quote": "The investment will be made once a funding formula will be found.",
+     "status": "fetched"
+    },
+    {
+     "label": "Balkan Green Energy News: Romania to build one small reactor to test before proceeding with six-unit SMR project",
+     "url": "https://balkangreenenergynews.com/romania-to-build-one-small-reactor-to-test-before-proceeding-with-six-unit-smr-project/",
+     "quote": "the project would enter a phase of financial structuring and partnership consolidation over the next six months.",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "unsupported",
+   "review": "Overruled 2026-11-20: data/opportunities.json _meta.binding_note lists FID among binding instruments, and the agent's own WNN source confirms shareholders approved the FID on 2026-02-13. The funding condition is already disclosed in the row (one unit built first; 'with caveats' in the POWER label)."
+  }
+ ],
+ "items": []
+}

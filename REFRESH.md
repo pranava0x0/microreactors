@@ -254,3 +254,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   nothing. The primary radiantnuclear.com page read in the browser pane (`[...document.querySelectorAll('p,h1,h2,h3')]` after a 3s
   wait; `get_page_text` returns only the nav). When a web lead is a company release, put the company's own news URL in
   `skip/web-leads.md`, not the wire copy. Four odd-day agents cost ~620K tokens for 0 shipped records.
+
+- **2026-11-20: a PDF that 403s curl and Playwright can still be read through the browser pane's own origin.** NYSERDA's
+  Nuclear Microreactor Technologies Study 403'd WebFetch, curl and headless Playwright (even after loading the parent page),
+  but `fetch()` run in the pane on nyserda.ny.gov returned the 768 KB PDF, and pdf.js imported from cdnjs extracted it in-page.
+  Write the cited paragraphs to HTML and cache with `fetch_source.py URL --from-file`. Also: two settled readings came back
+  (Janus "awarded" from 11-02; Romania's FID as non-binding against `_meta.binding_note`). Both are now in the settled-readings block.

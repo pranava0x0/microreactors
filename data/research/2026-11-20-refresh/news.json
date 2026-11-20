@@ -1,0 +1,96 @@
+{
+ "_meta": {
+  "captured": "2026-11-20",
+  "agent": "news",
+  "scope": "News tab: 1-20 MW microreactor events after 2026-11-19, then the prior-60-day gap (2026-09-21 to 2026-11-19), starting from skip/candidates.json and web-leads. Skip list: skip/news.json (110 shipped items, newest 2026-11-19).",
+  "angles_run": [
+   "candidates.json triage: Radiant WNN 11-20 (same event as shipped radiant-manufacturing-expansion-2026-11-19); Blykalla/Urenco HALEU (SEALER 55 MWe, out of band)",
+   "web-leads triage: Blykalla/Urenco, NANO-SJ Group, NRC criticality/licensing search",
+   "reactor criticality and testing: DOE Reactor Pilot Program, INL DOME, INL MARVEL, INL LOTUS",
+   "factories and construction: Radiant, Last Energy PWR-5, Deep Fission, Kairos Hermes 2",
+   "financing rounds, SPAC and IPO: Valar, Aalo, Antares, Standard Nuclear, Terrestrial, NuCube",
+   "fuel: HALEU allocation rounds, Centrus, Standard Nuclear TRISO, Natura, Radiant TRISO delivery",
+   "first-of-a-kind deployments: Westinghouse eVinci, Deployable Energy Unity, Janus program, General Atomics GA-TES, Natura MSR-1",
+   "setbacks and cancellations: NRC filings, Last Energy Caldwell filing, Oklo Aurora, Kairos",
+   "key hires and departures: X-energy TRISO-X, Hadron, NuCube, Natura, Terrestrial",
+   "companies swept: Radiant, Westinghouse eVinci, BWXT, Oklo, Antares, Aalo, Valar, Last Energy, NANO Nuclear, X-energy, Kairos, Deployable Energy, Deep Fission, Terrestrial, Holtec, General Atomics, Natura, Blue Energy, Centrus, Standard Nuclear"
+  ],
+  "absences": [
+   "Blykalla / Urenco HALEU contract (signed 2026-11-12, announced 2026-11-16): SEALER is 55 MWe, outside the 1-20 MW band; quantity, enrichment level and value are undisclosed. Not filed.",
+   "Radiant WNN 2026-11-20 'expands facilities' candidate: same event as the shipped radiant-manufacturing-expansion-2026-11-19 row. Not filed.",
+   "NANO Nuclear + SJ Group (2026-11-19): low signal (no site, no instrument), per web-leads. Not filed.",
+   "Last Energy PWR-20 Caldwell County, Texas: filed 2026-10-20, now in this file as a record. Note for the main session: the NRC Last Energy pre-application page (fetched) still describes a 'future application at Last Energy's Haskell, Texas site' and does not mention Caldwell, while the shipped deployment_sites row lastenergy-haskell names Haskell County. The Federal Register notice is the only source for the Caldwell filing.",
+   "INL and Purdue University construction-demonstration item (ANS headline, about 2026-11-09): found only as a headline; no fetched page confirmed its date or content. Not filed.",
+   "Hyundai / ARC Clean Technology / First American Nuclear partnership (ANS, 2026-11-06, 'Korean companies partner with U.S. start-ups'): the Hyundai-NANO MOU is shipped, the rest is not 1-20 MW and names no site or size. Not filed.",
+   "X-energy TRISO-X president Joel Duling retirement, effective 2026-11-20: out of band (X-energy is an SMR developer; TRISO-X is a fuel subsidiary). Not filed.",
+   "Oklo Aurora structural-concrete update (ANS roundup, 2026-11-16): Aurora is outside the 1-20 MW band. Not filed.",
+   "Aalo-Crusoe partnership (announced 2026-07-30; 2027 INL demonstration, 2029 Pod target): outside the 60-day gap window. Not filed.",
+   "Terrestrial Energy / Texas A&M RELLIS 77-acre ground lease (2026-06-17): outside the window. Not filed.",
+   "Standard Nuclear first HALEU feedstock at Oak Ridge (WNN, 2026-01-08): outside the window. Not filed.",
+   "Radiant TRISO test-fuel delivery to INL DOME (announced 2026-07-01): outside the window. Radiant DSA approval (2026-10-29) is already shipped. Fuel loading and full-power start dates not confirmed by any source found; the company's Q3 2026 completion target has passed unconfirmed.",
+   "Antares, Last Energy and Radiant DOE authorization milestones (ANS, 2026-11-02): each event is already a shipped row (antares-mark1-doe-nsda-2026-10-23, last-energy-texas-dsa-approval-2026-10-08, radiant-kaleidos-dsa-full-power-2026-10-29). Not filed again.",
+   "Valar Atomics and Aalo Atomics: no November 2026 events found in two searches. Valar Ward 250 criticality and Aalo criticality are shipped.",
+   "Westinghouse eVinci: no November 2026 events found. The 2027 DOME slot was released in 2025 and went to Deployable Energy (shipped 2026-09-30).",
+   "INL DOME, MARVEL and LOTUS: no November 2026 status found. Sources conflict: MARVEL is described as online by 2027 with TREAT installation starting late 2026 in an older page; LOTUS is listed for 2028 open for operations.",
+   "Kairos Power: no events after the shipped Hermes 2 groundbreaking (2026-04-17) found.",
+   "Deep Fission, Natura Resources, Holtec: no November 2026 microreactor events found. Holtec's 2026-10-08 Palisades item is not a microreactor event.",
+   "Blue Energy: one search, no relevant results.",
+   "General Atomics GA-TES (Fort Hood, Janus selection 2026-08-26): no milestone after August found.",
+   "Army Janus program: no October or November 2026 updates found beyond the shipped August awards.",
+   "NANO Nuclear KRONOS: no NRC acceptance announcement for the construction permit application found. The NANO release it cited (2025-03-11) describes pre-application engagement only.",
+   "DOE HALEU allocation: no fourth round found after the July 2026 third round (NASA and Radiant).",
+   "Search budget: 25 web searches and about 11 fetches. The Federal Register and NRC PDFs could not be read through WebFetch; the Last Energy notice was read after extracting text from the saved PDF bytes with PyMuPDF."
+  ]
+ },
+ "items": [
+  {
+   "id": "last-energy-caldwell-lwa-application-2026-10-20",
+   "date": "2026-10-20",
+   "headline": "Last Energy files NRC request for early foundation work at Texas PWR-20 site",
+   "companies": [
+    "Last Energy"
+   ],
+   "category": "regulatory",
+   "what_happened": "On October 20, 2026, Last Energy filed part one of a two-part phased construction permit application with the NRC. The limited work authorization request covers permanent foundation work for the PWR-20 reactor vessel at Caldwell County, Texas, including steel H-piles and a steel liner. The NRC published notice of the filing on November 5, 2026.",
+   "why_it_matters": "For a 1-20 MW buyer, this is a formal NRC filing for the PWR-20 at a named Texas site. The NRC has not yet accepted the request for docketing, so no construction start date is set.",
+   "binding": true,
+   "binding_note": "A filed NRC application. The notice says the NRC has not yet decided whether to docket the request, and a detailed technical review follows only after that decision.",
+   "sources": [
+    {
+     "label": "Federal Register — NRC notice: Last Energy, Inc; Phased Construction Permit Application – Limited Work Authorization (2026)",
+     "url": "https://www.federalregister.gov/d/2026-22577",
+     "quote": "On October 20, 2026, Last Energy filed the first part of a two-part phased construction permit application",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "nyserda-microreactor-study-master-plan-2026-11-18",
+   "date": "2026-11-18",
+   "headline": "New York's nuclear Master Plan includes a microreactor study that stops short of backing deployment",
+   "companies": [
+    "NYSERDA",
+    "Westinghouse Government Services"
+   ],
+   "category": "policy",
+   "what_happened": "Governor Hochul released New York's Master Plan for Responsible Advanced Nuclear Development at a state nuclear summit in Rochester on November 18, 2026. One of its supporting studies, NYSERDA's Nuclear Microreactor Technologies Study (Report 26-21h), calls the microreactor market pre-commercial and says further work is needed to decide which microreactor technologies and applications, if any, are worth further state action. It recommends a cooperation framework with Fort Drum and Westinghouse Government Services on the Army's Janus project there.",
+   "why_it_matters": "New York names industrial, institutional, military, remote and existing nuclear-site loads as the likeliest microreactor buyers, but commits no money or procurement. For now the state's role is learning from the Fort Drum project.",
+   "binding": false,
+   "binding_note": "A screening-level study; it says it does not establish feasibility or commit the state to policy action or deployment.",
+   "sources": [
+    {
+     "label": "NYSERDA, Nuclear Microreactor Technologies Study, Report 26-21h (November 2026)",
+     "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Advanced-Nuclear/Publications/Nuclear-Microreactor-Technologies-Study.pdf",
+     "quote": "Further work is needed to determine which microreactor technologies and applications, if any, offer sufficient value to New York State to warrant further action.",
+     "status": "fetched"
+    },
+    {
+     "label": "WAMC, At a summit in Rochester, Hochul announces the release of a nuclear power plan for New York (2026-11-18)",
+     "url": "https://www.wamc.org/2026-11-18/at-a-summit-in-rochester-hochul-announces-the-release-of-a-nuclear-power-plan-for-new-york",
+     "quote": "The Advanced Nuclear Master Plan addresses issues like commercial viability, workforce readiness and supply chain capacity.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
