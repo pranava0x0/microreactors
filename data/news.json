@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "captured": "2026-11-20",
+    "captured": "2026-11-22",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "63 of 112 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 49 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "63 of 113 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 50 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-19",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 23
+      "count": 24
     },
     {
       "id": "fuel",
@@ -263,6 +263,33 @@
           "label": "MarketBeat — Oklo Q3 earnings call highlights (2026-11-07)",
           "url": "https://www.marketbeat.com/instant-alerts/transcript-oklo-q3-earnings-call-highlights-2026-11-07/",
           "quote": "Oklo’s first Aurora powerhouse in Idaho may not begin operating until 2028 or 2029.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "terra-innovatum-solo-psar-complete-2026-11-04",
+      "date": "2026-11-04",
+      "headline": "Terra Innovatum gives NRC all 18 SOLO safety report chapters for readiness review",
+      "companies": [
+        "Terra Innovatum"
+      ],
+      "category": "regulatory",
+      "what_happened": "On 2026-11-04 Terra Innovatum said it had provided the NRC with all 18 chapters of the Preliminary Safety Analysis Report for its SOLO micro-modular reactor, for readiness review ahead of a formal construction permit application. The company targets a first-of-a-kind deployment in 2027.",
+      "why_it_matters": "SOLO is a 1 MW design, so it sits in the 1-20 MW band. The 2027 date is the company's own target; a buyer should wait for the NRC readiness review and any licence step before treating it as firm.",
+      "binding": false,
+      "binding_note": "Not binding: the chapters went to NRC staff for a readiness review, which the company describes as an assessment ahead of formal construction permit application submission. No application has been filed or docketed.",
+      "sources": [
+        {
+          "label": "Terra Innovatum — Achieves key NRC licensing milestone, delivers all 18 SOLO PSAR chapters (company release, mirrored on Finviz, 2026-11-04)",
+          "url": "https://finviz.com/news/415394/terra-innovatum-achieves-key-nrc-licensing-milestone-delivers-all-18-solo-psar-chapters-for-readiness-review-as-it-advances-toward-2027-first-reactor-deployment",
+          "quote": "today announced that it has now provided all 18 chapters of its Preliminary Safety Analysis Report",
+          "status": "fetched"
+        },
+        {
+          "label": "Notebookcheck — Micro-modular nuclear reactor with 1 MW output one step closer to commercialization (undated)",
+          "url": "https://www.notebookcheck.net/Micro-modular-nuclear-reactor-with-1-MW-output-one-step-closer-to-commercialization.1114872.0.html",
+          "quote": "It has an output of 1 MW and the company expects it to hit the market by 2028 or earlier.",
           "status": "fetched"
         }
       ]

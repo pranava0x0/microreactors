@@ -260,3 +260,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   but `fetch()` run in the pane on nyserda.ny.gov returned the 768 KB PDF, and pdf.js imported from cdnjs extracted it in-page.
   Write the cited paragraphs to HTML and cache with `fetch_source.py URL --from-file`. Also: two settled readings came back
   (Janus "awarded" from 11-02; Romania's FID as non-binding against `_meta.binding_note`). Both are now in the settled-readings block.
+
+- **2026-11-22: an `unsupported` or `wrong` check is often a citation gap on a true claim.** Malmstrom's "5 MWe on sites as small as
+  two acres" is Westinghouse's own claim (on DOE-NE's eVinci page, already cached) but neither of the row's sources carried it; the
+  Illinois Tier 4 line was near-right with no Illinois source at all. Before dropping or rewording, grep `data/cache` for the claimed
+  phrase: if a cached primary page has it, add that page to the row's sources and overrule. Also, the politics agent re-checked
+  `licensing` although it was on the recently-checked list: name the skipped ids inside the check step itself, not only at the end.

@@ -646,3 +646,17 @@ Seven Haiku agents (even weekday: all lanes), 2 at a time, after 4 main-session 
 | ideas | 152K | 0 records; absences named the NYSERDA study | yes, via absences |
 
 ~1.11M agent tokens for 2 news items. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-22 daily refresh (Sunday, even day; costs and ideas skipped per the 11-14 weekend note)
+
+Five Haiku agents, 2 at a time, after 2 main-session web searches. No 11-21 run. `skip/recently-checked.md` rebuilt (11-18..11-21) with the settled-readings block. 1 news, 1 correction, 1 source added. Both web leads (Nuclea-Moltex, Berkeley/Odin) predated the window; the Nuclea deal is still pending UK NSIA approval.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 166K | 0 records; both web leads out of window | no |
+| deals | 172K | 3 checks; Malmstrom "two acres" unsupported, overruled (vendor claim on DOE-NE page, added as source) | yes, via the source gap |
+| vendors | 150K | 1 item (Terra Innovatum SOLO PSAR, 11-04; set non-binding: readiness review, no filed application) | yes |
+| politics | 173K | Illinois Tier 4 line corrected to the source's wording and cited; re-checked `licensing` despite the list | yes |
+| applications | 188K | 1 confirmation (lunar FSP); 3 Finnish 50 MWth district-heat rows held (out of band) | marginal |
+
+~850K agent tokens for 1 news item and 1 correction. Phone cost 1.70 (baseline 1.69).

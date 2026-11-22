@@ -1,0 +1,80 @@
+{
+ "_meta": {
+  "captured": "2026-11-22",
+  "agent": "politics",
+  "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy.json rows; new dockets and policy/regulatory items dated after 2026-11-19. Items and dockets: none filed (see absences).",
+  "angles_run": [
+   "part57-status",
+   "nrc-commission-votes-nov-2026",
+   "ferc-el25-49-colocation",
+   "fy27-ndaa-microreactor",
+   "state-laws-nov-2026",
+   "cnsc-onr-decisions",
+   "doe-policy-nov-2026",
+   "fy27-energy-water-appropriations",
+   "utility-smr-dockets-oct-nov-2026",
+   "texas-alaska-puc-dockets",
+   "illinois-data-center-tier4",
+   "nrc-acrs-final-rule",
+   "dominion-2026-irp"
+  ],
+  "absences": [
+   "Part 57 final rule (shipped text says final due 2026-11-23): NRC proposed-rule page returned HTTP 403; no final Part 57 found in trade press through 2026-11-22. Final status and due date NOT verified.",
+   "No dated policy or regulatory event after 2026-11-19 found for NRC commission votes, DOE/DoD microreactor policy, state microreactor laws, CNSC or ONR decisions. Search index appears to stop near 2026-11-20, so this is a coverage gap, not evidence of no events.",
+   "FY2027 NDAA: House bill H.R. 8800 (HASC 44-12) carries a Harrigan amendment directing DoD to deploy a transportable microreactor in INDOPACOM; Senate bill S. 4784 cleared SASC 18-9. No floor action or conference text found after the CRS status report of 2026-09-01. Bill text not read.",
+   "FY2027 Energy and Water appropriations: House subcommittee approved 2026-05-15 and full committee 2026-05-20 (34-25); Senate draft unsigned. No Office of Nuclear Energy line item found in either. Outside the 90-day window, not filed.",
+   "Dominion Energy 2026 IRP update (filed 2026-10-15 with the Virginia SCC and, per one report, the NCUC): trade-press reports say it includes about 2 GW of SMRs, but also say three SMR sets starting 2042. No docket number found; Virginia Mercury and States Newsroom pages returned HTTP 403. Not filed as a Type F docket because no docket number or primary filing was retrieved.",
+   "Army Janus Program (army.mil, dated 2026-08-26, fetched): five vendors, five initial sites (Fort Bragg, Fort Campbell, Fort Hood, Fort Benning, Fort Drum), up to $2.2B; Army-licensed rather than NRC. Dated before the window and not in policy.json; left for a later pass.",
+   "NRC final rule reforming ACRS (Federal Register 2026-11-17, effective 2027-02-01; ANS article dated 2026-11-17, fetched): one fetched document only. The Federal Register copy (public-inspection 2026-21801.pdf) returned binary and could not be read, so no second source. Not filed. Lead for the regulatory list.",
+   "Texas state grant condition (ANS, 2026-04): project must file an NRC construction-permit or license application on or before 2026-12-01; Texas state strategic plan due 2026-12-01 (NASEO slide). Deadline events, not dated in-window events. Not filed.",
+   "Deployable Energy Unity criticality date: shipped text says June 30, 2026. ANS (fetched 2026-07-02 article, and separate 2026-07-01 article) says July 1; POWER says late June 30. Sources conflict on the date, so no check written.",
+   "FERC EL25-49-002 (June 18, 2026 order): PDF returned binary and could not be read. The shipped June 18 date was confirmed only through search summaries of the Willkie and Troutman items. No post-June EL25-49 order found; a PJM compliance filing due about mid-August was not confirmed as filed.",
+   "INL state-activity census (279 bills, 73 enacted, as of 2025-12-01): the PDF returned binary and the figures could not be verified from it. No check written.",
+   "Illinois data-center Tier 4 rule: the primary rule text and IEPA notice were not found; the check rests on two trade or consultant pages, not the rule itself.",
+   "Searches ran about 21 and fetches about 15 against a budget of 25 and 20."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-licensing-1",
+   "target": "licensing",
+   "file": "policy",
+   "claim": "NRC's proposed microreactor framework (May 2026, for reactors of 100 MWe or less)",
+   "verdict": "confirmed",
+   "evidence": "ANS, dated 2026-10-22, quotes NRC as saying Part 57 'has yet to be finalized', so it was still a proposed rule as of that date. ANS, dated 2026-04-27, says Part 57 was 'tentatively scheduled' for Federal Register publication on May 6, 2026, which matches the 'May 2026' in the shipped text. No final Part 57 rule found in sources through 2026-11-22. The NRC proposed-rule page returned HTTP 403, so the 2026-11-23 final due date was not verified.",
+   "sources": [
+    {
+     "label": "ANS — NRC finalizes rule on licensing reactors with prior DOE or DOD authorization (2026-10-22)",
+     "url": "https://www.ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization%EF%BC%9BAdvanced/",
+     "quote": "Part 57 is aimed at microreactor designs and has yet to be finalized.",
+     "status": "fetched"
+    },
+    {
+     "label": "ANS — NRC introduces microreactor regulatory framework (2026-04-27)",
+     "url": "https://www.ans.org/news/2026-04-27/article-7981/nrc-introduces-microreactor-regulatory-framework/",
+     "quote": "Part 57 is tentatively scheduled to be published in the",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-diesel-1",
+   "target": "diesel",
+   "file": "policy",
+   "claim": "Illinois requires Tier 4 Final for most new data-center diesel permits from December 2026",
+   "verdict": "wrong",
+   "evidence": "ALL4 (fetched) says a bill signed 2026-01-08, effective 2026-06-01, starts the requirement 2026-12-01: air permit applications for most new data centers 'will need to propose emergency diesel backup generators meeting U.S. EPA Tier 4 emissions standards', and the rule covers only new generators. Trinity (fetched) says facilities 'may elect to proactively install Tier 4 engines or add-on air pollution control', so Tier 4 engines are not mandated. The shipped 'requires Tier 4 Final' overstates the rule: it requires applications to propose Tier 4 standards, and Tier 4-equivalent setups are allowed. The primary Illinois rule text was not retrieved.",
+   "correction": "Illinois requires most new data-center air permit applications to propose diesel generators meeting EPA Tier 4 standards from December 2026",
+   "sources": [
+    {
+     "label": "ALL4 — Illinois data centers: fears for Tiers (trade press)",
+     "url": "https://www.all4inc.com/4-the-record-articles/illinois-data-centers-fears-for-tiers/",
+     "quote": "will need to propose emergency diesel backup generators meeting U.S. EPA Tier 4 emissions standards",
+     "status": "fetched"
+    }
+   ],
+   "agent_correction": "Illinois requires Tier 4-equivalent controls for most new data-center diesel permits from December 2026",
+   "review": "Main session 2026-11-22: read ALL4 (fetched, quote verified). The shipped claim was near-right but uncited and said 'permits' where SB 25 governs what applications must propose; the agent's 'Tier 4-equivalent controls' is vaguer than the source, so the correction follows ALL4's own wording. Integration appends the ALL4 and Trinity sources to the row."
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "_meta": {
+  "captured": "2026-11-22",
+  "agent": "vendors",
+  "scope": "Vendors tab: (1) Type G checks on shipped vendor rows where a dated, fetched source changed the text; (2) vendor milestones dated after 2026-11-19 not in skip/news.json, including unlisted 1-20 MWe designs. Window: after 2026-11-19, then the prior 60-day gap where a dated in-band event sits just outside it.",
+  "angles_run": [
+   "Radiant Kaleidos DOME fueling and criticality status (shipped Q3 target)",
+   "Deployable Energy Unity-1 post-DOME milestones",
+   "Last Energy PWR-5 criticality and readiness review",
+   "NANO Nuclear KRONOS MMR NRC docketing date; ZEUS and LOKI milestones",
+   "Steady Energy LDR-50 (checked against the 1-20 MWe band)",
+   "Natura Resources MSR-1 post-September 2026",
+   "Blue Energy microreactor or SMR announcements (checked against the 1-20 MWe band)",
+   "Terra Innovatum SOLO NRC licensing milestones",
+   "Aalo-X demonstration plant 2027 construction and licence claim"
+  ],
+  "absences": [
+   "Radiant Kaleidos: no fetched primary page confirms whether DOME fueling or criticality has happened since the 2026-10-29 DOE safety-analysis approval. radiantnuclear.com and nrc.gov returned HTTP 403 to WebFetch, and INL/NRIC results were undated. The shipped text (Q3 target passed; fueling waits on Readiness Review) is left unchanged; no check written.",
+   "Aalo: no source found for the shipped claim that a 30 MWth / 10 MWe demonstration plant is slated for construction and licensing in 2027. One search, nothing citable. Aalo-X zero-power criticality on 2026-07-04 is shipped and not re-checked.",
+   "Last Energy PWR-5 (Texas A&M RELLIS): the latest dated reports are from September to October 2026. The mid-2026 criticality target has passed with no criticality date found. Not in the vendors table; no item filed.",
+   "NANO Nuclear KRONOS MMR: the NRC docketed the University of Illinois construction permit application on 2026-05-18, which is outside the window and not in the news skip list. Not filed, because it is well before the 60-day gap. ZEUS and LOKI: no dated milestone found.",
+   "Deployable Energy Unity-1: the latest dated item is the early-October 2026 DOME selection, already shipped (deployable-energy-dome-selection-2026-09-30). Nothing newer found.",
+   "Natura MSR-1: no November 2026 item found. The latest dated event is the 2026-09-18 FLiBe delivery, already shipped.",
+   "Steady Energy LDR-50: a 50 MW district-heat design, outside the 1-20 MWe band. Helen and Kuopio letters of intent are undated. Not filed.",
+   "Blue Energy: the 300 MWe BWRX-300 gas-plus-nuclear plant and the Port of Victoria application are outside the 1-20 MWe band. Not filed.",
+   "Valar Atomics: skipped per recently-checked.md (valar-ward250).",
+   "Westinghouse eVinci: skipped per recently-checked.md (evinci).",
+   "General Atomics GA-TES, BWXT BANR and Antares R1: not searched in this pass for in-window milestones. The main news agent covered Antares and reported nothing new.",
+   "Terra Innovatum SOLO 1 MW output: the fetched page does not say whether the 1 MW figure is electrical or thermal, and the article is undated. The item's date rests on the company release (2026-11-04)."
+  ]
+ },
+ "items": [
+  {
+   "id": "terra-innovatum-solo-psar-complete-2026-11-04",
+   "date": "2026-11-04",
+   "headline": "Terra Innovatum gives NRC all 18 SOLO safety report chapters for readiness review",
+   "companies": [
+    "Terra Innovatum"
+   ],
+   "category": "regulatory",
+   "what_happened": "On 2026-11-04 Terra Innovatum said it had provided the NRC with all 18 chapters of the Preliminary Safety Analysis Report for its SOLO micro-modular reactor, for readiness review ahead of a formal construction permit application. The company targets a first-of-a-kind deployment in 2027.",
+   "why_it_matters": "SOLO is a 1 MW design, so it sits in the 1-20 MW band. The 2027 date is the company's own target; a buyer should wait for the NRC readiness review and any licence step before treating it as firm.",
+   "binding": false,
+   "binding_note": "Not binding: the chapters went to NRC staff for a readiness review, which the company describes as an assessment ahead of formal construction permit application submission. No application has been filed or docketed.",
+   "sources": [
+    {
+     "label": "Terra Innovatum — Achieves key NRC licensing milestone, delivers all 18 SOLO PSAR chapters (company release, mirrored on Finviz, 2026-11-04)",
+     "url": "https://finviz.com/news/415394/terra-innovatum-achieves-key-nrc-licensing-milestone-delivers-all-18-solo-psar-chapters-for-readiness-review-as-it-advances-toward-2027-first-reactor-deployment",
+     "quote": "today announced that it has now provided all 18 chapters of its Preliminary Safety Analysis Report",
+     "status": "fetched"
+    },
+    {
+     "label": "Notebookcheck — Micro-modular nuclear reactor with 1 MW output one step closer to commercialization (undated)",
+     "url": "https://www.notebookcheck.net/Micro-modular-nuclear-reactor-with-1-MW-output-one-step-closer-to-commercialization.1114872.0.html",
+     "quote": "It has an output of 1 MW and the company expects it to hit the market by 2028 or earlier.",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

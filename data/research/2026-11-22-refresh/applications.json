@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "captured": "2026-11-22",
+    "agent": "applications",
+    "scope": "Applications tab: Type G checks on segments and deployment_sites rows most likely to have changed; Type S applications in district heat (the segment was thin); no Type E regions and no Type N items met the bar.",
+    "angles_run": [
+      "Type G: NASA/DOE lunar fission surface power (segments nasa-doe-fsp-lunar)",
+      "Type G: Penn State eVinci, UIUC Kronos, Texas A&M RELLIS permit status (segments and deployment_sites)",
+      "Type G: Steady Energy LDR-50 Helsinki pilot status",
+      "Type G: Last Energy London Gateway MOU status",
+      "Type G: Oklo / Wyoming Hyperscale Aspen Mountain LOI status",
+      "Type G: CVEA Valdez microreactor status",
+      "Type S: behind-the-meter data center microreactor deals (no new binding 1-20 MW deal found; existing rows cover the named MOUs)",
+      "Type S: hydrogen and ammonia (only electrolyser-scale and modular-ammonia items; no microreactor buyer)",
+      "Type S: mines (Russian Kyuchus gold mine at 35 MW+ is outside the band; Fort Knox showed no nuclear plan)",
+      "Type S: hospitals and medical centres (2 searches, nothing citable)",
+      "Type S: disaster recovery and emergency power (concept studies only; no named civilian buyer with a MW commitment)",
+      "Type S: district heating (Kuopio, Kerava and Jyvaskyla Steady Energy agreements, fetched)",
+      "Type S: Canadian remote communities and Indigenous mines (Pabineau 50 MWe is outside the band; North Shore Mi'kmaq MoU undated)",
+      "Type E: Bermuda and Faroe Islands (no microreactor activity found; Bermuda has a residential price but no load MW, so not filed)"
+    ],
+    "absences": [
+      "Hospitals and health-system microreactor projects: 2 searches, nothing citable.",
+      "Hydrogen and ammonia microreactor buyers: only electrolyser-scale projects (Plug/Hy2gen 275 MW, First Ammonia, Hynfra 500 MW) and a modular ammonia system with no MW figure. Not microreactor buyers.",
+      "Disaster recovery and emergency civilian buyers: only INL and C-MIX concept studies (500 kW to 5 MW) with no named buyer or commitment.",
+      "Behind-the-meter data-centre microreactor deals signed in 2026 with a MW commitment: none found beyond the existing rows. Last Energy Texas (30 units, 600 MW) is already in deployment_sites as lastenergy-haskell; GridMarket and Deployable Energy (about 3 GW pipeline, July 2026) is already in segments.",
+      "Mines: Seligdar Kyuchus gold mine (Russia, at least 35 MW from RITM-200N SMR, supply from mid-2028) is outside the 1-20 MW band and was not filed. Kinross Fort Knox: no nuclear project reported; power is grid-supplied.",
+      "Canadian remote communities: Prodigy and Pabineau/Eel River Bar 50 MWe transportable plant is outside the band. North Shore Mi'kmaq Tribal Council and Westinghouse eVinci MoU has no date found.",
+      "Radiant Kaleidos named buyer beyond Equinix (20 units, preorder) and the Army Janus award: no new customer with a MW commitment. Naval Weapons Station Crane is a military load with no stated civilian component; it is already in news.",
+      "Bermuda: residential retail price found (USD 0.452/kWh, March 2026, globalpetrolprices aggregator), but no microreactor activity and no load MW. Not filed. Faroe Islands: no nuclear activity found.",
+      "Penn State eVinci (psu-frontier, penn-state-evinci): no 2026 construction permit filing found in searches; the shipped pre-application status stands. The NRC ADAMS docket was not read directly.",
+      "CVEA Valdez (cvea-valdez): no 2026 news found. Search results were 2022 and 2023 items. The shipped tabled status is not confirmed or contradicted; no check emitted.",
+      "UIUC Kronos (uiuc-kronos-mmr, segments): the shipped text says the application was submitted on 31 March 2026. The NRC Federal Register notice of 21 April 2026 says the application is dated March 27, 2026 (docket NRC-2026-1717, docketed 18 May 2026). The university and ANS say 31 March. Not a clear error (letter date versus submittal date), so no check emitted. Flagged for the main session.",
+      "Steady Energy Helsinki pilot (steady-energy-ldr50): the shipped first-concrete date of 12 February 2026 is consistent with search summaries (WNN, Finnish government release). The government release returned HTTP 403 to WebFetch and was not fetched. No check emitted.",
+      "Oklo / Wyoming Hyperscale Aspen Mountain: the 2024 letter of intent is non-binding, and no advancement was found. Sources disagree on the PPA term (ANS and Data Center Frontier say 20 years; Data Center Dynamics says 10 years). The shipped 20-year text is cited to ANS and is not wrong on its own source. No check emitted.",
+      "Last Energy London Gateway (last-energy-london-gateway): the shipped MOU date of 15 September 2025, 20 MWe and 2030 target are consistent with current reporting. A June 2026 report (DP World Constanta study) repeats the London Gateway plan. No check emitted.",
+      "Kerava and Kuopio agreement dates and any heat or power follow-up after 2024: not found beyond the fetched WNN articles of 19 July 2024 and 10 October 2024."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-nasa-doe-fsp-lunar-1",
+      "target": "nasa-doe-fsp-lunar",
+      "file": "segments",
+      "claim": "NASA says it will put a nuclear reactor on the Moon by the first quarter of fiscal year 2030",
+      "verdict": "confirmed",
+      "evidence": "ANS, 13 October 2026: NASA and DOE signed a memorandum of understanding, effective 1 November 2026, to develop a lunar surface reactor; the reactor is to be 'ready to launch by 2030'. SR-1 Freedom is scheduled to launch in December 2028 as a milestone toward Lunar Reactor-1. The shipped 2030 target stands. The October 2026 MOU is not in the timeline field and is a candidate for the row's next edit.",
+      "sources": [
+        {
+          "label": "American Nuclear Society — NASA and DOE sign space nuclear MOU (2026-10-13)",
+          "url": "https://www.ans.org/news/2026-10-13/article-8482/nasa-and-doe-sign-space-nuclear-mou/",
+          "quote": "ready to launch by 2030",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "kuopio-steady-energy-ldr50",
+      "segment": "district heating",
+      "name": "Kuopion Energia and Steady Energy district heat plant, Kuopio",
+      "status": "studied",
+      "power_class": "50 MW thermal per LDR-50 unit (design figure; project size not stated)",
+      "timeline": "Letter of intent December 2023; one-year pre-planning agreement signed by July 2024; district heat planned for the early 2030s",
+      "sponsor": "Kuopion Energia (municipal energy company)",
+      "vendor": "Steady Energy",
+      "what_it_says": "Steady Energy signed a one-year pre-planning agreement with Kuopion Energia, after a letter of intent in December 2023. The plan is to start producing district heat in Kuopio in the early 2030s. The 50 MW figure is the thermal output of the LDR-50 design, not a stated plant size.",
+      "microreactor_read": "The figures are thermal, so they do not compare with the 1-20 MW electric band. This is a district heat buyer at a pre-planning stage, with no fuel or licence step named.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Steady Energy, Kuopion Energy enhance cooperation (2024-07-19)",
+          "url": "https://world-nuclear-news.org/articles/steady-energy,-kuopion-energy-enhance-cooperation",
+          "quote": "has signed a one-year pre-planning agreement with Kuopion Energia",
+          "status": "fetched"
+        },
+        {
+          "label": "World Nuclear News — Third Finnish city considers SMRs for district heating (2024-10-10)",
+          "url": "https://wnn.world-nuclear.org/articles/third-finnish-city-considers-smrs-for-district-heating",
+          "quote": "In December 2023, Steady Energy signed a letter of intent with municipal energy company Kuopion Energia",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "kerava-steady-energy-ldr50",
+      "segment": "district heating",
+      "name": "Keravan Energia and Steady Energy nuclear district heating feasibility study, Kerava",
+      "status": "studied",
+      "power_class": "50 MW thermal per LDR-50 unit (design figure; project size not stated)",
+      "timeline": "Agreement reported 10 October 2024; no operating or construction date given",
+      "sponsor": "Keravan Energia (municipal energy company)",
+      "vendor": "Steady Energy",
+      "what_it_says": "Keravan Energia signed an agreement with Steady Energy to develop nuclear-powered district heating in Kerava. The agreement covers site suitability, licensing, zoning, and the technical and economic viability of a nuclear heat plant. The source gives no heat output for the Kerava plant itself.",
+      "microreactor_read": "The figures are thermal and a feasibility study only, so this does not compare with the 1-20 MW electric band. The buyer is a district heat network with no power price published.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Third Finnish city considers SMRs for district heating (2024-10-10)",
+          "url": "https://wnn.world-nuclear.org/articles/third-finnish-city-considers-smrs-for-district-heating",
+          "quote": "The agreement marks the first step towards evaluating the feasibility of deploying SMR technology in Kerava.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "jyvaskyla-alva-steady-ldr50",
+      "segment": "district heating",
+      "name": "Alva-yhtiot Oy and Steady Energy district heat preliminary study, Jyvaskyla",
+      "status": "proposed",
+      "power_class": "50 MW thermal per LDR-50 unit (design figure; project size not stated)",
+      "timeline": "Letter of intent and year-long preliminary study launched, reported 19 May 2026",
+      "sponsor": "Alva-yhtiot Oy (municipal energy company)",
+      "vendor": "Steady Energy",
+      "what_it_says": "Steady Energy and Alva-yhtiot Oy signed a letter of intent to investigate SMRs as a district heating source in Jyvaskyla, central Finland. The two companies have launched a year-long preliminary study. The 50 MW figure is the thermal output of one LDR-50 design unit.",
+      "microreactor_read": "The figures are thermal, so they do not compare with the 1-20 MW electric band. A one-year study with a letter of intent is the current stage; no fuel, licence or power price is named.",
+      "sources": [
+        {
+          "label": "World Nuclear News — Fourth Finnish municipality to assess nuclear district heating (2026-05-19)",
+          "url": "https://world-nuclear-news.org/articles/fourth-finnish-municipality-to-assess-nuclear-district-heating",
+          "quote": "to investigate the suitability of SMRs as a source for district heating in the city of Jyväskylä in central Finland.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
