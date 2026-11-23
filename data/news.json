@@ -1,19 +1,19 @@
 {
   "_meta": {
-    "captured": "2026-11-19",
+    "captured": "2026-11-23",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "62 of 110 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 48 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "63 of 114 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 51 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-19",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 22
+      "count": 24
     },
     {
       "id": "fuel",
-      "count": 19
+      "count": 20
     },
     {
       "id": "contract",
@@ -33,7 +33,7 @@
     },
     {
       "id": "policy",
-      "count": 7
+      "count": 8
     },
     {
       "id": "criticality",
@@ -66,6 +66,34 @@
           "label": "Radiant, Radiant Expands Manufacturing to Scale Commercial Microreactor Production (Nov. 19, 2026)",
           "url": "https://www.radiantnuclear.com/news/radiant-expands-manufacturing",
           "quote": "Representing an investment of more than $100 million in Radiant’s Los Angeles-area footprint, the expanded El Segundo campus adds approximately 200,000 square feet",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "nyserda-microreactor-study-master-plan-2026-11-18",
+      "date": "2026-11-18",
+      "headline": "New York's nuclear Master Plan includes a microreactor study that stops short of backing deployment",
+      "companies": [
+        "NYSERDA",
+        "Westinghouse Government Services"
+      ],
+      "category": "policy",
+      "what_happened": "Governor Hochul released New York's Master Plan for Responsible Advanced Nuclear Development at a state nuclear summit in Rochester on November 18, 2026. One of its supporting studies, NYSERDA's Nuclear Microreactor Technologies Study (Report 26-21h), calls the microreactor market pre-commercial and says further work is needed to decide which microreactor technologies and applications, if any, are worth further state action. It recommends a cooperation framework with Fort Drum and Westinghouse Government Services on the Army's Janus project there.",
+      "why_it_matters": "New York names industrial, institutional, military, remote and existing nuclear-site loads as the likeliest microreactor buyers, but commits no money or procurement. For now the state's role is learning from the Fort Drum project.",
+      "binding": false,
+      "binding_note": "A screening-level study; it says it does not establish feasibility or commit the state to policy action or deployment.",
+      "sources": [
+        {
+          "label": "NYSERDA, Nuclear Microreactor Technologies Study, Report 26-21h (November 2026)",
+          "url": "https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Advanced-Nuclear/Publications/Nuclear-Microreactor-Technologies-Study.pdf",
+          "quote": "Further work is needed to determine which microreactor technologies and applications, if any, offer sufficient value to New York State to warrant further action.",
+          "status": "fetched"
+        },
+        {
+          "label": "WAMC, At a summit in Rochester, Hochul announces the release of a nuclear power plan for New York (2026-11-18)",
+          "url": "https://www.wamc.org/2026-11-18/at-a-summit-in-rochester-hochul-announces-the-release-of-a-nuclear-power-plan-for-new-york",
+          "quote": "The Advanced Nuclear Master Plan addresses issues like commercial viability, workforce readiness and supply chain capacity.",
           "status": "fetched"
         }
       ]
@@ -240,6 +268,33 @@
       ]
     },
     {
+      "id": "terra-innovatum-solo-psar-complete-2026-11-04",
+      "date": "2026-11-04",
+      "headline": "Terra Innovatum gives NRC all 18 SOLO safety report chapters for readiness review",
+      "companies": [
+        "Terra Innovatum"
+      ],
+      "category": "regulatory",
+      "what_happened": "On 2026-11-04 Terra Innovatum said it had provided the NRC with all 18 chapters of the Preliminary Safety Analysis Report for its SOLO micro-modular reactor, for readiness review ahead of a formal construction permit application. The company targets a first-of-a-kind deployment in 2027.",
+      "why_it_matters": "SOLO is a 1 MW design, so it sits in the 1-20 MW band. The 2027 date is the company's own target; a buyer should wait for the NRC readiness review and any licence step before treating it as firm.",
+      "binding": false,
+      "binding_note": "Not binding: the chapters went to NRC staff for a readiness review, which the company describes as an assessment ahead of formal construction permit application submission. No application has been filed or docketed.",
+      "sources": [
+        {
+          "label": "Terra Innovatum — Achieves key NRC licensing milestone, delivers all 18 SOLO PSAR chapters (company release, mirrored on Finviz, 2026-11-04)",
+          "url": "https://finviz.com/news/415394/terra-innovatum-achieves-key-nrc-licensing-milestone-delivers-all-18-solo-psar-chapters-for-readiness-review-as-it-advances-toward-2027-first-reactor-deployment",
+          "quote": "today announced that it has now provided all 18 chapters of its Preliminary Safety Analysis Report",
+          "status": "fetched"
+        },
+        {
+          "label": "Notebookcheck — Micro-modular nuclear reactor with 1 MW output one step closer to commercialization (undated)",
+          "url": "https://www.notebookcheck.net/Micro-modular-nuclear-reactor-with-1-MW-output-one-step-closer-to-commercialization.1114872.0.html",
+          "quote": "It has an output of 1 MW and the company expects it to hit the market by 2028 or earlier.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
       "id": "centrus-doe-haleu-options-2026-11-04",
       "date": "2026-11-04",
       "headline": "DOE says it will not exercise further HALEU contract options with Centrus",
@@ -300,6 +355,34 @@
           "label": "KBTX, Texas A&M gets $5.4M to research turning nuclear waste into fuel (Oct. 29, 2026)",
           "url": "https://www.kbtx.com/2026/10/30/texas-am-gets-54m-research-turning-nuclear-waste-into-fuel/",
           "quote": "Texas A&M researchers have been awarded $5.4 million in federal money to study whether used nuclear fuel can be recycled into new reactor fuel.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-hornig-triso-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "Standard Nuclear wins about $7M ARPA-E award for recycled-fuel TRISO",
+      "companies": [
+        "Standard Nuclear",
+        "SHINE Technologies"
+      ],
+      "category": "fuel",
+      "what_happened": "DOE's ARPA-E announced eight selected projects in the HORNIG program on October 29, 2026, slated to share up to $50 million. Standard Nuclear of Oak Ridge, Tennessee, was awarded $6,999,984 for a project to make TRISO particle fuel from recycled transuranic and uranium feedstock, led with SHINE Technologies. Its company release is dated November 2, 2026.",
+      "why_it_matters": "This is a research-stage fuel award, not a fuel supply contract. A microreactor buyer should not count on this fuel path until it is qualified, and it adds a second recycled-feedstock TRISO source to the fuel field.",
+      "binding": false,
+      "binding_note": "An ARPA-E selection and award announcement. The award agreement's execution was not confirmed in the sources read.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire, DOE's ARPA-E selects eight transuranic fuel development projects (2026-10-29)",
+          "url": "https://www.ans.org/news/article-8532/does-arpae-selects-eight-transuranic-fuel-development-projects/",
+          "quote": "was awarded $6,999,984",
+          "status": "fetched"
+        },
+        {
+          "label": "Business Wire (via Finviz), Standard Nuclear selected by ARPA-E to develop TRISO fuel from recycled transuranic material (Nov. 2, 2026)",
+          "url": "https://finviz.com/news/413162/standard-nuclear-selected-by-arpa-e-to-develop-triso-fuel-from-recycled-transuranic-material",
+          "quote": "to receive approximately $7 million in funding",
           "status": "fetched"
         }
       ]
@@ -541,6 +624,27 @@
           "label": "Radiant, US Navy Selects Radiant to Power Critical Infrastructure at Naval Weapons Station Crane (Oct. 20, 2026)",
           "url": "https://www.radiantnuclear.com/news/navy-selects-radiant",
           "quote": "today announced its selection by the Department of the Navy to deploy its Kaleidos microreactor at Naval Weapons Station Crane, Indiana",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "last-energy-caldwell-lwa-application-2026-10-20",
+      "date": "2026-10-20",
+      "headline": "Last Energy files NRC request for early foundation work at Texas PWR-20 site",
+      "companies": [
+        "Last Energy"
+      ],
+      "category": "regulatory",
+      "what_happened": "On October 20, 2026, Last Energy filed part one of a two-part phased construction permit application with the NRC. The limited work authorization request covers permanent foundation work for the PWR-20 reactor vessel at Caldwell County, Texas, including steel H-piles and a steel liner. The NRC published notice of the filing on November 5, 2026.",
+      "why_it_matters": "For a 1-20 MW buyer, this is a formal NRC filing for the PWR-20 at a named Texas site. The NRC has not yet accepted the request for docketing, so no construction start date is set.",
+      "binding": true,
+      "binding_note": "A filed NRC application. The notice says the NRC has not yet decided whether to docket the request, and a detailed technical review follows only after that decision.",
+      "sources": [
+        {
+          "label": "Federal Register — NRC notice: Last Energy, Inc; Phased Construction Permit Application – Limited Work Authorization (2026)",
+          "url": "https://www.federalregister.gov/d/2026-22577",
+          "quote": "On October 20, 2026, Last Energy filed the first part of a two-part phased construction permit application",
           "status": "fetched"
         }
       ]

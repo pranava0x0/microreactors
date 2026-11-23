@@ -1,0 +1,52 @@
+{
+ "_meta": {
+  "captured": "2026-11-20",
+  "agent": "vendors",
+  "scope": "Vendors tab: Type G checks on shipped vendor rows (skipping recently-checked radiant, aalo-x, valar-ward250); Type N items for dated vendor milestones after 2026-11-19 not in skip/news.json, including 1-20 MWe designs outside the table.",
+  "angles_run": [
+    "Antares R1 / Mark-1 news Nov 2026",
+    "Westinghouse eVinci news Nov 2026 (criticality date check)",
+    "BWXT BANR Fort Campbell update Nov 2026",
+    "General Atomics GA-TES Fort Hood",
+    "Deployable Energy Unity DOME 2027 and criticality date",
+    "NANO Nuclear KRONOS MMR milestone Nov 2026",
+    "Last Energy PWR-5 Texas pilot Nov 2026",
+    "Natura Resources MSR-1 Nov 2026",
+    "Terra Innovatum SOLO 2026",
+    "Steady Energy LDR-50 2026",
+    "Blue Energy 2026 (BWRX-300, out of band)",
+    "generic microreactor vendor announcement 2026-11-20"
+  ],
+  "absences": [
+    "No vendor milestone dated 2026-11-19 or later found for any 1-20 MWe design. Searches on Antares, eVinci, BWXT BANR, GA-TES, Deployable Energy, NANO KRONOS, Last Energy, Natura, Terra Innovatum, Steady Energy and a generic 2026-11-20 query returned nothing dated in the window.",
+    "Antares: a Nuclear News tag page lists an article dated 2026-11-02 on DOE authorization milestones for Antares, Last Energy and Radiant. The body was not fetched. Its three events match shipped news items dated 2026-10-07, 2026-10-23 and 2026-10-29, so no new item was filed.",
+    "Last Energy PWR-5 Texas pilot: the DSA approval is shipped (2026-10-07). The next step, a readiness review before criticality authorisation, has no dated public source found.",
+    "Natura MSR-1: no status update after the 2026-09-18 fuel salt arrival (shipped 2026-09-22). Operation status is unverified.",
+    "Terra Innovatum SOLO: NRC topical report safety evaluations were anticipated by October 2026 (company release, March 2026). No outcome found. SOLO is not in the shipped vendors table and no dated event in the window was found.",
+    "Steady Energy LDR-50: the STUK/SUJB joint preliminary assessment (July 2026) is not in skip/news.json. It is dated well before the window and is not filed. The Fermi Energia MoU date could not be confirmed.",
+    "Deployable Energy: the Unity zero-power criticality was at INL on 2026-07-01 per the ANS article of 2026-10-02 (a search summary said June 30; not used). It is not in skip/news.json but is outside the window. The 2027 full-power DOME test has no start date.",
+    "Westinghouse DOME 2027 slot: per the 2026-10-02 ANS article, Westinghouse notified NRIC in September 2025 that it would not use its 2027 slot. Not in skip/news.json, but dated 2025, so not filed.",
+    "Blue Energy: the Texas gas-plus-nuclear plant uses 300 MW BWRX-300 units. Out of the 1-20 MWe band; not filed.",
+    "General Atomics GA-TES: no Fort Hood construction, test or date news after the 2026-08-26 selection. The Army's Sept 2028 first-reactor target is a program target, not a GA-TES date, so no check was written."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-evinci-1",
+   "target": "evinci",
+   "file": "vendors",
+   "claim": "eVinci test assembly reached zero-power criticality at NCERC",
+   "verdict": "confirmed",
+   "evidence": "Westinghouse release dated August 25, 2026 says zero-power criticality testing was completed on August 24, 2026 at 10:39 a.m. PT at NCERC, Nevada National Security Site. Matches the shipped 2026-08-24 date.",
+   "sources": [
+    {
+     "label": "Westinghouse — Westinghouse eVinci Microreactor Achieves Zero-Power Criticality (2026-08-25)",
+     "url": "https://info.westinghousenuclear.com/news/westinghouse-evinci-microreactor-achieves-zero-power-criticality",
+     "quote": "on August 24, 2026 at 10:39 a.m. PT",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "items": []
+}

@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "captured": "2026-11-20",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: politics and regulation. Type G checks on shipped policy rows (file policy), Type F dockets not in skip/dockets.json, Type N items category policy or regulatory after 2026-11-19.",
+    "angles_run": [
+      "shipped licensing rows: Part 53 final (checked)",
+      "shipped licensing rows: DOE pilot track and four criticals by July 4 (checked, trade-press only, not written)",
+      "shipped licensing rows: Texas HB 14 TANEO awards (no awards found on TANEO page)",
+      "shipped licensing rows: Alaska SB 177 50 MW definition (WNN fetched, 2023 secondary, not written)",
+      "shipped licensing rows: What states did in 2025 (no newer INL report found)",
+      "shipped licensing rows: NRC Part 57 final (skipped: recently-checked settled reading, still proposed)",
+      "shipped licensing rows: ADVANCE Act fee clause (skipped: recently-checked settled reading)",
+      "dockets: Dominion Virginia 2026 IRP with SMR line (filing confirmed, SMR amount unverified)",
+      "dockets: Georgia PSC SMR dockets (none; Sept 2026 NU-1 uprate is large-reactor, out of band)",
+      "dockets: Alaska RCA microreactor dockets (none found)",
+      "dockets: New Jersey S3870 / P.L.2026 c.9 (April 2026, outside 90 days; Power NJ Act July 2026 is large nuclear)",
+      "items: NRC Commission votes Nov 2026 (none found)",
+      "items: FY2027 NDAA nuclear and microreactor provisions (House committee text only; no final)",
+      "items: FY2027 Energy and Water DOE Office of Nuclear Energy (House committee bill, no microreactor line found)",
+      "items: Army Janus (selections 2026-08-26 already shipped as news)",
+      "items: DOE microreactor policy Nov 2026 (company milestones only, already shipped)",
+      "items: state microreactor laws signed Nov 2026 (none found)",
+      "items: CNSC SMR or microreactor licence decisions (none after April 2025)",
+      "items: companion NRC proposed rule for DOE/DOW authorization or Part 57 (none dated Nov 2026)"
+    ],
+    "absences": [
+      "NRC Part 57 final rule (due 2026-11-23): not checked, skipped per skip/recently-checked.md (settled as proposed). No final rule found in search; ANS 2026-10-22 still describes it as proposed.",
+      "Dominion Virginia 2026 IRP update (filed with the SCC 2026-10-15): filing confirmed by a fetched SELC release dated 2026-10-16 ('Yesterday, Dominion Energy filed its 2026 Integrated Resource Plan (IRP) update with the State Corporation Commission (SCC).'). The 2 GW SMR figure appears only in search summaries; no fetched page states it (Virginia Mercury and newsfromthestates returned 403; the wdbj7 fetch says the nuclear share is not broken out). Docket number not found. Not filed as a Type F record. Follow-up: pull the SCC docket for the 2026 IRP and read its SMR line.",
+      "Georgia PSC: no 2026 SMR-specific docket found. Georgia Power's Sept 2026 Vogtle/Hatch uprate and NU-1 tariff filings are large-reactor uprates, out of the 1-20 MW band.",
+      "Alaska RCA: no microreactor docket found for Copper Valley or Golden Valley. DEC siting permits and NRC licensing are the operative venues per search results.",
+      "NRC Commission votes on advanced reactors dated 2026-11-16 to 2026-11-20: none found. Most recent NRC action in results is the Dow/X-energy Long Mott construction permit (2026-11-09 or 11-10), already in skip/news.json.",
+      "FY2027 NDAA: House committee text (H.R. 8800, HASC 44-12) includes a Harrigan amendment for a transportable microreactor (50 MW or less) in Indo-Pacific Command. Floor passage, Senate text and conference outcome not found. No dated in-window event.",
+      "FY2027 Energy and Water (H.R. 9022, House committee report H.Rept. 119-667, 2026-04-22): Office of Nuclear Energy microreactor line not found; Senate summary excerpt did not include the Office of Nuclear Energy. Outside window.",
+      "Army Janus five selections (2026-08-26): dated and already shipped in skip/news.json (army-janus-* ids). Not refiled.",
+      "Texas HB 14 / TANEO: TANEO page lists no announced HB 14 grant awards (selections were projected for the week of 2026-07-20; first award period as early as 2026-09-14). Page cites a $120M ANCRP reimbursement cap, which does not contradict the shipped $350M fund figure. Award status unverified.",
+      "Alaska SB 177 (2022): WNN fetched (2023-07-28) confirms the 50 MW definition. The shipped sentence on legislative siting approval is consistent with that article. Not written as a check because the only fetched source is a 2023 secondary article.",
+      "What states did in 2025 (INL, as of 2025-12-01: 279 bills, 73 enacted): no newer INL report found. NCSL and NEI summaries give different 2025-26 counts (NEI: over 60 measures enacted in the past 12 months). Shipped figures left as is.",
+      "DOE Reactor Pilot Program four criticals by July 4 (Antares 2026-06-04, Valar 2026-06-18, Deployable 2026-06-30, Aalo CTR 2026-07-04 12:20 MT): POWER (2026-07-06) fetched and confirms the dates, but it is trade press, not a DOE primary, so it is not written as a confirmed check. Aalo naming is settled in recently-checked.md.",
+      "New Jersey: P.L.2026 c.9 (signed 2026-04-08) and Power NJ Act (2026-07-13) are outside the 90-day window and large-reactor scale. skip/dockets.json already lists the NJ S4849 and A5727 bills.",
+      "CNSC (Canada): no SMR or microreactor licence decision found after the April 2025 Darlington construction licence.",
+      "Companion NRC rule for DOE/DOW-authorized designs (proposed 2026-04-02, comment period closed 2026-05-04) and Part 57 proposal (91 FR 23628, 2026-05-01): no new November 2026 NRC proposed rule found.",
+      "Budget: about 20 web searches and 7 fetches used. Two HTTP 403s (newsfromthestates.com, virginiamercury.com) limited the Dominion check. Search summaries were not used as quotes."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "NRC finalised its risk-informed, technology-inclusive licensing framework in March 2026",
+      "verdict": "confirmed",
+      "evidence": "Federal Register notice 'Risk-Informed, Technology-Inclusive Regulatory Framework for Advanced Reactors' is dated Monday, March 30, 2026 (published 2026-03-30; the page states the final rule is effective April 29, 2026). The March 2026 finalisation date in the shipped text matches the primary publication.",
+      "sources": [
+        {
+          "label": "Federal Register — Risk-Informed, Technology-Inclusive Regulatory Framework for Advanced Reactors (final rule, March 30, 2026)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-03-30/html/2026-06048.htm",
+          "quote": "This final rule is effective on April 29, 2026.",
+          "status": "fetched"
+        }
+      ]
+    }
+  ],
+  "dockets": [],
+  "items": []
+}

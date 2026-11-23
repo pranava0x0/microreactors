@@ -1,0 +1,62 @@
+{
+ "_meta": {
+  "captured": "2026-11-23",
+  "agent": "vendors",
+  "scope": "Vendors tab: Type G checks on shipped skip/vendors.json rows (excluding recently-checked valar-ward250 and evinci); Type N items for vendor milestones dated after 2026-11-19 not in skip/news.json, including non-table 1-20 MWe designs.",
+  "angles_run": [
+   "Radiant Kaleidos DOME fuelling, criticality and DOE Readiness Review",
+   "Radiant Fort Benning Janus site status",
+   "Antares Mark-1 and Janus Fort Bragg",
+   "Oklo Aurora-INL construction and Forged Rings capacity reservation",
+   "BWXT BANR Fort Campbell Janus",
+   "General Atomics GA-TES Fort Hood Janus",
+   "Aalo-X demonstration plant timing (fetched Aalo 2026 plan post; DOE criticality release)",
+   "Last Energy PWR-20 Texas (NRC filings, Caldwell vs Haskell county)",
+   "Deployable Energy Unity-1 (DOME, 2027 full-power test)",
+   "NANO Nuclear KRONOS MMR and ZEUS",
+   "Natura Resources MSR-1 Abilene",
+   "Terra Innovatum SOLO (NRC letters)",
+   "Blue Energy and Steady Energy (EIB financing)",
+   "Generic in-window sweep for microreactor vendor milestones, week of 2026-11-23"
+  ],
+  "absences": [
+   "Radiant DOME: no published outcome for DOE's Readiness Review or for fuel loading after 2026-10-29. An NRIC presentation dated 2026-05-05 says the review began 2026-04-27, which conflicts with the shipped status 'Readiness Review next'. Not fetched to a primary page, so no check was written.",
+   "Antares, Radiant, Oklo, Aalo, BWXT, GA-TES, Last Energy, Deployable, NANO, Natura, Terra Innovatum: no vendor milestone dated after 2026-11-19 found in 18 searches and 2 fetches.",
+   "Oklo Forged Rings capacity reservation (27 Aurora module-equivalents, 2030-2035): announced 2026-11-06 per NEI Magazine and Zacks/ANS summaries. Out of window; not in skip/news.json. Not filed. Primary Oklo release not fetched.",
+   "Steady Energy (LDR-50): EUR 40M EIB convertible loan dated 2026-09-15 (European Commission single-market news item). Out of window; Steady is not in the vendor table. Not filed.",
+   "Last Energy: Federal Register notice of 2026-10-20 (LWA application) names a Caldwell County, Texas site; NRC pre-application page names Haskell, Texas. Unresolved site conflict; out of window and Last Energy is not a table vendor.",
+   "Blue Energy: NRC pre-application page updated 2026-11-16 lists a construction permit pre-application effort and a limited work authorization application for a Port of Victoria unit. Its design is a BWRX-300 plant (outside the 1-20 MWe band). Not filed.",
+   "Natura MSR-1: no criticality found; schedule shifted from 2026 deployment to 2028 (Fortune, 2026-07-04). Natura is not a table vendor. Not filed.",
+   "Deployable Energy Unity-1: DOE zero-power criticality 2026-07-01 (already out of window per web-leads); DOME full-power test targeted 2027 (INL, October 2026). Nothing dated after 2026-11-19.",
+   "General Atomics GA-TES: Army reporting cites a September 2028 operating target for the program's first reactor, not confirmed as GA-TES at Fort Hood. Shipped row 'Not published' left unchanged.",
+   "BWXT BANR at Fort Campbell: construction late 2028 and operation early 2030s per BWXT-era reporting; shipped row consistent. No post-August 2026 update found."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-aalo-x-1",
+   "target": "aalo-x",
+   "file": "vendors",
+   "claim": "Zero-power critical test reactor (no power output); the separate 30 MWth / 10 MWe Aalo-X demonstration plant is slated for construction and licensing in 2027",
+   "verdict": "confirmed",
+   "evidence": "Aalo's own 2026 plan post, published 2026-02-18, says Aalo-X is 'targeted to be built by end of 2026' and that power is raised after first criticality in early 2027. It gives no licensing date. The DOE release dated 2026-07-06 reports Aalo-X zero-power fueled criticality on 2026-07-04 and says nothing about construction or licensing timing for the demonstration plant.",
+   "sources": [
+    {
+     "label": "Aalo Atomics — Aalo's 2026 Plan: Criticality and Beyond (2026-02-18)",
+     "url": "https://www.aalo.com/post/aalos-2026-plan-criticality-and-beyond",
+     "quote": "targeted to be built by end of 2026",
+     "status": "fetched"
+    },
+    {
+     "label": "U.S. Department of Energy — Department of Energy Celebrates Fourth Criticality Ahead of July 4th Goal (2026-07-06)",
+     "url": "https://www.energy.gov/articles/department-energy-celebrates-fourth-criticality-ahead-july-4th-goal",
+     "quote": "successfully completed a zero-power fueled criticality demonstration",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "wrong",
+   "review": "Overruled 2026-11-23: the row's own source (POWER, July 2026, cached) says Aalo 'will use data from the CTR and Aalo-0 to support construction and licensing in 2027'. The agent's source is Aalo's February 2026 plan, five months older. Same Aalo-X naming family as the 11-04 settled reading."
+  }
+ ],
+ "items": []
+}

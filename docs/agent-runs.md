@@ -630,3 +630,46 @@ Four Haiku agents (odd day: news, deals, vendors, politics), 2 at a time, after 
 | politics | 159K | 0 records | no |
 
 ~620K agent tokens for 1 news item the main session sourced. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-20 daily refresh
+
+Seven Haiku agents (even weekday: all lanes), 2 at a time, after 4 main-session web searches. `skip/recently-checked.md` rebuilt (11-16..11-19) with the settled-readings block. 2 news, 0 corrections. The news agent found the Last Energy Caldwell LWA filing from the Federal Register (the watcher missed it). The NYSERDA microreactor study came from the ideas agent's absences: the PDF 403s scripts and Playwright, but a same-origin `fetch()` in the browser pane returned it and pdf.js read it in-page.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 185K | 1 item (Last Energy Caldwell LWA) | yes |
+| deals | 144K | 1 check (Romania FID binding), overruled: binding_note counts an FID | no |
+| vendors | 145K | 1 confirmation (eVinci criticality date) | marginal |
+| politics | 175K | 1 confirmation (Part 53 final rule date) | marginal |
+| applications | 165K | 5 Janus "outdated" checks, all overruled (11-02 reading); 1 out-of-window MOU dropped | no |
+| costs | 147K | 1 confirmation (Michigan LCOE band) | marginal |
+| ideas | 152K | 0 records; absences named the NYSERDA study | yes, via absences |
+
+~1.11M agent tokens for 2 news items. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-22 daily refresh (Sunday, even day; costs and ideas skipped per the 11-14 weekend note)
+
+Five Haiku agents, 2 at a time, after 2 main-session web searches. No 11-21 run. `skip/recently-checked.md` rebuilt (11-18..11-21) with the settled-readings block. 1 news, 1 correction, 1 source added. Both web leads (Nuclea-Moltex, Berkeley/Odin) predated the window; the Nuclea deal is still pending UK NSIA approval.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 166K | 0 records; both web leads out of window | no |
+| deals | 172K | 3 checks; Malmstrom "two acres" unsupported, overruled (vendor claim on DOE-NE page, added as source) | yes, via the source gap |
+| vendors | 150K | 1 item (Terra Innovatum SOLO PSAR, 11-04; set non-binding: readiness review, no filed application) | yes |
+| politics | 173K | Illinois Tier 4 line corrected to the source's wording and cited; re-checked `licensing` despite the list | yes |
+| applications | 188K | 1 confirmation (lunar FSP); 3 Finnish 50 MWth district-heat rows held (out of band) | marginal |
+
+~850K agent tokens for 1 news item and 1 correction. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-23 daily refresh (odd day: news, deals, vendors, politics)
+
+Four Haiku agents, 2 at a time, after 5 main-session web searches. `skip/recently-checked.md` rebuilt (11-19..11-22) with the settled-readings block, and the skipped ids named inside each prompt. 1 news item (gap-fill), 0 corrections. Nothing dated after 2026-11-19 surfaced in any lane. Both non-confirm checks were overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 153K | 1 item (Standard Nuclear ARPA-E HORNIG award, 10-29, missed by the watcher) | yes |
+| deals | 168K | 2 checks: canada-src confirmed; Texas "rule adopted" unsupported, overruled (same page says regulators "adopted rules") | marginal |
+| vendors | 162K | 1 check: Aalo-X "2027" wrong, overruled (agent's Feb source predates the row's July POWER source) | no |
+| politics | 187K | 0 records; Louisiana LANE / tariff vote outcome and Dominion IRP left as absences | no |
+
+~670K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).

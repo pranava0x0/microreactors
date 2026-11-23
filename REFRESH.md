@@ -254,3 +254,22 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   nothing. The primary radiantnuclear.com page read in the browser pane (`[...document.querySelectorAll('p,h1,h2,h3')]` after a 3s
   wait; `get_page_text` returns only the nav). When a web lead is a company release, put the company's own news URL in
   `skip/web-leads.md`, not the wire copy. Four odd-day agents cost ~620K tokens for 0 shipped records.
+
+- **2026-11-20: a PDF that 403s curl and Playwright can still be read through the browser pane's own origin.** NYSERDA's
+  Nuclear Microreactor Technologies Study 403'd WebFetch, curl and headless Playwright (even after loading the parent page),
+  but `fetch()` run in the pane on nyserda.ny.gov returned the 768 KB PDF, and pdf.js imported from cdnjs extracted it in-page.
+  Write the cited paragraphs to HTML and cache with `fetch_source.py URL --from-file`. Also: two settled readings came back
+  (Janus "awarded" from 11-02; Romania's FID as non-binding against `_meta.binding_note`). Both are now in the settled-readings block.
+
+- **2026-11-22: an `unsupported` or `wrong` check is often a citation gap on a true claim.** Malmstrom's "5 MWe on sites as small as
+  two acres" is Westinghouse's own claim (on DOE-NE's eVinci page, already cached) but neither of the row's sources carried it; the
+  Illinois Tier 4 line was near-right with no Illinois source at all. Before dropping or rewording, grep `data/cache` for the claimed
+  phrase: if a cached primary page has it, add that page to the row's sources and overrule. Also, the politics agent re-checked
+  `licensing` although it was on the recently-checked list: name the skipped ids inside the check step itself, not only at the end.
+
+- **2026-11-23: a source older than the row's own source cannot make the row wrong.** The vendors agent called Aalo-X's
+  "construction and licensing in 2027" wrong on Aalo's February 2026 plan; the row cites POWER from July 2026, which says
+  exactly that. Before applying any `wrong`/`outdated` check, compare the publication date of the agent's source with the
+  row's: an older page is a superseded plan, not a correction. Same day, the deals agent called Texas "rule adopted"
+  unsupported because the lede says "unveiled"; the page's own summary says "adopted rules". Both overruled; an odd-day run
+  with no post-window news costs ~670K tokens for one gap-fill item.

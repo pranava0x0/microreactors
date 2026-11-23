@@ -1,0 +1,158 @@
+{
+ "_meta": {
+  "captured": "2026-11-20",
+  "agent": "applications",
+  "scope": "Applications tab: Type G status checks on shipped Janus deployment-site rows; Type S gap search (hospitals, hydrogen/ammonia, disaster recovery, installation power); one Type N item from a shipped-lane university; no Type E regions",
+  "angles_run": [
+   "Type G: nasa-doe-fsp-lunar and westinghouse-evinci-lunar (2026 MOU and award search)",
+   "Type G: last-energy-london-gateway (2026 update search)",
+   "Type G: uiuc-kronos-mmr and uiuc-kronos (NRC docketing; NRC highlights page fetched)",
+   "Type G: oklo-wyoming-hyperscale-aspen-mountain (2026 status search)",
+   "Type G: penn-state-evinci (2026 search; university page fetched)",
+   "Type G: steady-energy-ldr50 (2026 construction and regulator search)",
+   "Type G: chalk-river-mmr (CNSC status search)",
+   "Type G: janus-bragg, janus-benning, janus-campbell, janus-hood, janus-drum (Army Janus award page fetched; Fort Benning site-visit page fetched)",
+   "Type G: arctic-microreactor-canada, last-energy-pwr5-rellis-pilot, tamu-rellis-aalo (not searched; time spent on Janus and Type S)",
+   "Type S: hospital and health-campus microreactor power agreements",
+   "Type S: hydrogen and ammonia microreactor buyers with an MWe figure",
+   "Type S: disaster recovery and emergency power contracts with an MW figure",
+   "Type S: Army installation commercial power (Strategic Capital Initiatives lease awards; army.mil page fetched, no MW figures)"
+  ],
+  "absences": [
+   "Type S hospitals: one search, no named hospital or health-system microreactor power agreement found; angle bailed.",
+   "Type S hydrogen and ammonia: two searches, no 2026 named buyer with an MWe figure. Next Hydrogen (March 2026) names no reactor or MWe; the eVinci hydrogen item is a capability statement, not a contract. Angle bailed.",
+   "Type S disaster recovery: one search, no named contract with an MW rating. Janus resilience sites are already on the tab. Angle bailed.",
+   "Type S installation power: army.mil article 295486 (2026-09-18, fetched) gives no MW figure for Ameresco (Aberdeen Proving Ground, Picatinny Arsenal), Indelible-Bloom or Frontier Power USA (Tobyhanna). Not filed: a power number is required.",
+   "Type G oklo-wyoming-hyperscale-aspen-mountain: one search found no 2026 status; the shipped letter-of-intent text cannot be confirmed or corrected. No check written.",
+   "Type G uiuc-kronos-mmr: NRC highlights page (fetched) says the acceptance review is ongoing. A search summary says docketed 2026-05-18, but that was not fetched. Shipped text is accurate either way. No check written.",
+   "Type G last-energy-london-gateway: no 2026 update found; the shipped MOU text stands.",
+   "Type G penn-state-evinci: a fetched university release dated 2026-05-08 adds a five-year agreement and a research test reactor at University Park. The shipped letter-of-intent text is not wrong, so no check; the release is filed as a Type N item.",
+   "Type G nasa-doe-fsp-lunar and westinghouse-evinci-lunar: no 2026 award or contract found. The ANS item dated 2026-10-13 (fetched) covers a broader space-nuclear MOU with no lunar reactor size. No check written.",
+   "Type G steady-energy-ldr50: construction and Helen network details match the shipped text. The EIB loan (2026-09-15) and the July 2026 STUK assessment are already on the News tab or outside this lane. No check written.",
+   "Type G chalk-river-mmr: CNSC project page (search summary, not fetched) reads Paused, matching the shipped status. No check written.",
+   "Type G arctic-microreactor-canada, last-energy-pwr5-rellis-pilot and tamu-rellis-aalo were not searched this pass.",
+   "Type E: no new regions searched this pass.",
+   "Web leads from skip/web-leads.md: Blykalla SEALER (55 MWe) is outside the 1-20 MW band and was not filed. The NANO and SJ Group item is low signal (no site, no instrument) and was not filed."
+  ],
+  "dropped_by_review": [
+   {
+    "ids": [
+     "penn-state-westinghouse-mou-2026-05-08"
+    ],
+    "reason": "Event dated 2026-05-08, outside the 60-day gap window; MOU with no size, date or price."
+   }
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-janus-bragg-1",
+   "target": "janus-bragg",
+   "file": "deployment_sites",
+   "claim": "intent-to-award",
+   "verdict": "confirmed",
+   "evidence": "Army.mil, dated 2026-08-26, lists the five selected Janus vendors and installations, including Antares Nuclear at Fort Bragg. Antares announced the same day that it had been awarded a Janus Program agreement (Business Wire release, snippet only; the release page returned HTTP 403). The shipped News tab already carries the 2026-08-26 Antares Fort Bragg item.",
+   "correction": "selected",
+   "sources": [
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "Antares Nuclear, Inc. – Fort Bragg, North Carolina",
+     "status": "fetched"
+    },
+    {
+     "label": "Antares — Antares Awarded Army Janus Program Agreement to Deliver Nuclear Microreactor Power for Armys Energy Resilience Mission (2026-08-26)",
+     "url": "https://secure.businesswire.com/news/home/20260826426834/en/Antares-Awarded-Army-Janus-Program-Agreement-to-Deliver-Nuclear-Microreactor-Power-for-Armys-Energy-Resilience-Mission",
+     "quote": "Antares Awarded Army Janus Program Agreement to Deliver Nuclear Microreactor Power for Armys Energy Resilience Mission",
+     "status": "snippet-only"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-20 (same reading as 2026-11-02): the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. A vendor's own 'awarded' release does not outrank the agency's verb; intent-to-award stands until agreements are signed."
+  },
+  {
+   "id": "check-janus-benning-1",
+   "target": "janus-benning",
+   "file": "deployment_sites",
+   "claim": "intent-to-award",
+   "verdict": "confirmed",
+   "evidence": "Army.mil, dated 2026-08-26, lists Radiant Industries, Inc. at Fort Benning, Georgia among the five selected Janus vendors and installations. Army.mil, dated 2026-10-19, reports a Janus site visit to Fort Benning on Oct. 16, 2026, with Radiant present. Radiant's own release (HTTP 403) was not read; its up-to-$750M, 15-unit figure is not used here.",
+   "correction": "selected",
+   "sources": [
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "Radiant Industries, Inc. – Fort Benning, Georgia",
+     "status": "fetched"
+    },
+    {
+     "label": "U.S. Army — Fort Benning hosts Janus Program partners, surveys potential nuclear microreactor site (2026-10-19)",
+     "url": "https://www.army.mil/article/296206",
+     "quote": "Leaders and planners from the Maneuver Center of Excellence and Fort Benning met with representatives",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-20 (same reading as 2026-11-02): the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. A vendor's own 'awarded' release does not outrank the agency's verb; intent-to-award stands until agreements are signed."
+  },
+  {
+   "id": "check-janus-campbell-1",
+   "target": "janus-campbell",
+   "file": "deployment_sites",
+   "claim": "intent-to-award",
+   "verdict": "confirmed",
+   "evidence": "Army.mil, dated 2026-08-26, lists BWXT Advanced Technologies, LLC at Fort Campbell, Kentucky among the five selected Janus vendors and installations.",
+   "correction": "selected",
+   "sources": [
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "BWXT Advanced Technologies, LLC – Fort Campbell, Kentucky",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-20 (same reading as 2026-11-02): the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. A vendor's own 'awarded' release does not outrank the agency's verb; intent-to-award stands until agreements are signed."
+  },
+  {
+   "id": "check-janus-hood-1",
+   "target": "janus-hood",
+   "file": "deployment_sites",
+   "claim": "intent-to-award",
+   "verdict": "confirmed",
+   "evidence": "Army.mil, dated 2026-08-26, lists General Atomics Electromagnetic Systems at Fort Hood, Texas among the five selected Janus vendors and installations.",
+   "correction": "selected",
+   "sources": [
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "General Atomics Electromagnetic Systems – Fort Hood, Texas",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-20 (same reading as 2026-11-02): the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. A vendor's own 'awarded' release does not outrank the agency's verb; intent-to-award stands until agreements are signed."
+  },
+  {
+   "id": "check-janus-drum-1",
+   "target": "janus-drum",
+   "file": "deployment_sites",
+   "claim": "intent-to-award",
+   "verdict": "confirmed",
+   "evidence": "Army.mil, dated 2026-08-26, lists Westinghouse Government Services at Fort Drum, New York among the five selected Janus vendors and installations.",
+   "correction": "selected",
+   "sources": [
+    {
+     "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+     "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+     "quote": "Westinghouse Government Services – Fort Drum, New York",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "outdated",
+   "review": "Overruled 2026-11-20 (same reading as 2026-11-02): the Army's own 2026-08-26 release says it 'down-selected potential industry awardees for negotiation of Other Transactions Authority-based agreements'. A vendor's own 'awarded' release does not outrank the agency's verb; intent-to-award stands until agreements are signed."
+  }
+ ],
+ "items": [],
+ "applications": [],
+ "regions": []
+}

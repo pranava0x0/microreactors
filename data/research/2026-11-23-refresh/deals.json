@@ -1,0 +1,67 @@
+{
+ "_meta": {
+  "captured": "2026-11-23",
+  "agent": "deals",
+  "scope": "Deals tab: Type G checks on shipped opportunities rows not on recently-checked.md (texas-backup, canada-src, plus candidates screened); Type N items for buyer deals dated after 2026-11-19 not in skip/news.json. Result: no new in-window buyer deal found, 2 checks written.",
+  "angles_run": [
+   "Air Force ANPI Buckley (Radiant) status",
+   "Air Force ANPI Eielson (Oklo) status, incl. 2023 DLA revocation history",
+   "Oklo-Switch 12 GW Master Power Agreement status",
+   "Saskatchewan Research Council eVinci status (canada-src)",
+   "Texas Backup Power Package rule and application status (texas-backup)",
+   "DOE DOME test bed Radiant fuel and experiment status",
+   "Army Janus (excluded by recently-checked; searched for November 2026 installation news only)",
+   "US-Japan-Korea trilateral SMR MOC (signing date only)",
+   "New buyer deals after 2026-11-19: generic microreactor data-center, PPA, MOU and SMR searches; Oklo, NANO Nuclear, Radiant, Deep Fission, Last Energy, X-energy, Valar, Aalo, Antares, Kairos, NuScale, Holtec",
+   "Web-lead screen: Berkeley microreactor agreement; Nuclea-Moltex completion"
+  ],
+  "absences": [
+   "No buyer deal (PPA, MOU, LOI, contract, site selection) dated after 2026-11-19 surfaced in any search. Latest in-window buyer-side item found is the already-shipped Deep Fission Kansas master energy purchase agreement (2026-10-20), which is outside the window.",
+   "Oklo to U.S. Forged Rings capacity reservation at Hertford County, NC, reported 2026-11-06 (search summary only, not fetched): https://finviz.com/news/418309/oklo-us-forged-rings-partner-to-advance-domestic-manufacturing-for-future-aurora-powerhouse-deployments . Before the 2026-11-19 window and a supplier reservation, not a buyer deal. Not filed.",
+   "Nuclea Energy / Moltex technology purchase: completion not confirmed. Search summaries (WNN, not fetched) describe a signed agreement announced August 2026 with completion pending UK NSI Act clearance: https://world-nuclear-news.org/articles/nuclea-energy-to-acquire-moltex-energy-technology-portfolio . A corporate asset acquisition, not a buyer deal; left to the news pass.",
+   "Berkeley prototype microreactor agreement (web lead): no matching 2026 agreement found. Results returned Deep Fission (Berkeley-based) items already shipped, plus a Radiant DoD item from 2025.",
+   "Aalo and Crusoe nuclear-powered AI data center deal at Idaho National Laboratory: date not stated in the search summary, not fetched, not in skip/news.json: https://www.datacenterdynamics.com/en/news/crusoe-partners-with-aalo-on-nuclear-powered-ai-data-center-deployment-at-idaho-national-lab/ . Could not date it inside the window; not filed.",
+   "DOME test bed (dome): the shipped 'not yet fueled' status could not be checked. No November 2026 source found. The Radiant DSA release (radiantnuclear.com, 2026-10-29) returned HTTP 403 to WebFetch. Not filed.",
+   "Eielson (eielson): the shipped row is consistent with June 2026 Air Force newsletter and the March 2026 DLA pending-awardee report (search summary). A Yahoo/Northern Journal item that the DLA rescinded a preliminary award is dated 2023-11-20 (fetched) and was superseded by the 2025-06-11 NOITA. Not a correction; not filed.",
+   "Anpi-buckley (Radiant): no check written. Search summary (2026-04-22 selection; siting and NEPA pending; first Kaleidos reactors delivered by 2028) is consistent with the shipped row. Radiant's own page was not fetched.",
+   "Oklo-Switch: no 2026 change found. Oklo's 10-Q, cited in a search summary, still lists the 12 GW Master Power Agreement from December 2024 as non-binding. No primary page fetched; no check written.",
+   "Equinix-Radiant, anpi-jbsa, anpi-malmstrom, janus, doe-pilot, nano-supermicro, uk-lastenergy, romania-nuscale: excluded per recently-checked.md; not searched for verdicts."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-texas-backup-1",
+   "target": "texas-backup",
+   "file": "opportunities",
+   "claim": "Funded; rule adopted 2026, no application schedule as of May 2026; nuclear not eligible",
+   "verdict": "confirmed",
+   "evidence": "Spartnerships' 2026 program update, dated 2026-05-22 (fetched), says the PUCT 'has unveiled a new rule establishing the grant and loan process' and does not say the rule was adopted. The same page says 'The commission has not released an application schedule.' The page does not address nuclear eligibility.",
+   "sources": [
+    {
+     "label": "Spartnerships — Texas Backup Power Package program 2026 update (2026-05-22)",
+     "url": "https://www.spartnerships.com/texas-backup-power-program-2026-update/",
+     "quote": "has unveiled a new rule establishing the grant and loan process",
+     "status": "fetched"
+    }
+   ],
+   "agent_verdict": "unsupported",
+   "review": "Overruled 2026-11-23: the same cached Spartnerships page's own summary reads 'Texas utility regulators adopted rules for a statewide backup power program', and its body refers to 'final rule adoption'. 'Unveiled' in the lede does not contradict 'adopted'; the agent read one clause."
+  },
+  {
+   "id": "check-canada-src-1",
+   "target": "canada-src",
+   "file": "opportunities",
+   "claim": "Was the first eVinci customer (CA$80M government funding, SRC as licensed operator); Westinghouse cancelled the contract in fall 2025",
+   "verdict": "confirmed",
+   "evidence": "The Saskatchewan Research Council's own FAQ on nuclear (undated page, fetched) says Westinghouse cancelled the project contract in fall 2025 and that SRC is now evaluating other microreactor technologies. The 2023 Westinghouse Canada page that search surfaced describes the project as ongoing; it predates the cancellation and was not used.",
+   "sources": [
+    {
+     "label": "Saskatchewan Research Council — FAQs About Nuclear (project status)",
+     "url": "https://www.src.sk.ca/src-nuclear/additional-information",
+     "quote": "In fall 2025, Westinghouse canceled the project contract with SRC due to their decision to shift focus",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
