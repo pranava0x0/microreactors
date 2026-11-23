@@ -660,3 +660,16 @@ Five Haiku agents, 2 at a time, after 2 main-session web searches. No 11-21 run.
 | applications | 188K | 1 confirmation (lunar FSP); 3 Finnish 50 MWth district-heat rows held (out of band) | marginal |
 
 ~850K agent tokens for 1 news item and 1 correction. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-23 daily refresh (odd day: news, deals, vendors, politics)
+
+Four Haiku agents, 2 at a time, after 5 main-session web searches. `skip/recently-checked.md` rebuilt (11-19..11-22) with the settled-readings block, and the skipped ids named inside each prompt. 1 news item (gap-fill), 0 corrections. Nothing dated after 2026-11-19 surfaced in any lane. Both non-confirm checks were overruled.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 153K | 1 item (Standard Nuclear ARPA-E HORNIG award, 10-29, missed by the watcher) | yes |
+| deals | 168K | 2 checks: canada-src confirmed; Texas "rule adopted" unsupported, overruled (same page says regulators "adopted rules") | marginal |
+| vendors | 162K | 1 check: Aalo-X "2027" wrong, overruled (agent's Feb source predates the row's July POWER source) | no |
+| politics | 187K | 0 records; Louisiana LANE / tariff vote outcome and Dominion IRP left as absences | no |
+
+~670K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).

@@ -266,3 +266,10 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   Illinois Tier 4 line was near-right with no Illinois source at all. Before dropping or rewording, grep `data/cache` for the claimed
   phrase: if a cached primary page has it, add that page to the row's sources and overrule. Also, the politics agent re-checked
   `licensing` although it was on the recently-checked list: name the skipped ids inside the check step itself, not only at the end.
+
+- **2026-11-23: a source older than the row's own source cannot make the row wrong.** The vendors agent called Aalo-X's
+  "construction and licensing in 2027" wrong on Aalo's February 2026 plan; the row cites POWER from July 2026, which says
+  exactly that. Before applying any `wrong`/`outdated` check, compare the publication date of the agent's source with the
+  row's: an older page is a superseded plan, not a correction. Same day, the deals agent called Texas "rule adopted"
+  unsupported because the lede says "unveiled"; the page's own summary says "adopted rules". Both overruled; an odd-day run
+  with no post-window news costs ~670K tokens for one gap-fill item.

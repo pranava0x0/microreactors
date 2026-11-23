@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "captured": "2026-11-23",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market. Event dates after 2026-11-19 first, then the prior 60 days (2026-09-24 onward). Skip lists read: skip/news.json, skip/candidates.json, skip/web-leads.md, skip/recently-checked.md.",
+    "angles_run": [
+      "main-session candidates (WNN Radiant expansion, POWER Blykalla HALEU)",
+      "web leads: NRC EA/FONSI Radiant Oak Ridge docket 70-7045; Nuclea/Moltex completion; WNN Berkeley prototype",
+      "general microreactor news Nov 2026 (criticality, contracts, financing)",
+      "DOE Reactor Pilot Program criticality and Nuclear Energy Launch Pad",
+      "Aalo, Valar, Antares, Last Energy status",
+      "NuCube/Launch Two SPAC vote and closing",
+      "DOE authorization milestones (Antares, Last Energy, Radiant)",
+      "Westinghouse eVinci, Janus and Fort Drum",
+      "NANO Nuclear, Deep Fission, Terrestrial Energy",
+      "HALEU and TRISO fuel deliveries; Standard Nuclear, Natura",
+      "HORNIG / ARPA-E transuranic fuel selections (gap fill, prior 60 days)",
+      "microreactor executive appointments",
+      "INL DOME and LOTUS test beds",
+      "Hadron Energy, Kairos, X-energy",
+      "Oklo Aurora-INL, Groves, Centrus HALEU"
+    ],
+    "absences": [
+      "Radiant Oak Ridge (Roane County, TN) fuel facility, docket 70-7045: the NRC environmental assessment and FONSI were not found. The NRC schedule lists them for Nov-Dec 2026. Not filed; the EA/FONSI is not the license in any case.",
+      "Nuclea Energy / Moltex IP acquisition: search results describe a signed agreement conditional on UK National Security and Investment Act approval, with no completion announcement found. The C$11.5M price is from a Dealroom summary, not a primary page. Not filed as completed.",
+      "WNN 'Agreement could see prototype microreactor built at Berkeley': a letter of intent between Cambridge Atomworks and Chiltern Vital Group for the Odin prototype at Berkeley Green Science and Technology Park, Gloucestershire. No publication date was visible in the search results, so the 60-day window could not be confirmed. Non-binding; not filed.",
+      "NuCube / Launch Two SPAC: no shareholder meeting date, vote result or closing found. An October 2026 extension vote is reported; the NuCube business combination outside date is reported as 2027-01-07 in a secondary summary. Not filed.",
+      "Reactor Pilot Program and criticality news after 2026-11-19: none surfaced. The latest DOE criticality release found is 2026-08-06 (Oklo Groves).",
+      "Valar, Aalo, Antares, Last Energy, Kairos, X-energy, Hadron, NANO Nuclear, Deep Fission, Terrestrial Energy, Natura, Westinghouse eVinci, INL DOME/LOTUS: no dated item after 2026-11-19 surfaced in search. Latest items found were 2026-11-02 to 2026-11-16 and were already shipped or are outside the band.",
+      "Oklo Aurora-INL forged-rings manufacturing partnership, 2026-11-06, https://finviz.com/news/418309/oklo-us-forged-rings-partner-to-advance-domestic-manufacturing-for-future-aurora-powerhouse-deployments : dated in window, but Aurora is a 75 MWe reactor (outside 1-20 MW). Not filed.",
+      "ANS Nuclear Newswire 'Oklo roundup' dated 2026-11-16, https://www.ans.org/news/article-8581/oklo-roundup-groves1-plans-centrus-contract-aurora-concrete/ : its Centrus contract paragraph could not be read, and its other content is already shipped (Groves-1 clearance 2026-11-12, Centrus HALEU 2026-11-13).",
+      "Terrestrial Energy / Ameresco Aberdeen Proving Ground IMSR project: announced around 2026-09; 390 MWe, outside the 1-20 MW band. Not filed.",
+      "Antares, Last Energy and Radiant DOE authorization milestones, ANS 2026-11-02: each underlying milestone (Antares Mark-1 NSDA 2026-10-23, Last Energy DSA 2026-10-07, Radiant Kaleidos DSA 2026-10-29) is already in skip/news.json. Not refiled.",
+      "Hadron Energy / GigCapital7 business combination: completed mid-2026, outside the 60-day window. Not filed."
+    ]
+  },
+  "items": [
+    {
+      "id": "standard-nuclear-hornig-triso-2026-10-29",
+      "date": "2026-10-29",
+      "headline": "Standard Nuclear wins about $7M ARPA-E award for recycled-fuel TRISO",
+      "companies": ["Standard Nuclear", "SHINE Technologies"],
+      "category": "fuel",
+      "what_happened": "DOE's ARPA-E announced eight selected projects in the HORNIG program on October 29, 2026, slated to share up to $50 million. Standard Nuclear of Oak Ridge, Tennessee, was awarded $6,999,984 for a project to make TRISO particle fuel from recycled transuranic and uranium feedstock, led with SHINE Technologies. Its company release is dated November 2, 2026.",
+      "why_it_matters": "This is a research-stage fuel award, not a fuel supply contract. A microreactor buyer should not count on this fuel path until it is qualified, and it adds a second recycled-feedstock TRISO source to the fuel field.",
+      "binding": false,
+      "binding_note": "An ARPA-E selection and award announcement. The award agreement's execution was not confirmed in the sources read.",
+      "sources": [
+        {
+          "label": "ANS Nuclear Newswire, DOE's ARPA-E selects eight transuranic fuel development projects (2026-10-29)",
+          "url": "https://www.ans.org/news/article-8532/does-arpae-selects-eight-transuranic-fuel-development-projects/",
+          "quote": "was awarded $6,999,984",
+          "status": "fetched"
+        },
+        {
+          "label": "Business Wire (via Finviz), Standard Nuclear selected by ARPA-E to develop TRISO fuel from recycled transuranic material (Nov. 2, 2026)",
+          "url": "https://finviz.com/news/413162/standard-nuclear-selected-by-arpa-e-to-develop-triso-fuel-from-recycled-transuranic-material",
+          "quote": "to receive approximately $7 million in funding",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

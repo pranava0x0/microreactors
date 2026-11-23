@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "captured": "2026-11-23",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation. Checks on shipped policy groups not on recently-checked.md (batteries, interconnection); dockets not in skip/dockets.json; News items dated after 2026-11-19 (policy/regulatory). Output: no records passed the contract bar this pass.",
+    "angles_run": [
+      "NRC Part 57 final rule status (due 2026-11-23)",
+      "FERC EL25-49 co-located load: rehearing and PJM compliance",
+      "Talen-Amazon Susquehanna rejection and rehearing",
+      "FY2027 NDAA microreactor provisions (House and Senate)",
+      "Battery majors paired with nuclear developers (interconnection/batteries check)",
+      "State PUC and utility SMR or microreactor dockets, last 90 days",
+      "Governor signings of nuclear or microreactor bills, November 2026",
+      "NRC Commission votes and approvals, November 2026",
+      "Dominion Energy 2026 IRP update (Virginia SCC PUR-2026-00163)",
+      "Radiant Oak Ridge (docket 70-7045) FONSI in Federal Register",
+      "Louisiana PSC nuclear tariff (SMR and microreactor feasibility fee)",
+      "Congress FY2027 energy and water appropriations for nuclear",
+      "CNSC microreactor licence decisions, November 2026",
+      "ONR advanced modular reactor policy, November 2026",
+      "DOE microreactor policy announcements, November 2026",
+      "Army Janus Program directives, late November 2026",
+      "Utility commission microreactor or data-center cost-recovery orders, September 2026"
+    ],
+    "absences": [
+      "NRC Part 57 (licensing group, on recently-checked.md so not checked): no final rule found. NRC Part 57 page and an October 2026 ANS article still describe it as proposed (91 FR 23628). Source: https://www.nrc.gov/facilities-safety/new-reactors/advanced-reactors/modernizing-how-we-regulate/rulemaking/proposed-part-57-licensing-requirements-for-microreactors-and-other-reactors-with-comparable-risk-profiles",
+      "FY2027 NDAA (House): H.R. 8800 carries a Harrigan amendment for a transportable microreactor deployment program in Indo-Pacific Command, adopted by voice vote in committee; the House passed the bill on or about 2026-07-22 (vote counts differ between MeriTalk and ExchangeMonitor). Dated before the 2026-11-19 window, so not filed. Source: https://repcloakroom.house.gov/amendment/h-r-8800-national-defense-authorization-act-for-fiscal-year-2027/ (snippet only, not fetched).",
+      "FY2027 NDAA (Senate): cloture on the motion to proceed failed 50-46 on 2026-07-14; no floor action or microreactor amendment found since. SASC bill directs an Air Force microreactor implementation report. Source: https://www.armed-services.senate.gov/press-releases/sasc-completes-markup-of-national-defense-authorization-act-for-fiscal-year-2027 (snippet only).",
+      "FY2027 Energy and Water appropriations: no November 2026 floor or conference action found; latest source is CRS R48944 dated 2026-06-23. Reactor Pilot Program line item not separately identified. Source: https://www.everycrsreport.com/reports/R48944.html (snippet only).",
+      "Dominion Energy 2026 IRP update, Virginia SCC PUR-2026-00163, filed 2026-10-15. Fetched SELC release dated 2026-10-16 says: \"Yesterday, Dominion Energy filed its 2026 Integrated Resource Plan (IRP) update with the State Corporation Commission (SCC).\" https://www.selc.org/?p=44854. SMR capacity conflicts across outlets (three SMR sets from 2042; 2,046 MW; 2 GW), and no fetched page gave a nuclear figure, so no docket record was filed. Primary SCC docket page not retrieved.",
+      "Louisiana PSC nuclear tariff: proposed 20-cent monthly fee on Entergy Louisiana, Cleco and SWEPCO bills to fund SMR and microreactor feasibility and site work. Vote postponed in August 2026 to the 2026-09-16 meeting. Outcome not found; the source page returned HTTP 403 and the September agenda PDF was not readable. Source: https://lailluminator.com/2026/08/13/nuclear-tariff/ (snippet only). Not filed.",
+      "Radiant Oak Ridge / Roane County, Tennessee (NRC docket 70-7045): no environmental assessment or FONSI found in the Federal Register. Results were NRC Section 106 consultation letters only. Main-session web lead not confirmed.",
+      "Texas: first SMR application to ERCOT (Blue Energy, up to 1.5 GW for a Crusoe data center), reported October 2026. Above the 1-20 MW band and grid-operator, not a PUC filing; not filed. Source: https://www.energyconnects.com/news/renewables/2026/october/first-small-nuclear-reactors-seeking-to-connect-to-texas-grid/ (snippet only).",
+      "Post-2026-11-19 policy events not found: DOE microreactor policy (none dated after 2026-11-19 surfaced); Army Janus directives (latest dated item found is 2025-11-18 or the undated five-company selection); CNSC microreactor licence decisions; ONR advanced modular reactor policy; NRC Commission votes beyond the 2026-11-09 Long Mott construction permit, which is already shipped.",
+      "Interconnection checks (not written, no correction found): FERC EL25-49 shipped text matches the Troutman June 2026 page (fetched), and FERC's 2026-08-14 notice extended PJM transmission-owner compliance to 2026-11-16 (snippet only); the shipped text does not state that deadline, but it is not wrong. Talen-Amazon 2-1 rejection and rehearing denial are consistent with the 2024 and 2025 orders in search results (snippet only). ERCOT 75 MW threshold matches the fetched SB 6 bill analysis already cited in the shipped record. SGIP 2 MW Fast Track: NatLaw fetch returned \"Synchronous and induction machines will continue to be subject to the 2 MW Fast Track threshold\" via a summarizing fetch, not verbatim-verified, so no check was written.",
+      "Batteries group, 'No battery major has signed a nuclear pairing': searches for Fluence, Tesla Megapack and Form Energy with nuclear developers returned only battery supply deals (Fluence-EVE 206 GWh framework; Form Energy-Crusoe 12 GWh; Tesla-NatPower 25 GWh). No nuclear pairing found, consistent with the shipped finding, but it is an absence claim, so no check was written."
+    ]
+  },
+  "checks": [],
+  "dockets": [],
+  "items": []
+}
