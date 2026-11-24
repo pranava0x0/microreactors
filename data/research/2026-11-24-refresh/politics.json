@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "captured": "2026-11-24",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation. Type G checks on skip/policy.json (non-excluded groups only), Type F dockets not in skip/dockets.json, Type N items category policy or regulatory dated after 2026-11-19.",
+    "angles_run": [
+      "NRC Part 57 final status (2 searches: proposed only as of latest indexed sources)",
+      "NRC interim staff guidance DANU-ISG-2026-XX effective date (web lead; 1 search + fetched Morgan Lewis post)",
+      "Radiant R-50 docket 70-7045 EA/FONSI (web lead; 1 search)",
+      "FERC EL25-49 PJM co-location after June 2026 (1 search; FERC PDF fetch returned binary, not readable)",
+      "FY2027 NDAA nuclear provisions (1 search)",
+      "FY2027 Energy and Water appropriations, Office of Nuclear Energy (1 search)",
+      "NRC Commission votes and construction permits, Nov 2026 (1 search)",
+      "State microreactor and SMR laws signed or effective, Nov 2026 (2 searches)",
+      "Utility IRPs and SMR cost-recovery dockets, Sep-Nov 2026 (4 searches; Dominion and NJ leads)",
+      "Louisiana nuclear tariff (1 search)",
+      "Army and DoD microreactor policy, Nov 2026 (1 search)",
+      "DOE Reactor Pilot Program and Launch Pad, post-deadline (1 search)",
+      "Congress nuclear bills introduced Nov 2026 (1 search)",
+      "Talen-Amazon interconnection row, 2026 status (1 search)"
+    ],
+    "absences": [
+      "Checks: no Type G check written. Policy groups licensing and diesel are excluded by skip/recently-checked.md, so the Part 57, Part 53, ADVANCE Act fee, DOE pilot, and executive-order rows could not be checked here. Price-Anderson, 45Y/48E and state siting or moratoria rows are not in skip/policy.json at all. Interconnection rows checked: FERC EL25-49 (interconnection 5): latest order found is 2026-06-18 (EL25-49-002); no later order surfaced, but the FERC PDF returned as binary with no text extractor available, so the shipped 'set aside parts of that order' wording could not be verified. No check written. Interconnection 4 (Talen-Amazon, FERC rejected twice): a search summary (https://www.powermag.com/talen-amazon-launch-18b-nuclear-ppa-a-grid-connected-ipp-model-for-the-data-center-era/) reports a restructured front-of-meter deal and a Fifth Circuit appeal filed January, undated and not fetched; a lead for the row, not a check. Batteries group: no check written (no fetched contradiction).",
+      "Part 57 (NRC microreactor rule): the web lead's 'final due 2026-11-23' is not confirmed. The latest indexed sources (ANS, 2026-10-22; https://www.ans.org/news/2026-10-22/article-8512/nrc-finalizes-rule-on-licensing-reactors-with-prior-doe-or-dod-authorization%EF%BC%9BAdvanced/) say Part 57 has not been finalized. Proposed rule published as 91 FR 23628 (sources give Apr 24 or May 1; not resolved). Docket NRC-2025-0379. The NRC regulatory-activities page could not be fetched (HTTP 403).",
+      "NRC interim staff guidance (DANU-ISG-2026-XX, DOE/DOW prior authorization): the web lead's effective date of 2026-11-23 is not confirmed. A fetched Morgan Lewis post (November 2026, https://www.morganlewis.com/blogs/upandatom/2026/11/nrc-finalizes-pathway-for-reactor-designs-previously-authorized-by-doe-or-dow) says the final rule was published 2026-10-26 and takes effect 2026-11-25, and that the draft ISG 'remains under review by the Office of Information and Regulatory Affairs and may change before issuance.' It gives no ISG effective date. Not filed.",
+      "Radiant R-50 (docket 70-7045, Roane County TN): NRC June 2026 letters (search results, not fetched, e.g. https://www.nrc.gov/docs/ML2615/ML26154A265.pdf) describe an environmental assessment in progress. No FONSI or EA was found in any search. Not filed. Application was submitted 2026-02-25 per the same letters.",
+      "New Jersey docket QO26100661 (advanced nuclear Request for Expression of Interest, Power NJ Act, at least 1,100 MW): fetched NJ BPU release dated 11/9/2026 (https://www.nj.gov/bpu/newsroom/2026/approved/20261109.html) says the BPU 'opened a public comment period' on draft guidance, comments due Dec. 4, final guidance considered Jan. 2027. It names 'advanced nuclear', not microreactors or SMRs, and the draft's microreactor or SMR terms were not retrieved. Not filed as a docket: the 'names microreactors or SMRs' test is not met. Docket number is from a search summary only.",
+      "Dominion Energy 2026 integrated resource plan (filed 2026-10-15 with the Virginia SCC and, per one report, the NCUC; roughly 2 GW of SMRs per States Newsroom and Virginia Mercury, three SMR sets from 2042 per Energy-Storage.news): not filed. Both fetches returned HTTP 403, so the filing date and SMR figure rest on search summaries that disagree. Leads: https://virginiamercury.com/2026/10/19/dominions-energy-roadmap-keeps-fossil-fuels-in-the-mix-expands-solar/ and https://www.energy-storage.news/dominion-energy-files-irp-with-plans-to-build-3-5gw-of-bess-in-pjm-over-next-20-years/",
+      "Appalachian Power SMR cost-recovery petition (Campbell County, Joshua Falls site, Virginia SCC): the SCC approved site-development spending in Nov 2025 and the company expected to petition in mid-2026. No 2026 filing, docket number or amount was found. Not filed.",
+      "Louisiana PSC 'nuclear tariff' (20-cent monthly charge on Entergy Louisiana, Cleco and SWEPCO bills to fund SMR and microreactor feasibility work): proposed August 2026, vote postponed to 2026-09-16 per Louisiana Illuminator (https://lailluminator.com/2026/08/13/nuclear-tariff/). Outcome not found. Outside the 90-day docket window, so not filed. The existing skip docket R-37871 is a related but different proceeding.",
+      "Kentucky PSC case 2025-00186 (nuclear investigation): last order found dated 2026-04-24; no November 2026 order surfaced. Not filed.",
+      "FY2027 NDAA: House Armed Services bill H.R. 8800 carries Sec. 311 (nuclear energy in DoD energy policy) and a microreactor amendment; committee-stage text (https://armedservices.house.gov/uploadedfiles/fy27_ndaa_rdy_print_-_final.pdf). The Senate bill is S. 9022 and its microreactor language was not found. No final conference text or December outcome found. Not an in-window event.",
+      "FY2027 Energy and Water appropriations: House full committee approved 34-25 on 2026-05-20 (https://appropriations.house.gov/news/press-releases/committee-approves-fy27-energy-and-water-development-appropriations-act). Senate markup status and any November action not confirmed. A $1B redirect to SMR, advanced reactor and enrichment programs appears in the Senate Republican summary. Advanced Reactors Demonstration Program figures conflict in the DOE table ($226M request vs. $269M and $226M columns); not resolved, not filed.",
+      "Congress bills in window: none found. Prior introductions are Lee-McCormick NEIDA (April 2026), Coons-Budd FIRST Act (July 2026), Risch-Gallego ARC Act (February 2026). Not in-window events.",
+      "State laws: no governor signing or law taking effect in the week of 2026-11-20 found. Pennsylvania HB 2017 (Act 37, signed July 2026) and New Jersey AB 4881 (enacted, date not found) are outside the window or undated. Arizona, Ohio, Minnesota and Nebraska measures were mentioned as pending only.",
+      "DOE Reactor Pilot Program: the EO 14301 July 4, 2026 criticality goal has passed (ANS, 2026-07-02). Successor Nuclear Energy Launch Pad (March 2026). No new November 2026 deadline or announcement found.",
+      "Army and DoD: Janus selection and $2.2B award dated 2026-08-26 (army.mil, https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors), outside the item window and already covered by the deployment-site skip rows. No November 2026 Army policy announcement found.",
+      "Already shipped, not re-filed: NRC DOE/DOW prior-authorization final rule (2026-10-22, news skip); Dow/X-energy Long Mott construction permit (2026-11-09/10, news skip); NYSERDA microreactor study (2026-11-18, news skip).",
+      "Not searched: CNSC and ONR changes; NANO Nuclear CNSC site-licence submission (web lead, international regulator, lane check not completed); Nuclea-Moltex acquisition and MARVEL criticality (news lane); Price-Anderson, 45Y/48E, state siting and moratoria rows (absent from skip/policy.json)."
+    ]
+  },
+  "checks": [],
+  "dockets": [],
+  "items": []
+}

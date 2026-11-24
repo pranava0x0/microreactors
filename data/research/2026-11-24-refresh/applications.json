@@ -1,0 +1,91 @@
+{
+ "_meta": {
+  "captured": "2026-11-24",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped deployment_sites and segments rows most likely to have changed; Type S new named buyer projects; Type E regions (none filed)",
+  "angles_run": [
+   "Type G: Penn State FRONTIER construction-permit status (deployment_sites psu-frontier)",
+   "Type G: Texas A&M RELLIS / Aalo early site permit (deployment_sites tamus-rellis)",
+   "Type G: Last Energy London Gateway MOU status (segments last-energy-london-gateway)",
+   "Type G: Last Energy Llynfi Welsh SIP application (deployment_sites lastenergy-llynfi)",
+   "Type G: Steady Energy LDR-50 Helsinki pilot (segments steady-energy-ldr50)",
+   "Type G: CSMC Arctic microreactor award (segments arctic-microreactor-canada)",
+   "Type G: Qulliq Energy Iqaluit diesel forecast (deployment_sites iqaluit-qec)",
+   "Type G: Oklo-Diamondback Permian LOI (deployment_sites oklo-diamondback-permian)",
+   "Type G: Last Energy Haskell County plan (deployment_sites lastenergy-haskell)",
+   "Type S: data centers behind the meter (Aalo / Crusoe at INL)",
+   "Type S: hospitals and health systems (2 searches, nothing citable)",
+   "Type S: disaster recovery and backup power (1 search, nothing citable)",
+   "Type S: hydrogen and ammonia (1 search, no MW figure)",
+   "Type S: desalination (1 search, already on skip list)",
+   "Type S: mines and mineral processing (1 search, already on skip list)",
+   "Type E: Chile Aysen off-grid (1 search, nothing citable)"
+  ],
+  "absences": [
+   "Type S hospitals / health systems: two searches found no named microreactor project for a hospital campus with a MW figure.",
+   "Type S disaster recovery / backup power at data centers: one search returned only baseload deals; no named backup or disaster-recovery microreactor with a MW figure.",
+   "Type S hydrogen / ammonia: Ultra Safe, Hyundai Engineering and SK Ecoplant MOU (signed 20 April, year not stated in the result; reactor to be tested at Chalk River) has no MW figure. NewHydrogen and NuCube MoU is undated with no MW figure. Not filed.",
+   "Type S desalination: Natura and NGL produced-water deal (2026-02-03) is already on the skip list (ngl-natura-produced-water-2026-02-04). No new utility desalination project found.",
+   "Type S mines: Prodigy and Des Nedhe MoU and Nuclea and New Mining MOU are already on the skip list. No new named mine PPA or offtake with a MW figure found.",
+   "Type E regions: no new region with both a price and a load number found. Only Chile (Aysen) was searched, with nothing citable: no microreactor project or nuclear bill, and the results covered a non-nuclear mid-sized-systems bill. Not searched within budget: other remote jurisdictions outside skip/regions.json.",
+   "Type G Penn State FRONTIER: no construction-permit application found in 2026 results; NRC highlights list UIUC only. Shipped 'pre-application' consistent with what was found. No check written.",
+   "Type G Texas A&M RELLIS: Aalo's 2026-07-11 letter of intent for an early site permit and a planned Q4 2026 submission are consistent with the shipped row. No filing confirmation found. No check written.",
+   "Type G Last Energy London Gateway: no 2026 update found; latest coverage is the September 2025 MOU. Shipped row consistent. No check written.",
+   "Type G Steady Energy LDR-50: first concrete 12 February 2026 confirmed by WNN coverage; lease to 2028; consistent with shipped row. No check written.",
+   "Type G CSMC Arctic: FedDev Ontario $4.5 million award dated 23 July 2026 confirmed. Currency is CAD in the press release and some outlets convert it. Shipped row does not state currency; not outdated. No check written.",
+   "Type G Qulliq Energy Iqaluit: shipped figures are the 2025/26 GRA; no 2026/27 GRA found in search results. The row labels its year, so not outdated. No check written.",
+   "Type G Oklo-Diamondback Permian: only April 2024 coverage found; no evidence of conversion or termination. Shipped 'concept' status not contradicted. No check written.",
+   "Type G Last Energy Haskell County: only February 2025 coverage; no 2026 status found. Shipped 'pre-application' not contradicted. No check written.",
+   "Dated in-band event not filed: Peru enacted a law on 2026-03-22 setting a framework for nuclear and SMRs, per CIPER column dated 2026-05-11 (https://www.ciperchile.cl/2026/05/11/1986-no-es-un-argumento-el-debate-de-la-energia-nuclear-en-chile/). Politics lane, not an applications record; the column is secondary and the law was not fetched."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-lastenergy-llynfi-1",
+   "target": "lastenergy-llynfi",
+   "file": "deployment_sites",
+   "claim": "plans a Welsh Significant Infrastructure Project (SIP) application in July 2026",
+   "verdict": "outdated",
+   "evidence": "Last Energy UK's notice dated 12 June 2026 says the company 'intends to apply to the Welsh Ministers for an Infrastructure Consent Order' and that representations were due by 31 July 2026. The notice gives no date for the application, saying only that it will be made 'before an application is submitted to the Welsh Ministers for infrastructure consent'. The July 2026 filing date in the shipped row is therefore a past, unscheduled plan, and no lodged application was found.",
+   "correction": "opened statutory pre-application consultation on a Welsh Significant Infrastructure Project (SIP) application in June 2026, with representations due 31 July 2026; no filing date has been given",
+   "sources": [
+    {
+     "label": "Public Notice Portal — Last Energy UK Limited notice of intent to apply for an Infrastructure Consent Order (Llynfi), 12 June 2026",
+     "url": "https://publicnoticeportal.uk/notice/planning/6a476b9d91c6ecb04cd4e25b",
+     "quote": "Representations must be received 31st July 2026.",
+     "status": "fetched"
+    }
+   ],
+   "review": "Main session 2026-11-24 read the notice: it is a pre-application consultation notice signed 12 June 2026 (published 03/07/26), deadline 31 July 2026, with no application date. Correction reworded to say what July 2026 actually was."
+  }
+ ],
+ "applications": [
+  {
+   "id": "aalo-crusoe-inl-data-center",
+   "segment": "data centers behind the meter",
+   "name": "Aalo Pod with Crusoe AI data centers; Crusoe Spark proof of concept at INL",
+   "status": "proposed",
+   "power_class": "50 MWe Aalo Pod (five 10 MWe reactors sharing turbines); Aalo-X 10 MWe demonstration at INL",
+   "timeline": "Crusoe Spark proof of concept at INL in 2027; Aalo Pods at Crusoe data centers by end of 2029; Aalo's own timeline lists Aalo-X for Q1 2027 and the Pod for Q3 2028",
+   "sponsor": "Crusoe (partner); who pays for the Spark data center not stated in the sources fetched",
+   "vendor": "Aalo Atomics",
+   "what_it_says": "Aalo introduced the Aalo Pod in August 2025 as a 50 MWe XMR for data centers. Aalo will initially power a Crusoe Spark modular data center at INL in 2027 as a proof of concept, and the two companies intend Pod deployments at Crusoe data centers by the end of 2029. No power purchase price or contracted load figure is published in the sources fetched.",
+   "microreactor_read": "The 50 MWe Pod is above the 1-20 MW band, but one 10 MWe Aalo unit fits it. The project is a stated intention with no PPA, price or contracted load, and the Aalo-X demonstration is not yet licensed or built.",
+   "sources": [
+    {
+     "label": "POWER Magazine — Aalo and Crusoe plan 2027 INL demonstration pairing nuclear power and AI data center load (30 July 2026)",
+     "url": "https://powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load",
+     "quote": "Aalo will initially power a Crusoe Spark modular data center running Crusoe Cloud at INL in 2027 as a proof of concept.",
+     "status": "fetched"
+    },
+    {
+     "label": "Aalo Atomics — Aalo-X and Aalo Pod timeline and specifications",
+     "url": "https://www.aalo.com/aalo-x",
+     "quote": "The Aalo Pod is a 50 MWe power plant with five 10 MWe reactors sharing multiple turbines.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  }
+ ]
+}

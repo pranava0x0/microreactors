@@ -673,3 +673,19 @@ Four Haiku agents, 2 at a time, after 5 main-session web searches. `skip/recentl
 | politics | 187K | 0 records; Louisiana LANE / tariff vote outcome and Dominion IRP left as absences | no |
 
 ~670K agent tokens for 1 news item. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-24 daily refresh (even day: all seven lanes)
+
+Seven Haiku agents, 2 at a time, after 3 main-session web searches. `skip/recently-checked.md` rebuilt (11-20..11-23) with the settled-readings block. 1 news item, 1 correction, 1 application. No browser use this run.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 158K | 1 item (Standard Nuclear DSAs for SN-TN/SN-ID, 11-06/11-12; WNN 11-24) | yes |
+| deals | 160K | 1 check: uk-lastenergy confirmed | no |
+| vendors | 168K | 0 records | no |
+| politics | 183K | 0 records; NRC interim guidance and Part 57 left as absences | no |
+| applications | 161K | 1 application (Aalo-Crusoe INL / Pods); Llynfi "July 2026 SIP application" outdated, correction reworded by hand | yes |
+| costs | 148K | 0 records | no |
+| ideas | 146K | 0 records | no |
+
+~1.12M agent tokens for 1 news item, 1 correction, 1 application. Phone cost 1.70 (baseline 1.69).

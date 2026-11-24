@@ -759,6 +759,33 @@
     }
    ],
    "group": "compute-industry"
+  },
+  {
+   "id": "aalo-crusoe-inl-data-center",
+   "segment": "data centers behind the meter",
+   "name": "Aalo Pod with Crusoe AI data centers; Crusoe Spark proof of concept at INL",
+   "status": "proposed",
+   "power_class": "50 MWe Aalo Pod (five 10 MWe reactors sharing turbines); Aalo-X 10 MWe demonstration at INL",
+   "timeline": "Crusoe Spark proof of concept at INL in 2027; Aalo Pods at Crusoe data centers by end of 2029; Aalo's own timeline lists Aalo-X for Q1 2027 and the Pod for Q3 2028",
+   "sponsor": "Crusoe (partner); who pays for the Spark data center not stated in the sources fetched",
+   "vendor": "Aalo Atomics",
+   "what_it_says": "Aalo introduced the Aalo Pod in August 2025 as a 50 MWe XMR for data centers. Aalo will initially power a Crusoe Spark modular data center at INL in 2027 as a proof of concept, and the two companies intend Pod deployments at Crusoe data centers by the end of 2029. No power purchase price or contracted load figure is published in the sources fetched.",
+   "microreactor_read": "The 50 MWe Pod is above the 1-20 MW band, but one 10 MWe Aalo unit fits it. The project is a stated intention with no PPA, price or contracted load, and the Aalo-X demonstration is not yet licensed or built.",
+   "sources": [
+    {
+     "label": "POWER Magazine — Aalo and Crusoe plan 2027 INL demonstration pairing nuclear power and AI data center load (30 July 2026)",
+     "url": "https://powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load",
+     "quote": "Aalo will initially power a Crusoe Spark modular data center running Crusoe Cloud at INL in 2027 as a proof of concept.",
+     "status": "fetched"
+    },
+    {
+     "label": "Aalo Atomics — Aalo-X and Aalo Pod timeline and specifications",
+     "url": "https://www.aalo.com/aalo-x",
+     "quote": "The Aalo Pod is a 50 MWe power plant with five 10 MWe reactors sharing multiple turbines.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
   }
  ]
 }

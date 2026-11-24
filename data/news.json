@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "captured": "2026-11-23",
+    "captured": "2026-11-24",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "63 of 114 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 51 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "binding_note": "64 of 115 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 51 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
     "window": "2026-01-05 to 2026-11-19",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
@@ -13,7 +13,7 @@
     },
     {
       "id": "fuel",
-      "count": 20
+      "count": 21
     },
     {
       "id": "contract",
@@ -236,6 +236,33 @@
           "label": "ANS Nuclear Newswire: Canada assesses its space reactor capabilities (Nov. 9, 2026)",
           "url": "https://www.ans.org/news/article-8567/canada-assesses-its-space-reactor-capabilities/",
           "quote": "lunar reactor capable of producing 20 kWe",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-triso-dsa-submitted-2026-11-06",
+      "date": "2026-11-06",
+      "headline": "Standard Nuclear sends safety analyses for two new TRISO fuel plants to DOE",
+      "companies": [
+        "Standard Nuclear"
+      ],
+      "category": "fuel",
+      "what_happened": "Standard Nuclear submitted Documented Safety Analyses to DOE for two identical TRISO fuel plants: SN-TN in Tennessee on 6 November 2026 and SN-ID in Idaho on 12 November 2026. DOE had approved the preliminary safety analyses for both in July, and each plant could initially make up to 1 metric ton of uranium as TRISO a year.",
+      "why_it_matters": "The DSA is the last major DOE safety document before a fuel line can run. Neither plant is authorized yet, so buyers should not count their output in near-term microreactor fuel supply until DOE approves the DSA.",
+      "binding": true,
+      "binding_note": "A filed application: the DSAs were submitted to DOE for review. This is not an approval; DOE has not yet authorized either plant.",
+      "sources": [
+        {
+          "label": "World Nuclear News - Key step in licensing of US TRISO fuel facilities (2026-11-24)",
+          "url": "https://www.world-nuclear-news.org/articles/key-step-in-licensing-of-us-triso-fuel-facilities",
+          "quote": "Standard Nuclear has submitted the Documented Safety Analyses for two new identical TRISO fuel production facilities",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society - Standard Nuclear plans TRISO production at two new facilities in 2026 (2026-07-24)",
+          "url": "https://www.ans.org/news/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/",
+          "quote": "the Department of Energy has approved the preliminary documented safety analyses (PDSAs) for both facilities",
           "status": "fetched"
         }
       ]

@@ -273,3 +273,10 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   row's: an older page is a superseded plan, not a correction. Same day, the deals agent called Texas "rule adopted"
   unsupported because the lede says "unveiled"; the page's own summary says "adopted rules". Both overruled; an odd-day run
   with no post-window news costs ~670K tokens for one gap-fill item.
+
+- **2026-11-24: a web-search summary's "effective date" can be off by a step, and a lead headline can name the wrong company.** The
+  summary said NRC "interim guidance" took effect 11-23; the Federal Register API (`/api/v1/documents/<doc>.json`) shows it is the
+  DOE/DoW prior-authorization final rule, published 10-26, effective 11-25, and shipped 10-22. The WNN "TRISO fuel facilities" lead
+  that the main session took for Radiant's R-50 FONSI was Standard Nuclear's DSAs. Check a lead against the FR API or the article text
+  before writing it into `web-leads.md` as a fact. Also, `verify_pass_quotes.py` marks a news quote FABRICATED when the span starts
+  at the verb ("has submitted ..."); prefixing the subject ("Standard Nuclear has submitted ...") clears it.
