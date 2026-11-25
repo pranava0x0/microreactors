@@ -689,3 +689,16 @@ Seven Haiku agents, 2 at a time, after 3 main-session web searches. `skip/recent
 | ideas | 146K | 0 records | no |
 
 ~1.12M agent tokens for 1 news item, 1 correction, 1 application. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-25 daily refresh (odd day: news, deals, vendors, politics)
+
+Four Haiku agents, 2 at a time, after 2 main-session web searches and one Federal Register API query (which found the Radiant FONSI the searches missed). `skip/recently-checked.md` rebuilt (11-21..11-24) with the settled-readings block. 1 news item, 1 correction. No browser use this run.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 174K | 1 item (NRC EA/FONSI for Radiant's Oak Ridge R-50 fuel packing facility, FR 2026-11-23); why_it_matters tightened to the FR's wording | yes |
+| deals | 151K | 1 check: oklo-switch confirmed | no |
+| vendors | 160K | 1 check: radiant Janus "Army cautions" called unsupported; overruled (the row's POWER source quotes the Army's Waksman) | no |
+| politics | 179K | 1 check: Texas HB 14 "workforce" expenses unsupported; main session read the enrolled bill and turned it into a correction, bill text added as a source | yes |
+
+~664K agent tokens for 1 news item and 1 correction. Phone cost 1.70 (baseline 1.69).

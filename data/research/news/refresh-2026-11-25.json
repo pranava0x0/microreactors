@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "captured": "2026-11-25",
+    "agent": "refresh-2026-11-25",
+    "scope": "daily refresh: haiku agents, quotes repaired and verified offline"
+  },
+  "items": [
+    {
+      "id": "radiant-oak-ridge-fuel-packing-fonsi-2026-11-23",
+      "date": "2026-11-23",
+      "headline": "NRC finds no significant impact for Radiant's Oak Ridge TRISO fuel facility",
+      "companies": [
+        "Radiant Industries",
+        "NRC"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC published an environmental assessment and finding of no significant impact (FONSI) for Radiant's special nuclear material license application for a fuel facility at its R-50 site in Oak Ridge, Tennessee, in the Federal Register on 23 November 2026. The license would let Radiant receive TRISO fuel and package compacts into monoliths for its 1 MWe Kaleidos reactors, and the NRC did not prepare an environmental impact statement. The NRC accepted the application in May 2026 and the license has not yet been issued.",
+      "why_it_matters": "A FONSI clears the environmental review for fuel handling at the Oak Ridge site. It is not the license, and later phases there (reactor fueling, testing, and storage before deployment to customer sites) must be licensed separately.",
+      "binding": false,
+      "binding_note": "A FONSI is an environmental finding. The special nuclear material license has not been issued, and the NRC still has to decide on it.",
+      "sources": [
+        {
+          "label": "Federal Register, Vol. 91 No. 224 — NRC, Radiant Industries special nuclear materials license application for a fuel packing facility; EA and FONSI (2026-11-23)",
+          "url": "https://www.federalregister.gov/documents/full_text/text/2026/11/23/2026-23754.txt",
+          "quote": "Additional activities must be licensed separately and may require environmental reviews.",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society, Nuclear News — NRC to review Radiant R-50 Part 70 license application (2026-05-06)",
+          "url": "https://www.ans.org/news/2026-05-06/article-8009/nrc-to-review-radiant-r50-part-70-license-application/",
+          "quote": "The NRC's acceptance confirms that Radiant's application is sufficiently complete for detailed technical review",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

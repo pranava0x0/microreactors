@@ -280,3 +280,9 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   that the main session took for Radiant's R-50 FONSI was Standard Nuclear's DSAs. Check a lead against the FR API or the article text
   before writing it into `web-leads.md` as a fact. Also, `verify_pass_quotes.py` marks a news quote FABRICATED when the span starts
   at the verb ("has submitted ..."); prefixing the subject ("Standard Nuclear has submitted ...") clears it.
+
+- **2026-11-25: query the Federal Register API for named leads before handing them to agents.** Yesterday's pass left the Radiant
+  R-50 FONSI as an absence ("no Federal Register notice found"); `federalregister.gov/api/v1/documents.json?conditions[term]=Radiant+Industries`
+  returned it (doc 2026-23754, published 11-23) in one call, with a plain-text `full_text/text/...txt` URL that `fetch_source.py`
+  caches cleanly. Same day, an agent's `unsupported` on an enacted-bill row was right but for the wrong reason: read the enrolled
+  bill text (capitol.texas.gov `billtext/html/*F.htm` curls fine) before deciding, and cite it on the row.

@@ -518,12 +518,24 @@
           "name": "Texas HB 14 funds microreactors by name",
           "status": "enacted",
           "kind": "enacted",
-          "mechanism": "Signed June 2025, HB 14 created the Texas Advanced Nuclear Energy Office and a $350M development fund, reimbursing project, workforce and supply-chain expenses for advanced nuclear including microreactors. Unlike the state's backup-power program, this one names the technology.",
+          "mechanism": "Signed June 2025, HB 14 created the Texas Advanced Nuclear Energy Office and a $350M development fund, reimbursing project-development and supply-chain expenses (from feasibility studies and licensing work to manufacturing capacity and fuel fabrication) for advanced nuclear including microreactors. Unlike the state's backup-power program, this one names the technology.",
           "sources": [
             {
               "label": "Texas Governor — HB 14 signing statement",
               "url": "https://gov.texas.gov/news/post/governor-abbott-congratulates-texas-legislature-for-passing-nuclear-power-legislation",
               "quote": "$350 million—the largest national commitment",
+              "status": "fetched"
+            },
+            {
+              "label": "Texas Legislature — H.B. No. 14, enrolled text (89th Legislature, 2025), Sec. 483.203(b)",
+              "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00014F.htm",
+              "quote": "developing manufacturing capacity and readiness",
+              "status": "fetched"
+            },
+            {
+              "label": "Texas Legislature — H.B. No. 14, enrolled text (89th Legislature, 2025), Sec. 483.203(b)",
+              "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00014F.htm",
+              "quote": "developing manufacturing capacity and readiness",
               "status": "fetched"
             }
           ]

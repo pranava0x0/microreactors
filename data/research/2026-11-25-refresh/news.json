@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "captured": "2026-11-25",
+    "agent": "news",
+    "scope": "News tab: 1-20 MW microreactor market events after 2026-11-19, then any gap in the prior 60 days. Starts from skip/candidates.json and skip/web-leads.md. Does not file ids or events already in skip/news.json. Stays out of the deals, politics, vendors, applications, costs and ideas lanes.",
+    "angles_run": [
+      "candidates: Radiant Oak Ridge FONSI (fetched); WNN BWXT AP1000 (out of band, skipped); WNN Radiant expansion (already shipped as radiant-manufacturing-expansion-2026-11-19, skipped); POWER Blykalla HALEU (out of band, skipped)",
+      "reactor criticality and testing: DOE Reactor Pilot Program, INL DOME, Radiant Kaleidos, Westinghouse eVinci, Deployable Energy Unity-1, Valar Ward250",
+      "factories and construction: Radiant El Segundo/Oak Ridge, Antares, Last Energy PWR-20, INL/Purdue construction demonstration",
+      "financing and SPAC/IPO: Oklo Q3 update, Standard Nuclear, Deep Fission, Terrestrial Energy Q3, Valar, Aalo/Crusoe",
+      "fuel: HALEU (Centrus, Radiant, Antares, Natura), TRISO (Standard Nuclear, BWXT, Radiant), Nuclea/Moltex",
+      "first-of-a-kind deployments: Army Janus (Fort Hood, Fort Drum, Fort Benning, Fort Bragg), Navy Crane, Kairos Hermes 2, NANO Nuclear KRONOS",
+      "setbacks and cancellations and key personnel: sweep found none dated after 2026-11-19",
+      "company sweep: Radiant, Westinghouse eVinci, BWXT, Oklo, Antares, Aalo, Valar, Last Energy, NANO Nuclear, X-energy, Kairos, Deployable Energy, Deep Fission, Terrestrial, Holtec, General Atomics, Natura, Blue Energy, Centrus, Standard Nuclear"
+    ],
+    "absences": [
+      "Search budget (about 24 searches, 3 fetches) returned almost nothing dated after 2026-11-19 beyond the Radiant FONSI. Searches on Westinghouse eVinci, Antares Mark-1, Valar, Aalo, Last Energy, Deployable Energy, Radiant DOME/Navy Crane, DOE Reactor Pilot Program, Janus, Kairos, Standard Nuclear, Centrus, Holtec, Blue Energy and Natura found no new in-band item dated 2026-11-20 or later.",
+      "Radiant Kaleidos DOME criticality: no report found. Earlier schedule slipped past the June 2026 target in an INL March presentation; the current status is not verifiable from this sweep.",
+      "Oklo Forged Rings reservation (27 Aurora module-equivalents for 2030-2035): reported in Oklo's Q3 2026 update, roughly 2026-11-06/07, and by ANS Nuclear News on 2026-11-16 at https://www.ans.org/news/article-8581/oklo-roundup-groves1-plans-centrus-contract-aurora-concrete/. Not filed: the primary Oklo release or 10-Q was not fetched, and the same earnings call already produced the shipped row oklo-aurora-startup-2028-2029-2026-11-06 (possible overlap).",
+      "Nuclea Energy and Moltex technology acquisition: a signing announcement with no date found. Completion is subject to UK National Security and Investment Act approval and no closing date was found. Not filed (per web-leads.md).",
+      "INL and Purdue construction demonstration for advanced reactors (NRIC/ACTI), announced 2026-11-05: https://inl.gov/news-release/department-of-energy-and-purdue-partner-to-improve-nuclear-reactor-construction/. Generic SMR containment and building construction research, not a 1-20 MW reactor, not fetched. Not filed.",
+      "Terrestrial Energy Q3 2026 results, 2026-11-10: company update with no discrete milestone found. Project TETRA has no DOE authorization or construction date in results. Not filed.",
+      "Last Energy Texas PWR-20 site: the Federal Register early-construction notice gives Caldwell County, while NRC pre-application and press coverage say Haskell County. The filed row already covers the 2026-10-20 NRC request. Not verified against NRC; the county discrepancy is not resolved here.",
+      "Natura Resources, Holtec, Blue Energy, Centrus and Standard Nuclear: no 2026-11-20-or-later item found in the sweep.",
+      "Out of scope and not filed: BWXT AP1000 manufacturing qualification (WNN, 2026-11-25; large LWR), Blykalla HALEU enrichment contract (POWER, 2026-11-19; lead-cooled 55 MWe), Crusoe-Aalo INL partnership (2026-07-30; outside the 60-day gap)."
+    ]
+  },
+  "items": [
+    {
+      "id": "radiant-oak-ridge-fuel-packing-fonsi-2026-11-23",
+      "date": "2026-11-23",
+      "headline": "NRC finds no significant impact for Radiant's Oak Ridge TRISO fuel facility",
+      "companies": [
+        "Radiant Industries",
+        "NRC"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC published an environmental assessment and finding of no significant impact (FONSI) for Radiant's special nuclear material license application for a fuel facility at its R-50 site in Oak Ridge, Tennessee, in the Federal Register on 23 November 2026. The license would let Radiant receive TRISO fuel and package compacts into monoliths for its 1 MWe Kaleidos reactors, and the NRC did not prepare an environmental impact statement. The NRC accepted the application in May 2026 and the license has not yet been issued.",
+      "why_it_matters": "A FONSI clears the environmental review for fuel handling at the Oak Ridge site. It is not the license, and later phases there (reactor fueling, testing, and storage before deployment to customer sites) must be licensed separately.",
+      "binding": false,
+      "binding_note": "A FONSI is an environmental finding. The special nuclear material license has not been issued, and the NRC still has to decide on it.",
+      "sources": [
+        {
+          "label": "Federal Register, Vol. 91 No. 224 — NRC, Radiant Industries special nuclear materials license application for a fuel packing facility; EA and FONSI (2026-11-23)",
+          "url": "https://www.federalregister.gov/documents/full_text/text/2026/11/23/2026-23754.txt",
+          "quote": "Additional activities must be licensed separately and may require environmental reviews.",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society, Nuclear News — NRC to review Radiant R-50 Part 70 license application (2026-05-06)",
+          "url": "https://www.ans.org/news/2026-05-06/article-8009/nrc-to-review-radiant-r50-part-70-license-application/",
+          "quote": "The NRC's acceptance confirms that Radiant's application is sufficiently complete for detailed technical review",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}
