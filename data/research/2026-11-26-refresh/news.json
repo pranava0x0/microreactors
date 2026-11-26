@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "captured": "2026-11-26",
+    "agent": "news",
+    "scope": "News tab, 1-20 MW microreactor market, events after 2026-11-23 and a 60-day gap check. Skip/candidates.json read first; 1 watcher candidate (WNN 2026-11-25 Westinghouse-BWXT AP1000 qualification) is out of band (large LWR) and not filed. Web-leads checked: MARVEL fuel delivery, Nuclea-Moltex completion. Budget used: about 20 web searches, 5 fetches (3 blocked or 404).",
+    "angles_run": [
+      "watcher candidates (skip/candidates.json)",
+      "web-leads: INL MARVEL fuel delivery (inl.gov/news 403; energy.gov 404; no primary page found)",
+      "web-leads: Nuclea-Moltex completion (no closing announcement found; signed deal still pending UK NSIA approval)",
+      "web-leads: NRC third workshop on licensing pathways (not checked; no microreactor-licensing content identified)",
+      "reactor criticality and testing (Reactor Pilot Program, DOME, LOTUS)",
+      "factories and construction (INL-Purdue NRIC construction demonstration, 2026-11-05)",
+      "financing and SPAC/IPO (no post-11-23 event found)",
+      "fuel (HALEU, TRISO deliveries; no post-11-23 event found)",
+      "first-of-a-kind deployments and DOE authorization milestones (Antares, Last Energy, Radiant Oct-Nov 2026; all already shipped)",
+      "setbacks and cancellations (no microreactor cancellation dated 2026-11; Bechtel-TerraPower Natrium exit is SMR-scale and dated September)",
+      "key hires and departures (X-energy TRISO-X president Joel Duling retirement, announced 2026-09-25, effective 2026-11-20: fuel-unit leadership at a 50+ MWe developer, out of band, not filed)",
+      "company sweeps: Oklo, Valar, Antares, Aalo, NANO Nuclear, Deep Fission, Last Energy, Natura, Terrestrial, Deployable, Westinghouse eVinci, Kairos, X-energy (no late-November 2026 release found for any)"
+    ],
+    "absences": [
+      "No item dated after 2026-11-23 was found in the search index that is not already on the News tab. The index shows almost nothing after mid-November 2026 for any company in the sweep list.",
+      "INL MARVEL fuel delivery (search summary, about 2026-11-19): not confirmed. inl.gov/news returned HTTP 403 and energy.gov/ne returned HTTP 404 to WebFetch. Only older DOE planning pages surfaced. Not filed.",
+      "Nuclea-Moltex completion: no closing announcement found. Sources describe a signed deal pending UK National Security and Investment Act approval. Not filed.",
+      "NRC third public workshop on new reactor licensing pathways (advisory dated 2026-11-25): not fetched. No microreactor-licensing (Part 57) content identified in any search result. Not filed.",
+      "INL-Purdue NRIC construction demonstration (announced 2026-11-05): real and dated, but a scaled steel-plate containment and reactor-building test for SMR-class construction, with no microreactor or 1-20 MW buyer content. Out of band; not filed.",
+      "X-energy TRISO-X president Joel Duling retirement (announced 2026-09-25, effective 2026-11-20): primary GlobeNewswire release found, but fuel-unit leadership at an 80 MWe-class developer. Out of band; not filed.",
+      "DOE Reactor Pilot Program criticality in December 2026 (MARVEL, INL expects December per shipped item): no confirmation of any December criticality event or schedule in search results. DOE program page returned 404.",
+      "Deployable Energy, Terrestrial Energy, Deep Fission, Last Energy, Kairos and Natura: no post-11-23 announcement found in the index.",
+      "ANS Nuclear Newswire RSS and NRC press releases: blocked for non-browser clients (per skip/candidates.json _meta.blocked); Radiant and Oklo IR pages returned 403 to WebFetch. Primary company newsrooms were not checkable this run."
+    ]
+  },
+  "items": []
+}

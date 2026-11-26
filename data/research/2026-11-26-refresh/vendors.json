@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "captured": "2026-11-26",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (skip list applied: aalo-x, radiant), and Type N items for vendor milestones dated after 2026-11-23 not in skip/news.json, including non-table 1-20 MWe vendors.",
+    "angles_run": [
+      "valar-ward250: Ward 250 news Nov 2026; Project Beehive BLM status",
+      "antares: Mark-1 news Nov 2026; Mark-1 DOE NSDA (Oct 23)",
+      "evinci: Fort Drum / Janus milestone Nov 2026; NCERC criticality",
+      "oklo-aurora: INL construction milestone Nov 2026; Oklo primary release",
+      "non-table vendors: NANO Nuclear KRONOS/ZEUS; Last Energy PWR-20; Deployable Energy DOME; Steady, Natura, Blue Energy, Terra Innovatum",
+      "Last Energy Texas PWR-5 DSA (WNN, dated 2026-10-08)",
+      "Deployable Energy DOME selection (INL release dated 2026-09-30)"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-23 found for valar-ward250, antares, evinci, oklo-aurora (searches returned nothing newer than Oct 2026 for Valar and Antares, Sept 2026 for eVinci; Oklo's Aurora concrete/steel update is dated 2026-11-11, before the window).",
+      "bwxt-banr and general-atomics-ga-tes not searched: search budget spent on higher-yield rows.",
+      "Non-table vendors with no dated Nov 2026 event found: NANO Nuclear (KRONOS/ZEUS), Last Energy (latest DSA item 2026-10-08), Deployable Energy (DOME selection 2026-09-30, testing 2027), Steady Energy, Natura Resources, Blue Energy, Terra Innovatum. Searches returned only undated or older items.",
+      "Oklo Aurora November 2026 concrete/steel update (2026-11-11) rests on a Nuclear News summary of an X post; Oklo primary release not located. Not an item (before window) and not a check (no shipped claim contradicted).",
+      "Antares Mark-1 DOE NSDA approval (2026-10-23) and Mark-1 INL 2027 campaign: shipped antares row does not carry them, but both predate the window, so not filed as items.",
+      "ANS article 8549 (Antares/Last Energy/Radiant DOE milestones) returned HTTP 522 on fetch; not used as a source.",
+      "Valar Price, UT BLM application: latest reporting (late Sept to early Oct 2026) says still under completeness review; no later decision found. Shipped note is consistent with this."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

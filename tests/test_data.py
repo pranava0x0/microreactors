@@ -263,3 +263,31 @@ class ArgumentsDataset(unittest.TestCase):
             self.assertIn(a["basis"], ("rule", "physical", "commercial"), a["id"])
             self.assertTrue(a["notes"], a["id"])
             self.assertEqual(a["note_count"], len(a["notes"]), a["id"])
+
+
+class NoDuplicateSources(unittest.TestCase):
+    """A `sources` list must not carry the same (url, quote) pair twice.
+
+    Added 2026-11-26: the HB 14 enrolled-text citation landed twice on the
+    policy licensing row during the 2026-11-25 refresh and no gate noticed."""
+
+    def test_no_repeated_source(self):
+        sys.path.insert(0, str(ROOT / "tools"))
+        import build_data
+        dups = []
+
+        def walk(n, path):
+            if isinstance(n, dict):
+                if isinstance(n.get("sources"), list):
+                    keys = [(s.get("url"), s.get("quote")) for s in n["sources"] if isinstance(s, dict)]
+                    if len(keys) != len(set(keys)):
+                        dups.append(path)
+                for k, v in n.items():
+                    walk(v, f"{path}/{k}")
+            elif isinstance(n, list):
+                for i, v in enumerate(n):
+                    walk(v, f"{path}[{i}]")
+
+        for name in list(build_data.FILES) + ["news"]:
+            walk(load(f"{name}.json"), name)
+        self.assertEqual(dups, [], f"repeated sources at {dups}")

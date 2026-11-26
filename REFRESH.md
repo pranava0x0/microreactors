@@ -286,3 +286,10 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   returned it (doc 2026-23754, published 11-23) in one call, with a plain-text `full_text/text/...txt` URL that `fetch_source.py`
   caches cleanly. Same day, an agent's `unsupported` on an enacted-bill row was right but for the wrong reason: read the enrolled
   bill text (capitol.texas.gov `billtext/html/*F.htm` curls fine) before deciding, and cite it on the row.
+
+- **2026-11-26: on a holiday week the applications lane is the only one that pays, because it checks stale milestones, not new events.**
+  All seven lanes cost ~1.08M tokens; news, deals, vendors, costs and ideas produced 0 shipped records, while applications found three
+  segment rows frozen at an earlier milestone (UIUC KRONOS docketing, Last Energy's DSA approval, both already in the news tab). A row
+  whose `timeline` names a step the news tab has since overtaken is the cheapest correction there is: grep news.json for the row's
+  vendor before each run. Also, inl.gov now serves a bot-verification page to headless Playwright (supersedes the 10-21 note), and a
+  merged-twice source on `policy/licensing` passed every gate until `NoDuplicateSources` was added to `tests/test_data.py`.

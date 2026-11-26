@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "captured": "2026-11-26",
+    "agent": "costs",
+    "scope": "Type G checks on costs.json rows (microreactor_lcoe, incentives); Type N items for fuel/financing events after 2026-11-23 not in skip/news.json",
+    "angles_run": [
+      "Alaska PCE base-rate revision (U-26-010) and RCA order status",
+      "INL MARVEL fuel delivery (web lead) via energy.gov and inl.gov news",
+      "HALEU deliveries, enrichment contracts, DOE fuel awards after 2026-11-23",
+      "Microreactor diesel breakeven $1.50/L source (shipped row)",
+      "OBBBA §45Y/§48E nuclear construction-start window (primary and secondary)",
+      "DOE LPO/EDF loans for fuel or enrichment after 2026-11-23",
+      "arXiv 2506.13361 LCOE band and PTC effect (shipped row microreactor_lcoe[5])",
+      "NEI cost report (shipped rows microreactor_lcoe[0-1]) and Nuclear Business Platform band (microreactor_lcoe[4])"
+    ],
+    "absences": [
+      "No fuel-supply or financing item dated after 2026-11-23 found: searches for HALEU deliveries, enrichment contracts, DOE fuel awards and DOE/EDF loans returned only items dated July 2026 or earlier (Centrus $900M task order July 2026, DOE enrichment task orders 5 Jan 2026, EDF Constellation $5B 27 Oct 2026). Items array omitted.",
+      "MARVEL fuel delivery (web lead, ~2026-11-19) not confirmed: energy.gov fuel-fabrication page is dated 7 Feb 2024 and states the first shipment was expected spring 2025; inl.gov/news listing (fetched) has no MARVEL fuel-delivery release in November 2026 (latest 23 Nov: Guidedwave).",
+      "Shipped displaced_alternatives[2] diesel breakeven of $1.50/litre (cited to ScienceDirect S2210670723002317): not verified. ScienceDirect returned 403 to WebFetch and the browser pane. No check written.",
+      "Shipped microreactor_lcoe[0] and [1] (NEI 2019 FOAK/NOAK bands): NEI page returned 403. Not verified.",
+      "Shipped microreactor_lcoe[4] (Nuclear Business Platform, 200-330): fetched text gives USD 0.20-0.33/kWh, which equals the shipped band, but the page shows 'Oct 10' with no year, so no dated confirmation. Shipped currency field 'not stated' could read USD; not a verdict.",
+      "Alaska PCE: RCA docket U-26-010 proposes a FY2027 base amount of 22.11 cents/kWh (notice dated 1 May 2026; written comments due 2 June 2026, hearing 9 June 2026). No final order found, so no correction to the shipped 19.35 cents/kWh FY2024 figure. The shipped 20.38 cents/kWh BRC is not a verdict either.",
+      "Two checks each rest on one primary document (the second-document rule could not be met inside quota). Morgan Lewis (24 July 2025) is secondary and too old to confirm on its own.",
+      "Remaining Type G targets not fetched within quota: capex and learning_curve rows (INL RPT-24-80433, already verified 2026-08-29 per skip), archetypes, and the Alaska FY2024 per-utility $0.41-$1.95/kWh appendix (RCA order too large for the fetch)."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-microreactor_lcoe-5-1",
+      "target": "microreactor_lcoe[5]",
+      "file": "costs",
+      "claim": "Optimized design, with PTC (U.S. only): low_mwh 48.21, high_mwh 78.32. Basis: Genetic-algorithm optimization over design parameters; capital cost drawn from a $2,500–4,000/kW (nominal $3,000) nth-of-a-kind distribution, itself sourced to the NEI study above. The paper reports the PTC cutting LCOE by 22–24%, so the same optimization unsubsidised lands near $63–103/MWh (derived, not published).",
+      "verdict": "confirmed",
+      "evidence": "arXiv 2506.13361 (Abdussami et al.) abstract, fetched 2026-11-26: LCOEs of $48.21/MWh to $78.32/MWh with the PTC, and the PTC reduces LCOE by 22-24%. Paper submitted 16 June 2025, v2 revised 19 December 2025. The abstract page gives no $/kW capital cost range, so the $2,500-4,000/kW input is not checked here. Note: the shipped unsubsidised band $63-103/MWh uses 24% at both ends; using the full 22-24% range gives about $62-103/MWh (48.21/0.78 to 78.32/0.76).",
+      "sources": [
+        {
+          "label": "Abdussami et al. — arXiv 2506.13361 (abstract, v2 Dec 2025)",
+          "url": "https://arxiv.org/abs/2506.13361",
+          "quote": "/MWh when supported by the Production Tax Credit (PTC)",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-incentives-points-0-1",
+      "target": "incentives.points[0]",
+      "file": "costs",
+      "claim": "§45Y/§48E survive for new nuclear that begins construction before 2034, then phase out over three years; the emissions-based sunset trigger was replaced by these fixed dates.",
+      "verdict": "confirmed",
+      "evidence": "Codified 26 U.S.C. 45Y as fetched 2026-11-26 (Cornell LII): subsection (d)(3) sets the applicable year as calendar year 2032; (d)(2)(A) gives 100 percent for construction beginning in the first calendar year following the applicable year (2033), (d)(2)(B) 75 percent for the second year (2034), (d)(2)(C) 50 percent for the third (2035), and (d)(2)(D) 0 percent after. The codified text has no nuclear-specific deadline: the 2034 cutoff and three-year phase-down come from the general schedule that applies to all facilities, which the shipped 'kept them for nuclear' framing does not say. Secondary law-firm summary (Morgan Lewis, 24 July 2025) also gives the 2034 date.",
+      "sources": [
+        {
+          "label": "Cornell LII — 26 U.S.C. 45Y, Clean electricity production credit (current text)",
+          "url": "https://www.law.cornell.edu/uscode/text/26/45Y",
+          "quote": "means calendar year 2032",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

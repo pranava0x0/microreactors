@@ -702,3 +702,19 @@ Four Haiku agents, 2 at a time, after 2 main-session web searches and one Federa
 | politics | 179K | 1 check: Texas HB 14 "workforce" expenses unsupported; main session read the enrolled bill and turned it into a correction, bill text added as a source | yes |
 
 ~664K agent tokens for 1 news item and 1 correction. Phone cost 1.70 (baseline 1.69).
+
+## 2026-11-26 daily refresh (even day: all seven lanes)
+
+Seven Haiku agents, 2 at a time, after 4 main-session web searches (one `extended`). `skip/recently-checked.md` rebuilt (11-22..11-25) and the skipped ids named inside each prompt's check step. 0 news, 3 corrections, 1 docket, 1 application. Merge-gate review of PR #41 found the HB 14 bill source shipped twice on `policy/licensing`; removed, and `tests/test_data.py::NoDuplicateSources` added (fails on the old file). No Chrome use; the browser pane's existing tab was left alone.
+
+| agent | tokens | result | worth it |
+|---|---|---|---|
+| news | 152K | 0 items (Thanksgiving week; MARVEL fuel-delivery lead blocked by inl.gov) | no |
+| deals | 135K | 2 checks confirmed (anpi-jbsa, nano-supermicro) | no |
+| vendors | 133K | 0 records | no |
+| politics | 170K | 1 docket: Appalachian Power Joshua Falls SMR site-cost recovery (VA SCC); main session rewrote it from the article and added the ~$100M site estimate | yes |
+| applications | 198K | 3 segment corrections (UIUC KRONOS docketed 2026-05-18; Last Energy DSA approved 2026-10-07; Penn State LOI "submitted", not "announced") + Jyväskylä LDR-50 application; its May news item dropped (out of window, above band) | yes |
+| costs | 153K | 2 checks confirmed (arXiv LCOE band, 45Y applicable year 2032) | no |
+| ideas | 143K | 1 check confirmed (Price-Anderson $158,026,000) | no |
+
+~1.08M agent tokens for 0 news items, 3 corrections, 1 docket, 1 application. 4 FABRICATED quote flags were all extractor artifacts (trailing period mid-sentence x2, arXiv `\$`, Cornell LII curly quotes); spans trimmed. Phone cost 1.70 (baseline 1.69).

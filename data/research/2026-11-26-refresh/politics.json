@@ -1,0 +1,56 @@
+{
+ "_meta": {
+  "captured": "2026-11-26",
+  "agent": "politics",
+  "scope": "Rules & deal design tab: politics and regulation. Type G checks on shipped policy rows not on the settled skip list (batteries and interconnection groups only; licensing and diesel skipped per the prompt), Type F dockets filed or decided in the last 90 days, Type N policy and regulatory items dated after 2026-11-23.",
+  "angles_run": [
+   "policy.json batteries and interconnection rows: FERC EL25-49 status, Talen-Amazon appeal, ERCOT SB 6 75 MW rule",
+   "NRC Part 57 status and Commission actions (Nov 2026)",
+   "NRC third licensing-pathways workshop advisory",
+   "FY2027 NDAA microreactor provisions and Army Janus program",
+   "FY2027 Energy and Water appropriations (DOE Office of Nuclear Energy)",
+   "state microreactor and SMR legislation 2026 (PA, IL, OH SB 294, NJ, IN)",
+   "state PUC and IRP SMR dockets 2026 (VA SCC Appalachian Power, NCUC Duke, PNM, Ameren)",
+   "DOE Reactor Pilot Program announcements after 2026-11-23",
+   "executive-order deadlines (Army 2028, DOE first-site goal)",
+   "Congress microreactor bills introduced Nov 2026",
+   "battery-major nuclear pairings (Tesla, Fluence, Form Energy) as check on 'No battery major has signed a nuclear pairing'"
+  ],
+  "absences": [
+   "Checks: none written. The prompt's named rows (NRC Part 57, Part 53, ADVANCE Act fees, DOE Reactor Pilot Program, 2025 executive orders, Texas HB 14, Alaska SB 177) sit in the policy 'licensing' group, which the skip list excludes for this step, so they were not checked. Price-Anderson and 45Y/48E rows do not exist in skip/policy.json and were not searched.",
+   "Checks: no fetched page contradicted any shipped batteries or interconnection row. FERC EL25-49 (PJM Nov 18, 2026 filing ER27-531): contents not retrieved, only search summaries. Talen-Amazon: search results show FERC rejection, rehearing denial and a Fifth Circuit appeal but no 2026 status. ERCOT 75 MW: a PUCT final rule dated 2026-09-18 (Project 58481) appears in one law-firm summary only and was not fetched.",
+   "Checks: 'No battery major has signed a nuclear pairing' was searched. Results show Energy Vault with NuCube (announced Jan 2025, a battery storage company rather than a major) and GridMarket with Deployable Energy (July 2026, no battery partner named). Tesla, Fluence and Form Energy returned nothing. No verdict written because the Energy Vault match turns on how 'battery major' is defined.",
+   "Items: no dated Congress, NRC commission, DOE or DoD policy event after 2026-11-23 was found. NRC advisory on a third new-reactor licensing-pathways workshop is listed in the NRC news sidebar at 2026-11-25; the advisory page itself gives no date, topics or microreactor content, so it was not filed under web-leads rules. The 'License to Launch Workshop #3' (MCA vs MHA source terms, 2026-12-02) appears only in a search summary.",
+   "Items: NRC Part 57 final rule. No Commission vote, Federal Register final rule or NRC press release found through 2026-11-26. The most recent coverage (ANS, 2026-10-22) says Part 57 has not been finalized. Part 57 is in the licensing group, so not checked; reported here as the status of an item that missed its 2026-11-23 target.",
+   "Items: NDAA. HASC and SASC FY2027 bills include microreactor and advanced-nuclear sections, but no enacted text or conference outcome was found. A search summary gives a 44-12 HASC vote without a fetched source.",
+   "Items: FY2027 Energy and Water. House committee approved H.R. 9022 on 2026-04-22 (CRS); Senate draft is marked July 2026. The Senate Office of Nuclear Energy figure was not retrieved; no November floor action found.",
+   "Items: DOE Reactor Pilot Program. No announcement dated after 2026-11-23 found. Most recent DOE authorization milestones are October 2026 (Last Energy DSA on 2026-10-07).",
+   "Items: the Army Janus release (army.mil/article/294891, published 2026-08-26) and its five-vendor selection are outside the 2026-11-23 window and belong to the opportunities file. Sources conflict on the number of Army sites (five in the release; nine in a November summary).",
+   "Dockets: only one record met the window with a fetched source. Duke Energy 2026 Carolinas Resource Plan (IIR, released 2026-08-24; 1,200 MW nuclear at Cherokee County SC and 300 MW SMR at Stokes County NC; NCUC order expected by 2026-12-31) has no verified filing date or docket number. Ohio SB 294 (Senate-passed energy siting bill) has no microreactor fee exemption confirmed in search results. PNM 2026 IRP appears only as a preliminary draft. Illinois HB 2473 was signed 2023-12-08 and is outside the window. Pennsylvania Act 37 of 2026 (SMR and microreactor definitions, signed July 2026) is outside the 90-day window.",
+   "Dockets: the Virginia SCC docket number for the Appalachian Power request is not stated in the fetched article (a '147360' appears only inside a link). Filing date is not stated; the article is dated 2026-11-05."
+  ]
+ },
+ "dockets": [
+  {
+   "id": "appalachian-power-joshua-falls-smr-cost-recovery-2026",
+   "forum": "Virginia State Corporation Commission",
+   "utility": "Appalachian Power Company",
+   "state": "VA",
+   "type": "other",
+   "date": "2026-11-05",
+   "size_class": "small",
+   "status": "pending",
+   "url": "https://cardinalnews.org/2026/11/05/appalachian-power-asks-to-charge-customers-for-nuclear-reactor-site-development/",
+   "what_it_says": "Appalachian Power asks the SCC to let it charge customers for developing a site for a potential small modular reactor at its Joshua Falls property in Campbell County. It expects site development to cost about $100 million, financed over six years; the first year would recover $20.6 million through bills from October 2027 through September 2028. A 2024 state law caps recovery at $125 million. The article (5 November 2026) does not give the filing date or case number.",
+   "microreactor_read": "Ratepayers would fund SMR site studies and permits years before a reactor exists; the utility says one would likely not run until the mid- to late 2030s. The SCC's own staff raised, in a related 2025 proceeding, the risk of customers paying for a site that is never built.",
+   "sources": [
+    {
+     "label": "Cardinal News — Appalachian Power SMR site cost recovery request (2026-11-05)",
+     "url": "https://cardinalnews.org/2026/11/05/appalachian-power-asks-to-charge-customers-for-nuclear-reactor-site-development/",
+     "quote": "caps the amount that the utility could recover from customers at $125 million total",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}
