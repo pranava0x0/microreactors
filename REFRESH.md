@@ -273,3 +273,23 @@ python3 tools/news_watch.py --json data/research/$D-refresh/skip/candidates.json
   row's: an older page is a superseded plan, not a correction. Same day, the deals agent called Texas "rule adopted"
   unsupported because the lede says "unveiled"; the page's own summary says "adopted rules". Both overruled; an odd-day run
   with no post-window news costs ~670K tokens for one gap-fill item.
+
+- **2026-11-24: a web-search summary's "effective date" can be off by a step, and a lead headline can name the wrong company.** The
+  summary said NRC "interim guidance" took effect 11-23; the Federal Register API (`/api/v1/documents/<doc>.json`) shows it is the
+  DOE/DoW prior-authorization final rule, published 10-26, effective 11-25, and shipped 10-22. The WNN "TRISO fuel facilities" lead
+  that the main session took for Radiant's R-50 FONSI was Standard Nuclear's DSAs. Check a lead against the FR API or the article text
+  before writing it into `web-leads.md` as a fact. Also, `verify_pass_quotes.py` marks a news quote FABRICATED when the span starts
+  at the verb ("has submitted ..."); prefixing the subject ("Standard Nuclear has submitted ...") clears it.
+
+- **2026-11-25: query the Federal Register API for named leads before handing them to agents.** Yesterday's pass left the Radiant
+  R-50 FONSI as an absence ("no Federal Register notice found"); `federalregister.gov/api/v1/documents.json?conditions[term]=Radiant+Industries`
+  returned it (doc 2026-23754, published 11-23) in one call, with a plain-text `full_text/text/...txt` URL that `fetch_source.py`
+  caches cleanly. Same day, an agent's `unsupported` on an enacted-bill row was right but for the wrong reason: read the enrolled
+  bill text (capitol.texas.gov `billtext/html/*F.htm` curls fine) before deciding, and cite it on the row.
+
+- **2026-11-26: on a holiday week the applications lane is the only one that pays, because it checks stale milestones, not new events.**
+  All seven lanes cost ~1.08M tokens; news, deals, vendors, costs and ideas produced 0 shipped records, while applications found three
+  segment rows frozen at an earlier milestone (UIUC KRONOS docketing, Last Energy's DSA approval, both already in the news tab). A row
+  whose `timeline` names a step the news tab has since overtaken is the cheapest correction there is: grep news.json for the row's
+  vendor before each run. Also, inl.gov now serves a bot-verification page to headless Playwright (supersedes the 10-21 note), and a
+  merged-twice source on `policy/licensing` passed every gate until `NoDuplicateSources` was added to `tests/test_data.py`.

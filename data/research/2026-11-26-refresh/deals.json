@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "captured": "2026-11-26",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities (not on the 2026-11-22..25 settled list) and new buyer deals dated after 2026-11-23 missing from skip/news.json",
+    "angles_run": [
+      "Antares JBSA ANPI status (search + fetch of Antares release page)",
+      "Oklo Eielson NOITA / NRC / contract status (search; primary DAF newsletter fetch returned 403)",
+      "Radiant Buckley ANPI status (search)",
+      "DOME Kaleidos fueling status (search + energy.gov DOME page fetch; Radiant DSA page returned 403)",
+      "NANO Nuclear Supermicro MOU binding status (search + company release fetch)",
+      "Microreactor PPA / buyer deals dated 2026-11-24 to 2026-11-26 (3 searches, no in-window hit)",
+      "Equinix-Radiant site assignment (search; settled deposit reading not re-flagged)"
+    ],
+    "absences": [
+      "No buyer deal (PPA, MOU, LOI, contract, site selection) dated 2026-11-24 to 2026-11-26 surfaced in three date-targeted searches; the Thanksgiving-week window is empty on this pass.",
+      "Eielson (opportunities eielson): the DAF June 2026 newsletter PDF and the eielson.af.mil release returned HTTP 403 on fetch; the NOITA status and NRC/contract milestone dates could not be read from a primary page, so no check was written.",
+      "Buckley (opportunities anpi-buckley): Radiant's Kaleidos release page returned HTTP 403; search summaries say first delivery to Buckley by 2028 and a DOE second HALEU allocation on 2026-07-23, but no fetched primary page confirms them, so no check was written.",
+      "DOME (opportunities dome): shipped text says 'not yet fueled'. The energy.gov DOME page (last updated 2026-04-08) does not say whether fueling has started, and no November 2026 source was found. No verdict written.",
+      "Equinix-Radiant (opportunities equinix-radiant): no site, host or commissioning date for the 20 Kaleidos units was found in 2026 sources; the deposit reading is settled and was not re-flagged.",
+      "JBSA ANPI (search summary only): KSAT quotes an executive pointing to on-base power in 2029, while the Antares release says 2028 or earlier. The 2029 figure is from a search summary and was not fetched, so it is not a correction.",
+      "Eielson NOITA date: one search summary dates the notice to 2025-08-31, while the shipped row and the settled reading use 2025-06-11. Not re-flagged; the settled reading stands."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-anpi-jbsa-1",
+      "target": "anpi-jbsa",
+      "file": "opportunities",
+      "claim": "Deployment targeted 2028 or earlier; ANPI goal ≥1 reactor operating by 2030",
+      "verdict": "confirmed",
+      "evidence": "Antares's own ANPI JBSA update page (undated in the fetch output; the selection it describes was announced 2026-04-22) says Antares's R1 microreactors are 'targeted for deployment by 2028 or earlier.' The same page names no order or contract for a unit at JBSA, which matches the row's instrument field.",
+      "sources": [
+        {
+          "label": "Antares — ANPI JBSA update (undated page; selection announced 2026-04-22)",
+          "url": "https://antaresindustries.com/updates/anpi-jbsa",
+          "quote": "with systems targeted for deployment by 2028 or earlier.",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "check-nano-supermicro-1",
+      "target": "nano-supermicro",
+      "file": "opportunities",
+      "claim": "MOU signed May 2026",
+      "verdict": "confirmed",
+      "evidence": "NANO Nuclear's release on the Supermicro MOU is dated May 6, 2026, and states the MOU is non-binding. This matches the row's MOU status and binding: false.",
+      "sources": [
+        {
+          "label": "NANO Nuclear — strategic MOU with Supermicro (release dated 2026-05-06)",
+          "url": "https://nanonuclearenergy.com/nano-nuclear-signs-strategic-mou-with-supermicro-to-power-the-next-generation-of-ai-data-centers-with-advanced-nuclear-energy/",
+          "quote": "While the MOU is non-binding, it establishes a foundation for future definitive agreements",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

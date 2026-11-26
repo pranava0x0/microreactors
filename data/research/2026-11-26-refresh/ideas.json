@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "captured": "2026-11-26",
+    "agent": "ideas",
+    "scope": "Why microreactors tab (arguments, ideas, studies): Type G checks on time-sensitive argument numbers; Type N items for major studies dated after 2026-11-23 (policy).",
+    "angles_run": [
+      "Price-Anderson financial protection amounts (10 CFR 140.11), check on argument liability",
+      "ERCOT Small Generation 10 MW threshold and large-generator study timelines, argument thresholds",
+      "MISO surplus interconnection service timing, argument inherit",
+      "National-lab microreactor cost studies (INL MARVEL public cost estimate, INL FY26 NST impact report)",
+      "GAO / CBO small modular reactor and microreactor cost reports",
+      "Insurer, lender and financing studies for microreactors"
+    ],
+    "absences": [
+      "No study or report dated after 2026-11-23 found that changes the case for or against 1-20 MW reactors; items list omitted rather than padded.",
+      "MARVEL public cost estimate (INL FY26 plan, 90% design) not located; the figures were not found in any fetched or indexed page.",
+      "INL FY26 NST Impact Report (PDF metadata 2026-11-12, before the window) could not be read beyond its opening pages; no microreactor cost finding was readable.",
+      "ERCOT large-generator study durations (18-30 months) and small-generator durations (8-12 months) in argument thresholds could not be verified; the ERCOT Planning Guide Section 5 text was not fetched. PGRR 140 proposes changing the small/large split for non-synchronous generators under 10 MW; it is not adopted per the ROS report.",
+      "MISO surplus interconnection service average time to commercial operation (argument inherit, 'about a year') not found; general MISO queue delay is about two years per a MISO statement, which is not the SIS figure, so no check was written.",
+      "Not checked for time-sensitive numbers (search budget spent on the angles above): fuel, load-fit, battery, first-article, product, relocatable, fleet, one-property, utility-owns."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-liability-1",
+      "target": "liability",
+      "file": "arguments",
+      "claim": "A 300 MWe unit carries $500,000,000 of primary financial protection and accepts a contingent retrospective assessment of $158,026,000.",
+      "verdict": "confirmed",
+      "evidence": "10 CFR 140.11(a)(4) as published on Cornell LII (amended at 89 FR 10625, effective date Dec. 30, 2024) sets the deferred premium for reactors of 100,000 electrical kilowatts or more at no more than $158,026,000 per nuclear incident, with no more than $24,714,000 per incident within one calendar year. The $500,000,000 figure appears in the same paragraph as the primary protection sum. The shipped $158,026,000 matches the current text.",
+      "sources": [
+        {
+          "label": "Cornell Legal Information Institute — 10 CFR 140.11 Amounts of financial protection for certain reactors (amended Dec. 30, 2024)",
+          "url": "https://www.law.cornell.edu/cfr/text/10/140.11",
+          "quote": "no more than $158,026,000 with respect to any nuclear incident",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

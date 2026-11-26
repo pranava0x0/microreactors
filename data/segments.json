@@ -335,7 +335,7 @@
    "name": "Penn State and Westinghouse eVinci research reactor",
    "status": "proposed",
    "power_class": "size not stated on the cited page (parent eVinci design: 5 MWe)",
-   "timeline": "Penn State announced its letter of intent to the NRC on 2025-02-28",
+   "timeline": "Penn State submitted its letter of intent to the NRC on 2025-02-28",
    "sponsor": "Penn State University",
    "vendor": "Westinghouse",
    "what_it_says": "Penn State announced on 28 February 2025 that it submitted a letter of intent to the NRC to host and operate a Westinghouse eVinci reactor on its University Park campus. eVinci is a HALEU TRISO-fueled sodium heat-pipe reactor, and Westinghouse describes its parent design as 5 MWe.",
@@ -351,6 +351,18 @@
      "label": "World Nuclear News — Westinghouse, Astrobotic team up on space projects (2023)",
      "url": "https://wnn.world-nuclear.org/articles/westinghouse,-astrobotic-team-up-on-space-projects",
      "quote": "Westinghouse is developing a scaled-down version of its 5-MWe eVinci microreactor",
+     "status": "fetched"
+    },
+    {
+     "label": "Penn State News — Penn State engages NRC to build new nuclear research facility (2025)",
+     "url": "https://www.psu.edu/news/research/story/penn-state-engages-nrc-build-new-nuclear-research-facility",
+     "quote": "Penn State submitted a letter of intent to the NRC on Feb. 28",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — Penn State and Westinghouse make eVinci microreactor plan official (2025)",
+     "url": "https://www.ans.org/news/2025-03-05/article-6829/penn-state-and-westinghouse-make-evinci-microreactor-plan-official",
+     "quote": "submitted a letter of intent to host and operate an eVinci reactor to the Nuclear Regulatory Commission on February 28",
      "status": "fetched"
     }
    ],
@@ -383,7 +395,7 @@
    "name": "University of Illinois Urbana-Champaign and Nano Nuclear Kronos MMR",
    "status": "proposed",
    "power_class": "up to 15 MWe (45 MWt) per unit",
-   "timeline": "construction permit application submitted to the NRC, reported 2026-04-02; project first announced 2021",
+   "timeline": "construction permit application dated 2026-03-27; NRC docketed it 2026-05-18; project first announced 2021",
    "sponsor": "University of Illinois Urbana-Champaign",
    "vendor": "Nano Nuclear Energy",
    "what_it_says": "UIUC and Nano Nuclear submitted a construction permit application to the NRC for a Kronos micro modular reactor on 31 March 2026, the first step of two-part Part 50 licensing for a research and test reactor. Each Kronos unit is designed for up to 15 MWe (45 MWt), and the 2021 plan was to re-power part of the coal-fired Abbott power station with it.",
@@ -411,6 +423,18 @@
      "label": "U.S. NRC — Advanced reactor highlights 2026 (NRC Receives University of Illinois Construction Permit Application)",
      "url": "https://www.nrc.gov/reactors/new-reactors/advanced/highlights/2026",
      "quote": "On March 31, 2026, the University of Illinois Urbana-Champaign (U. of I.) submitted its construction permit application",
+     "status": "fetched"
+    },
+    {
+     "label": "Federal Register — University of Illinois KRONOS MMR docketing notice (2026)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2026-05-26/html/2026-10419.htm",
+     "quote": "The application was docketed on May 18, 2026.",
+     "status": "fetched"
+    },
+    {
+     "label": "Grainger College of Engineering — NRC application story (2026)",
+     "url": "https://grainger.illinois.edu/news/stories/NRC-application",
+     "quote": "The application consists of hundreds of pages, including a safety analysis report",
      "status": "fetched"
     }
    ],
@@ -699,7 +723,7 @@
    "name": "Last Energy PWR-5 pilot reactor at Texas A&M RELLIS",
    "status": "funded",
    "power_class": "5 MW of electrical output",
-   "timeline": "Preliminary documented safety analysis approved, release dated 2026-05-28. On 2026-09-10 the company said: \"In the next couple of months, we intend to get final authorization from the Department of Energy\".",
+   "timeline": "Preliminary documented safety analysis approved, release dated 2026-05-28. Documented safety analysis approved, announced 2026-10-07.",
    "vendor": "Last Energy",
    "what_it_says": "Last Energy is building a PWR-5 pilot reactor on the Texas A&M RELLIS campus near Bryan-College Station. The company says the reactor is scaled for 5 MW of electrical output. The pilot is a test unit in DOE's Reactor Pilot Program, with its preliminary safety analysis approved and final DOE authorization still pending, and the company says it is not meant to power homes or businesses right away. The RELLIS site record still reads pre-application, which covers the NRC early-site-permit track and not this DOE pilot.",
    "microreactor_read": "A 5 MW electric pilot sits inside the 1-20 MW band, but it is a test unit in DOE's Reactor Pilot Program, not a commercial sale. No power buyer or price is named.",
@@ -714,6 +738,18 @@
      "label": "KBTX — Nuclear reactor at RELLIS could be running within months (2026-09-10)",
      "url": "https://www.kbtx.com/2026/09/11/nuclear-reactor-rellis-could-be-running-within-months/",
      "quote": "The PWR-5 is not meant to power homes or businesses right away.",
+     "status": "fetched"
+    },
+    {
+     "label": "World Nuclear News — Last Energy's Texas micro-modular reactor clears safety analysis (2026)",
+     "url": "https://world-nuclear-news.org/articles/last-energy-texas-micro-modular-reactor-clears-safety-analysis",
+     "quote": "The Department of Energy's approval of the Documented Safety Analysis clears Last Energy's planned pilot reactor",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — Antares, Last Energy, and Radiant hit DOE authorization milestones (2026)",
+     "url": "https://www.ans.org/news/article-8549/antares-last-energy-and-radiant-hit-doe-authorization-milestones/",
+     "quote": "On October 7, Last Energy announced the DOE's approval of its DSA for its pilot reactor.",
      "status": "fetched"
     }
    ],
@@ -759,6 +795,60 @@
     }
    ],
    "group": "compute-industry"
+  },
+  {
+   "id": "aalo-crusoe-inl-data-center",
+   "segment": "data centers behind the meter",
+   "name": "Aalo Pod with Crusoe AI data centers; Crusoe Spark proof of concept at INL",
+   "status": "proposed",
+   "power_class": "50 MWe Aalo Pod (five 10 MWe reactors sharing turbines); Aalo-X 10 MWe demonstration at INL",
+   "timeline": "Crusoe Spark proof of concept at INL in 2027; Aalo Pods at Crusoe data centers by end of 2029; Aalo's own timeline lists Aalo-X for Q1 2027 and the Pod for Q3 2028",
+   "sponsor": "Crusoe (partner); who pays for the Spark data center not stated in the sources fetched",
+   "vendor": "Aalo Atomics",
+   "what_it_says": "Aalo introduced the Aalo Pod in August 2025 as a 50 MWe XMR for data centers. Aalo will initially power a Crusoe Spark modular data center at INL in 2027 as a proof of concept, and the two companies intend Pod deployments at Crusoe data centers by the end of 2029. No power purchase price or contracted load figure is published in the sources fetched.",
+   "microreactor_read": "The 50 MWe Pod is above the 1-20 MW band, but one 10 MWe Aalo unit fits it. The project is a stated intention with no PPA, price or contracted load, and the Aalo-X demonstration is not yet licensed or built.",
+   "sources": [
+    {
+     "label": "POWER Magazine — Aalo and Crusoe plan 2027 INL demonstration pairing nuclear power and AI data center load (30 July 2026)",
+     "url": "https://powermag.com/aalo-crusoe-plan-2027-inl-demonstration-pairing-nuclear-power-and-ai-data-center-load",
+     "quote": "Aalo will initially power a Crusoe Spark modular data center running Crusoe Cloud at INL in 2027 as a proof of concept.",
+     "status": "fetched"
+    },
+    {
+     "label": "Aalo Atomics — Aalo-X and Aalo Pod timeline and specifications",
+     "url": "https://www.aalo.com/aalo-x",
+     "quote": "The Aalo Pod is a 50 MWe power plant with five 10 MWe reactors sharing multiple turbines.",
+     "status": "fetched"
+    }
+   ],
+   "group": "compute-industry"
+  },
+  {
+   "id": "steady-energy-jyvaskyla-alva",
+   "segment": "district heating",
+   "name": "Jyväskylä district heat letter of intent (Steady Energy and Alva-yhtiöt Oy)",
+   "status": "proposed",
+   "power_class": "100-300 MW heat (2-6 LDR-50 units, 50 MW thermal each)",
+   "timeline": "letter of intent signed 2026-05-19; one-year preliminary study launched",
+   "sponsor": "Alva-yhtiöt Oy (city-owned energy group)",
+   "vendor": "Steady Energy (LDR-50)",
+   "what_it_says": "Steady Energy and Alva-yhtiöt Oy signed a letter of intent to study nuclear district heat for Jyväskylä. Steady Energy says it could supply the city with between two and six LDR-50 reactors, which would produce 100 MW to 300 MW of heat. Alva's production director said the companies are not making an investment decision at this stage.",
+   "microreactor_read": "One LDR-50 is 50 MW thermal, above the 1-20 MW band, so a single block does not match this heat load. The study covers regulation, sites and costs first; there is no investment decision.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Fourth Finnish municipality to assess nuclear district heating (2026)",
+     "url": "https://world-nuclear-news.org/articles/fourth-finnish-municipality-to-assess-nuclear-district-heating",
+     "quote": "has signed a letter of intent with municipal energy company Alva-yhtiöt Oy",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER — More nuclear-powered district heating planned in Finland (2026)",
+     "url": "https://www.powermag.com/more-nuclear-powered-district-heating-planned-in-finland/",
+     "quote": "could supply Jyväskylä with between two and six LDR-50 reactors",
+     "status": "fetched"
+    }
+   ],
+   "group": "heat"
   }
  ]
 }

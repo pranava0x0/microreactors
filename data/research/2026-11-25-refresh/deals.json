@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "captured": "2026-11-25",
+    "agent": "deals",
+    "scope": "Deals tab: Type G checks on shipped opportunities rows (not on recently-checked.md) and Type N buyer-deal items dated after 2026-11-19 missing from skip/news.json",
+    "angles_run": [
+      "ANPI Buckley (Radiant) status search",
+      "Equinix-Radiant 20-reactor agreement update search",
+      "Oklo-Switch 12 GW master agreement update search (two searches)",
+      "NANO Nuclear / Supermicro MOU search",
+      "Microreactor PPA / LOI / data center deals, Nov 2026 (three searches)",
+      "Eielson ANPI Oklo NOITA contract status search",
+      "Antares JBSA ANPI contract search (two searches)",
+      "Valar / Radiant / Deployable customer agreements, late Nov 2026",
+      "Oklo agreements Nov 2026",
+      "Last Energy PWR-20 data center agreement search",
+      "Aalo / Deep Fission / NuCube customer agreements search",
+      "Radiant Kaleidos customer news, late Nov 2026",
+      "Antares customer agreement, Nov 2026"
+    ],
+    "absences": [
+      "Type N: no new buyer deal dated after 2026-11-19 found in any angle. Searches on microreactor PPA, LOI and data-center deals (Nov 2026), Oklo, Radiant, Antares, Valar, Deep Fission, NuCube, Aalo and Last Energy returned nothing in band. The search index may lag the last few days.",
+      "Out of band, already dated before the window: Crusoe-Aalo strategic partnership, Power Magazine, published 2026-07-30 (partnership only, no signed contract). Last Energy 30-reactor Haskell County, Texas plan, Power Engineering, dated 2025-03-03 (plan, no named offtaker).",
+      "Dated in-band event not filed: Oklo reserved manufacturing capacity at U.S. Forged Rings (2026-11-06). This is a supplier reservation, not a buyer deal, so it is outside the Deals lane. URL: https://finviz.com/news/418309/oklo-us-forged-rings-partner-to-advance-domestic-manufacturing-for-future-aurora-powerhouse-deployments",
+      "anpi-jbsa, anpi-buckley: no check written. Search summaries confirm the April 22, 2026 selections and show no committed unit order. The DAF 'next steps' release (af.mil 4465439) returned HTTP 403, so its next-step wording is unverified.",
+      "eielson: no check written. Shipped NOITA and 2025-06-11 dates are consistent with search summaries. The AF CAMP 18JUN2026 newsletter PDF returned HTTP 403, so the NRC decision (forecast about 2028) and the 2030 completion date are unverified against a fetched page.",
+      "equinix-radiant: no check. Search found no update after the 2025-08-14 release, and the deposits and pre-order reading is settled in web-leads/recently-checked.",
+      "nano-supermicro: no check written. The NANO investor release (ir.nanonuclearenergy.com) returned HTTP 403. A May 6, 2026 MOU, described as non-binding, appears in search summaries only, so the shipped row remains unverified against a fetched primary page.",
+      "oklo-switch: one confirmed check written from the Switch primary page (dated 2024-12-18), which states the 12 GW agreement is non-binding. No 2026 binding Switch PPA was found in search. The shipped phrase 'grew Oklo's order book to ~14 GW' is not checked here."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-oklo-switch-1",
+      "target": "oklo-switch",
+      "file": "opportunities",
+      "claim": "Non-binding Master Power Agreement, the largest announced corporate nuclear framework",
+      "verdict": "confirmed",
+      "evidence": "Switch's own announcement, dated 2024-12-18, describes 'a 12-gigawatts non-binding Master Power Agreement' to deploy 12 GW of Oklo Aurora powerhouse projects through 2044. Individual binding agreements are to follow as projects reach milestones. No binding Switch PPA was found in 2026 searches.",
+      "sources": [
+        {
+          "label": "Switch — Oklo and Switch form landmark strategic relationship (2024-12-18)",
+          "url": "https://www.switch.com/oklo-and-switch-form-landmark-strategic-relationship/",
+          "quote": "a 12-gigawatts non-binding Master Power Agreement",
+          "status": "fetched"
+        }
+      ]
+    }
+  ]
+}

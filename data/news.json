@@ -1,19 +1,19 @@
 {
   "_meta": {
-    "captured": "2026-11-23",
+    "captured": "2026-11-25",
     "what_this_is": "Dated events in the microreactor market, newest first. Each row says which instrument the event rests on.",
-    "binding_note": "63 of 114 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 51 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
-    "window": "2026-01-05 to 2026-11-19",
+    "binding_note": "64 of 116 items rest on something executed - a signed contract, a filed application, an achieved milestone or a formal regulatory step. The other 52 are selections, letters of intent, memoranda and non-binding term sheets. Both are reported; only one is a commitment.",
+    "window": "2026-01-05 to 2026-11-23",
     "refresh": "New items come from watching six trade and government news feeds and SEC filings. Each one is read against its source document before it goes up, because a headline alone cannot tell a selection from a signed contract."
   },
   "categories": [
     {
       "id": "regulatory",
-      "count": 24
+      "count": 25
     },
     {
       "id": "fuel",
-      "count": 20
+      "count": 21
     },
     {
       "id": "contract",
@@ -49,6 +49,34 @@
     }
   ],
   "items": [
+    {
+      "id": "radiant-oak-ridge-fuel-packing-fonsi-2026-11-23",
+      "date": "2026-11-23",
+      "headline": "NRC finds no significant impact for Radiant's Oak Ridge TRISO fuel facility",
+      "companies": [
+        "Radiant Industries",
+        "NRC"
+      ],
+      "category": "regulatory",
+      "what_happened": "The NRC published an environmental assessment and finding of no significant impact (FONSI) for Radiant's special nuclear material license application for a fuel facility at its R-50 site in Oak Ridge, Tennessee, in the Federal Register on 23 November 2026. The license would let Radiant receive TRISO fuel and package compacts into monoliths for its 1 MWe Kaleidos reactors, and the NRC did not prepare an environmental impact statement. The NRC accepted the application in May 2026 and the license has not yet been issued.",
+      "why_it_matters": "A FONSI clears the environmental review for fuel handling at the Oak Ridge site. It is not the license, and later phases there (reactor fueling, testing, and storage before deployment to customer sites) must be licensed separately.",
+      "binding": false,
+      "binding_note": "A FONSI is an environmental finding. The special nuclear material license has not been issued, and the NRC still has to decide on it.",
+      "sources": [
+        {
+          "label": "Federal Register, Vol. 91 No. 224 — NRC, Radiant Industries special nuclear materials license application for a fuel packing facility; EA and FONSI (2026-11-23)",
+          "url": "https://www.federalregister.gov/documents/full_text/text/2026/11/23/2026-23754.txt",
+          "quote": "Additional activities must be licensed separately and may require environmental reviews.",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society, Nuclear News — NRC to review Radiant R-50 Part 70 license application (2026-05-06)",
+          "url": "https://www.ans.org/news/2026-05-06/article-8009/nrc-to-review-radiant-r50-part-70-license-application/",
+          "quote": "The NRC's acceptance confirms that Radiant's application is sufficiently complete for detailed technical review",
+          "status": "fetched"
+        }
+      ]
+    },
     {
       "id": "radiant-manufacturing-expansion-2026-11-19",
       "date": "2026-11-19",
@@ -236,6 +264,33 @@
           "label": "ANS Nuclear Newswire: Canada assesses its space reactor capabilities (Nov. 9, 2026)",
           "url": "https://www.ans.org/news/article-8567/canada-assesses-its-space-reactor-capabilities/",
           "quote": "lunar reactor capable of producing 20 kWe",
+          "status": "fetched"
+        }
+      ]
+    },
+    {
+      "id": "standard-nuclear-triso-dsa-submitted-2026-11-06",
+      "date": "2026-11-06",
+      "headline": "Standard Nuclear sends safety analyses for two new TRISO fuel plants to DOE",
+      "companies": [
+        "Standard Nuclear"
+      ],
+      "category": "fuel",
+      "what_happened": "Standard Nuclear submitted Documented Safety Analyses to DOE for two identical TRISO fuel plants: SN-TN in Tennessee on 6 November 2026 and SN-ID in Idaho on 12 November 2026. DOE had approved the preliminary safety analyses for both in July, and each plant could initially make up to 1 metric ton of uranium as TRISO a year.",
+      "why_it_matters": "The DSA is the last major DOE safety document before a fuel line can run. Neither plant is authorized yet, so buyers should not count their output in near-term microreactor fuel supply until DOE approves the DSA.",
+      "binding": true,
+      "binding_note": "A filed application: the DSAs were submitted to DOE for review. This is not an approval; DOE has not yet authorized either plant.",
+      "sources": [
+        {
+          "label": "World Nuclear News - Key step in licensing of US TRISO fuel facilities (2026-11-24)",
+          "url": "https://www.world-nuclear-news.org/articles/key-step-in-licensing-of-us-triso-fuel-facilities",
+          "quote": "Standard Nuclear has submitted the Documented Safety Analyses for two new identical TRISO fuel production facilities",
+          "status": "fetched"
+        },
+        {
+          "label": "American Nuclear Society - Standard Nuclear plans TRISO production at two new facilities in 2026 (2026-07-24)",
+          "url": "https://www.ans.org/news/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/",
+          "quote": "the Department of Energy has approved the preliminary documented safety analyses (PDSAs) for both facilities",
           "status": "fetched"
         }
       ]

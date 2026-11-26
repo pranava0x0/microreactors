@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "captured": "2026-11-24",
+    "agent": "costs",
+    "scope": "Costs tab: Type G checks on shipped costs.json rows (excluding recently-checked microreactor_lcoe[5]); Type N items for dated fuel-supply or financing events after 2026-11-19 not in skip/news.json.",
+    "angles_run": [
+      "HALEU enrichment contracts, Nov 2026",
+      "DOE HALEU allocation rounds, Nov 2026",
+      "MARVEL TRIGA fuel delivery and criticality date",
+      "Urenco, Orano, General Matter enrichment deals, Nov 2026",
+      "LPO / EDF conditional commitments for microreactors, 2026",
+      "TRISO supply contracts, late Nov 2026",
+      "Microreactor financing rounds, Nov 2026",
+      "Antares Series C date",
+      "Check: archetypes convergence 25% claim (INL RPT-25-87273 and OSTI record)",
+      "Check: microreactor_lcoe[4] Nuclear Business Platform band",
+      "Check: microreactor_lcoe NEI FOAK/NOAK (NEI page)",
+      "Check: alternatives diesel breakeven $1.50/litre (ScienceDirect)",
+      "Check: learning_curve.floor and capex (INL RPT-24-80433 PDF)",
+      "Check: incentives.points OBBBA nuclear credit (Morgan Lewis)"
+    ],
+    "absences": [
+      "No in-window (after 2026-11-19) HALEU delivery, enrichment contract or DOE fuel award found in searches; no in-band fuel or financing item filed.",
+      "Urenco and Blykalla signed a HALEU enrichment agreement for a 55 MWe SEALER unit, dated 2026-11-12 per search summary (not fetched). Outside the 1-20 MW band and on the web-leads do-not-file list. URL: https://www.world-nuclear-news.org/articles/urenco-blykalla-sign-haleu-deal",
+      "Copenhagen Atomics and Urenco deconversion-facility partnership, dated 2026-11-09 per search summary (not fetched). Before the window. URL: https://www.ans.org/news/article-8568/copenhagen-atomics-and-urenco-partner-on-planned-deconversion-facility/",
+      "Web-lead claim that TRIGA fuel for INL MARVEL was delivered 2026-11-19 and criticality expected in December: no delivery report found. INL MARVEL page says dry initial criticality anticipated in 2027 and full power in 2028. Date is on the window boundary, not after it. URL: https://inl.gov/microreactors/marvel/",
+      "No DOE HALEU allocation round dated November 2026 found. Latest round found was 2026-07-23 (NASA and Radiant conditional commitments), outside the window. URL: https://www.energy.gov/ne/articles/energy-department-distribute-third-round-haleu-nasa-and-radiant",
+      "No Loan Programs Office or Office of Energy Dominance Financing conditional commitment for a microreactor found in 2026. Found only large-reactor, uprate and isotope loans. URL: https://www.ans.org/news/2026-06-23/article-8142/doe-announces-175b-in-conditional-loans-for-ap1000-builds/",
+      "No microreactor financing round dated November 2026 found. Antares Series C ($470M) was announced 2026-07-27, outside the window. URL: https://www.businesswire.com/news/home/20260727569769/en/Antares-Raises-$470M-Series-C-to-Deploy-Nuclear-Microreactors-for-Critical-Missions",
+      "Possible internal arithmetic error, not filed (no readable primary source): costs.json archetypes.convergence says the liquid-metal design is 25% cheaper than gas-cooled as a first unit. The shipped FOAK figures (330 vs 410 $/MWh) give 19.5% cheaper, or 24% more expensive. INL RPT-25-87273 PDF is binary in WebFetch, and the OSTI record (https://www.osti.gov/biblio/2588465) carries no LCOE values. Needs a readable copy of the report before a verdict.",
+      "microreactor_lcoe[4] ('Published range, general', 200-330 $/MWh) is supported by the cited Nuclear Business Platform page, which gives LCOE USD 0.20-0.33/kWh. The page is dated only 'Oct 10' with no year, so no verdict is filed. The row's currency 'not stated' could read USD on that page's wording. URL: https://www.nuclearbusiness-platform.com/media/insights/asean-nuclear-microreactor-revolution",
+      "microreactor_lcoe NEI FOAK/NOAK (140-410 and 90-330 $/MWh): NEI report page returned HTTP 403. Not verified this pass.",
+      "alternatives diesel breakeven ($1.50/litre, ScienceDirect S2210670723002317): page returned HTTP 403. Not verified this pass.",
+      "learning_curve.floor ($178,500 per staff year) and capex rows ($14,500, $22,000, $6,000 per kWe): INL RPT-24-80433 PDF is binary in WebFetch and text was not readable this pass. Not verified; prior verification noted in skip/costs.json.",
+      "incentives.points OBBBA nuclear credit (construction start before 2034, three-year phase-out, 10% adder, FEOC, MLP): Morgan Lewis article dated 2025-07-24 is consistent with the shipped text, but it is a law-firm summary from four months ago, not a primary statute or current IRS guidance. No verdict filed."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

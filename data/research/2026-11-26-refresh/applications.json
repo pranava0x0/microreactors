@@ -1,0 +1,147 @@
+{
+ "_meta": {
+  "captured": "2026-11-26",
+  "agent": "applications",
+  "scope": "Applications tab: Type G checks on shipped segments rows not on the settled skip list (UIUC KRONOS, Last Energy PWR-5 pilot, Penn State eVinci); Type S new named applications (district heat); Type N one item for that district-heat event. Type E regions not run.",
+  "angles_run": [
+   "G: Last Energy PWR-5 RELLIS final DOE authorization",
+   "G: MARVEL dry criticality and fuel (inl.gov returned 403; not checked)",
+   "G: Steady Energy LDR-50 pilot construction and lease",
+   "G: UIUC KRONOS NRC docketing",
+   "G: Oklo Wyoming Aspen Mountain update (none found)",
+   "G: Penn State eVinci letter of intent",
+   "G: Copper Valley Electric Association Valdez status (none found)",
+   "G: Deep Fission Endeavour and Parsons project",
+   "G: Uvation / Terra Innovatum 1 MWe pilot (none found)",
+   "G: CSMC Arctic microreactor USD 4.5M award (supported, no verdict)",
+   "G: Last Energy London Gateway (none found for 2026)",
+   "S: hospital microreactor agreements (none found)",
+   "S: district heat, Finland (Jyvaskyla LOI)",
+   "S: hydrogen and ammonia with named microreactor project (none found)",
+   "S: mines with named microreactor agreement (none new)",
+   "S: desalination (only Natura-NGL, 100 MW, already shipped)",
+   "S: Army Janus and civilian community loads (no MW figures; military context only)"
+  ],
+  "absences": [
+   "MARVEL (segment inl-marvel-desalination): inl.gov pages returned HTTP 403 to WebFetch, so the October 2026 DOE safety approval and December 2026 criticality target are unchecked. Search summaries show a March 2026 PDSA for dry criticality and an older INL page giving 2027; the shipped 2026-10-06 news item is consistent with the segment row.",
+   "NucNet pages (CSMC funding; Jyvaskyla LOI) returned HTTP 403; WNN and POWER used instead.",
+   "Oklo Wyoming Aspen Mountain (segment oklo-wyoming-hyperscale-aspen-mountain): no 2026 project update found. Sources disagree on the term (10 or 20 years) of the nonbinding 2024 LOI.",
+   "Copper Valley Electric Association Valdez (deployment_sites cvea-valdez, tabled): no 2025 or 2026 reporting found; tabled status unverified.",
+   "Uvation / Terra Innovatum 1 MWe pilot (uvation-data-center-pilot): no 2026 construction or operation reporting found; not checked.",
+   "Last Energy London Gateway (last-energy-london-gateway): no 2026 update found; ONR and company pages not fetched.",
+   "CSMC Arctic (arctic-microreactor-canada): spaceq article dated 2026-07-23 supports the shipped fleet-scale 2030 target. No check issued because that page is outside the 60-day window for a confirmed verdict.",
+   "Steady Energy lease to 2028 (steady-energy-ldr50): neither fetched source mentions a lease; not checked.",
+   "Penn State FRONTIER (psu-frontier, pre-application) and the NRC docket: no NRC docketing or 2026 status found.",
+   "Hospitals: no microreactor hospital agreement found in searches. Disaster recovery: not searched (budget).",
+   "Hydrogen and ammonia: only conventional green ammonia projects found; no named microreactor project.",
+   "Mines: no new named binding microreactor agreement with a mine operator beyond shipped rows.",
+   "Army Janus and September 2026 Army SCI leases: military-installation projects, context only, no civilian MW figures found.",
+   "Deep Fission Parsons, Great Plains Development Authority master energy purchase agreement (signed 2026-10-20; initial phase 150 MW, target 2028): already shipped as news item deep-fission-gpda-master-energy-purchase-2026-10-20 with no segment row. Not added as a Type S to avoid a second record of the same event; main session may want a segment row.",
+   "Type E regions: not run, budget spent on checks and applications."
+  ],
+  "review": [
+   "2026-11-26 main session: dropped news item steady-energy-alva-jyvaskyla-loi-2026-05-19 (event 2026-05-19 is outside the 60-day gap window, and a 50 MWth LDR-50 is above the 1-20 MW band); kept the application row in group 'heat' beside steady-energy-ldr50."
+  ]
+ },
+ "checks": [
+  {
+   "id": "check-uiuc-kronos-mmr-1",
+   "target": "uiuc-kronos-mmr",
+   "file": "segments",
+   "claim": "construction permit application submitted to the NRC, reported 2026-04-02; project first announced 2021",
+   "verdict": "outdated",
+   "evidence": "The Federal Register notice says the NRC docketed the UIUC KRONOS MMR construction permit application on 2026-05-18, with an acceptance letter of the same date. The application letter is dated 2026-03-27. Grainger College (story dated 2026-07-16) reports the NRC publicly began its review on 2026-06-23. The shipped row does not mention docketing.",
+   "correction": "construction permit application dated 2026-03-27; NRC docketed it 2026-05-18; project first announced 2021",
+   "sources": [
+    {
+     "label": "Federal Register — University of Illinois KRONOS MMR docketing notice (2026)",
+     "url": "https://www.govinfo.gov/content/pkg/FR-2026-05-26/html/2026-10419.htm",
+     "quote": "The application was docketed on May 18, 2026.",
+     "status": "fetched"
+    },
+    {
+     "label": "Grainger College of Engineering — NRC application story (2026)",
+     "url": "https://grainger.illinois.edu/news/stories/NRC-application",
+     "quote": "The application consists of hundreds of pages, including a safety analysis report",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-last-energy-pwr5-rellis-pilot-1",
+   "target": "last-energy-pwr5-rellis-pilot",
+   "file": "segments",
+   "claim": "Preliminary documented safety analysis approved, release dated 2026-05-28. On 2026-09-10 the company said: \"In the next couple of months, we intend to get final authorization from the Department of Energy\".",
+   "verdict": "outdated",
+   "evidence": "Last Energy announced DOE approval of its Documented Safety Analysis for the RELLIS pilot on 2026-10-07 (ANS article dated 2026-11-02). World Nuclear News (dated 2026-10-08) says DSA approval moves the project into readiness review, which it calls the final step before authorisation for criticality. The shipped row stops at the preliminary analysis.",
+   "correction": "Preliminary documented safety analysis approved, release dated 2026-05-28. Documented safety analysis approved, announced 2026-10-07.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Last Energy's Texas micro-modular reactor clears safety analysis (2026)",
+     "url": "https://world-nuclear-news.org/articles/last-energy-texas-micro-modular-reactor-clears-safety-analysis",
+     "quote": "The Department of Energy's approval of the Documented Safety Analysis clears Last Energy's planned pilot reactor",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — Antares, Last Energy, and Radiant hit DOE authorization milestones (2026)",
+     "url": "https://www.ans.org/news/article-8549/antares-last-energy-and-radiant-hit-doe-authorization-milestones/",
+     "quote": "On October 7, Last Energy announced the DOE's approval of its DSA for its pilot reactor.",
+     "status": "fetched"
+    }
+   ]
+  },
+  {
+   "id": "check-penn-state-evinci-1",
+   "target": "penn-state-evinci",
+   "file": "segments",
+   "claim": "Penn State announced its letter of intent to the NRC on 2025-02-28",
+   "verdict": "wrong",
+   "evidence": "Penn State's own story (dated 2025-03-04) says Penn State submitted the letter of intent to the NRC on Feb. 28, 2025; the public announcement came in that story. ANS (dated 2025-03-05) gives the same 28 February submission date.",
+   "correction": "Penn State submitted its letter of intent to the NRC on 2025-02-28",
+   "sources": [
+    {
+     "label": "Penn State News — Penn State engages NRC to build new nuclear research facility (2025)",
+     "url": "https://www.psu.edu/news/research/story/penn-state-engages-nrc-build-new-nuclear-research-facility",
+     "quote": "Penn State submitted a letter of intent to the NRC on Feb. 28",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society — Penn State and Westinghouse make eVinci microreactor plan official (2025)",
+     "url": "https://www.ans.org/news/2025-03-05/article-6829/penn-state-and-westinghouse-make-evinci-microreactor-plan-official",
+     "quote": "submitted a letter of intent to host and operate an eVinci reactor to the Nuclear Regulatory Commission on February 28",
+     "status": "fetched"
+    }
+   ]
+  }
+ ],
+ "applications": [
+  {
+   "id": "steady-energy-jyvaskyla-alva",
+   "segment": "district heating",
+   "name": "Jyväskylä district heat letter of intent (Steady Energy and Alva-yhtiöt Oy)",
+   "status": "proposed",
+   "power_class": "100-300 MW heat (2-6 LDR-50 units, 50 MW thermal each)",
+   "timeline": "letter of intent signed 2026-05-19; one-year preliminary study launched",
+   "sponsor": "Alva-yhtiöt Oy (city-owned energy group)",
+   "vendor": "Steady Energy (LDR-50)",
+   "what_it_says": "Steady Energy and Alva-yhtiöt Oy signed a letter of intent to study nuclear district heat for Jyväskylä. Steady Energy says it could supply the city with between two and six LDR-50 reactors, which would produce 100 MW to 300 MW of heat. Alva's production director said the companies are not making an investment decision at this stage.",
+   "microreactor_read": "One LDR-50 is 50 MW thermal, above the 1-20 MW band, so a single block does not match this heat load. The study covers regulation, sites and costs first; there is no investment decision.",
+   "sources": [
+    {
+     "label": "World Nuclear News — Fourth Finnish municipality to assess nuclear district heating (2026)",
+     "url": "https://world-nuclear-news.org/articles/fourth-finnish-municipality-to-assess-nuclear-district-heating",
+     "quote": "has signed a letter of intent with municipal energy company Alva-yhtiöt Oy",
+     "status": "fetched"
+    },
+    {
+     "label": "POWER — More nuclear-powered district heating planned in Finland (2026)",
+     "url": "https://www.powermag.com/more-nuclear-powered-district-heating-planned-in-finland/",
+     "quote": "could supply Jyväskylä with between two and six LDR-50 reactors",
+     "status": "fetched"
+    }
+   ],
+   "group": "heat"
+  }
+ ],
+ "items": []
+}

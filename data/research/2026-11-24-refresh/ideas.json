@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "captured": "2026-11-24",
+    "agent": "ideas",
+    "scope": "Why microreactors tab (arguments, ideas, studies): Type G checks on time-sensitive arguments and Type N-style study items dated after 2026-11-19",
+    "angles_run": [
+      "MISO surplus interconnection service in-service times (inherit)",
+      "ERCOT Small Generation 10 MW threshold and PGRR 140 status (thresholds)",
+      "NRC/DOE microreactor cost studies (DOE Liftoff update, INL MOUSE, ORNL, INL 2026 review)",
+      "GAO microreactor work 2026",
+      "NASEM / National Academies microreactor report 2026",
+      "NEI / EPRI / IEA advanced reactor and SMR cost reports late 2026",
+      "Nuclear Innovation Alliance Right-Sizing Reactors and 2026 follow-up",
+      "CBO / insurer / lender microreactor cost estimates",
+      "Academic microreactor LCOE studies (arXiv, engrXiv) 2026"
+    ],
+    "absences": [
+      "No in-window study (dated 2026-11-20 to 2026-11-24) with a fetched page and a headline number that changes the case for or against 1-20 MW reactors was found. Searches of DOE Liftoff, GAO, NASEM, NEI, EPRI, IEA, NIA, CBO and insurer or lender sources returned only pre-window material.",
+      "Dated in-band items found, not filed (outside this agent's lane or already shipped): NYSERDA 'Nuclear Microreactor Technologies Study', Report 26-21h, cover dated November 2026 (https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Advanced-Nuclear/Publications/Nuclear-Microreactor-Technologies-Study.pdf). Web-leads lists the NYSERDA study as already shipped (2026-11-18); exact release date not confirmed on a fetched page.",
+      "Dated in-band item found, not filed: ERCOT PGRR 140 (https://www.ercot.com/mktrules/issues/PGRR140) received TAC Recommended for Approval on 2026-11-18, next step Board. The fetched page describes the change as clarifying Distributed Generation types in line with NPRR1317; it does not state any change to the under-10 MW Small Generation timeline, so no check on the thresholds argument was written.",
+      "Dated in-band item found, not filed (news lane): INL FY26 NST Impact Report, uploaded November 2026 (https://inl.gov/content/uploads/2026/11/26-50840_FY26-NST-Impact-Report.pdf). It reports that four industry-led reactors reached criticality weeks apart. The PDF could not be read (binary text layer not extracted), so the date and figures are unverified.",
+      "Dated in-band item found, not filed (market research, not a public study): BCC Research 'Global Nuclear Microreactors Market' (VCR018A) listed with a November 2026 publish date (https://www.bccresearch.com/partners/vertical-context/global-nuclear-microreactors-market.html). Commercial report, no fetched page, no headline figure.",
+      "Argument 'inherit' (MISO surplus projects 'come online in about a year on average since 2024'): no fetched source states an average MISO surplus in-service time. Search summaries cite MISO's stated goal of a one-year queue by the 2028 cycle, and LBNL's Queued Up 2026 edition (https://eta-publications.lbl.gov/sites/default/files/2026-06/queued_up_2026_edition.pdf) could not be fetched (10 MB limit exceeded). Not written as a check: the verdict would rest on search summaries alone.",
+      "Argument 'thresholds' (ERCOT 9.9 MW process 8-12 months; 10.1 MW 18-30 months): the 10 MW breakpoint still appears in the July 2026 ERCOT Planning Guide (https://www.ercot.com/files/docs/2026/06/18/July-1-2026-Planning-Guide.pdf, seen in search summary only, not fetched). The month ranges were not found in any fetched source. Not written as a check.",
+      "Argument 'load-fit' and 'fleet' are not time-sensitive; no check written. Argument 'liability' (10 CFR 140.12 floor $4.5M and cap $74M) is a regulatory formula; no current change found in search, not fetched; no check written.",
+      "Argument 'fuel' (Texas Backup Power Package): not time-sensitive for this pass; the state program's status was not checked.",
+      "Recently-checked and web-leads ids were respected: no check or item written on vendors evinci, aalo-x; opportunities romania-nuscale, janus, doe-pilot, anpi-malmstrom, texas-backup, canada-src; deployment_sites janus-*; segments nasa-doe-fsp-lunar; policy licensing, diesel; costs microreactor_lcoe[5]; or on the shipped NYSERDA, Radiant, Standard Nuclear, Centrus-Oklo and INL MARVEL items.",
+      "Budget used: about 21 web searches and 3 fetch attempts (one failed on size); a further fetch for the INL FY26 report returned no readable text."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

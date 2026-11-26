@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "captured": "2026-11-25",
+    "agent": "politics",
+    "scope": "Rules and deal design tab: policy and regulation. Type G checks on shipped policy rows (licensing group); no new dockets or items found with a fetched primary source dated after 2026-11-19.",
+    "angles_run": [
+      "Part 57 microreactor rule status (NRC rulemaking page, Federal Register, trade press)",
+      "Part 53 final rule date (Federal Register 2026-03-30)",
+      "DOE Reactor Pilot Program criticality dates (ANS 2026-07-02, DOE, NRC audit record)",
+      "EO 14300 18-month deadlines and NRC wholesale revision tracker",
+      "Texas HB 14 enrolled text and governor signing statement",
+      "10 U.S.C. 2920 availability mandate (Cornell LII)",
+      "FY2027 NDAA microreactor provisions (House and Senate)",
+      "FY2027 Energy and Water appropriations (House, Senate)",
+      "NRC Commission and construction-permit actions, November 2026",
+      "CNSC SMR licensing status",
+      "State microreactor and nuclear laws, November 2026 (NCSL roundups)",
+      "Utility commission dockets naming SMRs or microreactors, filed Aug-Nov 2026",
+      "Louisiana PSC nuclear tariff (Aug-Sept 2026)",
+      "Army and DoW microreactor policy, late November 2026",
+      "DOE Nuclear Energy Launch Pad, late November 2026"
+    ],
+    "absences": [
+      "Part 57 (proposed microreactor rule, 91 FR 23628): no final rule found as of 2026-11-25. The NRC rulemaking page (fetched; last reviewed 2026-09-14) lists it at proposed stage with no final schedule. The comment period closed 2026-06-15 per search summaries. The task brief's 'final due 2026-11-23' could not be confirmed from any source I found.",
+      "EO 14300 final-rule deadline (about 2026-11-23, 18 months from 2025-05-23): an NRC tracker summary (https://www.nrc.gov/about-nrc/governing-laws/advance-act/wholesale-revision-regs, returned HTTP 403 to WebFetch, so unread) shows most wholesale-revision rules as TBD. Its only final rule with a date was 'Organizational Changes and Conforming Amendments', dated 11/23/2026. Chairman Ho Nieh was reported as acknowledging that some final rules will land after the 18-month target. Not filed: the claim rests on search summaries only.",
+      "Louisiana PSC 'nuclear tariff' (20-cent monthly charge on Entergy Louisiana, Cleco and SWEPCO bills, to fund SMR and microreactor feasibility work): vote postponed in August 2026 and set for the 2026-09-16 meeting. The outcome was not found, and no docket number or primary commission order was found. The Louisiana Illuminator page (https://lailluminator.com/2026/08/13/nuclear-tariff/) returned HTTP 403, so unread. Not filed as a docket.",
+      "Senate Appropriations FY2027 Energy and Water bill: $63.1B total, released Thursday 2026-11-12 (Bloomberg Government, published 2026-11-13 UTC; https://news.bgov.com/environment-and-energy/senate-appropriators-eye-nuclear-security-domestic-energy-boost). Out of band (before 2026-11-19). The Senate summary PDF (https://www.appropriations.senate.gov/download/ewd-bill-summary-fy27&download=1) is compressed and unreadable to WebFetch, so no reactor line was confirmed. House FY27 Energy and Water bill was approved by committee 2026-05-20, with a Democratic summary citing $2.7B for nuclear reactor demonstrations, not verified against the bill text.",
+      "FY2027 NDAA: House passed H.R. 8800 on 2026-07-22 with a transportable microreactor demonstration for INDOPACOM (Rep. Harrigan amendment). Senate version S. 4784 (S. Rept. 119-127) microreactor language not confirmed. No November 2026 floor or conference action found. Outside band.",
+      "NRC Commission votes in November 2026: none found. The NRC issued the Dow/X-energy Long Mott construction permit on 2026-11-09 (out of band; already on the news tab as a November item).",
+      "CNSC: no SMR licence decision found for November 2026. OPG's BWRX-300 operating-licence application was filed 2026-03-25; a Commission hearing date was not found. ONR (UK): not searched.",
+      "State laws, November 2026: no microreactor-specific enactment found. NCSL's November 2026 News Reactor edition was not in the index (latest found: October 2026). Pennsylvania Act 37 of 2026 (HB 2017, fee changes for micro-reactors, signed about July 2026) is out of band.",
+      "Utility dockets naming microreactors or SMRs, filed or decided 2026-08-27 to 2026-11-25: none found with a fetched primary page. Kentucky PSC Case 2025-00186 (open nuclear investigation; technical conference May 2026) and Appalachian Power's SMR site-cost recovery (approved Nov 2025, recovery request anticipated mid-2026) are not in the 90-day window or lack a primary filing date. West Virginia HB 4491 (introduced 2026-01-19) is out of window.",
+      "Army and DoW microreactor policy in late November 2026: none found. The latest found is the 2026-08-26 Janus announcement (already shipped as opportunities janus) and a 2026-09-22 Waksman remark on nuclear waste management (exploratory; not filed).",
+      "DOE Nuclear Energy Launch Pad: no November 2026 announcement found. The most recent found are the 2026-03-05 launch and the April 2026 first selections, plus a later 13-project round whose date was not in the sources.",
+      "Part 53 final rule (shipped as 'March 2026'): confirmed by Federal Register 2026-03-30 (91 FR 15696, effective 2026-04-29), from search summary. Not a check: no shipped error."
+    ]
+  },
+  "checks": [
+    {
+      "id": "check-licensing-1",
+      "target": "licensing",
+      "file": "policy",
+      "claim": "a $350M development fund, reimbursing project, workforce and supply-chain expenses for advanced nuclear including microreactors.",
+      "verdict": "wrong",
+      "evidence": "The enrolled HB 14 text (89th Legislature, 2025) limits reimbursable expenses to a list headed 'Expenses that qualify for reimbursement under this section are limited to expenses attributable or allocable to:'. The items fetched were technology development, feasibility studies and developing manufacturing capacity and readiness. The text, as read, does not list workforce expenses as reimbursable. Supply-chain expenses are covered by the Project Development and Supply Chain Reimbursement Program. The enrolled definition of 'advanced nuclear reactor' names microreactors, so the 'names the technology' point stands. The governor's 2 June 2025 release describes workforce training as a goal of the $350 million investment, not a reimbursable expense.",
+      "sources": [
+        {
+          "label": "Texas Legislature — H.B. No. 14, enrolled text (89th Legislature, 2025), Sec. 483.203(b)",
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00014F.htm",
+          "quote": "developing manufacturing capacity and readiness",
+          "status": "fetched"
+        },
+        {
+          "label": "Texas Governor — HB 14 signing statement (2 June 2025)",
+          "url": "https://gov.texas.gov/news/post/governor-abbott-congratulates-texas-legislature-for-passing-nuclear-power-legislation",
+          "quote": "By creating the Texas Advanced Nuclear Energy Office and investing $350 million",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "unsupported",
+      "correction": "a $350M development fund, reimbursing project-development and supply-chain expenses (from feasibility studies and licensing work to manufacturing capacity and fuel fabrication) for advanced nuclear including microreactors.",
+      "review": "Main session read the enrolled text: Sec. 483.203(b) lists eleven reimbursable expense types (technology development, feasibility, site planning, FEED, site characterization, early site permit, licence application, manufacturing capacity, fuel fabrication, permits, NRC fees); the word 'workforce' does not appear in the bill. Converted from unsupported to a correction."
+    }
+  ]
+}

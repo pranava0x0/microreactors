@@ -1,0 +1,64 @@
+{
+ "_meta": {
+  "captured": "2026-11-24",
+  "agent": "news",
+  "scope": "News tab: 1-20 MW microreactor market events after 2026-11-19, then gap events in the prior 60 days (2026-09-25 to 2026-11-18). Started from skip/candidates.json, then web leads and company sweeps.",
+  "angles_run": [
+   "candidates.json: WNN 2026-11-24 TRISO licensing (fetched; not the R-50 event the lead expected)",
+   "candidates.json: WNN 2026-11-20 Radiant facilities (already shipped as radiant-manufacturing-expansion-2026-11-19; skipped)",
+   "candidates.json: POWER 2026-11-19 Blykalla HALEU (SEALER 55 MWe, outside band; skipped)",
+   "web-leads: NRC EA/FONSI for Radiant R-50, docket 70-7045 (searched; no FONSI found)",
+   "web-leads: Nuclea / Moltex acquisition completion (searched; signed, closing not found)",
+   "web-leads: INL MARVEL TRIGA fuel delivery (searched; not confirmed)",
+   "web-leads: NRC interim guidance on prior DOE/DoW authorizations, effective 2026-11-23 (searched; only the April draft found)",
+   "web-leads: NANO Nuclear KRONOS MMR CNSC licence to prepare site (searched; no dated submission found)",
+   "Gap sweep: Standard Nuclear DOE DSA submissions (2026-11-06 and 2026-11-12) - filed",
+   "Company sweep: Last Energy, Aalo, Valar, Kairos, Natura, Deep Fission, Antares, Radiant (no in-window item beyond the above)",
+   "Company sweep: Westinghouse eVinci, BWXT BANR, Deployable Energy, Terrestrial Energy (no in-window item)",
+   "Company sweep: Oklo Aurora-INL structural milestone (in window, out of band; not filed)",
+   "Gap check: DOE authorization milestones reported by ANS 2026-11-02 (all three already shipped)",
+   "Financing, SPAC/IPO closings, and executive appointments (nothing dated 2026-11-19 or later found)"
+  ],
+  "absences": [
+   "Radiant R-50 (TRISO receipt and monolith facility, Roane County TN, docket 70-7045): the web lead expected WNN 2026-11-24 to cover the NRC EA/FONSI, but the fetched article covers Standard Nuclear's DSAs instead. A search summary says the NRC schedule lists the final EA and FONSI for November-December 2026, and no FONSI or Federal Register notice was found. Not filed. Re-check the NRC docket page or federalregister.gov before 2026-12-31.",
+   "Nuclea Energy acquisition of Moltex Energy technology (SSR-W, WATSS, FLEX): search results describe a signed agreement, subject to UK National Security and Investment Act approval and to negotiation with Moltex's administrators. No completion announcement found, and the price is disputed (WNN undisclosed; Dealroom C$11.5M). Not filed.",
+   "INL MARVEL TRIGA-type fuel delivery on 2026-11-19 (web lead): no INL or DOE primary page found. The June 2026 ANS article expected fuel in October and dry criticality in December 2026, and INL's own MARVEL pages still say 2027. Not filed.",
+   "NRC interim guidance letting applicants use DOE or DoW prior authorizations, effective 2026-11-23 (web lead): only the draft ISG DANU-ISG-2026-XX (Federal Register, 2026-04-17) was found, with comments due 30 days after publication. Federal Register document 2026-21801 could not be read (compressed PDF through WebFetch). No final guidance or effective date found. Not filed.",
+   "NANO Nuclear KRONOS MMR Canada, licence to prepare site (web lead): the company says it is moving toward an LTPS submission; no dated submission found on the CNSC project page, which is archived. Not filed.",
+   "Oklo Aurora-INL structural concrete and steel in place, announced on X 2026-11-11 (ANS roundup 2026-11-16, https://www.ans.org/news/article-8581/oklo-roundup-groves1-plans-centrus-contract-aurora-concrete/): in window but Aurora is a 75 MWe design, outside the 1-20 MW band, and the only source is a social post relayed by a trade outlet. Not filed.",
+   "X-energy TRISO-X president Joel Duling retirement, effective 2026-11-20, interim lead Jason Hatfield (GlobeNewswire release dated 2026-09-25, https://www.morningstar.com/news/globe-newswire/9833802/x-energy-announces-planned-retirement-of-triso-x-president-joel-duling): TRISO-X is a fuel subsidiary of an SMR developer. Out of band. Not filed.",
+   "Deployable Energy Unity PDSA approval (ANS / WNN, dated 2026-05-26, https://www.world-nuclear-news.org/articles/approval-milestone-for-us-microreactor-project): older than the 60-day gap window. Not filed.",
+   "Antares Mark-1 NSDA (2026-10-23), Last Energy pilot DSA (2026-10-07) and Radiant Kaleidos DSA (2026-10-29), as summarised by ANS 2026-11-02 (https://www.ans.org/news/article-8549/antares-last-energy-and-radiant-hit-doe-authorization-milestones/): all three already ship. No new item.",
+   "Searches for in-window (2026-11-19 onward) news found nothing for Westinghouse eVinci, BWXT, Deployable Energy, Terrestrial Energy, Valar, Kairos, Natura, Deep Fission, Antares, Last Energy, Aalo, Hadron or One Nuclear, or for SPAC closings, IPO pricing, or executive appointments. The inl.gov feature story and the NRC press page returned HTTP 403 to WebFetch. Hadron and One Nuclear SPAC status could not be confirmed. The WNN 2026-11-24 article also says Standard Nuclear holds NRC approval for TRISO production in Richland, Washington, through a Framatome joint venture; the date and scope of that approval were not found, so it is not filed."
+  ]
+ },
+ "items": [
+  {
+   "id": "standard-nuclear-triso-dsa-submitted-2026-11-06",
+   "date": "2026-11-06",
+   "headline": "Standard Nuclear sends safety analyses for two new TRISO fuel plants to DOE",
+   "companies": [
+    "Standard Nuclear"
+   ],
+   "category": "fuel",
+   "what_happened": "Standard Nuclear submitted Documented Safety Analyses to DOE for two identical TRISO fuel plants: SN-TN in Tennessee on 6 November 2026 and SN-ID in Idaho on 12 November 2026. DOE had approved the preliminary safety analyses for both in July, and each plant could initially make up to 1 metric ton of uranium as TRISO a year.",
+   "why_it_matters": "The DSA is the last major DOE safety document before a fuel line can run. Neither plant is authorized yet, so buyers should not count their output in near-term microreactor fuel supply until DOE approves the DSA.",
+   "binding": true,
+   "binding_note": "A filed application: the DSAs were submitted to DOE for review. This is not an approval; DOE has not yet authorized either plant.",
+   "sources": [
+    {
+     "label": "World Nuclear News - Key step in licensing of US TRISO fuel facilities (2026-11-24)",
+     "url": "https://www.world-nuclear-news.org/articles/key-step-in-licensing-of-us-triso-fuel-facilities",
+     "quote": "Standard Nuclear has submitted the Documented Safety Analyses for two new identical TRISO fuel production facilities",
+     "status": "fetched"
+    },
+    {
+     "label": "American Nuclear Society - Standard Nuclear plans TRISO production at two new facilities in 2026 (2026-07-24)",
+     "url": "https://www.ans.org/news/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/",
+     "quote": "the Department of Energy has approved the preliminary documented safety analyses (PDSAs) for both facilities",
+     "status": "fetched"
+    }
+   ]
+  }
+ ]
+}

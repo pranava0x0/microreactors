@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "captured": "2026-11-24",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendor rows (antares, radiant, bwxt-banr, general-atomics-ga-tes, valar-ward250, oklo-aurora; evinci and aalo-x skipped per recently-checked.md) and Type N items for vendor milestones dated after 2026-11-19 not in skip/news.json. Small 1-20 MWe designs (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy) checked for dated in-window events.",
+    "angles_run": [
+      "NANO KRONOS CNSC licence to prepare site submission (web lead)",
+      "Radiant R-50 TRISO facility EA / FONSI / Part 70 licence (web lead)",
+      "Nuclea Energy / Moltex Energy acquisition completion (web lead)",
+      "Deployable Energy Unity news after 2026-11-19",
+      "Last Energy PWR-20 Texas news",
+      "Valar Atomics Ward 250 / Utah lease (fetched Oct 1 source to check shipped lease claim)",
+      "Valar Nvidia 30 MW data center claim (shipped notes, not re-checked by prior pass)",
+      "Aalo Atomics / Aalo-X news",
+      "Antares Mark-1 and November 2026 announcements",
+      "Radiant Kaleidos DOME fuelling / Readiness Review status",
+      "BWXT BANR Fort Campbell timing",
+      "Oklo Aurora-INL construction and Forged Rings reservation",
+      "Natura Resources news",
+      "Terra Innovatum SOLO news",
+      "Steady Energy LOKI news (no 2026 coverage found)",
+      "Blue Energy news (SMR, not microreactor)",
+      "NANO Nuclear ZEUS hardware news (fetched; release dated 2025-03-25)"
+    ],
+    "absences": [
+      "No vendor milestone dated 2026-11-20 to 2026-11-24 was found with a primary or fetched source. Zero Type N items filed.",
+      "Web lead NRC EA/FONSI for Radiant R-50 (docket 70-7045): not found. The WNN 2026-11-24 article 'Key step in licensing of US TRISO fuel facilities' is about Standard Nuclear's SN-TN and SN-ID Documented Safety Analyses submitted to DOE on 2026-11-06 and 2026-11-12 (both before the window), not an R-50 EA or FONSI. NRC search results show R-50 as an EA in progress (June 2026 consultation letter) and an NRC-accepted Part 70 fueling-building application under expedited review with a targeted completion of 2026-12-18. No issued licence or FONSI found.",
+      "Web lead Nuclea Energy / Moltex acquisition: not filed. Search results show a definitive agreement announced around 2026-08-13, with completion subject to UK National Security and Investment Act approval; no completion date found. Nuclea SEC filings describe the deal as not yet completed.",
+      "Web lead NANO Nuclear KRONOS CNSC licence to prepare site: no dated submission found. Search results show plans to submit an LTPS through True North Nuclear (announced October 2025) with no filing date. Not filed.",
+      "NANO ZEUS core-block hardware release: fetched page is dated 2025-03-25, out of window. A 2026-11-11 NANO release on the Q4 business update webcast (2026-11-30) and joining WNA/IDEA is corporate, not a vendor milestone.",
+      "Deployable Energy Unity: criticality 2026-06-30 and DOME full-power selection (INL release 2026-09-30; company release 2026-10-07) are both before the window. No November 2026 news found.",
+      "Last Energy: NRC filing dated 2026-10-20 for the first part of a two-part phased construction permit application (Caldwell County, TX per Federal Register notice; the same notice's Haskell County reference was not reconciled). Already in skip/news.json (last-energy-caldwell-lwa-application-2026-10-20). No November milestone found.",
+      "Aalo Atomics: latest coverage found is March 2026 (Aalo-X completion expected end of 2026). Shipped aalo-x row is in recently-checked.md and was not re-checked.",
+      "Valar Atomics: Utah Trust Lands Administration Board approval of more than 640 acres on 2026-09-17 is supported by East Idaho News 2026-10-01 (fetched). The 480-acre state-land application reported by the Salt Lake Tribune in October is a different figure and was not reconciled. Nvidia 30 MW data center described in July 2026 coverage (KSL, Reuters via WHBL 2026-07-01) as a proposal and exploratory stage, not a built plant. No check filed. BLM completeness review pending per the Oct 1 article.",
+      "Natura Resources: 2026-11-02 Texas A&M-led DOE $5.4M award (already covered in skip/news.json as texas-am-natura-doe-fuel-recycling-grant-2026-10-29 dated 2026-10-29) and September 2026 DOE salt shipment are before the window. No November vendor milestone found.",
+      "Terra Innovatum SOLO: no November 2026 news found; latest NRC pre-application item is a January 2026 regulatory engagement plan revision. An NRC page carries an undated lapse-in-appropriations alert, not verified as current.",
+      "Steady Energy (LOKI): no 2026 coverage found. Search results returned NANO Nuclear's LOKI MMR only (RFI January 2026).",
+      "Blue Energy: 2026 coverage concerns a BWRX-300 SMR (Limited Work Authorization application dated 2026-09-15) and a Victoria, TX gas-plus-nuclear plan; not a 1-20 MWe microreactor. Out of lane.",
+      "Antares: DOE Nuclear Safety Design Agreement approval for Mark-1 announced 2026-10-23 and ANS 'Antares, Last Energy, and Radiant hit DOE authorization milestones' dated 2026-11-02 are before the window. Shipped antares row (2028 or earlier delivery, JBSA and Janus Fort Bragg) not contradicted by any source found.",
+      "Radiant: DOME Readiness Review is still pending with no date published (search results, undated). Shipped radiant row says 'Readiness Review next', which is consistent. Not filed.",
+      "BWXT BANR (Fort Campbell): Army/BWXT announcements of 2026-08-26 and a late-2028 groundbreaking target with early-2030s operation are consistent with the shipped bwxt-banr row. No dated change found. Not filed.",
+      "Oklo Aurora: Forged Rings capacity reservation (27 module-equivalents reserved 2030-2035, per Oklo Q3 update) and Standard Nuclear DSA events are dated 2026-11-06 and earlier, before the window. Shipped oklo-aurora row (2028-2029 startup) is consistent with the 2026-11-06 news item; not filed.",
+      "General Atomics GA-TES: no 2026-11 milestone found beyond the shipped 2026-08-26 Janus selection. Not filed."
+    ]
+  },
+  "checks": [],
+  "items": []
+}

@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "captured": "2026-11-25",
+    "agent": "vendors",
+    "scope": "Vendors tab: Type G checks on shipped vendors (target = vendor id) and Type N items for vendor milestones dated after 2026-11-19 that skip/news.json lacks. Skipped recently-checked ids (vendors aalo-x). Budget used: 16 web searches, 3 fetches (2 returned HTTP 403).",
+    "angles_run": [
+      "Radiant DOME fuel loading, Readiness Review and criticality status",
+      "Radiant news after 2026-11-19 (blog, NRC R-50 licence review)",
+      "Radiant Janus award wording (army.mil primary)",
+      "Valar Ward 250 and Project Beehive BLM status",
+      "Antares Mark-1 and R1 news after 2026-10-23",
+      "Westinghouse eVinci news after 2026-09",
+      "Deployable Energy Unity DOME schedule",
+      "NANO Nuclear KRONOS MMR news after 2026-10-27",
+      "Last Energy PWR-20 Texas and NRC filing",
+      "Aalo-X post-criticality status",
+      "Terra Innovatum SOLO NRC review timeline",
+      "Natura MSR-1 status",
+      "Steady Energy LDR-50 status",
+      "Blue Energy status",
+      "Oklo Aurora construction news after 2026-11-16"
+    ],
+    "absences": [
+      "No vendor milestone dated after 2026-11-19 found for any shipped vendor or for the 1-20 MWe vendors not in the table (Deployable Energy, NANO KRONOS/ZEUS, Last Energy, Aalo, Valar, Natura, Blue Energy, Terra Innovatum, Steady Energy). Searches surfaced only items already in skip/news.json or dated earlier.",
+      "Radiant DOME status (vendors id radiant, milestone 2026 Q3 and note on DOE Readiness Review): the radiantnuclear.com pages (dome-selection, triso-fuel-supply) returned HTTP 403 to WebFetch, so the shipped row's sources could not be re-read. Search summaries are conflicting: an INL May 2026 presentation says the Readiness Review began 2026-04-27; another summary says no date has been published. No fetched page confirms fuel loading or criticality as of 2026-11-25. Not filed.",
+      "Radiant NRC licence: NRC documents, as summarised in a search, expect review of Radiant's R-50 Part 70 application to finish by 2026-12-18 (a August release said Q4 2026). This is a target date, not an event; no fetched NRC page was read. Not filed. Dated in-band target, source: NRC pre-application and document pages (ML2522 series), not fetched.",
+      "Radiant TRISO supply: a search summary cites a Radiant blog post 'Radiant Locks TRISO Fuel Supply Through Early 2030s' (https://radiantnuclear.com/blog/triso-fuel-supply/). Undated; blocked (403). Not verified against the shipped fabricator text.",
+      "Radiant Janus award: the shipped note 'the Army cautions that dividing an award by its unit count does not yield a unit price' is not in the army.mil release of 2026-08-26 (https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors), which mentions Radiant only in a vendor list and does not contain the $750M or 15-unit figures. The $750M / 15 Kaleidos figures appear in trade coverage (energytech, POWER) that was not fetched. Filed as a check (unsupported); the POWER article is the shipped source and was not read in full.",
+      "Valar Ward 250 and Project Beehive: a BLM Utah office statement, reported by ANS on 2026-10-05 (https://www.ans.org/news/2026-10-05/article-8462/details-emerge-on-valars-utah-plans/), says the application is under completeness review; no approval found through 2026-11-25. This agrees with the shipped note 'the BLM has not approved it'. Not filed as a check because the page was not fetched and a confirmation needs a fetched page.",
+      "Antares Mark-1: DOE Nuclear Safety Design Agreement approval on 2026-10-23 (already in news skip). Mark-1 full-power operation is planned for 2027 and initial military deployments from 2028, consistent with the R1 2028 target. No post-2026-11-19 Antares event found.",
+      "Westinghouse eVinci: no news after 2026-09-03 found (criticality milestone already shipped). Janus Fort Drum selection (2026-08-26) already shipped.",
+      "Deployable Energy Unity: DOME full-power campaign is scheduled for 2027 (INL release 2026-09-30, already in news skip). No November event found.",
+      "NANO Nuclear: Hyundai Engineering MOU (2026-10-27) and IMPSA review (2026-10-21) are in news skip. A search summary mentions NRC acceptance of the KRONOS MMR construction permit application at UIUC, undated; not filed without a primary page giving a date.",
+      "Last Energy: NRC Federal Register notice of the phased construction permit application (filed 2026-10-20, public-inspection document 2026-22577) is shipped as news (2026-10-20). The notice places the early work in Caldwell County, Texas; the NRC pre-application page places the project at Haskell, Texas. Unresolved county conflict; not filed because it belongs to the deployment-site lane.",
+      "Aalo: Aalo-X zero-power criticality 2026-07-04 (excluded, recently-checked). No post-criticality milestone (sodium testing, full-power operation, Project Ascension progress) found in searches dated after July 2026.",
+      "Oklo Aurora: the shipped first_delivery_target 2028-2029 is consistent with the 2026-11-06 news item. Search results also carry 2025 articles saying commercial operation late 2027 to early 2028; those are older and superseded by the 2026 window, so not filed.",
+      "Terra Innovatum SOLO: NRC safety evaluations were anticipated by October 2026 per the company release; no completion found. Vendor not in the table; the 2026-11-04 readiness item is already in news skip.",
+      "Natura MSR-1: FLiBe delivered to Abilene on 2026-09-18 (ANS). Not critical as of the latest source found; initial operation estimated 2028 by one Fortune article only. Not filed; vendor not in the table.",
+      "Steady Energy LDR-50: STUK joint early review summary (July 2026) and listing (October 2026) found in search summaries; not fetched and dated before 2026-11-19. Not filed.",
+      "Blue Energy: BWRX-300 gas-plus-nuclear project (Victoria, TX) next phase signed 2026-08-13 per trade press; a large SMR, not a 1-20 MWe design. Not filed."
+    ]
+  },
+  "items": [],
+  "checks": [
+    {
+      "id": "check-radiant-1",
+      "target": "radiant",
+      "file": "vendors",
+      "claim": "The Army cautions that dividing an award by its unit count does not yield a unit price, because the award pays for development and the first-of-a-kind units.",
+      "verdict": "confirmed",
+      "evidence": "The Army's Janus release dated 2026-08-26 (army.mil article 294891) names Radiant only in a vendor list for Fort Benning. It gives an overall figure of about $2.2 billion across FY2027-2031 and an expected total of more than 20 microreactors. It contains no per-vendor award amount, no unit count, no Kaleidos mention and no caution about dividing an award by units. The $750M / 15-unit figures in the shipped row come from trade coverage, and the caution is not found in the Army text. Check the POWER article that the shipped note cites before re-attributing the sentence.",
+      "sources": [
+        {
+          "label": "U.S. Army — Army reaches agreement with private industry for nuclear micro-reactors (2026-08-26)",
+          "url": "https://www.army.mil/article/294891/army_reaches_agreement_with_private_industry_for_nuclear_micro_reactors",
+          "quote": "the Army is awarding up to a combined $2.2 billion",
+          "status": "fetched"
+        }
+      ],
+      "agent_verdict": "unsupported",
+      "review": "Overruled in the main session: the row's own POWER source (cached) has the Army's Waksman cautioning that the $2.2 billion should not be divided by reactor count ('One thing you definitely cannot do is divide the dollars by the number of reactors'). The agent read only the army.mil release."
+    }
+  ]
+}
